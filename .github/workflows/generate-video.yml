@@ -1,0 +1,37 @@
+name: 콩트 영상 생성
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 장면별 클립 생성 (Ark Seedance / fal.ai)
+        env:
+          ARK_API_KEY: ${{ secrets.ARK_API_KEY }}
+          FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+        run: python3 scripts/generate_video.py
+
+      - name: ffmpeg 설치
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: 클립 이어붙이기
+        # concat 목록 안의 상대 경로는 목록 파일 위치 기준으로 해석되므로 out/ 안에서 실행
+        working-directory: out
+        run: |
+          ls scene*.mp4 | sed "s/^/file '/;s/$/'/" > list.txt
+          ffmpeg -f concat -safe 0 -i list.txt -c copy bungeoppang-skit.mp4
+
+      - name: 결과 영상 업로드
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bungeoppang-skit-video
+          path: |
+            out/scene*.mp4
+            out/bungeoppang-skit.mp4
+          retention-days: 7
