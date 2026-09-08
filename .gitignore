@@ -1,0 +1,4 @@
+# 환경 변수 / 비밀 키 — 절대 커밋하지 않기
+.env
+.env.local
+.env.*.local
