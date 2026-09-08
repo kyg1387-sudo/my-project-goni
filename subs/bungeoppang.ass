@@ -1,0 +1,32 @@
+[Script Info]
+Title: 붕어빵 가격 콩트 자막
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sajang,Noto Sans CJK KR,80,&H00FFFFFF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,6,2,2,60,60,420,1
+Style: Gokaek,Noto Sans CJK KR,80,&H0000E5FF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,6,2,2,60,60,420,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.30,0:00:01.50,Gokaek,,0,0,0,,붕어빵\N얼마예요?
+Dialogue: 0,0:00:01.50,0:00:03.20,Sajang,,0,0,0,,예쁜 언니는,\N오백 원,
+Dialogue: 0,0:00:03.20,0:00:05.00,Sajang,,0,0,0,,못생긴 언니는,\N천 원입니다.
+Dialogue: 0,0:00:05.00,0:00:06.30,Gokaek,,0,0,0,,근데...\N가격이 왜 달라요?
+Dialogue: 0,0:00:06.30,0:00:07.60,Sajang,,0,0,0,,내가 볼때는\N이 동네는...
+Dialogue: 0,0:00:07.60,0:00:08.80,Sajang,,0,0,0,,예쁜 언니밖에\N없어요!
+Dialogue: 0,0:00:08.80,0:00:10.00,Gokaek,,0,0,0,,하하하\N그럼 저는 오백 원이죠?
+Dialogue: 0,0:00:10.00,0:00:11.20,Sajang,,0,0,0,,잠깐만요,\N다시 한번 볼게요.
+Dialogue: 0,0:00:11.20,0:00:12.20,Gokaek,,0,0,0,,...왜\N다시 봐요?
+Dialogue: 0,0:00:12.20,0:00:13.40,Sajang,,0,0,0,,너무 예뻐서\N삼백 원.
+Dialogue: 0,0:00:13.40,0:00:14.30,Gokaek,,0,0,0,,하하하\N아 진짜 못 말려!
+Dialogue: 0,0:00:14.30,0:00:15.00,Sajang,,0,0,0,,내일 오면\N공짜예요.
+Dialogue: 0,0:00:15.00,0:00:15.60,Gokaek,,0,0,0,,왜요?
+Dialogue: 0,0:00:15.60,0:00:17.00,Sajang,,0,0,0,,내일은\N더 예뻐질 거니까.
+Dialogue: 0,0:00:17.00,0:00:17.80,Gokaek,,0,0,0,,하하하하
+Dialogue: 0,0:00:17.80,0:00:18.90,Sajang,,0,0,0,,(카메라 보며)\N오늘 매출 삼백 원.
+Dialogue: 0,0:00:18.90,0:00:20.00,Sajang,,0,0,0,,...근데\N흑자.
