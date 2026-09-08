@@ -16,9 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: 장면별 클립 생성 (Ark Seedance)
+      - name: 장면별 클립 생성 (Ark Seedance / fal.ai)
         env:
           ARK_API_KEY: ${{ secrets.ARK_API_KEY }}
+          FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
         run: python3 scripts/generate_video.py
 
       - name: 클립 이어붙이기
