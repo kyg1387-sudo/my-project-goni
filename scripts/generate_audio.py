@@ -18,17 +18,21 @@ import time
 import urllib.error
 import urllib.request
 
-VENDOR_VOICE = "Josh"    # 사장: 낮고 능청스러운 남성 목소리
-CUSTOMER_VOICE = "Sarah" # 손님: 밝은 여성 목소리
+# 역할별 목소리 후보 — fal의 ElevenLabs 엔드포인트가 지원하는 이름이 문서와 다를 수 있어
+# 앞에서부터 시도해 처음 성공하는 목소리를 그 역할에 고정한다.
+VOICE_CANDIDATES = {
+    "vendor": ["Brian", "George", "Daniel", "Bill", "Eric", "Rachel"],   # 사장: 남성 우선
+    "customer": ["Sarah", "Jessica", "Alice", "Lily", "Rachel"],         # 손님: 여성 우선
+}
 
-# (시작 초, 목소리, 대사) — 12초 시퀀스의 자막 타이밍(subs/bungeoppang-seq003.ass)과 동일
+# (시작 초, 역할, 대사) — 12초 시퀀스의 자막 타이밍(subs/bungeoppang-seq003.ass)과 동일
 LINES = [
-    (0.0, VENDOR_VOICE, "내가 볼때는, 이 동네는..."),
-    (2.0, VENDOR_VOICE, "예쁜 언니밖에 없어요!"),
-    (4.0, CUSTOMER_VOICE, "하하하! 아 진짜 못 말려!"),
-    (6.0, VENDOR_VOICE, "너무 예뻐서 삼백 원."),
-    (8.0, VENDOR_VOICE, "내일 오면 공짜예요."),
-    (10.0, VENDOR_VOICE, "내일은 더 예뻐질 거니까!"),
+    (0.0, "vendor", "내가 볼때는, 이 동네는..."),
+    (2.0, "vendor", "예쁜 언니밖에 없어요!"),
+    (4.0, "customer", "하하하! 아 진짜 못 말려!"),
+    (6.0, "vendor", "너무 예뻐서 삼백 원."),
+    (8.0, "vendor", "내일 오면 공짜예요."),
+    (10.0, "vendor", "내일은 더 예뻐질 거니까!"),
 ]
 
 AMBIENCE_PROMPT = ("cozy Korean night street food market ambience, distant chatter, "
@@ -97,15 +101,22 @@ def main():
     workdir = os.path.join(os.path.dirname(video_out) or ".", "audio")
     os.makedirs(workdir, exist_ok=True)
 
-    # 1) 대사 TTS 생성
+    # 1) 대사 TTS 생성 (역할별로 처음 성공한 목소리를 고정)
+    chosen = {}
     voice_files = []  # (시작초, 파일경로)
-    for i, (start, voice, text) in enumerate(LINES, start=1):
-        print(f"[대사 {i}] ({voice}) {text}")
-        result = fal_run("fal-ai/elevenlabs/tts/multilingual-v2",
-                         {"text": text, "voice": voice, "speed": 1.1}, key)
-        url = find_audio_url(result)
+    for i, (start, role, text) in enumerate(LINES, start=1):
+        candidates = [chosen[role]] if role in chosen else VOICE_CANDIDATES[role]
+        url = None
+        for voice in candidates:
+            print(f"[대사 {i}] ({role}:{voice}) {text}")
+            result = fal_run("fal-ai/elevenlabs/tts/multilingual-v2",
+                             {"text": text, "voice": voice, "speed": 1.1}, key)
+            url = find_audio_url(result)
+            if url:
+                chosen[role] = voice
+                break
         if not url:
-            sys.exit(f"[대사 {i}] TTS 실패 — 결과: {result}")
+            sys.exit(f"[대사 {i}] 모든 목소리 후보 실패")
         path = os.path.join(workdir, f"line{i:02d}.mp3")
         urllib.request.urlretrieve(url, path)
         voice_files.append((start, path))
