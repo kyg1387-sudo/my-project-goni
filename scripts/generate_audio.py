@@ -21,17 +21,24 @@ import urllib.request
 # 역할별 목소리 후보 — fal의 ElevenLabs 엔드포인트가 지원하는 이름이 문서와 다를 수 있어
 # 앞에서부터 시도해 처음 성공하는 목소리를 그 역할에 고정한다.
 VOICE_CANDIDATES = {
-    "vendor": ["Brian", "George", "Daniel", "Bill", "Eric", "Rachel"],   # 사장: 남성 우선
-    "customer": ["Sarah", "Jessica", "Alice", "Lily", "Rachel"],         # 손님: 여성 우선
+    "vendor": ["Charlie", "Chris", "Eric", "Brian", "George", "Rachel"],  # 사장: 밝은 남성 우선
+    "customer": ["Jessica", "Lily", "Sarah", "Alice", "Rachel"],          # 손님: 발랄한 여성 우선
 }
 
-# (시작 초, 역할, 대사) — 12초 시퀀스의 자막 타이밍(subs/bungeoppang-seq003.ass)과 동일
+# 생동감을 위한 표현 설정: 안정성을 낮추고 스타일을 높여 감정 표현을 키운다
+TTS_SETTINGS = {"speed": 1.1, "stability": 0.35, "similarity_boost": 0.8, "style": 0.6}
+
+# 대사 음성의 피치 업 배율 (톤을 높여 생동감 있게, 배경음에는 적용하지 않음)
+VOICE_PITCH = 1.15
+
+# (시작 초, 역할, 대사) — 12초 시퀀스의 자막 타이밍(subs/bungeoppang-seq003.ass)과 동일.
+# 웃음은 또박또박 읽히지 않도록 자연스러운 감탄 표기로 쓴다.
 LINES = [
     (0.0, "vendor", "내가 볼때는, 이 동네는..."),
     (2.0, "vendor", "예쁜 언니밖에 없어요!"),
-    (4.0, "customer", "하하하! 아 진짜 못 말려!"),
-    (6.0, "vendor", "너무 예뻐서 삼백 원."),
-    (8.0, "vendor", "내일 오면 공짜예요."),
+    (4.0, "customer", "아하하핫! 아, 진짜 못 말려~"),
+    (6.0, "vendor", "너무 예뻐서 삼백 원!"),
+    (8.0, "vendor", "내일 오면 공짜예요~"),
     (10.0, "vendor", "내일은 더 예뻐질 거니까!"),
 ]
 
@@ -110,7 +117,7 @@ def main():
         for voice in candidates:
             print(f"[대사 {i}] ({role}:{voice}) {text}")
             result = fal_run("fal-ai/elevenlabs/tts/multilingual-v2",
-                             {"text": text, "voice": voice, "speed": 1.1}, key)
+                             {"text": text, "voice": voice, **TTS_SETTINGS}, key)
             url = find_audio_url(result)
             if url:
                 chosen[role] = voice
@@ -139,7 +146,7 @@ def main():
     for idx, (start, path) in enumerate(voice_files, start=1):
         inputs += ["-i", path]
         ms = int(start * 1000)
-        filters.append(f"[{idx}:a]adelay={ms}|{ms}[v{idx}]")
+        filters.append(f"[{idx}:a]rubberband=pitch={VOICE_PITCH},adelay={ms}|{ms}[v{idx}]")
         mix_labels.append(f"[v{idx}]")
     if ambience:
         inputs += ["-i", ambience]
