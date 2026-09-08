@@ -35,10 +35,19 @@ jobs:
             -c:v libx264 -preset medium -crf 18 -c:a copy \
             out/bungeoppang-skit-subbed.mp4
 
+      - name: 대사 음성과 배경 소리 입히기
+        env:
+          FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+        run: |
+          python3 scripts/generate_audio.py \
+            out/bungeoppang-skit-subbed.mp4 out/bungeoppang-skit-final.mp4
+
       - name: 결과 영상 업로드
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: bungeoppang-skit-video-subbed
-          path: out/bungeoppang-skit-subbed.mp4
+          path: |
+            out/bungeoppang-skit-subbed.mp4
+            out/bungeoppang-skit-final.mp4
           retention-days: 7
