@@ -2,6 +2,12 @@ name: 콩트 영상 생성
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - claude/bungeoppang-pricing-skit-qdmcje
+    paths:
+      - .github/workflows/generate-video.yml
+      - scripts/generate_video.py
 
 jobs:
   generate:
