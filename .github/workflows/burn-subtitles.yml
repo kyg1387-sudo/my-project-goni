@@ -5,18 +5,11 @@ on:
     inputs:
       source_run_id:
         description: 클립 Artifact를 가져올 영상 생성 실행의 run ID
+        required: true
+      subs_file:
+        description: 입힐 자막 파일 경로
         required: false
-        default: "34182640358"
-  push:
-    branches:
-      - claude/bungeoppang-pricing-skit-qdmcje
-    paths:
-      - .github/workflows/burn-subtitles.yml
-      - subs/**
-
-env:
-  # push 트리거로 실행될 때 사용할 기본 소스 실행 (4차 영상 생성 성공 실행)
-  DEFAULT_SOURCE_RUN_ID: "34182640358"
+        default: subs/bungeoppang-seq003.ass
 
 jobs:
   burn:
@@ -30,7 +23,7 @@ jobs:
         with:
           name: bungeoppang-skit-video
           path: out
-          run-id: ${{ inputs.source_run_id || env.DEFAULT_SOURCE_RUN_ID }}
+          run-id: ${{ inputs.source_run_id }}
           github-token: ${{ github.token }}
 
       - name: ffmpeg와 한글 폰트 설치
@@ -38,7 +31,7 @@ jobs:
 
       - name: 자막 입히기
         run: |
-          ffmpeg -i out/bungeoppang-skit.mp4 -vf "ass=subs/bungeoppang.ass" \
+          ffmpeg -i out/bungeoppang-skit.mp4 -vf "ass=${{ inputs.subs_file }}" \
             -c:v libx264 -preset medium -crf 18 -c:a copy \
             out/bungeoppang-skit-subbed.mp4
 

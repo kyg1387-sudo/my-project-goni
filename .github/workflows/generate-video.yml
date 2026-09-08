@@ -19,11 +19,15 @@ jobs:
       - name: ffmpeg 설치
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
-      - name: 클립 이어붙이기
-        # concat 목록 안의 상대 경로는 목록 파일 위치 기준으로 해석되므로 out/ 안에서 실행
+      - name: 클립 이어붙이기 (숏당 앞 2초 사용)
+        # concat 목록 안의 상대 경로는 목록 파일 위치 기준으로 해석되므로 out/ 안에서 실행.
+        # 스토리보드의 2초 컷 리듬에 맞춰 각 숏의 앞 2초만 잘라 이어붙인다.
         working-directory: out
         run: |
-          ls scene*.mp4 | sed "s/^/file '/;s/$/'/" > list.txt
+          for f in scene*.mp4; do
+            ffmpeg -i "$f" -t 2 -c:v libx264 -preset medium -crf 18 -an "trim_$f"
+          done
+          ls trim_scene*.mp4 | sed "s/^/file '/;s/$/'/" > list.txt
           ffmpeg -f concat -safe 0 -i list.txt -c copy bungeoppang-skit.mp4
 
       - name: 결과 영상 업로드

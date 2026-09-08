@@ -1,0 +1,21 @@
+[Script Info]
+Title: 붕어빵 고양이 SEQ 003 자막 (12초 압축판)
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sajang,Noto Sans CJK KR,80,&H00FFFFFF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,6,2,2,60,60,420,1
+Style: Gokaek,Noto Sans CJK KR,80,&H0000E5FF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,6,2,2,60,60,420,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:02.00,Sajang,,0,0,0,,내가 볼때는\N이 동네는...
+Dialogue: 0,0:00:02.00,0:00:04.00,Sajang,,0,0,0,,예쁜 언니밖에\N없어요!
+Dialogue: 0,0:00:04.00,0:00:06.00,Gokaek,,0,0,0,,하하하\N아 진짜 못 말려!
+Dialogue: 0,0:00:06.00,0:00:08.00,Sajang,,0,0,0,,너무 예뻐서\N삼백 원.
+Dialogue: 0,0:00:08.00,0:00:10.00,Sajang,,0,0,0,,내일 오면\N공짜예요.
+Dialogue: 0,0:00:10.00,0:00:12.00,Sajang,,0,0,0,,내일은\N더 예뻐질 거니까!
