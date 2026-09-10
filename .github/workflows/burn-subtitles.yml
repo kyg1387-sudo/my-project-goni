@@ -11,6 +11,10 @@ on:
         description: 클립 Artifact를 가져올 영상 생성 실행의 run ID
         required: false
         default: "34182640358"
+      commit_output:
+        description: 완성 영상을 브랜치 deliveries/ 폴더에 커밋할지 여부 (true/false)
+        required: false
+        default: "false"
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
@@ -21,6 +25,8 @@ jobs:
   burn:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -48,3 +54,15 @@ jobs:
           name: ${{ env.SKIT }}-skit-video-subbed
           path: out/${{ env.SKIT }}-skit-subbed.mp4
           retention-days: 7
+
+      # Artifact 저장소(Azure)에 접근할 수 없는 환경에서 git으로 영상을 받을 수 있게 한다
+      - name: 완성 영상 브랜치에 커밋
+        if: ${{ inputs.commit_output == 'true' }}
+        run: |
+          mkdir -p deliveries
+          cp "out/${SKIT}-skit-subbed.mp4" deliveries/
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add deliveries
+          git commit -m "완성 영상 추가: ${SKIT}-skit-subbed.mp4"
+          git push
