@@ -3,20 +3,19 @@ name: 콩트 영상 자막 입히기
 on:
   workflow_dispatch:
     inputs:
+      skit:
+        description: 자막을 입힐 스킷 이름 (subs/<skit>.ass)
+        required: false
+        default: "bungeoppang"
       source_run_id:
         description: 클립 Artifact를 가져올 영상 생성 실행의 run ID
         required: false
         default: "34182640358"
-  push:
-    branches:
-      - claude/bungeoppang-pricing-skit-qdmcje
-    paths:
-      - .github/workflows/burn-subtitles.yml
-      - subs/**
 
 env:
-  # push 트리거로 실행될 때 사용할 기본 소스 실행 (4차 영상 생성 성공 실행)
-  DEFAULT_SOURCE_RUN_ID: "34182640358"
+  SKIT: ${{ inputs.skit || 'bungeoppang' }}
+  # push 트리거로 실행될 때 사용할 기본 소스 실행 (붕어빵 4차 영상 생성 성공 실행)
+  SOURCE_RUN_ID: ${{ inputs.source_run_id || '34182640358' }}
 
 jobs:
   burn:
@@ -28,9 +27,9 @@ jobs:
       - name: 생성된 클립 내려받기
         uses: actions/download-artifact@v4
         with:
-          name: bungeoppang-skit-video
+          name: ${{ env.SKIT }}-skit-video
           path: out
-          run-id: ${{ inputs.source_run_id || env.DEFAULT_SOURCE_RUN_ID }}
+          run-id: ${{ env.SOURCE_RUN_ID }}
           github-token: ${{ github.token }}
 
       - name: ffmpeg와 한글 폰트 설치
@@ -38,14 +37,14 @@ jobs:
 
       - name: 자막 입히기
         run: |
-          ffmpeg -i out/bungeoppang-skit.mp4 -vf "ass=subs/bungeoppang.ass" \
+          ffmpeg -i "out/${SKIT}-skit.mp4" -vf "ass=subs/${SKIT}.ass" \
             -c:v libx264 -preset medium -crf 18 -c:a copy \
-            out/bungeoppang-skit-subbed.mp4
+            "out/${SKIT}-skit-subbed.mp4"
 
       - name: 결과 영상 업로드
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: bungeoppang-skit-video-subbed
-          path: out/bungeoppang-skit-subbed.mp4
+          name: ${{ env.SKIT }}-skit-video-subbed
+          path: out/${{ env.SKIT }}-skit-subbed.mp4
           retention-days: 7

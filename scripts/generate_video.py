@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""붕어빵 가격 콩트 → 장면별 쇼츠 영상 생성.
+"""콩트/드라마 대본 → 장면별 쇼츠 영상 생성.
 
 Ark(Seedance)와 fal.ai를 모두 지원한다. ARK_API_KEY가 있으면 Ark의 두 리전
 (BytePlus, Volcengine)을 차례로 시도하고, 실패하면 FAL_API_KEY로 fal.ai
@@ -7,7 +7,12 @@ Seedance에 폴백한다.
 
 사용법:
     export ARK_API_KEY=... 또는 export FAL_API_KEY=...
-    python3 scripts/generate_video.py
+    python3 scripts/generate_video.py [scripts/scenes/<스킷>.json]
+
+장면 파일(JSON) 형식:
+    duration  장면당 길이(초). 5 또는 10. 생략 시 5
+    style     모든 장면 프롬프트 뒤에 붙는 공통 지시문(인물/의상/장소 일관성 유지용)
+    scenes    장면별 프롬프트 목록 — 같은 인물은 매 장면 동일한 외형 문구로 묘사할 것
 
 환경 변수(선택):
     ARK_BASE_URL, ARK_VIDEO_MODEL  Ark 엔드포인트/모델 직접 지정
@@ -24,23 +29,21 @@ import urllib.error
 import urllib.request
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "out")
+DEFAULT_SCENES_FILE = os.path.join(os.path.dirname(__file__), "scenes", "bungeoppang.json")
 
-# 장면별 텍스트-투-비디오 프롬프트. 9:16 세로(쇼츠), 장면당 5초.
-# 생성 모델은 한글 자막 렌더링이 불안정하므로 자막은 편집 단계에서 얹는 것을 전제로,
-# 여기서는 연기/구도 중심으로 프롬프트를 구성한다.
-SCENES = [
-    "한국 겨울 길거리 붕어빵 노점, 김이 모락모락 나는 붕어빵 틀, 손님(젊은 여성)이 다가와 가격을 묻고 "
-    "포장마차 사장(중년 남성)이 능청스럽게 웃으며 대답하는 장면, 따뜻한 저녁 조명, 코미디 톤",
 
-    "붕어빵 노점 앞, 손님이 어이없다는 표정으로 웃음을 터뜨리고 사장이 진지한 척 손가락으로 손님 얼굴을 "
-    "가리키며 다시 살펴보는 과장된 연기, 클로즈업 위주, 코미디 톤",
+def load_scenes(path):
+    """장면 파일을 읽어 (프롬프트 목록, 장면당 길이)를 돌려준다.
 
-    "붕어빵 사장이 활짝 웃으며 붕어빵을 봉투에 담아 건네고 손님이 크게 웃는 장면, 훈훈한 마무리 분위기, "
-    "겨울 길거리 야경 보케",
-
-    "붕어빵 노점 사장이 카메라를 정면으로 보며 어깨를 으쓱하는 브이로그식 마무리 컷, 씁쓸하면서도 "
-    "만족스러운 미소, 코미디 쇼츠 엔딩 느낌",
-]
+    생성 모델은 한글 자막 렌더링이 불안정하므로 자막은 편집 단계에서 얹는 것을 전제로,
+    프롬프트는 연기/구도 중심으로 구성한다. style은 인물/의상/장소 일관성을 위해
+    모든 장면 프롬프트 뒤에 공통으로 붙인다.
+    """
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+    style = data.get("style", "").strip()
+    prompts = [f"{scene}, {style}" if style else scene for scene in data["scenes"]]
+    return prompts, int(data.get("duration", 5))
 
 
 def http_json(url, payload=None, headers=None):
@@ -76,11 +79,11 @@ ARK_CANDIDATES = [
 ]
 
 
-def ark_generate(base_url, model, key, index, prompt):
+def ark_generate(base_url, model, key, index, prompt, duration):
     headers = {"Authorization": f"Bearer {key}"}
     status, task = http_json(f"{base_url}/contents/generations/tasks", {
         "model": model,
-        "content": [{"type": "text", "text": f"{prompt} --ratio 9:16 --duration 5"}],
+        "content": [{"type": "text", "text": f"{prompt} --ratio 9:16 --duration {duration}"}],
     }, headers)
     if status != 200:
         print(f"  [ark] 작업 생성 실패 (HTTP {status}): {task}")
@@ -106,13 +109,13 @@ def ark_generate(base_url, model, key, index, prompt):
 FAL_MODEL = os.environ.get("FAL_VIDEO_MODEL", "fal-ai/bytedance/seedance/v1/lite/text-to-video")
 
 
-def fal_generate(key, index, prompt):
+def fal_generate(key, index, prompt, duration):
     headers = {"Authorization": f"Key {key}"}
     status, task = http_json(f"https://queue.fal.run/{FAL_MODEL}", {
         "prompt": prompt,
         "aspect_ratio": "9:16",
         "resolution": "720p",
-        "duration": "5",
+        "duration": str(duration),
     }, headers)
     if status != 200:
         print(f"  [fal] 작업 생성 실패 (HTTP {status}): {task}")
@@ -136,7 +139,7 @@ def fal_generate(key, index, prompt):
 
 # ---------- 메인 ----------
 
-def pick_provider():
+def pick_provider(duration):
     """실제로 첫 장면 생성에 성공하는 공급자 함수를 골라 돌려준다."""
     ark_key = os.environ.get("ARK_API_KEY")
     fal_key = os.environ.get("FAL_API_KEY")
@@ -146,19 +149,23 @@ def pick_provider():
         pairs = [override] if all(override) else ARK_CANDIDATES
         for base_url, model in pairs:
             candidates.append((f"ark {base_url} / {model}",
-                               lambda i, p, b=base_url, m=model: ark_generate(b, m, ark_key, i, p)))
+                               lambda i, p, b=base_url, m=model: ark_generate(b, m, ark_key, i, p, duration)))
     if fal_key:
-        candidates.append((f"fal.ai {FAL_MODEL}", lambda i, p: fal_generate(fal_key, i, p)))
+        candidates.append((f"fal.ai {FAL_MODEL}", lambda i, p: fal_generate(fal_key, i, p, duration)))
     if not candidates:
         sys.exit("ARK_API_KEY 또는 FAL_API_KEY 환경 변수가 필요합니다. (키를 코드나 채팅에 넣지 마세요)")
     return candidates
 
 
 def main():
+    scenes_file = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_SCENES_FILE
+    scenes, duration = load_scenes(scenes_file)
+    print(f"장면 파일: {scenes_file} ({len(scenes)}개 장면, 장면당 {duration}초)")
+
     os.makedirs(OUT_DIR, exist_ok=True)
     paths = []
     provider = None
-    for index, prompt in enumerate(SCENES, start=1):
+    for index, prompt in enumerate(scenes, start=1):
         print(f"[scene {index:02d}] {prompt[:40]}...")
         if provider:
             path = provider(index, prompt)
@@ -166,7 +173,7 @@ def main():
                 sys.exit(f"[scene {index:02d}] 생성 실패 — 위 로그를 확인하세요.")
         else:
             path = None
-            for name, fn in pick_provider():
+            for name, fn in pick_provider(duration):
                 print(f"  공급자 시도: {name}")
                 path = fn(index, prompt)
                 if path:
@@ -178,7 +185,7 @@ def main():
 
     print("\n생성 완료. 클립 이어붙이기 (ffmpeg 필요):")
     print("  ls out/scene*.mp4 | sed \"s/^/file '/;s/$/'/\" > out/list.txt")
-    print("  ffmpeg -f concat -safe 0 -i out/list.txt -c copy out/bungeoppang-skit.mp4")
+    print("  ffmpeg -f concat -safe 0 -i out/list.txt -c copy out/<스킷>-skit.mp4")
     return paths
 
 

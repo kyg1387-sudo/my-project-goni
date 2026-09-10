@@ -2,11 +2,19 @@ name: 콩트 영상 생성
 
 on:
   workflow_dispatch:
+    inputs:
+      skit:
+        description: 생성할 스킷 이름 (scripts/scenes/<skit>.json)
+        required: false
+        default: "bungeoppang"
+
+env:
+  SKIT: ${{ inputs.skit || 'bungeoppang' }}
 
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
 
@@ -14,7 +22,7 @@ jobs:
         env:
           ARK_API_KEY: ${{ secrets.ARK_API_KEY }}
           FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
-        run: python3 scripts/generate_video.py
+        run: python3 scripts/generate_video.py "scripts/scenes/${SKIT}.json"
 
       - name: ffmpeg 설치
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
@@ -24,14 +32,14 @@ jobs:
         working-directory: out
         run: |
           ls scene*.mp4 | sed "s/^/file '/;s/$/'/" > list.txt
-          ffmpeg -f concat -safe 0 -i list.txt -c copy bungeoppang-skit.mp4
+          ffmpeg -f concat -safe 0 -i list.txt -c copy "${SKIT}-skit.mp4"
 
       - name: 결과 영상 업로드
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: bungeoppang-skit-video
+          name: ${{ env.SKIT }}-skit-video
           path: |
             out/scene*.mp4
-            out/bungeoppang-skit.mp4
+            out/${{ env.SKIT }}-skit.mp4
           retention-days: 7
