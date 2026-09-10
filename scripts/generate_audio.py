@@ -29,6 +29,19 @@ import time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from generate_video import http_json, download  # noqa: E402
 
+
+def download_retry(url, path, attempts=3):
+    """일시적 네트워크 오류(불완전 수신 등)에 대비해 다운로드를 재시도한다."""
+    for attempt in range(1, attempts + 1):
+        try:
+            download(url, path)
+            return True
+        except Exception as e:
+            print(f"  다운로드 실패 ({attempt}/{attempts}): {e}")
+            if attempt < attempts:
+                time.sleep(2 * attempt)
+    return False
+
 WORK_DIR = None  # main에서 out/audio 로 설정
 
 
@@ -126,8 +139,7 @@ def tts_line(cfg, key, index, voice, text, emotion=None):
         print(f"  [tts {index:03d}] 응답에서 오디오 URL을 못 찾음: {result}")
         return None
     path = os.path.join(WORK_DIR, f"line{index:03d}.mp3")
-    download(url, path)
-    return path
+    return path if download_retry(url, path) else None
 
 
 def make_bgm(cfg, key):
@@ -143,8 +155,7 @@ def make_bgm(cfg, key):
         print(f"  [bgm] 응답에서 오디오 URL을 못 찾음: {result}")
         return None
     path = os.path.join(WORK_DIR, "bgm.audio")
-    download(url, path)
-    return path
+    return path if download_retry(url, path) else None
 
 
 # ---------- 믹싱 ----------
