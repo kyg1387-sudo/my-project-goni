@@ -15,6 +15,10 @@ on:
         description: 완성 영상을 브랜치 deliveries/ 폴더에 커밋할지 여부 (true/false)
         required: false
         default: "false"
+      add_audio:
+        description: 대사 TTS와 배경음악을 생성해 입힐지 여부 (true/false)
+        required: false
+        default: "false"
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
@@ -24,7 +28,7 @@ env:
 jobs:
   burn:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 45
     permissions:
       contents: write
     steps:
@@ -47,12 +51,25 @@ jobs:
             -c:v libx264 -preset medium -crf 18 -c:a copy \
             "out/${SKIT}-skit-subbed.mp4"
 
+      - name: 대사 TTS와 배경음악 생성 후 믹싱
+        if: ${{ inputs.add_audio == 'true' }}
+        env:
+          FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+        run: |
+          python3 scripts/generate_audio.py \
+            --ass "subs/${SKIT}.ass" \
+            --config "scripts/audio/${SKIT}.json" \
+            --video "out/${SKIT}-skit-subbed.mp4" \
+            --out "out/${SKIT}-skit-final.mp4"
+
       - name: 결과 영상 업로드
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.SKIT }}-skit-video-subbed
-          path: out/${{ env.SKIT }}-skit-subbed.mp4
+          path: |
+            out/${{ env.SKIT }}-skit-subbed.mp4
+            out/${{ env.SKIT }}-skit-final.mp4
           retention-days: 7
 
       # Artifact 저장소(Azure)에 접근할 수 없는 환경에서 git으로 영상을 받을 수 있게 한다
@@ -60,9 +77,13 @@ jobs:
         if: ${{ inputs.commit_output == 'true' }}
         run: |
           mkdir -p deliveries
-          cp "out/${SKIT}-skit-subbed.mp4" deliveries/
+          if [ -f "out/${SKIT}-skit-final.mp4" ]; then
+            cp "out/${SKIT}-skit-final.mp4" deliveries/
+          else
+            cp "out/${SKIT}-skit-subbed.mp4" deliveries/
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add deliveries
-          git commit -m "완성 영상 추가: ${SKIT}-skit-subbed.mp4"
+          git commit -m "완성 영상 추가 (${SKIT})"
           git push

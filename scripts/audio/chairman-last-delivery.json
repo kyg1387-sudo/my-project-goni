@@ -1,0 +1,33 @@
+{
+  "tts_model": "fal-ai/minimax/speech-02-hd",
+  "language_boost": "Korean",
+  "speed": 1.05,
+  "default_voice": "Deep_Voice_Man",
+  "style_voices": {
+    "Naration": "Deep_Voice_Man",
+    "Doyun": "Determined_Man",
+    "Vil": "Wise_Woman",
+    "Jung": "Patient_Man"
+  },
+  "name_voices": {
+    "미란": "Wise_Woman",
+    "태석": "Casual_Guy",
+    "경비원": "Imposing_Manner",
+    "정 실장": "Patient_Man"
+  },
+  "style_emotions": {
+    "Vil": "angry",
+    "Naration": "neutral",
+    "Doyun": "neutral",
+    "Jung": "neutral"
+  },
+  "emotion_overrides": {
+    "2": "happy",
+    "17": "happy",
+    "31": "surprised",
+    "36": "fearful"
+  },
+  "bgm_model": "fal-ai/lyria2",
+  "bgm_prompt": "tense cinematic Korean drama orchestral score, suspenseful strings and piano, slow build to a triumphant reveal, dramatic, instrumental only, no vocals",
+  "bgm_volume": 0.22
+}
