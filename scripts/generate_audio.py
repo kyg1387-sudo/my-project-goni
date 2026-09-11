@@ -32,6 +32,7 @@ import re
 import subprocess
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from generate_video import http_json, download  # noqa: E402
@@ -370,15 +371,14 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
     # 대사(내레이션 제외)만 담긴 전체 트랙
     dial_wav = render_track(placed_dialogue, total, os.path.join(WORK_DIR, "dialogue.wav"))
 
-    final_scenes, ambience = [], []
-    for i, (scene, (t0, t1)) in enumerate(zip(scenes, bounds), start=1):
+    def process_scene(item):
+        """한 장면의 현장음 생성과 립싱크. (최종 장면 경로, 현장음 항목|None)을 돌려준다."""
+        i, scene, t0, t1 = item
         v_url = fal_upload(scene, key)
 
-        # 장면 현장음 (실패해도 계속)
-        amb = ambience_scene(cfg, key, v_url, i, t1 - t0)
-        if amb:
-            ambience.append((t0, amb))
-        else:
+        amb = ambience_scene(cfg, key, v_url, i, t1 - t0)  # 실패해도 계속
+        amb_item = (t0, amb) if amb else None
+        if not amb:
             print(f"  [scene {i:02d}] 현장음 없음")
 
         has_dialogue = any(
@@ -386,19 +386,23 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
             for start, tempo, _s, p in placed_dialogue)
         if not has_dialogue:
             print(f"[scene {i:02d}] 대사 없음 — 립싱크 생략")
-            final_scenes.append(scene)
-            continue
+            return scene, amb_item
         seg = os.path.join(WORK_DIR, f"seg{i:02d}.wav")
         subprocess.run(["ffmpeg", "-y", "-i", dial_wav,
                         "-af", f"atrim={t0:.3f}:{t1:.3f},asetpts=PTS-STARTPTS", seg],
                        check=True, capture_output=True)
         print(f"[scene {i:02d}] 립싱크 중... ({t0:.1f}~{t1:.1f}s)")
         lip = lipsync_scene(cfg, key, v_url, seg, i)
-        if lip:
-            final_scenes.append(lip)
-        else:
+        if not lip:
             print(f"  [scene {i:02d}] 립싱크 실패 — 원본 유지")
-            final_scenes.append(scene)
+        return (lip or scene), amb_item
+
+    jobs = [(i, scene, t0, t1)
+            for i, (scene, (t0, t1)) in enumerate(zip(scenes, bounds), start=1)]
+    with ThreadPoolExecutor(max_workers=int(cfg.get("scene_workers", 4))) as pool:
+        results = list(pool.map(process_scene, jobs))
+    final_scenes = [r[0] for r in results]
+    ambience = [r[1] for r in results if r[1]]
 
     # 재조립(해상도/프레임레이트 정규화) + 자막 입히기
     cmd = ["ffmpeg", "-y"]
@@ -441,8 +445,8 @@ def main():
     lines = parse_ass(args.ass)
     print(f"자막 {len(lines)}줄 파싱됨")
 
-    clips = []
-    for i, (start, _end, style, name, text) in enumerate(lines, start=1):
+    def make_tts(item):
+        i, (start, _end, style, name, text) = item
         voice = (cfg.get("name_voices", {}).get(name)
                  or cfg.get("style_voices", {}).get(style)
                  or cfg["default_voice"])
@@ -454,8 +458,11 @@ def main():
             print(f"  [tts {i:03d}] 재시도")
             path = tts_line(cfg, key, i, voice, text, emotion)
         if not path:
-            sys.exit(f"[tts {i:03d}] 생성 실패 — 위 로그를 확인하세요.")
-        clips.append((start, style, path))
+            raise RuntimeError(f"[tts {i:03d}] 생성 실패 — 위 로그를 확인하세요.")
+        return (start, style, path)
+
+    with ThreadPoolExecutor(max_workers=int(cfg.get("tts_workers", 4))) as pool:
+        clips = list(pool.map(make_tts, enumerate(lines, start=1)))
 
     total = probe_duration(args.video)
     placed = plan_placement(clips, total)
