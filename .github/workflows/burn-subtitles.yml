@@ -19,6 +19,10 @@ on:
         description: 대사 TTS와 배경음악을 생성해 입힐지 여부 (true/false)
         required: false
         default: "false"
+      lipsync:
+        description: 대사 구간 입 모양 재합성과 장면 현장음 생성 여부 (true/false)
+        required: false
+        default: "false"
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
@@ -28,7 +32,7 @@ env:
 jobs:
   burn:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
     permissions:
       contents: write
     steps:
@@ -51,16 +55,23 @@ jobs:
             -c:v libx264 -preset medium -crf 18 -c:a copy \
             "out/${SKIT}-skit-subbed.mp4"
 
-      - name: 대사 TTS와 배경음악 생성 후 믹싱
+      - name: 대사 TTS와 배경음악 생성 후 믹싱 (립싱크·현장음 옵션)
         if: ${{ inputs.add_audio == 'true' }}
         env:
           FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+          FAL_KEY: ${{ secrets.FAL_API_KEY }}
         run: |
+          EXTRA=""
+          if [ "${{ inputs.lipsync }}" = "true" ]; then
+            pip install --quiet fal-client
+            EXTRA="--lipsync --scenes-dir out"
+          fi
           python3 scripts/generate_audio.py \
             --ass "subs/${SKIT}.ass" \
             --config "scripts/audio/${SKIT}.json" \
             --video "out/${SKIT}-skit-subbed.mp4" \
-            --out "out/${SKIT}-skit-final.mp4"
+            --out "out/${SKIT}-skit-final.mp4" \
+            $EXTRA
 
       - name: 결과 영상 업로드
         if: always()
