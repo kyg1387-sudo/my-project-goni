@@ -27,6 +27,10 @@ on:
         description: 제작을 건너뛰고 이 run의 완성 Artifact에서 영상만 꺼내 커밋 (선택)
         required: false
         default: ""
+      resume_run_id:
+        description: 이 run의 Artifact에서 중간 산출물(out/audio)을 복원해 이어하기 (선택)
+        required: false
+        default: ""
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
@@ -71,6 +75,15 @@ jobs:
             -c:v libx264 -preset medium -crf 18 -c:a copy \
             "out/${SKIT}-skit-subbed.mp4"
 
+      - name: 이전 실행 중간 산출물 복원 (이어하기)
+        if: ${{ inputs.resume_run_id != '' && inputs.deliver_from_run_id == '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.SKIT }}-skit-video-subbed
+          path: out
+          run-id: ${{ inputs.resume_run_id }}
+          github-token: ${{ github.token }}
+
       - name: 대사 TTS와 배경음악 생성 후 믹싱 (립싱크·현장음 옵션)
         if: ${{ inputs.add_audio == 'true' && inputs.deliver_from_run_id == '' }}
         env:
@@ -97,6 +110,10 @@ jobs:
           path: |
             out/${{ env.SKIT }}-skit-subbed.mp4
             out/${{ env.SKIT }}-skit-final.mp4
+            out/audio/line*.mp3
+            out/audio/lip*.mp4
+            out/audio/amb*.wav
+            out/audio/bgm.audio
           retention-days: 7
 
       # Artifact 저장소(Azure)에 접근할 수 없는 환경에서 git으로 영상을 받을 수 있게 한다

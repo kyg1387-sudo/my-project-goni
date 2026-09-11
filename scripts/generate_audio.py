@@ -146,7 +146,16 @@ def parse_ass(path):
 
 # ---------- TTS / BGM ----------
 
+def cached(path):
+    """이어하기: 이전 실행에서 만들어진 산출물이 있으면 재사용한다."""
+    return os.path.exists(path) and os.path.getsize(path) > 1000
+
+
 def tts_line(cfg, key, index, voice, text, emotion=None):
+    path = os.path.join(WORK_DIR, f"line{index:03d}.mp3")
+    if cached(path):
+        print(f"  [tts {index:03d}] 기존 파일 재사용")
+        return path
     voice_setting = {"voice_id": voice, "speed": float(cfg.get("speed", 1.05))}
     if emotion and emotion != "neutral":
         voice_setting["emotion"] = emotion
@@ -162,11 +171,14 @@ def tts_line(cfg, key, index, voice, text, emotion=None):
     if not url:
         print(f"  [tts {index:03d}] 응답에서 오디오 URL을 못 찾음: {result}")
         return None
-    path = os.path.join(WORK_DIR, f"line{index:03d}.mp3")
     return path if download_retry(url, path) else None
 
 
 def make_bgm(cfg, key):
+    path = os.path.join(WORK_DIR, "bgm.audio")
+    if cached(path):
+        print("  [bgm] 기존 파일 재사용")
+        return path
     model = cfg.get("bgm_model")
     prompt = cfg.get("bgm_prompt")
     if not model or not prompt:
@@ -285,6 +297,10 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
 
 def lipsync_scene(cfg, key, v_url, audio_path, index):
     """장면 클립의 입 모양을 대사 오디오에 맞게 재합성한 클립 경로를 돌려준다. 실패 시 None."""
+    path = os.path.join(WORK_DIR, f"lip{index:02d}.mp4")
+    if cached(path):
+        print(f"  [lipsync {index:02d}] 기존 파일 재사용")
+        return path
     a_url = fal_upload(audio_path, key)
     for model in cfg.get("lipsync_models", ["fal-ai/sync-lipsync", "fal-ai/latentsync"]):
         payload = {"video_url": v_url, "audio_url": a_url}
@@ -296,7 +312,6 @@ def lipsync_scene(cfg, key, v_url, audio_path, index):
             if not url:
                 print(f"  [lipsync {index:02d}] 응답에서 영상 URL을 못 찾음: {result}")
                 continue
-            path = os.path.join(WORK_DIR, f"lip{index:02d}.mp4")
             if download_retry(url, path):
                 return path
     return None
@@ -304,6 +319,10 @@ def lipsync_scene(cfg, key, v_url, audio_path, index):
 
 def ambience_scene(cfg, key, v_url, index, duration):
     """장면 영상을 분석해 어울리는 현장음(음악 제외)을 생성한 wav 경로를 돌려준다. 실패 시 None."""
+    wav = os.path.join(WORK_DIR, f"amb{index:02d}.wav")
+    if cached(wav):
+        print(f"  [ambience {index:02d}] 기존 파일 재사용")
+        return wav
     model = cfg.get("ambience_model")
     if not model:
         return None
