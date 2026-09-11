@@ -23,6 +23,10 @@ on:
         description: 대사 구간 입 모양 재합성과 장면 현장음 생성 여부 (true/false)
         required: false
         default: "false"
+      deliver_from_run_id:
+        description: 제작을 건너뛰고 이 run의 완성 Artifact에서 영상만 꺼내 커밋 (선택)
+        required: false
+        default: ""
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
@@ -38,7 +42,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: 완성 Artifact에서 영상만 내려받기 (전달 전용 모드)
+        if: ${{ inputs.deliver_from_run_id != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.SKIT }}-skit-video-subbed
+          path: out
+          run-id: ${{ inputs.deliver_from_run_id }}
+          github-token: ${{ github.token }}
+
       - name: 생성된 클립 내려받기
+        if: ${{ inputs.deliver_from_run_id == '' }}
         uses: actions/download-artifact@v4
         with:
           name: ${{ env.SKIT }}-skit-video
@@ -47,16 +61,18 @@ jobs:
           github-token: ${{ github.token }}
 
       - name: ffmpeg와 한글 폰트 설치
+        if: ${{ inputs.deliver_from_run_id == '' }}
         run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-noto-cjk
 
       - name: 자막 입히기
+        if: ${{ inputs.deliver_from_run_id == '' }}
         run: |
           ffmpeg -i "out/${SKIT}-skit.mp4" -vf "ass=subs/${SKIT}.ass" \
             -c:v libx264 -preset medium -crf 18 -c:a copy \
             "out/${SKIT}-skit-subbed.mp4"
 
       - name: 대사 TTS와 배경음악 생성 후 믹싱 (립싱크·현장음 옵션)
-        if: ${{ inputs.add_audio == 'true' }}
+        if: ${{ inputs.add_audio == 'true' && inputs.deliver_from_run_id == '' }}
         env:
           FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
           FAL_KEY: ${{ secrets.FAL_API_KEY }}
@@ -74,7 +90,7 @@ jobs:
             $EXTRA
 
       - name: 결과 영상 업로드
-        if: always()
+        if: ${{ always() && inputs.deliver_from_run_id == '' }}
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.SKIT }}-skit-video-subbed
@@ -97,4 +113,6 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add deliveries
           git commit -m "완성 영상 추가 (${SKIT})"
+          # 실행 중 브랜치에 다른 커밋이 올라온 경우에 대비
+          git pull --rebase origin "${GITHUB_REF_NAME}"
           git push
