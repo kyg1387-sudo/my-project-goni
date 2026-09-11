@@ -168,19 +168,50 @@ def probe_duration(path):
     return float(out.stdout.strip())
 
 
+MAX_TEMPO = 1.35  # 대사가 자막 슬롯보다 길 때 허용하는 최대 배속 (피치 유지)
+GAP = 0.05        # 연속 대사 사이 최소 간격(초)
+
+
+def plan_placement(clips, total):
+    """겹치지 않는 배치 [(실제 시작, 배속, 파일)]을 계산한다.
+
+    각 대사는 자막 슬롯(다음 대사 시작까지)보다 길면 MAX_TEMPO까지 배속해
+    슬롯에 맞추고, 그래도 길면 다음 대사를 앞 대사가 끝난 뒤로 밀어
+    절대 겹치지 않게 한다. 여유가 생기면 다시 자막 타이밍으로 복귀한다.
+    """
+    placed, prev_end = [], 0.0
+    for k, (start, path) in enumerate(clips):
+        dur = probe_duration(path)
+        next_start = clips[k + 1][0] if k + 1 < len(clips) else total
+        slot = max(next_start - start - GAP, 0.5)
+        tempo = min(max(dur / slot, 1.0), MAX_TEMPO)
+        actual = max(start, prev_end + GAP)
+        placed.append((actual, tempo, path))
+        prev_end = actual + dur / tempo
+        if tempo > 1.0 or actual > start + 0.01:
+            print(f"  배치 조정 [{k + 1:03d}]: 시작 {start:.2f}→{actual:.2f}s, "
+                  f"배속 x{tempo:.2f} (길이 {dur:.2f}s, 슬롯 {slot:.2f}s)")
+    return placed
+
+
 def mix(video, clips, bgm, bgm_volume, out_path):
     """clips: [(start초, 파일)] — 영상 오디오 트랙으로 믹싱해 out_path에 저장."""
     duration = probe_duration(video)
+    placed = plan_placement(clips, duration)
+
     cmd = ["ffmpeg", "-y", "-i", video]
-    for _, path in clips:
+    for _, _, path in placed:
         cmd += ["-i", path]
     if bgm:
         cmd += ["-stream_loop", "-1", "-i", bgm]
 
     parts, mix_inputs = [], []
-    for k, (start, _) in enumerate(clips):
+    for k, (start, tempo, _) in enumerate(placed):
         ms = int(round(start * 1000))
-        parts.append(f"[{k + 1}:a]adelay={ms}:all=1[d{k}]")
+        chain = f"[{k + 1}:a]"
+        if tempo > 1.0:
+            chain += f"atempo={tempo:.4f},"
+        parts.append(chain + f"adelay={ms}:all=1[d{k}]")
         mix_inputs.append(f"[d{k}]")
     if bgm:
         parts.append(
