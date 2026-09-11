@@ -122,9 +122,17 @@ jobs:
         run: |
           mkdir -p deliveries
           if [ -f "out/${SKIT}-skit-final.mp4" ]; then
-            cp "out/${SKIT}-skit-final.mp4" deliveries/
+            SRC="out/${SKIT}-skit-final.mp4"
           else
-            cp "out/${SKIT}-skit-subbed.mp4" deliveries/
+            SRC="out/${SKIT}-skit-subbed.mp4"
+          fi
+          BASE="deliveries/$(basename "$SRC")"
+          rm -f "$BASE" "$BASE".part-*
+          # GitHub 파일 한도(100MB) 초과 시 90MB 조각으로 분할 (cat *.part-* > 원본 으로 복원)
+          if [ "$(stat -c%s "$SRC")" -gt 99000000 ]; then
+            split -b 90m -d "$SRC" "$BASE.part-"
+          else
+            cp "$SRC" deliveries/
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
