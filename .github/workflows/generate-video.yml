@@ -40,12 +40,20 @@ jobs:
       - name: ffmpeg 설치
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
-      - name: 클립 이어붙이기
-        # concat 목록 안의 상대 경로는 목록 파일 위치 기준으로 해석되므로 out/ 안에서 실행
+      - name: 클립 이어붙이기 (규격 정규화)
+        # 클립별 인코딩 차이로 인한 화면 깨짐을 막기 위해 전 클립을 동일 규격으로
+        # 재인코딩해 이어붙인다: 1280x720, 화면비 유지 + 패딩(찌그러짐 방지), 24fps
         working-directory: out
         run: |
-          ls scene*.mp4 | sed "s/^/file '/;s/$/'/" > list.txt
-          ffmpeg -y -f concat -safe 0 -i list.txt -c copy "${SKIT}-skit.mp4"
+          FILTER=""; INPUTS=""; N=0
+          for f in $(ls scene*.mp4); do
+            INPUTS="$INPUTS -i $f"
+            FILTER="$FILTER[$N:v]scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2,fps=24,setsar=1[v$N];"
+            N=$((N+1))
+          done
+          CHAIN=$(seq 0 $((N-1)) | sed 's/.*/[v&]/' | tr -d '\n')
+          ffmpeg -y $INPUTS -filter_complex "${FILTER}${CHAIN}concat=n=${N}:v=1:a=0[vc]" \
+            -map "[vc]" -an -c:v libx264 -preset medium -crf 18 "${SKIT}-skit.mp4"
 
       - name: 결과 영상 업로드
         if: always()
