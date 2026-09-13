@@ -135,9 +135,18 @@ def fal_generate(key, index, prompt, duration, ratio):
         _, info = http_json(status_url, headers=headers)
         state = info.get("status")
         if state == "COMPLETED":
-            _, result = http_json(result_url, headers=headers)
+            r_status, result = http_json(result_url, headers=headers)
+            url = None
+            if isinstance(result, dict):
+                video = result.get("video")
+                if isinstance(video, dict):
+                    url = video.get("url")
+            if not url:
+                # 완료로 표시됐지만 결과에 영상이 없는 경우(잔액/정책/파라미터 오류 등)
+                print(f"  [fal] 결과에 영상이 없음 (HTTP {r_status}): {result}")
+                return None
             path = os.path.join(OUT_DIR, f"scene{index:02d}.mp4")
-            download(result["video"]["url"], path)
+            download(url, path)
             return path
         if state in ("FAILED", "CANCELLED", "ERROR"):
             print(f"  [fal] 생성 실패: {info}")
