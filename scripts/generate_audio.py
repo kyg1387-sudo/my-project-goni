@@ -360,13 +360,19 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
     scenes = sorted(glob.glob(os.path.join(scenes_dir, "scene*.mp4")))
     if not scenes:
         sys.exit(f"장면 클립을 찾을 수 없습니다: {scenes_dir}/scene*.mp4")
+    # 계획 길이가 있으면 그 길이로 장면을 정확히 잘라 쓴다. 생성 클립이 몇 프레임씩
+    # 길 때 생기는 누적 오차(자막·음성이 장면보다 앞서는 현상)를 없애기 위함이다.
+    planned = cfg.get("scene_durations")
+    if planned and len(planned) != len(scenes):
+        print(f"경고: scene_durations {len(planned)}개 != 장면 {len(scenes)}개 — 실측 길이 사용")
+        planned = None
+    durations = [float(d) for d in planned] if planned else [probe_duration(s) for s in scenes]
     bounds, t = [], 0.0
-    for s in scenes:
-        d = probe_duration(s)
+    for d in durations:
         bounds.append((t, t + d))
         t += d
     total = t
-    print(f"장면 {len(scenes)}개, 총 {total:.2f}초")
+    print(f"장면 {len(scenes)}개, 총 {total:.2f}초" + (" (계획 길이로 정규화)" if planned else ""))
 
     # 대사(내레이션 제외)만 담긴 전체 트랙
     dial_wav = render_track(placed_dialogue, total, os.path.join(WORK_DIR, "dialogue.wav"))
@@ -410,8 +416,12 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
         cmd += ["-i", s]
     parts = []
     for k in range(len(final_scenes)):
+        d = durations[k]
+        # tpad로 짧은 클립은 마지막 프레임을 늘리고, trim으로 계획 길이에 정확히 맞춘다
         parts.append(f"[{k}:v]scale=1280:720:force_original_aspect_ratio=decrease,"
-                     f"pad=1280:720:(ow-iw)/2:(oh-ih)/2,fps=24,setsar=1[v{k}]")
+                     f"pad=1280:720:(ow-iw)/2:(oh-ih)/2,fps=24,setsar=1,"
+                     f"tpad=stop_mode=clone:stop_duration=15,trim=duration={d:.3f},"
+                     f"setpts=PTS-STARTPTS[v{k}]")
     parts.append("".join(f"[v{k}]" for k in range(len(final_scenes)))
                  + f"concat=n={len(final_scenes)}:v=1:a=0[vc]")
     parts.append(f"[vc]ass={ass_path}[vo]")

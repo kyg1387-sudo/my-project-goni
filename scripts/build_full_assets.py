@@ -30,6 +30,8 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 
 # 등장인물 고정 외형 (모든 장면 프롬프트에서 동일 문구 반복 — 일관성 유지)
 DOYUN = "20대 후반 한국 남성 배달 기사(짧은 검은 머리, 파란색 배달 점퍼, 검은 바지, 짜장 소스 묻은 흰 운동화)"
+# 클로즈업용: 소품 묘사(운동화 등)를 빼서 모델이 소품을 손에 들고 나오는 오생성을 막는다
+DOYUN_FACE = "20대 후반 한국 남성 배달 기사(짧은 검은 머리, 파란색 배달 점퍼)"
 MIRAN = "50대 한국 여성(베이지색 트위드 명품 정장, 진주 목걸이, 단정한 올림머리)"
 TAESEOK = "20대 후반 한국 남성(흰색 명품 후드티, 금목걸이, 갈색 염색머리)"
 JUNG = "60대 한국 남성 비서실장(백발, 은테 안경, 검은 스리피스 정장)"
@@ -213,8 +215,8 @@ SECTIONS = [
             (J, "정 실장", "회장님. 유언 조건 90일, 완료됐습니다. 이사회 소집 준비가 끝났습니다.", None),
             (V, "미란", "회, 회장님이라니. 무슨.", "surprised"),
             (J, "정 실장", "한성그룹 제3대 회장, 강도윤 회장님이십니다. 사모님 남편분, 유민호 상무의 최종 결재권자이십니다.", None),
-            (A, "5", f"{MIRAN}이 입을 벌린 채 뒤로 물러나고 {TAESEOK}의 휴대폰이 바닥에 떨어지는 장면, {MUTE}", None),
-            (A, "5", f"{DOYUN}가 일어서서 무릎의 먼지를 터는 장면, 위엄 있는 분위기 전환, {MUTE}", None),
+            (A, "5", f"{LOBBY}, {MIRAN}이 입을 벌린 채 뒤로 물러나고 {TAESEOK}의 휴대폰이 바닥에 떨어지는 장면, {MUTE}", None),
+            (A, "5", f"{LOBBY}, {DOYUN}가 일어서서 무릎의 먼지를 터는 장면, 위엄 있는 분위기 전환, {MUTE}", None),
         ],
     ),
     dict(
@@ -225,8 +227,8 @@ SECTIONS = [
         ],
         speaker_shots={
             D: [
-                f"{LOBBY}, {DOYUN}가 서류 봉투를 든 채 위엄 있는 표정으로 {TALK}",
-                f"{DOYUN}의 얼굴 클로즈업, 차갑고 단호한 눈빛으로 {TALK}",
+                f"{LOBBY}, {DOYUN}가 혼자 서류 봉투를 든 채 위엄 있는 표정으로 {TALK}, 단독 인물 샷",
+                f"{DOYUN_FACE}의 정면 얼굴 클로즈업, 차갑고 단호한 눈빛으로 {TALK}",
             ],
             "미란": [
                 f"{LOBBY}, {MIRAN}의 창백해진 얼굴, 두려움에 떨리는 표정으로 {TALK}",
@@ -259,7 +261,7 @@ SECTIONS = [
         ambience="night street ambience, motorcycle starting and riding away, wind, dawn birds at quiet hillside",
         narration_shots=[
             f"밤거리, {DOYUN}가 배달 오토바이를 타고 떠나는 뒷모습, 도시 야경 보케, {MUTE}",
-            f"새벽 산 중턱의 산소 앞, 배달 기사 복장의 {DOYUN}가 짜장면을 내려놓고 고개 숙이는 장면, 일출, 감성적인 엔딩, {MUTE}",
+            f"새벽 산 중턱, 잔디로 덮인 둥근 봉분과 비석이 있는 할아버지 무덤 앞에서 배달 기사 복장의 {DOYUN}가 짜장면 그릇을 내려놓고 고개 숙이는 장면, 일출, 감성적인 엔딩, {MUTE}",
         ],
         speaker_shots={
             D: [f"{LOBBY}, {DOYUN}가 헬멧을 손에 든 채 잔잔한 미소로 {TALK}"],
@@ -424,6 +426,9 @@ def main():
         "style_emotions": {"Vil": "angry", "Naration": "neutral",
                            "Doyun": "neutral", "Jung": "neutral"},
         "emotion_overrides": emotions,
+        # 생성 클립이 계획보다 몇 프레임 길어도 누적 오차 없이 자막·음성과 맞도록,
+        # 재조립 시 각 장면을 이 길이로 정확히 자른다
+        "scene_durations": [s["duration"] for s in scene_items],
         "narration_styles": ["Naration"],
         "silent_styles": ["Caption"],
         "lipsync_models": ["fal-ai/sync-lipsync", "fal-ai/latentsync"],

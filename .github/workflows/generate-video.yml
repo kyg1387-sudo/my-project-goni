@@ -11,6 +11,10 @@ on:
         description: 이 run의 Artifact에서 이미 생성된 장면 클립을 복원해 이어하기 (선택)
         required: false
         default: ""
+      regen_scenes:
+        description: 복원 후 다시 만들 장면 번호 목록 (공백 구분, 예 "9 59 81")
+        required: false
+        default: ""
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
@@ -31,6 +35,13 @@ jobs:
           run-id: ${{ inputs.resume_run_id }}
           github-token: ${{ github.token }}
 
+      - name: 다시 만들 장면 삭제 (부분 재생성)
+        if: ${{ inputs.regen_scenes != '' }}
+        run: |
+          for n in ${{ inputs.regen_scenes }}; do
+            rm -fv "out/$(printf 'scene%02d' "$n").mp4"
+          done
+
       - name: 장면별 클립 생성 (Ark Seedance / fal.ai)
         env:
           ARK_API_KEY: ${{ secrets.ARK_API_KEY }}
@@ -40,20 +51,11 @@ jobs:
       - name: ffmpeg 설치
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
-      - name: 클립 이어붙이기 (규격 정규화)
-        # 클립별 인코딩 차이로 인한 화면 깨짐을 막기 위해 전 클립을 동일 규격으로
-        # 재인코딩해 이어붙인다: 1280x720, 화면비 유지 + 패딩(찌그러짐 방지), 24fps
-        working-directory: out
-        run: |
-          FILTER=""; INPUTS=""; N=0
-          for f in $(ls scene*.mp4); do
-            INPUTS="$INPUTS -i $f"
-            FILTER="$FILTER[$N:v]scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2,fps=24,setsar=1[v$N];"
-            N=$((N+1))
-          done
-          CHAIN=$(seq 0 $((N-1)) | sed 's/.*/[v&]/' | tr -d '\n')
-          ffmpeg -y $INPUTS -filter_complex "${FILTER}${CHAIN}concat=n=${N}:v=1:a=0[vc]" \
-            -map "[vc]" -an -c:v libx264 -preset medium -crf 18 "${SKIT}-skit.mp4"
+      - name: 클립 이어붙이기 (규격 정규화 + 계획 길이 트리밍)
+        # 클립별 인코딩 차이로 인한 화면 깨짐과, 클립이 계획보다 길 때 생기는
+        # 자막·음성 누적 오차를 막는다: 1280x720/24fps 통일, 화면비 유지 + 패딩,
+        # 장면 파일의 계획 길이(duration)로 정확히 자름
+        run: python3 scripts/concat_scenes.py "scripts/scenes/${SKIT}.json" out "out/${SKIT}-skit.mp4"
 
       - name: 결과 영상 업로드
         if: always()
