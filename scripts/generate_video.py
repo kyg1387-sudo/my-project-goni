@@ -174,6 +174,11 @@ def main():
     paths = []
     provider = None
     for index, (prompt, duration) in enumerate(scenes, start=1):
+        existing = os.path.join(OUT_DIR, f"scene{index:02d}.mp4")
+        if os.path.exists(existing) and os.path.getsize(existing) > 100_000:
+            print(f"[scene {index:02d}] 기존 파일 재사용 (이어하기)")
+            paths.append(existing)
+            continue
         print(f"[scene {index:02d}] ({duration}s) {prompt[:40]}...")
         if provider:
             path = provider(index, prompt, duration)

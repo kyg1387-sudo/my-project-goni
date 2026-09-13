@@ -7,6 +7,10 @@ on:
         description: 생성할 스킷 이름 (scripts/scenes/<skit>.json)
         required: false
         default: "bungeoppang"
+      resume_run_id:
+        description: 이 run의 Artifact에서 이미 생성된 장면 클립을 복원해 이어하기 (선택)
+        required: false
+        default: ""
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
@@ -17,6 +21,15 @@ jobs:
     timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
+
+      - name: 이전 실행 장면 클립 복원 (이어하기)
+        if: ${{ inputs.resume_run_id != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.SKIT }}-skit-video
+          path: out
+          run-id: ${{ inputs.resume_run_id }}
+          github-token: ${{ github.token }}
 
       - name: 장면별 클립 생성 (Ark Seedance / fal.ai)
         env:
@@ -32,7 +45,7 @@ jobs:
         working-directory: out
         run: |
           ls scene*.mp4 | sed "s/^/file '/;s/$/'/" > list.txt
-          ffmpeg -f concat -safe 0 -i list.txt -c copy "${SKIT}-skit.mp4"
+          ffmpeg -y -f concat -safe 0 -i list.txt -c copy "${SKIT}-skit.mp4"
 
       - name: 결과 영상 업로드
         if: always()
