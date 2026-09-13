@@ -43,7 +43,7 @@ def load_scenes(path):
         data = json.load(f)
     style = data.get("style", "").strip()
     prompts = [f"{scene}, {style}" if style else scene for scene in data["scenes"]]
-    return prompts, int(data.get("duration", 5))
+    return prompts, int(data.get("duration", 5)), data.get("ratio", "9:16")
 
 
 def http_json(url, payload=None, headers=None):
@@ -79,11 +79,11 @@ ARK_CANDIDATES = [
 ]
 
 
-def ark_generate(base_url, model, key, index, prompt, duration):
+def ark_generate(base_url, model, key, index, prompt, duration, ratio):
     headers = {"Authorization": f"Bearer {key}"}
     status, task = http_json(f"{base_url}/contents/generations/tasks", {
         "model": model,
-        "content": [{"type": "text", "text": f"{prompt} --ratio 9:16 --duration {duration}"}],
+        "content": [{"type": "text", "text": f"{prompt} --ratio {ratio} --duration {duration}"}],
     }, headers)
     if status != 200:
         print(f"  [ark] 작업 생성 실패 (HTTP {status}): {task}")
@@ -109,11 +109,11 @@ def ark_generate(base_url, model, key, index, prompt, duration):
 FAL_MODEL = os.environ.get("FAL_VIDEO_MODEL", "fal-ai/bytedance/seedance/v1/lite/text-to-video")
 
 
-def fal_generate(key, index, prompt, duration):
+def fal_generate(key, index, prompt, duration, ratio):
     headers = {"Authorization": f"Key {key}"}
     status, task = http_json(f"https://queue.fal.run/{FAL_MODEL}", {
         "prompt": prompt,
-        "aspect_ratio": "9:16",
+        "aspect_ratio": ratio,
         "resolution": "720p",
         "duration": str(duration),
     }, headers)
@@ -139,7 +139,7 @@ def fal_generate(key, index, prompt, duration):
 
 # ---------- 메인 ----------
 
-def pick_provider(duration):
+def pick_provider(duration, ratio):
     """실제로 첫 장면 생성에 성공하는 공급자 함수를 골라 돌려준다."""
     ark_key = os.environ.get("ARK_API_KEY")
     fal_key = os.environ.get("FAL_API_KEY")
@@ -149,9 +149,9 @@ def pick_provider(duration):
         pairs = [override] if all(override) else ARK_CANDIDATES
         for base_url, model in pairs:
             candidates.append((f"ark {base_url} / {model}",
-                               lambda i, p, b=base_url, m=model: ark_generate(b, m, ark_key, i, p, duration)))
+                               lambda i, p, b=base_url, m=model: ark_generate(b, m, ark_key, i, p, duration, ratio)))
     if fal_key:
-        candidates.append((f"fal.ai {FAL_MODEL}", lambda i, p: fal_generate(fal_key, i, p, duration)))
+        candidates.append((f"fal.ai {FAL_MODEL}", lambda i, p: fal_generate(fal_key, i, p, duration, ratio)))
     if not candidates:
         sys.exit("ARK_API_KEY 또는 FAL_API_KEY 환경 변수가 필요합니다. (키를 코드나 채팅에 넣지 마세요)")
     return candidates
@@ -159,8 +159,8 @@ def pick_provider(duration):
 
 def main():
     scenes_file = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_SCENES_FILE
-    scenes, duration = load_scenes(scenes_file)
-    print(f"장면 파일: {scenes_file} ({len(scenes)}개 장면, 장면당 {duration}초)")
+    scenes, duration, ratio = load_scenes(scenes_file)
+    print(f"장면 파일: {scenes_file} ({len(scenes)}개 장면, 장면당 {duration}초, 화면비 {ratio})")
 
     os.makedirs(OUT_DIR, exist_ok=True)
     paths = []
@@ -173,7 +173,7 @@ def main():
                 sys.exit(f"[scene {index:02d}] 생성 실패 — 위 로그를 확인하세요.")
         else:
             path = None
-            for name, fn in pick_provider(duration):
+            for name, fn in pick_provider(duration, ratio):
                 print(f"  공급자 시도: {name}")
                 path = fn(index, prompt)
                 if path:
