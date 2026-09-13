@@ -1,22 +1,27 @@
 #!/usr/bin/env python3
-"""회장님의 마지막 배달 — 풀버전(약 11~12분) 제작 자산 생성기.
+"""회장님의 마지막 배달 — 풀버전 제작 자산 생성기 (발화 정렬판).
 
-전체 대본을 섹션별 대사/내레이션과 숏 리스트로 정의해 두고, 발화 길이 기반으로
-자막 타이밍을 계산한 뒤 세 파일을 생성한다:
+전체 대본을 발화 단위(beat)로 정렬해 세 파일을 생성한다:
 
-    scripts/scenes/chairman-last-delivery-full.json  (16:9 장면 프롬프트)
+    scripts/scenes/chairman-last-delivery-full.json  (16:9 장면 프롬프트, 장면별 5/10초)
     subs/chairman-last-delivery-full.ass             (1920x1080 자막)
     scripts/audio/chairman-last-delivery-full.json   (목소리·감정·현장음 설정)
 
-타이밍 규칙: 줄 길이(공백 제외 글자 수)/5.5 + 0.4초, 최소 1.2초. 섹션별 발화
-구간을 10초 장면 경계에 맞춰 올림하고, 남는 시간은 섹션 끝의 연출 호흡으로 둔다.
-장면 수 = ceil(섹션 구간/10), 섹션 숏 리스트를 순환하며 채운다.
+핵심 규칙 — 화면과 대사의 일치:
+  * 같은 화자의 연속 대사(beat)마다 그 화자가 정면을 보고 말하는 전용 장면을 배정한다.
+    한 장면에는 한 화자의 대사만 들어가므로, 장면 단위 립싱크에서 화면 속 인물이
+    남의 대사로 입을 움직이는 일이 없다.
+  * 내레이션 beat는 연출(설정) 숏으로 배정하고 "아무도 말하지 않는" 지시를 붙여
+    대사 장면과 시각적으로 분리한다. 내레이션과 대사는 시간상 절대 겹치지 않는다.
+  * 대사 장면 프롬프트에는 한국어 발화·입 모양 지시를 명시한다.
+
+타이밍 규칙: 줄 길이(공백 제외 글자 수)/5.5 + 0.4초, 최소 1.2초. beat 앞뒤로
+호흡(0.4/0.6초)을 두고, beat 길이를 5초/10초 장면 조합으로 올림해 채운다.
 
 사용법: python3 scripts/build_full_assets.py
 """
 
 import json
-import math
 import os
 import re
 
@@ -27,24 +32,40 @@ DOYUN = "20대 후반 한국 남성 배달 기사(짧은 검은 머리, 파란�
 MIRAN = "50대 한국 여성(베이지색 트위드 명품 정장, 진주 목걸이, 단정한 올림머리)"
 TAESEOK = "20대 후반 한국 남성(흰색 명품 후드티, 금목걸이, 갈색 염색머리)"
 JUNG = "60대 한국 남성 비서실장(백발, 은테 안경, 검은 스리피스 정장)"
+GUARD = "60대 한국 남성 경비원(회색 경비 제복, 경비 모자)"
+MANAGER = "50대 한국 남성 관리소장(감색 양복, 가슴에 명찰)"
 LOBBY = "대리석 바닥과 크리스탈 샹들리에가 있는 최고급 아파트 로비, 차가운 백색 조명"
+GARAGE = "어두운 지하 주차장, 검은 고급 세단과 배달 오토바이"
+
+# 대사 장면: 말하는 사람 한 명만, 한국어 입 모양 (립싱크 품질을 위해 정면 상반신)
+TALK = ("카메라를 향해 대사에 맞춰 입을 자연스럽게 움직이며 한국어로 말하는 "
+        "정면 상반신 샷, 화면에는 말하는 사람 한 명만 등장")
+# 내레이션 장면: 인물이 있어도 입을 움직이지 않게
+MUTE = "아무도 입을 움직이거나 말하지 않는 장면"
 
 STYLE = ("시네마틱 한국 드라마, 실사 영화 화질, 동일한 인물과 의상과 장소를 "
-         "모든 장면에서 유지, 자연스러운 피부 질감, 16:9 와이드 가로 구도")
+         "모든 장면에서 유지, 자연스러운 피부 질감, 16:9 와이드 가로 구도, "
+         "모든 대사와 화면 속 글자는 한국어, 영어 없음")
 
-# (스타일, 화자이름, 대사, 감정|None)  — 스타일: N(내레이션)/D(도윤)/V(빌런)/J(정실장)
+# 스타일: N(내레이션)/D(도윤)/V(빌런)/J(정실장)
 N, D, V, J = "Naration", "Doyun", "Vil", "Jung"
 
 SECTIONS = [
     dict(
         name="콜드 오픈",
-        lead_in=3.0,
-        ambience="porcelain bowl clattering, liquid splashing on marble floor, shocked crowd murmur, lobby reverb",
-        shots=[
-            f"{LOBBY}, {MIRAN}이 {DOYUN}에게 호통치며 짜장면 그릇을 쏟아 검은 소스가 흰 운동화 위로 흐르는 장면, 뒤에서 {TAESEOK}이 휴대폰으로 촬영하며 비웃음",
-            f"{LOBBY}, {DOYUN}가 입주민들이 지켜보는 가운데 천천히 무릎을 꿇는 장면, 슬로우 모션",
-            f"{DOYUN}의 은색 손목시계 클로즈업, 8시 32분을 가리키는 시계 바늘, 긴장감 있는 연출",
+        ambience="porcelain bowl clattering, liquid splashing on marble floor, wordless shocked crowd murmur, lobby reverb",
+        intro=[
+            (f"{LOBBY}, {MIRAN}이 {DOYUN} 앞에서 짜장면 그릇을 쏟아 검은 소스가 흰 운동화 위로 흐르는 장면, "
+             f"뒤에서 {TAESEOK}이 휴대폰으로 촬영하며 비웃는 표정, {MUTE}", 5),
         ],
+        narration_shots=[
+            f"{LOBBY}, {DOYUN}가 입주민들이 지켜보는 가운데 천천히 무릎을 꿇는 슬로우 모션, {MUTE}",
+            f"{DOYUN}의 은색 손목시계 클로즈업, 8시 32분을 가리키는 시계 바늘, 긴장감 있는 연출, {MUTE}",
+        ],
+        speaker_shots={
+            "미란": [f"{LOBBY}, {MIRAN}이 분노한 표정으로 아래를 손가락질하며 {TALK}"],
+            "태석": [f"{LOBBY}, {TAESEOK}이 휴대폰을 든 채 낄낄대며 {TALK}"],
+        },
         lines=[
             (V, "미란", "무릎 꿇어. 다들 보는 데서.", "angry"),
             (V, "태석", "야 이거 봐, 진짜 꿇네.", "happy"),
@@ -54,14 +75,14 @@ SECTIONS = [
     ),
     dict(
         name="내레이션 훅",
-        lead_in=1.0,
         ambience="low cinematic room tone, clock ticking, distant city hum, no music",
-        shots=[
-            f"{DOYUN}의 얼굴 클로즈업, 무표정하지만 깊은 눈빛, 화면 정지 같은 정적인 연출",
-            "고급 한옥 서재에서 백발 노인의 손이 만년필로 유언장에 서명하는 회상 장면, 세피아 톤",
-            "야간 도시 스카이라인과 대기업 본사 빌딩 외관, 웅장한 야경",
-            f"{DOYUN}가 배달 오토바이를 타고 밤거리를 달리는 몽타주, 회상 톤",
+        narration_shots=[
+            f"{DOYUN}의 얼굴 클로즈업, 무표정하지만 깊은 눈빛, 화면 정지 같은 정적인 연출, {MUTE}",
+            f"고급 한옥 서재에서 백발 노인의 손이 만년필로 유언장에 서명하는 회상 장면, 세피아 톤, {MUTE}",
+            f"야간 도시 스카이라인과 대기업 본사 빌딩 외관, 웅장한 야경, {MUTE}",
+            f"{DOYUN}가 배달 오토바이를 타고 밤거리를 달리는 몽타주, 회상 톤, {MUTE}",
         ],
+        speaker_shots={},
         lines=[
             (N, "", "이 남자 이름은 강도윤. 스물아홉. 한성그룹 창업주의 유일한 손자입니다.", None),
             (N, "", "석 달 전, 할아버지는 유언장에 단 한 줄을 남기고 세상을 떠났습니다.", None),
@@ -73,15 +94,16 @@ SECTIONS = [
     ),
     dict(
         name="8시간 전 — 도착",
-        lead_in=2.0,
         ambience="night city street ambience, motorcycle engine idling, guard booth, freight elevator hum",
-        shots=[
-            f"밤의 강남 최고급 아파트 외관과 정문, {DOYUN}가 배달 오토바이 옆에서 헬멧을 벗는 장면, 드라마틱 야경",
-            f"경비실 앞, 제복 입은 경비원이 손사래 치며 지하 주차장을 가리키고 {DOYUN}가 말없이 듣는 장면",
-            f"어두운 지하 화물 엘리베이터에 배달 봉지를 들고 타는 {DOYUN}, 차가운 형광등 조명, 계급 대비 연출",
+        narration_shots=[
+            f"밤의 강남 최고급 아파트 외관과 정문, {DOYUN}가 배달 오토바이 옆에서 헬멧을 벗는 장면, 드라마틱 야경, {MUTE}",
+            f"어두운 지하 화물 엘리베이터에 배달 봉지를 들고 타는 {DOYUN}, 차가운 형광등 조명, 계급 대비 연출, {MUTE}",
         ],
+        speaker_shots={
+            "경비원": [f"경비실 앞에 선 {GUARD}이 근엄한 얼굴로 지하 주차장 쪽을 손으로 가리키며 {TALK}"],
+        },
         lines=[
-            (N, "", "자막, 8시간 전. 강남 한복판, 한 채에 백억이 넘는다는 최고급 아파트, 한성 팰리스.", None),
+            (N, "", "8시간 전. 강남 한복판, 한 채에 백억이 넘는다는 최고급 아파트, 한성 팰리스.", None),
             (V, "경비원", "배달은 지하 화물 엘리베이터. 정문으로 들어오지 마. 여기 사는 분들 눈에 띄면 안 돼.", "angry"),
             (N, "", "여러분, 이 아파트 이름 잘 기억하세요. 한성 팰리스. 한성건설이 지었고, 한성자산이 관리하고, 그 두 회사 모두 도윤이 오늘 밤 물려받을 그룹의 계열사입니다.", None),
             (N, "", "이 단지 전체가, 이 경비실까지도, 몇 시간 뒤 이 남자 겁니다.", None),
@@ -89,16 +111,23 @@ SECTIONS = [
     ),
     dict(
         name="4801호 첫 배달",
-        lead_in=2.0,
-        ambience="apartment hallway room tone, porcelain bowl spill and splash, phone camera shutter clicks, mocking snicker",
-        shots=[
-            f"고급 펜트하우스 현관, 문이 열리고 {MIRAN}이 짜증난 표정으로 {DOYUN}를 맞는 장면",
-            f"펜트하우스 현관, {TAESEOK}이 슬리퍼를 끌고 나와 배달 봉지를 발로 툭 차며 비웃는 장면",
-            f"{DOYUN}의 무표정한 얼굴 클로즈업, 감정을 누르는 눈빛",
-            f"{MIRAN}이 짜장면 그릇을 들고 단무지를 가리키며 따지는 클로즈업",
-            f"{MIRAN}이 짜장면 그릇을 {DOYUN}의 발 앞에 쏟아붓는 장면, 검은 소스가 바닥에 퍼지는 클로즈업",
-            f"{DOYUN}가 무릎을 꿇고 손으로 짜장 소스를 닦고, {TAESEOK}이 옆에서 휴대폰으로 찍으며 웃는 장면",
+        ambience="apartment hallway room tone, porcelain bowl spill and splash, phone camera shutter clicks, wordless mocking snicker",
+        narration_shots=[
+            f"{DOYUN}의 무표정한 얼굴 클로즈업, 감정을 누르는 눈빛, {MUTE}",
+            f"고급 펜트하우스 현관, {MIRAN}이 짜장면 그릇을 {DOYUN}의 발 앞에 쏟아붓는 장면, 검은 소스가 바닥에 퍼지는 클로즈업, {MUTE}",
+            f"고급 펜트하우스 현관, {DOYUN}가 무릎을 꿇고 손으로 짜장 소스를 닦고, {TAESEOK}이 옆에서 휴대폰으로 찍으며 웃는 장면, {MUTE}",
         ],
+        speaker_shots={
+            "미란": [
+                f"고급 펜트하우스 현관, {MIRAN}이 짜증난 표정으로 팔짱을 낀 채 {TALK}",
+                f"고급 펜트하우스 현관, {MIRAN}이 짜장면 그릇을 든 채 단무지를 가리키며 화난 표정으로 {TALK}",
+            ],
+            "태석": [
+                f"고급 펜트하우스 현관, 슬리퍼 차림의 {TAESEOK}이 비웃는 표정으로 {TALK}",
+                f"고급 펜트하우스 현관, {TAESEOK}이 휴대폰 카메라를 들이대고 낄낄대며 {TALK}",
+            ],
+            D: [f"고급 펜트하우스 현관, 배달 봉지를 든 {DOYUN}가 공손하게 고개를 살짝 숙였다 들며 {TALK}"],
+        },
         lines=[
             (V, "미란", "아 진짜, 왜 이렇게 늦어? 면 다 불었겠네.", "angry"),
             (D, "", "죄송합니다. 엘리베이터가 화물용밖에 안 돼서요.", None),
@@ -115,19 +144,20 @@ SECTIONS = [
             (V, "태석", "야 이거 스토리 올려야지. 배달 거지 무릎 꿇은 거.", "happy"),
             (N, "", "여러분, 태석이 지금 찍고 있는 이 영상. 오늘 밤 이 영상이 어디에 올라가는지 끝까지 보시면 압니다.", None),
             (D, "", "다시 갖다 드리겠습니다.", None),
-            (V, "미란", "당연하지. 그리고 이번엔 정문으로 올라와. 관리소장한테 내가 말해둘 테니까. 무릎 꿇고 사과하는 거 제대로 보게.", "angry"),
+            (V, "미란", "당연하지. 이번엔 정문으로 올라와. 관리소장한테 내가 말해둘 테니까. 네가 무릎 꿇고 사과하는 거, 내 눈으로 제대로 보게.", "angry"),
         ],
     ),
     dict(
         name="지하 주차장 — 정 실장",
-        lead_in=2.0,
         ambience="underground parking garage ambience, low ventilation hum, car window motor, echoing footsteps",
-        shots=[
-            f"어두운 지하 주차장, 배달 오토바이 옆에 세워진 검은 고급 세단, {JUNG}이 차창 너머로 정중히 고개 숙이는 장면",
-            f"{JUNG}의 진지한 얼굴 클로즈업, 어둠 속 대비 조명",
-            f"{DOYUN}가 짜장 소스 묻은 손을 내려다보며 차분히 말하는 클로즈업",
-            f"지하 주차장 와이드 샷, 오토바이와 세단 사이에 마주 선 {DOYUN}와 {JUNG}, 미스터리한 분위기",
+        narration_shots=[
+            f"{GARAGE}, {JUNG}이 세단 옆에서 {DOYUN}를 향해 허리 숙여 정중히 인사하는 장면, {MUTE}",
+            f"{GARAGE} 와이드 샷, 오토바이와 세단 사이에 마주 선 {DOYUN}와 {JUNG}, 미스터리한 분위기, {MUTE}",
         ],
+        speaker_shots={
+            "정 실장": [f"{GARAGE}, 세단 옆에 반듯하게 선 {JUNG}이 고개를 들고 정중한 표정으로 {TALK}"],
+            D: [f"{GARAGE}, {DOYUN}가 짜장 소스 묻은 손을 내렸다 들며 차분한 눈빛으로 {TALK}"],
+        },
         lines=[
             (J, "정 실장", "도련님. 여덟 시간 남았습니다.", None),
             (N, "", "한성그룹 비서실장, 정 실장. 지난 90일 동안 매일 이 시간에 이렇게 나타나 딱 한 마디만 하고 사라졌습니다. 유언장의 조건, 정체를 밝히지 말 것을 지키기 위해서입니다.", None),
@@ -144,14 +174,20 @@ SECTIONS = [
     ),
     dict(
         name="로비 재배달",
-        lead_in=2.0,
-        ambience="marble lobby crowd murmur, echoing footsteps, tense atmosphere, no music",
-        shots=[
-            f"{LOBBY}, {DOYUN}가 새 짜장면 봉지를 들고 정문으로 들어서고 관리소장과 경비원 두 명이 막아서는 장면",
-            f"{LOBBY}, 입주민 십여 명이 둘러선 가운데 {MIRAN}이 손가락질하며 호통치는 장면",
-            f"{LOBBY}, 무릎 꿇은 {DOYUN}가 고개를 들어 차분하게 말하는 클로즈업",
-            f"{MIRAN}의 붉어진 얼굴 클로즈업, 당황과 분노가 섞인 표정",
+        ambience="marble lobby wordless crowd murmur, echoing footsteps, tense atmosphere, no music",
+        narration_shots=[
+            f"{LOBBY}, {DOYUN}가 새 짜장면 봉지를 들고 정문으로 들어서고 관리소장과 경비원 두 명이 막아서는 장면, {MUTE}",
+            f"{LOBBY}, 입주민 십여 명이 무릎 꿇은 {DOYUN}를 둘러싸고 지켜보는 와이드 샷, {MUTE}",
         ],
+        speaker_shots={
+            "관리소장": [f"{LOBBY}, {MANAGER}이 단호한 표정으로 서류판을 든 채 {TALK}"],
+            "미란": [
+                f"{LOBBY}, {MIRAN}이 손가락질하며 분노한 표정으로 {TALK}",
+                f"{LOBBY}, {MIRAN}의 붉어진 얼굴, 당황과 분노가 섞인 표정으로 {TALK}",
+            ],
+            "태석": [f"{LOBBY}, {TAESEOK}이 휴대폰을 든 채 비웃는 표정으로 {TALK}"],
+            D: [f"{LOBBY}, 무릎 꿇은 {DOYUN}가 고개를 들어 차분한 표정으로 {TALK}"],
+        },
         lines=[
             (N, "", "저녁 여덟 시 반. 도윤이 새 짜장면을 들고 정문으로 들어섰습니다.", None),
             (V, "관리소장", "4801호에서 신고가 들어왔어. 배달 기사가 입주민한테 불손했다고. 여기서 사과하고 가.", "angry"),
@@ -169,14 +205,17 @@ SECTIONS = [
     ),
     dict(
         name="아홉 시 — 신분 공개",
-        lead_in=3.0,
-        ambience="automatic glass doors sliding open, many synchronized footsteps, camera flashes clicking, gasps",
-        shots=[
-            "최고급 아파트 로비의 자동문이 열리며 검은 정장의 남자들 열두 명이 줄지어 들어오는 장면, 뒤로 카메라 플래시 세례, 슬로우 모션",
-            f"{JUNG}이 무릎 꿇은 {DOYUN} 앞에서 허리를 90도로 숙여 인사하고 입주민들이 경악하는 장면",
-            f"{MIRAN}이 입을 벌린 채 뒤로 물러나고 {TAESEOK}의 휴대폰이 바닥에 떨어지는 장면",
-            f"{DOYUN}가 일어서서 무릎의 먼지를 터는 장면, 위엄 있는 분위기 전환",
+        ambience="automatic glass doors sliding open, many synchronized footsteps, camera flashes clicking, wordless gasps",
+        narration_shots=[
+            "최고급 아파트 로비의 자동문이 열리며 검은 정장의 남자들 열두 명이 줄지어 들어오는 장면, 뒤로 카메라 플래시 세례, 슬로우 모션, " + MUTE,
+            f"{JUNG}이 무릎 꿇은 {DOYUN} 앞에서 허리를 90도로 숙여 인사하고 입주민들이 경악하는 장면, {MUTE}",
+            f"{MIRAN}이 입을 벌린 채 뒤로 물러나고 {TAESEOK}의 휴대폰이 바닥에 떨어지는 장면, {MUTE}",
+            f"{DOYUN}가 일어서서 무릎의 먼지를 터는 장면, 위엄 있는 분위기 전환, {MUTE}",
         ],
+        speaker_shots={
+            "정 실장": [f"{LOBBY}, {JUNG}이 반듯하게 서서 존경을 담은 표정으로 {TALK}"],
+            "미란": [f"{LOBBY}, {MIRAN}의 창백해진 얼굴, 경악한 표정으로 더듬거리며 {TALK}"],
+        },
         lines=[
             (N, "", "로비 자동문이 열렸습니다. 검은 정장의 남자들이 줄지어 들어왔습니다. 열두 명. 그 뒤로 정 실장. 그 뒤로 취재진. 로비 시계가 아홉 시를 가리켰습니다.", None),
             (J, "정 실장", "회장님. 유언 조건 90일, 완료됐습니다. 이사회 소집 준비 끝났습니다.", None),
@@ -188,16 +227,24 @@ SECTIONS = [
     ),
     dict(
         name="심판",
-        lead_in=2.0,
-        ambience="stunned lobby silence, gasps and murmurs, paper envelope rustle, quiet sobbing",
-        shots=[
-            f"{LOBBY}, {DOYUN}가 서류 봉투를 들고 차분하게 말하고 {JUNG}이 뒤에 시립한 장면",
-            f"{MIRAN}의 창백해진 얼굴 클로즈업, 두려움에 떨리는 표정",
-            f"{TAESEOK}이 몸을 떨며 고개를 숙이는 장면",
-            f"{DOYUN}가 {TAESEOK} 앞에 서서 조용히 말하는 투샷, 팽팽한 긴장감",
-            f"중년 관리소장이 진땀을 흘리며 {MIRAN}을 슬쩍 쳐다보는 장면",
-            f"{MIRAN}이 무릎을 꿇고 애원하고 {DOYUN}가 내려다보는 권력 역전 구도",
+        ambience="stunned lobby silence, wordless gasps and murmurs, paper envelope rustle, quiet sobbing",
+        narration_shots=[
+            f"{TAESEOK}이 몸을 떨며 고개를 숙이는 장면, {MUTE}",
+            f"중년 관리소장이 진땀을 흘리며 {MIRAN}을 슬쩍 쳐다보는 장면, {MUTE}",
         ],
+        speaker_shots={
+            D: [
+                f"{LOBBY}, {DOYUN}가 서류 봉투를 든 채 위엄 있는 표정으로 {TALK}",
+                f"{DOYUN}의 얼굴 클로즈업, 차갑고 단호한 눈빛으로 {TALK}",
+            ],
+            "미란": [
+                f"{LOBBY}, {MIRAN}의 창백해진 얼굴, 두려움에 떨리는 표정으로 {TALK}",
+                f"{LOBBY}, {MIRAN}이 무릎을 꿇고 두 손을 모아 애원하는 표정으로 {TALK}",
+                f"{LOBBY}, {MIRAN}의 창백해진 얼굴, 두려움에 떨리는 표정으로 {TALK}",
+            ],
+            "태석": [f"{LOBBY}, {TAESEOK}이 몸을 떨며 사색이 된 얼굴로 더듬거리며 {TALK}"],
+            "관리소장": [f"{LOBBY}, {MANAGER}이 진땀을 흘리며 어쩔 줄 몰라 하는 표정으로 {TALK}"],
+        },
         lines=[
             (D, "", "유민호 상무. 주택사업본부. 지난 3년 협력업체 선정 과정에서 리베이트 수수 정황 열한 건. 그중 여섯 건이 이 단지 공사입니다.", None),
             (D, "", "사모님. 남편분이 이 아파트 어떻게 샀는지 아세요?", None),
@@ -220,14 +267,16 @@ SECTIONS = [
     ),
     dict(
         name="에필로그 — 마지막 배달",
-        lead_in=3.0,
         ambience="night street ambience, motorcycle starting and riding away, wind, dawn birds at quiet hillside",
-        shots=[
-            f"{LOBBY}, 정장 차림의 중년 남성 임원이 감사실 직원들과 함께 걸어 나오다 무릎 꿇은 아내와 아들을 보고 멈춰 서는 장면",
-            f"{DOYUN}가 헬멧을 집어 들고 {JUNG}과 대화하는 장면, 여운 있는 조명",
-            f"밤거리, {DOYUN}가 배달 오토바이를 타고 떠나는 뒷모습, 도시 야경 보케",
-            f"새벽 산 중턱의 산소 앞, 배달 기사 복장의 {DOYUN}가 짜장면을 내려놓고 고개 숙이는 장면, 일출, 감성적인 엔딩",
+        narration_shots=[
+            f"{LOBBY}, 정장 차림의 중년 남성 임원이 감사실 직원들과 함께 걸어 나오다 무릎 꿇은 아내와 아들을 보고 멈춰 서는 장면, {MUTE}",
+            f"밤거리, {DOYUN}가 배달 오토바이를 타고 떠나는 뒷모습, 도시 야경 보케, {MUTE}",
+            f"새벽 산 중턱의 산소 앞, 배달 기사 복장의 {DOYUN}가 짜장면을 내려놓고 고개 숙이는 장면, 일출, 감성적인 엔딩, {MUTE}",
         ],
+        speaker_shots={
+            D: [f"{LOBBY}, {DOYUN}가 헬멧을 손에 든 채 잔잔한 미소로 {TALK}"],
+            "정 실장": [f"{LOBBY}, {JUNG}이 존경 어린 표정으로 {TALK}"],
+        },
         lines=[
             (N, "", "한 시간 뒤. 유민호 상무가 감사실 직원들과 함께 내려왔습니다. 로비에서 아내와 아들이 무릎을 꿇고 있는 걸 봤습니다. 그리고 그 앞에, 짜장 소스가 묻은 운동화를 신은 채 서 있는 새 회장을 봤습니다.", None),
             (D, "", "정 실장님. 오토바이는 제가 몰고 갈게요. 마지막 배달 하나 남았어요.", None),
@@ -240,16 +289,40 @@ SECTIONS = [
     ),
 ]
 
-SCENE_SEC = 10          # 장면당 길이(초)
 CHAR_RATE = 5.5         # 초당 글자 수(한국어 낭독)
 LINE_PAD = 0.4          # 줄 사이 호흡
 MIN_DUR = 1.2
-SECTION_TAIL = 1.5
+BEAT_LEAD = 0.4         # beat 시작 전 호흡
+BEAT_TAIL = 0.6         # beat 끝 호흡
+SCENE_SIZES = (5, 10)   # 생성 모델이 지원하는 장면 길이(초)
 
 
 def line_duration(text):
     chars = len(re.sub(r"\s", "", text))
     return max(MIN_DUR, chars / CHAR_RATE + LINE_PAD)
+
+
+def beat_scene_sizes(need):
+    """beat 길이(need초)를 5/10초 장면 조합으로 덮는 최소 낭비 조합을 돌려준다."""
+    sizes = [10] * int(need // 10)
+    rem = need - 10 * len(sizes)
+    if rem > 5:
+        sizes.append(10)
+    elif rem > 0.01 or not sizes:
+        sizes.append(5)
+    return sizes
+
+
+def build_beats(lines):
+    """연속된 같은 화자(내레이션 포함)의 줄들을 beat로 묶는다."""
+    beats = []
+    for style, name, text, emotion in lines:
+        key = "N" if style == N else (name or style)
+        if beats and beats[-1]["key"] == key:
+            beats[-1]["lines"].append((style, name, text, emotion))
+        else:
+            beats.append({"key": key, "lines": [(style, name, text, emotion)]})
+    return beats
 
 
 def fmt_time(t):
@@ -280,31 +353,57 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
 
 def main():
-    events, scenes, ambience_prompts, emotions = [], [], [], {}
+    events, scene_items, ambience_prompts, emotions = [], [], [], {}
     t_video, line_no = 0.0, 0
 
     for sec in SECTIONS:
-        # 발화 배치 (섹션 시작 + lead_in부터 순차)
-        t = t_video + sec["lead_in"]
-        for style, name, text, emotion in sec["lines"]:
-            line_no += 1
-            dur = line_duration(text)
-            events.append((t, t + dur - 0.1, style, name, text))
-            if emotion:
-                emotions[str(line_no)] = emotion
-            t += dur
-        raw_span = (t - t_video) + SECTION_TAIL
+        sec_start = t_video
+        narr_idx = 0
+        spk_idx = {}
 
-        # 장면 경계에 맞춰 올림, 숏 리스트 순환
-        n = max(1, math.ceil(raw_span / SCENE_SEC))
-        for k in range(n):
-            scenes.append(sec["shots"][k % len(sec["shots"])])
+        for prompt, size in sec.get("intro", []):
+            scene_items.append({"prompt": prompt, "duration": size})
             ambience_prompts.append(sec["ambience"])
-        t_video += n * SCENE_SEC
-        print(f"{sec['name']}: 발화 {len(sec['lines'])}줄, {raw_span:.1f}s → 장면 {n}개")
+            t_video += size
+
+        n_beats = 0
+        for beat in build_beats(sec["lines"]):
+            n_beats += 1
+            t = t_video + BEAT_LEAD
+            for style, name, text, emotion in beat["lines"]:
+                line_no += 1
+                dur = line_duration(text)
+                events.append((t, t + dur - 0.1, style, name, text))
+                if emotion:
+                    emotions[str(line_no)] = emotion
+                t += dur
+            need = (t - t_video) + BEAT_TAIL
+
+            key = beat["key"]
+            if key == "N":
+                shots = sec["narration_shots"]
+            else:
+                shots = sec["speaker_shots"][key]
+            for size in beat_scene_sizes(need):
+                if key == "N":
+                    prompt = shots[narr_idx % len(shots)]
+                    narr_idx += 1
+                else:
+                    k = spk_idx.get(key, 0)
+                    prompt = shots[k % len(shots)]
+                    spk_idx[key] = k + 1
+                scene_items.append({"prompt": prompt, "duration": size})
+                ambience_prompts.append(sec["ambience"])
+                t_video += size
+
+        print(f"{sec['name']}: 발화 {len(sec['lines'])}줄 / beat {n_beats}개 → "
+              f"{t_video - sec_start:.0f}초")
 
     total = t_video
-    print(f"\n합계: 자막 {line_no}줄, 장면 {len(scenes)}개, 영상 {total:.0f}초 ({total / 60:.1f}분)")
+    n5 = sum(1 for s in scene_items if s["duration"] == 5)
+    n10 = len(scene_items) - n5
+    print(f"\n합계: 자막 {line_no}줄, 장면 {len(scene_items)}개 (5초 {n5} + 10초 {n10}), "
+          f"영상 {total:.0f}초 ({total / 60:.1f}분)")
 
     # 1) 자막
     with open(os.path.join(ROOT, "subs", "chairman-last-delivery-full.ass"), "w", encoding="utf-8") as f:
@@ -312,9 +411,9 @@ def main():
         for s, e, style, name, text in events:
             f.write(f"Dialogue: 0,{fmt_time(s)},{fmt_time(e)},{style},{name},0,0,0,,{text}\n")
 
-    # 2) 장면 프롬프트
+    # 2) 장면 프롬프트 (장면별 5/10초)
     with open(os.path.join(ROOT, "scripts", "scenes", "chairman-last-delivery-full.json"), "w", encoding="utf-8") as f:
-        json.dump({"duration": SCENE_SEC, "ratio": "16:9", "style": STYLE, "scenes": scenes},
+        json.dump({"duration": 10, "ratio": "16:9", "style": STYLE, "scenes": scene_items},
                   f, ensure_ascii=False, indent=2)
 
     # 3) 오디오 설정

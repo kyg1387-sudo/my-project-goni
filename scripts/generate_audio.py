@@ -332,7 +332,7 @@ def ambience_scene(cfg, key, v_url, index, duration):
     payload = {
         "video_url": v_url,
         "prompt": prompt,
-        "negative_prompt": "music, melody, song",
+        "negative_prompt": "music, melody, song, speech, talking, dialogue, voice, narration, English words, singing",
         "duration": min(int(round(duration)), 30),
     }
     result = fal_run(model, payload, key, f"ambience {index:02d}")

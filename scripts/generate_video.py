@@ -33,17 +33,25 @@ DEFAULT_SCENES_FILE = os.path.join(os.path.dirname(__file__), "scenes", "bungeop
 
 
 def load_scenes(path):
-    """장면 파일을 읽어 (프롬프트 목록, 장면당 길이)를 돌려준다.
+    """장면 파일을 읽어 ([(프롬프트, 길이초)], 화면비)를 돌려준다.
 
     생성 모델은 한글 자막 렌더링이 불안정하므로 자막은 편집 단계에서 얹는 것을 전제로,
     프롬프트는 연기/구도 중심으로 구성한다. style은 인물/의상/장소 일관성을 위해
-    모든 장면 프롬프트 뒤에 공통으로 붙인다.
+    모든 장면 프롬프트 뒤에 공통으로 붙인다. scenes 항목은 문자열(전역 duration 사용)
+    또는 {"prompt": ..., "duration": 5|10} 객체를 섞어 쓸 수 있다.
     """
     with open(path, encoding="utf-8") as f:
         data = json.load(f)
     style = data.get("style", "").strip()
-    prompts = [f"{scene}, {style}" if style else scene for scene in data["scenes"]]
-    return prompts, int(data.get("duration", 5)), data.get("ratio", "9:16")
+    default_dur = int(data.get("duration", 5))
+    items = []
+    for scene in data["scenes"]:
+        if isinstance(scene, dict):
+            prompt, dur = scene["prompt"], int(scene.get("duration", default_dur))
+        else:
+            prompt, dur = scene, default_dur
+        items.append((f"{prompt}, {style}" if style else prompt, dur))
+    return items, data.get("ratio", "9:16")
 
 
 def http_json(url, payload=None, headers=None):
@@ -139,7 +147,7 @@ def fal_generate(key, index, prompt, duration, ratio):
 
 # ---------- 메인 ----------
 
-def pick_provider(duration, ratio):
+def pick_provider(ratio):
     """실제로 첫 장면 생성에 성공하는 공급자 함수를 골라 돌려준다."""
     ark_key = os.environ.get("ARK_API_KEY")
     fal_key = os.environ.get("FAL_API_KEY")
@@ -149,9 +157,9 @@ def pick_provider(duration, ratio):
         pairs = [override] if all(override) else ARK_CANDIDATES
         for base_url, model in pairs:
             candidates.append((f"ark {base_url} / {model}",
-                               lambda i, p, b=base_url, m=model: ark_generate(b, m, ark_key, i, p, duration, ratio)))
+                               lambda i, p, d, b=base_url, m=model: ark_generate(b, m, ark_key, i, p, d, ratio)))
     if fal_key:
-        candidates.append((f"fal.ai {FAL_MODEL}", lambda i, p: fal_generate(fal_key, i, p, duration, ratio)))
+        candidates.append((f"fal.ai {FAL_MODEL}", lambda i, p, d: fal_generate(fal_key, i, p, d, ratio)))
     if not candidates:
         sys.exit("ARK_API_KEY 또는 FAL_API_KEY 환경 변수가 필요합니다. (키를 코드나 채팅에 넣지 마세요)")
     return candidates
@@ -159,23 +167,23 @@ def pick_provider(duration, ratio):
 
 def main():
     scenes_file = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_SCENES_FILE
-    scenes, duration, ratio = load_scenes(scenes_file)
-    print(f"장면 파일: {scenes_file} ({len(scenes)}개 장면, 장면당 {duration}초, 화면비 {ratio})")
+    scenes, ratio = load_scenes(scenes_file)
+    print(f"장면 파일: {scenes_file} ({len(scenes)}개 장면, 화면비 {ratio})")
 
     os.makedirs(OUT_DIR, exist_ok=True)
     paths = []
     provider = None
-    for index, prompt in enumerate(scenes, start=1):
-        print(f"[scene {index:02d}] {prompt[:40]}...")
+    for index, (prompt, duration) in enumerate(scenes, start=1):
+        print(f"[scene {index:02d}] ({duration}s) {prompt[:40]}...")
         if provider:
-            path = provider(index, prompt)
+            path = provider(index, prompt, duration)
             if not path:
                 sys.exit(f"[scene {index:02d}] 생성 실패 — 위 로그를 확인하세요.")
         else:
             path = None
-            for name, fn in pick_provider(duration, ratio):
+            for name, fn in pick_provider(ratio):
                 print(f"  공급자 시도: {name}")
-                path = fn(index, prompt)
+                path = fn(index, prompt, duration)
                 if path:
                     provider = fn
                     break
