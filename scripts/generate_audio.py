@@ -443,7 +443,10 @@ def main():
     os.makedirs(WORK_DIR, exist_ok=True)
 
     lines = parse_ass(args.ass)
-    print(f"자막 {len(lines)}줄 파싱됨")
+    silent = set(cfg.get("silent_styles", []))
+    if silent:
+        lines = [l for l in lines if l[2] not in silent]
+    print(f"자막 {len(lines)}줄 파싱됨 (화면 전용 스타일 {sorted(silent)} 제외)")
 
     def make_tts(item):
         i, (start, _end, style, name, text) = item
