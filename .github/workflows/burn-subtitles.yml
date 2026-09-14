@@ -75,6 +75,13 @@ jobs:
           sudo apt-get update && sudo apt-get install -y ffmpeg
           pip install --quiet faster-whisper
 
+      - name: 대사 파일 길이 출력 (대화 리듬 계산용)
+        run: |
+          for f in out/audio/line*.mp3; do
+            d=$(ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$f")
+            echo "DUR $(basename "$f") $d"
+          done
+
       - name: 언어 검사 실행
         run: python3 scripts/qa_language.py --audio-dir out/audio --ass "subs/${SKIT}.ass"
 
