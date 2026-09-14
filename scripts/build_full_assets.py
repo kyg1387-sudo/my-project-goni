@@ -262,7 +262,7 @@ SECTIONS = [
         ambience="night street ambience, motorcycle starting and riding away, wind, dawn birds at quiet hillside",
         narration_shots=[
             f"밤거리, {DOYUN}가 배달 오토바이를 타고 떠나는 뒷모습, 도시 야경 보케, {MUTE}",
-            f"새벽 산 중턱, 잔디로 덮인 둥근 봉분 앞에 화강암 비석이 하나만 서 있고, 비석 정면에는 큰 한자 '墓' 한 글자만 또렷하게 새겨져 있으며 그 외 다른 글자나 무늬는 전혀 없음, 그 앞에서 배달 기사 복장의 {DOYUN}가 짜장면 그릇을 내려놓고 고개 숙이는 장면, 일출, 감성적인 엔딩, {MUTE}",
+            f"새벽 산 중턱, 잔디로 덮인 둥근 봉분 앞에 아무 글자도 무늬도 새겨져 있지 않은 매끈한 회색 화강암 비석이 하나 서 있고, 그 앞에서 배달 기사 복장의 {DOYUN}가 짜장면 그릇을 내려놓고 고개 숙이는 장면, 일출, 감성적인 엔딩, {MUTE}",
         ],
         speaker_shots={
             D: [f"{LOBBY}, {DOYUN}가 헬멧을 손에 든 채 잔잔한 미소로 {TALK}"],
