@@ -35,6 +35,10 @@ on:
         description: 복원 후 다시 만들 산출물 패턴 (out/audio 기준, 공백 구분, 예 "lip*.mp4 amb09.wav")
         required: false
         default: ""
+      remap_removed:
+        description: 자막에서 삭제된 TTS 줄의 옛 번호 목록 — 캐시 번호를 당겨 재사용 (공백 구분, 예 "3 58")
+        required: false
+        default: ""
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
@@ -87,6 +91,10 @@ jobs:
           path: out
           run-id: ${{ inputs.resume_run_id }}
           github-token: ${{ github.token }}
+
+      - name: TTS 캐시 줄 번호 재매핑 (자막 줄 삭제 반영)
+        if: ${{ inputs.remap_removed != '' && inputs.deliver_from_run_id == '' }}
+        run: python3 scripts/remap_tts_cache.py out/audio ${{ inputs.remap_removed }}
 
       - name: 복원 산출물 중 다시 만들 것 삭제 (부분 재생성)
         if: ${{ inputs.invalidate != '' && inputs.deliver_from_run_id == '' }}

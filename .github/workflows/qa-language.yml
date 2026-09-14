@@ -1,0 +1,54 @@
+name: 오디오 언어 검사 (무료 QA)
+
+on:
+  workflow_dispatch:
+    inputs:
+      skit:
+        description: 검사할 스킷 이름
+        required: false
+        default: "chairman-last-delivery-full"
+      audio_run_id:
+        description: 오디오 캐시 Artifact(<skit>-skit-video-subbed)를 가져올 run ID
+        required: true
+      remap_removed:
+        description: 자막에서 삭제된 TTS 줄의 옛 번호 목록 (공백 구분, 예 "3 58")
+        required: false
+        default: ""
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 오디오 캐시 내려받기
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.skit }}-skit-video-subbed
+          path: out
+          run-id: ${{ inputs.audio_run_id }}
+          github-token: ${{ github.token }}
+
+      - name: TTS 캐시 줄 번호 재매핑 (자막 줄 삭제 반영)
+        if: ${{ inputs.remap_removed != '' }}
+        run: python3 scripts/remap_tts_cache.py out/audio ${{ inputs.remap_removed }}
+
+      - name: ffmpeg와 faster-whisper 설치
+        run: |
+          sudo apt-get update && sudo apt-get install -y ffmpeg
+          pip install --quiet faster-whisper
+
+      - name: 언어 검사 실행
+        run: |
+          python3 scripts/qa_language.py \
+            --audio-dir out/audio \
+            --ass "subs/${{ inputs.skit }}.ass"
+
+      - name: 보고서 업로드
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.skit }}-qa-language-report
+          path: out/audio/qa_language_report.txt
+          retention-days: 7
