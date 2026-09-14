@@ -113,7 +113,7 @@ SECTIONS = [
     ),
     dict(
         name="4801호 첫 배달",
-        ambience="apartment hallway room tone, porcelain bowl spill and splash, phone camera shutter clicks",
+        ambience="",
         narration_shots=[
             f"{DOYUN}의 무표정한 얼굴 클로즈업, 감정을 누르는 눈빛, {MUTE}",
         ],
@@ -146,7 +146,7 @@ SECTIONS = [
     ),
     dict(
         name="지하 주차장 — 정 실장",
-        ambience="underground parking garage ambience, low ventilation hum, car window motor, echoing footsteps",
+        ambience="",
         narration_shots=[
             f"{GARAGE}, {JUNG}이 세단 옆에서 {DOYUN}를 향해 허리 숙여 정중히 인사하는 장면, {MUTE}",
             f"{GARAGE} 와이드 샷, 오토바이와 세단 사이에 마주 선 {DOYUN}와 {JUNG}, 미스터리한 분위기, {MUTE}",
@@ -172,7 +172,7 @@ SECTIONS = [
     ),
     dict(
         name="로비 재배달",
-        ambience="marble lobby room tone, echoing footsteps, air conditioning hum, tense atmosphere, no music",
+        ambience="",
         narration_shots=[
             f"{LOBBY}, {DOYUN}가 새 짜장면 봉지를 들고 정문으로 들어서고 관리소장과 경비원 두 명이 막아서는 장면, {MUTE}",
             f"{LOBBY}, 입주민 십여 명이 무릎 꿇은 {DOYUN}를 둘러싸고 지켜보는 와이드 샷, {MUTE}",
@@ -194,7 +194,7 @@ SECTIONS = [
             (V, "태석", "야 이거 봐, 진짜 꿇네. 엄마, 이런 애들은 이렇게 해야 돼. 지 분수를 알아야지.", "happy"),
             (V, "미란", "니 사장한테 전화해. 너 오늘부로 잘라달라고. 내 남편이 한성건설 상무야. 이 동네 배달 업체 전부 우리 쪽에서 계약 관리해. 알아?", "angry"),
             (D, "", "네. 압니다. 한성자산 계약입니다.", None),
-            (V, "미란", "뭐?", "surprised"),
+            (V, "미란", "뭐라고?", "surprised"),
             (D, "", "이 단지 협력업체 계약, 한성건설이 아니라 한성자산에서 관리합니다. 상무님 소관이 아닙니다.", None),
             (A, "5", f"{LOBBY}, 입주민 십여 명이 웅성거림을 멈추고 조용해진 가운데 무릎 꿇은 {DOYUN}를 바라보는 와이드 샷, {MUTE}", None),
             (V, "미란", "이 새끼가 어디서 아는 척을.", "angry"),
@@ -222,7 +222,7 @@ SECTIONS = [
     ),
     dict(
         name="심판",
-        ambience="stunned quiet lobby room tone, paper envelope rustle, soft slow footsteps",
+        ambience="",
         narration_shots=[
             f"{TAESEOK}이 몸을 떨며 고개를 숙이는 장면, {MUTE}",
         ],

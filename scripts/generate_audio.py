@@ -362,6 +362,10 @@ def ambience_scene(cfg, key, v_url, index, duration):
         return None
     prompts = cfg.get("ambience_prompts", [])
     prompt = prompts[index - 1] if index - 1 < len(prompts) else "realistic ambient sound"
+    if not prompt.strip():
+        # 빈 프롬프트 = 현장음 없이 감(생성 모델이 말소리를 계속 섞는 구간용)
+        print(f"  [ambience {index:02d}] 현장음 없음(의도적 생략)")
+        return None
     raw = ambience_group_clip(cfg, key, v_url, prompt)
     if not raw:
         return None
