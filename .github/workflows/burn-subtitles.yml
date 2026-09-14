@@ -181,6 +181,7 @@ jobs:
             out/audio/line*.mp3
             out/audio/lip*.mp4
             out/audio/amb*.wav
+            out/audio/ambg-*.media
             out/audio/bgm.audio
           retention-days: 7
 

@@ -4,7 +4,7 @@
 실제 배우 드라마처럼 등장인물의 연기와 대화로만 이야기를 끌어가고,
 내레이션은 쓰지 않는다. 시간 경과·장소는 화면 자막 카드(Caption)로,
 설명이 필요한 배경은 인물 대사(주로 정 실장과의 대화)로 풀어낸다.
-할아버지의 유언만 회상 보이스오버(입 모양 없음)로 들려준다.
+보이스오버는 쓰지 않는다 — 유언 인용도 소리 없는 자막 카드(Caption)로 보여준다.
 
 생성 파일:
     scripts/scenes/chairman-last-delivery-full.json  (16:9 장면 프롬프트, 장면별 5/10초)
@@ -61,7 +61,7 @@ C, A = "Caption", "Action"
 SECTIONS = [
     dict(
         name="콜드 오픈",
-        ambience="porcelain bowl clattering, liquid splashing on marble floor, wordless shocked crowd murmur, lobby reverb",
+        ambience="porcelain bowl clattering, liquid splashing on marble floor, tense marble lobby room tone, distant footsteps",
         narration_shots=[
             f"{LOBBY}, {DOYUN}가 입주민들이 지켜보는 가운데 천천히 무릎을 꿇는 슬로우 모션, {MUTE}",
             f"{DOYUN}의 은색 손목시계 클로즈업, 8시 32분을 가리키는 시계 바늘, 긴장감 있는 연출, {MUTE}",
@@ -113,7 +113,7 @@ SECTIONS = [
     ),
     dict(
         name="4801호 첫 배달",
-        ambience="apartment hallway room tone, porcelain bowl spill and splash, phone camera shutter clicks, wordless mocking snicker",
+        ambience="apartment hallway room tone, porcelain bowl spill and splash, phone camera shutter clicks",
         narration_shots=[
             f"{DOYUN}의 무표정한 얼굴 클로즈업, 감정을 누르는 눈빛, {MUTE}",
         ],
@@ -172,7 +172,7 @@ SECTIONS = [
     ),
     dict(
         name="로비 재배달",
-        ambience="marble lobby wordless crowd murmur, echoing footsteps, tense atmosphere, no music",
+        ambience="marble lobby room tone, echoing footsteps, air conditioning hum, tense atmosphere, no music",
         narration_shots=[
             f"{LOBBY}, {DOYUN}가 새 짜장면 봉지를 들고 정문으로 들어서고 관리소장과 경비원 두 명이 막아서는 장면, {MUTE}",
             f"{LOBBY}, 입주민 십여 명이 무릎 꿇은 {DOYUN}를 둘러싸고 지켜보는 와이드 샷, {MUTE}",
@@ -202,7 +202,7 @@ SECTIONS = [
     ),
     dict(
         name="아홉 시 — 신분 공개",
-        ambience="automatic glass doors sliding open, many synchronized footsteps, camera flashes clicking, wordless gasps",
+        ambience="automatic glass doors sliding open, many synchronized footsteps, camera flashes clicking",
         narration_shots=[
             "최고급 아파트 로비의 자동문이 열리며 검은 정장의 남자들 열두 명이 줄지어 들어오는 장면, 뒤로 카메라 플래시 세례, 슬로우 모션, " + MUTE,
         ],
@@ -222,7 +222,7 @@ SECTIONS = [
     ),
     dict(
         name="심판",
-        ambience="stunned lobby silence, wordless gasps and murmurs, paper envelope rustle, quiet sobbing",
+        ambience="stunned quiet lobby room tone, paper envelope rustle, soft slow footsteps",
         narration_shots=[
             f"{TAESEOK}이 몸을 떨며 고개를 숙이는 장면, {MUTE}",
         ],

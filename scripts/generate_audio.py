@@ -318,37 +318,61 @@ def lipsync_scene(cfg, key, v_url, audio_path, index):
     return None
 
 
+AMB_NEGATIVE = ("music, melody, song, speech, talking, dialogue, voice, narration, "
+                "crowd murmur, whispering, mumbling, human voice, vocal sounds, "
+                "English words, Chinese words, singing, laughing")
+
+_amb_lock = __import__("threading").Lock()
+
+
+def ambience_group_clip(cfg, key, v_url, prompt):
+    """같은 프롬프트(=같은 장소)의 장면들은 현장음 생성 1회를 공유한다.
+
+    말소리 섞임 사고 이후: 장면마다 따로 만들면 비용도 크고 품질 편차도 커서,
+    프롬프트 해시로 캐시(ambg-XXXX.media)해 그룹당 한 번만 생성한다.
+    """
+    import hashlib
+    tag = hashlib.md5(prompt.encode()).hexdigest()[:8]
+    raw = os.path.join(WORK_DIR, f"ambg-{tag}.media")
+    with _amb_lock:  # 같은 그룹 동시 생성 방지
+        if cached(raw):
+            return raw
+        result = fal_run(cfg["ambience_model"], {
+            "video_url": v_url,
+            "prompt": prompt,
+            "negative_prompt": AMB_NEGATIVE,
+            "duration": 30,
+        }, key, f"ambience group {tag}")
+        if result is None:
+            return None
+        url = find_video_url(result) or find_audio_url(result)
+        if not url:
+            print(f"  [ambience {tag}] 응답에서 미디어 URL을 못 찾음: {result}")
+            return None
+        return raw if download_retry(url, raw) else None
+
+
 def ambience_scene(cfg, key, v_url, index, duration):
-    """장면 영상을 분석해 어울리는 현장음(음악 제외)을 생성한 wav 경로를 돌려준다. 실패 시 None."""
+    """장면에 깔 현장음 wav 경로를 돌려준다(그룹 클립에서 잘라냄). 실패 시 None."""
     wav = os.path.join(WORK_DIR, f"amb{index:02d}.wav")
     if cached(wav):
         print(f"  [ambience {index:02d}] 기존 파일 재사용")
         return wav
-    model = cfg.get("ambience_model")
-    if not model:
+    if not cfg.get("ambience_model"):
         return None
     prompts = cfg.get("ambience_prompts", [])
     prompt = prompts[index - 1] if index - 1 < len(prompts) else "realistic ambient sound"
-    payload = {
-        "video_url": v_url,
-        "prompt": prompt,
-        "negative_prompt": "music, melody, song, speech, talking, dialogue, voice, narration, English words, singing",
-        "duration": min(int(round(duration)), 30),
-    }
-    result = fal_run(model, payload, key, f"ambience {index:02d}")
-    if result is None:
+    raw = ambience_group_clip(cfg, key, v_url, prompt)
+    if not raw:
         return None
-    url = find_video_url(result) or find_audio_url(result)
-    if not url:
-        print(f"  [ambience {index:02d}] 응답에서 미디어 URL을 못 찾음: {result}")
-        return None
-    raw = os.path.join(WORK_DIR, f"amb{index:02d}.media")
-    if not download_retry(url, raw):
-        return None
-    wav = os.path.join(WORK_DIR, f"amb{index:02d}.wav")
+    # 장면마다 그룹 클립의 다른 구간을 써서 티 나는 반복을 피한다
+    total = probe_duration(raw)
+    offset = 0.0
+    if total > duration + 0.5:
+        offset = (index * 3.1) % max(total - duration - 0.2, 0.1)
     subprocess.run(["ffmpeg", "-y", "-i", raw, "-vn",
-                    "-af", f"atrim=0:{duration:.3f}", wav],
-                   check=True, capture_output=True)
+                    "-af", f"atrim={offset:.3f}:{offset + duration:.3f},asetpts=PTS-STARTPTS",
+                    wav], check=True, capture_output=True)
     return wav
 
 
