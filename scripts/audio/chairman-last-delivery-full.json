@@ -132,7 +132,8 @@
     "Naration"
   ],
   "silent_styles": [
-    "Caption"
+    "Caption",
+    "NameTag"
   ],
   "lipsync_models": [
     "fal-ai/sync-lipsync",
