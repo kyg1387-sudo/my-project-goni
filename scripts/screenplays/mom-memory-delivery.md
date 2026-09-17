@@ -107,3 +107,5 @@
 - 경비원 명찰: "김영곤" — 초상 사진의 빈 명찰표에 폰트 합성(완료, guard 기준).
 - 확정 배우: 정례=jeongrye-2, 혜정=hyejeong-fix-1(남색 재킷 보정), 민호=minho-1,
   경비원=guard-cameo(감독 사진 얼굴 합성).
+- 확정 목소리(오디션, 감정표현 기준): 정례=Abbess, 혜정=Calm_Woman,
+  민호=Decent_Boy, 경비원=Deep_Voice_Man. (MiniMax speech-02-hd)
