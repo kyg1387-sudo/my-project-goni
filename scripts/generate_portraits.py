@@ -135,6 +135,9 @@ def main():
         if person.get("refs"):
             ref_urls = []
             for ref in person["refs"]:
+                if ref.startswith("http"):
+                    ref_urls.append(ref)   # 공개 URL은 그대로 전달
+                    continue
                 if not os.path.exists(ref):
                     sys.exit(f"[{pid}] 기준 이미지 없음: {ref} (앞 단계 생성 실패?)")
                 if ref not in upload_cache:

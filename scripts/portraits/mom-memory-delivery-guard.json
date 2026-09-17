@@ -1,0 +1,25 @@
+{
+  "characters": [
+    {
+      "id": "guard-cameo",
+      "count": 2,
+      "refs": [
+        "https://github.com/user-attachments/assets/f1381f38-4e58-475d-8b92-023caf25ab13",
+        "assets/portraits/mom-memory-delivery/guard-1.png"
+      ],
+      "prompt": "두 번째 사진 속 경비원의 몸·회색 제복·정모·가슴의 빈 명찰표·자세·구도·밝은 회색 무지 배경은 전부 그대로 유지하고, 얼굴만 첫 번째 사진의 남성 얼굴로 자연스럽게 바꿔줘. 첫 번째 사진 남성의 안경과 이목구비, 인상을 그대로 살리되 60대 경비원답게 자연스럽게 어울리도록. 실사 사진 화질, 화면에 글자 없음."
+    },
+    {
+      "id": "guard-side",
+      "count": 1,
+      "refs": ["out/portraits/guard-cameo-1.png"],
+      "prompt": "이 경비원을 그대로 유지한 채(같은 얼굴, 같은 안경, 같은 회색 제복과 정모), 몸과 고개를 왼쪽으로 돌려 측면 옆모습이 보이는 상반신 사진으로 만들어줘. 같은 밝은 회색 무지 배경, 같은 조명, 실사 사진 화질."
+    },
+    {
+      "id": "guard-back",
+      "count": 1,
+      "refs": ["out/portraits/guard-cameo-1.png"],
+      "prompt": "이 경비원을 그대로 유지한 채(같은 회색 제복과 정모), 뒤로 돌아서 등과 뒷모습이 보이는 상반신 사진으로 만들어줘. 같은 밝은 회색 무지 배경, 같은 조명, 실사 사진 화질."
+    }
+  ]
+}
