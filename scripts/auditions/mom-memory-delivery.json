@@ -1,0 +1,31 @@
+{
+  "tts_model": "fal-ai/minimax/speech-02-hd",
+  "language_boost": "Korean",
+  "speed": 1.0,
+  "tests": [
+    {"id": "정례후보1-Wise_Woman-오열", "voice": "Wise_Woman", "emotion": "sad", "speed": 0.92,
+     "text": "아는데… 아는데도, 비만 오면 여기가 이렇게 아파서… 그날 조금만 빨리 왔으면, 우리 민호…"},
+    {"id": "정례후보1-Wise_Woman-해맑음", "voice": "Wise_Woman", "emotion": "happy",
+     "text": "어, 혜정 왔니? 오빠 우산 갖다주러 왔지. 오늘 비 온다잖아."},
+    {"id": "정례후보2-Calm_Woman-오열", "voice": "Calm_Woman", "emotion": "sad", "speed": 0.92,
+     "text": "아는데… 아는데도, 비만 오면 여기가 이렇게 아파서… 그날 조금만 빨리 왔으면, 우리 민호…"},
+    {"id": "정례후보2-Calm_Woman-해맑음", "voice": "Calm_Woman", "emotion": "happy",
+     "text": "어, 혜정 왔니? 오빠 우산 갖다주러 왔지. 오늘 비 온다잖아."},
+    {"id": "정례후보3-Abbess-오열", "voice": "Abbess", "emotion": "sad", "speed": 0.92,
+     "text": "아는데… 아는데도, 비만 오면 여기가 이렇게 아파서… 그날 조금만 빨리 왔으면, 우리 민호…"},
+    {"id": "정례후보3-Abbess-해맑음", "voice": "Abbess", "emotion": "happy",
+     "text": "어, 혜정 왔니? 오빠 우산 갖다주러 왔지. 오늘 비 온다잖아."},
+    {"id": "혜정후보1-Calm_Woman-울음", "voice": "Calm_Woman", "emotion": "sad",
+     "text": "엄마 잘못 아니야… 엄마 잘못 아니야, 엄마…"},
+    {"id": "혜정후보2-Sweet_Girl_2-울음", "voice": "Sweet_Girl_2", "emotion": "sad",
+     "text": "엄마 잘못 아니야… 엄마 잘못 아니야, 엄마…"},
+    {"id": "민호후보1-Decent_Boy-해맑음", "voice": "Decent_Boy", "emotion": "happy",
+     "text": "엄마! 나 우산 없어도 돼! 금방 뛰어가면 되는데, 뭐!"},
+    {"id": "민호후보2-Lively_Girl-해맑음", "voice": "Lively_Girl", "emotion": "happy",
+     "text": "엄마! 나 우산 없어도 돼! 금방 뛰어가면 되는데, 뭐!"},
+    {"id": "경비원후보1-Deep_Voice_Man", "voice": "Deep_Voice_Man", "emotion": "neutral", "speed": 0.95,
+     "text": "늘 저 자리에서, 우산 들고 아이들 나오는 것만 보다 가십니다."},
+    {"id": "경비원후보2-Patient_Man", "voice": "Patient_Man", "emotion": "neutral", "speed": 0.95,
+     "text": "늘 저 자리에서, 우산 들고 아이들 나오는 것만 보다 가십니다."}
+  ]
+}

@@ -23,12 +23,58 @@ on:
         description: (초상 모드) 다시 만들 인물 id 목록 (공백 구분, 예 "guard minho")
         required: false
         default: ""
+      audition_spec:
+        description: 목소리 오디션 모드 — 스펙 이름 (scripts/auditions/<spec>.json). 지정 시 TTS 샘플만 생성
+        required: false
+        default: ""
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
   SPEC: ${{ inputs.portraits_spec }}
 
 jobs:
+  audition:
+    if: ${{ inputs.audition_spec != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    env:
+      ASPEC: ${{ inputs.audition_spec }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 기존 샘플 복원 (재사용)
+        run: |
+          if [ -d "assets/auditions/${ASPEC}" ]; then
+            mkdir -p out/audition
+            cp -nv "assets/auditions/${ASPEC}"/*.mp3 out/audition/ || true
+          fi
+
+      - name: 오디션 샘플 생성 (fal.ai TTS)
+        env:
+          FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+        run: python3 scripts/voice_audition.py "${ASPEC}"
+
+      - name: 샘플 업로드
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ASPEC }}-audition
+          path: out/audition/*.mp3
+          retention-days: 7
+
+      - name: 샘플을 저장소에 커밋
+        run: |
+          mkdir -p "assets/auditions/${ASPEC}"
+          cp -v out/audition/*.mp3 "assets/auditions/${ASPEC}/"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "assets/auditions/${ASPEC}"
+          git diff --cached --quiet || git commit -m "목소리 오디션 샘플 추가 (${ASPEC})"
+          git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
   portraits:
     if: ${{ inputs.portraits_spec != '' }}
     runs-on: ubuntu-latest
@@ -87,7 +133,7 @@ jobs:
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
   generate:
-    if: ${{ inputs.portraits_spec == '' }}
+    if: ${{ inputs.portraits_spec == '' && inputs.audition_spec == '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 240
     steps:
