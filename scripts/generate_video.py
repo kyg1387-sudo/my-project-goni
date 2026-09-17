@@ -48,9 +48,10 @@ def load_scenes(path):
     for scene in data["scenes"]:
         if isinstance(scene, dict):
             prompt, dur = scene["prompt"], int(scene.get("duration", default_dur))
+            refs = scene.get("refs") or []
         else:
-            prompt, dur = scene, default_dur
-        items.append((f"{prompt}, {style}" if style else prompt, dur))
+            prompt, dur, refs = scene, default_dur, []
+        items.append((f"{prompt}, {style}" if style else prompt, dur, refs))
     return items, data.get("ratio", "9:16")
 
 
@@ -115,16 +116,45 @@ def ark_generate(base_url, model, key, index, prompt, duration, ratio):
 # ---------- fal.ai ----------
 
 FAL_MODEL = os.environ.get("FAL_VIDEO_MODEL", "fal-ai/bytedance/seedance/v1/lite/text-to-video")
+# 기준 초상(참조 이미지) 기반 생성 — 인물 일관성 유지 (refs가 있는 장면에 사용)
+FAL_REF_MODEL = os.environ.get("FAL_REF_MODEL", "fal-ai/bytedance/seedance/v1/lite/reference-to-video")
+
+_upload_cache = {}
 
 
-def fal_generate(key, index, prompt, duration, ratio):
+def fal_upload(key, path):
+    """로컬 참조 이미지를 fal 스토리지에 올리고 URL을 돌려준다 (파일별 1회)."""
+    if path in _upload_cache:
+        return _upload_cache[path]
     headers = {"Authorization": f"Key {key}"}
-    status, task = http_json(f"https://queue.fal.run/{FAL_MODEL}", {
+    status, init = http_json("https://rest.fal.ai/storage/upload/initiate", {
+        "file_name": os.path.basename(path),
+        "content_type": "image/png",
+    }, headers)
+    if status != 200 or "upload_url" not in init:
+        sys.exit(f"fal 스토리지 업로드 시작 실패 (HTTP {status}): {init}")
+    req = urllib.request.Request(init["upload_url"], data=open(path, "rb").read(),
+                                 headers={"Content-Type": "image/png"}, method="PUT")
+    with urllib.request.urlopen(req, timeout=120) as resp:
+        if resp.status not in (200, 201, 204):
+            sys.exit(f"fal 스토리지 업로드 실패 (HTTP {resp.status})")
+    _upload_cache[path] = init["file_url"]
+    print(f"  참조 이미지 업로드: {path}")
+    return init["file_url"]
+
+
+def fal_generate(key, index, prompt, duration, ratio, ref_urls=None):
+    headers = {"Authorization": f"Key {key}"}
+    model = FAL_REF_MODEL if ref_urls else FAL_MODEL
+    payload = {
         "prompt": prompt,
         "aspect_ratio": ratio,
         "resolution": "720p",
         "duration": str(duration),
-    }, headers)
+    }
+    if ref_urls:
+        payload["reference_image_urls"] = ref_urls
+    status, task = http_json(f"https://queue.fal.run/{model}", payload, headers)
     if status != 200:
         print(f"  [fal] 작업 생성 실패 (HTTP {status}): {task}")
         return None
@@ -182,13 +212,24 @@ def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     paths = []
     provider = None
-    for index, (prompt, duration) in enumerate(scenes, start=1):
+    fal_key = os.environ.get("FAL_API_KEY")
+    for index, (prompt, duration, refs) in enumerate(scenes, start=1):
         existing = os.path.join(OUT_DIR, f"scene{index:02d}.mp4")
         if os.path.exists(existing) and os.path.getsize(existing) > 100_000:
             print(f"[scene {index:02d}] 기존 파일 재사용 (이어하기)")
             paths.append(existing)
             continue
         print(f"[scene {index:02d}] ({duration}s) {prompt[:40]}...")
+        if refs:
+            # 기준 초상 기반 장면 — 인물 일관성을 위해 fal 참조 모델을 사용
+            if not fal_key:
+                sys.exit("refs가 있는 장면에는 FAL_API_KEY가 필요합니다.")
+            ref_urls = [fal_upload(fal_key, r) for r in refs]
+            path = fal_generate(fal_key, index, prompt, duration, ratio, ref_urls)
+            if not path:
+                sys.exit(f"[scene {index:02d}] 생성 실패 — 위 로그를 확인하세요.")
+            paths.append(path)
+            continue
         if provider:
             path = provider(index, prompt, duration)
             if not path:
