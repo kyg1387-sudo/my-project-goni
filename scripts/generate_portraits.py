@@ -51,16 +51,44 @@ def extract_image_urls(result):
     return [im["url"] for im in images if isinstance(im, dict) and im.get("url")]
 
 
-def fal_image(key, prompt, num_images):
+FAL_EDIT_MODEL = os.environ.get("FAL_EDIT_MODEL", "fal-ai/nano-banana/edit")
+
+
+def fal_upload(key, path):
+    """로컬 이미지를 fal 스토리지에 올리고 URL을 돌려준다 (편집 모델의 기준 이미지용)."""
     headers = {"Authorization": f"Key {key}"}
+    status, init = http_json("https://rest.fal.ai/storage/upload/initiate", {
+        "file_name": os.path.basename(path),
+        "content_type": "image/png",
+    }, headers)
+    if status != 200 or "upload_url" not in init:
+        sys.exit(f"fal 스토리지 업로드 시작 실패 (HTTP {status}): {init}")
+    data = open(path, "rb").read()
+    req = urllib.request.Request(init["upload_url"], data=data,
+                                 headers={"Content-Type": "image/png"}, method="PUT")
+    with urllib.request.urlopen(req, timeout=120) as resp:
+        if resp.status not in (200, 201, 204):
+            sys.exit(f"fal 스토리지 업로드 실패 (HTTP {resp.status})")
+    return init["file_url"]
+
+
+def fal_image(key, prompt, num_images, ref_urls=None, model=None):
+    headers = {"Authorization": f"Key {key}"}
+    model = model or (FAL_EDIT_MODEL if ref_urls else FAL_IMAGE_MODEL)
     # 모델별 파라미터 차이를 흡수: 실패하면 다음 페이로드로 재시도
-    payloads = [
-        {"prompt": prompt, "aspect_ratio": "3:4", "num_images": num_images},
-        {"prompt": prompt, "image_size": "portrait_4_3", "num_images": num_images},
-        {"prompt": prompt, "num_images": num_images},
-    ]
+    if ref_urls:
+        payloads = [
+            {"prompt": prompt, "image_urls": ref_urls, "num_images": num_images},
+            {"prompt": prompt, "image_url": ref_urls[0], "num_images": num_images},
+        ]
+    else:
+        payloads = [
+            {"prompt": prompt, "aspect_ratio": "3:4", "num_images": num_images},
+            {"prompt": prompt, "image_size": "portrait_4_3", "num_images": num_images},
+            {"prompt": prompt, "num_images": num_images},
+        ]
     for payload in payloads:
-        status, task = http_json(f"https://queue.fal.run/{FAL_IMAGE_MODEL}", payload, headers)
+        status, task = http_json(f"https://queue.fal.run/{model}", payload, headers)
         if status != 200:
             print(f"  [fal] 작업 생성 실패 (HTTP {status}): {task} — 다른 파라미터로 재시도")
             continue
@@ -95,6 +123,7 @@ def main():
     os.makedirs(OUT_DIR, exist_ok=True)
 
     failed = []
+    upload_cache = {}
     for person in spec["characters"]:
         pid, count = person["id"], int(person.get("count", 2))
         todo = [n for n in range(1, count + 1)
@@ -102,8 +131,19 @@ def main():
         if not todo:
             print(f"[{pid}] 이미 생성됨 — 재사용")
             continue
+        ref_urls = None
+        if person.get("refs"):
+            ref_urls = []
+            for ref in person["refs"]:
+                if not os.path.exists(ref):
+                    sys.exit(f"[{pid}] 기준 이미지 없음: {ref} (앞 단계 생성 실패?)")
+                if ref not in upload_cache:
+                    upload_cache[ref] = fal_upload(key, ref)
+                    print(f"  기준 이미지 업로드: {ref}")
+                ref_urls.append(upload_cache[ref])
         print(f"[{pid}] {len(todo)}장 생성: {person['prompt'][:60]}…")
-        urls = fal_image(key, person["prompt"], len(todo))
+        urls = fal_image(key, person["prompt"], len(todo),
+                         ref_urls=ref_urls, model=person.get("model"))
         if len(urls) < len(todo):
             failed.append(pid)
         for n, url in zip(todo, urls):

@@ -1,0 +1,46 @@
+{
+  "characters": [
+    {
+      "id": "hyejeong-fix",
+      "count": 1,
+      "refs": ["assets/portraits/mom-memory-delivery/hyejeong-1.png"],
+      "prompt": "이 여성의 얼굴과 머리 모양을 그대로 유지한 채, 의상만 남색 무지 재킷(로고·무늬 없음)과 흰 블라우스 차림으로 바꿔줘. 같은 밝은 회색 무지 배경, 같은 정면 상반신 구도, 같은 조명, 실사 사진 화질."
+    },
+    {
+      "id": "hyejeong-side",
+      "count": 1,
+      "refs": ["out/portraits/hyejeong-fix-1.png"],
+      "prompt": "이 인물을 그대로 유지한 채(같은 얼굴, 같은 머리 모양, 같은 남색 재킷과 흰 블라우스), 몸과 고개를 왼쪽으로 돌려 측면 옆모습이 보이는 상반신 사진으로 만들어줘. 같은 밝은 회색 무지 배경, 같은 조명, 실사 사진 화질."
+    },
+    {
+      "id": "hyejeong-back",
+      "count": 1,
+      "refs": ["out/portraits/hyejeong-fix-1.png"],
+      "prompt": "이 인물을 그대로 유지한 채(같은 머리 모양, 같은 남색 재킷), 뒤로 돌아서 등과 뒷머리가 보이는 뒷모습 상반신 사진으로 만들어줘. 같은 밝은 회색 무지 배경, 같은 조명, 실사 사진 화질."
+    },
+    {
+      "id": "jeongrye-side",
+      "count": 1,
+      "refs": ["assets/portraits/mom-memory-delivery/jeongrye-2.png"],
+      "prompt": "이 할머니를 그대로 유지한 채(같은 얼굴, 같은 흰머리 파마, 같은 연보라색 카디건), 몸과 고개를 왼쪽으로 돌려 측면 옆모습이 보이는 상반신 사진으로 만들어줘. 같은 밝은 회색 무지 배경, 같은 조명, 실사 사진 화질."
+    },
+    {
+      "id": "jeongrye-back",
+      "count": 1,
+      "refs": ["assets/portraits/mom-memory-delivery/jeongrye-2.png"],
+      "prompt": "이 할머니를 그대로 유지한 채(같은 흰머리 파마, 같은 연보라색 카디건), 뒤로 돌아서 등과 뒷머리가 보이는 뒷모습 상반신 사진으로 만들어줘. 같은 밝은 회색 무지 배경, 같은 조명, 실사 사진 화질."
+    },
+    {
+      "id": "minho-side",
+      "count": 1,
+      "refs": ["assets/portraits/mom-memory-delivery/minho-1.png"],
+      "prompt": "이 남자아이를 그대로 유지한 채(같은 얼굴, 같은 짧은 검은 머리, 같은 하늘색 티셔츠와 노란 책가방), 몸과 고개를 왼쪽으로 돌려 측면 옆모습이 보이는 상반신 사진으로 만들어줘. 같은 밝은 회색 무지 배경, 같은 조명, 실사 사진 화질."
+    },
+    {
+      "id": "minho-back",
+      "count": 1,
+      "refs": ["assets/portraits/mom-memory-delivery/minho-1.png"],
+      "prompt": "이 남자아이를 그대로 유지한 채(같은 짧은 검은 머리, 같은 하늘색 티셔츠), 뒤로 돌아서 등에 멘 노란 책가방과 뒷머리가 보이는 뒷모습 상반신 사진으로 만들어줘. 같은 밝은 회색 무지 배경, 같은 조명, 실사 사진 화질."
+    }
+  ]
+}
