@@ -136,6 +136,9 @@ jobs:
     if: ${{ inputs.portraits_spec == '' && inputs.audition_spec == '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 240
+    permissions:
+      contents: write
+      actions: read
     steps:
       - uses: actions/checkout@v4
 
@@ -169,6 +172,23 @@ jobs:
         # 자막·음성 누적 오차를 막는다: 1280x720/24fps 통일, 화면비 유지 + 패딩,
         # 장면 파일의 계획 길이(duration)로 정확히 자름
         run: python3 scripts/concat_scenes.py "scripts/scenes/${SKIT}.json" out "out/${SKIT}-skit.mp4"
+
+      - name: 장면 검수용 프레임 시트 커밋 (실패해도 생성분 보존)
+        if: always()
+        run: |
+          sudo apt-get install -y ffmpeg 2>/dev/null || true
+          mkdir -p "assets/qa/${SKIT}"
+          for f in out/scene*.mp4; do
+            [ -e "$f" ] || continue
+            n=$(basename "$f" .mp4)
+            ffmpeg -v error -ss 1.5 -i "$f" -frames:v 1 -vf scale=480:-2 -q:v 5 "assets/qa/${SKIT}/${n}.jpg" -y || true
+          done
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "assets/qa/${SKIT}" || true
+          git diff --cached --quiet || git commit -m "장면 검수 프레임 (${SKIT})"
+          git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          git push origin "HEAD:${GITHUB_REF_NAME}" || true
 
       - name: 결과 영상 업로드
         if: always()
