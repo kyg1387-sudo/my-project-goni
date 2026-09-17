@@ -73,6 +73,9 @@ def http_json(url, payload=None, headers=None):
         except ValueError:
             pass
         return e.code, body
+    except (urllib.error.URLError, TimeoutError, OSError) as e:
+        # 접속 실패/시간 초과 — 호출자가 다음 공급자로 넘어갈 수 있게 오류로 돌려준다
+        return 0, f"접속 실패: {e}"
 
 
 def download(url, path):
@@ -102,7 +105,7 @@ def ark_generate(base_url, model, key, index, prompt, duration, ratio):
     while True:
         time.sleep(10)
         status, info = http_json(f"{base_url}/contents/generations/tasks/{task_id}", headers=headers)
-        state = info.get("status")
+        state = info.get("status") if isinstance(info, dict) else None
         if state == "succeeded":
             path = os.path.join(OUT_DIR, f"scene{index:02d}.mp4")
             download(info["content"]["video_url"], path)
@@ -163,7 +166,7 @@ def fal_generate(key, index, prompt, duration, ratio, ref_urls=None):
     while True:
         time.sleep(10)
         _, info = http_json(status_url, headers=headers)
-        state = info.get("status")
+        state = info.get("status") if isinstance(info, dict) else None
         if state == "COMPLETED":
             r_status, result = http_json(result_url, headers=headers)
             url = None
