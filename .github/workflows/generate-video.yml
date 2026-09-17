@@ -39,6 +39,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: 이전 실행 초상 복원 (이어하기)
+        if: ${{ inputs.resume_run_id != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.SPEC }}-portraits
+          path: out/portraits
+          run-id: ${{ inputs.resume_run_id }}
+          github-token: ${{ github.token }}
+
       - name: 커밋된 초상 복원 (이미 확정된 초상 재사용)
         run: |
           if [ -d "assets/portraits/${SPEC}" ]; then
