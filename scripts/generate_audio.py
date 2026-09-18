@@ -206,20 +206,20 @@ def probe_duration(path):
 
 
 def plan_placement(clips, total):
-    """겹치지 않는 배치 [(실제 시작, 배속, style, 파일)]을 계산한다.
+    """겹치지 않는 배치 [(실제 시작, 배속, style, 화자, 파일)]을 계산한다.
 
     각 대사는 자막 슬롯(다음 대사 시작까지)보다 길면 MAX_TEMPO까지 배속해
     슬롯에 맞추고, 그래도 길면 다음 대사를 앞 대사가 끝난 뒤로 밀어
     절대 겹치지 않게 한다. 여유가 생기면 다시 자막 타이밍으로 복귀한다.
     """
     placed, prev_end = [], 0.0
-    for k, (start, style, path) in enumerate(clips):
+    for k, (start, style, name, path) in enumerate(clips):
         dur = probe_duration(path)
         next_start = clips[k + 1][0] if k + 1 < len(clips) else total
         slot = max(next_start - start - GAP, 0.5)
         tempo = min(max(dur / slot, 1.0), MAX_TEMPO)
         actual = max(start, prev_end + GAP)
-        placed.append((actual, tempo, style, path))
+        placed.append((actual, tempo, style, name, path))
         prev_end = actual + dur / tempo
         if tempo > 1.0 or actual > start + 0.01:
             print(f"  배치 조정 [{k + 1:03d}]: 시작 {start:.2f}→{actual:.2f}s, "
@@ -233,10 +233,10 @@ def render_track(placed, total, out_wav):
     """배치된 클립들을 무음 바탕 위에 얹어 total초 길이 wav로 렌더링한다."""
     cmd = ["ffmpeg", "-y", "-f", "lavfi", "-t", f"{total:.3f}",
            "-i", "anullsrc=r=44100:cl=stereo"]
-    for _, _, _, path in placed:
-        cmd += ["-i", path]
+    for entry in placed:
+        cmd += ["-i", entry[-1]]
     parts, mix_inputs = [], ["[0:a]"]
-    for k, (start, tempo, _style, _path) in enumerate(placed):
+    for k, (start, tempo, *_rest) in enumerate(placed):
         ms = int(round(start * 1000))
         chain = f"[{k + 1}:a]"
         if tempo > 1.0:
@@ -255,15 +255,15 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
     ambience = ambience or []
     duration = probe_duration(video)
     cmd = ["ffmpeg", "-y", "-i", video]
-    for _, _, _, path in placed:
-        cmd += ["-i", path]
+    for entry in placed:
+        cmd += ["-i", entry[-1]]
     for _, path in ambience:
         cmd += ["-i", path]
     if bgm:
         cmd += ["-stream_loop", "-1", "-i", bgm]
 
     parts, mix_inputs = [], []
-    for k, (start, tempo, _style, _path) in enumerate(placed):
+    for k, (start, tempo, *_rest) in enumerate(placed):
         ms = int(round(start * 1000))
         chain = f"[{k + 1}:a]"
         if tempo > 1.0:
@@ -368,8 +368,9 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
     total = t
     print(f"장면 {len(scenes)}개, 총 {total:.2f}초")
 
-    # 대사(내레이션 제외)만 담긴 전체 트랙
-    dial_wav = render_track(placed_dialogue, total, os.path.join(WORK_DIR, "dialogue.wav"))
+    # 장면별로 "화면에 보이는 인물"의 대사만 립싱크에 사용한다.
+    # scene_speakers[i]: i번째 장면에 보이는 화자 이름 목록 (없으면 모든 화자 허용)
+    scene_speakers = cfg.get("scene_speakers", [])
 
     def process_scene(item):
         """한 장면의 현장음 생성과 립싱크. (최종 장면 경로, 현장음 항목|None)을 돌려준다."""
@@ -381,17 +382,18 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
         if not amb:
             print(f"  [scene {i:02d}] 현장음 없음")
 
-        has_dialogue = any(
-            start < t1 and (start + probe_duration(p) / tempo) > t0
-            for start, tempo, _s, p in placed_dialogue)
-        if not has_dialogue:
-            print(f"[scene {i:02d}] 대사 없음 — 립싱크 생략")
+        visible = set(scene_speakers[i - 1]) if i - 1 < len(scene_speakers) else None
+        scene_lines = [
+            (max(start - t0, 0.0), tempo, style, name, path)
+            for start, tempo, style, name, path in placed_dialogue
+            if start < t1 and (start + probe_duration(path) / tempo) > t0
+            and (visible is None or name in visible)]
+        if not scene_lines:
+            print(f"[scene {i:02d}] 화면 속 인물의 대사 없음 — 립싱크 생략")
             return scene, amb_item
-        seg = os.path.join(WORK_DIR, f"seg{i:02d}.wav")
-        subprocess.run(["ffmpeg", "-y", "-i", dial_wav,
-                        "-af", f"atrim={t0:.3f}:{t1:.3f},asetpts=PTS-STARTPTS", seg],
-                       check=True, capture_output=True)
-        print(f"[scene {i:02d}] 립싱크 중... ({t0:.1f}~{t1:.1f}s)")
+        seg = render_track(scene_lines, t1 - t0, os.path.join(WORK_DIR, f"seg{i:02d}.wav"))
+        print(f"[scene {i:02d}] 립싱크 중... ({t0:.1f}~{t1:.1f}s, "
+              f"화자 {sorted({l[3] for l in scene_lines})})")
         lip = lipsync_scene(cfg, key, v_url, seg, i)
         if not lip:
             print(f"  [scene {i:02d}] 립싱크 실패 — 원본 유지")
@@ -459,7 +461,9 @@ def main():
             path = tts_line(cfg, key, i, voice, text, emotion)
         if not path:
             raise RuntimeError(f"[tts {i:03d}] 생성 실패 — 위 로그를 확인하세요.")
-        return (start, style, path)
+        # 화자 이름: Name 필드가 비어 있으면 스타일→이름 매핑 사용 (예: Doyun → 도윤)
+        speaker = name or cfg.get("style_names", {}).get(style, style)
+        return (start, style, speaker, path)
 
     with ThreadPoolExecutor(max_workers=int(cfg.get("tts_workers", 4))) as pool:
         clips = list(pool.map(make_tts, enumerate(lines, start=1)))
