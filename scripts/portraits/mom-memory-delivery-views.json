@@ -3,50 +3,79 @@
     {
       "id": "hyejeong-fix",
       "count": 1,
-      "refs": ["assets/portraits/mom-memory-delivery/hyejeong-1.png"],
+      "refs": [
+        "assets/portraits/mom-memory-delivery/hyejeong-1.png"
+      ],
       "prompt": "이 여성의 얼굴과 머리 모양을 그대로 유지한 채, 의상만 남색 무지 재킷(로고·무늬 없음)과 흰 블라우스 차림으로 바꿔줘. 같은 밝은 회색 무지 배경, 같은 정면 상반신 구도, 같은 조명, 실사 사진 화질."
     },
     {
       "id": "hyejeong-side",
       "count": 1,
-      "refs": ["out/portraits/hyejeong-fix-1.png"],
+      "refs": [
+        "out/portraits/hyejeong-fix-1.png"
+      ],
       "prompt": "이 인물을 그대로 유지한 채(같은 얼굴, 같은 머리 모양, 같은 남색 재킷과 흰 블라우스), 몸과 고개를 왼쪽으로 돌려 측면 옆모습이 보이는 상반신 사진으로 만들어줘. 같은 밝은 회색 무지 배경, 같은 조명, 실사 사진 화질."
     },
     {
       "id": "hyejeong-back",
       "count": 1,
-      "refs": ["out/portraits/hyejeong-fix-1.png"],
+      "refs": [
+        "out/portraits/hyejeong-fix-1.png"
+      ],
       "prompt": "이 인물을 그대로 유지한 채(같은 머리 모양, 같은 남색 재킷), 뒤로 돌아서 등과 뒷머리가 보이는 뒷모습 상반신 사진으로 만들어줘. 같은 밝은 회색 무지 배경, 같은 조명, 실사 사진 화질."
     },
     {
       "id": "jeongrye-side",
       "count": 1,
-      "refs": ["assets/portraits/mom-memory-delivery/jeongrye-2.png"],
+      "refs": [
+        "assets/portraits/mom-memory-delivery/jeongrye-2.png"
+      ],
       "prompt": "이 할머니를 그대로 유지한 채(같은 얼굴, 같은 흰머리 파마, 같은 연보라색 카디건), 몸과 고개를 왼쪽으로 돌려 측면 옆모습이 보이는 상반신 사진으로 만들어줘. 같은 밝은 회색 무지 배경, 같은 조명, 실사 사진 화질."
     },
     {
       "id": "jeongrye-back",
       "count": 1,
-      "refs": ["assets/portraits/mom-memory-delivery/jeongrye-2.png"],
+      "refs": [
+        "assets/portraits/mom-memory-delivery/jeongrye-2.png"
+      ],
       "prompt": "이 할머니를 그대로 유지한 채(같은 흰머리 파마, 같은 연보라색 카디건), 뒤로 돌아서 등과 뒷머리가 보이는 뒷모습 상반신 사진으로 만들어줘. 같은 밝은 회색 무지 배경, 같은 조명, 실사 사진 화질."
     },
     {
       "id": "jeongrye-young",
       "count": 1,
-      "refs": ["assets/portraits/mom-memory-delivery/jeongrye-2.png"],
+      "refs": [
+        "assets/portraits/mom-memory-delivery/jeongrye-2.png"
+      ],
       "prompt": "이 할머니의 30년 전, 40대 초반(마흔두 살) 시절 모습으로 만들어줘. 훨씬 젊게: 주름이 거의 없는 매끈하고 탄력 있는 피부, 또렷한 눈매, 흰머리 없는 윤기 나는 검은 짧은 파마머리. 같은 사람임을 알아볼 수 있는 같은 얼굴형과 이목구비는 유지. 소박한 무지 앞치마 차림(무늬·글자 없음). 같은 밝은 회색 무지 배경, 정면 상반신 구도, 실사 사진 화질."
     },
     {
       "id": "minho-side",
       "count": 1,
-      "refs": ["assets/portraits/mom-memory-delivery/minho-1.png"],
+      "refs": [
+        "assets/portraits/mom-memory-delivery/minho-1.png"
+      ],
       "prompt": "이 남자아이를 그대로 유지한 채(같은 얼굴, 같은 짧은 검은 머리, 같은 하늘색 티셔츠와 노란 책가방), 몸과 고개를 왼쪽으로 돌려 측면 옆모습이 보이는 상반신 사진으로 만들어줘. 같은 밝은 회색 무지 배경, 같은 조명, 실사 사진 화질."
     },
     {
       "id": "minho-back",
       "count": 1,
-      "refs": ["assets/portraits/mom-memory-delivery/minho-1.png"],
+      "refs": [
+        "assets/portraits/mom-memory-delivery/minho-1.png"
+      ],
       "prompt": "이 남자아이를 그대로 유지한 채(같은 짧은 검은 머리, 같은 하늘색 티셔츠), 뒤로 돌아서 등에 멘 노란 책가방과 뒷머리가 보이는 뒷모습 상반신 사진으로 만들어줘. 같은 밝은 회색 무지 배경, 같은 조명, 실사 사진 화질."
+    },
+    {
+      "id": "jeongrye-sad",
+      "count": 1,
+      "refs": [
+        "assets/portraits/mom-memory-delivery/jeongrye-2.png"
+      ],
+      "prompt": "이 할머니를 그대로 유지한 채(같은 얼굴형, 같은 흰머리 파마, 같은 연보라색 카디건, 같은 밝은 회색 무지 배경), 표정만 바꿔줘: 뺨에 눈물이 흘러내리고 눈시울이 붉어진 채 얼굴이 일그러져 흐느껴 우는 깊은 슬픔의 오열 표정, 웃음기 전혀 없음. 정면 상반신, 실사 사진 화질."
+    },
+    {
+      "id": "school-plate",
+      "count": 1,
+      "prompt": "한국 초등학교 정문 옆 벽돌 기둥에 붙은 가로로 긴 스테인리스 학교 명판의 정면 클로즈업 사진. 명판 표면은 아무 글자도 없는 매끈한 무지 금속판. 흐린 하늘 아래 차분한 조명, 빗방울이 살짝 맺힘, 실사 사진 화질, 화면에 글자 없음. 16:9 가로 구도."
     }
   ]
 }
