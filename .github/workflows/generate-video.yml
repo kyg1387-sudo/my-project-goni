@@ -15,6 +15,10 @@ on:
         description: 복원 후 다시 만들 장면 번호 목록 (공백 구분, 예 "9 59 81")
         required: false
         default: ""
+      insert_at:
+        description: 장면 삽입 시 밀림 처리 — 이 번호부터 복원된 장면 파일을 한 칸씩 뒤로 개명 (예 "19")
+        required: false
+        default: ""
       portraits_spec:
         description: 인물 초상 생성 모드 — 스펙 이름 (scripts/portraits/<spec>.json). 지정 시 영상 생성 대신 초상만 생성
         required: false
@@ -183,6 +187,17 @@ jobs:
           path: out
           run-id: ${{ inputs.resume_run_id }}
           github-token: ${{ github.token }}
+
+      - name: 장면 삽입 밀림 처리 (뒤에서부터 한 칸씩 개명)
+        if: ${{ inputs.insert_at != '' }}
+        run: |
+          top=$(ls out/scene*.mp4 2>/dev/null | sed 's/.*scene\([0-9]*\)\.mp4/\1/' | sort -n | tail -1)
+          if [ -z "$top" ]; then exit 0; fi
+          for ((n=10#$top; n>=${{ inputs.insert_at }}; n--)); do
+            src=$(printf 'out/scene%02d.mp4' "$n")
+            dst=$(printf 'out/scene%02d.mp4' "$((n+1))")
+            if [ -e "$src" ]; then mv -v "$src" "$dst"; fi
+          done
 
       - name: 다시 만들 장면 삭제 (부분 재생성)
         if: ${{ inputs.regen_scenes != '' }}

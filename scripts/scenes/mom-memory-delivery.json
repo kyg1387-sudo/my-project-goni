@@ -57,10 +57,10 @@
       ]
     },
     {
-      "prompt": "주택가 골목길, 흐린 하늘, 72세 한국 할머니 정례(흰머리 섞인 회색 짧은 파마머리, 갸름한 얼굴, 연보라색 무지 카디건)이 눈물이 살짝 맺힌 채 접힌 낡은 노란색 우산을 두 팔로 더 꼭 끌어안고 고집스럽게 카메라를 향해 대사에 맞춰 입을 자연스럽게 움직이며 한국어로 말하는 정면 상반신 샷, 화면에는 말하는 사람 한 명만 등장",
+      "prompt": "주택가 골목길, 흐린 하늘, 72세 한국 할머니 정례(흰머리 섞인 회색 짧은 파마머리, 갸름한 얼굴, 연보라색 무지 카디건)이 눈물이 살짝 맺힌 채 접힌 낡은 노란색 우산을 두 팔로 더 꼭 끌어안고 고집스럽게, 웃음기 없이 카메라를 향해 대사에 맞춰 입을 자연스럽게 움직이며 한국어로 말하는 정면 상반신 샷, 화면에는 말하는 사람 한 명만 등장",
       "duration": 10,
       "refs": [
-        "assets/portraits/mom-memory-delivery/jeongrye-2.png"
+        "assets/portraits/mom-memory-delivery-views/jeongrye-sad-1.png"
       ]
     },
     {
@@ -124,6 +124,13 @@
       "refs": [
         "assets/portraits/mom-memory-delivery/jeongrye-2.png",
         "assets/portraits/mom-memory-delivery-views/hyejeong-fix-1.png"
+      ]
+    },
+    {
+      "prompt": "초등학교 정문 옆 벽돌 기둥에 붙은 학교 명판의 정면 클로즈업, 첨부된 기준 사진과 똑같은 명판과 글자를 그대로 유지, 거의 정지된 고정 샷(카메라 움직임 최소), 빗방울이 살짝 맺힌 스테인리스 명판, 아무도 입을 움직이거나 말하지 않는 장면",
+      "duration": 5,
+      "refs": [
+        "assets/portraits/mom-memory-delivery-views/school-plate-named.png"
       ]
     },
     {
@@ -340,7 +347,7 @@
       "prompt": "초등학교 정문 앞(아무 글자 없는 매끈한 교문 기둥과 무지 명판), 흐린 하늘, 72세 한국 할머니 정례(흰머리 섞인 회색 짧은 파마머리, 갸름한 얼굴, 연보라색 무지 카디건)이 뺨에 눈물이 흘러내리는 채 일그러진 얼굴로 가슴을 움켜쥐고 흐느껴 오열하는, 웃음기 없는 깊은 슬픔의 카메라를 향해 대사에 맞춰 입을 자연스럽게 움직이며 한국어로 말하는 정면 상반신 샷, 화면에는 말하는 사람 한 명만 등장",
       "duration": 10,
       "refs": [
-        "assets/portraits/mom-memory-delivery/jeongrye-2.png"
+        "assets/portraits/mom-memory-delivery-views/jeongrye-sad-1.png"
       ]
     },
     {

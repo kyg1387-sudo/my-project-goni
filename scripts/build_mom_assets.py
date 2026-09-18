@@ -29,6 +29,8 @@ REF_JR_Y = "assets/portraits/mom-memory-delivery-views/jeongrye-young-1.png"  # 
 REF_HJ = "assets/portraits/mom-memory-delivery-views/hyejeong-fix-1.png"
 REF_MH = "assets/portraits/mom-memory-delivery/minho-1.png"
 REF_GD = "assets/portraits/mom-memory-delivery-guard/guard-final.png"
+REF_JR_SAD = "assets/portraits/mom-memory-delivery-views/jeongrye-sad-1.png"   # 오열 표정 변형
+REF_PLATE = "assets/portraits/mom-memory-delivery-views/school-plate-named.png"  # "장흥초등학교" 합성 명판
 
 # 인물 고정 문구 (기준 초상과 함께 프롬프트에도 반복 — 이중 고정)
 JR = "72세 한국 할머니 정례(흰머리 섞인 회색 짧은 파마머리, 갸름한 얼굴, 연보라색 무지 카디건)"
@@ -84,7 +86,7 @@ SECTIONS = [
             S_JR: [
                 shot(f"{ALLEY}, 낡은 노란 우산을 품에 안은 {JR}이 태연하게 웃으며 {TALK}", [REF_JR]),
                 shot(f"{ALLEY}, {JR}이 노란 우산을 꼭 끌어안고 시무룩하지만 고집스러운 표정으로 {TALK}", [REF_JR]),
-                shot(f"{ALLEY}, {JR}이 눈물이 살짝 맺힌 채 접힌 낡은 노란색 우산을 두 팔로 더 꼭 끌어안고 고집스럽게 {TALK}", [REF_JR]),
+                shot(f"{ALLEY}, {JR}이 눈물이 살짝 맺힌 채 접힌 낡은 노란색 우산을 두 팔로 더 꼭 끌어안고 고집스럽게, 웃음기 없이 {TALK}", [REF_JR_SAD]),
             ],
         },
         lines=[
@@ -140,6 +142,9 @@ SECTIONS = [
             (S_HJ, "", "어디를 가는 거야, 대체…", "neutral"),
             (A, "5", f"{BUS}, {JR}이 창가에 앉아 노란 우산을 꼭 끌어안고 창밖을 바라보는 장면, {MUTE}", None, [REF_JR]),
             (A, "5", f"{HILL}, 앞서 걸어가는 {JR}과 멀찍이 뒤따르는 {HJ}, 화면에는 정확히 두 명만 등장, {MUTE}", None, [REF_JR, REF_HJ]),
+            (A, "5", f"초등학교 정문 옆 벽돌 기둥에 붙은 학교 명판의 정면 클로즈업, 첨부된 기준 사진과 "
+                     f"똑같은 명판과 글자를 그대로 유지, 거의 정지된 고정 샷(카메라 움직임 최소), "
+                     f"빗방울이 살짝 맺힌 스테인리스 명판, {MUTE}", None, [REF_PLATE]),
             (A, "10", f"{GATE}, {JR}이 교문 옆 늘 서던 자리에 멈춰 서서 노란 우산을 두 손으로 쥐고 "
                       f"운동장 쪽을 하염없이 바라보는 옆모습, 잔잔하고 아련한 연출, {MUTE}", None, [REF_JR]),
             (S_HJ, "", "…초등학교? 여기가 어디라고…", "surprised"),
@@ -216,7 +221,7 @@ SECTIONS = [
             S_JR: [
                 shot(f"{GATE}, {JR}이 해맑게 웃으며 노란 우산을 들어 보이고 {TALK}", [REF_JR]),
                 shot(f"{GATE}, {JR}이 처음으로 흔들리는 눈빛으로 조용히 {TALK}", [REF_JR]),
-                shot(f"{GATE}, {JR}이 뺨에 눈물이 흘러내리는 채 일그러진 얼굴로 가슴을 움켜쥐고 흐느껴 오열하는, 웃음기 없는 깊은 슬픔의 {TALK}", [REF_JR]),
+                shot(f"{GATE}, {JR}이 뺨에 눈물이 흘러내리는 채 일그러진 얼굴로 가슴을 움켜쥐고 흐느껴 오열하는, 웃음기 없는 깊은 슬픔의 {TALK}", [REF_JR_SAD]),
                 shot(f"{GATE_RAIN} 노란 우산 아래, {JR}이 평온한 눈물의 미소로 하교하는 아이들 쪽을 바라보다 {TALK}", [REF_JR]),
                 shot(f"{GATE_RAIN} 노란 우산 아래, {JR}이 딸을 바라보며 눈물의 미소로 {TALK}", [REF_JR]),
             ],
