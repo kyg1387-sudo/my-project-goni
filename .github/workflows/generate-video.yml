@@ -23,6 +23,10 @@ on:
         description: (초상 모드) 다시 만들 인물 id 목록 (공백 구분, 예 "guard minho")
         required: false
         default: ""
+      export_files:
+        description: 미리보기 내보내기 모드 — resume_run_id의 Artifact에서 꺼내 커밋할 파일 목록 (공백 구분, 예 "scene05.mp4")
+        required: false
+        default: ""
       audition_spec:
         description: 목소리 오디션 모드 — 스펙 이름 (scripts/auditions/<spec>.json). 지정 시 TTS 샘플만 생성
         required: false
@@ -132,8 +136,37 @@ jobs:
           git pull --rebase origin "${GITHUB_REF_NAME}" || true
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
+  export:
+    if: ${{ inputs.export_files != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Artifact에서 장면 복원
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.SKIT }}-skit-video
+          path: out
+          run-id: ${{ inputs.resume_run_id }}
+          github-token: ${{ github.token }}
+      - name: 선택 파일 커밋
+        run: |
+          mkdir -p "assets/preview/${SKIT}"
+          for f in ${{ inputs.export_files }}; do
+            cp -v "out/$f" "assets/preview/${SKIT}/" || true
+          done
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "assets/preview/${SKIT}"
+          git diff --cached --quiet || git commit -m "미리보기 장면 (${SKIT})"
+          git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
   generate:
-    if: ${{ inputs.portraits_spec == '' && inputs.audition_spec == '' }}
+    if: ${{ inputs.portraits_spec == '' && inputs.audition_spec == '' && inputs.export_files == '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 240
     permissions:
