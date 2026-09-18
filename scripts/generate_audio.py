@@ -464,7 +464,12 @@ def main():
     with ThreadPoolExecutor(max_workers=int(cfg.get("tts_workers", 4))) as pool:
         clips = list(pool.map(make_tts, enumerate(lines, start=1)))
 
-    total = probe_duration(args.video)
+    if args.lipsync:
+        # 재조립 기준인 장면 클립들의 합으로 전체 길이를 계산 (subbed 영상이 부분본일 수 있음)
+        total = sum(probe_duration(s)
+                    for s in sorted(glob.glob(os.path.join(args.scenes_dir, "scene*.mp4"))))
+    else:
+        total = probe_duration(args.video)
     placed = plan_placement(clips, total)
 
     video, ambience = args.video, []

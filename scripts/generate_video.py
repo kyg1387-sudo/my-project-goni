@@ -23,6 +23,7 @@ Seedance에 폴백한다.
 
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -160,12 +161,17 @@ def pick_provider(duration, ratio):
 def main():
     scenes_file = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_SCENES_FILE
     scenes, duration, ratio = load_scenes(scenes_file)
-    print(f"장면 파일: {scenes_file} ({len(scenes)}개 장면, 장면당 {duration}초, 화면비 {ratio})")
+    # SCENES_ONLY="3,5,7" 처럼 지정하면 해당 번호 장면만 재생성 (번호는 1부터)
+    only = {int(x) for x in re.split(r"[,\s]+", os.environ.get("SCENES_ONLY", "")) if x}
+    print(f"장면 파일: {scenes_file} ({len(scenes)}개 장면, 장면당 {duration}초, 화면비 {ratio}"
+          + (f", 대상: {sorted(only)}" if only else "") + ")")
 
     os.makedirs(OUT_DIR, exist_ok=True)
     paths = []
     provider = None
     for index, prompt in enumerate(scenes, start=1):
+        if only and index not in only:
+            continue
         print(f"[scene {index:02d}] {prompt[:40]}...")
         if provider:
             path = provider(index, prompt)

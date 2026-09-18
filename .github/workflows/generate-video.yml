@@ -7,9 +7,14 @@ on:
         description: 생성할 스킷 이름 (scripts/scenes/<skit>.json)
         required: false
         default: "bungeoppang"
+      scenes_only:
+        description: 재생성할 장면 번호만 지정 (예 "3,5,7", 비우면 전체)
+        required: false
+        default: ""
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
+  SCENES_ONLY: ${{ inputs.scenes_only }}
 
 jobs:
   generate:
