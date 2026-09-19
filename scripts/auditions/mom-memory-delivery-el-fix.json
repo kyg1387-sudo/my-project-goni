@@ -1,0 +1,11 @@
+{
+  "tts_model": "fal-ai/elevenlabs/tts/eleven-v3",
+  "tests": [
+    {"id": "FIX-line030", "voice": "Matilda",
+     "text": "[frail elderly woman in her seventies, quiet trembling voice] …알아."},
+    {"id": "FIX-line032-a", "voice": "Matilda",
+     "text": "[frail elderly woman in her seventies, hoarse tearful trembling voice] 아는데… 아는데도, 비만 오면 여기가 이렇게 아파서… 그날 조금만 빨리 왔으면, 우리 민호…"},
+    {"id": "FIX-line032-b", "voice": "Matilda",
+     "text": "[frail elderly woman in her seventies, hoarse trembling voice] [tearful] 아는데… 아는데도, 비만 오면 여기가 이렇게 아파서… [sobbing] 그날 조금만 빨리 왔으면, 우리 민호…"}
+  ]
+}
