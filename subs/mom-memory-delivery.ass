@@ -9,6 +9,7 @@ ScaledBorderAndShadow: yes
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Caption,Noto Sans CJK KR,46,&H00E8E8E8,&H000000FF,&H00000000,&H96000000,-1,-1,0,0,100,100,0,0,1,4,2,8,200,200,70,1
+Style: Naration,Noto Sans CJK KR,52,&H00D2EEF5,&H000000FF,&H00000000,&H80000000,-1,-1,0,0,100,100,0,0,1,4,2,2,200,200,85,1
 Style: Jeongrye,Noto Sans CJK KR,60,&H00B8E8FF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,200,200,80,1
 Style: Hyejeong,Noto Sans CJK KR,60,&H00FFFFFF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,200,200,80,1
 Style: Minho,Noto Sans CJK KR,60,&H0090EE90,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,200,200,80,1
@@ -16,6 +17,7 @@ Style: Guard,Noto Sans CJK KR,60,&H00A0C8F0,&H000000FF,&H00000000,&H80000000,-1,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:02.00,0:00:06.60,Naration,,0,0,0,,우리 엄마는… 요즘 자꾸만 사라진다.
 Dialogue: 0,0:00:10.60,0:00:12.90,Caption,,0,0,0,,어느 오래된 다세대주택
 Dialogue: 0,0:00:15.60,0:00:18.08,Hyejeong,,0,0,0,,엄마? …엄마 어디 갔어?!
 Dialogue: 0,0:00:18.18,0:00:23.57,Hyejeong,,0,0,0,,네, 저희 엄마가 또 없어졌어요. 연보라색 가디건 입으셨고요…!
@@ -29,6 +31,7 @@ Dialogue: 0,0:01:35.36,0:01:38.94,Hyejeong,,0,0,0,,…요양원 상담, 다음 �
 Dialogue: 0,0:01:45.60,0:01:47.90,Caption,,0,0,0,,사흘 뒤, 흐린 날 아침
 Dialogue: 0,0:01:50.60,0:01:55.08,Jeongrye,,0,0,0,,오늘은 진짜 비가 오겠네. …가야지, 늦으면 안 되지.
 Dialogue: 0,0:02:00.60,0:02:02.90,Hyejeong,,0,0,0,,어디를 가는 거야, 대체…
+Dialogue: 0,0:02:05.00,0:02:10.60,Naration,,0,0,0,,그날 나는 처음으로, 엄마가 어디로 가는지 따라가 보았다.
 Dialogue: 0,0:02:30.60,0:02:33.45,Hyejeong,,0,0,0,,…초등학교? 여기가 어디라고…
 Dialogue: 0,0:02:35.60,0:02:38.81,Guard,,0,0,0,,아이고, 어르신. 오늘도 오셨네요.
 Dialogue: 0,0:02:45.60,0:02:50.63,Jeongrye,,0,0,0,,우리 아이가 우산을 안 가져갔어요. 비 맞으면 감기 걸리는데…
@@ -51,12 +54,13 @@ Dialogue: 0,0:05:40.60,0:05:45.63,Jeongrye,,0,0,0,,어, 혜정 왔니? 오빠 �
 Dialogue: 0,0:05:50.60,0:05:54.17,Hyejeong,,0,0,0,,엄마… 오빠는… 오빠는 이제 여기 없잖아…
 Dialogue: 0,0:06:00.60,0:06:01.70,Jeongrye,,0,0,0,,…알아.
 Dialogue: 0,0:06:05.60,0:06:06.81,Hyejeong,,0,0,0,,…뭐라고?
-Dialogue: 0,0:06:10.60,0:06:17.99,Jeongrye,,0,0,0,,아는데… 아는데도, 비만 오면 여기가 이렇게 아파서… 그날 조금만 빨리 왔으면, 우리 민호…
-Dialogue: 0,0:06:18.09,0:06:22.21,Jeongrye,,0,0,0,,엄마가 미안해서… 삼십 년을 미안해서, 혜정아…
+Dialogue: 0,0:06:10.60,0:06:19.00,Jeongrye,,0,0,0,,아는데… 아는데도, 비만 오면 여기가 이렇게 아파서… 그날 조금만 빨리 왔으면, 우리 민호…
+Dialogue: 0,0:06:19.09,0:06:23.21,Jeongrye,,0,0,0,,엄마가 미안해서… 삼십 년을 미안해서, 혜정아…
 Dialogue: 0,0:06:25.60,0:06:29.35,Hyejeong,,0,0,0,,엄마 잘못 아니야… 엄마 잘못 아니야, 엄마…
 Dialogue: 0,0:06:45.60,0:06:48.08,Hyejeong,,0,0,0,,엄마… 비 온다. 우산 펴자.
 Dialogue: 0,0:06:55.60,0:06:58.63,Jeongrye,,0,0,0,,…우리 민호도, 저렇게 웃었는데.
 Dialogue: 0,0:07:00.60,0:07:05.45,Hyejeong,,0,0,0,,응. …엄마, 이제 나랑 같이 오자. 비 오는 날마다, 같이.
 Dialogue: 0,0:07:10.60,0:07:12.54,Jeongrye,,0,0,0,,…그럴까, 우리 딸.
 Dialogue: 0,0:07:25.60,0:07:27.90,Caption,,0,0,0,,그 뒤로, 비가 오는 날이면
+Dialogue: 0,0:07:29.00,0:07:36.60,Naration,,0,0,0,,엄마는 지금도 비 예보가 있는 날이면 학교 앞으로 간다. …이제는, 내가 함께 간다.
 Dialogue: 0,0:08:00.60,0:08:04.17,Caption,,0,0,0,,기억은 흐려져도, 사랑은 길을 잊지 않는다

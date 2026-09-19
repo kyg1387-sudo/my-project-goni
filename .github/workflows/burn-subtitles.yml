@@ -39,6 +39,10 @@ on:
         description: 자막에서 삭제된 TTS 줄의 옛 번호 목록 — 캐시 번호를 당겨 재사용 (공백 구분, 예 "3 58")
         required: false
         default: ""
+      remap_inserted:
+        description: 자막에 삽입된 TTS 줄의 새 번호 목록 — 캐시 번호를 밀어 재사용 (공백 구분, 예 "1 13 41")
+        required: false
+        default: ""
       qa_language_only:
         description: 제작 대신 오디오 캐시 언어 검사만 실행 (resume_run_id의 Artifact 대상, 무료)
         required: false
@@ -143,6 +147,10 @@ jobs:
       - name: TTS 캐시 줄 번호 재매핑 (자막 줄 삭제 반영)
         if: ${{ inputs.remap_removed != '' && inputs.deliver_from_run_id == '' }}
         run: python3 scripts/remap_tts_cache.py out/audio ${{ inputs.remap_removed }}
+
+      - name: TTS 캐시 줄 번호 재매핑 (자막 줄 삽입 반영)
+        if: ${{ inputs.remap_inserted != '' && inputs.deliver_from_run_id == '' }}
+        run: python3 scripts/remap_tts_cache.py out/audio --insert ${{ inputs.remap_inserted }}
 
       - name: 복원 산출물 중 다시 만들 것 삭제 (부분 재생성)
         if: ${{ inputs.invalidate != '' && inputs.deliver_from_run_id == '' }}
