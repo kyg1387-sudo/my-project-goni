@@ -405,6 +405,13 @@ def main():
                          "Minho": "Decent_Boy", "Guard": "Deep_Voice_Man"},
         "style_emotions": {},
         "emotion_overrides": emotions,
+        # 감정 완급: 슬픈 대사는 느리게, 아이의 밝은 대사는 경쾌하게 (립싱크는 대사 오디오 기준이라 안전)
+        "speed_overrides": {
+            "5": 0.92, "7": 0.9, "19": 0.95, "20": 0.95, "21": 0.95,
+            "23": 1.08, "25": 1.08,
+            "27": 0.9, "29": 0.9, "30": 0.85, "32": 0.85, "33": 0.88,
+            "34": 0.9, "35": 0.92, "36": 0.9, "37": 0.95, "38": 0.9,
+        },
         "scene_durations": [s["duration"] for s in scene_items],
         "narration_styles": [],
         "silent_styles": ["Caption"],

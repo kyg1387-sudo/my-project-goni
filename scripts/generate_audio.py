@@ -157,7 +157,8 @@ def tts_line(cfg, key, index, voice, text, emotion=None):
     if cached(path):
         print(f"  [tts {index:03d}] 기존 파일 재사용")
         return path
-    voice_setting = {"voice_id": voice, "speed": float(cfg.get("speed", 1.05))}
+    speed = float(cfg.get("speed_overrides", {}).get(str(index), cfg.get("speed", 1.05)))
+    voice_setting = {"voice_id": voice, "speed": speed}
     if emotion and emotion != "neutral":
         voice_setting["emotion"] = emotion
     payload = {
