@@ -1,0 +1,12 @@
+{
+  "tts_model": "fal-ai/minimax/speech-02-hd",
+  "language_boost": "Korean",
+  "tests": [
+    {"id": "NAR-1", "voice": "Calm_Woman", "emotion": "sad", "speed": 0.92,
+     "text": "우리 엄마는… 요즘 자꾸만 사라진다."},
+    {"id": "NAR-2", "voice": "Calm_Woman", "emotion": "neutral", "speed": 0.94,
+     "text": "그날 나는 처음으로, 엄마가 어디로 가는지 따라가 보았다."},
+    {"id": "NAR-3", "voice": "Calm_Woman", "emotion": "sad", "speed": 0.9,
+     "text": "엄마는 지금도 비 예보가 있는 날이면 학교 앞으로 간다. …이제는, 내가 함께 간다."}
+  ]
+}
