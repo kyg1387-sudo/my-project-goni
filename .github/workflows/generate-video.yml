@@ -207,6 +207,13 @@ jobs:
             rm -fv "out/$(printf 'scene%02d' "$n").mp4"
           done
 
+      - name: 장면 교체본 덮어쓰기 (assets/video-overrides — 편집·재사용 클립)
+        run: |
+          if [ -d "assets/video-overrides/${SKIT}" ]; then
+            mkdir -p out
+            cp -v "assets/video-overrides/${SKIT}"/scene*.mp4 out/
+          fi
+
       - name: 장면별 클립 생성 (Ark Seedance / fal.ai)
         env:
           ARK_API_KEY: ${{ secrets.ARK_API_KEY }}
