@@ -11,6 +11,30 @@
       "voice": "8vwSOQHQApfVx993mKf9",
       "model": "elevenlabs-direct",
       "text": "[quiet, gentle] 늘 저 자리에서, 우산 들고 아이들 나오는 것만 보다 가십니다."
+    },
+    {
+      "id": "GV-직접-걱정마세요",
+      "voice": "8vwSOQHQApfVx993mKf9",
+      "model": "elevenlabs-direct",
+      "text": "[warm, reassuring] 걱정 마세요. 이따 아이들 나올 때까지 여기서 같이 기다립시다."
+    },
+    {
+      "id": "GV-직접-따님",
+      "voice": "8vwSOQHQApfVx993mKf9",
+      "model": "elevenlabs-direct",
+      "text": "[gentle, kind] 따님이시구나. …비 예보만 있으면 오세요. 벌써 몇 달째예요."
+    },
+    {
+      "id": "GV-직접-손주마중",
+      "voice": "8vwSOQHQApfVx993mKf9",
+      "model": "elevenlabs-direct",
+      "text": "[hesitant, quiet] 처음엔 손주 마중인 줄 알았는데… 한번은 그러시더라고요. \"우리 민호 나올 시간\"이라고."
+    },
+    {
+      "id": "GV-직접-모른척",
+      "voice": "8vwSOQHQApfVx993mKf9",
+      "model": "elevenlabs-direct",
+      "text": "[quiet, moved] 그 얘길 듣고는… 저도 그냥 모른 척, 같이 기다려 드립니다."
     }
   ]
 }
