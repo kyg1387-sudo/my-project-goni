@@ -1,0 +1,15 @@
+{
+  "tts_model": "fal-ai/elevenlabs/tts/eleven-v3",
+  "tests": [
+    {"id": "CRY32-t1", "voice": "Matilda",
+     "text": "[frail elderly woman in her seventies, hoarse trembling voice] [sobbing] 아는데… 아는데도, 비만 오면 여기가 이렇게 아파서… [sobbing, voice breaking] 그날 조금만 빨리 왔으면, 우리 민호…"},
+    {"id": "CRY32-t2", "voice": "Matilda",
+     "text": "[frail elderly woman in her seventies, hoarse voice, weeping through the words] 아는데… 아는데도, 비만 오면 여기가 이렇게 아파서… [breaking down in sobs] 그날 조금만 빨리 왔으면, 우리 민호…"},
+    {"id": "CRY33-t1", "voice": "Matilda",
+     "text": "[frail elderly woman in her seventies, hoarse voice] [sobbing, wailing with grief] 엄마가 미안해서… 삼십 년을 미안해서, 혜정아…"},
+    {"id": "CRY33-t2", "voice": "Matilda",
+     "text": "[frail elderly woman crying her heart out, voice breaking with guilt] 엄마가 미안해서… 삼십 년을 미안해서, 혜정아…"},
+    {"id": "CRY34-혜정-t1", "voice": "Sarah",
+     "text": "[crying, voice breaking, desperate] 엄마 잘못 아니야… 엄마 잘못 아니야, 엄마…"}
+  ]
+}
