@@ -1,0 +1,13 @@
+{
+  "tts_model": "fal-ai/elevenlabs/tts/eleven-v3",
+  "tests": [
+    {"id": "AGE-Matilda-일상", "voice": "Matilda",
+     "text": "[frail elderly woman in her seventies, weak slightly hoarse voice, slow] 왜 이렇게 야단이야. 잠깐 나갔다 온 건데."},
+    {"id": "AGE-Matilda-오열", "voice": "Matilda",
+     "text": "[frail elderly woman in her seventies, hoarse trembling voice] [sobbing] 엄마가 미안해서… 삼십 년을 미안해서, 혜정아…"},
+    {"id": "AGE-Alice-일상", "voice": "Alice",
+     "text": "[frail elderly woman in her seventies, weak slightly hoarse voice, slow] 왜 이렇게 야단이야. 잠깐 나갔다 온 건데."},
+    {"id": "AGE-Alice-오열", "voice": "Alice",
+     "text": "[frail elderly woman in her seventies, hoarse trembling voice] [sobbing] 엄마가 미안해서… 삼십 년을 미안해서, 혜정아…"}
+  ]
+}
