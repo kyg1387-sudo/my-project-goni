@@ -1,0 +1,12 @@
+{
+  "tts_model": "fal-ai/elevenlabs/tts/eleven-v3",
+  "tests": [
+    {"id": "GV-v3-반김", "voice": "8vwSOQHQApfVx993mKf9",
+     "text": "[warm, friendly] 아이고, 어르신. 오늘도 오셨네요."},
+    {"id": "GV-v3-조용히", "voice": "8vwSOQHQApfVx993mKf9",
+     "text": "[quiet, gentle] 늘 저 자리에서, 우산 들고 아이들 나오는 것만 보다 가십니다."},
+    {"id": "GV-m2-반김", "voice": "8vwSOQHQApfVx993mKf9",
+     "model": "fal-ai/elevenlabs/tts/multilingual-v2",
+     "text": "아이고, 어르신. 오늘도 오셨네요."}
+  ]
+}
