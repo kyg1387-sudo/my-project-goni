@@ -1,0 +1,17 @@
+{
+  "tts_model": "fal-ai/elevenlabs/tts/eleven-v3",
+  "tests": [
+    {"id": "EL정례-Matilda-오열", "voice": "Matilda",
+     "text": "[sobbing] 아는데… 아는데도, 비만 오면 여기가 이렇게 아파서… [crying] 그날 조금만 빨리 왔으면, 우리 민호…"},
+    {"id": "EL정례-Lily-오열", "voice": "Lily",
+     "text": "[sobbing] 아는데… 아는데도, 비만 오면 여기가 이렇게 아파서… [crying] 그날 조금만 빨리 왔으면, 우리 민호…"},
+    {"id": "EL정례-Matilda-해맑음", "voice": "Matilda",
+     "text": "[cheerfully] 어, 혜정 왔니? 오빠 우산 갖다주러 왔지. 오늘 비 온다잖아."},
+    {"id": "EL정례-Lily-해맑음", "voice": "Lily",
+     "text": "[cheerfully] 어, 혜정 왔니? 오빠 우산 갖다주러 왔지. 오늘 비 온다잖아."},
+    {"id": "EL혜정-Sarah-울음", "voice": "Sarah",
+     "text": "[crying] 엄마 잘못 아니야… 엄마 잘못 아니야, 엄마…"},
+    {"id": "EL혜정-Jessica-울음", "voice": "Jessica",
+     "text": "[crying] 엄마 잘못 아니야… 엄마 잘못 아니야, 엄마…"}
+  ]
+}

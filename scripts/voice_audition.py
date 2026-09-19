@@ -81,15 +81,24 @@ def main():
         if os.path.exists(path) and os.path.getsize(path) > 1000:
             print(f"[{t['id']}] 기존 파일 재사용")
             continue
-        voice_setting = {"voice_id": t["voice"], "speed": float(t.get("speed", spec.get("speed", 1.0)))}
-        if t.get("emotion") and t["emotion"] != "neutral":
-            voice_setting["emotion"] = t["emotion"]
-        print(f"[{t['id']}] {t['voice']}/{t.get('emotion','neutral')}: {t['text'][:30]}…")
-        result = fal_run(spec.get("tts_model", "fal-ai/minimax/speech-02-hd"), {
-            "text": t["text"],
-            "voice_setting": voice_setting,
-            "language_boost": spec.get("language_boost", "Korean"),
-        }, key, t["id"])
+        model = t.get("model", spec.get("tts_model", "fal-ai/minimax/speech-02-hd"))
+        if "elevenlabs" in model:
+            # ElevenLabs (fal 호스팅) — v3는 감정을 대사 안의 오디오 태그([sobbing] 등)로 지시
+            payload = {"text": t["text"], "voice": t["voice"]}
+            for k in ("stability", "similarity_boost", "style", "speed"):
+                if k in t:
+                    payload[k] = t[k]
+        else:
+            voice_setting = {"voice_id": t["voice"], "speed": float(t.get("speed", spec.get("speed", 1.0)))}
+            if t.get("emotion") and t["emotion"] != "neutral":
+                voice_setting["emotion"] = t["emotion"]
+            payload = {
+                "text": t["text"],
+                "voice_setting": voice_setting,
+                "language_boost": spec.get("language_boost", "Korean"),
+            }
+        print(f"[{t['id']}] {model} {t['voice']}/{t.get('emotion','-')}: {t['text'][:30]}…")
+        result = fal_run(model, payload, key, t["id"])
         url = find_audio_url(result) if result else None
         if not url:
             failed.append(t["id"])
