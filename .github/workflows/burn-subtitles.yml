@@ -152,6 +152,14 @@ jobs:
             rm -fv $p
           done
 
+      - name: TTS 교체본 덮어쓰기 (assets/audio-overrides — 상위 TTS로 바꾼 줄)
+        if: ${{ inputs.deliver_from_run_id == '' }}
+        run: |
+          if [ -d "assets/audio-overrides/${SKIT}" ]; then
+            mkdir -p out/audio
+            cp -v "assets/audio-overrides/${SKIT}"/*.mp3 out/audio/
+          fi
+
       - name: 대사 TTS와 배경음악 생성 후 믹싱 (립싱크·현장음 옵션)
         if: ${{ inputs.add_audio == 'true' && inputs.deliver_from_run_id == '' }}
         env:
