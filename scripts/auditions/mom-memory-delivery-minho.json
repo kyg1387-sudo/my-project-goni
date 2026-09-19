@@ -1,0 +1,12 @@
+{
+  "tts_model": "fal-ai/minimax/speech-02-hd",
+  "language_boost": "Korean",
+  "tests": [
+    {"id": "MH-DecentBoy", "voice": "Decent_Boy", "emotion": "happy", "speed": 1.08,
+     "text": "엄마! 나 우산 없어도 돼! 금방 뛰어가면 되는데, 뭐!"},
+    {"id": "MH-LivelyGirl", "voice": "Lively_Girl", "emotion": "happy", "speed": 1.05,
+     "text": "엄마! 나 우산 없어도 돼! 금방 뛰어가면 되는데, 뭐!"},
+    {"id": "MH-SweetGirl", "voice": "Sweet_Girl_2", "emotion": "happy", "speed": 1.05,
+     "text": "엄마! 나 우산 없어도 돼! 금방 뛰어가면 되는데, 뭐!"}
+  ]
+}
