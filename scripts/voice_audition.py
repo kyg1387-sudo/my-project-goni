@@ -66,11 +66,102 @@ def fal_run(model, payload, key, tag):
             return None
 
 
+def el_request(method, url, key, payload=None):
+    req = urllib.request.Request(
+        url,
+        data=json.dumps(payload).encode() if payload is not None else None,
+        headers={"Content-Type": "application/json", "xi-api-key": key},
+        method=method)
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            return resp.status, json.load(resp)
+    except urllib.error.HTTPError as e:
+        return e.code, e.read().decode(errors="replace")[:300]
+
+
+def el_child_search(cfg):
+    """ElevenLabs 목소리 도서관에서 어린 남자아이 목소리를 검색해 후보 샘플을 만든다."""
+    key = (os.environ.get("ELEVENLABS_API_KEY") or "").strip()
+    if not key:
+        sys.exit("ELEVENLABS_API_KEY 시크릿이 필요합니다.")
+    os.makedirs(OUT_DIR, exist_ok=True)
+    text = cfg["text"]
+    seen, picks = set(), []
+    for q in cfg.get("queries", ["korean boy child", "boy kid", "child"]):
+        import urllib.parse
+        status, data = el_request(
+            "GET",
+            "https://api.elevenlabs.io/v1/shared-voices?page_size=12&search="
+            + urllib.parse.quote(q), key)
+        if status != 200:
+            print(f"[검색 '{q}'] 실패 (HTTP {status}): {data}")
+            continue
+        for v in data.get("voices", []):
+            vid = v.get("voice_id")
+            if not vid or vid in seen:
+                continue
+            gender = (v.get("gender") or "").lower()
+            age = (v.get("age") or "").lower()
+            if gender and gender != "male":
+                continue
+            if age and age not in ("young", "child"):
+                continue
+            seen.add(vid)
+            picks.append(v)
+    picks = picks[:4]
+    if not picks:
+        sys.exit("도서관 검색 결과가 없습니다.")
+    failed = []
+    for i, v in enumerate(picks, 1):
+        name = v.get("name", f"voice{i}")
+        vid, owner = v["voice_id"], v.get("public_owner_id")
+        print(f"[후보{i}] {name} | id={vid} | age={v.get('age')} lang={v.get('language')} "
+              f"| use_case={v.get('use_case')}")
+        path = os.path.join(OUT_DIR, f"EL아이후보{i}-{name[:20]}.mp3")
+        added_status, added = el_request(
+            "POST", f"https://api.elevenlabs.io/v1/voices/add/{owner}/{vid}",
+            key, {"new_name": f"minho-cand-{i}"})
+        if added_status == 200 and isinstance(added, dict):
+            use_id = added.get("voice_id", vid)
+            t_status = None
+            for model in ("eleven_v3", "eleven_multilingual_v2"):
+                req = urllib.request.Request(
+                    f"https://api.elevenlabs.io/v1/text-to-speech/{use_id}",
+                    data=json.dumps({"text": text, "model_id": model}).encode(),
+                    headers={"Content-Type": "application/json", "xi-api-key": key},
+                    method="POST")
+                try:
+                    with urllib.request.urlopen(req, timeout=120) as resp:
+                        open(path, "wb").write(resp.read())
+                    print(f"  생성됨 ({model}) → {path}")
+                    t_status = 200
+                    break
+                except urllib.error.HTTPError as e:
+                    t_status = e.code
+                    print(f"  [{model}] 오류 (HTTP {e.code}): {e.read().decode(errors='replace')[:200]}")
+            if t_status != 200:
+                failed.append(name)
+        else:
+            print(f"  내 목소리 추가 실패 (HTTP {added_status}): {added} — 미리듣기로 대체")
+            prev = v.get("preview_url")
+            if prev:
+                urllib.request.urlretrieve(prev, path)
+                print(f"  미리듣기 저장 → {path}")
+            else:
+                failed.append(name)
+    if failed:
+        print(f"실패: {', '.join(failed)}")
+    print("어린이 목소리 후보 탐색 완료")
+
+
 def main():
     if len(sys.argv) < 2:
         sys.exit("사용법: voice_audition.py <작품>")
     spec = json.load(open(os.path.join("scripts", "auditions", f"{sys.argv[1]}.json"),
                           encoding="utf-8"))
+    if spec.get("el_child_search"):
+        el_child_search(spec["el_child_search"])
+        return
     key = os.environ.get("FAL_API_KEY")
     if not key:
         sys.exit("FAL_API_KEY가 필요합니다.")
