@@ -84,7 +84,7 @@ def main():
         model = t.get("model", spec.get("tts_model", "fal-ai/minimax/speech-02-hd"))
         if model == "elevenlabs-direct":
             # 사용자 본인 ElevenLabs 계정의 보이스(개인 클론) — ELEVENLABS_API_KEY 필요
-            el_key = os.environ.get("ELEVENLABS_API_KEY")
+            el_key = (os.environ.get("ELEVENLABS_API_KEY") or "").strip()
             if not el_key:
                 failed.append(t["id"])
                 print(f"[{t['id']}] ELEVENLABS_API_KEY 시크릿이 없습니다 — 건너뜀")
