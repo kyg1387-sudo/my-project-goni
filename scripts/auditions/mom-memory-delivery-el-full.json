@@ -1,0 +1,31 @@
+{
+  "tts_model": "fal-ai/elevenlabs/tts/eleven-v3",
+  "tests": [
+    {"id": "ELF-line003", "voice": "Matilda",
+     "text": "[calm, lightly amused] 왜 이렇게 야단이야. 잠깐 나갔다 온 건데."},
+    {"id": "ELF-line005", "voice": "Matilda",
+     "text": "[softly, hurt] …비가 온다고 했단 말이야."},
+    {"id": "ELF-line007", "voice": "Matilda",
+     "text": "[tearful, stubborn] 아니야… 온댔어. 오늘은 꼭 온댔단 말이야."},
+    {"id": "ELF-line010", "voice": "Matilda",
+     "text": "[soft hopeful murmur] 오늘은 진짜 비가 오겠네. …가야지, 늦으면 안 되지."},
+    {"id": "ELF-line014", "voice": "Matilda",
+     "text": "[polite, gentle worry] 우리 아이가 우산을 안 가져갔어요. 비 맞으면 감기 걸리는데…"},
+    {"id": "ELF-line024", "voice": "Matilda",
+     "text": "[warm laughing] 감기 걸린다니까! 이따 엄마가 우산 갖고 갈게!"},
+    {"id": "ELF-line026", "voice": "Matilda",
+     "text": "[worried, hurried] 어머, 비가 이렇게 쏟아지네. 가야겠다."},
+    {"id": "ELF-line028", "voice": "Matilda",
+     "text": "[bright, innocent] 어, 혜정 왔니? 오빠 우산 갖다주러 왔지. 오늘 비 온다잖아."},
+    {"id": "ELF-line030", "voice": "Matilda",
+     "text": "[quiet, trembling] …알아."},
+    {"id": "ELF-line032", "voice": "Matilda",
+     "text": "[tearfully, slowly] 아는데… 아는데도, 비만 오면 여기가 이렇게 아파서… [crying] 그날 조금만 빨리 왔으면, 우리 민호…"},
+    {"id": "ELF-line033", "voice": "Matilda",
+     "text": "[sobbing] 엄마가 미안해서… 삼십 년을 미안해서, 혜정아…"},
+    {"id": "ELF-line036", "voice": "Matilda",
+     "text": "[serene, wistful] …우리 민호도, 저렇게 웃었는데."},
+    {"id": "ELF-line038", "voice": "Matilda",
+     "text": "[tearful smile] …그럴까, 우리 딸."}
+  ]
+}
