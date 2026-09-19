@@ -82,6 +82,30 @@ def main():
             print(f"[{t['id']}] 기존 파일 재사용")
             continue
         model = t.get("model", spec.get("tts_model", "fal-ai/minimax/speech-02-hd"))
+        if model == "elevenlabs-direct":
+            # 사용자 본인 ElevenLabs 계정의 보이스(개인 클론) — ELEVENLABS_API_KEY 필요
+            el_key = os.environ.get("ELEVENLABS_API_KEY")
+            if not el_key:
+                failed.append(t["id"])
+                print(f"[{t['id']}] ELEVENLABS_API_KEY 시크릿이 없습니다 — 건너뜀")
+                continue
+            print(f"[{t['id']}] elevenlabs-direct {t['voice']}: {t['text'][:30]}…")
+            req = urllib.request.Request(
+                f"https://api.elevenlabs.io/v1/text-to-speech/{t['voice']}",
+                data=json.dumps({
+                    "text": t["text"],
+                    "model_id": t.get("el_model", "eleven_v3"),
+                }).encode(),
+                headers={"Content-Type": "application/json", "xi-api-key": el_key},
+                method="POST")
+            try:
+                with urllib.request.urlopen(req, timeout=120) as resp:
+                    open(path, "wb").write(resp.read())
+                print(f"  저장됨 → {path}")
+            except urllib.error.HTTPError as e:
+                print(f"  [{t['id']}] ElevenLabs 오류 (HTTP {e.code}): {e.read().decode(errors='replace')[:300]}")
+                failed.append(t["id"])
+            continue
         if "elevenlabs" in model:
             # ElevenLabs (fal 호스팅) — v3는 감정을 대사 안의 오디오 태그([sobbing] 등)로 지시
             payload = {"text": t["text"], "voice": t["voice"]}

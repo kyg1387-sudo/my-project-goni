@@ -62,6 +62,7 @@ jobs:
       - name: 오디션 샘플 생성 (fal.ai TTS)
         env:
           FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
         run: python3 scripts/voice_audition.py "${ASPEC}"
 
       - name: 샘플 업로드
