@@ -148,8 +148,8 @@
     "Caption"
   ],
   "lipsync_models": [
-    "fal-ai/sync-lipsync",
-    "fal-ai/latentsync"
+    "fal-ai/latentsync",
+    "fal-ai/sync-lipsync"
   ],
   "ambience_model": "fal-ai/mmaudio-v2",
   "ambience_volume": 0.4,

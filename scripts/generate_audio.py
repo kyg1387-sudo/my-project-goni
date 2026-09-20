@@ -406,6 +406,9 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
     # 대사(내레이션 제외)만 담긴 전체 트랙
     dial_wav = render_track(placed_dialogue, total, os.path.join(WORK_DIR, "dialogue.wav"))
 
+    # 립싱크 왜곡(얼굴 깨짐)이 반복되는 장면은 립싱크를 건너뛰고 원본 얼굴을 유지한다
+    skip_lipsync = set(int(n) for n in cfg.get("lipsync_skip_scenes", []))
+
     def process_scene(item):
         """한 장면의 현장음 생성과 립싱크. (최종 장면 경로, 현장음 항목|None)을 돌려준다."""
         i, scene, t0, t1 = item
@@ -421,6 +424,9 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
             for start, tempo, _s, p in placed_dialogue)
         if not has_dialogue:
             print(f"[scene {i:02d}] 대사 없음 — 립싱크 생략")
+            return scene, amb_item
+        if i in skip_lipsync:
+            print(f"[scene {i:02d}] 립싱크 제외 지정 — 원본 유지")
             return scene, amb_item
         seg = os.path.join(WORK_DIR, f"seg{i:02d}.wav")
         subprocess.run(["ffmpeg", "-y", "-i", dial_wav,
