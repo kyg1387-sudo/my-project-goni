@@ -1,0 +1,10 @@
+{
+  "tests": [
+    {"id": "MHEL-기본", "voice": "V9zeHe6rhQ2jEkZaNOGy", "model": "elevenlabs-direct",
+     "text": "엄마! 나 우산 없어도 돼! 금방 뛰어가면 되는데, 뭐!"},
+    {"id": "MHEL-아이지시", "voice": "V9zeHe6rhQ2jEkZaNOGy", "model": "elevenlabs-direct",
+     "text": "[energetic ten-year-old Korean boy, bright cheerful child voice] 엄마! 나 우산 없어도 돼! 금방 뛰어가면 되는데, 뭐!"},
+    {"id": "MHEL-약속", "voice": "V9zeHe6rhQ2jEkZaNOGy", "model": "elevenlabs-direct",
+     "text": "[energetic ten-year-old Korean boy, bright cheerful child voice] 응! 약속이야, 엄마!"}
+  ]
+}
