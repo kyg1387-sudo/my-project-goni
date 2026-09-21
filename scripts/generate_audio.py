@@ -297,6 +297,31 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
 
 # ---------- 립싱크 ----------
 
+def omnihuman_scene(cfg, key, scene_path, audio_path, index):
+    """오디오 구동 생성(OmniHuman류): 장면 첫 프레임 + 대사 오디오로 입 모양이
+    정확히 맞는 클립을 새로 생성한다. 실패 시 None(기존 립싱크로 폴백)."""
+    path = os.path.join(WORK_DIR, f"omni{index:02d}.mp4")
+    if cached(path):
+        print(f"  [omnihuman {index:02d}] 기존 파일 재사용")
+        return path
+    frame = os.path.join(WORK_DIR, f"omniframe{index:02d}.png")
+    subprocess.run(["ffmpeg", "-y", "-ss", "0.2", "-i", scene_path,
+                    "-frames:v", "1", frame], check=True, capture_output=True)
+    img_url = fal_upload(frame, key)
+    a_url = fal_upload(audio_path, key)
+    models = cfg.get("omnihuman_models",
+                     ["fal-ai/bytedance/omnihuman/v1.5", "fal-ai/bytedance/omnihuman"])
+    for model in models:
+        payload = {"image_url": img_url, "audio_url": a_url}
+        result = fal_run(model, payload, key, f"omnihuman {index:02d} ({model})",
+                         timeout_s=1800)
+        if result:
+            url = find_video_url(result)
+            if url and download_retry(url, path):
+                return path
+    return None
+
+
 def lipsync_scene(cfg, key, v_url, audio_path, index):
     """장면 클립의 입 모양을 대사 오디오에 맞게 재합성한 클립 경로를 돌려준다. 실패 시 None."""
     path = os.path.join(WORK_DIR, f"lip{index:02d}.mp4")
@@ -432,6 +457,12 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
         subprocess.run(["ffmpeg", "-y", "-i", dial_wav,
                         "-af", f"atrim={t0:.3f}:{t1:.3f},asetpts=PTS-STARTPTS", seg],
                        check=True, capture_output=True)
+        if i in set(int(n) for n in cfg.get("omnihuman_scenes", [])):
+            print(f"[scene {i:02d}] 오디오 구동 생성(omnihuman) 중... ({t0:.1f}~{t1:.1f}s)")
+            omni = omnihuman_scene(cfg, key, scene, seg, i)
+            if omni:
+                return omni, amb_item
+            print(f"  [scene {i:02d}] omnihuman 실패 — 기존 립싱크로 폴백")
         print(f"[scene {i:02d}] 립싱크 중... ({t0:.1f}~{t1:.1f}s)")
         lip = lipsync_scene(cfg, key, v_url, seg, i)
         if not lip:
