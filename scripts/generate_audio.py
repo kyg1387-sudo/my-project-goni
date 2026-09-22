@@ -544,7 +544,9 @@ def main():
         clips = list(pool.map(make_tts, enumerate(lines, start=1)))
 
     total = probe_duration(args.video)
-    placed = plan_placement(clips, total)
+    # 내레이션 등 파일 끝에 추가된 줄이 있어도 시간순으로 배치한다
+    # (TTS 줄 번호·캐시 파일명은 파일 순서 기준 그대로 유지)
+    placed = plan_placement(sorted(clips, key=lambda c: c[0]), total)
 
     video, ambience = args.video, []
     if args.lipsync:
