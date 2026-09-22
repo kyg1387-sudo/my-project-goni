@@ -1,0 +1,10 @@
+{
+  "tts_model": "fal-ai/minimax/speech-02-hd",
+  "language_boost": "Korean",
+  "tests": [
+    {"id": "나레이터C-정감여", "voice": "Abbess", "emotion": "neutral", "speed": 0.9,
+     "text": "7년째, 단 하루도 빠짐없이 걸어온 길이었습니다. 말이 없던 그 사람은, 매일 밤 이 길을 지키고 있었습니다."},
+    {"id": "나레이터D-부드러운여", "voice": "Graceful_Lady", "emotion": "neutral", "speed": 0.9,
+     "text": "7년째, 단 하루도 빠짐없이 걸어온 길이었습니다. 말이 없던 그 사람은, 매일 밤 이 길을 지키고 있었습니다."}
+  ]
+}
