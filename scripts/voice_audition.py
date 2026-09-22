@@ -79,6 +79,44 @@ def el_request(method, url, key, payload=None):
         return e.code, e.read().decode(errors="replace")[:300]
 
 
+def el_resolve_voice(name, key, _cache={}):
+    """이름으로 ElevenLabs 목소리 ID를 찾는다: 내 목소리 → 도서관 검색+추가 순."""
+    if name in _cache:
+        return _cache[name]
+    import urllib.parse
+    status, data = el_request("GET", "https://api.elevenlabs.io/v1/voices", key)
+    if status == 200 and isinstance(data, dict):
+        for v in data.get("voices", []):
+            if (v.get("name") or "").lower().startswith(name.lower()):
+                print(f"  내 목소리에서 발견: {v['name']} → {v['voice_id']}")
+                _cache[name] = v["voice_id"]
+                return v["voice_id"]
+    status, data = el_request(
+        "GET", "https://api.elevenlabs.io/v1/shared-voices?page_size=12&search="
+        + urllib.parse.quote(name), key)
+    if status != 200 or not isinstance(data, dict):
+        print(f"  도서관 검색 실패 (HTTP {status}): {data}")
+        return None
+    for v in data.get("voices", []):
+        if not (v.get("name") or "").lower().startswith(name.lower()):
+            continue
+        vid, owner = v["voice_id"], v.get("public_owner_id")
+        print(f"  도서관에서 발견: {v['name']} | id={vid}")
+        a_status, added = el_request(
+            "POST", f"https://api.elevenlabs.io/v1/voices/add/{owner}/{vid}",
+            key, {"new_name": name})
+        if a_status == 200 and isinstance(added, dict):
+            use_id = added.get("voice_id", vid)
+            print(f"  내 목소리에 추가됨 → {use_id}")
+            _cache[name] = use_id
+            return use_id
+        print(f"  내 목소리 추가 실패 (HTTP {a_status}): {added} — 원본 ID로 시도")
+        _cache[name] = vid
+        return vid
+    print(f"  '{name}' 목소리를 찾지 못했습니다.")
+    return None
+
+
 def el_child_search(cfg):
     """ElevenLabs 목소리 도서관에서 어린 남자아이 목소리를 검색해 후보 샘플을 만든다."""
     key = (os.environ.get("ELEVENLABS_API_KEY") or "").strip()
@@ -180,22 +218,38 @@ def main():
                 failed.append(t["id"])
                 print(f"[{t['id']}] ELEVENLABS_API_KEY 시크릿이 없습니다 — 건너뜀")
                 continue
-            print(f"[{t['id']}] elevenlabs-direct {t['voice']}: {t['text'][:30]}…")
-            req = urllib.request.Request(
-                f"https://api.elevenlabs.io/v1/text-to-speech/{t['voice']}",
-                data=json.dumps({
-                    "text": t["text"],
-                    "model_id": t.get("el_model", "eleven_v3"),
-                }).encode(),
-                headers={"Content-Type": "application/json", "xi-api-key": el_key},
-                method="POST")
-            try:
-                with urllib.request.urlopen(req, timeout=120) as resp:
-                    open(path, "wb").write(resp.read())
-                print(f"  저장됨 → {path}")
-            except urllib.error.HTTPError as e:
-                print(f"  [{t['id']}] ElevenLabs 오류 (HTTP {e.code}): {e.read().decode(errors='replace')[:300]}")
+            vid = t.get("voice") or el_resolve_voice(t["voice_name"], el_key)
+            if not vid:
                 failed.append(t["id"])
+                continue
+            print(f"[{t['id']}] elevenlabs-direct {vid}: {t['text'][:30]}…")
+
+            def el_tts(voice_id):
+                req = urllib.request.Request(
+                    f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}",
+                    data=json.dumps({
+                        "text": t["text"],
+                        "model_id": t.get("el_model", "eleven_v3"),
+                    }).encode(),
+                    headers={"Content-Type": "application/json", "xi-api-key": el_key},
+                    method="POST")
+                try:
+                    with urllib.request.urlopen(req, timeout=120) as resp:
+                        open(path, "wb").write(resp.read())
+                    print(f"  저장됨 → {path}")
+                    return True
+                except urllib.error.HTTPError as e:
+                    print(f"  [{t['id']}] ElevenLabs 오류 (HTTP {e.code}): "
+                          f"{e.read().decode(errors='replace')[:300]}")
+                    return False
+
+            if el_tts(vid):
+                continue
+            # 라이브러리 목소리가 계정에 없어 거부된 경우: 이름으로 추가 후 1회 재시도
+            rid = el_resolve_voice(t["voice_name"], el_key) if t.get("voice_name") else None
+            if rid and rid != vid and el_tts(rid):
+                continue
+            failed.append(t["id"])
             continue
         if "elevenlabs" in model:
             # ElevenLabs (fal 호스팅) — v3는 감정을 대사 안의 오디오 태그([sobbing] 등)로 지시

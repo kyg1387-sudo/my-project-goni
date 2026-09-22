@@ -1,0 +1,22 @@
+{
+  "tests": [
+    {"id": "NARR-029", "model": "elevenlabs-direct",
+     "voice": "uyVNoMrnUku1dZyVEXwD", "voice_name": "Anna Kim",
+     "text": "[warm, gentle storytelling narration, calm and tender] 서명 용지가 붙던 날에도, 김씨는 아무 말이 없었습니다."},
+    {"id": "NARR-030", "model": "elevenlabs-direct",
+     "voice": "uyVNoMrnUku1dZyVEXwD", "voice_name": "Anna Kim",
+     "text": "[warm, gentle storytelling narration, calm and tender] 하지만 그날 밤에도, 김씨의 밤은 똑같이 시작되고 있었습니다."},
+    {"id": "NARR-031", "model": "elevenlabs-direct",
+     "voice": "uyVNoMrnUku1dZyVEXwD", "voice_name": "Anna Kim",
+     "text": "[warm, gentle storytelling narration, calm and tender] 칠 년째, 단 하루도 빠짐없이 걸어온 길이었습니다."},
+    {"id": "NARR-032", "model": "elevenlabs-direct",
+     "voice": "uyVNoMrnUku1dZyVEXwD", "voice_name": "Anna Kim",
+     "text": "[warm, gentle storytelling narration, quiet sorrow] 해고 통보를 받던 날, 김씨는 처음으로 명찰을 내려놓았습니다."},
+    {"id": "NARR-033", "model": "elevenlabs-direct",
+     "voice": "uyVNoMrnUku1dZyVEXwD", "voice_name": "Anna Kim",
+     "text": "[warm, gentle storytelling narration, quiet sorrow] 그날도 김씨는, 아무 말 없이 돌아섰습니다."},
+    {"id": "NARR-034", "model": "elevenlabs-direct",
+     "voice": "uyVNoMrnUku1dZyVEXwD", "voice_name": "Anna Kim",
+     "text": "[warm, gentle storytelling narration, softly hopeful] 일주일 뒤, 게시판에는 다른 종이들이 붙기 시작했습니다."}
+  ]
+}
