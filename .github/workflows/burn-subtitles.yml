@@ -20,7 +20,7 @@ on:
         required: false
         default: "false"
       lipsync:
-        description: 대사 구간 입 모양 재합성과 장면 현장음 생성 여부 (true/false)
+        description: 대사 구간 입 모양 재합성과 장면 현장음 생성 여부 (true/false/remix — remix는 resume한 완성본의 영상 트랙을 재사용해 오디오만 무과금 재조합)
         required: false
         default: "false"
       deliver_from_run_id:
@@ -175,7 +175,15 @@ jobs:
           FAL_KEY: ${{ secrets.FAL_API_KEY }}
         run: |
           EXTRA=""
-          if [ "${{ inputs.lipsync }}" = "true" ]; then
+          if [ "${{ inputs.lipsync }}" = "remix" ]; then
+            # 무과금 재조합: resume한 완성본의 영상 트랙 재사용 (유료 생성 없음)
+            if [ ! -f "out/${SKIT}-skit-final.mp4" ]; then
+              echo "재믹스용 완성본(out/${SKIT}-skit-final.mp4)이 없습니다 — resume_run_id를 확인하세요"
+              exit 1
+            fi
+            cp "out/${SKIT}-skit-final.mp4" "out/${SKIT}-remix-base.mp4"
+            EXTRA="--remix-video out/${SKIT}-remix-base.mp4 --scenes-dir out"
+          elif [ "${{ inputs.lipsync }}" = "true" ]; then
             pip install --quiet fal-client
             EXTRA="--lipsync --scenes-dir out"
           fi
@@ -196,6 +204,7 @@ jobs:
             out/${{ env.SKIT }}-skit-final.mp4
             out/audio/line*.mp3
             out/audio/lip*.mp4
+            out/audio/omni*.mp4
             out/audio/amb*.wav
             out/audio/ambg-*.media
             out/audio/bgm.audio

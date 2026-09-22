@@ -505,6 +505,9 @@ def main():
     ap.add_argument("--video", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--lipsync", action="store_true")
+    ap.add_argument("--remix-video",
+                    help="무과금 재믹스: 이전 완성본 영상의 비디오 트랙을 그대로 쓰고 "
+                         "(립싱크·omnihuman 결과가 이미 구워져 있음) 캐시된 오디오만 재조합")
     ap.add_argument("--scenes-dir", default="out")
     args = ap.parse_args()
 
@@ -549,7 +552,24 @@ def main():
     placed = plan_placement(sorted(clips, key=lambda c: c[0]), total)
 
     video, ambience = args.video, []
-    if args.lipsync:
+    if args.remix_video:
+        # 무과금 재믹스: 유료 생성(립싱크·omnihuman·현장음) 없이, 이전 완성본의
+        # 영상 트랙 + 캐시 오디오(line*.mp3, amb*.wav, bgm.audio)만 다시 조합한다.
+        video = args.remix_video
+        scenes = sorted(glob.glob(os.path.join(args.scenes_dir, "scene*.mp4")))
+        planned = cfg.get("scene_durations")
+        if planned and scenes and len(planned) != len(scenes):
+            planned = None
+        durations = ([float(d) for d in planned] if planned
+                     else [probe_duration(s) for s in scenes])
+        t = 0.0
+        for i, d in enumerate(durations, start=1):
+            p = os.path.join(WORK_DIR, f"amb{i:02d}.wav")
+            if cached(p):
+                ambience.append((t, p))
+            t += d
+        print(f"재믹스 모드: 영상 {video}, 캐시 현장음 {len(ambience)}개 재사용")
+    elif args.lipsync:
         narration = set(cfg.get("narration_styles", ["Naration"]))
         placed_dialogue = [p for p in placed if p[2] not in narration]
         print(f"립싱크 대상 대사 {len(placed_dialogue)}줄 (내레이션 {len(placed) - len(placed_dialogue)}줄 제외)")
