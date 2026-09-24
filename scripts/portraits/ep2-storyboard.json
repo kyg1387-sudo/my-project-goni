@@ -1,0 +1,65 @@
+{
+  "characters": [
+    {
+      "id": "sb1",
+      "count": 1,
+      "refs": [
+        "assets/portraits/guard-kim-secret-cap2/kim-gold-1.png",
+        "assets/portraits/ep2-cast/junho-hood-1.png",
+        "assets/portraits/ep2-cast/jiwoo-spring-2.png",
+        "assets/portraits/ep2-cast/loc-corridor-1.png"
+      ],
+      "prompt": "Storyboard contact sheet: one single 16:9 image, a 2x3 grid of six cinematic photorealistic film frames separated by thin white gutters. Absolutely no text, letters, numbers or labels anywhere. Use the reference images: the elderly Korean security guard in navy uniform (image 1), the pale young Korean man in a plain beige hoodie (image 2), the little girl with yellow hairpin in pale pink cardigan (image 3), and the old Korean apartment exterior corridor location (image 4). Frame 1: pre-dawn dim corridor, extreme close-up of an old man's wrinkled hands hanging a plain white blank plastic bag on a door handle, face not visible. Frame 2: extreme close-up of a door opened one inch, a single dark wary eye of the young man peering through the gap. Frame 3: early spring morning, wide shot, the little girl waving cheerfully to the smiling old security guard near a small guard booth. Frame 4: insert shot, no people, the closed apartment door with untouched mail wedged in the door slit and a plain white bag on the floor. Frame 5: night, high angle long shot of a recycling area, the young man in beige hoodie seen from behind hurriedly turning away. Frame 6: night, medium shot of the old security guard holding a flashlight, watching from a distance with a concerned look."
+    },
+    {
+      "id": "sb2",
+      "count": 1,
+      "refs": [
+        "assets/portraits/guard-kim-secret-cap2/kim-gold-1.png",
+        "assets/portraits/ep2-cast/junho-room-1.png",
+        "assets/portraits/ep2-cast/loc-room-1.png"
+      ],
+      "prompt": "Storyboard contact sheet: one single 16:9 image, a 2x3 grid of six cinematic photorealistic film frames separated by thin white gutters. Absolutely no text, letters, numbers or labels anywhere. Use the reference images: the elderly Korean security guard in navy uniform (image 1), the pale young Korean man in a plain beige hoodie inside a dark curtained room (image 2), and the dim one-room apartment location (image 3). Frame 1: small guard booth interior at night, insert shot of a black-and-white framed photo of a middle-aged woman beside a single white chrysanthemum, no people. Frame 2: the old guard at his desk gently touching an old floral-pattern notebook, medium close-up, tender sad expression. Frame 3: pre-dawn, the old guard packing food containers into a plain white blank bag, mid-cough with a fist to his mouth. Frame 4: inside the dark room, close-up of the young man's hands holding two small blank paper notes side by side, one aged and yellowed, one new and white, no writing visible. Frame 5: close-up of a small steaming pot on an old gas stove in a tiny kitchenette, no people. Frame 6: the young man at a small table, spoon paused mid-air, eyes reddening with restrained tears, medium close-up, dim warm lamp light."
+    },
+    {
+      "id": "sb3",
+      "count": 1,
+      "refs": [
+        "assets/portraits/ep2-cast/junho-room-1.png",
+        "assets/portraits/guard-kim-secret-cap2/kim-gold-1.png",
+        "assets/portraits/ep2-cast/loc-corridor-1.png"
+      ],
+      "prompt": "Storyboard contact sheet: one single 16:9 image, a 2x3 grid of six cinematic photorealistic film frames separated by thin white gutters. Absolutely no text, letters, numbers or labels anywhere. Use the reference images: the pale young Korean man in a plain beige hoodie (image 1), the elderly Korean security guard in navy uniform (image 2), and the old apartment exterior corridor (image 3). Frame 1: close-up of a wrinkled hand hanging a plain white blank bag on a door handle in soft dawn light. Frame 2: the same door handle in morning light with the bag now empty and neatly folded, no people. Frame 3: view through a narrow door gap from inside, the security guard's uniformed back walking away down the corridor, seen from behind. Frame 4: the dim room now slightly tidied, washed food containers stacked upside down to dry, small blank paper squares pinned on the wall, the young man pulling the dark curtain open a little, one beam of daylight entering. Frame 5: night, close-up of the young man's hands hanging clean stacked food containers back on the outside door handle. Frame 6: dawn, the old guard discovering the returned containers, faint surprised smile while pressing one hand to his lower back, medium close-up."
+    },
+    {
+      "id": "sb4",
+      "count": 1,
+      "refs": [
+        "assets/portraits/ep2-cast/junho-hood-1.png",
+        "assets/portraits/guard-kim-secret-cap2/kim-gold-1.png",
+        "assets/portraits/ep2-cast/loc-corridor-1.png"
+      ],
+      "prompt": "Storyboard contact sheet: one single 16:9 image, a 2x3 grid of six cinematic photorealistic film frames separated by thin white gutters. Absolutely no text, letters, numbers or labels anywhere. Use the reference images: the pale young Korean man in a plain beige hoodie (image 1), the elderly Korean security guard (image 2), and the old apartment corridor (image 3). Frame 1: slow push-in feel, close-up of a completely empty door handle on a plain door, grey dawn light, no people. Frame 2: extreme close-up through a door gap, the young man's anxious trembling eye. Frame 3: close-up of the young man's trembling hand gripping the inside door handle. Frame 4: low angle medium shot, the door swung open, blinding daylight flooding in, the young man in beige hoodie silhouetted taking one step out. Frame 5: guard booth interior, the old guard lying down with a wet towel folded on his forehead, feverish. Frame 6: the young man standing shyly at the booth doorway holding out a plain white blank bag with both hands, the old guard sitting up in astonishment."
+    },
+    {
+      "id": "sb5",
+      "count": 1,
+      "refs": [
+        "assets/portraits/ep2-cast/junho-hood-1.png",
+        "assets/portraits/guard-kim-secret-cap2/kim-gold-1.png"
+      ],
+      "prompt": "Storyboard contact sheet: one single 16:9 image, a 2x3 grid of six cinematic photorealistic film frames separated by thin white gutters. Absolutely no text, letters, numbers or labels anywhere. Use the reference images: the pale young Korean man in a plain beige hoodie (image 1) and the elderly Korean security guard in navy uniform (image 2), both inside a small warm guard booth in the evening. Frame 1: high angle close-up of an old worn cardboard box being opened, full of small blank paper notes, no writing visible. Frame 2: the young man hugging the box, eyes down, medium close-up, fragile expression. Frame 3: close-up of his hands carefully lifting one aged yellowed blank note from the box. Frame 4: the old guard gazing at the note for a long moment, eyes glistening, slow push-in medium close-up. Frame 5: the young man with tears welling, trying to smile, medium close-up. Frame 6: top-down extreme close-up of two small blank paper notes lying side by side on a wooden desk, one yellowed and one white, warm lamp light, no people."
+    },
+    {
+      "id": "sb6",
+      "count": 1,
+      "refs": [
+        "assets/portraits/ep2-cast/junho-suit-2.png",
+        "assets/portraits/guard-kim-secret-cap2/kim-gold-1.png",
+        "assets/portraits/ep2-cast/jiwoo-spring-2.png",
+        "assets/portraits/ep2-cast/park-spring-2.png"
+      ],
+      "prompt": "Storyboard contact sheet: one single 16:9 image, a 2x3 grid of six cinematic photorealistic film frames separated by thin white gutters. Absolutely no text, letters, numbers or labels anywhere. Use the reference images: the young Korean man now healthy in a navy suit and white shirt (image 1), the elderly Korean security guard (image 2), the little girl with yellow hairpin (image 3), and the middle-aged lady with pearl necklace and permed hair in a bright spring cardigan (image 4). Frame 1: early spring morning, wide shot, the young man in the navy suit stepping out of the apartment entrance, cherry-blossom buds on trees. Frame 2: medium two-shot, the young man bowing politely to the old guard in front of the guard booth, the guard patting his shoulder warmly. Frame 3: the old guard alone, gentle proud smile, slight nod, medium close-up. Frame 4: wide shot, the little girl waving and the middle-aged lady walking over carrying stacked food containers, warm morning light. Frame 5: top-down extreme close-up of the old guard's hand writing in the floral notebook with a pen, the page blank, no visible writing. Frame 6: through the guard booth window, long shot of the young man in the suit walking away down the apartment path, seen from behind, spring light."
+    }
+  ]
+}
