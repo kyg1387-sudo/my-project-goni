@@ -1,0 +1,6 @@
+{
+  "tests": [
+    {"id": "SCENE29-FIX", "model": "omnihuman", "audio_id": "CHUPDA",
+     "image": "assets/auditions/scene29-fix/frame29.png"}
+  ]
+}
