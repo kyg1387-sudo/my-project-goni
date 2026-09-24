@@ -57,26 +57,32 @@ jobs:
           if [ -d "assets/auditions/${ASPEC}" ]; then
             mkdir -p out/audition
             cp -nv "assets/auditions/${ASPEC}"/*.mp3 out/audition/ || true
+            cp -nv "assets/auditions/${ASPEC}"/*.mp4 out/audition/ || true
           fi
 
       - name: 오디션 샘플 생성 (fal.ai TTS)
         env:
           FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
-        run: python3 scripts/voice_audition.py "${ASPEC}"
+        run: |
+          pip install --quiet fal-client  # omnihuman 시험(이미지+음성) 업로드용
+          python3 scripts/voice_audition.py "${ASPEC}"
 
       - name: 샘플 업로드
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.ASPEC }}-audition
-          path: out/audition/*.mp3
+          path: |
+            out/audition/*.mp3
+            out/audition/*.mp4
           retention-days: 7
 
       - name: 샘플을 저장소에 커밋
         run: |
           mkdir -p "assets/auditions/${ASPEC}"
-          cp -v out/audition/*.mp3 "assets/auditions/${ASPEC}/"
+          cp -v out/audition/*.mp3 "assets/auditions/${ASPEC}/" || true
+          cp -v out/audition/*.mp4 "assets/auditions/${ASPEC}/" || true
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add "assets/auditions/${ASPEC}"

@@ -192,6 +192,45 @@ def el_child_search(cfg):
     print("어린이 목소리 후보 탐색 완료")
 
 
+def find_video_url(result):
+    if not isinstance(result, dict):
+        return None
+    for k in ("video", "video_url", "output"):
+        v = result.get(k)
+        if isinstance(v, dict) and v.get("url"):
+            return v["url"]
+        if isinstance(v, str) and v.startswith("http"):
+            return v
+    return None
+
+
+def omnihuman_test(t, key):
+    """이미지 + (같은 스펙에서 만든) 오디오로 말하는 영상을 생성한다."""
+    path = os.path.join(OUT_DIR, f"{t['id']}.mp4")
+    if os.path.exists(path) and os.path.getsize(path) > 1000:
+        print(f"[{t['id']}] 기존 파일 재사용")
+        return True
+    audio = os.path.join(OUT_DIR, f"{t['audio_id']}.mp3")
+    if not os.path.exists(audio):
+        print(f"[{t['id']}] 오디오 없음: {audio}")
+        return False
+    os.environ.setdefault("FAL_KEY", key)
+    import fal_client
+    img_url = fal_client.upload_file(t["image"])
+    a_url = fal_client.upload_file(audio)
+    for model in t.get("models", ["fal-ai/bytedance/omnihuman/v1.5",
+                                  "fal-ai/bytedance/omnihuman"]):
+        print(f"[{t['id']}] {model} 생성 중...")
+        result = fal_run(model, {"image_url": img_url, "audio_url": a_url},
+                         key, t["id"])
+        url = find_video_url(result) if result else None
+        if url:
+            urllib.request.urlretrieve(url, path)
+            print(f"  저장됨 → {path}")
+            return True
+    return False
+
+
 def main():
     if len(sys.argv) < 2:
         sys.exit("사용법: voice_audition.py <작품>")
@@ -211,6 +250,10 @@ def main():
             print(f"[{t['id']}] 기존 파일 재사용")
             continue
         model = t.get("model", spec.get("tts_model", "fal-ai/minimax/speech-02-hd"))
+        if model == "omnihuman":
+            if not omnihuman_test(t, key):
+                failed.append(t["id"])
+            continue
         if model == "elevenlabs-direct":
             # 사용자 본인 ElevenLabs 계정의 보이스(개인 클론) — ELEVENLABS_API_KEY 필요
             el_key = (os.environ.get("ELEVENLABS_API_KEY") or "").strip()
