@@ -1,9 +1,38 @@
 {
   "characters": [
     {
-      "id": "junho-hood",
+      "id": "junho-room",
       "count": 2,
-      "prompt": "한국 아파트 복도의 부드러운 아침 빛, 27세 한국 남성 준호의 정면 상반신 사진. 반드시 옷을 입고 있음: 목까지 올라오는 회색 무지 후드티를 입고 후드는 등 뒤로 내려져 있으며, 상반신 전체가 후드티로 완전히 덮여 있음(맨살 노출 없음, 로고·프린트·글자 없음). 오래 햇빛을 못 본 창백한 피부, 눈 밑 옅은 다크서클, 부스스한 검은 곱슬 앞머리가 이마를 덮음, 마른 체형, 지치고 조심스럽지만 선한 눈빛. 화면에는 한 명만, 화면 어디에도 글자 없음. 사실적인 사진 스타일, 인물 중앙, 배경 여백 넉넉하게."
+      "refs": [
+        "assets/portraits/ep2-cast/junho-hood-1.png"
+      ],
+      "prompt": "이 사진의 남성을 그대로 유지하되 배경과 조명만 바꿔줘: 커튼이 쳐진 어두운 원룸 방 안, 커튼 틈으로 스며드는 가는 낮빛 한 줄기, 어스름한 실내. 같은 베이지색 무지 후드티(후드 내림), 부스스한 검은 곱슬 앞머리, 창백한 피부와 눈 밑 다크서클, 지치고 조심스러운 눈빛 그대로. 화면에 한 명만, 어디에도 글자 없음. 사실적인 사진 스타일, 정면 상반신."
+    },
+    {
+      "id": "junho-suit",
+      "count": 2,
+      "refs": [
+        "assets/portraits/ep2-cast/junho-hood-1.png"
+      ],
+      "prompt": "이 사진의 남성을 그대로 유지하되 다음만 바꿔줘: 남색 무지 면접 정장과 흰 무지 셔츠(넥타이 없음)를 입고, 곱슬머리를 단정히 빗어 넘겼으며, 얼굴에 혈색이 돌아오고 옅은 미소를 띤 모습. 배경은 초봄 아침 햇살의 한국 아파트 단지 현관 앞(눈 없음). 얼굴 생김새와 마른 체형은 그대로. 화면에 한 명만, 옷과 화면 어디에도 글자·로고 없음. 사실적인 사진 스타일, 정면 상반신."
+    },
+    {
+      "id": "junho-sheet",
+      "count": 1,
+      "refs": [
+        "assets/portraits/ep2-cast/junho-hood-1.png"
+      ],
+      "prompt": "Character reference sheet, one single 16:9 image on a pure white background, photorealistic, soft studio lighting, minimal style, fashion-lookbook layout. Top-left header in clean black sans-serif text: large bold title \"JUNHO\", then four small lines: \"Height: 176 cm\" / \"Withdrawn but kind, slowly reopening to the world\" / \"Voice: soft, hoarse, hesitant\" / \"Photorealistic, soft studio lighting, minimal style, modern Korea\". Left half: full-body front view and full-body back view of the same slim 27-year-old Korean man standing side by side, feet visible, both figures cropped at the neck so the head is cut off by the top edge — no face on the left side. Wardrobe: plain beige hoodie with hood down, plain dark sweatpants, plain grey sneakers, no logos. Slim build, pale hands. Right half: one large close-up portrait from the shoulders up, straight to camera, tired but gentle expression, messy black curly fringe over the forehead, pale skin with faint dark circles, no headwear. Use the reference image for the face. No text other than the header."
+    },
+    {
+      "id": "loc-corridor",
+      "count": 1,
+      "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four labeled cells, small white label text in each cell corner only (\"DAY - WIDE\", \"NIGHT - WIDE\", \"DOOR CLOSE\", \"STAIR END\"). Same location in all four cells: an old Korean apartment building exterior corridor (복도식 아파트), plain beige walls, identical plain doors with no numbers and no signs, a plain metal door handle, morning light in day cells and dim greenish corridor lamp at night. No people anywhere. No text anywhere except the four small cell labels. Photorealistic."
+    },
+    {
+      "id": "loc-room",
+      "count": 1,
+      "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four labeled cells, small white label text in each cell corner only (\"DAY - CURTAIN\", \"NIGHT - LAMP\", \"DESK\", \"KITCHENETTE\"). Same location in all four cells: a small dim Korean one-room apartment of a recluse, closed dark curtains with a thin strip of daylight, instant noodle containers stacked neatly in a corner, a small desk, a tiny kitchenette with an old gas stove and a small pot, plain walls with no posters and no text. No people anywhere. No text anywhere except the four small cell labels. Photorealistic."
     }
   ]
 }
