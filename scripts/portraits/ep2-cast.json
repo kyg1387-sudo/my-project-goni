@@ -25,6 +25,22 @@
       "prompt": "Character reference sheet, one single 16:9 image on a pure white background, photorealistic, soft studio lighting, minimal style, fashion-lookbook layout. Top-left header in clean black sans-serif text: large bold title \"JUNHO\", then four small lines: \"Height: 176 cm\" / \"Withdrawn but kind, slowly reopening to the world\" / \"Voice: soft, hoarse, hesitant\" / \"Photorealistic, soft studio lighting, minimal style, modern Korea\". Left half: full-body front view and full-body back view of the same slim 27-year-old Korean man standing side by side, feet visible, both figures cropped at the neck so the head is cut off by the top edge — no face on the left side. Wardrobe: plain beige hoodie with hood down, plain dark sweatpants, plain grey sneakers, no logos. Slim build, pale hands. Right half: one large close-up portrait from the shoulders up, straight to camera, tired but gentle expression, messy black curly fringe over the forehead, pale skin with faint dark circles, no headwear. Use the reference image for the face. No text other than the header."
     },
     {
+      "id": "junho-back",
+      "count": 1,
+      "refs": [
+        "assets/portraits/ep2-cast/junho-hood-1.png"
+      ],
+      "prompt": "이 사진의 남성을 완전히 뒤에서 본 뒷모습으로 바꿔줘: 같은 부스스한 검은 곱슬머리의 뒤통수, 같은 베이지색 무지 후드티(후드 내림)와 짙은 회색 무지 바지, 마른 체형. 배경은 밤의 아파트 단지 분리수거장(글자·라벨 없는 무지 수거함), 가로등 불빛. 얼굴이 전혀 보이지 않는 완전한 후면 상반신, 화면에 한 명만, 어디에도 글자 없음. 사실적인 사진 스타일."
+    },
+    {
+      "id": "junho-suit-back",
+      "count": 1,
+      "refs": [
+        "assets/portraits/ep2-cast/junho-suit-2.png"
+      ],
+      "prompt": "이 사진의 남성을 완전히 뒤에서 본 뒷모습으로 바꿔줘: 검은 곱슬머리를 단정히 빗어 넘긴 뒤통수, 같은 남색 무지 정장, 마른 체형. 배경은 초봄 아침의 한국 아파트 단지 길, 나뭇가지에 벚꽃 봉오리, 눈 없음. 얼굴이 전혀 보이지 않는 완전한 후면 전신, 걸어가는 자세, 화면에 한 명만, 어디에도 글자 없음. 사실적인 사진 스타일."
+    },
+    {
       "id": "loc-corridor",
       "count": 1,
       "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four cells separated by thin white gutters, absolutely no text, no letters, no numbers, no labels anywhere in the image. Same location in all four cells: an old Korean apartment building exterior corridor (복도식 아파트), plain beige walls. Every door is a completely blank smooth plain door — no door plate, no sign, no number, no sticker, no notice, nothing attached to any door or wall — with only a plain metal door handle. Cell 1: wide view in soft morning light. Cell 2: the same wide view at night, dark deep-blue sky beyond the railing, corridor lit only by one dim greenish fluorescent lamp. Cell 3: close-up of one blank door and its handle. Cell 4: the corridor end with a plain concrete stairwell. No people anywhere. Photorealistic."

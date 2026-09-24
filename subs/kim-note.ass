@@ -1,0 +1,40 @@
+[Script Info]
+Title: 김씨의 쪽지 자막
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Naration,Noto Sans CJK KR,52,&H00D2EEF5,&H000000FF,&H00000000,&H80000000,-1,-1,0,0,100,100,0,0,1,4,2,2,200,200,85,1
+Style: Caption,Noto Sans CJK KR,46,&H00E8E8E8,&H000000FF,&H00000000,&H96000000,-1,-1,0,0,100,100,0,0,1,4,2,8,200,200,70,1
+Style: Kim,Noto Sans CJK KR,60,&H00B8E8FF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,200,200,80,1
+Style: Junho,Noto Sans CJK KR,60,&H00A8E8C8,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,200,200,80,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:10.40,0:00:13.25,Caption,,0,0,0,,매주 수요일 새벽, 그 문고리에는
+Dialogue: 0,0:00:13.75,0:00:16.05,Caption,,0,0,0,,{\an5\pos(960,470)\fnNoto Serif CJK KR\fs84\b1\fsp9\c&HD8F0FA&\3c&H120A05&\bord2\shad2\4c&H96000000&\blur0.4\fad(600,600)}김씨의 쪽지
+Dialogue: 0,0:00:16.55,0:00:18.85,Caption,,0,0,0,,석 달 전
+Dialogue: 0,0:00:30.80,0:00:35.46,Naration,,0,0,0,,504호의 문은, 오래도록 낮에는 열리지 않았습니다.
+Dialogue: 0,0:01:12.00,0:01:15.21,Kim,,0,0,0,,…여보. 그 청년, 아직 그 방에 있소.
+Dialogue: 0,0:01:41.50,0:01:43.25,Junho,,0,0,0,,…글씨가, 달라.
+Dialogue: 0,0:01:46.00,0:01:51.03,Naration,,0,0,0,,칠 년 만에 다시 걸린 봉지를, 그는 사흘 동안 열지 못했습니다.
+Dialogue: 0,0:02:12.00,0:02:13.39,Junho,,0,0,0,,…따뜻하네.
+Dialogue: 0,0:02:15.80,0:02:20.10,Naration,,0,0,0,,봉지는 매주 걸렸고, 쪽지는 한 장씩 늘어 갔습니다.
+Dialogue: 0,0:02:56.50,0:02:58.44,Kim,,0,0,0,,…잘 먹었으면 됐네.
+Dialogue: 0,0:03:01.00,0:03:05.85,Naration,,0,0,0,,석 달 만에 처음으로, 수요일의 문고리는 비어 있었습니다.
+Dialogue: 0,0:03:31.00,0:03:33.30,Junho,,0,0,0,,…아저씨. 괜찮으세요?
+Dialogue: 0,0:03:35.80,0:03:38.10,Kim,,0,0,0,,…자네가, 여길 어떻게…
+Dialogue: 0,0:03:51.20,0:03:53.68,Junho,,0,0,0,,…이번엔, 제 차례라서요.
+Dialogue: 0,0:04:01.50,0:04:03.62,Junho,,0,0,0,,…하나도 못 버렸어요.
+Dialogue: 0,0:04:04.92,0:04:10.13,Junho,,0,0,0,,그런데 이건… 칠 년 전 거예요. 그때도 누가, 걸어줬었거든요.
+Dialogue: 0,0:04:27.50,0:04:29.25,Kim,,0,0,0,,…집사람 겁니다.
+Dialogue: 0,0:04:30.35,0:04:35.56,Kim,,0,0,0,,칠 년 전에… 먼저 걸던 사람이오. 나는, 이어서 걸었을 뿐이고.
+Dialogue: 0,0:04:41.80,0:04:45.37,Junho,,0,0,0,,…그럼 저는, 두 분께… 두 번 받은 거네요.
+Dialogue: 0,0:05:10.80,0:05:12.55,Junho,,0,0,0,,다녀오겠습니다.
+Dialogue: 0,0:05:16.00,0:05:18.12,Kim,,0,0,0,,…그래. 잘 다녀오게.
+Dialogue: 0,0:05:36.00,0:05:41.03,Naration,,0,0,0,,닫힌 문을 연 것은, 수요일마다 걸린 두 사람의 글씨였습니다.
+Dialogue: 0,0:05:41.53,0:05:46.37,Caption,,0,0,0,,{\an5\pos(960,470)\fnNoto Serif CJK KR\fs64\b1\fsp7\c&HD8F0FA&\3c&H120A05&\bord2\shad2\4c&H96000000&\blur0.4\fad(1200,1500)}당신의 문고리에도,\N누군가의 온기가 걸려 있을지 모릅니다
