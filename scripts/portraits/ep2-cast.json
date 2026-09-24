@@ -27,12 +27,12 @@
     {
       "id": "loc-corridor",
       "count": 1,
-      "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four labeled cells, small white label text in each cell corner only (\"DAY - WIDE\", \"NIGHT - WIDE\", \"DOOR CLOSE\", \"STAIR END\"). Same location in all four cells: an old Korean apartment building exterior corridor (복도식 아파트), plain beige walls, identical plain doors with no numbers and no signs, a plain metal door handle, morning light in day cells and dim greenish corridor lamp at night. No people anywhere. No text anywhere except the four small cell labels. Photorealistic."
+      "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four cells separated by thin white gutters, absolutely no text, no letters, no numbers, no labels anywhere in the image. Same location in all four cells: an old Korean apartment building exterior corridor (복도식 아파트), plain beige walls. Every door is a completely blank smooth plain door — no door plate, no sign, no number, no sticker, no notice, nothing attached to any door or wall — with only a plain metal door handle. Cell 1: wide view in soft morning light. Cell 2: the same wide view at night, dark deep-blue sky beyond the railing, corridor lit only by one dim greenish fluorescent lamp. Cell 3: close-up of one blank door and its handle. Cell 4: the corridor end with a plain concrete stairwell. No people anywhere. Photorealistic."
     },
     {
       "id": "loc-room",
       "count": 1,
-      "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four labeled cells, small white label text in each cell corner only (\"DAY - CURTAIN\", \"NIGHT - LAMP\", \"DESK\", \"KITCHENETTE\"). Same location in all four cells: a small dim Korean one-room apartment of a recluse, closed dark curtains with a thin strip of daylight, instant noodle containers stacked neatly in a corner, a small desk, a tiny kitchenette with an old gas stove and a small pot, plain walls with no posters and no text. No people anywhere. No text anywhere except the four small cell labels. Photorealistic."
+      "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four cells separated by thin white gutters, absolutely no text, no letters, no numbers, no labels anywhere in the image. Same location in all four cells: a small dim Korean one-room apartment of a recluse. Plain white unlabeled disposable food containers — completely blank smooth white paper cups and bowls with no printing, no logos, no labels of any kind — stacked neatly in a corner. Plain walls with no posters, no calendar, no writing. Cell 1: wide view, closed dark curtains with one thin strip of daylight. Cell 2: the same room at night lit by a small warm desk lamp. Cell 3: close-up of the small plain desk. Cell 4: the tiny kitchenette with an old gas stove and one small plain pot, no product packaging visible. No people anywhere. Photorealistic."
     }
   ]
 }
