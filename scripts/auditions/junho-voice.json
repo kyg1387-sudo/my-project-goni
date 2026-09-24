@@ -1,0 +1,18 @@
+{
+  "tts_model": "fal-ai/minimax/speech-02-hd",
+  "language_boost": "Korean",
+  "tests": [
+    {"id": "JUNHO-A-Decent", "voice": "Decent_Boy", "emotion": "fearful", "speed": 0.85,
+     "text": "…아저씨. 괜찮으세요?"},
+    {"id": "JUNHO-B-Decent", "voice": "Decent_Boy", "emotion": "sad", "speed": 0.78,
+     "text": "…그럼 저는, 두 분께… 두 번 받은 거네요."},
+    {"id": "JUNHO-A-Knight", "voice": "Young_Knight", "emotion": "fearful", "speed": 0.85,
+     "text": "…아저씨. 괜찮으세요?"},
+    {"id": "JUNHO-B-Knight", "voice": "Young_Knight", "emotion": "sad", "speed": 0.78,
+     "text": "…그럼 저는, 두 분께… 두 번 받은 거네요."},
+    {"id": "JUNHO-A-Casual", "voice": "Casual_Guy", "emotion": "fearful", "speed": 0.85,
+     "text": "…아저씨. 괜찮으세요?"},
+    {"id": "JUNHO-B-Casual", "voice": "Casual_Guy", "emotion": "sad", "speed": 0.78,
+     "text": "…그럼 저는, 두 분께… 두 번 받은 거네요."}
+  ]
+}
