@@ -182,6 +182,7 @@ jobs:
               exit 1
             fi
             cp "out/${SKIT}-skit-final.mp4" "out/${SKIT}-remix-base.mp4"
+            pip install --quiet fal-client  # remix_patch(장면 교정)용
             EXTRA="--remix-video out/${SKIT}-remix-base.mp4 --scenes-dir out"
           elif [ "${{ inputs.lipsync }}" = "true" ]; then
             pip install --quiet fal-client

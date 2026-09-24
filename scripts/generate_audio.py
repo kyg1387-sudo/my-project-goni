@@ -553,22 +553,75 @@ def main():
 
     video, ambience = args.video, []
     if args.remix_video:
-        # 무과금 재믹스: 유료 생성(립싱크·omnihuman·현장음) 없이, 이전 완성본의
-        # 영상 트랙 + 캐시 오디오(line*.mp3, amb*.wav, bgm.audio)만 다시 조합한다.
+        # 재믹스: 이전 완성본의 영상 트랙 + 캐시 오디오(line*.mp3, amb*.wav,
+        # bgm.audio)만 다시 조합한다. remix_patch에 지정된 장면만 예외적으로
+        # omnihuman을 다시 만들어 해당 구간의 영상을 갈아끼운다(그 외 유료 호출 없음).
         video = args.remix_video
-        scenes = sorted(glob.glob(os.path.join(args.scenes_dir, "scene*.mp4")))
+        # 재믹스는 장면 클립이 없어도 되므로 계획 길이표(scene_durations)를 그대로 쓴다
         planned = cfg.get("scene_durations")
-        if planned and scenes and len(planned) != len(scenes):
-            planned = None
         durations = ([float(d) for d in planned] if planned
-                     else [probe_duration(s) for s in scenes])
-        t = 0.0
+                     else [probe_duration(s) for s in
+                           sorted(glob.glob(os.path.join(args.scenes_dir, "scene*.mp4")))])
+        bounds, t = [], 0.0
         for i, d in enumerate(durations, start=1):
+            bounds.append((t, t + d))
             p = os.path.join(WORK_DIR, f"amb{i:02d}.wav")
             if cached(p):
                 ambience.append((t, p))
             t += d
         print(f"재믹스 모드: 영상 {video}, 캐시 현장음 {len(ambience)}개 재사용")
+
+        # 장면 교정 패치: {"장면번호": "소스 클립 이름"} — 그 장면 구간만
+        # 소스 클립+대사 오디오로 omnihuman 재생성 후 영상에 이어붙인다.
+        patches = {int(k): v for k, v in (cfg.get("remix_patch") or {}).items()}
+        if patches:
+            narration = set(cfg.get("narration_styles", ["Naration"]))
+            placed_dialogue = [p for p in placed if p[2] not in narration]
+            dial_wav = render_track(placed_dialogue, total,
+                                    os.path.join(WORK_DIR, "dialogue.wav"))
+            patch_segs = []
+            for i in sorted(patches):
+                t0, t1 = bounds[i - 1]
+                d = t1 - t0
+                seg = os.path.join(WORK_DIR, f"seg{i:02d}.wav")
+                subprocess.run(["ffmpeg", "-y", "-i", dial_wav, "-af",
+                                f"atrim={t0:.3f}:{t1:.3f},asetpts=PTS-STARTPTS", seg],
+                               check=True, capture_output=True)
+                src = os.path.join(args.scenes_dir, f"{patches[i]}.mp4")
+                print(f"[remix patch {i:02d}] {patches[i]} + 대사({t0:.1f}~{t1:.1f}s) → omnihuman")
+                clip = omnihuman_scene(cfg, key, src, seg, i)
+                if not clip:
+                    sys.exit(f"[remix patch {i:02d}] omnihuman 생성 실패")
+                patched = os.path.join(WORK_DIR, f"patched{i:02d}.mp4")
+                subprocess.run(["ffmpeg", "-y", "-i", clip, "-vf",
+                                (f"scale=1280:720:force_original_aspect_ratio=decrease,"
+                                 f"pad=1280:720:(ow-iw)/2:(oh-ih)/2,fps=24,setsar=1,"
+                                 f"tpad=stop_mode=clone:stop_duration=15,"
+                                 f"trim=duration={d:.3f},setpts=PTS+{t0:.3f}/TB,"
+                                 f"ass={args.ass},setpts=PTS-STARTPTS"),
+                                "-an", "-c:v", "libx264", "-preset", "medium",
+                                "-crf", "18", patched], check=True)
+                patch_segs.append((t0, t1, patched))
+            # 기본 영상에서 패치 구간만 잘라내고 새 클립으로 이어붙인다
+            cmd = ["ffmpeg", "-y", "-i", video]
+            for _, _, p in patch_segs:
+                cmd += ["-i", p]
+            n_base = len(patch_segs) + 1
+            parts = [f"[0:v]split={n_base}" + "".join(f"[s{k}]" for k in range(n_base))]
+            labels, cur = [], 0.0
+            for k, (t0, t1, _p) in enumerate(patch_segs):
+                parts.append(f"[s{k}]trim={cur:.3f}:{t0:.3f},setpts=PTS-STARTPTS[b{k}]")
+                labels += [f"[b{k}]", f"[{k + 1}:v]"]
+                cur = t1
+            parts.append(f"[s{n_base - 1}]trim=start={cur:.3f},setpts=PTS-STARTPTS[b{n_base - 1}]")
+            labels.append(f"[b{n_base - 1}]")
+            parts.append("".join(labels) + f"concat=n={len(labels)}:v=1:a=0[vs]")
+            spliced = os.path.join(WORK_DIR, "remix-spliced.mp4")
+            subprocess.run(cmd + ["-filter_complex", ";".join(parts), "-map", "[vs]",
+                                  "-an", "-c:v", "libx264", "-preset", "medium",
+                                  "-crf", "18", spliced], check=True)
+            video = spliced
+            print(f"장면 패치 {len(patch_segs)}개 반영 → {video}")
     elif args.lipsync:
         narration = set(cfg.get("narration_styles", ["Naration"]))
         placed_dialogue = [p for p in placed if p[2] not in narration]
