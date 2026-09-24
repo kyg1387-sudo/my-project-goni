@@ -431,7 +431,7 @@ def main():
         "language_boost": "Korean",
         "speed": 1.0,
         "default_voice": "Imposing_Manner",
-        "style_voices": {"Kim": "Imposing_Manner", "Junho": "AUDITION_TBD",
+        "style_voices": {"Kim": "Imposing_Manner", "Junho": "Casual_Guy",
                          "Naration": "Calm_Woman"},
         "style_emotions": {"Kim": "neutral", "Junho": "neutral", "Naration": "neutral"},
         "emotion_overrides": emotions,

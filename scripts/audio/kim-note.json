@@ -5,7 +5,7 @@
   "default_voice": "Imposing_Manner",
   "style_voices": {
     "Kim": "Imposing_Manner",
-    "Junho": "AUDITION_TBD",
+    "Junho": "Casual_Guy",
     "Naration": "Calm_Woman"
   },
   "style_emotions": {
