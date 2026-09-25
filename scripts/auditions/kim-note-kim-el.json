@@ -1,0 +1,16 @@
+{
+  "tests": [
+    {"id": "line002", "model": "elevenlabs-direct", "voice": "8vwSOQHQApfVx993mKf9",
+     "text": "[low, tender voice to a photo, slight pause after the first word] …여보. 그 청년, 아직 그 방에 있소."},
+    {"id": "line007", "model": "elevenlabs-direct", "voice": "8vwSOQHQApfVx993mKf9",
+     "text": "[gruff but warm, faint smile] …잘 먹었으면 됐네."},
+    {"id": "line010", "model": "elevenlabs-direct", "voice": "8vwSOQHQApfVx993mKf9",
+     "text": "[breathless with surprise, trailing off] …자네가, 여길 어떻게…"},
+    {"id": "line014", "model": "elevenlabs-direct", "voice": "8vwSOQHQApfVx993mKf9",
+     "text": "[long pause before, low quiet voice holding back emotion] …집사람 겁니다."},
+    {"id": "line015", "model": "elevenlabs-direct", "voice": "8vwSOQHQApfVx993mKf9",
+     "text": "[steady but heavy, calm sorrow] 칠 년 전에… 먼저 걸던 사람이오. 나는, 이어서 걸었을 뿐이고."},
+    {"id": "line018", "model": "elevenlabs-direct", "voice": "8vwSOQHQApfVx993mKf9",
+     "text": "[warm, gently seeing him off, half-beat pause after the first word] …그래. 잘 다녀오게."}
+  ]
+}
