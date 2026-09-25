@@ -1,0 +1,388 @@
+{
+  "tts_model": "fal-ai/minimax/speech-02-hd",
+  "language_boost": "Korean",
+  "speed": 1.05,
+  "default_voice": "Deep_Voice_Man",
+  "style_voices": {
+    "Naration": "Deep_Voice_Man",
+    "Doyun": "Determined_Man",
+    "Vil": "Wise_Woman",
+    "Jung": "Patient_Man"
+  },
+  "name_voices": {
+    "미란": "Wise_Woman",
+    "태석": "Casual_Guy",
+    "경비원": "Imposing_Manner",
+    "관리소장": "Imposing_Manner",
+    "정 실장": "Patient_Man"
+  },
+  "style_emotions": {
+    "Vil": "angry",
+    "Naration": "neutral",
+    "Doyun": "neutral",
+    "Jung": "neutral"
+  },
+  "emotion_overrides": {
+    "2": "happy",
+    "18": "neutral",
+    "19": "happy",
+    "27": "happy",
+    "47": "happy",
+    "50": "surprised",
+    "57": "surprised",
+    "62": "fearful",
+    "66": "fearful",
+    "69": "fearful",
+    "74": "fearful",
+    "72": "sad"
+  },
+  "narration_styles": [
+    "Naration"
+  ],
+  "lipsync_models": [
+    "fal-ai/sync-lipsync",
+    "fal-ai/latentsync"
+  ],
+  "ambience_model": "fal-ai/mmaudio-v2",
+  "ambience_volume": 0.4,
+  "ambience_prompts": [
+    "porcelain bowl clattering, liquid splashing on marble floor, lobby reverb",
+    "porcelain bowl clattering, liquid splashing on marble floor, lobby reverb",
+    "low cinematic room tone, clock ticking, distant city hum, no music",
+    "low cinematic room tone, clock ticking, distant city hum, no music",
+    "low cinematic room tone, clock ticking, distant city hum, no music",
+    "low cinematic room tone, clock ticking, distant city hum, no music",
+    "low cinematic room tone, clock ticking, distant city hum, no music",
+    "night city street ambience, motorcycle engine idling, guard booth, freight elevator hum",
+    "night city street ambience, motorcycle engine idling, guard booth, freight elevator hum",
+    "night city street ambience, motorcycle engine idling, guard booth, freight elevator hum",
+    "night city street ambience, motorcycle engine idling, guard booth, freight elevator hum",
+    "porcelain bowl spill and splash, phone camera shutter clicks, apartment hallway room tone",
+    "porcelain bowl spill and splash, phone camera shutter clicks, apartment hallway room tone",
+    "porcelain bowl spill and splash, phone camera shutter clicks, apartment hallway room tone",
+    "porcelain bowl spill and splash, phone camera shutter clicks, apartment hallway room tone",
+    "porcelain bowl spill and splash, phone camera shutter clicks, apartment hallway room tone",
+    "porcelain bowl spill and splash, phone camera shutter clicks, apartment hallway room tone",
+    "porcelain bowl spill and splash, phone camera shutter clicks, apartment hallway room tone",
+    "porcelain bowl spill and splash, phone camera shutter clicks, apartment hallway room tone",
+    "porcelain bowl spill and splash, phone camera shutter clicks, apartment hallway room tone",
+    "underground parking garage ambience, low ventilation hum, car window motor, echoing footsteps",
+    "underground parking garage ambience, low ventilation hum, car window motor, echoing footsteps",
+    "underground parking garage ambience, low ventilation hum, car window motor, echoing footsteps",
+    "underground parking garage ambience, low ventilation hum, car window motor, echoing footsteps",
+    "underground parking garage ambience, low ventilation hum, car window motor, echoing footsteps",
+    "underground parking garage ambience, low ventilation hum, car window motor, echoing footsteps",
+    "underground parking garage ambience, low ventilation hum, car window motor, echoing footsteps",
+    "underground parking garage ambience, low ventilation hum, car window motor, echoing footsteps",
+    "echoing footsteps on marble floor, lobby reverb",
+    "echoing footsteps on marble floor, lobby reverb",
+    "echoing footsteps on marble floor, lobby reverb",
+    "echoing footsteps on marble floor, lobby reverb",
+    "echoing footsteps on marble floor, lobby reverb",
+    "echoing footsteps on marble floor, lobby reverb",
+    "echoing footsteps on marble floor, lobby reverb",
+    "automatic glass doors sliding open, many synchronized footsteps, camera flashes clicking",
+    "automatic glass doors sliding open, many synchronized footsteps, camera flashes clicking",
+    "automatic glass doors sliding open, many synchronized footsteps, camera flashes clicking",
+    "automatic glass doors sliding open, many synchronized footsteps, camera flashes clicking",
+    "automatic glass doors sliding open, many synchronized footsteps, camera flashes clicking",
+    "paper envelope rustle, quiet tense room tone",
+    "paper envelope rustle, quiet tense room tone",
+    "paper envelope rustle, quiet tense room tone",
+    "paper envelope rustle, quiet tense room tone",
+    "paper envelope rustle, quiet tense room tone",
+    "paper envelope rustle, quiet tense room tone",
+    "paper envelope rustle, quiet tense room tone",
+    "paper envelope rustle, quiet tense room tone",
+    "paper envelope rustle, quiet tense room tone",
+    "paper envelope rustle, quiet tense room tone",
+    "paper envelope rustle, quiet tense room tone",
+    "night street ambience, motorcycle starting and riding away, wind, dawn birds at quiet hillside",
+    "night street ambience, motorcycle starting and riding away, wind, dawn birds at quiet hillside",
+    "night street ambience, motorcycle starting and riding away, wind, dawn birds at quiet hillside",
+    "night street ambience, motorcycle starting and riding away, wind, dawn birds at quiet hillside",
+    "night street ambience, motorcycle starting and riding away, wind, dawn birds at quiet hillside"
+  ],
+  "bgm_model": "fal-ai/lyria2",
+  "bgm_prompt": "tense cinematic Korean drama orchestral score, suspenseful strings and piano, slow build to a triumphant reveal, dramatic, instrumental only, no vocals",
+  "bgm_volume": 0.22,
+  "style_names": {
+    "Doyun": "도윤"
+  },
+  "scene_speakers": [
+    [
+      "도윤",
+      "미란",
+      "태석"
+    ],
+    [
+      "도윤"
+    ],
+    [
+      "도윤"
+    ],
+    [],
+    [],
+    [
+      "도윤"
+    ],
+    [
+      "도윤"
+    ],
+    [
+      "도윤"
+    ],
+    [
+      "도윤",
+      "경비원"
+    ],
+    [
+      "도윤"
+    ],
+    [
+      "도윤"
+    ],
+    [
+      "도윤",
+      "미란"
+    ],
+    [
+      "태석"
+    ],
+    [
+      "도윤"
+    ],
+    [
+      "미란"
+    ],
+    [
+      "도윤",
+      "미란"
+    ],
+    [
+      "도윤",
+      "태석"
+    ],
+    [
+      "도윤",
+      "미란"
+    ],
+    [
+      "태석"
+    ],
+    [
+      "도윤"
+    ],
+    [
+      "정 실장"
+    ],
+    [
+      "정 실장"
+    ],
+    [
+      "도윤"
+    ],
+    [
+      "도윤",
+      "정 실장"
+    ],
+    [
+      "정 실장"
+    ],
+    [
+      "정 실장"
+    ],
+    [
+      "도윤"
+    ],
+    [
+      "도윤",
+      "정 실장"
+    ],
+    [
+      "도윤",
+      "관리소장",
+      "경비원"
+    ],
+    [
+      "미란"
+    ],
+    [
+      "도윤"
+    ],
+    [
+      "미란"
+    ],
+    [
+      "도윤",
+      "관리소장",
+      "경비원"
+    ],
+    [
+      "미란"
+    ],
+    [
+      "도윤"
+    ],
+    [],
+    [
+      "도윤",
+      "정 실장"
+    ],
+    [
+      "미란",
+      "태석"
+    ],
+    [
+      "도윤"
+    ],
+    [],
+    [
+      "도윤",
+      "정 실장"
+    ],
+    [
+      "미란"
+    ],
+    [
+      "태석"
+    ],
+    [
+      "도윤",
+      "태석"
+    ],
+    [
+      "미란",
+      "관리소장"
+    ],
+    [
+      "도윤",
+      "미란"
+    ],
+    [
+      "도윤",
+      "정 실장"
+    ],
+    [
+      "미란"
+    ],
+    [
+      "태석"
+    ],
+    [
+      "도윤",
+      "태석"
+    ],
+    [
+      "미란",
+      "관리소장"
+    ],
+    [],
+    [
+      "도윤",
+      "정 실장"
+    ],
+    [
+      "도윤"
+    ],
+    [
+      "도윤"
+    ],
+    []
+  ],
+  "section_ends": [
+    2,
+    7,
+    11,
+    20,
+    28,
+    35,
+    40,
+    51
+  ],
+  "speed_overrides": {
+    "1": 1.0,
+    "2": 1.1,
+    "3": 0.95,
+    "4": 0.9,
+    "5": 1.0,
+    "6": 0.98,
+    "7": 0.92,
+    "8": 1.05,
+    "9": 1.02,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.05,
+    "13": 1.05,
+    "14": 0.95,
+    "15": 1.1,
+    "16": 0.98,
+    "17": 1.08,
+    "18": 1.05,
+    "19": 1.08,
+    "20": 1.0,
+    "21": 0.95,
+    "22": 0.95,
+    "23": 1.05,
+    "24": 0.95,
+    "25": 1.1,
+    "26": 1.05,
+    "27": 1.1,
+    "28": 1.0,
+    "29": 0.92,
+    "30": 1.02,
+    "31": 0.9,
+    "32": 1.0,
+    "33": 0.9,
+    "34": 0.95,
+    "35": 0.98,
+    "36": 0.95,
+    "37": 1.0,
+    "38": 0.9,
+    "39": 0.95,
+    "40": 0.9,
+    "41": 1.02,
+    "42": 1.0,
+    "43": 1.05,
+    "44": 0.95,
+    "45": 1.05,
+    "46": 0.9,
+    "47": 1.1,
+    "48": 1.08,
+    "49": 0.9,
+    "50": 1.0,
+    "51": 0.95,
+    "52": 0.9,
+    "53": 1.05,
+    "54": 1.05,
+    "55": 0.9,
+    "56": 0.85,
+    "57": 0.95,
+    "58": 0.92,
+    "59": 0.95,
+    "60": 0.95,
+    "61": 0.92,
+    "62": 0.95,
+    "63": 0.95,
+    "64": 0.9,
+    "65": 1.0,
+    "66": 1.05,
+    "67": 0.92,
+    "68": 0.98,
+    "69": 1.0,
+    "70": 0.95,
+    "71": 0.98,
+    "72": 1.0,
+    "73": 0.9,
+    "74": 0.95,
+    "75": 0.88,
+    "76": 0.95,
+    "77": 0.95,
+    "78": 1.0,
+    "79": 0.95,
+    "80": 0.92,
+    "81": 0.92,
+    "82": 0.85,
+    "83": 1.0
+  }
+}

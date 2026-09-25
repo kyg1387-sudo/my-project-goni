@@ -29,5 +29,21 @@
   },
   "bgm_model": "fal-ai/lyria2",
   "bgm_prompt": "tense cinematic Korean drama orchestral score, suspenseful strings and piano, slow build to a triumphant reveal, dramatic, instrumental only, no vocals",
-  "bgm_volume": 0.22
+  "bgm_volume": 0.22,
+  "narration_styles": ["Naration"],
+  "lipsync_models": ["fal-ai/sync-lipsync", "fal-ai/latentsync"],
+  "ambience_model": "fal-ai/mmaudio-v2",
+  "ambience_volume": 0.4,
+  "ambience_prompts": [
+    "porcelain bowl clattering, liquid splashing on marble floor, shocked crowd murmur, lobby reverb",
+    "tense quiet marble lobby, wristwatch ticking, fabric rustle, distant murmur",
+    "night city street ambience, motorcycle engine idling, distant traffic, footsteps",
+    "porcelain bowl spill and splash, phone camera shutter clicks, mocking snicker, apartment hallway",
+    "underground parking garage ambience, low ventilation hum, car window motor, echoing footsteps",
+    "crowd murmuring in marble lobby, echoing footsteps, tense atmosphere",
+    "automatic glass doors sliding open, many synchronized footsteps, camera flashes clicking, gasps",
+    "stunned silence then gasps and murmurs, marble lobby reverb, a phone clattering on floor",
+    "paper envelope rustle, quiet sobbing, tense room tone, murmurs",
+    "night street ambience, motorcycle starting and riding away, wind, distant city hum"
+  ]
 }
