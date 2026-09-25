@@ -1,14 +1,34 @@
 {
   "tests": [
-    {"id": "line001", "model": "elevenlabs-direct", "voice": "5n5gqmaQi9Ewevrz7bOS",
-     "text": "[warm, gentle storytelling narration, calm and tender] 504호의 문은, 오래도록 낮에는 열리지 않았습니다."},
-    {"id": "line004", "model": "elevenlabs-direct", "voice": "5n5gqmaQi9Ewevrz7bOS",
-     "text": "[warm, gentle storytelling narration, careful and quiet] 칠 년 만에 다시 걸린 봉지를, 그는 사흘 동안 열지 못했습니다."},
-    {"id": "line006", "model": "elevenlabs-direct", "voice": "5n5gqmaQi9Ewevrz7bOS",
-     "text": "[warm, gentle storytelling narration, tender warmth growing] 봉지는 매주 걸렸고, 쪽지는 한 장씩 늘어 갔습니다."},
-    {"id": "line008", "model": "elevenlabs-direct", "voice": "5n5gqmaQi9Ewevrz7bOS",
-     "text": "[warm, gentle storytelling narration, quiet tension, slightly slower] 석 달 만에 처음으로, 수요일의 문고리는 비어 있었습니다."},
-    {"id": "line019", "model": "elevenlabs-direct", "voice": "5n5gqmaQi9Ewevrz7bOS",
-     "text": "[warm, gentle storytelling narration, softly hopeful, slowest and most tender] 닫힌 문을 연 것은, 수요일마다 걸린 두 사람의 글씨였습니다."}
+    {
+      "id": "line001",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "text": "[warm, gentle storytelling narration, calm and tender] 오백사 호의 문은, 오래도록 낮에는 열리지 않았습니다."
+    },
+    {
+      "id": "line004",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "text": "[warm, gentle storytelling narration, careful and quiet] 칠 년 만에 다시 걸린 봉지를, 그는 사흘 동안 열지 못했습니다."
+    },
+    {
+      "id": "line006",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "text": "[warm, gentle storytelling narration, tender warmth growing] 봉지는 매주 걸렸고, 쪽지는 한 장씩 늘어 갔습니다."
+    },
+    {
+      "id": "line008",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "text": "[warm, gentle storytelling narration, quiet tension, slightly slower] 석 달 만에 처음으로, 수요일의 문고리는 비어 있었습니다."
+    },
+    {
+      "id": "line019",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "text": "[warm, gentle storytelling narration, softly hopeful, slowest and most tender] 닫힌 문을 연 것은, 수요일마다 걸린 두 사람의 글씨였습니다."
+    }
   ]
 }
