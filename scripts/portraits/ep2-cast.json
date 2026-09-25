@@ -57,6 +57,11 @@
       "id": "loc-room",
       "count": 1,
       "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four cells separated by thin white gutters, absolutely no text, no letters, no numbers, no labels anywhere in the image. Same location in all four cells: a small dim Korean one-room apartment of a recluse. Plain white unlabeled disposable food containers — completely blank smooth white paper cups and bowls with no printing, no logos, no labels of any kind — stacked neatly in a corner. Plain walls with no posters, no calendar, no writing. Cell 1: wide view, closed dark curtains with one thin strip of daylight. Cell 2: the same room at night lit by a small warm desk lamp. Cell 3: close-up of the small plain desk. Cell 4: the tiny kitchenette with an old gas stove and one small plain pot, no product packaging visible. No people anywhere. Photorealistic."
+    },
+    {
+      "id": "loc-guard",
+      "count": 1,
+      "prompt": "작은 한국 아파트 경비실의 실내, 한 장의 사실적인 사진. 크림색 무지 벽(글자·게시물 없음), 창밖으로 아파트 단지가 보이는 작은 창문, 창가의 작은 나무 책상과 따뜻한 스탠드 조명, 벽 옆의 좁은 간이침대, 소박하고 낡았지만 정돈된 분위기, 낮의 부드러운 빛. 사람이 한 명도 없는 무인 실내, 어디에도 글자 없음. 16:9 가로 구도."
     }
   ]
 }
