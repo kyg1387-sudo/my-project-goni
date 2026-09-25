@@ -51,6 +51,10 @@ on:
         description: 대사 TTS 언어 검사만 수행 (true/false)
         required: false
         default: "false"
+      qc_patterns:
+        description: QC 대상 파일 패턴 (비우면 line*.mp3, 예 "amb*.wav,bgm.audio")
+        required: false
+        default: ""
       slice_source:
         description: 소스 Artifact 만료 시, deliveries의 완성본을 잘라 장면 복구 (true/false)
         required: false
@@ -184,7 +188,25 @@ jobs:
           FAL_KEY: ${{ secrets.FAL_API_KEY }}
         run: |
           pip install --quiet fal-client
-          python3 scripts/qc_tts.py --ass "subs/${SKIT}.ass" --audio-dir out/audio
+          EXTRA=""
+          if [ -n "${{ inputs.qc_patterns }}" ]; then
+            EXTRA="--patterns ${{ inputs.qc_patterns }}"
+          fi
+          python3 scripts/qc_tts.py --ass "subs/${SKIT}.ass" --audio-dir out/audio \
+            --report qc-report.txt $EXTRA
+
+      # 로그/Artifact 접근이 막힌 환경에서도 결과를 git으로 받을 수 있게 한다
+      - name: QC 보고서 커밋
+        if: ${{ inputs.qc_tts == 'true' }}
+        run: |
+          mkdir -p docs/qc
+          cp qc-report.txt "docs/qc/${SKIT}-qc-${{ github.run_id }}.txt"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/qc
+          git commit -m "QC 보고서 (${SKIT}, run ${{ github.run_id }})"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
 
       - name: 대사 TTS와 배경음악 생성 후 믹싱 (립싱크·현장음 옵션)
         if: ${{ inputs.add_audio == 'true' && inputs.deliver_from_run_id == '' && inputs.qc_tts != 'true' }}
