@@ -39,6 +39,7 @@ REF_JUNHO_SUIT_BACK = f"{P}/ep2-cast/junho-suit-back-1.png"    # 정장 뒷모�
 REF_JIWOO = f"{P}/ep2-cast/jiwoo-spring-2.png"
 REF_PARK = f"{P}/ep2-cast/park-spring-2.png"
 REF_WIFE = f"{P}/ep2-cast/wife-photo-1.png"             # 아내 사진 기준(scene08에서 추출)
+REF_KIM_BARE = f"{P}/ep2-cast/kim-bare-1.png"          # 맨머리 김씨(몸살 장면용)
 
 # 인물 고정 문구 (모든 장면 동일 반복 — 규칙 5)
 KIM = ("68세 한국 남성 아파트 경비원 김씨(흰머리 섞인 짧은 머리, 온화하지만 무뚝뚝한 표정, "
@@ -112,9 +113,11 @@ SECTIONS = [
              f"닫힌 문 전체로 빠지는 샷, 사람이 한 명도 없는 무인 장면, 인물 없음, {MUTE}", []),
         ],
         speaker_shots={
-            K: [(f"{GUARD_IN}, 책상 위 갈색 나무 액자를 바라보며 꽃무늬 수첩을 쓰다듬는 {KIM}, "
-                 f"액자 속 흑백 사진은 참조된 흑백 사진과 완전히 동일한 사진(같은 단발머리 중년 여성, "
-                 f"짙은 카라 블라우스), 눈시울이 옅게 붉어진 그리움에 잠긴 표정으로 {TALK}", [REF_KIM, REF_WIFE])],
+            K: [(f"밤의 {GUARD_IN} 실내, 책상 앞에 혼자 앉아 갈색 나무 액자를 바라보며 두 손으로 꽃무늬 "
+                 f"수첩을 쓰다듬는 {KIM}, 액자 속 흑백 사진은 참조된 흑백 사진과 완전히 동일한 사진"
+                 f"(같은 단발머리 중년 여성, 짙은 카라 블라우스), 눈시울이 옅게 붉어진 그리움에 잠긴 "
+                 f"표정으로 {TALK}, 혼자 단독 인물 샷(다른 사람의 손·팔·몸이 화면에 전혀 없음)",
+                [REF_KIM, REF_WIFE])],
         },
         lines=[
             (A, "10", f"{APT} 경비실 앞, {JIWOO}가 등굣길에 환하게 웃으며 손을 흔들고 {KIM}가 "
@@ -206,8 +209,9 @@ SECTIONS = [
                   f"{TALK}", [REF_JUNHO]),
                  (f"{GUARD_IN}, 죽이 담긴 흰 무지 봉지를 두 손으로 안은 {JUNHO}가 수줍게 시선을 "
                   f"내렸다 들며 담담하게 {TALK}", [REF_JUNHO])],
-            K: [(f"{GUARD_IN}, 정모 없이 맨머리로 간이침대에서 몸을 반쯤 일으킨 {KIM}가 눈을 크게 뜨고 "
-                 f"믿기지 않는 놀란 표정으로 {TALK}, 머리에 모자나 수건 없음", [REF_KIM])],
+            K: [(f"{GUARD_IN}, 참조 사진 그대로의 맨머리(모자 없음)로 간이침대에서 몸을 반쯤 일으킨 "
+                 f"{KIM}가 눈을 크게 뜨고 믿기지 않는 놀란 표정으로 {TALK}, 혼자 단독 인물 샷",
+                [REF_KIM_BARE])],
         },
         lines=[
             (N, "", "석 달 만에 처음으로, 수요일의 문고리는 비어 있었습니다.", None, 1.0, 0.9),
