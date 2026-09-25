@@ -354,7 +354,34 @@ def ambience_scene(cfg, key, v_url, index, duration):
     return wav
 
 
-def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_video):
+def fmt_ass_time(t):
+    t = max(t, 0.0)
+    h = int(t // 3600)
+    m = int(t % 3600 // 60)
+    return f"{h}:{m:02d}:{t % 60:05.2f}"
+
+
+def write_scene_ass(ass_path, t0, t1, out_path):
+    """[t0,t1) 구간과 겹치는 자막 큐만 장면 로컬 시간으로 옮긴 .ass를 만든다."""
+    header, events = [], []
+    for raw in open(ass_path, encoding="utf-8"):
+        line = raw.rstrip("\n")
+        if line.startswith("Dialogue:"):
+            fields = line[len("Dialogue:"):].strip().split(",", 9)
+            s, e = parse_time(fields[1]), parse_time(fields[2])
+            if s < t1 and e > t0:
+                fields[1] = fmt_ass_time(s - t0)
+                fields[2] = fmt_ass_time(min(e, t1) - t0)
+                events.append("Dialogue: " + ",".join(fields))
+        else:
+            header.append(line)
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(header + events) + "\n")
+    return out_path
+
+
+def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_video,
+                         no_burn=False, burn_scenes=frozenset()):
     """장면별 대사 구간 립싱크·현장음 생성 후 재조립하고 자막을 입힌 영상을 돌려준다.
 
     (재조립된 영상 경로, [(시작초, 현장음 wav)]) 를 돌려준다.
@@ -422,6 +449,11 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
                  f"pad=1280:720:(ow-iw)/2:(oh-ih)/2,fps=24,setsar=1")
         scene_no = k + 1
         dur = bounds[k][1] - bounds[k][0]
+        # 자막이 안 구워진 새 클립에만 개별 자막 굽기 (복구 모드)
+        if no_burn and scene_no in burn_scenes:
+            seg_ass = write_scene_ass(ass_path, bounds[k][0], bounds[k][1],
+                                      os.path.join(WORK_DIR, f"sub{scene_no:02d}.ass"))
+            chain += f",ass={seg_ass}"
         if scene_no - 1 in section_ends:          # 섹션 첫 장면: 페이드 인
             chain += f",fade=t=in:st=0:d={FADE}"
         if scene_no in section_ends and scene_no < len(final_scenes):  # 섹션 마지막: 페이드 아웃
@@ -429,7 +461,10 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
         parts.append(chain + f"[v{k}]")
     parts.append("".join(f"[v{k}]" for k in range(len(final_scenes)))
                  + f"concat=n={len(final_scenes)}:v=1:a=0[vc]")
-    parts.append(f"[vc]ass={ass_path}[vo]")
+    if no_burn:
+        parts[-1] = parts[-1].replace("[vc]", "[vo]")  # 전체 자막 굽기 생략
+    else:
+        parts.append(f"[vc]ass={ass_path}[vo]")
     cmd += ["-filter_complex", ";".join(parts), "-map", "[vo]", "-an",
             "-c:v", "libx264", "-preset", "medium", "-crf", "18", work_video]
     subprocess.run(cmd, check=True)
@@ -445,6 +480,10 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--lipsync", action="store_true")
     ap.add_argument("--scenes-dir", default="out")
+    ap.add_argument("--no-burn", action="store_true",
+                    help="장면 클립에 자막이 이미 구워져 있음 (전체 자막 굽기 생략)")
+    ap.add_argument("--burn-scenes", default="",
+                    help="자막이 없는 클립 번호 목록 (개별로 자막을 입힘, 예 '3,5,7')")
     args = ap.parse_args()
 
     key = os.environ.get("FAL_API_KEY")
@@ -494,9 +533,11 @@ def main():
         narration = set(cfg.get("narration_styles", ["Naration"]))
         placed_dialogue = [p for p in placed if p[2] not in narration]
         print(f"립싱크 대상 대사 {len(placed_dialogue)}줄 (내레이션 {len(placed) - len(placed_dialogue)}줄 제외)")
+        burn_scenes = {int(x) for x in re.split(r"[,\s]+", args.burn_scenes) if x}
         video, ambience = rebuild_with_lipsync(cfg, key, args.scenes_dir, args.ass,
                                                placed_dialogue,
-                                               os.path.join(WORK_DIR, "rebuilt.mp4"))
+                                               os.path.join(WORK_DIR, "rebuilt.mp4"),
+                                               args.no_burn, burn_scenes)
 
     print("배경음악 생성 중...")
     bgm = make_bgm(cfg, key)

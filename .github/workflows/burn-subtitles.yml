@@ -51,6 +51,14 @@ on:
         description: 대사 TTS 언어 검사만 수행 (true/false)
         required: false
         default: "false"
+      slice_source:
+        description: 소스 Artifact 만료 시, deliveries의 완성본을 잘라 장면 복구 (true/false)
+        required: false
+        default: ""
+      burn_scenes:
+        description: slice_source 모드에서 자막이 없는(교체된) 장면 번호 목록 (예 "3,5,7")
+        required: false
+        default: ""
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
@@ -76,7 +84,7 @@ jobs:
           github-token: ${{ github.token }}
 
       - name: 생성된 클립 내려받기
-        if: ${{ inputs.deliver_from_run_id == '' && inputs.qc_tts != 'true' }}
+        if: ${{ inputs.deliver_from_run_id == '' && inputs.qc_tts != 'true' && inputs.slice_source == '' }}
         uses: actions/download-artifact@v4
         with:
           name: ${{ env.SKIT }}-skit-video
@@ -93,13 +101,6 @@ jobs:
           run-id: ${{ inputs.replace_run_id }}
           github-token: ${{ github.token }}
 
-      - name: 교체 적용
-        if: ${{ inputs.replace_run_id != '' && inputs.deliver_from_run_id == '' }}
-        run: |
-          ls out/replace/scene*.mp4
-          cp -f out/replace/scene*.mp4 out/
-          rm -rf out/replace
-
       - name: 추가 교체 장면 클립 내려받기
         if: ${{ inputs.replace_run_id2 != '' && inputs.deliver_from_run_id == '' }}
         uses: actions/download-artifact@v4
@@ -108,13 +109,6 @@ jobs:
           path: out/replace2
           run-id: ${{ inputs.replace_run_id2 }}
           github-token: ${{ github.token }}
-
-      - name: 추가 교체 적용
-        if: ${{ inputs.replace_run_id2 != '' && inputs.deliver_from_run_id == '' }}
-        run: |
-          ls out/replace2/scene*.mp4
-          cp -f out/replace2/scene*.mp4 out/
-          rm -rf out/replace2
 
       - name: 추가 교체 장면 클립 내려받기 3
         if: ${{ inputs.replace_run_id3 != '' && inputs.deliver_from_run_id == '' }}
@@ -125,6 +119,35 @@ jobs:
           run-id: ${{ inputs.replace_run_id3 }}
           github-token: ${{ github.token }}
 
+      - name: ffmpeg와 한글 폰트 설치
+        if: ${{ inputs.deliver_from_run_id == '' && inputs.qc_tts != 'true' }}
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-noto-cjk
+
+      - name: 완성본에서 장면 복구 (소스 Artifact 만료 시)
+        if: ${{ inputs.slice_source != '' && inputs.deliver_from_run_id == '' }}
+        run: |
+          mkdir -p out
+          if [ -f "deliveries/${SKIT}-skit-final.mp4" ]; then
+            cp "deliveries/${SKIT}-skit-final.mp4" "out/${SKIT}-base.mp4"
+          else
+            cat deliveries/${SKIT}-skit-final.mp4.part-* > "out/${SKIT}-base.mp4"
+          fi
+          python3 scripts/slice_scenes.py "out/${SKIT}-base.mp4" "scripts/scenes/${SKIT}.json" out
+
+      - name: 교체 적용
+        if: ${{ inputs.replace_run_id != '' && inputs.deliver_from_run_id == '' }}
+        run: |
+          ls out/replace/scene*.mp4
+          cp -f out/replace/scene*.mp4 out/
+          rm -rf out/replace
+
+      - name: 추가 교체 적용
+        if: ${{ inputs.replace_run_id2 != '' && inputs.deliver_from_run_id == '' }}
+        run: |
+          ls out/replace2/scene*.mp4
+          cp -f out/replace2/scene*.mp4 out/
+          rm -rf out/replace2
+
       - name: 추가 교체 적용 3
         if: ${{ inputs.replace_run_id3 != '' && inputs.deliver_from_run_id == '' }}
         run: |
@@ -132,12 +155,8 @@ jobs:
           cp -f out/replace3/scene*.mp4 out/
           rm -rf out/replace3
 
-      - name: ffmpeg와 한글 폰트 설치
-        if: ${{ inputs.deliver_from_run_id == '' && inputs.qc_tts != 'true' }}
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-noto-cjk
-
       - name: 자막 입히기
-        if: ${{ inputs.deliver_from_run_id == '' && inputs.qc_tts != 'true' }}
+        if: ${{ inputs.deliver_from_run_id == '' && inputs.qc_tts != 'true' && inputs.slice_source == '' }}
         run: |
           ffmpeg -i "out/${SKIT}-skit.mp4" -vf "ass=subs/${SKIT}.ass" \
             -c:v libx264 -preset medium -crf 18 -c:a copy \
@@ -178,6 +197,9 @@ jobs:
             pip install --quiet fal-client
             EXTRA="--lipsync --scenes-dir out"
           fi
+          if [ -n "${{ inputs.slice_source }}" ]; then
+            EXTRA="$EXTRA --no-burn --burn-scenes ${{ inputs.burn_scenes }}"
+          fi
           python3 scripts/generate_audio.py \
             --ass "subs/${SKIT}.ass" \
             --config "scripts/audio/${SKIT}.json" \
@@ -197,7 +219,7 @@ jobs:
             out/audio/lip*.mp4
             out/audio/amb*.wav
             out/audio/bgm.audio
-          retention-days: 7
+          retention-days: 30
 
       # Artifact 저장소(Azure)에 접근할 수 없는 환경에서 git으로 영상을 받을 수 있게 한다
       - name: 완성 영상 브랜치에 커밋

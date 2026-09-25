@@ -47,4 +47,4 @@ jobs:
           path: |
             out/scene*.mp4
             out/${{ env.SKIT }}-skit.mp4
-          retention-days: 7
+          retention-days: 30
