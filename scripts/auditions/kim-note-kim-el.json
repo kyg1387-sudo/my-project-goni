@@ -1,16 +1,16 @@
 {
   "tests": [
     {"id": "line002", "model": "elevenlabs-direct", "voice": "8vwSOQHQApfVx993mKf9",
-     "text": "[low, tender voice to a photo, slight pause after the first word] …여보. 그 청년, 아직 그 방에 있소."},
+     "text": "[a quiet sigh first, then speaking very slowly and softly to his late wife's photo, aching longing, voice low and tender, a long pause after the first word] …여보. …그 청년, 아직 그 방에 있소."},
     {"id": "line007", "model": "elevenlabs-direct", "voice": "8vwSOQHQApfVx993mKf9",
-     "text": "[gruff but warm, faint smile] …잘 먹었으면 됐네."},
+     "text": "[a soft chuckle under his breath, gruff but deeply warm, quiet proud smile in the voice, unhurried] …잘 먹었으면 됐네."},
     {"id": "line010", "model": "elevenlabs-direct", "voice": "8vwSOQHQApfVx993mKf9",
-     "text": "[breathless with surprise, trailing off] …자네가, 여길 어떻게…"},
+     "text": "[startled and breathless, sitting up suddenly, voice weak from fever but rising with disbelief, trailing off unfinished] …자네가… 여길, 어떻게…"},
     {"id": "line014", "model": "elevenlabs-direct", "voice": "8vwSOQHQApfVx993mKf9",
-     "text": "[long pause before, low quiet voice holding back emotion] …집사람 겁니다."},
+     "text": "[a long heavy silence first, then barely above a whisper, voice low and cracking slightly, an old man holding back seven years of grief] …집사람… 겁니다."},
     {"id": "line015", "model": "elevenlabs-direct", "voice": "8vwSOQHQApfVx993mKf9",
-     "text": "[steady but heavy, calm sorrow] 칠 년 전에… 먼저 걸던 사람이오. 나는, 이어서 걸었을 뿐이고."},
+     "text": "[calm but heavy with old grief, very slow, a quiet breath at each pause, humble and steady] 칠 년 전에… 먼저 걸던 사람이오. …나는, 이어서 걸었을 뿐이고."},
     {"id": "line018", "model": "elevenlabs-direct", "voice": "8vwSOQHQApfVx993mKf9",
-     "text": "[warm, gently seeing him off, half-beat pause after the first word] …그래. 잘 다녀오게."}
+     "text": "[voice thick with quiet emotion, a gentle fatherly smile audible, seeing him off with pride, half-beat pause after the first word] …그래. …잘 다녀오게."}
   ]
 }
