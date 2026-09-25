@@ -115,6 +115,15 @@ jobs:
           run-id: ${{ inputs.deliver_from_run_id }}
           github-token: ${{ github.token }}
 
+      - name: 이전 실행 중간 산출물 복원 (이어하기)
+        if: ${{ inputs.resume_run_id != '' && inputs.deliver_from_run_id == '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.SKIT }}-skit-video-subbed
+          path: out
+          run-id: ${{ inputs.resume_run_id }}
+          github-token: ${{ github.token }}
+
       - name: 생성된 클립 내려받기
         if: ${{ inputs.deliver_from_run_id == '' }}
         uses: actions/download-artifact@v4
@@ -131,18 +140,11 @@ jobs:
       - name: 자막 입히기
         if: ${{ inputs.deliver_from_run_id == '' }}
         run: |
+          # 캐시 복원본이 남긴 옛 자막 영상 제거 (소스 영상 기준으로 새로 입힘)
+          rm -f "out/${SKIT}-skit-subbed.mp4"
           ffmpeg -i "out/${SKIT}-skit.mp4" -vf "ass=subs/${SKIT}.ass" \
             -c:v libx264 -preset medium -crf 18 -c:a copy \
             "out/${SKIT}-skit-subbed.mp4"
-
-      - name: 이전 실행 중간 산출물 복원 (이어하기)
-        if: ${{ inputs.resume_run_id != '' && inputs.deliver_from_run_id == '' }}
-        uses: actions/download-artifact@v4
-        with:
-          name: ${{ env.SKIT }}-skit-video-subbed
-          path: out
-          run-id: ${{ inputs.resume_run_id }}
-          github-token: ${{ github.token }}
 
       - name: TTS 캐시 줄 번호 재매핑 (자막 줄 삭제 반영)
         if: ${{ inputs.remap_removed != '' && inputs.deliver_from_run_id == '' }}
