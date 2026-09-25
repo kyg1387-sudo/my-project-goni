@@ -1,0 +1,10 @@
+{
+  "tts_model": "fal-ai/minimax/speech-02-hd",
+  "language_boost": "Korean",
+  "tests": [
+    {"id": "KIM-NEUTRAL", "voice": "Imposing_Manner", "speed": 0.9,
+     "text": "…잘 먹었으면 됐네. …여보. 그 청년, 아직 그 방에 있소."},
+    {"id": "KIM-EMO-SAD", "voice": "Imposing_Manner", "emotion": "sad", "speed": 0.9,
+     "text": "…잘 먹었으면 됐네. …여보. 그 청년, 아직 그 방에 있소."}
+  ]
+}
