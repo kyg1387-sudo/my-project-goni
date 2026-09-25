@@ -40,6 +40,8 @@ REF_JIWOO = f"{P}/ep2-cast/jiwoo-spring-2.png"
 REF_PARK = f"{P}/ep2-cast/park-spring-2.png"
 REF_WIFE = f"{P}/ep2-cast/wife-photo-1.png"             # 아내 사진 기준(scene08에서 추출)
 REF_KIM_BARE = f"{P}/ep2-cast/kim-bare-1.png"          # 맨머리 김씨(몸살 장면용)
+REF_CORR_DAY = f"{P}/ep2-cast/loc-corridor-day.png"    # 복도 로케이션(낮 와이드 셀)
+REF_CORR_DOOR = f"{P}/ep2-cast/loc-corridor-door.png"  # 복도 로케이션(문 클로즈업 셀)
 
 # 인물 고정 문구 (모든 장면 동일 반복 — 규칙 5)
 KIM = ("68세 한국 남성 아파트 경비원 김씨(흰머리 섞인 짧은 머리, 온화하지만 무뚝뚝한 표정, "
@@ -109,8 +111,9 @@ SECTIONS = [
         name="1장 — 닫힌 문",
         ambience="spring morning birds, distant children, light breeze",
         narration_shots=[
-            (f"{CORR}, 아침 햇살, 닫힌 무지 문 앞에 쌓인 우편물과 무지 흰 봉지들을 천천히 비추다 "
-             f"닫힌 문 전체로 빠지는 샷, 사람이 한 명도 없는 무인 장면, 인물 없음, {MUTE}", []),
+            (f"참조 사진과 동일한 {CORR}(같은 베이지색 벽과 무지 문), 아침 햇살, 닫힌 무지 문 앞 "
+             f"바닥에 쌓인 우편물과 무지 흰 봉지들을 천천히 비추다 닫힌 문 전체로 빠지는 샷, "
+             f"사람이 한 명도 없는 무인 장면, 인물 없음, {MUTE}", [REF_CORR_DAY]),
         ],
         speaker_shots={
             K: [(f"밤의 {GUARD_IN} 실내, 책상 앞에 혼자 앉아 갈색 나무 액자를 바라보며 두 손으로 꽃무늬 "
@@ -200,9 +203,9 @@ SECTIONS = [
         name="4장 — 걸리지 않은 봉지",
         ambience="grey dawn wind, empty corridor room tone, faint heartbeat-like low pulse",
         narration_shots=[
-            (f"{CORR_DAWN}, 아무것도 걸려 있지 않은 텅 빈 은색 문고리를 향해 천천히 다가가는 클로즈업, "
-             f"문은 완전히 매끈한 무지이며 금색 문패·명패·표지·종이가 하나도 붙어 있지 않음, "
-             f"사람이 한 명도 없는 무인 장면, 인물 없음, {MUTE}", []),
+            (f"참조 사진과 동일한 문과 문고리(같은 무지 문, 같은 은색 손잡이)의 {CORR_DAWN} 버전, "
+             f"아무것도 걸려 있지 않은 텅 빈 문고리를 향해 천천히 다가가는 클로즈업, 문패·명패·종이 없음, "
+             f"사람이 한 명도 없는 무인 장면, 인물 없음, {MUTE}", [REF_CORR_DOOR]),
         ],
         speaker_shots={
             JH: [(f"{GUARD_IN} 문가에 어색하게 선 {JUNHO}가 조심스럽고 갈라지는 목소리로 걱정스럽게 "
