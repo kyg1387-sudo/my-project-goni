@@ -42,6 +42,7 @@ REF_WIFE = f"{P}/ep2-cast/wife-photo-1.png"             # 아내 사진 기준(s
 REF_KIM_BARE = f"{P}/ep2-cast/kim-bare-1.png"          # 맨머리 김씨(몸살 장면용)
 REF_CORR_DAY = f"{P}/ep2-cast/loc-corridor-day.png"    # 복도 로케이션(낮 와이드 셀)
 REF_CORR_DOOR = f"{P}/ep2-cast/loc-corridor-door.png"  # 복도 로케이션(문 클로즈업 셀)
+REF_GUARD = f"{P}/ep2-cast/loc-guard-1.png"            # 경비실 실내 기준 사진
 
 # 인물 고정 문구 (모든 장면 동일 반복 — 규칙 5)
 KIM = ("68세 한국 남성 아파트 경비원 김씨(흰머리 섞인 짧은 머리, 온화하지만 무뚝뚝한 표정, "
@@ -211,9 +212,9 @@ SECTIONS = [
         ],
         speaker_shots={
             JH: [(f"{GUARD_IN} 문가에 어색하게 선 {JUNHO}가 조심스럽고 갈라지는 목소리로 걱정스럽게 "
-                  f"{TALK}", [REF_JUNHO]),
+                  f"{TALK}, 참조된 경비실 실내 사진과 동일한 방(크림색 벽·작은 창·나무 책상·스탠드), 창밖은 초봄(눈 없음)", [REF_JUNHO, REF_GUARD]),
                  (f"{GUARD_IN}, 죽이 담긴 흰 무지 봉지를 두 손으로 안은 {JUNHO}가 수줍게 시선을 "
-                  f"내렸다 들며 담담하게 {TALK}", [REF_JUNHO])],
+                  f"내렸다 들며 담담하게 {TALK}, 참조된 경비실 실내 사진과 동일한 방(크림색 벽·작은 창·나무 책상·스탠드), 창밖은 초봄(눈 없음)", [REF_JUNHO, REF_GUARD])],
             K: [(f"{GUARD_IN}, 참조 사진 그대로의 맨머리(모자 없음)로 간이침대에서 몸을 반쯤 일으킨 "
                  f"{KIM}가 눈을 크게 뜨고 믿기지 않는 놀란 표정으로 {TALK}, 혼자 단독 인물 샷",
                 [REF_KIM_BARE])],
@@ -232,7 +233,7 @@ SECTIONS = [
             (JH, "", "…아저씨. 괜찮으세요?", "fearful", 1.0, 0.85),
             (K, "", "…자네가, 여길 어떻게…", "surprised", 0.8, 0.85),
             (A, "5", f"{GUARD_IN}, {JUNHO}가 죽이 담긴 흰 무지 봉지를 두 손으로 조심스럽게 내미는 "
-                     f"장면, {MUTE}", [REF_JUNHO]),
+                     f"장면, 참조된 경비실 실내 사진과 동일한 방(크림색 벽·작은 창·나무 책상·스탠드), 창밖은 초봄(눈 없음), {MUTE}", [REF_JUNHO, REF_GUARD]),
             (A, "5", NOTE_BG + f", 서툰 글씨 느낌의 무지 쪽지, {MUTE}", []),  # ★쪽지⑤ 「드세요.」 (PIL 교체)
             (JH, "", "…이번엔, 제 차례라서요.", "sad", 1.2, 0.80),
         ],
@@ -246,19 +247,19 @@ SECTIONS = [
         ],
         speaker_shots={
             JH: [(f"{GUARD_IN}, 낡은 종이 상자를 품에 안은 {JUNHO}가 시선을 내린 채 낮고 느리게 "
-                  f"{TALK}", [REF_JUNHO]),
+                  f"{TALK}, 참조된 경비실 실내 사진과 동일한 방(크림색 벽·작은 창·나무 책상·스탠드), 창밖은 초봄(눈 없음)", [REF_JUNHO, REF_GUARD]),
                  (f"{GUARD_IN}, 누렇게 바랜 무지 쪽지 한 장을 조심스럽게 꺼내 든 {JUNHO}가 "
-                  f"그리움에 잠긴 표정으로 {TALK}", [REF_JUNHO]),
-                 (f"낮의 {GUARD_IN} 실내(창밖은 밝은 오후), 눈물이 고인 채 웃으려 애쓰는 {JUNHO}가 "
-                  f"떨리는 목소리로 {TALK}", [REF_JUNHO])],
+                  f"그리움에 잠긴 표정으로 {TALK}, 참조된 경비실 실내 사진과 동일한 방(크림색 벽·작은 창·나무 책상·스탠드), 창밖은 초봄(눈 없음)", [REF_JUNHO, REF_GUARD]),
+                 (f"{GUARD_IN}, 눈물이 고인 채 웃으려 애쓰는 {JUNHO}가 떨리는 목소리로 {TALK}, "
+                  f"참조된 경비실 실내 사진과 동일한 방(크림색 벽·작은 창·나무 책상·스탠드), 창밖은 초봄(눈 없음)", [REF_JUNHO, REF_GUARD])],
             K: [(f"낮의 {GUARD_IN} 실내, 책상 앞 의자에 앉아 바랜 쪽지를 오래 바라보는 {KIM}, "
                  f"눈시울이 붉어진 채 낮은 목소리로 {TALK}", [REF_KIM]),
                 (f"낮의 {GUARD_IN} 실내, 책상 앞 의자에 앉은 {KIM}가 시선을 들어 담담하지만 무겁게 "
                  f"{TALK}", [REF_KIM])],
         },
         lines=[
-            (A, "5", f"낮의 {GUARD_IN}(창밖은 밝은 오후), {JUNHO}가 탁자 위에서 낡은 종이 상자를 여는 "
-                     f"하이 앵글 클로즈업, 상자 안에 무지 쪽지들이 가득, {MUTE}", [REF_JUNHO]),
+            (A, "5", f"낮의 {GUARD_IN}, {JUNHO}가 탁자 위에서 낡은 종이 상자를 여는 "
+                     f"하이 앵글 클로즈업, 상자 안에 무지 쪽지들이 가득, 참조된 경비실 실내 사진과 동일한 방(크림색 벽·작은 창·나무 책상·스탠드), 창밖은 초봄(눈 없음), {MUTE}", [REF_JUNHO, REF_GUARD]),
             (JH, "", "…하나도 못 버렸어요.", "sad", 1.5, 0.80),
             (JH, "", "그런데 이건… 칠 년 전 거예요. 그때도 누가, 걸어줬었거든요.", "sad", 1.2, 0.85),
             (A, "5", NOTE_BG + f", 누렇게 바랜 무지 쪽지, {MUTE}", []),  # ★쪽지⑥ 아내 필체 (PIL 교체)
