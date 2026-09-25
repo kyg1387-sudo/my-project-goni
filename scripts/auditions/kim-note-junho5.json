@@ -1,0 +1,9 @@
+{
+  "tts_model": "fal-ai/minimax/speech-02-hd",
+  "language_boost": "Korean",
+  "tests": [
+    {"id": "L5A", "voice": "Casual_Guy", "emotion": "sad", "speed": 0.80, "text": "…따뜻하네."},
+    {"id": "L5B", "voice": "Casual_Guy", "emotion": "sad", "speed": 0.92, "text": "…따뜻하네."},
+    {"id": "L5C", "voice": "Casual_Guy", "speed": 0.85, "text": "…따뜻하네."}
+  ]
+}
