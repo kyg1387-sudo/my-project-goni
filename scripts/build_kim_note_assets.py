@@ -472,12 +472,21 @@ def main():
         "omnihuman_scenes": omni_scenes,
         "lipsync_models": ["fal-ai/latentsync", "fal-ai/sync-lipsync"],
         "ambience_model": "fal-ai/mmaudio-v2",
-        "ambience_volume": 0.35,
+        "ambience_volume": 0.22,
         "ambience_prompts": ambience_prompts,
         "bgm_model": "fal-ai/lyria2",
-        "bgm_prompt": "tender emotional Korean drama score, gentle piano and warm strings, "
-                      "quiet early-spring atmosphere of loneliness slowly opening into warmth, "
-                      "building to a hopeful heartfelt resolution, instrumental only, no vocals",
+        "bgm_segments": [
+            {"start": 0, "end": 128,
+             "prompt": "sparse melancholic solo piano, quiet and lonely, slow tempo, gentle "
+                       "early-spring Korean drama underscore, minimal, instrumental only, no vocals"},
+            {"start": 126, "end": 258,
+             "prompt": "tender warm piano with soft strings, hopeful quiet warmth growing, "
+                       "gentle Korean drama underscore, instrumental only, no vocals"},
+            {"start": 256, "end": 350,
+             "prompt": "emotional heartfelt piano and warm strings swelling gently to a "
+                       "hopeful tearful resolution, Korean drama finale underscore, "
+                       "instrumental only, no vocals"}
+        ],
         "bgm_volume": 0.22,
     }
     with open(os.path.join(ROOT, "scripts", "audio", "kim-note.json"), "w", encoding="utf-8") as f:

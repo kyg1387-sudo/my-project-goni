@@ -176,24 +176,40 @@ def tts_line(cfg, key, index, voice, text, emotion=None):
     return path if download_retry(url, path) else None
 
 
-def make_bgm(cfg, key):
-    path = os.path.join(WORK_DIR, "bgm.audio")
+def _bgm_one(cfg, key, prompt, path):
     if cached(path):
-        print("  [bgm] 기존 파일 재사용")
+        print(f"  [bgm] 기존 파일 재사용: {os.path.basename(path)}")
         return path
     model = cfg.get("bgm_model")
-    prompt = cfg.get("bgm_prompt")
     if not model or not prompt:
         return None
-    result = fal_run(model, {"prompt": prompt}, key, "bgm")
+    result = fal_run(model, {"prompt": prompt}, key, f"bgm {os.path.basename(path)}")
     if result is None:
         return None
     url = find_audio_url(result)
     if not url:
         print(f"  [bgm] 응답에서 오디오 URL을 못 찾음: {result}")
         return None
-    path = os.path.join(WORK_DIR, "bgm.audio")
     return path if download_retry(url, path) else None
+
+
+def make_bgm(cfg, key):
+    """단일 bgm_prompt 또는 다중 bgm_segments([{prompt,start,end}])를 생성한다.
+
+    반환: [(path, start, end)] — 단일 곡이면 start=0, end=None(영상 끝까지).
+    반복감을 줄이기 위해 구간별 다른 곡을 쓰고 믹싱에서 크로스페이드한다.
+    """
+    segs = cfg.get("bgm_segments")
+    if segs:
+        out = []
+        for i, seg in enumerate(segs, start=1):
+            path = os.path.join(WORK_DIR, f"bgm{i:02d}.audio")
+            got = _bgm_one(cfg, key, seg["prompt"], path)
+            if got:
+                out.append((got, float(seg["start"]), float(seg["end"])))
+        return out or None
+    path = _bgm_one(cfg, key, cfg.get("bgm_prompt"), os.path.join(WORK_DIR, "bgm.audio"))
+    return [(path, 0.0, None)] if path else None
 
 
 # ---------- 배치 계획 ----------
@@ -260,8 +276,9 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
         cmd += ["-i", path]
     for _, path in ambience:
         cmd += ["-i", path]
-    if bgm:
-        cmd += ["-stream_loop", "-1", "-i", bgm]
+    bgm_list = bgm if isinstance(bgm, list) else ([(bgm, 0.0, None)] if bgm else [])
+    for path, _s, _e in bgm_list:
+        cmd += ["-i", path]
 
     parts, mix_inputs = [], []
     for k, (start, tempo, _style, _path) in enumerate(placed):
@@ -276,11 +293,18 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
         ms = int(round(start * 1000))
         parts.append(f"[{base + k}:a]volume={ambience_volume},adelay={ms}:all=1[amb{k}]")
         mix_inputs.append(f"[amb{k}]")
-    if bgm:
+    # BGM 세그먼트: 구간 길이만큼 루프-트림하고, 경계는 2초 페이드로 겹쳐 잇는다
+    for k, (_path, seg_s, seg_e) in enumerate(bgm_list):
+        end = duration if seg_e is None else min(seg_e, duration)
+        seg_len = max(end - seg_s, 0.5)
+        fade_out_st = max(seg_len - 2, 0)
         parts.append(
-            f"[{base + len(ambience)}:a]atrim=0:{duration:.3f},"
-            f"afade=t=out:st={max(duration - 2, 0):.3f}:d=2,volume={bgm_volume}[bg]")
-        mix_inputs.append("[bg]")
+            f"[{base + len(ambience) + k}:a]aloop=loop=-1:size=2147483647,"
+            f"atrim=0:{seg_len:.3f},asetpts=PTS-STARTPTS,"
+            f"afade=t=in:st=0:d={'0.01' if k == 0 else '2'},"
+            f"afade=t=out:st={fade_out_st:.3f}:d=2,"
+            f"volume={bgm_volume},adelay={int(round(seg_s * 1000))}:all=1[bg{k}]")
+        mix_inputs.append(f"[bg{k}]")
     parts.append(
         "".join(mix_inputs)
         + f"amix=inputs={len(mix_inputs)}:duration=longest:normalize=0,"
