@@ -35,6 +35,10 @@ on:
         description: 이 run에서 재생성한 장면 클립으로 원본 장면을 교체 (선택)
         required: false
         default: ""
+      replace_run_id2:
+        description: 추가 교체 run (replace_run_id 적용 후 덮어씀, 선택)
+        required: false
+        default: ""
       invalidate:
         description: 복원한 중간 산출물 중 다시 만들 파일 (out/audio 기준 글롭, 공백 구분)
         required: false
@@ -91,6 +95,22 @@ jobs:
           ls out/replace/scene*.mp4
           cp -f out/replace/scene*.mp4 out/
           rm -rf out/replace
+
+      - name: 추가 교체 장면 클립 내려받기
+        if: ${{ inputs.replace_run_id2 != '' && inputs.deliver_from_run_id == '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.SKIT }}-skit-video
+          path: out/replace2
+          run-id: ${{ inputs.replace_run_id2 }}
+          github-token: ${{ github.token }}
+
+      - name: 추가 교체 적용
+        if: ${{ inputs.replace_run_id2 != '' && inputs.deliver_from_run_id == '' }}
+        run: |
+          ls out/replace2/scene*.mp4
+          cp -f out/replace2/scene*.mp4 out/
+          rm -rf out/replace2
 
       - name: ffmpeg와 한글 폰트 설치
         if: ${{ inputs.deliver_from_run_id == '' && inputs.qc_tts != 'true' }}
