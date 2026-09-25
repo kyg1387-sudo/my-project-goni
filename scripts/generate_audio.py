@@ -406,14 +406,25 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
     final_scenes = [r[0] for r in results]
     ambience = [r[1] for r in results if r[1]]
 
-    # 재조립(해상도/프레임레이트 정규화) + 자막 입히기
+    # 재조립(해상도/프레임레이트 정규화) + 섹션 경계 페이드 전환 + 자막 입히기.
+    # 장소/시간이 바뀌는 섹션 경계에만 짧은 페이드를 넣고(같은 장소 내 컷은 하드 컷 유지),
+    # 페이드는 클립 길이 안에서 처리해 전체 길이와 오디오 싱크를 바꾸지 않는다.
+    FADE = 0.3
+    section_ends = set(cfg.get("section_ends", []))
     cmd = ["ffmpeg", "-y"]
     for s in final_scenes:
         cmd += ["-i", s]
     parts = []
     for k in range(len(final_scenes)):
-        parts.append(f"[{k}:v]scale=1280:720:force_original_aspect_ratio=decrease,"
-                     f"pad=1280:720:(ow-iw)/2:(oh-ih)/2,fps=24,setsar=1[v{k}]")
+        chain = (f"[{k}:v]scale=1280:720:force_original_aspect_ratio=decrease,"
+                 f"pad=1280:720:(ow-iw)/2:(oh-ih)/2,fps=24,setsar=1")
+        scene_no = k + 1
+        dur = bounds[k][1] - bounds[k][0]
+        if scene_no - 1 in section_ends:          # 섹션 첫 장면: 페이드 인
+            chain += f",fade=t=in:st=0:d={FADE}"
+        if scene_no in section_ends and scene_no < len(final_scenes):  # 섹션 마지막: 페이드 아웃
+            chain += f",fade=t=out:st={max(dur - FADE, 0):.3f}:d={FADE}"
+        parts.append(chain + f"[v{k}]")
     parts.append("".join(f"[v{k}]" for k in range(len(final_scenes)))
                  + f"concat=n={len(final_scenes)}:v=1:a=0[vc]")
     parts.append(f"[vc]ass={ass_path}[vo]")
