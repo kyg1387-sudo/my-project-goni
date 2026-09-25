@@ -476,13 +476,13 @@ def main():
         "ambience_prompts": ambience_prompts,
         "bgm_model": "fal-ai/lyria2",
         "bgm_segments": [
-            {"start": 0, "end": 128,
+            {"start": 0, "end": 125,
              "prompt": "sparse melancholic solo piano, quiet and lonely, slow tempo, gentle "
                        "early-spring Korean drama underscore, minimal, instrumental only, no vocals"},
-            {"start": 126, "end": 258,
+            {"start": 127.5, "end": 254,
              "prompt": "tender warm piano with soft strings, hopeful quiet warmth growing, "
                        "gentle Korean drama underscore, instrumental only, no vocals"},
-            {"start": 256, "end": 350,
+            {"start": 256.5, "end": 350,
              "prompt": "emotional heartfelt piano and warm strings swelling gently to a "
                        "hopeful tearful resolution, Korean drama finale underscore, "
                        "instrumental only, no vocals"}
