@@ -10,7 +10,9 @@ Seedance에 폴백한다.
     python3 scripts/generate_video.py [scripts/scenes/<스킷>.json]
 
 장면 파일(JSON) 형식:
-    duration  장면당 길이(초). 5 또는 10. 생략 시 5
+    duration  전체 장면 공통 길이(초). 5 또는 10. 생략 시 5. durations가 있으면 무시됨
+    durations 장면별 길이(초) 목록, scenes와 같은 길이. 각 값은 5 또는 10만 가능
+              (컷마다 길이를 다르게 할 때 사용 — 없으면 duration 값을 전체에 적용)
     style     모든 장면 프롬프트 뒤에 붙는 공통 지시문(인물/의상/장소 일관성 유지용)
     scenes    장면별 프롬프트 목록 — 같은 인물은 매 장면 동일한 외형 문구로 묘사할 것
 
@@ -34,17 +36,30 @@ DEFAULT_SCENES_FILE = os.path.join(os.path.dirname(__file__), "scenes", "bungeop
 
 
 def load_scenes(path):
-    """장면 파일을 읽어 (프롬프트 목록, 장면당 길이)를 돌려준다.
+    """장면 파일을 읽어 (프롬프트 목록, 장면별 길이 목록, 화면비)를 돌려준다.
 
     생성 모델은 한글 자막 렌더링이 불안정하므로 자막은 편집 단계에서 얹는 것을 전제로,
     프롬프트는 연기/구도 중심으로 구성한다. style은 인물/의상/장소 일관성을 위해
     모든 장면 프롬프트 뒤에 공통으로 붙인다.
+
+    durations가 없는 기존 파일(전체 공통 duration)과 호환된다 — 이 경우 같은 길이를
+    장면 수만큼 채워서 돌려준다.
     """
     with open(path, encoding="utf-8") as f:
         data = json.load(f)
     style = data.get("style", "").strip()
-    prompts = [f"{scene}, {style}" if style else scene for scene in data["scenes"]]
-    return prompts, int(data.get("duration", 5)), data.get("ratio", "9:16")
+    scenes = data["scenes"]
+    prompts = [f"{scene}, {style}" if style else scene for scene in scenes]
+    if "durations" in data:
+        durations = [int(d) for d in data["durations"]]
+        if len(durations) != len(scenes):
+            sys.exit(f"durations 길이({len(durations)})가 scenes 길이({len(scenes)})와 다릅니다.")
+    else:
+        durations = [int(data.get("duration", 5))] * len(scenes)
+    bad = sorted({d for d in durations if d not in (5, 10)})
+    if bad:
+        sys.exit(f"지원하지 않는 장면 길이입니다({bad}) — Seedance는 5 또는 10초만 지원합니다.")
+    return prompts, durations, data.get("ratio", "9:16")
 
 
 def http_json(url, payload=None, headers=None):
@@ -140,8 +155,12 @@ def fal_generate(key, index, prompt, duration, ratio):
 
 # ---------- 메인 ----------
 
-def pick_provider(duration, ratio):
-    """실제로 첫 장면 생성에 성공하는 공급자 함수를 골라 돌려준다."""
+def pick_provider(ratio):
+    """실제로 첫 장면 생성에 성공하는 공급자 함수를 골라 돌려준다.
+
+    각 후보 함수는 (index, prompt, duration)을 받는다 — 장면마다 길이가 다를 수 있어
+    duration을 클로저에 고정하지 않고 매 호출마다 넘겨받는다.
+    """
     ark_key = os.environ.get("ARK_API_KEY")
     fal_key = os.environ.get("FAL_API_KEY")
     candidates = []
@@ -150,9 +169,9 @@ def pick_provider(duration, ratio):
         pairs = [override] if all(override) else ARK_CANDIDATES
         for base_url, model in pairs:
             candidates.append((f"ark {base_url} / {model}",
-                               lambda i, p, b=base_url, m=model: ark_generate(b, m, ark_key, i, p, duration, ratio)))
+                               lambda i, p, d, b=base_url, m=model: ark_generate(b, m, ark_key, i, p, d, ratio)))
     if fal_key:
-        candidates.append((f"fal.ai {FAL_MODEL}", lambda i, p: fal_generate(fal_key, i, p, duration, ratio)))
+        candidates.append((f"fal.ai {FAL_MODEL}", lambda i, p, d: fal_generate(fal_key, i, p, d, ratio)))
     if not candidates:
         sys.exit("ARK_API_KEY 또는 FAL_API_KEY 환경 변수가 필요합니다. (키를 코드나 채팅에 넣지 마세요)")
     return candidates
@@ -160,28 +179,29 @@ def pick_provider(duration, ratio):
 
 def main():
     scenes_file = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_SCENES_FILE
-    scenes, duration, ratio = load_scenes(scenes_file)
+    scenes, durations, ratio = load_scenes(scenes_file)
     # SCENES_ONLY="3,5,7" 처럼 지정하면 해당 번호 장면만 재생성 (번호는 1부터)
     only = {int(x) for x in re.split(r"[,\s]+", os.environ.get("SCENES_ONLY", "")) if x}
-    print(f"장면 파일: {scenes_file} ({len(scenes)}개 장면, 장면당 {duration}초, 화면비 {ratio}"
+    dur_summary = f"{durations[0]}초" if len(set(durations)) == 1 else f"{sorted(set(durations))}초 혼합"
+    print(f"장면 파일: {scenes_file} ({len(scenes)}개 장면, 장면당 {dur_summary}, 화면비 {ratio}"
           + (f", 대상: {sorted(only)}" if only else "") + ")")
 
     os.makedirs(OUT_DIR, exist_ok=True)
     paths = []
     provider = None
-    for index, prompt in enumerate(scenes, start=1):
+    for index, (prompt, duration) in enumerate(zip(scenes, durations), start=1):
         if only and index not in only:
             continue
-        print(f"[scene {index:02d}] {prompt[:40]}...")
+        print(f"[scene {index:02d}] {duration}s {prompt[:40]}...")
         if provider:
-            path = provider(index, prompt)
+            path = provider(index, prompt, duration)
             if not path:
                 sys.exit(f"[scene {index:02d}] 생성 실패 — 위 로그를 확인하세요.")
         else:
             path = None
-            for name, fn in pick_provider(duration, ratio):
+            for name, fn in pick_provider(ratio):
                 print(f"  공급자 시도: {name}")
-                path = fn(index, prompt)
+                path = fn(index, prompt, duration)
                 if path:
                     provider = fn
                     break

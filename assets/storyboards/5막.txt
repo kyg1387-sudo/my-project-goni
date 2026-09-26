@@ -1,0 +1,5 @@
+Cinematic storyboard contact sheet, one single image containing exactly 3 numbered panels in a 3x2 grid; the remaining cell(s) form a black card with the white title text "EP3 김씨와 폐지 할머니 - SCENE 5막 — 새벽 배달". Each panel has a small white label in its top-left corner showing the cut number and duration and a one-line caption below it. Photorealistic live-action, Kodak 35mm film grain, natural lighting, muted warm naturalistic palette, 16:9 panels.
+Setting and characters: the guard Kim — see the reference character sheet for exact identifiers. Use the reference character sheets for faces and wardrobe only. No blood, no gore.
+Panel 1 — CUT 32 - 5s — Medium close-up, Static. 앞, 밤늦게, 김씨가 손전등을 입에 물고 리어카 바퀴를 직접 갈아 끼우는 모습. Caption: "앞, 밤늦게, 김씨가 손전등을 입에 물고 리어카 바퀴를 직접 갈아 끼우는 모습".
+Panel 2 — CUT 33 - 5s — Close-up, Static. 리어카 손잡이 클로즈업, 밤. Caption: "리어카 손잡이 클로즈업, 밤".
+Panel 3 — CUT 34 - 10s — Long shot, Follow shot. 김씨가 고쳐진 리어카를 새벽 어스름 속에 혼자 밀고 걸어가 할머니의 평소 자리에 조용히 세워두는 모습. Caption: "김씨가 고쳐진 리어카를 새벽 어스름 속에 혼자 밀고 걸어가 할머니의 평소 자리에 조용히 세워두는 모습".

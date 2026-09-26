@@ -1,0 +1,4 @@
+Cinematic storyboard contact sheet, one single image containing exactly 2 numbered panels in a 3x2 grid; the remaining cell(s) form a black card with the white title text "EP3 김씨와 폐지 할머니 - SCENE 4막 도입 — 고물상을 찾아가다". Each panel has a small white label in its top-left corner showing the cut number and duration and a one-line caption below it. Photorealistic live-action, Kodak 35mm film grain, natural lighting, muted warm naturalistic palette, 16:9 panels.
+Setting and characters: the guard Kim — see the reference character sheet for exact identifiers. Use the reference character sheets for faces and wardrobe only. No blood, no gore.
+Panel 1 — CUT 26 - 10s — Full shot, Side tracking. 고물상 거리 초입, 리어카들이 줄지어 서 있는 낮의 골목, 김씨가 두리번거리며 걸어가는 모습. Caption: "고물상 거리 초입, 리어카들이 줄지어 서 있는 낮의 골목, 김씨가 두리번거리며 걸어가는 모습".
+Panel 2 — CUT 27 - 5s — Medium close-up, Slow zoom in. 고물상 마당 입구, 김씨가 걸음을 멈추고 안쪽의 낯익은 손잡이를 발견하는 모습. Caption: "고물상 마당 입구, 김씨가 걸음을 멈추고 안쪽의 낯익은 손잡이를 발견하는 모습".

@@ -58,24 +58,12 @@
       "최사장"
     ],
     [
-      "김씨"
+      "김씨",
+      "최사장"
     ],
     [],
     [],
     [],
-    [
-      "할머니"
-    ],
-    [
-      "할머니"
-    ],
-    [
-      "김씨"
-    ],
-    [],
-    [
-      "할머니"
-    ],
     [
       "할머니"
     ],
@@ -93,6 +81,25 @@
       "김씨"
     ],
     [
+      "할머니"
+    ],
+    [
+      "할머니"
+    ],
+    [],
+    [
+      "할머니"
+    ],
+    [
+      "할머니"
+    ],
+    [
+      "할머니"
+    ],
+    [
+      "김씨"
+    ],
+    [
       "김씨"
     ],
     [
@@ -101,6 +108,10 @@
     [
       "김씨"
     ],
+    [
+      "김씨"
+    ],
+    [],
     [
       "김씨"
     ],
@@ -118,17 +129,13 @@
       "최사장"
     ],
     [
-      "김씨",
-      "최사장"
-    ],
-    [
       "김씨"
     ],
     [
-      "최사장"
+      "최사장",
+      "김씨"
     ],
     [
-      "김씨",
       "최사장"
     ],
     [
@@ -146,6 +153,17 @@
     ],
     [
       "할머니"
+    ],
+    [
+      "할머니"
+    ],
+    [
+      "할머니",
+      "김씨"
+    ],
+    [],
+    [
+      "김씨"
     ],
     [
       "할머니"
@@ -160,15 +178,15 @@
     3,
     4,
     5,
-    10,
-    14,
-    21,
-    23,
-    28,
+    12,
+    17,
+    25,
+    27,
     31,
-    32,
+    34,
     35,
-    36
+    42,
+    43
   ],
   "lipsync_models": [
     "fal-ai/sync-lipsync",
@@ -178,41 +196,48 @@
   "ambience_volume": 0.35,
   "ambience_prompts": [
     "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
-    "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
+    "rusty cart wheel creak, tense quiet, no crowd murmur",
     "",
     "",
     "",
+    "cart wheel creaking softly, quiet afternoon street",
+    "cardboard rustling, quiet afternoon street",
     "",
+    "soft cloth wiping, quiet street",
     "",
-    "",
-    "",
-    "",
+    "quiet early morning ambience, birds distant",
+    "quiet early morning ambience",
     "demolition site rubble settling, distant truck engine idling, no crowd voices",
-    "demolition site rubble settling, distant truck engine idling, no crowd voices",
-    "demolition site rubble settling, distant truck engine idling, no crowd voices",
-    "demolition site rubble settling, distant truck engine idling, no crowd voices",
+    "truck engine, rubble loading, distant",
+    "sudden silence, wind",
+    "quiet, distant city hum",
+    "quiet night street ambience, footsteps",
+    "quiet night office hum, clock ticking",
+    "door, footsteps into the night",
+    "footsteps, flashlight click, distant night ambience",
+    "heavy rain, footsteps splashing",
+    "quiet night office hum, paper rustling",
+    "paper rustling",
+    "quiet night office hum",
+    "tired footsteps, night ambience",
+    "daytime street ambience, distant traffic",
+    "daytime scrapyard ambience",
+    "rusty cart wheel creak, tense quiet, no crowd murmur",
+    "tense quiet",
+    "tense quiet fading into a softer stillness",
+    "quiet resolution, distant scrapyard ambience",
+    "metal clinking, tools, quiet night",
+    "quiet night, soft fabric handling",
+    "pre-dawn quiet street ambience, single cart wheel creak, distant rooster",
     "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
-    "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
-    "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
-    "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
-    "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
-    "pre-dawn quiet street ambience, single cart wheel creak, distant rooster, no voices",
-    "pre-dawn quiet street ambience, single cart wheel creak, distant rooster, no voices",
-    "pre-dawn quiet street ambience, single cart wheel creak, distant rooster, no voices",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "quiet morning ambience, birds",
+    "quiet morning ambience",
+    "quiet morning ambience",
+    "soft snowfall silence, distant winter wind",
+    "quiet morning ambience",
+    "quiet morning office ambience",
+    "cart wheel rolling smoothly, quiet morning street",
+    "quiet evening ambience",
     ""
   ],
   "bgm_model": "fal-ai/lyria2",
