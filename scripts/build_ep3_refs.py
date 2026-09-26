@@ -67,6 +67,12 @@ CHARACTERS = [
         hair="short salt-and-pepper buzz cut, round face",
         headwear="no hat",
         identifiers=["가슴의 흰색 무지 명찰표(글자 없음)", "짧은 반백 스포츠머리", "짙은 감색 유니폼"],
+        note=("**카메오 확정(시리즈 전편 공통, CLAUDE.md 참고)**: 경비원 김씨 역은 감독 "
+              "김영곤 본인 얼굴로 EP1부터 마지막 편까지 출연한다. 아래 프롬프트는 사진이 "
+              "없을 때 쓰는 순수 텍스트 생성용 폴백이다 — **실제로는 감독 정면 사진을 "
+              "이미지 편집 모델(예: 얼굴을 보존하며 의상만 바꾸는 nano-banana류)에 입력해 "
+              "만들어야 한다.** 사진을 받으면 이 시트를 그 사진 기반 image-to-image "
+              "프롬프트로 다시 만들 것 — 지금 프롬프트로 먼저 생성하지 말 것."),
     ),
     dict(
         slug="grandma",
@@ -208,6 +214,9 @@ def write_char_files():
         lines_doc.append(f"- 고정 식별자: {', '.join(c['identifiers'])}")
         lines_doc.append(f"- 헤더 텍스트: \"{c['header']}\" / \"{c['height']}\" / "
                          f"\"{c['personality']}\" / \"{c['voice']}\"")
+        if c.get("note"):
+            lines_doc.append("")
+            lines_doc.append(c["note"])
         lines_doc.append("")
         lines_doc.append("```")
         lines_doc.append(prompt)
