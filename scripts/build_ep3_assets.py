@@ -625,9 +625,29 @@ def write_audio_config(data):
         "bgm_prompt": "warm gentle Korean drama piano and strings, understated, bittersweet, "
                       "slow tempo, instrumental only, no vocals, no lyrics",
         "bgm_volume": 0.18,
+        # 감정 2단계 빌드업(리텐션 검토 반영) — generate_audio.py가 bgm_segments를 우선
+        # 사용하므로 위 bgm_prompt/bgm_model 단일곡은 이 배열이 비거나 생성 실패할 때만
+        # 쓰이는 폴백이 된다. 일부러 3단계가 아니라 2단계로 설계했다: "위기/갈등 구간
+        # BGM을 멈춘다"는 건 미지근한 곡을 트는 게 아니라 정말 음악을 끄고 현장음(빗소리·
+        # 발소리·정적)만 남기는 것 — 그래서 3막(사흘 밤 수색)~4막 대치 중반까지는 아예
+        # 구간을 만들지 않았다(=무음). generate_audio.py가 겹침·최소 간격(1초)을 자동
+        # 검증하므로 시간을 잘못 넣으면 생성 전에 바로 막힌다.
+        "bgm_segments": [
+            dict(start=36.0, end=106.0, volume=0.15,
+                 prompt="sparse minimalist Korean drama piano, single quiet melodic line, "
+                        "dry understated tone, slow unhurried tempo, no strings, "
+                        "instrumental only, no vocals, no lyrics"),
+            # 106~205s: 의도적 무음 구간 — 3막 수색 몽타주 + 4막 대치 전반부. 빗소리·
+            # 손전등·정적으로 긴장을 끌고, 음악은 넣지 않는다.
+            dict(start=205.0, end=304.0, volume=0.20,
+                 prompt="warm gentle Korean drama strings and piano swelling gradually, "
+                        "cello and violin, bittersweet and healing, emotional but restrained, "
+                        "instrumental only, no vocals, no lyrics"),
+        ],
         "_주의": ("김씨=EL 8vwSOQHQApfVx993mKf9, 내레이터=EL 5n5gqmaQi9Ewevrz7bOS 로 교체 "
                 "예정(시리즈 목소리 대장) — generate_audio.py에 엔진별 라우팅 추가 후 적용. "
-                "그 전까지는 위 MiniMax 프리셋이 폴백."),
+                "그 전까지는 위 MiniMax 프리셋이 폴백. bgm_segments는 lyria2를 2번 호출하므로 "
+                "단일곡 대비 음악 생성 비용이 2배(그래도 소액)."),
     }
     path = os.path.join(ROOT, "scripts", "audio", f"{SLUG}.json")
     with open(path, "w", encoding="utf-8") as f:

@@ -22,6 +22,13 @@ fal.ai의 TTS(MiniMax speech), 음악 생성(Lyria 2), 립싱크(sync-lipsync �
         --lipsync --scenes-dir out
 
 ffmpeg/ffprobe가 PATH에 있어야 한다. BGM 생성에 실패하면 경고만 남기고 계속 진행한다.
+
+BGM 감정 단계 빌드업(선택): 오디오 설정에 "bgm_segments"를
+[{"start", "end", "prompt", "volume"(선택)}, ...] 형태로 넣으면 곡 하나 대신 구간별로
+따로 생성해서 배치한다(예: 초반 건조한 단선율 → 갈등 구간 무음 → 클라이맥스 현악 상승).
+있으면 이걸 우선 쓰고 "bgm_model"/"bgm_prompt"(단일곡)는 무시한다. 구간 사이 최소
+간격(MIN_BGM_GAP, 기본 1초)을 안 지키면 겹쳐 들릴 수 있어 생성 전에 바로 막는다 —
+간격을 벌려서 구간을 정말 "쉬게" 두는 게 핵심이지, 크로스페이드로 이어붙이면 안 된다.
 """
 
 import argparse
@@ -177,6 +184,36 @@ def tts_line(cfg, key, index, voice, text, emotion=None):
     return path if download_retry(url, path) else None
 
 
+MIN_BGM_GAP = 1.0  # 구간 사이 최소 무음 간격(초) — 겹치면 두 곡이 동시에 들린다(EP2 실증)
+
+
+def _check_bgm_gaps(ordered_start_end_labels):
+    """(start, end, label) 목록이 시간순이고 서로 안 겹치는지 검사, 위반 시 즉시 예외.
+
+    validate_bgm_segments(설정 검증)와 mix()(실제 믹싱 직전 최종 방어) 둘 다 이 함수를
+    거친다 — 겹침 방지가 "설정을 잘 쓰겠지"라는 사람의 주의력에 기대면 안 된다(EP2
+    교훈 ⑭: 크로스페이드로 겹치면 두 곡이 동시에 나는 것처럼 들림).
+    """
+    for start, end, label in ordered_start_end_labels:
+        if end <= start:
+            raise SystemExit(f"bgm_segments 오류: '{label}' end({end})가 start({start})보다 "
+                              "뒤여야 합니다.")
+    for (s0, e0, l0), (s1, e1, l1) in zip(ordered_start_end_labels, ordered_start_end_labels[1:]):
+        gap = s1 - e0
+        if gap < MIN_BGM_GAP:
+            raise SystemExit(
+                f"bgm_segments 오류: '{l0}'(끝 {e0}s)와 '{l1}'(시작 {s1}s) 사이 간격이 "
+                f"{gap:.1f}s로 너무 좁습니다(최소 {MIN_BGM_GAP}s) — 겹쳐 들릴 수 있어 생성을 "
+                "막습니다. 구간 시간을 조정하세요.")
+
+
+def validate_bgm_segments(segments):
+    """구간이 시간순이고 서로 겹치지 않는지 검사한다. 위반 시 즉시 예외를 던진다."""
+    ordered = sorted(segments, key=lambda s: s["start"])
+    _check_bgm_gaps([(s["start"], s["end"], s.get("prompt", "")[:20]) for s in ordered])
+    return ordered
+
+
 def make_bgm(cfg, key):
     path = os.path.join(WORK_DIR, "bgm.audio")
     if cached(path):
@@ -195,6 +232,40 @@ def make_bgm(cfg, key):
         return None
     path = os.path.join(WORK_DIR, "bgm.audio")
     return path if download_retry(url, path) else None
+
+
+def make_bgm_segments(cfg, key):
+    """bgm_segments 설정을 읽어 구간별로 곡을 따로 생성한다 (감정 3단계 빌드업용).
+
+    각 구간은 {"start", "end", "prompt", "volume"(선택)} — 시간 단위는 초, 최종
+    영상 타임코드 기준. validate_bgm_segments()로 겹침을 먼저 막은 뒤 생성한다.
+    실패한 구간은 건너뛰고 경고만 남긴다(그 구간만 무음이 됨).
+
+    반환: [(start, end, volume, path), ...] (start 순 정렬)
+    """
+    segments = validate_bgm_segments(cfg["bgm_segments"])
+    model = cfg.get("bgm_model")
+    default_volume = float(cfg.get("bgm_volume", 0.22))
+    results = []
+    for i, seg in enumerate(segments):
+        path = os.path.join(WORK_DIR, f"bgm{i}.audio")
+        if cached(path):
+            print(f"  [bgm{i}] 기존 파일 재사용")
+            results.append((seg["start"], seg["end"], float(seg.get("volume", default_volume)), path))
+            continue
+        if not model or not seg.get("prompt"):
+            print(f"  [bgm{i}] 모델/프롬프트 없음 — 이 구간은 무음으로 둠")
+            continue
+        result = fal_run(model, {"prompt": seg["prompt"]}, key, f"bgm{i}")
+        url = result and find_audio_url(result)
+        if not url:
+            print(f"  [bgm{i}] 생성 실패 — 이 구간은 무음으로 둠")
+            continue
+        if not download_retry(url, path):
+            print(f"  [bgm{i}] 다운로드 실패 — 이 구간은 무음으로 둠")
+            continue
+        results.append((seg["start"], seg["end"], float(seg.get("volume", default_volume)), path))
+    return results
 
 
 # ---------- 배치 계획 ----------
@@ -252,16 +323,30 @@ def render_track(placed, total, out_wav):
     return out_wav
 
 
-def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume=0.4):
-    """배치된 대사·현장음·BGM을 영상 오디오 트랙으로 믹싱해 out_path에 저장."""
+def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume=0.4,
+        bgm_segments=None):
+    """배치된 대사·현장음·BGM을 영상 오디오 트랙으로 믹싱해 out_path에 저장.
+
+    bgm_segments가 있으면(감정 3단계 빌드업 등) 그걸 우선 쓰고 bgm(단일곡)은 무시한다.
+    구간마다 자기 길이 안에서 페이드인·페이드아웃을 걸어 다음 구간과 겹치지 않게 한다
+    (겹치면 두 곡이 동시에 들린다 — EP2 실증). 호출자가 make_bgm_segments()로 만든
+    목록을 그대로 넘긴다는 전제라 겹침 검사는 그쪽(validate_bgm_segments)에서 이미 한 번
+    거쳤지만, "설정을 잘 지키겠지"에 기대지 않도록 여기서도 최종 방어로 다시 검사한다.
+    """
     ambience = ambience or []
+    if bgm_segments:
+        bgm_segments = sorted(bgm_segments, key=lambda s: s[0])
+        _check_bgm_gaps([(s, e, p) for s, e, _v, p in bgm_segments])
     duration = probe_duration(video)
     cmd = ["ffmpeg", "-y", "-i", video]
     for entry in placed:
         cmd += ["-i", entry[-1]]
     for _, path in ambience:
         cmd += ["-i", path]
-    if bgm:
+    if bgm_segments:
+        for _, _, _, path in bgm_segments:
+            cmd += ["-stream_loop", "-1", "-i", path]
+    elif bgm:
         cmd += ["-stream_loop", "-1", "-i", bgm]
 
     parts, mix_inputs = [], []
@@ -277,9 +362,22 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
         ms = int(round(start * 1000))
         parts.append(f"[{base + k}:a]volume={ambience_volume},adelay={ms}:all=1[amb{k}]")
         mix_inputs.append(f"[amb{k}]")
-    if bgm:
+    bgm_base = base + len(ambience)
+    if bgm_segments:
+        FADE = 2.0
+        for i, (start, end, vol, _path) in enumerate(bgm_segments):
+            seg_dur = max(end - start, 0.1)
+            fade = min(FADE, seg_dur / 2)
+            ms = int(round(start * 1000))
+            parts.append(
+                f"[{bgm_base + i}:a]atrim=0:{seg_dur:.3f},"
+                f"afade=t=in:st=0:d={fade:.3f},"
+                f"afade=t=out:st={max(seg_dur - fade, 0):.3f}:d={fade:.3f},"
+                f"volume={vol},adelay={ms}:all=1[bg{i}]")
+            mix_inputs.append(f"[bg{i}]")
+    elif bgm:
         parts.append(
-            f"[{base + len(ambience)}:a]atrim=0:{duration:.3f},"
+            f"[{bgm_base}:a]atrim=0:{duration:.3f},"
             f"afade=t=out:st={max(duration - 2, 0):.3f}:d=2,volume={bgm_volume}[bg]")
         mix_inputs.append("[bg]")
     parts.append(
@@ -545,13 +643,19 @@ def main():
                                                args.no_burn, burn_scenes)
 
     print("배경음악 생성 중...")
-    bgm = make_bgm(cfg, key)
-    if not bgm:
-        print("경고: 배경음악 생성 실패 — 대사만으로 계속 진행합니다.")
+    bgm, bgm_segments = None, None
+    if cfg.get("bgm_segments"):
+        bgm_segments = make_bgm_segments(cfg, key)
+        if not bgm_segments:
+            print("경고: 배경음악 구간 생성 실패 — 대사만으로 계속 진행합니다.")
+    else:
+        bgm = make_bgm(cfg, key)
+        if not bgm:
+            print("경고: 배경음악 생성 실패 — 대사만으로 계속 진행합니다.")
 
     print("믹싱 중...")
     mix(video, placed, bgm, float(cfg.get("bgm_volume", 0.22)), args.out,
-        ambience, float(cfg.get("ambience_volume", 0.4)))
+        ambience, float(cfg.get("ambience_volume", 0.4)), bgm_segments=bgm_segments)
     print(f"완료 → {args.out}")
 
 
