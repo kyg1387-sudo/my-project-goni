@@ -193,7 +193,7 @@ jobs:
             EXTRA="--patterns ${{ inputs.qc_patterns }}"
           fi
           python3 scripts/qc_tts.py --ass "subs/${SKIT}.ass" --audio-dir out/audio \
-            --report qc-report.txt $EXTRA
+            --config "scripts/audio/${SKIT}.json" --report qc-report.txt $EXTRA
 
       # 로그/Artifact 접근이 막힌 환경에서도 결과를 git으로 받을 수 있게 한다
       - name: QC 보고서 커밋

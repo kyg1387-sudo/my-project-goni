@@ -54,6 +54,8 @@ def main():
     ap.add_argument("--model", default="fal-ai/whisper")
     ap.add_argument("--patterns", default="line*.mp3",
                     help='검사 파일 패턴(쉼표 구분, 예 "amb*.wav,bgm.audio")')
+    ap.add_argument("--config", default="",
+                    help="오디오 설정 json (silent_styles 제외에 필요)")
     ap.add_argument("--report", default="",
                     help="결과를 저장할 텍스트 파일 경로 (선택)")
     args = ap.parse_args()
@@ -63,6 +65,11 @@ def main():
         sys.exit("FAL_API_KEY 환경 변수가 필요합니다.")
 
     lines = parse_ass(args.ass)
+    if args.config:
+        import json
+        with open(args.config, encoding="utf-8") as f:
+            silent = set(json.load(f).get("silent_styles", []))
+        lines = [ln for ln in lines if ln[2] not in silent]
     files = []
     for pat in args.patterns.split(","):
         files += sorted(glob.glob(os.path.join(args.audio_dir, pat.strip())))
