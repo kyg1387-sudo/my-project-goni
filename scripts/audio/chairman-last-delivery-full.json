@@ -387,5 +387,8 @@
   },
   "silent_styles": [
     "Fix"
-  ]
+  ],
+  "lipsync_model_overrides": {
+    "23": "fal-ai/latentsync"
+  }
 }

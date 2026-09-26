@@ -305,7 +305,12 @@ def lipsync_scene(cfg, key, v_url, audio_path, index):
         print(f"  [lipsync {index:02d}] 기존 파일 재사용")
         return path
     a_url = fal_upload(audio_path, key)
-    for model in cfg.get("lipsync_models", ["fal-ai/sync-lipsync", "fal-ai/latentsync"]):
+    models = list(cfg.get("lipsync_models", ["fal-ai/sync-lipsync", "fal-ai/latentsync"]))
+    # 장면별 모델 지정: 클로즈업 등에서 기본 모델이 입을 뭉개면 대체 모델을 우선 시도
+    override = (cfg.get("lipsync_model_overrides") or {}).get(str(index))
+    if override:
+        models = [override] + [m for m in models if m != override]
+    for model in models:
         payload = {"video_url": v_url, "audio_url": a_url}
         if "sync-lipsync" in model:
             payload["sync_mode"] = "cut_off"
