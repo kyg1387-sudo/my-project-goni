@@ -140,7 +140,7 @@ SECTIONS = [
     ),
     dict(
         name="궁금증 캡션", lead_in=0.3,
-        lines=[C("며칠째, 그는 왜 여기 있는 걸까")],
+        lines=[C("말이 없던 그가, 왜 고물상 앞을 막아섰을까")],
         cuts=[cut(f"{JUNKYARD}, {CART} 손잡이의 가죽끈만 어둡게 보이는 정지된 듯한 구도, 인물 없음",
                   [], 5, "Extreme close-up", "Static, locked off",
                   sound="")],
@@ -408,7 +408,7 @@ SECTIONS = [
     ),
     dict(
         name="다음 편 예고", lead_in=0.3,
-        lines=[C("다음 이야기 — 김씨의 크리스마스")],
+        lines=[C("다음 이야기 — 성탄 전야, 그가 월급 봉투를 열었다")],
         cuts=[cut(f"{GUARD_BOOTH} 창가, 작은 트리 장식이 살짝 보이는 겨울 예고 컷, 사람이 한 명도 "
                   f"없는, 인물 없음", [], 5, "Medium", "Static, locked off", sound="")],
     ),
