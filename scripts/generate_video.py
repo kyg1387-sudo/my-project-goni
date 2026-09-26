@@ -43,8 +43,24 @@ def load_scenes(path):
     with open(path, encoding="utf-8") as f:
         data = json.load(f)
     style = data.get("style", "").strip()
-    prompts = [f"{scene}, {style}" if style else scene for scene in data["scenes"]]
-    return prompts, int(data.get("duration", 5)), data.get("ratio", "9:16")
+    scenes = []
+    for scene in data["scenes"]:
+        if isinstance(scene, dict):
+            text, refs = scene["prompt"], scene.get("refs", [])
+        else:
+            text, refs = scene, []
+        scenes.append((f"{text}, {style}" if style else text,
+                       [resolve_ref(r) for r in refs]))
+    return scenes, int(data.get("duration", 5)), data.get("ratio", "9:16")
+
+
+def resolve_ref(ref):
+    """참조 이미지 경로를 URL로 바꾼다 (저장소 상대 경로 → raw URL)."""
+    if ref.startswith("http"):
+        return ref
+    repo = os.environ.get("GITHUB_REPOSITORY", "kyg1387-sudo/my-project-goni")
+    branch = os.environ.get("GITHUB_REF_NAME", "main")
+    return f"https://raw.githubusercontent.com/{repo}/{branch}/{ref}"
 
 
 def http_json(url, payload=None, headers=None):
@@ -108,16 +124,23 @@ def ark_generate(base_url, model, key, index, prompt, duration, ratio):
 # ---------- fal.ai ----------
 
 FAL_MODEL = os.environ.get("FAL_VIDEO_MODEL", "fal-ai/bytedance/seedance/v1/lite/text-to-video")
+# 인물 기준 초상을 참조해 생성 (얼굴 고정) — refs가 있는 장면에 사용
+FAL_REF_MODEL = os.environ.get("FAL_REF_VIDEO_MODEL",
+                               "fal-ai/bytedance/seedance/v1/lite/reference-to-video")
 
 
-def fal_generate(key, index, prompt, duration, ratio):
+def fal_generate(key, index, prompt, duration, ratio, refs=()):
     headers = {"Authorization": f"Key {key}"}
-    status, task = http_json(f"https://queue.fal.run/{FAL_MODEL}", {
+    model = FAL_REF_MODEL if refs else FAL_MODEL
+    payload = {
         "prompt": prompt,
         "aspect_ratio": ratio,
         "resolution": "720p",
         "duration": str(duration),
-    }, headers)
+    }
+    if refs:
+        payload["reference_image_urls"] = list(refs)
+    status, task = http_json(f"https://queue.fal.run/{model}", payload, headers)
     if status != 200:
         print(f"  [fal] 작업 생성 실패 (HTTP {status}): {task}")
         return None
@@ -150,9 +173,10 @@ def pick_provider(duration, ratio):
         pairs = [override] if all(override) else ARK_CANDIDATES
         for base_url, model in pairs:
             candidates.append((f"ark {base_url} / {model}",
-                               lambda i, p, b=base_url, m=model: ark_generate(b, m, ark_key, i, p, duration, ratio)))
+                               lambda i, p, r=(), b=base_url, m=model: ark_generate(b, m, ark_key, i, p, duration, ratio)))
     if fal_key:
-        candidates.append((f"fal.ai {FAL_MODEL}", lambda i, p: fal_generate(fal_key, i, p, duration, ratio)))
+        candidates.append((f"fal.ai {FAL_MODEL}",
+                           lambda i, p, r=(): fal_generate(fal_key, i, p, duration, ratio, r)))
     if not candidates:
         sys.exit("ARK_API_KEY 또는 FAL_API_KEY 환경 변수가 필요합니다. (키를 코드나 채팅에 넣지 마세요)")
     return candidates
@@ -169,19 +193,20 @@ def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     paths = []
     provider = None
-    for index, prompt in enumerate(scenes, start=1):
+    for index, (prompt, refs) in enumerate(scenes, start=1):
         if only and index not in only:
             continue
-        print(f"[scene {index:02d}] {prompt[:40]}...")
+        print(f"[scene {index:02d}] {prompt[:40]}..."
+              + (f" (참조 {len(refs)}장)" if refs else ""))
         if provider:
-            path = provider(index, prompt)
+            path = provider(index, prompt, refs)
             if not path:
                 sys.exit(f"[scene {index:02d}] 생성 실패 — 위 로그를 확인하세요.")
         else:
             path = None
             for name, fn in pick_provider(duration, ratio):
                 print(f"  공급자 시도: {name}")
-                path = fn(index, prompt)
+                path = fn(index, prompt, refs)
                 if path:
                     provider = fn
                     break

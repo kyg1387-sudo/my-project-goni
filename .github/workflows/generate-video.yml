@@ -11,6 +11,10 @@ on:
         description: 재생성할 장면 번호만 지정 (예 "3,5,7", 비우면 전체)
         required: false
         default: ""
+      portraits:
+        description: 기준 초상만 생성해 커밋 (JSON, 예 [{"name":"miran-coat","prompt":"...","edit_from":""}])
+        required: false
+        default: ""
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
@@ -20,19 +24,46 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     timeout-minutes: 240
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
+      - name: 기준 초상 생성 후 커밋 (초상 전용 모드)
+        if: ${{ inputs.portraits != '' }}
+        env:
+          FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+          PORTRAITS: ${{ inputs.portraits }}
+        run: |
+          echo "$PORTRAITS" | python3 -c "
+          import json, subprocess, sys
+          for p in json.load(sys.stdin):
+              cmd = ['python3', 'scripts/generate_portrait.py',
+                     '--name', p['name'], '--prompt', p['prompt']]
+              if p.get('edit_from'):
+                  cmd += ['--edit-from', p['edit_from']]
+              subprocess.run(cmd, check=True)
+          "
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/portraits
+          git commit -m "기준 초상 생성 (${SKIT})"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
+
       - name: 장면별 클립 생성 (Ark Seedance / fal.ai)
+        if: ${{ inputs.portraits == '' }}
         env:
           ARK_API_KEY: ${{ secrets.ARK_API_KEY }}
           FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
         run: python3 scripts/generate_video.py "scripts/scenes/${SKIT}.json"
 
       - name: ffmpeg 설치
+        if: ${{ inputs.portraits == '' }}
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
       - name: 클립 이어붙이기
+        if: ${{ inputs.portraits == '' }}
         # concat 목록 안의 상대 경로는 목록 파일 위치 기준으로 해석되므로 out/ 안에서 실행
         working-directory: out
         run: |
@@ -40,7 +71,7 @@ jobs:
           ffmpeg -f concat -safe 0 -i list.txt -c copy "${SKIT}-skit.mp4"
 
       - name: 결과 영상 업로드
-        if: always()
+        if: ${{ always() && inputs.portraits == '' }}
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.SKIT }}-skit-video
