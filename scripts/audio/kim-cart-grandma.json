@@ -30,21 +30,21 @@
     "1": "serious",
     "2": "determined",
     "11": "sad(절제)",
-    "29": "neutral(단호)",
-    "30": "serious",
-    "31": "determined",
-    "34": "warm(무뚝뚝)",
-    "38": "sad(그리움, 울먹)"
+    "28": "neutral(단호)",
+    "29": "serious",
+    "30": "determined",
+    "33": "warm(무뚝뚝)",
+    "37": "sad(그리움, 울먹)"
   },
   "speed_overrides": {
     "1": 0.85,
     "2": 0.8,
     "11": 0.7,
-    "29": 0.9,
-    "30": 0.85,
-    "31": 0.8,
-    "34": 0.85,
-    "38": 0.7
+    "28": 0.9,
+    "29": 0.85,
+    "30": 0.8,
+    "33": 0.85,
+    "37": 0.7
   },
   "narration_styles": [
     "Naration"
@@ -63,66 +63,87 @@
     [],
     [],
     [],
-    [],
-    [],
-    [],
-    [],
+    [
+      "할머니"
+    ],
+    [
+      "할머니"
+    ],
+    [
+      "김씨"
+    ],
     [],
     [
       "할머니"
     ],
-    [],
-    [],
-    [
-      "김씨"
-    ],
-    [
-      "김씨"
-    ],
-    [
-      "김씨"
-    ],
-    [
-      "김씨"
-    ],
-    [
-      "김씨"
-    ],
-    [
-      "김씨"
-    ],
-    [
-      "김씨"
-    ],
-    [
-      "김씨"
-    ],
-    [
-      "김씨"
-    ],
-    [
-      "김씨",
-      "최사장"
-    ],
-    [
-      "김씨",
-      "최사장"
-    ],
-    [
-      "김씨"
-    ],
-    [
-      "김씨",
-      "최사장"
-    ],
-    [],
-    [],
-    [],
     [
       "할머니"
     ],
     [],
+    [
+      "할머니"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨",
+      "최사장"
+    ],
+    [
+      "김씨",
+      "최사장"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨",
+      "최사장"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨"
+    ],
     [],
+    [
+      "할머니"
+    ],
+    [
+      "할머니"
+    ],
+    [
+      "할머니"
+    ],
     [
       "김씨"
     ],
@@ -138,10 +159,10 @@
     20,
     22,
     26,
-    28,
     29,
-    32,
-    33
+    30,
+    33,
+    34
   ],
   "lipsync_models": [
     "fal-ai/sync-lipsync",
@@ -176,6 +197,7 @@
     "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
     "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
     "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
+    "pre-dawn quiet street ambience, single cart wheel creak, distant rooster, no voices",
     "pre-dawn quiet street ambience, single cart wheel creak, distant rooster, no voices",
     "pre-dawn quiet street ambience, single cart wheel creak, distant rooster, no voices",
     "",
