@@ -15,6 +15,10 @@ on:
         description: 기준 초상만 생성해 커밋 (JSON, 예 [{"name":"miran-coat","prompt":"...","edit_from":""}])
         required: false
         default: ""
+      frames_from_run_id:
+        description: 생성 없이 이 run의 장면 Artifact에서 검수 프레임만 뽑아 커밋 (선택)
+        required: false
+        default: ""
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
@@ -51,19 +55,48 @@ jobs:
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push
 
+      - name: 이전 run 장면 Artifact 내려받기 (프레임 검수 전용 모드)
+        if: ${{ inputs.frames_from_run_id != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.SKIT }}-skit-video
+          path: out
+          run-id: ${{ inputs.frames_from_run_id }}
+          github-token: ${{ github.token }}
+
       - name: 장면별 클립 생성 (Ark Seedance / fal.ai)
-        if: ${{ inputs.portraits == '' }}
+        if: ${{ inputs.portraits == '' && inputs.frames_from_run_id == '' }}
         env:
           ARK_API_KEY: ${{ secrets.ARK_API_KEY }}
           FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
         run: python3 scripts/generate_video.py "scripts/scenes/${SKIT}.json"
 
-      - name: ffmpeg 설치
+      # 로컬에서 Artifact 저장소에 접근 못 하는 환경을 위해 검수 프레임을 git으로 커밋
+      - name: 검수 프레임 커밋
         if: ${{ inputs.portraits == '' }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          DIR="docs/qc/frames-${{ github.run_id }}"
+          mkdir -p "$DIR"
+          for f in out/scene*.mp4; do
+            b=$(basename "$f" .mp4)
+            for p in 1 5 9; do
+              ffmpeg -y -ss $p -i "$f" -frames:v 1 -vf scale=480:-2 "$DIR/${b}-f$p.jpg" 2>/dev/null || true
+            done
+          done
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "$DIR"
+          git commit -m "검수 프레임 (${SKIT}, run ${{ github.run_id }})" || exit 0
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
+
+      - name: ffmpeg 설치
+        if: ${{ inputs.portraits == '' && inputs.frames_from_run_id == '' }}
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
       - name: 클립 이어붙이기
-        if: ${{ inputs.portraits == '' }}
+        if: ${{ inputs.portraits == '' && inputs.frames_from_run_id == '' }}
         # concat 목록 안의 상대 경로는 목록 파일 위치 기준으로 해석되므로 out/ 안에서 실행
         working-directory: out
         run: |
@@ -71,7 +104,7 @@ jobs:
           ffmpeg -f concat -safe 0 -i list.txt -c copy "${SKIT}-skit.mp4"
 
       - name: 결과 영상 업로드
-        if: ${{ always() && inputs.portraits == '' }}
+        if: ${{ always() && inputs.portraits == '' && inputs.frames_from_run_id == '' }}
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.SKIT }}-skit-video
