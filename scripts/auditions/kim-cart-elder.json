@@ -1,0 +1,28 @@
+{
+  "tests": [
+    {
+      "id": "elder_A",
+      "model": "elevenlabs-direct",
+      "voice": "IZnNrZQBS9lhLjXgYVT8",
+      "text": "[trembling, elderly woman, distressed whisper] 리어카가… 리어카가 없어졌어…"
+    },
+    {
+      "id": "elder_B",
+      "model": "elevenlabs-direct",
+      "voice": "btKMxrEJKGBf21DM9nVQ",
+      "text": "[trembling, elderly woman, distressed whisper] 리어카가… 리어카가 없어졌어…"
+    },
+    {
+      "id": "owner_A",
+      "model": "elevenlabs-direct",
+      "voice": "IZnNrZQBS9lhLjXgYVT8",
+      "text": "[middle-aged man, puzzled, slightly defensive] 아니, 이거 오늘 새벽에 정비 트럭이 놓고 간 건데… 왜, 뭐 잘못됐소?"
+    },
+    {
+      "id": "owner_B",
+      "model": "elevenlabs-direct",
+      "voice": "btKMxrEJKGBf21DM9nVQ",
+      "text": "[middle-aged man, puzzled, slightly defensive] 아니, 이거 오늘 새벽에 정비 트럭이 놓고 간 건데… 왜, 뭐 잘못됐소?"
+    }
+  ]
+}
