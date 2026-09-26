@@ -1,0 +1,192 @@
+{
+  "tts_model": "fal-ai/minimax/speech-02-hd",
+  "language_boost": "Korean",
+  "speed": 1.0,
+  "default_voice": "Deep_Voice_Man",
+  "style_voices": {
+    "Naration": "Deep_Voice_Man",
+    "Kim": "Imposing_Manner",
+    "Grandma": "Wise_Woman",
+    "Choi": "Determined_Man"
+  },
+  "name_voices": {
+    "김씨": "Imposing_Manner",
+    "할머니": "Wise_Woman",
+    "최사장": "Determined_Man"
+  },
+  "style_names": {
+    "Kim": "김씨",
+    "Grandma": "할머니",
+    "Choi": "최사장",
+    "Naration": "내레이터"
+  },
+  "style_emotions": {
+    "Kim": "neutral",
+    "Grandma": "sad",
+    "Choi": "neutral",
+    "Naration": "neutral"
+  },
+  "emotion_overrides": {
+    "1": "serious",
+    "2": "determined",
+    "11": "sad(절제)",
+    "29": "neutral(단호)",
+    "30": "serious",
+    "31": "determined",
+    "34": "warm(무뚝뚝)",
+    "38": "sad(그리움, 울먹)"
+  },
+  "speed_overrides": {
+    "1": 0.85,
+    "2": 0.8,
+    "11": 0.7,
+    "29": 0.9,
+    "30": 0.85,
+    "31": 0.8,
+    "34": 0.85,
+    "38": 0.7
+  },
+  "narration_styles": [
+    "Naration"
+  ],
+  "silent_styles": [
+    "Caption"
+  ],
+  "scene_speakers": [
+    [
+      "김씨",
+      "최사장"
+    ],
+    [
+      "김씨"
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "할머니"
+    ],
+    [],
+    [],
+    [
+      "김씨"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨",
+      "최사장"
+    ],
+    [
+      "김씨",
+      "최사장"
+    ],
+    [
+      "김씨"
+    ],
+    [
+      "김씨",
+      "최사장"
+    ],
+    [],
+    [],
+    [],
+    [
+      "할머니"
+    ],
+    [],
+    [],
+    [
+      "김씨"
+    ],
+    []
+  ],
+  "section_ends": [
+    2,
+    3,
+    4,
+    5,
+    9,
+    13,
+    20,
+    22,
+    26,
+    28,
+    29,
+    32,
+    33
+  ],
+  "lipsync_models": [
+    "fal-ai/sync-lipsync",
+    "fal-ai/latentsync"
+  ],
+  "ambience_model": "fal-ai/mmaudio-v2",
+  "ambience_volume": 0.35,
+  "ambience_prompts": [
+    "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
+    "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "demolition site rubble settling, distant truck engine idling, no crowd voices",
+    "demolition site rubble settling, distant truck engine idling, no crowd voices",
+    "demolition site rubble settling, distant truck engine idling, no crowd voices",
+    "demolition site rubble settling, distant truck engine idling, no crowd voices",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
+    "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
+    "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
+    "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
+    "pre-dawn quiet street ambience, single cart wheel creak, distant rooster, no voices",
+    "pre-dawn quiet street ambience, single cart wheel creak, distant rooster, no voices",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "bgm_model": "fal-ai/lyria2",
+  "bgm_prompt": "warm gentle Korean drama piano and strings, understated, bittersweet, slow tempo, instrumental only, no vocals, no lyrics",
+  "bgm_volume": 0.18,
+  "_주의": "김씨=EL 8vwSOQHQApfVx993mKf9, 내레이터=EL 5n5gqmaQi9Ewevrz7bOS 로 교체 예정(시리즈 목소리 대장) — generate_audio.py에 엔진별 라우팅 추가 후 적용. 그 전까지는 위 MiniMax 프리셋이 폴백."
+}
