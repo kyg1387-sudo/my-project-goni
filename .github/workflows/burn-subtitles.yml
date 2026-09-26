@@ -55,6 +55,10 @@ on:
         description: QC 대상 파일 패턴 (비우면 line*.mp3, 예 "amb*.wav,bgm.audio")
         required: false
         default: ""
+      qc_sync:
+        description: 완성본 오디오-자막 동기 검사 (qc_tts=true와 함께 지정)
+        required: false
+        default: ""
       slice_source:
         description: 소스 Artifact 만료 시, deliveries의 완성본을 잘라 장면 복구 (true/false)
         required: false
@@ -188,12 +192,24 @@ jobs:
           FAL_KEY: ${{ secrets.FAL_API_KEY }}
         run: |
           pip install --quiet fal-client
-          EXTRA=""
-          if [ -n "${{ inputs.qc_patterns }}" ]; then
-            EXTRA="--patterns ${{ inputs.qc_patterns }}"
+          if [ "${{ inputs.qc_sync }}" = "true" ]; then
+            sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+            if [ -f "deliveries/${SKIT}-skit-final.mp4" ]; then
+              cp "deliveries/${SKIT}-skit-final.mp4" qc-final.mp4
+            else
+              cat deliveries/${SKIT}-skit-final.mp4.part-* > qc-final.mp4
+            fi
+            python3 scripts/qc_sync.py --ass "subs/${SKIT}.ass" \
+              --config "scripts/audio/${SKIT}.json" --video qc-final.mp4 \
+              --report qc-report.txt
+          else
+            EXTRA=""
+            if [ -n "${{ inputs.qc_patterns }}" ]; then
+              EXTRA="--patterns ${{ inputs.qc_patterns }}"
+            fi
+            python3 scripts/qc_tts.py --ass "subs/${SKIT}.ass" --audio-dir out/audio \
+              --config "scripts/audio/${SKIT}.json" --report qc-report.txt $EXTRA
           fi
-          python3 scripts/qc_tts.py --ass "subs/${SKIT}.ass" --audio-dir out/audio \
-            --config "scripts/audio/${SKIT}.json" --report qc-report.txt $EXTRA
 
       # 로그/Artifact 접근이 막힌 환경에서도 결과를 git으로 받을 수 있게 한다
       - name: QC 보고서 커밋
