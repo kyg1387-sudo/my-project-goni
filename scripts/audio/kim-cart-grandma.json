@@ -29,22 +29,22 @@
   "emotion_overrides": {
     "1": "serious",
     "2": "determined",
-    "11": "sad(절제)",
+    "12": "sad(절제)",
     "28": "neutral(단호)",
-    "29": "serious",
-    "30": "determined",
-    "33": "warm(무뚝뚝)",
-    "37": "sad(그리움, 울먹)"
+    "30": "serious",
+    "31": "determined",
+    "34": "warm(무뚝뚝)",
+    "38": "sad(그리움, 울먹)"
   },
   "speed_overrides": {
     "1": 0.85,
     "2": 0.8,
-    "11": 0.7,
+    "12": 0.7,
     "28": 0.9,
-    "29": 0.85,
-    "30": 0.8,
-    "33": 0.85,
-    "37": 0.7
+    "30": 0.85,
+    "31": 0.8,
+    "34": 0.85,
+    "38": 0.7
   },
   "narration_styles": [
     "Naration"
@@ -79,6 +79,9 @@
     [
       "할머니"
     ],
+    [
+      "할머니"
+    ],
     [],
     [
       "할머니"
@@ -120,6 +123,9 @@
     ],
     [
       "김씨"
+    ],
+    [
+      "최사장"
     ],
     [
       "김씨",
@@ -154,15 +160,15 @@
     3,
     4,
     5,
-    9,
-    13,
-    20,
-    22,
-    26,
-    29,
-    30,
-    33,
-    34
+    10,
+    14,
+    21,
+    23,
+    28,
+    31,
+    32,
+    35,
+    36
   ],
   "lipsync_models": [
     "fal-ai/sync-lipsync",
@@ -180,6 +186,7 @@
     "",
     "",
     "",
+    "",
     "demolition site rubble settling, distant truck engine idling, no crowd voices",
     "demolition site rubble settling, distant truck engine idling, no crowd voices",
     "demolition site rubble settling, distant truck engine idling, no crowd voices",
@@ -193,6 +200,7 @@
     "",
     "",
     "",
+    "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
     "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
     "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
     "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
