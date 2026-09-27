@@ -127,7 +127,7 @@ SECTIONS = [
         cuts=[
             cut(JUNKYARD_BLOCK + ", 정면 상반신, 한국어로 대사하며 입을 자연스럽게 움직임",
                 ["김씨", "최사장"], 10, "Medium close-up", "Slow dolly in toward Kim",
-                end="hold on Kim's resolute expression",
+                angle="Low angle", end="hold on Kim's resolute expression",
                 sound="rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur"),
             # Kim의 두 줄 대사가 10초를 넘어가므로(약 12초), 이 컷도 김씨를 화면에 유지한 채
             # 이어간다 — Choi 단독 리액션으로 끊으면 뒷부분 대사와 화자-화면이 어긋난다.
@@ -222,8 +222,10 @@ SECTIONS = [
                 "background stretches",
                 end="hold on her frozen face for the last second",
                 sound="sudden silence, wind"),
+            # High angle(내려다봄) = 무력함·고립 — 주저앉은 사람을 Low angle로 찍으면
+            # 오히려 위압감(영웅적)이 실려 정서와 반대로 간다(규칙집 §7-2 대조표 참고).
             cut(f"{DEMOLITION}, 늦은 오후, {GRANDMA}가 주저앉아 빈손으로 바닥을 짚는 모습",
-                ["할머니"], 5, "Full shot", "Static, locked off", angle="Low angle",
+                ["할머니"], 5, "Full shot", "Static, locked off", angle="High angle",
                 sound="quiet, distant city hum"),
             cut(f"{DEMOLITION} 인근, 늦은 밤, {GRANDMA}가 홀로 주변을 헤매며 찾는 모습, 지친 모습",
                 ["할머니"], 5, "Long shot", "Handheld, fine natural tremor",
@@ -261,7 +263,7 @@ SECTIONS = [
                 ["김씨"], 10, "Long shot", "Side tracking, camera moves parallel to Kim",
                 sound="footsteps, flashlight click, distant night ambience"),
             cut(f"{ALLEY_NIGHT}, 비가 내리는 가운데 {KIM}이 우산도 없이 젖은 채 골목을 헤매는 모습",
-                ["김씨"], 10, "Full shot", "Handheld, fine natural tremor",
+                ["김씨"], 10, "Full shot", "Handheld, fine natural tremor", angle="High angle",
                 sound="heavy rain, footsteps splashing"),
             cut(f"{GUARD_BOOTH}, 밤, {KIM}이 서랍에서 아내의 낡은 꽃무늬 수첩을 꺼내 펼쳐보는 모습",
                 ["김씨"], 10, "Medium close-up", "Slow dolly in toward Kim",
@@ -314,7 +316,7 @@ SECTIONS = [
             # 콜드오픈 컷 1과 완전히 동일 — 실제로는 같은 클립(재사용, COLD_OPEN_DUPES 참고).
             cut(JUNKYARD_BLOCK + ", 정면 상반신, 한국어로 대사하며 입을 자연스럽게 움직임",
                 ["김씨", "최사장"], 10, "Medium close-up", "Slow dolly in toward Kim",
-                end="hold on Kim's resolute expression",
+                angle="Low angle", end="hold on Kim's resolute expression",
                 sound="rusty cart wheel creak, tense quiet, no crowd murmur"),
             cut(JUNKYARD_STRAP + ", 정면 상반신, 한국어로 대사하며 입을 자연스럽게 움직임",
                 ["김씨"], 10, "Medium close-up", "Slow dolly in toward Kim",

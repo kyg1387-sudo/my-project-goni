@@ -13,7 +13,7 @@
 [CAMERA]
 Movement: Slow dolly in toward Kim
 Speed: natural, unhurried
-Framing: keep the full cast in frame, Medium close-up throughout, Eye-level
+Framing: keep the full cast in frame, Medium close-up throughout, Low angle
 End: hold on Kim's resolute expression
 [DURATION] 10 seconds
 [DIALOGUE] the guard (Kim) (Korean, [firm, low]): "이 손잡이, 가죽끈 감긴 거 보이시죠."
@@ -233,7 +233,7 @@ End: hold on her frozen face for the last second
 [CAMERA]
 Movement: Static, locked off
 Speed: natural, unhurried
-Framing: keep the grandmother in frame, Full shot throughout, Low angle
+Framing: keep the grandmother in frame, Full shot throughout, High angle
 End: hold on the final frame for the last second
 [DURATION] 5 seconds
 [DIALOGUE] none
@@ -305,7 +305,7 @@ End: hold on the final frame for the last second
 [CAMERA]
 Movement: Handheld, fine natural tremor
 Speed: natural, unhurried
-Framing: keep the guard (Kim) in frame, Full shot throughout, Eye-level
+Framing: keep the guard (Kim) in frame, Full shot throughout, High angle
 End: hold on the final frame for the last second
 [DURATION] 10 seconds
 [DIALOGUE] none
@@ -407,7 +407,7 @@ End: hold on Kim's focused gaze
 [CAMERA]
 Movement: Slow dolly in toward Kim
 Speed: natural, unhurried
-Framing: keep the full cast in frame, Medium close-up throughout, Eye-level
+Framing: keep the full cast in frame, Medium close-up throughout, Low angle
 End: hold on Kim's resolute expression
 [DURATION] 10 seconds
 [DIALOGUE] Choi (the scrapyard owner) (Korean, [brisk, businesslike]): "이미 계근까지 끝난 물건입니다. 값도 다 쳐드렸고요."
