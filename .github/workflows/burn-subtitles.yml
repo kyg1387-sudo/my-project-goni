@@ -67,6 +67,14 @@ on:
         description: slice_source 모드에서 자막이 없는(교체된) 장면 번호 목록 (예 "3,5,7")
         required: false
         default: ""
+      slice_file:
+        description: slice_source 모드에서 자를 원본 경로(기본은 deliveries 최신본, 예 sources/chairman-full-v4base.mp4)
+        required: false
+        default: ""
+      replace_more:
+        description: 추가 교체 run ID 목록(공백 구분, replace_run_id3 이후에 순서대로 덮어씀)
+        required: false
+        default: ""
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
@@ -135,7 +143,14 @@ jobs:
         if: ${{ inputs.slice_source != '' && inputs.deliver_from_run_id == '' }}
         run: |
           mkdir -p out
-          if [ -f "deliveries/${SKIT}-skit-final.mp4" ]; then
+          SRC="${{ inputs.slice_file }}"
+          if [ -n "$SRC" ]; then
+            if [ -f "$SRC" ]; then
+              cp "$SRC" "out/${SKIT}-base.mp4"
+            else
+              cat "$SRC".part-* > "out/${SKIT}-base.mp4"
+            fi
+          elif [ -f "deliveries/${SKIT}-skit-final.mp4" ]; then
             cp "deliveries/${SKIT}-skit-final.mp4" "out/${SKIT}-base.mp4"
           else
             cat deliveries/${SKIT}-skit-final.mp4.part-* > "out/${SKIT}-base.mp4"
@@ -162,6 +177,20 @@ jobs:
           ls out/replace3/scene*.mp4
           cp -f out/replace3/scene*.mp4 out/
           rm -rf out/replace3
+
+      - name: 추가 교체 일괄 적용 (replace_more)
+        if: ${{ inputs.replace_more != '' && inputs.deliver_from_run_id == '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for RID in ${{ inputs.replace_more }}; do
+            rm -rf out/replmore && mkdir -p out/replmore
+            gh run download "$RID" -n "${SKIT}-skit-video" -D out/replmore \
+              -R "${GITHUB_REPOSITORY}"
+            ls out/replmore/scene*.mp4
+            cp -f out/replmore/scene*.mp4 out/
+          done
+          rm -rf out/replmore
 
       - name: 자막 입히기
         if: ${{ inputs.deliver_from_run_id == '' && inputs.qc_tts != 'true' && inputs.slice_source == '' }}
