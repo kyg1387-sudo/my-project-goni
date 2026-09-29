@@ -192,12 +192,21 @@ def tts_line(cfg, key, index, voice, text, emotion=None):
 
 
 def typecast_tts_line(cfg, key, index, voice, text, emotion=None):
-    """Typecast REST API(동기 응답)로 대사 한 줄을 생성한다. tts_line과 같은 캐싱 규칙."""
+    """Typecast REST API(동기 응답)로 대사 한 줄을 생성한다. tts_line과 같은 캐싱 규칙.
+
+    emotion(MiniMax 스타일 감정 라벨, 예: "angry")은 검증된 Typecast emotion_type이
+    아니므로 API 호출에는 쓰지 않는다 — 지금까지 시험 생성은 전부 emotion_type="smart"
+    (텍스트 기반 자동 추론)로만 성공을 확인했다. emotion 인자는 톤 연출표 기록/향후
+    확장용으로만 받아둔다. 줄별로 다른 emotion_type을 실제로 검증했다면
+    cfg["typecast_emotion_overrides"]에 줄 번호別로 명시해 덮어쓸 수 있다.
+    """
     path = os.path.join(WORK_DIR, f"line{index:03d}.mp3")
     if cached(path):
         print(f"  [tts {index:03d}] 기존 파일 재사용")
         return path
     tempo = float(cfg.get("speed_overrides", {}).get(str(index), cfg.get("speed", 1.0)))
+    emotion_type = cfg.get("typecast_emotion_overrides", {}).get(
+        str(index), cfg.get("typecast_emotion_type", "smart"))
     payload = {
         "text": text,
         "voice_id": voice,
@@ -209,7 +218,7 @@ def typecast_tts_line(cfg, key, index, voice, text, emotion=None):
             "audio_tempo": tempo,
             "audio_format": "mp3",
         },
-        "prompt": {"emotion_type": emotion or "smart"},
+        "prompt": {"emotion_type": emotion_type},
     }
     req = urllib.request.Request(
         "https://api.typecast.ai/v1/text-to-speech",
