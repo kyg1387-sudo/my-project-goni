@@ -20,6 +20,8 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     timeout-minutes: 240
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -48,3 +50,17 @@ jobs:
             out/scene*.mp4
             out/${{ env.SKIT }}-skit.mp4
           retention-days: 30
+
+      # Artifact 저장소(Azure)에 접근할 수 없는 환경에서도 git으로 시험 클립을 받을 수
+      # 있게 한다 — scenes_only(부분 시험 생성)일 때만. 전체 생성은 용량 문제로 제외.
+      - name: 시험 클립 브랜치에 커밋 (scenes_only 지정 시)
+        if: ${{ inputs.scenes_only != '' }}
+        run: |
+          mkdir -p "video-tests/${SKIT}"
+          cp out/scene*.mp4 "video-tests/${SKIT}/"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "video-tests/${SKIT}"
+          git commit -m "시험 장면 클립 추가 (${SKIT}, scenes ${SCENES_ONLY})"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
