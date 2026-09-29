@@ -1,0 +1,91 @@
+name: 립싱크 시험
+
+on:
+  # workflow_dispatch는 default 브랜치에 반영돼야 수동 실행 메뉴에 뜨므로, 작업
+  # 브랜치에서 바로 등록·실행할 수 있게 관련 파일이 바뀔 때 자동 실행되는 push
+  # 트리거를 같이 둔다 (voice-test.yml과 같은 패턴). 실제 시험 실행은 아래 각
+  # 단계의 workflow_dispatch 조건으로 막혀 있어 push 시엔 부트스트랩만 됨.
+  push:
+    paths:
+      - "scripts/lipsync_test.py"
+      - ".github/workflows/lipsync-test.yml"
+  workflow_dispatch:
+    inputs:
+      video:
+        description: 기존 장면 클립 경로 (예 video-tests/참교육사이다/scene62.mp4)
+        required: true
+      text:
+        description: 립싱크에 쓸 대사 텍스트
+        required: true
+      voice:
+        description: TTS voice_id (typecast는 tc_..., minimax는 프리셋 이름)
+        required: true
+      engine:
+        description: TTS 엔진 (typecast|minimax)
+        required: false
+        default: "typecast"
+      emotion:
+        description: 감정 라벨 (minimax만 사용, typecast는 참고용 무시됨)
+        required: false
+        default: ""
+      out_name:
+        description: 결과 파일 이름 (lipsync-tests/ 브랜치 폴더에 커밋됨)
+        required: false
+        default: "test01.mp4"
+
+env:
+  # push 트리거(스크립트 변경) 시 워크플로 등록 확인용 기본값 — 실제 실행은 workflow_dispatch로.
+  VIDEO: ${{ inputs.video || 'video-tests/참교육사이다/scene62.mp4' }}
+  TEXT: ${{ inputs.text || '바다요? 아재. 나가 저 바다서 십 년 묵고 산 사람이요.' }}
+  VOICE: ${{ inputs.voice || 'tc_67b68ff3ba5438793103bfab' }}
+  ENGINE: ${{ inputs.engine || 'typecast' }}
+  EMOTION: ${{ inputs.emotion }}
+  OUT_NAME: ${{ inputs.out_name || 'test01.mp4' }}
+
+jobs:
+  lipsync-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: fal-client 설치
+        run: pip install --quiet fal-client
+
+      - name: 립싱크 시험 실행
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        env:
+          FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+          FAL_KEY: ${{ secrets.FAL_API_KEY }}
+          TYPECAST_API_KEY: ${{ secrets.TYPECAST_API_KEY }}
+        run: |
+          python3 scripts/lipsync_test.py \
+            --video "${VIDEO}" \
+            --text "${TEXT}" \
+            --voice "${VOICE}" \
+            --engine "${ENGINE}" \
+            ${EMOTION:+--emotion "${EMOTION}"} \
+            --out "out/${OUT_NAME}"
+
+      - name: 결과 Artifact 업로드
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lipsync-test-${{ env.OUT_NAME }}
+          path: out/${{ env.OUT_NAME }}
+          retention-days: 14
+
+      # Artifact 저장소(Azure) 접근이 막힌 환경에서도 git pull로 받을 수 있게 커밋
+      - name: 결과 브랜치에 커밋
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          mkdir -p lipsync-tests
+          cp "out/${OUT_NAME}" "lipsync-tests/${OUT_NAME}"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add lipsync-tests
+          git commit -m "립싱크 시험 결과 추가 (${OUT_NAME})"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
