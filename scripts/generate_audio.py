@@ -237,11 +237,75 @@ def typecast_tts_line(cfg, key, index, voice, text, emotion=None):
         return None
 
 
+def make_bgm_segment(cfg, key, index, prompt):
+    path = os.path.join(WORK_DIR, f"bgmseg{index:02d}.audio")
+    if cached(path):
+        print(f"  [bgm seg {index:02d}] 기존 파일 재사용")
+        return path
+    model = cfg.get("bgm_model")
+    result = fal_run(model, {"prompt": prompt}, key, f"bgm seg {index:02d}")
+    if result is None:
+        return None
+    url = find_audio_url(result)
+    if not url:
+        print(f"  [bgm seg {index:02d}] 응답에서 오디오 URL을 못 찾음: {result}")
+        return None
+    return path if download_retry(url, path) else None
+
+
+def stitch_bgm_segments(paths, out_path, fade=1.5, gap=2.0):
+    """여러 BGM 세그먼트를 페이드아웃 → 무음 간격 → 페이드인으로 이어붙인다.
+
+    겹침 크로스페이드는 두 곡이 동시에 들리는 것처럼 어색하다(EP2 교훈 ⑭) —
+    반드시 겹치지 않게 무음 간격을 두고 잇는다.
+    """
+    n = len(paths)
+    cmd = ["ffmpeg", "-y"]
+    for p in paths:
+        cmd += ["-i", p]
+    for _ in range(n - 1):
+        cmd += ["-f", "lavfi", "-t", f"{gap:.3f}", "-i", "anullsrc=r=44100:cl=stereo"]
+
+    parts, concat_inputs = [], []
+    for k, p in enumerate(paths):
+        dur = probe_duration(p)
+        fade_start = max(dur - fade, 0)
+        parts.append(f"[{k}:a]afade=t=in:st=0:d={fade},"
+                     f"afade=t=out:st={fade_start:.3f}:d={fade}[s{k}]")
+        concat_inputs.append(f"[s{k}]")
+        if k < n - 1:
+            concat_inputs.append(f"[{n + k}:a]")
+    parts.append("".join(concat_inputs) + f"concat=n={len(concat_inputs)}:v=0:a=1[aout]")
+    cmd += ["-filter_complex", ";".join(parts), "-map", "[aout]", out_path]
+    subprocess.run(cmd, check=True, capture_output=True)
+    return out_path
+
+
 def make_bgm(cfg, key):
     path = os.path.join(WORK_DIR, "bgm.audio")
     if cached(path):
         print("  [bgm] 기존 파일 재사용")
         return path
+
+    segments = cfg.get("bgm_segments")
+    if segments:
+        seg_paths = []
+        for i, seg in enumerate(segments, start=1):
+            prompt = seg["prompt"] if isinstance(seg, dict) else seg
+            seg_path = make_bgm_segment(cfg, key, i, prompt)
+            if not seg_path:
+                print(f"  [bgm] 세그먼트 {i} 생성 실패 — BGM 생략")
+                return None
+            seg_paths.append(seg_path)
+        try:
+            stitch_bgm_segments(seg_paths, path,
+                                fade=float(cfg.get("bgm_fade", 1.5)),
+                                gap=float(cfg.get("bgm_gap", 2.0)))
+        except subprocess.CalledProcessError as e:
+            print(f"  [bgm] 세그먼트 이어붙이기 실패: {e} — BGM 생략")
+            return None
+        return path
+
     model = cfg.get("bgm_model")
     prompt = cfg.get("bgm_prompt")
     if not model or not prompt:
@@ -253,7 +317,6 @@ def make_bgm(cfg, key):
     if not url:
         print(f"  [bgm] 응답에서 오디오 URL을 못 찾음: {result}")
         return None
-    path = os.path.join(WORK_DIR, "bgm.audio")
     return path if download_retry(url, path) else None
 
 

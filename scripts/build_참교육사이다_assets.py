@@ -10,7 +10,8 @@ docs/대본-참교육사이다-사투리버전.md(완결 대본) + 사용자가 
     scripts/audio/참교육사이다.json   (목소리·감정·현장음 설정 — 전 배역 Typecast)
 
 타이밍 규칙: 줄 길이(공백 제외 글자 수)/5.5 + 0.4초, 최소 1.2초. 섹션별 발화
-구간을 10초 장면 경계에 맞춰 올림하고, 남는 시간은 섹션 끝의 연출 호흡으로 둔다.
+구간을 5초 장면 경계에 맞춰 올림하고, 남는 시간은 섹션 끝의 연출 호흡으로 둔다.
+장면은 카메라 구도를 순환시키며 확장해(expand_shots) 정면 고정 반복을 피한다.
 
 사용법: python3 scripts/build_참교육사이다_assets.py
 """
@@ -44,6 +45,34 @@ HARBOR = "목포 앞바다가 보이는 항구 부두, 새로 진수한 구조�
 STYLE = ("시네마틱 한국 드라마, 실사 영화 화질, 동일한 인물과 의상과 장소를 "
          "모든 장면에서 유지, 자연스러운 피부 질감, 16:9 와이드 가로 구도, "
          "지시된 인물 외 임의 등장 인물 없음, 화면 속에 새겨지거나 쓰인 글자 없음")
+
+# 카메라 문법(영화제작규칙집.md 7장) — 정면 고정 샷만 반복되지 않도록 장면마다 순환 적용
+CAMERA_VARIANTS = [
+    "로우 앵글에서 인물을 향해 천천히 달리 인 하며",
+    "인물 주위를 곡선으로 도는 아크 샷으로",
+    "인물 어깨 높이에서 뒤따르는 팔로우 샷으로",
+    "핸드헬드로 미세하게 흔들리는 구도로",
+    "하이 앵글로 인물을 내려다보며",
+    "인물 옆에서 나란히 움직이는 사이드 트래킹으로",
+    "정지된 카메라로 고정된 채",
+    "인물에게 슬로우 줌인 하며",
+    "더치 앵글로 살짝 기울어진 구도로",
+    "인물 뒤에서 고정된 리어 샷으로",
+    "인물에게서 서서히 물러나는 리버스 트래킹으로",
+    "카메라가 천천히 올라가는 크레인 업으로",
+]
+
+
+def expand_shots(shots, n):
+    """섹션의 원래 shots(내용 순서 보장)를 카메라 구도를 바꿔가며 정확히 n개로
+    확장한다. 시간 비율에 맞춰 내용을 매핑하므로 화자 정렬은 그대로 유지되고,
+    같은 내용이 이어져도 매 컷 카메라가 달라 정면 고정 반복을 피한다."""
+    out = []
+    for i in range(n):
+        content = shots[min(int(i * len(shots) / n), len(shots) - 1)]
+        cam = CAMERA_VARIANTS[i % len(CAMERA_VARIANTS)]
+        out.append(f"{cam}, {content}")
+    return out
 
 # (스타일, 화자이름, 대사, 감정|None)
 # N=내레이션 H=한도희 C=서해진회장 M=엄마 R=서미령 J=서준혁 S=사내 P=목포해경
@@ -256,7 +285,7 @@ SECTIONS = [
     ),
 ]
 
-SCENE_SEC = 10          # 장면당 길이(초)
+SCENE_SEC = 5           # 장면당 길이(초) — 5|10 중 짧은 쪽으로 빠른 컷 전환(사용자 피드백)
 CHAR_RATE = 5.5         # 초당 글자 수(한국어 낭독)
 LINE_PAD = 0.4          # 줄 사이 호흡
 MIN_DUR = 1.2
@@ -317,8 +346,8 @@ def main():
         raw_span = (t - t_video) + SECTION_TAIL
 
         n = max(1, math.ceil(raw_span / SCENE_SEC))
-        for k in range(n):
-            scenes.append(sec["shots"][k % len(sec["shots"])])
+        for shot in expand_shots(sec["shots"], n):
+            scenes.append(shot)
             ambience_prompts.append(sec["ambience"])
         t_video += n * SCENE_SEC
         print(f"{sec['name']}: 발화 {len(sec['lines'])}줄, {raw_span:.1f}s → 장면 {n}개")
@@ -362,9 +391,18 @@ def main():
         "ambience_volume": 0.4,
         "ambience_prompts": ambience_prompts,
         "bgm_model": "fal-ai/lyria2",
-        "bgm_prompt": ("tense cinematic Korean drama orchestral score with subtle traditional "
-                       "Korean instrumental accents, suspenseful strings and piano building to a "
-                       "triumphant vindication, dramatic, instrumental only, no vocals"),
+        # 단곡 반복은 루프가 티남(EP2 교훈 ⑭) — 도입/중반/결말 3곡을 페이드로 이어붙임
+        "bgm_segments": [
+            "slow tense cinematic Korean drama orchestral intro, subtle traditional Korean "
+            "instrumental accents, quiet strings and piano, mournful and restrained, "
+            "instrumental only, no vocals",
+            "building suspenseful Korean drama orchestral score, strings and piano tension "
+            "rising, dramatic accents, instrumental only, no vocals",
+            "triumphant cinematic Korean drama orchestral finale, strings and piano resolving "
+            "to a vindicated uplifting theme, dramatic, instrumental only, no vocals",
+        ],
+        "bgm_fade": 1.5,
+        "bgm_gap": 2.0,
         "bgm_volume": 0.22,
     }
     with open(os.path.join(ROOT, "scripts", "audio", "참교육사이다.json"), "w", encoding="utf-8") as f:
