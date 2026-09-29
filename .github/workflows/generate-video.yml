@@ -11,6 +11,10 @@ on:
         description: 재생성할 장면 번호만 지정 (예 "3,5,7", 비우면 전체)
         required: false
         default: ""
+      resume_run_id:
+        description: 이 run의 Artifact에서 이미 만든 장면 클립을 복원해 이어하기 (선택)
+        required: false
+        default: ""
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
@@ -24,6 +28,20 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+
+      - name: 이전 실행 클립 복원 (이어하기)
+        if: ${{ inputs.resume_run_id != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.SKIT }}-skit-video
+          path: out
+          run-id: ${{ inputs.resume_run_id }}
+          github-token: ${{ github.token }}
+        continue-on-error: true
+
+      - name: 복원된 이어붙이기 결과물은 재사용 대상에서 제외
+        if: ${{ inputs.resume_run_id != '' }}
+        run: rm -f "out/${SKIT}-skit.mp4"
 
       - name: 장면별 클립 생성 (Ark Seedance / fal.ai)
         env:

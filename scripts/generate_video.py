@@ -72,6 +72,12 @@ def download(url, path):
     print(f"  저장됨 → {path}")
 
 
+def cached(path):
+    """이어하기: 이전 실행(또는 resume_run_id로 복원된 out/)에 이미 만들어진
+    장면 클립이 있으면 재생성하지 않고 재사용한다(generate_audio.py와 같은 규칙)."""
+    return os.path.exists(path) and os.path.getsize(path) > 1000
+
+
 # ---------- Ark (BytePlus / Volcengine) ----------
 
 ARK_CANDIDATES = [
@@ -171,6 +177,11 @@ def main():
     provider = None
     for index, prompt in enumerate(scenes, start=1):
         if only and index not in only:
+            continue
+        path = os.path.join(OUT_DIR, f"scene{index:02d}.mp4")
+        if cached(path):
+            print(f"[scene {index:02d}] 기존 파일 재사용")
+            paths.append(path)
             continue
         print(f"[scene {index:02d}] {prompt[:40]}...")
         if provider:
