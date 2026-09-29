@@ -1,5 +1,15 @@
 [
   {
+    "id": "naration_1_s02",
+    "character": "나레이션",
+    "engine": "typecast",
+    "voice": "tc_66e26710ac44cf7c7ebfdb71",
+    "language": "kor",
+    "output": {"audio_tempo": 1.1},
+    "prompt": {"emotion_type": "smart"},
+    "text": "목포 최대 재벌, 삼천억 자산의 해진수산 서해진 회장의 장례식장. 조문객들이 수군거리는 가운데 뺨을 맞은 스물아홉 살 요양보호사 한도희."
+  },
+  {
     "id": "seohoejang_1_s05",
     "character": "서해진 회장",
     "engine": "typecast",
