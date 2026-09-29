@@ -1,74 +1,83 @@
 [
   {
-    "id": "01_seohoejang_kimssi_voice",
+    "id": "01v2_seohoejang_kimssi_voice",
     "character": "서해진 회장 (후보1)",
     "engine": "elevenlabs",
     "voice": "8vwSOQHQApfVx993mKf9",
-    "note": "확정 프로젝트 보이스 — 김씨 시리즈 김씨 목소리 재사용 테스트(나이든 위엄있는 남성)",
+    "note": "v2: stability↓ style↑ 로 톤 강약 보강 (기존 01번과 비교용)",
+    "voice_settings": {"stability": 0.35, "style": 0.35},
     "text": "석 달째 고 약을 묵는 척허고 뱉어부렀어야. 그란디도 몸뚱이가 요로코롬 망가진 거 봉께, 밥에다가도 뭘 탔는갑서."
   },
   {
-    "id": "02_seohoejang_narrator_voice",
+    "id": "02v2_seohoejang_narrator_voice",
     "character": "서해진 회장 (후보2)",
     "engine": "elevenlabs",
     "voice": "5n5gqmaQi9Ewevrz7bOS",
-    "note": "확정 프로젝트 보이스 — 김씨 시리즈 내레이터/아웃트로 목소리 재사용 테스트",
+    "note": "v2: 기존 02번과 비교용",
+    "voice_settings": {"stability": 0.35, "style": 0.35},
     "text": "석 달째 고 약을 묵는 척허고 뱉어부렀어야. 그란디도 몸뚱이가 요로코롬 망가진 거 봉께, 밥에다가도 뭘 탔는갑서."
   },
   {
-    "id": "03_eomma_rachel",
+    "id": "03v2_eomma_rachel",
     "character": "도희 엄마 (후보1, 미검증)",
     "engine": "elevenlabs",
     "voice": "21m00Tcm4TlvDq8ikWAM",
-    "note": "미검증 — ElevenLabs 기본 프리메이드 보이스(Rachel). 계정에 없으면 이 항목만 실패",
+    "note": "v2: 감정 대사라 stability를 더 낮추고 style을 크게 올림",
+    "voice_settings": {"stability": 0.22, "style": 0.55},
     "text": "[trembling] 나가 평생 요 애기를 팔아묵고 살았는디, 이번엔 못 팔겄소. 도희야… 엄마가 미안허다잉. 참말로 미안허다."
   },
   {
-    "id": "04_eomma_bella",
+    "id": "04v2_eomma_bella",
     "character": "도희 엄마 (후보2, 미검증)",
     "engine": "elevenlabs",
     "voice": "EXAVITQu4vr4xnSDxMaL",
-    "note": "미검증 — ElevenLabs 기본 프리메이드 보이스(Bella)",
+    "note": "v2",
+    "voice_settings": {"stability": 0.22, "style": 0.55},
     "text": "[trembling] 나가 평생 요 애기를 팔아묵고 살았는디, 이번엔 못 팔겄소. 도희야… 엄마가 미안허다잉. 참말로 미안허다."
   },
   {
-    "id": "05_sanae_adam",
+    "id": "05v2_sanae_adam",
     "character": "창고 사내 (후보1, 미검증)",
     "engine": "elevenlabs",
     "voice": "pNInz6obpgDQGcFmaJgB",
-    "note": "미검증 — ElevenLabs 기본 프리메이드 보이스(Adam)",
+    "note": "v2: 거친 위협조라 stability는 중간, style은 낮게(과장보다는 낮고 거칠게)",
+    "voice_settings": {"stability": 0.4, "style": 0.25},
     "text": "아따, 회장 딸 자리 포기헌다고 각서 한 장만 써부러. 안 쓰믄 오늘 밤 바다 구경 징허게 허게 될 것이여."
   },
   {
-    "id": "06_sanae_antoni",
+    "id": "06v2_sanae_domi",
     "character": "창고 사내 (후보2, 미검증)",
     "engine": "elevenlabs",
-    "voice": "ErXwobaBhgdcyaCsHiaK",
-    "note": "미검증 — ElevenLabs 기본 프리메이드 보이스(Antoni)",
+    "voice": "AZnzlk1XvdvUeBnXmlld",
+    "note": "v2: 이전 Antoni ID(voice_not_found)를 Domi로 교체",
+    "voice_settings": {"stability": 0.4, "style": 0.25},
     "text": "아따, 회장 딸 자리 포기헌다고 각서 한 장만 써부러. 안 쓰믄 오늘 밤 바다 구경 징허게 허게 될 것이여."
   },
   {
-    "id": "07_dohee_standard",
+    "id": "07v2_dohee_standard",
     "character": "한도희 — 표준어 구간 (미검증)",
     "engine": "elevenlabs",
     "voice": "MF3mGyEYCl7XYWbV9V6O",
-    "note": "미검증 — ElevenLabs 기본 프리메이드 보이스(Elli). 평소 절제된 표준어 대사",
+    "note": "v2: 절제된 표준어라 stability 높게, style 낮게",
+    "voice_settings": {"stability": 0.5, "style": 0.15},
     "text": "처음부터 저를 알고 부르신 거예요?"
   },
   {
-    "id": "08_dohee_dialect_sad",
-    "character": "한도희 — 사투리·감정 구간 (07번과 동일 보이스)",
+    "id": "08v2_dohee_dialect_sad",
+    "character": "한도희 — 사투리·감정 구간 (07v2와 동일 보이스)",
     "engine": "elevenlabs",
     "voice": "MF3mGyEYCl7XYWbV9V6O",
-    "note": "07번과 같은 목소리로 표준어→사투리 전환이 자연스러운지 비교",
+    "note": "v2: 07v2와 같은 목소리, stability를 크게 낮춰 감정 붕괴를 대조",
+    "voice_settings": {"stability": 0.2, "style": 0.6},
     "text": "[sobbing] 회장님… 지가요… 지가 쪼까만 더 빨랐으믄… 그 애기 살렸을 것인디…"
   },
   {
-    "id": "09_susagwan_narrator_voice",
+    "id": "09v2_susagwan_narrator_voice",
     "character": "목포해경 수사관",
     "engine": "elevenlabs",
     "voice": "5n5gqmaQi9Ewevrz7bOS",
-    "note": "확정 프로젝트 보이스 재사용",
+    "note": "v2: 위엄있는 통보조, stability 중간",
+    "voice_settings": {"stability": 0.4, "style": 0.25},
     "text": "서준혁, 서미령 씨. 살인 및 살인교사 혐의로 체포허겄습니다."
   }
 ]

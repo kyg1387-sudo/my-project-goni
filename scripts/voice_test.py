@@ -31,13 +31,24 @@ MINIMAX_MODEL = "fal-ai/minimax/speech-02-hd"
 ELEVENLABS_MODEL_ID = "eleven_multilingual_v2"
 
 
-def elevenlabs_tts(voice_id, text, key, out_path, model_id=ELEVENLABS_MODEL_ID):
+DEFAULT_VOICE_SETTINGS = {
+    # stability를 낮출수록 억양 기복(강약)이 커지고 감정 표현이 풍부해진다.
+    # 너무 낮으면(<0.2) 발음이 불안정해질 수 있어 0.3 안팎을 기본값으로 둔다.
+    "stability": 0.30,
+    "similarity_boost": 0.75,
+    "style": 0.45,           # 0=원래 톤 그대로, 1=과장. 감정 실린 대사용으로 올림
+    "use_speaker_boost": True,
+}
+
+
+def elevenlabs_tts(voice_id, text, key, out_path, model_id=ELEVENLABS_MODEL_ID, voice_settings=None):
     """ElevenLabs TTS를 직접 호출해 mp3를 out_path에 저장한다. 성공 시 True."""
     url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}"
+    settings = {**DEFAULT_VOICE_SETTINGS, **(voice_settings or {})}
     payload = {
         "text": text,
         "model_id": model_id,
-        "voice_settings": {"stability": 0.5, "similarity_boost": 0.75},
+        "voice_settings": settings,
     }
     req = urllib.request.Request(
         url,
@@ -107,7 +118,8 @@ def main():
                 failed.append(item["id"])
                 continue
             ok = elevenlabs_tts(item["voice"], item["text"], el_key, out_path,
-                                 item.get("model_id", ELEVENLABS_MODEL_ID))
+                                 item.get("model_id", ELEVENLABS_MODEL_ID),
+                                 item.get("voice_settings"))
         elif engine == "minimax":
             if not fal_key:
                 print(f"[{item['id']}] FAL_API_KEY 없음 — 건너뜀")
