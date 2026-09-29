@@ -11,6 +11,12 @@ on:
         description: 시험 대사 목록 JSON 경로
         required: false
         default: "scripts/audio/참교육사이다-voice-test.json"
+  # workflow_dispatch는 main에 반영돼야 수동 실행이 가능하므로, 작업 브랜치에서도
+  # 바로 돌릴 수 있게 시험 대사 JSON이 바뀔 때 자동 실행되는 push 트리거를 같이 둔다.
+  push:
+    paths:
+      - "scripts/audio/*-voice-test.json"
+      - "scripts/voice_test.py"
 
 env:
   SKIT: ${{ inputs.skit || '참교육사이다' }}
@@ -28,6 +34,7 @@ jobs:
       - name: 후보 목소리 생성
         env:
           FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
         run: |
           python3 scripts/voice_test.py --lines "$LINES_FILE" --out "voice-tests/${SKIT}"
 

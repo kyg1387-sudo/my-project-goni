@@ -1,75 +1,74 @@
 [
   {
-    "id": "01_seohoejang_deepvoiceman",
+    "id": "01_seohoejang_kimssi_voice",
     "character": "서해진 회장 (후보1)",
-    "voice": "Deep_Voice_Man",
-    "note": "확정 프리셋 — 기존 작품에서 검증된 목소리",
+    "engine": "elevenlabs",
+    "voice": "8vwSOQHQApfVx993mKf9",
+    "note": "확정 프로젝트 보이스 — 김씨 시리즈 김씨 목소리 재사용 테스트(나이든 위엄있는 남성)",
     "text": "석 달째 고 약을 묵는 척허고 뱉어부렀어야. 그란디도 몸뚱이가 요로코롬 망가진 거 봉께, 밥에다가도 뭘 탔는갑서."
   },
   {
-    "id": "02_seohoejang_imposing",
+    "id": "02_seohoejang_narrator_voice",
     "character": "서해진 회장 (후보2)",
-    "voice": "Imposing_Manner",
-    "note": "확정 프리셋",
+    "engine": "elevenlabs",
+    "voice": "5n5gqmaQi9Ewevrz7bOS",
+    "note": "확정 프로젝트 보이스 — 김씨 시리즈 내레이터/아웃트로 목소리 재사용 테스트",
     "text": "석 달째 고 약을 묵는 척허고 뱉어부렀어야. 그란디도 몸뚱이가 요로코롬 망가진 거 봉께, 밥에다가도 뭘 탔는갑서."
   },
   {
-    "id": "03_seohoejang_determined",
-    "character": "서해진 회장 (후보3, 대조용)",
-    "voice": "Determined_Man",
-    "note": "확정 프리셋 — 사내 후보와 겹치지만 비교용으로 같이 테스트",
-    "text": "석 달째 고 약을 묵는 척허고 뱉어부렀어야. 그란디도 몸뚱이가 요로코롬 망가진 거 봉께, 밥에다가도 뭘 탔는갑서."
+    "id": "03_eomma_rachel",
+    "character": "도희 엄마 (후보1, 미검증)",
+    "engine": "elevenlabs",
+    "voice": "21m00Tcm4TlvDq8ikWAM",
+    "note": "미검증 — ElevenLabs 기본 프리메이드 보이스(Rachel). 계정에 없으면 이 항목만 실패",
+    "text": "[trembling] 나가 평생 요 애기를 팔아묵고 살았는디, 이번엔 못 팔겄소. 도희야… 엄마가 미안허다잉. 참말로 미안허다."
   },
   {
-    "id": "04_eomma_wisewoman_sad",
-    "character": "도희 엄마 (후보1)",
-    "voice": "Wise_Woman",
-    "note": "확정 프리셋",
-    "emotion": "sad",
-    "text": "나가 평생 요 애기를 팔아묵고 살았는디, 이번엔 못 팔겄소. 도희야… 엄마가 미안허다잉. 참말로 미안허다."
-  },
-  {
-    "id": "05_eomma_calmwoman_sad_experimental",
+    "id": "04_eomma_bella",
     "character": "도희 엄마 (후보2, 미검증)",
-    "voice": "Calm_Woman",
-    "note": "미검증 프리셋 이름 — 존재하지 않으면 이 항목만 실패하고 나머지는 정상 진행됨",
-    "emotion": "sad",
-    "text": "나가 평생 요 애기를 팔아묵고 살았는디, 이번엔 못 팔겄소. 도희야… 엄마가 미안허다잉. 참말로 미안허다."
+    "engine": "elevenlabs",
+    "voice": "EXAVITQu4vr4xnSDxMaL",
+    "note": "미검증 — ElevenLabs 기본 프리메이드 보이스(Bella)",
+    "text": "[trembling] 나가 평생 요 애기를 팔아묵고 살았는디, 이번엔 못 팔겄소. 도희야… 엄마가 미안허다잉. 참말로 미안허다."
   },
   {
-    "id": "06_sanae_determined",
-    "character": "창고 사내 (후보1)",
-    "voice": "Determined_Man",
-    "note": "확정 프리셋",
+    "id": "05_sanae_adam",
+    "character": "창고 사내 (후보1, 미검증)",
+    "engine": "elevenlabs",
+    "voice": "pNInz6obpgDQGcFmaJgB",
+    "note": "미검증 — ElevenLabs 기본 프리메이드 보이스(Adam)",
     "text": "아따, 회장 딸 자리 포기헌다고 각서 한 장만 써부러. 안 쓰믄 오늘 밤 바다 구경 징허게 허게 될 것이여."
   },
   {
-    "id": "07_sanae_casualguy",
-    "character": "창고 사내 (후보2)",
-    "voice": "Casual_Guy",
-    "note": "확정 프리셋",
+    "id": "06_sanae_antoni",
+    "character": "창고 사내 (후보2, 미검증)",
+    "engine": "elevenlabs",
+    "voice": "ErXwobaBhgdcyaCsHiaK",
+    "note": "미검증 — ElevenLabs 기본 프리메이드 보이스(Antoni)",
     "text": "아따, 회장 딸 자리 포기헌다고 각서 한 장만 써부러. 안 쓰믄 오늘 밤 바다 구경 징허게 허게 될 것이여."
   },
   {
-    "id": "08_dohee_standard",
-    "character": "한도희 — 표준어 구간",
-    "voice": "Wise_Woman",
-    "note": "확정 프리셋 — 평소 절제된 표준어 대사",
+    "id": "07_dohee_standard",
+    "character": "한도희 — 표준어 구간 (미검증)",
+    "engine": "elevenlabs",
+    "voice": "MF3mGyEYCl7XYWbV9V6O",
+    "note": "미검증 — ElevenLabs 기본 프리메이드 보이스(Elli). 평소 절제된 표준어 대사",
     "text": "처음부터 저를 알고 부르신 거예요?"
   },
   {
-    "id": "09_dohee_dialect_sad",
-    "character": "한도희 — 사투리·감정 구간",
-    "voice": "Wise_Woman",
-    "note": "확정 프리셋 — 08번과 같은 목소리로 표준어→사투리 전환이 자연스러운지 비교",
-    "emotion": "sad",
-    "text": "회장님… 지가요… 지가 쪼까만 더 빨랐으믄… 그 애기 살렸을 것인디…"
+    "id": "08_dohee_dialect_sad",
+    "character": "한도희 — 사투리·감정 구간 (07번과 동일 보이스)",
+    "engine": "elevenlabs",
+    "voice": "MF3mGyEYCl7XYWbV9V6O",
+    "note": "07번과 같은 목소리로 표준어→사투리 전환이 자연스러운지 비교",
+    "text": "[sobbing] 회장님… 지가요… 지가 쪼까만 더 빨랐으믄… 그 애기 살렸을 것인디…"
   },
   {
-    "id": "10_susagwan_patientman",
+    "id": "09_susagwan_narrator_voice",
     "character": "목포해경 수사관",
-    "voice": "Patient_Man",
-    "note": "확정 프리셋",
+    "engine": "elevenlabs",
+    "voice": "5n5gqmaQi9Ewevrz7bOS",
+    "note": "확정 프로젝트 보이스 재사용",
     "text": "서준혁, 서미령 씨. 살인 및 살인교사 혐의로 체포허겄습니다."
   }
 ]
