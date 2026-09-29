@@ -1,0 +1,75 @@
+name: 참조 이미지 기반 장면 재생성
+
+on:
+  push:
+    paths:
+      - "scripts/build_character_sheets.py"
+      - "scripts/regen_scene_ref.py"
+      - ".github/workflows/regen-scenes-ref.yml"
+  workflow_dispatch:
+    inputs:
+      skit:
+        description: 스킷 이름
+        required: false
+        default: "참교육사이다"
+      map_file:
+        description: 장면번호->인물목록 JSON 매핑 파일 경로
+        required: false
+        default: "scripts/scenes/참교육사이다-regen-map.json"
+      characters_only:
+        description: 캐릭터 시트를 새로 만들 인물만 지정 (쉼표, 비우면 전체 — 이미 있으면 재사용)
+        required: false
+        default: ""
+
+env:
+  SKIT: ${{ inputs.skit || '참교육사이다' }}
+  MAP_FILE: ${{ inputs.map_file || 'scripts/scenes/참교육사이다-regen-map.json' }}
+  CHARACTERS_ONLY: ${{ inputs.characters_only }}
+
+jobs:
+  regen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: fal-client 설치
+        run: pip install --quiet fal-client
+
+      - name: 캐릭터 시트 생성
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        env:
+          FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+          FAL_KEY: ${{ secrets.FAL_API_KEY }}
+        run: python3 scripts/build_character_sheets.py --only "${CHARACTERS_ONLY}"
+
+      - name: 캐릭터 시트 커밋 (재사용 자산)
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/characters
+          git diff --cached --quiet || git commit -m "캐릭터 시트 생성/갱신 (${SKIT})"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
+
+      - name: 지정 장면 참조 재생성
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        env:
+          FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+          FAL_KEY: ${{ secrets.FAL_API_KEY }}
+        run: |
+          python3 scripts/regen_scene_ref.py \
+            --scenes-json "scripts/scenes/${SKIT}.json" \
+            --map "${MAP_FILE}" \
+            --out-dir out
+
+      - name: 결과 Artifact 업로드 (burn-subtitles replace_run_id 호환)
+        if: ${{ always() && github.event_name == 'workflow_dispatch' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.SKIT }}-skit-video
+          path: out/scene*.mp4
+          retention-days: 30
