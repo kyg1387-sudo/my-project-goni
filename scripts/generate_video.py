@@ -102,8 +102,12 @@ def ark_generate(base_url, model, key, index, prompt, duration, ratio):
         status, info = http_json(f"{base_url}/contents/generations/tasks/{task_id}", headers=headers)
         state = info.get("status")
         if state == "succeeded":
+            url = find_video_url(info)
+            if not url:
+                print(f"  [ark] 응답에서 영상 URL을 못 찾음: {info}")
+                return None
             path = os.path.join(OUT_DIR, f"scene{index:02d}.mp4")
-            download(info["content"]["video_url"], path)
+            download(url, path)
             return path
         if state in ("failed", "cancelled"):
             print(f"  [ark] 생성 실패: {info}")
@@ -114,6 +118,33 @@ def ark_generate(base_url, model, key, index, prompt, duration, ratio):
 # ---------- fal.ai ----------
 
 FAL_MODEL = os.environ.get("FAL_VIDEO_MODEL", "fal-ai/bytedance/seedance/v1/lite/text-to-video")
+
+
+def find_video_url(obj):
+    """fal 응답 구조가 모델·버전마다 조금씩 달라(video/video_url/url 등) 재귀로 찾는다.
+
+    한 장면이 result['video']['url'] 고정 경로로 못 찾을 때 KeyError로 전체 실행이
+    죽는 사고가 실증됐다(118장면 본 제작 중) — 이제는 없으면 None을 돌려주고
+    호출부에서 원본 응답을 로그로 남긴 뒤 그 장면만 실패 처리한다(이어하기로 복구).
+    """
+    if isinstance(obj, str):
+        return obj if obj.startswith("http") and re.search(r"\.(mp4|mov|webm)(\?|$)", obj) else None
+    if isinstance(obj, dict):
+        for k in ("video", "video_url", "url"):
+            if k in obj:
+                found = find_video_url(obj[k])
+                if found:
+                    return found
+        for v in obj.values():
+            found = find_video_url(v)
+            if found:
+                return found
+    if isinstance(obj, list):
+        for v in obj:
+            found = find_video_url(v)
+            if found:
+                return found
+    return None
 
 
 def fal_generate(key, index, prompt, duration, ratio):
@@ -135,8 +166,12 @@ def fal_generate(key, index, prompt, duration, ratio):
         state = info.get("status")
         if state == "COMPLETED":
             _, result = http_json(result_url, headers=headers)
+            url = find_video_url(result)
+            if not url:
+                print(f"  [fal] 응답에서 영상 URL을 못 찾음: {result}")
+                return None
             path = os.path.join(OUT_DIR, f"scene{index:02d}.mp4")
-            download(result["video"]["url"], path)
+            download(url, path)
             return path
         if state in ("FAILED", "CANCELLED", "ERROR"):
             print(f"  [fal] 생성 실패: {info}")
