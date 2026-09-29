@@ -83,8 +83,9 @@ def main():
     ap.add_argument("--language-boost", default="Korean", help="minimax 항목용")
     args = ap.parse_args()
 
-    el_key = os.environ.get("ELEVENLABS_API_KEY")
-    fal_key = os.environ.get("FAL_API_KEY")
+    # GitHub Secrets 값에 개행이 섞여 들어오면 HTTP 헤더에 넣을 때 깨지므로 strip
+    el_key = (os.environ.get("ELEVENLABS_API_KEY") or "").strip() or None
+    fal_key = (os.environ.get("FAL_API_KEY") or "").strip() or None
     os.makedirs(args.out, exist_ok=True)
 
     with open(args.lines, encoding="utf-8") as f:
