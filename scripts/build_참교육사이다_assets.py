@@ -76,6 +76,51 @@ def expand_shots(shots, n):
         out.append(f"{cam}, {content}")
     return out
 
+# 화자 이름 → 고정 외형 문구 (qc_speaker_alignment.py가 그대로 import해서 재사용 —
+# 두 파일에 같은 문구를 따로 옮겨 적으면 한쪽만 고쳤을 때 어긋난다, EP3 교훈: DOHEE
+# 상수/QC 마커 desync 실증)
+MARKERS = {
+    "한도희": DOHEE, "서회장": CHAIRMAN, "엄마": EOMMA, "서미령": MIRYEONG,
+    "서준혁": JUNHYUK, "사내": SANAE, "목포해경": HAEGYEONG,
+}
+# 내레이션·녹음/영상 속 목소리 스타일: 화면에 실제 화자가 안 보여도 됨(규칙 4)
+NO_ONSCREEN_REQUIRED = {"Naration", "JunhyukRec", "ChairmanVideo"}
+
+
+def validate_speaker_alignment(events, scenes, scene_sec):
+    """자막의 각 대사 시간대에, 그 시각 장면 프롬프트에 실제 화자 마커가 있는지 검사한다.
+
+    EP3 교훈 ⑰: shots 순환/시간비율 확장 방식은 대사가 컷 경계를 넘어가며 화자
+    없는 컷에 얹히는 사고가 실제로 여러 번 났다 — 빌드 자체를 SystemExit로 막아
+    화자-화면 불일치 자산이 커밋되는 일을 원천 차단한다(경고만 남기고 넘어가지 않음).
+    """
+    mismatches = []
+    for i, (start, _end, style, name, text) in enumerate(events, 1):
+        if style in NO_ONSCREEN_REQUIRED:
+            continue
+        scene_idx = int(start // scene_sec)
+        if scene_idx >= len(scenes):
+            mismatches.append((i, start, name, text, scene_idx, "장면 범위 초과"))
+            continue
+        marker = MARKERS.get(name)
+        if marker is None:
+            mismatches.append((i, start, name, text, scene_idx, f"화자 '{name}' 마커 정의 없음"))
+        elif marker not in scenes[scene_idx]:
+            mismatches.append((i, start, name, text, scene_idx, "장면에 화자 마커 없음"))
+
+    if mismatches:
+        print(f"\n화자-장면 정렬 실패: 불일치 {len(mismatches)}건")
+        for i, start, name, text, scene_idx, reason in mismatches:
+            m, s = divmod(start, 60)
+            print(f"  [{i:02d}] {int(m)}:{s:05.2f} 화자={name} 장면#{scene_idx + 1} — {reason}")
+            print(f"       대사: {text[:50]}")
+        raise SystemExit(
+            "빌드 중단 — 화자-장면 불일치가 있는 자산은 저장하지 않습니다. "
+            "SECTIONS의 shots 배정을 고친 뒤 다시 실행하세요."
+        )
+    print(f"화자-장면 정렬 검증 통과 (대사 {len(events)}줄 중 불일치 0건)")
+
+
 # (스타일, 화자이름, 대사, 감정|None)
 # N=내레이션 H=한도희 C=서해진회장 M=엄마 R=서미령 J=서준혁 S=사내 P=목포해경
 # JR/CV=녹음·영상 속 목소리(화면에 실제 인물이 안 보여도 되는 구간 — narration_styles에
@@ -357,6 +402,8 @@ def main():
 
     total = t_video
     print(f"\n합계: 자막 {line_no}줄, 장면 {len(scenes)}개, 영상 {total:.0f}초 ({total / 60:.1f}분)")
+
+    validate_speaker_alignment(events, scenes, SCENE_SEC)
 
     # 1) 자막
     with open(os.path.join(ROOT, "subs", "참교육사이다.ass"), "w", encoding="utf-8") as f:

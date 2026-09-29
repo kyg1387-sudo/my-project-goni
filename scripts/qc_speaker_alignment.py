@@ -16,26 +16,15 @@ MARKERS를 그대로 재사용해야 정확하다. 이 파일은 참교육사이
 import argparse
 import json
 import os
+import sys
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-# 참교육사이다 인물 고정 외형 (build_참교육사이다_assets.py와 반드시 동일해야 함)
-MARKERS = {
-    "한도희": "20대 후반 한국 여성 요양보호사(둥근 얼굴, 단정하게 묶은 짧은 검은 생머리, "
-              "베이지색 요양보호사 유니폼 조끼와 흰 셔츠, 가슴에 아무 글자도 없는 매끈한 흰색 "
-              "명찰을 달고 있음, 단단하고 절제된 눈빛)",
-    "서회장": "70대 한국 남성 재벌 회장(마르고 깊은 주름이 팬 얼굴, 짧게 다듬은 백발, "
-             "짙은 남색 실크 환자용 가운, 형형하고 맑은 눈빛)",
-    "엄마": "50대 후반 한국 여성(둥글고 지친 얼굴, 희끗희끗한 짧은 파마머리, 낡은 꽃무늬 카디건)",
-    "서미령": "30대 한국 여성 상무(날렵한 얼굴형, 어깨 길이 스트레이트 검은 머리, "
-             "짙은 남색 정장 재킷, 차갑고 표독스러운 표정)",
-    "서준혁": "30대 한국 남성 전무(각진 턱선, 깔끔하게 넘긴 검은 머리, 회색 슬림핏 수트, 오만한 표정)",
-    "사내": "건장한 한국 남성 사내 여러 명(어두운 색 작업 점퍼, 짧게 깎은 머리, 거친 인상, "
-           "동일한 복장 유지)",
-    "목포해경": "50대 한국 남성 해양경찰 수사관(짧은 반백머리, 각진 얼굴, 감청색 해양경찰 정복, "
-              "무거운 표정)",
-}
-NO_ONSCREEN_REQUIRED = {"Naration", "JunhyukRec", "ChairmanVideo"}
+# 인물 고정 외형 마커는 build_참교육사이다_assets.py에서 그대로 import한다 — 두 파일에
+# 같은 문구를 따로 옮겨 적으면 한쪽만 고쳤을 때 어긋난다(EP3 교훈: DOHEE 상수/QC 마커
+# desync 실증). 다른 작품에 쓰려면 이 import를 그 작품의 build_<skit>_assets 모듈로 바꿀 것.
+from build_참교육사이다_assets import MARKERS, NO_ONSCREEN_REQUIRED  # noqa: E402
 
 
 def parse_time(t):

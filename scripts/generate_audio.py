@@ -19,6 +19,12 @@ TTS 엔진 선택 (오디오 설정 JSON):
   Typecast 사용 시 TYPECAST_API_KEY 환경 변수가 필요하다(BGM·립싱크는 여전히 fal.ai라
   FAL_API_KEY는 항상 필요).
 
+화면 전용 캡션 (오디오 설정 JSON):
+    "silent_styles": ["Caption", ...]   — TTS도 립싱크도 하지 않는 화면 전용 자막 스타일.
+  파싱 직후 이 스타일의 줄을 통째로 제외하므로, emotion_overrides/speed_overrides의
+  줄 번호(1부터)는 제외 이후 남은 TTS 대상 줄 기준이다. narration_styles(TTS는 하되
+  립싱크만 빼는 것)와 다르니 혼동하지 말 것.
+
 사용법:
     export FAL_API_KEY=...
     export TYPECAST_API_KEY=...   # 설정에서 typecast 엔진을 쓸 때만 필요
@@ -279,6 +285,25 @@ def stitch_bgm_segments(paths, out_path, fade=1.5, gap=2.0):
     cmd += ["-filter_complex", ";".join(parts), "-map", "[aout]", out_path]
     subprocess.run(cmd, check=True, capture_output=True)
     return out_path
+
+
+def validate_bgm_segments(cfg):
+    """bgm_segments 구성이 stitch_bgm_segments()에서 안전한지 무과금으로 미리 검사한다.
+
+    세그먼트 수가 2개 미만이면 페이드/간격 로직이 의미 없고, fade가 너무 크면
+    afade out 시작점이 음수가 될 수 있다 — 실제 생성 전에 걸러낸다.
+    """
+    segments = cfg.get("bgm_segments")
+    if not segments:
+        return
+    fade = float(cfg.get("bgm_fade", 1.5))
+    gap = float(cfg.get("bgm_gap", 2.0))
+    if fade <= 0:
+        sys.exit(f"[bgm] bgm_fade는 0보다 커야 합니다 (현재 {fade})")
+    if gap < 0:
+        sys.exit(f"[bgm] bgm_gap은 0 이상이어야 합니다 (현재 {gap})")
+    if len(segments) < 2 and gap:
+        print("  [bgm] 세그먼트가 1개뿐이라 gap 설정은 무시됩니다.")
 
 
 def make_bgm(cfg, key):
@@ -620,8 +645,17 @@ def main():
     WORK_DIR = os.path.join(os.path.dirname(args.out) or ".", "audio")
     os.makedirs(WORK_DIR, exist_ok=True)
 
+    validate_bgm_segments(cfg)
+
     lines = parse_ass(args.ass)
     print(f"자막 {len(lines)}줄 파싱됨")
+
+    silent = set(cfg.get("silent_styles", []))
+    if silent:
+        before = len(lines)
+        lines = [l for l in lines if l[2] not in silent]
+        print(f"silent_styles {sorted(silent)} 제외: {before}줄 → {len(lines)}줄 "
+              f"(화면 전용 캡션 — TTS·립싱크 모두 제외, emotion_overrides 인덱스는 이 이후 번호 기준)")
 
     def make_tts(item):
         i, (start, _end, style, name, text) = item
