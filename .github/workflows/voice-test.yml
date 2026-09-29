@@ -1,0 +1,55 @@
+name: 후보 목소리 TTS 시험
+
+on:
+  workflow_dispatch:
+    inputs:
+      skit:
+        description: 스킷 이름 (voice-tests/<skit>/ 에 결과 저장)
+        required: false
+        default: "참교육사이다"
+      lines_file:
+        description: 시험 대사 목록 JSON 경로
+        required: false
+        default: "scripts/audio/참교육사이다-voice-test.json"
+
+env:
+  SKIT: ${{ inputs.skit || '참교육사이다' }}
+  LINES_FILE: ${{ inputs.lines_file || 'scripts/audio/참교육사이다-voice-test.json' }}
+
+jobs:
+  voice-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 후보 목소리 생성
+        env:
+          FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+        run: |
+          python3 scripts/voice_test.py --lines "$LINES_FILE" --out "voice-tests/${SKIT}"
+
+      - name: 결과 업로드 (Artifact)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.SKIT }}-voice-test
+          path: voice-tests/${{ env.SKIT }}/*.mp3
+          retention-days: 14
+
+      # Artifact 저장소에 접근할 수 없는 환경에서도 git으로 결과를 받을 수 있게 한다
+      - name: 결과 브랜치에 커밋
+        if: always()
+        run: |
+          if ! ls voice-tests/"${SKIT}"/*.mp3 >/dev/null 2>&1; then
+            echo "생성된 파일이 없어 커밋을 건너뜀"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add voice-tests
+          git commit -m "후보 목소리 TTS 시험 결과 추가 (${SKIT})"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
