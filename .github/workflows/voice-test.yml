@@ -33,6 +33,7 @@ jobs:
 
       - name: 후보 목소리 생성
         env:
+          TYPECAST_API_KEY: ${{ secrets.TYPECAST_API_KEY }}
           FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
         run: |
