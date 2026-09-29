@@ -1,16 +1,27 @@
 #!/usr/bin/env python3
 """자막(.ass) 타이밍에 맞춰 대사 TTS·배경음악을 생성하고, 선택적으로 립싱크까지 해서 영상에 입힌다.
 
-fal.ai의 TTS(MiniMax speech), 음악 생성(Lyria 2), 립싱크(sync-lipsync 등) 모델을 사용한다.
-자막 파일의 각 Dialogue 줄에서 시작 시각·화자(Style/Name)·텍스트를 읽어 화자별 목소리로
-음성을 만들고, 자막이 뜨는 시점에 맞춰 배치한 뒤 배경음악을 낮은 볼륨으로 깔아 믹싱한다.
+TTS는 화자별로 fal.ai MiniMax speech 또는 Typecast 중 하나를 쓴다(대사별로 섞어 쓰기도
+가능 — 아래 "TTS 엔진 선택" 참고). 음악 생성(Lyria 2)·립싱크(sync-lipsync 등)는 fal.ai만
+쓴다. 자막 파일의 각 Dialogue 줄에서 시작 시각·화자(Style/Name)·텍스트를 읽어 화자별
+목소리로 음성을 만들고, 자막이 뜨는 시점에 맞춰 배치한 뒤 배경음악을 낮은 볼륨으로 깔아
+믹싱한다.
 
 --lipsync 모드에서는 장면 클립별로 그 장면에 나오는 대사(내레이션 제외)만 잘라
 립싱크 모델로 입 모양을 재합성한 뒤, 장면들을 다시 이어붙이고 자막을 입힌 영상 위에
 최종 오디오를 믹싱한다. 입 모양과 최종 오디오가 같은 배치 계획을 쓰므로 싱크가 맞는다.
 
+TTS 엔진 선택 (오디오 설정 JSON):
+    "tts_engine": "minimax" | "typecast"   — 기본 엔진 (미지정 시 minimax)
+    "engine_overrides": {"화자이름": "typecast"}       — name_voices와 같은 키로 화자별 override
+    "style_engine_overrides": {"스타일": "typecast"}   — style_voices와 같은 키로 스타일별 override
+  voice_id 값은 엔진에 맞는 걸 써야 한다(MiniMax는 프리셋 이름, Typecast는 tc_... ID).
+  Typecast 사용 시 TYPECAST_API_KEY 환경 변수가 필요하다(BGM·립싱크는 여전히 fal.ai라
+  FAL_API_KEY는 항상 필요).
+
 사용법:
     export FAL_API_KEY=...
+    export TYPECAST_API_KEY=...   # 설정에서 typecast 엔진을 쓸 때만 필요
     # 기본 (자막 입힌 영상에 오디오만)
     python3 scripts/generate_audio.py \
         --ass subs/<스킷>.ass --config scripts/audio/<스킷>.json \
@@ -32,6 +43,8 @@ import re
 import subprocess
 import sys
 import time
+import urllib.error
+import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -41,6 +54,7 @@ WORK_DIR = None  # main에서 out/audio 로 설정
 
 MAX_TEMPO = 1.35  # 대사가 자막 슬롯보다 길 때 허용하는 최대 배속 (피치 유지)
 GAP = 0.05        # 연속 대사 사이 최소 간격(초)
+TYPECAST_MODEL = "ssfm-v30"
 
 
 def download_retry(url, path, attempts=3):
@@ -175,6 +189,43 @@ def tts_line(cfg, key, index, voice, text, emotion=None):
         print(f"  [tts {index:03d}] 응답에서 오디오 URL을 못 찾음: {result}")
         return None
     return path if download_retry(url, path) else None
+
+
+def typecast_tts_line(cfg, key, index, voice, text, emotion=None):
+    """Typecast REST API(동기 응답)로 대사 한 줄을 생성한다. tts_line과 같은 캐싱 규칙."""
+    path = os.path.join(WORK_DIR, f"line{index:03d}.mp3")
+    if cached(path):
+        print(f"  [tts {index:03d}] 기존 파일 재사용")
+        return path
+    tempo = float(cfg.get("speed_overrides", {}).get(str(index), cfg.get("speed", 1.0)))
+    payload = {
+        "text": text,
+        "voice_id": voice,
+        "model": cfg.get("typecast_model", TYPECAST_MODEL),
+        "language": cfg.get("typecast_language", "kor"),
+        "output": {
+            "volume": 100,
+            "audio_pitch": 0,
+            "audio_tempo": tempo,
+            "audio_format": "mp3",
+        },
+        "prompt": {"emotion_type": emotion or "smart"},
+    }
+    req = urllib.request.Request(
+        "https://api.typecast.ai/v1/text-to-speech",
+        data=json.dumps(payload).encode(),
+        headers={"X-API-KEY": key, "Content-Type": "application/json"},
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=120) as resp:
+            with open(path, "wb") as f:
+                f.write(resp.read())
+        return path
+    except urllib.error.HTTPError as e:
+        body = e.read().decode(errors="replace")
+        print(f"  [tts {index:03d}] Typecast 실패 (HTTP {e.code}): {body}")
+        return None
 
 
 def make_bgm(cfg, key):
@@ -486,9 +537,10 @@ def main():
                     help="자막이 없는 클립 번호 목록 (개별로 자막을 입힘, 예 '3,5,7')")
     args = ap.parse_args()
 
-    key = os.environ.get("FAL_API_KEY")
+    key = (os.environ.get("FAL_API_KEY") or "").strip()
     if not key:
         sys.exit("FAL_API_KEY 환경 변수가 필요합니다. (키를 코드나 채팅에 넣지 마세요)")
+    tc_key = (os.environ.get("TYPECAST_API_KEY") or "").strip() or None
 
     with open(args.config, encoding="utf-8") as f:
         cfg = json.load(f)
@@ -506,11 +558,21 @@ def main():
                  or cfg["default_voice"])
         emotion = (cfg.get("emotion_overrides", {}).get(str(i))
                    or cfg.get("style_emotions", {}).get(style))
-        print(f"[{i:03d}/{len(lines)}] {start:7.2f}s {voice}/{emotion or 'neutral'}: {text[:30]}")
-        path = tts_line(cfg, key, i, voice, text, emotion)
+        engine = (cfg.get("engine_overrides", {}).get(name)
+                  or cfg.get("style_engine_overrides", {}).get(style)
+                  or cfg.get("tts_engine", "minimax"))
+        print(f"[{i:03d}/{len(lines)}] {start:7.2f}s {engine}:{voice}/{emotion or 'neutral'}: {text[:30]}")
+        if engine == "typecast":
+            if not tc_key:
+                sys.exit(f"[tts {i:03d}] TYPECAST_API_KEY 환경 변수가 필요합니다 "
+                          f"(설정에서 {name or style}에 typecast 엔진을 지정함).")
+            gen = lambda: typecast_tts_line(cfg, tc_key, i, voice, text, emotion)  # noqa: E731
+        else:
+            gen = lambda: tts_line(cfg, key, i, voice, text, emotion)  # noqa: E731
+        path = gen()
         if not path:  # 한 번 재시도
             print(f"  [tts {i:03d}] 재시도")
-            path = tts_line(cfg, key, i, voice, text, emotion)
+            path = gen()
         if not path:
             raise RuntimeError(f"[tts {i:03d}] 생성 실패 — 위 로그를 확인하세요.")
         # 화자 이름: Name 필드가 비어 있으면 스타일→이름 매핑 사용 (예: Doyun → 도윤)

@@ -191,6 +191,7 @@ jobs:
         env:
           FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
           FAL_KEY: ${{ secrets.FAL_API_KEY }}
+          TYPECAST_API_KEY: ${{ secrets.TYPECAST_API_KEY }}
         run: |
           EXTRA=""
           if [ "${{ inputs.lipsync }}" = "true" ]; then
