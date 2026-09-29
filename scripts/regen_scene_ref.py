@@ -118,6 +118,7 @@ def main():
     if args.custom_image:
         if not (args.custom_prompt and args.custom_out):
             sys.exit("--custom-image에는 --custom-prompt와 --custom-out이 함께 필요합니다.")
+        os.makedirs(os.path.dirname(args.custom_out) or ".", exist_ok=True)
         ok = regen_one(key, args.custom_prompt, [args.custom_image], args.custom_duration,
                         args.custom_ratio, args.custom_out, "custom")
         sys.exit(0 if ok else "커스텀 장면 생성 실패")
