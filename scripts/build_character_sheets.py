@@ -123,6 +123,20 @@ CHARACTERS = {
         hair="short graying hair",
         face_identifiers="square weathered face, deep-set eyes",
     ),
+    # 아웃트로 진행자 — 사용자 제공 실사진은 fal reference-to-video 콘텐츠 정책
+    # (실존 인물 초상 처리 불가)에 막혀, 사용자 확정대로 비슷한 분위기의 AI
+    # 가상 인물로 대체(CLAUDE.md 성장 전략 체크리스트 ⑦용).
+    "아웃트로진행자": dict(
+        name_en="OUTRO HOST", height=163,
+        personality="Warm, friendly, sincere and approachable",
+        voice="Warm gentle standard Korean, welcoming tone",
+        age_desc="Korean woman in her late twenties",
+        wardrobe="a cream cable-knit sweater",
+        identifiers="Slim build, shoulder-length straight black hair with a side part",
+        expression="warm friendly smile, eyes crinkled warmly",
+        hair="shoulder-length straight black hair, side part",
+        face_identifiers="oval face, warm smiling eyes, soft gentle features",
+    ),
 }
 
 
