@@ -47,7 +47,10 @@ STYLE = ("시네마틱 한국 드라마, 실사 영화 화질, 동일한 인물�
 
 # (스타일, 화자이름, 대사, 감정|None)
 # N=내레이션 H=한도희 C=서해진회장 M=엄마 R=서미령 J=서준혁 S=사내 P=목포해경
+# JR/CV=녹음·영상 속 목소리(화면에 실제 인물이 안 보여도 되는 구간 — narration_styles에
+# 포함시켜 립싱크 대상에서 제외. 규칙 4: 립싱크는 화면에 나온 인물 대사에만 적용)
 N, H, C, M, R, J, S, P = "Naration", "Dohee", "Chairman", "Eomma", "Miryeong", "Junhyuk", "Sanae", "Haegyeong"
+JR, CV = "JunhyukRec", "ChairmanVideo"
 
 SECTIONS = [
     dict(
@@ -58,6 +61,8 @@ SECTIONS = [
             f"{FUNERAL}, {MIRYEONG}가 {DOHEE}의 뺨을 세게 올려붙이는 순간, 조문객들이 놀라 술렁이는 장면",
             f"{FUNERAL}, 바닥에 쓰러질 듯 휘청이다 다시 꼿꼿이 서는 {DOHEE}의 클로즈업, 입술에서 피가 살짝 비침",
             f"{FUNERAL}, 영정 사진 속 {CHAIRMAN}을 올려다보는 {DOHEE}의 옆모습, 슬픔을 억누른 표정",
+            f"{FUNERAL}, 피 묻은 입술을 손등으로 닦으며 담담히 말하는 {DOHEE}의 클로즈업",
+            f"{FUNERAL}, 조문객들 사이에서 흔들림 없이 서 있는 {DOHEE}의 단단한 눈빛, 여운 있는 홀드",
         ],
         lines=[
             (R, "서미령", "요양보호사 주제에 어디서 상주 완장을 차고 설쳐? 당장 꺼져!", "angry"),
@@ -72,8 +77,12 @@ SECTIONS = [
         ambience="small apartment kitchen room tone, refrigerator hum, distant early morning street, no music",
         shots=[
             f"{DOHEE_HOME}, 지친 얼굴로 새벽에 귀가한 {DOHEE}가 식탁 위 빈 봉투를 발견하고 멈춰 서는 장면",
-            f"{DOHEE_HOME}, {EOMMA}가 눈을 피하며 딴청 부리듯 설거지하는 뒷모습",
+            f"{DOHEE_HOME}, 빈 봉투를 사이에 두고 마주 선 {DOHEE}와 {EOMMA}의 투샷, 무거운 침묵",
+            f"{DOHEE_HOME}, 눈을 피하며 딴청 부리듯 설거지하는 {EOMMA}의 뒷모습, 목소리만 날카로움",
+            "칠흑같이 어두운 밤바다에 몰아치는 거센 파도, 인물 없음, 회상 톤",
+            "낡은 구인 공고지 클로즈업, 손글씨로 급히 적은 채용 조건, 인물 없음",
             f"면접실 책상 앞, {MIRYEONG}가 이력서를 손끝으로 툭 밀어내며 냉담하게 바라보는 장면",
+            f"면접실, {MIRYEONG}가 이력서를 바닥에 던지고 {DOHEE}가 무표정하게 듣는 투샷",
             f"면접실 바닥에 떨어진 이력서를 말없이 주워드는 {DOHEE}의 손 클로즈업",
         ],
         lines=[
@@ -92,9 +101,12 @@ SECTIONS = [
         ambience="quiet sickroom room tone, distant ocean waves through window, soft medical equipment hum, no music",
         shots=[
             f"{SICKROOM}, 창밖 바다만 하루 종일 바라보는 {CHAIRMAN}의 옆모습, 무표정",
-            f"약통을 정리하던 {DOHEE}가 알약 색이 처방전과 다른 것을 발견하고 눈을 가늘게 뜨는 클로즈업",
+            f"{SICKROOM}, 약통을 정리하던 {DOHEE}가 알약 색이 처방전과 다른 것을 발견하고 눈을 가늘게 뜨는 클로즈업",
             f"{SICKROOM}, 등 뒤에서 또렷한 목소리로 말을 거는 {CHAIRMAN}과 놀라 돌아보는 {DOHEE}의 투샷",
-            f"{SICKROOM}, 침대에 걸터앉아 담담히 말하는 {CHAIRMAN}과 그 앞에 선 {DOHEE}",
+            f"{SICKROOM}, 침대에 걸터앉아 담담히 말하는 {CHAIRMAN}의 클로즈업, 형형한 눈빛",
+            f"{SICKROOM}, {CHAIRMAN}과 그 앞에 선 {DOHEE}가 마주보고 대화하는 투샷",
+            f"{SICKROOM}, 회상하는 눈빛으로 창밖을 보며 말하는 {CHAIRMAN}의 클로즈업",
+            f"{SICKROOM}, {CHAIRMAN}의 말을 듣고 놀란 표정으로 굳는 {DOHEE}의 클로즈업",
         ],
         lines=[
             (N, "", "출근 첫날부터 이상했습니다. 회장은 하루 종일 창밖 바다만 바라보며 한마디도 하지 않았죠. 그런데 사흘째 밤, 약을 챙기던 도희의 눈에 들어온 것. 알약의 색이 처방전과 미묘하게 달랐습니다.", None),
@@ -110,9 +122,13 @@ SECTIONS = [
         ambience="quiet sickroom room tone, muffled crying, soft ocean waves, no music",
         shots=[
             f"{SICKROOM}, 손을 떨기 시작하는 {DOHEE}의 클로즈업, 눈에 눈물이 고임",
-            f"{DOHEE}가 무너지듯 고개를 숙이고 흐느끼는 장면, {CHAIRMAN}이 안타깝게 바라봄",
-            f"{SICKROOM}, {CHAIRMAN}이 서류 봉투를 내밀며 담담히 말하는 장면",
-            f"입양 서류를 떨리는 손으로 받아드는 {DOHEE}의 클로즈업",
+            f"{SICKROOM}, {DOHEE}가 무너지듯 고개를 숙이고 흐느끼는 장면",
+            f"{SICKROOM}, 흐느끼는 {DOHEE}를 {CHAIRMAN}이 안타깝게 바라보는 투샷",
+            f"{SICKROOM}, {CHAIRMAN}이 진지한 눈빛으로 위로하듯 말하는 클로즈업",
+            f"{SICKROOM}, {CHAIRMAN}과 {DOHEE}가 나란히 앉아 말없이 서로를 바라보는 투샷",
+            f"{SICKROOM}, {CHAIRMAN}이 서랍에서 서류 봉투를 꺼내는 클로즈업",
+            f"{SICKROOM}, {CHAIRMAN}이 서류 봉투를 {DOHEE}에게 내밀며 담담히 말하는 투샷",
+            f"입양 서류를 떨리는 손으로 받아드는 {DOHEE}의 클로즈업, {CHAIRMAN}의 손이 살짝 함께 보임",
         ],
         lines=[
             (N, "", "도희의 손이 떨리기 시작합니다. 그날 밤, 뒤집힌 요트 안에 갇혀 있던 열여섯 살 소년. 도희는 목숨을 걸고 여섯 번이나 차가운 바다에 뛰어들었지만, 끝내 아이를 살리지 못했습니다.", None),
@@ -128,6 +144,7 @@ SECTIONS = [
         lead_in=1.5,
         ambience="corporate hallway tense murmur, camera flashes, distant funeral hall echo, no music",
         shots=[
+            f"장례식장 복도, 하얗게 질린 얼굴로 마주 선 {JUNHYUK}과 {MIRYEONG}, 무거운 분위기",
             f"장례식장 복도, {JUNHYUK}이 {DOHEE} 앞을 가로막고 차갑게 위협하는 장면",
             f"{JUNHYUK}의 오만한 표정 클로즈업, 뒤로 {MIRYEONG}가 팔짱 끼고 서 있음",
             "밤길, 도로를 달리는 자동차 헤드라이트, 뒤로 검은 승합차가 바짝 따라붙는 장면, 미스터리한 긴장감",
@@ -144,9 +161,10 @@ SECTIONS = [
         ambience="abandoned cold storage warehouse ambience, metal door creaking, distant foghorn, tense silence then scuffle",
         shots=[
             f"{WAREHOUSE}, {SANAE}이 {DOHEE}를 둘러싸고 각서를 들이미는 장면",
-            f"{WAREHOUSE}, {DOHEE}가 순식간에 몸을 돌려 제압 기술을 쓰는 액션 컷, 모션 블러",
+            f"{WAREHOUSE}, {DOHEE}가 순식간에 몸을 돌려 {SANAE} 중 한 명을 제압하는 액션 컷, 모션 블러",
             f"{WAREHOUSE}, 바닥에 쓰러진 {SANAE}과 그 사이에 태연히 선 {DOHEE}",
-            f"{DOHEE}가 쓰러진 사내의 휴대폰을 주워 화면을 확인하며 전화를 거는 클로즈업",
+            f"{WAREHOUSE}, {DOHEE}가 쓰러진 사내의 휴대폰을 주워 화면을 확인하며 전화를 거는 클로즈업",
+            f"{WAREHOUSE} 출입구, {DOHEE}가 유유히 걸어 나가는 뒷모습, 여운 있는 조명",
         ],
         lines=[
             (S, "사내", "아따 아가씨, 상속 포기 각서에 지장 딱 찍어부러. 안 그라믄 오늘 밤 산 채로 저 시커먼 앞바다 물고기 밥 되는 것이여.", "angry"),
@@ -163,9 +181,13 @@ SECTIONS = [
         ambience="tense boardroom silence, papers shuffling, distant sob, no music",
         shots=[
             f"{BOARDROOM} 앞 복도, {MIRYEONG}가 {EOMMA}에게 봉투를 내밀며 회유하는 장면",
+            f"{BOARDROOM} 앞 복도, 봉투를 받아든 {EOMMA}의 놀란 얼굴 클로즈업, {MIRYEONG}와 투샷",
             f"{BOARDROOM}, 증인석에 선 {EOMMA}의 굳은 얼굴, 긴 테이블에 둘러앉은 임원들",
-            f"{BOARDROOM}, 차마 엄마를 쳐다보지 못하는 {DOHEE}의 옆모습",
-            f"{EOMMA}가 눈물을 흘리며 고개 숙이고 말하는 클로즈업, {DOHEE}가 눈물을 쏟는 투샷",
+            f"{BOARDROOM}, 차마 엄마를 쳐다보지 못하는 {DOHEE}의 옆모습, {EOMMA}가 멀리 증인석에 보임",
+            f"{BOARDROOM}, 일그러지는 {MIRYEONG}의 얼굴과 말을 잇는 {EOMMA}의 투샷",
+            f"{BOARDROOM}, {EOMMA}가 눈물을 흘리며 절규하듯 말하는 클로즈업",
+            f"{BOARDROOM}, {EOMMA}와 {DOHEE}의 투샷, {DOHEE}의 눈에 눈물이 고이기 시작",
+            f"{BOARDROOM}, 눈물을 쏟는 {DOHEE}의 클로즈업, {EOMMA}가 함께 프레임에 보임",
         ],
         lines=[
             (N, "", "힘으로 안 되자, 미령은 가장 잔인한 카드를 꺼냅니다. 바로 도희의 엄마였죠.", None),
@@ -184,19 +206,27 @@ SECTIONS = [
         lead_in=1.0,
         ambience="tense boardroom silence, recording playback static, gasps, door opening, handcuffs clinking",
         shots=[
-            f"{BOARDROOM}, {JUNHYUK}이 테이블을 내리치며 소리치는 장면",
-            f"{DOHEE}가 낡은 블랙박스를 꺼내 테이블에 올려놓는 클로즈업",
-            f"{BOARDROOM} 스크린에 영상이 재생되고 임원들이 경악하는 반응 샷",
+            f"{BOARDROOM}, {JUNHYUK}이 테이블을 내리치며 소리치고 {DOHEE}가 침착하게 마주보는 투샷",
+            f"{BOARDROOM} 테이블 위, 낡은 블랙박스에서 재생 표시등이 켜지는 클로즈업, 인물 없음",
+            f"{BOARDROOM} 대형 스크린에 재생되는 영상 전경, 임원들이 경악하는 반응 샷",
+            f"스크린 속 재현 장면, {MIRYEONG}가 {CHAIRMAN}의 약통에 다른 알약을 넣는 장면",
+            f"스크린 속 클로즈업, {CHAIRMAN}이 카메라를 정면으로 응시하며 말하는 장면",
+            f"{BOARDROOM}, 스크린을 끄고 담담히 말하는 {DOHEE}와 일그러지는 {MIRYEONG}의 투샷",
             f"{BOARDROOM} 문이 열리며 {HAEGYEONG}이 수사관들과 함께 들어서는 장면",
-            f"수갑이 채워지는 {JUNHYUK}과 {MIRYEONG}, 끌려나가며 소리치는 장면",
+            f"{BOARDROOM}, {HAEGYEONG}이 {JUNHYUK}과 {MIRYEONG}을 향해 체포를 선언하는 클로즈업",
+            f"{BOARDROOM}, {HAEGYEONG}과 {JUNHYUK}·{MIRYEONG}이 마주선 투샷, 무거운 정적",
+            f"수갑이 채워지는 {JUNHYUK}과 {MIRYEONG}, {DOHEE}와 마주하는 장면",
+            f"{BOARDROOM}, 끌려나가는 {JUNHYUK}·{MIRYEONG}을 정면으로 바라보는 {DOHEE}의 단호한 클로즈업",
+            f"{BOARDROOM}, {DOHEE}가 끌려나가는 {MIRYEONG}·{JUNHYUK}을 등지고 당당히 서 있는 투샷",
+            f"{BOARDROOM}, {DOHEE}가 회의실 창밖 바다를 바라보며 서 있는 와이드 샷, 승리의 여운",
         ],
         lines=[
             (J, "서준혁", "신파 그만하고! 증거 있어? 우리가 뭘 했다는 증거 있냐고!", "angry"),
             (H, "한도희", "있습니다.", "neutral"),
             (N, "", "도희가 꺼낸 건 낡은 블랙박스 하나. 회장이 십 년 동안 숨겨온, 사고 요트 선장실의 녹음 장치였습니다.", None),
-            (J, "서준혁", "연료관만 자르면 돼. 폭풍 오는 날 나가면 아무도 사고라고 의심 안 해.", "neutral"),
+            (JR, "서준혁", "연료관만 자르면 돼. 폭풍 오는 날 나가면 아무도 사고라고 의심 안 해.", "neutral"),
             (N, "", "회의장이 얼어붙습니다. 도희가 몰래 챙겼던 그 알약은, 국립과학수사연구원 감정 결과 처방전에 없는 성분으로 이미 확인된 뒤였습니다. 도희는 이어서 영상 하나를 띄웁니다. 미령이 회장의 약통에 다른 알약을 넣는 장면. 회장이 직접 설치한 카메라였죠. 그리고 영상 마지막, 카메라를 바라보며 말하는 회장의 모습.", None),
-            (C, "서회장", "미령아, 준혁아. 고것이 느그들 마지막 기회였어야. 내가 다 보고 있었당께.", "neutral"),
+            (CV, "서회장", "미령아, 준혁아. 고것이 느그들 마지막 기회였어야. 내가 다 보고 있었당께.", "neutral"),
             (H, "한도희", "회장님은 치매가 아니었습니다. 당신들이 약을 바꾸는 걸, 석 달 동안 전부 지켜보고 계셨어요.", "neutral"),
             (R, "서미령", "이거, 조작이야!", "angry"),
             (N, "", "그 순간 들어서는 목포해양경찰서 수사관들. 선두에 선 사람은 십 년 전 도희에게 책임을 떠넘겼던 바로 그 상관이었습니다.", None),
@@ -212,8 +242,8 @@ SECTIONS = [
         ambience="calm harbor morning ambience, seagulls, gentle waves, ship horn, uplifting",
         shots=[
             f"{HARBOR}, 새로 진수한 흰색 구조선이 정박해 있는 장면, 선체 옆면은 매끈하고 글자 없음",
-            f"{HARBOR}, 구조대장 제복을 입은 {DOHEE}가 배 위에서 바다를 바라보는 장면",
-            f"{HARBOR}, {EOMMA}가 부두에서 손을 흔드는 장면",
+            f"{HARBOR}, 부두에서 손을 흔드는 {EOMMA}와 구조대장 제복을 입고 배 위에서 돌아보는 {DOHEE}를 함께 담은 와이드 투샷",
+            f"{HARBOR}, 구조대장 제복을 입은 {DOHEE}가 배 위에서 바다를 바라보며 말하는 클로즈업",
             f"{DOHEE}의 손에 들린 편지 봉투 클로즈업, 여운 있는 조명",
         ],
         lines=[
@@ -263,6 +293,8 @@ Style: Miryeong,Noto Sans CJK KR,60,&H00C896FF,&H000000FF,&H00000000,&H80000000,
 Style: Junhyuk,Noto Sans CJK KR,60,&H00FF8080,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,200,200,80,1
 Style: Sanae,Noto Sans CJK KR,60,&H0096FFFF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,200,200,80,1
 Style: Haegyeong,Noto Sans CJK KR,60,&H00AAFFAA,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,200,200,80,1
+Style: JunhyukRec,Noto Sans CJK KR,52,&H00FF8080,&H000000FF,&H00000000,&H80000000,-1,-1,0,0,100,100,0,0,1,5,2,2,200,200,80,1
+Style: ChairmanVideo,Noto Sans CJK KR,52,&H0000E5FF,&H000000FF,&H00000000,&H80000000,-1,-1,0,0,100,100,0,0,1,5,2,2,200,200,80,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -322,7 +354,9 @@ def main():
             "목포해경": "tc_67e38d8c771b5511659c4534",
         },
         "emotion_overrides": emotions,
-        "narration_styles": ["Naration"],
+        # JunhyukRec/ChairmanVideo: 녹음·영상 속 목소리라 화면에 실제 입모양이 없어도 됨 →
+        # 립싱크 제외 대상에 함께 포함 (규칙 4)
+        "narration_styles": ["Naration", "JunhyukRec", "ChairmanVideo"],
         "lipsync_models": ["fal-ai/sync-lipsync", "fal-ai/latentsync"],
         "ambience_model": "fal-ai/mmaudio-v2",
         "ambience_volume": 0.4,

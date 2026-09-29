@@ -50,7 +50,9 @@
     "56": "neutral"
   },
   "narration_styles": [
-    "Naration"
+    "Naration",
+    "JunhyukRec",
+    "ChairmanVideo"
   ],
   "lipsync_models": [
     "fal-ai/sync-lipsync",
