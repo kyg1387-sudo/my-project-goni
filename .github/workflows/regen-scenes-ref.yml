@@ -92,7 +92,7 @@ jobs:
             --out-dir out
 
       - name: 단독 컷 생성 (아웃트로 등 custom_image 지정 시)
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.custom_image != '' }}
+        if: ${{ always() && github.event_name == 'workflow_dispatch' && inputs.custom_image != '' }}
         env:
           FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
           FAL_KEY: ${{ secrets.FAL_API_KEY }}
@@ -120,8 +120,12 @@ jobs:
           retention-days: 30
 
       - name: 단독 컷 브랜치에 커밋
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.custom_image != '' }}
+        if: ${{ always() && github.event_name == 'workflow_dispatch' && inputs.custom_image != '' }}
         run: |
+          if [ ! -f "out/${CUSTOM_OUT_NAME}" ]; then
+            echo "out/${CUSTOM_OUT_NAME} 없음 — 생성 단계 실패, 커밋 생략"
+            exit 0
+          fi
           mkdir -p "video-tests/${SKIT}/custom"
           cp "out/${CUSTOM_OUT_NAME}" "video-tests/${SKIT}/custom/"
           git config user.name "github-actions[bot]"
