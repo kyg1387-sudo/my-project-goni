@@ -38,6 +38,7 @@ DEFAULT_VOICE_SETTINGS = {
     "similarity_boost": 0.75,
     "style": 0.45,           # 0=원래 톤 그대로, 1=과장. 감정 실린 대사용으로 올림
     "use_speaker_boost": True,
+    "speed": 1.15,           # ElevenLabs 허용 범위 0.7~1.2. 전라도 사투리는 빠른 편이라 상향
 }
 
 
