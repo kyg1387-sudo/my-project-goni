@@ -1,90 +1,142 @@
 [
   {
-    "id": "t1_seohoejang",
+    "id": "seohoejang_1_s05",
     "character": "서해진 회장",
     "engine": "typecast",
     "voice": "tc_61945d9c2c11c2c9fd934340",
     "language": "kor",
     "output": {"audio_tempo": 1.3},
     "prompt": {"emotion_type": "smart"},
-    "note": "사용자 지정 캐스팅 — 깊고 무게감 있는 70대 남성 전라도 사투리",
-    "text": "석 달째 고 약을 묵는 척허고 뱉어부렀어야. 그란디도 몸뚱이가 요로코롬 망가진 거 봉께, 밥에다가도 뭘 탔는갑서."
+    "text": "아가, 고것을 챙겨가꼬… 뭣에 쓸라고 그라냐? 석 달째 그 약을, 먹는 척허고 혓바닥 밑에 숨겨서 뱉어부렀어야… 그란디도 손발이 덜덜 떨리는 거 봉께, 먹는 국물에다가도 뭘 탄갑소. 근디 니는, 들어온 지 사흘 만에 딱 알아채부렀네. 내가 사람 하나는, 기가 맥히게 잘 골랐당깨."
   },
   {
-    "id": "t2_eomma",
+    "id": "seohoejang_2_s06",
+    "character": "서해진 회장",
+    "engine": "typecast",
+    "voice": "tc_61945d9c2c11c2c9fd934340",
+    "language": "kor",
+    "output": {"audio_tempo": 1.3},
+    "prompt": {"emotion_type": "smart", "previous_text": "내가 사람 하나는, 기가 맥히게 잘 골랐당깨."},
+    "text": "십 년 전 그 칠흑 같은 비바람 몰아치던 밤… 뒤집힌 요트 밑창으로 기어들어가서 내 외손주 끝까지 건져낼라고 발버둥 치던 해경. 고것이 바로, 니 아니었냐?"
+  },
+  {
+    "id": "seohoejang_3_s08",
+    "character": "서해진 회장",
+    "engine": "typecast",
+    "voice": "tc_61945d9c2c11c2c9fd934340",
+    "language": "kor",
+    "output": {"audio_tempo": 1.25},
+    "prompt": {"emotion_type": "smart", "previous_text": "지가 쪼끔만 더 빨랐으믄… 그 어린것을 살렸을 것인디…"},
+    "text": "울지 마라, 아가. 해경 수색일지 내가 진작에 싹 다 훑어봤어야. 아무도 그 거친 물에 안 들어갈라고 배 위에서 구경만 헐 때, 니 혼자 갈비뼈가 부러져감서 여섯 번을 들어갔어. 우리 민우가 눈 감기 전에 마지막으로 맞잡은 따뜻한 온기가… 니 손이었당깨."
+  },
+  {
+    "id": "eomma_1_s04",
     "character": "도희 엄마",
     "engine": "typecast",
     "voice": "tc_5ebea266728f5b00075e6215",
     "language": "kor",
-    "output": {"audio_tempo": 1.15},
-    "prompt": {"emotion_type": "smart", "previous_text": "나가 평생 요 애기를 팔아묵고 살았는디, 이번엔 못 팔겄소."},
-    "note": "사용자 지정 캐스팅 — 억척스럽고 감정 기복 큰 50~60대 여성",
-    "text": "도희야… 엄마가 미안허다잉. 참말로 미안허다."
+    "output": {"audio_tempo": 1.25},
+    "prompt": {"emotion_type": "smart"},
+    "text": "워매… 딸년 돈이 엄니 돈이제, 누구 돈이다냐? 니가 해경서 짤리지만 안 했어도, 우리가 요로코롬 궁상떨고 살겄냐?"
   },
   {
-    "id": "t3_miryeong",
+    "id": "eomma_2_s12",
+    "character": "도희 엄마",
+    "engine": "typecast",
+    "voice": "tc_5ebea266728f5b00075e6215",
+    "language": "kor",
+    "output": {"audio_tempo": 1.2},
+    "prompt": {"emotion_type": "smart"},
+    "text": "지가요… 저 서울 사모님헌티 돈 오억 받기로 약조를 했었어라. 우리 딸이 사기 쳐서 노인네 홀렸다고 거짓말 쳐주믄, 돈방석 앉혀준다고 꼬드기드만요."
+  },
+  {
+    "id": "eomma_3_s13",
+    "character": "도희 엄마 (절정)",
+    "engine": "typecast",
+    "voice": "tc_5ebea266728f5b00075e6215",
+    "language": "kor",
+    "output": {"audio_tempo": 1.15},
+    "prompt": {"emotion_type": "smart", "previous_text": "돈방석 앉혀준다고 꼬드기드만요."},
+    "text": "근디요…! 나가 평생 이 불쌍한 딸년 등골을 파먹고 살았는디… 이번엔 도저히 못 팔아먹겄소! 이 아그가 어떤 아그인디! 남의 집 귀한 새끼 살리겄다고 얼어 죽을 바다에 제 목숨 던졌다가 버려진, 불쌍한 내 딸이여라! 도희야… 애미가 잘못했다… 참말로 죽을죈디, 용서해라 도희야…!"
+  },
+  {
+    "id": "dohee_1_s03_standard",
+    "character": "한도희 (표준어)",
+    "engine": "typecast",
+    "voice": "tc_67b68ff3ba5438793103bfab",
+    "language": "kor",
+    "output": {"audio_tempo": 1.0},
+    "prompt": {"emotion_type": "smart"},
+    "text": "상무님. 지금 누구 얼굴에 손을 올리신 건지, 딱 두 달 뒤에 똑똑히 알게 될 겁니다."
+  },
+  {
+    "id": "dohee_2_s07_dialect_sad",
+    "character": "한도희 (사투리·감정)",
+    "engine": "typecast",
+    "voice": "tc_67b68ff3ba5438793103bfab",
+    "language": "kor",
+    "output": {"audio_tempo": 1.15},
+    "prompt": {"emotion_type": "smart", "previous_text": "고것이 바로, 니 아니었냐?"},
+    "text": "회장님… 지가요… 지가 쪼끔만 더 빨랐으믄… 그 어린것을 살렸을 것인디…"
+  },
+  {
+    "id": "dohee_3_s15_standard",
+    "character": "한도희 (표준어, 단호)",
+    "engine": "typecast",
+    "voice": "tc_67b68ff3ba5438793103bfab",
+    "language": "kor",
+    "output": {"audio_tempo": 1.05},
+    "prompt": {"emotion_type": "smart"},
+    "text": "내가 왜 못 가집니까? 서해진 회장님의 법적 유언에 따라 삼천억 지분 전액 상속받아 즉시 민우 해양구조재단으로 귀속시킵니다. 그리고 내가 그 재단의 종신 이사장이자 해진수산 총괄 경영인으로 취임할 겁니다. 당신들 감방에서 썩는 동안 피눈물 흘리며 참회나 하쇼."
+  },
+  {
+    "id": "miryeong_1_s01",
     "character": "서미령",
     "engine": "typecast",
     "voice": "tc_66d91c60da8dd20be59cd40b",
     "language": "kor",
     "output": {"audio_tempo": 1.1},
     "prompt": {"emotion_type": "smart"},
-    "note": "사용자 지정 캐스팅 — 날카롭고 표독스러운 30대 서울 여성. 표준어라 사투리 캐릭터와 대비 확인용",
-    "text": "요양보호사 주제에 어디서 상주 자리에 서 있어? 당장 나가!"
+    "text": "요양보호사 주제에 어디서 상주 완장을 차고 설쳐? 당장 꺼져!"
   },
   {
-    "id": "t4_junhyuk",
+    "id": "junhyuk_1_s09",
     "character": "서준혁",
     "engine": "typecast",
     "voice": "tc_676cda634571635588f87804",
     "language": "kor",
-    "output": {"audio_tempo": 1.1},
+    "output": {"audio_tempo": 1.05},
     "prompt": {"emotion_type": "smart"},
-    "note": "사용자 지정 캐스팅 — 오만하고 차가운 30대 서울 남성",
-    "text": "요양보호사를 딸로? 치매 노인 꼬드긴 꽃뱀이네. 이사회 전까지 네가 살아있을 것 같아?"
+    "text": "치매 노인 구워삶아 호적에 오른 꽃뱀 년이 어딜 까불어? 너 이사회 날까지 살아서 걸어갈 수 있을 것 같아?"
   },
   {
-    "id": "t5_sanae",
+    "id": "sanae_1_s10",
     "character": "창고 사내",
     "engine": "typecast",
     "voice": "tc_63da42a2dbbf266ceb0b0fb2",
     "language": "kor",
     "output": {"audio_tempo": 1.3},
     "prompt": {"emotion_type": "smart"},
-    "note": "사용자 지정 캐스팅 — 거친 목소리의 중년 남성",
-    "text": "아따, 회장 딸 자리 포기헌다고 각서 한 장만 써부러. 안 쓰믄 오늘 밤 바다 구경 징허게 허게 될 것이여."
+    "text": "아따 아가씨, 상속 포기 각서에 지장 딱 찍어부러. 안 그라믄 오늘 밤 산 채로 저 시커먼 앞바다 물고기 밥 되는 것이여."
   },
   {
-    "id": "t6_susagwan",
-    "character": "목포해경 수사관",
+    "id": "sanae_2_s11",
+    "character": "창고 사내",
+    "engine": "typecast",
+    "voice": "tc_63da42a2dbbf266ceb0b0fb2",
+    "language": "kor",
+    "output": {"audio_tempo": 1.25},
+    "prompt": {"emotion_type": "smart"},
+    "text": "워매… 요것이 뭔 요양보호사여… 사람 때려잡는 인간 병기제…"
+  },
+  {
+    "id": "haegyeong_1_s14",
+    "character": "목포해경",
     "engine": "typecast",
     "voice": "tc_67e38d8c771b5511659c4534",
     "language": "kor",
-    "output": {"audio_tempo": 1.2},
+    "output": {"audio_tempo": 1.25},
     "prompt": {"emotion_type": "smart"},
-    "note": "사용자 지정 캐스팅 — 거친 목소리의 중년 남성(해경)",
-    "text": "서준혁, 서미령 씨. 살인 및 살인교사 혐의로 체포허겄습니다."
-  },
-  {
-    "id": "t7_dohee_standard",
-    "character": "한도희 — 표준어 구간",
-    "engine": "typecast",
-    "voice": "tc_67b68ff3ba5438793103bfab",
-    "language": "kor",
-    "output": {"audio_tempo": 1.0},
-    "prompt": {"emotion_type": "smart"},
-    "note": "사용자 지정 캐스팅 — 단단하고 또렷한 20대 후반 여성. 절제된 구간이라 템포 유지",
-    "text": "처음부터 저를 알고 부르신 거예요?"
-  },
-  {
-    "id": "t8_dohee_dialect_sad",
-    "character": "한도희 — 사투리·감정 구간 (t7과 동일 보이스)",
-    "engine": "typecast",
-    "voice": "tc_67b68ff3ba5438793103bfab",
-    "language": "kor",
-    "output": {"audio_tempo": 1.15},
-    "prompt": {"emotion_type": "smart"},
-    "note": "t7과 같은 목소리로 표준어→사투리·감정 전환 대비",
-    "text": "회장님… 지가요… 지가 쪼까만 더 빨랐으믄… 그 애기 살렸을 것인디…"
+    "text": "서준혁, 서미령. 십 년 전 요트 살인교사 및 서해진 회장 살인미수 혐의로 긴급 체포허요. 그리고 한도희 경장… 십 년 전엔 내가 비겁해서 진실을 덮었는디, 오늘은 내 경찰 뱃지를 걸고 요 잡것들 죗값 치르게 헐라고 직접 영장 쳐왔네. 면목 없네, 정말로."
   }
 ]
