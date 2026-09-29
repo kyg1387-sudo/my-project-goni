@@ -1,0 +1,85 @@
+name: 오디오 구동 생성(OmniHuman) 시험
+
+on:
+  push:
+    paths:
+      - "scripts/omnihuman_test.py"
+      - ".github/workflows/omnihuman-test.yml"
+  workflow_dispatch:
+    inputs:
+      image:
+        description: 화자 1인만 나오는 단독 이미지 경로
+        required: true
+      text:
+        description: 대사 텍스트
+        required: true
+      voice:
+        description: TTS voice_id (typecast는 tc_..., minimax는 프리셋 이름)
+        required: true
+      engine:
+        description: TTS 엔진 (typecast|minimax)
+        required: false
+        default: "typecast"
+      emotion:
+        description: 감정 라벨 (minimax만 사용)
+        required: false
+        default: ""
+      out_name:
+        description: 결과 파일 이름 (omnihuman-tests/ 브랜치 폴더에 커밋됨)
+        required: false
+        default: "test01.mp4"
+
+env:
+  IMAGE: ${{ inputs.image || 'video-tests/참교육사이다/stills/dohee-face-crop.jpg' }}
+  TEXT: ${{ inputs.text || '바다요? 아재. 나가 저 바다서 십 년 묵고 산 사람이요.' }}
+  VOICE: ${{ inputs.voice || 'tc_67b68ff3ba5438793103bfab' }}
+  ENGINE: ${{ inputs.engine || 'typecast' }}
+  EMOTION: ${{ inputs.emotion }}
+  OUT_NAME: ${{ inputs.out_name || 'test01.mp4' }}
+
+jobs:
+  omnihuman-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: fal-client 설치
+        run: pip install --quiet fal-client
+
+      - name: OmniHuman 시험 실행
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        env:
+          FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+          FAL_KEY: ${{ secrets.FAL_API_KEY }}
+          TYPECAST_API_KEY: ${{ secrets.TYPECAST_API_KEY }}
+        run: |
+          python3 scripts/omnihuman_test.py \
+            --image "${IMAGE}" \
+            --text "${TEXT}" \
+            --voice "${VOICE}" \
+            --engine "${ENGINE}" \
+            ${EMOTION:+--emotion "${EMOTION}"} \
+            --out "out/${OUT_NAME}"
+
+      - name: 결과 Artifact 업로드
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: omnihuman-test-${{ env.OUT_NAME }}
+          path: out/${{ env.OUT_NAME }}
+          retention-days: 14
+
+      - name: 결과 브랜치에 커밋
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          mkdir -p omnihuman-tests
+          cp "out/${OUT_NAME}" "omnihuman-tests/${OUT_NAME}"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add omnihuman-tests
+          git commit -m "OmniHuman 시험 결과 추가 (${OUT_NAME})"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
