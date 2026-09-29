@@ -98,16 +98,32 @@ def regen_one(key, prompt, ref_paths, duration, ratio, out_path, label):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--scenes-json", required=True)
+    ap.add_argument("--scenes-json", help="지정 장면 재생성 모드에 필요 (--custom-* 미사용 시)")
     ap.add_argument("--scene", help="단일 장면 번호 (1부터)")
     ap.add_argument("--characters", help="--scene용 쉼표 구분 인물 이름")
     ap.add_argument("--map", help="여러 장면용 JSON 매핑 파일 {\"31\": [\"한도희\",\"서회장\"], ...}")
     ap.add_argument("--out-dir", default="out")
+    ap.add_argument("--custom-image", help="캐릭터 시트 대신 쓸 임의 참조 이미지 경로 "
+                    "(카메오 등, CHARACTERS 목록에 없는 인물용)")
+    ap.add_argument("--custom-prompt", help="--custom-image와 함께 쓰는 장면 프롬프트")
+    ap.add_argument("--custom-duration", type=int, default=8)
+    ap.add_argument("--custom-ratio", default="16:9")
+    ap.add_argument("--custom-out", help="--custom-image 결과 파일 경로")
     args = ap.parse_args()
 
     key = (os.environ.get("FAL_API_KEY") or "").strip()
     if not key:
         sys.exit("FAL_API_KEY 환경 변수가 필요합니다.")
+
+    if args.custom_image:
+        if not (args.custom_prompt and args.custom_out):
+            sys.exit("--custom-image에는 --custom-prompt와 --custom-out이 함께 필요합니다.")
+        ok = regen_one(key, args.custom_prompt, [args.custom_image], args.custom_duration,
+                        args.custom_ratio, args.custom_out, "custom")
+        sys.exit(0 if ok else "커스텀 장면 생성 실패")
+
+    if not args.scenes_json:
+        sys.exit("--scenes-json이 필요합니다 (또는 --custom-image 모드 사용).")
 
     with open(args.scenes_json, encoding="utf-8") as f:
         data = json.load(f)

@@ -20,11 +20,36 @@ on:
         description: 캐릭터 시트를 새로 만들 인물만 지정 (쉼표, 비우면 전체 — 이미 있으면 재사용)
         required: false
         default: ""
+      skip_map_regen:
+        description: 장면 매핑 재생성 단계를 건너뛸지 (true/false — 아웃트로 등 단독 컷만 만들 때)
+        required: false
+        default: "false"
+      custom_image:
+        description: (선택) 카메오 등 단독 컷용 참조 이미지 경로
+        required: false
+        default: ""
+      custom_prompt:
+        description: custom_image와 함께 쓰는 장면 프롬프트
+        required: false
+        default: ""
+      custom_duration:
+        description: custom_image 컷 길이(초, 4~15)
+        required: false
+        default: "8"
+      custom_out_name:
+        description: custom_image 결과 파일 이름 (out/ 아래)
+        required: false
+        default: "outro.mp4"
 
 env:
   SKIT: ${{ inputs.skit || '참교육사이다' }}
   MAP_FILE: ${{ inputs.map_file || 'scripts/scenes/참교육사이다-regen-map.json' }}
   CHARACTERS_ONLY: ${{ inputs.characters_only }}
+  SKIP_MAP_REGEN: ${{ inputs.skip_map_regen }}
+  CUSTOM_IMAGE: ${{ inputs.custom_image }}
+  CUSTOM_PROMPT: ${{ inputs.custom_prompt }}
+  CUSTOM_DURATION: ${{ inputs.custom_duration || '8' }}
+  CUSTOM_OUT_NAME: ${{ inputs.custom_out_name || 'outro.mp4' }}
 
 jobs:
   regen:
@@ -56,7 +81,7 @@ jobs:
           git push
 
       - name: 지정 장면 참조 재생성
-        if: ${{ github.event_name == 'workflow_dispatch' }}
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.skip_map_regen != 'true' }}
         env:
           FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
           FAL_KEY: ${{ secrets.FAL_API_KEY }}
@@ -66,10 +91,42 @@ jobs:
             --map "${MAP_FILE}" \
             --out-dir out
 
-      - name: 결과 Artifact 업로드 (burn-subtitles replace_run_id 호환)
-        if: ${{ always() && github.event_name == 'workflow_dispatch' }}
+      - name: 단독 컷 생성 (아웃트로 등 custom_image 지정 시)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.custom_image != '' }}
+        env:
+          FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+          FAL_KEY: ${{ secrets.FAL_API_KEY }}
+        run: |
+          python3 scripts/regen_scene_ref.py \
+            --custom-image "${CUSTOM_IMAGE}" \
+            --custom-prompt "${CUSTOM_PROMPT}" \
+            --custom-duration "${CUSTOM_DURATION}" \
+            --custom-out "out/${CUSTOM_OUT_NAME}"
+
+      - name: 결과 Artifact 업로드 (장면 재생성분)
+        if: ${{ always() && github.event_name == 'workflow_dispatch' && inputs.skip_map_regen != 'true' }}
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.SKIT }}-skit-video
           path: out/scene*.mp4
           retention-days: 30
+
+      - name: 결과 Artifact 업로드 (단독 컷)
+        if: ${{ always() && github.event_name == 'workflow_dispatch' && inputs.custom_image != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.SKIT }}-custom-clip
+          path: out/${{ env.CUSTOM_OUT_NAME }}
+          retention-days: 30
+
+      - name: 단독 컷 브랜치에 커밋
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.custom_image != '' }}
+        run: |
+          mkdir -p "video-tests/${SKIT}/custom"
+          cp "out/${CUSTOM_OUT_NAME}" "video-tests/${SKIT}/custom/"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "video-tests/${SKIT}/custom"
+          git commit -m "단독 컷 추가 (${SKIT}, ${CUSTOM_OUT_NAME})"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
