@@ -1,0 +1,8 @@
+{
+  "outro_line": "오늘 이야기 마음에 닿으셨나요? 구독과 좋아요는 다음 이야기를 만드는 데 큰 힘이 됩니다.",
+  "outro_speaker": "아웃트로진행자",
+  "outro_clip": "video-tests/참교육사이다/custom/outro.mp4",
+  "outro_note": "이 대사는 Typecast TTS가 아니라 fal reference-to-video 모델 자체가 프롬프트만 보고 생성한 오디오. 발음 정확도 미검증 — 사용자 청취 확인 필요. 이상하면 Typecast TTS로 이 줄만 재생성 후 오디오만 교체(무과금).",
+  "closing_caption": "미담이야기였습니다.",
+  "closing_caption_status": "아직 최종 영상에 삽입되지 않음 — 최종본 완성 후 ffmpeg로 무료 삽입 예정"
+}
