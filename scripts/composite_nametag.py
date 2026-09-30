@@ -77,10 +77,14 @@ def render_tag_layer(w, h, draw_fn, radius=6):
 
 
 def paste_tag(base_image, tag_layer, box, angle=0.0,
-              shadow_offset=(2, 3), shadow_blur=3, shadow_opacity=110):
+              shadow_offset=(2, 3), shadow_blur=3, shadow_opacity=110,
+              soften=0.7):
     """tag_layer(투명 RGBA, box의 w×h 크기)를 box 중심을 기준으로 angle도만큼
     회전시켜 그림자와 함께 base_image에 합성한다 — 옷 표면 기울기에 맞추면
-    "붙어 있는 물체"처럼 보이고, 수평 그대로 얹으면 "화면 위 그래픽"처럼 붕 뜬다."""
+    "붙어 있는 물체"처럼 보이고, 수평 그대로 얹으면 "화면 위 그래픽"처럼 붕 뜬다.
+    soften(px)만큼 살짝 블러를 줘 벡터로 그린 명찰 가장자리·글자가 영상 프레임의
+    사진 질감(약간의 노이즈·압축 블러)과 안 섞이고 "스티커처럼" 튀는 것을 줄인다
+    (실증: 완전히 또렷한 벡터 텍스트는 사용자가 "어색해"로 지적)."""
     x, y, w, h = box
     base = base_image.convert("RGBA")
     cx, cy = x + w / 2, y + h / 2
@@ -96,6 +100,8 @@ def paste_tag(base_image, tag_layer, box, angle=0.0,
     sy = round(cy - sh / 2 + shadow_offset[1])
     base.alpha_composite(shadow_rot, (sx, sy))
 
+    if soften > 0:
+        tag_layer = tag_layer.filter(ImageFilter.GaussianBlur(soften))
     tag_rot = tag_layer.rotate(angle, expand=True, resample=Image.BICUBIC)
     tw, th = tag_rot.size
     tx = round(cx - tw / 2)
@@ -106,9 +112,14 @@ def paste_tag(base_image, tag_layer, box, angle=0.0,
 
 def draw_simple(draw, x, y, w, h, text, tag_color, text_color, radius=6,
                  padding_ratio=0.14):
-    """box 전체를 명찰 색 둥근 사각형으로 채운 뒤 텍스트를 가운데 정렬로 그린다."""
+    """box 전체를 명찰 색 둥근 사각형으로 채운 뒤 텍스트를 가운데 정렬로 그린다.
+    테두리는 진한 선 대신 tag_color보다 살짝 어두운 톤만 얇게 둘러 "실물 명찰판의
+    옆면 두께"처럼 보이게 하고, 글자는 아래쪽에 밝은 하이라이트 사본을 먼저 깔아
+    살짝 파인 각인(embossed) 느낌을 준다 — EP1 경비원 김씨 금속 명찰 참고, 평평한
+    벡터 텍스트만 그리면 "붙여넣은 스티커"처럼 어색해 보인다(실증)."""
+    rim = tuple(max(0, c - 35) for c in tag_color)
     draw.rounded_rectangle([x, y, x + w, y + h], radius=radius, fill=tag_color,
-                            outline=(180, 180, 175), width=1)
+                            outline=rim, width=1)
     font_path = find_font()
     pad = int(h * padding_ratio)
     max_w, max_h = w - 2 * pad, h - 2 * pad
@@ -116,6 +127,8 @@ def draw_simple(draw, x, y, w, h, text, tag_color, text_color, radius=6,
     tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
     tx = x + (w - tw) / 2 - bbox[0]
     ty = y + (h - th) / 2 - bbox[1]
+    highlight = tuple(min(255, c + 60) for c in tag_color)
+    draw.text((tx, ty + 1), text, fill=highlight, font=font)
     draw.text((tx, ty), text, fill=text_color, font=font)
 
 
@@ -208,6 +221,9 @@ def main():
     ap.add_argument("--romanized", default=None, help="badge 스타일: 로마자 표기 (예 'D. H. HAN')")
     ap.add_argument("--shadow-opacity", type=int, default=110,
                     help="명찰 아래 그림자 진하기(0=그림자 없음, 0~255)")
+    ap.add_argument("--soften", type=float, default=0.7,
+                    help="명찰 전체에 줄 블러(px) — 벡터 텍스트가 영상 프레임보다 "
+                         "또렷해서 스티커처럼 튀는 것을 줄인다. 0=블러 없음.")
     args = ap.parse_args()
 
     image = Image.open(args.image)
@@ -239,7 +255,7 @@ def main():
                 d, lx, ly, lw, lh, args.text, tag_color, text_color))
 
     result = paste_tag(image, layer, args.box, angle=args.angle,
-                        shadow_opacity=args.shadow_opacity)
+                        shadow_opacity=args.shadow_opacity, soften=args.soften)
     result.save(args.out, quality=95)
     print(f"합성 완료 → {args.out} (스타일: {args.style}, 텍스트: '{args.text}', "
           f"영역: {args.box}, 각도: {args.angle}도)")
