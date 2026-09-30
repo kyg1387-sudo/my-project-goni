@@ -189,7 +189,7 @@ jobs:
       - name: 자막 입히기
         if: ${{ inputs.deliver_from_run_id == '' && inputs.qc_tts != 'true' && inputs.slice_source == '' }}
         run: |
-          ffmpeg -i "out/${SKIT}-skit.mp4" -vf "ass=subs/${SKIT}.ass" \
+          ffmpeg -y -i "out/${SKIT}-skit.mp4" -vf "ass=subs/${SKIT}.ass" \
             -c:v libx264 -preset medium -crf 18 -c:a copy \
             "out/${SKIT}-skit-subbed.mp4"
 
