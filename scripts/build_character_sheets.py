@@ -105,12 +105,13 @@ CHARACTERS = {
         name_en="HENCHMAN", height=178,
         personality="Rough, intimidating, low-level enforcer",
         voice="Rough gravelly Jeolla dialect",
-        age_desc="burly Korean man in his forties",
+        age_desc="burly South Korean man in his forties, clearly Korean East Asian "
+                  "ethnicity",
         wardrobe="a dark worn work jumpsuit jacket, plain with no text or logos",
         identifiers="Stocky muscular build, short buzzed hair",
         expression="rough intimidating expression",
         hair="short buzzed black hair",
-        face_identifiers="broad rough-featured face, thick eyebrows",
+        face_identifiers="broad rough-featured Korean face, thick eyebrows",
     ),
     "목포해경": dict(
         name_en="COAST GUARD CAPTAIN", height=175,
