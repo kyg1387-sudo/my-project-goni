@@ -72,15 +72,15 @@ CHARACTERS = {
         name_en="DOHEE'S MOTHER", height=158,
         personality="Worn down by hardship, blunt but deeply protective underneath",
         voice="Rough coarse Jeolla dialect, loud when emotional",
-        age_desc="Korean woman in her mid-fifties, middle-aged NOT elderly, "
-                  "youthful skin with only light wrinkling",
+        # 실제 본편 22개 장면(생성 완료분)에서 이미 확립된 외형을 시트에 맞춰
+        # 역으로 기록 — 영상이 기준, 시트가 그걸 따라간다(사용자 확정).
+        age_desc="Korean woman in her late fifties, weathered face",
         wardrobe="a faded floral-pattern cardigan over a plain blouse",
         identifiers="Short stout build, tired rounded face",
         expression="weary but warm expression",
-        hair="short black permed hair with only a few subtle gray strands, "
-             "mostly dark hair, not white or fully gray",
-        face_identifiers="round tired face, faint smile lines, middle-aged 50s "
-                          "appearance, mostly dark hair",
+        hair="short gray-streaked curly permed hair",
+        face_identifiers="round tired face, deep smile lines, gray-streaked "
+                          "curly hair",
     ),
     "서미령": dict(
         name_en="SEO MIRYEONG", height=168,
