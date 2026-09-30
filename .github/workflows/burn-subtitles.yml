@@ -59,6 +59,10 @@ on:
         description: slice_source 모드에서 자막이 없는(교체된) 장면 번호 목록 (예 "3,5,7")
         required: false
         default: ""
+      no_ambience:
+        description: lipsync=true일 때 현장음(ambience) 생성은 생략할지 (true/false, 비용 절감용)
+        required: false
+        default: "false"
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
@@ -213,6 +217,9 @@ jobs:
           if [ "${{ inputs.lipsync }}" = "true" ]; then
             pip install --quiet fal-client
             EXTRA="--lipsync --scenes-dir out"
+            if [ "${{ inputs.no_ambience }}" = "true" ]; then
+              EXTRA="$EXTRA --no-ambience"
+            fi
           fi
           if [ -n "${{ inputs.slice_source }}" ]; then
             EXTRA="$EXTRA --no-burn --burn-scenes ${{ inputs.burn_scenes }}"

@@ -539,7 +539,7 @@ def write_scene_ass(ass_path, t0, t1, out_path):
 
 
 def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_video,
-                         no_burn=False, burn_scenes=frozenset()):
+                         no_burn=False, burn_scenes=frozenset(), no_ambience=False):
     """장면별 대사 구간 립싱크·현장음 생성 후 재조립하고 자막을 입힌 영상을 돌려준다.
 
     (재조립된 영상 경로, [(시작초, 현장음 wav)]) 를 돌려준다.
@@ -567,10 +567,11 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
         i, scene, t0, t1 = item
         v_url = fal_upload(scene, key)
 
-        amb = ambience_scene(cfg, key, v_url, i, t1 - t0)  # 실패해도 계속
+        amb = None if no_ambience else ambience_scene(cfg, key, v_url, i, t1 - t0)  # 실패해도 계속
         amb_item = (t0, amb) if amb else None
         if not amb:
-            print(f"  [scene {i:02d}] 현장음 없음")
+            print(f"  [scene {i:02d}] 현장음 없음"
+                  + (" (--no-ambience)" if no_ambience else ""))
 
         visible = set(scene_speakers[i - 1]) if i - 1 < len(scene_speakers) else None
         scene_lines = [
@@ -645,6 +646,8 @@ def main():
                     help="장면 클립에 자막이 이미 구워져 있음 (전체 자막 굽기 생략)")
     ap.add_argument("--burn-scenes", default="",
                     help="자막이 없는 클립 번호 목록 (개별로 자막을 입힘, 예 '3,5,7')")
+    ap.add_argument("--no-ambience", action="store_true",
+                    help="--lipsync와 별개로 현장음(ambience) 생성은 생략 (비용 절감용)")
     args = ap.parse_args()
 
     key = (os.environ.get("FAL_API_KEY") or "").strip()
@@ -718,7 +721,8 @@ def main():
         video, ambience = rebuild_with_lipsync(cfg, key, args.scenes_dir, args.ass,
                                                placed_dialogue,
                                                os.path.join(WORK_DIR, "rebuilt.mp4"),
-                                               args.no_burn, burn_scenes)
+                                               args.no_burn, burn_scenes,
+                                               args.no_ambience)
 
     print("배경음악 생성 중...")
     bgm = make_bgm(cfg, key)
