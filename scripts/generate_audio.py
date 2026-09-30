@@ -226,21 +226,31 @@ def typecast_tts_line(cfg, key, index, voice, text, emotion=None):
         },
         "prompt": {"emotion_type": emotion_type},
     }
-    req = urllib.request.Request(
-        "https://api.typecast.ai/v1/text-to-speech",
-        data=json.dumps(payload).encode(),
-        headers={"X-API-KEY": key, "Content-Type": "application/json"},
-        method="POST",
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=120) as resp:
-            with open(path, "wb") as f:
-                f.write(resp.read())
-        return path
-    except urllib.error.HTTPError as e:
-        body = e.read().decode(errors="replace")
-        print(f"  [tts {index:03d}] Typecast 실패 (HTTP {e.code}): {body}")
-        return None
+    # 동시 요청이 많으면(tts_workers) Typecast 레이트리밋(429)에 자주 걸린다 —
+    # 요청 자체를 다시 만들어 지수 백오프로 재시도한다(실증: 118장면 본 제작 중).
+    for attempt in range(5):
+        req = urllib.request.Request(
+            "https://api.typecast.ai/v1/text-to-speech",
+            data=json.dumps(payload).encode(),
+            headers={"X-API-KEY": key, "Content-Type": "application/json"},
+            method="POST",
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                with open(path, "wb") as f:
+                    f.write(resp.read())
+            return path
+        except urllib.error.HTTPError as e:
+            body = e.read().decode(errors="replace")
+            if e.code == 429 and attempt < 4:
+                wait = 3 * (2 ** attempt)
+                print(f"  [tts {index:03d}] 레이트리밋(429) — {wait}초 대기 후 재시도 "
+                      f"({attempt + 1}/5)")
+                time.sleep(wait)
+                continue
+            print(f"  [tts {index:03d}] Typecast 실패 (HTTP {e.code}): {body}")
+            return None
+    return None
 
 
 def make_bgm_segment(cfg, key, index, prompt):
