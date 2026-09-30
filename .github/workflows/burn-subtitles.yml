@@ -155,14 +155,10 @@ jobs:
           cp -f out/replace3/scene*.mp4 out/
           rm -rf out/replace3
 
-      - name: 자막 입히기
-        if: ${{ inputs.deliver_from_run_id == '' && inputs.qc_tts != 'true' && inputs.slice_source == '' }}
-        run: |
-          ffmpeg -i "out/${SKIT}-skit.mp4" -vf "ass=subs/${SKIT}.ass" \
-            -c:v libx264 -preset medium -crf 18 -c:a copy \
-            "out/${SKIT}-skit-subbed.mp4"
-
       - name: 이전 실행 중간 산출물 복원 (이어하기)
+        # 장면 재조립 단계보다 먼저 복원해야 한다 — out/audio 캐시(TTS·BGM·현장음)는
+        # 재사용하되, 예전에 잘못된 순서로 만들어졌을 수 있는 영상 트랙(스킷/자막입힌본)은
+        # 아래 "장면 이어붙이기 재생성"·"자막 입히기" 단계가 항상 다시 만들어 덮어쓴다.
         if: ${{ inputs.resume_run_id != '' && inputs.deliver_from_run_id == '' }}
         uses: actions/download-artifact@v4
         with:
@@ -176,6 +172,26 @@ jobs:
         run: |
           cd out/audio
           rm -fv ${{ inputs.invalidate }}
+
+      - name: 장면 이어붙이기 재생성 (파일명 사전식 정렬 버그 수정)
+        # 소스 Artifact의 out/<skit>-skit.mp4는 `ls scene*.mp4`(사전식 정렬)로 만들어져
+        # 두 자릿수(scene01~99)와 세 자릿수(scene100~) 장면 번호가 뒤섞인 순서로
+        # 이어붙여져 있을 수 있다(참교육사이다 118장면 본 제작에서 실증 — 50초 지점부터
+        # 영상 대부분이 대본과 다른 장면으로 재생됨). 개별 장면 파일(out/sceneNN.mp4)은
+        # 모두 정상이므로, 여기서 숫자 기준(sort -V)으로 다시 이어붙여 덮어쓴다 — 무료.
+        # (위 이어하기 단계가 복원했을 수 있는 예전 잘못된 스킷 영상도 여기서 덮어써진다.)
+        if: ${{ inputs.deliver_from_run_id == '' && inputs.qc_tts != 'true' && inputs.slice_source == '' }}
+        working-directory: out
+        run: |
+          ls scene*.mp4 | sort -V | sed "s/^/file '/;s/$/'/" > list.txt
+          ffmpeg -y -f concat -safe 0 -i list.txt -c copy "${SKIT}-skit.mp4"
+
+      - name: 자막 입히기
+        if: ${{ inputs.deliver_from_run_id == '' && inputs.qc_tts != 'true' && inputs.slice_source == '' }}
+        run: |
+          ffmpeg -i "out/${SKIT}-skit.mp4" -vf "ass=subs/${SKIT}.ass" \
+            -c:v libx264 -preset medium -crf 18 -c:a copy \
+            "out/${SKIT}-skit-subbed.mp4"
 
       - name: 대사 TTS 언어 검사 (QC 전용)
         if: ${{ inputs.qc_tts == 'true' }}

@@ -544,7 +544,10 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
 
     (재조립된 영상 경로, [(시작초, 현장음 wav)]) 를 돌려준다.
     """
-    scenes = sorted(glob.glob(os.path.join(scenes_dir, "scene*.mp4")))
+    def _scene_num(path):
+        m = re.search(r"scene(\d+)\.mp4$", path)
+        return int(m.group(1)) if m else -1
+    scenes = sorted(glob.glob(os.path.join(scenes_dir, "scene*.mp4")), key=_scene_num)
     if not scenes:
         sys.exit(f"장면 클립을 찾을 수 없습니다: {scenes_dir}/scene*.mp4")
     bounds, t = [], 0.0

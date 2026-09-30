@@ -69,7 +69,7 @@ jobs:
         # concat 목록 안의 상대 경로는 목록 파일 위치 기준으로 해석되므로 out/ 안에서 실행
         working-directory: out
         run: |
-          ls scene*.mp4 | sed "s/^/file '/;s/$/'/" > list.txt
+          ls scene*.mp4 | sort -V | sed "s/^/file '/;s/$/'/" > list.txt
           ffmpeg -f concat -safe 0 -i list.txt -c copy "${SKIT}-skit.mp4"
 
       - name: 결과 영상 업로드
