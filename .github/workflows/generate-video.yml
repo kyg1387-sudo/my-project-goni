@@ -127,7 +127,7 @@ jobs:
   portraits:
     if: ${{ inputs.portraits_spec != '' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 90
     permissions:
       contents: write
       actions: read
