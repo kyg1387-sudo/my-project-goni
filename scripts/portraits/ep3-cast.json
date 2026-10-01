@@ -1,0 +1,40 @@
+{
+  "_설명": "EP3 기준 시트 생성 스펙 (generate-video.yml portraits_spec=ep3-cast). 김씨 항목은 얼굴 결정 후 추가.",
+  "characters": [
+    {
+      "id": "grandma-sheet",
+      "count": 1,
+      "prompt": "Character reference sheet, one single 16:9 image on a pure white background, photorealistic, soft studio lighting, minimal style, fashion-lookbook layout. Top-left header in clean black sans-serif text: large bold title \"GRANDMOTHER\", then four small lines below it: \"Height: 150cm\" / \"Frail but fiercely independent, quietly warm\" / \"Voice: soft, raspy, few words\" / \"Photorealistic, soft studio lighting, minimal style, modern Korean apartment complex, contemporary, worn everyday clothing\". Left half: full-body front view and full-body back view of the same 70대 후반 한국 여성(a Korean woman in her late 70s), standing side by side, feet visible, both figures cropped at the neck so the head is cut off by the top edge of the frame — no face shown on the left side. Wardrobe: a faded brown floral headscarf tied over her hair, a plain worn dark brown baggy work trousers (\"monpe\") and a thick navy quilted jacket, worn brown work gloves. Body: thin frame, stooped back, deeply wrinkled hands. Right half: one large close-up portrait from the shoulders up, straight to camera, tired but gentle, quiet dignity, grey hair mostly covered by the headscarf, faded brown floral headscarf. No text other than the header."
+    },
+    {
+      "id": "choi-sheet",
+      "count": 1,
+      "prompt": "Character reference sheet, one single 16:9 image on a pure white background, photorealistic, soft studio lighting, minimal style, fashion-lookbook layout. Top-left header in clean black sans-serif text: large bold title \"CHOI - SCRAPYARD OWNER\", then four small lines below it: \"Height: 173cm\" / \"Gruff, businesslike, secretly soft-hearted\" / \"Voice: brisk, low, businesslike\" / \"Photorealistic, soft studio lighting, minimal style, modern Korean apartment complex, contemporary, worn everyday clothing\". Left half: full-body front view and full-body back view of the same 50대 한국 남성(a Korean man in his 50s), standing side by side, feet visible, both figures cropped at the neck so the head is cut off by the top edge of the frame — no face shown on the left side. Wardrobe: a grease-stained plain grey work vest over a dark shirt, black work gloves, a worn radio clipped to his belt. Body: stocky, sturdy build, calloused hands. Right half: one large close-up portrait from the shoulders up, straight to camera, wary, businesslike, short greying hair, no hat. No text other than the header."
+    },
+    {
+      "id": "loc-guard-booth",
+      "count": 1,
+      "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four labeled cells, clean white gutters between cells, small plain black caption text under each cell and nothing else. Photorealistic, natural lighting, no people in any cell. Setting: a small apartment security guard booth interior, a narrow desk, several old black-and-white CCTV monitors, a thermos, a blank plain duty-roster chalkboard on the wall with no text. Cell 1 (label \"DAY - WIDE\"): the same small guard booth interior by daylight, sunlight through the window. Cell 2 (label \"NIGHT - WIDE\"): the same small guard booth interior at night, warm desk lamp light, dark window. Cell 3 (label \"KEY POSITION 1\"): close view of the narrow desk with old black-and-white CCTV monitors and a thermos. Cell 4 (label \"KEY POSITION 2\"): close view of the booth window looking out toward the apartment flower bed. No text anywhere in the image other than the four cell labels."
+    },
+    {
+      "id": "loc-apt-gate",
+      "count": 1,
+      "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four labeled cells, clean white gutters between cells, small plain black caption text under each cell and nothing else. Photorealistic, natural lighting, no people in any cell. Setting: a sidewalk in front of an apartment complex main gate, a flower bed and a low wall, ordinary modern Korean apartment complex in the background. Cell 1 (label \"DAY - WIDE\"): the same sidewalk by afternoon daylight, ordinary apartment complex. Cell 2 (label \"NIGHT - WIDE\"): the same sidewalk at evening dusk, streetlights just turning on. Cell 3 (label \"KEY POSITION 1\"): close view of the flower bed and low wall beside the sidewalk. Cell 4 (label \"KEY POSITION 2\"): close view of the sidewalk pavement leading toward the apartment gate. No text anywhere in the image other than the four cell labels."
+    },
+    {
+      "id": "loc-demolition",
+      "count": 1,
+      "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four labeled cells, clean white gutters between cells, small plain black caption text under each cell and nothing else. Photorealistic, natural lighting, no people in any cell. Setting: a demolition site mid-redevelopment, collapsed wall rubble, hazy dust, a safety fence, a blank plain white notice board with absolutely no text or lettering, completely empty of people. Cell 1 (label \"DAY - WIDE\"): the same demolition site by late-afternoon daylight, dust in the air. Cell 2 (label \"NIGHT - WIDE\"): the same demolition site at night, one distant work light, empty and quiet. Cell 3 (label \"KEY POSITION 1\"): close view of the collapsed wall rubble and a blank plain safety notice board with no text. Cell 4 (label \"KEY POSITION 2\"): close view of the safety fence at the edge of the site. No text anywhere in the image other than the four cell labels."
+    },
+    {
+      "id": "loc-alley-night",
+      "count": 1,
+      "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four labeled cells, clean white gutters between cells, small plain black caption text under each cell and nothing else. Photorealistic, natural lighting, no people in any cell. Setting: a narrow neighborhood alley with a single working streetlamp, piles of stacked paper and cardboard against old shutter doors, thin night mist, completely empty of people. Cell 1 (label \"DAY - WIDE\"): the same narrow alley by overcast daylight (rarely used, for continuity only). Cell 2 (label \"NIGHT - WIDE\"): the same narrow alley at night, one working streetlamp, thin night mist. Cell 3 (label \"KEY POSITION 1\"): close view of the piles of stacked paper and cardboard against an old shutter door. Cell 4 (label \"KEY POSITION 2\"): close view of the cracked pavement under the single streetlamp. No text anywhere in the image other than the four cell labels."
+    },
+    {
+      "id": "loc-junkyard",
+      "count": 1,
+      "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four labeled cells, clean white gutters between cells, small plain black caption text under each cell and nothing else. Photorealistic, natural lighting, no people in any cell. Setting: a small scrapyard, compressed bales of paper, a rusty scale, a bare bulb hanging overhead, an old truck, a blank plain corrugated sheet-metal wall with absolutely no text or lettering. Cell 1 (label \"DAY - WIDE\"): the same scrapyard by daylight, ordinary working hours. Cell 2 (label \"NIGHT - WIDE\"): the same scrapyard at dusk, a single bare bulb glowing overhead. Cell 3 (label \"KEY POSITION 1\"): close view of the rusty scale and compressed bales of paper. Cell 4 (label \"KEY POSITION 2\"): close view of the old truck parked against a blank plain sheet-metal wall with no text. No text anywhere in the image other than the four cell labels."
+    }
+  ]
+}
