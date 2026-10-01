@@ -87,7 +87,7 @@
 - Engine: Image-to-Video (approved keyframe only)
 - Camera Motion: Slow cinematic push-in (zoom 1.05)
 - Character Motion: Micro chest breathing, single slow blink, lips move with the dialogue, max 5-degree head tilt. Choi perfectly still.
-- Edit Strategy: 00:02.00~00:04.20 Talking face (line 1)
+- Edit Strategy: 00:02.00~00:04.09 Talking face (line 1) → 00:04.09~00:04.20 Hold: lips closed, reaction beat only (no speech after audio ends)
 ```
 
 ### S02 (10s) — Medium close-up (two-shot, Choi weighted)
@@ -112,7 +112,7 @@
 - Engine: Image-to-Video (approved keyframe only)
 - Camera Motion: Static, locked off
 - Character Motion: Kim lips move with dialogue, Choi single slow blink only, no head turn.
-- Edit Strategy: 00:06.12~00:08.12 Talking face (line 2) → 00:08.12~00:09.12 B-roll: ECU leather strap on handle (S03 keyframe) → 00:09.12~00:11.13 Reaction: Choi wary stare
+- Edit Strategy: 00:06.12~00:08.12 Talking face (line 2) → 00:08.12~00:09.12 B-roll: ECU leather strap on handle (S03 keyframe) → 00:09.12~00:10.17 Reaction: Choi wary stare → 00:10.17~00:11.13 Hold: lips closed, reaction beat only (no speech after audio ends)
 ```
 
 ### S03 (5s) — Extreme close-up
@@ -425,7 +425,7 @@
 - Engine: Image-to-Video (approved keyframe only)
 - Camera Motion: Slow cinematic push-in (zoom 1.08) — replaces dolly-zoom
 - Character Motion: Only a slow push-in, one slow blink, lips form the short line, no head turn.
-- Edit Strategy: 01:31.17~01:33.05 Talking face (line 15) then hold on frozen face; narration lines 16–17 over this and S16
+- Edit Strategy: 01:31.17~01:32.20 Talking face (line 15) then hold on frozen face; narration lines 16–17 over this and S16 → 01:32.20~01:33.05 Hold: lips closed, reaction beat only (no speech after audio ends)
 ```
 
 ### S16 (5s) — Full shot, high angle
@@ -763,7 +763,7 @@
 - Engine: Image-to-Video (approved keyframe only)
 - Camera Motion: Slow cinematic push-in (zoom 1.05)
 - Character Motion: Hand settles on the strap, lips move with the line, single blink.
-- Edit Strategy: 03:31.18~03:34.14 Talking face (line 33)
+- Edit Strategy: 03:31.18~03:34.03 Talking face (line 33) → 03:34.03~03:34.14 Hold: lips closed, reaction beat only (no speech after audio ends)
 ```
 
 ### S30 (10s) — Close-up (Choi reaction)
@@ -788,7 +788,7 @@
 - Engine: Image-to-Video (approved keyframe only)
 - Camera Motion: Slow cinematic push-in (zoom 1.05)
 - Character Motion: Slow push-in, one blink, jaw loosens slightly, no head turn.
-- Edit Strategy: 03:36.06~03:38.06 Talking face Kim (line 34, from S29 angle) → 03:38.06~03:39.06 B-roll: strap ECU → 03:39.06~03:41.07 Reaction: Choi softening (this keyframe)
+- Edit Strategy: 03:36.06~03:38.06 Talking face Kim (line 34, from S29 angle) → 03:38.06~03:39.06 B-roll: strap ECU → 03:39.06~03:40.11 Reaction: Choi softening (this keyframe) → 03:40.11~03:41.07 Hold: lips closed, reaction beat only (no speech after audio ends)
 ```
 
 ### S31 (10s) — Medium close-up
@@ -813,7 +813,7 @@
 - Engine: Image-to-Video (approved keyframe only)
 - Camera Motion: Static, locked off
 - Character Motion: Lips move with the short line, one small hand wave, single blink.
-- Edit Strategy: 03:55.08~03:58.15 Talking face Choi (line 37)
+- Edit Strategy: 03:55.08~03:57.13 Talking face Choi (line 37) → 03:57.13~03:58.15 Hold: lips closed, reaction beat only (no speech after audio ends)
 ```
 
 ### S32 (5s) — Medium close-up
@@ -934,7 +934,7 @@
 - Engine: Image-to-Video (approved keyframe only)
 - Camera Motion: Static, locked off
 - Character Motion: Two slow steps forward, hand rising toward the handle, lips form the short line.
-- Edit Strategy: 04:28.00~04:30.17 Talking face (line 42)
+- Edit Strategy: 04:28.00~04:29.19 Talking face (line 42) → 04:29.19~04:30.17 Hold: lips closed, reaction beat only (no speech after audio ends)
 ```
 
 ### S37 (10s) — Close-up (hands)
