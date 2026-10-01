@@ -1,0 +1,41 @@
+{
+ "_설명": "PHASE 1-2 보정: 김씨 1·2줄은 톤연출표 속도(0.80~0.85)에 맞춰 느린 연기 태그로 재생성, 할머니 12줄은 언어 검사에서 일본어로 오인(짧은 숨소리 발화)되어 태그만 바꿔 재생성(대본 동결 — 문장은 그대로)",
+ "tests": [
+  {
+   "id": "line001",
+   "model": "elevenlabs-direct",
+   "voice": "8vwSOQHQApfVx993mKf9",
+   "text": "[slow, firm, low] 이 손잡이, 가죽끈 감긴 거 보이시죠."
+  },
+  {
+   "id": "line002",
+   "model": "elevenlabs-direct",
+   "voice": "8vwSOQHQApfVx993mKf9",
+   "text": "[slow, resolute] 이거 임자 되시는 분이 직접 감으신 겁니다. 함부로 못 없애는 물건입니다."
+  },
+  {
+   "id": "line012_A",
+   "model": "elevenlabs-direct",
+   "voice": "IZnNrZQBS9lhLjXgYVT8",
+   "text": "[sad, quiet] …내 리어카…"
+  },
+  {
+   "id": "line012_B",
+   "model": "elevenlabs-direct",
+   "voice": "btKMxrEJKGBf21DM9nVQ",
+   "text": "[sad, quiet] …내 리어카…"
+  },
+  {
+   "id": "line012_A2",
+   "model": "elevenlabs-direct",
+   "voice": "IZnNrZQBS9lhLjXgYVT8",
+   "text": "[trembling] …내 리어카…"
+  },
+  {
+   "id": "line012_B2",
+   "model": "elevenlabs-direct",
+   "voice": "btKMxrEJKGBf21DM9nVQ",
+   "text": "[trembling] …내 리어카…"
+  }
+ ]
+}
