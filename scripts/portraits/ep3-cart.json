@@ -1,0 +1,10 @@
+{
+  "_설명": "EP3 PHASE 2 보강 — 리어카(소품) 마스터 시트. 파일럿 실증: 장면마다 손잡이 형태가 달라짐(할머니 보행 컷에 끌채 없음) → 소품도 참조 에셋으로 잠근다.",
+  "characters": [
+    {
+      "id": "cart-sheet",
+      "count": 1,
+      "prompt": "Prop master sheet: one single image, a clean 2x2 grid of four photo panels separated by thin white gutters on a pure white studio background, no header, no captions, no text anywhere. The SAME object in all four panels: a traditional Korean paper-collecting handcart (rear-car): a welded dark steel-tube frame with a flat cargo bed and low open mesh side rails, two large spoked bicycle-type wheels with worn rubber tires, and at the FRONT a long U-shaped tubular pull handle (drawbar) that extends forward and ends in a horizontal cross-bar grip; the cross-bar grip is tightly wound with an old frayed brown leather strap, polished smooth by years of hands, with one loose strap end hanging. Rust spots and scratches on the frame, a few flattened plain brown cardboard boxes with no labels in the bed. TOP-LEFT = three-quarter front view showing the whole cart and the full pull handle; TOP-RIGHT = strict side view; BOTTOM-LEFT = rear view; BOTTOM-RIGHT = close-up of the leather-wrapped cross-bar grip. Photorealistic product photography, soft even studio lighting, Arri Alexa cinematic color grade, Kodak 35mm film grain. Absolutely no people, no hands, no text, letters, numbers, labels, logos or watermarks. Negative: gibberish, foreign text, incomprehensible letters, printed labels, stickers, barcodes, watermarks, people, hands."
+    }
+  ]
+}
