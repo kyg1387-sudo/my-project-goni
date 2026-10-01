@@ -60,17 +60,17 @@
    "duration": 10
   },
   {
-   "prompt": "Camera: Static, locked off. Motion: Almost imperceptible focus breathing, dust motes drifting. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off. Motion: Almost imperceptible focus breathing, dust motes drifting. Mouths stay closed; no talking. This is an empty insert shot: no person, no hand, no arm or body part ever enters the frame; only the objects and the camera move. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s03-1.png",
    "duration": 5
   },
   {
-   "prompt": "Camera: Static, locked off. Motion: Static plate, faint leaf movement only. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off. Motion: Static plate, faint leaf movement only. Mouths stay closed; no talking. This is an empty insert shot: no person, no hand, no arm or body part ever enters the frame; only the objects and the camera move. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s04-1.png",
    "duration": 5
   },
   {
-   "prompt": "Camera: Static, locked off. Motion: Static plate, light breeze in the flower bed. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off. Motion: Static plate, light breeze in the flower bed. Mouths stay closed; no talking. This is an empty insert shot: no person, no hand, no arm or body part ever enters the frame; only the objects and the camera move. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s05-1.png",
    "duration": 5
   },
@@ -85,7 +85,7 @@
    "duration": 10
   },
   {
-   "prompt": "Camera: Static, locked off. Motion: Gentle focal adjustment only. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off. Motion: Gentle focal adjustment only. Mouths stay closed; no talking. This is an empty insert shot: no person, no hand, no arm or body part ever enters the frame; only the objects and the camera move. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s08-1.png",
    "duration": 5
   },
@@ -115,7 +115,7 @@
    "duration": 5
   },
   {
-   "prompt": "Camera: Slow cinematic push-in toward the truck (zoom 1.05). Motion: Slow push-in, workers move slowly, truck exhaust drifts. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Slow cinematic push-in toward the truck (zoom 1.05). Motion: Slow push-in, workers move slowly, truck exhaust drifts. Mouths stay closed; no talking. This is an empty insert shot: no person, no hand, no arm or body part ever enters the frame; only the objects and the camera move. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s14-1.png",
    "duration": 5
   },
@@ -160,7 +160,7 @@
    "duration": 10
   },
   {
-   "prompt": "Camera: Static, rack focus edge → writing. Motion: Slow rack focus only. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, rack focus edge → writing. Motion: Slow rack focus only. Mouths stay closed; no talking. This is an empty insert shot: no person, no hand, no arm or body part ever enters the frame; only the objects and the camera move. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s23-1.png",
    "duration": 5
   },
@@ -220,7 +220,7 @@
    "duration": 10
   },
   {
-   "prompt": "Camera: Static, locked off. Motion: Mist drifts, nothing else. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off. Motion: Mist drifts, nothing else. Mouths stay closed; no talking. This is an empty insert shot: no person, no hand, no arm or body part ever enters the frame; only the objects and the camera move. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s35-1.png",
    "duration": 5
   },
@@ -245,7 +245,7 @@
    "duration": 5
   },
   {
-   "prompt": "Camera: Static, locked off. Motion: Steam rises slowly, dust motes. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off. Motion: Steam rises slowly, dust motes. Mouths stay closed; no talking. This is an empty insert shot: no person, no hand, no arm or body part ever enters the frame; only the objects and the camera move. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s40-1.png",
    "duration": 5
   },
@@ -265,7 +265,7 @@
    "duration": 10
   },
   {
-   "prompt": "Camera: Static, locked off. Motion: Static plate, faint light flicker on the ornament. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off. Motion: Static plate, faint light flicker on the ornament. Mouths stay closed; no talking. This is an empty insert shot: no person, no hand, no arm or body part ever enters the frame; only the objects and the camera move. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s44-1.png",
    "duration": 10
   }

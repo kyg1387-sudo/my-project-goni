@@ -40,6 +40,10 @@ for k, sc in enumerate(sb["scenes"]):
                      f"movement, no exaggerated mouth shapes, teeth not shown, head turn under 10 degrees.")
     else:
         parts.append("Mouths stay closed; no talking.")
+    if not any(not r.startswith("LOC@") for r in sb["scenes"][k]["refs"]):
+        # 파일럿 실증(S03): 무인 인서트에 손이 들어옴 → 무인 컷은 사람·손 진입 금지를 명시
+        parts.append("This is an empty insert shot: no person, no hand, no arm or body part ever enters the frame; "
+                     "only the objects and the camera move.")
     parts.append("Everything else in the frame stays still except gentle ambient motion (dust, mist, light).")
     scenes.append({"prompt": " ".join(parts), "image": kf, "duration": durations[k]})
 
