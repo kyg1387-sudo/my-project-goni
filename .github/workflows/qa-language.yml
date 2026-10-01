@@ -8,8 +8,13 @@ on:
         required: false
         default: "chairman-last-delivery-full"
       audio_run_id:
-        description: 오디오 캐시 Artifact(<skit>-skit-video-subbed)를 가져올 run ID
-        required: true
+        description: 오디오 캐시 Artifact(<skit>-skit-video-subbed)를 가져올 run ID (audio_dir 지정 시 불필요)
+        required: false
+        default: ""
+      audio_dir:
+        description: 저장소 안의 오디오 폴더를 직접 검사 (예 assets/auditions/<spec>) — PHASE 1 선행 생성 보이스 검사용. 지정 시 Artifact 대신 이 폴더를 검사하고 보고서를 같은 폴더에 커밋
+        required: false
+        default: ""
       remap_removed:
         description: 자막에서 삭제된 TTS 줄의 옛 번호 목록 (공백 구분, 예 "3 58")
         required: false
@@ -19,10 +24,14 @@ jobs:
   scan:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    permissions:
+      contents: write
+      actions: read
     steps:
       - uses: actions/checkout@v4
 
       - name: 오디오 캐시 내려받기
+        if: ${{ inputs.audio_dir == '' }}
         uses: actions/download-artifact@v4
         with:
           name: ${{ inputs.skit }}-skit-video-subbed
@@ -31,7 +40,7 @@ jobs:
           github-token: ${{ github.token }}
 
       - name: TTS 캐시 줄 번호 재매핑 (자막 줄 삭제 반영)
-        if: ${{ inputs.remap_removed != '' }}
+        if: ${{ inputs.remap_removed != '' && inputs.audio_dir == '' }}
         run: python3 scripts/remap_tts_cache.py out/audio ${{ inputs.remap_removed }}
 
       - name: ffmpeg와 faster-whisper 설치
@@ -39,16 +48,34 @@ jobs:
           sudo apt-get update && sudo apt-get install -y ffmpeg
           pip install --quiet faster-whisper
 
-      - name: 언어 검사 실행
+      - name: 언어 검사 실행 (Artifact 오디오 캐시)
+        if: ${{ inputs.audio_dir == '' }}
         run: |
           python3 scripts/qa_language.py \
             --audio-dir out/audio \
             --ass "subs/${{ inputs.skit }}.ass"
+
+      - name: 언어 검사 실행 (저장소 오디오 폴더)
+        if: ${{ inputs.audio_dir != '' }}
+        run: python3 scripts/qa_language.py --audio-dir "${{ inputs.audio_dir }}"
+
+      - name: 보고서를 저장소에 커밋 (저장소 폴더 검사 시)
+        if: ${{ always() && inputs.audio_dir != '' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "${{ inputs.audio_dir }}/qa_language_report.txt" || true
+          git diff --cached --quiet || git commit -m "언어 검사 보고서 (${{ inputs.audio_dir }})"
+          git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          git push origin "HEAD:${GITHUB_REF_NAME}" || true
 
       - name: 보고서 업로드
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.skit }}-qa-language-report
-          path: out/audio/qa_language_report.txt
+          path: |
+            out/audio/qa_language_report.txt
+            ${{ inputs.audio_dir }}/qa_language_report.txt
+          if-no-files-found: ignore
           retention-days: 7
