@@ -46,6 +46,10 @@ COMPOSITION = {
             "the rubble wall and is walking away from it."),
     "S25": ("Close-up on legs and shoes only, from the knees down, low camera: tired steps on the wet pavement. "
             "Nothing lies on the ground — no radio, no objects dropped; the radio stays clipped on his belt out of frame."),
+    "S29": ("Both of Kim's hands rest on the T-shaped cross grip at the end of the cart's front drawbar, the frayed "
+            "leather strap under his fingers, the cart bed behind the grip; same cart as the prop reference."),
+    "S34": ("Kim walks away from the camera PULLING the cart by its front drawbar T-grip with one hand behind him, "
+            "the cart trailing behind him nearer to the camera; same cart as the prop reference, no rear push handle."),
     "S01": ("Composition: Kim stands between Choi and the handcart with his body turned toward Choi; the two "
             "men face each other at close range in a confrontation, Kim nearer to camera. Frame them from the "
             "chest up as a medium close-up two-shot, both faces clearly visible."),
@@ -103,6 +107,10 @@ def build_prompt(scene, preset, negative):
         files.append(path)
         parts.append(f"Reference image {n} is {desc}")
     has_people = any(not r.startswith(("LOC@", "CART@")) for r in refs)
+    if any(r.startswith("KIM@") for r in refs):
+        parts.append("Kim's wardrobe is locked: a plain LONG-SLEEVE dark navy security-guard shirt and dark trousers, "
+                     "pristine clean chest with NO name tag, NO badge, NO insignia, NO patch, NO lettering of any kind; "
+                     "the only item on him is a small radio on his belt.")
     parts.append(f"Shot: {scene['shot']} — frame exactly at this shot size.")
     parts.append(f"Subject: {scene['subject'].strip()}")
     if scene["id"] in COMPOSITION:
