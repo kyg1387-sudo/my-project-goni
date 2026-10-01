@@ -1,0 +1,27 @@
+{
+ "_설명": "EP3 PHASE 5 파일럿 — 본 장면 파일에서 S01(대사·투샷)·S03(무인 ECU)·S06(보행 롱샷) 3장면만 추출. 합격 클립은 assets/video-overrides/kim-cart-grandma/sceneNN.mp4 로 복사해 본 실행에서 재사용(재과금 없음).",
+ "ratio": "16:9",
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "source_scenes": [
+  1,
+  3,
+  6
+ ],
+ "scenes": [
+  {
+   "prompt": "Camera: Slow cinematic push-in (zoom 1.05). Motion: Micro chest breathing, single slow blink, lips move with the dialogue, max 5-degree head tilt. Choi perfectly still. Kim is speaking Korean softly: lips move gently and naturally with small jaw movement, no exaggerated mouth shapes, teeth not shown, head turn under 10 degrees. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "image": "assets/portraits/ep3-keyframes/s01-1.png",
+   "duration": 10
+  },
+  {
+   "prompt": "Camera: Static, locked off. Motion: Almost imperceptible focus breathing, dust motes drifting. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "image": "assets/portraits/ep3-keyframes/s03-1.png",
+   "duration": 5
+  },
+  {
+   "prompt": "Camera: Very slow lateral drift (follows subject at walking pace). Motion: Slow walk, cart wheel turns, gentle lateral camera drift matching her pace, no fast motion. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "image": "assets/portraits/ep3-keyframes/s06-1.png",
+   "duration": 10
+  }
+ ]
+}
