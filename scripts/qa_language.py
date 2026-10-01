@@ -53,9 +53,17 @@ def main():
     args = ap.parse_args()
 
     from faster_whisper import WhisperModel
+    import subprocess
+    import numpy as np
     model = WhisperModel(args.model, device="cpu", compute_type="int8")
     ass_lines = parse_ass_lines(args.ass)
     report, flagged = [], []
+
+    def load_audio(path):
+        """ffmpeg로 16kHz mono float32 배열 디코딩 — faster-whisper 내부 PyAV 버전 충돌 회피."""
+        raw = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-f", "f32le", "-ac", "1",
+                              "-ar", "16000", "-"], capture_output=True, check=True).stdout
+        return np.frombuffer(raw, dtype=np.float32)
 
     def log(msg):
         print(msg, flush=True)
@@ -65,7 +73,7 @@ def main():
     for p in sorted(glob.glob(os.path.join(args.audio_dir, "line*.mp3"))):
         name = os.path.basename(p)
         idx = int(name[4:7]) if name[4:7].isdigit() else 0
-        segs, info = model.transcribe(p, beam_size=1, vad_filter=False)
+        segs, info = model.transcribe(load_audio(p), beam_size=1, vad_filter=False)
         heard = " ".join(s.text.strip() for s in segs).strip()
         script = ass_lines[idx - 1][2] if 0 < idx <= len(ass_lines) else ""
         sim = similarity(heard, script) if script else -1
@@ -89,7 +97,7 @@ def main():
     log("\n=== 현장음 파일 검사 (amb*.wav) — 말소리가 들리면 안 됨 ===")
     for p in sorted(glob.glob(os.path.join(args.audio_dir, "amb*.wav"))):
         name = os.path.basename(p)
-        segs, info = model.transcribe(p, beam_size=1, vad_filter=True,
+        segs, info = model.transcribe(load_audio(p), beam_size=1, vad_filter=True,
                                       vad_parameters={"min_silence_duration_ms": 300})
         heard = " ".join(s.text.strip() for s in segs).strip()
         # 짧은 잡음 오인식은 무시하고, 단어가 이어지는 경우만 말소리로 본다
