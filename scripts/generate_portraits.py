@@ -72,7 +72,7 @@ def fal_upload(key, path):
     return init["file_url"]
 
 
-def fal_image(key, prompt, num_images, ref_urls=None, model=None):
+def fal_image(key, prompt, num_images, ref_urls=None, model=None, aspect_ratio=None):
     headers = {"Authorization": f"Key {key}"}
     model = model or (FAL_EDIT_MODEL if ref_urls else FAL_IMAGE_MODEL)
     # 모델별 파라미터 차이를 흡수: 실패하면 다음 페이로드로 재시도
@@ -81,6 +81,10 @@ def fal_image(key, prompt, num_images, ref_urls=None, model=None):
             {"prompt": prompt, "image_urls": ref_urls, "num_images": num_images},
             {"prompt": prompt, "image_url": ref_urls[0], "num_images": num_images},
         ]
+        if aspect_ratio:
+            # 키프레임(16:9 등) 화면비 지정 — 모델이 파라미터를 거부하면 위 기본 페이로드로 폴백
+            payloads.insert(0, {"prompt": prompt, "image_urls": ref_urls,
+                                "num_images": num_images, "aspect_ratio": aspect_ratio})
     else:
         payloads = [
             {"prompt": prompt, "aspect_ratio": "3:4", "num_images": num_images},
@@ -146,7 +150,8 @@ def main():
                 ref_urls.append(upload_cache[ref])
         print(f"[{pid}] {len(todo)}장 생성: {person['prompt'][:60]}…")
         urls = fal_image(key, person["prompt"], len(todo),
-                         ref_urls=ref_urls, model=person.get("model"))
+                         ref_urls=ref_urls, model=person.get("model"),
+                         aspect_ratio=person.get("aspect_ratio"))
         if len(urls) < len(todo):
             failed.append(pid)
         for n, url in zip(todo, urls):

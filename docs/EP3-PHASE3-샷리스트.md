@@ -1,6 +1,6 @@
 # EP3 「김씨와 폐지 할머니」 — PHASE 3 정밀 샷 리스트 & 프롬프트 설계 (Storyboard Lock)
 
-규격서 PHASE 3 산출물. 작성 2026-10-01. 상태: **설계 완료 — 사용자 PASS 대기** (PASS 전 PHASE 4 렌더링 금지)
+규격서 PHASE 3 산출물. 작성 2026-10-01. 상태: **Storyboard Lock — 사용자 PASS 2026-10-01** (이후 변경은 사용자 재승인 필요)
 
 원본 데이터: `scripts/storyboard/kim-cart-grandma.json` (이 문서는 `scripts/build_phase3_doc.py`로 생성). 타임코드는 PHASE 1 Lock 타임라인(24fps)과 PHASE 2 Lock 에셋을 그대로 참조한다.
 
@@ -1131,6 +1131,6 @@
 
 ## 3-3. PHASE 4·5 실행 계획 (PASS 후)
 
-- PHASE 4 키프레임: 장면당 1장, `fal-ai/nano-banana/edit`에 참조 셀(인물+로케이션)을 멀티 참조로 넣어 생성 → `assets/keyframes/kim-cart-grandma/sNN.png`. Kill Gate(외계어·손가락·눈동자) 통과분만 Lock.
+- PHASE 4 키프레임: 장면당 1장, `fal-ai/nano-banana/edit`에 캐릭터 시트+로케이션 셀을 멀티 참조로 넣어 생성. 스펙은 `scripts/build_ep3_keyframes.py`가 이 Lock 데이터에서 자동 생성(`scripts/portraits/ep3-keyframes.json` 44장, 파일럿 `ep3-keyframes-pilot.json` 3장). 실행은 `generate-video.yml portraits_spec=…` → `assets/portraits/<spec>/sNN-1.png`. Kill Gate(외계어·손가락·눈동자·그리드 출력) 통과분만 Lock, 불합격은 `portraits_regen_ids`로 부분 재생성.
 - PHASE 5 모션: `generate_video.py`에 키프레임 입력(Image-to-Video, Seedance image-to-video) 모드를 추가해 승인 키프레임만 변환. Text-to-Video 사용 금지.
 - 비용 보고: PHASE 4·5 각각 실행 전에 장면 수·예상 비용을 보고하고 승인을 받는다.
