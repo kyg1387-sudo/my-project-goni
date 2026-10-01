@@ -156,8 +156,17 @@ def main():
             failed.append(pid)
         for n, url in zip(todo, urls):
             path = os.path.join(OUT_DIR, f"{pid}-{n}.png")
-            urllib.request.urlretrieve(url, path)
-            print(f"  저장됨 → {path}")
+            # 결과 CDN의 일시적 5xx로 44장 실행 전체가 죽지 않도록 재시도(실증: s26에서 HTTP 500)
+            for attempt in range(4):
+                try:
+                    urllib.request.urlretrieve(url, path)
+                    print(f"  저장됨 → {path}")
+                    break
+                except (urllib.error.HTTPError, urllib.error.URLError, OSError) as e:
+                    print(f"  내려받기 실패({attempt + 1}/4): {e} — {2 ** attempt}s 후 재시도")
+                    time.sleep(2 ** attempt)
+            else:
+                failed.append(pid)
 
     if failed:
         sys.exit(f"생성 실패 인물: {', '.join(failed)}")

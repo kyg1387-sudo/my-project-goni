@@ -170,10 +170,11 @@ jobs:
           path: out/portraits/*.png
           retention-days: 7
 
-      - name: 초상을 저장소에 커밋
+      - name: 초상을 저장소에 커밋 (실패해도 생성분 보존)
+        if: always()
         run: |
           mkdir -p "assets/portraits/${SPEC}"
-          cp -v out/portraits/*.png "assets/portraits/${SPEC}/"
+          cp -v out/portraits/*.png "assets/portraits/${SPEC}/" || true
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add "assets/portraits/${SPEC}"
