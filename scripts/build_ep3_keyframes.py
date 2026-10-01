@@ -24,6 +24,21 @@ OUT_PATH = os.path.join(ROOT, "scripts", "portraits", "ep3-keyframes.json")
 PILOT_PATH = os.path.join(ROOT, "scripts", "portraits", "ep3-keyframes-pilot.json")
 PILOT_IDS = ["S01", "S03", "S21"]  # 투샷 대사컷 / 무인 인서트 / 야간 비 전신 — 난이도 3유형
 
+# 파일럿 실증(2026-10-01): 트럭 적재함에 한글풍 레터링, 골판지 상자에 인쇄 라벨 자국이 생김 →
+# 소품도 '무지'로 명시하고 네거티브를 보강한다(아카이브 교훈: 화면 속 글자는 모델이 못 쓴다).
+PLAIN_PROPS = ("All props are plain and unprinted: vehicles have no lettering or decals, cardboard boxes and "
+               "paper bundles are plain brown with no printed labels, stamps, tape markings or barcodes, "
+               "walls and boards are blank.")
+EXTRA_NEGATIVE = "lettering on vehicles, printed labels on boxes, shipping stamps, barcodes, stickers, posters"
+
+# 장면별 구도 보강(스토리보드 Lock 내용을 바꾸지 않고, 프레이밍·배치만 더 분명히 지시).
+# 파일럿 S01: 두 인물이 나란히 서서 화면 밖을 보는 그림이 나옴 → 대치 구도를 명시.
+COMPOSITION = {
+    "S01": ("Composition: Kim stands between Choi and the handcart with his body turned toward Choi; the two "
+            "men face each other at close range in a confrontation, Kim nearer to camera. Frame them from the "
+            "chest up as a medium close-up two-shot, both faces clearly visible."),
+}
+
 SHEETS = {
     "KIM": ("assets/portraits/ep3-cast/kim-sheet-1.png", "Kim, the apartment security guard (Korean man in his early 60s)"),
     "GMA": ("assets/portraits/ep3-cast/grandma-sheet-1.png", "the elderly paper-collecting grandmother (Korean woman in her late 70s)"),
@@ -69,8 +84,10 @@ def build_prompt(scene, preset, negative):
         files.append(path)
         parts.append(f"Reference image {n} is {desc}")
     has_people = any(not r.startswith("LOC@") for r in refs)
-    parts.append(f"Shot: {scene['shot']}.")
+    parts.append(f"Shot: {scene['shot']} — frame exactly at this shot size.")
     parts.append(f"Subject: {scene['subject'].strip()}")
+    if scene["id"] in COMPOSITION:
+        parts.append(COMPOSITION[scene["id"]])
     if scene.get("expression") and scene["expression"].strip() not in ("", "—", "-"):
         parts.append(f"Expression (pre-baked at 50%): {scene['expression'].strip()}")
     parts.append(f"Environment: {scene['environment'].strip()}.")
@@ -81,8 +98,9 @@ def build_prompt(scene, preset, negative):
         parts.append("No people in the frame other than those described above; every visible person must be one of the referenced characters.")
     else:
         parts.append("Completely unpopulated: not a single person, silhouette or body part anywhere in the frame.")
+    parts.append(PLAIN_PROPS)
     parts.append("Absolutely no text, letters, numbers, logos, signage or symbols anywhere in the image.")
-    parts.append(f"Negative: {negative}.")
+    parts.append(f"Negative: {negative}, {EXTRA_NEGATIVE}.")
     return " ".join(parts), files
 
 
