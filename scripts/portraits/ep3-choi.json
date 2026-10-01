@@ -1,0 +1,10 @@
+{
+  "_설명": "EP3 PHASE 2 최사장 마스터 시트 (AI 배우, 규격: 정면·45도·측면·전신·3표정)",
+  "characters": [
+    {
+      "id": "choi-sheet",
+      "count": 1,
+      "prompt": "Character master sheet, one single 16:9 image on a pure white background, photorealistic, soft studio lighting, fashion-lookbook layout, 3 rows. Top-left header in clean black sans-serif text: large bold title \"CHOI - SCRAPYARD OWNER\", then one small line: \"Height: 173cm\". ROW 1 (head shots, shoulders up, same person): front view / 45-degree three-quarter view / strict left profile. ROW 2 (full body, feet visible): front view and back view standing side by side. ROW 3 (expressions, shoulders up): neutral businesslike / wary frown / softened quiet smile. Subject: a Korean man in his 50s, stocky sturdy build, calloused hands, short greying hair, no hat, gruff but secretly soft-hearted face. Wardrobe locked: a grease-stained plain grey work vest over a plain dark shirt, black work gloves, a worn radio clipped to his belt. Same face, hair and wardrobe in every panel. Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. No text anywhere except the stated header. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers."
+    }
+  ]
+}
