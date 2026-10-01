@@ -1,6 +1,6 @@
 # EP3 「김씨와 폐지 할머니」 — PHASE 4 키프레임 스틸 렌더링 & Kill Gate
 
-규격서 PHASE 4 산출물. 작성 2026-10-01. 상태: **44장 전부 Kill Gate 합격 — 사용자 PASS 대기** (PASS 전 PHASE 5 금지)
+규격서 PHASE 4 산출물. 작성 2026-10-01. 상태: **PASS — 사용자 승인 2026-10-01 ("PHASE 4 PASS"), PHASE 4 Lock**
 
 ## 4-0. 실행 기록
 - 사용자 승인 2026-10-01 ("여기서 실행, 승인"). 스펙 `scripts/portraits/ep3-keyframes.json`(44장, `scripts/build_ep3_keyframes.py`가 PHASE 3 Lock 데이터에서 생성), 파일럿 3장은 다른 세션이 선행.
