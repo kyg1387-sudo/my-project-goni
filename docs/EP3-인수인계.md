@@ -1,59 +1,63 @@
-# EP3 「김씨와 폐지 할머니」 인수인계 (다른 세션/페이블에서 이어서 작업할 때 먼저 읽을 것)
+# EP3 「김씨와 폐지 할머니」 인수인계 (다른 세션에서 이어서 작업할 때 먼저 읽을 것)
 
-작성일 2026-10-01 · 브랜치 `claude/vigilant-davinci-lbu0io` · 현재 상태: **무료 준비 단계 100% 완료, 유료 생성 단계 시작 전**
+갱신 2026-10-01 · 제작 브랜치 **`claude/zen-cori-8ren7o`** (이 브랜치에서만 작업·푸시) ·
+현재 상태: **PHASE 1·2 Lock 완료, PHASE 3 설계 완료(사용자 PASS 대기), 목소리 최종 선택 대기.
+PHASE 4(키프레임 렌더링, 유료)는 아직 시작하지 않았다.**
+
+> 이 문서의 2026-10-01 이전 판(브랜치 vigilant-davinci)은 "유료 단계 시작 전, 캐릭터 시트부터
+> 시작, 김씨=감독 얼굴"이라 적혀 있었다 — 모두 **폐기**. 아래가 현재 사실이다.
 
 ## 1. 먼저 읽을 지침 (순서대로)
 
-1. `CLAUDE.md` — 제작 총지침. 품질·비용·검증 규칙과 EP1~EP3 실증 교훈 ①~㉔. **이 파일을 프로젝트
-   지침(시스템 규칙)으로 넣고 시작할 것.**
-2. `docs/영화제작규칙집.md` — Seedance 기준 제작 문법(캐릭터 시트 → 로케이션 시트 → 스토리보드 →
-   5블록 컷 프롬프트, 카메라 3축, 컷 길이표).
-3. `docs/기획안-김씨시리즈.md` — 시리즈 세계관·6편 라인업·공개 전략.
+1. `CLAUDE.md` — 시네마틱 AI 영상 제작 표준 운영 규격서(PHASE 1~6). 모든 작업의 시스템 규칙.
+2. `docs/EP3-PHASE1-대본동결-오디오앵커.md` — 동결 대본 + 실측 Lock 타임라인(48줄, 총 325초).
+3. `docs/EP3-PHASE2-마스터에셋.md` — 캐릭터·로케이션 시트 판정표, 참조 ID 규칙, 공통 프리셋·네거티브.
+4. `docs/EP3-PHASE3-샷리스트.md` — 44컷 샷 리스트 + 씬별 키프레임·모션 프롬프트
+   (원본 데이터 `scripts/storyboard/kim-cart-grandma.json`, 생성기 `scripts/build_phase3_doc.py`).
+5. 참고: `docs/아카이브-이전제작지침(CLAUDE.md-2026-10-01까지).md`(EP1~EP3 실증 교훈 ①~㉔),
+   `docs/영화제작규칙집.md`, `docs/기획안-김씨시리즈.md`.
 
 ## 2. 확정된 결정 (다시 묻지 말 것)
 
-- **경비원 김씨 = 감독 김영곤 본인 얼굴, EP1~EP6 전편 공통.** 기준 사진:
-  `assets/portraits/kim-reference-studio.jpg`(1순위, 안경 없음, 정면). 캐주얼 사진 3장은 보조.
-  김씨는 **안경 없이** 간다.
-- 명찰 이름 "김영곤" — 기준 초상에 글자 없는 명찰표를 달고, 정지 초상에 한글 폰트로 합성한 뒤
-  image-to-video (CLAUDE.md ④ 참고).
-- 장르: 잔잔한 미담·힐링 드라마. 김씨는 언성을 높이지 않는다. "충격적 반전" 식 과대포장 금지.
-- 대본은 리뷰 3회를 거쳐 확정됨(설정 모순·시간대 충돌·정보 공개 타이밍·카메라 앵글 모두 반영). 더 고치지 말 것.
-- BGM은 2단계: 36~106초 건조한 피아노 → 106~205초 **의도적 무음** → 205~304초 현악 상승.
-- 목소리: 김씨=ElevenLabs `8vwSOQHQApfVx993mKf9`, 내레이터=ElevenLabs `5n5gqmaQi9Ewevrz7bOS`
-  (오디오 설정의 MiniMax 값은 폴백일 뿐).
+- **김씨 얼굴 = 기존 AI 배우 유지** (EP1·EP2와 동일 인물, 참조 `assets/portraits/guard-kim-secret-cap2/kim-gold-1.png`).
+  사용자 결정 2026-10-01. 감독 사진(`assets/portraits/kim-reference-studio.jpg` 등)은 보관만 하고 EP3에 쓰지 않는다.
+  명찰·모자·문자 없는 민무늬 네이비 경비복으로 고정.
+- **마스터 에셋(PHASE 2 Lock, 전부 합격)**: 김씨 `assets/portraits/ep3-cast/kim-sheet-1.png`,
+  할머니 `assets/portraits/ep3-cast/grandma-sheet-1.png`, 최사장 `assets/portraits/ep3-choi/choi-sheet-1.png`,
+  로케이션 5장(`ep3-cast/loc-*-1.png`) → 라벨 없는 셀 20장 `ep3-cast/cells/loc-<장소>-<day|night|key1|key2>.png`.
+  참조 호출: `KIM@<셀>`, `GMA@<셀>`, `CHOI@<셀>`, `LOC@<장소>-<상태>`.
+- **대본 동결(PHASE 1)**: 문장·쉼표까지 고정. 수정 금지. 자막 `subs/kim-cart-grandma.ass`,
+  컷 길이 `scripts/scenes/kim-cart-grandma.json`(44컷, 5|10초, 합 325초), 오디오 `scripts/audio/kim-cart-grandma.json`.
+- **BGM 2구간**: 36~106초 건조한 피아노 → 중간 **의도적 무음** → 220~319초 현악 상승(`bgm_segments`).
+- **목소리**: 내레이터=ElevenLabs `5n5gqmaQi9Ewevrz7bOS`, 김씨=ElevenLabs `8vwSOQHQApfVx993mKf9`,
+  최사장=Typecast 명주 `tc_656059fc4db338e38f77d0bc`(ssfm-v30), 할머니=Typecast `tc_60ad0841061ee28740ec2e1c`.
+  오디오 설정의 MiniMax 값은 폴백일 뿐이다.
+- 장르: 잔잔한 미담·힐링 드라마. 김씨는 언성을 높이지 않는다. 제목·썸네일에 지어낸 사실·"충격적 반전" 금지.
 
-## 3. 생성에 실제로 넣을 파일 — 이 순서로
+## 3. 지금 사용자가 결정해야 할 것
 
-| 순서 | 무엇 | 파일 | 수량 |
-|---|---|---|---|
-| ① | 캐릭터 시트 | `assets/character-sheets/{kim,grandma,choi}.txt` (김씨는 반드시 위 사진을 참조 입력) | 3장 |
-| ② | 로케이션 시트 | `assets/locations/*.txt` | 5장 |
-| ③ | 스토리보드 콘택트시트 | `assets/storyboards/*.txt` (검수용, 생략 가능) | 11장 |
-| ④ | 컷 영상 | `docs/EP3-컷프롬프트.md` 또는 `scripts/scenes/kim-cart-grandma.json` (`scenes`+`durations`) | 44컷, 5초/10초 |
-| ⑤ | 자막·오디오 | `subs/kim-cart-grandma.ass`, `scripts/audio/kim-cart-grandma.json` | — |
+1. **목소리 최종 판 선택** — `assets/auditions/kim-cart-choi-typecast/`(line028·034),
+   `assets/auditions/kim-cart-grandma-typecast/`(line012·038): TC1/TC2(템포 상향판), E1/E2(감정 강도·스마트 판) 중 택1씩.
+   김씨 빠른 판은 `assets/auditions/kim-cart-kim-fast/`.
+2. **PHASE 3 샷 리스트 PASS** — PASS 전에는 PHASE 4 렌더링(유료) 금지.
 
-각 컷 프롬프트 끝에 `한국어로 말하는 입 모양, 영어 없음`이 붙어 있어야 한다(파이프라인 고유 규칙).
-콜드오픈 컷 1과 4막 대치 컷 1은 프롬프트가 완전히 같으니 **한 번만 생성해 복사**(중복 과금 방지).
+## 4. PASS 이후 순서 (규격서 그대로)
 
-## 4. 생성 도구에 따른 주의
+1. PHASE 4: 승인 시트 참조로 키프레임 스틸 44장 생성 → Kill Gate(외계어·손가락·눈동자) 검수.
+   유료 실행 전 규모·비용을 사용자에게 먼저 알리고 승인받는다.
+2. PHASE 5: 승인 키프레임만 image-to-video(텍스트→영상 금지), 대사 컷은 PHASE 1 오디오로 립싱크,
+   4초 초과 발화는 컷어웨이 치팅(샷 리스트의 Edit Strategy에 이미 명시).
+3. PHASE 6: 3중 사운드 레이어·J-Cut·얼굴 복구 → 제4장 체크리스트 전항 PASS → 완성본.
+4. 완성 전달 시 글로벌 진출 가이드(일본어 자막 .srt, 언어별 제목·설명)와
+   `docs/EP3-업로드메타데이터.md` 함께 제공.
 
-- **참조 이미지를 넣을 수 있는 도구(Seedance 2.0 등)**: 위 순서 그대로. 컷 프롬프트의
-  `[LOCK] Use the "GUARD KIM" reference character sheet…` 문구가 그 시트를 가리킨다.
-- **이 저장소의 GitHub Actions(`generate-video.yml`)**: fal.ai Seedance v1 lite **텍스트→영상**이라
-  참조 이미지를 못 받는다 → 카메오 얼굴이 반영되지 않는다. 이 경로로 가려면
-  `scripts/generate_video.py`를 image-to-video 모델로 확장해야 한다(아직 안 함).
+## 5. 검증 메모 (2026-10-01, 무과금)
 
-## 5. 생성 후 할 일
-
-1. 프레임 검수: 장면당 시작·중간·끝 + 바닥·배경 상태, 무인 지시 컷에 인물 등장 여부, 글자 번짐.
-2. 필요한 컷만 `scripts/trim_and_retime.py --skit kim-cart-grandma --scenes-dir out --trims "번호:초"`로
-   뒷부분 트리밍(자막 타이밍 자동 재정렬, 대사 걸리면 자동 차단). 기본 dry-run, `--apply`로 적용.
-3. TTS 후 언어 QA(외국어 섞임 0건) → 믹싱 → 완성본.
-4. 완성본 전달 시 글로벌 진출 가이드(일본어 자막 .srt, 언어별 제목·설명) 함께 준비(CLAUDE.md 상단 약속).
-5. 업로드 메타데이터는 `docs/EP3-업로드메타데이터.md`(제목 후보 3개, 썸네일 문구, 고정 댓글).
+PHASE 3 샷 리스트를 Lock 타임라인·에셋과 대조: 대사 8줄의 화자-컷 일치 0건 불일치, 컷 길이 합 325초 일치,
+LOC 셀 20개 전부 존재. S30(최사장 리액션 컷)에 김씨 대사 꼬리 1.3초가 걸치지만 Edit Strategy가
+S29 앵글의 김씨 얼굴로 덮도록 명시돼 있어 규격 적합.
 
 ## 6. 비용 원칙 리마인드
 
-유료 실행 전에 규모(시트 8장 + 컷 44개 + 오디오)를 사용자에게 먼저 알리고 승인받을 것.
-재생성은 항상 부분만. AI 실수로 인한 재생성 비용은 무과금 경로(트리밍·교체·캐시)부터 찾을 것.
+유료 실행 전 규모를 먼저 알리고 승인받을 것. 재생성은 부분만. AI 실수로 인한 재생성은 무과금
+경로(기존 클립 편집·캐시 재조합)부터 찾고, 불가피하면 실수 비용임을 밝히고 승인 후 실행.
