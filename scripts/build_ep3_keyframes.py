@@ -78,6 +78,34 @@ PANEL = {
 }
 
 
+# 전체 일관성 패스(2026-10-01, 사용자 지시 "전체 일관성 있게"): 장소별 승인 키프레임을 연속성 앵커로 추가 참조.
+ANCHORS = {
+    "junkyard": "S28", "apt-gate": "S07", "demolition": "S13", "alley-night": "S20",
+    "guard-booth-day": "S10", "guard-booth-night": "S18",
+}
+WARDROBE = {
+    "GMA": ("The grandmother's wardrobe is locked: a faded brown floral headscarf tied over her head so that it covers "
+            "her hair (a real scarf, not a thin headband), a thick plain navy quilted jacket, dark-brown baggy monpe "
+            "trousers, brown work gloves; no text, no logos."),
+    "CHOI": ("Choi's wardrobe is locked: a grease-stained plain grey work vest over a plain dark shirt, black work "
+             "gloves, a worn radio on his belt; no text, no logos, no name tag."),
+}
+
+
+def anchor_for(scene):
+    loc = [r for r in scene["refs"] if r.startswith("LOC@")]
+    if not loc:
+        return None
+    cell = loc[0].split("@", 1)[1]
+    place = cell.rsplit("-", 1)[0]
+    if place == "guard-booth":
+        place = "guard-booth-night" if cell.endswith("night") else "guard-booth-day"
+    sid = ANCHORS.get(place)
+    if not sid or sid == scene["id"]:
+        return None
+    return f"assets/portraits/ep3-keyframes/{sid.lower()}-1.png"
+
+
 def resolve(ref):
     """'KIM@front-neutral' / 'LOC@junkyard-day' → (파일 경로, 참조 설명문 조각)."""
     kind, cell = ref.split("@", 1)
@@ -108,7 +136,16 @@ def build_prompt(scene, preset, negative):
         path, desc = resolve(ref)
         files.append(path)
         parts.append(f"Reference image {n} is {desc}")
+    anchor = anchor_for(scene)
+    if anchor and os.path.exists(anchor):
+        files.append(anchor)
+        parts.append(f"Reference image {len(files)} is the CONTINUITY frame: an approved still from the same location "
+                     "earlier in this film — match its exact set dressing, props layout, materials, colors and lens look "
+                     "so both shots clearly belong to the same place; only the camera angle, time of day and action differ.")
     has_people = any(not r.startswith(("LOC@", "CART@")) for r in refs)
+    for kind, line in WARDROBE.items():
+        if any(r.startswith(kind + "@") for r in refs):
+            parts.append(line)
     if any(r.startswith("KIM@") for r in refs):
         parts.append("Kim's wardrobe is locked: a plain LONG-SLEEVE dark navy security-guard shirt and dark trousers, "
                      "pristine clean chest with NO name tag, NO badge, NO insignia, NO patch, NO lettering of any kind; "
