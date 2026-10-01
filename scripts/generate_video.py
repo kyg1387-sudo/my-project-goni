@@ -17,6 +17,7 @@ Seedance에 폴백한다.
 환경 변수(선택):
     ARK_BASE_URL, ARK_VIDEO_MODEL  Ark 엔드포인트/모델 직접 지정
     FAL_VIDEO_MODEL                기본값: fal-ai/bytedance/seedance/v1/lite/text-to-video
+    FAL_I2V_MODEL                  기본값: fal-ai/bytedance/seedance/v1/lite/image-to-video (장면에 image가 있을 때)
 
 결과물은 out/ 폴더에 scene01.mp4, scene02.mp4 ... 로 저장된다.
 """
@@ -51,14 +52,18 @@ def load_scenes(path):
     items = []
     for k, scene in enumerate(data["scenes"]):
         base_dur = int(durations[k]) if durations is not None else default_dur
+        image = None
         if isinstance(scene, dict):
             prompt, dur = scene["prompt"], int(scene.get("duration", base_dur))
             refs = scene.get("refs") or []
+            image = scene.get("image")  # 규격서 PHASE 5: 승인 키프레임 → Image-to-Video
+            if image and not os.path.exists(image):
+                sys.exit(f"[scene {k + 1:02d}] 키프레임 파일이 없습니다: {image}")
         else:
             prompt, dur, refs = scene, base_dur, []
         if dur not in (5, 10):
             sys.exit(f"[scene {k + 1:02d}] 지원하지 않는 길이 {dur}초 — Seedance는 5 또는 10초만 지원합니다.")
-        items.append((f"{prompt}, {style}" if style else prompt, dur, refs))
+        items.append((f"{prompt}, {style}" if style else prompt, dur, refs, image))
     return items, data.get("ratio", "9:16")
 
 
@@ -194,6 +199,45 @@ def fal_generate(key, index, prompt, duration, ratio, ref_urls=None):
         print(f"  [fal] 대기 중... ({state})")
 
 
+FAL_I2V_MODEL = os.environ.get("FAL_I2V_MODEL", "fal-ai/bytedance/seedance/v1/lite/image-to-video")
+
+
+def fal_generate_i2v(key, index, prompt, duration, ratio, image_url):
+    """승인 키프레임 1장을 첫 프레임으로 고정해 영상을 만든다(규격서 PHASE 5: Text-to-Video 금지).
+    모델별 파라미터 차이를 흡수하기 위해 페이로드를 순서대로 시도한다."""
+    headers = {"Authorization": f"Key {key}"}
+    base = {"prompt": prompt, "image_url": image_url, "duration": str(duration), "resolution": "720p"}
+    payloads = [dict(base, aspect_ratio=ratio), base,
+                {"prompt": prompt, "image_url": image_url, "duration": str(duration)}]
+    for payload in payloads:
+        status, task = http_json(f"https://queue.fal.run/{FAL_I2V_MODEL}", payload, headers)
+        if status != 200:
+            print(f"  [fal i2v] 작업 생성 실패 (HTTP {status}): {task} — 다른 파라미터로 재시도")
+            continue
+        status_url, result_url = task["status_url"], task["response_url"]
+        print(f"  [fal i2v] 작업 생성됨: {task['request_id']}")
+        while True:
+            time.sleep(10)
+            _, info = http_json(status_url, headers=headers)
+            state = info.get("status") if isinstance(info, dict) else None
+            if state == "COMPLETED":
+                r_status, result = http_json(result_url, headers=headers)
+                url = None
+                if isinstance(result, dict) and isinstance(result.get("video"), dict):
+                    url = result["video"].get("url")
+                if not url:
+                    print(f"  [fal i2v] 결과에 영상이 없음 (HTTP {r_status}): {result}")
+                    return None
+                path = os.path.join(OUT_DIR, f"scene{index:02d}.mp4")
+                download(url, path)
+                return path
+            if state in ("FAILED", "CANCELLED", "ERROR"):
+                print(f"  [fal i2v] 생성 실패: {info}")
+                break
+            print(f"  [fal i2v] 대기 중... ({state})")
+    return None
+
+
 # ---------- 메인 ----------
 
 def pick_provider(ratio):
@@ -223,13 +267,23 @@ def main():
     paths = []
     provider = None
     fal_key = os.environ.get("FAL_API_KEY")
-    for index, (prompt, duration, refs) in enumerate(scenes, start=1):
+    for index, (prompt, duration, refs, image) in enumerate(scenes, start=1):
         existing = os.path.join(OUT_DIR, f"scene{index:02d}.mp4")
         if os.path.exists(existing) and os.path.getsize(existing) > 100_000:
             print(f"[scene {index:02d}] 기존 파일 재사용 (이어하기)")
             paths.append(existing)
             continue
         print(f"[scene {index:02d}] ({duration}s) {prompt[:40]}...")
+        if image:
+            # 규격서 PHASE 5-1: 승인 키프레임만 Image-to-Video로 변환
+            if not fal_key:
+                sys.exit("image(키프레임)가 있는 장면에는 FAL_API_KEY가 필요합니다.")
+            img_url = fal_upload(fal_key, image)
+            path = fal_generate_i2v(fal_key, index, prompt, duration, ratio, img_url)
+            if not path:
+                sys.exit(f"[scene {index:02d}] 생성 실패 — 위 로그를 확인하세요.")
+            paths.append(path)
+            continue
         if refs:
             # 기준 초상 기반 장면 — 인물 일관성을 위해 fal 참조 모델을 사용
             if not fal_key:
