@@ -1,0 +1,21 @@
+{
+  "_설명": "김씨 얼굴 결정용 비교 시트 2종 (edit 모델, 기준 사진 참조). kim-actor=EP1·EP2 AI 배우, kim-director=감독 본인 사진.",
+  "characters": [
+    {
+      "id": "kim-actor-sheet",
+      "count": 1,
+      "refs": [
+        "assets/portraits/guard-kim-secret-cap2/kim-gold-1.png"
+      ],
+      "prompt": "Character master sheet, one single 16:9 image on a pure white background, photorealistic, soft studio lighting, fashion-lookbook layout, 3 rows. Top-left header in clean black sans-serif text: large bold title \"GUARD KIM\", then one small line: \"Height: 170cm\". ROW 1 (head shots, shoulders up, same person): front view / 45-degree three-quarter view / strict left profile. ROW 2 (full body, feet visible): front view and back view standing side by side. ROW 3 (expressions, shoulders up): neutral calm / faint gentle smile / tense worried. Wardrobe locked: plain dark navy security guard uniform shirt, a blank white nameplate with absolutely no text on the left chest, black duty belt with an old handheld radio, black work shoes, no hat, no glasses. Same face, hair and wardrobe in every panel. Use the exact face of the man in the reference photo (the existing series actor): Korean man in his early 60s, round face, short neat salt-and-pepper hair, weathered skin. Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. No text anywhere except the stated header. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers."
+    },
+    {
+      "id": "kim-director-sheet",
+      "count": 1,
+      "refs": [
+        "assets/portraits/kim-reference-studio.jpg"
+      ],
+      "prompt": "Character master sheet, one single 16:9 image on a pure white background, photorealistic, soft studio lighting, fashion-lookbook layout, 3 rows. Top-left header in clean black sans-serif text: large bold title \"GUARD KIM\", then one small line: \"Height: 170cm\". ROW 1 (head shots, shoulders up, same person): front view / 45-degree three-quarter view / strict left profile. ROW 2 (full body, feet visible): front view and back view standing side by side. ROW 3 (expressions, shoulders up): neutral calm / faint gentle smile / tense worried. Wardrobe locked: plain dark navy security guard uniform shirt, a blank white nameplate with absolutely no text on the left chest, black duty belt with an old handheld radio, black work shoes, no hat, no glasses. Same face, hair and wardrobe in every panel. Use the exact face identity of the man in the reference photo, but age him naturally to his early 60s as a weathered apartment security guard: short neat grey-streaked hair, no glasses, no tuxedo, no saxophone, calm quiet expression. Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. No text anywhere except the stated header. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers."
+    }
+  ]
+}
