@@ -41,6 +41,5 @@
 - 모든 키프레임은 `캐릭터 시트 셀 + 로케이션 셀`을 멀티 레퍼런스로 결합해 생성(Image-to-Image). 텍스트만으로 인물 생성 금지.
 - 시트 참조 ID 표기: `KIM@kim-sheet-1`, `GMA@grandma-sheet-1`, `CHOI@choi-sheet-1`, `LOC@<place>-<day|night|key1|key2>`.
 
-## 2-4. 미결 사항 (PHASE 2 PASS와 별개, PHASE 5 전까지)
-- **최사장 목소리 = Typecast 명주 `tc_656059fc4db338e38f77d0bc`** (사용자 선택 2026-10-01). 오디션 스펙 `scripts/auditions/kim-cart-choi-typecast.json`(대사 2줄 × 프리셋 2안) → 채택본을 `line028.mp3`/`line034.mp3`로 복사 후 `scripts/retime_from_tts.py`로 타임코드 재확정. 실행에는 GitHub Secret `TYPECAST_API_KEY` 등록 필요.
-- 할머니 목소리 A/B 선택: ElevenLabs `IZnNrZQBS9lhLjXgYVT8`(A) / `btKMxrEJKGBf21DM9nVQ`(B). 미정.
+## 2-4. 목소리 확정 (2026-10-01)
+- 최사장 = Typecast 명주 `tc_656059fc4db338e38f77d0bc`, 할머니 = Typecast `tc_60ad0841061ee28740ec2e1c`, 김씨·내레이터 = ElevenLabs(시리즈 대장). 채택 클립과 재확정 타임라인은 `docs/EP3-PHASE1-대본동결-오디오앵커.md` 1-3 참조.

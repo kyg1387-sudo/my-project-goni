@@ -18,43 +18,43 @@
 
 | Scene | 타임코드 & 듀레이션 | 오디오 파형 & 대사 | 샷 사이즈 & 렌즈 | 조명 설계 | 카메라 무빙 | 전환(Out) | 참조 에셋 |
 |---|---|---|---|---|---|---|---|
-| S01 | 00:00.00 ~ 00:10.00 (10s) | line001 김씨 Attack 00:02.00–00:04.20 (대사: 이 손잡이, 가죽끈 감긴 거 보이…)<br>line002 김씨 Attack 00:06.12–00:11.13 (대사: 이거 임자 되시는 분이 직접 감으…) | Medium close-up (two-shot) / 50mm lens | Overcast daylight 5600K from upper-left | Slow cinematic push-in (zoom 1.05) | Hard cut | KIM@front-neutral, CHOI@front-wary, LOC@junkyard-day |
-| S02 | 00:10.00 ~ 00:20.00 (10s) | line002 김씨 Attack 00:06.12–00:11.13 (대사: 이거 임자 되시는 분이 직접 감으…) | Medium close-up (two-shot, Choi weighted) / 50mm lens | Overcast daylight 5600K from upper-left | Static, locked off | Hard cut (cold open → caption) | KIM@45-neutral, CHOI@front-wary, LOC@junkyard-day |
+| S01 | 00:00.00 ~ 00:10.00 (10s) | line001 김씨 Attack 00:02.00–00:04.09 (대사: 이 손잡이, 가죽끈 감긴 거 보이…)<br>line002 김씨 Attack 00:06.12–00:10.17 (대사: 이거 임자 되시는 분이 직접 감으…) | Medium close-up (two-shot) / 50mm lens | Overcast daylight 5600K from upper-left | Slow cinematic push-in (zoom 1.05) | Hard cut | KIM@front-neutral, CHOI@front-wary, LOC@junkyard-day |
+| S02 | 00:10.00 ~ 00:20.00 (10s) | line002 김씨 Attack 00:06.12–00:10.17 (대사: 이거 임자 되시는 분이 직접 감으…) | Medium close-up (two-shot, Choi weighted) / 50mm lens | Overcast daylight 5600K from upper-left | Static, locked off | Hard cut (cold open → caption) | KIM@45-neutral, CHOI@front-wary, LOC@junkyard-day |
 | S03 | 00:20.00 ~ 00:25.00 (5s) | 자막카드 Attack 00:20.22–00:24.22 (자막: 말이 없던 그가, 왜 고물상 앞을…) | Extreme close-up / 85mm prime lens | Overcast daylight 5600K from upper-left | Static, locked off | Dissolve 0.5s | LOC@junkyard-key1 |
 | S04 | 00:25.00 ~ 00:30.00 (5s) | 자막카드 Attack 00:25.22–00:28.04 (자막: 김씨와 폐지 할머니) | Long shot / 35mm lens | Blue-hour dusk | Static, locked off | Hard cut | LOC@apt-gate-night |
 | S05 | 00:30.00 ~ 00:35.00 (5s) | 자막카드 Attack 00:30.22–00:33.02 (자막: 사흘 전) | Long shot / 35mm lens | Late-afternoon golden hour | Static, locked off | Dissolve 0.5s (time rewind) | LOC@apt-gate-day |
 | S06 | 00:35.00 ~ 00:45.00 (10s) | line003 내레이터 Attack 00:36.12–00:41.14 (내레: 이 골목의 리어카는, 유독 손잡이…)<br>line004 내레이터 Attack 00:41.21–00:48.13 (내레: 그 리어카는 이십 년 전, 할머니…) | Long shot / 35mm lens | Late-afternoon golden hour | Very slow lateral drift (follows subject at walking pace) | J-Cut 0.5s (cart creak leads) | GMA@fullbody-front, LOC@apt-gate-day |
-| S07 | 00:45.00 ~ 00:55.00 (10s) | line004 내레이터 Attack 00:41.21–00:48.13 (내레: 그 리어카는 이십 년 전, 할머니…)<br>line005 내레이터 Attack 00:48.20–00:57.20 (내레: 손잡이에 감긴 가죽끈도, 삐걱이는…) | Medium shot / 50mm lens | Late-afternoon golden hour | Static, locked off | J-Cut 0.5s | GMA@45-neutral, LOC@apt-gate-day |
-| S08 | 00:55.00 ~ 01:00.00 (5s) | line005 내레이터 Attack 00:48.20–00:57.20 (내레: 손잡이에 감긴 가죽끈도, 삐걱이는…)<br>line006 내레이터 Attack 00:58.03–01:03.23 (내레: 할머니에게 이 리어카는, 벌이가 …) | Close-up / 85mm prime lens | Late-afternoon golden hour | Static, locked off | Match cut (strap → hands on strap) | LOC@apt-gate-key1 |
+| S07 | 00:45.00 ~ 00:55.00 (10s) | line004 내레이터 Attack 00:41.21–00:48.13 (내레: 그 리어카는 이십 년 전, 할머니…)<br>line005 내레이터 Attack 00:48.21–00:57.20 (내레: 손잡이에 감긴 가죽끈도, 삐걱이는…) | Medium shot / 50mm lens | Late-afternoon golden hour | Static, locked off | J-Cut 0.5s | GMA@45-neutral, LOC@apt-gate-day |
+| S08 | 00:55.00 ~ 01:00.00 (5s) | line005 내레이터 Attack 00:48.21–00:57.20 (내레: 손잡이에 감긴 가죽끈도, 삐걱이는…)<br>line006 내레이터 Attack 00:58.03–01:03.23 (내레: 할머니에게 이 리어카는, 벌이가 …) | Close-up / 85mm prime lens | Late-afternoon golden hour | Static, locked off | Match cut (strap → hands on strap) | LOC@apt-gate-key1 |
 | S09 | 01:00.00 ~ 01:05.00 (5s) | line006 내레이터 Attack 00:58.03–01:03.23 (내레: 할머니에게 이 리어카는, 벌이가 …)<br>line007 내레이터 Attack 01:04.06–01:13.00 (내레: 다른 건 아무리 험하게 다뤄도, …) | Close-up (hands) / 85mm prime lens | Late-afternoon golden hour | Slow cinematic push-in (zoom 1.05) | J-Cut 0.5s | GMA@hands, LOC@apt-gate-day |
 | S10 | 01:05.00 ~ 01:10.00 (5s) | line007 내레이터 Attack 01:04.06–01:13.00 (내레: 다른 건 아무리 험하게 다뤄도, …) | Medium close-up / 50mm lens | Late-afternoon golden hour | Static, locked off | J-Cut 0.5s | KIM@front-neutral, LOC@guard-booth-day |
 | S11 | 01:10.00 ~ 01:15.00 (5s) | line007 내레이터 Attack 01:04.06–01:13.00 (내레: 다른 건 아무리 험하게 다뤄도, …)<br>line008 내레이터 Attack 01:13.07–01:19.22 (내레: 경비 김씨는 매일 아침, 재활용 …) | Full shot (rear) / 35mm lens | Soft morning daylight through the booth window from upper-left | Static rear shot | J-Cut 0.5s (birds lead) | KIM@fullbody-back, LOC@guard-booth-day |
 | S12 | 01:15.00 ~ 01:20.00 (5s) | line008 내레이터 Attack 01:13.07–01:19.22 (내레: 경비 김씨는 매일 아침, 재활용 …) | Long shot / 35mm lens | Soft natural daylight from upper-left | Static, locked off | Dissolve 0.5s | GMA@fullbody-side, LOC@apt-gate-day |
 | S13 | 01:20.00 ~ 01:25.00 (5s) | line009 내레이터 Attack 01:20.05–01:22.19 (내레: 말 한마디 없이, 그저 그렇게.)<br>line010 내레이터 Attack 01:23.02–01:27.22 (내레: 그날 오후, 철거 트럭이 골목의 …) | Long shot / 24mm wide angle | Late-afternoon golden hour | Static, locked off | J-Cut 0.5s (truck idle leads) | GMA@fullbody-front, LOC@demolition-day |
 | S14 | 01:25.00 ~ 01:30.00 (5s) | line010 내레이터 Attack 01:23.02–01:27.22 (내레: 그날 오후, 철거 트럭이 골목의 …)<br>line011 내레이터 Attack 01:28.10–01:31.10 (내레: 리어카도 함께, 고철더미인 줄 알…) | Long shot / 24mm wide angle | Late-afternoon golden hour | Slow cinematic push-in toward the truck (zoom 1.05) | Hard cut | LOC@demolition-key1 |
-| S15 | 01:30.00 ~ 01:40.00 (10s) | line011 내레이터 Attack 01:28.10–01:31.10 (내레: 리어카도 함께, 고철더미인 줄 알…)<br>line012 할머니 Attack 01:31.17–01:33.05 (대사: …내 리어카…)<br>line013 내레이터 Attack 01:33.12–01:38.12 (내레: 말은 짧았지만, 그 말 안에 이십…)<br>line014 내레이터 Attack 01:38.19–01:45.15 (내레: 할머니는 그날 밤, 늦도록 혼자 …) | Medium close-up / 85mm prime lens | Late-afternoon golden hour | Slow cinematic push-in (zoom 1.08) — replaces dolly-zoom | Hold 0.8s → Dissolve 0.5s | GMA@front-tense, LOC@demolition-day |
+| S15 | 01:30.00 ~ 01:40.00 (10s) | line011 내레이터 Attack 01:28.10–01:31.10 (내레: 리어카도 함께, 고철더미인 줄 알…)<br>line012 할머니 Attack 01:31.17–01:32.20 (대사: …내 리어카…)<br>line013 내레이터 Attack 01:33.12–01:38.12 (내레: 말은 짧았지만, 그 말 안에 이십…)<br>line014 내레이터 Attack 01:38.19–01:45.15 (내레: 할머니는 그날 밤, 늦도록 혼자 …) | Medium close-up / 85mm prime lens | Late-afternoon golden hour | Slow cinematic push-in (zoom 1.08) — replaces dolly-zoom | Hold 0.8s → Dissolve 0.5s | GMA@front-tense, LOC@demolition-day |
 | S16 | 01:40.00 ~ 01:45.00 (5s) | line014 내레이터 Attack 01:38.19–01:45.15 (내레: 할머니는 그날 밤, 늦도록 혼자 …) | Full shot, high angle / 35mm lens | Late-afternoon golden hour | Static, locked off | Dissolve 0.5s | GMA@fullbody-front, LOC@demolition-key2 |
 | S17 | 01:45.00 ~ 01:55.00 (10s) | line014 내레이터 Attack 01:38.19–01:45.15 (내레: 할머니는 그날 밤, 늦도록 혼자 …)<br>line015 내레이터 Attack 01:45.23–01:50.15 (내레: 아무도, 리어카가 어디로 갔는지 …) | Long shot / 35mm lens | Low-key night | Subtle handheld sway | Dissolve 0.5s | GMA@fullbody-side, LOC@demolition-night |
 | S18 | 01:55.00 ~ 02:05.00 (10s) | line016 내레이터 Attack 01:56.12–02:00.17 (내레: 그에게도, 아무도 모르는 이유가 …)<br>line017 내레이터 Attack 02:01.00–02:06.08 (내레: 그래서 그는, 아무도 시키지 않은…) | Medium close-up / 85mm prime lens | Low-key booth interior at night | Static, locked off | J-Cut 0.5s (clock tick leads) | KIM@front-neutral, LOC@guard-booth-night |
 | S19 | 02:05.00 ~ 02:10.00 (5s) | line017 내레이터 Attack 02:01.00–02:06.08 (내레: 그래서 그는, 아무도 시키지 않은…)<br>line018 내레이터 Attack 02:06.15–02:12.01 (내레: 첫째 날 밤, 샅샅이 뒤진 골목엔…) | Full shot (rear follow) / 35mm lens | Low-key booth interior at night | Very slow push forward behind Kim | Dissolve 0.4s (night ambience bridge) | KIM@fullbody-back, LOC@guard-booth-night |
 | S20 | 02:10.00 ~ 02:20.00 (10s) | line018 내레이터 Attack 02:06.15–02:12.01 (내레: 첫째 날 밤, 샅샅이 뒤진 골목엔…)<br>line019 내레이터 Attack 02:12.08–02:21.02 (내레: 비가 쏟아지던 둘째 날 밤, 우산…) | Long shot / 35mm lens | Low-key night | Very slow lateral drift | Dissolve 0.5s | KIM@fullbody-side, LOC@alley-night-night |
-| S21 | 02:20.00 ~ 02:30.00 (10s) | line019 내레이터 Attack 02:12.08–02:21.02 (내레: 비가 쏟아지던 둘째 날 밤, 우산…)<br>line020 내레이터 Attack 02:21.09–02:28.13 (내레: 쉬어가던 밤, 그는 아내의 꽃무늬…)<br>line021 내레이터 Attack 02:28.20–02:37.01 (내레: 거기엔 이렇게 적혀 있었습니다 —…) | Full shot, high angle / 35mm lens | Night rain | Subtle handheld sway | Dissolve 0.5s | KIM@fullbody-front, LOC@alley-night-key1 |
-| S22 | 02:30.00 ~ 02:40.00 (10s) | line021 내레이터 Attack 02:28.20–02:37.01 (내레: 거기엔 이렇게 적혀 있었습니다 —…)<br>line022 내레이터 Attack 02:37.08–02:47.00 (내레: 십 년 전, 아무도 그에게 말을 …) | Medium close-up / 85mm prime lens | Low-key booth interior at night | Slow cinematic push-in (zoom 1.05) | Match cut (hands → notebook) | KIM@front-neutral, LOC@guard-booth-night |
-| S23 | 02:40.00 ~ 02:45.00 (5s) | line022 내레이터 Attack 02:37.08–02:47.00 (내레: 십 년 전, 아무도 그에게 말을 …) | Extreme close-up / 85mm prime lens | Low-key booth interior at night | Static, rack focus edge → writing | J-Cut 0.5s | LOC@guard-booth-key1 |
-| S24 | 02:45.00 ~ 02:55.00 (10s) | line022 내레이터 Attack 02:37.08–02:47.00 (내레: 십 년 전, 아무도 그에게 말을 …)<br>line023 내레이터 Attack 02:47.07–02:51.19 (내레: 김씨는 그날을, 십 년이 지나도록…)<br>line024 내레이터 Attack 02:52.03–02:56.21 (내레: 다리가 저려올 때쯤에야, 셋째 날…) | Medium close-up / 85mm prime lens | Low-key booth interior at night | Static, locked off | Sepia dissolve 0.5s → flashback | KIM@front-neutral, LOC@guard-booth-night |
+| S21 | 02:20.00 ~ 02:30.00 (10s) | line019 내레이터 Attack 02:12.08–02:21.02 (내레: 비가 쏟아지던 둘째 날 밤, 우산…)<br>line020 내레이터 Attack 02:21.10–02:28.13 (내레: 쉬어가던 밤, 그는 아내의 꽃무늬…)<br>line021 내레이터 Attack 02:28.21–02:37.01 (내레: 거기엔 이렇게 적혀 있었습니다 —…) | Full shot, high angle / 35mm lens | Night rain | Subtle handheld sway | Dissolve 0.5s | KIM@fullbody-front, LOC@alley-night-key1 |
+| S22 | 02:30.00 ~ 02:40.00 (10s) | line021 내레이터 Attack 02:28.21–02:37.01 (내레: 거기엔 이렇게 적혀 있었습니다 —…)<br>line022 내레이터 Attack 02:37.09–02:47.00 (내레: 십 년 전, 아무도 그에게 말을 …) | Medium close-up / 85mm prime lens | Low-key booth interior at night | Slow cinematic push-in (zoom 1.05) | Match cut (hands → notebook) | KIM@front-neutral, LOC@guard-booth-night |
+| S23 | 02:40.00 ~ 02:45.00 (5s) | line022 내레이터 Attack 02:37.09–02:47.00 (내레: 십 년 전, 아무도 그에게 말을 …) | Extreme close-up / 85mm prime lens | Low-key booth interior at night | Static, rack focus edge → writing | J-Cut 0.5s | LOC@guard-booth-key1 |
+| S24 | 02:45.00 ~ 02:55.00 (10s) | line022 내레이터 Attack 02:37.09–02:47.00 (내레: 십 년 전, 아무도 그에게 말을 …)<br>line023 내레이터 Attack 02:47.07–02:51.20 (내레: 김씨는 그날을, 십 년이 지나도록…)<br>line024 내레이터 Attack 02:52.03–02:56.21 (내레: 다리가 저려올 때쯤에야, 셋째 날…) | Medium close-up / 85mm prime lens | Low-key booth interior at night | Static, locked off | Sepia dissolve 0.5s → flashback | KIM@front-neutral, LOC@guard-booth-night |
 | S25 | 02:55.00 ~ 03:05.00 (10s) | line024 내레이터 Attack 02:52.03–02:56.21 (내레: 다리가 저려올 때쯤에야, 셋째 날…)<br>line025 내레이터 Attack 02:57.04–03:02.00 (내레: 철거 업체가 고철을 넘긴 곳 — …) | Close-up (feet/legs) / 85mm prime lens | Low-key night | Static, locked off | Dissolve 0.4s | KIM@fullbody-side, LOC@alley-night-night |
 | S26 | 03:05.00 ~ 03:15.00 (10s) | line026 내레이터 Attack 03:06.12–03:11.12 (내레: 김씨는 그길로, 소문난 고물상들을…)<br>line027 내레이터 Attack 03:12.00–03:17.13 (내레: 세 번째 집, 마당 안쪽에 낯익은…) | Full shot / 35mm lens | Soft natural daylight from upper-left | Very slow lateral drift | J-Cut 0.5s (daytime street leads) | KIM@fullbody-front, LOC@junkyard-day |
 | S27 | 03:15.00 ~ 03:20.00 (5s) | line027 내레이터 Attack 03:12.00–03:17.13 (내레: 세 번째 집, 마당 안쪽에 낯익은…) | Medium close-up / 85mm prime lens | Overcast daylight 5600K from upper-left | Slow cinematic push-in (zoom 1.06) | Hard cut | KIM@45-neutral, LOC@junkyard-key1 |
 | S28 | 03:20.00 ~ 03:30.00 (10s) | line028 최사장 Attack 03:22.00–03:26.05 (대사: 이미 계근까지 끝난 물건입니다. …)<br>line029 내레이터 Attack 03:26.17–03:28.20 (내레: 김씨는, 물러서지 않았습니다.) | Medium close-up (two-shot, Choi speaking) / 50mm lens | Overcast daylight 5600K from upper-left | Static, locked off | Hard cut | CHOI@front-neutral, KIM@45-neutral, LOC@junkyard-day |
-| S29 | 03:30.00 ~ 03:40.00 (10s) | line030 김씨 Attack 03:31.18–03:34.14 (대사: 이 손잡이, 가죽끈 감긴 거 보이…)<br>line031 김씨 Attack 03:36.06–03:41.07 (대사: 이거 임자 되시는 분이 직접 감으…) | Medium close-up / 85mm prime lens | Overcast daylight 5600K from upper-left | Slow cinematic push-in (zoom 1.05) | Match cut (hand on strap) | KIM@front-neutral, LOC@junkyard-day |
-| S30 | 03:40.00 ~ 03:50.00 (10s) | line031 김씨 Attack 03:36.06–03:41.07 (대사: 이거 임자 되시는 분이 직접 감으…)<br>line032 내레이터 Attack 03:41.19–03:46.00 (내레: 최사장은 잠시, 자신의 어머니를 …)<br>line033 내레이터 Attack 03:46.12–03:51.18 (내레: 돌아가시기 전까지, 낡은 유모차를…) | Close-up (Choi reaction) / 85mm prime lens | Overcast daylight 5600K from upper-left | Slow cinematic push-in (zoom 1.05) | Hold 1s → Dissolve 0.5s | CHOI@front-neutral, LOC@junkyard-day |
-| S31 | 03:50.00 ~ 04:00.00 (10s) | line033 내레이터 Attack 03:46.12–03:51.18 (내레: 돌아가시기 전까지, 낡은 유모차를…)<br>line034 최사장 Attack 03:55.08–03:58.15 (대사: …가져가십쇼. 값은 됐습니다.) | Medium close-up / 85mm prime lens | Overcast daylight 5600K from upper-left | Static, locked off | Hold 1s → Dissolve 0.5s → dawn | CHOI@front-smile, KIM@45-neutral, LOC@junkyard-day |
+| S29 | 03:30.00 ~ 03:40.00 (10s) | line030 김씨 Attack 03:31.18–03:34.03 (대사: 이 손잡이, 가죽끈 감긴 거 보이…)<br>line031 김씨 Attack 03:36.06–03:40.11 (대사: 이거 임자 되시는 분이 직접 감으…) | Medium close-up / 85mm prime lens | Overcast daylight 5600K from upper-left | Slow cinematic push-in (zoom 1.05) | Match cut (hand on strap) | KIM@front-neutral, LOC@junkyard-day |
+| S30 | 03:40.00 ~ 03:50.00 (10s) | line031 김씨 Attack 03:36.06–03:40.11 (대사: 이거 임자 되시는 분이 직접 감으…)<br>line032 내레이터 Attack 03:41.19–03:46.00 (내레: 최사장은 잠시, 자신의 어머니를 …)<br>line033 내레이터 Attack 03:46.12–03:51.18 (내레: 돌아가시기 전까지, 낡은 유모차를…) | Close-up (Choi reaction) / 85mm prime lens | Overcast daylight 5600K from upper-left | Slow cinematic push-in (zoom 1.05) | Hold 1s → Dissolve 0.5s | CHOI@front-neutral, LOC@junkyard-day |
+| S31 | 03:50.00 ~ 04:00.00 (10s) | line033 내레이터 Attack 03:46.12–03:51.18 (내레: 돌아가시기 전까지, 낡은 유모차를…)<br>line034 최사장 Attack 03:55.08–03:57.13 (대사: …가져가십쇼. 값은 됐습니다.) | Medium close-up / 85mm prime lens | Overcast daylight 5600K from upper-left | Static, locked off | Hold 1s → Dissolve 0.5s → dawn | CHOI@front-smile, KIM@45-neutral, LOC@junkyard-day |
 | S32 | 04:00.00 ~ 04:05.00 (5s) | line035 내레이터 Attack 04:01.12–04:06.22 (내레: 그는 밤늦도록, 자신의 몫으로 새…) | Medium close-up / 50mm lens | Low-key booth interior at night | Static, locked off | J-Cut 0.5s (metal clink leads) | KIM@45-neutral, LOC@guard-booth-night |
 | S33 | 04:05.00 ~ 04:10.00 (5s) | line035 내레이터 Attack 04:01.12–04:06.22 (내레: 그는 밤늦도록, 자신의 몫으로 새…)<br>line036 내레이터 Attack 04:07.10–04:13.18 (내레: 거친 쇠손잡이에 시릴 손을 위해,…) | Close-up (hands) / 85mm prime lens | Low-key booth interior at night | Static, locked off | Dissolve 0.4s | KIM@hands, LOC@guard-booth-night |
 | S34 | 04:10.00 ~ 04:20.00 (10s) | line036 내레이터 Attack 04:07.10–04:13.18 (내레: 거친 쇠손잡이에 시릴 손을 위해,…)<br>line037 내레이터 Attack 04:14.06–04:19.20 (내레: 그날 새벽, 아무도 없는 골목에 …) | Long shot (rear follow) / 35mm lens | Pre-dawn blue hour | Very slow push forward behind Kim | Hard cut → caption | KIM@fullbody-back, LOC@alley-night-key2 |
 | S35 | 04:20.00 ~ 04:25.00 (5s) | 자막카드 Attack 04:20.22–04:23.02 (자막: 다음날 아침) | Long shot / 35mm lens | Pre-dawn blue hour | Static, locked off | Hard cut | LOC@demolition-key2 |
-| S36 | 04:25.00 ~ 04:30.00 (5s) | line038 할머니 Attack 04:28.00–04:30.17 (대사: …영감이 감아준 건데…) | Medium shot / 50mm lens | Soft natural daylight from upper-left | Static, locked off | Dissolve 0.4s | GMA@front-tense, LOC@demolition-day |
-| S37 | 04:30.00 ~ 04:40.00 (10s) | line038 할머니 Attack 04:28.00–04:30.17 (대사: …영감이 감아준 건데…)<br>line039 내레이터 Attack 04:31.05–04:38.12 (내레: 말 한마디 건네지 않았지만, 두 …)<br>line040 내레이터 Attack 04:39.00–04:44.10 (내레: 빚을 갚는 데, 꼬박 십 년이 걸…) | Close-up (hands) / 85mm prime lens | Soft natural daylight from upper-left | Slow cinematic push-in (zoom 1.05) | Dissolve 0.4s | GMA@hands, LOC@demolition-day |
+| S36 | 04:25.00 ~ 04:30.00 (5s) | line038 할머니 Attack 04:28.00–04:29.19 (대사: …영감이 감아준 건데…) | Medium shot / 50mm lens | Soft natural daylight from upper-left | Static, locked off | Dissolve 0.4s | GMA@front-tense, LOC@demolition-day |
+| S37 | 04:30.00 ~ 04:40.00 (10s) | line039 내레이터 Attack 04:31.05–04:38.12 (내레: 말 한마디 건네지 않았지만, 두 …)<br>line040 내레이터 Attack 04:39.00–04:44.10 (내레: 빚을 갚는 데, 꼬박 십 년이 걸…) | Close-up (hands) / 85mm prime lens | Soft natural daylight from upper-left | Slow cinematic push-in (zoom 1.05) | Dissolve 0.4s | GMA@hands, LOC@demolition-day |
 | S38 | 04:40.00 ~ 04:45.00 (5s) | line040 내레이터 Attack 04:39.00–04:44.10 (내레: 빚을 갚는 데, 꼬박 십 년이 걸…)<br>line041 내레이터 Attack 04:44.22–04:50.17 (내레: 고마움은 몰라도 된다고, 그는 그…) | Choker close-up / 85mm prime lens | Soft natural daylight from upper-left | Static, locked off | Sepia dissolve 0.5s → flashback | GMA@front-smile, LOC@demolition-day |
 | S39 | 04:45.00 ~ 04:50.00 (5s) | line041 내레이터 Attack 04:44.22–04:50.17 (내레: 고마움은 몰라도 된다고, 그는 그…) | Medium shot (two-shot) / 50mm lens | Memory flashback: desaturated sepia grade | Static, locked off | Sepia dissolve 0.5s → present | GMA@fullbody-front, KIM@fullbody-front, LOC@alley-night-key1 |
 | S40 | 04:50.00 ~ 04:55.00 (5s) | line041 내레이터 Attack 04:44.22–04:50.17 (내레: 고마움은 몰라도 된다고, 그는 그…)<br>line042 내레이터 Attack 04:51.05–04:56.01 (내레: 그날 이후, 할머니의 리어카는 다…) | Close-up / 85mm prime lens | Soft morning daylight through the booth window from upper-left | Static, locked off | Hard cut (bookend impact) | LOC@guard-booth-day |
@@ -71,7 +71,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S01
 - Timecode: 00:00.00 - 00:10.00 (Duration: 10s)
-- Audio Anchor: line001 김씨 Attack 00:02.00–00:04.20 (대사: 이 손잡이, 가죽끈 감긴 거 보이…) / line002 김씨 Attack 00:06.12–00:11.13 (대사: 이거 임자 되시는 분이 직접 감으…)
+- Audio Anchor: line001 김씨 Attack 00:02.00–00:04.09 (대사: 이 손잡이, 가죽끈 감긴 거 보이…) / line002 김씨 Attack 00:06.12–00:10.17 (대사: 이거 임자 되시는 분이 직접 감으…)
 - Transition Out: Hard cut
 - References: KIM@front-neutral, CHOI@front-wary, LOC@junkyard-day
 
@@ -96,7 +96,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S02
 - Timecode: 00:10.00 - 00:20.00 (Duration: 10s)
-- Audio Anchor: line002 김씨 Attack 00:06.12–00:11.13 (대사: 이거 임자 되시는 분이 직접 감으…)
+- Audio Anchor: line002 김씨 Attack 00:06.12–00:10.17 (대사: 이거 임자 되시는 분이 직접 감으…)
 - Transition Out: Hard cut (cold open → caption)
 - References: KIM@45-neutral, CHOI@front-wary, LOC@junkyard-day
 
@@ -217,7 +217,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S07
 - Timecode: 00:45.00 - 00:55.00 (Duration: 10s)
-- Audio Anchor: line004 내레이터 Attack 00:41.21–00:48.13 (내레: 그 리어카는 이십 년 전, 할머니…) / line005 내레이터 Attack 00:48.20–00:57.20 (내레: 손잡이에 감긴 가죽끈도, 삐걱이는…)
+- Audio Anchor: line004 내레이터 Attack 00:41.21–00:48.13 (내레: 그 리어카는 이십 년 전, 할머니…) / line005 내레이터 Attack 00:48.21–00:57.20 (내레: 손잡이에 감긴 가죽끈도, 삐걱이는…)
 - Transition Out: J-Cut 0.5s
 - References: GMA@45-neutral, LOC@apt-gate-day
 
@@ -241,7 +241,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S08
 - Timecode: 00:55.00 - 01:00.00 (Duration: 5s)
-- Audio Anchor: line005 내레이터 Attack 00:48.20–00:57.20 (내레: 손잡이에 감긴 가죽끈도, 삐걱이는…) / line006 내레이터 Attack 00:58.03–01:03.23 (내레: 할머니에게 이 리어카는, 벌이가 …)
+- Audio Anchor: line005 내레이터 Attack 00:48.21–00:57.20 (내레: 손잡이에 감긴 가죽끈도, 삐걱이는…) / line006 내레이터 Attack 00:58.03–01:03.23 (내레: 할머니에게 이 리어카는, 벌이가 …)
 - Transition Out: Match cut (strap → hands on strap)
 - References: LOC@apt-gate-key1
 
@@ -409,7 +409,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S15
 - Timecode: 01:30.00 - 01:40.00 (Duration: 10s)
-- Audio Anchor: line011 내레이터 Attack 01:28.10–01:31.10 (내레: 리어카도 함께, 고철더미인 줄 알…) / line012 할머니 Attack 01:31.17–01:33.05 (대사: …내 리어카…) / line013 내레이터 Attack 01:33.12–01:38.12 (내레: 말은 짧았지만, 그 말 안에 이십…) / line014 내레이터 Attack 01:38.19–01:45.15 (내레: 할머니는 그날 밤, 늦도록 혼자 …)
+- Audio Anchor: line011 내레이터 Attack 01:28.10–01:31.10 (내레: 리어카도 함께, 고철더미인 줄 알…) / line012 할머니 Attack 01:31.17–01:32.20 (대사: …내 리어카…) / line013 내레이터 Attack 01:33.12–01:38.12 (내레: 말은 짧았지만, 그 말 안에 이십…) / line014 내레이터 Attack 01:38.19–01:45.15 (내레: 할머니는 그날 밤, 늦도록 혼자 …)
 - Transition Out: Hold 0.8s → Dissolve 0.5s
 - References: GMA@front-tense, LOC@demolition-day
 
@@ -554,7 +554,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S21
 - Timecode: 02:20.00 - 02:30.00 (Duration: 10s)
-- Audio Anchor: line019 내레이터 Attack 02:12.08–02:21.02 (내레: 비가 쏟아지던 둘째 날 밤, 우산…) / line020 내레이터 Attack 02:21.09–02:28.13 (내레: 쉬어가던 밤, 그는 아내의 꽃무늬…) / line021 내레이터 Attack 02:28.20–02:37.01 (내레: 거기엔 이렇게 적혀 있었습니다 —…)
+- Audio Anchor: line019 내레이터 Attack 02:12.08–02:21.02 (내레: 비가 쏟아지던 둘째 날 밤, 우산…) / line020 내레이터 Attack 02:21.10–02:28.13 (내레: 쉬어가던 밤, 그는 아내의 꽃무늬…) / line021 내레이터 Attack 02:28.21–02:37.01 (내레: 거기엔 이렇게 적혀 있었습니다 —…)
 - Transition Out: Dissolve 0.5s
 - References: KIM@fullbody-front, LOC@alley-night-key1
 
@@ -578,7 +578,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S22
 - Timecode: 02:30.00 - 02:40.00 (Duration: 10s)
-- Audio Anchor: line021 내레이터 Attack 02:28.20–02:37.01 (내레: 거기엔 이렇게 적혀 있었습니다 —…) / line022 내레이터 Attack 02:37.08–02:47.00 (내레: 십 년 전, 아무도 그에게 말을 …)
+- Audio Anchor: line021 내레이터 Attack 02:28.21–02:37.01 (내레: 거기엔 이렇게 적혀 있었습니다 —…) / line022 내레이터 Attack 02:37.09–02:47.00 (내레: 십 년 전, 아무도 그에게 말을 …)
 - Transition Out: Match cut (hands → notebook)
 - References: KIM@front-neutral, LOC@guard-booth-night
 
@@ -602,7 +602,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S23
 - Timecode: 02:40.00 - 02:45.00 (Duration: 5s)
-- Audio Anchor: line022 내레이터 Attack 02:37.08–02:47.00 (내레: 십 년 전, 아무도 그에게 말을 …)
+- Audio Anchor: line022 내레이터 Attack 02:37.09–02:47.00 (내레: 십 년 전, 아무도 그에게 말을 …)
 - Transition Out: J-Cut 0.5s
 - References: LOC@guard-booth-key1
 
@@ -626,7 +626,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S24
 - Timecode: 02:45.00 - 02:55.00 (Duration: 10s)
-- Audio Anchor: line022 내레이터 Attack 02:37.08–02:47.00 (내레: 십 년 전, 아무도 그에게 말을 …) / line023 내레이터 Attack 02:47.07–02:51.19 (내레: 김씨는 그날을, 십 년이 지나도록…) / line024 내레이터 Attack 02:52.03–02:56.21 (내레: 다리가 저려올 때쯤에야, 셋째 날…)
+- Audio Anchor: line022 내레이터 Attack 02:37.09–02:47.00 (내레: 십 년 전, 아무도 그에게 말을 …) / line023 내레이터 Attack 02:47.07–02:51.20 (내레: 김씨는 그날을, 십 년이 지나도록…) / line024 내레이터 Attack 02:52.03–02:56.21 (내레: 다리가 저려올 때쯤에야, 셋째 날…)
 - Transition Out: Sepia dissolve 0.5s → flashback
 - References: KIM@front-neutral, LOC@guard-booth-night
 
@@ -747,7 +747,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S29
 - Timecode: 03:30.00 - 03:40.00 (Duration: 10s)
-- Audio Anchor: line030 김씨 Attack 03:31.18–03:34.14 (대사: 이 손잡이, 가죽끈 감긴 거 보이…) / line031 김씨 Attack 03:36.06–03:41.07 (대사: 이거 임자 되시는 분이 직접 감으…)
+- Audio Anchor: line030 김씨 Attack 03:31.18–03:34.03 (대사: 이 손잡이, 가죽끈 감긴 거 보이…) / line031 김씨 Attack 03:36.06–03:40.11 (대사: 이거 임자 되시는 분이 직접 감으…)
 - Transition Out: Match cut (hand on strap)
 - References: KIM@front-neutral, LOC@junkyard-day
 
@@ -772,7 +772,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S30
 - Timecode: 03:40.00 - 03:50.00 (Duration: 10s)
-- Audio Anchor: line031 김씨 Attack 03:36.06–03:41.07 (대사: 이거 임자 되시는 분이 직접 감으…) / line032 내레이터 Attack 03:41.19–03:46.00 (내레: 최사장은 잠시, 자신의 어머니를 …) / line033 내레이터 Attack 03:46.12–03:51.18 (내레: 돌아가시기 전까지, 낡은 유모차를…)
+- Audio Anchor: line031 김씨 Attack 03:36.06–03:40.11 (대사: 이거 임자 되시는 분이 직접 감으…) / line032 내레이터 Attack 03:41.19–03:46.00 (내레: 최사장은 잠시, 자신의 어머니를 …) / line033 내레이터 Attack 03:46.12–03:51.18 (내레: 돌아가시기 전까지, 낡은 유모차를…)
 - Transition Out: Hold 1s → Dissolve 0.5s
 - References: CHOI@front-neutral, LOC@junkyard-day
 
@@ -797,7 +797,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S31
 - Timecode: 03:50.00 - 04:00.00 (Duration: 10s)
-- Audio Anchor: line033 내레이터 Attack 03:46.12–03:51.18 (내레: 돌아가시기 전까지, 낡은 유모차를…) / line034 최사장 Attack 03:55.08–03:58.15 (대사: …가져가십쇼. 값은 됐습니다.)
+- Audio Anchor: line033 내레이터 Attack 03:46.12–03:51.18 (내레: 돌아가시기 전까지, 낡은 유모차를…) / line034 최사장 Attack 03:55.08–03:57.13 (대사: …가져가십쇼. 값은 됐습니다.)
 - Transition Out: Hold 1s → Dissolve 0.5s → dawn
 - References: CHOI@front-smile, KIM@45-neutral, LOC@junkyard-day
 
@@ -918,7 +918,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S36
 - Timecode: 04:25.00 - 04:30.00 (Duration: 5s)
-- Audio Anchor: line038 할머니 Attack 04:28.00–04:30.17 (대사: …영감이 감아준 건데…)
+- Audio Anchor: line038 할머니 Attack 04:28.00–04:29.19 (대사: …영감이 감아준 건데…)
 - Transition Out: Dissolve 0.4s
 - References: GMA@front-tense, LOC@demolition-day
 
@@ -943,7 +943,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S37
 - Timecode: 04:30.00 - 04:40.00 (Duration: 10s)
-- Audio Anchor: line038 할머니 Attack 04:28.00–04:30.17 (대사: …영감이 감아준 건데…) / line039 내레이터 Attack 04:31.05–04:38.12 (내레: 말 한마디 건네지 않았지만, 두 …) / line040 내레이터 Attack 04:39.00–04:44.10 (내레: 빚을 갚는 데, 꼬박 십 년이 걸…)
+- Audio Anchor: line039 내레이터 Attack 04:31.05–04:38.12 (내레: 말 한마디 건네지 않았지만, 두 …) / line040 내레이터 Attack 04:39.00–04:44.10 (내레: 빚을 갚는 데, 꼬박 십 년이 걸…)
 - Transition Out: Dissolve 0.4s
 - References: GMA@hands, LOC@demolition-day
 
