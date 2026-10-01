@@ -54,16 +54,19 @@ COMPOSITION = {
             "that sits on the windowsill in the continuity frame — a transparent plastic bag, NOT a paper bag."),
     "S09": ("Close-up on the grandmother's gloved hands wiping, with a small rag, the leather-wrapped short cross-bar at "
             "the end of the cart's single straight drawbar pole; the pole is ONE bar, the grip is ONE short cross-bar."),
-    "S26": ("Every handcart standing in the yard is the same model as the prop reference: single straight drawbar pole "
-            "with a short leather-wrapped cross-bar grip. No carts with U-shaped push handles."),
-    "S37": ("Close-up on the grandmother's two gloved hands cupping the leather-wrapped short cross-bar at the end of the "
-            "cart's single straight drawbar pole (ONE pole, ONE cross-bar, exactly like the handle reference)."),
-    "S42": ("The grandmother walks pulling the cart by its single straight drawbar pole, her hand on the short "
-            "leather-wrapped cross-bar grip behind her; the cart trails behind her."),
-    "S29": ("The cart's front drawbar is ONE single straight pole that ends in ONE short horizontal cross-bar (a T "
-            "handle), exactly as in the prop reference's bottom-right panel — NOT a U-shaped loop, NOT two parallel bars, "
-            "NOT a shopping-cart handle. Kim's two hands rest on that short cross-bar, the frayed leather strap wound "
-            "around it under his fingers; the pole runs back to the cart bed behind him."),
+    "S26": ("Exactly ONE person in the frame: Kim alone, walking and looking around; Choi is NOT present. Every handcart "
+            "standing in the yard is the same model as the prop reference: single straight drawbar pole with a short "
+            "leather-wrapped cross-bar grip. No carts with U-shaped push handles."),
+    "S37": ("CLOSE-UP, 85mm: the frame is filled by the grandmother's two gloved hands cupping the leather-wrapped short "
+            "cross-bar at the end of the cart's single straight drawbar pole (ONE pole, ONE cross-bar, exactly like the "
+            "handle reference); her body is only partly visible at the frame edge, no full figure, no wide shot."),
+    "S42": ("Action: the grandmother is WALKING along the sidewalk, body upright with a slight stoop, one hand behind her "
+            "holding the short leather-wrapped cross-bar at the end of the cart's single drawbar pole, the cart trailing "
+            "behind her. She is NOT bending over, NOT loading boxes, NOT standing still."),
+    "S29": ("Composition: Kim stands at the FRONT of the cart, facing the camera, the cart bed BEHIND him and to one side. "
+            "He has lifted the end of the cart's single straight drawbar pole and holds its short leather-wrapped "
+            "cross-bar grip in both hands at waist height, the pole running back past his hip to the cart. ONE pole, ONE "
+            "short cross-bar — NOT a U-shaped loop, NOT two parallel bars, NOT a push handle behind the cart."),
     "S34": ("Kim walks away from the camera PULLING the cart by its front drawbar T-grip with one hand behind him, "
             "the cart trailing behind him nearer to the camera; same cart as the prop reference, no rear push handle."),
     "S01": ("Composition: Kim stands between Choi and the handcart with his body turned toward Choi; the two "
@@ -109,7 +112,12 @@ WARDROBE = {
 EXTRA_REFS = {"S41": "assets/portraits/ep3-keyframes/s40-1.png"}  # 소품 연속성(옥수수 봉지)
 
 
+ANCHOR_SKIP = {"S26", "S29", "S37", "S42"}  # 연속성 앵커가 동작·인물 구성을 끌어간 실증 → 앵커 제외
+
+
 def anchor_for(scene):
+    if scene["id"] in ANCHOR_SKIP:
+        return None
     loc = [r for r in scene["refs"] if r.startswith("LOC@")]
     if not loc:
         return None
