@@ -1,5 +1,5 @@
 {
-  "_설명": "EP3 최사장 목소리 = Typecast 명주(tc_656059fc4db338e38f77d0bc, 사용자 선택 2026-10-01). 대사 2줄을 ssfm-v30 프리셋 2안으로 생성해 비교 후 채택본을 line028/line034로 복사.",
+  "_설명": "EP3 최사장 목소리 = Typecast 명주(tc_656059fc4db338e38f77d0bc, 사용자 선택 2026-10-01). 대사 2줄을 ssfm-v30 프리셋 2안으로 생성해 비교 후 채택본을 line028/line034로 복사. 2026-10-01 사용자 피드백 '대사가 너무 느려' → 템포 1.15로 재생성(느린 판은 _superseded-slow/).",
   "tc_model": "ssfm-v30",
   "tests": [
     {
@@ -9,7 +9,7 @@
       "text": "이미 계근까지 끝난 물건입니다. 값도 다 쳐드렸고요.",
       "emotion_preset": "normal",
       "emotion_intensity": 1.0,
-      "tempo": 0.9
+      "tempo": 1.15
     },
     {
       "id": "line028_TC2",
@@ -18,7 +18,7 @@
       "text": "이미 계근까지 끝난 물건입니다. 값도 다 쳐드렸고요.",
       "emotion_preset": "tonedown",
       "emotion_intensity": 1.2,
-      "tempo": 0.9
+      "tempo": 1.15
     },
     {
       "id": "line034_TC1",
@@ -27,7 +27,7 @@
       "text": "…가져가십쇼. 값은 됐습니다.",
       "emotion_preset": "normal",
       "emotion_intensity": 1.0,
-      "tempo": 0.85
+      "tempo": 1.15
     },
     {
       "id": "line034_TC2",
@@ -36,7 +36,7 @@
       "text": "…가져가십쇼. 값은 됐습니다.",
       "emotion_preset": "sad",
       "emotion_intensity": 0.8,
-      "tempo": 0.85
+      "tempo": 1.15
     }
   ]
 }
