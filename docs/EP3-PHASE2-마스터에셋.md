@@ -1,6 +1,6 @@
 # EP3 「김씨와 폐지 할머니」 — PHASE 2 기준 마스터 에셋 고정
 
-규격서 PHASE 2 산출물. 작성 2026-10-01. 상태: **검수 완료, 사용자 PASS 대기** (PASS 전 PHASE 3 진입 금지)
+규격서 PHASE 2 산출물. 작성 2026-10-01. 상태: **전 에셋 Kill Gate 합격 — 사용자 PASS 대기** (PASS 전 PHASE 3 진입 금지)
 
 ## 2-0. 사용자 확정 사항
 - **김씨 얼굴 = 기존 AI 배우 유지** (EP1·EP2와 동일 인물, `assets/portraits/guard-kim-secret-cap2/kim-gold-1.png` 참조). 2026-10-01 사용자 결정("그대로 유지하는것이 좋지않으까?").
@@ -16,7 +16,7 @@
 |---|---|---|---|---|
 | 김씨 | `assets/portraits/ep3-cast/kim-sheet-1.png` | nano-banana/edit (ref: kim-gold-1.png) | 9패널 완비, 기존 배우 얼굴 일치, 명찰·모자·문자 없음, 손가락 정상 | **합격** |
 | 폐지 할머니 | `assets/portraits/ep3-cast/grandma-sheet-1.png` | seedream v3 T2I | 9패널 완비, 두건·남색 누비점퍼·몸뻬 의상 고정, 3표정(중립·미소·근심), 문자 없음 | **합격** (경미: 45도 패널이 측면에 가까움 — 컷 생성 시 정면 패널 우선 참조) |
-| 최사장 | `assets/portraits/ep3-choi/choi-sheet-1.png` | seedream v3 T2I | v1: 45도·측면·3표정 누락 → 보류. v2: 패널 간 머리 불일치(백발↔민머리) → 보류. v3: 머리 고정 프롬프트로 재생성 | **v3 검수 대기** |
+| 최사장 | `assets/portraits/ep3-choi/choi-sheet-1.png` | seedream v3 T2I | v1: 45도·측면·3표정 누락 → 보류. v2: 패널 간 머리 불일치(백발↔민머리) → 보류. v3: 머리 고정 프롬프트로 재생성 → 9패널 완비, 짧은 반백 머리·회색 조끼·무전기 전 패널 고정, 문자 없음 | **합격** (경미: 찌푸림 패널에 수염 기미 — 컷 생성 시 정면·중립 패널 우선 참조) |
 
 보류본은 `_rejected/`에 보관(`ep3-cast/_rejected/grandma-sheet-v1.png`, `ep3-choi/_rejected/choi-sheet-v1.png`, `choi-sheet-v2.png`).
 `assets/portraits/ep3-kim-test/`(배우/감독 비교용 2장)는 결정 완료 후 참고용으로만 보관.
