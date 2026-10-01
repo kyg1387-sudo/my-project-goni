@@ -7,7 +7,8 @@
   "KIM": "assets/portraits/ep3-cast/kim-sheet-1.png",
   "GMA": "assets/portraits/ep3-cast/grandma-sheet-1.png",
   "CHOI": "assets/portraits/ep3-choi/choi-sheet-1.png",
-  "LOC": "assets/portraits/ep3-cast/cells/loc-<place>-<day|night|key1|key2>.png"
+  "LOC": "assets/portraits/ep3-cast/cells/loc-<place>-<day|night|key1|key2>.png",
+  "CART": "assets/portraits/ep3-cart/cart-sheet-1.png"
  },
  "scenes": [
   {
@@ -20,9 +21,10 @@
    "refs": [
     "KIM@front-neutral",
     "CHOI@front-wary",
+    "CART@sheet",
     "LOC@junkyard-day"
    ],
-   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt standing firmly in front of Korean man in his 50s (reference: CHOI sheet), stocky build, short cropped salt-and-pepper hair, grease-stained plain grey work vest over plain dark shirt, black work gloves, worn radio on belt, blocking him; beside them the rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle. Kim faces camera three-quarter, mouth slightly open mid-sentence.",
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt standing firmly in front of Korean man in his 50s (reference: CHOI sheet), stocky build, short cropped salt-and-pepper hair, grease-stained plain grey work vest over plain dark shirt, black work gloves, worn radio on belt, blocking him; beside them the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap. Kim faces camera three-quarter, mouth slightly open mid-sentence.",
    "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
    "expression": "Kim: firm, jaw set (tension 50%). Choi: wary frown.",
    "motion": "Micro chest breathing, single slow blink, lips move with the dialogue, max 5-degree head tilt. Choi perfectly still.",
@@ -38,9 +40,10 @@
    "refs": [
     "KIM@45-neutral",
     "CHOI@front-wary",
+    "CART@sheet",
     "LOC@junkyard-day"
    ],
-   "subject": "Korean man in his 50s (reference: CHOI sheet), stocky build, short cropped salt-and-pepper hair, grease-stained plain grey work vest over plain dark shirt, black work gloves, worn radio on belt arms crossed, staring silently at Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt who is finishing a sentence; the rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle handle visible at frame edge.",
+   "subject": "Korean man in his 50s (reference: CHOI sheet), stocky build, short cropped salt-and-pepper hair, grease-stained plain grey work vest over plain dark shirt, black work gloves, worn radio on belt arms crossed, staring silently at Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt who is finishing a sentence; the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap handle visible at frame edge.",
    "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
    "expression": "Choi: suspicious silence. Kim: steady resolve.",
    "motion": "Kim lips move with dialogue, Choi single slow blink only, no head turn.",
@@ -54,9 +57,10 @@
    "camera": "Static, locked off",
    "transition_out": "Dissolve 0.5s",
    "refs": [
+    "CART@sheet",
     "LOC@junkyard-key1"
    ],
-   "subject": "The frayed brown leather strap wound around the rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle handle, nothing else in focus, dark moody frame, no people.",
+   "subject": "The frayed brown leather strap wound around the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap handle, nothing else in focus, dark moody frame, no people.",
    "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
    "expression": "—",
    "motion": "Almost imperceptible focus breathing, dust motes drifting.",
@@ -103,9 +107,10 @@
    "transition_out": "J-Cut 0.5s (cart creak leads)",
    "refs": [
     "GMA@fullbody-front",
+    "CART@sheet",
     "LOC@apt-gate-day"
    ],
-   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves slowly pulling the rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle along the sidewalk toward camera-left, afternoon sun on the handle.",
+   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves slowly pulling the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap along the sidewalk toward camera-left, afternoon sun on the handle.",
    "environment": "sidewalk in front of an apartment-complex main gate (LOC apt-gate): flower bed and low wall, no signs, no lettering",
    "expression": "Neutral, tired dignity.",
    "motion": "Slow walk, cart wheel turns, gentle lateral camera drift matching her pace, no fast motion.",
@@ -120,9 +125,10 @@
    "transition_out": "J-Cut 0.5s",
    "refs": [
     "GMA@45-neutral",
+    "CART@sheet",
     "LOC@apt-gate-day"
    ],
-   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves bending to pick up a flattened cardboard box and placing it on the rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle.",
+   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves bending to pick up a flattened cardboard box and placing it on the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap.",
    "environment": "sidewalk in front of an apartment-complex main gate (LOC apt-gate): flower bed and low wall, no signs, no lettering, alley corner",
    "expression": "Neutral, focused on the work.",
    "motion": "Slow bend and lift, cardboard sways, no rapid moves.",
@@ -136,9 +142,10 @@
    "camera": "Static, locked off",
    "transition_out": "Match cut (strap → hands on strap)",
    "refs": [
+    "CART@sheet",
     "LOC@apt-gate-key1"
    ],
-   "subject": "The frayed brown leather strap on the rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle handle, polished smooth by twenty years of hands, warm afternoon light raking across it.",
+   "subject": "The frayed brown leather strap on the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap handle, polished smooth by twenty years of hands, warm afternoon light raking across it.",
    "environment": "sidewalk in front of an apartment-complex main gate (LOC apt-gate): flower bed and low wall, no signs, no lettering",
    "expression": "—",
    "motion": "Gentle focal adjustment only.",
@@ -153,9 +160,10 @@
    "transition_out": "J-Cut 0.5s",
    "refs": [
     "GMA@hands",
+    "CART@sheet",
     "LOC@apt-gate-day"
    ],
-   "subject": "The gloved, wrinkled hands of Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves wiping the leather strap on the rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle handle with a small rag, tender and careful.",
+   "subject": "The gloved, wrinkled hands of Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves wiping the leather strap on the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap handle with a small rag, tender and careful.",
    "environment": "sidewalk in front of an apartment-complex main gate (LOC apt-gate): flower bed and low wall, no signs, no lettering",
    "expression": "—",
    "motion": "Slow wiping motion of the hands, slight push-in.",
@@ -204,9 +212,10 @@
    "transition_out": "Dissolve 0.5s",
    "refs": [
     "GMA@fullbody-side",
+    "CART@sheet",
     "LOC@apt-gate-day"
    ],
-   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves discovering the stack of boxes by the flower bed and giving a small nod before loading them onto the rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle, early morning.",
+   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves discovering the stack of boxes by the flower bed and giving a small nod before loading them onto the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap, early morning.",
    "environment": "sidewalk in front of an apartment-complex main gate (LOC apt-gate): flower bed and low wall, no signs, no lettering",
    "expression": "Faint gratitude, small nod.",
    "motion": "Small nod, slow lift of the boxes.",
@@ -221,9 +230,10 @@
    "transition_out": "J-Cut 0.5s (truck idle leads)",
    "refs": [
     "GMA@fullbody-front",
+    "CART@sheet",
     "LOC@demolition-day"
    ],
-   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves parking the rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle beside the rubble wall and walking away from it to collect paper, late afternoon dust haze.",
+   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves parking the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap beside the rubble wall and walking away from it to collect paper, late afternoon dust haze.",
    "environment": "redevelopment demolition lot (LOC demolition): collapsed wall rubble, faint dust haze, safety fence, blank white sign with no lettering, no people around",
    "expression": "Neutral.",
    "motion": "Slow walk away from the cart, dust drifting.",
@@ -237,9 +247,10 @@
    "camera": "Slow cinematic push-in toward the truck (zoom 1.05)",
    "transition_out": "Hard cut",
    "refs": [
+    "CART@sheet",
     "LOC@demolition-key1"
    ],
-   "subject": "Demolition workers (backs to camera, faceless, no text on vests) loading rubble into a truck; the rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle sits among the scrap in the background about to be loaded. No readable text anywhere.",
+   "subject": "Demolition workers (backs to camera, faceless, no text on vests) loading rubble into a truck; the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap sits among the scrap in the background about to be loaded. No readable text anywhere.",
    "environment": "redevelopment demolition lot (LOC demolition): collapsed wall rubble, faint dust haze, safety fence, blank white sign with no lettering, no people around",
    "expression": "—",
    "motion": "Slow push-in, workers move slowly, truck exhaust drifts.",
@@ -254,9 +265,10 @@
    "transition_out": "Hold 0.8s → Dissolve 0.5s",
    "refs": [
     "GMA@front-tense",
+    "CART@sheet",
     "LOC@demolition-day"
    ],
-   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves holding an armful of paper, frozen, staring at the empty spot where the rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle stood, lips just parted.",
+   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves holding an armful of paper, frozen, staring at the empty spot where the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap stood, lips just parted.",
    "environment": "redevelopment demolition lot (LOC demolition): collapsed wall rubble, faint dust haze, safety fence, blank white sign with no lettering, no people around",
    "expression": "Shock held at 50%: wide eyes, parted lips (keyframe carries the emotion).",
    "motion": "Only a slow push-in, one slow blink, lips form the short line, no head turn.",
@@ -440,6 +452,7 @@
    "transition_out": "J-Cut 0.5s (daytime street leads)",
    "refs": [
     "KIM@fullbody-front",
+    "CART@sheet",
     "LOC@junkyard-day"
    ],
    "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt walking along a daytime street lined with scrap handcarts at the entrance of the scrap-dealer district, looking around.",
@@ -475,9 +488,10 @@
    "refs": [
     "CHOI@front-neutral",
     "KIM@45-neutral",
+    "CART@sheet",
     "LOC@junkyard-day"
    ],
-   "subject": "Korean man in his 50s (reference: CHOI sheet), stocky build, short cropped salt-and-pepper hair, grease-stained plain grey work vest over plain dark shirt, black work gloves, worn radio on belt speaking briskly to Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt, gesturing at the rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle beside them in the scrapyard.",
+   "subject": "Korean man in his 50s (reference: CHOI sheet), stocky build, short cropped salt-and-pepper hair, grease-stained plain grey work vest over plain dark shirt, black work gloves, worn radio on belt speaking briskly to Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt, gesturing at the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap beside them in the scrapyard.",
    "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
    "expression": "Choi: businesslike. Kim: silent, firm.",
    "motion": "Choi lips move with dialogue, small hand gesture, Kim still.",
@@ -492,9 +506,10 @@
    "transition_out": "Match cut (hand on strap)",
    "refs": [
     "KIM@front-neutral",
+    "CART@sheet",
     "LOC@junkyard-day"
    ],
-   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt's rough hand slowly resting on the leather strap of the rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle handle, his face resolute above it.",
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt's rough hand slowly resting on the leather strap of the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap handle, his face resolute above it.",
    "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
    "expression": "Firm resolve.",
    "motion": "Hand settles on the strap, lips move with the line, single blink.",
@@ -527,9 +542,10 @@
    "refs": [
     "CHOI@front-smile",
     "KIM@45-neutral",
+    "CART@sheet",
     "LOC@junkyard-day"
    ],
-   "subject": "Korean man in his 50s (reference: CHOI sheet), stocky build, short cropped salt-and-pepper hair, grease-stained plain grey work vest over plain dark shirt, black work gloves, worn radio on belt with a softened face, giving a small dismissive wave of the hand toward Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt and the rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle.",
+   "subject": "Korean man in his 50s (reference: CHOI sheet), stocky build, short cropped salt-and-pepper hair, grease-stained plain grey work vest over plain dark shirt, black work gloves, worn radio on belt with a softened face, giving a small dismissive wave of the hand toward Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt and the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap.",
    "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
    "expression": "Gruff warmth, faint smile.",
    "motion": "Lips move with the short line, one small hand wave, single blink.",
@@ -544,9 +560,10 @@
    "transition_out": "J-Cut 0.5s (metal clink leads)",
    "refs": [
     "KIM@45-neutral",
+    "CART@sheet",
     "LOC@guard-booth-night"
    ],
-   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt late at night beside the booth, flashlight held in his mouth, fitting a new wheel onto the rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle.",
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt late at night beside the booth, flashlight held in his mouth, fitting a new wheel onto the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap.",
    "environment": "small apartment security booth interior (LOC guard-booth): narrow desk with old black-and-white CCTV monitors and a thermos, window onto the flower bed, blank smooth duty board on the wall with no writing, exterior at night",
    "expression": "Absorbed.",
    "motion": "Hands work slowly on the wheel, flashlight beam jitters slightly.",
@@ -561,9 +578,10 @@
    "transition_out": "Dissolve 0.4s",
    "refs": [
     "KIM@hands",
+    "CART@sheet",
     "LOC@guard-booth-night"
    ],
-   "subject": "The rough hands of Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt carefully wrapping one old navy work glove over the frayed leather strap of the rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle handle.",
+   "subject": "The rough hands of Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt carefully wrapping one old navy work glove over the frayed leather strap of the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap handle.",
    "environment": "small apartment security booth interior (LOC guard-booth): narrow desk with old black-and-white CCTV monitors and a thermos, window onto the flower bed, blank smooth duty board on the wall with no writing, night",
    "expression": "—",
    "motion": "Slow wrapping motion only.",
@@ -578,9 +596,10 @@
    "transition_out": "Hard cut → caption",
    "refs": [
     "KIM@fullbody-back",
+    "CART@sheet",
     "LOC@alley-night-key2"
    ],
-   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt from behind pushing the repaired rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle alone through the pre-dawn alley mist and setting it quietly in the grandmother's usual spot.",
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt from behind pushing the repaired rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap alone through the pre-dawn alley mist and setting it quietly in the grandmother's usual spot.",
    "environment": "dark neighbourhood alley at night (LOC alley-night): one sodium street lamp, stacked paper bundles, old shutter doors, thin night mist, pre-dawn",
    "expression": "—",
    "motion": "Slow push of the cart, sets it down, walks away, camera drifts forward.",
@@ -594,9 +613,10 @@
    "camera": "Static, locked off",
    "transition_out": "Hard cut",
    "refs": [
+    "CART@sheet",
     "LOC@demolition-key2"
    ],
-   "subject": "Empty alley near the demolition lot in early-morning mist, the repaired rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle standing alone, no people.",
+   "subject": "Empty alley near the demolition lot in early-morning mist, the repaired rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap standing alone, no people.",
    "environment": "redevelopment demolition lot (LOC demolition): collapsed wall rubble, faint dust haze, safety fence, blank white sign with no lettering, no people around, morning mist",
    "expression": "—",
    "motion": "Mist drifts, nothing else.",
@@ -611,9 +631,10 @@
    "transition_out": "Dissolve 0.4s",
    "refs": [
     "GMA@front-tense",
+    "CART@sheet",
     "LOC@demolition-day"
    ],
-   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves stopping in her tracks, startled, then stepping toward the rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle she thought was lost.",
+   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves stopping in her tracks, startled, then stepping toward the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap she thought was lost.",
    "environment": "redevelopment demolition lot (LOC demolition): collapsed wall rubble, faint dust haze, safety fence, blank white sign with no lettering, no people around, early morning",
    "expression": "Startled, disbelief.",
    "motion": "Two slow steps forward, hand rising toward the handle, lips form the short line.",
@@ -628,9 +649,10 @@
    "transition_out": "Dissolve 0.4s",
    "refs": [
     "GMA@hands",
+    "CART@sheet",
     "LOC@demolition-day"
    ],
-   "subject": "The two gloved hands of Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves cupping and stroking the glove-wrapped leather strap on the rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle handle.",
+   "subject": "The two gloved hands of Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves cupping and stroking the glove-wrapped leather strap on the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap handle.",
    "environment": "redevelopment demolition lot (LOC demolition): collapsed wall rubble, faint dust haze, safety fence, blank white sign with no lettering, no people around",
    "expression": "—",
    "motion": "Hands tremble gently, slow push-in.",
@@ -713,9 +735,10 @@
    "transition_out": "Dissolve 0.5s",
    "refs": [
     "GMA@fullbody-side",
+    "CART@sheet",
     "LOC@apt-gate-day"
    ],
-   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves pulling the repaired rusted paper-collecting handcart (rear-car) with an old frayed brown leather strap wound around its handle along the sunny morning sidewalk with a steadier stride.",
+   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves pulling the repaired rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap along the sunny morning sidewalk with a steadier stride.",
    "environment": "sidewalk in front of an apartment-complex main gate (LOC apt-gate): flower bed and low wall, no signs, no lettering",
    "expression": "Quiet strength.",
    "motion": "Slow steady walk, cart rolls smoothly, camera drifts.",

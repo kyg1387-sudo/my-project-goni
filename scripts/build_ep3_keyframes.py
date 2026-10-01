@@ -75,6 +75,13 @@ PANEL = {
 def resolve(ref):
     """'KIM@front-neutral' / 'LOC@junkyard-day' → (파일 경로, 참조 설명문 조각)."""
     kind, cell = ref.split("@", 1)
+    if kind == "CART":
+        # 소품 앵커(2026-10-01 추가): 장면마다 손잡이가 달라지던 리어카를 마스터 시트로 잠근다
+        return "assets/portraits/ep3-cart/cart-sheet-1.png", (
+            "the PROP master sheet of the paper-collecting handcart: reproduce this exact same cart — same steel-tube "
+            "frame, mesh side rails, two large spoked wheels, and the long single tubular front drawbar ending in a T-shaped cross grip "
+            "that is wound with the frayed brown leather strap. The pull handle must be visible and is what a person "
+            "holds to pull the cart. The sheet's grid layout and white gutters must NOT appear in the output.")
     if kind == "LOC":
         path = f"assets/portraits/ep3-cast/cells/loc-{cell}.png"
         return path, ("the LOCATION reference photo: reproduce this exact place — same materials, "
@@ -95,7 +102,7 @@ def build_prompt(scene, preset, negative):
         path, desc = resolve(ref)
         files.append(path)
         parts.append(f"Reference image {n} is {desc}")
-    has_people = any(not r.startswith("LOC@") for r in refs)
+    has_people = any(not r.startswith(("LOC@", "CART@")) for r in refs)
     parts.append(f"Shot: {scene['shot']} — frame exactly at this shot size.")
     parts.append(f"Subject: {scene['subject'].strip()}")
     if scene["id"] in COMPOSITION:
