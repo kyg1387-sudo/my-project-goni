@@ -38,19 +38,26 @@ def load_scenes(path):
     생성 모델은 한글 자막 렌더링이 불안정하므로 자막은 편집 단계에서 얹는 것을 전제로,
     프롬프트는 연기/구도 중심으로 구성한다. style은 인물/의상/장소 일관성을 위해
     모든 장면 프롬프트 뒤에 공통으로 붙인다. scenes 항목은 문자열(전역 duration 사용)
-    또는 {"prompt": ..., "duration": 5|10} 객체를 섞어 쓸 수 있다.
+    또는 {"prompt": ..., "duration": 5|10} 객체를 섞어 쓸 수 있다. 최상위 "durations"
+    배열(장면 수와 같은 길이, EP3 형식)이 있으면 그 값이 장면별 기본 길이가 된다.
     """
     with open(path, encoding="utf-8") as f:
         data = json.load(f)
     style = data.get("style", "").strip()
     default_dur = int(data.get("duration", 5))
+    durations = data.get("durations")
+    if durations is not None and len(durations) != len(data["scenes"]):
+        sys.exit(f"durations 길이({len(durations)})가 scenes 길이({len(data['scenes'])})와 다릅니다.")
     items = []
-    for scene in data["scenes"]:
+    for k, scene in enumerate(data["scenes"]):
+        base_dur = int(durations[k]) if durations is not None else default_dur
         if isinstance(scene, dict):
-            prompt, dur = scene["prompt"], int(scene.get("duration", default_dur))
+            prompt, dur = scene["prompt"], int(scene.get("duration", base_dur))
             refs = scene.get("refs") or []
         else:
-            prompt, dur, refs = scene, default_dur, []
+            prompt, dur, refs = scene, base_dur, []
+        if dur not in (5, 10):
+            sys.exit(f"[scene {k + 1:02d}] 지원하지 않는 길이 {dur}초 — Seedance는 5 또는 10초만 지원합니다.")
         items.append((f"{prompt}, {style}" if style else prompt, dur, refs))
     return items, data.get("ratio", "9:16")
 

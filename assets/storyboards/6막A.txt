@@ -1,0 +1,7 @@
+Cinematic storyboard contact sheet, one single image containing exactly 5 numbered panels in a 3x2 grid; the remaining cell(s) form a black card with the white title text "EP3 김씨와 폐지 할머니 - SCENE 6막 — 결말 A". Each panel has a small white label in its top-left corner showing the cut number and duration and a one-line caption below it. Photorealistic live-action, Kodak 35mm film grain, natural lighting, muted warm naturalistic palette, 16:9 panels.
+Setting and characters: the guard Kim — see the reference character sheet for exact identifiers. the grandmother — see the reference character sheet for exact identifiers. Use the reference character sheets for faces and wardrobe only. No blood, no gore.
+Panel 1 — CUT 36 - 5s — Medium, Static. 인근 골목, 이른 아침, 할머니가 리어카를 발견하고 놀라 다가가는 장면. Caption: "인근 골목, 이른 아침, 할머니가 리어카를 발견하고 놀라 다가가는 장면".
+Panel 2 — CUT 37 - 10s — Close-up, Slow zoom in. 리어카 손잡이의 가죽끈을 두 손으로 감싸 쓰다듬는 할머니의 손, 재개발 철거가 한창인 공터. Caption: "리어카 손잡이의 가죽끈을 두 손으로 감싸 쓰다듬는 할머니의 손, 재개발 철거가 한창인 공터".
+Panel 3 — CUT 38 - 5s — Choker, Static. 할머니의 얼굴, 눈물이 고인 채 옅은 미소, 재개발 철거가 한창인 공터, 무너진 담벼락 잔해와 뿌연 흙먼지. Caption: "할머니의 얼굴, 눈물이 고인 채 옅은 미소, 재개발 철거가 한창인 공터, 무너진 담벼락 잔해와 뿌연 흙먼지".
+Panel 4 — CUT 39 - 5s — Medium, Static. 십 년 전 겨울 회상 장면. Caption: "십 년 전 겨울 회상 장면".
+Panel 5 — CUT 40 - 5s — Close-up, Static. 앞 창턱, 이른 아침 햇살, 김이 모락모락 나는 삶은 옥수수가 담긴 작은 봉지 하나가 놓여 있는 모습. Caption: "앞 창턱, 이른 아침 햇살, 김이 모락모락 나는 삶은 옥수수가 담긴 작은 봉지 하나가 놓여 있는 모습".

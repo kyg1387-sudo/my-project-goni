@@ -193,23 +193,44 @@ def _bgm_one(cfg, key, prompt, path):
     return path if download_retry(url, path) else None
 
 
-def make_bgm(cfg, key):
-    """단일 bgm_prompt 또는 다중 bgm_segments([{prompt,start,end}])를 생성한다.
+MIN_BGM_GAP = 1.0  # 구간 사이 최소 무음 간격(초) — 겹치면 두 곡이 동시에 들린다(EP2 실증)
 
-    반환: [(path, start, end)] — 단일 곡이면 start=0, end=None(영상 끝까지).
-    반복감을 줄이기 위해 구간별 다른 곡을 쓰고 믹싱에서 크로스페이드한다.
+
+def validate_bgm_segments(segments):
+    """bgm_segments가 시간순이고 서로 겹치지 않는지 검사한다(위반 시 생성 전에 즉시 중단)."""
+    ordered = sorted(segments, key=lambda s: float(s["start"]))
+    for seg in ordered:
+        if float(seg["end"]) <= float(seg["start"]):
+            raise SystemExit(f"bgm_segments 오류: end({seg['end']})가 start({seg['start']})보다 뒤여야 합니다.")
+    for a, b in zip(ordered, ordered[1:]):
+        gap = float(b["start"]) - float(a["end"])
+        if gap < MIN_BGM_GAP:
+            raise SystemExit(
+                f"bgm_segments 오류: {a['end']}s에 끝나는 구간과 {b['start']}s에 시작하는 구간의 간격이 "
+                f"{gap:.1f}s로 너무 좁습니다(최소 {MIN_BGM_GAP}s) — 겹쳐 들리므로 생성을 막습니다.")
+    return ordered
+
+
+def make_bgm(cfg, key):
+    """단일 bgm_prompt 또는 다중 bgm_segments([{prompt,start,end,volume?}])를 생성한다.
+
+    반환: [(path, start, end, volume)] — 단일 곡이면 start=0, end=None(영상 끝까지),
+    volume=None(전역 bgm_volume 사용). 반복감을 줄이기 위해 구간별 다른 곡을 쓰고
+    믹싱에서 "페이드아웃 → 숨 → 페이드인"으로 잇는다(겹침 금지).
     """
     segs = cfg.get("bgm_segments")
     if segs:
         out = []
-        for i, seg in enumerate(segs, start=1):
+        for i, seg in enumerate(validate_bgm_segments(segs), start=1):
             path = os.path.join(WORK_DIR, f"bgm{i:02d}.audio")
             got = _bgm_one(cfg, key, seg["prompt"], path)
             if got:
-                out.append((got, float(seg["start"]), float(seg["end"])))
+                vol = seg.get("volume")
+                out.append((got, float(seg["start"]), float(seg["end"]),
+                            float(vol) if vol is not None else None))
         return out or None
     path = _bgm_one(cfg, key, cfg.get("bgm_prompt"), os.path.join(WORK_DIR, "bgm.audio"))
-    return [(path, 0.0, None)] if path else None
+    return [(path, 0.0, None, None)] if path else None
 
 
 # ---------- 배치 계획 ----------
@@ -276,8 +297,10 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
         cmd += ["-i", path]
     for _, path in ambience:
         cmd += ["-i", path]
-    bgm_list = bgm if isinstance(bgm, list) else ([(bgm, 0.0, None)] if bgm else [])
-    for path, _s, _e in bgm_list:
+    bgm_list = bgm if isinstance(bgm, list) else ([(bgm, 0.0, None, None)] if bgm else [])
+    # (path, start, end) 3-튜플도 허용 — 구간 볼륨이 없으면 전역 bgm_volume 사용
+    bgm_list = [(t[0], t[1], t[2], t[3] if len(t) > 3 else None) for t in bgm_list]
+    for path, _s, _e, _v in bgm_list:
         cmd += ["-i", path]
 
     parts, mix_inputs = [], []
@@ -294,16 +317,17 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
         parts.append(f"[{base + k}:a]volume={ambience_volume},adelay={ms}:all=1[amb{k}]")
         mix_inputs.append(f"[amb{k}]")
     # BGM 세그먼트: 구간 길이만큼 루프-트림하고, 경계는 2초 페이드로 겹쳐 잇는다
-    for k, (_path, seg_s, seg_e) in enumerate(bgm_list):
+    for k, (_path, seg_s, seg_e, seg_vol) in enumerate(bgm_list):
         end = duration if seg_e is None else min(seg_e, duration)
         seg_len = max(end - seg_s, 0.5)
         fade_out_st = max(seg_len - 2, 0)
+        vol = bgm_volume if seg_vol is None else seg_vol
         parts.append(
             f"[{base + len(ambience) + k}:a]aloop=loop=-1:size=2147483647,"
             f"atrim=0:{seg_len:.3f},asetpts=PTS-STARTPTS,"
             f"afade=t=in:st=0:d={'0.01' if k == 0 else '2'},"
             f"afade=t=out:st={fade_out_st:.3f}:d=2,"
-            f"volume={bgm_volume},adelay={int(round(seg_s * 1000))}:all=1[bg{k}]")
+            f"volume={vol},adelay={int(round(seg_s * 1000))}:all=1[bg{k}]")
         mix_inputs.append(f"[bg{k}]")
     parts.append(
         "".join(mix_inputs)

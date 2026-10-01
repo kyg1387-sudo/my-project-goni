@@ -1,0 +1,7 @@
+Cinematic storyboard contact sheet, one single image containing exactly 5 numbered panels in a 3x2 grid; the remaining cell(s) form a black card with the white title text "EP3 김씨와 폐지 할머니 - SCENE 2막 — 리어카 분실". Each panel has a small white label in its top-left corner showing the cut number and duration and a one-line caption below it. Photorealistic live-action, Kodak 35mm film grain, natural lighting, muted warm naturalistic palette, 16:9 panels.
+Setting and characters: the grandmother — see the reference character sheet for exact identifiers. Use the reference character sheets for faces and wardrobe only. No blood, no gore.
+Panel 1 — CUT 13 - 5s — Long shot, Static. 늦은 오후, 할머니가 리어카를 담벼락 옆에 세워두고 폐지를 주우러 자리를 비우는 모습. Caption: "늦은 오후, 할머니가 리어카를 담벼락 옆에 세워두고 폐지를 주우러 자리를 비우는 모습".
+Panel 2 — CUT 14 - 5s — Long shot, Slow dolly in toward the departing truck. 늦은 오후, 철거 인부들이 잔해를 트럭에 싣는 장면, 배경에 놓인 리어카가 함께 실려가는 모습. Caption: "늦은 오후, 철거 인부들이 잔해를 트럭에 싣는 장면, 배경에 놓인 리어카가 함께 실려가는 모습".
+Panel 3 — CUT 15 - 10s — Medium close-up, Dolly zoom: camera pulls back while lens zooms in. 늦은 오후, 할머니가 폐지를 안고 돌아와 텅 빈 자리를 발견하고 얼어붙은 표정으로 서 있는 장면. Caption: "늦은 오후, 할머니가 폐지를 안고 돌아와 텅 빈 자리를 발견하고 얼어붙은 표정으로 서 있는 장면".
+Panel 4 — CUT 16 - 5s — Full shot, Static. 늦은 오후, 할머니가 주저앉아 빈손으로 바닥을 짚는 모습. Caption: "늦은 오후, 할머니가 주저앉아 빈손으로 바닥을 짚는 모습".
+Panel 5 — CUT 17 - 5s — Long shot, Handheld. 인근, 늦은 밤, 할머니가 홀로 주변을 헤매며 찾는 모습, 지친 모습. Caption: "인근, 늦은 밤, 할머니가 홀로 주변을 헤매며 찾는 모습, 지친 모습".

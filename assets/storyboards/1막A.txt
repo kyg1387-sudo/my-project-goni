@@ -1,0 +1,7 @@
+Cinematic storyboard contact sheet, one single image containing exactly 5 numbered panels in a 3x2 grid; the remaining cell(s) form a black card with the white title text "EP3 김씨와 폐지 할머니 - SCENE 1막 — 할머니의 하루 A". Each panel has a small white label in its top-left corner showing the cut number and duration and a one-line caption below it. Photorealistic live-action, Kodak 35mm film grain, natural lighting, muted warm naturalistic palette, 16:9 panels.
+Setting and characters: the guard Kim — see the reference character sheet for exact identifiers. the grandmother — see the reference character sheet for exact identifiers. Use the reference character sheets for faces and wardrobe only. No blood, no gore.
+Panel 1 — CUT 6 - 10s — Long shot, Side tracking. 오후 햇살 속 할머니가 리어카를 끌고 걸어오는 모습. Caption: "오후 햇살 속 할머니가 리어카를 끌고 걸어오는 모습".
+Panel 2 — CUT 7 - 10s — Medium, Static. 인근 골목, 오후, 할머니가 허리를 굽혀 상자를 주워 리어카에 싣는 모습. Caption: "인근 골목, 오후, 할머니가 허리를 굽혀 상자를 주워 리어카에 싣는 모습".
+Panel 3 — CUT 8 - 5s — Close-up, Static. 리어카 손잡이에 감긴 낡은 갈색 가죽끈, 아파트 단지 정문 앞 인도, 화단과 낮은 담장 배경, 오후 햇살. Caption: "리어카 손잡이에 감긴 낡은 갈색 가죽끈, 아파트 단지 정문 앞 인도, 화단과 낮은 담장 배경, 오후 햇살".
+Panel 4 — CUT 9 - 5s — Close-up, Slow dolly in toward her hands. 인근 골목, 오후, 할머니가 다른 곳은 험하게 다뤄도 손잡이의 가죽끈만은 헝겊으로 정성스레 닦아내는 손. Caption: "인근 골목, 오후, 할머니가 다른 곳은 험하게 다뤄도 손잡이의 가죽끈만은 헝겊으로 정성스레 닦아내는 손".
+Panel 5 — CUT 10 - 5s — Medium close-up, Static. 오후, 김씨가 창문 너머로 할머니가 지나가는 모습을 무표정하게 지켜보는 장면. Caption: "오후, 김씨가 창문 너머로 할머니가 지나가는 모습을 무표정하게 지켜보는 장면".

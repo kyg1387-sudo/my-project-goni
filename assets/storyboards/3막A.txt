@@ -1,0 +1,7 @@
+Cinematic storyboard contact sheet, one single image containing exactly 5 numbered panels in a 3x2 grid; the remaining cell(s) form a black card with the white title text "EP3 김씨와 폐지 할머니 - SCENE 3막 — 김씨의 사흘 밤 A". Each panel has a small white label in its top-left corner showing the cut number and duration and a one-line caption below it. Photorealistic live-action, Kodak 35mm film grain, natural lighting, muted warm naturalistic palette, 16:9 panels.
+Setting and characters: the guard Kim — see the reference character sheet for exact identifiers. Use the reference character sheets for faces and wardrobe only. No blood, no gore.
+Panel 1 — CUT 18 - 10s — Medium close-up, Static. 밤, 김씨가 퇴근 준비를 하다 창밖 할머니의 빈 자리를 보고 잠시 멈춰서는 장면. Caption: "밤, 김씨가 퇴근 준비를 하다 창밖 할머니의 빈 자리를 보고 잠시 멈춰서는 장면".
+Panel 2 — CUT 19 - 5s — Full shot, Follow shot. 밤, 김씨가 결심한 듯 문을 열고 나서는 모습. Caption: "밤, 김씨가 결심한 듯 문을 열고 나서는 모습".
+Panel 3 — CUT 20 - 10s — Long shot, Side tracking. 김씨가 손전등을 들고 골목 구석구석을 살피며 걷는 모습. Caption: "김씨가 손전등을 들고 골목 구석구석을 살피며 걷는 모습".
+Panel 4 — CUT 21 - 10s — Full shot, Handheld. 비가 내리는 가운데 김씨가 우산도 없이 젖은 채 골목을 헤매는 모습. Caption: "비가 내리는 가운데 김씨가 우산도 없이 젖은 채 골목을 헤매는 모습".
+Panel 5 — CUT 22 - 10s — Medium close-up, Slow dolly in toward Kim. 밤, 김씨가 서랍에서 아내의 낡은 꽃무늬 수첩을 꺼내 펼쳐보는 모습. Caption: "밤, 김씨가 서랍에서 아내의 낡은 꽃무늬 수첩을 꺼내 펼쳐보는 모습".
