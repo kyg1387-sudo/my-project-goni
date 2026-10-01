@@ -34,6 +34,18 @@ EXTRA_NEGATIVE = "lettering on vehicles, printed labels on boxes, shipping stamp
 # 장면별 구도 보강(스토리보드 Lock 내용을 바꾸지 않고, 프레이밍·배치만 더 분명히 지시).
 # 파일럿 S01: 두 인물이 나란히 서서 화면 밖을 보는 그림이 나옴 → 대치 구도를 명시.
 COMPOSITION = {
+    # 본 실행 1차 Kill Gate(2026-10-01): S06·S13 두건 누락, S11 실내 생성, S25 무전기가 바닥에 놓임 → 보강
+    "S06": ("Mandatory wardrobe: the grandmother wears the faded brown floral headscarf tied over her hair exactly as in "
+            "the reference sheet — her hair must be covered by the scarf. Long shot, full body visible, she walks "
+            "toward camera-left pulling the handcart."),
+    "S11": ("Setting is OUTDOORS: the camera is outside the security booth; Kim stands on the pavement beside the "
+            "flower bed in front of the booth, seen from behind, placing a neat stack of flattened cardboard boxes on "
+            "the ground next to the flowers. The booth window is visible in the background. No interior walls."),
+    "S13": ("Mandatory wardrobe: the grandmother wears the faded brown floral headscarf tied over her hair exactly as in "
+            "the reference sheet — her hair must be covered by the scarf. Long shot: she has parked the handcart by "
+            "the rubble wall and is walking away from it."),
+    "S25": ("Close-up on legs and shoes only, from the knees down, low camera: tired steps on the wet pavement. "
+            "Nothing lies on the ground — no radio, no objects dropped; the radio stays clipped on his belt out of frame."),
     "S01": ("Composition: Kim stands between Choi and the handcart with his body turned toward Choi; the two "
             "men face each other at close range in a confrontation, Kim nearer to camera. Frame them from the "
             "chest up as a medium close-up two-shot, both faces clearly visible."),
