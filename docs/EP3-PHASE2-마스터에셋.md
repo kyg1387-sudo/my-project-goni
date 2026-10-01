@@ -42,4 +42,5 @@
 - 시트 참조 ID 표기: `KIM@kim-sheet-1`, `GMA@grandma-sheet-1`, `CHOI@choi-sheet-1`, `LOC@<place>-<day|night|key1|key2>`.
 
 ## 2-4. 미결 사항 (PHASE 2 PASS와 별개, PHASE 5 전까지)
-- 할머니·최사장 목소리 A/B 선택: ElevenLabs `IZnNrZQBS9lhLjXgYVT8`(A) / `btKMxrEJKGBf21DM9nVQ`(B). 선택 후 `scripts/retime_from_tts.py --pick`으로 타임코드 재확정.
+- **최사장 목소리 = Typecast 명주 `tc_656059fc4db338e38f77d0bc`** (사용자 선택 2026-10-01). 오디션 스펙 `scripts/auditions/kim-cart-choi-typecast.json`(대사 2줄 × 프리셋 2안) → 채택본을 `line028.mp3`/`line034.mp3`로 복사 후 `scripts/retime_from_tts.py`로 타임코드 재확정. 실행에는 GitHub Secret `TYPECAST_API_KEY` 등록 필요.
+- 할머니 목소리 A/B 선택: ElevenLabs `IZnNrZQBS9lhLjXgYVT8`(A) / `btKMxrEJKGBf21DM9nVQ`(B). 미정.

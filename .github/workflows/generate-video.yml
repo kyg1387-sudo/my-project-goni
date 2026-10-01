@@ -68,6 +68,7 @@ jobs:
         env:
           FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          TYPECAST_API_KEY: ${{ secrets.TYPECAST_API_KEY }}
         run: |
           pip install --quiet fal-client  # omnihuman 시험(이미지+음성) 업로드용
           python3 scripts/voice_audition.py "${ASPEC}"

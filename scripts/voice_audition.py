@@ -254,6 +254,42 @@ def main():
             if not omnihuman_test(t, key):
                 failed.append(t["id"])
             continue
+        if model == "typecast-direct":
+            # Typecast(https://typecast.ai) 보이스 — TYPECAST_API_KEY 필요. 응답은 오디오 바이트 그대로.
+            tc_key = (os.environ.get("TYPECAST_API_KEY") or "").strip()
+            if not tc_key:
+                failed.append(t["id"])
+                print(f"[{t['id']}] TYPECAST_API_KEY 시크릿이 없습니다 — 건너뜀")
+                continue
+            body = {
+                "voice_id": t["voice"],
+                "text": t["text"],
+                "model": t.get("tc_model", spec.get("tc_model", "ssfm-v30")),
+                "language": t.get("language", "kor"),
+                "output": {"audio_format": "mp3",
+                           "audio_tempo": float(t.get("tempo", spec.get("tempo", 1.0)))},
+            }
+            if t.get("emotion_preset"):
+                body["prompt"] = {"emotion_type": "preset",
+                                  "emotion_preset": t["emotion_preset"],
+                                  "emotion_intensity": float(t.get("emotion_intensity", 1.0))}
+            if t.get("seed") is not None:
+                body["seed"] = int(t["seed"])
+            print(f"[{t['id']}] typecast-direct {t['voice']}/{t.get('emotion_preset','-')}: {t['text'][:30]}…")
+            req = urllib.request.Request(
+                "https://api.typecast.ai/v1/text-to-speech",
+                data=json.dumps(body, ensure_ascii=False).encode("utf-8"),
+                headers={"Content-Type": "application/json", "X-API-KEY": tc_key},
+                method="POST")
+            try:
+                with urllib.request.urlopen(req, timeout=120) as resp:
+                    open(path, "wb").write(resp.read())
+                print(f"  저장됨 → {path}")
+            except urllib.error.HTTPError as e:
+                print(f"  [{t['id']}] Typecast 오류 (HTTP {e.code}): "
+                      f"{e.read().decode(errors='replace')[:300]}")
+                failed.append(t["id"])
+            continue
         if model == "elevenlabs-direct":
             # 사용자 본인 ElevenLabs 계정의 보이스(개인 클론) — ELEVENLABS_API_KEY 필요
             el_key = (os.environ.get("ELEVENLABS_API_KEY") or "").strip()

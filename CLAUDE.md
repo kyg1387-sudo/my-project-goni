@@ -244,13 +244,14 @@ deformed eyes, extra fingers.
 
 ## 부록. 프로젝트 운영 정보 (규칙이 아닌 참조 사실)
 
-- API 키는 GitHub Secrets(FAL_API_KEY, ARK_API_KEY, ELEVENLABS_API_KEY)에만 둔다.
+- API 키는 GitHub Secrets(FAL_API_KEY, ARK_API_KEY, ELEVENLABS_API_KEY, TYPECAST_API_KEY)에만 둔다.
   코드·채팅·문서에 넣지 않는다.
 - 제작 실행은 GitHub Actions(`generate-video.yml` 생성/초상/오디션, `burn-subtitles.yml`
   자막·오디오·립싱크·조립, `qa-language.yml` 언어 검사)로 수행하며, 유료 실행 전에는
   규모(장면 수·비용)를 사용자에게 먼저 알리고 승인받는다.
 - 시리즈 배역 목소리: 김씨=ElevenLabs `8vwSOQHQApfVx993mKf9`, 내레이터·아웃트로=ElevenLabs
-  `5n5gqmaQi9Ewevrz7bOS`, 준호=MiniMax Casual_Guy.
+  `5n5gqmaQi9Ewevrz7bOS`, 준호=MiniMax Casual_Guy, 최사장(EP3)=Typecast 명주
+  `tc_656059fc4db338e38f77d0bc`(ssfm-v30).
 - 2026-10-01 이전까지의 제작 지침·EP1~EP3 실증 교훈 ①~㉔·성장 전략 체크리스트는
   `docs/아카이브-이전제작지침(CLAUDE.md-2026-10-01까지).md`에 보관되어 있다(참조용).
   `docs/영화제작규칙집.md`, `docs/기획안-김씨시리즈.md`, `docs/EP3-인수인계.md`도 참조.
