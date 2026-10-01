@@ -46,8 +46,10 @@ COMPOSITION = {
             "the rubble wall and is walking away from it."),
     "S25": ("Close-up on legs and shoes only, from the knees down, low camera: tired steps on the wet pavement. "
             "Nothing lies on the ground — no radio, no objects dropped; the radio stays clipped on his belt out of frame."),
-    "S29": ("Both of Kim's hands rest on the T-shaped cross grip at the end of the cart's front drawbar, the frayed "
-            "leather strap under his fingers, the cart bed behind the grip; same cart as the prop reference."),
+    "S29": ("The cart's front drawbar is ONE single straight pole that ends in ONE short horizontal cross-bar (a T "
+            "handle), exactly as in the prop reference's bottom-right panel — NOT a U-shaped loop, NOT two parallel bars, "
+            "NOT a shopping-cart handle. Kim's two hands rest on that short cross-bar, the frayed leather strap wound "
+            "around it under his fingers; the pole runs back to the cart bed behind him."),
     "S34": ("Kim walks away from the camera PULLING the cart by its front drawbar T-grip with one hand behind him, "
             "the cart trailing behind him nearer to the camera; same cart as the prop reference, no rear push handle."),
     "S01": ("Composition: Kim stands between Choi and the handcart with his body turned toward Choi; the two "
