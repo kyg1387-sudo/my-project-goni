@@ -52,6 +52,14 @@ COMPOSITION = {
             "She is NOT bending over and NOT loading boxes; the cart bed already holds a few flattened boxes."),
     "S41": ("Prop continuity: the bag in Kim's hand is the SAME small clear plastic zip bag of yellow boiled corn kernels "
             "that sits on the windowsill in the continuity frame — a transparent plastic bag, NOT a paper bag."),
+    "S09": ("Close-up on the grandmother's gloved hands wiping, with a small rag, the leather-wrapped short cross-bar at "
+            "the end of the cart's single straight drawbar pole; the pole is ONE bar, the grip is ONE short cross-bar."),
+    "S26": ("Every handcart standing in the yard is the same model as the prop reference: single straight drawbar pole "
+            "with a short leather-wrapped cross-bar grip. No carts with U-shaped push handles."),
+    "S37": ("Close-up on the grandmother's two gloved hands cupping the leather-wrapped short cross-bar at the end of the "
+            "cart's single straight drawbar pole (ONE pole, ONE cross-bar, exactly like the handle reference)."),
+    "S42": ("The grandmother walks pulling the cart by its single straight drawbar pole, her hand on the short "
+            "leather-wrapped cross-bar grip behind her; the cart trails behind her."),
     "S29": ("The cart's front drawbar is ONE single straight pole that ends in ONE short horizontal cross-bar (a T "
             "handle), exactly as in the prop reference's bottom-right panel — NOT a U-shaped loop, NOT two parallel bars, "
             "NOT a shopping-cart handle. Kim's two hands rest on that short cross-bar, the frayed leather strap wound "
@@ -120,7 +128,9 @@ def resolve(ref):
     kind, cell = ref.split("@", 1)
     if kind == "CART":
         # 소품 앵커(2026-10-01 추가): 장면마다 손잡이가 달라지던 리어카를 마스터 시트로 잠근다
-        return "assets/portraits/ep3-cart/cart-sheet-1.png", (
+        # 2026-10-02: 시트 전체 대신 셀 2장(3/4 앞모습, 손잡이 클로즈업)을 각각 참조 — 손잡이 형태 준수율 향상
+        return ["assets/portraits/ep3-cart/cells/cart-front34.png",
+                "assets/portraits/ep3-cart/cells/cart-handle.png"], (
             "the PROP master sheet of the paper-collecting handcart: reproduce this exact same cart — same steel-tube "
             "frame, mesh side rails, two large spoked wheels, and the long single tubular front drawbar ending in a T-shaped cross grip "
             "that is wound with the frayed brown leather strap. The pull handle must be visible and is what a person "
@@ -141,10 +151,19 @@ def build_prompt(scene, preset, negative):
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, "
              "NOT a grid, NOT a contact sheet, no panels, no borders, no captions."]
     files = []
-    for n, ref in enumerate(refs, 1):
+    for ref in refs:
         path, desc = resolve(ref)
-        files.append(path)
-        parts.append(f"Reference image {n} is {desc}")
+        if isinstance(path, list):
+            files.append(path[0])
+            parts.append(f"Reference image {len(files)} is {desc}")
+            files.append(path[1])
+            parts.append(f"Reference image {len(files)} is a close-up of that same cart's handle: ONE straight pole "
+                         "ending in ONE short horizontal cross-bar wrapped in brown leather with a hanging strap end. "
+                         "Every handcart in the frame has exactly this handle — never a U-shaped loop, never two "
+                         "parallel bars, never a shopping-cart style push bar.")
+        else:
+            files.append(path)
+            parts.append(f"Reference image {len(files)} is {desc}")
     extra = EXTRA_REFS.get(scene["id"])
     if extra and os.path.exists(extra):
         files.append(extra)
