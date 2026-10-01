@@ -269,7 +269,11 @@ def main():
                 "output": {"audio_format": "mp3",
                            "audio_tempo": float(t.get("tempo", spec.get("tempo", 1.0)))},
             }
-            if t.get("emotion_preset"):
+            if t.get("smart"):
+                body["prompt"] = {"emotion_type": "smart",
+                                  "previous_text": t["smart"].get("previous_text"),
+                                  "next_text": t["smart"].get("next_text")}
+            elif t.get("emotion_preset"):
                 body["prompt"] = {"emotion_type": "preset",
                                   "emotion_preset": t["emotion_preset"],
                                   "emotion_intensity": float(t.get("emotion_intensity", 1.0))}

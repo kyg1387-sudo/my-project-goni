@@ -37,6 +37,46 @@
       "emotion_preset": "tonedown",
       "emotion_intensity": 1.0,
       "tempo": 1.2
+    },
+    {
+      "id": "line012_E1",
+      "model": "typecast-direct",
+      "voice": "tc_60ad0841061ee28740ec2e1c",
+      "text": "…내 리어카…",
+      "emotion_preset": "sad",
+      "emotion_intensity": 2.0,
+      "tempo": 1.1
+    },
+    {
+      "id": "line012_E2",
+      "model": "typecast-direct",
+      "voice": "tc_60ad0841061ee28740ec2e1c",
+      "text": "내 리어카… 내 리어카가…",
+      "smart": {
+        "previous_text": "리어카도 함께, 고철더미인 줄 알고 실려 갔습니다. 할머니는 폐지를 안고 돌아와 텅 빈 자리를 보았습니다. 숨이 멎는 듯했습니다.",
+        "next_text": "말은 짧았지만, 그 말 안에 이십 년이 들어 있었습니다."
+      },
+      "tempo": 1.1
+    },
+    {
+      "id": "line038_E1",
+      "model": "typecast-direct",
+      "voice": "tc_60ad0841061ee28740ec2e1c",
+      "text": "…영감이 감아준 건데…",
+      "emotion_preset": "sad",
+      "emotion_intensity": 2.0,
+      "tempo": 1.1
+    },
+    {
+      "id": "line038_E2",
+      "model": "typecast-direct",
+      "voice": "tc_60ad0841061ee28740ec2e1c",
+      "text": "…영감이 감아준 건데…",
+      "smart": {
+        "previous_text": "할머니는 돌아온 리어카를 보고 놀라 다가갔습니다. 손잡이의 가죽끈 위에 장갑 한 짝이 덧대어 감겨 있었습니다. 두 손으로 가죽끈을 감싸며, 울먹이듯 중얼거렸습니다.",
+        "next_text": "말 한마디 건네지 않았지만, 두 사람은 십 년 동안 온기를 주고받고 있었습니다."
+      },
+      "tempo": 1.1
     }
   ]
 }
