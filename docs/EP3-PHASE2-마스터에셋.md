@@ -1,6 +1,6 @@
 # EP3 「김씨와 폐지 할머니」 — PHASE 2 기준 마스터 에셋 고정
 
-규격서 PHASE 2 산출물. 작성 2026-10-01. 상태: **전 에셋 Kill Gate 합격 — 사용자 PASS 대기** (PASS 전 PHASE 3 진입 금지)
+규격서 PHASE 2 산출물. 작성 2026-10-01. 상태: **PASS — 사용자 승인 2026-10-01 ("PHASE 2 PASS"), PHASE 2 Lock**
 
 ## 2-0. 사용자 확정 사항
 - **김씨 얼굴 = 기존 AI 배우 유지** (EP1·EP2와 동일 인물, `assets/portraits/guard-kim-secret-cap2/kim-gold-1.png` 참조). 2026-10-01 사용자 결정("그대로 유지하는것이 좋지않으까?").
