@@ -26,7 +26,7 @@
    "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
    "expression": "Kim: firm, jaw set (tension 50%). Choi: wary frown.",
    "motion": "Micro chest breathing, single slow blink, lips move with the dialogue, max 5-degree head tilt. Choi perfectly still.",
-   "edit": "00:02.00~00:04.20 Talking face (line 1)"
+   "edit": "00:02.00~00:04.09 Talking face (line 1) → 00:04.09~00:04.20 Hold: lips closed, reaction beat only (no speech after audio ends)"
   },
   {
    "id": "S02",
@@ -44,7 +44,7 @@
    "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
    "expression": "Choi: suspicious silence. Kim: steady resolve.",
    "motion": "Kim lips move with dialogue, Choi single slow blink only, no head turn.",
-   "edit": "00:06.12~00:08.12 Talking face (line 2) → 00:08.12~00:09.12 B-roll: ECU leather strap on handle (S03 keyframe) → 00:09.12~00:11.13 Reaction: Choi wary stare"
+   "edit": "00:06.12~00:08.12 Talking face (line 2) → 00:08.12~00:09.12 B-roll: ECU leather strap on handle (S03 keyframe) → 00:09.12~00:10.17 Reaction: Choi wary stare → 00:10.17~00:11.13 Hold: lips closed, reaction beat only (no speech after audio ends)"
   },
   {
    "id": "S03",
@@ -260,7 +260,7 @@
    "environment": "redevelopment demolition lot (LOC demolition): collapsed wall rubble, faint dust haze, safety fence, blank white sign with no lettering, no people around",
    "expression": "Shock held at 50%: wide eyes, parted lips (keyframe carries the emotion).",
    "motion": "Only a slow push-in, one slow blink, lips form the short line, no head turn.",
-   "edit": "01:31.17~01:33.05 Talking face (line 15) then hold on frozen face; narration lines 16–17 over this and S16"
+   "edit": "01:31.17~01:32.20 Talking face (line 15) then hold on frozen face; narration lines 16–17 over this and S16 → 01:32.20~01:33.05 Hold: lips closed, reaction beat only (no speech after audio ends)"
   },
   {
    "id": "S16",
@@ -498,7 +498,7 @@
    "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
    "expression": "Firm resolve.",
    "motion": "Hand settles on the strap, lips move with the line, single blink.",
-   "edit": "03:31.18~03:34.14 Talking face (line 33)"
+   "edit": "03:31.18~03:34.03 Talking face (line 33) → 03:34.03~03:34.14 Hold: lips closed, reaction beat only (no speech after audio ends)"
   },
   {
    "id": "S30",
@@ -515,7 +515,7 @@
    "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
    "expression": "Softening (keyframe at 50%: brow relaxing).",
    "motion": "Slow push-in, one blink, jaw loosens slightly, no head turn.",
-   "edit": "03:36.06~03:38.06 Talking face Kim (line 34, from S29 angle) → 03:38.06~03:39.06 B-roll: strap ECU → 03:39.06~03:41.07 Reaction: Choi softening (this keyframe)"
+   "edit": "03:36.06~03:38.06 Talking face Kim (line 34, from S29 angle) → 03:38.06~03:39.06 B-roll: strap ECU → 03:39.06~03:40.11 Reaction: Choi softening (this keyframe) → 03:40.11~03:41.07 Hold: lips closed, reaction beat only (no speech after audio ends)"
   },
   {
    "id": "S31",
@@ -533,7 +533,7 @@
    "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
    "expression": "Gruff warmth, faint smile.",
    "motion": "Lips move with the short line, one small hand wave, single blink.",
-   "edit": "03:55.08~03:58.15 Talking face Choi (line 37)"
+   "edit": "03:55.08~03:57.13 Talking face Choi (line 37) → 03:57.13~03:58.15 Hold: lips closed, reaction beat only (no speech after audio ends)"
   },
   {
    "id": "S32",
@@ -617,7 +617,7 @@
    "environment": "redevelopment demolition lot (LOC demolition): collapsed wall rubble, faint dust haze, safety fence, blank white sign with no lettering, no people around, early morning",
    "expression": "Startled, disbelief.",
    "motion": "Two slow steps forward, hand rising toward the handle, lips form the short line.",
-   "edit": "04:28.00~04:30.17 Talking face (line 42)"
+   "edit": "04:28.00~04:29.19 Talking face (line 42) → 04:29.19~04:30.17 Hold: lips closed, reaction beat only (no speech after audio ends)"
   },
   {
    "id": "S37",

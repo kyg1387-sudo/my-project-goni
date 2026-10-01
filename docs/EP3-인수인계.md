@@ -1,7 +1,7 @@
 # EP3 「김씨와 폐지 할머니」 인수인계 (다른 세션에서 이어서 작업할 때 먼저 읽을 것)
 
 갱신 2026-10-01 · 제작 브랜치 **`claude/zen-cori-8ren7o`** (이 브랜치에서만 작업·푸시) ·
-현재 상태: **PHASE 1·2 Lock 완료, PHASE 3 설계 완료(사용자 PASS 대기), 목소리 최종 선택 대기.
+현재 상태: **PHASE 1·2 Lock 완료, 대사 8줄 목소리 최종 채택 완료(10-01 2차 재확정), PHASE 3 설계 완료 — 사용자 PASS 대기.
 PHASE 4(키프레임 렌더링, 유료)는 아직 시작하지 않았다.**
 
 > 이 문서의 2026-10-01 이전 판(브랜치 vigilant-davinci)은 "유료 단계 시작 전, 캐릭터 시트부터
@@ -36,10 +36,9 @@ PHASE 4(키프레임 렌더링, 유료)는 아직 시작하지 않았다.**
 
 ## 3. 지금 사용자가 결정해야 할 것
 
-1. **목소리 최종 판 선택** — `assets/auditions/kim-cart-choi-typecast/`(line028·034),
-   `assets/auditions/kim-cart-grandma-typecast/`(line012·038): TC1/TC2(템포 상향판), E1/E2(감정 강도·스마트 판) 중 택1씩.
-   김씨 빠른 판은 `assets/auditions/kim-cart-kim-fast/`.
-2. **PHASE 3 샷 리스트 PASS** — PASS 전에는 PHASE 4 렌더링(유료) 금지.
+1. **PHASE 3 샷 리스트 PASS** — `docs/EP3-PHASE3-샷리스트.md`. PASS 전에는 PHASE 4 렌더링(유료) 금지.
+   (목소리는 10-01 최종 채택 완료: 김씨 ElevenLabs 원본 1.2배속, 최사장 Typecast tonedown 템포 1.3,
+   할머니 Typecast 스마트 감정 템포 1.1. 채택본 `assets/auditions/kim-cart-grandma-tts/line*.mp3`, 구판은 `_superseded/`.)
 
 ## 4. PASS 이후 순서 (규격서 그대로)
 
