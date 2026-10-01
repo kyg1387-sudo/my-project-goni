@@ -46,6 +46,12 @@ COMPOSITION = {
             "the rubble wall and is walking away from it."),
     "S25": ("Close-up on legs and shoes only, from the knees down, low camera: tired steps on the wet pavement. "
             "Nothing lies on the ground — no radio, no objects dropped; the radio stays clipped on his belt out of frame."),
+    # 일관성 패스 실증: 연속성 앵커(S07) 영향으로 S06가 '상자 싣기' 자세가 됨 → 동작 명시. S40↔S41 옥수수 봉지 재질 불일치 → 소품 연속성.
+    "S06": ("Action: the grandmother is WALKING along the sidewalk toward camera-left, body upright with a slight stoop, "
+            "one hand behind her gripping the cart's leather-wrapped drawbar T-grip, the cart trailing behind her. "
+            "She is NOT bending over and NOT loading boxes; the cart bed already holds a few flattened boxes."),
+    "S41": ("Prop continuity: the bag in Kim's hand is the SAME small clear plastic zip bag of yellow boiled corn kernels "
+            "that sits on the windowsill in the continuity frame — a transparent plastic bag, NOT a paper bag."),
     "S29": ("The cart's front drawbar is ONE single straight pole that ends in ONE short horizontal cross-bar (a T "
             "handle), exactly as in the prop reference's bottom-right panel — NOT a U-shaped loop, NOT two parallel bars, "
             "NOT a shopping-cart handle. Kim's two hands rest on that short cross-bar, the frayed leather strap wound "
@@ -92,6 +98,9 @@ WARDROBE = {
 }
 
 
+EXTRA_REFS = {"S41": "assets/portraits/ep3-keyframes/s40-1.png"}  # 소품 연속성(옥수수 봉지)
+
+
 def anchor_for(scene):
     loc = [r for r in scene["refs"] if r.startswith("LOC@")]
     if not loc:
@@ -136,6 +145,11 @@ def build_prompt(scene, preset, negative):
         path, desc = resolve(ref)
         files.append(path)
         parts.append(f"Reference image {n} is {desc}")
+    extra = EXTRA_REFS.get(scene["id"])
+    if extra and os.path.exists(extra):
+        files.append(extra)
+        parts.append(f"Reference image {len(files)} is the PROP continuity frame: the exact same small clear plastic bag "
+                     "of boiled corn must appear, identical material and color.")
     anchor = anchor_for(scene)
     if anchor and os.path.exists(anchor):
         files.append(anchor)
