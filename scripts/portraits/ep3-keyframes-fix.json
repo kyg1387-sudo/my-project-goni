@@ -1,19 +1,14 @@
 {
-  "_설명": "EP3 PHASE 4 부분 수정(인페인팅) — S01·S02의 옛 리어카만 소품 시트 설계로 교체. 참조 1 = 현재 승인 키프레임(인물·구도 유지), 참조 2 = 리어카 마스터 시트. 결과는 검수 후 assets/portraits/ep3-keyframes/ 로 복사.",
+  "_설명": "EP3 PHASE 4 부분 수정(인페인팅) — S01·S02의 옛 리어카만 소품 시트 설계로 교체. 참조 1 = 현재 승인 키프레임(인물·구도 유지), 참조 2 = 리어카 마스터 시트. 결과는 검수 후 assets/portraits/ep3-keyframes/ 로 복사. 2차: S01 채택(리어카 화면 밖). S02는 리어카 제거 편집(s02b).",
   "characters": [
     {
-      "id": "s01",
+      "id": "s02b",
       "count": 1,
       "aspect_ratio": "16:9",
-      "refs": ["assets/portraits/ep3-keyframes/s01-1.png", "assets/portraits/ep3-cart/cart-sheet-1.png"],
-      "prompt": "Edit reference image 1 and output ONE single 16:9 film still that is IDENTICAL to reference image 1 in every way — same two men, same faces, same long-sleeve dark navy uniform with no name tag or badge, same poses, same scrapyard background, same lighting and color grade — EXCEPT for one change: replace the handcart at the bottom of the frame with the handcart from reference image 2 (the prop master sheet): a steel-tube cart whose long single front drawbar ends in a short horizontal T-shaped cross grip wound with an old frayed brown leather strap, with the loose strap end hanging. Keep the cart in the same position and scale at the bottom center of the frame, showing its drawbar and leather-wrapped grip. Do not change anything else. No text, no letters, no logos, no grid, no borders."
-    },
-    {
-      "id": "s02",
-      "count": 1,
-      "aspect_ratio": "16:9",
-      "refs": ["assets/portraits/ep3-keyframes/s02-1.png", "assets/portraits/ep3-cart/cart-sheet-1.png"],
-      "prompt": "Edit reference image 1 and output ONE single 16:9 film still that is IDENTICAL to reference image 1 in every way — same man (Choi) with arms crossed, same face, same grey work vest and black gloves, same scrapyard background, same lighting and color grade — EXCEPT for one change: replace the handcart at the left edge of the frame with the handcart from reference image 2 (the prop master sheet): a steel-tube cart whose long single front drawbar ends in a short horizontal T-shaped cross grip wound with an old frayed brown leather strap. Keep the cart in the same position and scale at the left edge. Do not change anything else. No text, no letters, no logos, no grid, no borders."
+      "refs": [
+        "assets/portraits/ep3-keyframes-fix/s02-1.png"
+      ],
+      "prompt": "Edit the reference image and output ONE single 16:9 film still IDENTICAL to it — same man (Choi) with arms crossed, same face, same grey work vest and black gloves, same scrapyard background, bales, scale, lighting and color grade — EXCEPT: completely REMOVE the handcart at the left edge of the frame and fill that area with the same scrapyard ground and paper bales continuing naturally. No cart, no handle, no strap anywhere in the frame. Do not change anything else. No text, no letters, no logos, no grid, no borders."
     }
   ]
 }
