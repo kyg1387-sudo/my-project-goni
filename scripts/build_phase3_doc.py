@@ -39,8 +39,8 @@ for ln in open(f"subs/{skit}.ass", encoding="utf-8"):
     if style != "Caption":
         tts_i += 1
     rows.append(dict(start=parse_t(p[1]), end=parse_t(p[2]), style=style, text=text,
-                     line=(f"line{tts_i:03d}" if style != "Caption" else "카드")))
-names = {"Kim": "김씨", "Grandma": "할머니", "Choi": "최사장", "Naration": "내레이터", "Caption": "자막카드"}
+                     line=(f"line{tts_i:03d}" if style != "Caption" else "자막카드")))
+names = {"Kim": "김씨", "Grandma": "할머니", "Choi": "최사장", "Naration": "내레이터", "Caption": ""}
 
 def audio_for(k):
     s0, s1 = cum[k], cum[k + 1]
@@ -49,7 +49,7 @@ def audio_for(k):
     for r in hits:
         kind = "대사" if r["style"] in ("Kim", "Grandma", "Choi") else ("자막" if r["style"] == "Caption" else "내레")
         kw = r["text"][:18] + ("…" if len(r["text"]) > 18 else "")
-        parts.append(f"{r['line']} {names.get(r['style'], r['style'])} Attack {tc(r['start'])}–{tc(r['end'])} ({kind}: {kw})")
+        parts.append(f"{r['line']} {names.get(r['style'], r['style'])}".strip() + f" Attack {tc(r['start'])}–{tc(r['end'])} ({kind}: {kw})")
     return "<br>".join(parts) if parts else "무음 (앰비언스만)"
 
 L = []

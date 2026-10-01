@@ -20,9 +20,9 @@
 |---|---|---|---|---|---|---|---|
 | S01 | 00:00.00 ~ 00:10.00 (10s) | line001 김씨 Attack 00:02.00–00:04.20 (대사: 이 손잡이, 가죽끈 감긴 거 보이…)<br>line002 김씨 Attack 00:06.12–00:11.13 (대사: 이거 임자 되시는 분이 직접 감으…) | Medium close-up (two-shot) / 50mm lens | Overcast daylight 5600K from upper-left | Slow cinematic push-in (zoom 1.05) | Hard cut | KIM@front-neutral, CHOI@front-wary, LOC@junkyard-day |
 | S02 | 00:10.00 ~ 00:20.00 (10s) | line002 김씨 Attack 00:06.12–00:11.13 (대사: 이거 임자 되시는 분이 직접 감으…) | Medium close-up (two-shot, Choi weighted) / 50mm lens | Overcast daylight 5600K from upper-left | Static, locked off | Hard cut (cold open → caption) | KIM@45-neutral, CHOI@front-wary, LOC@junkyard-day |
-| S03 | 00:20.00 ~ 00:25.00 (5s) | 카드 자막카드 Attack 00:20.22–00:24.22 (자막: 말이 없던 그가, 왜 고물상 앞을…) | Extreme close-up / 85mm prime lens | Overcast daylight 5600K from upper-left | Static, locked off | Dissolve 0.5s | LOC@junkyard-key1 |
-| S04 | 00:25.00 ~ 00:30.00 (5s) | 카드 자막카드 Attack 00:25.22–00:28.04 (자막: 김씨와 폐지 할머니) | Long shot / 35mm lens | Blue-hour dusk | Static, locked off | Hard cut | LOC@apt-gate-night |
-| S05 | 00:30.00 ~ 00:35.00 (5s) | 카드 자막카드 Attack 00:30.22–00:33.02 (자막: 사흘 전) | Long shot / 35mm lens | Late-afternoon golden hour | Static, locked off | Dissolve 0.5s (time rewind) | LOC@apt-gate-day |
+| S03 | 00:20.00 ~ 00:25.00 (5s) | 자막카드 Attack 00:20.22–00:24.22 (자막: 말이 없던 그가, 왜 고물상 앞을…) | Extreme close-up / 85mm prime lens | Overcast daylight 5600K from upper-left | Static, locked off | Dissolve 0.5s | LOC@junkyard-key1 |
+| S04 | 00:25.00 ~ 00:30.00 (5s) | 자막카드 Attack 00:25.22–00:28.04 (자막: 김씨와 폐지 할머니) | Long shot / 35mm lens | Blue-hour dusk | Static, locked off | Hard cut | LOC@apt-gate-night |
+| S05 | 00:30.00 ~ 00:35.00 (5s) | 자막카드 Attack 00:30.22–00:33.02 (자막: 사흘 전) | Long shot / 35mm lens | Late-afternoon golden hour | Static, locked off | Dissolve 0.5s (time rewind) | LOC@apt-gate-day |
 | S06 | 00:35.00 ~ 00:45.00 (10s) | line003 내레이터 Attack 00:36.12–00:41.14 (내레: 이 골목의 리어카는, 유독 손잡이…)<br>line004 내레이터 Attack 00:41.21–00:48.13 (내레: 그 리어카는 이십 년 전, 할머니…) | Long shot / 35mm lens | Late-afternoon golden hour | Very slow lateral drift (follows subject at walking pace) | J-Cut 0.5s (cart creak leads) | GMA@fullbody-front, LOC@apt-gate-day |
 | S07 | 00:45.00 ~ 00:55.00 (10s) | line004 내레이터 Attack 00:41.21–00:48.13 (내레: 그 리어카는 이십 년 전, 할머니…)<br>line005 내레이터 Attack 00:48.20–00:57.20 (내레: 손잡이에 감긴 가죽끈도, 삐걱이는…) | Medium shot / 50mm lens | Late-afternoon golden hour | Static, locked off | J-Cut 0.5s | GMA@45-neutral, LOC@apt-gate-day |
 | S08 | 00:55.00 ~ 01:00.00 (5s) | line005 내레이터 Attack 00:48.20–00:57.20 (내레: 손잡이에 감긴 가죽끈도, 삐걱이는…)<br>line006 내레이터 Attack 00:58.03–01:03.23 (내레: 할머니에게 이 리어카는, 벌이가 …) | Close-up / 85mm prime lens | Late-afternoon golden hour | Static, locked off | Match cut (strap → hands on strap) | LOC@apt-gate-key1 |
@@ -52,7 +52,7 @@
 | S32 | 04:00.00 ~ 04:05.00 (5s) | line035 내레이터 Attack 04:01.12–04:06.22 (내레: 그는 밤늦도록, 자신의 몫으로 새…) | Medium close-up / 50mm lens | Low-key booth interior at night | Static, locked off | J-Cut 0.5s (metal clink leads) | KIM@45-neutral, LOC@guard-booth-night |
 | S33 | 04:05.00 ~ 04:10.00 (5s) | line035 내레이터 Attack 04:01.12–04:06.22 (내레: 그는 밤늦도록, 자신의 몫으로 새…)<br>line036 내레이터 Attack 04:07.10–04:13.18 (내레: 거친 쇠손잡이에 시릴 손을 위해,…) | Close-up (hands) / 85mm prime lens | Low-key booth interior at night | Static, locked off | Dissolve 0.4s | KIM@hands, LOC@guard-booth-night |
 | S34 | 04:10.00 ~ 04:20.00 (10s) | line036 내레이터 Attack 04:07.10–04:13.18 (내레: 거친 쇠손잡이에 시릴 손을 위해,…)<br>line037 내레이터 Attack 04:14.06–04:19.20 (내레: 그날 새벽, 아무도 없는 골목에 …) | Long shot (rear follow) / 35mm lens | Pre-dawn blue hour | Very slow push forward behind Kim | Hard cut → caption | KIM@fullbody-back, LOC@alley-night-key2 |
-| S35 | 04:20.00 ~ 04:25.00 (5s) | 카드 자막카드 Attack 04:20.22–04:23.02 (자막: 다음날 아침) | Long shot / 35mm lens | Pre-dawn blue hour | Static, locked off | Hard cut | LOC@demolition-key2 |
+| S35 | 04:20.00 ~ 04:25.00 (5s) | 자막카드 Attack 04:20.22–04:23.02 (자막: 다음날 아침) | Long shot / 35mm lens | Pre-dawn blue hour | Static, locked off | Hard cut | LOC@demolition-key2 |
 | S36 | 04:25.00 ~ 04:30.00 (5s) | line038 할머니 Attack 04:28.00–04:30.17 (대사: …영감이 감아준 건데…) | Medium shot / 50mm lens | Soft natural daylight from upper-left | Static, locked off | Dissolve 0.4s | GMA@front-tense, LOC@demolition-day |
 | S37 | 04:30.00 ~ 04:40.00 (10s) | line038 할머니 Attack 04:28.00–04:30.17 (대사: …영감이 감아준 건데…)<br>line039 내레이터 Attack 04:31.05–04:38.12 (내레: 말 한마디 건네지 않았지만, 두 …)<br>line040 내레이터 Attack 04:39.00–04:44.10 (내레: 빚을 갚는 데, 꼬박 십 년이 걸…) | Close-up (hands) / 85mm prime lens | Soft natural daylight from upper-left | Slow cinematic push-in (zoom 1.05) | Dissolve 0.4s | GMA@hands, LOC@demolition-day |
 | S38 | 04:40.00 ~ 04:45.00 (5s) | line040 내레이터 Attack 04:39.00–04:44.10 (내레: 빚을 갚는 데, 꼬박 십 년이 걸…)<br>line041 내레이터 Attack 04:44.22–04:50.17 (내레: 고마움은 몰라도 된다고, 그는 그…) | Choker close-up / 85mm prime lens | Soft natural daylight from upper-left | Static, locked off | Sepia dissolve 0.5s → flashback | GMA@front-smile, LOC@demolition-day |
@@ -60,8 +60,8 @@
 | S40 | 04:50.00 ~ 04:55.00 (5s) | line041 내레이터 Attack 04:44.22–04:50.17 (내레: 고마움은 몰라도 된다고, 그는 그…)<br>line042 내레이터 Attack 04:51.05–04:56.01 (내레: 그날 이후, 할머니의 리어카는 다…) | Close-up / 85mm prime lens | Soft morning daylight through the booth window from upper-left | Static, locked off | Hard cut (bookend impact) | LOC@guard-booth-day |
 | S41 | 04:55.00 ~ 05:00.00 (5s) | line042 내레이터 Attack 04:51.05–04:56.01 (내레: 그날 이후, 할머니의 리어카는 다…) | Medium close-up / 85mm prime lens | Soft morning daylight through the booth window from upper-left | Static, locked off | J-Cut 0.5s | KIM@front-smile, LOC@guard-booth-day |
 | S42 | 05:00.00 ~ 05:05.00 (5s) | 무음 (앰비언스만) | Long shot / 35mm lens | Soft natural daylight from upper-left | Very slow lateral drift | Dissolve 0.5s | GMA@fullbody-side, LOC@apt-gate-day |
-| S43 | 05:05.00 ~ 05:15.00 (10s) | 카드 자막카드 Attack 05:05.22–05:10.16 (자막: 고마움은 몰라도 된다. 그 사람은…) | Long shot (rear) / 35mm lens | Blue-hour dusk | Static rear shot | Dissolve 0.5s → ending card | KIM@fullbody-back, LOC@guard-booth-night |
-| S44 | 05:15.00 ~ 05:25.00 (10s) | 카드 자막카드 Attack 05:15.22–05:20.13 (자막: 다음 이야기 — 성탄 전야, 그가…) | Medium shot / 35mm lens | Soft morning daylight through the booth window from upper-left | Static, locked off | Fade out | LOC@guard-booth-key2 |
+| S43 | 05:05.00 ~ 05:15.00 (10s) | 자막카드 Attack 05:05.22–05:10.16 (자막: 고마움은 몰라도 된다. 그 사람은…) | Long shot (rear) / 35mm lens | Blue-hour dusk | Static rear shot | Dissolve 0.5s → ending card | KIM@fullbody-back, LOC@guard-booth-night |
+| S44 | 05:15.00 ~ 05:25.00 (10s) | 자막카드 Attack 05:15.22–05:20.13 (자막: 다음 이야기 — 성탄 전야, 그가…) | Medium shot / 35mm lens | Soft morning daylight through the booth window from upper-left | Static, locked off | Fade out | LOC@guard-booth-key2 |
 
 ## 3-2. 씬별 키프레임 & 모션 프롬프트 (제5장 템플릿)
 
@@ -121,7 +121,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S03
 - Timecode: 00:20.00 - 00:25.00 (Duration: 5s)
-- Audio Anchor: 카드 자막카드 Attack 00:20.22–00:24.22 (자막: 말이 없던 그가, 왜 고물상 앞을…)
+- Audio Anchor: 자막카드 Attack 00:20.22–00:24.22 (자막: 말이 없던 그가, 왜 고물상 앞을…)
 - Transition Out: Dissolve 0.5s
 - References: LOC@junkyard-key1
 
@@ -145,7 +145,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S04
 - Timecode: 00:25.00 - 00:30.00 (Duration: 5s)
-- Audio Anchor: 카드 자막카드 Attack 00:25.22–00:28.04 (자막: 김씨와 폐지 할머니)
+- Audio Anchor: 자막카드 Attack 00:25.22–00:28.04 (자막: 김씨와 폐지 할머니)
 - Transition Out: Hard cut
 - References: LOC@apt-gate-night
 
@@ -169,7 +169,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S05
 - Timecode: 00:30.00 - 00:35.00 (Duration: 5s)
-- Audio Anchor: 카드 자막카드 Attack 00:30.22–00:33.02 (자막: 사흘 전)
+- Audio Anchor: 자막카드 Attack 00:30.22–00:33.02 (자막: 사흘 전)
 - Transition Out: Dissolve 0.5s (time rewind)
 - References: LOC@apt-gate-day
 
@@ -894,7 +894,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S35
 - Timecode: 04:20.00 - 04:25.00 (Duration: 5s)
-- Audio Anchor: 카드 자막카드 Attack 04:20.22–04:23.02 (자막: 다음날 아침)
+- Audio Anchor: 자막카드 Attack 04:20.22–04:23.02 (자막: 다음날 아침)
 - Transition Out: Hard cut
 - References: LOC@demolition-key2
 
@@ -1087,7 +1087,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S43
 - Timecode: 05:05.00 - 05:15.00 (Duration: 10s)
-- Audio Anchor: 카드 자막카드 Attack 05:05.22–05:10.16 (자막: 고마움은 몰라도 된다. 그 사람은…)
+- Audio Anchor: 자막카드 Attack 05:05.22–05:10.16 (자막: 고마움은 몰라도 된다. 그 사람은…)
 - Transition Out: Dissolve 0.5s → ending card
 - References: KIM@fullbody-back, LOC@guard-booth-night
 
@@ -1111,7 +1111,7 @@
 [SCENE SPECIFICATION]
 - Scene ID: S44
 - Timecode: 05:15.00 - 05:25.00 (Duration: 10s)
-- Audio Anchor: 카드 자막카드 Attack 05:15.22–05:20.13 (자막: 다음 이야기 — 성탄 전야, 그가…)
+- Audio Anchor: 자막카드 Attack 05:15.22–05:20.13 (자막: 다음 이야기 — 성탄 전야, 그가…)
 - Transition Out: Fade out
 - References: LOC@guard-booth-key2
 
