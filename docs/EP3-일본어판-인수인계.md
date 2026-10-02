@@ -17,8 +17,8 @@
 | 오디오 설정 | 완료 | `scripts/audio/kim-cart-grandma-ja.json` (scene_durations: S02 5, S15 5, S20 5, S28 10, S31 9; transitions; bgm 4구간; omnihuman_scenes [1,15,28,29,31,36]) |
 | 타임라인 | 확정 294.2s | 재잠금 명령은 §3 |
 | **조립(립싱크 6장면 + 믹스)** | **실행 중/완료 확인 필요** | burn run: skit=kim-cart-grandma-ja, source_skit=kim-cart-grandma, source_run_id=36971579705, resume_run_id=36966874332, invalidate=`omni*.mp4 omniframe*.png lip*.mp4 line*.mp3 seg*.wav`. 완료 시 bot 커밋 "완성 영상 추가 (kim-cart-grandma-ja)" → `deliveries/kim-cart-grandma-ja-skit-final.mp4(.part-*)` |
-| 아웃트로 일본어 멘트 TTS | 실행 중 | audition_spec=outro-ja → `assets/auditions/outro-ja/outro_ja.mp3` |
-| 아웃트로 입모양 재생성 | 미착수 | §4 |
+| 아웃트로 일본어 멘트 TTS | 완료(10.2s) | `assets/auditions/outro-ja/outro_ja.mp3` → `assets/audio-overrides/outro-ja/line001.mp3` |
+| 아웃트로 입모양 재생성 | 미니 스킷 outro-ja 준비 완료(§4 1~2단계 끝), generate run 실행 중 → burn 필요 | §4 3단계부터 |
 | 일본어 엔드카드 | 완료 | `assets/brand/endcard-midam-ja.mp4` |
 | 썸네일·메타데이터(일본어) | 완료 | `assets/thumbnails/ep3/*-JP.jpg`, `docs/EP3-업로드-최종.md` |
 
