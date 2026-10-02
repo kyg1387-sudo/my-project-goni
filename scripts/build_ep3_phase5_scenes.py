@@ -19,7 +19,8 @@ KF = "assets/portraits/ep3-keyframes/{sid}-1.png"
 
 # 대사가 걸리는 장면과 화면 속 화자(PHASE 3 샷 리스트 기준). 화자가 화면에 없는 리액션 컷은 립싱크 제외.
 TALKING = {1: "Kim", 15: "the grandmother", 28: "Choi", 29: "Kim", 31: "Choi", 36: "the grandmother"}
-LIPSYNC_SKIP = [2, 30, 37]  # 김씨 목소리에 최사장 리액션(S02·S30), 할머니 목소리에 손 클로즈업(S37)
+LIPSYNC_SKIP = [2, 30, 37]
+CART_RIGID = [3, 6, 7, 8, 9, 12, 13, 26, 29, 31, 32, 33, 34, 35, 36, 37, 42]  # 리어카 손잡이가 보이는 컷  # 김씨 목소리에 최사장 리액션(S02·S30), 할머니 목소리에 손 클로즈업(S37)
 
 STYLE = ("Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, "
          "keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; "
@@ -44,6 +45,11 @@ for k, sc in enumerate(sb["scenes"]):
         # 파일럿 실증(S03): 무인 인서트에 손이 들어옴 → 무인 컷은 사람·손 진입 금지를 명시
         parts.append("This is an empty insert shot: no person, no hand, no arm or body part ever enters the frame; "
                      "only the objects and the camera move.")
+    if n in CART_RIGID:
+        # 실증(S29): i2v 변환 중 끌채가 U자로 변형 → 소품 형태 고정을 명시
+        parts.append("The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight "
+                     "drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, "
+                     "duplicates or turns into a loop; hands stay where they are on the grip.")
     parts.append("Everything else in the frame stays still except gentle ambient motion (dust, mist, light).")
     scenes.append({"prompt": " ".join(parts), "image": kf, "duration": durations[k]})
 

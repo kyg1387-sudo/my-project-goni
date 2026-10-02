@@ -60,7 +60,7 @@
    "duration": 10
   },
   {
-   "prompt": "Camera: Static, locked off. Motion: Almost imperceptible focus breathing, dust motes drifting. Mouths stay closed; no talking. This is an empty insert shot: no person, no hand, no arm or body part ever enters the frame; only the objects and the camera move. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off. Motion: Almost imperceptible focus breathing, dust motes drifting. Mouths stay closed; no talking. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s03-1.png",
    "duration": 5
   },
@@ -75,22 +75,22 @@
    "duration": 5
   },
   {
-   "prompt": "Camera: Very slow lateral drift (follows subject at walking pace). Motion: Slow walk, cart wheel turns, gentle lateral camera drift matching her pace, no fast motion. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Very slow lateral drift (follows subject at walking pace). Motion: Slow walk, cart wheel turns, gentle lateral camera drift matching her pace, no fast motion. Mouths stay closed; no talking. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s06-1.png",
    "duration": 10
   },
   {
-   "prompt": "Camera: Static, locked off. Motion: Slow bend and lift, cardboard sways, no rapid moves. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off. Motion: Slow bend and lift, cardboard sways, no rapid moves. Mouths stay closed; no talking. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s07-1.png",
    "duration": 10
   },
   {
-   "prompt": "Camera: Static, locked off. Motion: Gentle focal adjustment only. Mouths stay closed; no talking. This is an empty insert shot: no person, no hand, no arm or body part ever enters the frame; only the objects and the camera move. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off. Motion: Gentle focal adjustment only. Mouths stay closed; no talking. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s08-1.png",
    "duration": 5
   },
   {
-   "prompt": "Camera: Slow cinematic push-in (zoom 1.05). Motion: Slow wiping motion of the hands, slight push-in. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Slow cinematic push-in (zoom 1.05). Motion: Slow wiping motion of the hands, slight push-in. Mouths stay closed; no talking. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s09-1.png",
    "duration": 5
   },
@@ -105,17 +105,17 @@
    "duration": 5
   },
   {
-   "prompt": "Camera: Static, locked off. Motion: Small nod, slow lift of the boxes. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off. Motion: Small nod, slow lift of the boxes. Mouths stay closed; no talking. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s12-1.png",
    "duration": 5
   },
   {
-   "prompt": "Camera: Static, locked off. Motion: Slow walk away from the cart, dust drifting. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off. Motion: Slow walk away from the cart, dust drifting. Mouths stay closed; no talking. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s13-1.png",
    "duration": 5
   },
   {
-   "prompt": "Camera: Slow cinematic push-in toward the truck (zoom 1.05). Motion: Slow push-in, workers move slowly, truck exhaust drifts. Mouths stay closed; no talking. This is an empty insert shot: no person, no hand, no arm or body part ever enters the frame; only the objects and the camera move. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Slow cinematic push-in toward the truck (zoom 1.05). Motion: Slow push-in, workers move slowly, truck exhaust drifts. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s14-1.png",
    "duration": 5
   },
@@ -175,7 +175,7 @@
    "duration": 10
   },
   {
-   "prompt": "Camera: Very slow lateral drift. Motion: Slow walk, head turns limited to 15°, camera drifts. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Very slow lateral drift. Motion: Slow walk, head turns limited to 15°, camera drifts. Mouths stay closed; no talking. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s26-1.png",
    "duration": 10
   },
@@ -190,7 +190,7 @@
    "duration": 10
   },
   {
-   "prompt": "Camera: Slow cinematic push-in (zoom 1.05). Motion: Hand settles on the strap, lips move with the line, single blink. Kim is speaking Korean softly: lips move gently and naturally with small jaw movement, no exaggerated mouth shapes, teeth not shown, head turn under 10 degrees. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Slow cinematic push-in (zoom 1.05). Motion: Hand settles on the strap, lips move with the line, single blink. Kim is speaking Korean softly: lips move gently and naturally with small jaw movement, no exaggerated mouth shapes, teeth not shown, head turn under 10 degrees. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s29-1.png",
    "duration": 10
   },
@@ -200,37 +200,37 @@
    "duration": 10
   },
   {
-   "prompt": "Camera: Static, locked off. Motion: Lips move with the short line, one small hand wave, single blink. Choi is speaking Korean softly: lips move gently and naturally with small jaw movement, no exaggerated mouth shapes, teeth not shown, head turn under 10 degrees. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off. Motion: Lips move with the short line, one small hand wave, single blink. Choi is speaking Korean softly: lips move gently and naturally with small jaw movement, no exaggerated mouth shapes, teeth not shown, head turn under 10 degrees. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s31-1.png",
    "duration": 10
   },
   {
-   "prompt": "Camera: Static, locked off. Motion: Hands work slowly on the wheel, flashlight beam jitters slightly. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off. Motion: Hands work slowly on the wheel, flashlight beam jitters slightly. Mouths stay closed; no talking. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s32-1.png",
    "duration": 5
   },
   {
-   "prompt": "Camera: Static, locked off. Motion: Slow wrapping motion only. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off. Motion: Slow wrapping motion only. Mouths stay closed; no talking. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s33-1.png",
    "duration": 5
   },
   {
-   "prompt": "Camera: Very slow push forward behind Kim. Motion: Slow push of the cart, sets it down, walks away, camera drifts forward. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Very slow push forward behind Kim. Motion: Slow pull of the cart, sets it down, walks away, camera drifts forward. Mouths stay closed; no talking. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s34-1.png",
    "duration": 10
   },
   {
-   "prompt": "Camera: Static, locked off. Motion: Mist drifts, nothing else. Mouths stay closed; no talking. This is an empty insert shot: no person, no hand, no arm or body part ever enters the frame; only the objects and the camera move. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off. Motion: Mist drifts, nothing else. Mouths stay closed; no talking. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s35-1.png",
    "duration": 5
   },
   {
-   "prompt": "Camera: Static, locked off. Motion: Two slow steps forward, hand rising toward the handle, lips form the short line. the grandmother is speaking Korean softly: lips move gently and naturally with small jaw movement, no exaggerated mouth shapes, teeth not shown, head turn under 10 degrees. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off. Motion: Two slow steps forward, hand rising toward the handle, lips form the short line. the grandmother is speaking Korean softly: lips move gently and naturally with small jaw movement, no exaggerated mouth shapes, teeth not shown, head turn under 10 degrees. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s36-1.png",
    "duration": 5
   },
   {
-   "prompt": "Camera: Slow cinematic push-in (zoom 1.05). Motion: Hands tremble gently, slow push-in. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Slow cinematic push-in (zoom 1.05). Motion: Hands tremble gently, slow push-in. Mouths stay closed; no talking. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s37-1.png",
    "duration": 10
   },
@@ -255,7 +255,7 @@
    "duration": 5
   },
   {
-   "prompt": "Camera: Very slow lateral drift. Motion: Slow steady walk, cart rolls smoothly, camera drifts. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Very slow lateral drift. Motion: Slow steady walk, cart rolls smoothly, camera drifts. Mouths stay closed; no talking. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s42-1.png",
    "duration": 5
   },
