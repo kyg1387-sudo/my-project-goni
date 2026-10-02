@@ -258,13 +258,13 @@
     },
     {
       "start": 137.9,
-      "end": 207.2,
+      "end": 209.2,
       "volume": 0.45,
       "prompt": "warm gentle Korean drama strings and piano swelling gradually, cello and violin, bittersweet and healing, emotional but restrained, instrumental only, no vocals, no lyrics"
     },
     {
-      "start": 213.2,
-      "end": 290.2,
+      "start": 217.2,
+      "end": 294.2,
       "volume": 0.45,
       "prompt": "warm hopeful Korean drama ending theme, soft piano melody with gentle strings, tender and resolving, slow tempo, instrumental only, no vocals, no lyrics"
     }
@@ -298,10 +298,10 @@
     10,
     10,
     5,
-    8,
     10,
     10,
-    7,
+    10,
+    9,
     5,
     5,
     10,
