@@ -27,6 +27,8 @@ ap.add_argument("--skit", required=True)
 ap.add_argument("--narration-tempo", type=float, default=1.0)
 ap.add_argument("--trim", default="", help="조립 길이 조정: 20=7,33=4 (생성 클립보다 짧게만, 영상 재생성 없음)")
 ap.add_argument("--anchor", default="", help="줄 앵커링: TTS줄=장면 (예 18=20,19=21) → 그 줄을 해당 장면 시작+0.3s 이후로 맞춤")
+ap.add_argument("--gap", type=float, default=0.3, help="줄 사이 최소 호흡(초), 규격 0.3~0.5")
+ap.add_argument("--tail", type=float, default=0.0, help="내레이션이 끝난 뒤 컷까지 최소 여운(초). 부족하면 줄을 다음 장면 시작+0.3으로 미룬다(앵커·대사 줄을 밀게 되면 미루지 않음)")
 ap.add_argument("--apply", action="store_true")
 a = ap.parse_args()
 
@@ -96,14 +98,47 @@ for i, p, s1, e1, style in rows:
     rows2.append((i, p, s1, e1, style))
 rows = rows2
 
-# 겹치지 않게 보정(압축으로 앞뒤 줄이 붙는 경우 0.3초 호흡 유지)
-prev_e = -1.0
-fixed = []
-for i, p, s1, e1, style in rows:
-    if style not in silent and s1 < prev_e + 0.3:
-        shift = prev_e + 0.3 - s1; s1 += shift; e1 += shift
-    if style not in silent: prev_e = e1
-    fixed.append((i, p, s1, e1, style))
+# 겹치지 않게 보정(압축으로 앞뒤 줄이 붙는 경우 --gap 초 호흡 유지)
+GAP = a.gap
+def sequence(rs):
+    prev_e, out = -1.0, []
+    for i, p, s1, e1, style in rs:
+        g = GAP if style in narr_styles else 0.3  # 대사 줄 간격은 0.3 고정(립싱크 캐시와 위치 일치 유지)
+        if style not in silent and s1 < prev_e + g:
+            shift = prev_e + g - s1; s1 += shift; e1 += shift
+        if style not in silent: prev_e = e1
+        out.append((i, p, s1, e1, style))
+    return out
+fixed = sequence(rows)
+
+# 여운 보정: 내레이션이 다음 컷 직전에 끝나면(여운 < --tail) 그 줄을 다음 장면 시작+0.3 으로 미룬다.
+# 단, 그로 인해 앵커 줄이나 대사(비내레이션) 줄이 밀리면 내용 동기가 깨지므로 미루지 않는다.
+if a.tail > 0:
+    tts_index = {}
+    n = 0
+    for i, p, s1, e1, style in fixed:
+        if style not in silent: n += 1; tts_index[i] = n
+    def scene_of(t):
+        return min(max(k for k in range(len(durs)) if new_s[k] <= t + 1e-6), len(durs) - 1)
+    changed = True
+    while changed:
+        changed = False
+        for idx, (i, p, s1, e1, style) in enumerate(fixed):
+            if style not in narr_styles: continue
+            ke = scene_of(e1)
+            if ke >= len(durs) - 1: continue
+            tail = new_s[ke + 1] - e1
+            if tail >= a.tail or tail < 0: continue
+            target = new_s[ke + 1] + 0.3
+            trial = list(fixed); trial[idx] = (i, p, target, target + (e1 - s1), style)
+            trial = sequence(trial)
+            ok = True
+            for (i2, p2, s2, e2, st2), (i3, p3, s3, e3, st3) in zip(fixed[idx + 1:], trial[idx + 1:]):
+                if abs(s3 - s2) > 1e-6 and (st2 not in narr_styles or tts_index.get(i2) in anchors):
+                    ok = False; break
+            if ok and trial[-1][3] <= new_total:
+                print(f"  [여운] {tc(s1)} '{p[9][:14]}' 끝~컷 {tail:.1f}s → S{ke + 2:02d} 시작+0.3 으로 미룸")
+                fixed = trial; changed = True; break
 
 print(f"[{a.skit}] 총 {sum(durs):.0f}s → {new_total:.1f}s (디졸브 {sum(1 for o in ov if o)}곳, 겹침 {sum(ov):.1f}s), 내레이션 x{a.narration_tempo}")
 if a.apply:

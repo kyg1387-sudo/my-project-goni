@@ -246,25 +246,25 @@
   "bgm_segments": [
     {
       "start": 15.0,
-      "end": 86.0,
+      "end": 85.4,
       "volume": 0.42,
       "prompt": "sparse minimalist Korean drama piano, single quiet melodic line, dry understated tone, slow unhurried tempo, no strings, instrumental only, no vocals, no lyrics"
     },
     {
-      "start": 90.0,
-      "end": 136.0,
+      "start": 89.4,
+      "end": 135.1,
       "volume": 0.36,
       "prompt": "tense quiet night-time underscore, low sustained cello drone and sparse piano notes, searching and restless, very slow, minimal, instrumental only, no vocals, no lyrics, no percussion"
     },
     {
-      "start": 139.6,
-      "end": 208.5,
+      "start": 138.7,
+      "end": 207.0,
       "volume": 0.45,
       "prompt": "warm gentle Korean drama strings and piano swelling gradually, cello and violin, bittersweet and healing, emotional but restrained, instrumental only, no vocals, no lyrics"
     },
     {
-      "start": 212.5,
-      "end": 290.27,
+      "start": 211.0,
+      "end": 288.0,
       "volume": 0.45,
       "prompt": "warm hopeful Korean drama ending theme, soft piano melody with gentle strings, tender and resolving, slow tempo, instrumental only, no vocals, no lyrics"
     }
@@ -333,13 +333,13 @@
     0.0417,
     0.0417,
     0.0417,
-    0.0417,
+    0.6,
     0.5,
     0.0417,
     0.0417,
     0.5,
     0.5,
-    0.5,
+    0.8,
     0.0417,
     0.4,
     0.5,
@@ -347,7 +347,7 @@
     0.0417,
     0.0417,
     0.5,
-    0.4,
+    1.0,
     0.0417,
     0.0417,
     0.0417,
@@ -356,10 +356,10 @@
     0.5,
     0.0417,
     0.4,
-    0.4,
+    0.8,
     0.5,
     0.4,
-    0.4,
+    0.8,
     0.5,
     0.5,
     0.0417,
