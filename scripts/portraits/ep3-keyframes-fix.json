@@ -51,6 +51,16 @@
         "assets/portraits/ep3-choi/cells/choi-expr-neutral.png"
       ],
       "prompt": "Edit reference image 1: REPLACE the man's broad smile with the expression shown in reference image 2 (same man, neutral and stern) softened only a little: mouth CLOSED with NO teeth visible, lips flat with the faintest downward-then-relenting set, a gruff proud man giving in — eyes slightly moist and tired, brow a little lowered, jaw relaxed, head very slightly bowed. No grin, no cheerful smile. The removal of the smile must be clearly visible. Keep everything else from reference image 1 EXACTLY: same person and identity, same age, same headscarf/hair, same clothing, same pose, framing, crop, camera angle, background, lighting and color grade. Output ONE single 16:9 photorealistic film still, no grid, no borders, no text, no logos, no watermarks. Negative: grin, teeth, gibberish, text, letters, bad anatomy, deformed eyes, asymmetrical pupils, grid, contact sheet."
+    },
+    {
+      "id": "s32a",
+      "count": 1,
+      "aspect_ratio": "16:9",
+      "refs": [
+        "assets/portraits/ep3-keyframes/s32-1.png",
+        "assets/portraits/ep3-cast/kim-sheet-1.png"
+      ],
+      "prompt": "Edit reference image 1: REMOVE the small object held in the man's mouth completely — nothing in his mouth, lips closed naturally, no cigarette, no flashlight, no stick, no smoke near his face. Instead a small black handheld flashlight lies on the desk beside the wheel, switched on, its beam pointing at the wheel hub. Keep everything else EXACTLY as in reference image 1: the same man (identity per reference image 2, the character sheet, whose grid must not appear), his pose and hands working on the spoked wheel, the handcart on the desk, the booth interior, window, night view, desk lamp, lighting and color grade. Output ONE single 16:9 photorealistic film still, no grid, no borders, no text, no logos, no watermarks. Negative: cigarette, smoking, object in mouth, smoke from mouth, gibberish, text, letters, bad anatomy, extra fingers, grid, contact sheet."
     }
   ]
 }
