@@ -54,7 +54,9 @@ COMPOSITION = {
             "that sits on the windowsill in the continuity frame — a transparent plastic bag, NOT a paper bag."),
     "S09": ("Close-up on the grandmother's gloved hands wiping, with a small rag, the leather-wrapped short cross-bar at "
             "the end of the cart's single straight drawbar pole; the pole is ONE bar, the grip is ONE short cross-bar."),
-    "S26": ("Exactly ONE person in the frame: Kim alone, walking and looking around; Choi is NOT present. Every handcart "
+    "S26": ("FACE IDENTITY IS THE PRIORITY: Kim's face must be the exact same face as the character sheet (top-row left "
+            "panel), rendered large and sharp — medium shot from the knees up, face at least one quarter of the frame height. "
+            "Exactly ONE person in the frame: Kim alone, walking toward camera and looking around; Choi is NOT present. Every handcart "
             "standing in the yard is the same model as the prop reference: single straight drawbar pole with a short "
             "leather-wrapped cross-bar grip. No carts with U-shaped push handles."),
     "S37": ("CLOSE-UP, 85mm: the frame is filled by the grandmother's two gloved hands cupping the leather-wrapped short "

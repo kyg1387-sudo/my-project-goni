@@ -175,7 +175,7 @@
    "duration": 10
   },
   {
-   "prompt": "Camera: Very slow lateral drift. Motion: Slow walk, head turns limited to 15°, camera drifts. Mouths stay closed; no talking. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off. Motion: Slow walk toward camera (one or two steps), head turns limited to 15°, face stays sharp and identical to the first frame. Mouths stay closed; no talking. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
    "image": "assets/portraits/ep3-keyframes/s26-1.png",
    "duration": 10
   },
