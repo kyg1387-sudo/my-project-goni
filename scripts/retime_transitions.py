@@ -25,6 +25,7 @@ def overlap_of(text):
 ap = argparse.ArgumentParser()
 ap.add_argument("--skit", required=True)
 ap.add_argument("--narration-tempo", type=float, default=1.0)
+ap.add_argument("--trim", default="", help="조립 길이 조정: 20=7,33=4 (생성 클립보다 짧게만, 영상 재생성 없음)")
 ap.add_argument("--apply", action="store_true")
 a = ap.parse_args()
 
@@ -32,18 +33,23 @@ sb = json.load(open(f"scripts/storyboard/{a.skit}.json", encoding="utf-8"))
 scenes = json.load(open(f"scripts/scenes/{a.skit}.json", encoding="utf-8"))
 audio = json.load(open(f"scripts/audio/{a.skit}.json", encoding="utf-8"))
 durs = [float(d) for d in scenes["durations"]]
+gen_durs = list(durs)
+for kv in [x for x in a.trim.split(",") if x]:
+    k, v = kv.split("="); k = int(k) - 1
+    assert float(v) <= gen_durs[k], f"S{k+1}: 생성 길이({gen_durs[k]}s)보다 길게 잡을 수 없음"
+    durs[k] = float(v)
 ov = [overlap_of(s.get("transition_out")) for s in sb["scenes"]]
 ov[-1] = 0.0
 assert len(ov) == len(durs)
 old_c = [0.0]
-for d in durs: old_c.append(old_c[-1] + d)
+for d in gen_durs: old_c.append(old_c[-1] + d)
 new_s = [0.0]
 for d, o in zip(durs, ov): new_s.append(new_s[-1] + d - o)
 new_total = new_s[-1]
 
 def remap(t):
     k = min(max(i for i in range(len(durs)) if old_c[i] <= t + 1e-6), len(durs)-1)
-    off = min(t - old_c[k], durs[k] - 0.05)
+    off = min(t - old_c[k], durs[k] - 0.05)  # 잘린 장면은 끝에 걸린 줄을 앞당긴다
     return new_s[k] + off
 
 ass_path = f"subs/{a.skit}.ass"
