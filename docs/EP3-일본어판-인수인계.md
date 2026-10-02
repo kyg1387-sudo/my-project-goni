@@ -16,9 +16,9 @@
 | 목소리 | 확정 | 내레이터 EL `5n5gqmaQi9Ewevrz7bOS`, 김씨 EL `8vwSOQHQApfVx993mKf9` (eleven_multilingual_v2), 최사장 Typecast `tc_69a8e49d2e36ab42260be475` tonedown 1.2, 할머니 Typecast `tc_61d55a84b8c48f42d69b2399` sad 1.0 tempo 0.9 |
 | 오디오 설정 | 완료 | `scripts/audio/kim-cart-grandma-ja.json` (scene_durations: S02 5, S15 5, S20 5, S28 10, S31 9; transitions; bgm 4구간; omnihuman_scenes [1,15,28,29,31,36]) |
 | 타임라인 | 확정 294.2s | 재잠금 명령은 §3 |
-| **조립(립싱크 6장면 + 믹스)** | **재실행 중** (1차 실패: 공유 클립 파일명 불일치 → 워크플로에 '소스 영상 이름 정규화' 단계 추가 후 재실행) | burn run: skit=kim-cart-grandma-ja, source_skit=kim-cart-grandma, source_run_id=36971579705, resume_run_id=36966874332, invalidate=`omni*.mp4 omniframe*.png lip*.mp4 line*.mp3 seg*.wav`. 완료 시 bot 커밋 "완성 영상 추가 (kim-cart-grandma-ja)" → `deliveries/kim-cart-grandma-ja-skit-final.mp4(.part-*)` |
+| **조립(립싱크 6장면 + 믹스)** | **완료** (run 37075152851 → `deliveries/kim-cart-grandma-ja-skit-final.mp4.part-*`, 294.2s). 최소 검수 통과: 대사 6장면 입모양·인물 정상, 음량 정상. 결함 1건: S31 최사장 대사 뒤(+6.0~6.5s) 헤드턴 → 로컬 패치(정지 클립으로 5.5s~끝 대체, 0.3s 디졸브) 적용본이 세션 스크래치 `ja-p.mp4`에만 있음 → **다음 세션은 §2-1의 패치 명령으로 재현 필요** | burn run: skit=kim-cart-grandma-ja, source_skit=kim-cart-grandma, source_run_id=36971579705, resume_run_id=36966874332, invalidate=`omni*.mp4 omniframe*.png lip*.mp4 line*.mp3 seg*.wav`. 완료 시 bot 커밋 "완성 영상 추가 (kim-cart-grandma-ja)" → `deliveries/kim-cart-grandma-ja-skit-final.mp4(.part-*)` |
 | 아웃트로 일본어 멘트 TTS | 완료(10.2s) | `assets/auditions/outro-ja/outro_ja.mp3` → `assets/audio-overrides/outro-ja/line001.mp3` |
-| 아웃트로 입모양 재생성 | burn 실행 중 (skit=outro-ja, source_run_id=37074815070). 완료 시 `deliveries/outro-ja-skit-final.mp4` | §4 4단계부터 |
+| 아웃트로 입모양 재생성 | burn 재실행 중 (1차 실패: concat 경로 버그 → 수정). skit=outro-ja, source_run_id=37074815070. 완료 시 `deliveries/outro-ja-skit-final.mp4` → `assets/auditions/outro-host/OUTRO-SCENE-ja.mp4`로 복사 | §4 4단계부터 |
 | 일본어 엔드카드 | 완료 | `assets/brand/endcard-midam-ja.mp4` |
 | 썸네일·메타데이터(일본어) | 완료 | `assets/thumbnails/ep3/*-JP.jpg`, `docs/EP3-업로드-최종.md` |
 
@@ -30,7 +30,13 @@
    ffprobe -show_entries format=duration /tmp/ja.mp4   # 294.2 ±0.1
    ```
    - 대사 6장면(S01·S15·S28·S29·S31·S36) 입 크롭 0.5초 간격 1장(헤드턴·번짐), 전환 콘택트시트 1장, 음량 윈도(무음 −60dB 이하 2초 금지).
-   - **S29 헤드턴 재발 시**: 한국어판과 같은 로컬 패치(정지 리드 2.05s + 0.2s 디졸브, 세션 기록의 ffmpeg 필터) — 재생성보다 우선.
+   - **S29 헤드턴 재발 시**: 한국어판과 같은 로컬 패치(정지 리드 2.05s + 0.2s 디졸브) — 재생성보다 우선.
+   - **S31 꼬리 헤드턴 패치(일본어판에서 확인됨)** — 아래 파이썬으로 재현(`ja.mp4` = 조립본, 결과 `ja-p.mp4`):
+     ```
+     # S31 시작 st31, 길이 D31, 전환 o31 은 scripts/audio/kim-cart-grandma-ja.json 에서 계산. cut=5.5, XF=0.3
+     # [0:v]trim=0:(st31+cut+XF) → [a] ; [1:v]=assets/video-overrides/kim-cart-grandma/scene31.mp4 trim=cut:(cut+L) → [p] (L = st31+D31-o31 - (st31+cut))
+     # [a][p]xfade=fade:duration=XF:offset=(st31+cut) → [ap] ; [0:v]trim=(st31+D31-o31):end → [b] ; [ap][b]concat ; 오디오는 0:a 복사
+     ```
    - 자막 길이·음성 어긋남이 보이면 §3 재잠금 후 `lipsync=remix`가 아니라 **omni 재생성 필요**(대사 오프셋이 바뀌면). 내레이션만 바뀌면 remix(무과금).
 2. **아웃트로 일본어판** (§4) → 3. **결합·전달** (§5) → 4. 업로드 가이드(일본 채널)는 `docs/EP3-업로드-최종.md`의 다국어 절 + 일본어 메타.
 
