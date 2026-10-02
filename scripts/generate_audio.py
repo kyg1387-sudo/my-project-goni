@@ -332,6 +332,7 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
     parts.append(
         "".join(mix_inputs)
         + f"amix=inputs={len(mix_inputs)}:duration=longest:normalize=0,"
+        + "alimiter=limit=0.95:attack=5:release=80,"  # BGM·현장음을 올려도 대사 피크가 클리핑되지 않게
         + f"atrim=0:{duration:.3f}[aout]")
 
     script = os.path.join(WORK_DIR, "filter.txt")
