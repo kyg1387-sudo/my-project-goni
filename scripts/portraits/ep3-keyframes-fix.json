@@ -72,6 +72,16 @@
         "assets/portraits/ep3-cast/cells/kim-expr-neutral.png"
       ],
       "prompt": "Edit reference image 1: REPLACE the man's face so that it is EXACTLY the same person as in reference images 2 and 3 (Kim, the character master sheet — front view): the same rounder, fuller face shape with soft full cheeks and a gentle rounded jawline, the same eyes, nose, mouth and skin, the same short neat salt-and-pepper hair swept to the side. Do NOT keep the narrower, gaunt, hollow-cheeked face of reference image 1. Expression: calm, resolute, lips closed, looking slightly off-camera to the right as in reference image 1. Keep everything else from reference image 1 EXACTLY: framing (chest-up close-up), pose, head angle, the plain dark navy security-guard shirt with pristine collar and no badge, the scrapyard background with stacked paper bales and corrugated fence, golden-hour lighting and color grade. Output ONE single 16:9 photorealistic film still, no grid, no borders, no text, no logos, no watermarks. Negative: gaunt face, hollow cheeks, different person, grid, contact sheet, text, letters, bad anatomy."
+    },
+    {
+      "id": "s29c",
+      "count": 1,
+      "aspect_ratio": "16:9",
+      "refs": [
+        "assets/portraits/ep3-cast/kim-sheet-1.png",
+        "assets/portraits/ep3-keyframes/s29-1.png"
+      ],
+      "prompt": "Create ONE single photorealistic cinematic film still in 16:9 — one frame only, NOT a grid, no borders, no captions. Reference image 1 is the CHARACTER master sheet of Kim, an apartment security guard, Korean man in his early 60s: put this EXACT same person in the frame — identical face (rounder full face, soft full cheeks, gentle rounded jaw, calm eyes), identical short neat salt-and-pepper hair swept to the side, identical age; use the sheet's top-left front-view panel as the face guide; the sheet's grid must NOT appear. Reference image 2 is the SHOT reference: reproduce its composition exactly — chest-up close-up of Kim alone, 85mm, f/1.8, eye level, Kim facing slightly to the right of camera, calm and resolute, lips closed — and reproduce its background and light: a scrapyard with stacked paper bales and a corrugated steel fence out of focus, an old rusty platform scale behind him, a bare light bulb on a wire above, warm golden-hour side light, Arri Alexa cinematic color grade, Kodak 35mm film grain. Wardrobe locked: plain long-sleeve dark navy security-guard shirt, pristine collar, NO name tag, NO badge, NO lettering. Negative: gaunt face, hollow cheeks, different person, grid, contact sheet, gibberish, text, letters, logos, watermarks, bad anatomy."
     }
   ]
 }
