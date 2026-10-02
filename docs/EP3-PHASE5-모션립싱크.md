@@ -59,3 +59,4 @@
 - 조립 코드에 규격 제3장-3 전환 반영: `scripts/generate_audio.py` xfade 체인(`transitions`=장면별 겹침 초, 압축 타임라인).
 - `scripts/retime_transitions.py`: 스토리보드 transition_out에서 디졸브 20곳(겹침 9.5s) 추출 → 자막·BGM 구간을 압축 시간으로 재잠금, 내레이션 34줄 x1.2(atempo, 음정 유지, 원본 `_orig/`). 총 길이 325→315.5s.
 - 대사 줄의 장면 내 위치는 불변 → 립싱크 캐시(lip15·lip29) 재사용 가능.
+- 할머니 line012 '…내 리어카…' 외국어처럼 들림(사용자 지적): Typecast 7안 생성 → 언어검사 ko 판정 K2·K4·K5 중 K5(tonedown, seed 67) 채택. 대본 글자 변경안(K7)은 동결 규칙상 제외. 구판 `_superseded/line012.v3.mp3`.
