@@ -16,9 +16,9 @@
 | 목소리 | 확정 | 내레이터 EL `5n5gqmaQi9Ewevrz7bOS`, 김씨 EL `8vwSOQHQApfVx993mKf9` (eleven_multilingual_v2), 최사장 Typecast `tc_69a8e49d2e36ab42260be475` tonedown 1.2, 할머니 Typecast `tc_61d55a84b8c48f42d69b2399` sad 1.0 tempo 0.9 |
 | 오디오 설정 | 완료 | `scripts/audio/kim-cart-grandma-ja.json` (scene_durations: S02 5, S15 5, S20 5, S28 10, S31 9; transitions; bgm 4구간; omnihuman_scenes [1,15,28,29,31,36]) |
 | 타임라인 | 확정 294.2s | 재잠금 명령은 §3 |
-| **조립(립싱크 6장면 + 믹스)** | **실행 중/완료 확인 필요** | burn run: skit=kim-cart-grandma-ja, source_skit=kim-cart-grandma, source_run_id=36971579705, resume_run_id=36966874332, invalidate=`omni*.mp4 omniframe*.png lip*.mp4 line*.mp3 seg*.wav`. 완료 시 bot 커밋 "완성 영상 추가 (kim-cart-grandma-ja)" → `deliveries/kim-cart-grandma-ja-skit-final.mp4(.part-*)` |
+| **조립(립싱크 6장면 + 믹스)** | **재실행 중** (1차 실패: 공유 클립 파일명 불일치 → 워크플로에 '소스 영상 이름 정규화' 단계 추가 후 재실행) | burn run: skit=kim-cart-grandma-ja, source_skit=kim-cart-grandma, source_run_id=36971579705, resume_run_id=36966874332, invalidate=`omni*.mp4 omniframe*.png lip*.mp4 line*.mp3 seg*.wav`. 완료 시 bot 커밋 "완성 영상 추가 (kim-cart-grandma-ja)" → `deliveries/kim-cart-grandma-ja-skit-final.mp4(.part-*)` |
 | 아웃트로 일본어 멘트 TTS | 완료(10.2s) | `assets/auditions/outro-ja/outro_ja.mp3` → `assets/audio-overrides/outro-ja/line001.mp3` |
-| 아웃트로 입모양 재생성 | 미니 스킷 outro-ja 준비 완료(§4 1~2단계 끝), generate run 실행 중 → burn 필요 | §4 3단계부터 |
+| 아웃트로 입모양 재생성 | burn 실행 중 (skit=outro-ja, source_run_id=37074815070). 완료 시 `deliveries/outro-ja-skit-final.mp4` | §4 4단계부터 |
 | 일본어 엔드카드 | 완료 | `assets/brand/endcard-midam-ja.mp4` |
 | 썸네일·메타데이터(일본어) | 완료 | `assets/thumbnails/ep3/*-JP.jpg`, `docs/EP3-업로드-최종.md` |
 
