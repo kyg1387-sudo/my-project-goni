@@ -1,0 +1,308 @@
+{
+  "_설명": "EP3 일본어 더빙판 본 생성 48줄 중 TTS 42줄 (2026-10-02 사용자 확정: 최사장 J2 tonedown, 할머니 J1 sad, 내레이터·김씨 ElevenLabs 다국어). 결과를 audio-overrides/kim-cart-grandma-ja/lineNNN.mp3 로 복사.",
+  "tc_model": "ssfm-v30",
+  "tests": [
+    {
+      "id": "line001",
+      "model": "elevenlabs-direct",
+      "voice": "8vwSOQHQApfVx993mKf9",
+      "el_model": "eleven_multilingual_v2",
+      "text": "この持ち手、革ひもが巻いてあるでしょう。"
+    },
+    {
+      "id": "line002",
+      "model": "elevenlabs-direct",
+      "voice": "8vwSOQHQApfVx993mKf9",
+      "el_model": "eleven_multilingual_v2",
+      "text": "持ち主が、自分の手で巻いたものです。簡単に捨てていい物じゃない。"
+    },
+    {
+      "id": "line003",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "この路地のリヤカーは、持ち手だけが、やけにつやつやしていました。"
+    },
+    {
+      "id": "line004",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "二十年前、おばあさんのご主人が、最後に直してくれたリヤカーでした。"
+    },
+    {
+      "id": "line005",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "巻かれた革ひもも、きしむ音も、みんな、あの人が残していったものでした。"
+    },
+    {
+      "id": "line006",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "おばあさんにとって、このリヤカーは稼ぎではなく、ご主人そのものだったのです。"
+    },
+    {
+      "id": "line007",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "ほかは乱暴に扱っても、この持ち手だけは、いつも布で拭いていました。"
+    },
+    {
+      "id": "line008",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "警備員のキムさんは毎朝、段ボールを畳んで、花壇のそばに置いておきました。"
+    },
+    {
+      "id": "line009",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "ひと言も言わず、ただ、そっと。"
+    },
+    {
+      "id": "line010",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "その日の午後、解体のトラックが、路地の廃材を運んでいきました。"
+    },
+    {
+      "id": "line011",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "リヤカーも一緒に。鉄くずだと思われて。"
+    },
+    {
+      "id": "line012",
+      "model": "typecast-direct",
+      "voice": "tc_61d55a84b8c48f42d69b2399",
+      "text": "…わたしの、リヤカー…",
+      "emotion_preset": "sad",
+      "emotion_intensity": 1.0,
+      "tempo": 0.9
+    },
+    {
+      "id": "line013",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "短い言葉でした。けれど、そこには二十年が詰まっていました。"
+    },
+    {
+      "id": "line014",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "おばあさんはその夜、遅くまで、ひとりで路地を歩き回りました。"
+    },
+    {
+      "id": "line015",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "リヤカーがどこへ行ったのか、誰も知りませんでした。"
+    },
+    {
+      "id": "line016",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "彼にも、誰も知らない理由がありました。"
+    },
+    {
+      "id": "line017",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "だから彼は、誰に頼まれたわけでもないことを、三晩、続けたのです。"
+    },
+    {
+      "id": "line018",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "一日目の夜。隅々まで探した路地に、痕跡はありませんでした。"
+    },
+    {
+      "id": "line019",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "雨の二日目の夜。傘もささずに回収所の通りを歩きましたが、やはり無駄足でした。"
+    },
+    {
+      "id": "line020",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "休んだ夜、彼は亡き妻の、花柄の手帳を開きました。"
+    },
+    {
+      "id": "line021",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "そこには、こうありました。「古紙拾いのおばあさん。昔、トウモロコシをくれた人」。"
+    },
+    {
+      "id": "line022",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "十年前、誰も彼に声をかけなかった冬。おばあさんが黙って差し出した、ゆでトウモロコシが一本。"
+    },
+    {
+      "id": "line023",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "キムさんはその日を、十年経っても、忘れてはいなかったのです。"
+    },
+    {
+      "id": "line024",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "足がしびれてきた頃、三日目に、ようやく手がかりが。"
+    },
+    {
+      "id": "line025",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "解体業者が鉄くずを渡した先。ようやく、行き先が見えました。"
+    },
+    {
+      "id": "line026",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "キムさんはその足で、回収所を一軒ずつ、訪ねて回りました。"
+    },
+    {
+      "id": "line027",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "三軒目。庭の奥に、見覚えのある持ち手がありました。"
+    },
+    {
+      "id": "line028",
+      "model": "typecast-direct",
+      "voice": "tc_69a8e49d2e36ab42260be475",
+      "text": "もう計量も済んだ物ですよ。代金も払いました。",
+      "emotion_preset": "tonedown",
+      "emotion_intensity": 1.2,
+      "tempo": 1.0
+    },
+    {
+      "id": "line029",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "キムさんは、引きませんでした。"
+    },
+    {
+      "id": "line030",
+      "model": "elevenlabs-direct",
+      "voice": "8vwSOQHQApfVx993mKf9",
+      "el_model": "eleven_multilingual_v2",
+      "text": "この持ち手、革ひもが巻いてあるでしょう。"
+    },
+    {
+      "id": "line031",
+      "model": "elevenlabs-direct",
+      "voice": "8vwSOQHQApfVx993mKf9",
+      "el_model": "eleven_multilingual_v2",
+      "text": "持ち主が、自分の手で巻いたものです。簡単に捨てていい物じゃない。"
+    },
+    {
+      "id": "line032",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "社長はふと、自分の母親を思い出していました。"
+    },
+    {
+      "id": "line033",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "亡くなるまで、古い乳母車を手放せなかった、母親のことを。"
+    },
+    {
+      "id": "line034",
+      "model": "typecast-direct",
+      "voice": "tc_69a8e49d2e36ab42260be475",
+      "text": "…持っていきなさい。金は、いらないよ。",
+      "emotion_preset": "tonedown",
+      "emotion_intensity": 1.2,
+      "tempo": 1.0
+    },
+    {
+      "id": "line035",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "彼は夜遅くまで、自分の金で新しい車輪を買い、取り付けました。"
+    },
+    {
+      "id": "line036",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "冷たい鉄の持ち手に手がかじかまぬよう、手袋を一枚、重ねて巻きました。"
+    },
+    {
+      "id": "line037",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "その明け方。誰もいない路地に、リヤカーが一台、戻っていました。"
+    },
+    {
+      "id": "line038",
+      "model": "typecast-direct",
+      "voice": "tc_61d55a84b8c48f42d69b2399",
+      "text": "…じいさんが、巻いてくれたのに…",
+      "emotion_preset": "sad",
+      "emotion_intensity": 1.0,
+      "tempo": 0.9
+    },
+    {
+      "id": "line039",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "ひと言も交わさなくても、二人は十年、温もりを分け合っていたのですね。"
+    },
+    {
+      "id": "line040",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "借りを返すのに、十年かかりました。"
+    },
+    {
+      "id": "line041",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "知らなくていい。彼はただ、静かに笑うだけでした。"
+    },
+    {
+      "id": "line042",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "その日から、おばあさんのリヤカーは、また路地を守っています。"
+    }
+  ]
+}

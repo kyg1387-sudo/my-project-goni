@@ -1,0 +1,771 @@
+{
+ "_설명": "EP3 PHASE 3 스토리보드 Lock 데이터. docs/EP3-PHASE3-샷리스트.md는 scripts/build_phase3_doc.py가 이 파일과 subs/.ass, scenes json에서 생성한다. PHASE 4 키프레임 생성(nano-banana/edit 멀티 참조)과 PHASE 5 Image-to-Video의 입력.",
+ "skit": "kim-cart-grandma",
+ "preset": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, muted warm naturalistic palette, late-autumn Korean neighbourhood tones",
+ "negative": "gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, cap, hat, badge, nametag",
+ "ref_map": {
+  "KIM": "assets/portraits/ep3-cast/kim-sheet-1.png",
+  "GMA": "assets/portraits/ep3-cast/grandma-sheet-1.png",
+  "CHOI": "assets/portraits/ep3-choi/choi-sheet-1.png",
+  "LOC": "assets/portraits/ep3-cast/cells/loc-<place>-<day|night|key1|key2>.png",
+  "CART": "assets/portraits/ep3-cart/cart-sheet-1.png"
+ },
+ "scenes": [
+  {
+   "id": "S01",
+   "shot": "Close-up, chest-up, single (no hands in frame)",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Overcast daylight 5600K from upper-left, bare bulbs as warm 3200K practicals, dramatic high-contrast shadows between paper bales, warm rim light",
+   "camera": "Static, locked off",
+   "transition_out": "Hard cut",
+   "refs": [
+    "KIM@front-neutral",
+    "LOC@junkyard-day"
+   ],
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt, framed from the chest up, alone in the frame, facing slightly camera-right as if speaking to someone just off-screen, lips parted mid-sentence; no hands visible, no cart in frame.",
+   "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
+   "expression": "Firm, jaw set, steady eyes (tension 50%).",
+   "motion": "Speaking: natural lip movement, single slow blink, micro head nod under 5 degrees, no hand gestures.",
+   "edit": "00:02.00~00:04.09 Talking face (line 1) → 00:04.09~00:04.20 Hold: lips closed, reaction beat only (no speech after audio ends)"
+  },
+  {
+   "id": "S02",
+   "shot": "Medium shot, single (Choi)",
+   "lens": "50mm lens, f/2.8, medium shot, natural perspective, soft background separation",
+   "lighting": "Overcast daylight 5600K from upper-left, bare bulbs as warm 3200K practicals, dramatic high-contrast shadows between paper bales, warm rim light",
+   "camera": "Static, locked off",
+   "transition_out": "Hard cut (cold open → caption)",
+   "refs": [
+    "CHOI@front-wary",
+    "LOC@junkyard-day"
+   ],
+   "subject": "Korean man in his mid-50s (reference: CHOI sheet): bald on top with very short grey hair on the sides, thick dark-grey mustache, deeply tanned skin, stocky build; grease-stained plain grey work vest over plain dark shirt, black work gloves; standing alone with arms crossed, staring silently toward someone off-screen camera-left; waist-up medium shot, no cart handle in frame.",
+   "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
+   "expression": "Suspicious silence, wary frown.",
+   "motion": "Single slow blink only, no head turn; mouth closed.",
+   "edit": "00:06.12~00:08.12 Talking face (line 2) → 00:08.12~00:09.12 B-roll: ECU leather strap on handle (S03 keyframe) → 00:09.12~00:10.17 Reaction: Choi wary stare → 00:10.17~00:11.13 Hold: lips closed, reaction beat only (no speech after audio ends)"
+  },
+  {
+   "id": "S03",
+   "shot": "Extreme close-up",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Overcast daylight 5600K from upper-left, bare bulbs as warm 3200K practicals, dramatic high-contrast shadows between paper bales, warm rim light",
+   "camera": "Static, locked off",
+   "transition_out": "Dissolve 0.5s",
+   "refs": [
+    "CART@sheet",
+    "LOC@junkyard-key1"
+   ],
+   "subject": "The frayed brown leather strap wound around the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap handle, nothing else in focus, dark moody frame, no people.",
+   "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
+   "expression": "—",
+   "motion": "Almost imperceptible focus breathing, dust motes drifting.",
+   "edit": ""
+  },
+  {
+   "id": "S04",
+   "shot": "Long shot",
+   "lens": "35mm lens, f/4.0, eye-level cinematic shot, environmental storytelling, rule of thirds",
+   "lighting": "Blue-hour dusk, cool 4800K ambient with one warm practical lamp, low-key, soft rim light",
+   "camera": "Static, locked off",
+   "transition_out": "Hard cut",
+   "refs": [
+    "LOC@apt-gate-night"
+   ],
+   "subject": "Empty sidewalk at dusk, no people, caption card space in lower third.",
+   "environment": "sidewalk in front of an apartment-complex main gate (LOC apt-gate): flower bed and low wall, no signs, no lettering",
+   "expression": "—",
+   "motion": "Static plate, faint leaf movement only.",
+   "edit": ""
+  },
+  {
+   "id": "S05",
+   "shot": "Long shot",
+   "lens": "35mm lens, f/4.0, eye-level cinematic shot, environmental storytelling, rule of thirds",
+   "lighting": "Late-afternoon golden hour, key from upper-left, 4500K warm amber, long soft shadows, warm rim light on hair and shoulders",
+   "camera": "Static, locked off",
+   "transition_out": "Dissolve 0.5s (time rewind)",
+   "refs": [
+    "LOC@apt-gate-day"
+   ],
+   "subject": "Empty sidewalk in afternoon sun, no people.",
+   "environment": "sidewalk in front of an apartment-complex main gate (LOC apt-gate): flower bed and low wall, no signs, no lettering",
+   "expression": "—",
+   "motion": "Static plate, light breeze in the flower bed.",
+   "edit": ""
+  },
+  {
+   "id": "S06",
+   "shot": "Long shot",
+   "lens": "35mm lens, f/4.0, eye-level cinematic shot, environmental storytelling, rule of thirds",
+   "lighting": "Late-afternoon golden hour, key from upper-left, 4500K warm amber, long soft shadows, warm rim light on hair and shoulders",
+   "camera": "Very slow lateral drift (follows subject at walking pace)",
+   "transition_out": "J-Cut 0.5s (cart creak leads)",
+   "refs": [
+    "GMA@fullbody-front",
+    "CART@sheet",
+    "LOC@apt-gate-day"
+   ],
+   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves slowly pulling the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap along the sidewalk toward camera-left, afternoon sun on the handle.",
+   "environment": "sidewalk in front of an apartment-complex main gate (LOC apt-gate): flower bed and low wall, no signs, no lettering",
+   "expression": "Neutral, tired dignity.",
+   "motion": "Slow walk, cart wheel turns, gentle lateral camera drift matching her pace, no fast motion.",
+   "edit": ""
+  },
+  {
+   "id": "S07",
+   "shot": "Medium shot",
+   "lens": "50mm lens, f/2.8, medium shot, natural perspective, soft background separation",
+   "lighting": "Late-afternoon golden hour, key from upper-left, 4500K warm amber, long soft shadows, warm rim light on hair and shoulders",
+   "camera": "Static, locked off",
+   "transition_out": "J-Cut 0.5s",
+   "refs": [
+    "GMA@45-neutral",
+    "CART@sheet",
+    "LOC@apt-gate-day"
+   ],
+   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves bending to pick up a flattened cardboard box and placing it on the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap.",
+   "environment": "sidewalk in front of an apartment-complex main gate (LOC apt-gate): flower bed and low wall, no signs, no lettering, alley corner",
+   "expression": "Neutral, focused on the work.",
+   "motion": "Slow bend and lift, cardboard sways, no rapid moves.",
+   "edit": ""
+  },
+  {
+   "id": "S08",
+   "shot": "Close-up",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Late-afternoon golden hour, key from upper-left, 4500K warm amber, long soft shadows, warm rim light on hair and shoulders",
+   "camera": "Static, locked off",
+   "transition_out": "Match cut (strap → hands on strap)",
+   "refs": [
+    "CART@sheet",
+    "LOC@apt-gate-key1"
+   ],
+   "subject": "The frayed brown leather strap on the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap handle, polished smooth by twenty years of hands, warm afternoon light raking across it.",
+   "environment": "sidewalk in front of an apartment-complex main gate (LOC apt-gate): flower bed and low wall, no signs, no lettering",
+   "expression": "—",
+   "motion": "Gentle focal adjustment only.",
+   "edit": ""
+  },
+  {
+   "id": "S09",
+   "shot": "Close-up (hands)",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Late-afternoon golden hour, key from upper-left, 4500K warm amber, long soft shadows, warm rim light on hair and shoulders",
+   "camera": "Slow cinematic push-in (zoom 1.05)",
+   "transition_out": "J-Cut 0.5s",
+   "refs": [
+    "GMA@hands",
+    "CART@sheet",
+    "LOC@apt-gate-day"
+   ],
+   "subject": "The gloved, wrinkled hands of Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves wiping the leather strap on the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap handle with a small rag, tender and careful.",
+   "environment": "sidewalk in front of an apartment-complex main gate (LOC apt-gate): flower bed and low wall, no signs, no lettering",
+   "expression": "—",
+   "motion": "Slow wiping motion of the hands, slight push-in.",
+   "edit": ""
+  },
+  {
+   "id": "S10",
+   "shot": "Medium close-up",
+   "lens": "50mm lens, f/2.8, medium shot, natural perspective, soft background separation",
+   "lighting": "Late-afternoon golden hour, key from upper-left, 4500K warm amber, long soft shadows, warm rim light on hair and shoulders",
+   "camera": "Static, locked off",
+   "transition_out": "J-Cut 0.5s",
+   "refs": [
+    "KIM@front-neutral",
+    "LOC@guard-booth-day"
+   ],
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt seen through the booth window glass, watching expressionlessly as the grandmother passes outside (she is a soft blurred figure beyond the glass).",
+   "environment": "small apartment security booth interior (LOC guard-booth): narrow desk with old black-and-white CCTV monitors and a thermos, window onto the flower bed, blank smooth duty board on the wall with no writing",
+   "expression": "Blank, unreadable, eyes following.",
+   "motion": "Eyes track slowly left to right, single blink, micro breathing.",
+   "edit": ""
+  },
+  {
+   "id": "S11",
+   "shot": "Full shot (rear)",
+   "lens": "35mm lens, f/4.0, eye-level cinematic shot, environmental storytelling, rule of thirds",
+   "lighting": "Soft morning daylight through the booth window from upper-left, 5600K, gentle contrast, dust motes in the light",
+   "camera": "Static rear shot",
+   "transition_out": "Dissolve 0.6s (booth → gate, 여운)",
+   "refs": [
+    "KIM@fullbody-back",
+    "LOC@guard-booth-day"
+   ],
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt from behind, quietly setting a neat stack of flattened cardboard boxes beside the flower bed outside the booth, early morning.",
+   "environment": "small apartment security booth interior (LOC guard-booth): narrow desk with old black-and-white CCTV monitors and a thermos, window onto the flower bed, blank smooth duty board on the wall with no writing, flower bed outside",
+   "expression": "—",
+   "motion": "Slow bend, places the stack, begins to turn away (max 20°), no face turn to camera.",
+   "edit": ""
+  },
+  {
+   "id": "S12",
+   "shot": "Long shot",
+   "lens": "35mm lens, f/4.0, eye-level cinematic shot, environmental storytelling, rule of thirds",
+   "lighting": "Soft natural daylight from upper-left, 5600K clean balanced tones, subtle warm rim light separating subject from background, gentle contrast",
+   "camera": "Static, locked off",
+   "transition_out": "Dissolve 1.0s (gate dusk → demolition, 여운)",
+   "refs": [
+    "GMA@fullbody-side",
+    "CART@sheet",
+    "LOC@apt-gate-day"
+   ],
+   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves discovering the stack of boxes by the flower bed and giving a small nod before loading them onto the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap, early morning.",
+   "environment": "sidewalk in front of an apartment-complex main gate (LOC apt-gate): flower bed and low wall, no signs, no lettering",
+   "expression": "Faint gratitude, small nod.",
+   "motion": "Small nod, slow lift of the boxes.",
+   "edit": ""
+  },
+  {
+   "id": "S13",
+   "shot": "Long shot",
+   "lens": "24mm wide angle, deep focus, imposing perspective, sharp architectural lines",
+   "lighting": "Late-afternoon golden hour, key from upper-left, 4500K warm amber, long soft shadows, warm rim light on hair and shoulders",
+   "camera": "Static, locked off",
+   "transition_out": "J-Cut 0.5s (truck idle leads)",
+   "refs": [
+    "GMA@fullbody-front",
+    "CART@sheet",
+    "LOC@demolition-day"
+   ],
+   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves parking the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap beside the rubble wall and walking away from it to collect paper, late afternoon dust haze.",
+   "environment": "redevelopment demolition lot (LOC demolition): collapsed wall rubble, faint dust haze, safety fence, blank white sign with no lettering, no people around",
+   "expression": "Neutral.",
+   "motion": "Slow walk away from the cart, dust drifting.",
+   "edit": ""
+  },
+  {
+   "id": "S14",
+   "shot": "Long shot",
+   "lens": "24mm wide angle, deep focus, imposing perspective, sharp architectural lines",
+   "lighting": "Late-afternoon golden hour, key from upper-left, 4500K warm amber, long soft shadows, warm rim light on hair and shoulders",
+   "camera": "Slow cinematic push-in toward the truck (zoom 1.05)",
+   "transition_out": "Hard cut",
+   "refs": [
+    "CART@sheet",
+    "LOC@demolition-key1"
+   ],
+   "subject": "Demolition workers (backs to camera, faceless, no text on vests) loading rubble into a truck; the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap sits among the scrap in the background about to be loaded. No readable text anywhere.",
+   "environment": "redevelopment demolition lot (LOC demolition): collapsed wall rubble, faint dust haze, safety fence, blank white sign with no lettering, no people around",
+   "expression": "—",
+   "motion": "Slow push-in, workers move slowly, truck exhaust drifts.",
+   "edit": ""
+  },
+  {
+   "id": "S15",
+   "shot": "Close-up, chest-up, single (no hands in frame)",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Late-afternoon golden hour, key from upper-left, 4500K warm amber, long soft shadows, warm rim light on hair and shoulders",
+   "camera": "Static, locked off",
+   "transition_out": "Hold 0.8s → Dissolve 0.5s",
+   "refs": [
+    "GMA@front-tense",
+    "LOC@demolition-day"
+   ],
+   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, framed from the chest up, alone, staring at the empty spot where her cart stood, lips just parted; no hands, no props in frame.",
+   "environment": "redevelopment demolition lot (LOC demolition): collapsed wall rubble, faint dust haze, safety fence, blank white sign with no lettering, no people around",
+   "expression": "Shock held at 50%: wide eyes, parted lips.",
+   "motion": "Speaks the short line, one slow blink, then frozen stillness; no hand gestures.",
+   "edit": "01:31.17~01:32.20 Talking face (line 15) then hold on frozen face; narration lines 16–17 over this and S16 → 01:32.20~01:33.05 Hold: lips closed, reaction beat only (no speech after audio ends)"
+  },
+  {
+   "id": "S16",
+   "shot": "Full shot, high angle",
+   "lens": "35mm lens, f/4.0, eye-level cinematic shot, environmental storytelling, rule of thirds",
+   "lighting": "Late-afternoon golden hour, key from upper-left, 4500K warm amber, long soft shadows, warm rim light on hair and shoulders",
+   "camera": "Static, locked off",
+   "transition_out": "Dissolve 0.5s",
+   "refs": [
+    "GMA@fullbody-front",
+    "LOC@demolition-key2"
+   ],
+   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves sunk to her knees on the dusty ground, one empty gloved hand pressed to the earth, seen from a high angle.",
+   "environment": "redevelopment demolition lot (LOC demolition): collapsed wall rubble, faint dust haze, safety fence, blank white sign with no lettering, no people around",
+   "expression": "Collapse, head bowed.",
+   "motion": "Micro trembling of the hand, dust settling, nothing else.",
+   "edit": ""
+  },
+  {
+   "id": "S17",
+   "shot": "Long shot",
+   "lens": "35mm lens, f/4.0, eye-level cinematic shot, environmental storytelling, rule of thirds",
+   "lighting": "Low-key night, single warm sodium street lamp as key from upper-left, 3200K tungsten feel, deep cinematic shadows, thin mist catching the light, Chiaroscuro",
+   "camera": "Subtle handheld sway",
+   "transition_out": "Dissolve 0.8s",
+   "refs": [
+    "GMA@fullbody-side",
+    "LOC@demolition-night"
+   ],
+   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves alone at night, small in the frame, wandering slowly along the fence of the demolition lot looking for the cart.",
+   "environment": "redevelopment demolition lot (LOC demolition): collapsed wall rubble, faint dust haze, safety fence, blank white sign with no lettering, no people around, night",
+   "expression": "Exhausted.",
+   "motion": "Slow walk, subtle handheld sway, mist drifting.",
+   "edit": ""
+  },
+  {
+   "id": "S18",
+   "shot": "Medium close-up",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Low-key booth interior at night, warm desk lamp key from upper-left 3200K, cool CCTV monitor glow as fill from the right, Chiaroscuro, rim light on the shoulder",
+   "camera": "Static, locked off",
+   "transition_out": "J-Cut 0.5s (clock tick leads)",
+   "refs": [
+    "KIM@front-neutral",
+    "LOC@guard-booth-night"
+   ],
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt inside the booth at night, halfway through putting on his jacket, paused, looking out the window at the empty spot where the grandmother usually passes.",
+   "environment": "small apartment security booth interior (LOC guard-booth): narrow desk with old black-and-white CCTV monitors and a thermos, window onto the flower bed, blank smooth duty board on the wall with no writing, night",
+   "expression": "Still, something decided behind the eyes.",
+   "motion": "Single slow blink, micro breathing, eyes settle on the window.",
+   "edit": ""
+  },
+  {
+   "id": "S19",
+   "shot": "Full shot (rear follow)",
+   "lens": "35mm lens, f/4.0, eye-level cinematic shot, environmental storytelling, rule of thirds",
+   "lighting": "Low-key booth interior at night, warm desk lamp key from upper-left 3200K, cool CCTV monitor glow as fill from the right, Chiaroscuro, rim light on the shoulder",
+   "camera": "Very slow push forward behind Kim",
+   "transition_out": "Dissolve 0.4s (night ambience bridge)",
+   "refs": [
+    "KIM@fullbody-back",
+    "LOC@guard-booth-night"
+   ],
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt from behind at shoulder height, opening the booth door and stepping out into the night, flashlight in hand.",
+   "environment": "small apartment security booth interior (LOC guard-booth): narrow desk with old black-and-white CCTV monitors and a thermos, window onto the flower bed, blank smooth duty board on the wall with no writing, doorway to the dark",
+   "expression": "—",
+   "motion": "Door opens slowly, he steps through, camera drifts forward slightly.",
+   "edit": ""
+  },
+  {
+   "id": "S20",
+   "shot": "Long shot",
+   "lens": "35mm lens, f/4.0, eye-level cinematic shot, environmental storytelling, rule of thirds",
+   "lighting": "Low-key night, single warm sodium street lamp as key from upper-left, 3200K tungsten feel, deep cinematic shadows, thin mist catching the light, Chiaroscuro",
+   "camera": "Very slow lateral drift",
+   "transition_out": "Dissolve 0.5s",
+   "refs": [
+    "KIM@fullbody-side",
+    "LOC@alley-night-night"
+   ],
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt walking slowly along the dark alley sweeping a flashlight beam over stacked paper bundles.",
+   "environment": "dark neighbourhood alley at night (LOC alley-night): one sodium street lamp, stacked paper bundles, old shutter doors, thin night mist",
+   "expression": "Searching.",
+   "motion": "Slow walk, flashlight beam sweeps slowly, mist.",
+   "edit": ""
+  },
+  {
+   "id": "S21",
+   "shot": "Full shot, high angle",
+   "lens": "35mm lens, f/4.0, eye-level cinematic shot, environmental storytelling, rule of thirds",
+   "lighting": "Night rain, single street lamp key from upper-left 3200K, wet reflective ground, backlit rain streaks, deep shadows",
+   "camera": "Subtle handheld sway",
+   "transition_out": "Dissolve 0.8s (rain → booth, 여운)",
+   "refs": [
+    "KIM@fullbody-front",
+    "LOC@alley-night-key1"
+   ],
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt soaked, no umbrella, standing in heavy rain in the alley, shoulders slumped, looking down the empty street.",
+   "environment": "dark neighbourhood alley at night (LOC alley-night): one sodium street lamp, stacked paper bundles, old shutter doors, thin night mist, pouring rain",
+   "expression": "Weary.",
+   "motion": "Rain falls, he stands nearly still, slow exhale, subtle sway.",
+   "edit": ""
+  },
+  {
+   "id": "S22",
+   "shot": "Medium close-up",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Low-key booth interior at night, warm desk lamp key from upper-left 3200K, cool CCTV monitor glow as fill from the right, Chiaroscuro, rim light on the shoulder",
+   "camera": "Slow cinematic push-in (zoom 1.05)",
+   "transition_out": "Match cut (hands → notebook)",
+   "refs": [
+    "KIM@front-neutral",
+    "LOC@guard-booth-night"
+   ],
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt at the booth desk at night, taking an old floral-patterned notebook from the drawer and opening it gently.",
+   "environment": "small apartment security booth interior (LOC guard-booth): narrow desk with old black-and-white CCTV monitors and a thermos, window onto the flower bed, blank smooth duty board on the wall with no writing, night",
+   "expression": "Quiet longing.",
+   "motion": "Hands open the notebook slowly, eyes lower, single blink.",
+   "edit": ""
+  },
+  {
+   "id": "S23",
+   "shot": "Extreme close-up",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Low-key booth interior at night, warm desk lamp key from upper-left 3200K, cool CCTV monitor glow as fill from the right, Chiaroscuro, rim light on the shoulder",
+   "camera": "Static, rack focus edge → writing",
+   "transition_out": "J-Cut 0.5s",
+   "refs": [
+    "LOC@guard-booth-key1"
+   ],
+   "subject": "Open page of an old floral notebook under a desk lamp; handwriting is present but rendered as soft illegible ink strokes, out of focus, no readable letters.",
+   "environment": "small apartment security booth interior (LOC guard-booth): narrow desk with old black-and-white CCTV monitors and a thermos, window onto the flower bed, blank smooth duty board on the wall with no writing",
+   "expression": "—",
+   "motion": "Slow rack focus only.",
+   "edit": ""
+  },
+  {
+   "id": "S24",
+   "shot": "Medium close-up",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Low-key booth interior at night, warm desk lamp key from upper-left 3200K, cool CCTV monitor glow as fill from the right, Chiaroscuro, rim light on the shoulder",
+   "camera": "Static, locked off",
+   "transition_out": "Sepia dissolve 0.5s → flashback",
+   "refs": [
+    "KIM@front-neutral",
+    "LOC@guard-booth-night"
+   ],
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt at the booth window at night, opening a thermos lid and drinking, gazing far away.",
+   "environment": "small apartment security booth interior (LOC guard-booth): narrow desk with old black-and-white CCTV monitors and a thermos, window onto the flower bed, blank smooth duty board on the wall with no writing, night",
+   "expression": "Tired, remembering.",
+   "motion": "Slow sip, gaze fixed far, micro breathing.",
+   "edit": ""
+  },
+  {
+   "id": "S25",
+   "shot": "Close-up (feet/legs)",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Low-key night, single warm sodium street lamp as key from upper-left, 3200K tungsten feel, deep cinematic shadows, thin mist catching the light, Chiaroscuro",
+   "camera": "Static, locked off",
+   "transition_out": "Dissolve 1.0s (night → day, 여운)",
+   "refs": [
+    "KIM@fullbody-side",
+    "LOC@alley-night-night"
+   ],
+   "subject": "Close-up of the tired legs and shoes of Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt dragging slightly on the wet alley pavement at night.",
+   "environment": "dark neighbourhood alley at night (LOC alley-night): one sodium street lamp, stacked paper bundles, old shutter doors, thin night mist",
+   "expression": "—",
+   "motion": "Slow heavy steps, slight limp.",
+   "edit": ""
+  },
+  {
+   "id": "S26",
+   "shot": "Medium shot (knee-up)",
+   "lens": "50mm lens, f/2.8, medium shot, natural perspective, soft background separation",
+   "lighting": "Soft natural daylight from upper-left, 5600K clean balanced tones, subtle warm rim light separating subject from background, gentle contrast",
+   "camera": "Static, locked off",
+   "transition_out": "J-Cut 0.5s (daytime street leads)",
+   "refs": [
+    "KIM@fullbody-front",
+    "CART@sheet",
+    "LOC@junkyard-day"
+   ],
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt walking slowly toward the camera along a daytime street lined with scrap handcarts at the entrance of the scrap-dealer district, looking around; framed from the knees up so his face is large and clearly recognizable.",
+   "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering street entrance",
+   "expression": "Alert.",
+   "motion": "Slow walk toward camera (one or two steps), head turns limited to 15°, face stays sharp and identical to the first frame.",
+   "edit": ""
+  },
+  {
+   "id": "S27",
+   "shot": "Medium close-up",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Overcast daylight 5600K from upper-left, bare bulbs as warm 3200K practicals, dramatic high-contrast shadows between paper bales, warm rim light",
+   "camera": "Slow cinematic push-in (zoom 1.06)",
+   "transition_out": "Hard cut",
+   "refs": [
+    "KIM@45-neutral",
+    "LOC@junkyard-key1"
+   ],
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt stopped at the scrapyard gate, eyes locking onto a familiar handle deep inside the yard.",
+   "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
+   "expression": "Recognition at 50%: eyes narrow, breath held.",
+   "motion": "Push-in on the eyes, single blink, no head turn.",
+   "edit": ""
+  },
+  {
+   "id": "S28",
+   "shot": "Close-up, chest-up, single (no hands in frame)",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Overcast daylight 5600K from upper-left, bare bulbs as warm 3200K practicals, dramatic high-contrast shadows between paper bales, warm rim light",
+   "camera": "Static, locked off",
+   "transition_out": "Hard cut",
+   "refs": [
+    "CHOI@front-neutral",
+    "LOC@junkyard-day"
+   ],
+   "subject": "Korean man in his mid-50s (reference: CHOI sheet): a Korean man in his mid-50s, stocky heavyset build, BALD on top with only very short cropped grey hair on the sides, a thick dark-grey MUSTACHE, deeply tanned leathery skin, broad square jaw, small narrow eyes under thick eyebrows — clearly a different man from a clean-shaven man with a full head of hair; grease-stained plain grey work vest over a plain dark shirt; framed from the chest up, alone in the frame, facing slightly camera-left as if speaking to someone off-screen, mouth open mid-sentence; no hands, no cart in frame.",
+   "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
+   "expression": "Businesslike, brisk, slightly impatient.",
+   "motion": "Speaking: natural lip movement, small head movements under 10 degrees, no hand gestures.",
+   "edit": "03:22.00~03:24.00 Talking face Choi (line 31) → 03:24.00~03:25.00 B-roll: rusty scale / paper bales → 03:25.00~03:26.05 Reaction: Kim unmoved"
+  },
+  {
+   "id": "S29",
+   "shot": "Medium close-up",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Overcast daylight 5600K from upper-left, bare bulbs as warm 3200K practicals, dramatic high-contrast shadows between paper bales, warm rim light",
+   "camera": "Slow cinematic push-in (zoom 1.05)",
+   "transition_out": "Match cut (hand on strap)",
+   "refs": [
+    "KIM@front-neutral",
+    "CART@sheet",
+    "LOC@junkyard-day"
+   ],
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt's rough hand slowly resting on the leather strap of the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap handle, his face resolute above it.",
+   "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
+   "expression": "Firm resolve.",
+   "motion": "Hand settles on the strap, lips move with the line, single blink.",
+   "edit": "03:31.18~03:34.03 Talking face (line 33) → 03:34.03~03:34.14 Hold: lips closed, reaction beat only (no speech after audio ends)"
+  },
+  {
+   "id": "S30",
+   "shot": "Close-up (Choi reaction)",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Overcast daylight 5600K from upper-left, bare bulbs as warm 3200K practicals, dramatic high-contrast shadows between paper bales, warm rim light",
+   "camera": "Slow cinematic push-in (zoom 1.05)",
+   "transition_out": "Hold 1s → Dissolve 0.5s",
+   "refs": [
+    "CHOI@front-neutral",
+    "LOC@junkyard-day"
+   ],
+   "subject": "Korean man in his mid-50s (reference: CHOI sheet): bald on top with very short grey hair on the sides, thick dark-grey mustache, deeply tanned skin, stocky build; grease-stained plain grey work vest over plain dark shirt; arms crossed, listening, his hard expression beginning to soften; chest-up close-up, alone in the frame, nobody else visible.",
+   "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
+   "expression": "Softening (keyframe at 50%: brow relaxing).",
+   "motion": "Slow push-in, one blink, jaw loosens slightly, no head turn.",
+   "edit": "03:36.06~03:38.06 Talking face Kim (line 34, from S29 angle) → 03:38.06~03:39.06 B-roll: strap ECU → 03:39.06~03:40.11 Reaction: Choi softening (this keyframe) → 03:40.11~03:41.07 Hold: lips closed, reaction beat only (no speech after audio ends)"
+  },
+  {
+   "id": "S31",
+   "shot": "Close-up, chest-up, single (no hands in frame)",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Overcast daylight 5600K from upper-left, bare bulbs as warm 3200K practicals, dramatic high-contrast shadows between paper bales, warm rim light",
+   "camera": "Static, locked off",
+   "transition_out": "Hold 1s → Dissolve 0.5s → dawn",
+   "refs": [
+    "CHOI@front-smile",
+    "LOC@junkyard-day"
+   ],
+   "subject": "Korean man in his mid-50s (reference: CHOI sheet): a Korean man in his mid-50s, stocky heavyset build, BALD on top with only very short cropped grey hair on the sides, a thick dark-grey MUSTACHE, deeply tanned leathery skin, broad square jaw, small narrow eyes under thick eyebrows — clearly a different man from a clean-shaven man with a full head of hair; grease-stained plain grey work vest over a plain dark shirt; framed from the chest up, alone in the frame, facing slightly camera-left, a softened expression; no hands, no cart in frame.",
+   "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
+   "expression": "Gruff warmth, faint smile (50%).",
+   "motion": "Speaks the short line softly, lips move gently, single blink, slight nod; no hand gestures.",
+   "edit": "03:55.08~03:57.13 Talking face Choi (line 37) → 03:57.13~03:58.15 Hold: lips closed, reaction beat only (no speech after audio ends)"
+  },
+  {
+   "id": "S32",
+   "shot": "Medium close-up",
+   "lens": "50mm lens, f/2.8, medium shot, natural perspective, soft background separation",
+   "lighting": "Low-key booth interior at night, warm desk lamp key from upper-left 3200K, cool CCTV monitor glow as fill from the right, Chiaroscuro, rim light on the shoulder",
+   "camera": "Static, locked off",
+   "transition_out": "J-Cut 0.5s (metal clink leads)",
+   "refs": [
+    "KIM@45-neutral",
+    "CART@sheet",
+    "LOC@guard-booth-night"
+   ],
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt late at night beside the booth, flashlight held in his mouth, fitting a new wheel onto the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap.",
+   "environment": "small apartment security booth interior (LOC guard-booth): narrow desk with old black-and-white CCTV monitors and a thermos, window onto the flower bed, blank smooth duty board on the wall with no writing, exterior at night",
+   "expression": "Absorbed.",
+   "motion": "Hands work slowly on the wheel, flashlight beam jitters slightly.",
+   "edit": ""
+  },
+  {
+   "id": "S33",
+   "shot": "Close-up (hands)",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Low-key booth interior at night, warm desk lamp key from upper-left 3200K, cool CCTV monitor glow as fill from the right, Chiaroscuro, rim light on the shoulder",
+   "camera": "Static, locked off",
+   "transition_out": "Dissolve 0.4s",
+   "refs": [
+    "KIM@hands",
+    "CART@sheet",
+    "LOC@guard-booth-night"
+   ],
+   "subject": "The rough hands of Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt carefully wrapping one old navy work glove over the frayed leather strap of the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap handle.",
+   "environment": "small apartment security booth interior (LOC guard-booth): narrow desk with old black-and-white CCTV monitors and a thermos, window onto the flower bed, blank smooth duty board on the wall with no writing, night",
+   "expression": "—",
+   "motion": "Slow wrapping motion only.",
+   "edit": ""
+  },
+  {
+   "id": "S34",
+   "shot": "Long shot (rear follow)",
+   "lens": "35mm lens, f/4.0, eye-level cinematic shot, environmental storytelling, rule of thirds",
+   "lighting": "Pre-dawn blue hour, 4000K cool ambient with faint warm horizon, mist, low-key, soft rim from a single lamp",
+   "camera": "Very slow push forward behind Kim",
+   "transition_out": "Dissolve 0.8s (location change: alley → site)",
+   "refs": [
+    "KIM@fullbody-back",
+    "CART@sheet",
+    "LOC@alley-night-key2"
+   ],
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt from behind pulling the repaired rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap alone through the pre-dawn alley mist and setting it quietly in the grandmother's usual spot.",
+   "environment": "dark neighbourhood alley at night (LOC alley-night): one sodium street lamp, stacked paper bundles, old shutter doors, thin night mist, pre-dawn",
+   "expression": "—",
+   "motion": "Slow pull of the cart, sets it down, walks away, camera drifts forward.",
+   "edit": ""
+  },
+  {
+   "id": "S35",
+   "shot": "Long shot",
+   "lens": "35mm lens, f/4.0, eye-level cinematic shot, environmental storytelling, rule of thirds",
+   "lighting": "Pre-dawn blue hour, 4000K cool ambient with faint warm horizon, mist, low-key, soft rim from a single lamp",
+   "camera": "Static, locked off",
+   "transition_out": "Dissolve 0.5s (night → next morning)",
+   "refs": [
+    "CART@sheet",
+    "LOC@demolition-key2"
+   ],
+   "subject": "Empty alley near the demolition lot in early-morning mist, the repaired rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap standing alone, no people.",
+   "environment": "redevelopment demolition lot (LOC demolition): collapsed wall rubble, faint dust haze, safety fence, blank white sign with no lettering, no people around, morning mist",
+   "expression": "—",
+   "motion": "Mist drifts, nothing else.",
+   "edit": ""
+  },
+  {
+   "id": "S36",
+   "shot": "Close-up, chest-up, single (no hands in frame)",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Soft natural daylight from upper-left, 5600K clean balanced tones, subtle warm rim light separating subject from background, gentle contrast",
+   "camera": "Static, locked off",
+   "transition_out": "Dissolve 0.4s",
+   "refs": [
+    "GMA@front-tense",
+    "LOC@demolition-day"
+   ],
+   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, framed from the chest up, alone, looking down toward the cart that is just out of frame below, eyes brimming, lips parted; no hands, no props in frame.",
+   "environment": "redevelopment demolition lot (LOC demolition): collapsed wall rubble, faint dust haze, safety fence, blank white sign with no lettering, no people around, early morning",
+   "expression": "Startled relief turning to tears (50%).",
+   "motion": "Speaks the short trembling line, one slow blink; no hand gestures.",
+   "edit": "04:28.00~04:29.19 Talking face (line 42) → 04:29.19~04:30.17 Hold: lips closed, reaction beat only (no speech after audio ends)"
+  },
+  {
+   "id": "S37",
+   "shot": "Close-up (hands)",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Soft natural daylight from upper-left, 5600K clean balanced tones, subtle warm rim light separating subject from background, gentle contrast",
+   "camera": "Slow cinematic push-in (zoom 1.05)",
+   "transition_out": "Dissolve 0.8s",
+   "refs": [
+    "GMA@hands",
+    "CART@sheet",
+    "LOC@demolition-day"
+   ],
+   "subject": "The two gloved hands of Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves cupping and stroking the glove-wrapped leather strap on the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap handle.",
+   "environment": "redevelopment demolition lot (LOC demolition): collapsed wall rubble, faint dust haze, safety fence, blank white sign with no lettering, no people around",
+   "expression": "—",
+   "motion": "Hands tremble gently, slow push-in.",
+   "edit": ""
+  },
+  {
+   "id": "S38",
+   "shot": "Choker close-up",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Soft natural daylight from upper-left, 5600K clean balanced tones, subtle warm rim light separating subject from background, gentle contrast",
+   "camera": "Static, locked off",
+   "transition_out": "Sepia dissolve 0.5s → flashback",
+   "refs": [
+    "GMA@front-smile",
+    "LOC@demolition-day"
+   ],
+   "subject": "The face of Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves, eyes brimming with tears, a faint smile.",
+   "environment": "redevelopment demolition lot (LOC demolition): collapsed wall rubble, faint dust haze, safety fence, blank white sign with no lettering, no people around",
+   "expression": "Tearful smile at 50% (keyframe).",
+   "motion": "Single slow blink, one tear line, micro breathing, no head turn.",
+   "edit": ""
+  },
+  {
+   "id": "S39",
+   "shot": "Medium shot (two-shot)",
+   "lens": "50mm lens, f/2.8, medium shot, natural perspective, soft background separation",
+   "lighting": "Memory flashback: desaturated sepia grade, soft diffused snowy light, 3200K warm feel, gentle halation, fine grain",
+   "camera": "Static, locked off",
+   "transition_out": "Sepia dissolve 0.5s → present",
+   "refs": [
+    "GMA@fullbody-front",
+    "KIM@fullbody-front",
+    "LOC@alley-night-key1"
+   ],
+   "subject": "Flashback ten years ago: snowy dark alley, Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves silently handing a steaming boiled corn to Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt, both ten years younger, sepia memory grade.",
+   "environment": "dark neighbourhood alley at night (LOC alley-night): one sodium street lamp, stacked paper bundles, old shutter doors, thin night mist, snowfall",
+   "expression": "Wordless kindness.",
+   "motion": "Snow falls slowly, her hand extends, his hand receives, nothing else.",
+   "edit": ""
+  },
+  {
+   "id": "S40",
+   "shot": "Close-up",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Soft morning daylight through the booth window from upper-left, 5600K, gentle contrast, dust motes in the light",
+   "camera": "Static, locked off",
+   "transition_out": "Hard cut (bookend impact)",
+   "refs": [
+    "LOC@guard-booth-day"
+   ],
+   "subject": "A small plastic bag with steaming boiled corn resting on the booth windowsill in early-morning sunlight, no people.",
+   "environment": "small apartment security booth interior (LOC guard-booth): narrow desk with old black-and-white CCTV monitors and a thermos, window onto the flower bed, blank smooth duty board on the wall with no writing, windowsill",
+   "expression": "—",
+   "motion": "Steam rises slowly, dust motes.",
+   "edit": ""
+  },
+  {
+   "id": "S41",
+   "shot": "Medium close-up",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
+   "lighting": "Soft morning daylight through the booth window from upper-left, 5600K, gentle contrast, dust motes in the light",
+   "camera": "Static, locked off",
+   "transition_out": "Dissolve 0.5s (J-Cut audio leads 0.5s)",
+   "refs": [
+    "KIM@front-smile",
+    "LOC@guard-booth-day"
+   ],
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt discovering the corn bag on the windowsill, lifting it in one hand, a faint smile.",
+   "environment": "small apartment security booth interior (LOC guard-booth): narrow desk with old black-and-white CCTV monitors and a thermos, window onto the flower bed, blank smooth duty board on the wall with no writing",
+   "expression": "Faint smile at 50% (keyframe).",
+   "motion": "Lifts the bag slowly, smile deepens by a hair, single blink.",
+   "edit": ""
+  },
+  {
+   "id": "S42",
+   "shot": "Long shot",
+   "lens": "35mm lens, f/4.0, eye-level cinematic shot, environmental storytelling, rule of thirds",
+   "lighting": "Soft natural daylight from upper-left, 5600K clean balanced tones, subtle warm rim light separating subject from background, gentle contrast",
+   "camera": "Very slow lateral drift",
+   "transition_out": "Dissolve 0.5s",
+   "refs": [
+    "GMA@fullbody-side",
+    "CART@sheet",
+    "LOC@apt-gate-day"
+   ],
+   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves pulling the repaired rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap along the sunny morning sidewalk with a steadier stride.",
+   "environment": "sidewalk in front of an apartment-complex main gate (LOC apt-gate): flower bed and low wall, no signs, no lettering",
+   "expression": "Quiet strength.",
+   "motion": "Slow steady walk, cart rolls smoothly, camera drifts.",
+   "edit": ""
+  },
+  {
+   "id": "S43",
+   "shot": "Long shot (rear)",
+   "lens": "35mm lens, f/4.0, eye-level cinematic shot, environmental storytelling, rule of thirds",
+   "lighting": "Blue-hour dusk, cool 4800K ambient with one warm practical lamp, low-key, soft rim light",
+   "camera": "Static rear shot",
+   "transition_out": "Dissolve 0.5s → ending card",
+   "refs": [
+    "KIM@fullbody-back",
+    "LOC@guard-booth-night"
+   ],
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt from behind standing at the booth doorway at dusk, quietly watching the complex, caption card space in lower third.",
+   "environment": "small apartment security booth interior (LOC guard-booth): narrow desk with old black-and-white CCTV monitors and a thermos, window onto the flower bed, blank smooth duty board on the wall with no writing, dusk",
+   "expression": "—",
+   "motion": "Micro breathing, nothing else.",
+   "edit": ""
+  },
+  {
+   "id": "S44",
+   "shot": "Medium shot",
+   "lens": "35mm lens, f/4.0, eye-level cinematic shot, environmental storytelling, rule of thirds",
+   "lighting": "Soft morning daylight through the booth window from upper-left, 5600K, gentle contrast, dust motes in the light",
+   "camera": "Static, locked off",
+   "transition_out": "Fade out",
+   "refs": [
+    "LOC@guard-booth-key2"
+   ],
+   "subject": "Booth windowsill with a small Christmas tree ornament just visible, winter teaser, no people, caption card space.",
+   "environment": "small apartment security booth interior (LOC guard-booth): narrow desk with old black-and-white CCTV monitors and a thermos, window onto the flower bed, blank smooth duty board on the wall with no writing, winter",
+   "expression": "—",
+   "motion": "Static plate, faint light flicker on the ornament.",
+   "edit": ""
+  }
+ ]
+}
