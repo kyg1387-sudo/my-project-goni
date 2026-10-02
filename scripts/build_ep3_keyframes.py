@@ -78,6 +78,10 @@ COMPOSITION = {
             "mustache, tanned weathered skin, broad square jaw, thick eyebrows."),
     "S15": ("SINGLE PORTRAIT: exactly one person (the grandmother), chest-up close-up, no hands, no cardboard, no cart."),
     "S36": ("SINGLE PORTRAIT: exactly one person (the grandmother), chest-up close-up, no hands, no cart in frame."),
+    "S02": ("SINGLE PORTRAIT: exactly one person (Choi) — bald on top, thick grey mustache, tanned skin; Kim is NOT in the frame. "
+            "No badge, no patch, no emblem on the vest."),
+    "S30": ("SINGLE PORTRAIT: exactly one person (Choi) — bald on top, thick grey mustache, tanned skin, chest-up close-up; "
+            "Kim is NOT in the frame, no second person, no out-of-focus shoulder. No badge, no patch, no emblem on the vest."),
     "S29": ("Composition: Kim stands at the FRONT of the cart, facing the camera, the cart bed BEHIND him and to one side. "
             "He has lifted the end of the cart's single straight drawbar pole and holds its short leather-wrapped "
             "cross-bar grip in both hands at waist height, the pole running back past his hip to the cart. ONE pole, ONE "
@@ -128,7 +132,7 @@ WARDROBE = {
 EXTRA_REFS = {"S41": "assets/portraits/ep3-keyframes/s40-1.png"}  # 소품 연속성(옥수수 봉지)
 
 
-ANCHOR_SKIP = {"S01", "S15", "S26", "S27", "S28", "S29", "S31", "S36", "S37", "S42"}  # S27: 앵커(S28 투샷)에 끌려 김씨가 최사장 조끼를 입음  # 연속성 앵커가 동작·인물 구성을 끌어간 실증 → 앵커 제외
+ANCHOR_SKIP = {"S01", "S02", "S15", "S26", "S27", "S28", "S29", "S30", "S31", "S36", "S37", "S42"}  # S27: 앵커(S28 투샷)에 끌려 김씨가 최사장 조끼를 입음  # 연속성 앵커가 동작·인물 구성을 끌어간 실증 → 앵커 제외
 
 
 def anchor_for(scene):
