@@ -1,0 +1,15 @@
+{
+ "_설명": "일본어 아웃트로 미니 스킷: 진행자 정지 프레임 + 음성 구동 립싱크",
+ "ratio": "16:9",
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "durations": [
+  12
+ ],
+ "scenes": [
+  {
+   "prompt": "Static, locked off. Motion: subtle breathing, gentle eye blink only. No head turn.",
+   "image": "assets/portraits/outro-host.png",
+   "duration": 12
+  }
+ ]
+}
