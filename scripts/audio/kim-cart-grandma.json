@@ -245,14 +245,14 @@
   "bgm_volume": 0.18,
   "bgm_segments": [
     {
-      "start": 33.5,
-      "end": 99.5,
+      "start": 32.5,
+      "end": 96.5,
       "volume": 0.15,
       "prompt": "sparse minimalist Korean drama piano, single quiet melodic line, dry understated tone, slow unhurried tempo, no strings, instrumental only, no vocals, no lyrics"
     },
     {
-      "start": 194.1,
-      "end": 282.0,
+      "start": 173.9,
+      "end": 257.8,
       "volume": 0.2,
       "prompt": "warm gentle Korean drama strings and piano swelling gradually, cello and violin, bittersweet and healing, emotional but restrained, instrumental only, no vocals, no lyrics"
     }
@@ -278,7 +278,7 @@
     10,
     10,
     5,
-    3,
+    5,
     10,
     10,
     5,

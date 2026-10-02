@@ -26,6 +26,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--skit", required=True)
 ap.add_argument("--narration-tempo", type=float, default=1.0)
 ap.add_argument("--trim", default="", help="조립 길이 조정: 20=7,33=4 (생성 클립보다 짧게만, 영상 재생성 없음)")
+ap.add_argument("--anchor", default="", help="줄 앵커링: TTS줄=장면 (예 18=20,19=21) → 그 줄을 해당 장면 시작+0.3s 이후로 맞춤")
 ap.add_argument("--apply", action="store_true")
 a = ap.parse_args()
 
@@ -73,6 +74,19 @@ for i, ln in enumerate(raw):
             subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", orig, "-filter:a", f"atempo={a.narration_tempo}", src], check=True)
     e1 = s1 + dur
     rows.append((i, p, s1, e1, style))
+
+# 앵커링: 내레이션이 장면보다 앞서는 구간은 줄을 해당 장면 시작 뒤로 민다(앞당기지는 않음)
+anchors = {int(k): int(v) for k, v in (kv.split("=") for kv in a.anchor.split(",") if kv)}
+rows2, n = [], 0
+for i, p, s1, e1, style in rows:
+    if style not in silent:
+        n += 1
+        if n in anchors:
+            target = new_s[anchors[n] - 1] + 0.3
+            if s1 < target:
+                e1 += target - s1; s1 = target
+    rows2.append((i, p, s1, e1, style))
+rows = rows2
 
 # 겹치지 않게 보정(압축으로 앞뒤 줄이 붙는 경우 0.3초 호흡 유지)
 prev_e = -1.0
