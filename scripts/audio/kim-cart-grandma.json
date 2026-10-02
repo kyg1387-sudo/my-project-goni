@@ -245,14 +245,14 @@
   "bgm_volume": 0.18,
   "bgm_segments": [
     {
-      "start": 36.0,
-      "end": 106.0,
+      "start": 35.0,
+      "end": 103.5,
       "volume": 0.15,
       "prompt": "sparse minimalist Korean drama piano, single quiet melodic line, dry understated tone, slow unhurried tempo, no strings, instrumental only, no vocals, no lyrics"
     },
     {
-      "start": 220.0,
-      "end": 319.0,
+      "start": 214.7,
+      "end": 309.5,
       "volume": 0.2,
       "prompt": "warm gentle Korean drama strings and piano swelling gradually, cello and violin, bittersweet and healing, emotional but restrained, instrumental only, no vocals, no lyrics"
     }
@@ -312,5 +312,51 @@
     28,
     31
   ],
-  "_현장음_생략": "2026-10-02 PHASE 6: 언어검사에서 영어 말소리 검출(amb01·15·29) + 의심(02·13) → 해당 장면 현장음 생략"
+  "_현장음_생략": "2026-10-02 PHASE 6: 언어검사에서 영어 말소리 검출(amb01·15·29) + 의심(02·13) → 해당 장면 현장음 생략",
+  "transitions": [
+    0.0,
+    0.0,
+    0.5,
+    0.0,
+    0.5,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.5,
+    0.0,
+    0.0,
+    0.5,
+    0.5,
+    0.5,
+    0.0,
+    0.4,
+    0.5,
+    0.5,
+    0.0,
+    0.0,
+    0.5,
+    0.4,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.5,
+    0.5,
+    0.0,
+    0.4,
+    0.0,
+    0.0,
+    0.4,
+    0.4,
+    0.5,
+    0.5,
+    0.0,
+    0.0,
+    0.5,
+    0.5,
+    0.0
+  ]
 }

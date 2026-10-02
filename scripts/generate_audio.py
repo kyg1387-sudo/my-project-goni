@@ -469,12 +469,18 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
         print(f"경고: scene_durations {len(planned)}개 != 장면 {len(scenes)}개 — 실측 길이 사용")
         planned = None
     durations = [float(d) for d in planned] if planned else [probe_duration(s) for s in scenes]
+    # 규격 제3장-3 전환: transitions[k] = 장면 k가 다음 장면과 겹치는 디졸브 길이(초, 0=하드컷).
+    # 겹친 만큼 뒤 장면이 당겨지므로 타임라인(자막·대사·현장음)은 모두 이 압축 시간 기준이다.
+    overlaps = [float(x) for x in cfg.get("transitions", [])]
+    overlaps += [0.0] * (len(durations) - len(overlaps))
+    overlaps[-1] = 0.0
     bounds, t = [], 0.0
-    for d in durations:
+    for d, o in zip(durations, overlaps):
         bounds.append((t, t + d))
-        t += d
+        t += d - o
     total = t
-    print(f"장면 {len(scenes)}개, 총 {total:.2f}초" + (" (계획 길이로 정규화)" if planned else ""))
+    print(f"장면 {len(scenes)}개, 총 {total:.2f}초" + (" (계획 길이로 정규화)" if planned else "")
+          + (f", 디졸브 {sum(1 for o in overlaps if o > 0)}곳(겹침 {sum(overlaps):.1f}s)" if any(overlaps) else ""))
 
     # 대사(내레이션 제외)만 담긴 전체 트랙
     dial_wav = render_track(placed_dialogue, total, os.path.join(WORK_DIR, "dialogue.wav"))
@@ -536,8 +542,24 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
                      f"pad=1280:720:(ow-iw)/2:(oh-ih)/2,fps=24,setsar=1,"
                      f"tpad=stop_mode=clone:stop_duration=15,trim=duration={d:.3f},"
                      f"setpts=PTS-STARTPTS[v{k}]")
-    parts.append("".join(f"[v{k}]" for k in range(len(final_scenes)))
-                 + f"concat=n={len(final_scenes)}:v=1:a=0[vc]")
+    if any(overlaps):
+        # xfade 체인: 각 경계에서 overlaps[k]초 디졸브(0이면 사실상 컷). offset = 누적(길이-겹침)
+        cur, acc = "[v0]", 0.0
+        for k in range(1, len(final_scenes)):
+            acc += durations[k - 1] - overlaps[k - 1]
+            o = overlaps[k - 1]
+            nxt = "[vc]" if k == len(final_scenes) - 1 else f"[x{k}]"
+            if o > 0:
+                parts.append(f"{cur}[v{k}]xfade=transition=fade:duration={o:.3f}:offset={acc:.3f}{nxt}")
+            else:
+                # 겹침 0: 1프레임 미만의 극짧은 xfade로 체인을 유지(사실상 하드컷)
+                parts.append(f"{cur}[v{k}]xfade=transition=fade:duration=0.001:offset={acc:.3f}{nxt}")
+            cur = nxt
+        if len(final_scenes) == 1:
+            parts.append("[v0]copy[vc]")
+    else:
+        parts.append("".join(f"[v{k}]" for k in range(len(final_scenes)))
+                     + f"concat=n={len(final_scenes)}:v=1:a=0[vc]")
     parts.append(f"[vc]ass={ass_path}[vo]")
     cmd += ["-filter_complex", ";".join(parts), "-map", "[vo]", "-an",
             "-c:v", "libx264", "-preset", "medium", "-crf", "18", work_video]
@@ -610,13 +632,15 @@ def main():
         durations = ([float(d) for d in planned] if planned
                      else [probe_duration(s) for s in
                            sorted(glob.glob(os.path.join(args.scenes_dir, "scene*.mp4")))])
+        overlaps = [float(x) for x in cfg.get("transitions", [])]
+        overlaps += [0.0] * (len(durations) - len(overlaps))
         bounds, t = [], 0.0
         for i, d in enumerate(durations, start=1):
             bounds.append((t, t + d))
             p = os.path.join(WORK_DIR, f"amb{i:02d}.wav")
             if cached(p):
                 ambience.append((t, p))
-            t += d
+            t += d - overlaps[i - 1]
         print(f"재믹스 모드: 영상 {video}, 캐시 현장음 {len(ambience)}개 재사용")
 
         # 장면 교정 패치: {"장면번호": "소스 클립 이름"} — 그 장면 구간만
