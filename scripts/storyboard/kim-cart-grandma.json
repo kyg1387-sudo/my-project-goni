@@ -205,7 +205,7 @@
    "lens": "35mm lens, f/4.0, eye-level cinematic shot, environmental storytelling, rule of thirds",
    "lighting": "Soft natural daylight from upper-left, 5600K clean balanced tones, subtle warm rim light separating subject from background, gentle contrast",
    "camera": "Static, locked off",
-   "transition_out": "Dissolve 0.5s",
+   "transition_out": "Dissolve 1.0s (gate dusk → demolition, 여운)",
    "refs": [
     "GMA@fullbody-side",
     "CART@sheet",
@@ -360,7 +360,7 @@
    "lens": "35mm lens, f/4.0, eye-level cinematic shot, environmental storytelling, rule of thirds",
    "lighting": "Night rain, single street lamp key from upper-left 3200K, wet reflective ground, backlit rain streaks, deep shadows",
    "camera": "Subtle handheld sway",
-   "transition_out": "Dissolve 0.5s",
+   "transition_out": "Dissolve 0.8s (rain → booth, 여운)",
    "refs": [
     "KIM@fullbody-front",
     "LOC@alley-night-key1"
