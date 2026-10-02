@@ -19,7 +19,7 @@ KF = "assets/portraits/ep3-keyframes/{sid}-1.png"
 
 # 대사가 걸리는 장면과 화면 속 화자(PHASE 3 샷 리스트 기준). 화자가 화면에 없는 리액션 컷은 립싱크 제외.
 TALKING = {1: "Kim", 15: "the grandmother", 28: "Choi", 29: "Kim", 31: "Choi", 36: "the grandmother"}
-LIPSYNC_SKIP = [2, 30, 37]
+LIPSYNC_SKIP = [2, 30, 37, 1, 28, 31]  # 1·28·31: PHASE 6 검수에서 립싱크 결과 입술 뭉개짐 → 원본(i2v 자연 입모양) 유지
 CART_RIGID = [3, 6, 7, 8, 9, 12, 13, 26, 29, 31, 32, 33, 34, 35, 36, 37, 42]  # 리어카 손잡이가 보이는 컷  # 김씨 목소리에 최사장 리액션(S02·S30), 할머니 목소리에 손 클로즈업(S37)
 
 STYLE = ("Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, "
