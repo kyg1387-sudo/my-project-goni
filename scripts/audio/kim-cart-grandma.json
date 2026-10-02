@@ -307,10 +307,7 @@
   "lipsync_skip_scenes": [
     2,
     30,
-    37,
-    1,
-    28,
-    31
+    37
   ],
   "_현장음_생략": "2026-10-02 PHASE 6: 언어검사에서 영어 말소리 검출(amb01·15·29) + 의심(02·13) → 해당 장면 현장음 생략",
   "transitions": [
@@ -358,5 +355,17 @@
     0.5,
     0.5,
     0.0
+  ],
+  "omnihuman_scenes": [
+    1,
+    15,
+    28,
+    29,
+    31,
+    36
+  ],
+  "omnihuman_models": [
+    "fal-ai/bytedance/omnihuman/v1.5",
+    "fal-ai/bytedance/omnihuman"
   ]
 }

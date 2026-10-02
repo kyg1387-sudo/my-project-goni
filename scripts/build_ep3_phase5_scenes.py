@@ -19,7 +19,7 @@ KF = "assets/portraits/ep3-keyframes/{sid}-1.png"
 
 # 대사가 걸리는 장면과 화면 속 화자(PHASE 3 샷 리스트 기준). 화자가 화면에 없는 리액션 컷은 립싱크 제외.
 TALKING = {1: "Kim", 15: "the grandmother", 28: "Choi", 29: "Kim", 31: "Choi", 36: "the grandmother"}
-LIPSYNC_SKIP = [2, 30, 37, 1, 28, 31]  # 1·28·31: PHASE 6 검수에서 립싱크 결과 입술 뭉개짐 → 원본(i2v 자연 입모양) 유지
+LIPSYNC_SKIP = [2, 30, 37]  # 대사 6장면(1·15·28·29·31·36)은 omnihuman(오디오 구동)으로 생성
 CART_RIGID = [3, 6, 7, 8, 9, 12, 13, 26, 29, 31, 32, 33, 34, 35, 36, 37, 42]  # 리어카 손잡이가 보이는 컷  # 김씨 목소리에 최사장 리액션(S02·S30), 할머니 목소리에 손 클로즈업(S37)
 
 STYLE = ("Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, "
@@ -67,6 +67,7 @@ json.dump(out, open(OUT, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 audio = json.load(open(AUDIO, encoding="utf-8"))
 audio["scene_durations"] = durations
 audio["lipsync_skip_scenes"] = LIPSYNC_SKIP
+audio["omnihuman_scenes"] = [1, 15, 28, 29, 31, 36]
 json.dump(audio, open(AUDIO, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 print(f"장면 {len(scenes)}개, 총 {sum(durations)}초, 립싱크 대상 {sorted(TALKING)} / 제외 {LIPSYNC_SKIP}")
 print("예시 S01:", scenes[0]["prompt"][:200])
