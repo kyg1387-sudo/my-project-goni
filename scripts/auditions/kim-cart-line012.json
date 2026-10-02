@@ -1,0 +1,76 @@
+{
+  "_설명": "EP3 line012 '…내 리어카…' 외국어처럼 들림(사용자 지적, 언어검사 ja 판정) → 또렷한 한국어 발음 판 선별용. 앞 말줄임표 제거(발음 시작을 분명히). K7은 조사 추가안(대본 변경이라 사용자 승인 필요).",
+  "tc_model": "ssfm-v30",
+  "tests": [
+    {
+      "id": "line012_K1",
+      "model": "typecast-direct",
+      "voice": "tc_60ad0841061ee28740ec2e1c",
+      "text": "내 리어카…",
+      "emotion_preset": "normal",
+      "emotion_intensity": 1.0,
+      "tempo": 1.0,
+      "seed": 11
+    },
+    {
+      "id": "line012_K2",
+      "model": "typecast-direct",
+      "voice": "tc_60ad0841061ee28740ec2e1c",
+      "text": "내 리어카…",
+      "emotion_preset": "normal",
+      "emotion_intensity": 1.0,
+      "tempo": 0.95,
+      "seed": 23
+    },
+    {
+      "id": "line012_K3",
+      "model": "typecast-direct",
+      "voice": "tc_60ad0841061ee28740ec2e1c",
+      "text": "내 리어카…",
+      "emotion_preset": "sad",
+      "emotion_intensity": 0.6,
+      "tempo": 1.0,
+      "seed": 37
+    },
+    {
+      "id": "line012_K4",
+      "model": "typecast-direct",
+      "voice": "tc_60ad0841061ee28740ec2e1c",
+      "text": "내 리어카…",
+      "emotion_preset": "sad",
+      "emotion_intensity": 0.8,
+      "tempo": 0.95,
+      "seed": 51
+    },
+    {
+      "id": "line012_K5",
+      "model": "typecast-direct",
+      "voice": "tc_60ad0841061ee28740ec2e1c",
+      "text": "내 리어카…",
+      "emotion_preset": "tonedown",
+      "emotion_intensity": 1.0,
+      "tempo": 1.0,
+      "seed": 67
+    },
+    {
+      "id": "line012_K6",
+      "model": "typecast-direct",
+      "voice": "tc_60ad0841061ee28740ec2e1c",
+      "text": "내 리어카…",
+      "emotion_preset": "normal",
+      "emotion_intensity": 1.0,
+      "tempo": 1.05,
+      "seed": 89
+    },
+    {
+      "id": "line012_K7",
+      "model": "typecast-direct",
+      "voice": "tc_60ad0841061ee28740ec2e1c",
+      "text": "내 리어카가…",
+      "emotion_preset": "sad",
+      "emotion_intensity": 0.8,
+      "tempo": 1.0,
+      "seed": 101
+    }
+  ]
+}
