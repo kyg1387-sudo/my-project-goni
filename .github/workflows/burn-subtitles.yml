@@ -7,6 +7,10 @@ on:
         description: 자막을 입힐 스킷 이름 (subs/<skit>.ass)
         required: false
         default: "bungeoppang"
+      source_skit:
+        description: 클립 Artifact를 가져올 스킷 id (비우면 skit과 동일 — 더빙판처럼 클립을 공유할 때 지정)
+        required: false
+        default: ""
       source_run_id:
         description: 클립 Artifact를 가져올 영상 생성 실행의 run ID
         required: false
@@ -143,7 +147,7 @@ jobs:
         if: ${{ inputs.deliver_from_run_id == '' }}
         uses: actions/download-artifact@v4
         with:
-          name: ${{ env.SKIT }}-skit-video
+          name: ${{ inputs.source_skit || env.SKIT }}-skit-video
           path: out
           run-id: ${{ env.SOURCE_RUN_ID }}
           github-token: ${{ github.token }}
