@@ -1,5 +1,7 @@
 # EP3 일본어 더빙판 인수인계 (2026-10-02, Fable 세션 → 다음 세션)
 
+> **2026-10-03 상태: 일본어판 제작 완료.** 최종본 `deliveries/kim-cart-grandma-ja-final-outro.mp4.part-00/01`(합치면 312.0s). 남은 일은 업로드뿐(§7). 아래는 제작 과정 기록이며, 재작업이 필요할 때만 참조한다.
+
 **읽는 법**: CLAUDE.md(제6장 포함)와 `docs/제작규격-보강-EP3실증.md`를 먼저 적용한다. 이 문서는 "어디까지 됐고, 다음에 무엇을 하는지"만 적는다.
 **원칙**: 한 브랜치(`claude/zen-cori-8ren7o`)에 한 세션만. 유료 실행 전 비용 보고·승인. bot 커밋이 올라오면 `git pull --rebase`.
 
@@ -18,7 +20,7 @@
 | 타임라인 | 확정 294.2s | 재잠금 명령은 §3 |
 | **조립(립싱크 6장면 + 믹스)** | **완료** (run 37075152851 → `deliveries/kim-cart-grandma-ja-skit-final.mp4.part-*`, 294.2s). 최소 검수 통과: 대사 6장면 입모양·인물 정상, 음량 정상. 결함 1건: S31 최사장 대사 뒤(+6.0~6.5s) 헤드턴 → 로컬 패치(정지 클립으로 5.5s~끝 대체, 0.3s 디졸브) 적용본을 `deliveries/kim-cart-grandma-ja-patched.mp4.part-00/01`(합치면 294.2s)로 커밋함 → **결합(§5)은 이 패치본을 본편으로 사용** | burn run: skit=kim-cart-grandma-ja, source_skit=kim-cart-grandma, source_run_id=36971579705, resume_run_id=36966874332, invalidate=`omni*.mp4 omniframe*.png lip*.mp4 line*.mp3 seg*.wav`. 완료 시 bot 커밋 "완성 영상 추가 (kim-cart-grandma-ja)" → `deliveries/kim-cart-grandma-ja-skit-final.mp4(.part-*)` |
 | 아웃트로 일본어 멘트 TTS | 완료(10.2s) | `assets/auditions/outro-ja/outro_ja.mp3` → `assets/audio-overrides/outro-ja/line001.mp3` |
-| 아웃트로 입모양 재생성 | burn 재실행 중 (1차 실패: concat 경로 버그 → 수정). skit=outro-ja, source_run_id=37074815070. 완료 시 `deliveries/outro-ja-skit-final.mp4` → `assets/auditions/outro-host/OUTRO-SCENE-ja.mp4`로 복사 | §4 4단계부터 |
+| 아웃트로 입모양 재생성 | **완료** `assets/auditions/outro-host/OUTRO-SCENE-ja.mp4` (12.0s, 시리즈 공통 재사용) | — |
 | 일본어 엔드카드 | 완료 | `assets/brand/endcard-midam-ja.mp4` |
 | 썸네일·메타데이터(일본어) | 완료 | `assets/thumbnails/ep3/*-JP.jpg`, `docs/EP3-업로드-최종.md` |
 
@@ -70,3 +72,9 @@ python3 scripts/retime_transitions.py --skit kim-cart-grandma-ja --narration-tem
 - 조립 시 `source_skit`이 없으면 Artifact 이름 불일치로 클립을 못 찾는다(워크플로 입력 필수).
 - 일본어 음성 1.12배는 `_orig/`에서 atempo로 만든 것. 더 느리게 원하면 §3 명령의 tempo만 바꾸고 재잠금 → 대사 오프셋 변화 확인 → 필요 시 omni 재생성.
 - Typecast 할머니 음성 line012 길이 1.9s: S15 창(5s) 안.
+
+## 7. 업로드 (일본 채널)
+- 영상: `deliveries/kim-cart-grandma-ja-final-outro.mp4.part-*` 합치기 → 1280x720, 5:12.
+- 제목·설명·태그·고정댓글: `docs/EP3-업로드-최종.md` 일본어 절(도파민형 제목 2 추천). 썸네일: `assets/thumbnails/ep3/EP3-thumb-G-money-JP.jpg`.
+- 자막: 화면에 일본어 번인 완료. CC는 `subs/kim-cart-grandma.ja.srt`(타이밍은 한국어판 기준이라 더빙판에는 올리지 않는다 — 올리려면 `subs/kim-cart-grandma-ja.ass`를 srt로 변환).
+- AI 고지 "예", 동영상 언어 日本語, 예약 金曜 19:00 JST.
