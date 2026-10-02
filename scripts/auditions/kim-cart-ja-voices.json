@@ -1,0 +1,113 @@
+{
+  "_설명": "EP3 일본어 더빙판 목소리 오디션 (2026-10-02). 최사장=tc_69a8e49d2e36ab42260be475, 할머니=tc_61d55a84b8c48f42d69b2399 (사용자 선택, Typecast JP). 내레이터·김씨=ElevenLabs 다국어(시리즈 ID). 각 2안 → 사용자 청취 후 채택본을 audio-overrides/kim-cart-grandma-ja/로 복사.",
+  "tc_model": "ssfm-v30",
+  "tests": [
+    {
+      "id": "line028_J1",
+      "model": "typecast-direct",
+      "voice": "tc_69a8e49d2e36ab42260be475",
+      "text": "もう計量も済んだ物ですよ。代金も払いました。",
+      "emotion_preset": "normal",
+      "emotion_intensity": 1.0,
+      "tempo": 1.0
+    },
+    {
+      "id": "line028_J2",
+      "model": "typecast-direct",
+      "voice": "tc_69a8e49d2e36ab42260be475",
+      "text": "もう計量も済んだ物ですよ。代金も払いました。",
+      "emotion_preset": "tonedown",
+      "emotion_intensity": 1.2,
+      "tempo": 1.0
+    },
+    {
+      "id": "line034_J1",
+      "model": "typecast-direct",
+      "voice": "tc_69a8e49d2e36ab42260be475",
+      "text": "…持っていきなさい。金は、いらないよ。",
+      "emotion_preset": "normal",
+      "emotion_intensity": 1.0,
+      "tempo": 1.0
+    },
+    {
+      "id": "line034_J2",
+      "model": "typecast-direct",
+      "voice": "tc_69a8e49d2e36ab42260be475",
+      "text": "…持っていきなさい。金は、いらないよ。",
+      "emotion_preset": "tonedown",
+      "emotion_intensity": 1.2,
+      "tempo": 1.0
+    },
+    {
+      "id": "line012_J1",
+      "model": "typecast-direct",
+      "voice": "tc_61d55a84b8c48f42d69b2399",
+      "text": "…わたしの、リヤカー…",
+      "emotion_preset": "sad",
+      "emotion_intensity": 1.0,
+      "tempo": 0.9
+    },
+    {
+      "id": "line012_J2",
+      "model": "typecast-direct",
+      "voice": "tc_61d55a84b8c48f42d69b2399",
+      "text": "…わたしの、リヤカー…",
+      "emotion_preset": "tonedown",
+      "emotion_intensity": 1.0,
+      "tempo": 0.9
+    },
+    {
+      "id": "line038_J1",
+      "model": "typecast-direct",
+      "voice": "tc_61d55a84b8c48f42d69b2399",
+      "text": "…じいさんが、巻いてくれたのに…",
+      "emotion_preset": "sad",
+      "emotion_intensity": 1.0,
+      "tempo": 0.9
+    },
+    {
+      "id": "line038_J2",
+      "model": "typecast-direct",
+      "voice": "tc_61d55a84b8c48f42d69b2399",
+      "text": "…じいさんが、巻いてくれたのに…",
+      "emotion_preset": "tonedown",
+      "emotion_intensity": 1.0,
+      "tempo": 0.9
+    },
+    {
+      "id": "line003_N",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "この路地のリヤカーは、持ち手だけが、やけにつやつやしていました。"
+    },
+    {
+      "id": "line004_N",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "二十年前、おばあさんのご主人が、最後に直してくれたリヤカーでした。"
+    },
+    {
+      "id": "line039_N",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "ひと言も交わさなくても、二人は十年、温もりを分け合っていたのですね。"
+    },
+    {
+      "id": "line001_K",
+      "model": "elevenlabs-direct",
+      "voice": "8vwSOQHQApfVx993mKf9",
+      "el_model": "eleven_multilingual_v2",
+      "text": "この持ち手、革ひもが巻いてあるでしょう。"
+    },
+    {
+      "id": "line002_K",
+      "model": "elevenlabs-direct",
+      "voice": "8vwSOQHQApfVx993mKf9",
+      "el_model": "eleven_multilingual_v2",
+      "text": "持ち主が、自分の手で巻いたものです。簡単に捨てていい物じゃない。"
+    }
+  ]
+}
