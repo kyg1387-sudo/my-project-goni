@@ -3,10 +3,10 @@
 본편과 아웃트로를 명확히 구분: 본편 끝 1.0초 페이드아웃(영상·소리) → 검은 화면 0.8초 → 아웃트로 0.5초 페이드인.
 1280x720 24fps 44.1kHz 스테레오로 정규화. 사용법: append_outro.py <final.mp4> <out.mp4>
 """
-import subprocess, sys
+import os, subprocess, sys
 src, out = sys.argv[1], sys.argv[2]
-outro = "assets/auditions/outro-host/OUTRO-SCENE.mp4"
-endcard = "assets/brand/endcard-midam.mp4"  # 채널 엔드카드(5.5s, 자체 음악 베드) — 아웃트로 뒤 0.6s 크로스페이드로 이어짐
+outro = os.environ.get("OUTRO", "assets/auditions/outro-host/OUTRO-SCENE.mp4")      # 일본어판: OUTRO=assets/auditions/outro-host/OUTRO-SCENE-ja.mp4
+endcard = os.environ.get("ENDCARD", "assets/brand/endcard-midam.mp4")             # 일본어판: ENDCARD=assets/brand/endcard-midam-ja.mp4  # 채널 엔드카드(5.5s, 자체 음악 베드) — 아웃트로 뒤 0.6s 크로스페이드로 이어짐
 def dur(p): return float(subprocess.check_output(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",p]).decode())
 d0, d1 = dur(src), dur(outro)
 FO, GAP, FI = 1.0, 0.8, 0.5
