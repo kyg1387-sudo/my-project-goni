@@ -40,6 +40,7 @@ for kv in [x for x in a.trim.split(",") if x]:
     assert float(v) <= gen_durs[k], f"S{k+1}: 생성 길이({gen_durs[k]}s)보다 길게 잡을 수 없음"
     durs[k] = float(v)
 ov = [overlap_of(s.get("transition_out")) for s in sb["scenes"]]
+ov = [o if o >= 1 / 24 else round(1 / 24, 4) for o in ov]  # 하드컷도 1프레임 겹침(xfade 체인 유지, 조립과 동일)
 ov[-1] = 0.0
 assert len(ov) == len(durs)
 old_c = [0.0]

@@ -473,6 +473,9 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
     # 겹친 만큼 뒤 장면이 당겨지므로 타임라인(자막·대사·현장음)은 모두 이 압축 시간 기준이다.
     overlaps = [float(x) for x in cfg.get("transitions", [])]
     overlaps += [0.0] * (len(durations) - len(overlaps))
+    # xfade는 offset이 앞 입력 길이와 같으면 그 지점에서 출력이 끝난다(실증: 44장면이 10초로 잘림).
+    # 하드컷 경계도 1프레임(1/24s) 겹침으로 체인을 이어 간다 — 타임라인(bounds)도 같은 값을 쓴다.
+    overlaps = [o if o >= 1 / 24 else 1 / 24 for o in overlaps]
     overlaps[-1] = 0.0
     bounds, t = [], 0.0
     for d, o in zip(durations, overlaps):
@@ -549,11 +552,7 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
             acc += durations[k - 1] - overlaps[k - 1]
             o = overlaps[k - 1]
             nxt = "[vc]" if k == len(final_scenes) - 1 else f"[x{k}]"
-            if o > 0:
-                parts.append(f"{cur}[v{k}]xfade=transition=fade:duration={o:.3f}:offset={acc:.3f}{nxt}")
-            else:
-                # 겹침 0: 1프레임 미만의 극짧은 xfade로 체인을 유지(사실상 하드컷)
-                parts.append(f"{cur}[v{k}]xfade=transition=fade:duration=0.001:offset={acc:.3f}{nxt}")
+            parts.append(f"{cur}[v{k}]xfade=transition=fade:duration={o:.4f}:offset={acc:.4f}{nxt}")
             cur = nxt
         if len(final_scenes) == 1:
             parts.append("[v0]copy[vc]")
@@ -634,6 +633,8 @@ def main():
                            sorted(glob.glob(os.path.join(args.scenes_dir, "scene*.mp4")))])
         overlaps = [float(x) for x in cfg.get("transitions", [])]
         overlaps += [0.0] * (len(durations) - len(overlaps))
+        overlaps = [o if o >= 1 / 24 else 1 / 24 for o in overlaps]
+        overlaps[-1] = 0.0
         bounds, t = [], 0.0
         for i, d in enumerate(durations, start=1):
             bounds.append((t, t + d))
