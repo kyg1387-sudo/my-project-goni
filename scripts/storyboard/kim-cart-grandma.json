@@ -584,7 +584,7 @@
    "lens": "35mm lens, f/4.0, eye-level cinematic shot, environmental storytelling, rule of thirds",
    "lighting": "Pre-dawn blue hour, 4000K cool ambient with faint warm horizon, mist, low-key, soft rim from a single lamp",
    "camera": "Very slow push forward behind Kim",
-   "transition_out": "Hard cut → caption",
+   "transition_out": "Dissolve 0.4s (location change: alley → site)",
    "refs": [
     "KIM@fullbody-back",
     "CART@sheet",
@@ -602,7 +602,7 @@
    "lens": "35mm lens, f/4.0, eye-level cinematic shot, environmental storytelling, rule of thirds",
    "lighting": "Pre-dawn blue hour, 4000K cool ambient with faint warm horizon, mist, low-key, soft rim from a single lamp",
    "camera": "Static, locked off",
-   "transition_out": "Hard cut",
+   "transition_out": "Dissolve 0.5s (night → next morning)",
    "refs": [
     "CART@sheet",
     "LOC@demolition-key2"
@@ -705,7 +705,7 @@
    "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
    "lighting": "Soft morning daylight through the booth window from upper-left, 5600K, gentle contrast, dust motes in the light",
    "camera": "Static, locked off",
-   "transition_out": "J-Cut 0.5s",
+   "transition_out": "Dissolve 0.5s (J-Cut audio leads 0.5s)",
    "refs": [
     "KIM@front-smile",
     "LOC@guard-booth-day"

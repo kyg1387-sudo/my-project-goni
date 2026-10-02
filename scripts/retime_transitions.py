@@ -110,10 +110,20 @@ if a.apply:
     for i, p, s1, e1, style in fixed:
         p[1], p[2] = ft(s1), ft(e1); raw[i] = ",".join(p)
     open(ass_path, "w", encoding="utf-8").write("\n".join(raw))
+    # bgm_segments 는 '직전에 적용된 타임라인' 기준 시각이므로 먼저 생성 타임라인으로 되돌린 뒤 새 타임라인으로 옮긴다(재실행 시 이중 압축 방지)
+    pt_tr, pt_d = audio.get("transitions"), audio.get("scene_durations")
+    if pt_tr and pt_d and len(pt_tr) == len(pt_d) == len(durs):
+        ps = [0.0]
+        for d, o in zip(pt_d, pt_tr): ps.append(ps[-1] + float(d) - float(o))
+        def unmap(t):
+            k = min(max(i for i in range(len(durs)) if ps[i] <= t + 1e-6), len(durs) - 1)
+            return old_c[k] + (t - ps[k])
+    else:
+        unmap = lambda t: t
+    for seg in audio.get("bgm_segments", []):
+        seg["start"], seg["end"] = round(remap(unmap(float(seg["start"]))), 1), round(min(remap(unmap(float(seg["end"]))), new_total), 1)
     audio["transitions"] = ov
     audio["scene_durations"] = [int(d) if float(d).is_integer() else d for d in durs]
-    for seg in audio.get("bgm_segments", []):
-        seg["start"], seg["end"] = round(remap(float(seg["start"])), 1), round(min(remap(float(seg["end"])), new_total), 1)
     json.dump(audio, open(f"scripts/audio/{a.skit}.json", "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     print("적용 완료:", ass_path, f"scripts/audio/{a.skit}.json", ov_dir)
 else:

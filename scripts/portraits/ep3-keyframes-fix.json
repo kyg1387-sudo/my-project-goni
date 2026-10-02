@@ -1,5 +1,5 @@
 {
-  "_설명": "S41 손 부자연(팔과 분리된 손) 수정 — 인물·배경 유지, 오른팔·손·봉지만 재구성.",
+  "_설명": "PHASE 6 표정 보정(사용자 지적 '감정 표현 어색'): S15 충격, S31 절제된 미소, S36 눈물 — 인물·구도·배경 유지, 표정만 교체. (이전 S41 손 수정 항목 유지)",
   "characters": [
     {
       "id": "s41a",
@@ -21,6 +21,36 @@
         "assets/portraits/ep3-cast/cells/loc-guard-booth-day.png"
       ],
       "prompt": "Create ONE single photorealistic cinematic film still in 16:9 — one frame only, NOT a grid, no borders, no captions. Reference image 1 is the CHARACTER master sheet of Kim, the apartment security guard (Korean man in his early 60s): put this exact same person in the frame, identical face, hair and age, using its bottom-row middle panel (faint gentle smile) as the expression guide; the sheet's grid must NOT appear. Reference image 2 is the PROP continuity frame: the exact same small clear plastic bag of yellow boiled corn kernels on the booth windowsill. Reference image 3 is the LOCATION reference: reproduce this security booth interior. Shot: medium close-up, 85mm, f/1.8, eye level. Kim stands at the windowsill in soft morning light from the window at upper-left, 5600K, and has just picked up the corn bag: his right forearm and hand are fully visible and clearly connected to his body, five fingers holding the top of the bag at chest height, a faint smile of recognition. Wardrobe locked: plain long-sleeve dark navy security-guard shirt, pristine chest with NO name tag, NO badge, NO lettering; a small radio on his belt. Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain. Negative: gibberish, text, letters, logos, watermarks, bad anatomy, deformed hands, extra fingers, floating hand, extra arms, grid, contact sheet."
+    },
+    {
+      "id": "s15e",
+      "count": 1,
+      "aspect_ratio": "16:9",
+      "refs": [
+        "assets/portraits/ep3-keyframes/s15-1.png",
+        "assets/portraits/ep3-cast/grandma-sheet-1.png"
+      ],
+      "prompt": "Edit reference image 1 and output it IDENTICAL except for the old woman's facial expression: change it to shock and dismay held at 50% — she has just found her handcart gone: eyes wide and glistening with welling tears, eyebrows raised and drawn together, lips slightly parted as if about to whisper, face drained and still, no smile at all, no teeth showing. Keep the framing, crop, camera angle, lens look, background, lighting, color grade, wardrobe, headscarf/hair and the person's identity EXACTLY as in reference image 1; reference image 2 is the character master sheet for identity only (its grid must NOT appear). Output ONE single 16:9 photorealistic film still, no grid, no borders, no text, no logos, no watermarks. Negative: smile, grin, teeth, gibberish, text, letters, bad anatomy, deformed eyes, asymmetrical pupils."
+    },
+    {
+      "id": "s31e",
+      "count": 1,
+      "aspect_ratio": "16:9",
+      "refs": [
+        "assets/portraits/ep3-keyframes/s31-1.png",
+        "assets/portraits/ep3-choi/choi-sheet-1.png"
+      ],
+      "prompt": "Edit reference image 1 and output it IDENTICAL except for the man's facial expression: remove the broad grin completely — lips CLOSED, NO teeth visible, a gruff subdued look of a proud man giving in: eyes softened and slightly moist, brow a little lowered, the faintest reluctant half-smile only at one corner of the closed mouth (gruff warmth at 50%), chin slightly tucked. Keep the framing, crop, camera angle, lens look, background, lighting, color grade, wardrobe, headscarf/hair and the person's identity EXACTLY as in reference image 1; reference image 2 is the character master sheet for identity only (its grid must NOT appear). Output ONE single 16:9 photorealistic film still, no grid, no borders, no text, no logos, no watermarks. Negative: smile, grin, teeth, gibberish, text, letters, bad anatomy, deformed eyes, asymmetrical pupils."
+    },
+    {
+      "id": "s36e",
+      "count": 1,
+      "aspect_ratio": "16:9",
+      "refs": [
+        "assets/portraits/ep3-keyframes/s36-1.png",
+        "assets/portraits/ep3-cast/grandma-sheet-1.png"
+      ],
+      "prompt": "Edit reference image 1 and output it IDENTICAL except for the old woman's facial expression: change it to startled relief turning into tears at 50% — eyes brimming with tears about to spill, inner eyebrows raised, chin trembling, lips pressed together and quivering, cheeks flushed, no smile, no teeth showing; she is looking slightly downward toward something just out of frame as in the original. Keep the framing, crop, camera angle, lens look, background, lighting, color grade, wardrobe, headscarf/hair and the person's identity EXACTLY as in reference image 1; reference image 2 is the character master sheet for identity only (its grid must NOT appear). Output ONE single 16:9 photorealistic film still, no grid, no borders, no text, no logos, no watermarks. Negative: smile, grin, teeth, gibberish, text, letters, bad anatomy, deformed eyes, asymmetrical pupils."
     }
   ]
 }
