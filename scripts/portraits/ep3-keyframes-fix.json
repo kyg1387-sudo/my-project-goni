@@ -1,15 +1,26 @@
 {
-  "_설명": "S29 손잡이만 교체(인페인팅): 현재 S29에서 U자 손잡이를 끌채 한 개+가로 손잡이로 바꾼다. 인물·배경 유지.",
+  "_설명": "S41 손 부자연(팔과 분리된 손) 수정 — 인물·배경 유지, 오른팔·손·봉지만 재구성.",
   "characters": [
     {
-      "id": "s29",
+      "id": "s41a",
       "count": 1,
       "aspect_ratio": "16:9",
       "refs": [
-        "assets/portraits/ep3-keyframes/s29-1.png",
-        "assets/portraits/ep3-cart/cells/cart-handle.png"
+        "assets/portraits/ep3-keyframes/s41-1.png",
+        "assets/portraits/ep3-keyframes/s40-1.png"
       ],
-      "prompt": "Edit reference image 1 and output ONE single 16:9 film still IDENTICAL to it — same man (Kim), same face, same long-sleeve dark navy uniform with no name tag, same pose, same scrapyard background, bales, scale, lighting and color grade — EXCEPT for one change: the handcart handle he is holding. Replace the U-shaped double-bar handle with the handle from reference image 2: ONE single straight metal pole coming from the cart bed, ending in ONE short horizontal cross-bar wrapped in brown leather with a loose strap end hanging. Kim's two hands now rest on that short leather-wrapped cross-bar at the same height and position as before. Remove the second bar entirely. Do not change anything else. No text, no logos, no grid, no borders."
+      "prompt": "Edit reference image 1 and output ONE single 16:9 film still IDENTICAL to it — same man (Kim), same face and hair, same long-sleeve dark navy uniform shirt, same booth, window, CCTV monitor, lighting and color grade — EXCEPT fix his right arm and hand: his right arm must extend naturally from his shoulder along the windowsill, the sleeve continuous with the shirt, and his right hand (same skin tone and age as his face, five fingers, anatomically correct) gently lifts the small clear plastic bag of yellow boiled corn kernels by its top with thumb and fingers, the bag resting on the sill as in reference image 2. No floating or detached hand, no second person, no extra hands. Do not change anything else. No text, no logos, no grid, no borders."
+    },
+    {
+      "id": "s41b",
+      "count": 1,
+      "aspect_ratio": "16:9",
+      "refs": [
+        "assets/portraits/ep3-cast/kim-sheet-1.png",
+        "assets/portraits/ep3-keyframes/s40-1.png",
+        "assets/portraits/ep3-cast/cells/loc-guard-booth-day.png"
+      ],
+      "prompt": "Create ONE single photorealistic cinematic film still in 16:9 — one frame only, NOT a grid, no borders, no captions. Reference image 1 is the CHARACTER master sheet of Kim, the apartment security guard (Korean man in his early 60s): put this exact same person in the frame, identical face, hair and age, using its bottom-row middle panel (faint gentle smile) as the expression guide; the sheet's grid must NOT appear. Reference image 2 is the PROP continuity frame: the exact same small clear plastic bag of yellow boiled corn kernels on the booth windowsill. Reference image 3 is the LOCATION reference: reproduce this security booth interior. Shot: medium close-up, 85mm, f/1.8, eye level. Kim stands at the windowsill in soft morning light from the window at upper-left, 5600K, and has just picked up the corn bag: his right forearm and hand are fully visible and clearly connected to his body, five fingers holding the top of the bag at chest height, a faint smile of recognition. Wardrobe locked: plain long-sleeve dark navy security-guard shirt, pristine chest with NO name tag, NO badge, NO lettering; a small radio on his belt. Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain. Negative: gibberish, text, letters, logos, watermarks, bad anatomy, deformed hands, extra fingers, floating hand, extra arms, grid, contact sheet."
     }
   ]
 }
