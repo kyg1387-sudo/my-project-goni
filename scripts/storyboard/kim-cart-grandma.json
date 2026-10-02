@@ -13,21 +13,19 @@
  "scenes": [
   {
    "id": "S01",
-   "shot": "Medium close-up (two-shot)",
-   "lens": "50mm lens, f/2.8, medium shot, natural perspective, soft background separation",
+   "shot": "Close-up, chest-up, single (no hands in frame)",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
    "lighting": "Overcast daylight 5600K from upper-left, bare bulbs as warm 3200K practicals, dramatic high-contrast shadows between paper bales, warm rim light",
-   "camera": "Slow cinematic push-in (zoom 1.05)",
+   "camera": "Static, locked off",
    "transition_out": "Hard cut",
    "refs": [
     "KIM@front-neutral",
-    "CHOI@front-wary",
-    "CART@sheet",
     "LOC@junkyard-day"
    ],
-   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt standing firmly in front of Korean man in his 50s (reference: CHOI sheet), stocky build, short cropped salt-and-pepper hair, grease-stained plain grey work vest over plain dark shirt, black work gloves, worn radio on belt, blocking him; beside them the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap. Kim faces camera three-quarter, mouth slightly open mid-sentence.",
+   "subject": "Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt, framed from the chest up, alone in the frame, facing slightly camera-right as if speaking to someone just off-screen, lips parted mid-sentence; no hands visible, no cart in frame.",
    "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
-   "expression": "Kim: firm, jaw set (tension 50%). Choi: wary frown.",
-   "motion": "Micro chest breathing, single slow blink, lips move with the dialogue, max 5-degree head tilt. Choi perfectly still.",
+   "expression": "Firm, jaw set, steady eyes (tension 50%).",
+   "motion": "Speaking: natural lip movement, single slow blink, micro head nod under 5 degrees, no hand gestures.",
    "edit": "00:02.00~00:04.09 Talking face (line 1) → 00:04.09~00:04.20 Hold: lips closed, reaction beat only (no speech after audio ends)"
   },
   {
@@ -258,20 +256,19 @@
   },
   {
    "id": "S15",
-   "shot": "Medium close-up",
+   "shot": "Close-up, chest-up, single (no hands in frame)",
    "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
    "lighting": "Late-afternoon golden hour, key from upper-left, 4500K warm amber, long soft shadows, warm rim light on hair and shoulders",
-   "camera": "Slow cinematic push-in (zoom 1.08) — replaces dolly-zoom",
+   "camera": "Static, locked off",
    "transition_out": "Hold 0.8s → Dissolve 0.5s",
    "refs": [
     "GMA@front-tense",
-    "CART@sheet",
     "LOC@demolition-day"
    ],
-   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves holding an armful of paper, frozen, staring at the empty spot where the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap stood, lips just parted.",
+   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, framed from the chest up, alone, staring at the empty spot where her cart stood, lips just parted; no hands, no props in frame.",
    "environment": "redevelopment demolition lot (LOC demolition): collapsed wall rubble, faint dust haze, safety fence, blank white sign with no lettering, no people around",
-   "expression": "Shock held at 50%: wide eyes, parted lips (keyframe carries the emotion).",
-   "motion": "Only a slow push-in, one slow blink, lips form the short line, no head turn.",
+   "expression": "Shock held at 50%: wide eyes, parted lips.",
+   "motion": "Speaks the short line, one slow blink, then frozen stillness; no hand gestures.",
    "edit": "01:31.17~01:32.20 Talking face (line 15) then hold on frozen face; narration lines 16–17 over this and S16 → 01:32.20~01:33.05 Hold: lips closed, reaction beat only (no speech after audio ends)"
   },
   {
@@ -480,21 +477,19 @@
   },
   {
    "id": "S28",
-   "shot": "Medium close-up (two-shot, Choi speaking)",
-   "lens": "50mm lens, f/2.8, medium shot, natural perspective, soft background separation",
+   "shot": "Close-up, chest-up, single (no hands in frame)",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
    "lighting": "Overcast daylight 5600K from upper-left, bare bulbs as warm 3200K practicals, dramatic high-contrast shadows between paper bales, warm rim light",
    "camera": "Static, locked off",
    "transition_out": "Hard cut",
    "refs": [
     "CHOI@front-neutral",
-    "KIM@45-neutral",
-    "CART@sheet",
     "LOC@junkyard-day"
    ],
-   "subject": "Korean man in his 50s (reference: CHOI sheet), stocky build, short cropped salt-and-pepper hair, grease-stained plain grey work vest over plain dark shirt, black work gloves, worn radio on belt speaking briskly to Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt, gesturing at the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap beside them in the scrapyard.",
+   "subject": "Korean man in his 50s (reference: CHOI sheet) — a visibly DIFFERENT man from Kim: broad square jaw, heavy dark eyebrows, deeply tanned weathered skin, short cropped grey hair with a receding hairline, stubble on the chin, stocky neck; grease-stained plain grey work vest over a plain dark shirt; framed from the chest up, alone in the frame, facing slightly camera-left as if speaking to someone off-screen, mouth open mid-sentence; no hands, no cart in frame.",
    "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
-   "expression": "Choi: businesslike. Kim: silent, firm.",
-   "motion": "Choi lips move with dialogue, small hand gesture, Kim still.",
+   "expression": "Businesslike, brisk, slightly impatient.",
+   "motion": "Speaking: natural lip movement, small head movements under 10 degrees, no hand gestures.",
    "edit": "03:22.00~03:24.00 Talking face Choi (line 31) → 03:24.00~03:25.00 B-roll: rusty scale / paper bales → 03:25.00~03:26.05 Reaction: Kim unmoved"
   },
   {
@@ -534,21 +529,19 @@
   },
   {
    "id": "S31",
-   "shot": "Medium close-up",
+   "shot": "Close-up, chest-up, single (no hands in frame)",
    "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
    "lighting": "Overcast daylight 5600K from upper-left, bare bulbs as warm 3200K practicals, dramatic high-contrast shadows between paper bales, warm rim light",
    "camera": "Static, locked off",
    "transition_out": "Hold 1s → Dissolve 0.5s → dawn",
    "refs": [
     "CHOI@front-smile",
-    "KIM@45-neutral",
-    "CART@sheet",
     "LOC@junkyard-day"
    ],
-   "subject": "Korean man in his 50s (reference: CHOI sheet), stocky build, short cropped salt-and-pepper hair, grease-stained plain grey work vest over plain dark shirt, black work gloves, worn radio on belt with a softened face, giving a small dismissive wave of the hand toward Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt and the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap.",
+   "subject": "Korean man in his 50s (reference: CHOI sheet) — a visibly DIFFERENT man from Kim: broad square jaw, heavy dark eyebrows, deeply tanned weathered skin, short cropped grey hair with a receding hairline, stubble on the chin, stocky neck; grease-stained plain grey work vest over a plain dark shirt; framed from the chest up, alone in the frame, facing slightly camera-left, a softened expression; no hands, no cart in frame.",
    "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
-   "expression": "Gruff warmth, faint smile.",
-   "motion": "Lips move with the short line, one small hand wave, single blink.",
+   "expression": "Gruff warmth, faint smile (50%).",
+   "motion": "Speaks the short line softly, lips move gently, single blink, slight nod; no hand gestures.",
    "edit": "03:55.08~03:57.13 Talking face Choi (line 37) → 03:57.13~03:58.15 Hold: lips closed, reaction beat only (no speech after audio ends)"
   },
   {
@@ -624,20 +617,19 @@
   },
   {
    "id": "S36",
-   "shot": "Medium shot",
-   "lens": "50mm lens, f/2.8, medium shot, natural perspective, soft background separation",
+   "shot": "Close-up, chest-up, single (no hands in frame)",
+   "lens": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
    "lighting": "Soft natural daylight from upper-left, 5600K clean balanced tones, subtle warm rim light separating subject from background, gentle contrast",
    "camera": "Static, locked off",
    "transition_out": "Dissolve 0.4s",
    "refs": [
     "GMA@front-tense",
-    "CART@sheet",
     "LOC@demolition-day"
    ],
-   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, worn dark-brown baggy monpe trousers, worn brown work gloves stopping in her tracks, startled, then stepping toward the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap she thought was lost.",
+   "subject": "Korean woman in her late 70s (reference: GRANDMA sheet), thin stooped frame, deeply wrinkled gentle face, faded brown floral headscarf over grey hair, thick plain navy quilted jacket, framed from the chest up, alone, looking down toward the cart that is just out of frame below, eyes brimming, lips parted; no hands, no props in frame.",
    "environment": "redevelopment demolition lot (LOC demolition): collapsed wall rubble, faint dust haze, safety fence, blank white sign with no lettering, no people around, early morning",
-   "expression": "Startled, disbelief.",
-   "motion": "Two slow steps forward, hand rising toward the handle, lips form the short line.",
+   "expression": "Startled relief turning to tears (50%).",
+   "motion": "Speaks the short trembling line, one slow blink; no hand gestures.",
    "edit": "04:28.00~04:29.19 Talking face (line 42) → 04:29.19~04:30.17 Hold: lips closed, reaction beat only (no speech after audio ends)"
   },
   {
