@@ -100,7 +100,7 @@
    "duration": 5
   },
   {
-   "prompt": "Camera: Static rear shot. Motion: Slow bend, places the stack, begins to turn away (max 20°), no face turn to camera. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off. Motion: Kim slowly folds the cardboard box flat with both hands, small careful movements, no walking, no turning. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, light).",
    "image": "assets/portraits/ep3-keyframes/s11-1.png",
    "duration": 5
   },
@@ -125,7 +125,7 @@
    "duration": 10
   },
   {
-   "prompt": "Camera: Static, locked off. Motion: Micro trembling of the hand, dust settling, nothing else. Mouths stay closed; no talking. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off, very slow push-in. Motion: The old woman kneels in place and slowly sifts through the rubble with one gloved hand, small careful movements, head stays down, no standing up. Mouths stay closed; no talking. Everything else in the frame stays still except drifting dust haze.",
    "image": "assets/portraits/ep3-keyframes/s16-1.png",
    "duration": 5
   },
@@ -230,7 +230,7 @@
    "duration": 5
   },
   {
-   "prompt": "Camera: Slow cinematic push-in (zoom 1.05). Motion: Hands tremble gently, slow push-in. Mouths stay closed; no talking. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Everything else in the frame stays still except gentle ambient motion (dust, mist, light).",
+   "prompt": "Camera: Static, locked off, very slow push-in. Motion: Only the gloved hands move — they tremble very gently and the thumbs slowly stroke the leather strap; nothing else moves. Mouths stay closed; no talking. The handcart is a rigid prop and keeps EXACTLY the shape of the first frame: one single straight drawbar pole with one short leather-wrapped cross-bar grip; the handle never bends, splits, duplicates or turns into a loop; hands stay where they are on the grip. Dust drifts slowly in the background.",
    "image": "assets/portraits/ep3-keyframes/s37-1.png",
    "duration": 10
   },
