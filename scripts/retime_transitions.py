@@ -76,14 +76,21 @@ for i, ln in enumerate(raw):
     rows.append((i, p, s1, e1, style))
 
 # 앵커링: 내레이션이 장면보다 앞서는 구간은 줄을 해당 장면 시작 뒤로 민다(앞당기지는 않음)
-anchors = {int(k): int(v) for k, v in (kv.split("=") for kv in a.anchor.split(",") if kv)}
+anchors = {}
+for kv in [x for x in a.anchor.split(",") if x]:
+    k, v = kv.split("=")
+    if "@" in v:  # N=M@off : 장면 M 시작+off 에 정확히(앞당김 포함)
+        m, off = v.split("@"); anchors[int(k)] = (int(m), float(off), True)
+    else:
+        anchors[int(k)] = (int(v), 0.3, False)
 rows2, n = [], 0
 for i, p, s1, e1, style in rows:
     if style not in silent:
         n += 1
         if n in anchors:
-            target = new_s[anchors[n] - 1] + 0.3
-            if s1 < target:
+            m, off, exact = anchors[n]
+            target = new_s[m - 1] + off
+            if s1 < target or exact:
                 e1 += target - s1; s1 = target
     rows2.append((i, p, s1, e1, style))
 rows = rows2
