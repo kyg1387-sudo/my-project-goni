@@ -41,7 +41,7 @@
     "CART@sheet",
     "LOC@junkyard-day"
    ],
-   "subject": "Korean man in his 50s (reference: CHOI sheet), stocky build, short cropped salt-and-pepper hair, grease-stained plain grey work vest over plain dark shirt, black work gloves, worn radio on belt arms crossed, staring silently at Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt who is finishing a sentence; the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap handle visible at frame edge.",
+   "subject": "Korean man in his mid-50s (reference: CHOI sheet): a Korean man in his mid-50s, stocky heavyset build, BALD on top with only very short cropped grey hair on the sides, a thick dark-grey MUSTACHE, deeply tanned leathery skin, broad square jaw, small narrow eyes under thick eyebrows — clearly a different man from a clean-shaven man with a full head of hair; grease-stained plain grey work vest over plain dark shirt, black work gloves, worn radio on belt arms crossed, staring silently at Korean man in his early 60s (reference: KIM sheet), round face, short neat salt-and-pepper crew cut, plain dark navy security-guard uniform with pristine clean collar, no badge, no name tag, no cap, worn radio on belt who is finishing a sentence; the rusted Korean paper-collecting handcart (rear-car, reference: CART sheet): steel-tube frame with mesh side rails, two large spoked wheels, and a long single tubular front drawbar ending in a T-shaped cross grip wound with an old frayed brown leather strap handle visible at frame edge.",
    "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
    "expression": "Choi: suspicious silence. Kim: steady resolve.",
    "motion": "Kim lips move with dialogue, Choi single slow blink only, no head turn.",
@@ -486,7 +486,7 @@
     "CHOI@front-neutral",
     "LOC@junkyard-day"
    ],
-   "subject": "Korean man in his 50s (reference: CHOI sheet) — a visibly DIFFERENT man from Kim: broad square jaw, heavy dark eyebrows, deeply tanned weathered skin, short cropped grey hair with a receding hairline, stubble on the chin, stocky neck; grease-stained plain grey work vest over a plain dark shirt; framed from the chest up, alone in the frame, facing slightly camera-left as if speaking to someone off-screen, mouth open mid-sentence; no hands, no cart in frame.",
+   "subject": "Korean man in his mid-50s (reference: CHOI sheet): a Korean man in his mid-50s, stocky heavyset build, BALD on top with only very short cropped grey hair on the sides, a thick dark-grey MUSTACHE, deeply tanned leathery skin, broad square jaw, small narrow eyes under thick eyebrows — clearly a different man from a clean-shaven man with a full head of hair; grease-stained plain grey work vest over a plain dark shirt; framed from the chest up, alone in the frame, facing slightly camera-left as if speaking to someone off-screen, mouth open mid-sentence; no hands, no cart in frame.",
    "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
    "expression": "Businesslike, brisk, slightly impatient.",
    "motion": "Speaking: natural lip movement, small head movements under 10 degrees, no hand gestures.",
@@ -521,7 +521,7 @@
     "CHOI@front-neutral",
     "LOC@junkyard-day"
    ],
-   "subject": "Korean man in his 50s (reference: CHOI sheet), stocky build, short cropped salt-and-pepper hair, grease-stained plain grey work vest over plain dark shirt, black work gloves, worn radio on belt arms crossed, listening, his hard expression beginning to soften; Kim is a soft out-of-focus shape at frame edge.",
+   "subject": "Korean man in his mid-50s (reference: CHOI sheet): a Korean man in his mid-50s, stocky heavyset build, BALD on top with only very short cropped grey hair on the sides, a thick dark-grey MUSTACHE, deeply tanned leathery skin, broad square jaw, small narrow eyes under thick eyebrows — clearly a different man from a clean-shaven man with a full head of hair; grease-stained plain grey work vest over plain dark shirt, black work gloves, worn radio on belt arms crossed, listening, his hard expression beginning to soften; Kim is a soft out-of-focus shape at frame edge.",
    "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
    "expression": "Softening (keyframe at 50%: brow relaxing).",
    "motion": "Slow push-in, one blink, jaw loosens slightly, no head turn.",
@@ -538,7 +538,7 @@
     "CHOI@front-smile",
     "LOC@junkyard-day"
    ],
-   "subject": "Korean man in his 50s (reference: CHOI sheet) — a visibly DIFFERENT man from Kim: broad square jaw, heavy dark eyebrows, deeply tanned weathered skin, short cropped grey hair with a receding hairline, stubble on the chin, stocky neck; grease-stained plain grey work vest over a plain dark shirt; framed from the chest up, alone in the frame, facing slightly camera-left, a softened expression; no hands, no cart in frame.",
+   "subject": "Korean man in his mid-50s (reference: CHOI sheet): a Korean man in his mid-50s, stocky heavyset build, BALD on top with only very short cropped grey hair on the sides, a thick dark-grey MUSTACHE, deeply tanned leathery skin, broad square jaw, small narrow eyes under thick eyebrows — clearly a different man from a clean-shaven man with a full head of hair; grease-stained plain grey work vest over a plain dark shirt; framed from the chest up, alone in the frame, facing slightly camera-left, a softened expression; no hands, no cart in frame.",
    "environment": "scrapyard yard (LOC junkyard): compressed paper bales, rusty scale, bare bulbs hanging overhead, one old truck, blank corrugated metal wall with no lettering",
    "expression": "Gruff warmth, faint smile (50%).",
    "motion": "Speaks the short line softly, lips move gently, single blink, slight nod; no hand gestures.",

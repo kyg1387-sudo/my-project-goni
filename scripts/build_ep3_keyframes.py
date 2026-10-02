@@ -71,11 +71,11 @@ COMPOSITION = {
     "S01": ("SINGLE PORTRAIT: exactly one person (Kim), chest-up close-up, no second person, no hands, no cart. His face "
             "must be the exact same face as the character sheet."),
     "S28": ("SINGLE PORTRAIT: exactly one person (Choi), chest-up close-up, no second person, no hands, no cart. His face "
-            "must be the exact same face as the Choi character sheet and must NOT resemble Kim: broad square jaw, heavy "
-            "eyebrows, tanned weathered skin, cropped receding grey hair, chin stubble."),
+            "must be the exact same face as the Choi character sheet and must NOT resemble Kim: bald on top, thick grey "
+            "mustache, tanned weathered skin, broad square jaw, thick eyebrows."),
     "S31": ("SINGLE PORTRAIT: exactly one person (Choi), chest-up close-up, no second person, no hands, no cart. His face "
-            "must be the exact same face as the Choi character sheet and must NOT resemble Kim: broad square jaw, heavy "
-            "eyebrows, tanned weathered skin, cropped receding grey hair, chin stubble."),
+            "must be the exact same face as the Choi character sheet and must NOT resemble Kim: bald on top, thick grey "
+            "mustache, tanned weathered skin, broad square jaw, thick eyebrows."),
     "S15": ("SINGLE PORTRAIT: exactly one person (the grandmother), chest-up close-up, no hands, no cardboard, no cart."),
     "S36": ("SINGLE PORTRAIT: exactly one person (the grandmother), chest-up close-up, no hands, no cart in frame."),
     "S29": ("Composition: Kim stands at the FRONT of the cart, facing the camera, the cart bed BEHIND him and to one side. "
@@ -92,7 +92,7 @@ COMPOSITION = {
 SHEETS = {
     "KIM": ("assets/portraits/ep3-cast/kim-sheet-1.png", "Kim, the apartment security guard (Korean man in his early 60s)"),
     "GMA": ("assets/portraits/ep3-cast/grandma-sheet-1.png", "the elderly paper-collecting grandmother (Korean woman in her late 70s)"),
-    "CHOI": ("assets/portraits/ep3-choi/choi-sheet-1.png", "Choi, the scrapyard owner (Korean man in his 50s)"),
+    "CHOI": ("assets/portraits/ep3-choi/choi-sheet-1.png", "Choi, the scrapyard owner (Korean man in his mid-50s: bald on top, thick grey mustache, tanned skin, stocky)"),
 }
 PANEL = {
     "front": "top-row left panel (frontal head and shoulders)",
@@ -119,8 +119,9 @@ WARDROBE = {
     "GMA": ("The grandmother's wardrobe is locked: a faded brown floral headscarf tied over her head so that it covers "
             "her hair (a real scarf, not a thin headband), a thick plain navy quilted jacket, dark-brown baggy monpe "
             "trousers, brown work gloves; no text, no logos."),
-    "CHOI": ("Choi's wardrobe is locked: a grease-stained plain grey work vest over a plain dark shirt, black work "
-             "gloves, a worn radio on his belt; no text, no logos, no name tag."),
+    "CHOI": ("Choi's look is locked: BALD on top with very short grey hair on the sides, a thick dark-grey MUSTACHE, deeply "
+             "tanned skin, stocky build; a grease-stained plain grey work vest over a plain dark shirt, black work gloves, "
+             "a worn radio on his belt; no text, no logos, no name tag."),
 }
 
 
