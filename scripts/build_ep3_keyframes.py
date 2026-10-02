@@ -65,6 +65,9 @@ COMPOSITION = {
     "S42": ("Action: the grandmother is WALKING along the sidewalk, body upright with a slight stoop, one hand behind her "
             "holding the short leather-wrapped cross-bar at the end of the cart's single drawbar pole, the cart trailing "
             "behind her. She is NOT bending over, NOT loading boxes, NOT standing still."),
+    "S27": ("Exactly ONE person: Kim alone (the security guard in the plain long-sleeve dark NAVY uniform shirt — NO grey "
+            "vest, NO work vest of any kind; Choi is NOT in this frame). Medium close-up at the scrapyard gate, his face large, "
+            "sharp and identical to the character sheet, eyes locking onto something deep inside the yard."),
     "S29": ("Composition: Kim stands at the FRONT of the cart, facing the camera, the cart bed BEHIND him and to one side. "
             "He has lifted the end of the cart's single straight drawbar pole and holds its short leather-wrapped "
             "cross-bar grip in both hands at waist height, the pole running back past his hip to the cart. ONE pole, ONE "
@@ -114,7 +117,7 @@ WARDROBE = {
 EXTRA_REFS = {"S41": "assets/portraits/ep3-keyframes/s40-1.png"}  # 소품 연속성(옥수수 봉지)
 
 
-ANCHOR_SKIP = {"S26", "S29", "S37", "S42"}  # 연속성 앵커가 동작·인물 구성을 끌어간 실증 → 앵커 제외
+ANCHOR_SKIP = {"S26", "S27", "S29", "S37", "S42"}  # S27: 앵커(S28 투샷)에 끌려 김씨가 최사장 조끼를 입음  # 연속성 앵커가 동작·인물 구성을 끌어간 실증 → 앵커 제외
 
 
 def anchor_for(scene):
