@@ -1,14 +1,15 @@
 {
-  "_설명": "EP3 PHASE 4 부분 수정(인페인팅) — S01·S02의 옛 리어카만 소품 시트 설계로 교체. 참조 1 = 현재 승인 키프레임(인물·구도 유지), 참조 2 = 리어카 마스터 시트. 결과는 검수 후 assets/portraits/ep3-keyframes/ 로 복사. 2차: S01 채택(리어카 화면 밖). S02는 리어카 제거 편집(s02b).",
+  "_설명": "S29 손잡이만 교체(인페인팅): 현재 S29에서 U자 손잡이를 끌채 한 개+가로 손잡이로 바꾼다. 인물·배경 유지.",
   "characters": [
     {
-      "id": "s02b",
+      "id": "s29",
       "count": 1,
       "aspect_ratio": "16:9",
       "refs": [
-        "assets/portraits/ep3-keyframes-fix/s02-1.png"
+        "assets/portraits/ep3-keyframes/s29-1.png",
+        "assets/portraits/ep3-cart/cells/cart-handle.png"
       ],
-      "prompt": "Edit the reference image and output ONE single 16:9 film still IDENTICAL to it — same man (Choi) with arms crossed, same face, same grey work vest and black gloves, same scrapyard background, bales, scale, lighting and color grade — EXCEPT: completely REMOVE the handcart at the left edge of the frame and fill that area with the same scrapyard ground and paper bales continuing naturally. No cart, no handle, no strap anywhere in the frame. Do not change anything else. No text, no letters, no logos, no grid, no borders."
+      "prompt": "Edit reference image 1 and output ONE single 16:9 film still IDENTICAL to it — same man (Kim), same face, same long-sleeve dark navy uniform with no name tag, same pose, same scrapyard background, bales, scale, lighting and color grade — EXCEPT for one change: the handcart handle he is holding. Replace the U-shaped double-bar handle with the handle from reference image 2: ONE single straight metal pole coming from the cart bed, ending in ONE short horizontal cross-bar wrapped in brown leather with a loose strap end hanging. Kim's two hands now rest on that short leather-wrapped cross-bar at the same height and position as before. Remove the second bar entirely. Do not change anything else. No text, no logos, no grid, no borders."
     }
   ]
 }
