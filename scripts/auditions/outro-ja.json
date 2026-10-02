@@ -1,0 +1,12 @@
+{
+  "_설명": "일본어 아웃트로 진행자 멘트 (시리즈 내레이터 목소리, ElevenLabs 다국어). 결과 line001을 outro-ja 스킷의 audio-overrides로 사용.",
+  "tests": [
+    {
+      "id": "outro_ja",
+      "model": "elevenlabs-direct",
+      "voice": "5n5gqmaQi9Ewevrz7bOS",
+      "el_model": "eleven_multilingual_v2",
+      "text": "最後までご覧いただき、ありがとうございました。よろしければ、チャンネル登録と高評価で応援してください。美談ものがたりでした。"
+    }
+  ]
+}
