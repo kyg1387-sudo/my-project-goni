@@ -195,8 +195,8 @@
   "ambience_model": "fal-ai/mmaudio-v2",
   "ambience_volume": 0.35,
   "ambience_prompts": [
-    "rusty cart wheel creak, distant scrap metal clinking, tense quiet, no crowd murmur",
-    "rusty cart wheel creak, tense quiet, no crowd murmur",
+    "",
+    "",
     "",
     "",
     "",
@@ -207,9 +207,9 @@
     "",
     "quiet early morning ambience, birds distant",
     "quiet early morning ambience",
-    "demolition site rubble settling, distant truck engine idling, no crowd voices",
+    "",
     "truck engine, rubble loading, distant",
-    "sudden silence, wind",
+    "",
     "quiet, distant city hum",
     "quiet night street ambience, footsteps",
     "quiet night office hum, clock ticking",
@@ -223,7 +223,7 @@
     "daytime street ambience, distant traffic",
     "daytime scrapyard ambience",
     "rusty cart wheel creak, tense quiet, no crowd murmur",
-    "tense quiet",
+    "",
     "tense quiet fading into a softer stillness",
     "quiet resolution, distant scrapyard ambience",
     "metal clinking, tools, quiet night",
@@ -311,5 +311,6 @@
     1,
     28,
     31
-  ]
+  ],
+  "_현장음_생략": "2026-10-02 PHASE 6: 언어검사에서 영어 말소리 검출(amb01·15·29) + 의심(02·13) → 해당 장면 현장음 생략"
 }
