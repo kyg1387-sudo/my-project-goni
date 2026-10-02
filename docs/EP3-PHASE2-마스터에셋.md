@@ -47,3 +47,8 @@
 ## 2-5. 소품 앵커 (2026-10-01 보강 — 파일럿 실증)
 - 장면마다 리어카 손잡이가 달라짐(할머니 보행 컷에 끌채 없음, 클로즈업은 굽은 손잡이) → 리어카를 마스터 에셋으로 잠근다.
 - `assets/portraits/ep3-cart/cart-sheet-1.png` (2x2: 3/4 앞·측면·뒤·손잡이 클로즈업). 설계: 철제 튜브 프레임+철망 측판, 큰 살바퀴 2개, 앞쪽 중앙 끌채 끝의 T자 가로 손잡이에 낡은 갈색 가죽끈 감음. 참조 ID `CART@sheet`, 리어카 등장 22장면 전부 호출.
+
+## 2-6. 최사장 외형 차별화 (2026-10-02, 사용자 지적 "김씨와 구분 안 됨")
+- v3 시트는 김씨와 같은 반백 머리 50~60대 남성이라 투샷·클로즈업에서 식별 불가. **최사장 v4**: 정수리 대머리+옆머리 짧은 백발, 짙은 콧수염, 그을린 피부, 각진 턱, 다부진 체격. `assets/portraits/ep3-choi/choi-sheet-1.png`(v3는 `_rejected/choi-sheet-v3-similar-to-kim.png`).
+- 프롬프트 잠금 갱신: `bald on top, thick dark-grey mustache, tanned skin, stocky; grey work vest, black gloves, radio`.
+- 영향 컷: S02·S28·S30·S31 키프레임 재생성.
