@@ -245,7 +245,7 @@
   "bgm_volume": 0.42,
   "bgm_segments": [
     {
-      "start": 15.0,
+      "start": 0.0,
       "end": 85.4,
       "volume": 0.42,
       "prompt": "sparse minimalist Korean drama piano, single quiet melodic line, dry understated tone, slow unhurried tempo, no strings, instrumental only, no vocals, no lyrics"
