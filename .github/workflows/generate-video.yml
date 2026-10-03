@@ -39,6 +39,14 @@ on:
         description: 언어 검사 모드(무료) — 저장소 안 오디오 폴더(예 assets/auditions/<spec>)를 faster-whisper로 전사해 외국어 혼입·태그 낭독을 검사하고 보고서를 같은 폴더에 커밋
         required: false
         default: ""
+      qa_model:
+        description: 언어 검사 Whisper 모델(small 기본, 일본어는 large-v3 권장)
+        required: false
+        default: "small"
+      qa_lang:
+        description: 언어 검사 기대 언어(ko 기본, 일본어판은 ja)
+        required: false
+        default: "ko"
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
@@ -112,7 +120,7 @@ jobs:
           pip install --quiet faster-whisper
 
       - name: 언어 검사 실행 (저장소 오디오 폴더)
-        run: python3 scripts/qa_language.py --audio-dir "${QA_DIR}"
+        run: python3 scripts/qa_language.py --audio-dir "${QA_DIR}" --model "${{ inputs.qa_model || 'small' }}" --lang "${{ inputs.qa_lang || 'ko' }}"
 
       - name: 보고서를 저장소에 커밋
         if: always()

@@ -50,6 +50,7 @@ def main():
     ap.add_argument("--audio-dir", default="out/audio")
     ap.add_argument("--ass", default="")
     ap.add_argument("--model", default="small")
+    ap.add_argument("--lang", default="ko", help="기대 언어(ko/ja). ja이면 한자는 정상으로 보고 감지언어만 검사")
     args = ap.parse_args()
 
     from faster_whisper import WhisperModel
@@ -80,11 +81,11 @@ def main():
         latin = re.findall(r"[A-Za-z]{2,}", heard)
         hanzi = re.findall(r"[一-鿿]+", heard)
         problems = []
-        if info.language != "ko":
+        if info.language != args.lang:
             problems.append(f"감지언어={info.language}(p={info.language_probability:.2f})")
         if latin:
             problems.append(f"영문 감지: {' '.join(latin[:5])}")
-        if hanzi:
+        if hanzi and args.lang != "ja":
             problems.append(f"한자/중국어 감지: {''.join(hanzi)[:20]}")
         if script and sim < 0.25:
             problems.append(f"대본과 불일치(유사도 {sim:.2f})")
