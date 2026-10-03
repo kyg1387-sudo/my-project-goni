@@ -71,6 +71,9 @@ EP3 실측: 한국어판 약 37달러(44장면), 일본어 더빙판 약 5달러
 ## 6. Opus 세션이 채울 칸
 - Opus 브랜치 이름: `claude/nice-tesla-izknnf` (2026-10-03, `origin/claude/zen-cori-8ren7o` 8db20cc에서 분기)
 - EP4 대본 v3 **승인·동결 2026-10-03** — `docs/대본-EP4-김씨의크리스마스.md`, `docs/톤연출표-EP4-김씨의크리스마스.md`, 시트 스펙 `scripts/portraits/ep4-cast.json`(미실행). 보이스 스펙 `scripts/auditions/kim-christmas-tts.json`(30줄)·`kim-christmas-voices.json`·`kim-christmas-child.json`
+- EP4 오디오 진행(2026-10-03): **일본어 기준 제작으로 결정**(사용자). 일본어 내레이터 26+김씨 4줄 `assets/auditions/kim-christmas-ja-tts/`(읽기 위험 11줄 가나 입력 재생성, 구판 `_superseded/`), 엄마 후보 4·아이(+2/+3반음) `assets/auditions/kim-christmas-ja-voices/` → **사용자 청취·선택 대기**. 한국어판 30줄 `assets/auditions/kim-christmas-tts/`(한국어판용 보관).
+  언어 검사: `generate-video.yml`에 `qa_model`·`qa_lang` 입력 추가(일본어는 large-v3·ja). EP3-JA 승인본도 같은 수준으로 오인식됨 → EL 내레이터·김씨의 일본어는 한국어 억양이 기준선. 일본어 원어민 내레이터 교체안은 사용자 판단 대기.
+  ElevenLabs API 키에 voices_read 권한 없음(도서관 검색·이름 조회 불가, ID 직접 지정은 가능).
 - EP4 대본 승인일 / 시트 run ID / 키프레임 run ID / 클립 run ID / burn run ID: ______
 - 요양보호사 편 진단서 위치: ______
 - 지출(잔액 변동): ______ (대장 `docs/시리즈-제작비용.md`에 기입)
