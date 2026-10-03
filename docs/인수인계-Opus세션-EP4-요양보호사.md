@@ -70,7 +70,7 @@ EP3 실측: 한국어판 약 37달러(44장면), 일본어 더빙판 약 5달러
 
 ## 6. Opus 세션이 채울 칸
 - Opus 브랜치 이름: `claude/nice-tesla-izknnf` (2026-10-03, `origin/claude/zen-cori-8ren7o` 8db20cc에서 분기)
-- EP4 대본 v2(일본 인정 드라마 최적화판) 2026-10-03 — `docs/대본-EP4-김씨의크리스마스.md`, `docs/톤연출표-EP4-김씨의크리스마스.md`, 시트 스펙 `scripts/portraits/ep4-cast.json`(미실행) — **사용자 승인 대기**
+- EP4 대본 v3(일본 인정 드라마 최적화판, 5:00~5:10 목표) 2026-10-03 — `docs/대본-EP4-김씨의크리스마스.md`, `docs/톤연출표-EP4-김씨의크리스마스.md`, 시트 스펙 `scripts/portraits/ep4-cast.json`(미실행) — **사용자 승인 대기**
 - EP4 대본 승인일 / 시트 run ID / 키프레임 run ID / 클립 run ID / burn run ID: ______
 - 요양보호사 편 진단서 위치: ______
 - 지출(잔액 변동): ______ (대장 `docs/시리즈-제작비용.md`에 기입)
