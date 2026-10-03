@@ -192,6 +192,29 @@ def el_child_search(cfg):
     print("어린이 목소리 후보 탐색 완료")
 
 
+def typecast_list(cfg):
+    """Typecast 보이스 목록을 로그에 출력한다(무과금). 후보 선정용 — 이름·성별·나이·지원 언어를 한 줄씩."""
+    key = (os.environ.get("TYPECAST_API_KEY") or "").strip()
+    if not key:
+        sys.exit("TYPECAST_API_KEY 시크릿이 필요합니다.")
+    import urllib.parse
+    q = urllib.parse.urlencode({k: v for k, v in cfg.items() if isinstance(v, str)})
+    for url in (f"https://api.typecast.ai/v2/voices?{q}", f"https://api.typecast.ai/v1/voices?{q}"):
+        req = urllib.request.Request(url, headers={"X-API-KEY": key})
+        try:
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                data = json.loads(resp.read().decode())
+        except urllib.error.HTTPError as e:
+            print(f"[{url}] HTTP {e.code}: {e.read().decode(errors='replace')[:200]}")
+            continue
+        voices = data if isinstance(data, list) else (data.get("voices") or data.get("data") or [])
+        print(f"[{url}] 보이스 {len(voices)}개")
+        for v in voices:
+            print("VOICE " + json.dumps(v, ensure_ascii=False)[:400])
+        return
+    sys.exit("Typecast 보이스 목록 조회 실패")
+
+
 def find_video_url(result):
     if not isinstance(result, dict):
         return None
@@ -238,6 +261,9 @@ def main():
                           encoding="utf-8"))
     if spec.get("el_child_search"):
         el_child_search(spec["el_child_search"])
+        return
+    if spec.get("typecast_list"):
+        typecast_list(spec["typecast_list"])
         return
     key = os.environ.get("FAL_API_KEY")
     if not key:
