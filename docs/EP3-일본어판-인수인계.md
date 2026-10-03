@@ -1,6 +1,6 @@
 # EP3 일본어 더빙판 인수인계 (2026-10-02, Fable 세션 → 다음 세션)
 
-> **2026-10-03 상태: 일본어판 제작 완료.** 최종본 `deliveries/kim-cart-grandma-ja-final-outro.mp4.part-00/01`(합치면 312.0s). 남은 일은 업로드뿐(§7). 아래는 제작 과정 기록이며, 재작업이 필요할 때만 참조한다.
+> **2026-10-03 상태: 일본어판 제작 완료.** 최종본 `deliveries/kim-cart-grandma-ja-final-outro.mp4.part-00/01`(합치면 **309.7s**, 2026-10-03 전수 검수 후 S31 무음 꼬리 2.3s 절단본). 남은 일은 업로드뿐(§7). 아래는 제작 과정 기록이며, 재작업이 필요할 때만 참조한다.
 
 **읽는 법**: CLAUDE.md(제6장 포함)와 `docs/제작규격-보강-EP3실증.md`를 먼저 적용한다. 이 문서는 "어디까지 됐고, 다음에 무엇을 하는지"만 적는다.
 **원칙**: 한 브랜치(`claude/zen-cori-8ren7o`)에 한 세션만. 유료 실행 전 비용 보고·승인. bot 커밋이 올라오면 `git pull --rebase`.
@@ -18,7 +18,7 @@
 | 목소리 | 확정 | 내레이터 EL `5n5gqmaQi9Ewevrz7bOS`, 김씨 EL `8vwSOQHQApfVx993mKf9` (eleven_multilingual_v2), 최사장 Typecast `tc_69a8e49d2e36ab42260be475` tonedown 1.2, 할머니 Typecast `tc_61d55a84b8c48f42d69b2399` sad 1.0 tempo 0.9 |
 | 오디오 설정 | 완료 | `scripts/audio/kim-cart-grandma-ja.json` (scene_durations: S02 5, S15 5, S20 5, S28 10, S31 9; transitions; bgm 4구간; omnihuman_scenes [1,15,28,29,31,36]) |
 | 타임라인 | 확정 294.2s | 재잠금 명령은 §3 |
-| **조립(립싱크 6장면 + 믹스)** | **완료** (run 37075152851 → `deliveries/kim-cart-grandma-ja-skit-final.mp4.part-*`, 294.2s). 최소 검수 통과: 대사 6장면 입모양·인물 정상, 음량 정상. 결함 1건: S31 최사장 대사 뒤(+6.0~6.5s) 헤드턴 → 로컬 패치(정지 클립으로 5.5s~끝 대체, 0.3s 디졸브) 적용본을 `deliveries/kim-cart-grandma-ja-patched.mp4.part-00/01`(합치면 294.2s)로 커밋함 → **결합(§5)은 이 패치본을 본편으로 사용** | burn run: skit=kim-cart-grandma-ja, source_skit=kim-cart-grandma, source_run_id=36971579705, resume_run_id=36966874332, invalidate=`omni*.mp4 omniframe*.png lip*.mp4 line*.mp3 seg*.wav`. 완료 시 bot 커밋 "완성 영상 추가 (kim-cart-grandma-ja)" → `deliveries/kim-cart-grandma-ja-skit-final.mp4(.part-*)` |
+| **조립(립싱크 6장면 + 믹스)** | **완료** (run 37075152851 → `deliveries/kim-cart-grandma-ja-skit-final.mp4.part-*`, 294.2s). 최소 검수 통과: 대사 6장면 입모양·인물 정상, 음량 정상. 결함 1건: S31 최사장 대사 뒤(+6.0~6.5s) 헤드턴 → 로컬 패치(정지 클립으로 5.5s~끝 대체, 0.3s 디졸브) 적용본을 `deliveries/kim-cart-grandma-ja-patched.mp4.part-00/01`로 커밋함. **전수 검수(2026-10-03)**: 최사장 대사 끝(210.5s) 뒤 BGM 3구간 종료(209.2)·4구간 시작(217.2) 사이 3.7s 완전 무음(−60dB 이하) 발견 → 본편 212.40~214.69s 구간(정지 Choi 꼬리, 무음)을 양쪽 트랙에서 잘라내 무음 1.4s·대사 끝→디졸브 1.9s로 맞춤(bgm 세그먼트는 Artifact에 저장되지 않아 remix 시 전곡 재생성이라 로컬 절단 선택). 패치본은 291.9s로 갱신 → **결합(§5)은 이 패치본을 본편으로 사용** | burn run: skit=kim-cart-grandma-ja, source_skit=kim-cart-grandma, source_run_id=36971579705, resume_run_id=36966874332, invalidate=`omni*.mp4 omniframe*.png lip*.mp4 line*.mp3 seg*.wav`. 완료 시 bot 커밋 "완성 영상 추가 (kim-cart-grandma-ja)" → `deliveries/kim-cart-grandma-ja-skit-final.mp4(.part-*)` |
 | 아웃트로 일본어 멘트 TTS | 완료(10.2s) | `assets/auditions/outro-ja/outro_ja.mp3` → `assets/audio-overrides/outro-ja/line001.mp3` |
 | 아웃트로 입모양 재생성 | **완료** `assets/auditions/outro-host/OUTRO-SCENE-ja.mp4` (12.0s, 시리즈 공통 재사용) | — |
 | 일본어 엔드카드 | 완료 | `assets/brand/endcard-midam-ja.mp4` |
@@ -74,7 +74,7 @@ python3 scripts/retime_transitions.py --skit kim-cart-grandma-ja --narration-tem
 - Typecast 할머니 음성 line012 길이 1.9s: S15 창(5s) 안.
 
 ## 7. 업로드 (일본 채널)
-- 영상: `deliveries/kim-cart-grandma-ja-final-outro.mp4.part-*` 합치기 → 1280x720, 5:12.
+- 영상: `deliveries/kim-cart-grandma-ja-final-outro.mp4.part-*` 합치기 → 1280x720, 5:10 (309.7s).
 - 제목·설명·태그·고정댓글: `docs/EP3-업로드-최종.md` 일본어 절(도파민형 제목 2 추천). 썸네일: `assets/thumbnails/ep3/EP3-thumb-G-money-JP.jpg`.
 - 자막: 화면에 일본어 번인 완료. CC는 `subs/kim-cart-grandma.ja.srt`(타이밍은 한국어판 기준이라 더빙판에는 올리지 않는다 — 올리려면 `subs/kim-cart-grandma-ja.ass`를 srt로 변환).
 - AI 고지 "예", 동영상 언어 日本語, 예약 金曜 19:00 JST.
