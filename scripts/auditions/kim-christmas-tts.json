@@ -1,0 +1,185 @@
+{
+ "_설명": "EP4 「김씨의 크리스마스」 PHASE 1 보이스 선행 생성(대본 v3 동결 2026-10-03). id=TTS 줄 번호(자막카드 제외). 내레이터 26줄 + 김씨 4줄. 아이(line004·012)·엄마(line005·033)는 오디션 채택 후 이 폴더로 복사. 내레이션은 생성 1.0 → 조립 시 atempo 1.2(원본 _orig/ 보관).",
+ "tests": [
+  {
+   "id": "line001",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[calm, gentle] 십이월 이십사일. 단지에는, 하루 종일 눈이 내렸습니다."
+  },
+  {
+   "id": "line002",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[quiet] 연말의 우편함마다, 고지서가 한 장씩 꽂혔습니다."
+  },
+  {
+   "id": "line003",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[hushed] 그리고 천팔백일 호 문에는, 빨간 종이 한 장이 붙어 있었습니다."
+  },
+  {
+   "id": "line006",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[soft] 무례해서가 아니었습니다."
+  },
+  {
+   "id": "line007",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[gentle, sad] 빚과 생활에 지친 엄마에게 남은 건, 작은 자존심 하나뿐이었습니다."
+  },
+  {
+   "id": "line008",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[warm, calm narration] 혼자 아이를 키운 지 삼 년."
+  },
+  {
+   "id": "line009",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[weary] 낮에는 식당에서, 밤에는 마트에서 일했지만, 겨울은 늘 돈이 먼저 바닥났습니다."
+  },
+  {
+   "id": "line010",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[soft, hushed] 엄마가 잠든 사이, 아이가 몰래 내려왔습니다."
+  },
+  {
+   "id": "line011",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[tender] 삐뚤빼뚤한 글씨로, 아이는 이렇게 적었습니다. '우리 집은 십팔 층이에요. 착한 일도 많이 했어요.'"
+  },
+  {
+   "id": "line013",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[quiet, meaningful] 그날은, 김씨의 한 달 월급날이었습니다."
+  },
+  {
+   "id": "line014",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[tender] 봉투 옆에는, 칠 년 전 세상을 떠난 아내의 가계부가 놓여 있었습니다."
+  },
+  {
+   "id": "line015",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[warm, calm narration] 손때 묻은 마지막 장 귀퉁이, 아내의 글씨."
+  },
+  {
+   "id": "line016",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[tender, wistful] '우리한테도 아이가 있었더라면… 여보가 산타 분장 한번 해 줬으면, 참 좋았을 텐데.'"
+  },
+  {
+   "id": "line017",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[moved, slow] 아이가 없던 두 사람에게, 그건 끝내 이루지 못한 소원이었습니다."
+  },
+  {
+   "id": "line018",
+   "model": "elevenlabs-direct",
+   "voice": "8vwSOQHQApfVx993mKf9",
+   "text": "[calm, low] 천팔백일 호… 관리비, 석 달 치입니다."
+  },
+  {
+   "id": "line019",
+   "model": "elevenlabs-direct",
+   "voice": "8vwSOQHQApfVx993mKf9",
+   "text": "[low, earnest] 제가 냈다는 말은… 절대로 하지 말아 주십시오."
+  },
+  {
+   "id": "line020",
+   "model": "elevenlabs-direct",
+   "voice": "8vwSOQHQApfVx993mKf9",
+   "text": "[quiet, gentle] 그 집 어머니… 상처받습니다."
+  },
+  {
+   "id": "line021",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[warm] 봉투를 내밀고 남은 지폐 몇 장으로, 그는 작은 트리 하나를 샀습니다."
+  },
+  {
+   "id": "line022",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[tender] 서랍 깊은 곳, 아내가 생전에 털실로 떠 두었던 별 하나."
+  },
+  {
+   "id": "line023",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[warm, moved] 칠 년 만에, 그 별이 트리 꼭대기에 걸렸습니다."
+  },
+  {
+   "id": "line024",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[hushed] 엘리베이터 소리에 아이가 깰까 봐, 그는 열여덟 층 계단을 걸어 올랐습니다."
+  },
+  {
+   "id": "line025",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[warm, calm narration] 벨은, 누르지 않았습니다."
+  },
+  {
+   "id": "line026",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[quiet] 발소리를 죽여, 그는 왔던 계단을 그대로 내려갔습니다."
+  },
+  {
+   "id": "line027",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[warm, calm narration] 복도 천장의 카메라만이, 그 뒷모습을 지켜보고 있었습니다."
+  },
+  {
+   "id": "line028",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[warm] 아이의 소원대로, 그 집의 불은 꺼지지 않았습니다."
+  },
+  {
+   "id": "line029",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[warm, calm narration] 누가 냈는지, 직원은 끝내 말하지 않았습니다."
+  },
+  {
+   "id": "line030",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[gentle] 다만, 새벽 복도의 화면을 말없이 틀어 주었을 뿐입니다."
+  },
+  {
+   "id": "line031",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[warm, calm narration] 화면 속 늙은 경비원은, 끝내 얼굴을 보이지 않았습니다."
+  },
+  {
+   "id": "line032",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "text": "[warm, realizing] 하지만 그 굽은 등과 낡은 패딩을, 이 단지에서 모르는 사람은 없었습니다."
+  },
+  {
+   "id": "line034",
+   "model": "elevenlabs-direct",
+   "voice": "8vwSOQHQApfVx993mKf9",
+   "text": "[soft, warm smile] ……메리 크리스마스입니다."
+  }
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "_설명": "EP4 오디션: 아이=이전 작품 검증 아동 보이스(V9zeHe6rhQ2jEkZaNOGy, 10세 남아 → 채택 시 음높이 보정으로 7세), 엄마=ElevenLabs 후보 4종 × 2줄(1단계 지친 차가움 / 5단계 울먹임). 사용자 청취 후 채택.",
+ "tests": [
+  {
+   "id": "child_MH_line004",
+   "model": "elevenlabs-direct",
+   "voice": "V9zeHe6rhQ2jEkZaNOGy",
+   "text": "[small seven-year-old boy, innocent, curious] 아저씨, 산타 할아버지는… 우리 집 호수를 모를까요?"
+  },
+  {
+   "id": "child_MH_line012",
+   "model": "elevenlabs-direct",
+   "voice": "V9zeHe6rhQ2jEkZaNOGy",
+   "text": "[small seven-year-old boy, soft, sincere] 산타 할아버지, 엄마 울지 않게… 불만 안 꺼지게 해 주세요."
+  },
+  {
+   "id": "mom_Sarah_line005",
+   "model": "elevenlabs-direct",
+   "voice_name": "Sarah",
+   "text": "[tired, curt, thirties woman] 하준아, 경비 아저씨 번거롭게 하지 마. …저희 일엔, 신경 쓰지 마세요."
+  },
+  {
+   "id": "mom_Sarah_line033",
+   "model": "elevenlabs-direct",
+   "voice_name": "Sarah",
+   "text": "[tearful, choked] 죄송합니다… 어제 그런 말까지 했는데… 정말, 감사합니다…"
+  },
+  {
+   "id": "mom_Jessica_line005",
+   "model": "elevenlabs-direct",
+   "voice_name": "Jessica",
+   "text": "[tired, curt, thirties woman] 하준아, 경비 아저씨 번거롭게 하지 마. …저희 일엔, 신경 쓰지 마세요."
+  },
+  {
+   "id": "mom_Jessica_line033",
+   "model": "elevenlabs-direct",
+   "voice_name": "Jessica",
+   "text": "[tearful, choked] 죄송합니다… 어제 그런 말까지 했는데… 정말, 감사합니다…"
+  },
+  {
+   "id": "mom_Lily_line005",
+   "model": "elevenlabs-direct",
+   "voice_name": "Lily",
+   "text": "[tired, curt, thirties woman] 하준아, 경비 아저씨 번거롭게 하지 마. …저희 일엔, 신경 쓰지 마세요."
+  },
+  {
+   "id": "mom_Lily_line033",
+   "model": "elevenlabs-direct",
+   "voice_name": "Lily",
+   "text": "[tearful, choked] 죄송합니다… 어제 그런 말까지 했는데… 정말, 감사합니다…"
+  },
+  {
+   "id": "mom_Matilda_line005",
+   "model": "elevenlabs-direct",
+   "voice_name": "Matilda",
+   "text": "[tired, curt, thirties woman] 하준아, 경비 아저씨 번거롭게 하지 마. …저희 일엔, 신경 쓰지 마세요."
+  },
+  {
+   "id": "mom_Matilda_line033",
+   "model": "elevenlabs-direct",
+   "voice_name": "Matilda",
+   "text": "[tearful, choked] 죄송합니다… 어제 그런 말까지 했는데… 정말, 감사합니다…"
+  }
+ ]
+}
