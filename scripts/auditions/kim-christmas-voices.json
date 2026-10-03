@@ -1,5 +1,5 @@
 {
- "_설명": "EP4 오디션: 아이=이전 작품 검증 아동 보이스(V9zeHe6rhQ2jEkZaNOGy, 10세 남아 → 채택 시 음높이 보정으로 7세), 엄마=ElevenLabs 후보 4종 × 2줄(1단계 지친 차가움 / 5단계 울먹임). 사용자 청취 후 채택.",
+ "_설명": "EP4 오디션: 아이=이전 작품 검증 아동 보이스(V9zeHe6rhQ2jEkZaNOGy, 10세 남아 → 채택 시 음높이 보정으로 7세), 엄마=ElevenLabs 후보 4종 × 2줄(1단계 지친 차가움 / 5단계 울먹임). 사용자 청취 후 채택. 2026-10-03: API 키에 voices_read 권한이 없어 이름 조회 실패 → ElevenLabs 기본 보이스 ID 직접 지정.",
  "tests": [
   {
    "id": "child_MH_line004",
@@ -16,50 +16,50 @@
   {
    "id": "mom_Sarah_line005",
    "model": "elevenlabs-direct",
-   "voice_name": "Sarah",
-   "text": "[tired, curt, thirties woman] 하준아, 경비 아저씨 번거롭게 하지 마. …저희 일엔, 신경 쓰지 마세요."
+   "text": "[tired, curt, thirties woman] 하준아, 경비 아저씨 번거롭게 하지 마. …저희 일엔, 신경 쓰지 마세요.",
+   "voice": "EXAVITQu4vr4xnSDxMaL"
   },
   {
    "id": "mom_Sarah_line033",
    "model": "elevenlabs-direct",
-   "voice_name": "Sarah",
-   "text": "[tearful, choked] 죄송합니다… 어제 그런 말까지 했는데… 정말, 감사합니다…"
+   "text": "[tearful, choked] 죄송합니다… 어제 그런 말까지 했는데… 정말, 감사합니다…",
+   "voice": "EXAVITQu4vr4xnSDxMaL"
   },
   {
    "id": "mom_Jessica_line005",
    "model": "elevenlabs-direct",
-   "voice_name": "Jessica",
-   "text": "[tired, curt, thirties woman] 하준아, 경비 아저씨 번거롭게 하지 마. …저희 일엔, 신경 쓰지 마세요."
+   "text": "[tired, curt, thirties woman] 하준아, 경비 아저씨 번거롭게 하지 마. …저희 일엔, 신경 쓰지 마세요.",
+   "voice": "cgSgspJ2msm6clMCkdW9"
   },
   {
    "id": "mom_Jessica_line033",
    "model": "elevenlabs-direct",
-   "voice_name": "Jessica",
-   "text": "[tearful, choked] 죄송합니다… 어제 그런 말까지 했는데… 정말, 감사합니다…"
+   "text": "[tearful, choked] 죄송합니다… 어제 그런 말까지 했는데… 정말, 감사합니다…",
+   "voice": "cgSgspJ2msm6clMCkdW9"
   },
   {
    "id": "mom_Lily_line005",
    "model": "elevenlabs-direct",
-   "voice_name": "Lily",
-   "text": "[tired, curt, thirties woman] 하준아, 경비 아저씨 번거롭게 하지 마. …저희 일엔, 신경 쓰지 마세요."
+   "text": "[tired, curt, thirties woman] 하준아, 경비 아저씨 번거롭게 하지 마. …저희 일엔, 신경 쓰지 마세요.",
+   "voice": "pFZP5JQG7iQjIQuC4Bku"
   },
   {
    "id": "mom_Lily_line033",
    "model": "elevenlabs-direct",
-   "voice_name": "Lily",
-   "text": "[tearful, choked] 죄송합니다… 어제 그런 말까지 했는데… 정말, 감사합니다…"
+   "text": "[tearful, choked] 죄송합니다… 어제 그런 말까지 했는데… 정말, 감사합니다…",
+   "voice": "pFZP5JQG7iQjIQuC4Bku"
   },
   {
    "id": "mom_Matilda_line005",
    "model": "elevenlabs-direct",
-   "voice_name": "Matilda",
-   "text": "[tired, curt, thirties woman] 하준아, 경비 아저씨 번거롭게 하지 마. …저희 일엔, 신경 쓰지 마세요."
+   "text": "[tired, curt, thirties woman] 하준아, 경비 아저씨 번거롭게 하지 마. …저희 일엔, 신경 쓰지 마세요.",
+   "voice": "XrExE9yKIg1WjnnlVkGX"
   },
   {
    "id": "mom_Matilda_line033",
    "model": "elevenlabs-direct",
-   "voice_name": "Matilda",
-   "text": "[tearful, choked] 죄송합니다… 어제 그런 말까지 했는데… 정말, 감사합니다…"
+   "text": "[tearful, choked] 죄송합니다… 어제 그런 말까지 했는데… 정말, 감사합니다…",
+   "voice": "XrExE9yKIg1WjnnlVkGX"
   }
  ]
 }
