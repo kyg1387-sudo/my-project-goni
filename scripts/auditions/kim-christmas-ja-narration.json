@@ -1,0 +1,266 @@
+{
+ "_설명": "EP4 일본어 기준판 최종 내레이션 26줄 — 내레이터 Typecast Juha(tc_5d01a52563338e00072b8c9c, 사용자 선택 2026-10-04). 감정: 톤표 neutral/happy→normal, sad→sad 0.8. 텍스트는 kim-christmas-ja-tts의 가나 보정판. 엄마 Soobin·아이 Minsu는 kim-christmas-ja-tc 오디션 채택본 재사용, 김씨는 kim-christmas-ja-tts(EL) 유지.",
+ "tc_model": "ssfm-v30",
+ "tests": [
+  {
+   "id": "line001",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "じゅうにがつ、にじゅうよっか。団地には、いちにちじゅう雪が降っていました。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line002",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "年の瀬の郵便受けには、どこも請求書が一枚ずつ。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line003",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "そして、せんはっぴゃくいちごうしつのドアには、赤い紙が一枚、貼られていました。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line006",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "冷たい人だったわけではありません。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line007",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "借金と暮らしに疲れ果てた母親に残っていたのは、小さな意地だけだったのです。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line008",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "おんなでひとつで子どもを育てて、三年。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line009",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "昼は食堂、夜はスーパーで働いても、冬はいつも、お金が先に底をつきました。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line010",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "母親が眠ったあと、男の子がこっそり下りてきました。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line011",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "たどたどしい字で、男の子はこう書いていました。『うちは、じゅうはっかいです。いい子にしていました』",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line013",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "その日は、キムさんのひと月分のお給料日でした。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line014",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "封筒の横には、ななねんまえにさきだった妻の、家計簿がありました。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line015",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "てあかのついた最後のページの隅に、妻の字。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line016",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "「わたしたちにも子どもがいたら…あなたに一度、サンタさんをやってほしかったな」",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line017",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "子どものいなかったふたりの、とうとう叶わなかった願いでした。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line021",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "封筒を差し出して残った、わずかなお札で、彼は小さなツリーをひとつ買いました。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line022",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "引き出しの奥に、妻が生前、けいとで編んでおいた星がひとつ。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line023",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "ななねんぶりに、その星がツリーのてっぺんに飾られました。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line024",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "エレベーターの音で子どもが起きないように、彼はじゅうはっかいまで、階段を上りました。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line025",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "チャイムは、鳴らしませんでした。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line026",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "足音を忍ばせて、来た階段を、そのまま下りていきました。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line027",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "廊下の天井のカメラだけが、その背中を見ていました。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line028",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "男の子の願いどおり、その家の明かりは、消えませんでした。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line029",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "誰が払ったのか、佐藤主任は最後まで言いませんでした。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line030",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "ただ黙って、明け方の廊下の映像を、見せてくれただけでした。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line031",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "画面の中の、としおいた警備員は、最後まで顔を見せませんでした。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line032",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "けれど、あの少し丸い背中と古いダウンを、この団地で知らない人はいませんでした。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  }
+ ]
+}
