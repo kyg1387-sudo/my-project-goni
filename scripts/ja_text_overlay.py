@@ -170,38 +170,45 @@ def still(sid, src, out):
 
 
 def video(sid, src, out):
+    """첫 프레임의 면 위치를 화면 전체 특징점으로 추적한다.
+    면 자체는 무늬가 적어(문·어두운 벽) 원근 추정이 무너지므로, 첫 프레임 대비 이동·회전·확대(4자유도)만
+    RANSAC으로 추정하고(움직이는 인물은 이상치로 제외), 프레임 간 급변은 버리고 지수 평활한다."""
     cap = cv2.VideoCapture(src)
     fps = cap.get(cv2.CAP_PROP_FPS) or 24
     W, H = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     art, mode = ART[sid]()
     art_bgr = Image.fromarray(np.asarray(art)[..., [2, 1, 0, 3]])
     q0 = np.float32(scaled_quad(sid, W, H))
-    ok, f0 = cap.read()
-    g0 = cv2.cvtColor(f0, cv2.COLOR_BGR2GRAY)
-    # 면 주변(살짝 넓힌 영역)의 특징점을 추적해 호모그래피 추정
-    mask = np.zeros_like(g0)
-    cv2.fillConvexPoly(mask, cv2.convexHull((q0 + (q0 - q0.mean(0)) * 0.35).astype(np.int32)), 255)
-    p0 = cv2.goodFeaturesToTrack(g0, 200, 0.01, 6, mask=mask)
+    ok, frame = cap.read()
+    g0 = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    orig = cv2.goodFeaturesToTrack(g0, 500, 0.005, 8)
+    cur = orig.copy()
     tmp = out + ".noaudio.mp4"
     vw = cv2.VideoWriter(tmp, cv2.VideoWriter_fourcc(*"mp4v"), fps, (W, H))
     rng = np.random.default_rng(1)
-    gp, pp, quad, n = g0, p0, q0, 0
-    frame = f0
+    M = np.float32([[1, 0, 0], [0, 1, 0]])
+    gp, n, rejected = g0, 0, 0
     while ok:
-        if n > 0 and pp is not None and len(pp) >= 8:
+        if n > 0 and len(cur) >= 10:
             g = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-            p1, st, _ = cv2.calcOpticalFlowPyrLK(gp, g, pp, None, winSize=(21, 21), maxLevel=3)
-            good0, good1 = pp[st == 1], p1[st == 1]
-            if len(good0) >= 8:
-                Hm, _ = cv2.findHomography(good0, good1, cv2.RANSAC, 2.0)
-                if Hm is not None:
-                    quad = cv2.perspectiveTransform(quad.reshape(-1, 1, 2), Hm).reshape(-1, 2)
-                gp, pp = g, good1.reshape(-1, 1, 2)
+            nxt, st, _ = cv2.calcOpticalFlowPyrLK(gp, g, cur, None, winSize=(21, 21), maxLevel=3)
+            keep = st.reshape(-1) == 1
+            orig, cur = orig[keep], nxt[keep]
+            est, inl = cv2.estimateAffinePartial2D(orig, cur, method=cv2.RANSAC, ransacReprojThreshold=2.0)
+            if est is not None and inl is not None and inl.sum() >= 10:
+                scale = float(np.hypot(est[0, 0], est[1, 0]))
+                jump = np.abs(est - M).max()
+                if 0.9 < scale < 1.15 and jump < 0.02 * max(W, H):
+                    M = 0.5 * M + 0.5 * est.astype(np.float32)
+                else:
+                    rejected += 1
+            gp = g
+        quad = cv2.transform(q0.reshape(-1, 1, 2), M).reshape(-1, 2)
         vw.write(blend(frame, warp_art(art_bgr, quad, (W, H)), mode, rng))
         ok, frame = cap.read(); n += 1
     vw.release()
     os.system(f'ffmpeg -v error -y -i "{tmp}" -c:v libx264 -crf 18 -pix_fmt yuv420p -an "{out}" && rm -f "{tmp}"')
-    print(f"저장: {out} ({n}프레임, 추적 특징점 {0 if p0 is None else len(p0)}개)")
+    print(f"저장: {out} ({n}프레임, 남은 특징점 {len(cur)}개, 급변 무시 {rejected}회)")
 
 
 if __name__ == "__main__":
