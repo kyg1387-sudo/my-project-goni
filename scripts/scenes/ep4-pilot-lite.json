@@ -1,0 +1,21 @@
+{
+ "_설명": "EP4 품질 파일럿 i2v 비교(ep4-pilot-lite): S36 10s 보행 뒷모습, S41 5s 2인 발견. 키프레임 = ep4-keyframes 합격본.",
+ "ratio": "16:9",
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "durations": [
+  10,
+  5
+ ],
+ "scenes": [
+  {
+   "prompt": "Very slow push forward following the subject (zoom factor 1.08), no shake. Motion: Subtle natural motion only: hushed determination. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S36-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: wonder / disbelief. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S41-1.png"
+  }
+ ]
+}
