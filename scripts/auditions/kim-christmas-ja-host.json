@@ -1,5 +1,5 @@
 {
- "_설명": "EP4 일본어 아웃트로 진행자 목소리 후보(Typecast 젊은 여성 3종, jpn). 사용자 청취 후 채택.",
+ "_설명": "EP4 일본어 아웃트로 진행자 목소리 후보(Typecast 젊은 여성 3종, jpn). 사용자 청취 후 채택. 2026-10-04: 사용자 지정 보이스 tc_629fe972013e90b4db213fd8 추가(happy/normal).",
  "tc_model": "ssfm-v30",
  "tests": [
   {
@@ -30,6 +30,26 @@
    "text": "最後までご覧いただき、ありがとうございました。少しでも心が温かくなったら、チャンネル登録と高評価で応援してください。次回は、キムさんが初めて出勤しなかった日のお話です。素敵なクリスマスを。",
    "emotion_preset": "happy",
    "emotion_intensity": 0.7,
+   "tempo": 1.0
+  },
+  {
+   "id": "host_user_happy",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "最後までご覧いただき、ありがとうございました。少しでも心が温かくなったら、チャンネル登録と高評価で応援してください。次回は、キムさんが初めて出勤しなかった日のお話です。素敵なクリスマスを。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 1.0
+  },
+  {
+   "id": "host_user_normal",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "最後までご覧いただき、ありがとうございました。少しでも心が温かくなったら、チャンネル登録と高評価で応援してください。次回は、キムさんが初めて出勤しなかった日のお話です。素敵なクリスマスを。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
    "tempo": 1.0
   }
  ]
