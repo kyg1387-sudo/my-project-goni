@@ -158,6 +158,9 @@ def build_prompt(sc, preset, negative, plain):
 
 
 EDIT_FROM = {
+    "S27": ("S29", "Edit the reference image: keep EVERYTHING identical — same woman, same face, glasses, cardigan, framing, glass window, "
+                   "office background, lighting and colours. Change ONLY her expression to restrained surprise (about 50%): eyebrows "
+                   "slightly raised, eyes a little wider, looking up just past the camera, lips closed or barely parted. No text anywhere."),
     "S28": ("S26", "Edit the reference image: keep EVERYTHING identical — same man, same face, jacket, framing, glass window, lobby "
                    "background, lighting and colours. Change ONLY his pose: gaze lowered toward the counter and head bowed slightly "
                    "(about 10 degrees), lips slightly parted as if speaking quietly. No text anywhere."),
