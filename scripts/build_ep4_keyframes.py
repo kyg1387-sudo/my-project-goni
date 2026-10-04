@@ -71,10 +71,12 @@ COMPOSITION = {
             "chest-up close-up, the lobby behind him softly out of focus (beige wall, grey door). Face large and sharp."),
     "S28": ("Camera is BEHIND the office window looking out at Kim (clerk's point of view): chest-up close-up, the lobby behind him "
             "softly out of focus. Gaze lowered, head bowed slightly."),
-    "S27": ("SINGLE PORTRAIT of the clerk (she MUST be in the frame, face large): she sits behind the counter inside the office, "
-            "chest-up close-up, looking up toward camera-right in surprise; office interior softly blurred behind her."),
-    "S29": ("SINGLE PORTRAIT of the clerk (she MUST be in the frame, face large): chest-up close-up inside the office, solemn, "
-            "chin slightly lowered in a small nod; office interior softly blurred behind her. No sparkles, no bokeh particles."),
+    "S27": ("Camera is in the LOBBY looking through the open sliding glass window INTO the office: the clerk sits at her desk inside, "
+            "chest-up close-up, behind her only office interior (grey filing cabinets, shelves, a wall clock) softly blurred — NOT a door, "
+            "NOT the lobby. Surprise held at 50%: eyebrows slightly raised, eyes a little wider, lips closed. Plain black rectangular glasses."),
+    "S29": ("Camera is in the LOBBY looking through the open sliding glass window INTO the office: the clerk sits at her desk inside, "
+            "chest-up close-up, behind her only office interior (grey filing cabinets, shelves, a wall clock) softly blurred — NOT a door, "
+            "NOT the lobby. Solemn, quiet understanding, chin slightly lowered, lips closed. Plain black rectangular glasses."),
     "S36": ("Camera at the BOTTOM of one long straight flight of concrete stairs, looking up the flight: Kim is about one third of "
             "the way up, his back fully to the camera, mid-step climbing UPWARD, the small tabletop tree with the knitted red-and-white "
             "star hugged against his chest (only the star and the top of the tree peek over his shoulder). Many more steps continue "
@@ -155,13 +157,27 @@ def build_prompt(sc, preset, negative, plain):
     return " ".join(parts), files
 
 
+EDIT_FROM = {
+    "S28": ("S26", "Edit the reference image: keep EVERYTHING identical — same man, same face, jacket, framing, glass window, lobby "
+                   "background, lighting and colours. Change ONLY his pose: gaze lowered toward the counter and head bowed slightly "
+                   "(about 10 degrees), lips slightly parted as if speaking quietly. No text anywhere."),
+    "S42": ("S07", "Edit the reference image: keep EVERYTHING identical — same steel door, same corridor, same framing and composition. "
+                   "Change ONLY two things: the red sheet becomes a plain blank WHITE A4 sheet in the same place, and the light becomes "
+                   "soft warm Christmas-morning sunlight from the window at the end of the corridor. The sheet stays completely blank."),
+}
+
+
 def main():
     sb = json.load(open(SB_PATH, encoding="utf-8"))
     chars, missing = [], []
     for sc in sb["scenes"]:
         if not sc.get("keyframe"):
             continue
-        prompt, files = build_prompt(sc, sb["preset"], sb["negative"], sb["plain_props"])
+        if sc["id"] in EDIT_FROM:
+            src, instr = EDIT_FROM[sc["id"]]
+            prompt, files = instr, [f"assets/portraits/ep4-keyframes/{src}-1.png"]
+        else:
+            prompt, files = build_prompt(sc, sb["preset"], sb["negative"], sb["plain_props"])
         missing += [f for f in files if not os.path.exists(os.path.join(ROOT, f))]
         chars.append({"id": sc["id"], "count": 1, "aspect_ratio": "16:9", "refs": files, "prompt": prompt})
     if missing:
