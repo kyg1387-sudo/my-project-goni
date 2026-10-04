@@ -74,6 +74,7 @@ EP3 실측: 한국어판 약 37달러(44장면), 일본어 더빙판 약 5달러
 - EP4 오디오 진행(2026-10-03): **일본어 기준 제작으로 결정**(사용자). 일본어 내레이터 26+김씨 4줄 `assets/auditions/kim-christmas-ja-tts/`(읽기 위험 11줄 가나 입력 재생성, 구판 `_superseded/`), 엄마 후보 4·아이(+2/+3반음) `assets/auditions/kim-christmas-ja-voices/` → **사용자 청취·선택 대기**. 한국어판 30줄 `assets/auditions/kim-christmas-tts/`(한국어판용 보관).
   언어 검사: `generate-video.yml`에 `qa_model`·`qa_lang` 입력 추가(일본어는 large-v3·ja). EP3-JA 승인본도 같은 수준으로 오인식됨 → EL 내레이터·김씨의 일본어는 한국어 억양이 기준선. 일본어 원어민 내레이터 교체안은 사용자 판단 대기.
   ElevenLabs API 키에 voices_read 권한 없음(도서관 검색·이름 조회 불가, ID 직접 지정은 가능).
+- EP4 진행(2026-10-04): PHASE 2 Lock(사용자 「승인」, 관리사무소 v2-1 일본어 교체본 최종). PHASE 3 초안 `docs/EP4-PHASE3-샷리스트.md`(생성기 `scripts/build_ep4_phase3.py`, 54컷·05:01.20·디졸브 10·카드 8). 아웃트로 `outro-ja-ep4`(25초, 진행자 Typecast `tc_629fe972013e90b4db213fd8`, 버튼·로고 `scripts/outro_cta_overlay.py`): generate run 37175515279 → burn run 37175761153(OmniHuman 25초 1회 과금) → **불합격**: 연속 25초 생성에서 얼굴이 점점 달라지고 고개 기울기 큼(`deliveries/outro-ja-ep4-skit-final.mp4`). 교훈: OmniHuman은 7초 이하로 끊고, 가슴 위 CU 키프레임(제6장 1)을 아웃트로에도 적용.
 - EP4 대본 승인일 / 시트 run ID / 키프레임 run ID / 클립 run ID / burn run ID: ______
 - 요양보호사 편 진단서 위치: ______
 - 지출(잔액 변동): ______ (대장 `docs/시리즈-제작비용.md`에 기입)
