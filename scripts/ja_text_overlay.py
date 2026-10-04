@@ -30,6 +30,10 @@ QUADS = {
     "S18": [(262, 178), (882, 120), (1140, 612), (330, 690)],
     "S22": [(482, 222), (945, 220), (1022, 600), (428, 605)],
     "S43": [(589, 131), (697, 128), (697, 183), (590, 186)],
+    # 호수판: 문 옆 흰 인터폰 판 바로 위 벽(오른쪽 벽이 화면 안쪽으로 물러나므로 오른쪽이 약간 큼)
+    "S03": [(1021, 392), (1079, 389), (1079, 415), (1021, 417)],
+    "S37": [(392, 328), (440, 332), (440, 352), (392, 357)],  # 트리가 놓인 왼쪽 문(왼쪽 벽은 오른쪽으로 물러남)
+    "S38": [(1104, 178), (1162, 175), (1162, 200), (1104, 203)],
 }
 
 
@@ -107,7 +111,20 @@ def art_s43():
     return im, "light"
 
 
-ART = {"S07": art_s07, "S42": art_s42, "S18": art_s18, "S22": art_s22, "S43": art_s43}
+def art_plate():
+    """스테인리스 호수판 「1801」: 헤어라인 금속 + 짙은 회색 고딕 숫자(ART 자체가 판 전체 — 불투명)."""
+    w, h = 560, 240
+    rng = np.random.default_rng(1801)
+    base = np.full((h, w, 3), 168, np.float32) + rng.normal(0, 6, (h, 1, 3))  # 가로 헤어라인
+    base += np.linspace(14, -14, w)[None, :, None]
+    im = Image.fromarray(np.clip(base, 0, 255).astype(np.uint8)).convert("RGBA")
+    d = ImageDraw.Draw(im)
+    d.rectangle([3, 3, w - 4, h - 4], outline=(110, 110, 112, 255), width=6)
+    centered(d, 28, "1801", ImageFont.truetype(GOTHIC, 170), (45, 45, 48, 255), w)
+    return im, "plate"
+
+
+ART = {"S03": art_plate, "S37": art_plate, "S38": art_plate, "S07": art_s07, "S42": art_s42, "S18": art_s18, "S22": art_s22, "S43": art_s43}
 
 
 def warp_art(art, quad, size):
@@ -122,6 +139,12 @@ def blend(frame, warped, mode, rng):
     f = frame.astype(np.float32)
     a = (warped[..., 3:4] / 255.0)
     a = cv2.GaussianBlur(a, (0, 0), 0.6)[..., None] if a.ndim == 3 else a
+    if mode == "plate":  # 불투명 판: 장면 밝기에 맞춰 어둡게(어두운 복도에서 튀지 않게)
+        lum = cv2.GaussianBlur(cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY), (0, 0), 25).astype(np.float32)[..., None] / 255.0
+        target = warped[..., :3] * np.clip(lum * 1.6 + 0.04, 0.05, 1.0)
+        out = f * (1 - a) + target * a
+        out += rng.normal(0, 1.5, out.shape) * a
+        return np.clip(out, 0, 255).astype(np.uint8)
     if mode == "multiply":
         ink = warped[..., :3] / 255.0
         out = f * (1 - a * (1 - ink))
