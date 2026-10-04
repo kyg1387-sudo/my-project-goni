@@ -80,6 +80,7 @@ EP3 실측: 한국어판 약 37달러(44장면), 일본어 더빙판 약 5달러
 - EP4 품질 파일럿 키프레임(2026-10-04): S36·S41(레터박스 크롭)·S50(재생성, 벽 메모지 지움) Kill Gate 합격 → `assets/portraits/ep4-keyframes/`. 다음: i2v lite vs pro 비교·S50 OmniHuman(짧게).
 - EP4 PHASE 4·5·6(2026-10-04): 키프레임 51장 Kill Gate(이미지 69장) → i2v 39컷 run 37182807944(인물 22 pro·무인 17 lite) → 불합격 7컷 정지 푸시인·일본어 글자 8컷 합성·S44 얼굴 그늘 → burn(OmniHuman 7) → 조립 끊김(117s) 수정(frame_quantize) → BGM 정적·S52 줌아웃 → 인물 대조로 S45 엄마 얼굴 교체. **교훈 전부 `docs/제작규격-보강-EP4실증.md`·CLAUDE.md 제7장에 반영(사용자 지시)**.
 - **EP4 일본어판 완성(2026-10-04)**: 최종본 `deliveries/kim-christmas-ja-final-outro.mp4.part-00/01`(합치면 335.6s = 본편 301.8 + 검은 화면 0.8 + 아웃트로 28.0 + 엔드카드 5.5, 1080p·스테레오), 미리보기 `deliveries/kim-christmas-ja-final-480p.mp4`. 본편 burn run 37191022381 + 로컬 룸톤(조용한 1초 창 8곳, −50dB 브라운 노이즈) + `append_outro.py`(OUT_SIZE=1920x1080, OUTRO-SCENE-ja-ep4, endcard-midam-ja). 사용자 확인 대기. 남은 일: 아웃트로 도입부 하이라이트 교체(A안), 업로드 가이드(JA)·쇼츠 5·썸네일.
+- **EP4 일본어판 최종 v3(2026-10-04, 전달)**: S28·S47 OmniHuman 재생성(동작 지시 `omnihuman_prompts`, burn run 37194390692) — S28 몸 기울기·S47 손으로 입 가림 해소. 아웃트로 하이라이트 4컷 반영, 룸톤, 335.58s 1080p. `deliveries/kim-christmas-ja-final-outro.mp4.part-00/01`, 480p, 쇼츠 5편 갱신(2·5번에 새 장면), 썸네일 3종, 업로드 가이드 `docs/업로드가이드-EP4-김씨의크리스마스-JA.md`. 남은 결정: 공개일.
 - EP4 대본 승인일 / 시트 run ID / 키프레임 run ID / 클립 run ID / burn run ID: ______
 - 요양보호사 편 진단서 위치: ______
 - 지출(잔액 변동): ______ (대장 `docs/시리즈-제작비용.md`에 기입)
