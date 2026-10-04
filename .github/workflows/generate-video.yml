@@ -28,7 +28,7 @@ on:
         required: false
         default: ""
       export_files:
-        description: 미리보기 내보내기 모드 — resume_run_id의 Artifact에서 꺼내 커밋할 파일 목록 (공백 구분, 예 "scene05.mp4")
+        description: 미리보기 내보내기 모드 — resume_run_id의 Artifact에서 꺼내 커밋할 파일 목록 (공백 구분, 예 "scene05.mp4"). "QA"면 전 장면 검수 시트만 커밋
         required: false
         default: ""
       audition_spec:
@@ -207,15 +207,29 @@ jobs:
           path: out
           run-id: ${{ inputs.resume_run_id }}
           github-token: ${{ github.token }}
+      - name: 검수 시트 도구 설치
+        if: ${{ inputs.export_files == 'QA' }}
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - name: 선택 파일 커밋
         run: |
           mkdir -p "assets/preview/${SKIT}"
-          for f in ${{ inputs.export_files }}; do
-            cp -v "out/$f" "assets/preview/${SKIT}/" || true
-          done
+          if [ "${{ inputs.export_files }}" = "QA" ]; then
+            # 검수 시트 모드(무료): 장면마다 1초 간격 10컷 + 첫 2초 0.25초 간격 8컷 타일(작은 jpg)만 커밋
+            mkdir -p "assets/qa/${SKIT}/sheets"
+            for f in out/scene*.mp4; do
+              n=$(basename "$f" .mp4)
+              ffmpeg -v error -y -i "$f" -vf "fps=1,scale=384:-2,tile=10x1" -frames:v 1 -q:v 4 "assets/qa/${SKIT}/sheets/${n}-1s.jpg" || true
+              ffmpeg -v error -y -i "$f" -vf "trim=0:2,fps=4,scale=384:-2,tile=8x1" -frames:v 1 -q:v 4 "assets/qa/${SKIT}/sheets/${n}-head.jpg" || true
+            done
+            git add "assets/qa/${SKIT}/sheets"
+          else
+            for f in ${{ inputs.export_files }}; do
+              cp -v "out/$f" "assets/preview/${SKIT}/" || true
+            done
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add "assets/preview/${SKIT}"
+          git add "assets/preview/${SKIT}" 2>/dev/null || true
           git diff --cached --quiet || git commit -m "미리보기 장면 (${SKIT})"
           git pull --rebase origin "${GITHUB_REF_NAME}" || true
           git push origin "HEAD:${GITHUB_REF_NAME}"
