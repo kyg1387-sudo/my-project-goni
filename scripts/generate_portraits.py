@@ -88,9 +88,12 @@ def fal_image(key, prompt, num_images, ref_urls=None, model=None, aspect_ratio=N
             payloads.insert(0, {"prompt": prompt, "image_urls": ref_urls,
                                 "num_images": num_images, "aspect_ratio": aspect_ratio})
     else:
+        # 스펙의 aspect_ratio(로케이션 시트 16:9 등)를 t2i에도 적용 — 예전에는 3:4로 고정돼 16:9 지정이 무시됨
+        ar = aspect_ratio or "3:4"
+        size = {"16:9": "landscape_16_9", "3:4": "portrait_4_3", "4:3": "landscape_4_3", "9:16": "portrait_16_9", "1:1": "square_hd"}.get(ar, "portrait_4_3")
         payloads = [
-            {"prompt": prompt, "aspect_ratio": "3:4", "num_images": num_images},
-            {"prompt": prompt, "image_size": "portrait_4_3", "num_images": num_images},
+            {"prompt": prompt, "aspect_ratio": ar, "num_images": num_images},
+            {"prompt": prompt, "image_size": size, "num_images": num_images},
             {"prompt": prompt, "num_images": num_images},
         ]
     for payload in payloads:
