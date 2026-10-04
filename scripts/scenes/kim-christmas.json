@@ -93,7 +93,7 @@
    "image": "assets/portraits/ep4-keyframes/S07-1.png"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: curious, innocent. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: Ren stays on tiptoe at the window breathing small white puffs, blinks once and tilts his head slightly; his hands stay on the ledge. Kim inside remains a blurred, still silhouette. No walking.",
    "duration": 5,
    "image": "assets/portraits/ep4-keyframes/S08-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
@@ -115,28 +115,28 @@
    "image": "assets/portraits/ep4-keyframes/S11-1.png"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: cut-away. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: The mother's hand gently tugs the boy's small hand and both take one slow small step away from the camera; faces stay out of frame; the grocery bag sways slightly.",
    "duration": 5,
    "image": "assets/portraits/ep4-keyframes/S12-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
    "i2v_resolution": "1080p"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: silent watching. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: Kim sits still in profile, breathing, his eyes following the pair outside; outside the window the mother and the boy walk slowly away into the falling snow, growing smaller. Kim never turns toward the camera.",
    "duration": 10,
    "image": "assets/portraits/ep4-keyframes/S13-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
    "i2v_resolution": "1080p"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: exhaustion. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: The mother stays asleep slumped over the low table, slow breathing only; the boy sleeps under the futon; the lamp light is steady. Nobody wakes up.",
    "duration": 10,
    "image": "assets/portraits/ep4-keyframes/S14-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
    "i2v_resolution": "1080p"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: silent insert. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: The sleeping hand lies still on the red sheet; the fingers twitch very slightly once; the sheet does not move.",
    "duration": 5,
    "image": "assets/portraits/ep4-keyframes/S14b-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
@@ -148,14 +148,14 @@
    "image": "assets/portraits/ep4-keyframes/S15-1.png"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: secret, careful. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: Ren, on tiptoe, slowly pushes the folded paper through the gap under the window until it slips inside, then lowers his heels. Snow falls. He does not turn around.",
    "duration": 5,
    "image": "assets/portraits/ep4-keyframes/S16-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
    "i2v_resolution": "1080p"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: tender attention. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: Kim slowly unfolds the small sheet of paper with both hands and lowers his eyes to read it; steam rises from the kettle. His head moves less than 10 degrees.",
    "duration": 10,
    "image": "assets/portraits/ep4-keyframes/S17-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
@@ -172,7 +172,7 @@
    "image": "assets/portraits/ep4-keyframes/S19-1.png"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: meaningful. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: Kim slowly takes the plain white envelope out of his inner jacket pocket, lays it on the desk and rests his hand on it.",
    "duration": 10,
    "image": "assets/portraits/ep4-keyframes/S20-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
@@ -194,14 +194,14 @@
    "image": "assets/portraits/ep4-keyframes/S23-1.png"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: warm recognition. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: The two keep walking slowly past each other with a small polite nod; the handcart wheels roll slowly; snow falls. No running, no stopping to talk.",
    "duration": 5,
    "image": "assets/portraits/ep4-keyframes/S24-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
    "i2v_resolution": "1080p"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: respectful. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: The weathered hands slowly slide the white envelope forward across the counter and stop; the envelope stays flat and blank.",
    "duration": 5,
    "image": "assets/portraits/ep4-keyframes/S25-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
@@ -232,28 +232,28 @@
    "duration": 10
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: modest. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: The hand slowly slips the thin wallet into the jacket pocket and withdraws.",
    "duration": 10,
    "image": "assets/portraits/ep4-keyframes/S31-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
    "i2v_resolution": "1080p"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: reverent. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: Kim slowly lifts the lid of the small wooden box; the tiny tree lights glow; steam rises from the kettle.",
    "duration": 5,
    "image": "assets/portraits/ep4-keyframes/S32-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
    "i2v_resolution": "1080p"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: longing. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: The rough palm holds still with the knitted star resting on it; the fingers curl very slightly; the star keeps its exact shape and colours.",
    "duration": 10,
    "image": "assets/portraits/ep4-keyframes/S33-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
    "i2v_resolution": "1080p"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: moved. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: The fingers slowly set the knitted star on the very top of the little tree and let go; the tiny lights twinkle softly.",
    "duration": 10,
    "image": "assets/portraits/ep4-keyframes/S34-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
@@ -265,14 +265,14 @@
    "image": "assets/portraits/ep4-keyframes/S35-1.png"
   },
   {
-   "prompt": "Very slow push forward following the subject (zoom factor 1.08), no shake. Motion: Subtle natural motion only: hushed determination. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Very slow push forward following the subject (zoom factor 1.08), no shake. Motion: Kim keeps climbing the stairs upward step by step, away from the camera, his back to the camera the entire time, hugging the little tree; he never turns around, never looks back and never comes down.",
    "duration": 10,
    "image": "assets/portraits/ep4-keyframes/S36-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
    "i2v_resolution": "1080p"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: silent gift. Micro movements, no fast motion, no new people, props stay rigid and unchanged. Camera completely locked off; the blank surface for composited Japanese text must not move or warp.",
+   "prompt": "Static, locked off. Motion: Kim stands still with his back to the camera in front of the door, head slightly bowed, for a long moment; near the end he steps quietly out of frame to the left, still facing away from the camera. His face is never shown; the lit tree stays on the floor. Camera completely locked off; the blank surface for composited Japanese text must not move or warp.",
    "duration": 10,
    "image": "assets/portraits/ep4-keyframes/S37-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
@@ -294,7 +294,7 @@
    "image": "assets/portraits/ep4-keyframes/S40-1.png"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: wonder / disbelief. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: Ren beams with his mouth closed and points down at the little tree, bouncing slightly on his toes; the mother stays frozen in the doorway, one hand on the door, lips parting slightly. Ren keeps facing the tree.",
    "duration": 5,
    "image": "assets/portraits/ep4-keyframes/S41-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
@@ -306,14 +306,14 @@
    "image": "assets/portraits/ep4-keyframes/S42-1.png"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: silent discretion. Micro movements, no fast motion, no new people, props stay rigid and unchanged. Camera completely locked off; the blank surface for composited Japanese text must not move or warp.",
+   "prompt": "Static, locked off. Motion: Behind the counter the clerk slowly shakes her head once and turns the monitor toward the mother; the mother stands still with her back to the camera. Camera completely locked off; the blank surface for composited Japanese text must not move or warp.",
    "duration": 10,
    "image": "assets/portraits/ep4-keyframes/S43-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
    "i2v_resolution": "1080p"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: revelation. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: Black-and-white CCTV footage: the old guard slowly sets the little tree on the floor at the door, straightens up and walks away down the corridor with his back to the camera; his face is never visible. Static surveillance view, light video noise.",
    "duration": 10,
    "image": "assets/portraits/ep4-keyframes/S44-1.png"
   },
@@ -323,7 +323,7 @@
    "image": "assets/portraits/ep4-keyframes/S45-1.png"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: urgency. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: The mother stands in the open doorway out of breath, her chest rising and falling, snow drifting behind her; she does not step inside.",
    "duration": 5,
    "image": "assets/portraits/ep4-keyframes/S46-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
@@ -335,14 +335,14 @@
    "image": "assets/portraits/ep4-keyframes/S47-1.png"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: deep bow. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: The mother holds a deep bow, her hair hiding her face; her shoulders tremble slightly; she stays bowed.",
    "duration": 5,
    "image": "assets/portraits/ep4-keyframes/S48-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
    "i2v_resolution": "1080p"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: shy kindness. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: Kim's hand slowly fiddles with the kettle handle; steam rises; the hand never lifts the kettle.",
    "duration": 5,
    "image": "assets/portraits/ep4-keyframes/S49-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
@@ -354,14 +354,14 @@
    "image": "assets/portraits/ep4-keyframes/S50-1.png"
   },
   {
-   "prompt": "Static, locked off. Motion: Subtle natural motion only: action instead of words. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: The hand slowly sets the steaming paper cup down on the ledge and withdraws; steam keeps rising from the cup.",
    "duration": 5,
    "image": "assets/portraits/ep4-keyframes/S51-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
    "i2v_resolution": "1080p"
   },
   {
-   "prompt": "Very slow pull-back (local zoom-out 1.08 to 1.00). Motion: Subtle natural motion only: warm afterglow. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "prompt": "Static, locked off. Motion: Snow falls steadily; inside the booth window two silhouettes sit still in the warm heater glow. (The slow pull-back is added in the edit.)",
    "duration": 10,
    "image": "assets/portraits/ep4-keyframes/S52-1.png"
   },

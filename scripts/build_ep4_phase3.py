@@ -310,6 +310,36 @@ BGM = [  # 톤연출표 4구간(0초부터 전편, 볼륨 0.36~0.45, 구간 사�
 ]
 
 
+# 인물 i2v 컷 장면별 동작 고정 문장(파일럿 실증: 일반 문구로는 뒤돌거나 소품이 사라짐 → 정확한 동작·금지 동작 명시)
+MOTION_OVERRIDE = {
+    "S08": "Ren stays on tiptoe at the window breathing small white puffs, blinks once and tilts his head slightly; his hands stay on the ledge. Kim inside remains a blurred, still silhouette. No walking.",
+    "S12": "The mother's hand gently tugs the boy's small hand and both take one slow small step away from the camera; faces stay out of frame; the grocery bag sways slightly.",
+    "S13": "Kim sits still in profile, breathing, his eyes following the pair outside; outside the window the mother and the boy walk slowly away into the falling snow, growing smaller. Kim never turns toward the camera.",
+    "S14": "The mother stays asleep slumped over the low table, slow breathing only; the boy sleeps under the futon; the lamp light is steady. Nobody wakes up.",
+    "S14b": "The sleeping hand lies still on the red sheet; the fingers twitch very slightly once; the sheet does not move.",
+    "S16": "Ren, on tiptoe, slowly pushes the folded paper through the gap under the window until it slips inside, then lowers his heels. Snow falls. He does not turn around.",
+    "S17": "Kim slowly unfolds the small sheet of paper with both hands and lowers his eyes to read it; steam rises from the kettle. His head moves less than 10 degrees.",
+    "S20": "Kim slowly takes the plain white envelope out of his inner jacket pocket, lays it on the desk and rests his hand on it.",
+    "S24": "The two keep walking slowly past each other with a small polite nod; the handcart wheels roll slowly; snow falls. No running, no stopping to talk.",
+    "S25": "The weathered hands slowly slide the white envelope forward across the counter and stop; the envelope stays flat and blank.",
+    "S31": "The hand slowly slips the thin wallet into the jacket pocket and withdraws.",
+    "S32": "Kim slowly lifts the lid of the small wooden box; the tiny tree lights glow; steam rises from the kettle.",
+    "S33": "The rough palm holds still with the knitted star resting on it; the fingers curl very slightly; the star keeps its exact shape and colours.",
+    "S34": "The fingers slowly set the knitted star on the very top of the little tree and let go; the tiny lights twinkle softly.",
+    "S36": "Kim keeps climbing the stairs upward step by step, away from the camera, his back to the camera the entire time, hugging the little tree; he never turns around, never looks back and never comes down.",
+    "S37": "Kim stands still with his back to the camera in front of the door, head slightly bowed, for a long moment; near the end he steps quietly out of frame to the left, still facing away from the camera. His face is never shown; the lit tree stays on the floor.",
+    "S41": "Ren beams with his mouth closed and points down at the little tree, bouncing slightly on his toes; the mother stays frozen in the doorway, one hand on the door, lips parting slightly. Ren keeps facing the tree.",
+    "S43": "Behind the counter the clerk slowly shakes her head once and turns the monitor toward the mother; the mother stands still with her back to the camera.",
+    "S44": "Black-and-white CCTV footage: the old guard slowly sets the little tree on the floor at the door, straightens up and walks away down the corridor with his back to the camera; his face is never visible. Static surveillance view, light video noise.",
+    "S46": "The mother stands in the open doorway out of breath, her chest rising and falling, snow drifting behind her; she does not step inside.",
+    "S48": "The mother holds a deep bow, her hair hiding her face; her shoulders tremble slightly; she stays bowed.",
+    "S49": "Kim's hand slowly fiddles with the kettle handle; steam rises; the hand never lifts the kettle.",
+    "S51": "The hand slowly sets the steaming paper cup down on the ledge and withdraws; steam keeps rising from the cup.",
+    "S52": "Snow falls steadily; inside the booth window two silhouettes sit still in the warm heater glow. (The slow pull-back is added in the edit.)",
+}
+I2V_CAM = {"S52": "static"}  # 카메라 줌아웃은 편집에서 로컬로
+
+
 PRO_MODEL = "fal-ai/bytedance/seedance/v1/pro/image-to-video"
 LITE_PEOPLE = {"S44", "S52"}  # 흑백 CCTV·원경 실루엣 — 고화질 이점 없음
 
@@ -424,7 +454,11 @@ def main():
             "lines": lines, "caption": CARDS.get(sid, "").replace("\\N", ""), "ja_overlay": JA_OVERLAY.get(sid, ""),
             "keyframe": keyframe,
         })
-        prompt = f"{CAM[cam]}. Motion: {motion}"
+        if sid in MOTION_OVERRIDE:
+            motion = MOTION_OVERRIDE[sid]
+            if sid in JA_OVERLAY:
+                motion += " Camera completely locked off; the blank surface for composited Japanese text must not move or warp."
+        prompt = f"{CAM[I2V_CAM.get(sid, cam)]}. Motion: {motion}"
         item = {"id": sid, "prompt": prompt, "duration": r["gen"]}
         # 혼합 화질(사용자 승인 2026-10-04): 인물이 보이는 i2v 컷만 Seedance pro 1080p, 무인·CCTV·원경 실루엣은 lite
         if kind in ("n", "v", "vo", "card") and "No people" not in subject and sid not in LITE_PEOPLE:
