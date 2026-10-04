@@ -1,5 +1,7 @@
 # EP3 일본어 더빙판 인수인계 (2026-10-02, Fable 세션 → 다음 세션)
 
+> **2026-10-04 갱신: 아웃트로 자막 잘림 수정(Opus 세션, 사용자 요청).** 일본어 아웃트로 자막이 한 줄로 화면 양옆을 넘던 결함 → `subs/outro-ja.ass` 문장별 3줄(수동 줄바꿈, 화면 전용 `HostSub` 스타일) → burn 재실행(run 37173228665, 음성·립싱크·BGM 캐시 재사용, fal 0) → `assets/auditions/outro-host/OUTRO-SCENE-ja.mp4` 교체(구판 `_superseded/`) → 최종본 `deliveries/kim-cart-grandma-ja-final-outro.mp4.part-00/01` 재결합(309.7s 동일, −60dB 무음 없음). 업로드는 이 파일로.
+>
 > **2026-10-03 상태: 일본어판 제작 완료, 사용자 최종 승인(v2).** 최종본 `deliveries/kim-cart-grandma-ja-final-outro.mp4.part-00/01`(합치면 **309.7s**, 2026-10-03 전수 검수 후 S31 무음 꼬리 2.3s 절단본). 남은 일은 업로드뿐(§7). 아래는 제작 과정 기록이며, 재작업이 필요할 때만 참조한다.
 
 **읽는 법**: CLAUDE.md(제6장 포함)와 `docs/제작규격-보강-EP3실증.md`를 먼저 적용한다. 이 문서는 "어디까지 됐고, 다음에 무엇을 하는지"만 적는다.
