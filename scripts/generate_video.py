@@ -64,7 +64,8 @@ def load_scenes(path):
                 sys.exit(f"[scene {k + 1:02d}] 키프레임 파일이 없습니다: {image}")
         else:
             prompt, dur, refs = scene, base_dur, []
-        if dur not in (5, 10):
+        override = os.path.join(OUT_DIR, f"scene{k + 1:02d}.mp4")  # 오버라이드 클립이 있으면 생성 안 함 → 길이 제한 없음
+        if dur not in (5, 10) and not (os.path.exists(override) and os.path.getsize(override) > 100_000):
             sys.exit(f"[scene {k + 1:02d}] 지원하지 않는 길이 {dur}초 — Seedance는 5 또는 10초만 지원합니다.")
         items.append((f"{prompt}, {style}" if style else prompt, dur, refs, image))
     return items, data.get("ratio", "9:16")
