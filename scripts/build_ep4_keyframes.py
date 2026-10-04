@@ -39,8 +39,8 @@ WARDROBE = {
              "cuffs (no logo, no patch) over a thin plain navy guard uniform; no name tag, no badge, no cap, no hat."),
     "MOM": ("The mother's look is locked: long straight black hair tied low at the nape, tired face without makeup, NO glasses; "
             "outdoors a plain beige long padded coat, indoors a plain grey cardigan; no logos."),
-    "REN": ("Ren's look is locked: bowl haircut, round red cheeks; daytime a plain mustard knit sweater; at night a plain navy "
-            "padded vest over grey pajama pants; no prints, no logos."),
+    "REN": ("Ren's look is locked: bowl haircut, round red cheeks; outdoors by day a plain navy padded vest over a plain mustard knit "
+            "sweater; at night the same navy padded vest over grey pajama pants; indoors the mustard knit alone; no prints, no logos."),
     "CLERK": ("The clerk's look is locked: short black bob, black-rimmed glasses, plain navy cardigan over a white blouse; "
               "no name tag, no badge, no lanyard text."),
 }
@@ -49,6 +49,32 @@ GMA_LOCK = ("The grandmother (EP3 character) keeps her locked look: faded brown 
             "cross-bar with a pair of men's work gloves tucked on it.")
 # 장면별 구도 보강(스토리보드 내용은 바꾸지 않고 프레이밍만 분명히)
 COMPOSITION = {
+    # 본 실행 1차 Kill Gate(2026-10-04) 보강
+    "S04": ("The complex is a cluster of TALL high-rise apartment towers (about 20 storeys each) seen from far away at night, rows "
+            "of warm windows, snow falling; NOT low-rise buildings."),
+    "S40": ("One TALL high-rise apartment tower (about 20 storeys) fills the frame from a low angle on a clear snowy Christmas morning; "
+            "exactly one window near the top (18th floor) glows warmly brighter than all the others."),
+    "S07": ("Interior 18th-floor corridor exactly as in the location reference (beige walls, steel doors, window at the far end): "
+            "insert framed square-on to the grey steel door of unit 1801, a plain blank red A4 sheet taped flat at eye level filling "
+            "the centre of the frame. No railing, no outdoor corridor."),
+    "S08": ("Ren wears a plain navy padded vest over his mustard knit sweater (same outfit as in the close-up that follows). "
+            "Inside the booth, behind the glass, only the blurred silhouette of Kim (short grey hair, navy padded jacket)."),
+    "S11": ("Setting is OUTDOORS in the snow: the mother stands outside in front of the guard booth, falling snow and a snowy courtyard "
+            "softly blurred behind her; NOT indoors, no office walls, no calendar."),
+    "S22": ("Top-down extreme close-up of the notebook lying OPEN, its last page flat and square to the camera, filling most of the "
+            "frame: faint ruled lines, soft yellowed paper, a fingerprint-worn bottom corner, NO writing at all."),
+    "S24": ("Kim wears his worn navy-charcoal padded jacket and plain dark trousers (no patterns). The grandmother wears her faded brown "
+            "floral headscarf covering her hair. They are walking past each other, not standing face to face."),
+    "S25": ("Only Kim's two weathered hands enter from the left in the sleeves of his worn navy padded jacket, sliding the plain white "
+            "envelope across the granite counter toward the glass window; nobody else's hands in frame."),
+    "S26": ("Camera is BEHIND the office window looking out at Kim (clerk's point of view): Kim faces the camera at the counter, "
+            "chest-up close-up, the lobby behind him softly out of focus (beige wall, grey door). Face large and sharp."),
+    "S28": ("Camera is BEHIND the office window looking out at Kim (clerk's point of view): chest-up close-up, the lobby behind him "
+            "softly out of focus. Gaze lowered, head bowed slightly."),
+    "S27": ("SINGLE PORTRAIT of the clerk (she MUST be in the frame, face large): she sits behind the counter inside the office, "
+            "chest-up close-up, looking up toward camera-right in surprise; office interior softly blurred behind her."),
+    "S29": ("SINGLE PORTRAIT of the clerk (she MUST be in the frame, face large): chest-up close-up inside the office, solemn, "
+            "chin slightly lowered in a small nod; office interior softly blurred behind her. No sparkles, no bokeh particles."),
     "S36": ("Camera at the BOTTOM of one long straight flight of concrete stairs, looking up the flight: Kim is about one third of "
             "the way up, his back fully to the camera, mid-step climbing UPWARD, the small tabletop tree with the knitted red-and-white "
             "star hugged against his chest (only the star and the top of the tree peek over his shoulder). Many more steps continue "
