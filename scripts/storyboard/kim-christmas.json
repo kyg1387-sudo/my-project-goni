@@ -74,8 +74,8 @@
    "refs": [
     "LOC@corridor-18f-night"
    ],
-   "subject": "No people. The dark 18th-floor outdoor corridor of an old Japanese danchi at 4 a.m., the motion-sensor light off, the steel door of unit 1801 at frame right with a small blank metal number plate beside it (plate faces camera, blank).",
-   "environment": "Long exterior corridor, railing on the left with falling snow beyond, row of identical steel doors, blank walls",
+   "subject": "No people. The dark 18th-floor interior corridor of an old Japanese apartment block at 4 a.m., the motion-sensor ceiling light off, faint moonlight from the window at the far end, the steel door of unit 1801 at frame right with a small blank metal number plate beside it (plate faces camera, blank).",
+   "environment": "Long narrow interior corridor, beige textured walls, identical steel doors on both sides, window at the far end with snow outside, dome camera on the ceiling",
    "expression": "Stillness",
    "motion": "Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged. Camera completely locked off; the blank surface for composited Japanese text must not move or warp.",
    "edit": "",
@@ -986,8 +986,8 @@
     "PROP@tree",
     "LOC@corridor-18f-night"
    ],
-   "subject": "Static rear full shot on the 18th-floor corridor: Kim sets the small lit tree down in front of the steel door of unit 1801 (blank metal number plate beside the door), stands still for a moment, then turns away (head turn within 15 degrees) toward the stairs.",
-   "environment": "Exterior corridor, railing, snow beyond",
+   "subject": "Static rear full shot in the 18th-floor interior corridor: Kim sets the small lit tree down in front of the steel door of unit 1801 (blank metal number plate beside the door), stands still for a moment, then turns away (head turn within 15 degrees) toward the stairs.",
+   "environment": "Narrow interior corridor, window at the far end, dim",
    "expression": "Silent gift",
    "motion": "Subtle natural motion only: silent gift. Micro movements, no fast motion, no new people, props stay rigid and unchanged. Camera completely locked off; the blank surface for composited Japanese text must not move or warp.",
    "edit": "03:29.09~03:32.10 line 25 (ナレーター) → 03:32.22~03:38.07 line 26 (ナレーター)",

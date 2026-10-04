@@ -52,12 +52,12 @@ COMPOSITION = {
     "S36": ("Camera low on the stairs behind him: Kim seen from behind, three or four steps above the camera, mid-climb, "
             "the small tabletop tree with the knitted red-and-white star hugged against his chest (only the top of the tree and "
             "the star visible over his shoulder). One warm sensor light glows on the landing above; the rest is dim and cool."),
-    "S41": ("Exterior corridor, camera facing the open steel door of unit 1801 from the side at child height: the mother stands "
+    "S41": ("Interior 18th-floor corridor (same as the location reference), camera facing the open steel door of unit 1801 from the side at child height: the mother stands "
             "in the doorway in a plain grey cardigan, frozen, one hand on the door; Ren beside her beams with his mouth closed and "
             "points down at the small lit tree with the knitted star standing on the corridor floor at their feet. "
             "Both faces clearly visible, matching their references."),
-    "S50": ("SINGLE PORTRAIT: exactly one person (Kim), chest-up close-up inside the guard booth, facing slightly camera-left "
-            "toward someone off-screen, head straight. His face must be the exact same face as the KIM reference. "
+    "S50": ("SINGLE PORTRAIT: exactly one person (Kim) and NOBODY else — no foreground shoulder, no back of another head, "
+            "no over-the-shoulder framing. Chest-up close-up inside the guard booth, looking just off-lens camera-left, head straight. His face must be the exact same face as the KIM reference. "
             "A faint kind smile is already on his face (50%), lips just parted. No hands, no cup, no kettle in frame."),
 }
 
