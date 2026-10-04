@@ -333,7 +333,7 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
         "".join(mix_inputs)
         + f"amix=inputs={len(mix_inputs)}:duration=longest:normalize=0,"
         + "alimiter=limit=0.95:attack=5:release=80,"  # BGM·현장음을 올려도 대사 피크가 클리핑되지 않게
-        + f"atrim=0:{duration:.3f}[aout]")
+        + f"atrim=0:{duration:.3f},aformat=channel_layouts=stereo[aout]")
 
     script = os.path.join(WORK_DIR, "filter.txt")
     with open(script, "w") as f:
@@ -342,6 +342,22 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
             "-map", "0:v", "-map", "[aout]",
             "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", out_path]
     subprocess.run(cmd, check=True)
+
+
+def frame_quantize(durations, overlaps, fps=24):
+    """장면 길이·겹침을 프레임 정수배로 맞춘다. 소수 길이(예 7.491s)는 trim이 프레임 단위로 잘라
+    매 장면 반 프레임씩 짧아지고, 누적되면 xfade offset이 앞 입력 길이를 넘는 순간 출력이 끊긴다
+    (EP4 실증: 301.8s 계획 → 117.6s에서 끊김, drop=4556). 경계 시각을 프레임에 맞춰 계산하므로
+    자막·대사 배치(원래 시각)와의 차이는 경계마다 0.5프레임 이내로 누적되지 않는다."""
+    n = len(durations)
+    qo = [max(round(o * fps), 1) if o > 0 else 0 for o in overlaps]
+    starts, t = [], 0.0
+    for d, o in zip(durations, overlaps):
+        starts.append(t); t += d - o
+    qs = [round(x * fps) for x in starts]
+    qend = round((starts[-1] + durations[-1]) * fps)
+    qd = [qs[k + 1] - qs[k] + qo[k] for k in range(n - 1)] + [qend - qs[-1]]
+    return [x / fps for x in qd], [x / fps for x in qo]
 
 
 def norm_filter(cfg):
@@ -487,6 +503,7 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
     # 하드컷 경계도 1프레임(1/24s) 겹침으로 체인을 이어 간다 — 타임라인(bounds)도 같은 값을 쓴다.
     overlaps = [o if o >= 1 / 24 else 1 / 24 for o in overlaps]
     overlaps[-1] = 0.0
+    durations, overlaps = frame_quantize(durations, overlaps)
     bounds, t = [], 0.0
     for d, o in zip(durations, overlaps):
         bounds.append((t, t + d))
@@ -570,7 +587,7 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
                      + f"concat=n={len(final_scenes)}:v=1:a=0[vc]")
     parts.append(f"[vc]ass={ass_path}[vo]")
     cmd += ["-filter_complex", ";".join(parts), "-map", "[vo]", "-an",
-            "-c:v", "libx264", "-preset", "medium", "-crf", "18", work_video]
+            "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p", work_video]
     subprocess.run(cmd, check=True)
     return work_video, ambience
 
@@ -644,6 +661,7 @@ def main():
         overlaps += [0.0] * (len(durations) - len(overlaps))
         overlaps = [o if o >= 1 / 24 else 1 / 24 for o in overlaps]
         overlaps[-1] = 0.0
+        durations, overlaps = frame_quantize(durations, overlaps)
         bounds, t = [], 0.0
         for i, d in enumerate(durations, start=1):
             bounds.append((t, t + d))
@@ -680,7 +698,7 @@ def main():
                                  f"tpad=stop_mode=clone:stop_duration=15,"
                                  f"trim=duration={d:.3f},setpts=PTS+{t0:.3f}/TB,"
                                  f"ass={args.ass},setpts=PTS-STARTPTS"),
-                                "-an", "-c:v", "libx264", "-preset", "medium",
+                                "-an", "-pix_fmt", "yuv420p", "-c:v", "libx264", "-preset", "medium",
                                 "-crf", "18", patched], check=True)
                 patch_segs.append((t0, t1, patched))
             # 기본 영상에서 패치 구간만 잘라내고 새 클립으로 이어붙인다
@@ -699,7 +717,7 @@ def main():
             parts.append("".join(labels) + f"concat=n={len(labels)}:v=1:a=0[vs]")
             spliced = os.path.join(WORK_DIR, "remix-spliced.mp4")
             subprocess.run(cmd + ["-filter_complex", ";".join(parts), "-map", "[vs]",
-                                  "-an", "-c:v", "libx264", "-preset", "medium",
+                                  "-an", "-pix_fmt", "yuv420p", "-c:v", "libx264", "-preset", "medium",
                                   "-crf", "18", spliced], check=True)
             video = spliced
             print(f"장면 패치 {len(patch_segs)}개 반영 → {video}")
