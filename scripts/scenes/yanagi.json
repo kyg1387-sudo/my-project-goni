@@ -1,0 +1,963 @@
+{
+ "_설명": "yanagi 장면 설정(build_yanagi_phase3.py 생성). override_required 장면은 정지 푸시인·OMNI 정지 프레임·재사용·카드를 video-overrides로 먼저 넣는다.",
+ "ratio": "16:9",
+ "budget_usd": 31.72,
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "durations": [
+  5,
+  10,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  10,
+  10,
+  10,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  10,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  10,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10
+ ],
+ "scenes": [
+  {
+   "prompt": "(override) reuse: Reuse of S27e (dogeza from above, sweat on the polished floor).",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S24b (chairman: 'where is she'). Hook voice = line047 mixed locally.",
+   "duration": 10,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S26h (a tear falls on the pressed leaf).",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) card: Black title card 『柳の葉と一杯の水』.",
+   "duration": 10,
+   "override_required": true
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Heat haze shimmers over the asphalt, willow branches hang almost still. No people, no cars. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S01a-1.png"
+  },
+  {
+   "prompt": "(override) still: No people. High angle from a second-floor height down the narrow alley, the glas",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S01b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ogata's raised hand trembles slightly, his chest heaves with shallow breaths. Sakamoto's back stays still. No one walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S02a-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Ogata on the floor, exhausted, dry lips, sweat, warm rim li",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S02b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sakamoto jabs his finger toward the door twice, his head stays turned away from the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S03a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: an old man's wrinkled hand pressed on the white tile floor, grey linen c",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S03b-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: outside, an old man's wrinkled hand slides down the sunlit glass door, t",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S04a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert from above: a plain white paper cup filling with water at the dispenser, ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S05a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yuna walks two steps forward away from the camera through the door, her ponytail swaying; she never turns around. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S06a-1.png"
+  },
+  {
+   "prompt": "(override) still: Low angle insert against the bright sky: a young woman's bandaged hand plucks a ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S06b-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert from above: a single long narrow willow leaf lands on the water in the pl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S07a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Willow branches sway gently in the foreground; the two figures stay still in the shade. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S08a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yuna slowly tilts the cup toward Ogata's lips; Ogata's hands rise to hold it. Both stay in profile, mouths closed. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S08b-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Yuna in the willow shade, gentle and slightly urgent, soft ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S08c-1.png"
+  },
+  {
+   "prompt": "(override) still: Close-up: the paper cup with the floating willow leaf sharp in the lower foregro",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S09a-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro insert from above: one long narrow willow leaf floating on the clear water",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S09a2-1.png"
+  },
+  {
+   "prompt": "(override) still: Side macro insert: an old man's wrinkled fingers trembling around the plain whit",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S09a3-1.png"
+  },
+  {
+   "prompt": "(override) still: Choker close-up of Ogata's eyes behind the tortoiseshell glasses widening, deep ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S09b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Willow branches sway gently, the old man slowly lowers the cup, the clerk stays crouched. No one stands up or walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S09c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ogata stares into the cup, breathing slowly; the willow sways. He does not turn his head. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S10a-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) still: Insert: an old man's hand slides a worn brown leather notebook back into the inn",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S10b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Willow branches sway; the old man stays still on the bench. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S10c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yuna scrubs the pot with slow tired strokes; steam rises; water runs. She keeps looking down. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S11a-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) still: Insert from above: a folded blank sheet of paper in an open locker and a smartph",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S11b-1.png"
+  },
+  {
+   "prompt": "(override) still: Close-up of Yuna in the dim back corner of the izakaya kitchen, her worried face",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S11c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The curtain edge stirs slightly in the foreground; the two figures stay still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S12a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Haruko leaning back against raised pillows by the window, w",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S12b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Haruko smiles and nods slightly; Yuna's head stays still with her back to the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S12c-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) still: Insert from above: an old woman's thin hand with a green jade ring clasping a yo",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S12d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The two figures stay crouched with their backs to the camera; willow branches sway in the golden light. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S13a-1.png"
+  },
+  {
+   "prompt": "(override) still: Flashback insert, no people: moss on the rim of the old stone well and a hanging",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S13a2-1.png"
+  },
+  {
+   "prompt": "(override) still: Flashback insert from the side: the older woman's wrinkled hand and floral sleev",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S13a3-1.png"
+  },
+  {
+   "prompt": "(override) still: Flashback insert from above: wrinkled hands scoop clear water with a dried gourd",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S13b-1.png"
+  },
+  {
+   "prompt": "(override) still: Flashback from above and behind: the small girl's two low pigtails and the older",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S13b2-1.png"
+  },
+  {
+   "prompt": "(override) still: Flashback side macro, no people: a long narrow willow leaf drifting down onto th",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S13b3-1.png"
+  },
+  {
+   "prompt": "(override) still: Flashback insert: a small child's hands receive the gourd dipper with the willow",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S13c-1.png"
+  },
+  {
+   "prompt": "(override) still: Flashback, no people: high angle of the old stone well and the weeping willow, t",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S13c2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sakamoto bobs his head slightly as he talks on the phone, back to the camera; Yuna stays still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S14a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a finger with a thick gold wristwatch taps a small CCTV monitor showing ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S14b-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert from above, no people: on the cluttered desk a blank printed photo sheet,",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S14b2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yuna keeps her head bowed and fiddles with the hem of her uniform; she does not look up. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S14c-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sakamoto leans forward and gestures sharply once; his face stays turned away from the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S14d-1.png"
+  },
+  {
+   "prompt": "(override) still: Side macro insert: a young woman's hands clenched on the hem of her striped unif",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S14d2-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert from above: a blank white sheet of paper is slapped onto a grey desk, oth",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S14e-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a smartphone on the desk vibrates and lights up with a blank notificatio",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S14f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Sakamoto from slightly below, smug cold menace, hard top li",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S14g-1.png"
+  },
+  {
+   "prompt": "(override) omni: Choker close-up of Yuna biting her lower lip, eyes glistening, holding back tear",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S14h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yuna writes slowly with her back to the camera; the overhead light flickers once. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S14i-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, no people: a laptop screen showing a blank grey form panel with an attac",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S14j-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle close-up of Yuna at the desk, head bowed, holding back tears under th",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S14j2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yuna stays still with her back to the camera; the light hums. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S14k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yuna bends and sets the bottle on the bench, then straightens up; branches sway. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S15a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: an unopened water bottle on the wooden bench with a small blank paper no",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S15b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The rear window slowly slides down; the streetlight flickers faintly. Nobody gets out. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S16a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sato turns his head a few degrees toward the back seat; streetlight slides across his shoulder. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S16b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ogata sits still looking out of the window, breathing slowly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S16c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Almost still; the bottle and willow outside glow; Ogata's shoulder stays still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S16d-1.png"
+  },
+  {
+   "prompt": "(override) still: Telephoto insert, no people: a plain water bottle standing on the bench under th",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S16d2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ogata blinks slowly; the reflection stays steady. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S16e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sakamoto picks up the bottle and drops it into the bin with a flick of his wrist; he turns his head less than 15 degrees. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S17a-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yuna lets go of the bottle and straightens slowly, a small calm look; branches sway. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S17b-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The two silhouettes stay still; dust motes float in the golden light. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S18a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Haruko gazes out of the window, breathing slowly; her lips stay soft and still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S18b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yuna tilts her head slightly, curious; her mouth stays closed. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S18c-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Haruko shakes her head slowly once with a soft smile; lips closed. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S18d-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Willow branches sway in the golden light; Ogata stands still at the water's edge. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S19a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: Sato's hand hands a plain black leather folder to Ogata's hand, golden l",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S19b-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: an old man's hand closes the worn brown leather notebook; the well and w",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S19c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Ogata from slightly below, resolute, golden rim light, the ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S19d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sakamoto pushes the rolled mat forward so it unrolls flat; he does not stand up. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S20a-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sakamoto points into the stockroom; Yuna steps back half a step. His head stays turned away. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S20b-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: the grey stockroom door swings shut, a young woman's bandaged hand letti",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S20c-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: Sakamoto's reflection in the glass door as his hands straighten his navy",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S20d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The third sedan rolls to a stop; heat haze; no one gets out yet. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S21a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert at ground level: a polished black oxford shoe and a charcoal-navy trouser",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S21b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The three figures take one slow step inside, backlit; Sakamoto holds his deep bow. No faces visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S22a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Sakamoto standing upright, over-eager fawning smile.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S22b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sakamoto holds the deep bow, perfectly still except for breathing. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S22c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sakamoto slowly raises his head from the bow and freezes; his glasses slip slightly. No other movement. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S23a-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) still: Insert: a trembling hand with a gold watch gripping the navy necktie.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S23b-1.png"
+  },
+  {
+   "prompt": "(override) reuse: 0.5-second flash of S04a (the hand sliding down the glass).",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Ogata from slightly below, calm and cold, bright backlight ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S23d-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a bead of sweat runs down Sakamoto's temple past the rim of his rectangu",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S23e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sakamoto swallows and his eyes dart sideways; he stays where he is. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S24a-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Ogata from slightly below, quiet and heavy, looking around ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S24b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sakamoto lowers his head further, shoulders hunched. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S24c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Completely still figures; only the refrigerator light flickers faintly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S25a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, no people: the handle of the grey stockroom door in silence.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S25b-1.png"
+  },
+  {
+   "prompt": "(override) still: No people. High angle down the empty store aisle toward the closed grey stockroo",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S25c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yuna steps out of the doorway and stops, eyes widening; Ogata's shoulder stays still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S26a-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Yuna, worried and relieved at once, soft diffused light.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S26b-1.png"
+  },
+  {
+   "prompt": "(override) still: Close-up of Ogata's eyes softening behind his glasses, a faint smile.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S26c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yuna listens and blinks; Ogata's head stays still with his back to the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S26d-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ogata listens, nodding very slightly; Yuna's head stays still with her back to the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S26e-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) still: Choker close-up of Ogata frozen, eyes widening behind his glasses as the words s",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S26e2-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert from above: an old hand opens the worn leather notebook to a yellowed pre",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S26f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Ogata, voice thickening, eyes wet behind the glasses.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S26g-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro insert: a single tear drops onto the pressed willow leaf in the open noteb",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S26h-1.png"
+  },
+  {
+   "prompt": "(override) still: Side macro insert: an old thumb gently brushing the edge of the pressed long nar",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S26h2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ogata lowers his head slightly and holds the notebook still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S26i-1.png"
+  },
+  {
+   "prompt": "(override) still: Slight high angle close-up of Yuna holding back tears, eyes brimming.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S26j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ogata stands perfectly still with his back to the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S27a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a black tablet in a woman's hands shows grainy black-and-white security ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S27b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Murase lowers the tablet slightly and looks straight ahead; she does not walk. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S27c-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) still: Insert from above: a woman's finger swipes the black tablet to a blank grey offi",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S27c2-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle medium of Sakamoto standing stiff with hunched shoulders, eyes dartin",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S27c3-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sakamoto's hands shake as he pleads; Ogata stays perfectly still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S27d-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sakamoto stays prostrate; his shoulders tremble slightly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S27e-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro insert: a drop of sweat falls onto the mirror-polished floor.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S27f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Ogata from slightly below, calm and steely, delivering the ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S27g-1.png"
+  },
+  {
+   "prompt": "(override) reuse: B-roll reuse of S27e under the rest of line061.",
+   "duration": 10,
+   "override_required": true
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Murase speaks seen from the side, her mouth not visible behind the angle; she stays still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S27i-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) still: Macro insert: a bead of sweat drips from a man's jaw onto the mirror-polished fl",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S27i2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Murase bows slightly; Yuna answers with a deep bow. No one walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S27j-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) still: Insert: trembling fingers with a gold watch unclip the blank white name plate fr",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S27k-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro: Sakamoto's own blurred face reflected in the mirror-polished floor.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S27l-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sakamoto walks slowly away from the camera across the mat and out of the door, growing smaller; he never turns around. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S27m-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Golden light; the three stay still; the curtain edge stirs. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S28a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ogata bows his head slightly toward the bed and stays still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S28b-1.png"
+  },
+  {
+   "prompt": "(override) still: Close-up of Haruko against the raised pillows, puzzled and searching his face, g",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S28b2-1.png"
+  },
+  {
+   "prompt": "(override) still: Side macro insert: Haruko's thin hand with the green jade ring tightening on the",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S28b3-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert from above: Haruko's thin hands with the jade ring hold an old man's hand",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S28c-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert from above: the open leather notebook on the blanket with the pressed wil",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S28d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Haruko, trembling recognition, tears welling, golden backli",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S28e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ogata freezes, then his head lowers a few degrees. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S28f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Haruko looks down at the photo, her finger resting on it; lips soft. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S28g-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) omni: Choker close-up of Ogata breaking down, tears behind the glasses, golden rim lig",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S28h-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a young woman's bandaged hand covers her mouth, a tear on her cheek edge",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S28i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yuna's lips tremble and tears fall; Ogata's head stays still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S28j-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) still: Insert from above: a young hand and an old hand with a green jade ring clasped o",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S28j2-1.png"
+  },
+  {
+   "prompt": "(override) still: Choker close-up of Yuna crying, her bandaged hand over her mouth, nodding.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S28k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Mist drifts over the water; the three stay still with their backs to the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/yanagi-keyframes/S29a-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead macro: two long narrow willow leaves float side by side on the clear sp",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S29b-1.png"
+  },
+  {
+   "prompt": "(override) still: Side macro insert, no people: a drop of water falls from the tip of a willow lea",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yanagi-keyframes/S29b2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Mist drifts slowly; willow branches sway; the tiny figures stay still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/yanagi-keyframes/S29c-1.png"
+  }
+ ]
+}
