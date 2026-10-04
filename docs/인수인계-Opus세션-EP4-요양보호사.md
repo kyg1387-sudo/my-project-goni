@@ -79,6 +79,7 @@ EP3 실측: 한국어판 약 37달러(44장면), 일본어 더빙판 약 5달러
 - EP4 아웃트로 도입부 교체 결정(사용자 A안, 2026-10-04): 0~9.75s 트리 몽타주 → 본편 하이라이트 4컷(S38·S41·S50·S52, 디졸브)으로 PHASE 5 후 교체(무과금, `scripts/scenes/outro-ja-ep4.json` `_교체예정`).
 - EP4 품질 파일럿 키프레임(2026-10-04): S36·S41(레터박스 크롭)·S50(재생성, 벽 메모지 지움) Kill Gate 합격 → `assets/portraits/ep4-keyframes/`. 다음: i2v lite vs pro 비교·S50 OmniHuman(짧게).
 - EP4 PHASE 4·5·6(2026-10-04): 키프레임 51장 Kill Gate(이미지 69장) → i2v 39컷 run 37182807944(인물 22 pro·무인 17 lite) → 불합격 7컷 정지 푸시인·일본어 글자 8컷 합성·S44 얼굴 그늘 → burn(OmniHuman 7) → 조립 끊김(117s) 수정(frame_quantize) → BGM 정적·S52 줌아웃 → 인물 대조로 S45 엄마 얼굴 교체. **교훈 전부 `docs/제작규격-보강-EP4실증.md`·CLAUDE.md 제7장에 반영(사용자 지시)**.
+- **EP4 일본어판 완성(2026-10-04)**: 최종본 `deliveries/kim-christmas-ja-final-outro.mp4.part-00/01`(합치면 335.6s = 본편 301.8 + 검은 화면 0.8 + 아웃트로 28.0 + 엔드카드 5.5, 1080p·스테레오), 미리보기 `deliveries/kim-christmas-ja-final-480p.mp4`. 본편 burn run 37191022381 + 로컬 룸톤(조용한 1초 창 8곳, −50dB 브라운 노이즈) + `append_outro.py`(OUT_SIZE=1920x1080, OUTRO-SCENE-ja-ep4, endcard-midam-ja). 사용자 확인 대기. 남은 일: 아웃트로 도입부 하이라이트 교체(A안), 업로드 가이드(JA)·쇼츠 5·썸네일.
 - EP4 대본 승인일 / 시트 run ID / 키프레임 run ID / 클립 run ID / burn run ID: ______
 - 요양보호사 편 진단서 위치: ______
 - 지출(잔액 변동): ______ (대장 `docs/시리즈-제작비용.md`에 기입)
