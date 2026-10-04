@@ -50,8 +50,8 @@
 | S38 | 03:39.02 - 03:42.14 | 3.50/5s | 무언 | insert | dawn_dark | static | Hard cut |  | PROP@tree, LOC@corridor-18f-night |
 | S39 | 03:42.14 - 03:48.03 | 6.53/10s | 내레이션 | insert | dawn_dark | static | Dissolve 1.0s | L27 | LOC@corridor-18f-key2 |
 | S40 | 03:48.03 - 03:54.09 | 6.24/10s | 내레이션 | xlong | morning | static | Hard cut | L28 / 【クリスマスの朝】 | LOC@apt-gate-winter-key2 |
-| S41 | 03:54.09 - 03:58.09 | 4.00/5s | 무언 | medium | morning | static | Hard cut |  | MOM@expr-neutral, REN@expr-happy, PROP@tree, LOC@corridor-18f-day |
-| S42 | 03:58.09 - 04:01.21 | 3.50/5s | 자막카드 | insert | morning | static | Hard cut |  | LOC@corridor-18f-day |
+| S41 | 03:54.09 - 03:58.09 | 4.00/5s | 무언 | medium | corr_morning | static | Hard cut |  | MOM@expr-neutral, REN@expr-happy, PROP@tree, LOC@corridor-18f-day |
+| S42 | 03:58.09 - 04:01.21 | 3.50/5s | 자막카드 | insert | corr_morning | static | Hard cut |  | LOC@corridor-18f-day |
 | S43 | 04:01.21 - 04:11.21 | 10.00/10s | 내레이션 | medium | office | static | Hard cut | L29, L30 | MOM@fullbody-back2, CLERK@front, LOC@mgmt-office-counter |
 | S44 | 04:11.21 - 04:21.21 | 10.00/10s | 내레이션 | insert | cctv | static | Hard cut | L31, L32 | KIMW@fullbody-back, PROP@tree, LOC@corridor-18f-night |
 | S45 | 04:21.21 - 04:27.01 | 5.66/10s | 리액션(정지 푸시인) | cu | office | push | Dissolve 0.5s |  | MOM@expr-tearful, LOC@mgmt-office-counter |

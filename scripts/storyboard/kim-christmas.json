@@ -1084,7 +1084,7 @@
    "generate_s": 5,
    "shot": "medium",
    "lens": "50mm lens, f/2.8, natural perspective, cinematic composition, rule of thirds",
-   "lighting": "Clear winter morning after snowfall, low-angle soft 5600K sunlight from camera-left, crisp clean tones, sparkling snow",
+   "lighting": "Christmas morning, soft low 5600K sunlight from the window at the end of the interior corridor, clean warm-neutral tones, no snow or particles indoors",
    "camera": "Static, locked off",
    "transition_out": "Hard cut",
    "refs": [
@@ -1111,7 +1111,7 @@
    "generate_s": 5,
    "shot": "insert",
    "lens": "85mm prime lens, f/2.0, shallow depth of field, creamy background bokeh, macro-like detail",
-   "lighting": "Clear winter morning after snowfall, low-angle soft 5600K sunlight from camera-left, crisp clean tones, sparkling snow",
+   "lighting": "Christmas morning, soft low 5600K sunlight from the window at the end of the interior corridor, clean warm-neutral tones, no snow or particles indoors",
    "camera": "Static, locked off",
    "transition_out": "Hard cut",
    "refs": [
