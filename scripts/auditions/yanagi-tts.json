@@ -98,7 +98,7 @@
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
-   "text": "入院中の祖母の治療費、じゅうはちまんえん。払えなければ、来月には退院を迫られる。",
+   "text": "入院中の祖母の治療費、じゅうはちまん えん。払えなければ、来月には退院を迫られる。",
    "emotion_preset": "sad",
    "emotion_intensity": 0.8,
    "tempo": 0.95
@@ -618,7 +618,7 @@
    "model": "typecast-direct",
    "voice": "tc_673eb42eef5b688d8cadd086",
    "language": "jpn",
-   "text": "本日付で懲戒解雇とします。業務上横領と強要については、刑事告訴と損害賠償請求の手続きに入ります",
+   "text": "本日付で、ちょうかいかいこ とします。業務上横領と強要については、けいじこくそと損害賠償請求の手続きに入ります",
    "emotion_preset": "tonedown",
    "emotion_intensity": 1.0,
    "tempo": 1.0
