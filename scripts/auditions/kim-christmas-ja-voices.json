@@ -1,0 +1,75 @@
+{
+ "_설명": "EP4 일본어 기준판 배역 오디션: 엄마 후보 4종(ElevenLabs 기본 보이스 ID) x 2줄(005 지친 차가움 / 033 울먹임), 아이=검증 아동 보이스 2줄(채택 시 로컬 음높이 보정). eleven_multilingual_v2. 사용자 청취로 채택.",
+ "tests": [
+  {
+   "id": "child_MH_line004",
+   "model": "elevenlabs-direct",
+   "voice": "V9zeHe6rhQ2jEkZaNOGy",
+   "el_model": "eleven_multilingual_v2",
+   "text": "おじさん、サンタさんは…うちの部屋番号、知らないのかな？"
+  },
+  {
+   "id": "mom_Sarah_line005",
+   "model": "elevenlabs-direct",
+   "voice": "EXAVITQu4vr4xnSDxMaL",
+   "el_model": "eleven_multilingual_v2",
+   "text": "レン、警備のおじさんを困らせないの。…うちのことは、構わないでください。"
+  },
+  {
+   "id": "mom_Jessica_line005",
+   "model": "elevenlabs-direct",
+   "voice": "cgSgspJ2msm6clMCkdW9",
+   "el_model": "eleven_multilingual_v2",
+   "text": "レン、警備のおじさんを困らせないの。…うちのことは、構わないでください。"
+  },
+  {
+   "id": "mom_Lily_line005",
+   "model": "elevenlabs-direct",
+   "voice": "pFZP5JQG7iQjIQuC4Bku",
+   "el_model": "eleven_multilingual_v2",
+   "text": "レン、警備のおじさんを困らせないの。…うちのことは、構わないでください。"
+  },
+  {
+   "id": "mom_Matilda_line005",
+   "model": "elevenlabs-direct",
+   "voice": "XrExE9yKIg1WjnnlVkGX",
+   "el_model": "eleven_multilingual_v2",
+   "text": "レン、警備のおじさんを困らせないの。…うちのことは、構わないでください。"
+  },
+  {
+   "id": "child_MH_line012",
+   "model": "elevenlabs-direct",
+   "voice": "V9zeHe6rhQ2jEkZaNOGy",
+   "el_model": "eleven_multilingual_v2",
+   "text": "サンタさん、お母さんが泣かないように、電気だけは消さないでください。"
+  },
+  {
+   "id": "mom_Sarah_line033",
+   "model": "elevenlabs-direct",
+   "voice": "EXAVITQu4vr4xnSDxMaL",
+   "el_model": "eleven_multilingual_v2",
+   "text": "ごめんなさい…昨日、あんなことまで言ったのに…本当に、ありがとうございます…"
+  },
+  {
+   "id": "mom_Jessica_line033",
+   "model": "elevenlabs-direct",
+   "voice": "cgSgspJ2msm6clMCkdW9",
+   "el_model": "eleven_multilingual_v2",
+   "text": "ごめんなさい…昨日、あんなことまで言ったのに…本当に、ありがとうございます…"
+  },
+  {
+   "id": "mom_Lily_line033",
+   "model": "elevenlabs-direct",
+   "voice": "pFZP5JQG7iQjIQuC4Bku",
+   "el_model": "eleven_multilingual_v2",
+   "text": "ごめんなさい…昨日、あんなことまで言ったのに…本当に、ありがとうございます…"
+  },
+  {
+   "id": "mom_Matilda_line033",
+   "model": "elevenlabs-direct",
+   "voice": "XrExE9yKIg1WjnnlVkGX",
+   "el_model": "eleven_multilingual_v2",
+   "text": "ごめんなさい…昨日、あんなことまで言ったのに…本当に、ありがとうございます…"
+  }
+ ]
+}

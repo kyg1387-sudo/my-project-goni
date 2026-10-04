@@ -1,0 +1,37 @@
+{
+ "_설명": "EP4 일본어 화면 글자 합성용 OFL 글꼴 내려받기(무과금): 아이 편지=Hachi Maru Pop, 아내 가계부=Klee One, 통지문·명판=Zen Old Mincho. scripts/fonts/에 저장.",
+ "fetch_files": [
+  {
+   "url": "https://github.com/google/fonts/raw/main/ofl/hachimarupop/HachiMaruPop-Regular.ttf",
+   "path": "scripts/fonts/HachiMaruPop-Regular.ttf"
+  },
+  {
+   "url": "https://github.com/google/fonts/raw/main/ofl/hachimarupop/OFL.txt",
+   "path": "scripts/fonts/OFL-HachiMaruPop.txt"
+  },
+  {
+   "url": "https://github.com/google/fonts/raw/main/ofl/kleeone/KleeOne-Regular.ttf",
+   "path": "scripts/fonts/KleeOne-Regular.ttf"
+  },
+  {
+   "url": "https://github.com/google/fonts/raw/main/ofl/kleeone/KleeOne-SemiBold.ttf",
+   "path": "scripts/fonts/KleeOne-SemiBold.ttf"
+  },
+  {
+   "url": "https://github.com/google/fonts/raw/main/ofl/kleeone/OFL.txt",
+   "path": "scripts/fonts/OFL-KleeOne.txt"
+  },
+  {
+   "url": "https://github.com/google/fonts/raw/main/ofl/zenoldmincho/ZenOldMincho-Regular.ttf",
+   "path": "scripts/fonts/ZenOldMincho-Regular.ttf"
+  },
+  {
+   "url": "https://github.com/google/fonts/raw/main/ofl/zenoldmincho/ZenOldMincho-Bold.ttf",
+   "path": "scripts/fonts/ZenOldMincho-Bold.ttf"
+  },
+  {
+   "url": "https://github.com/google/fonts/raw/main/ofl/zenoldmincho/OFL.txt",
+   "path": "scripts/fonts/OFL-ZenOldMincho.txt"
+  }
+ ]
+}

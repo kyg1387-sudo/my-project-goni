@@ -1,0 +1,11 @@
+{
+ "_설명": "EP4 품질 파일럿: S50 김씨 「……メリークリスマス。」 OmniHuman(4.10s = 앞 0.62s + 대사 1.70s + 여운 1.78s, Lock 배치와 동일)",
+ "tests": [
+  {
+   "id": "S50-omni",
+   "model": "omnihuman",
+   "audio_id": "s50_audio",
+   "image": "assets/portraits/ep4-keyframes/S50-1.png"
+  }
+ ]
+}

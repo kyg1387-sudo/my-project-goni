@@ -1,0 +1,215 @@
+{
+ "_설명": "EP4 일본어 기준판(주력) PHASE 1 보이스 — 사용자 결정 2026-10-03 '일본어 기준'. 내레이터 26 + 김씨 4, ElevenLabs 다국어(eleven_multilingual_v2, 태그 없음 — v2는 태그를 낭독함, EP3-JA 방식). 1801号室은 TTS 입력만 千八百一号室(자막은 숫자 유지). 내레이션은 조립 시 배속 결정(EP3-JA 1.12). 2026-10-03: 읽기 오류 위험 11줄(숫자·先立った·毛糸·手垢·年老いた 등)은 TTS 입력만 가나 표기(자막은 한자 유지), 구판은 _superseded/.",
+ "tests": [
+  {
+   "id": "line001",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "じゅうにがつ、にじゅうよっか。団地には、いちにちじゅう雪が降っていました。"
+  },
+  {
+   "id": "line002",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "年の瀬の郵便受けには、どこも請求書が一枚ずつ。"
+  },
+  {
+   "id": "line003",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "そして、せんはっぴゃくいちごうしつのドアには、赤い紙が一枚、貼られていました。"
+  },
+  {
+   "id": "line006",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "冷たい人だったわけではありません。"
+  },
+  {
+   "id": "line007",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "借金と暮らしに疲れ果てた母親に残っていたのは、小さな意地だけだったのです。"
+  },
+  {
+   "id": "line008",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "おんなでひとつで子どもを育てて、三年。"
+  },
+  {
+   "id": "line009",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "昼は食堂、夜はスーパーで働いても、冬はいつも、お金が先に底をつきました。"
+  },
+  {
+   "id": "line010",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "母親が眠ったあと、男の子がこっそり下りてきました。"
+  },
+  {
+   "id": "line011",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "たどたどしい字で、男の子はこう書いていました。『うちは、じゅうはっかいです。いい子にしていました』"
+  },
+  {
+   "id": "line013",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "その日は、キムさんのひと月分のお給料日でした。"
+  },
+  {
+   "id": "line014",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "封筒の横には、ななねんまえにさきだった妻の、家計簿がありました。"
+  },
+  {
+   "id": "line015",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "てあかのついた最後のページの隅に、妻の字。"
+  },
+  {
+   "id": "line016",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "「わたしたちにも子どもがいたら…あなたに一度、サンタさんをやってほしかったな」"
+  },
+  {
+   "id": "line017",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "子どものいなかったふたりの、とうとう叶わなかった願いでした。"
+  },
+  {
+   "id": "line018",
+   "model": "elevenlabs-direct",
+   "voice": "8vwSOQHQApfVx993mKf9",
+   "el_model": "eleven_multilingual_v2",
+   "text": "せんはっぴゃくいちごうしつの…管理費、三か月分です。"
+  },
+  {
+   "id": "line019",
+   "model": "elevenlabs-direct",
+   "voice": "8vwSOQHQApfVx993mKf9",
+   "el_model": "eleven_multilingual_v2",
+   "text": "わたしが払ったことは…決して、言わないでください。"
+  },
+  {
+   "id": "line020",
+   "model": "elevenlabs-direct",
+   "voice": "8vwSOQHQApfVx993mKf9",
+   "el_model": "eleven_multilingual_v2",
+   "text": "あそこのお母さんが…傷つきますから。"
+  },
+  {
+   "id": "line021",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "封筒を差し出して残った、わずかなお札で、彼は小さなツリーをひとつ買いました。"
+  },
+  {
+   "id": "line022",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "引き出しの奥に、妻が生前、けいとで編んでおいた星がひとつ。"
+  },
+  {
+   "id": "line023",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "ななねんぶりに、その星がツリーのてっぺんに飾られました。"
+  },
+  {
+   "id": "line024",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "エレベーターの音で子どもが起きないように、彼はじゅうはっかいまで、階段を上りました。"
+  },
+  {
+   "id": "line025",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "チャイムは、鳴らしませんでした。"
+  },
+  {
+   "id": "line026",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "足音を忍ばせて、来た階段を、そのまま下りていきました。"
+  },
+  {
+   "id": "line027",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "廊下の天井のカメラだけが、その背中を見ていました。"
+  },
+  {
+   "id": "line028",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "男の子の願いどおり、その家の明かりは、消えませんでした。"
+  },
+  {
+   "id": "line029",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "誰が払ったのか、佐藤主任は最後まで言いませんでした。"
+  },
+  {
+   "id": "line030",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "ただ黙って、明け方の廊下の映像を、見せてくれただけでした。"
+  },
+  {
+   "id": "line031",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "画面の中の、としおいた警備員は、最後まで顔を見せませんでした。"
+  },
+  {
+   "id": "line032",
+   "model": "elevenlabs-direct",
+   "voice": "5n5gqmaQi9Ewevrz7bOS",
+   "el_model": "eleven_multilingual_v2",
+   "text": "けれど、あの少し丸い背中と古いダウンを、この団地で知らない人はいませんでした。"
+  },
+  {
+   "id": "line034",
+   "model": "elevenlabs-direct",
+   "voice": "8vwSOQHQApfVx993mKf9",
+   "el_model": "eleven_multilingual_v2",
+   "text": "……メリークリスマス。"
+  }
+ ]
+}

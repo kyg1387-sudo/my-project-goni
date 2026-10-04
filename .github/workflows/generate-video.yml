@@ -7,16 +7,276 @@ on:
         description: 생성할 스킷 이름 (scripts/scenes/<skit>.json)
         required: false
         default: "bungeoppang"
+      resume_run_id:
+        description: 이 run의 Artifact에서 이미 생성된 장면 클립을 복원해 이어하기 (선택)
+        required: false
+        default: ""
+      regen_scenes:
+        description: 복원 후 다시 만들 장면 번호 목록 (공백 구분, 예 "9 59 81")
+        required: false
+        default: ""
+      insert_at:
+        description: 장면 삽입 시 밀림 처리 — 이 번호부터 복원된 장면 파일을 한 칸씩 뒤로 개명 (예 "19")
+        required: false
+        default: ""
+      portraits_spec:
+        description: 인물 초상 생성 모드 — 스펙 이름 (scripts/portraits/<spec>.json). 지정 시 영상 생성 대신 초상만 생성
+        required: false
+        default: ""
+      portraits_regen_ids:
+        description: (초상 모드) 다시 만들 인물 id 목록 (공백 구분, 예 "guard minho")
+        required: false
+        default: ""
+      export_files:
+        description: 미리보기 내보내기 모드 — resume_run_id의 Artifact에서 꺼내 커밋할 파일 목록 (공백 구분, 예 "scene05.mp4"). "QA"면 전 장면 검수 시트만 커밋
+        required: false
+        default: ""
+      audition_spec:
+        description: 목소리 오디션 모드 — 스펙 이름 (scripts/auditions/<spec>.json). 지정 시 TTS 샘플만 생성
+        required: false
+        default: ""
+      qa_audio_dir:
+        description: 언어 검사 모드(무료) — 저장소 안 오디오 폴더(예 assets/auditions/<spec>)를 faster-whisper로 전사해 외국어 혼입·태그 낭독을 검사하고 보고서를 같은 폴더에 커밋
+        required: false
+        default: ""
+      qa_model:
+        description: 언어 검사 Whisper 모델(small 기본, 일본어는 large-v3 권장)
+        required: false
+        default: "small"
+      qa_lang:
+        description: 언어 검사 기대 언어(ko 기본, 일본어판은 ja)
+        required: false
+        default: "ko"
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
+  SPEC: ${{ inputs.portraits_spec }}
 
 jobs:
-  generate:
+  audition:
+    if: ${{ inputs.audition_spec != '' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    env:
+      ASPEC: ${{ inputs.audition_spec }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: 기존 샘플 복원 (재사용)
+        run: |
+          if [ -d "assets/auditions/${ASPEC}" ]; then
+            mkdir -p out/audition
+            cp -nv "assets/auditions/${ASPEC}"/*.mp3 out/audition/ || true
+            cp -nv "assets/auditions/${ASPEC}"/*.mp4 out/audition/ || true
+          fi
+
+      - name: 오디션 샘플 생성 (fal.ai TTS)
+        env:
+          FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          TYPECAST_API_KEY: ${{ secrets.TYPECAST_API_KEY }}
+        run: |
+          pip install --quiet fal-client  # omnihuman 시험(이미지+음성) 업로드용
+          python3 scripts/voice_audition.py "${ASPEC}"
+
+      - name: 샘플 업로드
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ASPEC }}-audition
+          path: |
+            out/audition/*.mp3
+            out/audition/*.mp4
+          retention-days: 7
+
+      - name: 샘플을 저장소에 커밋
+        run: |
+          mkdir -p "assets/auditions/${ASPEC}"
+          cp -v out/audition/*.mp3 "assets/auditions/${ASPEC}/" || true
+          cp -v out/audition/*.mp4 "assets/auditions/${ASPEC}/" || true
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "assets/auditions/${ASPEC}"
+          git add scripts/fonts || true   # fetch_files 모드로 받은 글꼴
+          git diff --cached --quiet || git commit -m "목소리 오디션 샘플 추가 (${ASPEC})"
+          git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+  qa_audio:
+    if: ${{ inputs.qa_audio_dir != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    env:
+      QA_DIR: ${{ inputs.qa_audio_dir }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: ffmpeg와 faster-whisper 설치
+        run: |
+          sudo apt-get update && sudo apt-get install -y ffmpeg
+          pip install --quiet faster-whisper
+
+      - name: 언어 검사 실행 (저장소 오디오 폴더)
+        run: python3 scripts/qa_language.py --audio-dir "${QA_DIR}" --model "${{ inputs.qa_model || 'small' }}" --lang "${{ inputs.qa_lang || 'ko' }}"
+
+      - name: 보고서를 저장소에 커밋
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "${QA_DIR}/qa_language_report.txt" || true
+          git diff --cached --quiet || git commit -m "언어 검사 보고서 (${QA_DIR})"
+          git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          git push origin "HEAD:${GITHUB_REF_NAME}" || true
+
+  portraits:
+    if: ${{ inputs.portraits_spec != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 이전 실행 초상 복원 (이어하기)
+        if: ${{ inputs.resume_run_id != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.SPEC }}-portraits
+          path: out/portraits
+          run-id: ${{ inputs.resume_run_id }}
+          github-token: ${{ github.token }}
+
+      - name: 커밋된 초상 복원 (이미 확정된 초상 재사용)
+        run: |
+          if [ -d "assets/portraits/${SPEC}" ]; then
+            mkdir -p out/portraits
+            cp -nv "assets/portraits/${SPEC}"/*.png out/portraits/ || true
+          fi
+
+      - name: 다시 만들 인물 삭제 (부분 재생성)
+        if: ${{ inputs.portraits_regen_ids != '' }}
+        run: |
+          for id in ${{ inputs.portraits_regen_ids }}; do
+            rm -fv out/portraits/"$id"-*.png
+          done
+
+      - name: 초상 생성 (fal.ai)
+        env:
+          FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+        run: python3 scripts/generate_portraits.py "${SPEC}"
+
+      - name: 초상 업로드
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.SPEC }}-portraits
+          path: out/portraits/*.png
+          retention-days: 7
+
+      - name: 초상을 저장소에 커밋 (실패해도 생성분 보존)
+        if: always()
+        run: |
+          mkdir -p "assets/portraits/${SPEC}"
+          cp -v out/portraits/*.png "assets/portraits/${SPEC}/" || true
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "assets/portraits/${SPEC}"
+          git diff --cached --quiet || git commit -m "인물 초상 후보 추가 (${SPEC})"
+          git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+  export:
+    if: ${{ inputs.export_files != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Artifact에서 장면 복원
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.SKIT }}-skit-video
+          path: out
+          run-id: ${{ inputs.resume_run_id }}
+          github-token: ${{ github.token }}
+      - name: 검수 시트 도구 설치
+        if: ${{ inputs.export_files == 'QA' }}
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: 선택 파일 커밋
+        run: |
+          mkdir -p "assets/preview/${SKIT}"
+          if [ "${{ inputs.export_files }}" = "QA" ]; then
+            # 검수 시트 모드(무료): 장면마다 1초 간격 10컷 + 첫 2초 0.25초 간격 8컷 타일(작은 jpg)만 커밋
+            mkdir -p "assets/qa/${SKIT}/sheets"
+            for f in out/scene*.mp4; do
+              n=$(basename "$f" .mp4)
+              ffmpeg -v error -y -i "$f" -vf "fps=1,scale=384:-2,tile=10x1" -frames:v 1 -q:v 4 "assets/qa/${SKIT}/sheets/${n}-1s.jpg" || true
+              ffmpeg -v error -y -i "$f" -vf "trim=0:2,fps=4,scale=384:-2,tile=8x1" -frames:v 1 -q:v 4 "assets/qa/${SKIT}/sheets/${n}-head.jpg" || true
+            done
+            git add "assets/qa/${SKIT}/sheets"
+          else
+            for f in ${{ inputs.export_files }}; do
+              cp -v "out/$f" "assets/preview/${SKIT}/" || true
+            done
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "assets/preview/${SKIT}" 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "미리보기 장면 (${SKIT})"
+          git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+  generate:
+    if: ${{ inputs.portraits_spec == '' && inputs.audition_spec == '' && inputs.export_files == '' && inputs.qa_audio_dir == '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 이전 실행 장면 클립 복원 (이어하기)
+        if: ${{ inputs.resume_run_id != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.SKIT }}-skit-video
+          path: out
+          run-id: ${{ inputs.resume_run_id }}
+          github-token: ${{ github.token }}
+
+      - name: 장면 삽입 밀림 처리 (뒤에서부터 한 칸씩 개명)
+        if: ${{ inputs.insert_at != '' }}
+        run: |
+          top=$(ls out/scene*.mp4 2>/dev/null | sed 's/.*scene\([0-9]*\)\.mp4/\1/' | sort -n | tail -1)
+          if [ -z "$top" ]; then exit 0; fi
+          for ((n=10#$top; n>=${{ inputs.insert_at }}; n--)); do
+            src=$(printf 'out/scene%02d.mp4' "$n")
+            dst=$(printf 'out/scene%02d.mp4' "$((n+1))")
+            if [ -e "$src" ]; then mv -v "$src" "$dst"; fi
+          done
+
+      - name: 다시 만들 장면 삭제 (부분 재생성)
+        if: ${{ inputs.regen_scenes != '' }}
+        run: |
+          for n in ${{ inputs.regen_scenes }}; do
+            rm -fv "out/$(printf 'scene%02d' "$n").mp4"
+          done
+
+      - name: 장면 교체본 덮어쓰기 (assets/video-overrides — 편집·재사용 클립)
+        run: |
+          if [ -d "assets/video-overrides/${SKIT}" ]; then
+            mkdir -p out
+            cp -v "assets/video-overrides/${SKIT}"/scene*.mp4 out/
+          fi
 
       - name: 장면별 클립 생성 (Ark Seedance / fal.ai)
         env:
@@ -27,12 +287,28 @@ jobs:
       - name: ffmpeg 설치
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
-      - name: 클립 이어붙이기
-        # concat 목록 안의 상대 경로는 목록 파일 위치 기준으로 해석되므로 out/ 안에서 실행
-        working-directory: out
+      - name: 클립 이어붙이기 (규격 정규화 + 계획 길이 트리밍)
+        # 클립별 인코딩 차이로 인한 화면 깨짐과, 클립이 계획보다 길 때 생기는
+        # 자막·음성 누적 오차를 막는다: 1280x720/24fps 통일, 화면비 유지 + 패딩,
+        # 장면 파일의 계획 길이(duration)로 정확히 자름
+        run: python3 scripts/concat_scenes.py "scripts/scenes/${SKIT}.json" out "out/${SKIT}-skit.mp4"
+
+      - name: 장면 검수용 프레임 시트 커밋 (실패해도 생성분 보존)
+        if: always()
         run: |
-          ls scene*.mp4 | sed "s/^/file '/;s/$/'/" > list.txt
-          ffmpeg -f concat -safe 0 -i list.txt -c copy "${SKIT}-skit.mp4"
+          sudo apt-get install -y ffmpeg 2>/dev/null || true
+          mkdir -p "assets/qa/${SKIT}"
+          for f in out/scene*.mp4; do
+            [ -e "$f" ] || continue
+            n=$(basename "$f" .mp4)
+            ffmpeg -v error -ss 1.5 -i "$f" -frames:v 1 -vf scale=480:-2 -q:v 5 "assets/qa/${SKIT}/${n}.jpg" -y || true
+          done
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "assets/qa/${SKIT}" || true
+          git diff --cached --quiet || git commit -m "장면 검수 프레임 (${SKIT})"
+          git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          git push origin "HEAD:${GITHUB_REF_NAME}" || true
 
       - name: 결과 영상 업로드
         if: always()
