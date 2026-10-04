@@ -19,6 +19,15 @@
     "assets/portraits/outro-host/host-knit-2.png"
    ],
    "prompt": "Use the exact face and hairstyle of the woman in the reference image (same person: chin-length straight black bob, warm friendly face). A single full-frame 16:9 cinematic photograph, NO borders, NO blurred side panels. She sits on the LEFT THIRD of the frame, framed from the waist up, body angled slightly toward the right side of the frame, looking at the camera with a confident, warm, elegant smile. Styling: glamorous yet classy and tasteful — a fitted cream knit wrap dress with a modest V-neckline that flatters her curvy feminine figure, a delicate thin gold necklace, small pearl earrings, soft refined makeup with natural red lips; high-end magazine-cover elegance, nothing revealing. Her left hand rests gracefully in her lap; the right side of the frame is open, calm space. Background: a cosy, luxurious living room at night — a tall Christmas tree with warm fairy lights and wrapped gifts on the far right, softly out of focus, warm amber bokeh; the RIGHT TWO-THIRDS of the frame stays uncluttered and softly blurred (space for on-screen buttons). 50mm lens, f/2.0, shallow depth of field, razor-sharp focus on the eyes. Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, logos or watermarks anywhere. Negative: revealing outfit, cleavage focus, lingerie, borders, pillarbox, extra people, extra fingers, deformed hands, gibberish, foreign text, deformed eyes."
+  },
+  {
+   "id": "host-endscreen-soft",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ep4-outro/host-xmas-endscreen-1.png"
+   ],
+   "prompt": "Edit the reference image: keep EVERYTHING identical — same woman, same face, same hair, same cream wrap dress, necklace, earrings, pose, hands, framing, Christmas tree, lighting and colours. Change ONLY her expression: a gentle, warm, closed-mouth smile with soft kind eyes (lips together, no teeth showing), calm and moved, as if after a touching story. Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. No text anywhere."
   }
  ]
 }
