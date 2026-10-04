@@ -220,8 +220,11 @@ def typecast_list(cfg):
             continue
         voices = data if isinstance(data, list) else (data.get("voices") or data.get("data") or [])
         print(f"[{url}] 보이스 {len(voices)}개")
-        for v in voices:
-            print("VOICE " + json.dumps(v, ensure_ascii=False)[:400])
+        os.makedirs(OUT_DIR, exist_ok=True)
+        with open(os.path.join(OUT_DIR, "typecast_voices.jsonl"), "w", encoding="utf-8") as f:
+            for v in voices:
+                print("VOICE " + json.dumps(v, ensure_ascii=False)[:400])
+                f.write(json.dumps(v, ensure_ascii=False) + "\n")  # 저장소에 커밋해 세션에서 읽는다(로그는 외부 호스트라 못 받음)
         return
     sys.exit("Typecast 보이스 목록 조회 실패")
 
