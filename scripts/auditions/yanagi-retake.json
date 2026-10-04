@@ -1,5 +1,5 @@
 {
- "_설명": "버들잎 재녹음 후보(2026-10-04): line010(18만엔 끊김)·line062(告訴의 そ 누락) 표기 변형 3종씩. 설정은 본녹음과 동일. 언어 검사+청취로 확정 후 assets/auditions/yanagi-tts/로 교체.",
+ "_설명": "버들잎 재녹음 후보(2026-10-04): line010(18만엔 끊김)·line062(告訴의 そ 누락) 표기 변형 3종씩. 설정은 본녹음과 동일. 언어 검사+청취로 확정 후 assets/auditions/yanagi-tts/로 교체. 2차(062d~f): 1차에서 そ는 복구됐으나 懲戒가 しょうかい로 들려 懲戒 표기 변형 추가.",
  "tc_model": "ssfm-v30",
  "language": "jpn",
  "tests": [
@@ -59,6 +59,36 @@
    "voice": "tc_673eb42eef5b688d8cadd086",
    "language": "jpn",
    "text": "本日付で懲戒解雇とします。ぎょうむじょうおうりょうと強要については、けいじこくそと そんがいばいしょうせいきゅうの手続きに入ります",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line062d",
+   "model": "typecast-direct",
+   "voice": "tc_673eb42eef5b688d8cadd086",
+   "language": "jpn",
+   "text": "本日付で、ちょうかいかいこ とします。業務上横領と強要については、けいじこくそと損害賠償請求の手続きに入ります",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line062e",
+   "model": "typecast-direct",
+   "voice": "tc_673eb42eef5b688d8cadd086",
+   "language": "jpn",
+   "text": "本日付で懲戒解雇とします。業務上横領と強要については、けいじ こくそと損害賠償請求の手続きに入ります",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line062f",
+   "model": "typecast-direct",
+   "voice": "tc_673eb42eef5b688d8cadd086",
+   "language": "jpn",
+   "text": "本日付でちょうかいかいことします。業務上横領と強要については、刑事 こくそと損害賠償請求の手続きに入ります",
    "emotion_preset": "tonedown",
    "emotion_intensity": 1.0,
    "tempo": 1.0
