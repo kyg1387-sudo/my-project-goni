@@ -75,6 +75,15 @@
     "assets/portraits/ep4-cast/cells/mom-front.png"
    ],
    "prompt": "Use the exact face of the woman in the reference image (same person, same face shape, same hair). One single image: a clean 1x3 row of three head-and-shoulders portraits of that SAME woman separated by thin white gutters on a pure white background, no header, no captions. Left = tired, guarded neutral expression, eyes slightly averted. Middle = soft grateful smile with wet glistening eyes. Right = tearful, lips trembling, tears on the cheeks. Locked in all three: long straight black hair pulled back into a low ponytail with the forehead visible, NO bangs, NO glasses, smooth skin without freckles, no makeup, plain beige long padded coat collar over a plain grey knit sweater. Photorealistic, soft even studio lighting. Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: glasses, bangs, freckles, different person, gibberish, foreign text, bad anatomy, deformed eyes."
+  },
+  {
+   "id": "loc-mgmt-office-v2",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ep4-cast/cells/loc-mgmt-office-key1-clean.png"
+   ],
+   "prompt": "Use the reference image only for the layout of the space (door on the left, reception counter with a window in the centre, desk with a computer monitor on the right). Redraw it as a clean, natural, photorealistic location photograph: the management office of a Japanese apartment building (mansion kanrinin-shitsu), seen from the visitor side at eye level, 35mm lens, f/4. In the centre a small sliding reception window (uketsuke madoguchi) with perfectly CLEAR transparent glass in a silver aluminium frame; through the glass a tidy small office: a desk, an office chair, a small potted plant, a closed grey cabinet, and completely bare plain cream walls with nothing on them. A small silver service bell sits on the speckled stone counter. Directly above the window, a plain blank brown wooden nameplate with absolutely no writing on it. The door on the left is a plain grey door with no signs and no stickers. Evening, warm fluorescent ceiling light, clean speckled tile floor, consistent natural lighting, no people. Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers, notices, posters, papers on walls, signs, logos or watermarks anywhere. Negative: posters, notice papers, calendars, frosted glass, blur, mosaic, smudges, patches, gibberish, foreign text, people."
   }
  ]
 }
