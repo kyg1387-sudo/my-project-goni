@@ -45,6 +45,9 @@ def load_scenes(path):
     with open(path, encoding="utf-8") as f:
         data = json.load(f)
     style = data.get("style", "").strip()
+    global FAL_I2V_MODEL, I2V_RESOLUTION
+    FAL_I2V_MODEL = data.get("i2v_model") or FAL_I2V_MODEL  # 장면 파일에서 i2v 모델·해상도 지정(예: seedance pro 1080p)
+    I2V_RESOLUTION = data.get("i2v_resolution") or I2V_RESOLUTION
     default_dur = int(data.get("duration", 5))
     durations = data.get("durations")
     if durations is not None and len(durations) != len(data["scenes"]):
@@ -200,13 +203,15 @@ def fal_generate(key, index, prompt, duration, ratio, ref_urls=None):
 
 
 FAL_I2V_MODEL = os.environ.get("FAL_I2V_MODEL", "fal-ai/bytedance/seedance/v1/lite/image-to-video")
+I2V_RESOLUTION = "720p"
 
 
 def fal_generate_i2v(key, index, prompt, duration, ratio, image_url):
     """승인 키프레임 1장을 첫 프레임으로 고정해 영상을 만든다(규격서 PHASE 5: Text-to-Video 금지).
     모델별 파라미터 차이를 흡수하기 위해 페이로드를 순서대로 시도한다."""
     headers = {"Authorization": f"Key {key}"}
-    base = {"prompt": prompt, "image_url": image_url, "duration": str(duration), "resolution": "720p"}
+    base = {"prompt": prompt, "image_url": image_url, "duration": str(duration), "resolution": I2V_RESOLUTION}
+    print(f"  [fal i2v] {FAL_I2V_MODEL} {I2V_RESOLUTION}")
     payloads = [dict(base, aspect_ratio=ratio), base,
                 {"prompt": prompt, "image_url": image_url, "duration": str(duration)}]
     for payload in payloads:
