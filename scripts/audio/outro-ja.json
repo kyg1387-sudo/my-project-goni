@@ -25,7 +25,8 @@
   },
   "narration_styles": [],
   "silent_styles": [
-    "Caption"
+    "Caption",
+    "HostSub"
   ],
   "lipsync_models": [
     "fal-ai/sync-lipsync",
@@ -64,5 +65,6 @@
   ],
   "section_ends": [
     1
-  ]
+  ],
+  "_자막수정": "2026-10-04: 일본어 자막 한 줄 화면 밖 잘림 수정 — 문장별 3줄 분할(\\N 수동 줄바꿈). 첫 문장만 Host(TTS line001 앵커), 나머지는 화면 전용 HostSub(silent). 음성·립싱크 캐시(burn run 37077395875) 재사용."
 }

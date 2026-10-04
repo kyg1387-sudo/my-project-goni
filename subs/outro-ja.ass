@@ -11,9 +11,12 @@ Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour,
 Style: Naration,Noto Sans CJK JP,52,&H00DDDDDD,&H000000FF,&H00000000,&H80000000,-1,-1,0,0,100,100,0,0,1,5,2,2,200,200,80,1
 Style: Caption,Noto Serif CJK JP,56,&H00FFF3C4,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,6,2,5,200,200,80,1
 Style: Host,Noto Sans CJK JP,60,&H00FFFFFF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,200,200,80,1
+Style: HostSub,Noto Sans CJK JP,60,&H00FFFFFF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,200,200,80,1
 Style: Grandma,Noto Sans CJK JP,60,&H0096C8FF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,200,200,80,1
 Style: Choi,Noto Sans CJK JP,60,&H0064C8FF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,200,200,80,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.30,0:00:10.51,Host,ナレーター,0,0,0,,最後までご覧いただき、ありがとうございました。よろしければ、チャンネル登録と高評価で応援してください。美談ものがたりでした。
+Dialogue: 0,0:00:00.30,0:00:03.60,Host,ナレーター,0,0,0,,最後までご覧いただき、\Nありがとうございました。
+Dialogue: 0,0:00:03.90,0:00:08.40,HostSub,,0,0,0,,よろしければ、チャンネル登録と\N高評価で応援してください。
+Dialogue: 0,0:00:08.60,0:00:10.51,HostSub,,0,0,0,,美談ものがたりでした。
