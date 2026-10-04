@@ -1,0 +1,330 @@
+{
+ "_설명": "EP4 일본어 기준판 장면 설정(build_ep4_phase3.py 생성). 키프레임(PHASE 4) 승인 후 i2v. 재사용·정지 푸시인 컷은 video-overrides로 대체.",
+ "ratio": "16:9",
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "durations": [
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  10,
+  5,
+  10,
+  5,
+  10,
+  10,
+  5,
+  10,
+  5,
+  10,
+  10,
+  5,
+  10,
+  10,
+  10,
+  10,
+  5,
+  5,
+  10,
+  5,
+  10,
+  5,
+  10,
+  10,
+  5,
+  10,
+  10,
+  5,
+  10,
+  10,
+  5,
+  10,
+  10,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  10,
+  5
+ ],
+ "scenes": [
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: . Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 10
+  },
+  {
+   "prompt": "Extremely subtle slow push-in (zoom factor 1.05). Motion: Still keyframe, slow push-in only (local, no i2v). No lip movement.",
+   "duration": 5
+  },
+  {
+   "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged. Camera completely locked off; the blank surface for composited Japanese text must not move or warp.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S03-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S04-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S05-1.png"
+  },
+  {
+   "prompt": "Extremely subtle slow push-in (zoom factor 1.05). Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S06-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged. Camera completely locked off; the blank surface for composited Japanese text must not move or warp.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S07-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: curious, innocent. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S08-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Speaking: natural lip movement, single slow eye blink, micro chest breathing, maximum 5-degree head tilt, no head turn, no hand gestures. Lips close and stay still after the line ends.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S09-1.png"
+  },
+  {
+   "prompt": "Extremely subtle slow push-in (zoom factor 1.05). Motion: Still keyframe, slow push-in only (local, no i2v). No lip movement.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S10-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Speaking: natural lip movement, single slow eye blink, micro chest breathing, maximum 5-degree head tilt, no head turn, no hand gestures. Lips close and stay still after the line ends.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S11-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: cut-away. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S12-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: silent watching. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S13-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: exhaustion. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S14-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: silent insert. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S14b-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S15-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: secret, careful. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S16-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: tender attention. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S17-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged. Camera completely locked off; the blank surface for composited Japanese text must not move or warp.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S18-1.png"
+  },
+  {
+   "prompt": "Extremely subtle slow push-in (zoom factor 1.05). Motion: Still keyframe, slow push-in only (local, no i2v). No lip movement.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S19-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: meaningful. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S20-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S21-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged. Camera completely locked off; the blank surface for composited Japanese text must not move or warp.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S22-1.png"
+  },
+  {
+   "prompt": "Extremely subtle slow push-in (zoom factor 1.05). Motion: Still keyframe, slow push-in only (local, no i2v). No lip movement.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S23-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: warm recognition. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S24-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: respectful. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S25-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Speaking: natural lip movement, single slow eye blink, micro chest breathing, maximum 5-degree head tilt, no head turn, no hand gestures. Lips close and stay still after the line ends.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S26-1.png"
+  },
+  {
+   "prompt": "Extremely subtle slow push-in (zoom factor 1.05). Motion: Still keyframe, slow push-in only (local, no i2v). No lip movement.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S27-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Speaking: natural lip movement, single slow eye blink, micro chest breathing, maximum 5-degree head tilt, no head turn, no hand gestures. Lips close and stay still after the line ends.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S28-1.png"
+  },
+  {
+   "prompt": "Extremely subtle slow push-in (zoom factor 1.05). Motion: Still keyframe, slow push-in only (local, no i2v). No lip movement.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S29-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Speaking: natural lip movement, single slow eye blink, micro chest breathing, maximum 5-degree head tilt, no head turn, no hand gestures. Lips close and stay still after the line ends.",
+   "duration": 10
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: modest. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S31-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: reverent. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S32-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: longing. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S33-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: moved. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S34-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S35-1.png"
+  },
+  {
+   "prompt": "Very slow push forward following the subject (zoom factor 1.08), no shake. Motion: Subtle natural motion only: hushed determination. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S36-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: silent gift. Micro movements, no fast motion, no new people, props stay rigid and unchanged. Camera completely locked off; the blank surface for composited Japanese text must not move or warp.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S37-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged. Camera completely locked off; the blank surface for composited Japanese text must not move or warp.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S38-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S39-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S40-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: wonder / disbelief. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S41-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged. Camera completely locked off; the blank surface for composited Japanese text must not move or warp.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S42-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: silent discretion. Micro movements, no fast motion, no new people, props stay rigid and unchanged. Camera completely locked off; the blank surface for composited Japanese text must not move or warp.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S43-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: revelation. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S44-1.png"
+  },
+  {
+   "prompt": "Extremely subtle slow push-in (zoom factor 1.05). Motion: Still keyframe, slow push-in only (local, no i2v). No lip movement.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S45-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: urgency. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S46-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Speaking: natural lip movement, single slow eye blink, micro chest breathing, maximum 5-degree head tilt, no head turn, no hand gestures. Lips close and stay still after the line ends.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S47-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: deep bow. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S48-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: shy kindness. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S49-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Speaking: natural lip movement, single slow eye blink, micro chest breathing, maximum 5-degree head tilt, no head turn, no hand gestures. Lips close and stay still after the line ends.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S50-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Subtle natural motion only: action instead of words. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S51-1.png"
+  },
+  {
+   "prompt": "Very slow pull-back (local zoom-out 1.08 to 1.00). Motion: Subtle natural motion only: warm afterglow. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
+   "duration": 10,
+   "image": "assets/portraits/ep4-keyframes/S52-1.png"
+  },
+  {
+   "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged.",
+   "duration": 5,
+   "image": "assets/portraits/ep4-keyframes/S53-1.png"
+  }
+ ]
+}
