@@ -1,6 +1,6 @@
 # EP4 「김씨의 크리스마스」 — PHASE 2 기준 마스터 에셋 고정
 
-규격서 PHASE 2 산출물. 작성 2026-10-04. 상태: **Kill Gate 검수 완료 — 사용자 승인 대기**
+규격서 PHASE 2 산출물. 작성 2026-10-04. 상태: **Lock — 사용자 승인 2026-10-04(「승인」), 관리사무소는 v2-1 최종(사용자 선택)**
 스펙 `scripts/portraits/ep4-cast.json`(generate-video.yml portraits_spec=ep4-cast), 출력 `assets/portraits/ep4-cast/`, 셀 `assets/portraits/ep4-cast/cells/`(분할기 `scripts/split_sheet_cells.py`, 무과금).
 검수용 인물 셀 모음: `docs/EP4-PHASE2-인물셀-검수.png`.
 
@@ -29,7 +29,7 @@
 |---|---|---|
 | 18층 복도 `loc-corridor-18f` | 합격 | 호수 없음. 경미: 도어록 키패드 무늬 → 얕은 심도로 흐림 |
 | 1801호 거실 `loc-apt-1801` | 합격 | 경미: 낮 셀 좌상단 액자 → 그 구석 프레임 밖 |
-| 관리사무소 `loc-mgmt-office` | **합격(재생성)** | 2회 생성 모두 벽 게시물 외계어, 로컬 지우기본은 부자연스러움(사용자 지적) → 지우기본을 배치 참조로 일본 맨션 관리인실 스타일 16:9 재생성 2안: v2-1 유리 너머 달력·게시물 글자 불합격, **v2-2 합격**(투명 유리, 안쪽 맨 벽, 호출 벨, 무지 나무 명판 — 「管理事務所」 합성 자리) → `cells/loc-mgmt-office-counter.png`. CCTV 모니터 클로즈업은 `cells/loc-mgmt-office-key2.png` 구도 참조(모니터 상표 글자는 키프레임에서 제거 지시) |
+| 관리사무소 `loc-mgmt-office` | **합격(재생성)** | 2회 생성 모두 벽 게시물 외계어, 로컬 지우기본은 부자연스러움(사용자 지적) → 지우기본을 배치 참조로 일본 맨션 관리인실 스타일 16:9 재생성 2안: v2-1 유리 너머 달력·게시물 글자 불합격, v2-2 합격(투명 유리·맨 벽). **2026-10-04 사용자 선택으로 v2-1 최종 채택**: 유리 너머 외계어를 실제 일본어로 교체(「12月」 달력, 「お知らせ」 연말연시 쓰레기 수거 안내 — 화분 잎은 원본 유지), 모니터 뒷면 상표 글자 제거(로컬, `scripts/ep4_office_ja_signs.py`, 비교 `docs/EP4-관리사무소-v2-1-일본어교체.png`) → `cells/loc-mgmt-office-counter.png`. 무지 갈색 명판은 「管理事務所」 합성 자리. v2-2는 `cells/_unused/loc-mgmt-office-counter-v2-2.png`. 키프레임에서 유리 너머는 얕은 심도로 흐리고, 다시 생긴 글자는 Kill Gate에서 같은 방식으로 교체. CCTV 모니터 클로즈업은 `cells/loc-mgmt-office-key2.png` 구도 참조(모니터 상표 글자는 키프레임에서 제거 지시) |
 | 계단실·우편함 `loc-stairwell` | 합격 | |
 | 겨울 경비실 `loc-guard-booth-winter` | 합격(조합) | 2차: 낮 셀 컬러 복구. 사진 안 라벨 글자는 셀 하단 10% 크롭으로 제거. 밤 난로 컷은 1차(`cells/loc-guard-booth-winter-v1-key1/key2.png`) 사용 |
 | 겨울 정문 `loc-apt-gate-winter` | 합격 | key1(성에 낀 경비실 창)·key2(새벽 단지) 활용 |
