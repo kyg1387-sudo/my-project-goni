@@ -158,6 +158,11 @@ def build_prompt(sc, preset, negative, plain):
 
 
 EDIT_FROM = {
+    # 인물 일관성(사용자 지시 2026-10-04 "나오는 사람 일관성"): S45 엄마 얼굴이 S11·S47보다 둥글고 어려 보임 → S47 얼굴로 맞춤
+    "S45": (["_v1/S45", "S47"], "Edit reference image 1: keep EVERYTHING identical — framing, office background, grey sweater, hair "
+                   "tied back, monitor glow, lighting, colours and the tearful expression with welling tears. Replace ONLY the woman's facial "
+                   "identity with the exact same woman as in reference image 2 — same face shape (slimmer, longer face, defined chin), eyes, "
+                   "eyebrows, nose, lips and age. She must clearly be the same person as reference image 2. No text anywhere."),
     "S27": ("S29", "Edit the reference image: keep EVERYTHING identical — same woman, same face, glasses, cardigan, framing, glass window, "
                    "office background, lighting and colours. Change ONLY her expression to restrained surprise (about 50%): eyebrows "
                    "slightly raised, eyes a little wider, looking up just past the camera, lips closed or barely parted. No text anywhere."),
@@ -178,7 +183,8 @@ def main():
             continue
         if sc["id"] in EDIT_FROM:
             src, instr = EDIT_FROM[sc["id"]]
-            prompt, files = instr, [f"assets/portraits/ep4-keyframes/{src}-1.png"]
+            srcs = src if isinstance(src, list) else [src]
+            prompt, files = instr, [f"assets/portraits/ep4-keyframes/{x}-1.png" for x in srcs]
         else:
             prompt, files = build_prompt(sc, sb["preset"], sb["negative"], sb["plain_props"])
         missing += [f for f in files if not os.path.exists(os.path.join(ROOT, f))]
