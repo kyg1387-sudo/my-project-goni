@@ -1,0 +1,57 @@
+{
+ "_설명": "EP4 일본어 최종본 보정: line003(1801号室 → 1001로 들림) Typecast 3안, line020 김씨(傷つき → くじつき로 들림) EL 3안. 언어 검사 후 채택.",
+ "tc_model": "ssfm-v30",
+ "tests": [
+  {
+   "id": "line003_A",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "そして、千八百一号室のドアには、赤い紙が一枚、貼られていました。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line003_B",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "そして、1801号室のドアには、赤い紙が一枚、貼られていました。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line003_C",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "そして、せんはっぴゃく、いちごうしつのドアには、赤い紙が一枚、貼られていました。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line020_A",
+   "model": "elevenlabs-direct",
+   "voice": "8vwSOQHQApfVx993mKf9",
+   "el_model": "eleven_multilingual_v2",
+   "text": "あそこのお母さんが…きずつきますから。"
+  },
+  {
+   "id": "line020_B",
+   "model": "elevenlabs-direct",
+   "voice": "8vwSOQHQApfVx993mKf9",
+   "el_model": "eleven_multilingual_v2",
+   "text": "あそこの、お母さんが…き、ず、つきますから。"
+  },
+  {
+   "id": "line020_C",
+   "model": "elevenlabs-direct",
+   "voice": "8vwSOQHQApfVx993mKf9",
+   "el_model": "eleven_multilingual_v2",
+   "text": "あそこのお母さんが…傷つき、ますから。"
+  }
+ ]
+}
