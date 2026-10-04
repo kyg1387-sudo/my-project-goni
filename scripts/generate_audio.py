@@ -385,14 +385,18 @@ def omnihuman_scene(cfg, key, scene_path, audio_path, index):
     a_url = fal_upload(audio_path, key)
     models = cfg.get("omnihuman_models",
                      ["fal-ai/bytedance/omnihuman/v1.5", "fal-ai/bytedance/omnihuman"])
+    # 장면별 동작 지시(EP4 실증: S28 몸 기울기, S47 손으로 입 가림) — 모델이 prompt를 받지 않으면 빼고 재시도
+    prompt = (cfg.get("omnihuman_prompts") or {}).get(str(index))
     for model in models:
-        payload = {"image_url": img_url, "audio_url": a_url}
-        result = fal_run(model, payload, key, f"omnihuman {index:02d} ({model})",
-                         timeout_s=1800)
-        if result:
-            url = find_video_url(result)
-            if url and download_retry(url, path):
-                return path
+        payloads = ([{"image_url": img_url, "audio_url": a_url, "prompt": prompt}] if prompt else []) + \
+                   [{"image_url": img_url, "audio_url": a_url}]
+        for payload in payloads:
+            result = fal_run(model, payload, key, f"omnihuman {index:02d} ({model})",
+                             timeout_s=1800)
+            if result:
+                url = find_video_url(result)
+                if url and download_retry(url, path):
+                    return path
     return None
 
 

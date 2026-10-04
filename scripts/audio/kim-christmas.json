@@ -152,6 +152,10 @@
   "fal-ai/bytedance/omnihuman/v1.5",
   "fal-ai/bytedance/omnihuman"
  ],
+ "omnihuman_prompts": {
+  "29": "He speaks quietly with his head slightly bowed. Body, shoulders and head stay centered and still, facing the camera; no leaning to either side, no swaying. Hands stay out of frame.",
+  "48": "She speaks through tears, chin trembling slightly. Both hands stay down out of frame the whole time; she never touches or covers her mouth or face. Head stays facing the camera."
+ },
  "lipsync_skip_scenes": [
   19
  ],

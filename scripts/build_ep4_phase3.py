@@ -539,6 +539,11 @@ def main():
         "transitions": transitions,
         "omnihuman_scenes": [n(s) for s in ("S09", "S11", "S26", "S28", "S30", "S47", "S50")],
         "omnihuman_models": ["fal-ai/bytedance/omnihuman/v1.5", "fal-ai/bytedance/omnihuman"],
+        # 조립 검수 조건부 → 재생성(사용자 승인 2026-10-04): 장면별 동작 지시
+        "omnihuman_prompts": {
+            str(n("S28")): "He speaks quietly with his head slightly bowed. Body, shoulders and head stay centered and still, facing the camera; no leaning to either side, no swaying. Hands stay out of frame.",
+            str(n("S47")): "She speaks through tears, chin trembling slightly. Both hands stay down out of frame the whole time; she never touches or covers her mouth or face. Head stays facing the camera.",
+        },
         "lipsync_skip_scenes": [n("S18")],
         "lipsync_models": ["fal-ai/sync-lipsync", "fal-ai/latentsync"],
         "ambience_model": "fal-ai/mmaudio-v2", "ambience_volume": 0.35,
