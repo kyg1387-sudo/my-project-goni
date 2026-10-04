@@ -28,6 +28,24 @@
     "assets/portraits/ep4-outro/host-xmas-endscreen-1.png"
    ],
    "prompt": "Edit the reference image: keep EVERYTHING identical — same woman, same face, same hair, same cream wrap dress, necklace, earrings, pose, hands, framing, Christmas tree, lighting and colours. Change ONLY her expression: a gentle, warm, closed-mouth smile with soft kind eyes (lips together, no teeth showing), calm and moved, as if after a touching story. Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. No text anywhere."
+  },
+  {
+   "id": "host-cu",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ep4-outro/host-endscreen-soft-1.png"
+   ],
+   "prompt": "Same woman as the reference image — identical face, eyes, nose, lips, jawline, chin-length straight black bob with the same parting, pearl earrings, thin gold necklace and cream knit wrap dress. A single full-frame 16:9 cinematic photograph, NO borders. Re-frame as a CHEST-UP CLOSE-UP: she is seated upright on the LEFT THIRD of the frame, shoulders and head square to the camera (frontal, head straight, not tilted), her face large and sharp (face about one third of the frame height), looking directly into the lens with a gentle warm closed-mouth smile, lips together. No hands in frame. The right two-thirds of the frame is the same cosy living room softly out of focus with the Christmas tree's warm fairy-light bokeh. 85mm lens, f/1.8, razor-sharp focus on the irises. Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, logos or watermarks anywhere. Negative: head tilt, turned head, hands, extra people, different face, borders, gibberish, deformed eyes."
+  },
+  {
+   "id": "host-waist",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ep4-outro/host-endscreen-soft-1.png"
+   ],
+   "prompt": "Same woman as the reference image — identical face, eyes, nose, lips, jawline, chin-length straight black bob with the same parting, pearl earrings, thin gold necklace and cream knit wrap dress. A single full-frame 16:9 cinematic photograph, NO borders. Framed from the WAIST UP: she sits upright on the LEFT THIRD of the frame, body and head facing the camera (frontal, head straight), gentle warm closed-mouth smile, both hands resting relaxed together in her lap, each hand natural with five fingers. The right two-thirds of the frame stays uncluttered: the cosy living room and tall Christmas tree with warm fairy lights softly out of focus (space for on-screen end-screen elements). 50mm lens, f/2.0, razor-sharp focus on the eyes. Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, logos or watermarks anywhere. Negative: head tilt, turned head, extra fingers, deformed hands, extra people, different face, borders, gibberish, deformed eyes."
   }
  ]
 }
