@@ -1,0 +1,15 @@
+{
+ "_설명": "EP4 일본어 아웃트로 진행자 16:9 키프레임(EP3 진행자 얼굴 참조, 크리스마스 거실). 2안 생성 후 Kill Gate·사용자 선택. OmniHuman 입력용.",
+ "_style_preset": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting",
+ "characters": [
+  {
+   "id": "host-xmas-169",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/outro-host/host-knit-2.png"
+   ],
+   "prompt": "Use the exact face and hairstyle of the woman in the reference image (same person: chin-length straight black bob, warm friendly face). A single full-frame 16:9 cinematic photograph, NO borders, NO blurred side panels, NO split screen. She is seated, framed from the chest up in the centre of the frame, facing the camera with a gentle warm closed-mouth smile, wearing the same cream V-neck knit sweater. Both hands are out of frame. Background: a cosy warm living room at night, softly out of focus — a small Christmas tree with tiny warm fairy lights on the right side, a floor lamp, a beige sofa, warm amber bokeh. 85mm lens, f/2.0, shallow depth of field, razor-sharp focus on the eyes. Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, logos or watermarks anywhere. Negative: borders, letterbox, pillarbox, blurred side panels, extra people, hands near face, gibberish, foreign text, deformed eyes, extra fingers."
+  }
+ ]
+}
