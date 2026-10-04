@@ -1,0 +1,13 @@
+{
+ "_설명": "EP4 아웃트로 마지막 손 흔들기(사용자 요청 2026-10-04). 시작 프레임 = 아웃트로 v2 4구간(허리 위) OmniHuman 마지막 프레임 → 이어 붙여도 화면이 튀지 않게. 5초 생성 후 앞 2.4초만 사용, 손가락 Kill Gate(0.25초 간격) 불합격 시 1회 재생성, 그래도 불합격이면 미소+목례 정지로 폴백.",
+ "ratio": "16:9",
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, face, hair, wardrobe and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no new people entering",
+ "durations": [5],
+ "scenes": [
+  {
+   "prompt": "Static, locked off camera. The woman keeps her warm closed-mouth smile and looks into the lens; she calmly raises her right hand to chest height, palm facing the camera with five relaxed fingers, and gently waves goodbye twice with a small side-to-side motion, then holds the smile. Head stays straight, body stays seated, no head turn, no talking.",
+   "image": "assets/portraits/outro-wave-start.png",
+   "duration": 5
+  }
+ ]
+}
