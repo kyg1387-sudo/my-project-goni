@@ -76,6 +76,7 @@ EP3 실측: 한국어판 약 37달러(44장면), 일본어 더빙판 약 5달러
   ElevenLabs API 키에 voices_read 권한 없음(도서관 검색·이름 조회 불가, ID 직접 지정은 가능).
 - EP4 진행(2026-10-04): PHASE 2 Lock(사용자 「승인」, 관리사무소 v2-1 일본어 교체본 최종). PHASE 3 초안 `docs/EP4-PHASE3-샷리스트.md`(생성기 `scripts/build_ep4_phase3.py`, 54컷·05:01.20·디졸브 10·카드 8). 아웃트로 `outro-ja-ep4`(25초, 진행자 Typecast `tc_629fe972013e90b4db213fd8`, 버튼·로고 `scripts/outro_cta_overlay.py`): generate run 37175515279 → burn run 37175761153(OmniHuman 25초 1회 과금) → **불합격**: 연속 25초 생성에서 얼굴이 점점 달라지고 고개 기울기 큼(`deliveries/outro-ja-ep4-skit-final.mp4`). 교훈: OmniHuman은 7초 이하로 끊고, 가슴 위 CU 키프레임(제6장 1)을 아웃트로에도 적용.
 - EP4 아웃트로 v2(2026-10-04, 사용자 「재제작 + 빠이빠이 승인」): 28.0초 = 0~9.75 트리 불빛 몽타주(인사·여운 멘트 목소리만) → 9.75~17.12 진행자 CU 구독 요청(OmniHuman, 「高評価」12.2s·「チャンネル登録」13.0s 버튼, 15.9s 퇴장) → 17.12~24.10 허리 위 다음 화 예고·인사(OmniHuman) → 24.10~28.0 손 흔들기(i2v, 손가락 Kill Gate 합격). 좌상단 로고 「美談ものがたり」. 유튜브 최종 화면 요소 자리 18~28s(오른쪽 2/3). v2 1차에서 1구간(3.5s) OmniHuman도 1.5s부터 얼굴 변화 → 몽타주로 교체(무과금). 최종본 `assets/auditions/outro-host/OUTRO-SCENE-ja-ep4.mp4`(버튼·로고 합성, `scripts/outro_cta_overlay.py`), 원본 burn run 37179075281(캐시 재사용, 무과금).
+- EP4 아웃트로 도입부 교체 결정(사용자 A안, 2026-10-04): 0~9.75s 트리 몽타주 → 본편 하이라이트 4컷(S38·S41·S50·S52, 디졸브)으로 PHASE 5 후 교체(무과금, `scripts/scenes/outro-ja-ep4.json` `_교체예정`).
 - EP4 품질 파일럿 키프레임(2026-10-04): S36·S41(레터박스 크롭)·S50(재생성, 벽 메모지 지움) Kill Gate 합격 → `assets/portraits/ep4-keyframes/`. 다음: i2v lite vs pro 비교·S50 OmniHuman(짧게).
 - EP4 대본 승인일 / 시트 run ID / 키프레임 run ID / 클립 run ID / burn run ID: ______
 - 요양보호사 편 진단서 위치: ______
