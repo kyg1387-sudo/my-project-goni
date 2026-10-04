@@ -95,7 +95,9 @@
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: curious, innocent. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 5,
-   "image": "assets/portraits/ep4-keyframes/S08-1.png"
+   "image": "assets/portraits/ep4-keyframes/S08-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Speaking: natural lip movement, single slow eye blink, micro chest breathing, maximum 5-degree head tilt, no head turn, no hand gestures. Lips close and stay still after the line ends.",
@@ -115,22 +117,30 @@
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: cut-away. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 5,
-   "image": "assets/portraits/ep4-keyframes/S12-1.png"
+   "image": "assets/portraits/ep4-keyframes/S12-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: silent watching. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 10,
-   "image": "assets/portraits/ep4-keyframes/S13-1.png"
+   "image": "assets/portraits/ep4-keyframes/S13-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: exhaustion. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 10,
-   "image": "assets/portraits/ep4-keyframes/S14-1.png"
+   "image": "assets/portraits/ep4-keyframes/S14-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: silent insert. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 5,
-   "image": "assets/portraits/ep4-keyframes/S14b-1.png"
+   "image": "assets/portraits/ep4-keyframes/S14b-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged.",
@@ -140,12 +150,16 @@
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: secret, careful. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 5,
-   "image": "assets/portraits/ep4-keyframes/S16-1.png"
+   "image": "assets/portraits/ep4-keyframes/S16-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: tender attention. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 10,
-   "image": "assets/portraits/ep4-keyframes/S17-1.png"
+   "image": "assets/portraits/ep4-keyframes/S17-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged. Camera completely locked off; the blank surface for composited Japanese text must not move or warp.",
@@ -160,7 +174,9 @@
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: meaningful. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 10,
-   "image": "assets/portraits/ep4-keyframes/S20-1.png"
+   "image": "assets/portraits/ep4-keyframes/S20-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged.",
@@ -180,12 +196,16 @@
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: warm recognition. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 5,
-   "image": "assets/portraits/ep4-keyframes/S24-1.png"
+   "image": "assets/portraits/ep4-keyframes/S24-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: respectful. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 5,
-   "image": "assets/portraits/ep4-keyframes/S25-1.png"
+   "image": "assets/portraits/ep4-keyframes/S25-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Speaking: natural lip movement, single slow eye blink, micro chest breathing, maximum 5-degree head tilt, no head turn, no hand gestures. Lips close and stay still after the line ends.",
@@ -214,22 +234,30 @@
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: modest. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 10,
-   "image": "assets/portraits/ep4-keyframes/S31-1.png"
+   "image": "assets/portraits/ep4-keyframes/S31-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: reverent. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 5,
-   "image": "assets/portraits/ep4-keyframes/S32-1.png"
+   "image": "assets/portraits/ep4-keyframes/S32-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: longing. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 10,
-   "image": "assets/portraits/ep4-keyframes/S33-1.png"
+   "image": "assets/portraits/ep4-keyframes/S33-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: moved. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 10,
-   "image": "assets/portraits/ep4-keyframes/S34-1.png"
+   "image": "assets/portraits/ep4-keyframes/S34-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged.",
@@ -239,12 +267,16 @@
   {
    "prompt": "Very slow push forward following the subject (zoom factor 1.08), no shake. Motion: Subtle natural motion only: hushed determination. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 10,
-   "image": "assets/portraits/ep4-keyframes/S36-1.png"
+   "image": "assets/portraits/ep4-keyframes/S36-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: silent gift. Micro movements, no fast motion, no new people, props stay rigid and unchanged. Camera completely locked off; the blank surface for composited Japanese text must not move or warp.",
    "duration": 10,
-   "image": "assets/portraits/ep4-keyframes/S37-1.png"
+   "image": "assets/portraits/ep4-keyframes/S37-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged. Camera completely locked off; the blank surface for composited Japanese text must not move or warp.",
@@ -264,7 +296,9 @@
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: wonder / disbelief. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 5,
-   "image": "assets/portraits/ep4-keyframes/S41-1.png"
+   "image": "assets/portraits/ep4-keyframes/S41-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Almost still: faint ambient motion only (light flicker, drifting snow or steam). Objects stay rigid and unchanged. Camera completely locked off; the blank surface for composited Japanese text must not move or warp.",
@@ -274,7 +308,9 @@
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: silent discretion. Micro movements, no fast motion, no new people, props stay rigid and unchanged. Camera completely locked off; the blank surface for composited Japanese text must not move or warp.",
    "duration": 10,
-   "image": "assets/portraits/ep4-keyframes/S43-1.png"
+   "image": "assets/portraits/ep4-keyframes/S43-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: revelation. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
@@ -289,7 +325,9 @@
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: urgency. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 5,
-   "image": "assets/portraits/ep4-keyframes/S46-1.png"
+   "image": "assets/portraits/ep4-keyframes/S46-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Speaking: natural lip movement, single slow eye blink, micro chest breathing, maximum 5-degree head tilt, no head turn, no hand gestures. Lips close and stay still after the line ends.",
@@ -299,12 +337,16 @@
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: deep bow. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 5,
-   "image": "assets/portraits/ep4-keyframes/S48-1.png"
+   "image": "assets/portraits/ep4-keyframes/S48-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: shy kindness. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 5,
-   "image": "assets/portraits/ep4-keyframes/S49-1.png"
+   "image": "assets/portraits/ep4-keyframes/S49-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Static, locked off. Motion: Speaking: natural lip movement, single slow eye blink, micro chest breathing, maximum 5-degree head tilt, no head turn, no hand gestures. Lips close and stay still after the line ends.",
@@ -314,7 +356,9 @@
   {
    "prompt": "Static, locked off. Motion: Subtle natural motion only: action instead of words. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",
    "duration": 5,
-   "image": "assets/portraits/ep4-keyframes/S51-1.png"
+   "image": "assets/portraits/ep4-keyframes/S51-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "Very slow pull-back (local zoom-out 1.08 to 1.00). Motion: Subtle natural motion only: warm afterglow. Micro movements, no fast motion, no new people, props stay rigid and unchanged.",

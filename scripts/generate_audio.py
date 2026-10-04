@@ -344,6 +344,15 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
     subprocess.run(cmd, check=True)
 
 
+def norm_filter(cfg):
+    """장면 정규화 필터 앞부분. cfg output_size [W,H](기본 1280x720), fit "pad"(기본, 화면비 유지+패딩) 또는
+    "crop"(가득 채우고 넘치는 몇 픽셀만 잘라냄 — 1248x704·1920x1088 생성물에 검은 테가 생기지 않게)."""
+    w, h = (cfg.get("output_size") or [1280, 720])
+    if cfg.get("fit") == "crop":
+        return f"scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},fps=24,setsar=1,"
+    return f"scale={w}:{h}:force_original_aspect_ratio=decrease,pad={w}:{h}:(ow-iw)/2:(oh-ih)/2,fps=24,setsar=1,"
+
+
 # ---------- 립싱크 ----------
 
 def omnihuman_scene(cfg, key, scene_path, audio_path, index):
@@ -542,8 +551,7 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
     for k in range(len(final_scenes)):
         d = durations[k]
         # tpad로 짧은 클립은 마지막 프레임을 늘리고, trim으로 계획 길이에 정확히 맞춘다
-        parts.append(f"[{k}:v]scale=1280:720:force_original_aspect_ratio=decrease,"
-                     f"pad=1280:720:(ow-iw)/2:(oh-ih)/2,fps=24,setsar=1,"
+        parts.append(f"[{k}:v]{norm_filter(cfg)}"
                      f"tpad=stop_mode=clone:stop_duration=15,trim=duration={d:.3f},"
                      f"setpts=PTS-STARTPTS[v{k}]")
     if any(overlaps):
@@ -668,8 +676,7 @@ def main():
                     sys.exit(f"[remix patch {i:02d}] omnihuman 생성 실패")
                 patched = os.path.join(WORK_DIR, f"patched{i:02d}.mp4")
                 subprocess.run(["ffmpeg", "-y", "-i", clip, "-vf",
-                                (f"scale=1280:720:force_original_aspect_ratio=decrease,"
-                                 f"pad=1280:720:(ow-iw)/2:(oh-ih)/2,fps=24,setsar=1,"
+                                (f"{norm_filter(cfg)}"
                                  f"tpad=stop_mode=clone:stop_duration=15,"
                                  f"trim=duration={d:.3f},setpts=PTS+{t0:.3f}/TB,"
                                  f"ass={args.ass},setpts=PTS-STARTPTS"),

@@ -310,6 +310,10 @@ BGM = [  # 톤연출표 4구간(0초부터 전편, 볼륨 0.36~0.45, 구간 사�
 ]
 
 
+PRO_MODEL = "fal-ai/bytedance/seedance/v1/pro/image-to-video"
+LITE_PEOPLE = {"S44", "S52"}  # 흑백 CCTV·원경 실루엣 — 고화질 이점 없음
+
+
 def tc(sec):
     fr = int(round(sec * FPS))
     s, f = divmod(fr, FPS)
@@ -422,6 +426,9 @@ def main():
         })
         prompt = f"{CAM[cam]}. Motion: {motion}"
         item = {"id": sid, "prompt": prompt, "duration": r["gen"]}
+        # 혼합 화질(사용자 승인 2026-10-04): 인물이 보이는 i2v 컷만 Seedance pro 1080p, 무인·CCTV·원경 실루엣은 lite
+        if kind in ("n", "v", "vo", "card") and "No people" not in subject and sid not in LITE_PEOPLE:
+            item["i2v_model"], item["i2v_resolution"] = PRO_MODEL, "1080p"
         if keyframe:
             item["image"] = keyframe
         scene_items.append(item)
@@ -476,7 +483,8 @@ def main():
                   "faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, "
                   "no sudden movement, no new people entering"),
         "durations": [r["gen"] for r in rows],
-        "scenes": [{"prompt": it["prompt"], "duration": it["duration"], **({"image": it["image"]} if "image" in it else {})}
+        "scenes": [{"prompt": it["prompt"], "duration": it["duration"],
+                    **{k: it[k] for k in ("image", "i2v_model", "i2v_resolution") if k in it}}
                    for it in scene_items],
     }
     with open(os.path.join(ROOT, "scripts", "scenes", f"{SKIT}.json"), "w", encoding="utf-8") as f:
@@ -492,6 +500,7 @@ def main():
         "style_names": STYLE_NAMES,
         "narration_styles": ["Naration"],
         "silent_styles": ["Caption"],
+        "output_size": [1920, 1080], "fit": "crop",  # 1080p 출력(pro 1920x1088·lite 1248x704 모두 검은 테 없이 채움)
         "scene_durations": durations,
         "transitions": transitions,
         "omnihuman_scenes": [n(s) for s in ("S09", "S11", "S26", "S28", "S30", "S47", "S50")],
@@ -518,14 +527,16 @@ def main():
           "- 대사 7장면(S09·S11·S26·S28·S30·S47·S50) = 가슴 위 단독 CU 정지 키프레임 → OmniHuman. S30은 S28 키프레임 재사용.",
           "- 리액션 7컷(S02·S10·S19·S23·S27·S29·S45, S02는 S45 재사용) = 정지 푸시인, 립싱크 제외. S18(아이 편지 목소리)은 화면 밖 → 립싱크 제외.",
           "- 일본어 글자 합성 장면(카메라 고정): " + ", ".join(f"{k} {v}" for k, v in JA_OVERLAY.items()),
-          "", "| 장면 | 타임코드 | 조립/생성 | 종류 | 샷 | 조명 | 카메라 | 전환 | 대사·카드 | 참조 |", "|---|---|---|---|---|---|---|---|---|---|"]
+          "", "| 장면 | 타임코드 | 조립/생성 | 종류 | 화질 | 샷 | 조명 | 카메라 | 전환 | 대사·카드 | 참조 |", "|---|---|---|---|---|---|---|---|---|---|---|"]
     for s in sb_scenes:
         lc = ", ".join(f"L{i}" for i in s["lines"])
         if s["caption"]:
             lc = (lc + " / " if lc else "") + f"【{s['caption']}】"
         light_key = next(k for k, v in LIGHT.items() if v == s["lighting"])
         cam_key = next(k for k, v in CAM.items() if v == s["camera"])
-        md.append(f"| {s['id']} | {s['timecode']} | {s['assembled_s']:.2f}/{s['generate_s']}s | {kind_ko[s['kind']]} | {s['shot']} | "
+        tier = {"d": "OmniHuman", "react": "정지 푸시인", "reuse": "재사용"}.get(
+            s["kind"], "pro 1080p" if scene_items[[x["id"] for x in scene_items].index(s["id"])].get("i2v_model") else "lite 720p")
+        md.append(f"| {s['id']} | {s['timecode']} | {s['assembled_s']:.2f}/{s['generate_s']}s | {kind_ko[s['kind']]} | {tier} | {s['shot']} | "
                   f"{light_key} | {cam_key} | {s['transition_out']} | {lc} | {', '.join(s['refs'])} |")
     md += ["", "## 오디오", f"- BGM 4구간: " + " · ".join(f"{s:.1f}~{('끝' if e is None else f'{e:.1f}')}s 볼륨 {v}" for s, e, v, _p in BGM)
            + " (구간 사이 숨 1.0~1.5초, −60dB 2초 무음 금지)",

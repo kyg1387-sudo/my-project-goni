@@ -60,6 +60,8 @@ def load_scenes(path):
             prompt, dur = scene["prompt"], int(scene.get("duration", base_dur))
             refs = scene.get("refs") or []
             image = scene.get("image")  # 규격서 PHASE 5: 승인 키프레임 → Image-to-Video
+            if scene.get("i2v_model") or scene.get("i2v_resolution"):  # 장면별 화질(예: 인물 컷만 pro 1080p)
+                SCENE_I2V[k + 1] = (scene.get("i2v_model") or None, scene.get("i2v_resolution") or None)
             if image and not os.path.exists(image):
                 sys.exit(f"[scene {k + 1:02d}] 키프레임 파일이 없습니다: {image}")
         else:
@@ -205,18 +207,21 @@ def fal_generate(key, index, prompt, duration, ratio, ref_urls=None):
 
 FAL_I2V_MODEL = os.environ.get("FAL_I2V_MODEL", "fal-ai/bytedance/seedance/v1/lite/image-to-video")
 I2V_RESOLUTION = "720p"
+SCENE_I2V = {}  # 장면 번호 → (모델, 해상도) 개별 지정
 
 
 def fal_generate_i2v(key, index, prompt, duration, ratio, image_url):
     """승인 키프레임 1장을 첫 프레임으로 고정해 영상을 만든다(규격서 PHASE 5: Text-to-Video 금지).
     모델별 파라미터 차이를 흡수하기 위해 페이로드를 순서대로 시도한다."""
     headers = {"Authorization": f"Key {key}"}
-    base = {"prompt": prompt, "image_url": image_url, "duration": str(duration), "resolution": I2V_RESOLUTION}
-    print(f"  [fal i2v] {FAL_I2V_MODEL} {I2V_RESOLUTION}")
+    m, r = SCENE_I2V.get(index, (None, None))
+    model, res = m or FAL_I2V_MODEL, r or I2V_RESOLUTION
+    base = {"prompt": prompt, "image_url": image_url, "duration": str(duration), "resolution": res}
+    print(f"  [fal i2v] {model} {res}")
     payloads = [dict(base, aspect_ratio=ratio), base,
                 {"prompt": prompt, "image_url": image_url, "duration": str(duration)}]
     for payload in payloads:
-        status, task = http_json(f"https://queue.fal.run/{FAL_I2V_MODEL}", payload, headers)
+        status, task = http_json(f"https://queue.fal.run/{model}", payload, headers)
         if status != 200:
             print(f"  [fal i2v] 작업 생성 실패 (HTTP {status}): {task} — 다른 파라미터로 재시도")
             continue
