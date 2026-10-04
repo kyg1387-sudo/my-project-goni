@@ -49,9 +49,17 @@ GMA_LOCK = ("The grandmother (EP3 character) keeps her locked look: faded brown 
             "cross-bar with a pair of men's work gloves tucked on it.")
 # 장면별 구도 보강(스토리보드 내용은 바꾸지 않고 프레이밍만 분명히)
 COMPOSITION = {
-    "S36": ("Camera low on the stairs behind him: Kim seen from behind, three or four steps above the camera, mid-climb, "
-            "the small tabletop tree with the knitted red-and-white star hugged against his chest (only the top of the tree and "
-            "the star visible over his shoulder). One warm sensor light glows on the landing above; the rest is dim and cool."),
+    "S36": ("Camera at the BOTTOM of one long straight flight of concrete stairs, looking up the flight: Kim is about one third of "
+            "the way up, his back fully to the camera, mid-step climbing UPWARD, the small tabletop tree with the knitted red-and-white "
+            "star hugged against his chest (only the star and the top of the tree peek over his shoulder). Many more steps continue "
+            "straight above him to the next floor; NO landing, NO turn of the stairs near him. One warm sensor light glows at the top of "
+            "the flight; the rest is dim and cool."),
+    "S37": ("Rear full shot from behind Kim in the interior corridor: he stands with his back to the camera in front of the steel door of "
+            "unit 1801, having just set the small lit tree with the knitted star on the floor at the door; his head is bowed slightly, "
+            "body still facing the door. The blank metal number plate beside the door faces the camera."),
+    "S24": ("Long shot on a snowy path at dusk, camera static at the side: Kim (left, walking right) and the grandmother pulling her "
+            "handcart (right, walking left) are just passing each other in the middle of the frame, both giving a small polite bow of "
+            "the head; both seen in three-quarter side view, full bodies visible, small in frame."),
     "S41": ("Interior 18th-floor corridor (same as the location reference), camera facing the open steel door of unit 1801 from the side at child height: the mother stands "
             "in the doorway in a plain grey cardigan, frozen, one hand on the door; Ren beside her beams with his mouth closed and "
             "points down at the small lit tree with the knitted star standing on the corridor floor at their feet. "
