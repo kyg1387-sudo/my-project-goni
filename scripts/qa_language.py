@@ -78,13 +78,26 @@ def main():
         print(msg, flush=True)
         report.append(msg)
 
-    log("=== TTS 대사 파일 검사 (line*.mp3) ===")
-    for p in sorted(glob.glob(os.path.join(args.audio_dir, "line*.mp3"))):
+    files = sorted(glob.glob(os.path.join(args.audio_dir, "line*.mp3")))
+    # 오디션 폴더(assets/auditions/<spec>)는 파일명이 line*이 아니다 → 스펙 JSON의 id→대사로 대조
+    spec_text = {}
+    spec_path = os.path.join("scripts", "auditions", os.path.basename(os.path.normpath(args.audio_dir)) + ".json")
+    if not files and os.path.exists(spec_path):
+        import json
+        spec = json.load(open(spec_path, encoding="utf-8"))
+        spec_text = {t["id"]: t.get("text", "") for t in spec.get("tests", [])}
+        files = sorted(glob.glob(os.path.join(args.audio_dir, "*.mp3")))
+    log(f"=== TTS 대사 파일 검사 ({'line*.mp3' if not spec_text else '오디션 ' + os.path.basename(spec_path)}) ===")
+    for p in files:
         name = os.path.basename(p)
         idx = int(name[4:7]) if name[4:7].isdigit() else 0
-        segs, info = model.transcribe(load_audio(p), beam_size=1, vad_filter=False)
+        segs, info = model.transcribe(load_audio(p), beam_size=1, vad_filter=False,
+                                      language=None)
         heard = " ".join(s.text.strip() for s in segs).strip()
-        script = ass_lines[idx - 1][2] if 0 < idx <= len(ass_lines) else ""
+        if spec_text:
+            script = spec_text.get(os.path.splitext(name)[0], "")
+        else:
+            script = ass_lines[idx - 1][2] if 0 < idx <= len(ass_lines) else ""
         sim = similarity(heard, script) if script else -1
         latin = re.findall(r"[A-Za-z]{2,}", heard)
         hanzi = re.findall(r"[一-鿿]+", heard)
