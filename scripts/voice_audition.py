@@ -265,6 +265,13 @@ def main():
     if spec.get("typecast_list"):
         typecast_list(spec["typecast_list"])
         return
+    if spec.get("fetch_files"):
+        # 무과금: 공개 파일(OFL 글꼴 등)을 저장소 경로로 내려받는다(로컬 세션은 외부 다운로드가 막혀 있음)
+        for item in spec["fetch_files"]:
+            os.makedirs(os.path.dirname(item["path"]), exist_ok=True)
+            urllib.request.urlretrieve(item["url"], item["path"])
+            print(f"받음 {item['path']} ({os.path.getsize(item['path'])} bytes)")
+        return
     key = os.environ.get("FAL_API_KEY")
     if not key:
         sys.exit("FAL_API_KEY가 필요합니다.")
