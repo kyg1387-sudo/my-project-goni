@@ -14,6 +14,13 @@ import time
 import urllib.error
 import urllib.request
 
+POLL_TIMEOUT_S = int(os.environ.get("POLL_TIMEOUT_S", "1800"))
+
+
+def _require_lang(t):
+    """Typecast 언어 미지정이면 중단 — 옛 기본값 kor로 일본어 대사를 한국어 발음으로 과금 생성하던 사고 방지."""
+    sys.exit(f"[{t.get('id')}] typecast-direct 언어가 없습니다 — 테스트 또는 스펙 최상위에 \"language\": \"jpn\"(일본어)/\"kor\"를 지정하세요.")
+
 OUT_DIR = os.environ.get("AUDITION_OUT_DIR", "out/audition")
 
 
@@ -54,7 +61,11 @@ def fal_run(model, payload, key, tag):
     if status != 200:
         print(f"  [{tag}] 작업 생성 실패 (HTTP {status}): {task}")
         return None
+    deadline = time.time() + POLL_TIMEOUT_S  # 무한 대기 방지(잡 타임아웃까지 상태를 모르는 일 차단)
     while True:
+        if time.time() > deadline:
+            print(f"  [poll] {POLL_TIMEOUT_S}초 안에 끝나지 않아 중단합니다 — 같은 작업을 다시 제출하지 말고 fal 대시보드에서 상태를 확인하세요.")
+            return None
         time.sleep(4)
         _, info = http_json(task["status_url"], headers=headers)
         state = info.get("status")
@@ -298,7 +309,7 @@ def main():
                 "voice_id": t["voice"],
                 "text": t["text"],
                 "model": t.get("tc_model", spec.get("tc_model", "ssfm-v30")),
-                "language": t.get("language", "kor"),
+                "language": t.get("language") or spec.get("language") or _require_lang(t),
                 "output": {"audio_format": "mp3",
                            "audio_tempo": float(t.get("tempo", spec.get("tempo", 1.0)))},
             }

@@ -1,0 +1,86 @@
+{
+ "_설명": "EP4 일본어 아웃트로 진행자 목소리 후보(Typecast 젊은 여성 3종, jpn). 사용자 청취 후 채택. 2026-10-04: 사용자 지정 보이스 tc_629fe972013e90b4db213fd8 추가(happy/normal). 2026-10-04 v2 멘트(여운 유지형, 차분·정중): 사용자 보이스 normal/tonedown, tempo 0.95. v3: 좋아요(高評価)+구독 명시(사용자 요청).",
+ "tc_model": "ssfm-v30",
+ "tests": [
+  {
+   "id": "host_Olivia",
+   "model": "typecast-direct",
+   "voice": "tc_62a8975e695ad26f7fb514d1",
+   "language": "jpn",
+   "text": "最後までご覧いただき、ありがとうございました。少しでも心が温かくなったら、チャンネル登録と高評価で応援してください。次回は、キムさんが初めて出勤しなかった日のお話です。素敵なクリスマスを。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 1.0
+  },
+  {
+   "id": "host_Yura",
+   "model": "typecast-direct",
+   "voice": "tc_61130d6cf89dd58a4c13295d",
+   "language": "jpn",
+   "text": "最後までご覧いただき、ありがとうございました。少しでも心が温かくなったら、チャンネル登録と高評価で応援してください。次回は、キムさんが初めて出勤しなかった日のお話です。素敵なクリスマスを。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 1.0
+  },
+  {
+   "id": "host_Gahee",
+   "model": "typecast-direct",
+   "voice": "tc_624ccc04adcd568510764d3f",
+   "language": "jpn",
+   "text": "最後までご覧いただき、ありがとうございました。少しでも心が温かくなったら、チャンネル登録と高評価で応援してください。次回は、キムさんが初めて出勤しなかった日のお話です。素敵なクリスマスを。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 1.0
+  },
+  {
+   "id": "host_user_happy",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "最後までご覧いただき、ありがとうございました。少しでも心が温かくなったら、チャンネル登録と高評価で応援してください。次回は、キムさんが初めて出勤しなかった日のお話です。素敵なクリスマスを。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 1.0
+  },
+  {
+   "id": "host_user_normal",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "最後までご覧いただき、ありがとうございました。少しでも心が温かくなったら、チャンネル登録と高評価で応援してください。次回は、キムさんが初めて出勤しなかった日のお話です。素敵なクリスマスを。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "host_user_v2_normal",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "最後までご覧いただき、ありがとうございました。誰かのために、そっと手を差し伸べる。そんな優しさが、今日もどこかで灯っています。この物語が心に残りましたら、チャンネル登録で、キムさんのこれからを見守ってください。次回は、キムさんが初めて出勤しなかった日のお話です。どうぞ、あたたかなクリスマスを。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "host_user_v2_tonedown",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "最後までご覧いただき、ありがとうございました。誰かのために、そっと手を差し伸べる。そんな優しさが、今日もどこかで灯っています。この物語が心に残りましたら、チャンネル登録で、キムさんのこれからを見守ってください。次回は、キムさんが初めて出勤しなかった日のお話です。どうぞ、あたたかなクリスマスを。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 0.8,
+   "tempo": 0.95
+  },
+  {
+   "id": "host_user_v3_normal",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "最後までご覧いただき、ありがとうございました。誰かのために、そっと手を差し伸べる。そんな優しさが、今日もどこかで灯っています。この物語が心に残りましたら、高評価とチャンネル登録で、キムさんのこれからを見守ってください。次回は、キムさんが初めて出勤しなかった日のお話です。どうぞ、あたたかなクリスマスを。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  }
+ ]
+}

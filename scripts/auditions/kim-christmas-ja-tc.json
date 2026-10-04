@@ -1,0 +1,246 @@
+{
+ "_설명": "EP4 일본어 기준판 Typecast 오디션(ssfm-v30, language=jpn) — 내레이터(일본어 원어민급 발음 후보, 여성 중년·노년 낭독형) 4 · 엄마 4 · 아이 4, 각 2줄. EP3-JA에서 Typecast 일본어가 EL 한국어 보이스보다 명료했던 실측에 근거. 사용자 청취 후 채택.",
+ "tc_model": "ssfm-v30",
+ "tests": [
+  {
+   "id": "tc_nar_Inhwa_line016",
+   "model": "typecast-direct",
+   "voice": "tc_6296a815b958a8ed9610b189",
+   "language": "jpn",
+   "text": "「わたしたちにも子どもがいたら…あなたに一度、サンタさんをやってほしかったな」",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_nar_Inhwa_line032",
+   "model": "typecast-direct",
+   "voice": "tc_6296a815b958a8ed9610b189",
+   "language": "jpn",
+   "text": "けれど、あの少し丸い背中と古いダウンを、この団地で知らない人はいませんでした。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_nar_Yeonhwa_line016",
+   "model": "typecast-direct",
+   "voice": "tc_600697fd8a8ea9b977284703",
+   "language": "jpn",
+   "text": "「わたしたちにも子どもがいたら…あなたに一度、サンタさんをやってほしかったな」",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_nar_Yeonhwa_line032",
+   "model": "typecast-direct",
+   "voice": "tc_600697fd8a8ea9b977284703",
+   "language": "jpn",
+   "text": "けれど、あの少し丸い背中と古いダウンを、この団地で知らない人はいませんでした。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_nar_Agatha_line016",
+   "model": "typecast-direct",
+   "voice": "tc_63049449e7dfae64b10c6cb9",
+   "language": "jpn",
+   "text": "「わたしたちにも子どもがいたら…あなたに一度、サンタさんをやってほしかったな」",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_nar_Agatha_line032",
+   "model": "typecast-direct",
+   "voice": "tc_63049449e7dfae64b10c6cb9",
+   "language": "jpn",
+   "text": "けれど、あの少し丸い背中と古いダウンを、この団地で知らない人はいませんでした。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_nar_Juha_line016",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "「わたしたちにも子どもがいたら…あなたに一度、サンタさんをやってほしかったな」",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_nar_Juha_line032",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "けれど、あの少し丸い背中と古いダウンを、この団地で知らない人はいませんでした。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_mom_Yujin_line005",
+   "model": "typecast-direct",
+   "voice": "tc_64818767272f62f8ddb73948",
+   "language": "jpn",
+   "text": "レン、警備のおじさんを困らせないの。…うちのことは、構わないでください。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_mom_Yujin_line033",
+   "model": "typecast-direct",
+   "voice": "tc_64818767272f62f8ddb73948",
+   "language": "jpn",
+   "text": "ごめんなさい…昨日、あんなことまで言ったのに…本当に、ありがとうございます…",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.3,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_mom_Hanna_line005",
+   "model": "typecast-direct",
+   "voice": "tc_628d9e0e1374f7682602991b",
+   "language": "jpn",
+   "text": "レン、警備のおじさんを困らせないの。…うちのことは、構わないでください。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_mom_Hanna_line033",
+   "model": "typecast-direct",
+   "voice": "tc_628d9e0e1374f7682602991b",
+   "language": "jpn",
+   "text": "ごめんなさい…昨日、あんなことまで言ったのに…本当に、ありがとうございます…",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.3,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_mom_Gaeul_line005",
+   "model": "typecast-direct",
+   "voice": "tc_60f7a217279ffba711ce2958",
+   "language": "jpn",
+   "text": "レン、警備のおじさんを困らせないの。…うちのことは、構わないでください。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_mom_Gaeul_line033",
+   "model": "typecast-direct",
+   "voice": "tc_60f7a217279ffba711ce2958",
+   "language": "jpn",
+   "text": "ごめんなさい…昨日、あんなことまで言ったのに…本当に、ありがとうございます…",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.3,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_mom_Soobin_line005",
+   "model": "typecast-direct",
+   "voice": "tc_63aaec0d34ca719d00798a97",
+   "language": "jpn",
+   "text": "レン、警備のおじさんを困らせないの。…うちのことは、構わないでください。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_mom_Soobin_line033",
+   "model": "typecast-direct",
+   "voice": "tc_63aaec0d34ca719d00798a97",
+   "language": "jpn",
+   "text": "ごめんなさい…昨日、あんなことまで言ったのに…本当に、ありがとうございます…",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.3,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_child_Hajun_line004",
+   "model": "typecast-direct",
+   "voice": "tc_60db308484130840f23e6ca0",
+   "language": "jpn",
+   "text": "おじさん、サンタさんは…うちの部屋番号、知らないのかな？",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_child_Hajun_line012",
+   "model": "typecast-direct",
+   "voice": "tc_60db308484130840f23e6ca0",
+   "language": "jpn",
+   "text": "サンタさん、お母さんが泣かないように、電気だけは消さないでください。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_child_Gunwoo_line004",
+   "model": "typecast-direct",
+   "voice": "tc_624cccbcadcd568510764d65",
+   "language": "jpn",
+   "text": "おじさん、サンタさんは…うちの部屋番号、知らないのかな？",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_child_Gunwoo_line012",
+   "model": "typecast-direct",
+   "voice": "tc_624cccbcadcd568510764d65",
+   "language": "jpn",
+   "text": "サンタさん、お母さんが泣かないように、電気だけは消さないでください。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_child_Leo_line004",
+   "model": "typecast-direct",
+   "voice": "tc_62fb678f9b93d9207fa8c032",
+   "language": "jpn",
+   "text": "おじさん、サンタさんは…うちの部屋番号、知らないのかな？",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_child_Leo_line012",
+   "model": "typecast-direct",
+   "voice": "tc_62fb678f9b93d9207fa8c032",
+   "language": "jpn",
+   "text": "サンタさん、お母さんが泣かないように、電気だけは消さないでください。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_child_Minsu_line004",
+   "model": "typecast-direct",
+   "voice": "tc_63a3d9da4b235ddd6541a795",
+   "language": "jpn",
+   "text": "おじさん、サンタさんは…うちの部屋番号、知らないのかな？",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "tc_child_Minsu_line012",
+   "model": "typecast-direct",
+   "voice": "tc_63a3d9da4b235ddd6541a795",
+   "language": "jpn",
+   "text": "サンタさん、お母さんが泣かないように、電気だけは消さないでください。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  }
+ ]
+}

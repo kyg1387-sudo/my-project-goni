@@ -29,6 +29,8 @@ import time
 import urllib.error
 import urllib.request
 
+POLL_TIMEOUT_S = int(os.environ.get("POLL_TIMEOUT_S", "1800"))
+
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "out")
 DEFAULT_SCENES_FILE = os.path.join(os.path.dirname(__file__), "scenes", "bungeoppang.json")
 
@@ -62,12 +64,15 @@ def load_scenes(path):
             image = scene.get("image")  # 규격서 PHASE 5: 승인 키프레임 → Image-to-Video
             if scene.get("i2v_model") or scene.get("i2v_resolution"):  # 장면별 화질(예: 인물 컷만 pro 1080p)
                 SCENE_I2V[k + 1] = (scene.get("i2v_model") or None, scene.get("i2v_resolution") or None)
-            if image and not os.path.exists(image):
-                sys.exit(f"[scene {k + 1:02d}] 키프레임 파일이 없습니다: {image}")
         else:
             prompt, dur, refs = scene, base_dur, []
         override = os.path.join(OUT_DIR, f"scene{k + 1:02d}.mp4")  # 오버라이드 클립이 있으면 생성 안 함 → 길이 제한 없음
-        if dur not in (5, 10) and not (os.path.exists(override) and os.path.getsize(override) > 100_000):
+        has_override = os.path.exists(override) and os.path.getsize(override) > 100_000
+        if image and not os.path.exists(image) and not has_override \
+                and not (isinstance(scene, dict) and scene.get("override_required")):
+            # 교체 클립이 있으면 키프레임이 없어도 된다(정지 푸시인·재사용 컷)
+            sys.exit(f"[scene {k + 1:02d}] 키프레임 파일이 없습니다: {image}")
+        if dur not in (5, 10) and not has_override:
             sys.exit(f"[scene {k + 1:02d}] 지원하지 않는 길이 {dur}초 — Seedance는 5 또는 10초만 지원합니다.")
         items.append((f"{prompt}, {style}" if style else prompt, dur, refs, image))
     return items, data.get("ratio", "9:16")
@@ -120,7 +125,11 @@ def ark_generate(base_url, model, key, index, prompt, duration, ratio):
         return None
     task_id = task["id"]
     print(f"  [ark] 작업 생성됨: {task_id}")
+    deadline = time.time() + POLL_TIMEOUT_S  # 무한 대기 방지(잡 타임아웃까지 상태를 모르는 일 차단)
     while True:
+        if time.time() > deadline:
+            print(f"  [poll] {POLL_TIMEOUT_S}초 안에 끝나지 않아 중단합니다 — 같은 작업을 다시 제출하지 말고 fal 대시보드에서 상태를 확인하세요.")
+            return None
         time.sleep(10)
         status, info = http_json(f"{base_url}/contents/generations/tasks/{task_id}", headers=headers)
         state = info.get("status") if isinstance(info, dict) else None
@@ -181,7 +190,11 @@ def fal_generate(key, index, prompt, duration, ratio, ref_urls=None):
         return None
     status_url, result_url = task["status_url"], task["response_url"]
     print(f"  [fal] 작업 생성됨: {task['request_id']}")
+    deadline = time.time() + POLL_TIMEOUT_S  # 무한 대기 방지(잡 타임아웃까지 상태를 모르는 일 차단)
     while True:
+        if time.time() > deadline:
+            print(f"  [poll] {POLL_TIMEOUT_S}초 안에 끝나지 않아 중단합니다 — 같은 작업을 다시 제출하지 말고 fal 대시보드에서 상태를 확인하세요.")
+            return None
         time.sleep(10)
         _, info = http_json(status_url, headers=headers)
         state = info.get("status") if isinstance(info, dict) else None
@@ -227,7 +240,11 @@ def fal_generate_i2v(key, index, prompt, duration, ratio, image_url):
             continue
         status_url, result_url = task["status_url"], task["response_url"]
         print(f"  [fal i2v] 작업 생성됨: {task['request_id']}")
+        deadline = time.time() + POLL_TIMEOUT_S  # 무한 대기 방지(잡 타임아웃까지 상태를 모르는 일 차단)
         while True:
+            if time.time() > deadline:
+                print(f"  [poll] {POLL_TIMEOUT_S}초 안에 끝나지 않아 중단합니다 — 같은 작업을 다시 제출하지 말고 fal 대시보드에서 상태를 확인하세요.")
+                return None
             time.sleep(10)
             _, info = http_json(status_url, headers=headers)
             state = info.get("status") if isinstance(info, dict) else None
@@ -269,12 +286,55 @@ def pick_provider(ratio):
     return candidates
 
 
+I2V_RATE_USD = {"pro": 0.108, "lite": 0.036}  # 2026-10-04 fal 잔액 차이 실측(제작규격-보강-EP4 §1)
+
+
+def preflight(scenes_file, scenes):
+    """유료 생성 전에 비용을 추산하고 위험한 경로를 막는다(무료).
+
+    - override_required 장면(정지 푸시인·재사용·카드)에 교체 클립이 없으면 중단 → 유료 i2v/t2v로 새는 일 차단
+    - 키프레임 없는 장면(t2v)은 규격서 PHASE 5-1에 따라 기본 금지(allow_t2v: true일 때만 허용)
+    - budget_usd를 넘는 추산이면 중단
+    """
+    with open(scenes_file, encoding="utf-8") as f:
+        data = json.load(f)
+    raw = data["scenes"]
+    missing, t2v, cost, paid = [], [], 0.0, 0
+    for index, (prompt, duration, refs, image) in enumerate(scenes, start=1):
+        existing = os.path.join(OUT_DIR, f"scene{index:02d}.mp4")
+        if os.path.exists(existing) and os.path.getsize(existing) > 100_000:
+            continue
+        spec = raw[index - 1] if isinstance(raw[index - 1], dict) else {}
+        if spec.get("override_required"):
+            missing.append(index)
+            continue
+        if not image:
+            t2v.append(index)
+        model, res = SCENE_I2V.get(index, (None, None))
+        model, res = model or FAL_I2V_MODEL, res or I2V_RESOLUTION
+        tier = "lite" if "lite" in model else "pro"
+        cost += duration * I2V_RATE_USD[tier]
+        paid += 1
+    if missing:
+        sys.exit("교체 클립이 필요한 장면에 파일이 없습니다(유료 생성으로 새는 것 차단): "
+                 + " ".join(f"scene{i:02d}" for i in missing)
+                 + " — assets/video-overrides/<skit>/에 정지 푸시인 등을 먼저 넣으세요.")
+    if t2v and not data.get("allow_t2v"):
+        sys.exit("키프레임 없는 장면(t2v)은 금지입니다: " + " ".join(f"scene{i:02d}" for i in t2v)
+                 + " — image를 지정하거나 의도한 경우만 allow_t2v: true")
+    print(f"[비용 추산] 새로 생성할 장면 {paid}개, 약 {cost:.2f}달러 (실측 단가 pro 0.108/s, lite 0.036/s)")
+    budget = data.get("budget_usd")
+    if budget is not None and cost > float(budget) + 1e-9:
+        sys.exit(f"추산 {cost:.2f}달러가 budget_usd {float(budget):.2f}달러를 넘어 중단합니다.")
+
+
 def main():
     scenes_file = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_SCENES_FILE
     scenes, ratio = load_scenes(scenes_file)
     print(f"장면 파일: {scenes_file} ({len(scenes)}개 장면, 화면비 {ratio})")
 
     os.makedirs(OUT_DIR, exist_ok=True)
+    preflight(scenes_file, scenes)
     paths = []
     provider = None
     fal_key = os.environ.get("FAL_API_KEY")

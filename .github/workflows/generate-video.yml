@@ -121,7 +121,7 @@ jobs:
           pip install --quiet faster-whisper
 
       - name: 언어 검사 실행 (저장소 오디오 폴더)
-        run: python3 scripts/qa_language.py --audio-dir "${QA_DIR}" --model "${{ inputs.qa_model || 'small' }}" --lang "${{ inputs.qa_lang || 'ko' }}"
+        run: python3 scripts/qa_language.py --audio-dir "${QA_DIR}" --model "${{ inputs.qa_model }}" --lang "${{ inputs.qa_lang }}"
 
       - name: 보고서를 저장소에 커밋
         if: always()
@@ -275,7 +275,10 @@ jobs:
         run: |
           if [ -d "assets/video-overrides/${SKIT}" ]; then
             mkdir -p out
-            cp -v "assets/video-overrides/${SKIT}"/scene*.mp4 out/
+            # 폴더만 있고 클립이 없을 때 cp가 실패하지 않도록 가드
+            for f in "assets/video-overrides/${SKIT}"/scene*.mp4; do
+              if [ -e "$f" ]; then cp -v "$f" out/; fi
+            done
           fi
 
       - name: 장면별 클립 생성 (Ark Seedance / fal.ai)

@@ -49,9 +49,17 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--audio-dir", default="out/audio")
     ap.add_argument("--ass", default="")
-    ap.add_argument("--model", default="small")
-    ap.add_argument("--lang", default="ko", help="기대 언어(ko/ja). ja이면 한자는 정상으로 보고 감지언어만 검사")
+    ap.add_argument("--model", default="", help="Whisper 모델. 생략 시 ko=small, ja=large-v3")
+    ap.add_argument("--lang", default="", help="기대 언어(ko/ja). 생략 시 자막(.ass)에 가나가 있으면 ja, 없으면 ko. "
+                                               "ja이면 한자는 정상으로 보고 감지언어만 검사")
     args = ap.parse_args()
+    if not args.lang:
+        # 워크플로가 --lang을 넘기지 않아도 일본어판을 ko로 검사해 전 줄 오탐 처리되는 일을 막는다
+        text = "".join(t[2] for t in parse_ass_lines(args.ass))
+        args.lang = "ja" if re.search(r"[\u3040-\u30ff]", text) else "ko"
+    if not args.model:
+        args.model = "large-v3" if args.lang == "ja" else "small"
+    print(f"기대 언어={args.lang}, 모델={args.model}")
 
     from faster_whisper import WhisperModel
     import subprocess

@@ -18,6 +18,8 @@ import time
 import urllib.error
 import urllib.request
 
+POLL_TIMEOUT_S = int(os.environ.get("POLL_TIMEOUT_S", "1800"))
+
 FAL_IMAGE_MODEL = os.environ.get(
     "FAL_IMAGE_MODEL", "fal-ai/bytedance/seedream/v3/text-to-image")
 OUT_DIR = os.environ.get("PORTRAIT_OUT_DIR", "out/portraits")
@@ -98,7 +100,11 @@ def fal_image(key, prompt, num_images, ref_urls=None, model=None, aspect_ratio=N
             continue
         status_url, result_url = task["status_url"], task["response_url"]
         print(f"  [fal] 작업 생성됨: {task['request_id']}")
+        deadline = time.time() + POLL_TIMEOUT_S  # 무한 대기 방지(잡 타임아웃까지 상태를 모르는 일 차단)
         while True:
+            if time.time() > deadline:
+                print(f"  [poll] {POLL_TIMEOUT_S}초 안에 끝나지 않아 중단합니다 — 같은 작업을 다시 제출하지 말고 fal 대시보드에서 상태를 확인하세요.")
+                return []
             time.sleep(5)
             _, info = http_json(status_url, headers=headers)
             state = info.get("status")

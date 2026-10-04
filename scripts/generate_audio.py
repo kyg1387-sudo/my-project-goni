@@ -37,6 +37,12 @@ from concurrent.futures import ThreadPoolExecutor
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from generate_video import http_json, download  # noqa: E402
 
+
+def scene_key(path):
+    """scene9 < scene10 < scene100 — 장면 100개 이상에서도 순서 유지(사전순 정렬 금지)."""
+    m = re.search(r"scene(\d+)", os.path.basename(path))
+    return int(m.group(1)) if m else 10 ** 9
+
 WORK_DIR = None  # main에서 out/audio 로 설정
 
 MAX_TEMPO = 1.35  # 대사가 자막 슬롯보다 길 때 허용하는 최대 배속 (피치 유지)
@@ -489,13 +495,17 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
 
     (재조립된 영상 경로, [(시작초, 현장음 wav)]) 를 돌려준다.
     """
-    scenes = sorted(glob.glob(os.path.join(scenes_dir, "scene*.mp4")))
+    scenes = sorted(glob.glob(os.path.join(scenes_dir, "scene*.mp4")), key=scene_key)
     if not scenes:
         sys.exit(f"장면 클립을 찾을 수 없습니다: {scenes_dir}/scene*.mp4")
     # 계획 길이가 있으면 그 길이로 장면을 정확히 잘라 쓴다. 생성 클립이 몇 프레임씩
     # 길 때 생기는 누적 오차(자막·음성이 장면보다 앞서는 현상)를 없애기 위함이다.
     planned = cfg.get("scene_durations")
     if planned and len(planned) != len(scenes):
+        if not cfg.get("allow_duration_mismatch"):
+            # Lock 타임라인이 깨진 채 유료 립싱크까지 진행되는 일을 막는다
+            sys.exit(f"scene_durations {len(planned)}개 != 장면 {len(scenes)}개 — 장면 파일과 오디오 설정을 다시 생성하세요 "
+                     f"(의도한 경우만 allow_duration_mismatch: true)")
         print(f"경고: scene_durations {len(planned)}개 != 장면 {len(scenes)}개 — 실측 길이 사용")
         planned = None
     durations = [float(d) for d in planned] if planned else [probe_duration(s) for s in scenes]
@@ -521,6 +531,17 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
 
     # 립싱크 왜곡(얼굴 깨짐)이 반복되는 장면은 립싱크를 건너뛰고 원본 얼굴을 유지한다
     skip_lipsync = set(int(n) for n in cfg.get("lipsync_skip_scenes", []))
+    # 규격 제6장 1: 영상 위 립싱크 덧씌우기(sync-lipsync) 금지 — EP3에서 6달러 전액 폐기.
+    # 기본값은 OmniHuman 장면만 입을 만들고, 나머지 대사 장면(입이 안 보이는 구도)은 원본 유지.
+    legacy_lipsync = bool(cfg.get("legacy_lipsync", False))
+    omni_set = set(int(n) for n in cfg.get("omnihuman_scenes", []))
+    omni_max = float(cfg.get("omnihuman_max_s", 8.0))
+    too_long = [(i, t1 - t0) for i, (t0, t1) in enumerate(bounds, start=1)
+                if i in omni_set and (t1 - t0) > omni_max + 1e-6]
+    if too_long:
+        # 8초를 넘는 OmniHuman은 얼굴이 변하고 무음 꼬리까지 과금된다(EP4 아웃트로 실증) — 생성 전에 차단
+        sys.exit("OmniHuman 장면이 %.1f초를 넘습니다: %s — 장면을 나누거나 길이를 줄이세요"
+                 % (omni_max, ", ".join(f"scene{i:02d}={d:.2f}s" for i, d in too_long)))
 
     def process_scene(item):
         """한 장면의 현장음 생성과 립싱크. (최종 장면 경로, 현장음 항목|None)을 돌려준다."""
@@ -545,12 +566,18 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
         subprocess.run(["ffmpeg", "-y", "-i", dial_wav,
                         "-af", f"atrim={t0:.3f}:{t1:.3f},asetpts=PTS-STARTPTS", seg],
                        check=True, capture_output=True)
-        if i in set(int(n) for n in cfg.get("omnihuman_scenes", [])):
+        if i in omni_set:
             print(f"[scene {i:02d}] 오디오 구동 생성(omnihuman) 중... ({t0:.1f}~{t1:.1f}s)")
             omni = omnihuman_scene(cfg, key, scene, seg, i)
             if omni:
                 return omni, amb_item
+            if not legacy_lipsync:
+                print(f"  [scene {i:02d}] omnihuman 실패 — 원본 유지(유료 립싱크 폴백 없음). 재시도는 invalidate로")
+                return scene, amb_item
             print(f"  [scene {i:02d}] omnihuman 실패 — 기존 립싱크로 폴백")
+        elif not legacy_lipsync:
+            print(f"[scene {i:02d}] OmniHuman 대상 아님 — 원본 유지(입이 안 보이는 구도)")
+            return scene, amb_item
         print(f"[scene {i:02d}] 립싱크 중... ({t0:.1f}~{t1:.1f}s)")
         lip = lipsync_scene(cfg, key, v_url, seg, i)
         if not lip:
@@ -660,7 +687,7 @@ def main():
         planned = cfg.get("scene_durations")
         durations = ([float(d) for d in planned] if planned
                      else [probe_duration(s) for s in
-                           sorted(glob.glob(os.path.join(args.scenes_dir, "scene*.mp4")))])
+                           sorted(glob.glob(os.path.join(args.scenes_dir, "scene*.mp4")), key=scene_key)])
         overlaps = [float(x) for x in cfg.get("transitions", [])]
         overlaps += [0.0] * (len(durations) - len(overlaps))
         overlaps = [o if o >= 1 / 24 else 1 / 24 for o in overlaps]

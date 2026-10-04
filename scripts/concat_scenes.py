@@ -12,8 +12,15 @@
 import glob
 import json
 import os
+import re
 import subprocess
 import sys
+
+
+def scene_key(path):
+    """scene9 < scene10 < scene100 — 장면 100개 이상에서도 순서 유지(사전순 정렬 금지)."""
+    m = re.search(r"scene(\d+)", os.path.basename(path))
+    return int(m.group(1)) if m else 10 ** 9
 
 
 def main():
@@ -24,7 +31,7 @@ def main():
     durations = [int(s.get("duration", default_dur)) if isinstance(s, dict) else default_dur
                  for s in data["scenes"]]
 
-    clips = sorted(glob.glob(os.path.join(clips_dir, "scene*.mp4")))
+    clips = sorted(glob.glob(os.path.join(clips_dir, "scene*.mp4")), key=scene_key)
     if len(clips) != len(durations):
         sys.exit(f"클립 {len(clips)}개 != 계획 장면 {len(durations)}개")
 
