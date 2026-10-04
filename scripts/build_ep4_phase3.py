@@ -302,11 +302,11 @@ AMBIENCE = {  # 무인 컷만 효과음형(제6장 4: 사람 있는 장면·quie
     "S49": "kettle simmering on a kerosene heater, soft crackle",
     "S53": "morning birds chirping outside a small booth",
 }
-BGM = [  # 톤연출표 4구간(0초부터 전편, 볼륨 0.36~0.45, 구간 사이 숨은 2초 미만)
+BGM = [  # 톤연출표 4구간(0초부터 전편, 볼륨 0.36~0.45). 구간 사이 숨(1초)은 내레이션 아래에 둔다(EP4 1차 조립: 235s 무언 컷에 1.9s 정적)
     (0.0, 80.0, 0.42, "sparse melancholic solo piano in a minor key, Japanese human drama (ninjo) film score, winter loneliness, slow tempo, instrumental only, no vocals, no lyrics"),
-    (81.5, 141.0, 0.40, "tender piano and solo cello, nostalgic longing, Japanese family drama film score, slow tempo, instrumental only, no vocals, no lyrics"),
-    (142.0, 235.5, 0.38, "delicate celesta and music box over soft piano, quiet gradual rise, hopeful night, Japanese drama score, slow, instrumental only, no vocals, no lyrics"),
-    (236.5, None, 0.42, "warm strings with small sleigh bells and piano, gentle emotional resolution, heartwarming Japanese Christmas drama finale, slow, instrumental only, no vocals, no lyrics"),
+    (81.5, 139.5, 0.40, "tender piano and solo cello, nostalgic longing, Japanese family drama film score, slow tempo, instrumental only, no vocals, no lyrics"),
+    (140.5, 229.0, 0.38, "delicate celesta and music box over soft piano, quiet gradual rise, hopeful night, Japanese drama score, slow, instrumental only, no vocals, no lyrics"),
+    (230.0, None, 0.42, "warm strings with small sleigh bells and piano, gentle emotional resolution, heartwarming Japanese Christmas drama finale, slow, instrumental only, no vocals, no lyrics"),
 ]
 
 
