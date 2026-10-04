@@ -1,0 +1,15 @@
+{
+ "_설명": "EP4 일본어 아웃트로(엔드스크린 겸용): 진행자 16:9 정지 프레임 + 음성 구동 립싱크. 25초 = 멘트 0.5~23.8s + 여운 1.2s. 마지막 약 9초(16~25s)는 유튜브 최종 화면 요소 자리.",
+ "ratio": "16:9",
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "durations": [
+  25
+ ],
+ "scenes": [
+  {
+   "prompt": "Static, locked off. Motion: subtle breathing, gentle eye blink only. No head turn.",
+   "image": "assets/portraits/outro-host-ep4.png",
+   "duration": 25
+  }
+ ]
+}
