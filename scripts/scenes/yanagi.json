@@ -177,14 +177,14 @@
    "image": "assets/portraits/yanagi-keyframes/S01b-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Ogata's raised hand trembles slightly, his chest heaves with shallow breaths. Sakamoto's back stays still. No one walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Ogata's outstretched hand shakes weakly toward Sakamoto, then sags; his chest heaves with fast shallow breaths and his head droops with exhaustion. He stays slumped on the floor and does not stand. Sakamoto's back stays still. No one walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/yanagi-keyframes/S02a-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
    "i2v_resolution": "1080p"
   },
   {
-   "prompt": "(override) omni: Chest-up close-up of Ogata on the floor, exhausted, dry lips, sweat, warm rim li",
+   "prompt": "(override) omni: Chest-up close-up of Ogata, heat-stricken and desperate, slumped low against the",
    "duration": 5,
    "override_required": true,
    "image": "assets/portraits/yanagi-keyframes/S02b-1.png"

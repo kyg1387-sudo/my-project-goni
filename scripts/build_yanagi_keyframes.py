@@ -65,6 +65,9 @@ COMPOSITION = {  # 키프레임 Kill Gate 보강 (A단계 1차 검수 2026-10-05
     "S27l": ("Bird's-eye view straight down from the ceiling: Sakamoto kneels in dogeza on the mirror-polished floor, seen from "
              "directly above as a small figure — his back, slicked hair and flat palms; his face is NOT visible. Image upright."),
     "S28c": FULL + " Exactly three hands: the woman's two hands from the left/bottom and the man's single hand in a dark suit sleeve from the right; no other sleeves.",
+    # 감독님 지적(2026-10-05): 「간절히 물 한 모금 부탁하는 모습 같지 않음」 → 열사병 탈진·애원 표정 강화
+    "S02a": FULL + " He clearly looks heat-stricken and desperate, NOT relaxed or lounging; NOT lying flat on his back.",
+    "S02b": TIGHT + " Expression at about 70 percent: exhausted, pleading, desperate for water — NOT calm, NOT curious, NOT neutral.",
     "S27m": (FULL + " Camera behind Sakamoto at the far end of the aisle: we see ONLY his BACK (back of his slicked black hair, the back of "
              "the striped vest, grey slacks) as he walks away from the camera toward the open glass door and the blinding white daylight; "
              "his face is NOT visible at all; he is mid-stride, small in the frame, a silhouette against the glare."),
