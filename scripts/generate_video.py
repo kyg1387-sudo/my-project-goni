@@ -32,6 +32,7 @@ import urllib.request
 POLL_TIMEOUT_S = int(os.environ.get("POLL_TIMEOUT_S", "1800"))
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "out")
+MIN_CLIP_BYTES = 20_000  # 이보다 작으면 깨진 파일로 본다(정지 타이틀 카드 클립은 100KB 미만일 수 있음)
 DEFAULT_SCENES_FILE = os.path.join(os.path.dirname(__file__), "scenes", "bungeoppang.json")
 
 
@@ -67,7 +68,7 @@ def load_scenes(path):
         else:
             prompt, dur, refs = scene, base_dur, []
         override = os.path.join(OUT_DIR, f"scene{k + 1:02d}.mp4")  # 오버라이드 클립이 있으면 생성 안 함 → 길이 제한 없음
-        has_override = os.path.exists(override) and os.path.getsize(override) > 100_000
+        has_override = os.path.exists(override) and os.path.getsize(override) > MIN_CLIP_BYTES
         if image and not os.path.exists(image) and not has_override \
                 and not (isinstance(scene, dict) and scene.get("override_required")):
             # 교체 클립이 있으면 키프레임이 없어도 된다(정지 푸시인·재사용 컷)
@@ -302,7 +303,7 @@ def preflight(scenes_file, scenes):
     missing, t2v, cost, paid = [], [], 0.0, 0
     for index, (prompt, duration, refs, image) in enumerate(scenes, start=1):
         existing = os.path.join(OUT_DIR, f"scene{index:02d}.mp4")
-        if os.path.exists(existing) and os.path.getsize(existing) > 100_000:
+        if os.path.exists(existing) and os.path.getsize(existing) > MIN_CLIP_BYTES:
             continue
         spec = raw[index - 1] if isinstance(raw[index - 1], dict) else {}
         if spec.get("override_required"):
@@ -340,7 +341,7 @@ def main():
     fal_key = os.environ.get("FAL_API_KEY")
     for index, (prompt, duration, refs, image) in enumerate(scenes, start=1):
         existing = os.path.join(OUT_DIR, f"scene{index:02d}.mp4")
-        if os.path.exists(existing) and os.path.getsize(existing) > 100_000:
+        if os.path.exists(existing) and os.path.getsize(existing) > MIN_CLIP_BYTES:
             print(f"[scene {index:02d}] 기존 파일 재사용 (이어하기)")
             paths.append(existing)
             continue
