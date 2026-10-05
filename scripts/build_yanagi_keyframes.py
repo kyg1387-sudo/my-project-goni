@@ -70,6 +70,12 @@ COMPOSITION = {  # 키프레임 Kill Gate 보강 (A단계 1차 검수 2026-10-05
     "S25a": ("High-angle security-camera view from a ceiling corner of the store: small figures of Ogata, Sato, Murase and Sakamoto "
              "standing near the counter, wide fisheye-like perspective, slightly cool flat video look."),
     "S28g": "Haruko looks down at a small faded black-and-white paper photograph held in her fingers; NOT a phone, NOT a tablet.",
+    # 조립 검수(2026-10-05): 웃는 얼굴·떠 있는 머리 합성 결함 → 얼굴 없는 손·소품 인서트로
+    "S11b": (FULL + " Close insert with NO people and NO faces: inside an open grey staff locker, a folded plain sheet of paper "
+             "and a smartphone with a blank bright screen lie on the shelf; one yellow rubber-gloved hand rests on the phone. Tired night mood."),
+    "S14f": (FULL + " Close insert with NO faces and NO other people: a young woman's two hands (beige bandage on her right index "
+             "finger, green-and-white striped short sleeve) hold a smartphone with a blank bright screen above the grey office desk; "
+             "the fingers tense, the screen facing the camera."),
     "S06a": FULL, "S12a": FULL, "S26d": FULL, "S27j": FULL,
     "S08a": FULL + " The storefront has NO banners, NO hanging signs and NO coloured stripes under the blank green sign band.",
     "S20d": FULL, "S13a2": FULL, "S13c2": FULL, "S26h2": FULL + " " + WILLOW, "S29c": FULL,
