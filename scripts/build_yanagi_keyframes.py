@@ -39,12 +39,40 @@ LOC_NOTE = {  # 로케이션별 고정 문장(PHASE 2 Kill Gate 잔여 결함 + 
     "props-photo": ("The small black-and-white photo shows a teenage girl in a 1960s blouse standing beside an old round stone well with a "
                     "wooden bucket and a weeping willow; NO faucet, NO tap, NO modern objects."),
     "props-cup": "The cup is a plain white paper cup with no print; one long narrow willow leaf floats on the water.",
+    "loc-store-int": ("Store interior walls are plain white with NO coloured stripes or bands along the top of the walls or shelves, "
+                      "no brand trade dress, no logos, no numerals, no posters with writing."),
 }
+WILLOW = ("The leaf is a WEEPING-WILLOW leaf: very long and slender like a narrow blade (about 9 cm long, under 1.2 cm wide), "
+          "smooth untoothed edges, tapering to a long pointed tip, a thin pale midrib; NOT round, NOT oval, NOT serrated, NOT a birch, "
+          "elm, beech or cherry leaf.")
+NO_PROP_REF = {"S07a", "S09a", "S09a2", "S26f", "S26h", "S29b"}  # 시트 소품 셀의 잎 모양이 틀려 참조에서 뺌(문장으로 고정)
 
 
 TIGHT = ("Tight chest-up close-up: head and shoulders fill the frame, the top of the head near the top edge, the frame cut at mid-chest; "
          "the face occupies about one third of the frame height; hands NOT visible. Full-frame 16:9 image, no black bars.")
+FULL = "Full-frame 16:9 image filling the whole canvas: NO black bars, NO white borders, NO letterbox or pillarbox."
 COMPOSITION = {  # 키프레임 Kill Gate 보강 (A단계 1차 검수 2026-10-05)
+    # B단계 1차 검수
+    "S07a": WILLOW, "S09a2": WILLOW, "S29b": WILLOW + " Two such leaves float side by side.",
+    "S09a": WILLOW + (" Setting: the wooden bench in the willow shade right beside the small convenience store (as in the location "
+                      "reference), NOT a park, no stone lantern. Close-up: the paper cup sharp in the lower foreground, Ogata's face "
+                      "soft behind it."),
+    "S26f": WILLOW + " The worn brown leather notebook lies open, the dry faded olive-brown willow leaf pressed flat under clear film.",
+    "S26h": WILLOW + " The worn brown leather notebook lies open, the dry faded olive-brown willow leaf pressed flat under clear film.",
+    "S26i": FULL + " No logos, no brand names, no numerals anywhere on the glass or walls.",
+    "S27e": ("Sakamoto kneels in a full dogeza on the polished floor: knees on the floor, forehead pressed to the floor, both palms "
+             "flat on the floor in front of his head; NOT a push-up, legs folded under him."),
+    "S27l": ("Bird's-eye view straight down from the ceiling: Sakamoto kneels in dogeza on the mirror-polished floor, seen from "
+             "directly above as a small figure — his back, slicked hair and flat palms; his face is NOT visible. Image upright."),
+    "S27i2": ("Macro insert: the lower half of a man's jaw in profile at the very top edge of the frame, one bead of sweat falling "
+              "toward the mirror-polished floor below, reflections; a normal human scale, no giant face."),
+    "S27f": "Macro insert, no people: one tiny drop of water on the mirror-polished floor, soft reflections; plain floor, no white squares or patches.",
+    "S25a": ("High-angle security-camera view from a ceiling corner of the store: small figures of Ogata, Sato, Murase and Sakamoto "
+             "standing near the counter, wide fisheye-like perspective, slightly cool flat video look."),
+    "S28g": "Haruko looks down at a small faded black-and-white paper photograph held in her fingers; NOT a phone, NOT a tablet.",
+    "S20d": FULL, "S13a2": FULL, "S13c2": FULL, "S26h2": FULL + " " + WILLOW, "S29c": FULL,
+    "S13a3": FULL + " The older woman is seen from behind and the side so that her face is NOT visible; only her floral sleeve and hands.",
+    "S27b": "The black tablet screen shows only a plain dark grey video frame with soft blurred shapes (picture composited later).",
     "S12b": TIGHT + " Haruko sits propped on pillows by the window, looking at the camera with warm worry.",
     "S14g": TIGHT + " Expression: a thin cold smirk with hard narrowed eyes behind the glasses, NOT a broad friendly smile.",
     "S22b": TIGHT + " Expression: an eager over-polite fawning smile, eyebrows raised, shoulders slightly hunched forward.",
@@ -77,12 +105,13 @@ def notes(refs):
 
 
 def build(sc, face_refs):
-    refs = list(face_refs) + list(sc["refs"])
+    src = [r for r in sc["refs"] if not (sc["id"] in NO_PROP_REF and os.path.basename(r).startswith("props-"))]
+    refs = list(face_refs) + src
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, "
              "no borders, no captions."]
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
     parts.append(sc["keyframe_prompt"])
-    parts += notes(sc["refs"])
+    parts += [n for n in notes(src)]
     if sc["id"] in COMPOSITION:
         parts.append(COMPOSITION[sc["id"]])
     if sc["kind"] == "d":
