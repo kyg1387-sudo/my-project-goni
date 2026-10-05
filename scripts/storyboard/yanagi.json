@@ -39,6 +39,7 @@
    "keyframe_prompt": null,
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -62,6 +63,7 @@
    "keyframe_prompt": null,
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -85,6 +87,7 @@
    "keyframe_prompt": null,
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -108,6 +111,7 @@
    "keyframe_prompt": null,
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": "柳の葉と一杯の水"
   },
   {
@@ -133,6 +137,9 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. No people. Very low angle from the hot asphalt toward the small convenience store and the great weeping willow, heat haze shimmering.  Camera: low-angle looking up, 24mm wide angle, deep focus, imposing perspective. Lighting: harsh 2 p.m. midsummer sunlight, bleached highlights, visible heat haze over the asphalt, 5600K. Completely unpopulated: no people, no hands. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [
+    "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)"
+   ],
    "caption": "八月　鎌倉"
   },
   {
@@ -158,6 +165,10 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. No people. High angle from a second-floor height down the narrow alley, the glass door seen through hanging willow branches.  Camera: high-angle looking down, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: harsh 2 p.m. midsummer sunlight, bleached highlights, visible heat haze over the asphalt, 5600K. Completely unpopulated: no people, no hands. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [
+    "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)",
+    "문 옆 판 「やなぎマート 鎌倉店 / 運営:緒方ホールディングス株式会社」"
+   ],
    "caption": ""
   },
   {
@@ -187,6 +198,7 @@
     "店長代理 坂本"
    ],
    "ja_overlay": "店長代理 坂本(명찰, 작게)",
+   "signage": [],
    "caption": ""
   },
   {
@@ -213,6 +225,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Chest-up close-up of Ogata on the floor, exhausted, dry lips, sweat, warm rim light, looking up. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a faded grey linen jacket over a wrinkled beige shirt, loose tan trousers, worn brown leather shoes. Camera: eye-level, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait. Lighting: bright soft daylight through the glass storefront, cool fluorescent fill, gentle contrast. Exactly one person in frame, no foreground shoulder, hands out of frame, chest-up single close-up, facing the camera within 30 degrees. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -241,6 +254,7 @@
     "店長代理 坂本"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -267,6 +281,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert: an old man's wrinkled hand pressed on the white tile floor, grey linen cuff. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a faded grey linen jacket over a wrinkled beige shirt, loose tan trousers, worn brown leather shoes. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: bright soft daylight through the glass storefront, cool fluorescent fill, gentle contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -293,6 +308,10 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert: outside, an old man's wrinkled hand slides down the sunlit glass door, the street reflected in the glass, grey linen sleeve. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a faded grey linen jacket over a wrinkled beige shirt, loose tan trousers, worn brown leather shoes. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: harsh 2 p.m. midsummer sunlight, bleached highlights, visible heat haze over the asphalt, 5600K. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [
+    "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)",
+    "문 옆 판 「やなぎマート 鎌倉店 / 運営:緒方ホールディングス株式会社」"
+   ],
    "caption": ""
   },
   {
@@ -319,6 +338,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert from above: a plain white paper cup filling with water at the dispenser, a young woman's hand with a beige bandage on the right index finger. Characters: Oki Yuna, a Japanese woman aged 21, slim, gentle face, long straight black hair in a low ponytail with wispy see-through bangs, exactly one small beauty mark under her LEFT eye, no glasses, a beige adhesive bandage on her RIGHT index finger, wearing a plain green-and-white vertically striped short-sleeve convenience-store uniform shirt over a white T-shirt, a small plain blank white name plate on the left chest, black slacks, white canvas sneakers. Camera: overhead straight down 90 degrees, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: bright soft daylight through the glass storefront, cool fluorescent fill, gentle contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -347,6 +367,10 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [
+    "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)",
+    "문 옆 판 「やなぎマート 鎌倉店 / 運営:緒方ホールディングス株式会社」"
+   ],
    "caption": ""
   },
   {
@@ -373,6 +397,9 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Low angle insert against the bright sky: a young woman's bandaged hand plucks a single long narrow willow leaf from a hanging branch. Characters: Oki Yuna, a Japanese woman aged 21, slim, gentle face, long straight black hair in a low ponytail with wispy see-through bangs, exactly one small beauty mark under her LEFT eye, no glasses, a beige adhesive bandage on her RIGHT index finger, wearing a plain green-and-white vertically striped short-sleeve convenience-store uniform shirt over a white T-shirt, a small plain blank white name plate on the left chest, black slacks, white canvas sneakers. Camera: low-angle looking up, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: harsh 2 p.m. midsummer sunlight, bleached highlights, visible heat haze over the asphalt, 5600K. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [
+    "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)"
+   ],
    "caption": ""
   },
   {
@@ -398,6 +425,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert from above: a single long narrow willow leaf lands on the water in the plain white paper cup and floats.  Camera: overhead straight down 90 degrees, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: soft natural diffused light in dappled willow shade, low warm backlight rim on hair and shoulders, gentle contrast. Completely unpopulated: no people, no hands. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -427,6 +455,9 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [
+    "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)"
+   ],
    "caption": ""
   },
   {
@@ -456,6 +487,9 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [
+    "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)"
+   ],
    "caption": ""
   },
   {
@@ -484,6 +518,9 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [
+    "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)"
+   ],
    "caption": ""
   },
   {
@@ -510,6 +547,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Close-up: the paper cup with the floating willow leaf sharp in the lower foreground, Ogata's face soft behind it. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a faded grey linen jacket over a wrinkled beige shirt, loose tan trousers, worn brown leather shoes. Camera: eye-level, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait. Lighting: soft natural diffused light in dappled willow shade, low warm backlight rim on hair and shoulders, gentle contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -536,6 +574,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Macro insert from above: one long narrow willow leaf floating on the clear water in a plain white paper cup held in wrinkled hands, faint ripples. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a faded grey linen jacket over a wrinkled beige shirt, loose tan trousers, worn brown leather shoes. Camera: overhead straight down 90 degrees, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: soft natural diffused light in dappled willow shade, low warm backlight rim on hair and shoulders, gentle contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -562,6 +601,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Side macro insert: an old man's wrinkled fingers trembling around the plain white paper cup, a drop of water on his knuckle, grey linen cuff. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a faded grey linen jacket over a wrinkled beige shirt, loose tan trousers, worn brown leather shoes. Camera: eye-level from the side or behind, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: soft natural diffused light in dappled willow shade, low warm backlight rim on hair and shoulders, gentle contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -588,6 +628,9 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Choker close-up of Ogata's eyes behind the tortoiseshell glasses widening, deep wrinkles, a catchlight of the sky. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a faded grey linen jacket over a wrinkled beige shirt, loose tan trousers, worn brown leather shoes. Camera: eye-level, 85mm prime lens, f/1.8, choker framing from forehead to chin, razor-sharp eyes, soft bokeh. Lighting: soft natural diffused light in dappled willow shade, low warm backlight rim on hair and shoulders, gentle contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [
+    "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)"
+   ],
    "caption": ""
   },
   {
@@ -617,6 +660,9 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [
+    "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)"
+   ],
    "caption": ""
   },
   {
@@ -643,6 +689,9 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Low angle from below the bench: Ogata sits alone under the willow holding the paper cup, branches and sky above. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a faded grey linen jacket over a wrinkled beige shirt, loose tan trousers, worn brown leather shoes. Camera: low-angle looking up, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: soft natural diffused light in dappled willow shade, low warm backlight rim on hair and shoulders, gentle contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [
+    "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)"
+   ],
    "caption": ""
   },
   {
@@ -669,6 +718,9 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert: an old man's hand slides a worn brown leather notebook back into the inner pocket of a grey linen jacket without opening it. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a faded grey linen jacket over a wrinkled beige shirt, loose tan trousers, worn brown leather shoes. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: soft natural diffused light in dappled willow shade, low warm backlight rim on hair and shoulders, gentle contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [
+    "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)"
+   ],
    "caption": ""
   },
   {
@@ -695,6 +747,10 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Wide high view: a small old man alone on the bench under the great willow beside the store. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a faded grey linen jacket over a wrinkled beige shirt, loose tan trousers, worn brown leather shoes. Camera: high-angle looking down, 24mm wide angle, deep focus, imposing perspective. Lighting: soft natural diffused light in dappled willow shade, low warm backlight rim on hair and shoulders, gentle contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [
+    "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)",
+    "문 옆 판 「やなぎマート 鎌倉店 / 運営:緒方ホールディングス株式会社」"
+   ],
    "caption": ""
   },
   {
@@ -723,6 +779,7 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -749,6 +806,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert from above: a folded blank sheet of paper in an open locker and a smartphone lighting up with a blank notification panel; a gloved hand pauses at the edge. Characters: Oki Yuna, a Japanese woman aged 21, slim, gentle face, long straight black hair in a low ponytail with wispy see-through bangs, exactly one small beauty mark under her LEFT eye, no glasses, a beige adhesive bandage on her RIGHT index finger, wearing a red rubber apron over a white T-shirt, yellow rubber gloves, hair in the same low ponytail. Camera: overhead straight down 90 degrees, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: flat greenish fluorescent kitchen light, rising steam, tired night mood. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "休学届 + 病院未納通知",
+   "signage": [],
    "caption": ""
   },
   {
@@ -775,6 +833,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Close-up of Yuna in the dim back corner of the izakaya kitchen, her worried face lit by a phone screen held below frame, steam behind her. Characters: Oki Yuna, a Japanese woman aged 21, slim, gentle face, long straight black hair in a low ponytail with wispy see-through bangs, exactly one small beauty mark under her LEFT eye, no glasses, a beige adhesive bandage on her RIGHT index finger, wearing a red rubber apron over a white T-shirt, yellow rubber gloves, hair in the same low ponytail. Camera: eye-level, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait. Lighting: flat greenish fluorescent kitchen light, rising steam, tired night mood. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -804,6 +863,7 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -830,6 +890,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Chest-up close-up of Haruko leaning back against raised pillows by the window, warm worried smile, window light behind her. Characters: Oki Haruko, an East Asian woman aged 80, small and thin, silver-white chin-length bob with a small pink hairpin on the right side, deep smile lines, a green jade ring on her LEFT ring finger, no glasses, wearing a light-blue striped hospital gown with a cream knitted cardigan over the shoulders. Camera: eye-level, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait. Lighting: soft daylight diffused through a thin white curtain, pale mint walls, gentle contrast. Exactly one person in frame, no foreground shoulder, hands out of frame, chest-up single close-up, facing the camera within 30 degrees. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -859,6 +920,7 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -886,6 +948,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert from above: an old woman's thin hand with a green jade ring clasping a young woman's bandaged hand on a white blanket. Characters: Oki Haruko, an East Asian woman aged 80, small and thin, silver-white chin-length bob with a small pink hairpin on the right side, deep smile lines, a green jade ring on her LEFT ring finger, no glasses, wearing a light-blue striped hospital gown with a cream knitted cardigan over the shoulders | Oki Yuna, a Japanese woman aged 21, slim, gentle face, long straight black hair in a low ponytail with wispy see-through bangs, exactly one small beauty mark under her LEFT eye, no glasses, a beige adhesive bandage on her RIGHT index finger, wearing a plain green-and-white vertically striped short-sleeve convenience-store uniform shirt over a white T-shirt, a small plain blank white name plate on the left chest, black slacks, white canvas sneakers. Camera: overhead straight down 90 degrees, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: soft daylight diffused through a thin white curtain, pale mint walls, gentle contrast. Exactly 2 people (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -911,6 +974,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Flashback: low angle from beside the stone well, the backs of an older woman and a small girl crouching at the water's edge, silhouetted against the low golden sun through willows. No faces. Characters: a woman in her sixties seen only from behind or as wrinkled hands, faded floral cotton blouse (no face) | a small girl about six seen only from behind or as small hands, yellow T-shirt, two low pigtails with mint-green hair ties (no face). Camera: low-angle looking up, 24mm wide angle, deep focus, imposing perspective. Lighting: warm amber 3200K golden dusk flashback, soft halation, lifted blacks like an old family photo, low sun backlight. Exactly 2 people (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -936,6 +1000,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Flashback insert, no people: moss on the rim of the old stone well and a hanging willow branch against the low amber sun.  Camera: low-angle looking up, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: warm amber 3200K golden dusk flashback, soft halation, lifted blacks like an old family photo, low sun backlight. Completely unpopulated: no people, no hands. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -961,6 +1026,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Flashback insert from the side: the older woman's wrinkled hand and floral sleeve lowering a dried gourd dipper into the dark well water; no face. Characters: a woman in her sixties seen only from behind or as wrinkled hands, faded floral cotton blouse (no face). Camera: eye-level from the side or behind, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait. Lighting: warm amber 3200K golden dusk flashback, soft halation, lifted blacks like an old family photo, low sun backlight. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -986,6 +1052,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Flashback insert from above: wrinkled hands scoop clear water with a dried gourd dipper and float a single long narrow willow leaf on it. Characters: a woman in her sixties seen only from behind or as wrinkled hands, faded floral cotton blouse (no face). Camera: overhead straight down 90 degrees, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: warm amber 3200K golden dusk flashback, soft halation, lifted blacks like an old family photo, low sun backlight. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1011,6 +1078,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Flashback from above and behind: the small girl's two low pigtails and the older woman's floral blouse shoulder beside the well as she bends to the dipper; no faces. Characters: a woman in her sixties seen only from behind or as wrinkled hands, faded floral cotton blouse (no face) | a small girl about six seen only from behind or as small hands, yellow T-shirt, two low pigtails with mint-green hair ties (no face). Camera: bird's-eye view straight down from high above, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: warm amber 3200K golden dusk flashback, soft halation, lifted blacks like an old family photo, low sun backlight. Exactly 2 people (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1036,6 +1104,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Flashback side macro, no people: a long narrow willow leaf drifting down onto the clear water in the gourd dipper.  Camera: eye-level from the side or behind, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: warm amber 3200K golden dusk flashback, soft halation, lifted blacks like an old family photo, low sun backlight. Completely unpopulated: no people, no hands. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1061,6 +1130,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Flashback insert: a small child's hands receive the gourd dipper with the willow leaf floating on the water. Characters: a small girl about six seen only from behind or as small hands, yellow T-shirt, two low pigtails with mint-green hair ties (no face). Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: warm amber 3200K golden dusk flashback, soft halation, lifted blacks like an old family photo, low sun backlight. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1086,6 +1156,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Flashback, no people: high angle of the old stone well and the weeping willow, the water surface glinting in amber dusk, soft vignette.  Camera: high-angle looking down, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: warm amber 3200K golden dusk flashback, soft halation, lifted blacks like an old family photo, low sun backlight. Completely unpopulated: no people, no hands. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1116,6 +1187,7 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1142,6 +1214,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert: a finger with a thick gold wristwatch taps a small CCTV monitor showing a grainy grey image of a young woman giving a cup to an old man outside. Characters: Sakamoto Kenji, a Japanese man with a lean face, glossy gel-slicked-back black hair, rectangular black-rimmed glasses, a thick gold wristwatch on his LEFT wrist, wearing a white short-sleeve dress shirt with a navy necktie under a green-and-white striped store vest worn open, a small plain blank white name plate on the left chest, grey slacks, black loafers. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: a single cold fluorescent tube directly overhead (5600K or cooler), hard top light, dark shadows under brows and chin, faint cyan cast, chiaroscuro. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "CCTV(그림만)",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1167,6 +1240,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert from above, no people: on the cluttered desk a blank printed photo sheet, a red ink pad and a blank form under the hard top light.  Camera: overhead straight down 90 degrees, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: a single cold fluorescent tube directly overhead (5600K or cooler), hard top light, dark shadows under brows and chin, faint cyan cast, chiaroscuro. Completely unpopulated: no people, no hands. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1195,6 +1269,7 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1223,6 +1298,7 @@
     "店長代理 坂本"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1249,6 +1325,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Side macro insert: a young woman's hands clenched on the hem of her striped uniform shirt, knuckles white, trembling. Characters: Oki Yuna, a Japanese woman aged 21, slim, gentle face, long straight black hair in a low ponytail with wispy see-through bangs, exactly one small beauty mark under her LEFT eye, no glasses, a beige adhesive bandage on her RIGHT index finger, wearing a plain green-and-white vertically striped short-sleeve convenience-store uniform shirt over a white T-shirt, a small plain blank white name plate on the left chest, black slacks, white canvas sneakers. Camera: eye-level from the side or behind, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: a single cold fluorescent tube directly overhead (5600K or cooler), hard top light, dark shadows under brows and chin, faint cyan cast, chiaroscuro. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1275,6 +1352,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert from above: a blank white sheet of paper is slapped onto a grey desk, other papers scatter; a hand with a gold watch pulls away. Characters: Sakamoto Kenji, a Japanese man with a lean face, glossy gel-slicked-back black hair, rectangular black-rimmed glasses, a thick gold wristwatch on his LEFT wrist, wearing a white short-sleeve dress shirt with a navy necktie under a green-and-white striped store vest worn open, a small plain blank white name plate on the left chest, grey slacks, black loafers. Camera: overhead straight down 90 degrees, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: a single cold fluorescent tube directly overhead (5600K or cooler), hard top light, dark shadows under brows and chin, faint cyan cast, chiaroscuro. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "始末書",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1301,6 +1379,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert: a smartphone on the desk vibrates and lights up with a blank notification panel; a man's eyes (glasses edge) glance at it in the soft background. Characters: Oki Yuna, a Japanese woman aged 21, slim, gentle face, long straight black hair in a low ponytail with wispy see-through bangs, exactly one small beauty mark under her LEFT eye, no glasses, a beige adhesive bandage on her RIGHT index finger, wearing a plain green-and-white vertically striped short-sleeve convenience-store uniform shirt over a white T-shirt, a small plain blank white name plate on the left chest, black slacks, white canvas sneakers. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: a single cold fluorescent tube directly overhead (5600K or cooler), hard top light, dark shadows under brows and chin, faint cyan cast, chiaroscuro. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "病院未納通知(2回目)",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1329,6 +1408,7 @@
     "店長代理 坂本"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1357,6 +1437,7 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1385,6 +1466,7 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1410,6 +1492,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert, no people: a laptop screen showing a blank grey form panel with an attached scanned page (all blank).  Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: a single cold fluorescent tube directly overhead (5600K or cooler), hard top light, dark shadows under brows and chin, faint cyan cast, chiaroscuro. Completely unpopulated: no people, no hands. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "在庫ロス原因報告",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1436,6 +1519,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. High angle close-up of Yuna at the desk, head bowed, holding back tears under the cold top light. Characters: Oki Yuna, a Japanese woman aged 21, slim, gentle face, long straight black hair in a low ponytail with wispy see-through bangs, exactly one small beauty mark under her LEFT eye, no glasses, a beige adhesive bandage on her RIGHT index finger, wearing a plain green-and-white vertically striped short-sleeve convenience-store uniform shirt over a white T-shirt, a small plain blank white name plate on the left chest, black slacks, white canvas sneakers. Camera: high-angle looking down, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait. Lighting: a single cold fluorescent tube directly overhead (5600K or cooler), hard top light, dark shadows under brows and chin, faint cyan cast, chiaroscuro. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1464,6 +1548,7 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1492,6 +1577,9 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [
+    "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)"
+   ],
    "caption": ""
   },
   {
@@ -1517,6 +1605,9 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert: an unopened water bottle on the wooden bench with a small blank paper note taped to it, the note fluttering, dusk light.  Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: blue-hour dusk, deep blue ambient with a warm orange sodium streetlight, the store glowing. Completely unpopulated: no people, no hands. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "喉の渇いた方、どうぞお持ちください(Klee One)",
+   "signage": [
+    "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)"
+   ],
    "caption": ""
   },
   {
@@ -1542,6 +1633,9 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. No people visible. Low angle from the asphalt: a glossy black sedan with no emblem parked under an orange streetlight, the rear window sliding down.  Camera: low-angle looking up, 24mm wide angle, deep focus, imposing perspective. Lighting: blue-hour dusk, deep blue ambient with a warm orange sodium streetlight, the store glowing. Completely unpopulated: no people, no hands. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [
+    "번호판 「品川 300 あ ・・・1」(뒤차 ・・・2·・・・3), 엠블럼 없음"
+   ],
    "caption": ""
   },
   {
@@ -1568,6 +1662,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Inside the dark sedan: Sato in the front passenger seat seen from behind and the side, turning slightly back; his mouth is not visible. Characters: Sato, a Japanese man aged 52, neat side-parted black hair with silver temples, a clear coiled earpiece in his RIGHT ear, no glasses, wearing a black suit, white shirt, black necktie. Camera: eye-level from the side or behind, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: dark car interior lit only by orange streetlight through the side window, deep shadows. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1594,6 +1689,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Close side view of Ogata in the back seat in his suit, a shoulder-up silhouette against the orange-lit window. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: eye-level from the side or behind, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait. Lighting: dark car interior lit only by orange streetlight through the side window, deep shadows. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1620,6 +1716,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. From inside the car over Ogata's shoulder (soft foreground) through the open window: across the road the water bottle on the bench under the willow, lit by the store. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: eye-level from the side or behind, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: dark car interior lit only by orange streetlight through the side window, deep shadows. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1645,6 +1742,9 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Telephoto insert, no people: a plain water bottle standing on the bench under the willow, the store glow and orange streetlight melting into bokeh.  Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: blue-hour dusk, deep blue ambient with a warm orange sodium streetlight, the store glowing. Completely unpopulated: no people, no hands. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [
+    "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)"
+   ],
    "caption": ""
   },
   {
@@ -1671,6 +1771,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Ogata's face in side silhouette reflected in the dark window glass. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: eye-level from the side or behind, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait. Lighting: dark car interior lit only by orange streetlight through the side window, deep shadows. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1699,6 +1800,9 @@
     "店長代理 坂本"
    ],
    "ja_overlay": "",
+   "signage": [
+    "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)"
+   ],
    "caption": ""
   },
   {
@@ -1727,6 +1831,9 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [
+    "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)"
+   ],
    "caption": ""
   },
   {
@@ -1756,6 +1863,7 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1782,6 +1890,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Haruko's side profile in silhouette against the orange window, looking far away. Characters: Oki Haruko, an East Asian woman aged 80, small and thin, silver-white chin-length bob with a small pink hairpin on the right side, deep smile lines, a green jade ring on her LEFT ring finger, no glasses, wearing a light-blue striped hospital gown with a cream knitted cardigan over the shoulders. Camera: eye-level from the side or behind, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait. Lighting: low golden-hour sun through the window behind the bed, warm 3200K backlight, glowing rim light, soft lifted shadows. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1810,6 +1919,7 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1836,6 +1946,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Side medium of Haruko shaking her head gently with a small smile. Characters: Oki Haruko, an East Asian woman aged 80, small and thin, silver-white chin-length bob with a small pink hairpin on the right side, deep smile lines, a green jade ring on her LEFT ring finger, no glasses, wearing a light-blue striped hospital gown with a cream knitted cardigan over the shoulders. Camera: eye-level from the side or behind, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: low golden-hour sun through the window behind the bed, warm 3200K backlight, glowing rim light, soft lifted shadows. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1862,6 +1973,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Low angle extreme wide: Ogata alone at the old stone well at golden hour, small under the glowing willows. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: low-angle looking up, 24mm wide angle, deep focus, imposing perspective. Lighting: golden hour at the old well, low warm sun behind the willows, glowing rim light on leaves and figure, long soft shadows. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1889,6 +2001,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert: Sato's hand hands a plain black leather folder to Ogata's hand, golden light. Characters: Sato, a Japanese man aged 52, neat side-parted black hair with silver temples, a clear coiled earpiece in his RIGHT ear, no glasses, wearing a black suit, white shirt, black necktie | Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: golden hour at the old well, low warm sun behind the willows, glowing rim light on leaves and figure, long soft shadows. Exactly 2 people (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1915,6 +2028,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert: an old man's hand closes the worn brown leather notebook; the well and willows soft behind. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: golden hour at the old well, low warm sun behind the willows, glowing rim light on leaves and figure, long soft shadows. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1941,6 +2055,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Chest-up close-up of Ogata from slightly below, resolute, golden rim light, the willows soft behind. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: low-angle looking up, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait. Lighting: golden hour at the old well, low warm sun behind the willows, glowing rim light on leaves and figure, long soft shadows. Exactly one person in frame, no foreground shoulder, hands out of frame, chest-up single close-up, facing the camera within 30 degrees. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1969,6 +2084,7 @@
     "店長代理 坂本"
    ],
    "ja_overlay": "—",
+   "signage": [],
    "caption": ""
   },
   {
@@ -1999,6 +2115,7 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2025,6 +2142,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert: the grey stockroom door swings shut, a young woman's bandaged hand letting go of the handle. Characters: Oki Yuna, a Japanese woman aged 21, slim, gentle face, long straight black hair in a low ponytail with wispy see-through bangs, exactly one small beauty mark under her LEFT eye, no glasses, a beige adhesive bandage on her RIGHT index finger, wearing a plain green-and-white vertically striped short-sleeve convenience-store uniform shirt over a white T-shirt, a small plain blank white name plate on the left chest, black slacks, white canvas sneakers. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: crisp 10 a.m. daylight blasting through the glass door behind the entrance, strong backlight and silhouettes, interior darker, mirror-polished floor reflections, high contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2051,6 +2169,10 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert: Sakamoto's reflection in the glass door as his hands straighten his navy tie, pleased. Characters: Sakamoto Kenji, a Japanese man with a lean face, glossy gel-slicked-back black hair, rectangular black-rimmed glasses, a thick gold wristwatch on his LEFT wrist, wearing a white short-sleeve dress shirt with a navy necktie under a green-and-white striped store vest worn open, a small plain blank white name plate on the left chest, grey slacks, black loafers. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: crisp 10 a.m. daylight blasting through the glass door behind the entrance, strong backlight and silhouettes, interior darker, mirror-polished floor reflections, high contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [
+    "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)",
+    "문 옆 판 「やなぎマート 鎌倉店 / 運営:緒方ホールディングス株式会社」"
+   ],
    "caption": ""
   },
   {
@@ -2076,6 +2198,9 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. No people. Low angle from the asphalt: three glossy black sedans with no emblems and no plates stop in a row on the sunlit narrow street.  Camera: low-angle looking up, 24mm wide angle, deep focus, imposing perspective. Lighting: harsh 2 p.m. midsummer sunlight, bleached highlights, visible heat haze over the asphalt, 5600K. Completely unpopulated: no people, no hands. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [
+    "번호판 「品川 300 あ ・・・1」(뒤차 ・・・2·・・・3), 엠블럼 없음"
+   ],
    "caption": "土曜日"
   },
   {
@@ -2102,6 +2227,9 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert at ground level: a polished black oxford shoe and a charcoal-navy trouser hem step down onto sunlit asphalt from a car door. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: low-angle looking up, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: harsh 2 p.m. midsummer sunlight, bleached highlights, visible heat haze over the asphalt, 5600K. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [
+    "번호판 「品川 300 あ ・・・1」(뒤차 ・・・2·・・・3), 엠블럼 없음"
+   ],
    "caption": ""
   },
   {
@@ -2133,6 +2261,7 @@
     "店長代理 坂本"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2161,6 +2290,7 @@
     "店長代理 坂本"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2189,6 +2319,7 @@
     "店長代理 坂本"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2217,6 +2348,7 @@
     "店長代理 坂本"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2243,6 +2375,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert: a trembling hand with a gold watch gripping the navy necktie. Characters: Sakamoto Kenji, a Japanese man with a lean face, glossy gel-slicked-back black hair, rectangular black-rimmed glasses, a thick gold wristwatch on his LEFT wrist, wearing a white short-sleeve dress shirt with a navy necktie under a green-and-white striped store vest worn open, a small plain blank white name plate on the left chest, grey slacks, black loafers. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: crisp 10 a.m. daylight blasting through the glass door behind the entrance, strong backlight and silhouettes, interior darker, mirror-polished floor reflections, high contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2266,6 +2399,7 @@
    "keyframe_prompt": null,
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2292,6 +2426,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Chest-up close-up of Ogata from slightly below, calm and cold, bright backlight rim on his white hair. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: low-angle looking up, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait. Lighting: crisp 10 a.m. daylight blasting through the glass door behind the entrance, strong backlight and silhouettes, interior darker, mirror-polished floor reflections, high contrast. Exactly one person in frame, no foreground shoulder, hands out of frame, chest-up single close-up, facing the camera within 30 degrees. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2318,6 +2453,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert: a bead of sweat runs down Sakamoto's temple past the rim of his rectangular glasses. Characters: Sakamoto Kenji, a Japanese man with a lean face, glossy gel-slicked-back black hair, rectangular black-rimmed glasses, a thick gold wristwatch on his LEFT wrist, wearing a white short-sleeve dress shirt with a navy necktie under a green-and-white striped store vest worn open, a small plain blank white name plate on the left chest, grey slacks, black loafers. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: crisp 10 a.m. daylight blasting through the glass door behind the entrance, strong backlight and silhouettes, interior darker, mirror-polished floor reflections, high contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2346,6 +2482,7 @@
     "店長代理 坂本"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2372,6 +2509,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Chest-up close-up of Ogata from slightly below, quiet and heavy, looking around the store. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: low-angle looking up, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait. Lighting: cool crisp daylight inside the store, high-contrast chiaroscuro, polished floor reflections. Exactly one person in frame, no foreground shoulder, hands out of frame, chest-up single close-up, facing the camera within 30 degrees. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2400,6 +2538,7 @@
     "店長代理 坂本"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2431,6 +2570,7 @@
     "店長代理 坂本"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2456,6 +2596,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert, no people: the handle of the grey stockroom door in silence.  Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: cool crisp daylight inside the store, high-contrast chiaroscuro, polished floor reflections. Completely unpopulated: no people, no hands. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2481,6 +2622,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. No people. High angle down the empty store aisle toward the closed grey stockroom door, polished floor reflections, stillness.  Camera: high-angle looking down, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: cool crisp daylight inside the store, high-contrast chiaroscuro, polished floor reflections. Completely unpopulated: no people, no hands. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2510,6 +2652,7 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2538,6 +2681,7 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2564,6 +2708,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Close-up of Ogata's eyes softening behind his glasses, a faint smile. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: bright soft daylight through the glass storefront, cool fluorescent fill, gentle contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2593,6 +2738,7 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2622,6 +2768,7 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2648,6 +2795,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Choker close-up of Ogata frozen, eyes widening behind his glasses as the words sink in. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: eye-level, 85mm prime lens, f/1.8, choker framing from forehead to chin, razor-sharp eyes, soft bokeh. Lighting: bright soft daylight through the glass storefront, cool fluorescent fill, gentle contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2674,6 +2822,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert from above: an old hand opens the worn leather notebook to a yellowed pressed long narrow willow leaf under clear film. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: overhead straight down 90 degrees, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: bright soft daylight through the glass storefront, cool fluorescent fill, gentle contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2700,6 +2849,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Chest-up close-up of Ogata, voice thickening, eyes wet behind the glasses. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: eye-level, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait. Lighting: bright soft daylight through the glass storefront, cool fluorescent fill, gentle contrast. Exactly one person in frame, no foreground shoulder, hands out of frame, chest-up single close-up, facing the camera within 30 degrees. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2726,6 +2876,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Macro insert: a single tear drops onto the pressed willow leaf in the open notebook. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: overhead straight down 90 degrees, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: bright soft daylight through the glass storefront, cool fluorescent fill, gentle contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2752,6 +2903,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Side macro insert: an old thumb gently brushing the edge of the pressed long narrow willow leaf under the clear film. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: eye-level from the side or behind, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: bright soft daylight through the glass storefront, cool fluorescent fill, gentle contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2778,6 +2930,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Side silhouette of Ogata against the bright glass front, holding the open notebook to his chest. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: eye-level from the side or behind, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: low golden-hour sun through the window behind the bed, warm 3200K backlight, glowing rim light, soft lifted shadows. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2804,6 +2957,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Slight high angle close-up of Yuna holding back tears, eyes brimming. Characters: Oki Yuna, a Japanese woman aged 21, slim, gentle face, long straight black hair in a low ponytail with wispy see-through bangs, exactly one small beauty mark under her LEFT eye, no glasses, a beige adhesive bandage on her RIGHT index finger, wearing a plain green-and-white vertically striped short-sleeve convenience-store uniform shirt over a white T-shirt, a small plain blank white name plate on the left chest, black slacks, white canvas sneakers. Camera: high-angle looking down, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait. Lighting: bright soft daylight through the glass storefront, cool fluorescent fill, gentle contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2830,6 +2984,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. From behind: Ogata standing still, not turning around. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: eye-level from the side or behind, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: cool crisp daylight inside the store, high-contrast chiaroscuro, polished floor reflections. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2856,6 +3011,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert: a black tablet in a woman's hands shows grainy black-and-white security footage of a man pushing an old man out of a glass door. Characters: Murase, a Japanese woman aged 46, chin-length straight black bob with bangs, small pearl stud earrings, wearing a light-grey pantsuit with a white bow blouse. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: cool crisp daylight inside the store, high-contrast chiaroscuro, polished floor reflections. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "CCTV + 帳簿 + 始末書",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2882,6 +3038,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Low angle medium of Murase holding the tablet, crisp and official, seen three-quarter from the side. Characters: Murase, a Japanese woman aged 46, chin-length straight black bob with bangs, small pearl stud earrings, wearing a light-grey pantsuit with a white bow blouse. Camera: low-angle looking up, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: cool crisp daylight inside the store, high-contrast chiaroscuro, polished floor reflections. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2908,6 +3065,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert from above: a woman's finger swipes the black tablet to a blank grey official document panel. Characters: Murase, a Japanese woman aged 46, chin-length straight black bob with bangs, small pearl stud earrings, wearing a light-grey pantsuit with a white bow blouse. Camera: overhead straight down 90 degrees, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: cool crisp daylight inside the store, high-contrast chiaroscuro, polished floor reflections. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2934,6 +3092,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. High angle medium of Sakamoto standing stiff with hunched shoulders, eyes darting, cold daylight. Characters: Sakamoto Kenji, a Japanese man with a lean face, glossy gel-slicked-back black hair, rectangular black-rimmed glasses, a thick gold wristwatch on his LEFT wrist, wearing a white short-sleeve dress shirt with a navy necktie under a green-and-white striped store vest worn open, a small plain blank white name plate on the left chest, grey slacks, black loafers. Camera: high-angle looking down, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: cool crisp daylight inside the store, high-contrast chiaroscuro, polished floor reflections. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2963,6 +3122,7 @@
     "店長代理 坂本"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -2991,6 +3151,7 @@
     "店長代理 坂本"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3016,6 +3177,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Macro insert: a drop of sweat falls onto the mirror-polished floor.  Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: cool crisp daylight inside the store, high-contrast chiaroscuro, polished floor reflections. Completely unpopulated: no people, no hands. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3042,6 +3204,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Chest-up close-up of Ogata from slightly below, calm and steely, delivering the verdict. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: low-angle looking up, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait. Lighting: cool crisp daylight inside the store, high-contrast chiaroscuro, polished floor reflections. Exactly one person in frame, no foreground shoulder, hands out of frame, chest-up single close-up, facing the camera within 30 degrees. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3065,6 +3228,7 @@
    "keyframe_prompt": null,
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3091,6 +3255,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Side medium of Murase announcing, tablet against her chest. Characters: Murase, a Japanese woman aged 46, chin-length straight black bob with bangs, small pearl stud earrings, wearing a light-grey pantsuit with a white bow blouse. Camera: eye-level from the side or behind, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: cool crisp daylight inside the store, high-contrast chiaroscuro, polished floor reflections. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3117,6 +3282,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Macro insert: a bead of sweat drips from a man's jaw onto the mirror-polished floor. Characters: Sakamoto Kenji, a Japanese man with a lean face, glossy gel-slicked-back black hair, rectangular black-rimmed glasses, a thick gold wristwatch on his LEFT wrist, wearing a white short-sleeve dress shirt with a navy necktie under a green-and-white striped store vest worn open, a small plain blank white name plate on the left chest, grey slacks, black loafers. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: cool crisp daylight inside the store, high-contrast chiaroscuro, polished floor reflections. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3146,6 +3312,7 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3172,6 +3339,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert: trembling fingers with a gold watch unclip the blank white name plate from the striped vest. Characters: Sakamoto Kenji, a Japanese man with a lean face, glossy gel-slicked-back black hair, rectangular black-rimmed glasses, a thick gold wristwatch on his LEFT wrist, wearing a white short-sleeve dress shirt with a navy necktie under a green-and-white striped store vest worn open, a small plain blank white name plate on the left chest, grey slacks, black loafers. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: cool crisp daylight inside the store, high-contrast chiaroscuro, polished floor reflections. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "店長代理 坂本(명찰)",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3198,6 +3366,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Macro: Sakamoto's own blurred face reflected in the mirror-polished floor. Characters: Sakamoto Kenji, a Japanese man with a lean face, glossy gel-slicked-back black hair, rectangular black-rimmed glasses, a thick gold wristwatch on his LEFT wrist, wearing a white short-sleeve dress shirt with a navy necktie under a green-and-white striped store vest worn open, a small plain blank white name plate on the left chest, grey slacks, black loafers. Camera: overhead straight down 90 degrees, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: cool crisp daylight inside the store, high-contrast chiaroscuro, polished floor reflections. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3226,6 +3395,7 @@
     "店長代理 坂本"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3256,6 +3426,7 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3282,6 +3453,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Side-rear medium of Ogata leaning toward the bed, humble; his mouth not visible. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: eye-level from the side or behind, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: low golden-hour sun through the window behind the bed, warm 3200K backlight, glowing rim light, soft lifted shadows. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3308,6 +3480,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Close-up of Haruko against the raised pillows, puzzled and searching his face, golden backlight in her silver hair. Characters: Oki Haruko, an East Asian woman aged 80, small and thin, silver-white chin-length bob with a small pink hairpin on the right side, deep smile lines, a green jade ring on her LEFT ring finger, no glasses, wearing a light-blue striped hospital gown with a cream knitted cardigan over the shoulders. Camera: eye-level, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait. Lighting: low golden-hour sun through the window behind the bed, warm 3200K backlight, glowing rim light, soft lifted shadows. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3334,6 +3507,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Side macro insert: Haruko's thin hand with the green jade ring tightening on the cream blanket, golden light. Characters: Oki Haruko, an East Asian woman aged 80, small and thin, silver-white chin-length bob with a small pink hairpin on the right side, deep smile lines, a green jade ring on her LEFT ring finger, no glasses, wearing a light-blue striped hospital gown with a cream knitted cardigan over the shoulders. Camera: eye-level from the side or behind, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: low golden-hour sun through the window behind the bed, warm 3200K backlight, glowing rim light, soft lifted shadows. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3361,6 +3535,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert from above: Haruko's thin hands with the jade ring hold an old man's hand on the white blanket. Characters: Oki Haruko, an East Asian woman aged 80, small and thin, silver-white chin-length bob with a small pink hairpin on the right side, deep smile lines, a green jade ring on her LEFT ring finger, no glasses, wearing a light-blue striped hospital gown with a cream knitted cardigan over the shoulders | Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: overhead straight down 90 degrees, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: low golden-hour sun through the window behind the bed, warm 3200K backlight, glowing rim light, soft lifted shadows. Exactly 2 people (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3387,6 +3562,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert from above: the open leather notebook on the blanket with the pressed willow leaf and a small faded black-and-white photo of a teenage girl at a stone well; an old finger with a green jade ring stops on the photo. Characters: Oki Haruko, an East Asian woman aged 80, small and thin, silver-white chin-length bob with a small pink hairpin on the right side, deep smile lines, a green jade ring on her LEFT ring finger, no glasses, wearing a light-blue striped hospital gown with a cream knitted cardigan over the shoulders. Camera: overhead straight down 90 degrees, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: low golden-hour sun through the window behind the bed, warm 3200K backlight, glowing rim light, soft lifted shadows. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3413,6 +3589,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Chest-up close-up of Haruko, trembling recognition, tears welling, golden backlight. Characters: Oki Haruko, an East Asian woman aged 80, small and thin, silver-white chin-length bob with a small pink hairpin on the right side, deep smile lines, a green jade ring on her LEFT ring finger, no glasses, wearing a light-blue striped hospital gown with a cream knitted cardigan over the shoulders. Camera: eye-level, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait. Lighting: low golden-hour sun through the window behind the bed, warm 3200K backlight, glowing rim light, soft lifted shadows. Exactly one person in frame, no foreground shoulder, hands out of frame, chest-up single close-up, facing the camera within 30 degrees. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3439,6 +3616,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Ogata in side silhouette against the golden window, stunned. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: eye-level from the side or behind, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait. Lighting: low golden-hour sun through the window behind the bed, warm 3200K backlight, glowing rim light, soft lifted shadows. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3465,6 +3643,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Side medium of Haruko looking down at the photo, finger on it, remembering. Characters: Oki Haruko, an East Asian woman aged 80, small and thin, silver-white chin-length bob with a small pink hairpin on the right side, deep smile lines, a green jade ring on her LEFT ring finger, no glasses, wearing a light-blue striped hospital gown with a cream knitted cardigan over the shoulders. Camera: eye-level from the side or behind, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: low golden-hour sun through the window behind the bed, warm 3200K backlight, glowing rim light, soft lifted shadows. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3491,6 +3670,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Choker close-up of Ogata breaking down, tears behind the glasses, golden rim light. Characters: Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, round tortoiseshell glasses, a small pale scar on the right side of his chin, wearing a charcoal-navy three-piece suit, white shirt with the collar open and no tie, a small plain silver willow-leaf lapel pin. Camera: eye-level, 85mm prime lens, f/1.8, choker framing from forehead to chin, razor-sharp eyes, soft bokeh. Lighting: low golden-hour sun through the window behind the bed, warm 3200K backlight, glowing rim light, soft lifted shadows. Exactly one person in frame, no foreground shoulder, hands out of frame, chest-up single close-up, facing the camera within 30 degrees. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3517,6 +3697,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert: a young woman's bandaged hand covers her mouth, a tear on her cheek edge. Characters: Oki Yuna, a Japanese woman aged 21, slim, gentle face, long straight black hair in a low ponytail with wispy see-through bangs, exactly one small beauty mark under her LEFT eye, no glasses, a beige adhesive bandage on her RIGHT index finger, wearing a plain green-and-white vertically striped short-sleeve convenience-store uniform shirt over a white T-shirt, a small plain blank white name plate on the left chest, black slacks, white canvas sneakers. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: low golden-hour sun through the window behind the bed, warm 3200K backlight, glowing rim light, soft lifted shadows. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3546,6 +3727,7 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3573,6 +3755,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Insert from above: a young hand and an old hand with a green jade ring clasped over an old faded photograph on the blanket. Characters: Oki Haruko, an East Asian woman aged 80, small and thin, silver-white chin-length bob with a small pink hairpin on the right side, deep smile lines, a green jade ring on her LEFT ring finger, no glasses, wearing a light-blue striped hospital gown with a cream knitted cardigan over the shoulders | Oki Yuna, a Japanese woman aged 21, slim, gentle face, long straight black hair in a low ponytail with wispy see-through bangs, exactly one small beauty mark under her LEFT eye, no glasses, a beige adhesive bandage on her RIGHT index finger, wearing a plain green-and-white vertically striped short-sleeve convenience-store uniform shirt over a white T-shirt, a small plain blank white name plate on the left chest, black slacks, white canvas sneakers. Camera: overhead straight down 90 degrees, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: low golden-hour sun through the window behind the bed, warm 3200K backlight, glowing rim light, soft lifted shadows. Exactly 2 people (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3599,6 +3782,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Choker close-up of Yuna crying, her bandaged hand over her mouth, nodding. Characters: Oki Yuna, a Japanese woman aged 21, slim, gentle face, long straight black hair in a low ponytail with wispy see-through bangs, exactly one small beauty mark under her LEFT eye, no glasses, a beige adhesive bandage on her RIGHT index finger, wearing a plain green-and-white vertically striped short-sleeve convenience-store uniform shirt over a white T-shirt, a small plain blank white name plate on the left chest, black slacks, white canvas sneakers. Camera: eye-level, 85mm prime lens, f/1.8, choker framing from forehead to chin, razor-sharp eyes, soft bokeh. Lighting: low golden-hour sun through the window behind the bed, warm 3200K backlight, glowing rim light, soft lifted shadows. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3629,6 +3813,7 @@
     "沖"
    ],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3654,6 +3839,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Overhead macro: two long narrow willow leaves float side by side on the clear spring water and drift slowly.  Camera: overhead straight down 90 degrees, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: misty early morning, soft green and pale gold light, silver mist over the water. Completely unpopulated: no people, no hands. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3679,6 +3865,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Side macro insert, no people: a drop of water falls from the tip of a willow leaf into the misty spring, a ring of ripples.  Camera: eye-level from the side or behind, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: misty early morning, soft green and pale gold light, silver mist over the water. Completely unpopulated: no people, no hands. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   },
   {
@@ -3704,6 +3891,7 @@
    "keyframe_prompt": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Extreme wide from high above: the old stone well, the willows and the quiet town in morning mist; three tiny figures at the edge.  Camera: high-angle looking down, 24mm wide angle, deep focus, imposing perspective. Lighting: misty early morning, soft green and pale gold light, silver mist over the water. Completely unpopulated: no people, no hands. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "nameplates": [],
    "ja_overlay": "",
+   "signage": [],
    "caption": ""
   }
  ]

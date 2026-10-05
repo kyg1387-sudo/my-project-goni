@@ -338,6 +338,13 @@ CARDS = {"H3": "柳の葉と一杯の水", "S01a": "八月　鎌倉", "S21a": "�
 JA_OVERLAY = {"S11b": "休学届 + 病院未納通知", "S14b": "CCTV(그림만)", "S14e": "始末書", "S14f": "病院未納通知(2回目)",
               "S14j": "在庫ロス原因報告", "S15b": "喉の渇いた方、どうぞお持ちください(Klee One)", "S27b": "CCTV + 帳簿 + 始末書",
               "S20a": "—", "S27k": "店長代理 坂本(명찰)", "S02a": "店長代理 坂本(명찰, 작게)"}
+# 화면 속 가상 표기(사용자 확정 2026-10-05): 키프레임은 무지로 생성 → 로컬 실글꼴·원근 합성
+SIGN_STORE = "간판 「やなぎマート 鎌倉店」+측면 「24H」(scripts/yanagi_signage.py)"
+SIGN_DOOR = "문 옆 판 「やなぎマート 鎌倉店 / 運営:緒方ホールディングス株式会社」"
+SIGN_PLATE = "번호판 「品川 300 あ ・・・1」(뒤차 ・・・2·・・・3), 엠블럼 없음"
+SIGNAGE_BY_LOC = {"EXT_DAY": [SIGN_STORE, SIGN_DOOR], "EXT_BENCH": [SIGN_STORE], "EXT_DOOR": [SIGN_STORE, SIGN_DOOR],
+                  "EXT_LOW": [SIGN_STORE], "EXT_ACROSS": [SIGN_STORE], "EXT_THROUGH": [SIGN_STORE, SIGN_DOOR], "EXT_BLUE": [SIGN_STORE],
+                  "SEDAN": [SIGN_PLATE], "SEDANS": [SIGN_PLATE]}
 NAMEPLATE = {"SAKA": "店長代理 坂本", "YUNA": "沖"}  # 명찰 실글꼴 합성(사용자 지시 2026-10-04: 상황에 맞게 새김)
 AMBIENCE = {
     "S01a": "loud cicadas in a hot summer street, distant scooter", "S01b": "cicadas, faint air conditioner hum",
@@ -594,7 +601,7 @@ def main():
                    "refs": refs, "subject": s["subject"], "line": s["line"], "motion": item["prompt"] if tier in ("pro", "lite") else "",
                    "keyframe": keyframe, "keyframe_prompt": kf_prompt,
                    "nameplates": [NAMEPLATE[w.split(':')[0]] for w in s["who"] if w.split(':')[0] in NAMEPLATE and s["kind"] in ("face", "d", "sil")],
-                   "ja_overlay": JA_OVERLAY.get(sid, ""), "caption": CARDS.get(sid, "")})
+                   "ja_overlay": JA_OVERLAY.get(sid, ""), "signage": SIGNAGE_BY_LOC.get(s["loc"], []), "caption": CARDS.get(sid, "")})
     budget = round((cost["pro"] * RATE["pro"] + cost["lite"] * RATE["lite"]) * 1.25, 2)
 
     # ---------- 음성 복사(override) ----------
@@ -677,6 +684,8 @@ def main():
           f"| i2v 예산 상한 `budget_usd` (여유 25%) | | | {budget:.2f} |", "",
           "## 생성 방식 분포", "", "| 방식 | 컷 |", "|---|---|"] + [f"| {k} | {v} |" for k, v in tiers.most_common()] + [
           "", "## 앵글 분포 (생성 컷)", "", "| 앵글 | 컷 |", "|---|---|"] + [f"| {k} | {v} |" for k, v in ang.most_common()] + [
+          "", "## 화면 속 가상 표기 (키프레임은 무지 → 로컬 합성)", ""] + [
+          f"- {x['id']}: " + " / ".join(x["signage"]) for x in sb if x["signage"]] + [
           "", "## 샷 표", "", "| 컷 | 타임코드 | 길이 | 방식 | 사이즈 | 앵글 | 조명 | 편집 효과 | 대사 | 참조 |", "|---|---|---|---|---|---|---|---|---|---|"]
     for x in sb:
         light = next(k for k, v in LIGHT.items() if v == x["lighting"])
