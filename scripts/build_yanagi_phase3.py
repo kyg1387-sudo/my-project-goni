@@ -26,7 +26,7 @@ PROD = os.path.join(ROOT, "productions", "willow-leaf-ja")
 SKIT = "yanagi"
 FPS = 24
 HARD = 1 / FPS
-OMNI_MAX = 8.0
+OMNI_MAX = 7.9   # 조립 시 장면당 1프레임(HARD)이 더해져도 8초 상한 안쪽
 LEAD = 0.3            # 대사 컷은 발화 0.3초 전에 시작
 MIN_SHOT = 1.2
 STILL_MAX = 6.5
@@ -653,12 +653,13 @@ def main():
     idx = {sid: k + 1 for k, sid in enumerate(order_ids)}
     audio = {
         "_설명": "yanagi 조립·오디오(build_yanagi_phase3.py 생성). 음성 74줄 = assets/audio-overrides/yanagi/ (Typecast 확정본, 배속 없음).",
+        "default_voice": "cached-typecast",  # 74줄 모두 audio-overrides 캐시(lineNNN.mp3) — 유료 TTS 호출 없음
         "tts_model": "fal-ai/minimax/speech-02-hd", "language_boost": "Japanese", "speed": 1.0,
         "style_names": STYLE_JA, "narration_styles": ["Naration"], "silent_styles": ["Caption", "HookLine"],
         "output_size": [1920, 1080], "fit": "crop",
         "scene_durations": durations, "transitions": [0.0] * len(durations),
         "omnihuman_scenes": [idx[s["id"]] for s in SHOTS if s["kind"] == "d"],
-        "omnihuman_models": ["fal-ai/bytedance/omnihuman/v1.5", "fal-ai/bytedance/omnihuman"], "omnihuman_max_s": OMNI_MAX,
+        "omnihuman_models": ["fal-ai/bytedance/omnihuman/v1.5", "fal-ai/bytedance/omnihuman"], "omnihuman_max_s": 8.0,
         "legacy_lipsync": False,
         "ambience_model": "fal-ai/mmaudio-v2", "ambience_volume": 0.35,
         "ambience_prompts": [AMBIENCE.get(sid, "") for sid in order_ids],

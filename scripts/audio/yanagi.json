@@ -1,5 +1,6 @@
 {
  "_설명": "yanagi 조립·오디오(build_yanagi_phase3.py 생성). 음성 74줄 = assets/audio-overrides/yanagi/ (Typecast 확정본, 배속 없음).",
+ "default_voice": "cached-typecast",
  "tts_model": "fal-ai/minimax/speech-02-hd",
  "language_boost": "Japanese",
  "speed": 1.0,
@@ -74,8 +75,8 @@
   6.3539,
   2.5777,
   2.5777,
-  8.0417,
-  3.3937,
+  7.9417,
+  3.4937,
   4.1875,
   5.2902,
   5.2902,
