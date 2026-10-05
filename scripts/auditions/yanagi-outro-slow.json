@@ -1,47 +1,23 @@
 {
- "_설명": "아웃트로 진행자 4줄 느리게 재녹음(tempo 1.0→0.88, 감독님 지적 '말이 너무 빠름'). 같은 목소리·감정.",
- "tc_model": "ssfm-v30",
- "language": "jpn",
+ "_설명": "아웃트로 진행자 느린 음성(tempo 0.88, 앞뒤 무음 정리 후 0.15초씩) OmniHuman 3컷. 약 18.7초 x 0.16 = 약 3달러.",
  "tests": [
   {
-   "id": "line075s",
-   "model": "typecast-direct",
-   "voice": "tc_629fe972013e90b4db213fd8",
-   "language": "jpn",
-   "text": "最後までご覧いただき、ありがとうございました",
-   "emotion_preset": "normal",
-   "emotion_intensity": 1.0,
-   "tempo": 0.88
+   "id": "omni-076s",
+   "model": "omnihuman",
+   "image": "assets/portraits/yanagi-host/host-cu-1.png",
+   "audio_id": "pad076"
   },
   {
-   "id": "line076s",
-   "model": "typecast-direct",
-   "voice": "tc_629fe972013e90b4db213fd8",
-   "language": "jpn",
-   "text": "心に残る物語でしたら、高評価とチャンネル登録で応援していただけると嬉しいです",
-   "emotion_preset": "happy",
-   "emotion_intensity": 0.6,
-   "tempo": 0.88
+   "id": "omni-077s",
+   "model": "omnihuman",
+   "image": "assets/portraits/yanagi-host/host-wu-1.png",
+   "audio_id": "pad077"
   },
   {
-   "id": "line077s",
-   "model": "typecast-direct",
-   "voice": "tc_629fe972013e90b4db213fd8",
-   "language": "jpn",
-   "text": "次回も、時代を超えて人の心を温める、優しさと絆の物語をお届けします",
-   "emotion_preset": "normal",
-   "emotion_intensity": 1.0,
-   "tempo": 0.88
-  },
-  {
-   "id": "line078s",
-   "model": "typecast-direct",
-   "voice": "tc_629fe972013e90b4db213fd8",
-   "language": "jpn",
-   "text": "それでは、また次のお話で",
-   "emotion_preset": "happy",
-   "emotion_intensity": 0.7,
-   "tempo": 0.88
+   "id": "omni-078s",
+   "model": "omnihuman",
+   "image": "assets/portraits/yanagi-host/host-wave-1.png",
+   "audio_id": "pad078"
   }
  ]
 }
