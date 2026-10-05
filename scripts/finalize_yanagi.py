@@ -111,7 +111,8 @@ def patch(src, out, tmp):
         a, b = B[sid]; c = os.path.join(tmp, f"k_{sid}.mp4")
         cw = (x1 - x0) * W; ch = cw * 9 / 16
         run(["-ss", f"{a:.3f}", "-i", src, "-t", f"{b - a:.3f}", "-an", "-vf",
-             f"crop={cw:.0f}:{ch:.0f}:{x0 * W:.0f}:{(H - ch) / 2:.0f},scale={W}:{H}:flags=lanczos,fps=24", "-c:v", "libx264", "-crf", "16", c])
+             f"crop={cw:.0f}:{ch:.0f}:{x0 * W:.0f}:40,scale={W}:{H}:flags=lanczos,fps=24", "-c:v", "libx264", "-crf", "16", c])
+        # y=40부터: 아래쪽에 구워진 원래 자막이 크롭에 들어오지 않게(자막은 패치 단계에서 다시 굽는다)
         segs.append((a, b, c))
     # 패치 클립에 자막 다시 굽기(타임스탬프를 본편 시각으로 옮겨서) → 오버레이
     inputs, fc, last = ["-i", src], [], "[0:v]"
