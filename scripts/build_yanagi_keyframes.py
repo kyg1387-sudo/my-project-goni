@@ -64,6 +64,7 @@ COMPOSITION = {  # 키프레임 Kill Gate 보강 (A단계 1차 검수 2026-10-05
              "flat on the floor in front of his head; NOT a push-up, legs folded under him."),
     "S27l": ("Bird's-eye view straight down from the ceiling: Sakamoto kneels in dogeza on the mirror-polished floor, seen from "
              "directly above as a small figure — his back, slicked hair and flat palms; his face is NOT visible. Image upright."),
+    "S28c": FULL + " Exactly three hands: the woman's two hands from the left/bottom and the man's single hand in a dark suit sleeve from the right; no other sleeves.",
     "S27m": (FULL + " Camera behind Sakamoto at the far end of the aisle: we see ONLY his BACK (back of his slicked black hair, the back of "
              "the striped vest, grey slacks) as he walks away from the camera toward the open glass door and the blinding white daylight; "
              "his face is NOT visible at all; he is mid-stride, small in the frame, a silhouette against the glare."),
