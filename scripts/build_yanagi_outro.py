@@ -20,12 +20,14 @@ import imageio_ffmpeg
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 FF = imageio_ffmpeg.get_ffmpeg_exe()
 A = os.path.join(ROOT, "assets", "auditions", "yanagi-outro")
+A2 = os.path.join(ROOT, "assets", "auditions", "yanagi-outro-slow")  # 감독님 지적(말이 빠름·전환 끊김) 반영: tempo 0.88 재녹음
+HOLD = 0.8   # 진행자 컷 끝 정지(입 다문 채) — 다음 컷 디졸브가 말소리 위에 걸리지 않게
 KF = os.path.join(ROOT, "assets", "portraits", "yanagi-keyframes")
 OUT = os.path.join(ROOT, "out", "yanagi-outro.mp4")
 W, H, FPS = 1920, 1080, 24
 MONTAGE = [("S08b", "push"), ("S26h", "push"), ("S27e", "pull"), ("S28j2", "push"), ("S29b", "push")]  # 베풂 → 눈물 → 응징 → 재회 → 여운
-SEG = 1.8
-XF = 0.4
+SEG = 2.4   # 몽타주 컷 길이(디졸브 0.6초 포함 시 실제 노출 약 2.4초)
+XF = 0.6
 LINES = {
     "075": "最後までご覧いただき、ありがとうございました。",
     "076": "心に残る物語でしたら、高評価とチャンネル登録で\\N応援していただけると嬉しいです。",
@@ -64,7 +66,7 @@ def main():
     for n in ("076", "077", "078"):
         p = os.path.join(tmp, f"h{n}.mp4")
         # 마지막 손 흔들기는 끝 프레임을 2.4초 머금어 여운(엔드카드로 넘어가기 전 끊김 방지)
-        norm(os.path.join(A, f"omni-{n}.mp4"), p); hosts.append(p)
+        norm(os.path.join(A2, f"omni-{n}s.mp4"), p, extra=f",tpad=stop_mode=clone:stop_duration={HOLD}"); hosts.append(p)
     # 마지막: 손 흔드는 키프레임(OmniHuman은 손을 내려 버림) 2.6초 슬로 푸시인 — 엔드카드 전 여운
     wave = os.path.join(tmp, "wave.mp4")
     ov.cam(os.path.join(ROOT, "assets/portraits/yanagi-host/host-wave-1.png"), wave, 2.6 + XF, "push")
@@ -80,9 +82,9 @@ def main():
     for k in range(len(parts), len(parts) + len(hosts) - 1):
         host_start.append(host_start[-1] + lens[k] - XF)
     # 음성: line075는 몽타주 3번째 컷부터, 076~078은 각 립싱크 영상의 원래 음성(같은 TTS) 위치
-    t075 = SEG * 3 + 0.1  # 4번째 컷(재회의 손)부터 — 응징 컷 위에 감사 인사가 얹히지 않게
-    voice = [(os.path.join(ROOT, "assets", "auditions", "yanagi-tts", "line075.mp3"), t075)]
-    voice += [(os.path.join(A, f"line{n}.mp3"), host_start[j]) for j, n in enumerate(("076", "077", "078"))]
+    t075 = SEG * 3 - 0.4  # 4번째 컷(재회의 손)부터 — 응징 컷 위에 감사 인사가 얹히지 않게
+    voice = [(os.path.join(A2, "line075s.mp3"), t075)]
+    voice += [(os.path.join(A2, f"pad{n}.mp3"), host_start[j]) for j, n in enumerate(("076", "077", "078"))]
     inputs = []
     for c in clips:
         inputs += ["-i", c]

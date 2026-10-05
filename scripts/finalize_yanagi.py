@@ -50,7 +50,10 @@ CUTAWAY = [("S14g", 205.55, 207.75, "S14d2"), ("S14g", 210.45, 213.6, "S14e")]
 # 그 뒤는 유나 대사(line023)만으로 다시 만든 OmniHuman(앞 0.5초 무음 = 213.6초 시작)으로 교체
 REPLACE = [(213.6, None, "S14h", "assets/auditions/yanagi-fix-omni/omni-s14h.mp4"),
            # S27m: 정면을 보고 뒷걸음으로 나가던 컷(감독님 지적) → 뒷모습으로 걸어 나가는 새 i2v(유리문 로고 지움)
-           (None, None, "S27m", "assets/preview/yanagi/scene121.mp4")]  # OMNI 고개 숙임·손짓 왜곡 → 인서트(대사는 계속)
+           (None, None, "S27m", "assets/preview/yanagi/scene121.mp4"),
+           # 간판 미표시 외부 컷(감독님 지적) → 간판 합성본
+           (None, None, "S17a", "assets/preview/yanagi/scene64-sign.mp4"),
+           (None, None, "S17b", "assets/preview/yanagi/scene65-sign.mp4")]  # OMNI 고개 숙임·손짓 왜곡 → 인서트(대사는 계속)
 CROP = {"S12b": (0.30, 1.0)}
 # i2v 컷의 편집 카메라(규격 제8장 6 — 생성 지시가 아니라 편집에서). 원본은 자막 없는 생성 클립(assets/preview/yanagi/sceneNN.mp4)
 FX = {"S10c": "pull", "S11a": "pan", "S14d": "dutch5+hh", "S16d": "tilt", "S23a": "dollyzoom", "S26a": "rack",
@@ -108,6 +111,8 @@ def patch(src, out, tmp):
     for sid, fx in FX.items():
         a, b = B[sid]; c = os.path.join(tmp, f"f_{sid}.mp4")
         clip = os.path.join(ROOT, f"assets/preview/yanagi/scene{idx[sid]:02d}.mp4")
+        if os.path.exists(clip.replace(".mp4", "-sign.mp4")):
+            clip = clip.replace(".mp4", "-sign.mp4")   # 간판 합성본(clip_sign_overlay.py)
         if not os.path.exists(clip):
             print("편집 카메라 원본 없음(건너뜀):", sid); continue
         fx_clip(clip, c, fx, b - a)
