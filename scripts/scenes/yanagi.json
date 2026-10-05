@@ -576,7 +576,7 @@
    "i2v_resolution": "1080p"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Sakamoto points into the stockroom; Yuna steps back half a step. His head stays turned away. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Sakamoto points into the stockroom; Yuna steps back half a step. His head stays turned away. Outside the glass door only a soft, blurred, plain bright white street: no signs, no logos, no coloured marks or numbers appear at any time. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/yanagi-keyframes/S20b-1.png"
   },
@@ -604,7 +604,7 @@
    "image": "assets/portraits/yanagi-keyframes/S21b-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: The three figures take one slow step inside, backlit; Sakamoto holds his deep bow. No faces visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: The three figures take one slow step inside, backlit; Sakamoto holds his deep bow. No faces visible. Outside the glass door only a soft, blurred, plain bright white street: no signs, no logos, no coloured marks or numbers appear at any time. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/yanagi-keyframes/S22a-1.png"
   },
