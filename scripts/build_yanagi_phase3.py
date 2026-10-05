@@ -35,10 +35,11 @@ SHOT_TARGET = 1.6     # 분배 목표 최소 길이(인서트 1.6초 이상)
 
 # ---------- 고정 문장(PHASE 2 시트와 1:1, 모든 프롬프트에 그대로 반복) ----------
 C1, C2 = "assets/portraits/yanagi-cast/cells/", "assets/portraits/yanagi-cast-2/cells/"
+C3 = "assets/portraits/yanagi-yuna-v3s/cells/"  # 유나 v3(사용자 선택 2026-10-05)
 WHO = {
-    "YUNA": ("Oki Yuna, a Japanese woman aged 21, slim, gentle face, long straight black hair in a low ponytail with wispy "
-             "see-through bangs, exactly one small beauty mark under her LEFT eye, no glasses, a beige adhesive bandage on her RIGHT index finger",
-             C2 + "yuna-front.png"),
+    "YUNA": ("Oki Yuna, a beautiful, instantly likeable Japanese woman aged 21, slim with a healthy naturally feminine figure, clear luminous skin, large bright gentle eyes, warm kind smile, glossy long straight black hair in a neat low ponytail with soft wispy "
+             "see-through bangs and loose face-framing strands, exactly one small beauty mark under her LEFT eye, no glasses, a beige adhesive bandage on her RIGHT index finger",
+             C3 + "yuna-front.png"),
     "OGATA": ("Ogata Ryuzo, a Japanese man aged 75, lean, full head of cropped snow-white hair (not bald), thick white eyebrows, "
               "round tortoiseshell glasses, a small pale scar on the right side of his chin", C1 + "ogata-a-front.png"),
     "SAKA": ("Sakamoto Kenji, a Japanese man with a lean face, glossy gel-slicked-back black hair, rectangular black-rimmed glasses, "
