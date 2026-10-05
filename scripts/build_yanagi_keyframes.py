@@ -42,6 +42,15 @@ LOC_NOTE = {  # 로케이션별 고정 문장(PHASE 2 Kill Gate 잔여 결함 + 
 }
 
 
+TIGHT = ("Tight chest-up close-up: head and shoulders fill the frame, the top of the head near the top edge, the frame cut at mid-chest; "
+         "the face occupies about one third of the frame height; hands NOT visible. Full-frame 16:9 image, no black bars.")
+COMPOSITION = {  # 키프레임 Kill Gate 보강 (A단계 1차 검수 2026-10-05)
+    "S12b": TIGHT + " Haruko sits propped on pillows by the window, looking at the camera with warm worry.",
+    "S14g": TIGHT + " Expression: a thin cold smirk with hard narrowed eyes behind the glasses, NOT a broad friendly smile.",
+    "S22b": TIGHT + " Expression: an eager over-polite fawning smile, eyebrows raised, shoulders slightly hunched forward.",
+}
+
+
 def describe(path, i):
     name = os.path.basename(path)
     if name.startswith(("S", "H")) and "/yanagi-kf-" in path:
@@ -74,6 +83,8 @@ def build(sc, face_refs):
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
     parts.append(sc["keyframe_prompt"])
     parts += notes(sc["refs"])
+    if sc["id"] in COMPOSITION:
+        parts.append(COMPOSITION[sc["id"]])
     if sc["kind"] == "d":
         parts.append("Mouth gently closed or barely parted (speech is added later); natural skin texture, both eyes sharp and symmetrical.")
     parts.append("Absolutely no text, letters, numbers, logos or symbols anywhere in the image.")
@@ -81,14 +92,17 @@ def build(sc, face_refs):
 
 
 def main():
-    stage = (sys.argv[1] if len(sys.argv) > 1 else "a").lower()
+    arg = sys.argv[1] if len(sys.argv) > 1 else "a"
+    stage, _, only = arg.partition(":")  # 예: a:S12b,S14g → 재생성분만 yanagi-kf-a-r.json
+    stage = stage.lower()
+    only = set(only.split(",")) if only else None
     sb = json.load(open(SB_PATH, encoding="utf-8"))
     chars, missing = [], []
     for sc in sb["scenes"]:
         if not sc.get("keyframe"):
             continue
         is_a = sc["kind"] == "d"
-        if (stage == "a") != is_a:
+        if (stage == "a") != is_a or (only and sc["id"] not in only):
             continue
         face = []
         if stage == "b" and sc["kind"] in FACE_KINDS:
@@ -101,12 +115,14 @@ def main():
                         face.append(f)
         c = build(sc, face)
         missing += [f for f in c["refs"] if not os.path.exists(os.path.join(ROOT, f))]
+        if only:
+            c["count"] = 2  # 재생성은 2후보 중 선택
         chars.append(c)
     if missing:
         raise SystemExit("참조 파일 없음: " + ", ".join(sorted(set(missing))))
     head = {"_설명": f"yanagi PHASE 4 키프레임 {stage.upper()}단계 (build_yanagi_keyframes.py 생성, 직접 수정 금지).",
             "_style_preset": sb["preset"]}
-    path = OUT.format(stage)
+    path = OUT.format(stage + ("-r" if only else ""))
     json.dump({**head, "characters": chars}, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"{stage.upper()}단계 키프레임 {len(chars)}장 → {path} (약 {len(chars) * 0.04:.2f}달러)")
 
