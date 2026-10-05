@@ -101,5 +101,26 @@ def main():
     print(f"교체 클립 {made}개 → {OUT}\n생성 후 교체할 재사용 컷: {pending}")
 
 
+def replace_reuse(clips):
+    """생성된 i2v 클립(sceneNN.mp4 폴더)에서 재사용 컷을 잘라 교체(무과금). OMNI 원본은 조립 후 별도 교체."""
+    sb = json.load(open(SB, encoding="utf-8"))["scenes"]
+    ids = {s["id"]: i + 1 for i, s in enumerate(sb)}
+    pending = json.load(open(os.path.join(OUT, "_reuse_pending.json")))
+    left = []
+    for i, sid, src_id in pending:
+        src = os.path.join(clips, f"scene{ids[src_id]:02d}.mp4")
+        if sb[ids[src_id] - 1]["tier"] not in ("pro", "lite") or not os.path.exists(src):
+            left.append((i, sid, src_id)); continue
+        out = os.path.join(OUT, f"scene{i:02d}.mp4")
+        run(["-i", src, "-t", f"{sb[i - 1]['assembled_s'] + 0.5:.3f}", "-vf", f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps={FPS},format=yuv420p",
+             "-c:v", "libx264", "-crf", "18", "-an", out])
+        print(f"scene{i:02d} {sid} ← {src_id} 실제 클립")
+    json.dump(left, open(os.path.join(OUT, "_reuse_pending.json"), "w"), ensure_ascii=False)
+    print("남은 재사용 컷:", left)
+
+
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) > 2 and sys.argv[1] == "replace_reuse":
+        replace_reuse(sys.argv[2])
+    else:
+        main()
