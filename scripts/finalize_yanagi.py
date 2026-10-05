@@ -45,7 +45,10 @@ def bounds():
 
 # 조립 후 패치(검수 2026-10-05). 자막이 구워진 화면을 덮으므로 패치 클립에 같은 자막을 같은 시각으로 다시 굽는다.
 STILL_REDO = ["S11b", "S14e", "S14f", "S14j", "S15b"]          # 서류·화면 일본어 글자 합성 / 얼굴 결함 교체
-CUTAWAY = [("S14g", 205.55, 207.75, "S14d2"), ("S14g", 210.45, None, "S14e")]  # OMNI 고개 숙임·손짓 왜곡 → 인서트(대사는 계속)
+CUTAWAY = [("S14g", 205.55, 207.75, "S14d2"), ("S14g", 210.45, 213.6, "S14e")]
+# S14h: 점장 대사(line022)가 213.3초까지 이어져 유나 CU가 그 꼬리를 립싱크함(감독님 지적) → 213.6초까지 始末書 인서트로 덮고,
+# 그 뒤는 유나 대사(line023)만으로 다시 만든 OmniHuman(앞 0.5초 무음 = 213.6초 시작)으로 교체
+REPLACE = [(213.6, None, "S14h", "assets/auditions/yanagi-fix-omni/omni-s14h.mp4")]  # OMNI 고개 숙임·손짓 왜곡 → 인서트(대사는 계속)
 CROP = {"S12b": (0.30, 1.0)}
 # i2v 컷의 편집 카메라(규격 제8장 6 — 생성 지시가 아니라 편집에서). 원본은 자막 없는 생성 클립(assets/preview/yanagi/sceneNN.mp4)
 FX = {"S10c": "pull", "S11a": "pan", "S14d": "dutch5+hh", "S16d": "tilt", "S23a": "dollyzoom", "S26a": "rack",
@@ -106,6 +109,11 @@ def patch(src, out, tmp):
         if not os.path.exists(clip):
             print("편집 카메라 원본 없음(건너뜀):", sid); continue
         fx_clip(clip, c, fx, b - a)
+        segs.append((a, b, c))
+    for a, b, sid, clip in REPLACE:
+        b = b or B[sid][1]; c = os.path.join(tmp, f"r_{sid}.mp4")
+        run(["-i", os.path.join(ROOT, clip), "-an", "-vf", f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps=24,"
+             f"tpad=stop_mode=clone:stop_duration=1", "-t", f"{b - a + 0.1:.3f}", "-c:v", "libx264", "-crf", "16", c])
         segs.append((a, b, c))
     for sid, (x0, x1) in CROP.items():
         a, b = B[sid]; c = os.path.join(tmp, f"k_{sid}.mp4")
