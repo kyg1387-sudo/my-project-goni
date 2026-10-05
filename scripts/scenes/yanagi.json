@@ -850,7 +850,7 @@
    "image": "assets/portraits/yanagi-keyframes/S27l-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Sakamoto walks slowly away from the camera across the mat and out of the door, growing smaller; he never turns around. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Sakamoto, seen only from behind, walks slowly forward away from the camera toward the glass door, growing smaller; he keeps his back to the camera and never turns around, never walks backward. The glass door shows only plain blurred white daylight: no signs, no logos, no coloured marks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/yanagi-keyframes/S27m-1.png"
   },

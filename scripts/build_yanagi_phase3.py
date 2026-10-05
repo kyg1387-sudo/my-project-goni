@@ -307,7 +307,7 @@ SHOTS = [
     S("S27k", "S27", "ins", "ecu", "confront", "EL", ["SAKA:SAKA"], "INT_REV", "Insert: trembling fingers with a gold watch unclip the blank white name plate from the striped vest."),
     S("S27l", "S27", "ins", "ecu", "confront", "OH", ["SAKA:SAKA"], "INT_LOW", "Macro: Sakamoto's own blurred face reflected in the mirror-polished floor.", line="line064"),
     S("S27m", "S27", "sil", "ws", "inspect", "SIDE", ["SAKA:SAKA"], "INT_REV", "From behind: Sakamoto walks away across the burgundy mat and out through the glass door into the blinding glare.",
-      motion="Sakamoto walks slowly away from the camera across the mat and out of the door, growing smaller; he never turns around."),
+      motion="Sakamoto, seen only from behind, walks slowly forward away from the camera toward the glass door, growing smaller; he keeps his back to the camera and never turns around, never walks backward. The glass door shows only plain blurred white daylight: no signs, no logos, no coloured marks."),
     S("S28a", "S28", "sil", "ws", "ward_gold", "EL", ["HARUKO:HARUKO", "OGATA:OGATA_B", "YUNA:YUNA"], "PRIV_DUSK", "Wide through a gap in the curtain: a private hospital room at golden hour, Haruko in bed, Ogata on the chair, Yuna at the foot of the bed; faces small.",
       motion="Golden light; the three stay still; the curtain edge stirs."),
     S("S28b", "S28", "sil", "ms", "ward_gold", "SIDE", ["OGATA:OGATA_B"], "PRIV_DUSK", "Side-rear medium of Ogata leaning toward the bed, humble; his mouth not visible.", line="line065",
