@@ -1,0 +1,6 @@
+{
+ "_설명": "조립본 지적(2026-10-05): S14h 유나 CU가 점장 대사(line022) 꼬리에 입을 맞춤 + 명찰이 창틀에 합성됨 → 명찰 없는 키프레임 + 유나 대사(line023)만 담은 음성(앞 0.5초 무음)으로 OmniHuman 다시. 약 2.3초 x 0.16.",
+ "tests": [
+  {"id": "omni-s14h", "model": "omnihuman", "image": "assets/portraits/yanagi-keyframes/S14h-1.png", "audio_id": "s14h-a"}
+ ]
+}

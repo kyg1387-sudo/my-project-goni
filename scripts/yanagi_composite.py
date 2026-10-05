@@ -53,7 +53,8 @@ def cctv_art(src_id):
     a = np.clip(a, 0, 255).astype(np.uint8)
     return Image.fromarray(np.stack([a * 0.95, a, a * 1.02], -1).clip(0, 255).astype(np.uint8))
 _QUADS_NOTE = {}   # {"S20d": {"sign": [...], "plate": [...], "name": [...]}} — 자동 검출 보정용
-SKIP = {"S21b": {"plate"}, "S06a": {"name"}, "S27d": {"name"}, "S15a": {"name"}, "S20a": {"name"}}    # {"S08a": {"name"}} — 해당 표기 합성 안 함(가려짐·너무 작음)
+SKIP = {"S21b": {"plate"}, "S06a": {"name"}, "S27d": {"name"}, "S15a": {"name"}, "S20a": {"name"},
+        "S14h": {"name"}, "S26b": {"name"}}  # S14h·S26b: 명찰 검출이 창틀·문 표찰에 붙음(조립본 지적 2026-10-05)    # {"S08a": {"name"}} — 해당 표기 합성 안 함(가려짐·너무 작음)
 
 
 # ---------- 원화 ----------
