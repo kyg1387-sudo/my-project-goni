@@ -70,6 +70,8 @@ COMPOSITION = {  # 키프레임 Kill Gate 보강 (A단계 1차 검수 2026-10-05
     "S25a": ("High-angle security-camera view from a ceiling corner of the store: small figures of Ogata, Sato, Murase and Sakamoto "
              "standing near the counter, wide fisheye-like perspective, slightly cool flat video look."),
     "S28g": "Haruko looks down at a small faded black-and-white paper photograph held in her fingers; NOT a phone, NOT a tablet.",
+    "S06a": FULL, "S12a": FULL, "S26d": FULL, "S27j": FULL,
+    "S08a": FULL + " The storefront has NO banners, NO hanging signs and NO coloured stripes under the blank green sign band.",
     "S20d": FULL, "S13a2": FULL, "S13c2": FULL, "S26h2": FULL + " " + WILLOW, "S29c": FULL,
     "S13a3": FULL + " The older woman is seen from behind and the side so that her face is NOT visible; only her floral sleeve and hands.",
     "S27b": "The black tablet screen shows only a plain dark grey video frame with soft blurred shapes (picture composited later).",
@@ -79,8 +81,14 @@ COMPOSITION = {  # 키프레임 Kill Gate 보강 (A단계 1차 검수 2026-10-05
 }
 
 
+EXTRA_REFS = {"S29b": ["assets/portraits/yanagi-kf-b/S07a-1.png"]}  # 합격 컷의 버들잎을 잎 모양 참조로
+
+
 def describe(path, i):
     name = os.path.basename(path)
+    if any(path in v for v in EXTRA_REFS.values()):
+        return (f"Reference image {i} shows the correct LEAF SHAPE only: every leaf must be exactly this long, slender willow leaf; "
+                "ignore the cup and the background.")
     if name.startswith(("S", "H")) and "/yanagi-kf-" in path:
         who = next((v for k, v in PEOPLE.items() if FACE_KF.get(k) == name.split("-")[0]), "the character")
         return f"Reference image {i} is the APPROVED face of {who}: reproduce exactly this face, age and hairstyle (glasses only if worn there); ignore its background, framing and pose."
@@ -106,7 +114,7 @@ def notes(refs):
 
 def build(sc, face_refs):
     src = [r for r in sc["refs"] if not (sc["id"] in NO_PROP_REF and os.path.basename(r).startswith("props-"))]
-    refs = list(face_refs) + src
+    refs = list(face_refs) + src + EXTRA_REFS.get(sc["id"], [])
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, "
              "no borders, no captions."]
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
