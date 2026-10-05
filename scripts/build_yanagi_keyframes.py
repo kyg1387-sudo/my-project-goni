@@ -55,7 +55,7 @@ def describe(path, i):
     name = os.path.basename(path)
     if name.startswith(("S", "H")) and "/yanagi-kf-" in path:
         who = next((v for k, v in PEOPLE.items() if FACE_KF.get(k) == name.split("-")[0]), "the character")
-        return f"Reference image {i} is the APPROVED face of {who}: reproduce exactly this face, age, hairstyle and glasses."
+        return f"Reference image {i} is the APPROVED face of {who}: reproduce exactly this face, age and hairstyle (glasses only if worn there); ignore its background, framing and pose."
     for k, v in PEOPLE.items():
         if name.startswith(k):
             return (f"Reference image {i} is the character sheet cell of {v}: copy this exact face, hairstyle, wardrobe and age; "
