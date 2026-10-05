@@ -1,0 +1,23 @@
+{
+ "_설명": "S02a·S02b 애원·탈진 편집(승인 키프레임 기반, 얼굴 유지)",
+ "characters": [
+  {
+   "id": "S02b",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/yanagi-kf-a/S02b-1.png"
+   ],
+   "prompt": "Edit the reference image: keep EVERYTHING identical — the same old man, same face, same round tortoiseshell glasses, same white hair, same clothes, same framing, background and light. Change ONLY his condition and expression so he clearly looks heat-stricken and desperately begging for a sip of water: face flushed red and drenched in sweat, beads of sweat on the forehead, temples and nose, a few wet strands of white hair stuck to the forehead, cracked dry lips slightly parted, brows knitted upward in a pitiful pleading look, eyes glassy and weak, glasses slipped slightly down the nose. Still looking up at the camera. No text anywhere."
+  },
+  {
+   "id": "S02a",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/yanagi-kf-b/S02a-1.png"
+   ],
+   "prompt": "Edit the reference image: keep the same store, camera angle, light, the clerk's shoulder in the foreground, and the same old man (same face, white hair, glasses, grey linen jacket, beige trousers). Change ONLY the old man's pose and condition: instead of lying flat, he is slumped half-sitting on the floor with his back against the glass door, body sagging, face sweaty and flushed, mouth open gasping, and one shaking hand stretched up toward the clerk, begging. He looks heat-stricken and desperate, not relaxed. No name tag on his jacket. No text anywhere."
+  }
+ ]
+}
