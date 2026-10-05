@@ -1,0 +1,11 @@
+{
+ "_설명": "유나 외모 변경 후보(사용자 요청 2026-10-05): 누구나 호감 가는 청순 미인형 + 건강하고 자연스러운 여성스러운 체형, 단정한 유니폼(노출 없음). 3후보 중 선택 → 시트 재고정.",
+ "characters": [
+  {
+   "id": "yuna-v3-face",
+   "count": 3,
+   "aspect_ratio": "3:4",
+   "prompt": "Photorealistic live-action Japanese drama heroine portrait, waist-up, facing the camera, soft natural window light, Arri Alexa color grade, Kodak 35mm film grain. Oki Yuna, a beautiful and instantly likeable Japanese woman aged 21: clear luminous skin, large bright gentle eyes with sharp catchlights, soft natural eyebrows, a small straight nose, a warm kind smile with closed lips, glossy long straight black hair in a neat low ponytail with soft wispy see-through bangs and a few loose strands framing her face, exactly one small beauty mark under her LEFT eye, no glasses, light natural makeup. Slim, healthy, naturally feminine figure. Wearing a neatly fitted (not tight) green-and-white vertically striped short-sleeve convenience-store uniform shirt buttoned modestly over a white crew-neck T-shirt, a small plain blank white name plate on the left chest, a beige adhesive bandage on her RIGHT index finger. Clean softly blurred plain warm background. Modest, wholesome, elegant, the kind of heroine viewers instantly root for. No text, no letters, no logos anywhere. Negative: revealing clothing, cleavage, tight clothing, sexualized pose, heavy makeup, gibberish, text on name tag, watermark, deformed eyes, extra fingers."
+  }
+ ]
+}
