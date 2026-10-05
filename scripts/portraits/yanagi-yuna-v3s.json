@@ -1,0 +1,13 @@
+{
+ "_설명": "유나 v3 시트(사용자 선택 후보 1, 2026-10-05). 셀 분할 → assets/portraits/yanagi-yuna-v3/cells/",
+ "characters": [
+  {
+   "id": "yuna-sheet-v3",
+   "count": 1,
+   "refs": [
+    "assets/portraits/yanagi-yuna-v3/yuna-v3-face-1.png"
+   ],
+   "prompt": "Use the exact face of the young woman in the reference image (same person: same beautiful face shape, large bright gentle eyes, warm smile, glossy black hair, same soft wispy see-through bangs with loose face-framing strands, same neat low ponytail tied with a faded mint-green scrunchie). She is slim with a healthy, naturally feminine figure; the uniform is neatly fitted (not tight) and modest. Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (three head-and-shoulders portraits): left = straight frontal view, middle = 45-degree three-quarter view, right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (three head-and-shoulders portraits): left = gentle warm reassuring smile (as in the reference), middle = biting her lower lip holding back tears, eyes glistening, right = crying with relief, tears on the cheeks. Locked in all nine panels: absolutely NO glasses (bare eyes), exactly ONE small beauty mark under her LEFT eye and no other moles or spots on the face, a beige adhesive bandage wrapped around her RIGHT index finger (visible in the full-body panels), a plain green-and-white vertically striped convenience-store uniform shirt with short sleeves and no logo over a plain white crew-neck T-shirt, a small plain blank white rectangular name plate on the left chest with nothing written on it, plain black straight slacks, worn white canvas sneakers. Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, text on badge, text on name tag, logo on shirt, signage lettering, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers."
+  }
+ ]
+}
