@@ -46,7 +46,40 @@ def bounds():
 # 조립 후 패치(검수 2026-10-05). 자막이 구워진 화면을 덮으므로 패치 클립에 같은 자막을 같은 시각으로 다시 굽는다.
 STILL_REDO = ["S11b", "S14e", "S14f", "S14j", "S15b"]          # 서류·화면 일본어 글자 합성 / 얼굴 결함 교체
 CUTAWAY = [("S14g", 205.55, 207.75, "S14d2"), ("S14g", 210.45, None, "S14e")]  # OMNI 고개 숙임·손짓 왜곡 → 인서트(대사는 계속)
-CROP = {"S12b": (0.30, 1.0)}                                   # OMNI 왼쪽 가장자리 검은 형체 → 오른쪽 70% 확대(장면 전체 고정)
+CROP = {"S12b": (0.30, 1.0)}
+# i2v 컷의 편집 카메라(규격 제8장 6 — 생성 지시가 아니라 편집에서). 원본은 자막 없는 생성 클립(assets/preview/yanagi/sceneNN.mp4)
+FX = {"S10c": "pull", "S11a": "pan", "S14d": "dutch5+hh", "S16d": "tilt", "S23a": "dollyzoom", "S26a": "rack",
+      "S27d": "hh", "S27e": "pull", "S29c": "pull"}
+
+
+def fx_filter(fx, n):
+    t = f"(on/{n})"
+    zp = lambda z, x="iw/2-(iw/zoom/2)", y="ih/2-(ih/zoom/2)": f"zoompan=z='{z}':x='{x}':y='{y}':d=1:s=1920x1080:fps=24"
+    shake = "crop=1920:1080:x='(iw-1920)/2+9*sin(t*5.3)+4*sin(t*11.7)':y='(ih-1080)/2+6*sin(t*4.1)+3*sin(t*9.3)'"
+    if fx == "pull":
+        return zp(f"1.08-0.08*{t}")
+    if fx == "pan":
+        return zp("1.10", x=f"(iw-iw/zoom)*(0.2+0.6*{t})")
+    if fx == "tilt":
+        return zp("1.10", y=f"(ih-ih/zoom)*(0.15+0.7*{t})")
+    if fx == "dollyzoom":   # 인물 마스크 없는 근사: 1.6초 안에 빠른 줌인(정체 발각 1회)
+        return zp(f"1+0.22*{t}*{t}")
+    if fx == "hh":
+        return f"scale=2112:1188,{shake}"
+    if fx == "dutch5+hh":
+        return f"rotate=5*PI/180:ow=iw:oh=ih:c=black,scale=2400:1350,{shake}"
+    return "null"
+
+
+def fx_clip(src, out, fx, sec):
+    n = int(round(sec * 24)) + 2
+    base = f"scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,fps=24,trim=0:{sec + 0.05:.3f},setpts=PTS-STARTPTS"
+    if fx == "rack":    # 초점 이동: 흐림 → 선명 0.8초
+        vf = (f"[0:v]{base},split[a][b];[b]gblur=sigma=14[bl];"
+              f"[a][bl]blend=all_expr='A*min(1,T/0.8)+B*(1-min(1,T/0.8))',format=yuv420p[v]")
+    else:
+        vf = f"[0:v]{base},{fx_filter(fx, n)},format=yuv420p[v]"
+    run(["-i", src, "-filter_complex", vf, "-map", "[v]", "-an", "-c:v", "libx264", "-crf", "16", out])                                   # OMNI 왼쪽 가장자리 검은 형체 → 오른쪽 70% 확대(장면 전체 고정)
 
 
 def patch(src, out, tmp):
@@ -65,6 +98,14 @@ def patch(src, out, tmp):
     for sid, a, b, ins in CUTAWAY:
         b = b or B[sid][1]; c = os.path.join(tmp, f"c_{sid}_{a:.0f}.mp4")
         ov.cam(os.path.join(ROOT, f"assets/portraits/yanagi-keyframes/{ins}-1.png"), c, b - a + 0.1, "push")
+        segs.append((a, b, c))
+    idx = {x["id"]: i + 1 for i, x in enumerate(SB)}
+    for sid, fx in FX.items():
+        a, b = B[sid]; c = os.path.join(tmp, f"f_{sid}.mp4")
+        clip = os.path.join(ROOT, f"assets/preview/yanagi/scene{idx[sid]:02d}.mp4")
+        if not os.path.exists(clip):
+            print("편집 카메라 원본 없음(건너뜀):", sid); continue
+        fx_clip(clip, c, fx, b - a)
         segs.append((a, b, c))
     for sid, (x0, x1) in CROP.items():
         a, b = B[sid]; c = os.path.join(tmp, f"k_{sid}.mp4")
