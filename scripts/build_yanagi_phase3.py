@@ -301,7 +301,7 @@ SHOTS = [
     S("S27h", "S27", "reuse:S27e", "ews", "confront", "BE", [], None, "B-roll reuse of S27e under the rest of line061."),
     S("S27i", "S27", "face", "ms", "confront", "SIDE", ["MURASE:MURASE"], "INT_REV", "Side medium of Murase announcing, tablet against her chest.", line="line062",
       motion="Murase speaks seen from the side, her mouth not visible behind the angle; she stays still."),
-    S("S27i2", "S27", "ins", "ecu", "confront", "EL", ["SAKA:SAKA"], "INT_REV", "Macro insert: a bead of sweat drips from a man's jaw onto the mirror-polished floor."),
+    S("S27i2", "S27", "ins", "ecu", "confront", "EL", ["SAKA:SAKA"], "INT_REV", "Macro insert from the side at waist height: a man's hand hanging at his side, clenched into a trembling fist, beads of sweat on the knuckles, white shirt cuff and the hem of a green-and-white striped vest; the mirror-polished floor out of focus below. No face."),
     S("S27j", "S27", "face", "ms", "confront", "SIDE", ["MURASE:MURASE", "YUNA:YUNA"], "INT_AISLE", "Side medium: Murase bows respectfully to Yuna; Yuna bows back deeply.", line="line063",
       motion="Murase bows slightly; Yuna answers with a deep bow. No one walks."),
     S("S27k", "S27", "ins", "ecu", "confront", "EL", ["SAKA:SAKA"], "INT_REV", "Insert: trembling fingers with a gold watch unclip the blank white name plate from the striped vest."),

@@ -1,0 +1,16 @@
+{
+ "_설명": "yanagi PHASE 4 키프레임 B단계 (build_yanagi_keyframes.py 생성, 직접 수정 금지).",
+ "_style_preset": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting",
+ "characters": [
+  {
+   "id": "S27i2",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/yanagi-cast-2/cells/sakamoto-front.png",
+    "assets/portraits/yanagi-cast/cells/loc-store-int-angles-day.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the character sheet cell of Sakamoto (store manager, gel-slicked hair, black-rimmed glasses): copy this exact face, hairstyle, wardrobe and age; ignore its background, framing and any sheet layout. Reference image 2 is the location reference: match its architecture, colours, set dressing and light direction; ignore any borders or labels. Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, quiet restrained Japanese film mise-en-scene, no flat lighting. Macro insert from the side at waist height: a man's hand hanging at his side, clenched into a trembling fist, beads of sweat on the knuckles, white shirt cuff and the hem of a green-and-white striped vest; the mirror-polished floor out of focus below. No face. Characters: Sakamoto Kenji, a Japanese man with a lean face, glossy gel-slicked-back black hair, rectangular black-rimmed glasses, a thick gold wristwatch on his LEFT wrist, wearing a white short-sleeve dress shirt with a navy necktie under a green-and-white striped store vest worn open, a small plain blank white name plate on the left chest, grey slacks, black loafers. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: cool crisp daylight inside the store, high-contrast chiaroscuro, polished floor reflections. Exactly 1 person (or their hands) as described, no extra people. All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Name plates on uniforms stay completely blank (Japanese lettering is composited later). Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, posters with writing, price tags with numbers, printed labels, brand logos, car emblems, license plates, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people. Store interior walls are plain white with NO coloured stripes or bands along the top of the walls or shelves, no brand trade dress, no logos, no numerals, no posters with writing. Full-frame 16:9 image filling the whole canvas: NO black bars, NO white borders, NO letterbox or pillarbox. No drool, no liquid strings, no white boxes, no cut-off body parts; the hand is complete with five fingers. Absolutely no text, letters, numbers, logos or symbols anywhere in the image."
+  }
+ ]
+}
