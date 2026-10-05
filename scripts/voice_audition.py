@@ -301,6 +301,17 @@ def main():
             if not omnihuman_test(t, key):
                 failed.append(t["id"])
             continue
+        if model.startswith("fal-ai/lyria"):
+            # 배경음악 1곡(보컬 없음) — 아웃트로 음악 베드 등. 결과 파일은 .mp3 이름이지만 형식은 응답 그대로(ffmpeg가 내용으로 판별)
+            payload = {"prompt": t["text"], "negative_prompt": t.get("negative", "vocals, singing, lyrics, speech")}
+            print(f"[{t['id']}] {model}: {t['text'][:40]}…")
+            result = fal_run(model, payload, key, t["id"])
+            url = find_audio_url(result) if result else None
+            if not url:
+                failed.append(t["id"]); continue
+            urllib.request.urlretrieve(url, path)
+            print(f"  저장됨 → {path}")
+            continue
         if model == "typecast-direct":
             # Typecast(https://typecast.ai) 보이스 — TYPECAST_API_KEY 필요. 응답은 오디오 바이트 그대로.
             tc_key = (os.environ.get("TYPECAST_API_KEY") or "").strip()

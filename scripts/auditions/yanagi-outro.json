@@ -1,8 +1,28 @@
 {
- "_설명": "버들잎 아웃트로 진행자 OmniHuman 3컷(각 8초 이하, 가슴 위~허리 위). 음성 = 확정 TTS line076~078(Yui Sato). 약 14.7초 x 0.16 = 약 2.35달러.",
+ "_설명": "버들잎 아웃트로 진행자 OmniHuman 3컷(각 8초 이하, 가슴 위~허리 위). 음성 = 확정 TTS line076~078(Yui Sato). 약 14.7초 x 0.16 = 약 2.35달러. + 아웃트로 음악 베드 1곡(lyria2, 보컬 없음).",
  "tests": [
-  {"id": "omni-076", "model": "omnihuman", "image": "assets/portraits/yanagi-host/host-cu-1.png", "audio_id": "line076"},
-  {"id": "omni-077", "model": "omnihuman", "image": "assets/portraits/yanagi-host/host-wu-1.png", "audio_id": "line077"},
-  {"id": "omni-078", "model": "omnihuman", "image": "assets/portraits/yanagi-host/host-wave-1.png", "audio_id": "line078"}
+  {
+   "id": "outro-bed",
+   "model": "fal-ai/lyria2",
+   "text": "warm gentle solo piano with soft strings, hopeful and tender, Japanese human drama ending theme, slow 70 bpm, calm, instrumental, no vocals"
+  },
+  {
+   "id": "omni-076",
+   "model": "omnihuman",
+   "image": "assets/portraits/yanagi-host/host-cu-1.png",
+   "audio_id": "line076"
+  },
+  {
+   "id": "omni-077",
+   "model": "omnihuman",
+   "image": "assets/portraits/yanagi-host/host-wu-1.png",
+   "audio_id": "line077"
+  },
+  {
+   "id": "omni-078",
+   "model": "omnihuman",
+   "image": "assets/portraits/yanagi-host/host-wave-1.png",
+   "audio_id": "line078"
+  }
  ]
 }
