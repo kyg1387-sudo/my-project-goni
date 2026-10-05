@@ -263,6 +263,8 @@ def main():
             im.thumbnail((T, T)); x, y = (i % cols) * T, (i // cols) * (T + 24)
             sheet.paste(im, (x, y + 24)); d.text((x + 4, y + 3), lab, font=f, fill="black")
         os.makedirs(os.path.dirname(QA), exist_ok=True); sheet.save(QA, quality=85)
+    import yanagi_paper_text  # 서류·화면 일본어 글자(합성본 위에 다시 얹음)
+    yanagi_paper_text.run(fresh=True)
     print("\n".join(log)); print(f"합성 {len(crops)}곳 → {OUT}, 검수 {QA}")
 
 

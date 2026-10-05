@@ -35,17 +35,61 @@ def dur(p):
 
 
 def bounds():
+    """조립본 실제 장면 경계(장면 사이 1프레임 겹침 반영 — qa_assembly 보고와 같은 계산)."""
     d = [float(x) for x in AUDIO["scene_durations"]]
     t, out = 0.0, {}
-    for s, x in zip(SB, d):
-        out[s["id"]] = (t, t + x); t += x
+    for k, (s, x) in enumerate(zip(SB, d)):
+        out[s["id"]] = (t, t + x); t += x - (1 / 24 if k < len(d) - 1 else 0)
     return out
 
 
+# 조립 후 패치(검수 2026-10-05). 자막이 구워진 화면을 덮으므로 패치 클립에 같은 자막을 같은 시각으로 다시 굽는다.
+STILL_REDO = ["S11b", "S14e", "S14f", "S14j", "S15b"]          # 서류·화면 일본어 글자 합성 / 얼굴 결함 교체
+CUTAWAY = [("S14g", 205.55, 207.75, "S14d2"), ("S14g", 210.45, None, "S14e")]  # OMNI 고개 숙임·손짓 왜곡 → 인서트(대사는 계속)
+CROP = {"S12b": (0.30, 1.0)}                                   # OMNI 왼쪽 가장자리 검은 형체 → 오른쪽 70% 확대(장면 전체 고정)
+
+
+def patch(src, out, tmp):
+    B = bounds(); W, H = 1920, 1080
+    sys.path.insert(0, os.path.join(ROOT, "scripts"))
+    import build_yanagi_overrides as ov
+    ov.W, ov.H = W, H
+    fdir = os.environ.get("FONTSDIR", "/usr/share/fonts")
+    ass = os.path.join(ROOT, "subs", "yanagi.ass")
+    segs = []   # (t0, t1, clip)
+    for sid in STILL_REDO:
+        a, b = B[sid]; c = os.path.join(tmp, f"p_{sid}.mp4")
+        sc = next(x for x in SB if x["id"] == sid)
+        ov.cam(os.path.join(ROOT, f"assets/portraits/yanagi-keyframes/{sid}-1.png"), c, b - a + 0.1, sc["edit_fx"].split("+")[0])
+        segs.append((a, b, c))
+    for sid, a, b, ins in CUTAWAY:
+        b = b or B[sid][1]; c = os.path.join(tmp, f"c_{sid}_{a:.0f}.mp4")
+        ov.cam(os.path.join(ROOT, f"assets/portraits/yanagi-keyframes/{ins}-1.png"), c, b - a + 0.1, "push")
+        segs.append((a, b, c))
+    for sid, (x0, x1) in CROP.items():
+        a, b = B[sid]; c = os.path.join(tmp, f"k_{sid}.mp4")
+        cw = (x1 - x0) * W; ch = cw * 9 / 16
+        run(["-ss", f"{a:.3f}", "-i", src, "-t", f"{b - a:.3f}", "-an", "-vf",
+             f"crop={cw:.0f}:{ch:.0f}:{x0 * W:.0f}:{(H - ch) / 2:.0f},scale={W}:{H}:flags=lanczos,fps=24", "-c:v", "libx264", "-crf", "16", c])
+        segs.append((a, b, c))
+    # 패치 클립에 자막 다시 굽기(타임스탬프를 본편 시각으로 옮겨서) → 오버레이
+    inputs, fc, last = ["-i", src], [], "[0:v]"
+    for k, (a, b, c) in enumerate(segs, start=1):
+        inputs += ["-i", c]
+        fc.append(f"[{k}:v]trim=0:{b - a:.3f},setpts=PTS-STARTPTS+{a:.3f}/TB,ass={ass}:fontsdir={fdir}[p{k}]")
+        fc.append(f"{last}[p{k}]overlay=enable='between(t,{a:.3f},{b:.3f})':eof_action=pass[o{k}]"); last = f"[o{k}]"
+    run(inputs + ["-filter_complex", ";".join(fc), "-map", last, "-map", "0:a", "-c:v", "libx264", "-preset", "medium",
+                  "-crf", "17", "-c:a", "copy", out])
+    print("패치:", ", ".join(f"{a:.2f}-{b:.2f}" for a, b, _ in segs))
+
+
 def main():
-    src = sys.argv[1]
+    src0 = sys.argv[1]
     os.makedirs(OUTD, exist_ok=True)
     B = bounds()
+    tmp0 = os.path.join(OUTD, "fin"); os.makedirs(tmp0, exist_ok=True)
+    src = os.path.join(tmp0, "patched.mp4")
+    patch(src0, src, tmp0)
     h0, h1 = B["H1"]; s0, s1 = B["S24b"]
     row = next(r for r in LOCK["rows"] if r["id"] == "line047")
     off = row["start"] - s0                          # S24b 안에서 line047이 시작하는 위치
