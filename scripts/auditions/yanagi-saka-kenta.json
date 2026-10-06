@@ -1,0 +1,127 @@
+{
+ "_설명": "점장(坂本) 목소리 교체(감독님 선택 ② Kenta, 2026-10-06): 회장과 같은 음높이 대역이라 구별 안 됨 → Kenta(평균 F0 약 150Hz). 원본 12줄과 같은 문장·감정, tempo는 원본 길이에 맞게 x1.07(line032 제외).",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "line003",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "ちょっと、おじいさん。ここ休憩所じゃないんで。買わないなら出てってもらえます?そんな格好で座り込まれたら、お客さんが逃げるんだよ",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.8,
+   "tempo": 1.177
+  },
+  {
+   "id": "line017",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "はい、エリア長! 今月もロス率、ゼロでいけます。正式店長の件、ぜひよろしくお願いします!",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.177
+  },
+  {
+   "id": "line018",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "おきさん。昨日のこれ。店の水と紙コップ、勝手に使ったよね。立派な備品の私的流用だよ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 0.9,
+   "tempo": 1.07
+  },
+  {
+   "id": "line020",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "言い訳はいい。今週末、本部の監査が来るんだよ。俺の正式店長の審査がかかってんの。あんなのが店先に座り込んでたなんて報告されたら、どうしてくれるわけ?",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.0,
+   "tempo": 1.177
+  },
+  {
+   "id": "line021",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "始末書、書いて。今月のバイト代からさんまんえん引くから",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.07
+  },
+  {
+   "id": "line022",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "おばあさんの入院費、払えないんだって? ここクビになって、すぐ次のバイト見つかると思う? ……黙ってハンコ、押しなよ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.963
+  },
+  {
+   "id": "line032",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "こういうの置くなって。浮浪者が寄ってくるだろ",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.7,
+   "tempo": 1.05
+  },
+  {
+   "id": "line042",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "おきさん、今日は本部の方が帰るまで倉庫から出ないで。顔見せたら……わかってるよね",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 0.9,
+   "tempo": 1.07
+  },
+  {
+   "id": "line044",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "おがたホールディングス鎌倉店、店長代理の坂本でございます!本日は会長自らお越しいただき、誠に光栄で——",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.2,
+   "tempo": 1.177
+  },
+  {
+   "id": "line046",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "え……あ、いや……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 0.963
+  },
+  {
+   "id": "line048",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "そ、それは……ただのアルバイトで……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 1.07
+  },
+  {
+   "id": "line060",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "会長、違うんです! あの時の方が会長だと知っていたら、僕は——",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.3,
+   "tempo": 1.23
+  }
+ ]
+}
