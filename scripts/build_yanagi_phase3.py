@@ -249,7 +249,7 @@ SHOTS = [
     S("S21b", "S21", "ins", "ecu", "sun", "LA", ["OGATA:OGATA_B"], "SEDANS", "Insert at ground level: a polished black oxford shoe and a charcoal-navy trouser hem step down onto sunlit asphalt from a car door.", fx="jib"),
     S("S22a", "S22", "sil", "ws", "inspect", "EL", ["SAKA:SAKA", "MURASE:MURASE", "SATO:SATO", "OGATA:OGATA_B"], "INT_REV",
       "Wide from behind the counter toward the entrance: the glass door open, Murase and Sato entering first and Ogata behind them as backlit silhouettes against the blinding daylight; Sakamoto bowing 90 degrees on the burgundy mat in the foreground right.",
-      motion="The three figures take one slow step inside, backlit; Sakamoto holds his deep bow. No faces visible. Outside the glass door only a soft, blurred, plain bright white street: no signs, no logos, no coloured marks or numbers appear at any time."),
+      motion="The three backlit figures take one slow step inside together; Sakamoto holds his deep bow. Faces stay in natural backlit shadow. Outside the glass door only a soft, blurred, plain bright white street: no signs, no logos, no coloured marks or numbers appear at any time."),
     S("S22b", "S22", "d", "cu", "inspect", "EL", ["SAKA:SAKA"], "INT_INSPECT", "Chest-up close-up of Sakamoto standing upright, over-eager fawning smile.", line="line044", expr="fawn"),
     S("S22c", "S22", "sil", "ms", "inspect", "HA", ["SAKA:SAKA"], "INT_INSPECT", "High angle: Sakamoto bowing deeply on the burgundy mat, the top of his slick head toward the camera.",
       motion="Sakamoto holds the deep bow, perfectly still except for breathing."),

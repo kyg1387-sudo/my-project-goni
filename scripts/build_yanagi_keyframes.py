@@ -71,6 +71,13 @@ COMPOSITION = {  # 키프레임 Kill Gate 보강 (A단계 1차 검수 2026-10-05
     "S20c": (FULL + " Extreme close-up insert with NO face and NO head in frame: only a young woman's hand (beige bandage on the right index "
              "finger, green-and-white striped short sleeve) slowly pulling the grey stockroom door shut, fingers tense and hesitant on the "
              "steel handle; the bright store aisle softly out of focus through the narrowing gap."),
+    # 감독님 지적: 얼굴이 모자이크처럼 뭉개짐 + 회장 누락 → 세 사람의 자연스러운 역광 실루엣
+    "S22a": (FULL + " EXACTLY THREE visitors stand just inside the open glass door against blinding white daylight: in front a woman in a "
+             "light-grey pantsuit (chin-length black bob) and a man in a black suit, and between and slightly behind them an old man "
+             "with snow-white hair in a charcoal-navy suit whose white hair glows with a bright rim of backlight. Their faces are in "
+             "natural deep backlit shadow — dark but real faces with soft rim light on cheeks and ears, NOT blurred, NOT pixelated, "
+             "NOT smudged, no mosaic. Sakamoto bows 90 degrees on the burgundy mat in the right foreground. Outside the door only plain "
+             "blurred white daylight: no signs, no logos, no coloured marks."),
     "S27m": (FULL + " Camera behind Sakamoto at the far end of the aisle: we see ONLY his BACK (back of his slicked black hair, the back of "
              "the striped vest, grey slacks) as he walks away from the camera toward the open glass door and the blinding white daylight; "
              "his face is NOT visible at all; he is mid-stride, small in the frame, a silhouette against the glare."),
