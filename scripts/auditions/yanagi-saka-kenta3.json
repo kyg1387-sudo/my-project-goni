@@ -1,0 +1,57 @@
+{
+ "_설명": "점장 Kenta 발음 보정: line022 「次のバイト」가 「次の場合と」로, line032 「浮浪者」가 「うくろうしゃ」로 들림(ja large-v3) → 표기 변형 재녹음 후 언어 검사로 선택. 자막은 원문 유지.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "line022a",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "おばあさんの入院費、払えないんだって? ここクビになって、すぐ、つぎの バイト、見つかると思う? ……黙ってハンコ、押しなよ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.052
+  },
+  {
+   "id": "line022b",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "おばあさんの入院費、払えないんだって? ここクビになって、すぐに次のアルバイト、見つかると思う? ……黙ってハンコ、押しなよ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.052
+  },
+  {
+   "id": "line022c",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "おばあさんの入院費、払えないんだって? ここクビになって、すぐ次の、バイト、見つかると思う? ……黙ってハンコ、押しなよ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.052
+  },
+  {
+   "id": "line032a",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "こういうの、置くなって。ふろうしゃが寄ってくるだろ",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.7,
+   "tempo": 0.951
+  },
+  {
+   "id": "line032b",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "こういうの、おくなって。ふろうしゃが、寄ってくるだろ",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.7,
+   "tempo": 0.951
+  }
+ ]
+}
