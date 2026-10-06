@@ -124,10 +124,23 @@ def thumb_b():
     return bg
 
 
+def thumb_c():
+    """감동형(업로드 가이드 기존 A안): 입을 가린 유나의 눈물(S28i, 노을) 왼쪽 + 오른쪽 문구."""
+    im = kf("S28i", (0, 0, 1344, 768)).resize((W, H), Image.LANCZOS)
+    g = Image.new("L", (W, H))
+    d = ImageDraw.Draw(g)
+    for x in range(W):  # 오른쪽 글자 자리를 어둡게
+        d.line([(x, 0), (x, H)], fill=int(max(0, (x - W * 0.42) / (W * 0.58)) * 190))
+    im = Image.composite(Image.new("RGB", (W, H), (10, 6, 2)), im, g)
+    tri_text(im, (690, 150), "六十年前の", 104, YELLOW, BLOOD, 12, WHITE, 6)
+    tri_text(im, (690, 330), "一杯の水", 132, WHITE, BLACK, 14, SCARLET, 6, {3: RED})
+    return im
+
+
 if __name__ == "__main__":
     out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, "productions", "willow-leaf-ja", "thumbnails")
     os.makedirs(out, exist_ok=True)
-    for name, fn in (("A-기획안적용", thumb_a), ("B-반전형", thumb_b)):
+    for name, fn in (("A-기획안적용", thumb_a), ("B-반전형", thumb_b), ("C-감동형", thumb_c)):
         p = os.path.join(out, f"yanagi-thumb-{name}.jpg")
         fn().save(p, quality=92)
         print(p)

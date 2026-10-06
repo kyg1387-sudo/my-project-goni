@@ -32,10 +32,10 @@ def wrap(text, limit=15):
     t = text.replace("\\N", "")
     out = []
     while len(t) > limit + 2:
-        cut = max((k + 1 for k in range(5, limit + 1) if t[k] in "。、…』」？！"), default=0)
+        cut = max((k + 1 for k in range(5, limit + 1) if t[k] in "。、…』」？！?!"), default=0)
         if not cut:  # 문장부호가 없으면 조사 뒤에서 끊는다
             cut = max((k + 1 for k in range(7, limit + 1) if t[k] in "がでにをはのと"), default=limit)
-        while cut < len(t) and t[cut] in "…。、』」":
+        while cut < len(t) and t[cut] in "…。、』」？！?!—":  # 구두점·말줄임표로 시작하는 줄 금지
             cut += 1
         out.append(t[:cut]); t = t[cut:]
     if t:
