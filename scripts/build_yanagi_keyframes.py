@@ -68,6 +68,9 @@ COMPOSITION = {  # 키프레임 Kill Gate 보강 (A단계 1차 검수 2026-10-05
     # 감독님 지적(2026-10-05): 「간절히 물 한 모금 부탁하는 모습 같지 않음」 → 열사병 탈진·애원 표정 강화
     "S02a": FULL + " He clearly looks heat-stricken and desperate, NOT relaxed or lounging; NOT lying flat on his back.",
     "S02b": TIGHT + " Expression at about 70 percent: exhausted, pleading, desperate for water — NOT calm, NOT curious, NOT neutral.",
+    "S20c": (FULL + " Extreme close-up insert with NO face and NO head in frame: only a young woman's hand (beige bandage on the right index "
+             "finger, green-and-white striped short sleeve) slowly pulling the grey stockroom door shut, fingers tense and hesitant on the "
+             "steel handle; the bright store aisle softly out of focus through the narrowing gap."),
     "S27m": (FULL + " Camera behind Sakamoto at the far end of the aisle: we see ONLY his BACK (back of his slicked black hair, the back of "
              "the striped vest, grey slacks) as he walks away from the camera toward the open glass door and the blinding white daylight; "
              "his face is NOT visible at all; he is mid-stride, small in the frame, a silhouette against the glare."),
