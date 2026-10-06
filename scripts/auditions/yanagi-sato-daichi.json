@@ -1,0 +1,27 @@
+{
+ "_설명": "비서 사토 → Daichi(2026-10-06 추천안 채택). line028은 오디션본(길이 97%) 그대로, 038(110%)·039(88%)만 원본 길이에 맞게 tempo 보정 재녹음.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "line038",
+   "model": "typecast-direct",
+   "voice": "tc_63622a97ee3708cc70012f94",
+   "language": "jpn",
+   "text": "調べがつきました。坂本店長代理は、この半年で売上金をおよそにひゃくまんえん……。その穴を、アルバイトの始末書で埋めていました",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.12
+  },
+  {
+   "id": "line039",
+   "model": "typecast-direct",
+   "voice": "tc_63622a97ee3708cc70012f94",
+   "language": "jpn",
+   "text": "おきゆなさんの分も、昨日、本部に上がっています",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  }
+ ]
+}
