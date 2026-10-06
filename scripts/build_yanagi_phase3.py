@@ -381,17 +381,20 @@ def ass_t(sec):
 
 
 def wrap(text, limit=19):
-    """libass는 일본어 자동 줄바꿈 불가 → 19자 기준으로 구두점에서 수동 \\N (EP3 실증)."""
+    """libass는 일본어 자동 줄바꿈 불가 → 19자 기준으로 구두점에서 수동 \\N (EP3 실증).
+    말줄임표 「……」·줄표 「——」를 쪼개지 않고, 구두점으로 시작하는 줄을 만들지 않는다(검수 16번)."""
+    NOHEAD = "…—、。!?？！』」"
     out, cur = [], ""
-    for ch in text:
+    for i, ch in enumerate(text):
         cur += ch
-        if len(cur) >= limit and ch in "、。…!?？！』」":
+        nxt = text[i + 1] if i + 1 < len(text) else ""
+        if len(cur) >= limit and ch in "、。…!?？！』」" and nxt and nxt not in NOHEAD:
             out.append(cur); cur = ""
     if cur:
         out.append(cur)
-    if len(out) > 2:  # 3줄 이상이면 둘로 다시 나눔
+    if len(out) > 2 or max(len(x) for x in out) > limit + 7:  # 3줄 이상이거나 한 줄이 너무 길면 둘로 고르게
         mid = len(text) // 2
-        cands = [i + 1 for i, ch in enumerate(text[:-1]) if ch in "、。…"]
+        cands = [i + 1 for i, ch in enumerate(text[:-1]) if ch in "、。…!?？！" and text[i + 1] not in NOHEAD]
         cut = min(cands, key=lambda i: abs(i - mid)) if cands else mid
         out = [text[:cut], text[cut:]]
     return "\\N".join(out)
@@ -606,11 +609,19 @@ def main():
     budget = round((cost["pro"] * RATE["pro"] + cost["lite"] * RATE["lite"]) * 1.25, 2)
 
     # ---------- 음성 복사(override) ----------
+    # 목소리 교체(2026-10-06 감독님 지적 「회장·점장 목소리가 같다」): 점장 Kenta, 비서 사토 Daichi — 길이·발음 보정본을 고른 결과
+    RECAST = {**{f"line{n}": f"yanagi-saka-kenta/line{n}.mp3" for n in ("017", "021", "046", "048", "060")},
+              **{f"line{n}": f"yanagi-saka-kenta2/line{n}.mp3" for n in ("003", "018", "020", "042", "044")},
+              "line022": "yanagi-saka-kenta3/line022c.mp3", "line032": "yanagi-saka-kenta3/line032a.mp3",
+              "line028": "yanagi-sato-voice/sato_Daichi_line028.mp3",
+              "line038": "yanagi-sato-daichi/line038.mp3", "line039": "yanagi-sato-daichi/line039.mp3"}
     src = os.path.join(ROOT, "assets", "auditions", "yanagi-tts")
     dst = os.path.join(ROOT, "assets", "audio-overrides", SKIT)
     os.makedirs(dst, exist_ok=True)
     for i in range(1, 75):
-        shutil.copyfile(os.path.join(src, f"line{i:03d}.mp3"), os.path.join(dst, f"line{i:03d}.mp3"))
+        n = f"line{i:03d}"
+        shutil.copyfile(os.path.join(ROOT, "assets", "auditions", RECAST[n]) if n in RECAST else os.path.join(src, f"{n}.mp3"),
+                        os.path.join(dst, f"{n}.mp3"))
 
     # ---------- 자막(ASS): 줄 순서 = lineNNN 순서 (TTS 캐시 번호와 일치해야 함) ----------
     events = []
