@@ -1,0 +1,127 @@
+{
+ "_설명": "점장 목소리 재오디션(감독님 지적: 회장·점장 목소리 구별 안 됨 — 둘 다 약 110Hz). 4후보 x 3줄(협박·짜증·아첨).",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "saka_Kenta_line022",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "おばあさんの入院費、払えないんだって? ここクビになって、すぐ次のバイト見つかると思う? ……黙ってハンコ、押しなよ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "saka_Kenta_line032",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "こういうの置くなって。浮浪者が寄ってくるだろ",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.7,
+   "tempo": 1.05
+  },
+  {
+   "id": "saka_Kenta_line044",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "おがたホールディングス鎌倉店、店長代理の坂本でございます!本日は会長自らお越しいただき、誠に光栄で——",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.2,
+   "tempo": 1.1
+  },
+  {
+   "id": "saka_Daichi_line022",
+   "model": "typecast-direct",
+   "voice": "tc_63622a97ee3708cc70012f94",
+   "language": "jpn",
+   "text": "おばあさんの入院費、払えないんだって? ここクビになって、すぐ次のバイト見つかると思う? ……黙ってハンコ、押しなよ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "saka_Daichi_line032",
+   "model": "typecast-direct",
+   "voice": "tc_63622a97ee3708cc70012f94",
+   "language": "jpn",
+   "text": "こういうの置くなって。浮浪者が寄ってくるだろ",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.7,
+   "tempo": 1.05
+  },
+  {
+   "id": "saka_Daichi_line044",
+   "model": "typecast-direct",
+   "voice": "tc_63622a97ee3708cc70012f94",
+   "language": "jpn",
+   "text": "おがたホールディングス鎌倉店、店長代理の坂本でございます!本日は会長自らお越しいただき、誠に光栄で——",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.2,
+   "tempo": 1.1
+  },
+  {
+   "id": "saka_Tonakai_line022",
+   "model": "typecast-direct",
+   "voice": "tc_639ad2a0b3863ffe1948a241",
+   "language": "jpn",
+   "text": "おばあさんの入院費、払えないんだって? ここクビになって、すぐ次のバイト見つかると思う? ……黙ってハンコ、押しなよ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "saka_Tonakai_line032",
+   "model": "typecast-direct",
+   "voice": "tc_639ad2a0b3863ffe1948a241",
+   "language": "jpn",
+   "text": "こういうの置くなって。浮浪者が寄ってくるだろ",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.7,
+   "tempo": 1.05
+  },
+  {
+   "id": "saka_Tonakai_line044",
+   "model": "typecast-direct",
+   "voice": "tc_639ad2a0b3863ffe1948a241",
+   "language": "jpn",
+   "text": "おがたホールディングス鎌倉店、店長代理の坂本でございます!本日は会長自らお越しいただき、誠に光栄で——",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.2,
+   "tempo": 1.1
+  },
+  {
+   "id": "saka_Takuya_line022",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "おばあさんの入院費、払えないんだって? ここクビになって、すぐ次のバイト見つかると思う? ……黙ってハンコ、押しなよ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "saka_Takuya_line032",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "こういうの置くなって。浮浪者が寄ってくるだろ",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.7,
+   "tempo": 1.05
+  },
+  {
+   "id": "saka_Takuya_line044",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "おがたホールディングス鎌倉店、店長代理の坂本でございます!本日は会長自らお越しいただき、誠に光栄で——",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.2,
+   "tempo": 1.1
+  }
+ ]
+}
