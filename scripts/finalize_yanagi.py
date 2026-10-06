@@ -53,7 +53,10 @@ REPLACE = [(213.6, None, "S14h", "assets/auditions/yanagi-fix-omni/omni-s14h.mp4
            (None, None, "S27m", "assets/preview/yanagi/scene121.mp4"),
            # 간판 미표시 외부 컷(감독님 지적) → 간판 합성본
            (None, None, "S17a", "assets/preview/yanagi/scene64-sign.mp4"),
-           (None, None, "S17b", "assets/preview/yanagi/scene65-sign.mp4")]  # OMNI 고개 숙임·손짓 왜곡 → 인서트(대사는 계속)
+           (None, None, "S17b", "assets/preview/yanagi/scene65-sign.mp4"),
+           # S02 「水を……一口だけ」 감독님 지적: 애원·탈진 모습으로 교체
+           (None, None, "S02a", "assets/preview/yanagi/scene07.mp4"),
+           (None, None, "S02b", "assets/auditions/yanagi-fix-s02/omni-s02b.mp4")]  # OMNI 고개 숙임·손짓 왜곡 → 인서트(대사는 계속)
 CROP = {"S12b": (0.30, 1.0)}
 # i2v 컷의 편집 카메라(규격 제8장 6 — 생성 지시가 아니라 편집에서). 원본은 자막 없는 생성 클립(assets/preview/yanagi/sceneNN.mp4)
 FX = {"S10c": "pull", "S11a": "pan", "S14d": "dutch5+hh", "S16d": "tilt", "S23a": "dollyzoom", "S26a": "rack",
