@@ -1,0 +1,127 @@
+{
+ "_설명": "비서 사토 목소리 재오디션(감독님 요청 2026-10-06: 점장 교체와 함께 사토도 교체). 현재 Rex. 후보 4명 x 사토 3줄(028·038·039, 원본 문장·감정·tempo 동일). 회장(Hideo Watanabe)·점장(Kenta)·내레이터(Lloyd)와 구별되는 목소리.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "sato_Daichi_line028",
+   "model": "typecast-direct",
+   "voice": "tc_63622a97ee3708cc70012f94",
+   "language": "jpn",
+   "text": "会長、ですから申し上げたのです。お一人で、しかもお電話も持たずに……",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "sato_Daichi_line038",
+   "model": "typecast-direct",
+   "voice": "tc_63622a97ee3708cc70012f94",
+   "language": "jpn",
+   "text": "調べがつきました。坂本店長代理は、この半年で売上金をおよそにひゃくまんえん……。その穴を、アルバイトの始末書で埋めていました",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "sato_Daichi_line039",
+   "model": "typecast-direct",
+   "voice": "tc_63622a97ee3708cc70012f94",
+   "language": "jpn",
+   "text": "おきゆなさんの分も、昨日、本部に上がっています",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "sato_Ryouta_line028",
+   "model": "typecast-direct",
+   "voice": "tc_62baac31e1c614d37b9160e3",
+   "language": "jpn",
+   "text": "会長、ですから申し上げたのです。お一人で、しかもお電話も持たずに……",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "sato_Ryouta_line038",
+   "model": "typecast-direct",
+   "voice": "tc_62baac31e1c614d37b9160e3",
+   "language": "jpn",
+   "text": "調べがつきました。坂本店長代理は、この半年で売上金をおよそにひゃくまんえん……。その穴を、アルバイトの始末書で埋めていました",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "sato_Ryouta_line039",
+   "model": "typecast-direct",
+   "voice": "tc_62baac31e1c614d37b9160e3",
+   "language": "jpn",
+   "text": "おきゆなさんの分も、昨日、本部に上がっています",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "sato_Takuya_line028",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "会長、ですから申し上げたのです。お一人で、しかもお電話も持たずに……",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "sato_Takuya_line038",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "調べがつきました。坂本店長代理は、この半年で売上金をおよそにひゃくまんえん……。その穴を、アルバイトの始末書で埋めていました",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "sato_Takuya_line039",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "おきゆなさんの分も、昨日、本部に上がっています",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "sato_Simon_line028",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "会長、ですから申し上げたのです。お一人で、しかもお電話も持たずに……",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "sato_Simon_line038",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "調べがつきました。坂本店長代理は、この半年で売上金をおよそにひゃくまんえん……。その穴を、アルバイトの始末書で埋めていました",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "sato_Simon_line039",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "おきゆなさんの分も、昨日、本部に上がっています",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  }
+ ]
+}
