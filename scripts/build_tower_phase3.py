@@ -307,7 +307,7 @@ SHOTS = [
     S("S14f", "S14", "react", "cu", "hall", "EL", ["MAMAA"], "HALL_ROWS", "Close-up of Mama A frozen in shock, wide eyes, lips parted.", fx="split3", expr="shock"),
     S("S14g", "S14", "sil", "ws", "hall_reveal", "LA", ["CROWD"], "HALL_REV", "Low angle: silhouettes of residents rising one by one from their seats against the bright windows.", fx="split3",
       motion="Two or three silhouettes slowly stand up; the rest stay seated."),
-    S("S14h", "S14", "react", "cu", "hall_press", "EL", ["REIKA"], "HALL_LECTERN", "Chest-up close-up of Reika at the lectern, smile frozen, a single bead of sweat running down her temple.", fx="split3", expr="panic"),
+    S("S14h", "S14", "react", "cu", "hall_press", "EL", ["REIKA"], "HALL_LECTERN", "Chest-up close-up of Reika at the lectern, her face frozen in shock, a single bead of sweat running down her temple.", fx="split3", expr="panic"),
     S("S14i", "S14", "reuse:S14e", "ws", "hall_reveal", "EL", [], None, "Reuse of S14e (pair 3 frozen) under the killing line.", line="line041"),
     S("S14j", "S14", "sil", "ews", "hall_reveal", "HA", ["CROWD"], "HALL_REV",
       "From beside the lectern looking out over the packed hall: a hundred heads all turned toward the screen, backlit, faces unrecognizable.", line="line042",

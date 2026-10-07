@@ -85,24 +85,25 @@ REIKA_BY_EXPR = {"panic": "assets/portraits/tower-kf-a/S14l-1.png", "tears": "as
 FIX_B = {
     "S01d": "Insert: the brushed-steel passenger elevator doors are almost fully closed, leaving only a narrow vertical gap of about a hand's width; through the gap we glimpse ONE slice of Reika's face with a red-lipped smirk. The steel door surfaces are matte brushed metal with NO reflections of faces. Exactly one person.",
     "S05f": "Low insert at knee height ONLY: on the stage a woman's knees in cream wide-leg trousers crossing one over the other, nude heels; her face and upper body are NOT in frame. NOT a full-body shot.",
-    "S14h": "Tight chest-up close-up of Reika at the lectern: her confident smile has FROZEN and cracked — eyes fixed and frightened, a single bead of sweat running down her temple, face pale. NOT smiling happily. No hands.",
+    "S14h": "Eye-level tight chest-up close-up of Reika at the lectern, her face frozen in shock: eyes fixed and frightened, mouth slightly open, a single bead of sweat running down her temple, face pale. NO smile at all. No hands.",
     "S14n2": "High angle close-up of Reika (chest-up) staring down at something off-frame below, colour draining from her face, lips parted in fear. Her hands are NOT visible and she holds NOTHING.",
-    "S16g": "High angle tight close-up of Reika at the lectern, trembling, lips parted, eyes glassy with fear, face pale. NOT smiling. No hands.",
+    "S16g": "Camera ABOVE her eye line looking DOWN (high angle), tight close-up of head and shoulders only — NOT a medium shot, the lectern is NOT visible. Reika trembling, lips parted, eyes glassy with fear, face pale. NOT smiling. No hands.",
     "S17a": "ONE single frame (NOT two panels, NOT a split screen): side insert at floor level of a woman's knees in cream wide-leg trousers buckling, nude heels wobbling on the pale wood stage floor; her upper body NOT in frame.",
     "S17e2": "High angle tight close-up of Reika SITTING ON THE FLOOR, devastated: mouth falling open, tears welling and running, mascara slightly smudged. NOT smiling. No hands.",
     "S17g": "High angle close-up of Reika SITTING ON THE FLOOR beside the lectern, looking up pleadingly with wet eyes toward the front row, desperate. NOT standing, NOT smiling.",
     "S19d": "High angle tight close-up of Reika in the lobby clutching a stack of moving boxes against her chest (box edges at the bottom of frame), jaw clenched, eyes lowered in humiliation, lips pressed tight. NOT smiling, NOT surprised.",
     "S14e": "", "S14a": "", "S14c": "",
     # 크롭으로 못 고치는 인서트(얼굴을 자르면 4배 확대, 핸드 마이크라 스탠드를 쥔 손이 없음)
-    "S05c": "Tight insert framed from the shoulders down to the waist ONLY: three seated women side by side in the front row clapping eagerly in front of their chests (pink sweater, white blouse, beige cardigan); their heads and faces are OUT OF FRAME above the top edge. Hands with exactly five fingers each.",
+    "S05c": "Close insert of clapping hands at chest height: the camera is low and close, the top edge of the frame cuts across three seated women's collarbones, so only their torsos and clapping hands are in the picture (pink sweater, white blouse, beige cardigan) with blurred seated residents behind. Do NOT draw heads; NO masks, NO circles, NO blur patches, NO stickers. Hands with exactly five fingers each.",
     # B 재생성 2차(2026-10-07): S14l(굳은 미소) 참조가 미소를 끌고 옴 → 재생성 합격 공포 얼굴, 빈 의자 배경 → 주민 뒷머리 전경(S16d)
     "S15c": "Medium of the front rows of seated residents (men in suits, women in blouses) startled by a shout: they lean back slightly in their chairs with wide eyes, a few cover their mouths with one hand. Arms stay DOWN — nobody raises arms, nobody throws hands up, nobody stands. Faces soft and unrecognizable.",
     "S15a": "Macro insert, ONE hand only: a woman's hand with a thin gold bangle and cream tweed sleeve cuff tightly gripping the vertical chrome shaft of a microphone stand on the wooden lectern, knuckles white with tension. The microphone is mounted on the stand (NOT handheld). Her face is NOT in frame. Exactly five fingers.",
 }
 
 
-FEAR_FACE = {"S14h": "assets/portraits/tower-cast/cells/reika-fear-1.png", "S16g": "assets/portraits/tower-cast/cells/reika-fear-2.png",
+FEAR_FACE = {"S14h": "assets/portraits/tower-cast/cells/reika-fear-3.png", "S16g": "assets/portraits/tower-cast/cells/reika-fear-3.png",
              "S14n2": "assets/portraits/tower-cast/cells/reika-fear-1.png"}
+FEAR_HALL = "assets/portraits/tower-cast/cells/reika-fear-3.png"  # B 재생성 2차 합격 S14n2: 공포 얼굴 + 주민 배경(3차 기준)
 HALL_FRONT = "assets/portraits/tower-kf-b/S16d-1.png"  # 승인 B: 단상의 레이카, 전경에 주민 뒷머리
 BG_FRONT = ("Background geometry: the camera is among the seated audience facing the stage, so behind Reika are only the white wall, "
             "the window band and the pale projection screen, softly out of focus; the blurred backs of residents' heads fill the lower "
@@ -111,6 +112,10 @@ BG_FRONT = ("Background geometry: the camera is among the seated audience facing
 
 def describe(path, i):
     name = os.path.basename(path)
+    if path == FEAR_HALL:
+        return (f"Reference image {i} is the APPROVED shot of Reika frightened in the packed assembly hall: copy exactly this face, hair, "
+                "makeup, earrings, jacket, the frightened expression (NO smile) and the hall background with seated residents; change ONLY "
+                "the camera angle and framing as described.")
     if path in FEAR_FACE.values():
         return (f"Reference image {i} is the APPROVED face of Reika frightened: copy exactly this face, hair, makeup, pearl earrings, "
                 "jacket and the frightened expression (NO smile); ignore its background completely.")
@@ -157,8 +162,11 @@ def notes(refs):
 
 def build(sc, face_refs):
     refs = list(face_refs) + sc["refs"] + EXTRA_REFS.get(sc["id"], [])
+    if sc["id"] == "S05c":  # 얼굴 셀이 얼굴을 그리게 한 뒤 동그라미로 가림(B 2차 실증) → 장소 셀만, 의상은 문장으로
+        refs = [r for r in refs if "/cells/loc-" in r]
     if sc["id"] in FEAR_FACE:
-        refs = [FEAR_FACE[sc["id"]]] + [HALL_FRONT if r.endswith(("loc-hall-p4.png", "loc-hall-p2.png")) else r for r in sc["refs"]]
+        refs = [FEAR_FACE[sc["id"]]] + ([] if FEAR_FACE[sc["id"]] == FEAR_HALL else
+                                        [HALL_FRONT if r.endswith(("loc-hall-p4.png", "loc-hall-p2.png")) else r for r in sc["refs"]])
     if sc["id"] in FIX_A or (sc["kind"] in ("face", "react", "sil", "d") and sc["size"] != "ecu"):  # 단상·후면 셀은 흰 벽만 찍혀 배경이 스튜디오처럼 나옴(A단계 실증) → 스크린·창이 보이는 회의실 셀
         refs = [HALL_BG if r.endswith(("loc-hall-p4.png", "loc-hall-p2.png")) else r for r in refs]
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
@@ -167,7 +175,7 @@ def build(sc, face_refs):
     parts += notes(refs)
     if FIX_B.get(sc["id"]):
         parts.insert(1, FIX_B[sc["id"]])
-    if sc["id"] in FEAR_FACE:
+    if sc["id"] in FEAR_FACE and FEAR_FACE[sc["id"]] != FEAR_HALL:
         parts.insert(2, BG_FRONT)
     if sc["id"] in FIX_A:
         parts.insert(1, FIX_A[sc["id"]])

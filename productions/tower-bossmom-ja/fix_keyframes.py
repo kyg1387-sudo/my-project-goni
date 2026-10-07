@@ -9,6 +9,7 @@ from PIL import Image, ImageFilter
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, "..", ".."))
 SRC = os.path.join(REPO, "assets", "portraits", "tower-kf-b")
+SRC_R = os.path.join(REPO, "assets", "portraits", "tower-kf-b-r")  # 재생성분(있으면 우선)
 DST = os.path.join(REPO, "assets", "portraits", "tower-keyframes")
 
 # 인서트 크롭(16:9 박스, x0, y0, x1, y1) — 스펙의 ECU·인서트 구도로 좁힌다
@@ -20,6 +21,7 @@ CROPS = {
     "S14n": (360, 226, 640, 384),   # 통장을 내려놓는 손
     "S16i": (160, 249, 400, 384),   # 지팡이 손잡이를 쥔 손
     "S16i2": (186, 220, 426, 355),  # 체인 끈을 쥔 떨리는 손가락
+    "S15a": (160, 110, 480, 290),   # 재생성분: 스탠드를 쥔 손(빈 마이크 집게·왼쪽 종이 제외)
 }
 # 흐림 영역 — 키즈룸 복도 벽 게시물·작은 메모(가짜 글자). 배경 심도처럼 보이게 강하게 흐린다
 BLURS = {
@@ -43,9 +45,14 @@ def blur(im, box, r=7):
     im.paste(reg, (x0 - pad, y0 - pad), m)
 
 
+def src(sid):
+    r = os.path.join(SRC_R, f"{sid}-1.png")
+    return r if sid == "S15a" else os.path.join(SRC, f"{sid}-1.png")
+
+
 def main():
     for sid, box in CROPS.items():
-        im = Image.open(os.path.join(SRC, f"{sid}-1.png")).convert("RGB")
+        im = Image.open(src(sid)).convert("RGB")
         c = im.crop(tuple(2 * v for v in box))
         print(f"{sid}: 크롭 {c.size} → 1344x768 ({1344 / c.size[0]:.1f}배)")
         c.resize(im.size, Image.LANCZOS).save(os.path.join(DST, f"{sid}-1.png"))
