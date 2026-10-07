@@ -199,20 +199,47 @@ def art_lcd(w, h):
 
 
 def art_laptop(w, h):
-    im = canvas(w, h, (236, 238, 242, 255)); d = ImageDraw.Draw(im)
-    d.rectangle((0, 0, w, h * 0.09), fill=(52, 70, 104, 255))
-    d.text((w * 0.03, h * 0.02), "登記情報提供サービス", font=font(GOTH, h * 0.05), fill=(255, 255, 255, 255))
-    d.text((w * 0.06, h * 0.14), "法人登記　履歴事項", font=font(MIN_B, h * 0.075), fill=(30, 30, 40, 255))
-    rows = [("商号", COMPANY), ("代表者", "代表取締役　西園寺 剛"), ("本店所在地", "東京都港区 レンタルオフィス内"),
+    """노트북 화면(감독님 지적 4:31: 베젤에 붙음·표 선이 점선처럼 깨짐·너무 밝음) — 브라우저 틀(가상 사이트명)·굵은 표 선·
+    대표자 행 강조·밝기 80%·유리 반사·위쪽 둥근 모서리. 실존 서비스명(登記情報提供サービス)은 쓰지 않는다."""
+    S = 2; W_, H_ = int(w * S), int(h * S)
+    im = Image.new("RGBA", (W_, H_), (242, 243, 246, 255)); d = ImageDraw.Draw(im)
+    u = W_ / 100; f = lambda px, path=GOTH: font(path, px * u)
+    lw = max(2, int(0.35 * u))
+    # 브라우저 틀: 탭 줄 + 주소 줄
+    d.rectangle((0, 0, W_, 5.5 * u), fill=(222, 225, 230, 255))
+    d.rounded_rectangle((2 * u, 1.2 * u, 26 * u, 6 * u), radius=int(u), fill=(242, 243, 246, 255))
+    d.text((4 * u, 2.2 * u), "法人情報検索", font=f(2.4), fill=(60, 60, 70, 255))
+    for k, c in enumerate(((236, 106, 94), (245, 190, 79), (98, 197, 84))):
+        d.ellipse((W_ - (10 - k * 3) * u, 1.8 * u, W_ - (8.4 - k * 3) * u, 3.4 * u), fill=c + (255,))
+    d.rectangle((0, 5.5 * u, W_, 10.5 * u), fill=(248, 248, 250, 255))
+    d.rounded_rectangle((8 * u, 6.5 * u, 70 * u, 9.6 * u), radius=int(1.5 * u), fill=(232, 234, 238, 255))
+    d.text((10 * u, 7.0 * u), "houjin-kensaku.jp/detail/0312", font=f(2.1, MONT), fill=(90, 90, 100, 255))
+    # 본문 카드
+    x0, x1, y = 6 * u, 94 * u, 14 * u
+    d.rounded_rectangle((x0 - 2 * u, y - 2 * u, x1 + 2 * u, H_ - 4 * u), radius=int(u), fill=(255, 255, 255, 255))
+    d.text((x0, y), "法人登記　履歴事項", font=f(4.6, MIN_B), fill=(25, 25, 35, 255))
+    d.line((x0, y + 7 * u, x1, y + 7 * u), fill=(40, 70, 120, 255), width=lw * 2)
+    rows = [("商号", "西園寺ビルメンテナンス株式会社"), ("代表者", "代表取締役　西園寺 剛"), ("本店所在地", "東京都港区（レンタルオフィス）"),
             ("従業員数", "0名"), ("設立", "令和5年3月1日")]
-    y = h * 0.29; f1, f2 = font(GOTH, h * 0.052), font(GOTH, h * 0.058)
-    for k, v in rows:
-        d.rectangle((w * 0.06, y - h * 0.015, w * 0.94, y + h * 0.1), outline=(170, 176, 190, 255))
-        d.rectangle((w * 0.06, y - h * 0.015, w * 0.3, y + h * 0.1), fill=(222, 228, 240, 255))
-        d.text((w * 0.08, y + h * 0.01), k, font=f1, fill=(50, 50, 60, 255))
-        d.text((w * 0.33, y + h * 0.005), v, font=f2, fill=(20, 20, 30, 255) if k != "代表者" else (190, 20, 30, 255))
-        y += h * 0.115
-    return im
+    ty, rh, kx = y + 10 * u, 8.6 * u, x0 + 18 * u
+    for i, (k, v) in enumerate(rows):
+        r0 = ty + i * rh
+        if k == "代表者":
+            d.rectangle((x0, r0, x1, r0 + rh), fill=(255, 236, 236, 255))
+        d.rectangle((x0, r0, kx, r0 + rh), fill=(232, 238, 248, 255) if k != "代表者" else (250, 222, 222, 255))
+        d.text((x0 + 1.5 * u, r0 + 2.4 * u), k, font=f(3.0), fill=(60, 60, 75, 255))
+        vf = fit(d, v, GOTH, x1 - kx - 3 * u, 3.4 * u)
+        d.text((kx + 1.5 * u, r0 + 2.2 * u), v, font=vf, fill=(190, 20, 30, 255) if k == "代表者" else (20, 20, 30, 255))
+        d.line((x0, r0 + rh, x1, r0 + rh), fill=(190, 196, 208, 255), width=lw)
+    d.rectangle((x0, ty, x1, ty + rh * len(rows)), outline=(150, 158, 172, 255), width=lw)
+    d.line((kx, ty, kx, ty + rh * len(rows)), fill=(150, 158, 172, 255), width=lw)
+    # 밝기 80% + 유리 반사 + 위쪽 둥근 모서리
+    arr = np.asarray(im).astype(np.float32); arr[..., :3] *= 0.80
+    yy, xx = np.mgrid[0:H_, 0:W_]; band = np.exp(-(((xx / W_) * 0.8 + (yy / H_) - 0.6) / 0.14) ** 2) * 14
+    arr[..., :3] = np.clip(arr[..., :3] + band[..., None], 0, 255)
+    mask = Image.new("L", (W_, H_), 0); ImageDraw.Draw(mask).rounded_rectangle((0, 0, W_ - 1, H_ + int(4 * u)), radius=int(2.2 * u), fill=255)
+    arr[..., 3] = np.asarray(mask)
+    return Image.fromarray(arr.astype(np.uint8)).resize((int(w), int(h)), Image.LANCZOS)
 
 
 def sns_post(w, h, date, caption, photo="bag", likes="1,284"):
@@ -435,7 +462,7 @@ JOBS = {
     # 장부·계산기·노트북·휴대폰·명부
     "S10a": [("ink", P((360, 652), (850, 640), (900, 690), (420, 716)), lambda w, h: art_ledger(w, h))],
     "S10a2": [("replace", P((205, 302), (484, 252), (519, 292), (216, 352)), lambda w, h: art_lcd(w, h))],   # 액정 창 안쪽(실측 2026-10-07)
-    "S10c": [("emit", P((86, 316), (502, 317), (544, 614), (120, 628)), lambda w, h: art_laptop(w, h))],
+    "S10c": [("emit", P((96, 324), (497, 328), (535, 606), (124, 618)), lambda w, h: art_laptop(w, h))],   # 베젤 안쪽 약 10px(실측 2026-10-07)
     "S11a2": [("emit", P((770, 249), (936, 249), (936, 581), (770, 581)), lambda w, h: art_phone(w, h))],   # 베젤 안쪽(실측 2026-10-07)
     "S12a": [("ink", P((446, 495), (598, 491), (598, 568), (446, 571)), lambda w, h: art_roster(w, h))],
     # 스크린
