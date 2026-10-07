@@ -159,6 +159,8 @@ def card(sid, out, sec):
     os.remove(p)
 
 
+# 수정 9(2026-10-07): 회의장 재생성 컷 중 i2v 대신 정지 편집 카메라로(추가 과금 없이)
+FORCE_STILL = {"S07a2", "S14d", "S17b"}
 FX_OVERRIDE = {"S02b": "push"}   # 그래픽 패널이 팬에 잘리지 않게
 
 
@@ -181,7 +183,7 @@ def main(only=None):
         if only and s["id"] not in only:
             continue
         tier, out, sec = s["tier"], os.path.join(OUT, f"scene{i:02d}.mp4"), durs[i - 1] + 0.5
-        if tier in ("pro", "lite"):
+        if tier in ("pro", "lite") and s["id"] not in FORCE_STILL:
             continue
         if tier == "card":
             card(s["id"], out, durs[i - 1]); made += 1; log.append(f"scene{i:02d} {s['id']} card"); continue

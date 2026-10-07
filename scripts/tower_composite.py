@@ -344,6 +344,9 @@ JOBS = {
     "S14o": [("ink", P((848, 163), (1238, 142), (1238, 207), (848, 226)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     "S17h": [("ink", P((852, 163), (1240, 142), (1240, 207), (851, 225)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     "S14g": [("ink", P((867, 174), (1239, 139), (1239, 206), (867, 222)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
+    "S07a2": [("ink", P((687, 85), (1142, 75), (1142, 153), (687, 176)), lambda w, h: art_banner(w, h, BANNER_RINJI))],
+    "S14d": [("ink", P((860, 36), (1184, 34), (1184, 92), (860, 96)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
+    "S17e2": [("ink", P((850, 166), (1240, 144), (1240, 208), (850, 230)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     "S16h2": [("ink", P((850, 164), (1240, 138), (1240, 224), (850, 226)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     "S16g2": [("ink", P((1037, 77), (1460, 52), (1460, 128), (1037, 143)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     # 단상 명패·카운터 명판
