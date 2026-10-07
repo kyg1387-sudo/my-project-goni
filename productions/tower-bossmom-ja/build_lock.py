@@ -30,7 +30,7 @@ SILENT = {
     "S05": {"pre": (2.5, "임시총회 와이드"), 17: (2.5, "측근 박수 → 머뭇거리는 주민 박수 → 손을 드는 유미"), "post": (2.5, "정적 + 다리를 꼬는 레이카")},
     "S06": {"post": (2.0, "웃음소리, 고개 숙이는 유미")},
     "S06-2": {"pre": (2.0, "시선을 피하는 주민들")},
-    "S07": {"pre": (2.5, "수첩에 빠르게 적는 손 ECU"), "post": (1.5, "안경 너머 유미의 눈 ECU")},
+    "S07": {"pre": (2.5, "수첩에 빠르게 적는 손 ECU(NA14 동안 안경 너머 눈 ECU로 전환)")},
     "S08": {"pre": (3.0, "밤 식탁, 잠든 리코에게 담요")},
     "S09": {"pre": (2.0, "관리사무소 카운터, 파일을 내미는 담당자")},
     "S10": {"pre": (2.0, "장부에 빨간 동그라미"), 30: (1.5, "「二千四百万円」 강조 자막 + ドン"), 31: (2.0, "법인 등기 화면 인서트")},
@@ -105,11 +105,14 @@ def build():
             if x["n"] in sil:
                 t += sil[x["n"]][0] + (T[x["n"]][4] or 0)
             prev = x
-            if x["n"] in AD_AFTER:
-                ads.append((AD_AFTER[x["n"]][0], x["end"] + AD_TAIL, AD_AFTER[x["n"]][1], x["id"]))
+
         if ls:
             last = ls[-1]
-            if last["n"] not in sil:
+            if last["n"] in AD_AFTER:  # 광고 지점 = 전환 문장 끝 + 0.9초 여운 = 장면 경계(제0장 3)
+                assert "post" not in sil and last["n"] not in sil, f"{sid}: 광고 장면 뒤에 무언 비트 금지"
+                t += AD_TAIL
+                ads.append((AD_AFTER[last["n"]][0], t, AD_AFTER[last["n"]][1], last["id"]))
+            elif last["n"] not in sil:
                 t += max(TAIL_N if last["kind"] == "N" else TAIL_D, T[last["n"]][4])
         if "post" in sil:
             t += sil["post"][0]
@@ -125,7 +128,7 @@ def main():
            f"- 본편 끝(아웃트로 시작): {tc(main_end)}"]
     for name, at, target, lid in ads:
         ok = abs(at - target) <= 10
-        out.append(f"- **{name}: {tc(at)}** ({lid} 끝 + 0.9초 여운) — 목표 {tc(target)} ±10초 {'✅' if ok else '❌'}")
+        out.append(f"- **{name}: {tc(at)}** ({lid} 끝 + 0.9초 여운 = 장면 경계) — 목표 {tc(target)} ±10초 {'✅' if ok else '❌'}")
     out += ["", "## 장면 경계", "", "| 장면 | 시작 | 끝 | 길이 |", "|---|---|---|---|"]
     out += [f"| {s} | {tc(a)} | {tc(b)} | {b - a:.1f}초 |" for s, a, b in srows]
     out += ["", "## 줄별 타임코드", "", "| 줄 | 장면 | 화자 | 립싱크 | 시작 | 끝 | 길이 | 대사 |", "|---|---|---|---|---|---|---|---|"]
@@ -135,7 +138,7 @@ def main():
         out += ["", "## OMNI 8초 상한 주의(앞뒤 여백 포함 시 초과 위험 → 컷어웨이 분할)", ""]
         out += [f"- {x['id']} {x['dur']:.2f}초: {x['text'][:30]}" for x in long_omni]
     open(os.path.join(HERE, "06_Lock타임라인.md"), "w", encoding="utf-8").write("\n".join(out) + "\n")
-    json.dump({"total": total, "ads": [{"name": a, "at": b, "target": c, "line": d} for a, b, c, d in ads],
+    json.dump({"total": total, "main_end": main_end, "ads": [{"name": a, "at": b, "target": c, "line": d} for a, b, c, d in ads],
                "scenes": [{"id": s, "start": a, "end": b} for s, a, b in srows],
                "lines": [{k: x[k] for k in ("id", "scene", "spk", "omni", "start", "end", "dur", "text")} for x in rows]},
               open(os.path.join(HERE, "lock.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)

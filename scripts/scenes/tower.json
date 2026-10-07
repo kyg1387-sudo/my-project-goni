@@ -1,0 +1,949 @@
+{
+ "_설명": "tower 장면 설정(build_tower_phase3.py 생성). override_required 장면(정지 푸시인·OMNI 정지 프레임·그래픽·재사용·카드)은 video-overrides로 먼저 넣는다.",
+ "ratio": "16:9",
+ "budget_usd": 15.3,
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "durations": [
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10
+ ],
+ "scenes": [
+  {
+   "prompt": "Static, locked off camera. Motion: Reika lifts her chin slightly and shifts her weight to block the doorway; Mama A stays still behind her. Nobody walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S01a-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Reika from slightly below inside the elevator, condescendin",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S01b-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle close-up of Yumi in the lobby looking up, composed but stung, lips pr",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S01c-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: the brushed-steel elevator doors almost closed, a thin vertical sliver s",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S01d-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle insert: a little girl's small hand tightly clutching the hem of a wom",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S01e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Both stand still facing the closed doors; Riko leans against Yumi's side. Nobody walks or turns. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tower-keyframes/S01f-1.png"
+  },
+  {
+   "prompt": "(override) still: Close-up of Yumi facing the closed steel doors, her expression slowly cooling in",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S01g-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro insert: Yumi's eyes behind thin silver-rimmed glasses reflected in the pol",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S01h-1.png"
+  },
+  {
+   "prompt": "(override) card: Black title card 『タワマンのボスママ』.",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Clouds drift slowly; sunlight glints on the glass. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S02a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Mother and daughter walk slowly left to right across the frame, never toward the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S02a2-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead insert: a woman's quick fingers on a calculator beside a ledger and rec",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S02a3-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Graphic: the tower silhouette sliced into floor bands (上層階 / 中層階 / 低層階 pyramid),",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S02b-1.png"
+  },
+  {
+   "prompt": "(override) still: No people. The glossy glass entrance plaza of the tower, crisp and exclusive.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S02b2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The man takes one small step back aside; the two women glide past. Faces stay small and turned away. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tower-keyframes/S02c-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Insert, no people: a blank lounge reservation board on a stand in the lobby (「上層",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S02c2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The three women walk slowly across the lobby away from the camera; reflections follow them. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S02d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Reika tilts her head up slightly and smiles; she does not walk. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S02e-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) gfx: Insert, no people: the blank white plaque beside the glass kids-room door (「40階以",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S03a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Riko stands still watching; the children inside move softly out of focus. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S03b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Mama A tilts her head with a fake sympathetic gesture, back to the camera; Riko lowers her eyes. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S03c-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a little girl's small palm pressed flat against the glass door, colourfu",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S03d-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle close-up of Riko looking down, lower lip trembling, eyes wet.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S03e-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, no people: colourful toys and play mats seen through the glass, softly b",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S03e2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yumi's clenched hands tighten slightly; she does not move forward. Riko stays at the glass. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tower-keyframes/S03f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yumi gently rocks once; Riko stays curled. Nobody stands. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S03-2a-1.png"
+  },
+  {
+   "prompt": "(override) still: Close insert: Riko's face buried against Yumi's navy cardigan, only her pigtails",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S03-2b-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead insert: a woman's hand slowly stroking a little girl's black hair, a si",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S03-2c-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a woman's hand pulls a blank white notice sheet out of a brushed-steel m",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S04a-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Overhead insert: the blank notice held in a woman's hands (修繕積立金 1.8倍 値上げ予定 comp",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S04b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yumi holds the notice and reads; she does not move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S04b2-1.png"
+  },
+  {
+   "prompt": "(override) still: Close-up of Yumi reading the notice, eyes narrowing behind her glasses, lobby so",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S04c-1.png"
+  },
+  {
+   "prompt": "(override) still: No people. Low angle: clean, undamaged glass and metal facade panels of the six-",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S04d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Residents shift slightly in their seats; Reika stays at the lectern. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S05a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Reika spreads one hand in a grand gesture; the residents' heads stay still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S05b-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert at chest height: three mothers in the front row clapping eagerly, hands a",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S05c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yumi holds her raised hand steady and breathes; residents around her turn their heads slightly. She does not walk. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S05d-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Yumi standing in the middle rows, polite and calm, looking ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S05e-1.png"
+  },
+  {
+   "prompt": "(override) still: Low insert: on the stage a woman in cream wide-leg trousers slowly crosses her l",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S05f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Reika lowers her eyelids lazily, the microphone stays covering her mouth. She does not turn. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tower-keyframes/S06a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Reika at the lectern from slightly below, contemptuous mock",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S06b-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro insert: the quilted burgundy handbag with a gold chain on Reika's arm, a t",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S06c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Mama A leans in and shakes with laughter, face turned away; Mama B nods. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S06d-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle medium: Yumi slowly lowering her head among the seated residents, sma",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S06e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A few residents look down or away; nobody stands. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tower-keyframes/S06-2a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a man's hands clasped tightly on his khaki lap, knuckles pale.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S06-2b-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead macro under the table edge: a woman's hand writing fast in a small plai",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S07a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yumi keeps her head bowed; her hand writes slowly below frame. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S07a2-1.png"
+  },
+  {
+   "prompt": "(override) still: Close-up of Yumi with her head still bowed but her eyes raised, sharp and calcul",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S07b-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro insert: Yumi's eye behind the glasses lens, the distant lectern reflected ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S07c-1.png"
+  },
+  {
+   "prompt": "(override) still: Side macro: the pen tip underlining twice on a blank notebook line, decisive.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S07c2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yumi turns a page slowly; Riko sleeps. No one stands. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tower-keyframes/S08a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: Riko's small sleeping hand resting on a soft throw blanket on the sofa, ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S08a2-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead insert, no people: blank receipts, invoices and bank statements spread ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S08b-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a woman's fingers typing fast on a laptop keyboard beside a calculator, ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S08b2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The clerk's head lowers slightly; Yumi listens still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tower-keyframes/S09a-1.png"
+  },
+  {
+   "prompt": "(override) still: Slightly low close-up of Yumi at the counter listening intently, hands resting o",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S09a2-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a man's hands in grey suit sleeves slide a thick plain grey binder acros",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S09b-1.png"
+  },
+  {
+   "prompt": "(override) still: Close-up of Yumi receiving the file, a small grateful nod, determined eyes.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S09c-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Overhead macro: a red pen circling figures on a ledger page (外壁調査費 / 緊急補修費 compo",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S10a-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Insert, no people: a calculator on the table, display blank in the keyframe (24,",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S10a2-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle close-up of Yumi looking down at the ledger, lips tight, glasses refl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S10a3-1.png"
+  },
+  {
+   "prompt": "(override) still: Close-up of Yumi at night lit by the laptop glow, eyes cold and focused.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S10b-1.png"
+  },
+  {
+   "prompt": "(override) still: No people. A plain anonymous door in a dim rental-office corridor, completely bl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S10b2-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Insert: laptop screen (法人登記 代表者 西園寺 剛 composited), blank in the keyframe.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S10c-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Insert: a smartphone in a woman's hand, screen blank in the keyframe (fictional ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S11a-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Low side insert: the smartphone propped on the table beside a bank statement, sc",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S11a2-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead insert, no people: tall stacks of printouts with yellow highlighter str",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S11b-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle medium: Yumi late at night at the table buried in papers, rubbing her",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S11c-1.png"
+  },
+  {
+   "prompt": "(override) still: Side macro: a yellow highlighter dragging across a line of a blank printout, the",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S11c2-1.png"
+  },
+  {
+   "prompt": "(override) still: Close-up of Yumi at dawn-tired night, a faint grim smile of certainty, laptop gl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S11c3-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Overhead macro: a residents' roster table, a woman's finger stops on one row (住民",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S12a-1.png"
+  },
+  {
+   "prompt": "(override) still: Choker close-up of Yumi's eyes widening slightly behind her glasses in a quiet r",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S12b-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead insert at night: a woman's hands sealing a plain white envelope on the ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S12-2a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Residents walk away from the camera to their seats and sit down. No one faces the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tower-keyframes/S12-3a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: rows of residents' hands holding plain blank agenda sheets on their laps",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S12-3a2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Reika leans in slightly, face turned away; Yumi does not move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S12-3b-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a woman's hand calmly adjusting the strap of a plain black laptop bag on",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S12-3c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Residents murmur and shift slightly; Reika stands at the lectern. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S13a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Reika at the lectern from slightly below, triumphant smile,",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S13b-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a woman's hands plugging a plain cable into a slim laptop on her lap, si",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S13c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Yumi standing in the packed middle rows, calm and resolute,",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S13d-1.png"
+  },
+  {
+   "prompt": "(override) gfx: The large projector screen lights up above the lectern, residents' heads in silh",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S13e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yumi stands still with her back to the camera; residents' heads tilt up slowly toward the light. Nobody turns around. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S13f-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Screen graphic pair 1: passbook row 2,000,000円 ⇄ SNS post 「主人からのサプライズ♡」 with a r",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S14a-1.png"
+  },
+  {
+   "prompt": "(override) still: Medium of the three mothers in the front row exchanging uneasy glances, smiles f",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S14b-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Screen graphic pair 2: 2,500,000円 ⇄ 「冬休みはハワイのスイートで」.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S14c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Residents lean toward each other and murmur; nobody stands. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S14d-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Screen graphic pair 3 frozen: 3,000,000円 ⇄ 「主人が買ってくれた新作♥」, ざわ…ざわ… overlay (BGM c",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S14e-1.png"
+  },
+  {
+   "prompt": "(override) still: Close-up of Mama A frozen in shock, wide eyes, lips parted.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S14f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Two or three silhouettes slowly stand up; the rest stay seated. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S14g-1.png"
+  },
+  {
+   "prompt": "(override) still: Chest-up close-up of Reika at the lectern, smile frozen, a single bead of sweat ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S14h-1.png"
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S14e (pair 3 frozen) under the killing line.",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The crowd stays frozen, staring; a faint stir. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S14j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The man thrusts his arm toward the screen once and holds it; his face stays turned away. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tower-keyframes/S14k-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Reika at the lectern, panicked, eyes darting, forced denial",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S14l-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of the young property-management clerk standing in the side ai",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S14m-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a man's hand sets a plain dark-green passbook with a blank cover down fi",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S14n-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle close-up of Reika staring at the passbook, color draining from her fa",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S14n2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The three women shift sideways in their seats, away from the stage; faces down. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tower-keyframes/S14o-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a woman's hand with a thin gold bangle gripping the microphone stand on ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S15a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Reika at the lectern losing control, furious, hair slightly",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S15b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Several residents lean back sharply in their seats once and freeze. Nobody stands. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S15c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The old gentleman straightens up with his cane, slowly; the seated residents stay still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S16a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Mr. Odagiri from slightly below at the back of the hall, ca",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S16b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Residents turn their heads about 20 degrees toward the camera; nobody stands. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S16c-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle close-up of Reika at the lectern going pale, frozen.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S16d-1.png"
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S12-2a (sealing the envelope) as a flash under NA24.",
+   "duration": 10,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Mr. Odagiri, stern judging gaze, measured, backlit rim.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S16f-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle close-up of Reika trembling, lips parted, eyes glassy.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S16g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Two residents turn to each other in disbelief; nobody stands. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tower-keyframes/S16g2-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Overhead insert: a plain management-rules booklet open on the table (区分所有者 ⇔ 賃借人",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S16h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Mr. Odagiri stands still, his back to the camera; only his shoulders move with breath. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tower-keyframes/S16h2-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: an old man's hand resting on the curved handle of a dark wooden cane, a ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S16i-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: Reika's trembling fingers clutching the gold chain strap of the burgundy",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S16i2-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert: a woman's knees in cream wide-leg trousers buckling, nude heels wob",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S17a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Reika's shoulders tremble; she stays sitting on the floor. Nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S17b-1.png"
+  },
+  {
+   "prompt": "(override) omni: High angle chest-up close-up of Reika sitting on the floor looking up, tearful a",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S17d-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Overhead macro: spilled contents of the burgundy bag on the floor, among them a ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S17c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up close-up of Mr. Odagiri looking down, calm and unforgiving.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S17e-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle close-up of Reika on the floor, the words hitting her, mouth falling ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S17e2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Mr. Odagiri shifts his weight onto the cane; he stays standing with his back to the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S17f-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle close-up of Reika on the floor looking up pleadingly toward the front",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S17g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The three women look away and down at the same time; nobody stands. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S17h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Residents stand still; Reika stays small on the floor. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tower-keyframes/S17i-1.png"
+  },
+  {
+   "prompt": "(override) still: Close-up of Yumi standing among the residents, watching quietly, no gloating, a ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S17i2-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, no people: the plain dark-green passbook lying alone on the empty lecter",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S17-2a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The sky glows and clouds drift slowly. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tower-keyframes/S17-2b-1.png"
+  },
+  {
+   "prompt": "(override) still: No people. The empty assembly hall at sunset, rows of empty chairs in warm light",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S17-2c-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Insert, no people: the plaque beside the kids-room door (「どなたでもご利用ください」 composit",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S18a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The children play gently; Riko waves both hands happily. No one runs toward the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S18b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Riko laughs and bounces slightly in place. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S18c-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Reika shifts the heavy boxes in her arms; Yumi stays still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S19a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a woman's hand with a silver wristwatch politely gesturing, palm up, tow",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S19b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Yumi in the lobby, a graceful polite smile with steel under",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S19c-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle close-up of Reika clutching the boxes, jaw clenched in humiliation.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S19d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Reika takes one step into the freight elevator, back to the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tower-keyframes/S19e-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, no people visible: the grey freight elevator doors closing (match of S01",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tower-keyframes/S19f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Yumi and Riko walk slowly away from the camera hand in hand. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tower-keyframes/S19g-1.png"
+  },
+  {
+   "prompt": "(override) card: Black ending card 「見ていないところで、人は決まる。」.",
+   "duration": 10,
+   "override_required": true
+  }
+ ]
+}
