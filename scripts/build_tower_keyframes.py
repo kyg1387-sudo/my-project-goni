@@ -102,6 +102,7 @@ FIX_B = {
             "ONLY change the tears: remove the thick glossy gel-like streaks completely. Instead: eyes brimming with tears that pool along the lower lids, "
             "eye rims and the tip of the nose slightly reddened, ONE thin, barely visible wet trail on one cheek only, natural skin texture, "
             "lips pressed and trembling. Realistic, subtle, matte skin — NO shiny liquid lines.",
+    "S16h2": "Seen STRICTLY FROM BEHIND: Mr. Odagiri's back fills the right third of the frame — white hair from behind, charcoal suit back, dark wooden cane in his right hand; his face is NOT visible at all. He faces the stage at the far end of the packed hall.",
     # 크롭으로 못 고치는 인서트(얼굴을 자르면 4배 확대, 핸드 마이크라 스탠드를 쥔 손이 없음)
     "S05c": "Close insert of clapping hands at chest height: the camera is low and close, the top edge of the frame cuts across the three seated women's collarbones, so only their torsos and clapping hands are in the picture (pink sweater, white blouse, beige cardigan) with blurred seated residents behind. Do NOT draw heads; NO masks, NO circles, NO blur patches, NO stickers. Hands with exactly five fingers each.",
     # B 재생성 2차(2026-10-07): S14l(굳은 미소) 참조가 미소를 끌고 옴 → 재생성 합격 공포 얼굴, 빈 의자 배경 → 주민 뒷머리 전경(S16d)
