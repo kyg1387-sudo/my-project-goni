@@ -129,7 +129,7 @@ OMNI_PROMPTS = {
     "S06b": "Contemptuous mockery: half-lidded eyes, a sneering smile that widens on the last phrase, slight head tilt to one side.",
     "S13b": "Triumphant and theatrical: confident smile, chin up, a slow pleased glance across the room, a brief pause before the last words.",
     "S13d": "Calm and resolute: still posture, level gaze forward, quiet firmness, minimal head movement.",
-    "S14l": "Panicked denial: forced smile cracking, eyes darting left and right, quick shallow breaths, voice rising.",
+    "S14l": "Panicked denial while ALWAYS facing the camera: a stiff forced smile that keeps cracking, eyes darting left and right without turning the head, quick shallow breaths. NO head turning at all, NO looking sideways, NO laughing, NO hand gestures.",
     "S14m": "Nervous but resolute for the first time: a small swallow before speaking, then steady eyes forward, slight tension in the jaw.",
     "S15b": "Losing control: furious glare, nostrils flaring, sharp small head jerks on the accusations, shoulders tense.",
     "S16b": "Slow, calm and heavy: unhurried speech, a slight pause before speaking, steady unblinking gaze, dignified stillness.",
