@@ -435,7 +435,6 @@ JOBS = {
     "S06e": [("ink", P((696, 153), (1088, 133), (1088, 194), (696, 200)), lambda w, h: art_banner(w, h, BANNER_RINJI))],
     "S12-3a": [("ink", P((687, 219), (1137, 203), (1137, 250), (687, 262)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     "S13a": [("ink", P((848, 163), (1215, 141), (1215, 216), (848, 225)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
-    "S16a": [("ink", P((733, 164), (1282, 123), (1282, 204), (733, 236)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     "S17i": [("ink", P((706, 132), (1206, 93), (1202, 192), (706, 214)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     "S17-2c": [("ink", P((829, 114), (1284, 77), (1284, 139), (829, 169)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     # 수정 8(회의장 일관성 2026-10-07) 재생성 컷 현수막 — 방 기준(S05d·S13a)과 같은 위치
@@ -451,6 +450,8 @@ JOBS = {
     "S07a2": [("ink", P((687, 85), (1142, 75), (1142, 153), (687, 176)), lambda w, h: art_banner(w, h, BANNER_RINJI))],
     "S14d": [("ink", P((860, 36), (1184, 34), (1184, 92), (860, 96)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     "S17e2": [("ink", P((850, 166), (1240, 144), (1240, 208), (850, 230)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
+    "S16a": [("ink", P((564, 171), (813, 171), (813, 216), (564, 216)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],   # 수정 17 새 키프레임
+    "S17f": [("ink", P((524, 172), (811, 172), (811, 219), (524, 219)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     "S16h2": [("ink", P((850, 164), (1240, 138), (1240, 224), (850, 226)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     "S16g2": [("ink", P((1037, 77), (1460, 52), (1460, 128), (1037, 143)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     # 단상 명패·카운터 명판
