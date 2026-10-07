@@ -97,6 +97,11 @@ FIX_B = {
     "S01e": "EXTREME CLOSE-UP from directly above and slightly behind, ONE single frame: ONLY the small hand of a 7-year-old girl tightly gripping the hem of a woman's charcoal-grey wool skirt; the girl's mustard-yellow dress sleeve cuff at the wrist; the woman's navy cardigan hem at the top edge. NO faces, NO heads, NO full bodies — hands and fabric fill the frame. Polished marble lobby floor softly out of focus below. The child's fingers clearly separate, exactly five, small knuckles white from gripping.",
     # 감독님 지적(완성본 2026-10-07, 1:21): S03d가 설계(손바닥 인서트)와 달리 리코 전신 단독 컷 → 대사 중 마마A가 사라짐
     "S03d": "EXTREME CLOSE-UP, ONE single frame: ONLY the small open palm and fingers of a 7-year-old girl pressed flat against a clear glass door, seen from the corridor side; a mustard-yellow dress sleeve cuff at the wrist; beyond the glass the colourful play mats and toys of a bright kids room are softly blurred. NO face, NO head, NO full body — the hand fills the frame. Exactly five small fingers, natural child proportions.",
+    # 감독님 지적(완성본 1:28): 굵고 반짝이는 젤 같은 눈물 줄기 4개 → 현재 컷을 편집해 눈물만 자연스럽게
+    "S03e": "EDIT the reference image: keep EXACTLY the same girl, face, pigtails, framing, camera angle, lighting and kids-room background. "
+            "ONLY change the tears: remove the thick glossy gel-like streaks completely. Instead: eyes brimming with tears that pool along the lower lids, "
+            "eye rims and the tip of the nose slightly reddened, ONE thin, barely visible wet trail on one cheek only, natural skin texture, "
+            "lips pressed and trembling. Realistic, subtle, matte skin — NO shiny liquid lines.",
     # 크롭으로 못 고치는 인서트(얼굴을 자르면 4배 확대, 핸드 마이크라 스탠드를 쥔 손이 없음)
     "S05c": "Close insert of clapping hands at chest height: the camera is low and close, the top edge of the frame cuts across the three seated women's collarbones, so only their torsos and clapping hands are in the picture (pink sweater, white blouse, beige cardigan) with blurred seated residents behind. Do NOT draw heads; NO masks, NO circles, NO blur patches, NO stickers. Hands with exactly five fingers each.",
     # B 재생성 2차(2026-10-07): S14l(굳은 미소) 참조가 미소를 끌고 옴 → 재생성 합격 공포 얼굴, 빈 의자 배경 → 주민 뒷머리 전경(S16d)
@@ -116,6 +121,8 @@ BG_FRONT = ("Background geometry: the camera is among the seated audience facing
 
 def describe(path, i):
     name = os.path.basename(path)
+    if path == "assets/portraits/tower-kf-b/S03e-1.png":
+        return f"Reference image {i} is the image to EDIT."
     if name == "mamas-s14o.png":
         return (f"Reference image {i} shows the SAME three women (pink sweater + white pleated skirt, white blouse + black trousers, "
                 "beige cardigan + cream skirt) seated in the hall: copy exactly their wardrobe and body types; the framing is described "
@@ -170,6 +177,8 @@ def notes(refs):
 
 def build(sc, face_refs):
     refs = list(face_refs) + sc["refs"] + EXTRA_REFS.get(sc["id"], [])
+    if sc["id"] == "S03e":   # 편집: 현재 승인 컷 1장만 참조
+        refs = ["assets/portraits/tower-kf-b/S03e-1.png"]
     if sc["id"] in ("S01e", "S03d"):  # 얼굴 셀이 얼굴·전신을 끌어옴(S05c 실증) → 장소 셀만, 옷은 문장으로
         refs = [r for r in refs if "/cells/loc-" in r]
     if sc["id"] == "S05c":  # 얼굴 셀이 얼굴을 그리게 한 뒤 동그라미로 가림(B 2차) → 얼굴 셀 빼면 다른 엄마들(B 3차) → 승인 S14o(세 엄마 착석)
