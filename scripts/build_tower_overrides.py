@@ -270,7 +270,7 @@ def main(only=None):
 # ---------------- 생성 i2v 클립 후처리(무과금) ----------------
 RAW = os.path.join(ROOT, "assets", "portraits", "tower-kf-raw")
 POST_FX = {"S01f": "pull", "S19g": "pull", "S06a": "dutch5",   # i2v는 카메라 지시를 무시 → 편집에서(제8장 6)
-           "S01a": "slow2.0"}   # 생성 검수: 2초 뒤 문이 닫히기 시작(이야기상 S01d에서 닫힘) → 앞 2초만 느리게 늘림
+           "S01a": "slow2.0", "S14k": "slow2.2"}   # S14k: 2.5초부터 양팔을 들어 올림(감독님 지적) → 가리키는 앞 2.2초만 느리게   # 생성 검수: 2초 뒤 문이 닫히기 시작(이야기상 S01d에서 닫힘) → 앞 2초만 느리게 늘림
 SPLIT = ["S14f", "S14g", "S14h"]                                  # 3분할: 패널이 하나씩 늘어난다
 
 
@@ -399,7 +399,7 @@ def post(clips):
         fx = POST_FX.get(sid, "")
         if fx.startswith("slow"):
             t0 = float(fx[4:]); need = durs[i - 1] + 0.5; tmp = os.path.join(OUT, f"_{sid}_slow.mp4")
-            run(["-i", src, "-t", f"{t0}", "-vf", f"setpts={need / t0:.4f}*PTS,minterpolate=fps={FPS}:mi_mode=mci:mc_mode=aobmc:vsbmc=1"] + ENC + [tmp])
+            run(["-t", f"{t0}", "-i", src, "-vf", f"setpts={need / t0:.4f}*PTS,minterpolate=fps={FPS}:mi_mode=mci:mc_mode=aobmc:vsbmc=1"] + ENC + [tmp])
             src = tmp
         fr = list(read_frames(src))
         if src.endswith("_slow.mp4"):
