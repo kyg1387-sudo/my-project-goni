@@ -67,29 +67,59 @@ def fit_png(src, dst):
     return dst
 
 
+def cam_matrix(fx, t, w, h):
+    """원본(w x h) → 1920x1080 출력의 정확한 실수 아핀 행렬(감독님 지적 '영상 떨림' 2026-10-07:
+    ffmpeg zoompan은 좌표를 정수 픽셀로 반올림해 슬로 푸시인에서 프레임마다 0.3~0.7px 불규칙하게 떨렸다)."""
+    e = t * t * (3 - 2 * t) * 0.35 + t * 0.65   # 시작·끝을 살짝 부드럽게
+    z, cx, cy, deg = 1.0, 0.5, 0.5, 0.0
+    if fx in ("", "push", "rack"):
+        z = 1 + 0.05 * e
+    elif fx == "pull":
+        z = 1.06 - 0.06 * e
+    elif fx == "pan":
+        z = 1.07; cx = 0.5 + (0.2 + 0.6 * e - 0.5) * (1 - 1 / z)
+    elif fx.startswith("dutch"):
+        z = 1.2 * (1 + 0.03 * e); deg = float(fx[5:] or 5)
+    base = max(W / w, H / h)   # 16:9 채우기
+    M = cv2.getRotationMatrix2D((cx * w, cy * h), deg, base * z)
+    M[0, 2] += W / 2 - cx * w; M[1, 2] += H / 2 - cy * h
+    return M
+
+
+def render(imgs_fn, out, n, fx):
+    """imgs_fn(i) → 원본 RGB(float32) — 프레임마다 정확한 아핀으로 1920x1080 렌더."""
+    p = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-"] + ENC + [out],
+                         stdin=subprocess.PIPE)
+    for i in range(n):
+        im = imgs_fn(i); h, w = im.shape[:2]
+        M = cam_matrix(fx, i / max(1, n - 1), w, h)
+        fr = cv2.warpAffine(im, M, (W, H), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REFLECT)
+        p.stdin.write(np.clip(fr, 0, 255).astype(np.uint8).tobytes())
+    p.stdin.close(); p.wait()
+
+
+def load(src):
+    return np.asarray(Image.open(src).convert("RGB")).astype(np.float32)
+
+
 def cam(src, out, sec, fx):
-    n = max(1, int(math.ceil(sec * FPS)))
-    tmp = out + ".png"; fit_png(src, tmp)
-    run(["-loop", "1", "-i", tmp, "-vf", zoom_vf(n, fx) + ",format=yuv420p", "-frames:v", str(n)] + ENC + [out])
-    os.remove(tmp)
+    n = max(1, int(math.ceil(sec * FPS))); im = load(src)
+    render(lambda i: im, out, n, fx)
 
 
 def cam_states(sid, out, sec, fx, states):
-    """같은 카메라로 상태별 클립을 만든 뒤 시간차 크로스페이드(0.15초)."""
-    n = max(1, int(math.ceil(sec * FPS)))
-    ins, tmps = [], []
-    for t, f in states:
-        p = os.path.join(OUT, f"_{sid}_{len(tmps)}.png"); fit_png(os.path.join(KF, f), p); tmps.append(p)
-        ins += ["-loop", "1", "-i", p]
-    chains = [f"[{k}:v]{zoom_vf(n, fx)}[z{k}]" for k in range(len(states))]
-    cur = "z0"
-    for k in range(1, len(states)):
-        t0 = states[k][0] * sec; d = 0.15
-        chains.append(f"[{cur}][z{k}]blend=all_expr='A*(1-clip((T-{t0:.3f})/{d},0,1))+B*clip((T-{t0:.3f})/{d},0,1)'[b{k}]")
-        cur = f"b{k}"
-    run(ins + ["-filter_complex", ";".join(chains) + f";[{cur}]format=yuv420p[o]", "-map", "[o]", "-frames:v", str(n)] + ENC + [out])
-    for p in tmps:
-        os.remove(p)
+    """같은 카메라로 상태 이미지를 시간차 크로스페이드(0.15초)."""
+    n = max(1, int(math.ceil(sec * FPS))); ims = [load(os.path.join(KF, f)) for _, f in states]
+    ts = [t * sec for t, _ in states]
+
+    def frame(i):
+        t = i / FPS; im = ims[0]
+        for k in range(1, len(ims)):
+            a = min(1.0, max(0.0, (t - ts[k]) / 0.15))
+            if a > 0:
+                im = im * (1 - a) + ims[k] * a
+        return im
+    render(frame, out, n, fx)
 
 
 def dollyzoom(src, out, sec):
