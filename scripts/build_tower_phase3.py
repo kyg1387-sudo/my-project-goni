@@ -439,8 +439,14 @@ BANNER_DEFAULT = "グランタワー東京ベイ管理組合　通常総会"
 NAMEPLATE = {"TANTO": ("A small plain white name badge is clipped on the left chest of his suit jacket.", "명찰 「グランタワー管理　木村」")}
 MAILBOX = {"S04a": "우편함 이름표 「505　高橋」"}
 # 장면 전환(규격 제6장 5: 시간·장소 전환 디졸브 0.5~1.0초). 값은 이전 장면 끝에서 겹치는 길이 — 겹친 만큼 앞 컷을 늘려 Lock 타임라인을 유지한다.
-DISSOLVE_INTO = {"S01i": 0.8, "S02a": 0.8, "S03-2a": 0.8, "S04a": 0.6, "S08a": 0.0, "S09a": 0.6, "S10a": 0.6, "S12-2a": 0.6,
-                 "S12-3a": 0.8, "S17-2a": 0.8, "S18a": 1.0, "S19a": 0.6, "S19h": 1.0}
+# 장면 전환(사용자 제공 전환 매트릭스 2026-10-07 + 규격 제6장 5): 기본 하드컷, 시간·장소 전환만 디졸브 0.5~0.8,
+# 막 종료는 딥 투 블랙 1.0, 폭로·등장 순간은 화이트 플래시 0.2. 총회 폭로 구간(S13~S15) 내부는 100% 하드컷.
+# 값 = (종류, 겹침 초). 겹침만큼 앞 컷을 늘려(하드컷 1프레임 겹침은 빼고) Lock 타임라인을 유지한다.
+DISSOLVE_INTO = {"S01i": ("fadeblack", 1.0), "S02a": ("fadeblack", 0.8), "S03-2a": ("fade", 0.6), "S04a": ("fade", 0.5),
+                 "S08a": ("fade", 0.5), "S09a": ("fade", 0.6), "S10a": ("fade", 0.6), "S12-2a": ("fade", 0.5),
+                 "S12-3a": ("fade", 0.7), "S13e": ("fadewhite", 0.2), "S16b": ("fadewhite", 0.2),
+                 "S17-2a": ("fade", 0.7), "S18a": ("fadeblack", 1.0), "S19a": ("fade", 0.5), "S19h": ("fadeblack", 1.0)}
+AD_MAX_DISSOLVE = 0.5  # 광고 경계는 하드컷 또는 0.5초 디졸브까지(제0장 3)
 AMBIENCE = {"S02a": "high wind around a tall building, distant city hum", "S04d": "soft wind, distant city traffic",
             "S17-2b": "evening city ambience, distant crows", "S19f": "heavy freight elevator doors sliding shut with a thud"}
 STYLE = {"NA": "Naration", "由美": "Yumi", "麗華": "Reika", "莉子": "Riko", "小田切": "Odagiri", "担当者": "Tanto", "ママA": "MamaA", "住民": "Jumin"}
@@ -685,17 +691,25 @@ def main():
                    "size": s["lens"], "lens": LENS[s["lens"]], "angle": s["angle"], "light": s["light"], "lighting": LIGHT[s["light"]], "edit_fx": s["fx"],
                    "refs": refs, "subject": s["subject"], "line": s["line"], "motion": item["prompt"] if tier in ("pro", "lite") else "",
                    "keyframe": keyframe, "keyframe_prompt": kf_prompt, "gfx": GFX.get(sid, ""), "caption": CARDS.get(sid, ""),
-                   "signage": signage, "dissolve_in": DISSOLVE_INTO.get(sid, 0.0)})
+                   "signage": signage, "transition_in": DISSOLVE_INTO.get(sid, ("", 0.0))})
     budget = round((cost["pro"] * RATE["pro"] + cost["lite"] * RATE["lite"]) * 1.25, 2)
-    transitions = [0.0] * len(SHOTS)
+    transitions, ttypes = [0.0] * len(SHOTS), ["fade"] * len(SHOTS)
     for k, s_ in enumerate(SHOTS):
-        o = DISSOLVE_INTO.get(s_["id"], 0.0)
+        tt, o = DISSOLVE_INTO.get(s_["id"], ("fade", 0.0))
         if o and k > 0:
-            transitions[k - 1] = o
-            durations[k - 1] = round(durations[k - 1] + o, 4)  # 앞 컷이 겹침만큼 길어져 다음 컷 시작 시각은 Lock 그대로
-    for ad in ad_times:  # 광고 경계는 하드컷(디졸브 금지 — 광고 삽입 지점이 흐려짐)
+            transitions[k - 1], ttypes[k - 1] = o, tt
+            # 하드컷 경계는 조립 시 1프레임(HARD) 겹침 → 그만큼은 이미 들어 있으므로 o - HARD만 늘린다
+            durations[k - 1] = round(durations[k - 1] + o - HARD, 4)
+    for ad in ad_times:
         k = next(i for i, sid in enumerate(order_ids) if abs(starts[sid] - ad) < 1e-3)
-        assert transitions[k - 1] == 0.0, f"광고 경계 {order_ids[k]}에 디졸브 금지"
+        assert transitions[k - 1] <= AD_MAX_DISSOLVE, f"광고 경계 {order_ids[k]} 전환 {transitions[k - 1]}초 > {AD_MAX_DISSOLVE}"
+    # 전환 중에 대사가 시작되면 자막이 전환 위에 뜬다(소리는 J컷으로 정상) — 목록만 보고
+    in_trans = []
+    for k, s_ in enumerate(SHOTS):
+        o = DISSOLVE_INTO.get(s_["id"], ("fade", 0.0))[1]
+        if o:
+            t0 = starts[s_["id"]]
+            in_trans += [(s_["id"], lid) for lid, r in rows.items() if t0 - 1e-3 <= r["start"] < t0 + o]
 
     # 음성 복사(override): 발화 구간만, 3분할은 이어 붙임
     src = os.path.join(ROOT, "assets", "auditions", "tower-tts")
@@ -711,8 +725,8 @@ def main():
         key = "NA" if x["spk"].startswith("NA") else x["spk"]
         st = STYLE[key]
         events.append((r["start"] - TRIM_PRE, r["end"] + 0.25, st, STYLE_JA[st], wrap(x["text"])))
-    for sid, cap in CARDS.items():
-        c0 = starts[sid] + 0.3
+    for sid, cap in CARDS.items():  # 카드 자막은 전환이 끝난 뒤 0.1초에 또렷이(전환과 함께 번지지 않게)
+        c0 = starts[sid] + DISSOLVE_INTO.get(sid, ("", 0.2))[1] + 0.1
         events.append((c0, min(ends[sid] - 0.2, c0 + 3.5), "Caption", "", cap))
     for lid, off, ln, style, txt in EMPH:
         t0 = rows[lid]["start"] + off
@@ -776,7 +790,7 @@ def main():
         "tts_model": "fal-ai/minimax/speech-02-hd", "language_boost": "Japanese", "speed": 1.0,
         "style_names": STYLE_JA, "narration_styles": ["Naration"], "silent_styles": ["Caption", "Emph", "Stamp", "LR", "Zawa"],
         "output_size": [1920, 1080], "fit": "crop",
-        "scene_durations": durations, "transitions": transitions,
+        "scene_durations": durations, "transitions": transitions, "transition_types": ttypes,
         "omnihuman_scenes": [idx[s["id"]] for s in SHOTS if s["kind"] == "d"],
         "omnihuman_models": ["fal-ai/bytedance/omnihuman/v1.5", "fal-ai/bytedance/omnihuman"], "omnihuman_max_s": 8.0,
         "legacy_lipsync": False,
@@ -808,11 +822,13 @@ def main():
           "", "## 로컬 그래픽·글자 합성 (키프레임은 무지)", ""] + [f"- {k}: {v}" for k, v in GFX.items()] + [
           "", "## 화면 속 일본어 표기 (명판·명찰 — 무지 생성 후 로컬 합성)", ""] + [
           f"- {x['id']}: " + " / ".join(x["signage"]) for x in sb if x["signage"]] + [
-          "", "## 장면 전환 (디졸브)", ""] + [f"- {x['id']} 앞 {x['dissolve_in']}초" for x in sb if x["dissolve_in"]] + [
+          "", "## 장면 전환 (기본 하드컷)", ""] + [f"- {x['id']} 앞: {x['transition_in'][0]} {x['transition_in'][1]}초" for x in sb if x["transition_in"][1]] + [
           "", "## 샷 표", "", "| 컷 | 타임코드 | 길이 | 방식 | 사이즈 | 앵글 | 조명 | 편집 효과 | 대사 | 내용 |", "|---|---|---|---|---|---|---|---|---|---|"]
     for x in sb:
         md.append(f"| {x['id']} | {x['timecode']} | {x['assembled_s']:.2f}s | {x['tier']} | {x['size']} | {x['angle']} | {x['light']} | {x['edit_fx']} | {x['line'] or ''} | {x['subject'][:60]} |")
     open(os.path.join(PROD, "07_샷리스트.md"), "w", encoding="utf-8").write("\n".join(md) + "\n")
+    if in_trans:
+        print("전환 중 시작하는 대사(자막이 전환 위에 뜸):", in_trans)
     if lag_report:
         print("J컷(대사가 앞 컷 위에서 먼저 시작):", ", ".join(f"{a}+{b}s" for a, b in lag_report))
     top = ang.most_common(1)[0]

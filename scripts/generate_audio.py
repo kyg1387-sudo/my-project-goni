@@ -605,11 +605,15 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
     if any(overlaps):
         # xfade 체인: 각 경계에서 overlaps[k]초 디졸브(0이면 사실상 컷). offset = 누적(길이-겹침)
         cur, acc = "[v0]", 0.0
+        # 경계별 전환 종류(선택): fade(디졸브) / fadeblack(딥 투 블랙) / fadewhite(화이트 플래시). 없으면 전부 fade(기존 동작)
+        ttypes = list(cfg.get("transition_types", []))
+        ttypes += ["fade"] * (len(final_scenes) - len(ttypes))
         for k in range(1, len(final_scenes)):
             acc += durations[k - 1] - overlaps[k - 1]
             o = overlaps[k - 1]
             nxt = "[vc]" if k == len(final_scenes) - 1 else f"[x{k}]"
-            parts.append(f"{cur}[v{k}]xfade=transition=fade:duration={o:.4f}:offset={acc:.4f}{nxt}")
+            tt = ttypes[k - 1] if ttypes[k - 1] in ("fade", "fadeblack", "fadewhite") else "fade"
+            parts.append(f"{cur}[v{k}]xfade=transition={tt}:duration={o:.4f}:offset={acc:.4f}{nxt}")
             cur = nxt
         if len(final_scenes) == 1:
             parts.append("[v0]copy[vc]")

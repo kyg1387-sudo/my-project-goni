@@ -48,7 +48,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S01b",
@@ -77,7 +80,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S01c",
@@ -106,7 +112,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S01d",
@@ -135,7 +144,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S01e",
@@ -165,7 +177,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S01f",
@@ -195,7 +210,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S01g",
@@ -224,7 +242,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S01h",
@@ -253,7 +274,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S01i",
@@ -279,7 +303,10 @@
    "gfx": "",
    "caption": "タワマンのボスママ",
    "signage": [],
-   "dissolve_in": 0.8
+   "transition_in": [
+    "fadeblack",
+    1.0
+   ]
   },
   {
    "id": "S02a",
@@ -307,7 +334,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.8
+   "transition_in": [
+    "fadeblack",
+    0.8
+   ]
   },
   {
    "id": "S02a2",
@@ -339,7 +369,10 @@
    "signage": [
     "리셉션 뒤 금속 명판 「グランタワー東京ベイ」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S02a3",
@@ -368,7 +401,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S02b",
@@ -394,7 +430,10 @@
    "gfx": "층별 피라미드(上層階/中層階/低層階) — 타워 실루엣(S02a 키프레임) 위 반투명 띠",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S02b2",
@@ -424,7 +463,10 @@
    "signage": [
     "입구 석재 명판 「グランタワー東京ベイ」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S02c",
@@ -457,7 +499,10 @@
    "signage": [
     "리셉션 뒤 금속 명판 「グランタワー東京ベイ」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S02c2",
@@ -485,7 +530,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S02d",
@@ -518,7 +566,10 @@
    "signage": [
     "리셉션 뒤 금속 명판 「グランタワー東京ベイ」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S02e",
@@ -549,7 +600,10 @@
    "signage": [
     "리셉션 뒤 금속 명판 「グランタワー東京ベイ」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S03a",
@@ -577,7 +631,10 @@
    "gfx": "안내판 「40階以上の居住者専用」",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S03b",
@@ -606,7 +663,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S03c",
@@ -636,7 +696,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S03d",
@@ -665,7 +728,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S03e",
@@ -694,7 +760,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S03e2",
@@ -722,7 +791,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S03f",
@@ -752,7 +824,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S03-2a",
@@ -782,7 +857,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.8
+   "transition_in": [
+    "fade",
+    0.6
+   ]
   },
   {
    "id": "S03-2b",
@@ -812,7 +890,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S03-2c",
@@ -842,7 +923,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S04a",
@@ -873,7 +957,10 @@
    "signage": [
     "우편함 이름표 「505　高橋」"
    ],
-   "dissolve_in": 0.6
+   "transition_in": [
+    "fade",
+    0.5
+   ]
   },
   {
    "id": "S04b",
@@ -902,7 +989,10 @@
    "gfx": "통지서 「修繕積立金 来月より1.8倍に値上げ予定 / 臨時総会にて承認」",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S04b2",
@@ -933,7 +1023,10 @@
    "signage": [
     "리셉션 뒤 금속 명판 「グランタワー東京ベイ」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S04c",
@@ -962,7 +1055,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S04d",
@@ -990,7 +1086,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S05a",
@@ -1021,7 +1120,10 @@
    "signage": [
     "현수막 「グランタワー東京ベイ管理組合　臨時総会」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S05b",
@@ -1050,7 +1152,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S05c",
@@ -1081,7 +1186,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S05d",
@@ -1112,7 +1220,10 @@
    "signage": [
     "현수막 「グランタワー東京ベイ管理組合　臨時総会」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S05e",
@@ -1141,7 +1252,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S05f",
@@ -1170,7 +1284,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S06a",
@@ -1201,7 +1318,10 @@
    "signage": [
     "단상 명패 「理事長」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S06b",
@@ -1230,7 +1350,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S06c",
@@ -1259,7 +1382,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S06d",
@@ -1289,7 +1415,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S06e",
@@ -1320,7 +1449,10 @@
    "signage": [
     "현수막 「グランタワー東京ベイ管理組合　臨時総会」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S06-2a",
@@ -1348,7 +1480,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S06-2b",
@@ -1377,7 +1512,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S07a",
@@ -1406,7 +1544,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S07a2",
@@ -1435,7 +1576,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S07b",
@@ -1464,7 +1608,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S07c",
@@ -1493,7 +1640,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S07c2",
@@ -1522,7 +1672,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S08a",
@@ -1552,7 +1705,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "fade",
+    0.5
+   ]
   },
   {
    "id": "S08a2",
@@ -1581,7 +1737,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S08b",
@@ -1609,7 +1768,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S08b2",
@@ -1638,7 +1800,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S09a",
@@ -1671,7 +1836,10 @@
     "카운터 명판 「管理事務室」",
     "명찰 「グランタワー管理　木村」"
    ],
-   "dissolve_in": 0.6
+   "transition_in": [
+    "fade",
+    0.6
+   ]
   },
   {
    "id": "S09a2",
@@ -1700,7 +1868,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S09b",
@@ -1729,7 +1900,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S09c",
@@ -1758,7 +1932,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S10a",
@@ -1787,7 +1964,10 @@
    "gfx": "장부 「外壁調査費 / 緊急補修費」 + 빨간 동그라미",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.6
+   "transition_in": [
+    "fade",
+    0.6
+   ]
   },
   {
    "id": "S10a2",
@@ -1815,7 +1995,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S10a3",
@@ -1844,7 +2027,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S10b",
@@ -1873,7 +2059,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S10b2",
@@ -1899,7 +2088,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S10c",
@@ -1927,7 +2119,10 @@
    "gfx": "노트북 「法人登記 / 代表者 西園寺 剛 / 所在地 レンタルオフィス / 従業員 0名」",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S11a",
@@ -1956,7 +2151,10 @@
    "gfx": "휴대폰 가상 SNS 피드(로고·실명 서비스명 없음)",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S11a2",
@@ -1984,7 +2182,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S11b",
@@ -2012,7 +2213,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S11c",
@@ -2041,7 +2245,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S11c2",
@@ -2070,7 +2277,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S11c3",
@@ -2099,7 +2309,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S12a",
@@ -2128,7 +2341,10 @@
    "gfx": "주민 명부 「42階 所有者 小田切」(이름 칸은 흐리게)",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S12b",
@@ -2157,7 +2373,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S12-2a",
@@ -2186,7 +2405,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.6
+   "transition_in": [
+    "fade",
+    0.5
+   ]
   },
   {
    "id": "S12-3a",
@@ -2216,7 +2438,10 @@
    "signage": [
     "현수막 「グランタワー東京ベイ管理組合　通常総会」"
    ],
-   "dissolve_in": 0.8
+   "transition_in": [
+    "fade",
+    0.7
+   ]
   },
   {
    "id": "S12-3a2",
@@ -2244,7 +2469,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S12-3b",
@@ -2276,7 +2504,10 @@
    "signage": [
     "리셉션 뒤 금속 명판 「グランタワー東京ベイ」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S12-3c",
@@ -2305,7 +2536,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S13a",
@@ -2336,7 +2570,10 @@
    "signage": [
     "현수막 「グランタワー東京ベイ管理組合　通常総会」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S13b",
@@ -2365,7 +2602,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S13c",
@@ -2394,7 +2634,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S13d",
@@ -2423,7 +2666,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S13e",
@@ -2453,7 +2699,10 @@
    "signage": [
     "현수막 「グランタワー東京ベイ管理組合　通常総会」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "fadewhite",
+    0.2
+   ]
   },
   {
    "id": "S13f",
@@ -2484,7 +2733,10 @@
    "signage": [
     "현수막 「グランタワー東京ベイ管理組合　通常総会」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S14a",
@@ -2514,7 +2766,10 @@
    "signage": [
     "현수막 「グランタワー東京ベイ管理組合　通常総会」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S14b",
@@ -2545,7 +2800,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S14c",
@@ -2575,7 +2833,10 @@
    "signage": [
     "현수막 「グランタワー東京ベイ管理組合　通常総会」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S14d",
@@ -2603,7 +2864,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S14e",
@@ -2633,7 +2897,10 @@
    "signage": [
     "현수막 「グランタワー東京ベイ管理組合　通常総会」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S14f",
@@ -2662,7 +2929,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S14g",
@@ -2690,7 +2960,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S14h",
@@ -2719,7 +2992,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S14i",
@@ -2745,7 +3021,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S14j",
@@ -2773,7 +3052,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S14k",
@@ -2802,7 +3084,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S14l",
@@ -2831,7 +3116,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S14m",
@@ -2862,7 +3150,10 @@
    "signage": [
     "명찰 「グランタワー管理　木村」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S14n",
@@ -2891,7 +3182,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S14n2",
@@ -2920,7 +3214,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S14o",
@@ -2951,7 +3248,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S15a",
@@ -2980,7 +3280,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S15b",
@@ -3009,7 +3312,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S15c",
@@ -3037,7 +3343,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S16a",
@@ -3068,7 +3377,10 @@
    "signage": [
     "현수막 「グランタワー東京ベイ管理組合　通常総会」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S16b",
@@ -3097,7 +3409,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "fadewhite",
+    0.2
+   ]
   },
   {
    "id": "S16c",
@@ -3125,7 +3440,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S16d",
@@ -3154,7 +3472,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S16e",
@@ -3180,7 +3501,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S16f",
@@ -3209,7 +3533,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S16g",
@@ -3238,7 +3565,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S16g2",
@@ -3266,7 +3596,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S16h",
@@ -3294,7 +3627,10 @@
    "gfx": "관리규약 「区分所有者」 ⇔ 「賃借人」 좌우 대비",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S16h2",
@@ -3323,7 +3659,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S16i",
@@ -3352,7 +3691,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S16i2",
@@ -3381,7 +3723,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S17a",
@@ -3410,7 +3755,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S17b",
@@ -3441,7 +3789,10 @@
    "signage": [
     "단상 명패 「理事長」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S17d",
@@ -3470,7 +3821,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S17c",
@@ -3498,7 +3852,10 @@
    "gfx": "봉투 「家賃督促状」 시간차 등장",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S17e",
@@ -3527,7 +3884,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S17e2",
@@ -3556,7 +3916,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S17f",
@@ -3585,7 +3948,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S17g",
@@ -3614,7 +3980,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S17h",
@@ -3645,7 +4014,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S17i",
@@ -3676,7 +4048,10 @@
    "signage": [
     "현수막 「グランタワー東京ベイ管理組合　通常総会」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S17i2",
@@ -3705,7 +4080,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S17-2a",
@@ -3733,7 +4111,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.8
+   "transition_in": [
+    "fade",
+    0.7
+   ]
   },
   {
    "id": "S17-2b",
@@ -3761,7 +4142,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S17-2c",
@@ -3791,7 +4175,10 @@
    "signage": [
     "현수막 「グランタワー東京ベイ管理組合　通常総会」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S18a",
@@ -3819,7 +4206,10 @@
    "gfx": "안내판 「どなたでもご利用ください」",
    "caption": "一か月後",
    "signage": [],
-   "dissolve_in": 1.0
+   "transition_in": [
+    "fadeblack",
+    1.0
+   ]
   },
   {
    "id": "S18b",
@@ -3848,7 +4238,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S18c",
@@ -3877,7 +4270,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S19a",
@@ -3909,7 +4305,10 @@
    "signage": [
     "리셉션 뒤 금속 명판 「グランタワー東京ベイ」"
    ],
-   "dissolve_in": 0.6
+   "transition_in": [
+    "fade",
+    0.5
+   ]
   },
   {
    "id": "S19b",
@@ -3940,7 +4339,10 @@
    "signage": [
     "화물 엘리베이터 옆 표지판 「荷物用エレベーター」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S19c",
@@ -3969,7 +4371,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S19d",
@@ -3998,7 +4403,10 @@
    "gfx": "",
    "caption": "",
    "signage": [],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S19e",
@@ -4029,7 +4437,10 @@
    "signage": [
     "화물 엘리베이터 옆 표지판 「荷物用エレベーター」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S19f",
@@ -4059,7 +4470,10 @@
    "signage": [
     "화물 엘리베이터 옆 표지판 「荷物用エレベーター」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S19g",
@@ -4091,7 +4505,10 @@
    "signage": [
     "리셉션 뒤 금속 명판 「グランタワー東京ベイ」"
    ],
-   "dissolve_in": 0.0
+   "transition_in": [
+    "",
+    0.0
+   ]
   },
   {
    "id": "S19h",
@@ -4117,7 +4534,10 @@
    "gfx": "",
    "caption": "見ていないところで、人は決まる。",
    "signage": [],
-   "dissolve_in": 1.0
+   "transition_in": [
+    "fadeblack",
+    1.0
+   ]
   }
  ]
 }
