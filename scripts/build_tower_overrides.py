@@ -129,7 +129,12 @@ def card(sid, out, sec):
     os.remove(p)
 
 
+FX_OVERRIDE = {"S02b": "push"}   # 그래픽 패널이 팬에 잘리지 않게
+
+
 def default_fx(s):
+    if s["id"] in FX_OVERRIDE:
+        return FX_OVERRIDE[s["id"]]
     if s["edit_fx"] in ("push", "pull", "pan", "dutch7", "dutch5", "dollyzoom"):
         return s["edit_fx"]
     return "pan" if s["size"] in ("ws", "ews") else "push"
