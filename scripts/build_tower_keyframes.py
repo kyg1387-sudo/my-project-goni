@@ -41,7 +41,7 @@ EXTRA_REFS = {"S13d": [FRAMING_REF], "S05e": [FRAMING_REF], "S19c": [FRAMING_REF
               # A단계 1차 검수(2026-10-07): 구도 넓음·손 노출·배경 이탈·얼굴 불일치 → 승인 얼굴 + 구도 참조
               "S06b": [REIKA_FACE, FRAMING_REF], "S16b": [ODA_FACE, FRAMING_REF], "S16f": [ODA_FACE, FRAMING_REF],
               # A단계 3차: S01b 참조가 엘리베이터 배경·무표정을 끌고 옴(실증) → 회의실 승인 컷 S06b, 오다기리는 승인 컷 S16f
-              "S13b": "Same framing as the approved hall shot: tight chest-up close-up of Reika, a triumphant arrogant smile, chin raised high, eyes looking down. NO hands. The hall behind her is PACKED with seated residents as soft blurred shapes.",
+              "S13b": [REIKA_HALL], "S14l": [REIKA_HALL], "S15b": [REIKA_HALL], "S17e": [ODA_APPROVED, FRAMING_REF]}
 
 TIGHT = ("Tight chest-up close-up: head and shoulders fill the frame, the top of the head near the top edge, the frame cut at mid-chest; "
          "the face occupies about one third of the frame height; hands NOT visible. Full-frame 16:9 image, no black bars.")
