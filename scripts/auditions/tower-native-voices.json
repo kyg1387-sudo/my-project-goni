@@ -1,0 +1,317 @@
+{
+ "_설명": "사용자 요청 「일본어 자연스럽게」: Typecast 일본인 원어민 목소리(일본어 이름 보이스)만으로 재오디션. 1차 오디션의 Ryouta Takahashi·Mirei Kato(원어민)는 재사용. 측근 엄마 「〜」 늘임 제거(잡음 음절 방지).",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "yumi_NanamiIchikawa_na",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "私は頭を下げた。悔しかったからではない。……これは、隠したい数字がある人間の、言い方だ。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "yumi_HarunaSuzuki_na",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "私は頭を下げた。悔しかったからではない。……これは、隠したい数字がある人間の、言い方だ。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "yumi_MikiYamamoto_na",
+   "model": "typecast-direct",
+   "voice": "tc_63b6650135703800462c1eb0",
+   "language": "jpn",
+   "text": "私は頭を下げた。悔しかったからではない。……これは、隠したい数字がある人間の、言い方だ。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "yumi_SakuraTanaka_na",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "私は頭を下げた。悔しかったからではない。……これは、隠したい数字がある人間の、言い方だ。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "yumi_NanamiIchikawa_soukai",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "では、処分の前に、一つだけ。皆さんの、つみたてきんが、どこへ消えたのか。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.3,
+   "tempo": 1.0
+  },
+  {
+   "id": "yumi_HarunaSuzuki_soukai",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "では、処分の前に、一つだけ。皆さんの、つみたてきんが、どこへ消えたのか。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.3,
+   "tempo": 1.0
+  },
+  {
+   "id": "yumi_MikiYamamoto_soukai",
+   "model": "typecast-direct",
+   "voice": "tc_63b6650135703800462c1eb0",
+   "language": "jpn",
+   "text": "では、処分の前に、一つだけ。皆さんの、つみたてきんが、どこへ消えたのか。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.3,
+   "tempo": 1.0
+  },
+  {
+   "id": "yumi_SakuraTanaka_soukai",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "では、処分の前に、一つだけ。皆さんの、つみたてきんが、どこへ消えたのか。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.3,
+   "tempo": 1.0
+  },
+  {
+   "id": "yumi_NanamiIchikawa_ending",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "あら、さいおんじさん。お荷物の多い方は、荷物用エレベーターをどうぞ。……住人の皆さんが待たされるの、ご迷惑でしょう?",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 1.0
+  },
+  {
+   "id": "yumi_HarunaSuzuki_ending",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "あら、さいおんじさん。お荷物の多い方は、荷物用エレベーターをどうぞ。……住人の皆さんが待たされるの、ご迷惑でしょう?",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 1.0
+  },
+  {
+   "id": "yumi_MikiYamamoto_ending",
+   "model": "typecast-direct",
+   "voice": "tc_63b6650135703800462c1eb0",
+   "language": "jpn",
+   "text": "あら、さいおんじさん。お荷物の多い方は、荷物用エレベーターをどうぞ。……住人の皆さんが待たされるの、ご迷惑でしょう?",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 1.0
+  },
+  {
+   "id": "yumi_SakuraTanaka_ending",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "あら、さいおんじさん。お荷物の多い方は、荷物用エレベーターをどうぞ。……住人の皆さんが待たされるの、ご迷惑でしょう?",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 1.0
+  },
+  {
+   "id": "reika_SakuraTanaka_cold",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "あら、低層階の方は荷物用エレベーターを使ってくださる? 上の階の住人が待たされるの、迷惑なのよね",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "reika_HarunaSuzuki_cold",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "あら、低層階の方は荷物用エレベーターを使ってくださる? 上の階の住人が待たされるの、迷惑なのよね",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "reika_MikiYamamoto_cold",
+   "model": "typecast-direct",
+   "voice": "tc_63b6650135703800462c1eb0",
+   "language": "jpn",
+   "text": "あら、低層階の方は荷物用エレベーターを使ってくださる? 上の階の住人が待たされるの、迷惑なのよね",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "reika_MiuKobayashi_cold",
+   "model": "typecast-direct",
+   "voice": "tc_68d49c1e02c83f1fd4cdeaae",
+   "language": "jpn",
+   "text": "あら、低層階の方は荷物用エレベーターを使ってくださる? 上の階の住人が待たされるの、迷惑なのよね",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "reika_SakuraTanaka_collapse",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "お、おだぎり様……! 待ってください、それだけは……! 私、ここを追い出されたら、行く場所が……!",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.5,
+   "tempo": 1.1
+  },
+  {
+   "id": "reika_HarunaSuzuki_collapse",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "お、おだぎり様……! 待ってください、それだけは……! 私、ここを追い出されたら、行く場所が……!",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.5,
+   "tempo": 1.1
+  },
+  {
+   "id": "reika_MikiYamamoto_collapse",
+   "model": "typecast-direct",
+   "voice": "tc_63b6650135703800462c1eb0",
+   "language": "jpn",
+   "text": "お、おだぎり様……! 待ってください、それだけは……! 私、ここを追い出されたら、行く場所が……!",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.5,
+   "tempo": 1.1
+  },
+  {
+   "id": "reika_MiuKobayashi_collapse",
+   "model": "typecast-direct",
+   "voice": "tc_68d49c1e02c83f1fd4cdeaae",
+   "language": "jpn",
+   "text": "お、おだぎり様……! 待ってください、それだけは……! 私、ここを追い出されたら、行く場所が……!",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.5,
+   "tempo": 1.1
+  },
+  {
+   "id": "odagiri_HideoWatanabe_reveal",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……よんじゅうにかいの持ち主は、私だがね",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "odagiri_HideoWatanabe_down",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "行く場所なら、あなたが見下してきた、下の階にも、空き部屋はいくらでもありますよ",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "mamaA_MiuKobayashi_kids",
+   "model": "typecast-direct",
+   "voice": "tc_68d49c1e02c83f1fd4cdeaae",
+   "language": "jpn",
+   "text": "ごめんね、りこちゃん。ここ、上の子専用になったの。れいかさんが決めたのよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "mamaA_HarunaSuzuki_kids",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "ごめんね、りこちゃん。ここ、上の子専用になったの。れいかさんが決めたのよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "mamaA_SakuraTanaka_kids",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "ごめんね、りこちゃん。ここ、上の子専用になったの。れいかさんが決めたのよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "tanto_TakuyaMurakami_timid",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "……たかはしさん。正直、僕も前からおかしいと思ってたんです。でも、理事長に逆らったら、うちとの契約を切られるので……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "tanto_DaichiInoue_timid",
+   "model": "typecast-direct",
+   "voice": "tc_63622a97ee3708cc70012f94",
+   "language": "jpn",
+   "text": "……たかはしさん。正直、僕も前からおかしいと思ってたんです。でも、理事長に逆らったら、うちとの契約を切られるので……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "tanto_TakuyaMurakami_firm",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "……いいえ。その記録は、当社が保管している正式な帳簿の写しです。通帳の原本も、ここにあります",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.2,
+   "tempo": 1.0
+  },
+  {
+   "id": "tanto_DaichiInoue_firm",
+   "model": "typecast-direct",
+   "voice": "tc_63622a97ee3708cc70012f94",
+   "language": "jpn",
+   "text": "……いいえ。その記録は、当社が保管している正式な帳簿の写しです。通帳の原本も、ここにあります",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.2,
+   "tempo": 1.0
+  },
+  {
+   "id": "jumin_ToumaMurata_shout",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "おい……この業者、理事長の弟の会社じゃないか!",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.05
+  },
+  {
+   "id": "jumin_KentaYoshida_shout",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "おい……この業者、理事長の弟の会社じゃないか!",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.05
+  }
+ ]
+}
