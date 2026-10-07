@@ -1,0 +1,17 @@
+{
+ "_설명": "#01 타워맨션 보스맘 시험 장면 키프레임: 씬5 유미 총회 발언 가슴 위 CU(OmniHuman용). 참조 = 시트 상단행(앞머리 없음) 정면·45도 + 대회의실 셀1. 2안 약 0.08달러.",
+ "_style_preset": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, cool modern palette of a luxury Tokyo tower condominium, no flat lighting",
+ "characters": [
+  {
+   "id": "S5-yumi-cu",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/tower-ja-cast/cells/yumi-front.png",
+    "assets/portraits/tower-ja-cast/cells/yumi-q45.png",
+    "assets/portraits/tower-ja-cast/cells/loc-hall-day-wide-back.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference images 1 and 2 are the CHARACTER reference of Yumi (Japanese woman aged 42): put this exact same person in the frame — identical face, glasses, hair, skin, age and wardrobe — using them as the identity guide. Reference image 3 is the LOCATION reference photo: reproduce this exact assembly hall — same chairs, pale wood floor, floor-to-ceiling windows, light direction and color temperature — as the setting. Yumi's look is locked: straight black chin-length bob tucked behind both ears, NO bangs, forehead partly visible, thin plain silver-rimmed rectangular glasses, plain navy-blue fine-knit cardigan buttoned over a plain white collared blouse, no brooch, no pin, no badge, no logo. Shot: Close-up, chest-up, single person (no hands in frame) — frame exactly at this shot size, slight low angle (camera just below her eye line), head straight, body facing camera with a 15-degree turn, looking just off-lens camera-right toward the front of the hall. Subject: SINGLE PORTRAIT: Yumi alone, standing up from her seat in the middle rows of the residents' assembly, calm and composed, a cool firm resolve already in her face (50%), lips just parted as if about to speak; no hands. Exactly one person in sharp focus and NOBODY else near her — no foreground shoulder, no back of another head, no over-the-shoulder framing; behind her only very out-of-focus rows of grey chairs with a few seated residents reduced to soft unrecognizable blurred shapes. Cinematography: 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises behind the glasses, soft optical bokeh, cinematic portrait. Lighting: cool crisp daylight 5600K from the tall windows on camera-left as key light, soft fill, subtle cool rim light separating her from the background, gentle natural reflections on the glasses without hiding the eyes. Style: Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, cool modern palette of a luxury Tokyo tower condominium, no flat lighting. All screens and papers are completely blank; no letters, numbers or symbols anywhere in the frame. Absolutely no text, letters, numbers, logos, signage or symbols anywhere in the image. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, watermarks, stamps, symbols on collar, brooch, pin, bangs, bad anatomy, deformed eyes, extra fingers, hands, posters with writing, glare covering eyes."
+  }
+ ]
+}
