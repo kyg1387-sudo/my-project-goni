@@ -121,6 +121,24 @@ def S(sid, scene, kind, lens, light, angle, who, loc, subject, line=None, fx="",
                 subject=subject, line=line, fx=fx, motion=motion, expr=expr)
 
 
+# OmniHuman 장면별 연기 지시(톤 연출표 05 기준) — 고개 회전 20° 이내, 손 비노출, 카메라 고정(제2장 3·제6장 1)
+OMNI_COMMON = "Static camera. Keep the exact face, hair, wardrobe and background. Natural lip movement matching the Japanese speech, subtle breathing, natural blinks. Head turns stay under 15 degrees, hands stay out of frame. "
+OMNI_PROMPTS = {
+    "S01b": "Condescending and relaxed: chin slightly raised, eyes looking down her nose, a thin cold smile, one slow small head tilt.",
+    "S05e": "Polite and calm: steady eye contact toward the stage, a small respectful nod at the start, composed expression.",
+    "S06b": "Contemptuous mockery: half-lidded eyes, a sneering smile that widens on the last phrase, slight head tilt to one side.",
+    "S13b": "Triumphant and theatrical: confident smile, chin up, a slow pleased glance across the room, a brief pause before the last words.",
+    "S13d": "Calm and resolute: still posture, level gaze forward, quiet firmness, minimal head movement.",
+    "S14l": "Panicked denial: forced smile cracking, eyes darting left and right, quick shallow breaths, voice rising.",
+    "S14m": "Nervous but resolute for the first time: a small swallow before speaking, then steady eyes forward, slight tension in the jaw.",
+    "S15b": "Losing control: furious glare, nostrils flaring, sharp small head jerks on the accusations, shoulders tense.",
+    "S16b": "Slow, calm and heavy: unhurried speech, a slight pause before speaking, steady unblinking gaze, dignified stillness.",
+    "S16f": "Stern and measured judgement: steady gaze, slow deliberate speech, a small disappointed head shake once.",
+    "S17d": "Desperate pleading from the floor: tearful trembling lips, eyebrows raised in anguish, looking up, small sobbing breaths.",
+    "S17e": "Calm and unforgiving: looking down, quiet voice, faint polite smile that does not reach the eyes.",
+    "S19c": "Graceful polite smile with steel underneath: gentle courteous tone, a small polite bow of the head at the start, steady eyes.",
+}
+
 SHOTS = [
     # ① 후크 S01 — 로비
     S("S01a", "S01", "face", "ms", "lobby_cold", "LA", ["REIKA", "MAMAA"], "EV_OPEN",
@@ -804,6 +822,7 @@ def main():
         "output_size": [1920, 1080], "fit": "crop",
         "scene_durations": durations, "transitions": transitions, "transition_types": ttypes,
         "omnihuman_scenes": [idx[s["id"]] for s in SHOTS if s["kind"] == "d"],
+        "omnihuman_prompts": {str(idx[k]): OMNI_COMMON + v for k, v in OMNI_PROMPTS.items()},
         "omnihuman_models": ["fal-ai/bytedance/omnihuman/v1.5", "fal-ai/bytedance/omnihuman"], "omnihuman_max_s": 8.0,
         "legacy_lipsync": False,
         "ambience_model": "fal-ai/mmaudio-v2", "ambience_volume": 0.35,
