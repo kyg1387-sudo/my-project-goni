@@ -47,9 +47,9 @@ LOC_NOTE = {
 COMPOSITION = {
     "S01b": TIGHT + (" Setting: inside the open mirrored passenger elevator of the luxury tower lobby, brushed steel and mirror soft behind her. "
                      "Expression at about 60 percent: a condescending, polite-but-cruel smirk, chin raised, eyes looking down; NOT a friendly smile."),
-    "S13d": TIGHT + (" CAMERA DISTANCE: about one metre from her face with an 85mm lens — her head and shoulders fill the frame; "
+    "S13d": ("FRAMING FIRST: a tight single-person portrait close-up — Yumi's head and shoulders fill the frame, cut at mid-chest. " + TIGHT) + (" CAMERA DISTANCE: about one metre from her face with an 85mm lens — her head and shoulders fill the frame; "
                      "NOT a medium shot, NOT a full-body shot, her hands and waist are NOT visible. Setting: standing in the middle rows of the packed residents' assembly hall; behind her many seated residents are "
-                     "soft, out-of-focus shapes with unrecognizable faces, the tall windows on the left. Expression: calm, resolute, "
+                     "only creamy out-of-focus colour blobs (NO recognizable faces, NO sharp people anywhere), the tall windows on the left. Expression: calm, resolute, "
                      "about 50 percent firmness; NOT smiling."),
     "S17b": (FULL + " Extreme bird's-eye view from directly above the stage floor: Reika is ALREADY sitting collapsed on the pale wood floor "
              "beside the lectern, legs folded to one side, shoulders slumped, her long chestnut hair falling forward, the open burgundy "
