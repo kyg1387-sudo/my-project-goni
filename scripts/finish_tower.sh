@@ -3,7 +3,13 @@
 # 사용법: scripts/finish_tower.sh   (deliveries/tower-skit-final.mp4.part-* 가 최신 burn 결과여야 함)
 set -euo pipefail
 cd "$(dirname "$0")/.."
-cat deliveries/tower-skit-final.mp4.part-* > out/tower-main.mp4
+cat deliveries/tower-skit-final.mp4.part-* > out/tower-main-burn.mp4
+# burn 이후에 고친 하드컷 컷은 완성본에서 바로 교체(무과금) — PATCH="S10a2 ..."
+cp out/tower-main-burn.mp4 out/tower-main.mp4
+for sid in ${PATCH:-}; do
+  python3 scripts/patch_final_cut.py tower "$sid" out/tower-main.mp4 out/tower-main-p.mp4 productions/tower-bossmom-ja/qa/assembly/report.txt
+  mv out/tower-main-p.mp4 out/tower-main.mp4
+done
 MAIN=$(ffprobe -v error -show_entries format=duration -of csv=p=0 out/tower-main.mp4)
 python3 scripts/tower_sfx_mix.py out/tower-main.mp4 out/tower-main-sfx.mp4
 python3 scripts/tower_grade.py out/tower-main-sfx.mp4 out/tower-main-graded.mp4 productions/tower-bossmom-ja/qa/assembly/report.txt
