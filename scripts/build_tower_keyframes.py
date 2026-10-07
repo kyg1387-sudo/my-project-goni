@@ -38,8 +38,8 @@ TIGHT = ("Tight chest-up close-up: head and shoulders fill the frame, the top of
          "the face occupies about one third of the frame height; hands NOT visible. Full-frame 16:9 image, no black bars.")
 FULL = "Full-frame 16:9 image filling the whole canvas: NO black bars, NO white borders, NO letterbox or pillarbox."
 LOC_NOTE = {
-    "loc-lobby": "The lobby walls and elevator surrounds are bare polished stone and brushed steel: NO paper notices, NO signs, NO floor-number displays with digits.",
-    "loc-hall": "The assembly-hall walls are plain white with nothing hanging on them; the projector screen is completely blank white.",
+    "loc-lobby": "The lobby walls and elevator surrounds are polished stone and brushed steel: NO paper notices, NO posters, NO floor-number displays with digits; any plaque or sign plate is completely blank.",
+    "loc-hall": "The assembly-hall walls are plain white with no posters or papers; the projector screen, any banner and any nameplate are completely blank white.",
     "loc-kidsroom": "The kids-room walls have NO posters or papers with writing; the plaque beside the door is plain blank white.",
     "loc-office": "Binder spines and labels are completely blank; no papers with readable writing.",
     "prop-bag": "The burgundy quilted bag has NO logo, NO monogram, NO metal emblem — only plain quilting and a gold chain.",

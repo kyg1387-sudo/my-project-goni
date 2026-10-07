@@ -422,6 +422,25 @@ EMPH = [  # 화면 전용 강조 자막(silent_styles) — (기준 줄, 줄 시�
     ("line051", 0.3, 4.5, "LR", "区分所有者　　⇔　　賃借人"),
     ("line052", 0.6, 2.8, "Stamp", "家賃滞納"),
 ]
+# 화면 속 일본어 표기(사용자 지시 2026-10-07 「명찰·명판은 장면에 맞게」): 키프레임은 무지 자리만 → 로컬 실글꼴·원근 합성(ja_text_overlay.py)
+TOWER = "グランタワー東京ベイ"
+SIGN_BY_LOC = {
+    "EXT_ENT": ("Beside the glass entrance a long blank polished-stone name plaque is mounted on the wall.", f"입구 석재 명판 「{TOWER}」"),
+    "LOBBY": ("On the stone wall behind the reception counter a blank brushed-brass name plaque.", f"리셉션 뒤 금속 명판 「{TOWER}」"),
+    "EV_FREIGHT": ("On the wall right beside the freight elevator a small blank brushed-steel sign plate at eye level.", "화물 엘리베이터 옆 표지판 「荷物用エレベーター」"),
+    "OFFICE": ("On the service counter a small blank white desk sign plate faces the visitor.", "카운터 명판 「管理事務室」"),
+    "HALL_SCREEN": ("A long blank white banner hangs above the projector screen.", "현수막 장면별(S05 「グランタワー東京ベイ管理組合 臨時総会」 / S13~ 「グランタワー東京ベイ管理組合 通常総会」)"),
+    "HALL_LECTERN": ("A small blank white nameplate is fixed to the front of the lectern.", "단상 명패 「理事長」"),
+    "HALL_WIDE": ("A long blank white banner hangs above the projector screen at the front of the hall.", "현수막"),
+}
+SIGN_SIZES = ("ms", "ws", "ews")  # 클로즈업에는 명판 자리를 만들지 않는다(배경 보케 속 가짜 판 방지) — 화물 EV 표지판만 예외
+BANNER_BY_SCENE = {"S05": "グランタワー東京ベイ管理組合　臨時総会", "S06": "グランタワー東京ベイ管理組合　臨時総会"}
+BANNER_DEFAULT = "グランタワー東京ベイ管理組合　通常総会"
+NAMEPLATE = {"TANTO": ("A small plain white name badge is clipped on the left chest of his suit jacket.", "명찰 「グランタワー管理　木村」")}
+MAILBOX = {"S04a": "우편함 이름표 「505　高橋」"}
+# 장면 전환(규격 제6장 5: 시간·장소 전환 디졸브 0.5~1.0초). 값은 이전 장면 끝에서 겹치는 길이 — 겹친 만큼 앞 컷을 늘려 Lock 타임라인을 유지한다.
+DISSOLVE_INTO = {"S01i": 0.8, "S02a": 0.8, "S03-2a": 0.8, "S04a": 0.6, "S08a": 0.0, "S09a": 0.6, "S10a": 0.6, "S12-2a": 0.6,
+                 "S12-3a": 0.8, "S17-2a": 0.8, "S18a": 1.0, "S19a": 0.6, "S19h": 1.0}
 AMBIENCE = {"S02a": "high wind around a tall building, distant city hum", "S04d": "soft wind, distant city traffic",
             "S17-2b": "evening city ambience, distant crows", "S19f": "heavy freight elevator doors sliding shut with a thud"}
 STYLE = {"NA": "Naration", "由美": "Yumi", "麗華": "Reika", "莉子": "Riko", "小田切": "Odagiri", "担当者": "Tanto", "ママA": "MamaA", "住民": "Jumin"}
@@ -620,10 +639,22 @@ def main():
                  f"Only the people described ({len(named)} named{', plus soft unrecognizable background people' if len(named) != len(s['who']) else ''}), no extra sharp faces."))
         keyframe = None if s["kind"].startswith("reuse") or s["kind"] == "card" else f"assets/portraits/tower-keyframes/{sid}-1.png"
         kf_prompt = None
+        sign_txt, signage = [], []
+        if s["loc"] in SIGN_BY_LOC and (s["lens"] in SIGN_SIZES or s["loc"] == "EV_FREIGHT"):
+            sign_txt.append(SIGN_BY_LOC[s["loc"]][0])
+            sg = SIGN_BY_LOC[s["loc"]][1]
+            if s["loc"] in ("HALL_SCREEN", "HALL_WIDE"):
+                sg = f"현수막 「{BANNER_BY_SCENE.get(s['scene'], BANNER_DEFAULT)}」"
+            signage.append(sg)
+        for key in s["who"]:
+            if key in NAMEPLATE and s["kind"] in ("d", "face", "react", "sil"):
+                sign_txt.append(NAMEPLATE[key][0]); signage.append(NAMEPLATE[key][1])
+        if sid in MAILBOX:
+            sign_txt.append("Each mailbox door has a small blank white name card slot."); signage.append(MAILBOX[sid])
         if keyframe:
             kf_prompt = " ".join([
                 PRESET + ".", s["subject"], ("Characters: " + " | ".join(ids) + ".") if ids else "",
-                f"Camera: {ANGLE[s['angle']]}, {LENS[s['lens']]}.", f"Lighting: {LIGHT[s['light']]}.", comp, PLAIN,
+                f"Camera: {ANGLE[s['angle']]}, {LENS[s['lens']]}.", f"Lighting: {LIGHT[s['light']]}.", comp, " ".join(sign_txt), PLAIN,
                 f"Negative: {NEGATIVE}."]).strip()
             cost["kf"] += 1
         tier = {"d": "omni", "react": "still", "ins": "still", "estill": "still", "gfx": "gfx", "face": "pro", "sil": "lite",
@@ -653,8 +684,18 @@ def main():
                    "timecode": f"{tc(starts[sid])} - {tc(ends[sid])}", "start": round(starts[sid], 3), "assembled_s": round(d, 3), "generate_s": gen,
                    "size": s["lens"], "lens": LENS[s["lens"]], "angle": s["angle"], "light": s["light"], "lighting": LIGHT[s["light"]], "edit_fx": s["fx"],
                    "refs": refs, "subject": s["subject"], "line": s["line"], "motion": item["prompt"] if tier in ("pro", "lite") else "",
-                   "keyframe": keyframe, "keyframe_prompt": kf_prompt, "gfx": GFX.get(sid, ""), "caption": CARDS.get(sid, "")})
+                   "keyframe": keyframe, "keyframe_prompt": kf_prompt, "gfx": GFX.get(sid, ""), "caption": CARDS.get(sid, ""),
+                   "signage": signage, "dissolve_in": DISSOLVE_INTO.get(sid, 0.0)})
     budget = round((cost["pro"] * RATE["pro"] + cost["lite"] * RATE["lite"]) * 1.25, 2)
+    transitions = [0.0] * len(SHOTS)
+    for k, s_ in enumerate(SHOTS):
+        o = DISSOLVE_INTO.get(s_["id"], 0.0)
+        if o and k > 0:
+            transitions[k - 1] = o
+            durations[k - 1] = round(durations[k - 1] + o, 4)  # 앞 컷이 겹침만큼 길어져 다음 컷 시작 시각은 Lock 그대로
+    for ad in ad_times:  # 광고 경계는 하드컷(디졸브 금지 — 광고 삽입 지점이 흐려짐)
+        k = next(i for i, sid in enumerate(order_ids) if abs(starts[sid] - ad) < 1e-3)
+        assert transitions[k - 1] == 0.0, f"광고 경계 {order_ids[k]}에 디졸브 금지"
 
     # 음성 복사(override): 발화 구간만, 3분할은 이어 붙임
     src = os.path.join(ROOT, "assets", "auditions", "tower-tts")
@@ -735,7 +776,7 @@ def main():
         "tts_model": "fal-ai/minimax/speech-02-hd", "language_boost": "Japanese", "speed": 1.0,
         "style_names": STYLE_JA, "narration_styles": ["Naration"], "silent_styles": ["Caption", "Emph", "Stamp", "LR", "Zawa"],
         "output_size": [1920, 1080], "fit": "crop",
-        "scene_durations": durations, "transitions": [0.0] * len(durations),
+        "scene_durations": durations, "transitions": transitions,
         "omnihuman_scenes": [idx[s["id"]] for s in SHOTS if s["kind"] == "d"],
         "omnihuman_models": ["fal-ai/bytedance/omnihuman/v1.5", "fal-ai/bytedance/omnihuman"], "omnihuman_max_s": 8.0,
         "legacy_lipsync": False,
@@ -765,6 +806,9 @@ def main():
           "", "## 앵글 분포 (생성 컷)", "", "| 앵글 | 컷 | 비율 |", "|---|---|---|"] + [
           f"| {k} | {v} | {v / sum(ang.values()) * 100:.0f}% |" for k, v in ang.most_common()] + [
           "", "## 로컬 그래픽·글자 합성 (키프레임은 무지)", ""] + [f"- {k}: {v}" for k, v in GFX.items()] + [
+          "", "## 화면 속 일본어 표기 (명판·명찰 — 무지 생성 후 로컬 합성)", ""] + [
+          f"- {x['id']}: " + " / ".join(x["signage"]) for x in sb if x["signage"]] + [
+          "", "## 장면 전환 (디졸브)", ""] + [f"- {x['id']} 앞 {x['dissolve_in']}초" for x in sb if x["dissolve_in"]] + [
           "", "## 샷 표", "", "| 컷 | 타임코드 | 길이 | 방식 | 사이즈 | 앵글 | 조명 | 편집 효과 | 대사 | 내용 |", "|---|---|---|---|---|---|---|---|---|---|"]
     for x in sb:
         md.append(f"| {x['id']} | {x['timecode']} | {x['assembled_s']:.2f}s | {x['tier']} | {x['size']} | {x['angle']} | {x['light']} | {x['edit_fx']} | {x['line'] or ''} | {x['subject'][:60]} |")
