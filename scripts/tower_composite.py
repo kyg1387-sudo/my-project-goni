@@ -156,11 +156,45 @@ def art_ledger(w, h):
     return im
 
 
+SEG = {"0": "abcdef", "1": "bc", "2": "abged", "3": "abgcd", "4": "fgbc", "5": "afgcd", "6": "afgedc", "7": "abc", "8": "abcdefg", "9": "abcdfg"}
+
+
+def seg_digit(d, x, y, w, h, on, col, ghost):
+    """7세그먼트 숫자 1개(약간 기운 이탤릭, 실제 계산기 LCD처럼)."""
+    t, sl = h * 0.11, w * 0.12   # 획 두께, 기울기
+    P = lambda px, py: (x + px + sl * (1 - py / h), y + py)
+    segs = {"a": [(t * .6, 0), (w - t * .6, 0), (w - t * 1.4, t), (t * 1.4, t)],
+            "d": [(t * 1.4, h - t), (w - t * 1.4, h - t), (w - t * .6, h), (t * .6, h)],
+            "g": [(t, h / 2 - t / 2), (w - t, h / 2 - t / 2), (w - t * .5, h / 2), (w - t, h / 2 + t / 2), (t, h / 2 + t / 2), (t * .5, h / 2)],
+            "f": [(0, t * .6), (t, t * 1.4), (t, h / 2 - t * .7), (0, h / 2 - t * .2)],
+            "e": [(0, h / 2 + t * .2), (t, h / 2 + t * .7), (t, h - t * 1.4), (0, h - t * .6)],
+            "b": [(w - t, t * 1.4), (w, t * .6), (w, h / 2 - t * .2), (w - t, h / 2 - t * .7)],
+            "c": [(w - t, h / 2 + t * .7), (w, h / 2 + t * .2), (w, h - t * .6), (w - t, h - t * 1.4)]}
+    for k, poly in segs.items():
+        d.polygon([P(px, py) for px, py in poly], fill=col if k in on else ghost)
+
+
 def art_lcd(w, h):
-    im = canvas(w, h, (172, 178, 160, 255)); d = ImageDraw.Draw(im)
-    t = "24,000,000."
-    f = fit(d, t, GOTH, w * 0.9, h * 0.72)
-    tw = d.textlength(t, font=f); d.text((w * 0.95 - tw, h * 0.12), t, font=f, fill=(32, 36, 30, 255))
+    """계산기 액정(감독님 지적: 인쇄 글꼴·창 밖으로 삐져나옴) — 회녹색 액정 + 7세그먼트 + 꺼진 세그먼트 잔상 + 위쪽 그림자."""
+    a = np.zeros((int(h), int(w), 3), np.float32)
+    yy = np.linspace(0, 1, int(h))[:, None, None]
+    a[:] = np.array([150, 160, 140]) * (0.86 + 0.14 * yy)        # 위쪽이 살짝 어두운 액정
+    a[: max(2, int(h * 0.12))] *= 0.72                          # 테두리 아래 그림자
+    a[:, : max(2, int(w * 0.012))] *= 0.8
+    im = Image.fromarray(np.clip(a, 0, 255).astype(np.uint8)).convert("RGBA"); d = ImageDraw.Draw(im)
+    col, ghost = (28, 34, 30, 255), (128, 138, 120, 70)
+    text = "24000000"; n = 10                                     # 10자리 액정, 오른쪽 정렬
+    dh = h * 0.62; dw = dh * 0.5; gap = dw * 0.42; y = h * 0.22
+    right = w * 0.94
+    xs = [right - (n - i) * (dw + gap) for i in range(n)]
+    digits = " " * (n - len(text)) + text
+    for i, ch in enumerate(digits):
+        seg_digit(d, xs[i], y, dw, dh, SEG.get(ch, ""), col, ghost)
+        if ch != " " and (n - i - 1) in (3, 6) and i < n - 1:          # 천 단위 쉼표(아래쪽 작은 꺾쇠)
+            cx = xs[i] + dw + gap * 0.35
+            d.polygon([(cx, y + dh * 0.9), (cx + gap * 0.35, y + dh * 0.9), (cx, y + dh * 1.12)], fill=col)
+    d.rectangle((right - gap * 0.55, y + dh * 0.86, right - gap * 0.2, y + dh), fill=col)   # 소수점
+    d.text((w * 0.05, h * 0.08), "M", font=font(GOTH, h * 0.16), fill=(70, 78, 68, 160))  # 메모리 표시
     return im
 
 
@@ -357,7 +391,7 @@ JOBS = {
     "S19f": [("paper", P((969, 302), (1049, 302), (1049, 377), (969, 377)), lambda w, h: art_label(w, h, "荷物用エレベーター", GOTH, (40, 44, 52), 0.3, "SERVICE ELEVATOR"))],
     # 장부·계산기·노트북·휴대폰·명부
     "S10a": [("ink", P((360, 652), (850, 640), (900, 690), (420, 716)), lambda w, h: art_ledger(w, h))],
-    "S10a2": [("emit", P((208, 303), (528, 249), (535, 289), (217, 356)), lambda w, h: art_lcd(w, h))],
+    "S10a2": [("replace", P((205, 302), (484, 252), (519, 292), (216, 352)), lambda w, h: art_lcd(w, h))],   # 액정 창 안쪽(실측 2026-10-07)
     "S10c": [("emit", P((86, 316), (502, 317), (544, 614), (120, 628)), lambda w, h: art_laptop(w, h))],
     "S11a2": [("emit", P((766, 246), (936, 246), (936, 578), (766, 578)), lambda w, h: art_phone(w, h))],
     "S12a": [("ink", P((446, 495), (598, 491), (598, 568), (446, 571)), lambda w, h: art_roster(w, h))],
@@ -448,7 +482,7 @@ def apply(a, mode, q, art_fn, sigma_override=None, protect=False):
 
 # 무지 면은 질감이 없어 초점이 나간 것으로 오판됨 → 실제 초점(가장자리·나사 선명도)을 보고 직접 지정
 SIGMA = {"S03a": 0.4, "S03d": 0.6, "S03e2": 0.6, "S18a": 0.4, "S16h": 0.5, "S19b": 1.0, "S19f": 0.5, "S11a2": 0.5, "S10c": 0.6, "S14e": 0.7,
-         "S14c": 0.5, "S14a": 0.5, "S13e": 0.6, "S02c2": 0.4, "S04b": 0.4, "S12a": 0.4, "S17c": 0.4, "S10a2": 0.5, "S06a": 1.2}
+         "S14c": 0.5, "S14a": 0.5, "S13e": 0.6, "S02c2": 0.4, "S04b": 0.4, "S12a": 0.4, "S17c": 0.4, "S10a2": 0.9, "S06a": 1.2}
 PROTECT = {"S04b", "S10a", "S12a"}  # 손·펜·소매가 면을 가리는 컷
 
 
