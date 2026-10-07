@@ -196,29 +196,67 @@ def write_frames(frames, out):
 
 
 class SignTracker:
-    """합성 전 키프레임 ↔ 클립 프레임 ORB 호모그래피로 합성 표기(차이 영역)를 프레임마다 옮겨 붙인다."""
+    """합성 표기를 i2v 클립에 붙인다 — 두 단계(감독님 지적 2026-10-07: 간판이 떨림, 측정 결과 프레임간 최대 107px).
+    1) 표기 주변(사각형 bbox를 넉넉히 넓힌 영역)의 특징점만으로 프레임마다 위치·배율·회전(부분 아핀)을 구한다
+       — 화면 전체 특징점은 걷는 사람·군중에 끌려 흔들렸다.
+    2) 클립 전체의 사각형 모서리 궤적을 이상치 제거 후 '직선(1차)'으로 맞춘다 — 고정 카메라 i2v의 미세 드리프트만 남고 떨림 0.
+    3) 맞춘 모서리로 프레임별 원근 변환을 만들어 합성본(차이 영역)을 붙인다."""
     def __init__(self, sid):
+        import tower_composite as tc
         raw = np.asarray(Image.open(os.path.join(RAW, f"{sid}-1.png")).convert("RGB"))
         comp = np.asarray(Image.open(os.path.join(KF, f"{sid}-1.png")).convert("RGB"))
         diff = (np.abs(comp.astype(np.int16) - raw.astype(np.int16)).max(2) > 6).astype(np.uint8)
         diff = cv2.dilate(cv2.morphologyEx(diff, cv2.MORPH_CLOSE, np.ones((9, 9), np.uint8)), np.ones((7, 7), np.uint8))
         self.comp, self.mask = comp.astype(np.float32), cv2.GaussianBlur(diff.astype(np.float32), (0, 0), 2)
-        self.orb = cv2.ORB_create(5000); self.bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
-        self.kk, self.kd = self.orb.detectAndCompute(cv2.cvtColor(raw, cv2.COLOR_RGB2GRAY), None)
-        self.H = None
+        self.kh, self.kw = raw.shape[:2]
+        jobs = tc.JOBS.get(sid) or [(None, tc.PAIRS[sid][0], None)]
+        self.q = np.float32(jobs[0][1])
+        x, y, w, h = cv2.boundingRect(self.q.astype(np.int32)); pad = max(90, int(max(w, h) * 1.2))
+        self.box = (max(0, x - pad), max(0, y - pad), min(self.kw, x + w + pad), min(self.kh, y + h + pad))
+        m = np.zeros(raw.shape[:2], np.uint8); m[self.box[1]:self.box[3], self.box[0]:self.box[2]] = 255
+        m[diff > 0] = 0   # 합성 글자 자리(원본은 무지)는 특징점에서 뺀다
+        self.orb = cv2.ORB_create(3000); self.bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
+        self.kk, self.kd = self.orb.detectAndCompute(cv2.cvtColor(raw, cv2.COLOR_RGB2GRAY), m)
+        self.sx = W / self.kw   # 키프레임 → 프레임(16:9 맞춤) 배율
 
-    def apply(self, f):
-        g = cv2.cvtColor(f, cv2.COLOR_RGB2GRAY); fk, fd = self.orb.detectAndCompute(g, None)
-        if fd is not None and len(fk) > 20:
-            ms = sorted(self.bf.match(self.kd, fd), key=lambda m: m.distance)[:600]
-            if len(ms) > 20:
-                Hm, inl = cv2.findHomography(np.float32([self.kk[m.queryIdx].pt for m in ms]), np.float32([fk[m.trainIdx].pt for m in ms]), cv2.RANSAC, 3.0)
-                if Hm is not None and inl.sum() > 15:
-                    self.H = Hm if self.H is None else 0.6 * self.H + 0.4 * Hm   # 떨림 완화
-        if self.H is None:
-            return f
-        c = cv2.warpPerspective(self.comp, self.H, (W, H)); m = cv2.warpPerspective(self.mask, self.H, (W, H))[..., None]
-        return np.clip(f * (1 - m) + c * m, 0, 255).astype(np.uint8)
+    def corners(self, f):
+        x0, y0, x1, y1 = [int(v * self.sx) for v in self.box]; pad = int(60 * self.sx)
+        m = np.zeros((H, W), np.uint8); m[max(0, y0 - pad):y1 + pad, max(0, x0 - pad):x1 + pad] = 255
+        fk, fd = self.orb.detectAndCompute(cv2.cvtColor(f, cv2.COLOR_RGB2GRAY), m)
+        if fd is None or self.kd is None or len(fk) < 8:
+            return None
+        ms = sorted(self.bf.match(self.kd, fd), key=lambda mm: mm.distance)[:400]
+        if len(ms) < 8:
+            return None
+        A, inl = cv2.estimateAffinePartial2D(np.float32([self.kk[mm.queryIdx].pt for mm in ms]), np.float32([fk[mm.trainIdx].pt for mm in ms]),
+                                             method=cv2.RANSAC, ransacReprojThreshold=2.5)
+        if A is None or inl.sum() < 8:
+            return None
+        return cv2.transform(self.q.reshape(-1, 1, 2), A).reshape(-1, 2)
+
+    def run(self, frames):
+        n = len(frames); obs = [self.corners(f) for f in frames]
+        t = np.array([i for i in range(n) if obs[i] is not None], np.float64)
+        if len(t) < max(5, n // 5):   # 추적 실패 → 배율만 맞춘 고정 위치
+            fit = np.repeat((self.q * self.sx)[None], n, 0)
+        else:
+            P = np.array([obs[int(i)] for i in t]).reshape(len(t), -1)   # (프레임, 8)
+            keep = np.ones(len(t), bool)
+            for _ in range(3):   # 직선 맞춤 + 이상치(중앙 절대편차 3배) 제거 반복
+                co = np.polyfit(t[keep], P[keep], 1)
+                res = np.abs(P - (np.outer(t, co[0]) + co[1])).max(1)
+                mad = np.median(res[keep]) + 1e-6
+                keep = res < max(3 * mad, 1.5)
+            co = np.polyfit(t[keep], P[keep], 1)
+            fit = (np.outer(np.arange(n), co[0]) + co[1]).reshape(n, 4, 2)
+        src = np.float32([(0, 0), (self.kw, 0), (self.kw, self.kh), (0, self.kh)])
+        out = []
+        for i, f in enumerate(frames):
+            Hm = cv2.getPerspectiveTransform(self.q, np.float32(fit[i]))
+            c = cv2.warpPerspective(self.comp, Hm, (W, H)); mk = cv2.warpPerspective(self.mask, Hm, (W, H))[..., None]
+            out.append(np.clip(f * (1 - mk) + c * mk, 0, 255).astype(np.uint8))
+        self.fit = fit
+        return out
 
 
 def cam_frames(frames, fx):
@@ -269,7 +307,7 @@ def post(clips):
         if src.endswith("_slow.mp4"):
             os.remove(src)
         if sid in signs:
-            tr = SignTracker(sid); fr = [tr.apply(f) for f in fr]
+            tr = SignTracker(sid); fr = tr.run(fr)
         if sid in POST_FX and not fx.startswith("slow"):
             fr = cam_frames(fr, POST_FX[sid])
         write_frames(fr, os.path.join(OUT, f"scene{i:02d}.mp4")); print(f"scene{i:02d} {sid}: " + " + ".join(x for x in ("표기 추적" if sid in signs else "", POST_FX.get(sid, "")) if x))
