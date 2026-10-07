@@ -1,0 +1,142 @@
+{
+ "_설명": "#01 타워맨션 보스맘 — 유미(1인칭 내레이션 겸 주인공) 목소리 오디션: Typecast ssfm-v30 일본어, 중년 여성 내레이션 계열 5명 x 3줄(내레이션/총회 단호/엔딩 정중한 반격). 한자 오독 방지로 西園寺·積立金은 가나 입력. 사용자 청취로 확정.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "yumi_Jiseon_na",
+   "model": "typecast-direct",
+   "voice": "tc_6a4f2130d153a5cac8e19996",
+   "language": "jpn",
+   "text": "私は頭を下げた。悔しかったからではない。……これは、隠したい数字がある人間の、言い方だ。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0
+  },
+  {
+   "id": "yumi_Donatella_na",
+   "model": "typecast-direct",
+   "voice": "tc_68f04250d96385a3aa5e8865",
+   "language": "jpn",
+   "text": "私は頭を下げた。悔しかったからではない。……これは、隠したい数字がある人間の、言い方だ。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0
+  },
+  {
+   "id": "yumi_Manon_na",
+   "model": "typecast-direct",
+   "voice": "tc_64f97820ffc5b7a301bf119e",
+   "language": "jpn",
+   "text": "私は頭を下げた。悔しかったからではない。……これは、隠したい数字がある人間の、言い方だ。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0
+  },
+  {
+   "id": "yumi_Margot_na",
+   "model": "typecast-direct",
+   "voice": "tc_67a440ec1e05bd5665857efd",
+   "language": "jpn",
+   "text": "私は頭を下げた。悔しかったからではない。……これは、隠したい数字がある人間の、言い方だ。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0
+  },
+  {
+   "id": "yumi_Valerie_na",
+   "model": "typecast-direct",
+   "voice": "tc_67c90d1c45897c4a74a51a8d",
+   "language": "jpn",
+   "text": "私は頭を下げた。悔しかったからではない。……これは、隠したい数字がある人間の、言い方だ。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0
+  },
+  {
+   "id": "yumi_Jiseon_soukai",
+   "model": "typecast-direct",
+   "voice": "tc_6a4f2130d153a5cac8e19996",
+   "language": "jpn",
+   "text": "では、処分の前に、一つだけ。皆さんの、つみたてきんが、どこへ消えたのか。この通帳を、ご覧ください。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.3
+  },
+  {
+   "id": "yumi_Donatella_soukai",
+   "model": "typecast-direct",
+   "voice": "tc_68f04250d96385a3aa5e8865",
+   "language": "jpn",
+   "text": "では、処分の前に、一つだけ。皆さんの、つみたてきんが、どこへ消えたのか。この通帳を、ご覧ください。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.3
+  },
+  {
+   "id": "yumi_Manon_soukai",
+   "model": "typecast-direct",
+   "voice": "tc_64f97820ffc5b7a301bf119e",
+   "language": "jpn",
+   "text": "では、処分の前に、一つだけ。皆さんの、つみたてきんが、どこへ消えたのか。この通帳を、ご覧ください。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.3
+  },
+  {
+   "id": "yumi_Margot_soukai",
+   "model": "typecast-direct",
+   "voice": "tc_67a440ec1e05bd5665857efd",
+   "language": "jpn",
+   "text": "では、処分の前に、一つだけ。皆さんの、つみたてきんが、どこへ消えたのか。この通帳を、ご覧ください。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.3
+  },
+  {
+   "id": "yumi_Valerie_soukai",
+   "model": "typecast-direct",
+   "voice": "tc_67c90d1c45897c4a74a51a8d",
+   "language": "jpn",
+   "text": "では、処分の前に、一つだけ。皆さんの、つみたてきんが、どこへ消えたのか。この通帳を、ご覧ください。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.3
+  },
+  {
+   "id": "yumi_Jiseon_ending",
+   "model": "typecast-direct",
+   "voice": "tc_6a4f2130d153a5cac8e19996",
+   "language": "jpn",
+   "text": "あら、さいおんじさん。お荷物が多い方は、荷物用エレベーターをどうぞ。……住人の皆さんが待たされるの、ご迷惑でしょう？",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6
+  },
+  {
+   "id": "yumi_Donatella_ending",
+   "model": "typecast-direct",
+   "voice": "tc_68f04250d96385a3aa5e8865",
+   "language": "jpn",
+   "text": "あら、さいおんじさん。お荷物が多い方は、荷物用エレベーターをどうぞ。……住人の皆さんが待たされるの、ご迷惑でしょう？",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6
+  },
+  {
+   "id": "yumi_Manon_ending",
+   "model": "typecast-direct",
+   "voice": "tc_64f97820ffc5b7a301bf119e",
+   "language": "jpn",
+   "text": "あら、さいおんじさん。お荷物が多い方は、荷物用エレベーターをどうぞ。……住人の皆さんが待たされるの、ご迷惑でしょう？",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6
+  },
+  {
+   "id": "yumi_Margot_ending",
+   "model": "typecast-direct",
+   "voice": "tc_67a440ec1e05bd5665857efd",
+   "language": "jpn",
+   "text": "あら、さいおんじさん。お荷物が多い方は、荷物用エレベーターをどうぞ。……住人の皆さんが待たされるの、ご迷惑でしょう？",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6
+  },
+  {
+   "id": "yumi_Valerie_ending",
+   "model": "typecast-direct",
+   "voice": "tc_67c90d1c45897c4a74a51a8d",
+   "language": "jpn",
+   "text": "あら、さいおんじさん。お荷物が多い方は、荷物用エレベーターをどうぞ。……住人の皆さんが待たされるの、ご迷惑でしょう？",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6
+  }
+ ]
+}

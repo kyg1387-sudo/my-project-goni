@@ -37,6 +37,12 @@ from concurrent.futures import ThreadPoolExecutor
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from generate_video import http_json, download  # noqa: E402
 
+
+def scene_key(path):
+    """scene9 < scene10 < scene100 — 장면 100개 이상에서도 순서 유지(사전순 정렬 금지)."""
+    m = re.search(r"scene(\d+)", os.path.basename(path))
+    return int(m.group(1)) if m else 10 ** 9
+
 WORK_DIR = None  # main에서 out/audio 로 설정
 
 MAX_TEMPO = 1.35  # 대사가 자막 슬롯보다 길 때 허용하는 최대 배속 (피치 유지)
@@ -157,7 +163,6 @@ def tts_line(cfg, key, index, voice, text, emotion=None):
     if cached(path):
         print(f"  [tts {index:03d}] 기존 파일 재사용")
         return path
-    # 상황별 억양: 줄 번호별 말 속도 지정이 있으면 사용 (긴박=빠르게, 무게 있는 대사=느리게)
     speed = float(cfg.get("speed_overrides", {}).get(str(index), cfg.get("speed", 1.05)))
     voice_setting = {"voice_id": voice, "speed": speed}
     if emotion and emotion != "neutral":
@@ -177,24 +182,61 @@ def tts_line(cfg, key, index, voice, text, emotion=None):
     return path if download_retry(url, path) else None
 
 
-def make_bgm(cfg, key):
-    path = os.path.join(WORK_DIR, "bgm.audio")
+def _bgm_one(cfg, key, prompt, path):
     if cached(path):
-        print("  [bgm] 기존 파일 재사용")
+        print(f"  [bgm] 기존 파일 재사용: {os.path.basename(path)}")
         return path
     model = cfg.get("bgm_model")
-    prompt = cfg.get("bgm_prompt")
     if not model or not prompt:
         return None
-    result = fal_run(model, {"prompt": prompt}, key, "bgm")
+    result = fal_run(model, {"prompt": prompt}, key, f"bgm {os.path.basename(path)}")
     if result is None:
         return None
     url = find_audio_url(result)
     if not url:
         print(f"  [bgm] 응답에서 오디오 URL을 못 찾음: {result}")
         return None
-    path = os.path.join(WORK_DIR, "bgm.audio")
     return path if download_retry(url, path) else None
+
+
+MIN_BGM_GAP = 1.0  # 구간 사이 최소 무음 간격(초) — 겹치면 두 곡이 동시에 들린다(EP2 실증)
+
+
+def validate_bgm_segments(segments):
+    """bgm_segments가 시간순이고 서로 겹치지 않는지 검사한다(위반 시 생성 전에 즉시 중단)."""
+    ordered = sorted(segments, key=lambda s: float(s["start"]))
+    for seg in ordered:
+        if float(seg["end"]) <= float(seg["start"]):
+            raise SystemExit(f"bgm_segments 오류: end({seg['end']})가 start({seg['start']})보다 뒤여야 합니다.")
+    for a, b in zip(ordered, ordered[1:]):
+        gap = float(b["start"]) - float(a["end"])
+        if gap < MIN_BGM_GAP:
+            raise SystemExit(
+                f"bgm_segments 오류: {a['end']}s에 끝나는 구간과 {b['start']}s에 시작하는 구간의 간격이 "
+                f"{gap:.1f}s로 너무 좁습니다(최소 {MIN_BGM_GAP}s) — 겹쳐 들리므로 생성을 막습니다.")
+    return ordered
+
+
+def make_bgm(cfg, key):
+    """단일 bgm_prompt 또는 다중 bgm_segments([{prompt,start,end,volume?}])를 생성한다.
+
+    반환: [(path, start, end, volume)] — 단일 곡이면 start=0, end=None(영상 끝까지),
+    volume=None(전역 bgm_volume 사용). 반복감을 줄이기 위해 구간별 다른 곡을 쓰고
+    믹싱에서 "페이드아웃 → 숨 → 페이드인"으로 잇는다(겹침 금지).
+    """
+    segs = cfg.get("bgm_segments")
+    if segs:
+        out = []
+        for i, seg in enumerate(validate_bgm_segments(segs), start=1):
+            path = os.path.join(WORK_DIR, f"bgm{i:02d}.audio")
+            got = _bgm_one(cfg, key, seg["prompt"], path)
+            if got:
+                vol = seg.get("volume")
+                out.append((got, float(seg["start"]), float(seg["end"]),
+                            float(vol) if vol is not None else None))
+        return out or None
+    path = _bgm_one(cfg, key, cfg.get("bgm_prompt"), os.path.join(WORK_DIR, "bgm.audio"))
+    return [(path, 0.0, None, None)] if path else None
 
 
 # ---------- 배치 계획 ----------
@@ -208,20 +250,20 @@ def probe_duration(path):
 
 
 def plan_placement(clips, total):
-    """겹치지 않는 배치 [(실제 시작, 배속, style, 화자, 파일)]을 계산한다.
+    """겹치지 않는 배치 [(실제 시작, 배속, style, 파일)]을 계산한다.
 
     각 대사는 자막 슬롯(다음 대사 시작까지)보다 길면 MAX_TEMPO까지 배속해
     슬롯에 맞추고, 그래도 길면 다음 대사를 앞 대사가 끝난 뒤로 밀어
     절대 겹치지 않게 한다. 여유가 생기면 다시 자막 타이밍으로 복귀한다.
     """
     placed, prev_end = [], 0.0
-    for k, (start, style, name, path) in enumerate(clips):
+    for k, (start, style, path) in enumerate(clips):
         dur = probe_duration(path)
         next_start = clips[k + 1][0] if k + 1 < len(clips) else total
         slot = max(next_start - start - GAP, 0.5)
         tempo = min(max(dur / slot, 1.0), MAX_TEMPO)
         actual = max(start, prev_end + GAP)
-        placed.append((actual, tempo, style, name, path))
+        placed.append((actual, tempo, style, path))
         prev_end = actual + dur / tempo
         if tempo > 1.0 or actual > start + 0.01:
             print(f"  배치 조정 [{k + 1:03d}]: 시작 {start:.2f}→{actual:.2f}s, "
@@ -235,10 +277,10 @@ def render_track(placed, total, out_wav):
     """배치된 클립들을 무음 바탕 위에 얹어 total초 길이 wav로 렌더링한다."""
     cmd = ["ffmpeg", "-y", "-f", "lavfi", "-t", f"{total:.3f}",
            "-i", "anullsrc=r=44100:cl=stereo"]
-    for entry in placed:
-        cmd += ["-i", entry[-1]]
+    for _, _, _, path in placed:
+        cmd += ["-i", path]
     parts, mix_inputs = [], ["[0:a]"]
-    for k, (start, tempo, *_rest) in enumerate(placed):
+    for k, (start, tempo, _style, _path) in enumerate(placed):
         ms = int(round(start * 1000))
         chain = f"[{k + 1}:a]"
         if tempo > 1.0:
@@ -257,15 +299,18 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
     ambience = ambience or []
     duration = probe_duration(video)
     cmd = ["ffmpeg", "-y", "-i", video]
-    for entry in placed:
-        cmd += ["-i", entry[-1]]
+    for _, _, _, path in placed:
+        cmd += ["-i", path]
     for _, path in ambience:
         cmd += ["-i", path]
-    if bgm:
-        cmd += ["-stream_loop", "-1", "-i", bgm]
+    bgm_list = bgm if isinstance(bgm, list) else ([(bgm, 0.0, None, None)] if bgm else [])
+    # (path, start, end) 3-튜플도 허용 — 구간 볼륨이 없으면 전역 bgm_volume 사용
+    bgm_list = [(t[0], t[1], t[2], t[3] if len(t) > 3 else None) for t in bgm_list]
+    for path, _s, _e, _v in bgm_list:
+        cmd += ["-i", path]
 
     parts, mix_inputs = [], []
-    for k, (start, tempo, *_rest) in enumerate(placed):
+    for k, (start, tempo, _style, _path) in enumerate(placed):
         ms = int(round(start * 1000))
         chain = f"[{k + 1}:a]"
         if tempo > 1.0:
@@ -277,15 +322,24 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
         ms = int(round(start * 1000))
         parts.append(f"[{base + k}:a]volume={ambience_volume},adelay={ms}:all=1[amb{k}]")
         mix_inputs.append(f"[amb{k}]")
-    if bgm:
+    # BGM 세그먼트: 구간 길이만큼 루프-트림하고, 경계는 2초 페이드로 겹쳐 잇는다
+    for k, (_path, seg_s, seg_e, seg_vol) in enumerate(bgm_list):
+        end = duration if seg_e is None else min(seg_e, duration)
+        seg_len = max(end - seg_s, 0.5)
+        fade_out_st = max(seg_len - 2, 0)
+        vol = bgm_volume if seg_vol is None else seg_vol
         parts.append(
-            f"[{base + len(ambience)}:a]atrim=0:{duration:.3f},"
-            f"afade=t=out:st={max(duration - 2, 0):.3f}:d=2,volume={bgm_volume}[bg]")
-        mix_inputs.append("[bg]")
+            f"[{base + len(ambience) + k}:a]aloop=loop=-1:size=2147483647,"
+            f"atrim=0:{seg_len:.3f},asetpts=PTS-STARTPTS,"
+            f"afade=t=in:st=0:d={'0.01' if k == 0 else '2'},"
+            f"afade=t=out:st={fade_out_st:.3f}:d=2,"
+            f"volume={vol},adelay={int(round(seg_s * 1000))}:all=1[bg{k}]")
+        mix_inputs.append(f"[bg{k}]")
     parts.append(
         "".join(mix_inputs)
         + f"amix=inputs={len(mix_inputs)}:duration=longest:normalize=0,"
-        + f"atrim=0:{duration:.3f}[aout]")
+        + "alimiter=limit=0.95:attack=5:release=80,"  # BGM·현장음을 올려도 대사 피크가 클리핑되지 않게
+        + f"atrim=0:{duration:.3f},aformat=channel_layouts=stereo[aout]")
 
     script = os.path.join(WORK_DIR, "filter.txt")
     with open(script, "w") as f:
@@ -296,7 +350,61 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
     subprocess.run(cmd, check=True)
 
 
+def frame_quantize(durations, overlaps, fps=24):
+    """장면 길이·겹침을 프레임 정수배로 맞춘다. 소수 길이(예 7.491s)는 trim이 프레임 단위로 잘라
+    매 장면 반 프레임씩 짧아지고, 누적되면 xfade offset이 앞 입력 길이를 넘는 순간 출력이 끊긴다
+    (EP4 실증: 301.8s 계획 → 117.6s에서 끊김, drop=4556). 경계 시각을 프레임에 맞춰 계산하므로
+    자막·대사 배치(원래 시각)와의 차이는 경계마다 0.5프레임 이내로 누적되지 않는다."""
+    n = len(durations)
+    qo = [max(round(o * fps), 1) if o > 0 else 0 for o in overlaps]
+    starts, t = [], 0.0
+    for d, o in zip(durations, overlaps):
+        starts.append(t); t += d - o
+    qs = [round(x * fps) for x in starts]
+    qend = round((starts[-1] + durations[-1]) * fps)
+    qd = [qs[k + 1] - qs[k] + qo[k] for k in range(n - 1)] + [qend - qs[-1]]
+    return [x / fps for x in qd], [x / fps for x in qo]
+
+
+def norm_filter(cfg):
+    """장면 정규화 필터 앞부분. cfg output_size [W,H](기본 1280x720), fit "pad"(기본, 화면비 유지+패딩) 또는
+    "crop"(가득 채우고 넘치는 몇 픽셀만 잘라냄 — 1248x704·1920x1088 생성물에 검은 테가 생기지 않게)."""
+    w, h = (cfg.get("output_size") or [1280, 720])
+    if cfg.get("fit") == "crop":
+        return f"scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},fps=24,setsar=1,"
+    return f"scale={w}:{h}:force_original_aspect_ratio=decrease,pad={w}:{h}:(ow-iw)/2:(oh-ih)/2,fps=24,setsar=1,"
+
+
 # ---------- 립싱크 ----------
+
+def omnihuman_scene(cfg, key, scene_path, audio_path, index):
+    """오디오 구동 생성(OmniHuman류): 장면 첫 프레임 + 대사 오디오로 입 모양이
+    정확히 맞는 클립을 새로 생성한다. 실패 시 None(기존 립싱크로 폴백)."""
+    path = os.path.join(WORK_DIR, f"omni{index:02d}.mp4")
+    if cached(path):
+        print(f"  [omnihuman {index:02d}] 기존 파일 재사용")
+        return path
+    frame = os.path.join(WORK_DIR, f"omniframe{index:02d}.png")
+    subprocess.run(["ffmpeg", "-y", "-ss", "0.2", "-i", scene_path,
+                    "-frames:v", "1", frame], check=True, capture_output=True)
+    img_url = fal_upload(frame, key)
+    a_url = fal_upload(audio_path, key)
+    models = cfg.get("omnihuman_models",
+                     ["fal-ai/bytedance/omnihuman/v1.5", "fal-ai/bytedance/omnihuman"])
+    # 장면별 동작 지시(EP4 실증: S28 몸 기울기, S47 손으로 입 가림) — 모델이 prompt를 받지 않으면 빼고 재시도
+    prompt = (cfg.get("omnihuman_prompts") or {}).get(str(index))
+    for model in models:
+        payloads = ([{"image_url": img_url, "audio_url": a_url, "prompt": prompt}] if prompt else []) + \
+                   [{"image_url": img_url, "audio_url": a_url}]
+        for payload in payloads:
+            result = fal_run(model, payload, key, f"omnihuman {index:02d} ({model})",
+                             timeout_s=1800)
+            if result:
+                url = find_video_url(result)
+                if url and download_retry(url, path):
+                    return path
+    return None
+
 
 def lipsync_scene(cfg, key, v_url, audio_path, index):
     """장면 클립의 입 모양을 대사 오디오에 맞게 재합성한 클립 경로를 돌려준다. 실패 시 None."""
@@ -320,86 +428,120 @@ def lipsync_scene(cfg, key, v_url, audio_path, index):
     return None
 
 
+AMB_NEGATIVE = ("music, melody, song, speech, talking, dialogue, voice, narration, "
+                "crowd murmur, whispering, mumbling, human voice, vocal sounds, "
+                "English words, Chinese words, singing, laughing")
+
+_amb_lock = __import__("threading").Lock()
+
+
+def ambience_group_clip(cfg, key, v_url, prompt):
+    """같은 프롬프트(=같은 장소)의 장면들은 현장음 생성 1회를 공유한다.
+
+    말소리 섞임 사고 이후: 장면마다 따로 만들면 비용도 크고 품질 편차도 커서,
+    프롬프트 해시로 캐시(ambg-XXXX.media)해 그룹당 한 번만 생성한다.
+    """
+    import hashlib
+    tag = hashlib.md5(prompt.encode()).hexdigest()[:8]
+    raw = os.path.join(WORK_DIR, f"ambg-{tag}.media")
+    with _amb_lock:  # 같은 그룹 동시 생성 방지
+        if cached(raw):
+            return raw
+        result = fal_run(cfg["ambience_model"], {
+            "video_url": v_url,
+            "prompt": prompt,
+            "negative_prompt": AMB_NEGATIVE,
+            "duration": 30,
+        }, key, f"ambience group {tag}")
+        if result is None:
+            return None
+        url = find_video_url(result) or find_audio_url(result)
+        if not url:
+            print(f"  [ambience {tag}] 응답에서 미디어 URL을 못 찾음: {result}")
+            return None
+        return raw if download_retry(url, raw) else None
+
+
 def ambience_scene(cfg, key, v_url, index, duration):
-    """장면 영상을 분석해 어울리는 현장음(음악 제외)을 생성한 wav 경로를 돌려준다. 실패 시 None."""
+    """장면에 깔 현장음 wav 경로를 돌려준다(그룹 클립에서 잘라냄). 실패 시 None."""
     wav = os.path.join(WORK_DIR, f"amb{index:02d}.wav")
     if cached(wav):
         print(f"  [ambience {index:02d}] 기존 파일 재사용")
         return wav
-    model = cfg.get("ambience_model")
-    if not model:
+    if not cfg.get("ambience_model"):
         return None
     prompts = cfg.get("ambience_prompts", [])
     prompt = prompts[index - 1] if index - 1 < len(prompts) else "realistic ambient sound"
-    payload = {
-        "video_url": v_url,
-        "prompt": prompt,
-        "negative_prompt": "music, melody, song",
-        "duration": min(int(round(duration)), 30),
-    }
-    result = fal_run(model, payload, key, f"ambience {index:02d}")
-    if result is None:
+    if not prompt.strip():
+        # 빈 프롬프트 = 현장음 없이 감(생성 모델이 말소리를 계속 섞는 구간용)
+        print(f"  [ambience {index:02d}] 현장음 없음(의도적 생략)")
         return None
-    url = find_video_url(result) or find_audio_url(result)
-    if not url:
-        print(f"  [ambience {index:02d}] 응답에서 미디어 URL을 못 찾음: {result}")
+    raw = ambience_group_clip(cfg, key, v_url, prompt)
+    if not raw:
         return None
-    raw = os.path.join(WORK_DIR, f"amb{index:02d}.media")
-    if not download_retry(url, raw):
-        return None
-    wav = os.path.join(WORK_DIR, f"amb{index:02d}.wav")
+    # 장면마다 그룹 클립의 다른 구간을 써서 티 나는 반복을 피한다
+    total = probe_duration(raw)
+    offset = 0.0
+    if total > duration + 0.5:
+        offset = (index * 3.1) % max(total - duration - 0.2, 0.1)
     subprocess.run(["ffmpeg", "-y", "-i", raw, "-vn",
-                    "-af", f"atrim=0:{duration:.3f}", wav],
-                   check=True, capture_output=True)
+                    "-af", f"atrim={offset:.3f}:{offset + duration:.3f},asetpts=PTS-STARTPTS",
+                    wav], check=True, capture_output=True)
     return wav
 
 
-def fmt_ass_time(t):
-    t = max(t, 0.0)
-    h = int(t // 3600)
-    m = int(t % 3600 // 60)
-    return f"{h}:{m:02d}:{t % 60:05.2f}"
-
-
-def write_scene_ass(ass_path, t0, t1, out_path):
-    """[t0,t1) 구간과 겹치는 자막 큐만 장면 로컬 시간으로 옮긴 .ass를 만든다."""
-    header, events = [], []
-    for raw in open(ass_path, encoding="utf-8"):
-        line = raw.rstrip("\n")
-        if line.startswith("Dialogue:"):
-            fields = line[len("Dialogue:"):].strip().split(",", 9)
-            s, e = parse_time(fields[1]), parse_time(fields[2])
-            if s < t1 and e > t0:
-                fields[1] = fmt_ass_time(s - t0)
-                fields[2] = fmt_ass_time(min(e, t1) - t0)
-                events.append("Dialogue: " + ",".join(fields))
-        else:
-            header.append(line)
-    with open(out_path, "w", encoding="utf-8") as f:
-        f.write("\n".join(header + events) + "\n")
-    return out_path
-
-
-def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_video,
-                         no_burn=False, burn_scenes=frozenset()):
+def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_video):
     """장면별 대사 구간 립싱크·현장음 생성 후 재조립하고 자막을 입힌 영상을 돌려준다.
 
     (재조립된 영상 경로, [(시작초, 현장음 wav)]) 를 돌려준다.
     """
-    scenes = sorted(glob.glob(os.path.join(scenes_dir, "scene*.mp4")))
+    scenes = sorted(glob.glob(os.path.join(scenes_dir, "scene*.mp4")), key=scene_key)
     if not scenes:
         sys.exit(f"장면 클립을 찾을 수 없습니다: {scenes_dir}/scene*.mp4")
+    # 계획 길이가 있으면 그 길이로 장면을 정확히 잘라 쓴다. 생성 클립이 몇 프레임씩
+    # 길 때 생기는 누적 오차(자막·음성이 장면보다 앞서는 현상)를 없애기 위함이다.
+    planned = cfg.get("scene_durations")
+    if planned and len(planned) != len(scenes):
+        if not cfg.get("allow_duration_mismatch"):
+            # Lock 타임라인이 깨진 채 유료 립싱크까지 진행되는 일을 막는다
+            sys.exit(f"scene_durations {len(planned)}개 != 장면 {len(scenes)}개 — 장면 파일과 오디오 설정을 다시 생성하세요 "
+                     f"(의도한 경우만 allow_duration_mismatch: true)")
+        print(f"경고: scene_durations {len(planned)}개 != 장면 {len(scenes)}개 — 실측 길이 사용")
+        planned = None
+    durations = [float(d) for d in planned] if planned else [probe_duration(s) for s in scenes]
+    # 규격 제3장-3 전환: transitions[k] = 장면 k가 다음 장면과 겹치는 디졸브 길이(초, 0=하드컷).
+    # 겹친 만큼 뒤 장면이 당겨지므로 타임라인(자막·대사·현장음)은 모두 이 압축 시간 기준이다.
+    overlaps = [float(x) for x in cfg.get("transitions", [])]
+    overlaps += [0.0] * (len(durations) - len(overlaps))
+    # xfade는 offset이 앞 입력 길이와 같으면 그 지점에서 출력이 끝난다(실증: 44장면이 10초로 잘림).
+    # 하드컷 경계도 1프레임(1/24s) 겹침으로 체인을 이어 간다 — 타임라인(bounds)도 같은 값을 쓴다.
+    overlaps = [o if o >= 1 / 24 else 1 / 24 for o in overlaps]
+    overlaps[-1] = 0.0
+    durations, overlaps = frame_quantize(durations, overlaps)
     bounds, t = [], 0.0
-    for s in scenes:
-        d = probe_duration(s)
+    for d, o in zip(durations, overlaps):
         bounds.append((t, t + d))
-        t += d
+        t += d - o
     total = t
-    print(f"장면 {len(scenes)}개, 총 {total:.2f}초")
+    print(f"장면 {len(scenes)}개, 총 {total:.2f}초" + (" (계획 길이로 정규화)" if planned else "")
+          + (f", 디졸브 {sum(1 for o in overlaps if o > 0)}곳(겹침 {sum(overlaps):.1f}s)" if any(overlaps) else ""))
 
-    # 장면별로 "화면에 보이는 인물"의 대사만 립싱크에 사용한다.
-    # scene_speakers[i]: i번째 장면에 보이는 화자 이름 목록 (없으면 모든 화자 허용)
-    scene_speakers = cfg.get("scene_speakers", [])
+    # 대사(내레이션 제외)만 담긴 전체 트랙
+    dial_wav = render_track(placed_dialogue, total, os.path.join(WORK_DIR, "dialogue.wav"))
+
+    # 립싱크 왜곡(얼굴 깨짐)이 반복되는 장면은 립싱크를 건너뛰고 원본 얼굴을 유지한다
+    skip_lipsync = set(int(n) for n in cfg.get("lipsync_skip_scenes", []))
+    # 규격 제6장 1: 영상 위 립싱크 덧씌우기(sync-lipsync) 금지 — EP3에서 6달러 전액 폐기.
+    # 기본값은 OmniHuman 장면만 입을 만들고, 나머지 대사 장면(입이 안 보이는 구도)은 원본 유지.
+    legacy_lipsync = bool(cfg.get("legacy_lipsync", False))
+    omni_set = set(int(n) for n in cfg.get("omnihuman_scenes", []))
+    omni_max = float(cfg.get("omnihuman_max_s", 8.0))
+    too_long = [(i, t1 - t0) for i, (t0, t1) in enumerate(bounds, start=1)
+                if i in omni_set and (t1 - t0) > omni_max + 1e-6]
+    if too_long:
+        # 8초를 넘는 OmniHuman은 얼굴이 변하고 무음 꼬리까지 과금된다(EP4 아웃트로 실증) — 생성 전에 차단
+        sys.exit("OmniHuman 장면이 %.1f초를 넘습니다: %s — 장면을 나누거나 길이를 줄이세요"
+                 % (omni_max, ", ".join(f"scene{i:02d}={d:.2f}s" for i, d in too_long)))
 
     def process_scene(item):
         """한 장면의 현장음 생성과 립싱크. (최종 장면 경로, 현장음 항목|None)을 돌려준다."""
@@ -411,18 +553,32 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
         if not amb:
             print(f"  [scene {i:02d}] 현장음 없음")
 
-        visible = set(scene_speakers[i - 1]) if i - 1 < len(scene_speakers) else None
-        scene_lines = [
-            (max(start - t0, 0.0), tempo, style, name, path)
-            for start, tempo, style, name, path in placed_dialogue
-            if start < t1 and (start + probe_duration(path) / tempo) > t0
-            and (visible is None or name in visible)]
-        if not scene_lines:
-            print(f"[scene {i:02d}] 화면 속 인물의 대사 없음 — 립싱크 생략")
+        has_dialogue = any(
+            start < t1 and (start + probe_duration(p) / tempo) > t0
+            for start, tempo, _s, p in placed_dialogue)
+        if not has_dialogue:
+            print(f"[scene {i:02d}] 대사 없음 — 립싱크 생략")
             return scene, amb_item
-        seg = render_track(scene_lines, t1 - t0, os.path.join(WORK_DIR, f"seg{i:02d}.wav"))
-        print(f"[scene {i:02d}] 립싱크 중... ({t0:.1f}~{t1:.1f}s, "
-              f"화자 {sorted({l[3] for l in scene_lines})})")
+        if i in skip_lipsync:
+            print(f"[scene {i:02d}] 립싱크 제외 지정 — 원본 유지")
+            return scene, amb_item
+        seg = os.path.join(WORK_DIR, f"seg{i:02d}.wav")
+        subprocess.run(["ffmpeg", "-y", "-i", dial_wav,
+                        "-af", f"atrim={t0:.3f}:{t1:.3f},asetpts=PTS-STARTPTS", seg],
+                       check=True, capture_output=True)
+        if i in omni_set:
+            print(f"[scene {i:02d}] 오디오 구동 생성(omnihuman) 중... ({t0:.1f}~{t1:.1f}s)")
+            omni = omnihuman_scene(cfg, key, scene, seg, i)
+            if omni:
+                return omni, amb_item
+            if not legacy_lipsync:
+                print(f"  [scene {i:02d}] omnihuman 실패 — 원본 유지(유료 립싱크 폴백 없음). 재시도는 invalidate로")
+                return scene, amb_item
+            print(f"  [scene {i:02d}] omnihuman 실패 — 기존 립싱크로 폴백")
+        elif not legacy_lipsync:
+            print(f"[scene {i:02d}] OmniHuman 대상 아님 — 원본 유지(입이 안 보이는 구도)")
+            return scene, amb_item
+        print(f"[scene {i:02d}] 립싱크 중... ({t0:.1f}~{t1:.1f}s)")
         lip = lipsync_scene(cfg, key, v_url, seg, i)
         if not lip:
             print(f"  [scene {i:02d}] 립싱크 실패 — 원본 유지")
@@ -435,38 +591,34 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
     final_scenes = [r[0] for r in results]
     ambience = [r[1] for r in results if r[1]]
 
-    # 재조립(해상도/프레임레이트 정규화) + 섹션 경계 페이드 전환 + 자막 입히기.
-    # 장소/시간이 바뀌는 섹션 경계에만 짧은 페이드를 넣고(같은 장소 내 컷은 하드 컷 유지),
-    # 페이드는 클립 길이 안에서 처리해 전체 길이와 오디오 싱크를 바꾸지 않는다.
-    FADE = 0.3
-    section_ends = set(cfg.get("section_ends", []))
+    # 재조립(해상도/프레임레이트 정규화) + 자막 입히기
     cmd = ["ffmpeg", "-y"]
     for s in final_scenes:
         cmd += ["-i", s]
     parts = []
     for k in range(len(final_scenes)):
-        chain = (f"[{k}:v]scale=1280:720:force_original_aspect_ratio=decrease,"
-                 f"pad=1280:720:(ow-iw)/2:(oh-ih)/2,fps=24,setsar=1")
-        scene_no = k + 1
-        dur = bounds[k][1] - bounds[k][0]
-        # 자막이 안 구워진 새 클립에만 개별 자막 굽기 (복구 모드)
-        if no_burn and scene_no in burn_scenes:
-            seg_ass = write_scene_ass(ass_path, bounds[k][0], bounds[k][1],
-                                      os.path.join(WORK_DIR, f"sub{scene_no:02d}.ass"))
-            chain += f",ass={seg_ass}"
-        if scene_no - 1 in section_ends:          # 섹션 첫 장면: 페이드 인
-            chain += f",fade=t=in:st=0:d={FADE}"
-        if scene_no in section_ends and scene_no < len(final_scenes):  # 섹션 마지막: 페이드 아웃
-            chain += f",fade=t=out:st={max(dur - FADE, 0):.3f}:d={FADE}"
-        parts.append(chain + f"[v{k}]")
-    parts.append("".join(f"[v{k}]" for k in range(len(final_scenes)))
-                 + f"concat=n={len(final_scenes)}:v=1:a=0[vc]")
-    if no_burn:
-        parts[-1] = parts[-1].replace("[vc]", "[vo]")  # 전체 자막 굽기 생략
+        d = durations[k]
+        # tpad로 짧은 클립은 마지막 프레임을 늘리고, trim으로 계획 길이에 정확히 맞춘다
+        parts.append(f"[{k}:v]{norm_filter(cfg)}"
+                     f"tpad=stop_mode=clone:stop_duration=15,trim=duration={d:.3f},"
+                     f"setpts=PTS-STARTPTS[v{k}]")
+    if any(overlaps):
+        # xfade 체인: 각 경계에서 overlaps[k]초 디졸브(0이면 사실상 컷). offset = 누적(길이-겹침)
+        cur, acc = "[v0]", 0.0
+        for k in range(1, len(final_scenes)):
+            acc += durations[k - 1] - overlaps[k - 1]
+            o = overlaps[k - 1]
+            nxt = "[vc]" if k == len(final_scenes) - 1 else f"[x{k}]"
+            parts.append(f"{cur}[v{k}]xfade=transition=fade:duration={o:.4f}:offset={acc:.4f}{nxt}")
+            cur = nxt
+        if len(final_scenes) == 1:
+            parts.append("[v0]copy[vc]")
     else:
-        parts.append(f"[vc]ass={ass_path}[vo]")
+        parts.append("".join(f"[v{k}]" for k in range(len(final_scenes)))
+                     + f"concat=n={len(final_scenes)}:v=1:a=0[vc]")
+    parts.append(f"[vc]ass={ass_path}[vo]")
     cmd += ["-filter_complex", ";".join(parts), "-map", "[vo]", "-an",
-            "-c:v", "libx264", "-preset", "medium", "-crf", "18", work_video]
+            "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p", work_video]
     subprocess.run(cmd, check=True)
     return work_video, ambience
 
@@ -479,11 +631,10 @@ def main():
     ap.add_argument("--video", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--lipsync", action="store_true")
+    ap.add_argument("--remix-video",
+                    help="무과금 재믹스: 이전 완성본 영상의 비디오 트랙을 그대로 쓰고 "
+                         "(립싱크·omnihuman 결과가 이미 구워져 있음) 캐시된 오디오만 재조합")
     ap.add_argument("--scenes-dir", default="out")
-    ap.add_argument("--no-burn", action="store_true",
-                    help="장면 클립에 자막이 이미 구워져 있음 (전체 자막 굽기 생략)")
-    ap.add_argument("--burn-scenes", default="",
-                    help="자막이 없는 클립 번호 목록 (개별로 자막을 입힘, 예 '3,5,7')")
     args = ap.parse_args()
 
     key = os.environ.get("FAL_API_KEY")
@@ -497,7 +648,10 @@ def main():
     os.makedirs(WORK_DIR, exist_ok=True)
 
     lines = parse_ass(args.ass)
-    print(f"자막 {len(lines)}줄 파싱됨")
+    silent = set(cfg.get("silent_styles", []))
+    if silent:
+        lines = [l for l in lines if l[2] not in silent]
+    print(f"자막 {len(lines)}줄 파싱됨 (화면 전용 스타일 {sorted(silent)} 제외)")
 
     def make_tts(item):
         i, (start, _end, style, name, text) = item
@@ -513,31 +667,98 @@ def main():
             path = tts_line(cfg, key, i, voice, text, emotion)
         if not path:
             raise RuntimeError(f"[tts {i:03d}] 생성 실패 — 위 로그를 확인하세요.")
-        # 화자 이름: Name 필드가 비어 있으면 스타일→이름 매핑 사용 (예: Doyun → 도윤)
-        speaker = name or cfg.get("style_names", {}).get(style, style)
-        return (start, style, speaker, path)
+        return (start, style, path)
 
     with ThreadPoolExecutor(max_workers=int(cfg.get("tts_workers", 4))) as pool:
         clips = list(pool.map(make_tts, enumerate(lines, start=1)))
 
-    if args.lipsync:
-        # 재조립 기준인 장면 클립들의 합으로 전체 길이를 계산 (subbed 영상이 부분본일 수 있음)
-        total = sum(probe_duration(s)
-                    for s in sorted(glob.glob(os.path.join(args.scenes_dir, "scene*.mp4"))))
-    else:
-        total = probe_duration(args.video)
-    placed = plan_placement(clips, total)
+    total = probe_duration(args.video)
+    # 내레이션 등 파일 끝에 추가된 줄이 있어도 시간순으로 배치한다
+    # (TTS 줄 번호·캐시 파일명은 파일 순서 기준 그대로 유지)
+    placed = plan_placement(sorted(clips, key=lambda c: c[0]), total)
 
     video, ambience = args.video, []
-    if args.lipsync:
+    if args.remix_video:
+        # 재믹스: 이전 완성본의 영상 트랙 + 캐시 오디오(line*.mp3, amb*.wav,
+        # bgm.audio)만 다시 조합한다. remix_patch에 지정된 장면만 예외적으로
+        # omnihuman을 다시 만들어 해당 구간의 영상을 갈아끼운다(그 외 유료 호출 없음).
+        video = args.remix_video
+        # 재믹스는 장면 클립이 없어도 되므로 계획 길이표(scene_durations)를 그대로 쓴다
+        planned = cfg.get("scene_durations")
+        durations = ([float(d) for d in planned] if planned
+                     else [probe_duration(s) for s in
+                           sorted(glob.glob(os.path.join(args.scenes_dir, "scene*.mp4")), key=scene_key)])
+        overlaps = [float(x) for x in cfg.get("transitions", [])]
+        overlaps += [0.0] * (len(durations) - len(overlaps))
+        overlaps = [o if o >= 1 / 24 else 1 / 24 for o in overlaps]
+        overlaps[-1] = 0.0
+        durations, overlaps = frame_quantize(durations, overlaps)
+        bounds, t = [], 0.0
+        for i, d in enumerate(durations, start=1):
+            bounds.append((t, t + d))
+            p = os.path.join(WORK_DIR, f"amb{i:02d}.wav")
+            if cached(p):
+                ambience.append((t, p))
+            t += d - overlaps[i - 1]
+        print(f"재믹스 모드: 영상 {video}, 캐시 현장음 {len(ambience)}개 재사용")
+
+        # 장면 교정 패치: {"장면번호": "소스 클립 이름"} — 그 장면 구간만
+        # 소스 클립+대사 오디오로 omnihuman 재생성 후 영상에 이어붙인다.
+        patches = {int(k): v for k, v in (cfg.get("remix_patch") or {}).items()}
+        if patches:
+            narration = set(cfg.get("narration_styles", ["Naration"]))
+            placed_dialogue = [p for p in placed if p[2] not in narration]
+            dial_wav = render_track(placed_dialogue, total,
+                                    os.path.join(WORK_DIR, "dialogue.wav"))
+            patch_segs = []
+            for i in sorted(patches):
+                t0, t1 = bounds[i - 1]
+                d = t1 - t0
+                seg = os.path.join(WORK_DIR, f"seg{i:02d}.wav")
+                subprocess.run(["ffmpeg", "-y", "-i", dial_wav, "-af",
+                                f"atrim={t0:.3f}:{t1:.3f},asetpts=PTS-STARTPTS", seg],
+                               check=True, capture_output=True)
+                src = os.path.join(args.scenes_dir, f"{patches[i]}.mp4")
+                print(f"[remix patch {i:02d}] {patches[i]} + 대사({t0:.1f}~{t1:.1f}s) → omnihuman")
+                clip = omnihuman_scene(cfg, key, src, seg, i)
+                if not clip:
+                    sys.exit(f"[remix patch {i:02d}] omnihuman 생성 실패")
+                patched = os.path.join(WORK_DIR, f"patched{i:02d}.mp4")
+                subprocess.run(["ffmpeg", "-y", "-i", clip, "-vf",
+                                (f"{norm_filter(cfg)}"
+                                 f"tpad=stop_mode=clone:stop_duration=15,"
+                                 f"trim=duration={d:.3f},setpts=PTS+{t0:.3f}/TB,"
+                                 f"ass={args.ass},setpts=PTS-STARTPTS"),
+                                "-an", "-pix_fmt", "yuv420p", "-c:v", "libx264", "-preset", "medium",
+                                "-crf", "18", patched], check=True)
+                patch_segs.append((t0, t1, patched))
+            # 기본 영상에서 패치 구간만 잘라내고 새 클립으로 이어붙인다
+            cmd = ["ffmpeg", "-y", "-i", video]
+            for _, _, p in patch_segs:
+                cmd += ["-i", p]
+            n_base = len(patch_segs) + 1
+            parts = [f"[0:v]split={n_base}" + "".join(f"[s{k}]" for k in range(n_base))]
+            labels, cur = [], 0.0
+            for k, (t0, t1, _p) in enumerate(patch_segs):
+                parts.append(f"[s{k}]trim={cur:.3f}:{t0:.3f},setpts=PTS-STARTPTS[b{k}]")
+                labels += [f"[b{k}]", f"[{k + 1}:v]"]
+                cur = t1
+            parts.append(f"[s{n_base - 1}]trim=start={cur:.3f},setpts=PTS-STARTPTS[b{n_base - 1}]")
+            labels.append(f"[b{n_base - 1}]")
+            parts.append("".join(labels) + f"concat=n={len(labels)}:v=1:a=0[vs]")
+            spliced = os.path.join(WORK_DIR, "remix-spliced.mp4")
+            subprocess.run(cmd + ["-filter_complex", ";".join(parts), "-map", "[vs]",
+                                  "-an", "-pix_fmt", "yuv420p", "-c:v", "libx264", "-preset", "medium",
+                                  "-crf", "18", spliced], check=True)
+            video = spliced
+            print(f"장면 패치 {len(patch_segs)}개 반영 → {video}")
+    elif args.lipsync:
         narration = set(cfg.get("narration_styles", ["Naration"]))
         placed_dialogue = [p for p in placed if p[2] not in narration]
         print(f"립싱크 대상 대사 {len(placed_dialogue)}줄 (내레이션 {len(placed) - len(placed_dialogue)}줄 제외)")
-        burn_scenes = {int(x) for x in re.split(r"[,\s]+", args.burn_scenes) if x}
         video, ambience = rebuild_with_lipsync(cfg, key, args.scenes_dir, args.ass,
                                                placed_dialogue,
-                                               os.path.join(WORK_DIR, "rebuilt.mp4"),
-                                               args.no_burn, burn_scenes)
+                                               os.path.join(WORK_DIR, "rebuilt.mp4"))
 
     print("배경음악 생성 중...")
     bgm = make_bgm(cfg, key)
