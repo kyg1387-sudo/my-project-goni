@@ -30,6 +30,9 @@ PEOPLE = {
 }
 FACE_KF = {"reika": "S13b", "yumi": "S13d", "odagiri": "S16b", "tanto": "S14m"}  # 인물별 기준 얼굴(A단계 승인 후 B에 1번 참조)
 FACE_KINDS = ("face", "react", "d")
+# 구도 참조(사용자 승인 시험 장면 CU): 가슴 위 CU 프레이밍이 넓게 빠지는 컷에 추가(파일럿 S13d 실증: 미디엄으로 생성됨)
+FRAMING_REF = "assets/portraits/tower-ja-kf-test/S5-yumi-cu-1.png"
+EXTRA_REFS = {"S13d": [FRAMING_REF], "S05e": [FRAMING_REF], "S19c": [FRAMING_REF]}
 
 TIGHT = ("Tight chest-up close-up: head and shoulders fill the frame, the top of the head near the top edge, the frame cut at mid-chest; "
          "the face occupies about one third of the frame height; hands NOT visible. Full-frame 16:9 image, no black bars.")
@@ -44,7 +47,8 @@ LOC_NOTE = {
 COMPOSITION = {
     "S01b": TIGHT + (" Setting: inside the open mirrored passenger elevator of the luxury tower lobby, brushed steel and mirror soft behind her. "
                      "Expression at about 60 percent: a condescending, polite-but-cruel smirk, chin raised, eyes looking down; NOT a friendly smile."),
-    "S13d": TIGHT + (" Setting: standing in the middle rows of the packed residents' assembly hall; behind her many seated residents are "
+    "S13d": TIGHT + (" CAMERA DISTANCE: about one metre from her face with an 85mm lens — her head and shoulders fill the frame; "
+                     "NOT a medium shot, NOT a full-body shot, her hands and waist are NOT visible. Setting: standing in the middle rows of the packed residents' assembly hall; behind her many seated residents are "
                      "soft, out-of-focus shapes with unrecognizable faces, the tall windows on the left. Expression: calm, resolute, "
                      "about 50 percent firmness; NOT smiling."),
     "S17b": (FULL + " Extreme bird's-eye view from directly above the stage floor: Reika is ALREADY sitting collapsed on the pale wood floor "
@@ -56,6 +60,9 @@ COMPOSITION = {
 
 def describe(path, i):
     name = os.path.basename(path)
+    if path == FRAMING_REF:
+        return (f"Reference image {i} is a FRAMING reference only: copy its tight chest-up close-up framing, camera distance and shallow "
+                "depth of field exactly (head and shoulders filling the frame); ignore its background, hair fringe and the empty room.")
     if "/tower-kf-a/" in path:
         who = next((v for k, v in PEOPLE.items() if FACE_KF.get(k) == name.split("-")[0]), "the character")
         return f"Reference image {i} is the APPROVED face of {who}: reproduce exactly this face, age and hairstyle; ignore its background, framing and pose."
@@ -80,7 +87,7 @@ def notes(refs):
 
 
 def build(sc, face_refs):
-    refs = list(face_refs) + sc["refs"]
+    refs = list(face_refs) + sc["refs"] + EXTRA_REFS.get(sc["id"], [])
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
     parts.append(sc["keyframe_prompt"])
