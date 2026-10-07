@@ -327,7 +327,6 @@ JOBS = {
     # 통지서(손가락 보호)
     "S04b": [("paper", P((569, 392), (739, 392), (732, 605), (572, 605)), lambda w, h: art_notice(w, h))],
     # 현수막
-    "S05a": [("ink", P((795, 114), (1194, 93), (1194, 140), (795, 160)), lambda w, h: art_banner(w, h, BANNER_RINJI))],
     "S05d": [("ink", P((687, 102), (1144, 69), (1144, 143), (687, 176)), lambda w, h: art_banner(w, h, BANNER_RINJI))],
     "S06e": [("ink", P((696, 153), (1088, 133), (1088, 194), (696, 200)), lambda w, h: art_banner(w, h, BANNER_RINJI))],
     "S12-3a": [("ink", P((687, 219), (1137, 203), (1137, 250), (687, 262)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
@@ -335,8 +334,19 @@ JOBS = {
     "S16a": [("ink", P((733, 164), (1282, 123), (1282, 204), (733, 236)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     "S17i": [("ink", P((706, 132), (1206, 93), (1202, 192), (706, 214)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     "S17-2c": [("ink", P((829, 114), (1284, 77), (1284, 139), (829, 169)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
+    # 수정 8(회의장 일관성 2026-10-07) 재생성 컷 현수막 — 방 기준(S05d·S13a)과 같은 위치
+    "S05a": [("ink", P((700, 84), (1152, 74), (1152, 151), (701, 174)), lambda w, h: art_banner(w, h, BANNER_RINJI))],
+    "S05b": [("ink", P((688, 85), (1143, 75), (1143, 153), (688, 176)), lambda w, h: art_banner(w, h, BANNER_RINJI))],
+    "S06a": [("ink", P((689, 85), (1144, 76), (1144, 153), (689, 176)), lambda w, h: art_banner(w, h, BANNER_RINJI))],
+    "S06d": [("ink", P((694, 85), (1150, 76), (1148, 153), (694, 176)), lambda w, h: art_banner(w, h, BANNER_RINJI))],
+    "S14b": [("ink", P((848, 165), (1240, 143), (1240, 209), (849, 228)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
+    "S14k": [("ink", P((848, 165), (1239, 143), (1238, 206), (848, 226)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
+    "S14o": [("ink", P((848, 163), (1238, 142), (1238, 207), (848, 226)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
+    "S17h": [("ink", P((852, 163), (1240, 142), (1240, 207), (851, 225)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
+    "S14g": [("ink", P((867, 174), (1239, 139), (1239, 206), (867, 222)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
+    "S16h2": [("ink", P((850, 164), (1240, 138), (1240, 224), (850, 226)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
+    "S16g2": [("ink", P((1037, 77), (1460, 52), (1460, 128), (1037, 143)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     # 단상 명패·카운터 명판
-    "S06a": [("ink", P((416, 447), (500, 451), (500, 499), (416, 493)), lambda w, h: art_label(w, h, "理事長"))],
     "S09a": [("ink", P((642, 390), (727, 388), (727, 430), (642, 433)), lambda w, h: art_label(w, h, "管理事務室", GOTH, (40, 40, 50), 0.42, "MANAGEMENT OFFICE"))],
     # 화물 엘리베이터 표지판
     "S19a": [("ink", P((205, 228), (269, 240), (270, 347), (206, 345)), lambda w, h: art_plaque(w, h, [("荷物用", MIN_B, 0.17), ("エレベーター", MIN_B, 0.11), ("", None, 0.04), ("SERVICE", MONT, 0.07), ("ELEVATOR", MONT, 0.07)]))],
