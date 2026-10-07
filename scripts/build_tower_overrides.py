@@ -164,9 +164,62 @@ FORCE_STILL = {"S07a2", "S14d", "S17b", "S14o", "S16g2", "S09a"}   # S09a: 담�
 FX_OVERRIDE = {"S02b": "push"}   # 그래픽 패널이 팬에 잘리지 않게
 
 
-def default_fx(s):
+# 감독님 지적(정지 영상 과다 2026-10-07): 사람이 있는 정지 컷은 2.5D 시차(인물·배경 분리, 서로 다른 속도),
+# 연속 정지 컷은 무빙을 번갈아(같은 무빙 연속 금지). 미세하게 — 떨림으로 보이지 않게.
+PARALLAX_MOVES = ["dolly_in", "truck_l", "dolly_out", "truck_r"]
+_SEG = None
+
+
+def person_mask(src):
+    global _SEG
+    cache = os.path.join(ROOT, "assets", "portraits", "tower-masks", os.path.basename(src))
+    if os.path.exists(cache):
+        return np.asarray(Image.open(cache).convert("L")).astype(np.float32) / 255
+    from rembg import remove, new_session
+    if _SEG is None:
+        _SEG = new_session("u2net_human_seg")
+    m = remove(Image.open(src).convert("RGB"), session=_SEG, only_mask=True)
+    os.makedirs(os.path.dirname(cache), exist_ok=True); m.save(cache)
+    return np.asarray(m).astype(np.float32) / 255
+
+
+def parallax(src, out, sec, move):
+    """인물(전경)과 배경을 따로 움직이는 2.5D 카메라. 배경의 인물 자리는 미리 메워 둔다(inpaint)."""
+    n = max(1, int(math.ceil(sec * FPS)))
+    im = np.asarray(Image.open(src).convert("RGB")); h, w = im.shape[:2]
+    m = person_mask(src)
+    hard = (m > 0.4).astype(np.uint8)
+    hole = cv2.dilate(hard, np.ones((25, 25), np.uint8))
+    bg = cv2.inpaint(im, hole * 255, 9, cv2.INPAINT_TELEA).astype(np.float32)
+    fg = im.astype(np.float32); a = cv2.GaussianBlur(m, (0, 0), 1.2)[..., None]
+    base = max(W / w, H / h)
+    def M(z, dx):
+        T = cv2.getRotationMatrix2D((w / 2, h / 2), 0, base * z)
+        T[0, 2] += W / 2 - w / 2 + dx * W; T[1, 2] += H / 2 - h / 2
+        return T
+    p = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-"] + ENC + [out],
+                         stdin=subprocess.PIPE)
+    for i in range(n):
+        t = i / max(1, n - 1); e = t * t * (3 - 2 * t) * 0.4 + t * 0.6
+        if move == "dolly_in":
+            zb, zf, db, df = 1.03 + 0.02 * e, 1.03 + 0.06 * e, 0, 0
+        elif move == "dolly_out":
+            zb, zf, db, df = 1.05 - 0.02 * e, 1.09 - 0.06 * e, 0, 0
+        else:
+            sgn = -1 if move == "truck_l" else 1
+            zb, zf, db, df = 1.06, 1.06, sgn * (0.006 - 0.012 * e), sgn * (0.016 - 0.032 * e)
+        B = cv2.warpAffine(bg, M(zb, db), (W, H), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REFLECT)
+        F = cv2.warpAffine(fg, M(zf, df), (W, H), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REFLECT)
+        A = cv2.warpAffine(a, M(zf, df), (W, H), flags=cv2.INTER_LINEAR)[..., None]
+        p.stdin.write(np.clip(B * (1 - A) + F * A, 0, 255).astype(np.uint8).tobytes())
+    p.stdin.close(); p.wait()
+
+
+def default_fx(s, k=0):
     if s["id"] in FX_OVERRIDE:
         return FX_OVERRIDE[s["id"]]
+    if s["edit_fx"] == "" and s["size"] not in ("ws", "ews") and k % 2 == 1:
+        return "pull"   # 연속 정지 컷에서 밀기·당기기 교차
     if s["edit_fx"] in ("push", "pull", "pan", "dutch7", "dutch5", "dollyzoom"):
         return s["edit_fx"]
     return "pan" if s["size"] in ("ws", "ews") else "push"
@@ -179,6 +232,7 @@ def main(only=None):
     ids = {s["id"]: i for i, s in enumerate(sb, start=1)}
     os.makedirs(OUT, exist_ok=True)
     made, log = 0, []
+    run_i, prev_still = 0, False
     for i, s in enumerate(sb, start=1):
         if only and s["id"] not in only:
             continue
@@ -194,9 +248,16 @@ def main(only=None):
         elif tier == "reuse":
             fx = "push"
         else:
-            fx = default_fx(s)
+            fx = default_fx(s, i)
+        people = s["size"] != "ecu" and any(k in str(s["refs"]) for k in ("yumi", "reika", "riko", "odagiri", "tanto", "mama", "jumin"))
+        if tier in ("still", "reuse") or s["id"] in FORCE_STILL:
+            run_i = run_i + 1 if prev_still else 0
+        prev_still = tier in ("still", "reuse", "gfx") or s["id"] in FORCE_STILL
         if fx == "dollyzoom":
             dollyzoom(src, out, sec)
+        elif people and fx in ("push", "pan", "pull") and (tier == "still" or s["id"] in FORCE_STILL):
+            mv = PARALLAX_MOVES[(i + run_i) % len(PARALLAX_MOVES)]
+            parallax(src, out, sec, mv); fx = "parallax:" + mv
         elif src_id in states and tier in ("gfx", "reuse"):
             st = states[src_id] if tier == "gfx" else states[src_id][-1:]   # 재사용(정지 화면)은 마지막 상태
             cam_states(s["id"], out, sec, fx, st) if len(st) > 1 else cam(os.path.join(KF, st[0][1]), out, sec, fx)
