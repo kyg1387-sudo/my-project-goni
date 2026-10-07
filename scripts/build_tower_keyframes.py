@@ -35,10 +35,13 @@ FRAMING_REF = "assets/portraits/tower-ja-kf-test/S5-yumi-cu-1.png"
 HALL_BG = "assets/portraits/tower-ja-cast/cells/loc-hall-day-wide-back.png"
 REIKA_FACE = "assets/portraits/tower-kf-a/S01b-1.png"   # A단계 승인 레이카 얼굴(파일럿 합격)
 ODA_FACE = "assets/portraits/tower-cast/cells/odagiri-front.png"
+REIKA_HALL = "assets/portraits/tower-kf-a/S06b-1.png"   # A단계 2차 승인: 회의실(주민 착석) 배경의 레이카 — 얼굴+배경 기준
+ODA_APPROVED = "assets/portraits/tower-kf-a/S16f-1.png"  # A단계 2차 승인: 풍성한 흰 콧수염의 오다기리(S16b와 동일 인물)
 EXTRA_REFS = {"S13d": [FRAMING_REF], "S05e": [FRAMING_REF], "S19c": [FRAMING_REF],
               # A단계 1차 검수(2026-10-07): 구도 넓음·손 노출·배경 이탈·얼굴 불일치 → 승인 얼굴 + 구도 참조
-              "S06b": [REIKA_FACE, FRAMING_REF], "S13b": [REIKA_FACE, FRAMING_REF], "S14l": [REIKA_FACE, FRAMING_REF],
-              "S15b": [REIKA_FACE, FRAMING_REF], "S16b": [ODA_FACE, FRAMING_REF], "S16f": [ODA_FACE, FRAMING_REF], "S17e": [ODA_FACE, FRAMING_REF]}
+              "S06b": [REIKA_FACE, FRAMING_REF], "S16b": [ODA_FACE, FRAMING_REF], "S16f": [ODA_FACE, FRAMING_REF],
+              # A단계 3차: S01b 참조가 엘리베이터 배경·무표정을 끌고 옴(실증) → 회의실 승인 컷 S06b, 오다기리는 승인 컷 S16f
+              "S13b": "Same framing as the approved hall shot: tight chest-up close-up of Reika, a triumphant arrogant smile, chin raised high, eyes looking down. NO hands. The hall behind her is PACKED with seated residents as soft blurred shapes.",
 
 TIGHT = ("Tight chest-up close-up: head and shoulders fill the frame, the top of the head near the top edge, the frame cut at mid-chest; "
          "the face occupies about one third of the frame height; hands NOT visible. Full-frame 16:9 image, no black bars.")
@@ -68,12 +71,12 @@ COMPOSITION = {
 FIX_A = {
     "S05e": "FRAMING FIRST: tight chest-up portrait close-up of Yumi standing in the middle rows. Behind the subject the assembly hall is FULL of seated residents rendered only as creamy out-of-focus colour blobs (no recognizable faces), tall windows on the left, the blank projector screen soft in the background; NOT an empty room, NOT a plain studio wall.",
     "S06b": "FRAMING FIRST: tight chest-up close-up of Reika from slightly below, mocking smile. NO hands, NO arms, NO cane and NO lectern top visible in the frame. Behind the subject the assembly hall is FULL of seated residents rendered only as creamy out-of-focus colour blobs (no recognizable faces), tall windows on the left, the blank projector screen soft in the background; NOT an empty room, NOT a plain studio wall.",
-    "S13b": "FRAMING FIRST: tight chest-up close-up of Reika from slightly below, triumphant smile, chin raised. NO hands, NO arms, NO cane and NO lectern top visible in the frame. Behind the subject the assembly hall is FULL of seated residents rendered only as creamy out-of-focus colour blobs (no recognizable faces), tall windows on the left, the blank projector screen soft in the background; NOT an empty room, NOT a plain studio wall.",
-    "S14l": "FRAMING FIRST: tight chest-up close-up of Reika, panicked, sweat on her temple. NO hands, NO arms, NO cane and NO lectern top visible in the frame. Behind the subject the assembly hall is FULL of seated residents rendered only as creamy out-of-focus colour blobs (no recognizable faces), tall windows on the left, the blank projector screen soft in the background; NOT an empty room, NOT a plain studio wall.",
-    "S15b": "FRAMING FIRST: tight chest-up close-up of Reika, furious and losing control, hair slightly disheveled. NO hands, NO arms, NO cane and NO lectern top visible in the frame. Behind the subject the assembly hall is FULL of seated residents rendered only as creamy out-of-focus colour blobs (no recognizable faces), tall windows on the left, the blank projector screen soft in the background; NOT an empty room, NOT a plain studio wall.",
+    "S13b": "Same framing as the approved hall shot: tight chest-up close-up of Reika, a triumphant arrogant smile, chin raised high, eyes looking down. NO hands. The hall behind her is PACKED with seated residents as soft blurred shapes.",
+    "S14l": "Same framing as the approved hall shot: tight chest-up close-up of Reika, now PANICKED — eyes wide and darting, eyebrows raised in alarm, lips parted, a bead of sweat on her temple, face slightly pale. NO hands. NOT smiling. NOT in an elevator.",
+    "S15b": "Same framing as the approved hall shot: tight chest-up close-up of Reika, FURIOUS and losing control — brows drawn down hard, eyes blazing, teeth slightly bared, a few strands of hair out of place, flushed. NO hands. NOT smiling. NOT in an elevator.",
     "S16b": "FRAMING FIRST: tight chest-up close-up of Mr. Odagiri from slightly below, calm and dignified, strong window backlight rim on his white hair. NO hands, NO arms, NO cane and NO lectern top visible in the frame. He has a full neat WHITE moustache and deep wrinkles, mid-70s. Behind the subject the assembly hall is FULL of seated residents rendered only as creamy out-of-focus colour blobs (no recognizable faces), tall windows on the left, the blank projector screen soft in the background; NOT an empty room, NOT a plain studio wall.",
     "S16f": "FRAMING FIRST: tight chest-up close-up of Mr. Odagiri from slightly below, stern judging gaze. NO hands, NO arms, NO cane and NO lectern top visible in the frame. He has a full neat WHITE moustache and deep wrinkles, mid-70s — the same man as reference image 1. Behind the subject the assembly hall is FULL of seated residents rendered only as creamy out-of-focus colour blobs (no recognizable faces), tall windows on the left, the blank projector screen soft in the background; NOT an empty room, NOT a plain studio wall.",
-    "S17e": "FRAMING FIRST: tight chest-up close-up of Mr. Odagiri from slightly below, looking down, calm and unforgiving. NO hands, NO arms, NO cane and NO lectern top visible in the frame. He has a full neat WHITE moustache and deep wrinkles, mid-70s — the same man as reference image 1. Behind the subject the assembly hall is FULL of seated residents rendered only as creamy out-of-focus colour blobs (no recognizable faces), tall windows on the left, the blank projector screen soft in the background; NOT an empty room, NOT a plain studio wall.",
+    "S17e": "FRAMING FIRST: tight chest-up close-up of Mr. Odagiri from slightly below, looking down, calm and unforgiving. He MUST have the same FULL BUSHY WHITE MOUSTACHE (white mustache, thick and wide) as reference image 1 — never clean-shaven, never a thin moustache. NO hands, NO cane. Behind him the hall with soft blurred seated residents.",
 }
 
 
@@ -82,6 +85,12 @@ def describe(path, i):
     if path == REIKA_FACE:
         return (f"Reference image {i} is the APPROVED face of Reika: reproduce exactly this face, hair, makeup, pearl earrings and cream tweed "
                 "jacket; ignore its elevator background.")
+    if path == REIKA_HALL:
+        return (f"Reference image {i} is the APPROVED shot of Reika in the assembly hall: keep exactly this face, hair, makeup, jacket, "
+                "framing and the hall background full of seated residents; ONLY change her facial expression as described.")
+    if path == ODA_APPROVED:
+        return (f"Reference image {i} is the APPROVED face of Mr. Odagiri: exactly this face with the FULL BUSHY WHITE MOUSTACHE, "
+                "deep wrinkles and combed-back white hair; ignore its background.")
     if path == FRAMING_REF:
         return (f"Reference image {i} is a FRAMING reference only: copy its tight chest-up close-up framing, camera distance and shallow "
                 "depth of field exactly (head and shoulders filling the frame); ignore its background, hair fringe and the empty room.")
