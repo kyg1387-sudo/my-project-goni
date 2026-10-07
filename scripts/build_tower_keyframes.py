@@ -94,7 +94,7 @@ FIX_B = {
     "S19d": "High angle tight close-up of Reika in the lobby clutching a stack of moving boxes against her chest (box edges at the bottom of frame), jaw clenched, eyes lowered in humiliation, lips pressed tight. NOT smiling, NOT surprised.",
     "S14e": "", "S14a": "", "S14c": "",
     # 크롭으로 못 고치는 인서트(얼굴을 자르면 4배 확대, 핸드 마이크라 스탠드를 쥔 손이 없음)
-    "S05c": "Close insert of clapping hands at chest height: the camera is low and close, the top edge of the frame cuts across three seated women's collarbones, so only their torsos and clapping hands are in the picture (pink sweater, white blouse, beige cardigan) with blurred seated residents behind. Do NOT draw heads; NO masks, NO circles, NO blur patches, NO stickers. Hands with exactly five fingers each.",
+    "S05c": "Close insert of clapping hands at chest height: the camera is low and close, the top edge of the frame cuts across the three seated women's collarbones, so only their torsos and clapping hands are in the picture (pink sweater, white blouse, beige cardigan) with blurred seated residents behind. Do NOT draw heads; NO masks, NO circles, NO blur patches, NO stickers. Hands with exactly five fingers each.",
     # B 재생성 2차(2026-10-07): S14l(굳은 미소) 참조가 미소를 끌고 옴 → 재생성 합격 공포 얼굴, 빈 의자 배경 → 주민 뒷머리 전경(S16d)
     "S15c": "Medium of the front rows of seated residents (men in suits, women in blouses) startled by a shout: they lean back slightly in their chairs with wide eyes, a few cover their mouths with one hand. Arms stay DOWN — nobody raises arms, nobody throws hands up, nobody stands. Faces soft and unrecognizable.",
     "S15a": "Macro insert, ONE hand only: a woman's hand with a thin gold bangle and cream tweed sleeve cuff tightly gripping the vertical chrome shaft of a microphone stand on the wooden lectern, knuckles white with tension. The microphone is mounted on the stand (NOT handheld). Her face is NOT in frame. Exactly five fingers.",
@@ -112,6 +112,13 @@ BG_FRONT = ("Background geometry: the camera is among the seated audience facing
 
 def describe(path, i):
     name = os.path.basename(path)
+    if name == "mamas-s14o.png":
+        return (f"Reference image {i} shows the SAME three women (pink sweater + white pleated skirt, white blouse + black trousers, "
+                "beige cardigan + cream skirt) seated in the hall: copy exactly their wardrobe and body types; the framing is described "
+                "below (their heads are above the top edge of the frame).")
+    if path == HALL_FRONT:
+        return (f"Reference image {i} is the room: a modest 30-seat meeting room on a high floor with floor-to-ceiling windows on the "
+                "left, a white wall and a pale projection screen. Use exactly this room — NOT an auditorium, NO balcony, NO tiered seating.")
     if path == FEAR_HALL:
         return (f"Reference image {i} is the APPROVED shot of Reika frightened in the packed assembly hall: copy exactly this face, hair, "
                 "makeup, earrings, jacket, the frightened expression (NO smile) and the hall background with seated residents; change ONLY "
@@ -119,9 +126,6 @@ def describe(path, i):
     if path in FEAR_FACE.values():
         return (f"Reference image {i} is the APPROVED face of Reika frightened: copy exactly this face, hair, makeup, pearl earrings, "
                 "jacket and the frightened expression (NO smile); ignore its background completely.")
-    if path == HALL_FRONT:
-        return (f"Reference image {i} is the APPROVED assembly-hall shot: match its hall, lighting and the seated residents seen from "
-                "behind; ignore the person's pose and framing.")
     if path == REIKA_FACE:
         return (f"Reference image {i} is the APPROVED face of Reika: reproduce exactly this face, hair, makeup, pearl earrings and cream tweed "
                 "jacket; ignore its elevator background.")
@@ -162,10 +166,10 @@ def notes(refs):
 
 def build(sc, face_refs):
     refs = list(face_refs) + sc["refs"] + EXTRA_REFS.get(sc["id"], [])
-    if sc["id"] == "S05c":  # 얼굴 셀이 얼굴을 그리게 한 뒤 동그라미로 가림(B 2차 실증) → 장소 셀만, 의상은 문장으로
-        refs = [r for r in refs if "/cells/loc-" in r]
+    if sc["id"] == "S05c":  # 얼굴 셀이 얼굴을 그리게 한 뒤 동그라미로 가림(B 2차) → 얼굴 셀 빼면 다른 엄마들(B 3차) → 승인 S14o(세 엄마 착석)
+        refs = ["assets/portraits/tower-cast/cells/mamas-s14o.png"] + [r for r in refs if "/cells/loc-" in r]
     if sc["id"] in FEAR_FACE:
-        refs = [FEAR_FACE[sc["id"]]] + ([] if FEAR_FACE[sc["id"]] == FEAR_HALL else
+        refs = [FEAR_FACE[sc["id"]]] + ([HALL_FRONT] if FEAR_FACE[sc["id"]] == FEAR_HALL else
                                         [HALL_FRONT if r.endswith(("loc-hall-p4.png", "loc-hall-p2.png")) else r for r in sc["refs"]])
     if sc["id"] in FIX_A or (sc["kind"] in ("face", "react", "sil", "d") and sc["size"] != "ecu"):  # 단상·후면 셀은 흰 벽만 찍혀 배경이 스튜디오처럼 나옴(A단계 실증) → 스크린·창이 보이는 회의실 셀
         refs = [HALL_BG if r.endswith(("loc-hall-p4.png", "loc-hall-p2.png")) else r for r in refs]
