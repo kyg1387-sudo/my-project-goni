@@ -119,8 +119,23 @@ BG_FRONT = ("Background geometry: the camera is among the seated audience facing
             "foreground edge. NO empty chairs anywhere.")
 
 
+# 감독님 지적(회의장 일관성 2026-10-07): 빈 회의장 장소 셀(loc-hall-p*)을 참조한 컷이 빈 의자·다른 방·현수막 없음으로 나옴
+# → 승인 컷(합성 전 원본: 현수막 무지)을 방 기준으로. 임시총회 = S05d(약 40명), 통상총회 = S13a(만석 100명 이상)
+ROOM_RINJI = "assets/portraits/tower-kf-raw/S05d-1.png"
+ROOM_TSUJO = "assets/portraits/tower-kf-raw/S13a-1.png"
+ROOM_FIX = {**{k: ROOM_RINJI for k in ("S05a", "S05b", "S05c", "S06a", "S06d", "S06-2a")},
+            **{k: ROOM_TSUJO for k in ("S14b", "S14f", "S14g", "S14k", "S14o", "S16g2", "S16h2", "S17f", "S17h")}}
+CROWD = {ROOM_RINJI: "The hall is moderately filled: about forty residents seated in the rows (no large empty areas), matching the reference.",
+         ROOM_TSUJO: "The hall is PACKED: every chair in every row is occupied by seated residents (over a hundred people), NO empty chairs anywhere in view."}
+
+
 def describe(path, i):
     name = os.path.basename(path)
+    if path in (ROOM_RINJI, ROOM_TSUJO):
+        return (f"Reference image {i} is the APPROVED shot of this SAME assembly hall: copy exactly its room — floor-to-ceiling windows with the "
+                "city view on the left wall, the long white banner (keep it plain, NO letters), the projection screen, the wooden lectern, grey "
+                "chairs, pale wood floor, lighting and colour — and its audience density. Ignore the people's poses; the camera position is "
+                "described below.")
     if path == "assets/portraits/tower-kf-b/S03e-1.png":
         return f"Reference image {i} is the image to EDIT."
     if name == "mamas-s14o.png":
@@ -177,12 +192,14 @@ def notes(refs):
 
 def build(sc, face_refs):
     refs = list(face_refs) + sc["refs"] + EXTRA_REFS.get(sc["id"], [])
+    if sc["id"] in ROOM_FIX:
+        refs = [r for r in refs if "loc-hall" not in os.path.basename(r)] + [ROOM_FIX[sc["id"]]]
     if sc["id"] == "S03e":   # 편집: 현재 승인 컷 1장만 참조
         refs = ["assets/portraits/tower-kf-b/S03e-1.png"]
     if sc["id"] in ("S01e", "S03d"):  # 얼굴 셀이 얼굴·전신을 끌어옴(S05c 실증) → 장소 셀만, 옷은 문장으로
         refs = [r for r in refs if "/cells/loc-" in r]
     if sc["id"] == "S05c":  # 얼굴 셀이 얼굴을 그리게 한 뒤 동그라미로 가림(B 2차) → 얼굴 셀 빼면 다른 엄마들(B 3차) → 승인 S14o(세 엄마 착석)
-        refs = ["assets/portraits/tower-cast/cells/mamas-s14o.png"] + [r for r in refs if "/cells/loc-" in r]
+        refs = ["assets/portraits/tower-cast/cells/mamas-s14o.png"] + [r for r in refs if "/cells/loc-" in r or r == ROOM_RINJI]
     if sc["id"] in FEAR_FACE:
         refs = [FEAR_FACE[sc["id"]]] + ([HALL_FRONT] if FEAR_FACE[sc["id"]] == FEAR_HALL else
                                         [HALL_FRONT if r.endswith(("loc-hall-p4.png", "loc-hall-p2.png")) else r for r in sc["refs"]])
@@ -194,6 +211,8 @@ def build(sc, face_refs):
     parts += notes(refs)
     if FIX_B.get(sc["id"]):
         parts.insert(1, FIX_B[sc["id"]])
+    if sc["id"] in ROOM_FIX:
+        parts.insert(1, CROWD[ROOM_FIX[sc["id"]]])
     if sc["id"] in FEAR_FACE and FEAR_FACE[sc["id"]] != FEAR_HALL:
         parts.insert(2, BG_FRONT)
     if sc["id"] in FIX_A:
