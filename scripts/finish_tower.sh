@@ -10,6 +10,9 @@ for sid in ${PATCH:-}; do
   python3 scripts/patch_final_cut.py tower "$sid" out/tower-main.mp4 out/tower-main-p.mp4 productions/tower-bossmom-ja/qa/assembly/report.txt
   mv out/tower-main-p.mp4 out/tower-main.mp4
 done
+# 립싱크 클로즈업 배경을 같은 회의장 만석으로(수정 17)
+python3 scripts/tower_bg_swap.py out/tower-main.mp4 out/tower-main-bg.mp4 productions/tower-bossmom-ja/qa/assembly/report.txt
+mv out/tower-main-bg.mp4 out/tower-main.mp4
 MAIN=$(ffprobe -v error -show_entries format=duration -of csv=p=0 out/tower-main.mp4)
 python3 scripts/tower_sfx_mix.py out/tower-main.mp4 out/tower-main-sfx.mp4
 python3 scripts/tower_grade.py out/tower-main-sfx.mp4 out/tower-main-graded.mp4 productions/tower-bossmom-ja/qa/assembly/report.txt
