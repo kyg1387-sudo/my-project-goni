@@ -1,0 +1,9 @@
+{
+ "_설명": "タワマンのボスママ 아웃트로 진행자 OmniHuman 4컷(채널 공통 진행자 시트 yanagi-host, 음성 = 확정 TTS line062~065 앞뒤 0.15초, 마지막은 손 흔들기 꼬리 1.8초). 약 17.6초 x 0.16 = 약 2.8달러. 음악 베드는 채널 공통 outro-bed 재사용(무료).",
+ "tests": [
+  {"id": "omni-062", "model": "omnihuman", "image": "assets/portraits/yanagi-host/host-wu-1.png", "audio_id": "pad062"},
+  {"id": "omni-063", "model": "omnihuman", "image": "assets/portraits/yanagi-host/host-cu-1.png", "audio_id": "pad063"},
+  {"id": "omni-064", "model": "omnihuman", "image": "assets/portraits/yanagi-host/host-wu-1.png", "audio_id": "pad064"},
+  {"id": "omni-065", "model": "omnihuman", "image": "assets/portraits/yanagi-host/host-wave-1.png", "audio_id": "pad065"}
+ ]
+}
