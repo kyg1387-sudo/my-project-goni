@@ -80,11 +80,30 @@ FIX_A = {
 }
 
 
+# B단계 1차 검수(2026-10-07) 재생성: 레이카 기준 얼굴 S06b(미소)가 표정까지 끌고 옴 → 표정별 승인 컷을 기준 얼굴로
+REIKA_BY_EXPR = {"panic": "assets/portraits/tower-kf-a/S14l-1.png", "tears": "assets/portraits/tower-kf-a/S17d-1.png"}
+FIX_B = {
+    "S01d": "Insert: the brushed-steel passenger elevator doors are almost fully closed, leaving only a narrow vertical gap of about a hand's width; through the gap we glimpse ONE slice of Reika's face with a red-lipped smirk. The steel door surfaces are matte brushed metal with NO reflections of faces. Exactly one person.",
+    "S05f": "Low insert at knee height ONLY: on the stage a woman's knees in cream wide-leg trousers crossing one over the other, nude heels; her face and upper body are NOT in frame. NOT a full-body shot.",
+    "S14h": "Tight chest-up close-up of Reika at the lectern: her confident smile has FROZEN and cracked — eyes fixed and frightened, a single bead of sweat running down her temple, face pale. NOT smiling happily. No hands.",
+    "S14n2": "High angle close-up of Reika (chest-up) staring down at something off-frame below, colour draining from her face, lips parted in fear. Her hands are NOT visible and she holds NOTHING.",
+    "S16g": "High angle tight close-up of Reika at the lectern, trembling, lips parted, eyes glassy with fear, face pale. NOT smiling. No hands.",
+    "S17a": "ONE single frame (NOT two panels, NOT a split screen): side insert at floor level of a woman's knees in cream wide-leg trousers buckling, nude heels wobbling on the pale wood stage floor; her upper body NOT in frame.",
+    "S17e2": "High angle tight close-up of Reika SITTING ON THE FLOOR, devastated: mouth falling open, tears welling and running, mascara slightly smudged. NOT smiling. No hands.",
+    "S17g": "High angle close-up of Reika SITTING ON THE FLOOR beside the lectern, looking up pleadingly with wet eyes toward the front row, desperate. NOT standing, NOT smiling.",
+    "S19d": "High angle tight close-up of Reika in the lobby clutching a stack of moving boxes against her chest (box edges at the bottom of frame), jaw clenched, eyes lowered in humiliation, lips pressed tight. NOT smiling, NOT surprised.",
+    "S14e": "", "S14a": "", "S14c": "",
+}
+
+
 def describe(path, i):
     name = os.path.basename(path)
     if path == REIKA_FACE:
         return (f"Reference image {i} is the APPROVED face of Reika: reproduce exactly this face, hair, makeup, pearl earrings and cream tweed "
                 "jacket; ignore its elevator background.")
+    if path in REIKA_BY_EXPR.values():
+        return (f"Reference image {i} is the APPROVED face of Reika in this emotional state: copy exactly this face, hair, makeup, jacket "
+                "and the frightened/tearful expression; ignore its framing if the description differs.")
     if path == REIKA_HALL:
         return (f"Reference image {i} is the APPROVED shot of Reika in the assembly hall: keep exactly this face, hair, makeup, jacket, "
                 "framing and the hall background full of seated residents; ONLY change her facial expression as described.")
@@ -125,6 +144,8 @@ def build(sc, face_refs):
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
     parts.append(sc["keyframe_prompt"])
     parts += notes(refs)
+    if FIX_B.get(sc["id"]):
+        parts.insert(1, FIX_B[sc["id"]])
     if sc["id"] in FIX_A:
         parts.insert(1, FIX_A[sc["id"]])
         parts.append(TIGHT)
@@ -161,6 +182,10 @@ def main():
                     k = os.path.basename(r).split("-")[0]
                     if k in FACE_KF:
                         p = f"{KF_A}/{FACE_KF[k]}-1.png"
+                        if k == "reika":
+                            ex = next((e for e, cell in (("panic", "reika-expr2"), ("tears", "reika-expr3")) if any(cell in x for x in s["refs"])), None)
+                            if ex or s["id"] in ("S14h", "S16g", "S19d"):
+                                p = REIKA_BY_EXPR[ex or "panic"]
                         if not os.path.exists(os.path.join(ROOT, p)):
                             raise SystemExit(f"{s['id']}: 기준 얼굴 {p} 없음 — A단계 먼저")
                         face.append(p)

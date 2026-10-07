@@ -16,6 +16,7 @@
 """
 import collections
 import json
+import re
 import os
 import subprocess
 import sys
@@ -417,6 +418,13 @@ GFX = {
     "S17c": "봉투 「家賃督促状」 시간차 등장",
     "S18a": "안내판 「どなたでもご利用ください」",
 }
+GFX_PLATE = {  # 그래픽 컷 키프레임 = 글자 없는 바탕 면만
+    "S14a": "The large projector screen above the lectern glowing plain white and completely blank, seen straight on; the lectern and a few residents' heads in silhouette below.",
+    "S14c": "The large projector screen glowing plain white and completely blank, seen from slightly to the left; residents' heads in silhouette below.",
+    "S14e": "The large projector screen glowing plain white and completely blank, seen straight on and slightly closer; the hall darker around it; no writing anywhere in the room.",
+    "S13e": "The large projector screen above the lectern just switched on, glowing plain white and completely blank; residents' heads in silhouette below.",
+    "S02b": "No people. The full height of the 42-storey glass tower against a clear blue sky, straight-on view, the tower centred.",
+}
 EMPH = [  # 화면 전용 강조 자막(silent_styles) — (기준 줄, 줄 시작 후 초, 길이, 스타일, 문구)
     ("line030", 3.6, 2.4, "Emph", "二千四百万円"),
     ("line051", 0.3, 4.5, "LR", "区分所有者　　⇔　　賃借人"),
@@ -658,8 +666,12 @@ def main():
         if sid in MAILBOX:
             sign_txt.append("Each mailbox door has a small blank white name card slot."); signage.append(MAILBOX[sid])
         if keyframe:
+            subj = s["subject"]
+            if s["kind"] == "gfx":  # 그래픽 컷: 합성할 일본어 문구가 키프레임에 그려지지 않게(B단계 실증: S14e 「ざわ…」 가짜 글자)
+                subj = GFX_PLATE.get(sid) or re.sub(r"\s*\([^)]*\)|「[^」]*」|[0-9,]+円", "", subj)
+                subj += " Every surface that will carry writing is completely blank and evenly lit."
             kf_prompt = " ".join([
-                PRESET + ".", s["subject"], ("Characters: " + " | ".join(ids) + ".") if ids else "",
+                PRESET + ".", subj, ("Characters: " + " | ".join(ids) + ".") if ids else "",
                 f"Camera: {ANGLE[s['angle']]}, {LENS[s['lens']]}.", f"Lighting: {LIGHT[s['light']]}.", comp, " ".join(sign_txt), PLAIN,
                 f"Negative: {NEGATIVE}."]).strip()
             cost["kf"] += 1
