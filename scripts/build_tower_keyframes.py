@@ -28,7 +28,7 @@ PEOPLE = {
     "mamaA": "Mama A (honey-brown curly bob, pink sweater)", "mamaB": "Mama B (sleek black high ponytail, white blouse, NO glasses)",
     "mamaC": "Mama C (long light-brown hair, beige dress)", "jumin": "the middle-aged resident (salt-and-pepper hair, navy polo shirt)",
 }
-FACE_KF = {"reika": "S13b", "yumi": "S13d", "odagiri": "S16b", "tanto": "S14m"}  # 인물별 기준 얼굴(A단계 승인 후 B에 1번 참조)
+FACE_KF = {"reika": "S06b", "yumi": "S13d", "odagiri": "S16f", "tanto": "S14m"}  # 인물별 기준 얼굴(A단계 승인 후 B에 1번 참조)
 FACE_KINDS = ("face", "react", "d")
 # 구도 참조(사용자 승인 시험 장면 CU): 가슴 위 CU 프레이밍이 넓게 빠지는 컷에 추가(파일럿 S13d 실증: 미디엄으로 생성됨)
 FRAMING_REF = "assets/portraits/tower-ja-kf-test/S5-yumi-cu-1.png"
@@ -119,7 +119,7 @@ def notes(refs):
 
 def build(sc, face_refs):
     refs = list(face_refs) + sc["refs"] + EXTRA_REFS.get(sc["id"], [])
-    if sc["id"] in FIX_A:  # 단상·후면 셀은 흰 벽만 찍혀 배경이 스튜디오처럼 나옴(A단계 실증) → 스크린·창이 보이는 회의실 셀
+    if sc["id"] in FIX_A or (sc["kind"] in ("face", "react", "sil", "d") and sc["size"] != "ecu"):  # 단상·후면 셀은 흰 벽만 찍혀 배경이 스튜디오처럼 나옴(A단계 실증) → 스크린·창이 보이는 회의실 셀
         refs = [HALL_BG if r.endswith(("loc-hall-p4.png", "loc-hall-p2.png")) else r for r in refs]
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
