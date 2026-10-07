@@ -118,7 +118,7 @@
    "model": "typecast-direct",
    "voice": "tc_62b17ef6695ad26f7fb8e7f3",
    "language": "jpn",
-   "text": "共用施設は、ぜんこの管理費で運営されている。それなのに、低層階の子どもだけが締め出された。",
+   "text": "共用施設は、全世帯の管理費で運営されている。それなのに、低層階の子どもだけが締め出された。",
    "emotion_preset": "tonedown",
    "emotion_intensity": 1.0,
    "tempo": 1.0
