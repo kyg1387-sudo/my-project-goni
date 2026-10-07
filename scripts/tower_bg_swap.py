@@ -18,6 +18,7 @@ from PIL import Image
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 W, H, FPS, SUB_TOP = 1920, 1080, 24, 830
 # 컷 → 배경 판(키프레임, 크롭 x0,y0,x1,y1, 흐림) — 같은 회의장 만석 뒤쪽
+ERODE = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (9, 9))
 PLATES = {"S16b": ("S16c", (0, 260, 1344, 768), 9), "S16f": ("S16c", (0, 260, 1344, 768), 9),
           "S17e": ("S16c", (0, 260, 1344, 768), 9), "S14m": ("S13a", (0, 300, 1344, 768), 9)}
 
@@ -67,9 +68,10 @@ def main():
             small = Image.fromarray(f).resize((W // 2, H // 2))
             m = np.asarray(remove(small, session=sess, only_mask=True)).astype(np.float32) / 255
             m = cv2.resize(m, (W, H))
+            m = cv2.erode(m, ERODE)   # 원본 역광 림(흰 테두리)까지 오려지는 후광 제거
             m = m if prev is None else 0.6 * m + 0.4 * prev   # 가장자리 깜빡임 완화
             prev = m
-            a_ = cv2.GaussianBlur(m, (0, 0), 1.5)[..., None]
+            a_ = cv2.GaussianBlur(m, (0, 0), 2.0)[..., None]
             o = f.astype(np.float32) * a_ + P * (1 - a_)
             enc.stdin.write(np.clip(o, 0, 255).astype(np.uint8).tobytes())
         enc.stdin.close(); enc.wait()

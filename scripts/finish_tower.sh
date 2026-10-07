@@ -3,7 +3,7 @@
 # 사용법: scripts/finish_tower.sh   (deliveries/tower-skit-final.mp4.part-* 가 최신 burn 결과여야 함)
 set -euo pipefail
 cd "$(dirname "$0")/.."
-cat deliveries/tower-skit-final.mp4.part-* > out/tower-main-burn.mp4
+if ls deliveries/tower-skit-final.mp4.part-* >/dev/null 2>&1; then cat deliveries/tower-skit-final.mp4.part-* > out/tower-main-burn.mp4; fi   # 조각을 지운 뒤 재실행이면 out/ 의 burn 본 사용
 # burn 이후에 고친 하드컷 컷은 완성본에서 바로 교체(무과금) — PATCH="S10a2 ..."
 cp out/tower-main-burn.mp4 out/tower-main.mp4
 for sid in ${PATCH:-}; do
