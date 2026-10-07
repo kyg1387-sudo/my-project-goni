@@ -1,0 +1,6 @@
+{
+ "_설명": "#01 타워맨션 보스맘 시험 장면: S5 유미 「では、処分の前に一つだけ。皆さんの積立金が、どこへ消えたのか。」 OmniHuman(Valerie 음성 앞 7.22초 + 여운 0.3초 = 7.52초, 8초 상한 이내). 「この通帳をご覧ください」(s5-b)는 스크린 인서트 컷어웨이로 처리(무료). 약 1.2달러.",
+ "tests": [
+  {"id": "S5-omni", "model": "omnihuman", "audio_id": "s5-a", "image": "assets/portraits/tower-ja-kf-test/S5-yumi-cu-1.png"}
+ ]
+}
