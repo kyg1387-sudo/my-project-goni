@@ -1,0 +1,387 @@
+{
+ "_설명": "#01 타워맨션 보스맘 배역 오디션(유미 외): 레이카 4x3 · 오다기리 4x2 · 측근A 3x1 · 담당자 3x2 · 주민 3x1 · 리코 3x2. Typecast ssfm-v30 jpn, 이름은 가나 입력. 다른 채널 작품(버들잎·EP4) 배역 목소리는 제외. 사용자 청취로 확정.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "reika_SabrinaWitch_cold",
+   "model": "typecast-direct",
+   "voice": "tc_634f8ec12e351d8a3d548e61",
+   "language": "jpn",
+   "text": "あら、低層階の方は荷物用エレベーターを使ってくださる? 上の階の住人が待たされるの、迷惑なのよね",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "reika_Verna_cold",
+   "model": "typecast-direct",
+   "voice": "tc_67db74bc7b2874e2eb0c25ab",
+   "language": "jpn",
+   "text": "あら、低層階の方は荷物用エレベーターを使ってくださる? 上の階の住人が待たされるの、迷惑なのよね",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "reika_Aphrodite_cold",
+   "model": "typecast-direct",
+   "voice": "tc_6a45cb625729fc310b11b151",
+   "language": "jpn",
+   "text": "あら、低層階の方は荷物用エレベーターを使ってくださる? 上の階の住人が待たされるの、迷惑なのよね",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "reika_Stephanie_cold",
+   "model": "typecast-direct",
+   "voice": "tc_62f223d11643eebf963582f7",
+   "language": "jpn",
+   "text": "あら、低層階の方は荷物用エレベーターを使ってくださる? 上の階の住人が待たされるの、迷惑なのよね",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "reika_SabrinaWitch_insult",
+   "model": "typecast-direct",
+   "voice": "tc_634f8ec12e351d8a3d548e61",
+   "language": "jpn",
+   "text": "低層階の貧乏人が、総会で口出ししないでくださる? あなたの部屋の値段、私のバッグ三つ分でしょ?",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 1.0
+  },
+  {
+   "id": "reika_Verna_insult",
+   "model": "typecast-direct",
+   "voice": "tc_67db74bc7b2874e2eb0c25ab",
+   "language": "jpn",
+   "text": "低層階の貧乏人が、総会で口出ししないでくださる? あなたの部屋の値段、私のバッグ三つ分でしょ?",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 1.0
+  },
+  {
+   "id": "reika_Aphrodite_insult",
+   "model": "typecast-direct",
+   "voice": "tc_6a45cb625729fc310b11b151",
+   "language": "jpn",
+   "text": "低層階の貧乏人が、総会で口出ししないでくださる? あなたの部屋の値段、私のバッグ三つ分でしょ?",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 1.0
+  },
+  {
+   "id": "reika_Stephanie_insult",
+   "model": "typecast-direct",
+   "voice": "tc_62f223d11643eebf963582f7",
+   "language": "jpn",
+   "text": "低層階の貧乏人が、総会で口出ししないでくださる? あなたの部屋の値段、私のバッグ三つ分でしょ?",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 1.0
+  },
+  {
+   "id": "reika_SabrinaWitch_collapse",
+   "model": "typecast-direct",
+   "voice": "tc_634f8ec12e351d8a3d548e61",
+   "language": "jpn",
+   "text": "お、おだぎり様……! 待ってください、それだけは……! 私、ここを追い出されたら、行く場所が……!",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.5,
+   "tempo": 1.1
+  },
+  {
+   "id": "reika_Verna_collapse",
+   "model": "typecast-direct",
+   "voice": "tc_67db74bc7b2874e2eb0c25ab",
+   "language": "jpn",
+   "text": "お、おだぎり様……! 待ってください、それだけは……! 私、ここを追い出されたら、行く場所が……!",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.5,
+   "tempo": 1.1
+  },
+  {
+   "id": "reika_Aphrodite_collapse",
+   "model": "typecast-direct",
+   "voice": "tc_6a45cb625729fc310b11b151",
+   "language": "jpn",
+   "text": "お、おだぎり様……! 待ってください、それだけは……! 私、ここを追い出されたら、行く場所が……!",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.5,
+   "tempo": 1.1
+  },
+  {
+   "id": "reika_Stephanie_collapse",
+   "model": "typecast-direct",
+   "voice": "tc_62f223d11643eebf963582f7",
+   "language": "jpn",
+   "text": "お、おだぎり様……! 待ってください、それだけは……! 私、ここを追い出されたら、行く場所が……!",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.5,
+   "tempo": 1.1
+  },
+  {
+   "id": "odagiri_Poseidon_reveal",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "……よんじゅうにかいの持ち主は、私だがね",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "odagiri_Robert_reveal",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "……よんじゅうにかいの持ち主は、私だがね",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "odagiri_Dean_reveal",
+   "model": "typecast-direct",
+   "voice": "tc_673eb45cdc1073aef51e6b90",
+   "language": "jpn",
+   "text": "……よんじゅうにかいの持ち主は、私だがね",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "odagiri_Zeus_reveal",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "……よんじゅうにかいの持ち主は、私だがね",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "odagiri_Poseidon_down",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "行く場所なら、あなたが見下してきた、下の階にも、空き部屋はいくらでもありますよ",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "odagiri_Robert_down",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "行く場所なら、あなたが見下してきた、下の階にも、空き部屋はいくらでもありますよ",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "odagiri_Dean_down",
+   "model": "typecast-direct",
+   "voice": "tc_673eb45cdc1073aef51e6b90",
+   "language": "jpn",
+   "text": "行く場所なら、あなたが見下してきた、下の階にも、空き部屋はいくらでもありますよ",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "odagiri_Zeus_down",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "行く場所なら、あなたが見下してきた、下の階にも、空き部屋はいくらでもありますよ",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "mamaA_Kelsey_kids",
+   "model": "typecast-direct",
+   "voice": "tc_6763aa69e0158fa7fe2ecdd2",
+   "language": "jpn",
+   "text": "ごめんね〜、りこちゃん。ここ、上の子専用になったの。れいかさんが決めたのよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "mamaA_Riley_kids",
+   "model": "typecast-direct",
+   "voice": "tc_67db7504d5ebacf7578e68f1",
+   "language": "jpn",
+   "text": "ごめんね〜、りこちゃん。ここ、上の子専用になったの。れいかさんが決めたのよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "mamaA_Audrey_kids",
+   "model": "typecast-direct",
+   "voice": "tc_67e38e6d4600650873ac157c",
+   "language": "jpn",
+   "text": "ごめんね〜、りこちゃん。ここ、上の子専用になったの。れいかさんが決めたのよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "tanto_RyoutaTakahashi_timid",
+   "model": "typecast-direct",
+   "voice": "tc_62baac31e1c614d37b9160e3",
+   "language": "jpn",
+   "text": "……たかはしさん。正直、僕も前からおかしいと思ってたんです。でも、理事長に逆らったら、うちとの契約を切られるので……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "tanto_TakuyaMurakami_timid",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "……たかはしさん。正直、僕も前からおかしいと思ってたんです。でも、理事長に逆らったら、うちとの契約を切られるので……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "tanto_Damian_timid",
+   "model": "typecast-direct",
+   "voice": "tc_67ad6d39799793979dad0e1b",
+   "language": "jpn",
+   "text": "……たかはしさん。正直、僕も前からおかしいと思ってたんです。でも、理事長に逆らったら、うちとの契約を切られるので……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "tanto_RyoutaTakahashi_firm",
+   "model": "typecast-direct",
+   "voice": "tc_62baac31e1c614d37b9160e3",
+   "language": "jpn",
+   "text": "……いいえ。その記録は、当社が保管している正式な帳簿の写しです。通帳の原本も、ここにあります",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.2,
+   "tempo": 1.0
+  },
+  {
+   "id": "tanto_TakuyaMurakami_firm",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "……いいえ。その記録は、当社が保管している正式な帳簿の写しです。通帳の原本も、ここにあります",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.2,
+   "tempo": 1.0
+  },
+  {
+   "id": "tanto_Damian_firm",
+   "model": "typecast-direct",
+   "voice": "tc_67ad6d39799793979dad0e1b",
+   "language": "jpn",
+   "text": "……いいえ。その記録は、当社が保管している正式な帳簿の写しです。通帳の原本も、ここにあります",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.2,
+   "tempo": 1.0
+  },
+  {
+   "id": "jumin_Viktor_shout",
+   "model": "typecast-direct",
+   "voice": "tc_67888393646bd9364605d57a",
+   "language": "jpn",
+   "text": "おい……この業者、理事長の弟の会社じゃないか!",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.05
+  },
+  {
+   "id": "jumin_Rusty_shout",
+   "model": "typecast-direct",
+   "voice": "tc_67bfc776d41bad708fdf4ef9",
+   "language": "jpn",
+   "text": "おい……この業者、理事長の弟の会社じゃないか!",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.05
+  },
+  {
+   "id": "jumin_Gus_shout",
+   "model": "typecast-direct",
+   "voice": "tc_67bfc79c0fdd0f534e9567b1",
+   "language": "jpn",
+   "text": "おい……この業者、理事長の弟の会社じゃないか!",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.05
+  },
+  {
+   "id": "riko_MireiKato_ask",
+   "model": "typecast-direct",
+   "voice": "tc_63edf3ccd8e2eb7338999376",
+   "language": "jpn",
+   "text": "ママ……どうしてりこは、入っちゃだめなの?",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "riko_Harper_ask",
+   "model": "typecast-direct",
+   "voice": "tc_673587a063fc41710954ce20",
+   "language": "jpn",
+   "text": "ママ……どうしてりこは、入っちゃだめなの?",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "riko_Sua_ask",
+   "model": "typecast-direct",
+   "voice": "tc_6699eb5749dfac016c29445c",
+   "language": "jpn",
+   "text": "ママ……どうしてりこは、入っちゃだめなの?",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "riko_MireiKato_happy",
+   "model": "typecast-direct",
+   "voice": "tc_63edf3ccd8e2eb7338999376",
+   "language": "jpn",
+   "text": "ママ! 見て! みんなと遊べるよ!",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.2,
+   "tempo": 1.0
+  },
+  {
+   "id": "riko_Harper_happy",
+   "model": "typecast-direct",
+   "voice": "tc_673587a063fc41710954ce20",
+   "language": "jpn",
+   "text": "ママ! 見て! みんなと遊べるよ!",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.2,
+   "tempo": 1.0
+  },
+  {
+   "id": "riko_Sua_happy",
+   "model": "typecast-direct",
+   "voice": "tc_6699eb5749dfac016c29445c",
+   "language": "jpn",
+   "text": "ママ! 見て! みんなと遊べるよ!",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.2,
+   "tempo": 1.0
+  }
+ ]
+}
