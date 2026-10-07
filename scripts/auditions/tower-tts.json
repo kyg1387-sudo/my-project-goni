@@ -1,0 +1,617 @@
+{
+ "_설명": "타워맨션 PHASE 1 본녹음(확정 원어민 캐스트, Typecast ssfm-v30 jpn). build_tts.py 생성 — 직접 수정 금지. 음성 입력만 가나 변형, 자막은 한자 유지. 줄 번호 = 대본 순서.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "line001",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "あら、低層階の方は荷物用エレベーターを使ってくださる? 上の階の住人が待たされるの、迷惑なのよね",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line002",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "この時の私は、黙って頭を下げることしかできなかった。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line003",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "さんかげつご、この女が段ボール箱を抱えて、あの荷物用エレベーターに乗ることになるとは知らずに。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line004",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "……いや、正確に言えば。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.2,
+   "tempo": 0.9
+  },
+  {
+   "id": "line005",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "そうなるように仕向けたのは、私だった。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.4,
+   "tempo": 0.9
+  },
+  {
+   "id": "line006",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "私はたかはしゆみ、よんじゅうにさい。けいり、ひとすじ、にじゅうねん。離婚してから、娘のりこと二人、このタワーマンションのごかいで暮らしている。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line007",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "このマンションには、目に見えないルールがあった。住む階数が、そのまま身分になる。いわゆる、タワマンカースト。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line008",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "その頂点に君臨していたのが、よんじゅうにかいに住む管理組合の理事長、さいおんじれいかだった。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line009",
+   "model": "typecast-direct",
+   "voice": "tc_68d49c1e02c83f1fd4cdeaae",
+   "language": "jpn",
+   "text": "ごめんね、リコちゃん。ここ、上の子専用になったの。レイカさんが決めたのよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "line010",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "共用施設は、全戸の管理費で運営されている。それなのに、低層階の子どもだけが締め出された。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line011",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "娘の小さな背中を見て、私は奥歯を噛みしめた。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 0.95
+  },
+  {
+   "id": "line012",
+   "model": "typecast-direct",
+   "voice": "tc_63edf3ccd8e2eb7338999376",
+   "language": "jpn",
+   "text": "ママ……どうしてりこは、入っちゃだめなの?",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.2,
+   "tempo": 0.95
+  },
+  {
+   "id": "line013",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "……ごめんね。ママが、なんとかするからね",
+   "emotion_preset": "whisper",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line014",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "ある日届いた、一枚の通知。しゅうぜんつみたてきんを、来月からいってんはちばいに値上げする予定。臨時総会で承認を取るという。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line015",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "理由は、外壁の緊急工事。だが、このマンションはちくろくねん。外壁はどこも傷んでいない。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line016",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "すみません。工事の見積書と、これまでのつみたてきんの収支報告を、拝見できますか?",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line017",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "……ごかいの方よね? 緊急工事なんだから、見積もりなんて要らないの",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line018",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "低層階の貧乏人が、総会で口出ししないでくださる? あなたの部屋の値段、私のバッグ三つ分でしょ?",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 1.0
+  },
+  {
+   "id": "line019",
+   "model": "typecast-direct",
+   "voice": "tc_68d49c1e02c83f1fd4cdeaae",
+   "language": "jpn",
+   "text": "ほんとそれ! 払えないなら、引っ越せばいいのにね",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.2,
+   "tempo": 1.05
+  },
+  {
+   "id": "line020",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "私は頭を下げた。悔しかったからではない。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line021",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "彼女がいま、自分で口にした言葉。緊急工事、見積もりは要らない。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line022",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "経理をにじゅうねんやってきた人間には、わかる。……これは、隠したい数字がある人間の言い方だ。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.3,
+   "tempo": 0.9
+  },
+  {
+   "id": "line023",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "くぶんしょゆうしゃには、管理組合の帳簿を閲覧する権利がある。私は、管理会社に正式なえつらんせいきゅうを出した。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line024",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "領収書、請求書、振込記録。数字は嘘をつかない。嘘をつくのは、いつも人間のほうだ。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line025",
+   "model": "typecast-direct",
+   "voice": "tc_62baac31e1c614d37b9160e3",
+   "language": "jpn",
+   "text": "……たかはしさん。正直、僕も前からおかしいと思ってたんです。でも、理事長に逆らったら、うちとの契約を切られるので……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line026",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "かこにねんかんで、外壁調査費、緊急補修費として引き出された金額は、合計、にせんよんひゃくまんえん。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.2,
+   "tempo": 0.95
+  },
+  {
+   "id": "line027",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "支払い先はすべて、同じ会社。所在地はレンタルオフィス、従業員はゼロ。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line028",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "代表者の名前は、さいおんじ。れいかの、実の弟だった。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.3,
+   "tempo": 0.9
+  },
+  {
+   "id": "line029",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "そして、彼女のエスエヌエス。振り込みのあった日付と、新作バッグを投稿した日付が、鏡のように一致していた。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line030",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "もう一つ、気になる書類があった。住民名簿。よんじゅうにかいの欄に書かれた所有者の名前は……さいおんじではなかった。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.2,
+   "tempo": 0.95
+  },
+  {
+   "id": "line031",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "今日で、あなたも終わりね。ごかいの経理さん",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 0.7,
+   "tempo": 0.95
+  },
+  {
+   "id": "line032",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "本日の議題は二つ。しゅうぜんつみたてきんの値上げと、ごかいのたかはしさんの……発言禁止処分です",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line033",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "では、処分の前に一つだけ。皆さんのつみたてきんが、どこへ消えたのか",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.2,
+   "tempo": 0.95
+  },
+  {
+   "id": "line034",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "この通帳を、ご覧ください。……そのうちのさんけんだけ、お見せします",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line035",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "主人が買ってくれた。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line036",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "その主人の正体は、このマンションの住民全員だった。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.4,
+   "tempo": 0.9
+  },
+  {
+   "id": "line037",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "おい……この業者、理事長の弟の会社じゃないか!",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.05
+  },
+  {
+   "id": "line038",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "で、でたらめよ! こんなのねつぞうでしょ!",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.3,
+   "tempo": 1.1
+  },
+  {
+   "id": "line039",
+   "model": "typecast-direct",
+   "voice": "tc_62baac31e1c614d37b9160e3",
+   "language": "jpn",
+   "text": "……いいえ。その記録は、当社が保管している正式な帳簿の写しです。通帳の原本も、ここにあります",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.3,
+   "tempo": 0.95
+  },
+  {
+   "id": "line040",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "理事長の解任決議は、賛成多数で即座に可決された。管理組合は、ぎょうむじょうおうりょうで刑事告訴することを決めた。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line041",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "ふざけないで! 私はよんじゅうにかいのオーナーよ! あんたみたいな低層階の女、めいよきそんで訴えてやるわ!",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.5,
+   "tempo": 1.1
+  },
+  {
+   "id": "line042",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……よんじゅうにかいの持ち主は、私だがね",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.2,
+   "tempo": 0.85
+  },
+  {
+   "id": "line043",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "総会のみっかまえ。私は名簿にあった住所へ、一通の手紙を出していた。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line044",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "私が海外にいる間、あなたはオーナーの姪だと名乗っていたそうだね。だが、あなたは私の部屋を借りているだけの、ただのちんしゃくにんだ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line045",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "この管理規約では、役員になれるのはくぶんしょゆうしゃだけ。あなたには最初から、理事長になる資格すらなかった",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line046",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……家賃も、さんかげつたいのうしているね。賃貸契約は、本日をもって解除させてもらう",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line047a",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "お、おだぎり様……!",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.2,
+   "tempo": 1.05
+  },
+  {
+   "id": "line047b",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "待ってください、それだけは……!",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.5,
+   "tempo": 1.15
+  },
+  {
+   "id": "line047c",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "私、ここを追い出されたら、行く場所が……!",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.5,
+   "tempo": 1.0
+  },
+  {
+   "id": "line048",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "行く場所なら、あなたが見下してきた下の階にも、空き部屋はいくらでもありますよ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line049",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……ただし、家賃を払える方に限りますがね",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.1,
+   "tempo": 0.85
+  },
+  {
+   "id": "line050",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "最上階の女王の正体は、見栄のために家賃をたいのうし、住民のお金でブランド品を買い続けていた、ただの借り手だった。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line051",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "その後、弟の会社には警察の捜査が入り、つみたてきんは全額、返還されることになった。値上げの話は、もちろん白紙に戻った。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line052",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "いっかげつご。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line053",
+   "model": "typecast-direct",
+   "voice": "tc_63edf3ccd8e2eb7338999376",
+   "language": "jpn",
+   "text": "ママ! 見て! みんなと遊べるよ!",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.5,
+   "tempo": 1.05
+  },
+  {
+   "id": "line054",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "あら、さいおんじさん。お荷物の多い方は、荷物用エレベーターをどうぞ。……住人の皆さんが待たされるの、ご迷惑でしょう?",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "line055",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "住む階数で、人の価値は決まらない。決めるのは、その人が、誰も見ていないところで何をしてきたか、だ。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line056",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "最後までご覧いただき、ありがとうございました",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line057",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "スカッとしていただけたら、高評価とチャンネル登録で応援していただけると嬉しいです",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line058",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "あなたのマンションにも、こんなボスママ、いませんか? ぜひコメントで教えてください",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line059",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "それでは、また次のお話で",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  }
+ ]
+}
