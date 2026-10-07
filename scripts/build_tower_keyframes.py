@@ -32,7 +32,13 @@ FACE_KF = {"reika": "S13b", "yumi": "S13d", "odagiri": "S16b", "tanto": "S14m"} 
 FACE_KINDS = ("face", "react", "d")
 # 구도 참조(사용자 승인 시험 장면 CU): 가슴 위 CU 프레이밍이 넓게 빠지는 컷에 추가(파일럿 S13d 실증: 미디엄으로 생성됨)
 FRAMING_REF = "assets/portraits/tower-ja-kf-test/S5-yumi-cu-1.png"
-EXTRA_REFS = {"S13d": [FRAMING_REF], "S05e": [FRAMING_REF], "S19c": [FRAMING_REF]}
+HALL_BG = "assets/portraits/tower-ja-cast/cells/loc-hall-day-wide-back.png"
+REIKA_FACE = "assets/portraits/tower-kf-a/S01b-1.png"   # A단계 승인 레이카 얼굴(파일럿 합격)
+ODA_FACE = "assets/portraits/tower-cast/cells/odagiri-front.png"
+EXTRA_REFS = {"S13d": [FRAMING_REF], "S05e": [FRAMING_REF], "S19c": [FRAMING_REF],
+              # A단계 1차 검수(2026-10-07): 구도 넓음·손 노출·배경 이탈·얼굴 불일치 → 승인 얼굴 + 구도 참조
+              "S06b": [REIKA_FACE, FRAMING_REF], "S13b": [REIKA_FACE, FRAMING_REF], "S14l": [REIKA_FACE, FRAMING_REF],
+              "S15b": [REIKA_FACE, FRAMING_REF], "S16b": [ODA_FACE, FRAMING_REF], "S16f": [ODA_FACE, FRAMING_REF], "S17e": [ODA_FACE, FRAMING_REF]}
 
 TIGHT = ("Tight chest-up close-up: head and shoulders fill the frame, the top of the head near the top edge, the frame cut at mid-chest; "
          "the face occupies about one third of the frame height; hands NOT visible. Full-frame 16:9 image, no black bars.")
@@ -58,8 +64,24 @@ COMPOSITION = {
 }
 
 
+
+FIX_A = {
+    "S05e": "FRAMING FIRST: tight chest-up portrait close-up of Yumi standing in the middle rows. Behind the subject the assembly hall is FULL of seated residents rendered only as creamy out-of-focus colour blobs (no recognizable faces), tall windows on the left, the blank projector screen soft in the background; NOT an empty room, NOT a plain studio wall.",
+    "S06b": "FRAMING FIRST: tight chest-up close-up of Reika from slightly below, mocking smile. NO hands, NO arms, NO cane and NO lectern top visible in the frame. Behind the subject the assembly hall is FULL of seated residents rendered only as creamy out-of-focus colour blobs (no recognizable faces), tall windows on the left, the blank projector screen soft in the background; NOT an empty room, NOT a plain studio wall.",
+    "S13b": "FRAMING FIRST: tight chest-up close-up of Reika from slightly below, triumphant smile, chin raised. NO hands, NO arms, NO cane and NO lectern top visible in the frame. Behind the subject the assembly hall is FULL of seated residents rendered only as creamy out-of-focus colour blobs (no recognizable faces), tall windows on the left, the blank projector screen soft in the background; NOT an empty room, NOT a plain studio wall.",
+    "S14l": "FRAMING FIRST: tight chest-up close-up of Reika, panicked, sweat on her temple. NO hands, NO arms, NO cane and NO lectern top visible in the frame. Behind the subject the assembly hall is FULL of seated residents rendered only as creamy out-of-focus colour blobs (no recognizable faces), tall windows on the left, the blank projector screen soft in the background; NOT an empty room, NOT a plain studio wall.",
+    "S15b": "FRAMING FIRST: tight chest-up close-up of Reika, furious and losing control, hair slightly disheveled. NO hands, NO arms, NO cane and NO lectern top visible in the frame. Behind the subject the assembly hall is FULL of seated residents rendered only as creamy out-of-focus colour blobs (no recognizable faces), tall windows on the left, the blank projector screen soft in the background; NOT an empty room, NOT a plain studio wall.",
+    "S16b": "FRAMING FIRST: tight chest-up close-up of Mr. Odagiri from slightly below, calm and dignified, strong window backlight rim on his white hair. NO hands, NO arms, NO cane and NO lectern top visible in the frame. He has a full neat WHITE moustache and deep wrinkles, mid-70s. Behind the subject the assembly hall is FULL of seated residents rendered only as creamy out-of-focus colour blobs (no recognizable faces), tall windows on the left, the blank projector screen soft in the background; NOT an empty room, NOT a plain studio wall.",
+    "S16f": "FRAMING FIRST: tight chest-up close-up of Mr. Odagiri from slightly below, stern judging gaze. NO hands, NO arms, NO cane and NO lectern top visible in the frame. He has a full neat WHITE moustache and deep wrinkles, mid-70s — the same man as reference image 1. Behind the subject the assembly hall is FULL of seated residents rendered only as creamy out-of-focus colour blobs (no recognizable faces), tall windows on the left, the blank projector screen soft in the background; NOT an empty room, NOT a plain studio wall.",
+    "S17e": "FRAMING FIRST: tight chest-up close-up of Mr. Odagiri from slightly below, looking down, calm and unforgiving. NO hands, NO arms, NO cane and NO lectern top visible in the frame. He has a full neat WHITE moustache and deep wrinkles, mid-70s — the same man as reference image 1. Behind the subject the assembly hall is FULL of seated residents rendered only as creamy out-of-focus colour blobs (no recognizable faces), tall windows on the left, the blank projector screen soft in the background; NOT an empty room, NOT a plain studio wall.",
+}
+
+
 def describe(path, i):
     name = os.path.basename(path)
+    if path == REIKA_FACE:
+        return (f"Reference image {i} is the APPROVED face of Reika: reproduce exactly this face, hair, makeup, pearl earrings and cream tweed "
+                "jacket; ignore its elevator background.")
     if path == FRAMING_REF:
         return (f"Reference image {i} is a FRAMING reference only: copy its tight chest-up close-up framing, camera distance and shallow "
                 "depth of field exactly (head and shoulders filling the frame); ignore its background, hair fringe and the empty room.")
@@ -88,11 +110,16 @@ def notes(refs):
 
 def build(sc, face_refs):
     refs = list(face_refs) + sc["refs"] + EXTRA_REFS.get(sc["id"], [])
+    if sc["id"] in FIX_A:  # 단상·후면 셀은 흰 벽만 찍혀 배경이 스튜디오처럼 나옴(A단계 실증) → 스크린·창이 보이는 회의실 셀
+        refs = [HALL_BG if r.endswith(("loc-hall-p4.png", "loc-hall-p2.png")) else r for r in refs]
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
     parts.append(sc["keyframe_prompt"])
     parts += notes(refs)
-    if sc["id"] in COMPOSITION:
+    if sc["id"] in FIX_A:
+        parts.insert(1, FIX_A[sc["id"]])
+        parts.append(TIGHT)
+    elif sc["id"] in COMPOSITION:
         parts.append(COMPOSITION[sc["id"]])
     elif sc["kind"] == "d":
         parts.append(TIGHT)
