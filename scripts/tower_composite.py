@@ -244,9 +244,52 @@ def sns_post(w, h, date, caption, photo="bag", likes="1,284"):
 
 
 def art_phone(w, h):
-    im = canvas(w, h, (250, 250, 250, 255))
-    im.alpha_composite(sns_post(w, h * 0.92, "2025.11.11", "主人からのサプライズ♡\n新作のバッグ #記念日"), (0, int(h * 0.06)))
-    return im
+    """휴대폰 화면(감독님 지적 4:40: 화면이 베젤 없이 꽉 차 스티커처럼·밤 방에 비해 너무 밝음).
+    실제 SNS 앱 화면: 상태 표시줄·앱 헤더·사진·아이콘 줄·좋아요·캡션·날짜·하단 탭, 둥근 모서리(투명), 밝기 80%, 유리 반사."""
+    S = 3; W_, H_ = int(w * S), int(h * S)
+    im = Image.new("RGBA", (W_, H_), (250, 250, 250, 255)); d = ImageDraw.Draw(im)
+    u = W_ / 100   # 화면 폭 기준 단위
+    f = lambda px, path=GOTH: font(path, px * u)
+    # 상태 표시줄
+    d.text((5 * u, 2.2 * u), "21:47", font=f(4.2), fill=(20, 20, 20, 255))
+    bx = W_ - 15 * u; d.rounded_rectangle((bx, 3 * u, bx + 8 * u, 6.6 * u), radius=u, outline=(20, 20, 20, 255), width=max(1, int(.5 * u)))
+    d.rectangle((bx + u, 4 * u, bx + 6 * u, 5.6 * u), fill=(20, 20, 20, 255))
+    for k in range(3):
+        d.rectangle((W_ - 24 * u + k * 2 * u, (6.4 - (k + 1) * 1.2) * u, W_ - 23 * u + k * 2 * u, 6.6 * u), fill=(20, 20, 20, 255))
+    # 앱 헤더(로고 없음)
+    y = 10 * u
+    d.ellipse((4 * u, y, 13 * u, y + 9 * u), fill=(205, 160, 128, 255)); d.ellipse((5 * u, y + u, 12 * u, y + 8 * u), outline=(255, 255, 255, 255), width=max(1, int(.6 * u)))
+    d.text((16 * u, y + 1.6 * u), "reika_42F", font=f(4.6, MONT), fill=(25, 25, 25, 255))
+    d.text((W_ - 10 * u, y + 0.5 * u), "…", font=f(5), fill=(40, 40, 40, 255))
+    # 사진
+    py0, py1 = y + 12 * u, y + 12 * u + 100 * u
+    if os.path.exists(BAG):
+        ph = Image.open(BAG).convert("RGB"); sc = max(W_ / ph.size[0], (py1 - py0) / ph.size[1])
+        ph = ph.resize((int(ph.size[0] * sc), int(ph.size[1] * sc)))
+        ph = ph.crop(((ph.size[0] - W_) // 2, (ph.size[1] - int(py1 - py0)) // 2, (ph.size[0] - W_) // 2 + W_, (ph.size[1] - int(py1 - py0)) // 2 + int(py1 - py0)))
+        im.paste(ph, (0, int(py0)))
+    # 아이콘 줄: 하트(빨강 채움)·말풍선·종이비행기
+    y = py1 + 3 * u; r = 3.2 * u; cx = 7 * u
+    d.ellipse((cx - r, y, cx, y + r), fill=(232, 52, 72, 255)); d.ellipse((cx, y, cx + r, y + r), fill=(232, 52, 72, 255))
+    d.polygon([(cx - r, y + r * .55), (cx + r, y + r * .55), (cx, y + r * 2)], fill=(232, 52, 72, 255))
+    d.ellipse((17 * u, y, 23.5 * u, y + 6 * u), outline=(30, 30, 30, 255), width=max(1, int(.6 * u)))
+    d.polygon([(29 * u, y + 3 * u), (36 * u, y), (33 * u, y + 6.5 * u)], outline=(30, 30, 30, 255))
+    d.text((5 * u, y + 8.5 * u), "「いいね!」1,284件", font=f(3.9), fill=(25, 25, 25, 255))
+    d.text((5 * u, y + 14.5 * u), "reika_42F", font=f(3.9, MONT), fill=(25, 25, 25, 255))
+    d.text((5 * u, y + 20 * u), "主人からのサプライズ♡", font=f(4.1), fill=(25, 25, 25, 255))
+    d.text((5 * u, y + 25.5 * u), "新作のバッグ  #記念日", font=f(4.1), fill=(40, 90, 160, 255))
+    d.text((5 * u, y + 32 * u), "2025年11月11日", font=f(3.2), fill=(140, 140, 140, 255))
+    # 하단 탭
+    d.line((0, H_ - 12 * u, W_, H_ - 12 * u), fill=(225, 225, 225, 255), width=max(1, int(.3 * u)))
+    for k in range(5):
+        cx = (10 + k * 20) * u; d.rounded_rectangle((cx - 2.5 * u, H_ - 8.5 * u, cx + 2.5 * u, H_ - 3.5 * u), radius=u, outline=(60, 60, 60, 255), width=max(1, int(.5 * u)))
+    # 밝기 80% + 유리 반사(대각선 옅은 띠) + 둥근 모서리
+    arr = np.asarray(im).astype(np.float32); arr[..., :3] *= 0.80
+    yy, xx = np.mgrid[0:H_, 0:W_]; band = np.exp(-(((xx / W_) + (yy / H_) * 0.55 - 0.55) / 0.12) ** 2) * 16
+    arr[..., :3] = np.clip(arr[..., :3] + band[..., None], 0, 255)
+    mask = Image.new("L", (W_, H_), 0); ImageDraw.Draw(mask).rounded_rectangle((0, 0, W_ - 1, H_ - 1), radius=int(9 * u), fill=255)
+    arr[..., 3] = np.asarray(mask)
+    return Image.fromarray(arr.astype(np.uint8)).resize((int(w), int(h)), Image.LANCZOS)
 
 
 def art_roster(w, h):
@@ -393,7 +436,7 @@ JOBS = {
     "S10a": [("ink", P((360, 652), (850, 640), (900, 690), (420, 716)), lambda w, h: art_ledger(w, h))],
     "S10a2": [("replace", P((205, 302), (484, 252), (519, 292), (216, 352)), lambda w, h: art_lcd(w, h))],   # 액정 창 안쪽(실측 2026-10-07)
     "S10c": [("emit", P((86, 316), (502, 317), (544, 614), (120, 628)), lambda w, h: art_laptop(w, h))],
-    "S11a2": [("emit", P((766, 246), (936, 246), (936, 578), (766, 578)), lambda w, h: art_phone(w, h))],
+    "S11a2": [("emit", P((770, 249), (936, 249), (936, 581), (770, 581)), lambda w, h: art_phone(w, h))],   # 베젤 안쪽(실측 2026-10-07)
     "S12a": [("ink", P((446, 495), (598, 491), (598, 568), (446, 571)), lambda w, h: art_roster(w, h))],
     # 스크린
     "S13e": [("screen", P((460, 200), (884, 200), (884, 412), (460, 412)), lambda w, h: slide_passbook(w, h))],
@@ -460,7 +503,7 @@ def apply(a, mode, q, art_fn, sigma_override=None, protect=False):
             base = base * 0.9 + 18   # 투사 화면: 대비를 조금 낮추고 밝게
         out = af * (1 - m) + base * m
     elif mode == "emit":
-        m = inside[..., None]; out = af * (1 - m) + rgb * 0.95 * m
+        m = (inside * al[..., 0])[..., None]; out = af * (1 - m) + rgb * m   # 원화 알파(둥근 모서리) 반영
     elif mode in ("paper", "inpaint_ink"):
         out = af
         if mode == "inpaint_ink":   # 외계어(어두운 획)를 지우고 종이로 메움
