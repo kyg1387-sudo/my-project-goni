@@ -22,6 +22,7 @@ CROPS = {
     "S16i": (160, 249, 400, 384),   # 지팡이 손잡이를 쥔 손
     "S16i2": (186, 220, 426, 355),  # 체인 끈을 쥔 떨리는 손가락
     "S15a": (160, 110, 480, 290),   # 재생성분: 스탠드를 쥔 손(빈 마이크 집게·왼쪽 종이 제외)
+    "S05c": (95, 63, 665, 384),     # 재생성분: 박수 치는 세 엄마(시트 일치) 중심
 }
 # 흐림 영역 — 키즈룸 복도 벽 게시물·작은 메모(가짜 글자). 배경 심도처럼 보이게 강하게 흐린다
 BLURS = {
@@ -47,7 +48,7 @@ def blur(im, box, r=7):
 
 def src(sid):
     r = os.path.join(SRC_R, f"{sid}-1.png")
-    return r if sid == "S15a" else os.path.join(SRC, f"{sid}-1.png")
+    return r if sid in ("S15a", "S05c") else os.path.join(SRC, f"{sid}-1.png")
 
 
 def main():
