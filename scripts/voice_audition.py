@@ -203,6 +203,48 @@ def el_child_search(cfg):
     print("어린이 목소리 후보 탐색 완료")
 
 
+def el_shared_search(cfg):
+    """ElevenLabs 목소리 도서관을 언어·성별·나이로 검색해 목록(jsonl)과 미리듣기 mp3를 저장한다(무과금).
+    cfg: {"queries": [{"language": "ja", "gender": "female", "age": "middle_aged"}, ...], "per_query": 8}"""
+    import urllib.parse
+    key = (os.environ.get("ELEVENLABS_API_KEY") or "").strip()
+    if not key:
+        sys.exit("ELEVENLABS_API_KEY 시크릿이 필요합니다.")
+    os.makedirs(OUT_DIR, exist_ok=True)
+    seen, rows = set(), []
+    for q in cfg["queries"]:
+        params = {"page_size": str(cfg.get("per_query", 8)), **{k: v for k, v in q.items() if k != "tag"}}
+        status, data = el_request("GET", "https://api.elevenlabs.io/v1/shared-voices?"
+                                  + urllib.parse.urlencode(params), key)
+        if status != 200 or not isinstance(data, dict):
+            print(f"[검색 {q}] 실패 (HTTP {status}): {data}")
+            continue
+        for v in data.get("voices", []):
+            vid = v.get("voice_id")
+            if not vid or vid in seen:
+                continue
+            seen.add(vid)
+            row = {k: v.get(k) for k in ("voice_id", "public_owner_id", "name", "gender", "age",
+                                         "accent", "language", "use_case", "descriptive",
+                                         "description", "usage_character_count_1y", "cloned_by_count")}
+            row["tag"] = q.get("tag", "")
+            rows.append(row)
+            prev = v.get("preview_url")
+            if prev:
+                safe = "".join(c for c in (v.get("name") or "voice") if c.isalnum())[:20]
+                path = os.path.join(OUT_DIR, f"elprev_{q.get('tag', 'x')}_{safe}_{vid[:6]}.mp3")
+                try:
+                    urllib.request.urlretrieve(prev, path)
+                except (urllib.error.URLError, OSError) as e:
+                    print(f"  미리듣기 실패 {v.get('name')}: {e}")
+            print(f"[{q.get('tag')}] {v.get('name')} | {vid} | {v.get('gender')}/{v.get('age')} "
+                  f"| lang={v.get('language')} accent={v.get('accent')} | {v.get('use_case')}")
+    with open(os.path.join(OUT_DIR, "el_voices.jsonl"), "w", encoding="utf-8") as f:
+        for r in rows:
+            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    print(f"목록 {len(rows)}개 저장")
+
+
 def typecast_list(cfg):
     """Typecast 보이스 목록을 로그에 출력한다(무과금). 후보 선정용 — 이름·성별·나이·지원 언어를 한 줄씩."""
     key = (os.environ.get("TYPECAST_API_KEY") or "").strip()
@@ -275,6 +317,9 @@ def main():
                           encoding="utf-8"))
     if spec.get("el_child_search"):
         el_child_search(spec["el_child_search"])
+        return
+    if spec.get("el_shared_search"):
+        el_shared_search(spec["el_shared_search"])
         return
     if spec.get("typecast_list"):
         typecast_list(spec["typecast_list"])

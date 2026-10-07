@@ -1,0 +1,14 @@
+{
+ "_설명": "#01 타워맨션 — ElevenLabs 도서관에서 일본어 원어민 목소리만 검색(무과금: 목록 + 미리듣기). 사용자 요청 「일본어 자연스럽게」에 따라 Typecast 다국어(외국인) 목소리 대신 원어민 후보 확보.",
+ "el_shared_search": {
+  "per_query": 10,
+  "queries": [
+   {"tag": "f-mid", "language": "ja", "gender": "female", "age": "middle_aged"},
+   {"tag": "f-young", "language": "ja", "gender": "female", "age": "young"},
+   {"tag": "m-old", "language": "ja", "gender": "male", "age": "old"},
+   {"tag": "m-mid", "language": "ja", "gender": "male", "age": "middle_aged"},
+   {"tag": "m-young", "language": "ja", "gender": "male", "age": "young"},
+   {"tag": "child", "language": "ja", "search": "child"}
+  ]
+ }
+}
