@@ -72,7 +72,9 @@ def cam_matrix(fx, t, w, h):
     ffmpeg zoompan은 좌표를 정수 픽셀로 반올림해 슬로 푸시인에서 프레임마다 0.3~0.7px 불규칙하게 떨렸다)."""
     e = t * t * (3 - 2 * t) * 0.35 + t * 0.65   # 시작·끝을 살짝 부드럽게
     z, cx, cy, deg = 1.0, 0.5, 0.5, 0.0
-    if fx in ("", "push", "rack"):
+    if fx == "crash":   # 정체 발각 순간: 빠르게 다가갔다가 멈춤(앞 40%에 대부분 진행)
+        z = 1 + 0.14 * (1 - (1 - min(1.0, t / 0.4)) ** 3); cy = 0.5 - 0.5 * (1 - 1 / z)   # 얼굴 쪽(위)으로 — 화면 밖이 드러나지 않는 한도까지
+    elif fx in ("", "push", "rack"):
         z = 1 + 0.05 * e
     elif fx == "pull":
         z = 1.06 - 0.06 * e
@@ -161,7 +163,7 @@ def card(sid, out, sec):
 
 # 수정 9(2026-10-07): 회의장 재생성 컷 중 i2v 대신 정지 편집 카메라로(추가 과금 없이)
 FORCE_STILL = {"S07a2", "S14d", "S17b", "S14o", "S16g2", "S09a"}   # S09a: 담당자 대사 중 유미 입이 움직임(감독님 지적)   # S14o·S16g2: i2v가 군중 이탈·얼굴 난입(검수 불합격)
-FX_OVERRIDE = {"S02b": "push"}   # 그래픽 패널이 팬에 잘리지 않게
+FX_OVERRIDE = {"S02b": "push", "S16d": "crash"}   # S16d: 돌리줌 분리 실패(연설대가 갈라져 앞으로 나옴, 감독님 지적) → 빠른 푸시인   # 그래픽 패널이 팬에 잘리지 않게
 
 
 # 감독님 지적(정지 영상 과다 2026-10-07): 사람이 있는 정지 컷은 2.5D 시차(인물·배경 분리, 서로 다른 속도),
@@ -220,7 +222,7 @@ def default_fx(s, k=0):
         return FX_OVERRIDE[s["id"]]
     if s["edit_fx"] == "" and s["size"] not in ("ws", "ews") and k % 2 == 1:
         return "pull"   # 연속 정지 컷에서 밀기·당기기 교차
-    if s["edit_fx"] in ("push", "pull", "pan", "dutch7", "dutch5", "dollyzoom"):
+    if s["edit_fx"] in ("push", "pull", "pan", "dutch7", "dutch5"):
         return s["edit_fx"]
     return "pan" if s["size"] in ("ws", "ews") else "push"
 
