@@ -237,10 +237,15 @@ class SignTracker:
         comp = np.asarray(Image.open(os.path.join(KF, f"{sid}-1.png")).convert("RGB"))
         diff = (np.abs(comp.astype(np.int16) - raw.astype(np.int16)).max(2) > 6).astype(np.uint8)
         diff = cv2.dilate(cv2.morphologyEx(diff, cv2.MORPH_CLOSE, np.ones((9, 9), np.uint8)), np.ones((7, 7), np.uint8))
-        self.comp, self.mask = comp.astype(np.float32), cv2.GaussianBlur(diff.astype(np.float32), (0, 0), 2)
         self.kh, self.kw = raw.shape[:2]
         jobs = tc.JOBS.get(sid) or [(None, tc.PAIRS[sid][0], None)]
         self.q = np.float32(jobs[0][1])
+        # 감독님 지적(현수막 떨림 2026-10-07): i2v가 합성 키프레임의 글자를 스스로 다시 그려, 우리 글자 테두리 밖으로
+        # 매 프레임 모양이 바뀌는 AI 글자 잔상(점·이중 선)이 비쳤다 → 글자 주변만이 아니라 판·천 면 전체(사각형 6% 확장)를 덮는다
+        c = self.q.mean(0); qe = c + (self.q - c) * 1.06
+        face = np.zeros((self.kh, self.kw), np.uint8); cv2.fillPoly(face, [qe.astype(np.int32)], 1)
+        cover = np.maximum(face, diff)
+        self.comp, self.mask = comp.astype(np.float32), cv2.GaussianBlur(cover.astype(np.float32), (0, 0), 1.5)
         x, y, w, h = cv2.boundingRect(self.q.astype(np.int32)); pad = max(90, int(max(w, h) * 1.2))
         self.box = (max(0, x - pad), max(0, y - pad), min(self.kw, x + w + pad), min(self.kh, y + h + pad))
         m = np.zeros(raw.shape[:2], np.uint8); m[self.box[1]:self.box[3], self.box[0]:self.box[2]] = 255
