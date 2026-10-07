@@ -176,7 +176,8 @@ def main(only=None):
 
 # ---------------- 생성 i2v 클립 후처리(무과금) ----------------
 RAW = os.path.join(ROOT, "assets", "portraits", "tower-kf-raw")
-POST_FX = {"S01f": "pull", "S19g": "pull", "S06a": "dutch5"}   # i2v는 카메라 지시를 무시 → 편집에서(제8장 6)
+POST_FX = {"S01f": "pull", "S19g": "pull", "S06a": "dutch5",   # i2v는 카메라 지시를 무시 → 편집에서(제8장 6)
+           "S01a": "slow2.0"}   # 생성 검수: 2초 뒤 문이 닫히기 시작(이야기상 S01d에서 닫힘) → 앞 2초만 느리게 늘림
 SPLIT = ["S14f", "S14g", "S14h"]                                  # 3분할: 패널이 하나씩 늘어난다
 
 
@@ -259,10 +260,17 @@ def post(clips):
         src = os.path.join(clips, f"scene{i:02d}.mp4")
         if not os.path.exists(src):
             print(f"scene{i:02d} {sid}: 클립 없음 — export_files로 먼저 가져오기"); continue
+        fx = POST_FX.get(sid, "")
+        if fx.startswith("slow"):
+            t0 = float(fx[4:]); need = durs[i - 1] + 0.5; tmp = os.path.join(OUT, f"_{sid}_slow.mp4")
+            run(["-i", src, "-t", f"{t0}", "-vf", f"setpts={need / t0:.4f}*PTS,minterpolate=fps={FPS}:mi_mode=mci:mc_mode=aobmc:vsbmc=1"] + ENC + [tmp])
+            src = tmp
         fr = list(read_frames(src))
+        if src.endswith("_slow.mp4"):
+            os.remove(src)
         if sid in signs:
             tr = SignTracker(sid); fr = [tr.apply(f) for f in fr]
-        if sid in POST_FX:
+        if sid in POST_FX and not fx.startswith("slow"):
             fr = cam_frames(fr, POST_FX[sid])
         write_frames(fr, os.path.join(OUT, f"scene{i:02d}.mp4")); print(f"scene{i:02d} {sid}: " + " + ".join(x for x in ("표기 추적" if sid in signs else "", POST_FX.get(sid, "")) if x))
     # 3분할

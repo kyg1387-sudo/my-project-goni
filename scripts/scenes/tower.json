@@ -1,7 +1,7 @@
 {
  "_설명": "tower 장면 설정(build_tower_phase3.py 생성). override_required 장면(정지 푸시인·OMNI 정지 프레임·그래픽·재사용·카드)은 video-overrides로 먼저 넣는다.",
  "ratio": "16:9",
- "budget_usd": 15.3,
+ "budget_usd": 14.85,
  "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
  "durations": [
   5,
@@ -205,7 +205,7 @@
    "image": "assets/portraits/tower-keyframes/S02a-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Mother and daughter walk slowly left to right across the frame, never toward the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Mother and daughter take two or three slow small steps holding hands and then stand still; they stay at the same distance and the same small size in frame, never coming closer to the camera. Nobody turns around. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/tower-keyframes/S02a2-1.png"
   },
@@ -239,7 +239,7 @@
    "image": "assets/portraits/tower-keyframes/S02c2-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: The three women walk slowly across the lobby away from the camera; reflections follow them. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: The three women take two slow small steps and then stand still, staying tiny and far from the camera; their size in frame does not change. Reflections follow them. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/tower-keyframes/S02d-1.png"
   },
@@ -873,8 +873,9 @@
    "image": "assets/portraits/tower-keyframes/S17-2a-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: The sky glows and clouds drift slowly. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "(override) still: No people. Low angle: the tower against a golden dusk sky.",
    "duration": 10,
+   "override_required": true,
    "image": "assets/portraits/tower-keyframes/S17-2b-1.png"
   },
   {
