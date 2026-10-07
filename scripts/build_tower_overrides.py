@@ -160,7 +160,7 @@ def card(sid, out, sec):
 
 
 # 수정 9(2026-10-07): 회의장 재생성 컷 중 i2v 대신 정지 편집 카메라로(추가 과금 없이)
-FORCE_STILL = {"S07a2", "S14d", "S17b"}
+FORCE_STILL = {"S07a2", "S14d", "S17b", "S14o", "S16g2"}   # S14o·S16g2: i2v가 군중 이탈·얼굴 난입(검수 불합격)
 FX_OVERRIDE = {"S02b": "push"}   # 그래픽 패널이 팬에 잘리지 않게
 
 
