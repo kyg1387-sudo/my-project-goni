@@ -103,6 +103,12 @@ FIX_B = {
             "eye rims and the tip of the nose slightly reddened, ONE thin, barely visible wet trail on one cheek only, natural skin texture, "
             "lips pressed and trembling. Realistic, subtle, matte skin — NO shiny liquid lines.",
     "S16h2": "Seen STRICTLY FROM BEHIND: Mr. Odagiri's back fills the right third of the frame — white hair from behind, charcoal suit back, dark wooden cane in his right hand; his face is NOT visible at all. He faces the stage at the far end of the packed hall.",
+    # 수정 9(회의장 전체 일관성·긴장감 2026-10-07)
+    "S07a2": "Side medium in the SAME assembly hall (windows with city view behind): Yumi seated in a row of plastic chairs among other seated residents, head slightly bowed, a small notebook on her lap, writing with a pen; NO tables. Tense, quiet meeting atmosphere.",
+    "S14d": "High angle wide of the back rows of the SAME packed hall (floor-to-ceiling windows on the left): residents leaning to whisper to each other in shock, a few hands covering mouths, faces small and unrecognizable. Tense, buzzing atmosphere.",
+    "S17b": "Extreme bird's-eye view from straight above onto the pale wood floor of the SAME hall: Reika sitting collapsed beside the wooden lectern, the burgundy bag spilled open; the front row of residents' chairs and their feet/legs visible at the frame edges, forming a ring of onlookers. Cold daylight.",
+    "S17e2": "High angle tight close-up of Reika SITTING ON THE FLOOR, devastated: mouth falling open, tears welling, mascara slightly smudged; behind her, out of focus, the legs and seated bodies of residents in the front row watching. NOT smiling. No hands.",
+    "S17g": "High angle close-up of Reika SITTING ON THE FLOOR beside the lectern, looking up pleadingly with wet eyes toward the front row; behind and around her, out of focus, rows of seated residents staring down at her. NOT standing, NOT smiling.",
     # 크롭으로 못 고치는 인서트(얼굴을 자르면 4배 확대, 핸드 마이크라 스탠드를 쥔 손이 없음)
     "S05c": "Close insert of clapping hands at chest height: the camera is low and close, the top edge of the frame cuts across the three seated women's collarbones, so only their torsos and clapping hands are in the picture (pink sweater, white blouse, beige cardigan) with blurred seated residents behind. Do NOT draw heads; NO masks, NO circles, NO blur patches, NO stickers. Hands with exactly five fingers each.",
     # B 재생성 2차(2026-10-07): S14l(굳은 미소) 참조가 미소를 끌고 옴 → 재생성 합격 공포 얼굴, 빈 의자 배경 → 주민 뒷머리 전경(S16d)
@@ -125,7 +131,9 @@ BG_FRONT = ("Background geometry: the camera is among the seated audience facing
 ROOM_RINJI = "assets/portraits/tower-kf-raw/S05d-1.png"
 ROOM_TSUJO = "assets/portraits/tower-kf-raw/S13a-1.png"
 ROOM_FIX = {**{k: ROOM_RINJI for k in ("S05a", "S05b", "S05c", "S06a", "S06d", "S06-2a")},
-            **{k: ROOM_TSUJO for k in ("S14b", "S14f", "S14g", "S14k", "S14o", "S16g2", "S16h2", "S17f", "S17h")}}
+            "S07a2": ROOM_RINJI,
+            **{k: ROOM_TSUJO for k in ("S14b", "S14f", "S14g", "S14k", "S14o", "S16g2", "S16h2", "S17f", "S17h",
+                                       "S14d", "S17b", "S17e2", "S17g")}}
 CROWD = {ROOM_RINJI: "The hall is moderately filled: about forty residents seated in the rows (no large empty areas), matching the reference.",
          ROOM_TSUJO: "The hall is PACKED: every chair in every row is occupied by seated residents (over a hundred people), NO empty chairs anywhere in view."}
 
