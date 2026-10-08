@@ -37,7 +37,8 @@ PEOPLE = {
 }
 # 인물별 기준 얼굴 = A단계 승인 OMNI 컷(제7장 7: 기준 얼굴은 대사 키프레임). 사오리 엔딩(saori-e)은 대사 컷이 없어 셀 유지.
 FACE_KF = {"saori": "S03c", "saori-b": "S15e", "gondo": "S03d", "miyamoto": "S06c", "kiritani": "S01b", "okochi": "S16b"}
-FACE_KINDS = ("face", "react", "d", "sil")   # sil: 실루엣이라도 체형·머리 윤곽은 기준 얼굴 컷을 따른다
+FACE_KINDS = ("face", "react", "d", "sil")
+ANCHOR_FALLBACK = {"saori": "S15e"}   # 자기 자신이 기준 얼굴인 컷을 재생성할 때 쓸 같은 인물의 다른 기준(사무실 사오리 → 지하 사오리 얼굴)   # sil: 실루엣이라도 체형·머리 윤곽은 기준 얼굴 컷을 따른다
 
 TIGHT = ("FRAMING FIRST: a tight single-person chest-up close-up — head and shoulders fill the frame, the top of the head near the top edge, "
          "the frame cut at mid-chest; the face occupies about one third of the frame height; hands NOT visible; NOT a medium shot, NOT a full-body shot. "
@@ -79,6 +80,9 @@ FIX = {
              "straight down — bright forehead, deep dark eye sockets behind the gold-rimmed glasses, hard shadow under the chin, the far desks fading "
              "into cool shadow; NO bright daylight, NO flat lighting. Camera BELOW his eye line looking up. He leans slightly toward the lens, eyes "
              "narrowed, mouth closed in a hard line — cold threat, NOT smiling."),
+    # S03c: 기준 얼굴(지하 사오리 S15e)에서 얼굴만 가져오고 의상은 사무실 정장으로
+    "S03c": ("WARDROBE: a plain navy-blue tailored skirt suit over a plain white blouse — NOT the grey sweater, NOT the apron of reference image 1; "
+             "only the face, hair and glasses come from reference image 1."),
     # S11c: 책상 3/4 미디엄·손 노출·담담한 표정으로 생성됨 → 정면 CU + 공포
     "S11c": ("Saori faces the camera directly, seated at the desk but framed chest-up so the desk and her hands are NOT visible; the warm desk lamp lights "
              "one side of her face, the other side falls into cool shadow. Expression: FEAR held in — eyes wide and fixed, pupils large, lips pressed "
@@ -150,13 +154,19 @@ def notes(refs):
     return out
 
 
-def build(sc, face_refs):
+def build(sc, face_refs, drop_expr=False):
+    """drop_expr: 기준 얼굴이 있으면 작은 표정 셀을 빼고(얼굴형 드리프트 원인, A단계 정밀 대조 실증) 표정은 글로만 지시"""
     refs = list(face_refs) + [r for r in sc["refs"] if r not in face_refs]
+    if drop_expr and face_refs:
+        refs = [r for r in refs if "-expr" not in os.path.basename(r)]
     swap = {**REF_SWAP["*"], **REF_SWAP.get(sc["id"], {})}
     sneer = any(os.path.basename(r) == "gondo-expr1.png" for r in refs)
     refs = [os.path.join(os.path.dirname(r), swap.get(os.path.basename(r), os.path.basename(r))) for r in refs]
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
+    if drop_expr and face_refs:
+        parts.insert(1, "IDENTITY FIRST: the person is EXACTLY the one in reference image 1 — same face shape, jaw, cheekbones, nose, eyes, eyebrows, "
+                        "skin tone, age, hairstyle and eyewear; only the expression, lighting and framing described below change.")
     if sc["kind"] == "d":
         parts.insert(1, TIGHT + " Mouth CLOSED (lips together, no teeth visible); facing the camera, looking into the lens.")
     if sneer:
@@ -188,7 +198,9 @@ def face_refs_for(sc):
         if k and k in FACE_KF:
             p = f"{KF_DIR}/{FACE_KF[k]}-1.png"   # collect 뒤의 승인 키프레임(파일럿·A·재생성 포함)
             if sc["id"] == FACE_KF[k]:
-                continue
+                if k not in ANCHOR_FALLBACK:
+                    continue
+                p = f"{KF_DIR}/{ANCHOR_FALLBACK[k]}-1.png"
             if not os.path.exists(os.path.join(ROOT, p)):
                 raise SystemExit(f"{sc['id']}: 기준 얼굴 {p} 없음 — A단계 먼저")
             if p not in out:
@@ -227,9 +239,10 @@ def main():
     if stage == "pilot":
         items = [build(s, []) for s in shots if s["id"] in PILOT]
     elif stage == "a":
-        items = [build(s, []) for s in shots if s["kind"] == "d" and (only or not done(s))]
+        # 재생성(only)은 승인 기준 얼굴을 1번 참조로 + 표정 셀 제거(정밀 대조 2026-10-08: 25장 중 11장 얼굴형 드리프트)
+        items = [build(s, face_refs_for(s) if only else [], drop_expr=bool(only)) for s in shots if s["kind"] == "d" and (only or not done(s))]
     elif stage == "b":
-        items = [build(s, face_refs_for(s)) for s in shots if s["kind"] != "d" and (only or not done(s))]
+        items = [build(s, face_refs_for(s), drop_expr=True) for s in shots if s["kind"] != "d" and (only or not done(s))]
     else:
         raise SystemExit("단계: pilot|a|b[:ID,ID]|collect")
     if only:
