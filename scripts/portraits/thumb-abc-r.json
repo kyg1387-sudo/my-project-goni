@@ -1,0 +1,7 @@
+{"_설명": "썸네일 A·C 편집(2026-10-08): A1 오른쪽 무릎 꿇은 남자가 다른 인물(젊음) → 왼쪽과 같은 50대 남자로, C2 옷의 핏자국 같은 붉은 얼룩 제거. 2장 약 0.08달러.",
+ "characters": [
+  {"id": "thumbA", "count": 1, "aspect_ratio": "16:9", "refs": ["assets/portraits/thumb-abc/thumbA-1.png"],
+   "prompt": "EDIT the reference image: keep EXACTLY the split composition, the left half unchanged (the laughing man in his 50s with grey swept-back hair and thin glasses throwing papers in the warm office), and the right half's hotel banquet hall with the cold blue spotlight. ONLY change the kneeling man on the right so he is the SAME man as on the left: same face, grey swept-back hair, thin glasses, age in his 50s, same dark suit and tie — now kneeling in despair and panic, sweating heavily, mouth open, scattered papers on the carpet around him. Anime key visual style unchanged. Absolutely no text, no letters anywhere."},
+  {"id": "thumbC", "count": 1, "aspect_ratio": "16:9", "refs": ["assets/portraits/thumb-abc/thumbC-2.png"],
+   "prompt": "EDIT the reference image: keep EVERYTHING exactly the same — composition, all characters, faces, poses, ballroom, lighting, anime style. ONLY remove every red or dark-red stain from all clothing (the crying boss's shirt, tie and jacket, and everyone else's suits): clean fabric, NO blood, NO stains. The guards' caps and shoulder patches are plain with no emblem letters. Absolutely no text, no letters anywhere."}
+ ]}
