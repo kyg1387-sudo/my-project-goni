@@ -99,6 +99,10 @@ FIX = {
     "S12b": "A flushed, triumphant GRIN with the lips CLOSED — corners of the mouth pulled wide, cheeks raised, eyes narrowed with glee; NO teeth, mouth not open.",
     "S15j": ("He is standing in the BANQUET HALL among guests in dark suits (chandeliers and the blank stage screen blurred behind) — NOT in the archive, "
              "NO desk lamp, NO shelves. Expression: NO smile — mouth set in a firm straight line, eyes fixed on the camera, brows level, grave and steady."),
+    # B단계 2차: S10f 뒷모습 미디엄 → 손만, S16d 수직 부감
+    "S10f": "ONLY a woman's hand and index finger on the laptop trackpad fill the frame, the keyboard edge and the glowing screen bottom at the top edge; the camera is 40 cm above the hand.",
+    "S16d": ("Seen from DIRECTLY ABOVE at 90 degrees: the frame shows only the red carpet floor and, in the centre, the top of a heavyset man's head with "
+             "slicked salt-and-pepper hair, his navy-suited shoulders hunched as he kneels; no face visible, no walls, no ceiling, no tables."),
     # S11c: 책상 3/4 미디엄·손 노출·담담한 표정으로 생성됨 → 정면 CU + 공포
     "S11c": ("Saori faces the camera directly, seated at the desk but framed chest-up so the desk and her hands are NOT visible; the warm desk lamp lights "
              "one side of her face, the other side falls into cool shadow. Expression: FEAR held in — eyes wide and fixed, pupils large, lips pressed "
@@ -123,6 +127,11 @@ REF_SWAP = {"*": {"gondo-expr1.png": "gondo-front.png"}}
 SNEER = ("EXPRESSION FIRST: Gondo is NOT smiling. His face shows cold CONTEMPT — mouth closed with the lips pressed into a thin line and ONE corner "
          "pulled slightly up into a sneer, nostrils a little flared, eyelids half lowered, brows slightly raised as he looks DOWN his nose "
          "while his chin is raised; a cruel, bored, superior look.")
+
+
+# 2차 재생성 검수: 얼굴이 없어야 하는 비-ins 컷(실루엣 ECU 등)도 인서트 규칙 적용
+NOFACE = {"S12b2", "S16d"}
+NO_LOC_REF = {"S16d"}   # 장소 셀이 원근을 강제해 수직 부감이 안 나옴 → 바닥·정수리만 글로
 
 
 def person_key(path):
@@ -175,7 +184,9 @@ def build(sc, face_refs, drop_expr=False):
     refs = list(face_refs) + [r for r in sc["refs"] if r not in face_refs]
     if drop_expr and face_refs:
         refs = [r for r in refs if "-expr" not in os.path.basename(r)]
-    if sc["kind"] == "ins":   # 인서트는 인물 셀을 참조하면 얼굴을 그린다(B단계 실증) → 장소·소품 셀만, 손·의상은 글로
+    if sc["id"] in NO_LOC_REF:
+        refs = [r for r in refs if not os.path.basename(r).startswith(("loc-", "angle-"))]
+    if sc["kind"] == "ins" or sc["id"] in NOFACE:   # 인서트는 인물 셀을 참조하면 얼굴을 그린다(B단계 실증) → 장소·소품 셀만, 손·의상은 글로
         refs = [r for r in refs if not person_key(r)]
     swap = {**REF_SWAP["*"], **REF_SWAP.get(sc["id"], {})}
     sneer = any(os.path.basename(r) == "gondo-expr1.png" for r in refs)
@@ -196,7 +207,7 @@ def build(sc, face_refs, drop_expr=False):
     if sc["id"] in FIX:
         parts.insert(1 + sneer, FIX[sc["id"]])
     kp = sc["keyframe_prompt"]
-    if sc["kind"] == "ins":
+    if sc["kind"] == "ins" or sc["id"] in NOFACE:
         kp = re.sub(r" Characters: .*?(?= Camera:)", " No person's face is visible.", kp)
         parts.insert(1, INSERT_FIRST)
     if sc["angle"] == "BE":
