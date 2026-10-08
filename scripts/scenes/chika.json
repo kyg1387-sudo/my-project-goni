@@ -1,0 +1,1100 @@
+{
+ "_설명": "chika 장면 설정(build_chika_phase3.py 생성). override_required 장면(정지 푸시인·OMNI 정지 프레임·그래픽·재사용·카드)은 video-overrides로 먼저 넣는다. hero_takes 컷은 B안 상위 모델 3테이크.",
+ "ratio": "16:9",
+ "budget_usd": 42.82,
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "durations": [
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  10,
+  10,
+  10,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  10,
+  10,
+  10
+ ],
+ "scenes": [
+  {
+   "prompt": "Static, locked off camera. Motion: The silhouettes take two slow steps forward into the hall; the doors stay open. No one else enters. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S01a-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Kiritani just inside the doorway, expressionless, rimless g",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S01b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Slow motion: the glass tumbles, hits the carpet and shatters, wine splashing outward. The hand does not move. No face. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S01c-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) still: Low angle chest-up of Gondo frozen mid-sneer, the smile collapsing, gold glasses",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S01d-1.png"
+  },
+  {
+   "prompt": "(override) still: Medium shot of Saori standing alone among the tables in a grey knit and jeans, a",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S01e-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead extreme close-up: a single old yellowed voucher sheet lying under a war",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S01f-1.png"
+  },
+  {
+   "prompt": "(override) card: Title card over the dark archive.",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) card: Caption card: 二か月前.",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Almost still; a faint shimmer of the screen light over the seated heads. Nobody stands or turns. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S02a-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Gondo at the podium, proud smile, chin raised, gold glasse",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S02b-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Extreme close-up of the lower right corner of the glowing blank presentation scr",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S02c-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Extreme close-up of the centre of the blank glowing presentation screen.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S02d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Hands clap softly, a few heads nod. Nobody turns around. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S02e-1.png"
+  },
+  {
+   "prompt": "(override) still: Chest-up close-up of Saori in the last row, not clapping, cold steady eyes fixed",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S02f-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a woman's hands clasped tightly in her lap on a nav",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S02g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A colleague far away shifts slightly in a chair; otherwise still. Nobody walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S03a-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a fat right hand with a chunky gold wristwatch rest",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S03b-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead extreme close-up: a neat stack of blank white documents on a grey desk,",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S03b2-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Saori standing at a desk, jaw tight, eyes glistening but dr",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S03c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Gondo seated at his desk looking up with a thin sneer, har",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S03d-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a thick stack of blank papers studded with blank ye",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S03e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The colleagues lower their heads slightly and keep typing. Nobody looks up or walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/chika-keyframes/S03e2-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle chest-up of Saori, eyebrows raised in disbelief, lips slightly parted",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S03f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Gondo leaning slightly forward, eyes narrowed behind gold ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S03g-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle chest-up of Saori looking down, face rigid, only her eyes trembling, ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S03h-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Extreme close-up of a blank dark monitor screen on a desk, a faint blue-white gl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S04a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: She sits motionless, then slowly lowers her head a few centimetres. No turning. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/chika-keyframes/S04b-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up in a dark office at night: one hand passing a small ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S04c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Gondo walks two slow steps closer and stops; Saori stays still facing the elevators. No one turns to the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S05a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Gondo sneering widely, gold glasses, cold steel doors blur",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S05b-1.png"
+  },
+  {
+   "prompt": "(override) still: Chest-up close-up of Saori inside the open mirrored elevator holding a box again",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S05c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The steel doors slide shut slowly until the gap of light disappears. Nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S05d-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The tube flickers twice then stays on; dust drifts. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S06a-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He lowers the glasses from his nose and lets them hang on the cord, then looks up slightly. No standing up. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S06b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Miyamoto, warm lamp light on one side of his face, a gentle",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S06c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: She turns her head slowly to look along the shelves, then stands still. No walking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/chika-keyframes/S06d-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: the flatbed scanner lid lifting, a yellowed blank v",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S06e-1.png"
+  },
+  {
+   "prompt": "(override) still: Extreme close-up: a woman's hands setting a plain black smartphone on a small bl",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S06f-1.png"
+  },
+  {
+   "prompt": "(override) still: Chest-up close-up of Saori at the desk, glasses reflecting the lamp, a quiet kno",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S06g-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a woman's hands lifting the dusty lid of a yellowed",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S06g2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He walks slowly away from the camera between the racks without turning around. No one else. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/chika-keyframes/S06h-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle chest-up of Saori in the aisle looking up after him, the apron strap ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S06i-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: the scanner's bar of light sweeping under the glass",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S07a-1.png"
+  },
+  {
+   "prompt": "(override) still: Wide: the steel step-ladder against the rack, the top shelf half emptied of boxe",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S07b-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead extreme close-up: a woman's hand holding a yellowed voucher sheet under",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S07c-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Extreme close-up of one old yellowed voucher sheet with faint blank ruled boxes ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S07d-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead extreme close-up: ten identical yellowed voucher sheets fanned out acro",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S07e-1.png"
+  },
+  {
+   "prompt": "(override) still: Chest-up close-up of Saori staring down at the desk, lamp light from below her f",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S07f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He takes three slow steps toward the desk and stops. No turning to the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S08a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Miyamoto, eyes lowered then lifting, warm lamp light, the b",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S08b-1.png"
+  },
+  {
+   "prompt": "(override) still: Chest-up close-up of Saori listening, lips pressed, the voucher held low out of ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S08b2-1.png"
+  },
+  {
+   "prompt": "(override) still: Low angle from the floor looking up between two towering racks of yellowed boxes",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S08b2b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He rests his hand on the box and lowers his head slowly. He does not turn to the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S08c-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead extreme close-up: a woman's fingertips resting on a yellowed voucher on",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S08b3-1.png"
+  },
+  {
+   "prompt": "(override) still: Low angle extreme close-up: a woman's hand holding a yellowed voucher up against",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S08d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Saori, quiet steel in her eyes, a small firm set of the jaw",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S08e-1.png"
+  },
+  {
+   "prompt": "(override) card: Countdown card: 廃棄まで、あと二十日.",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) gfx: Extreme close-up of an open laptop screen glowing blue in the dark archive, a bl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S09b-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up at night: a yellow highlighter marking a blank line ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S09c-1.png"
+  },
+  {
+   "prompt": "(override) still: Extreme close-up: an old man's hand setting down a steaming paper cup of coffee ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S09d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He pulls the box a few centimetres toward himself on the shelf. No climbing down. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S09e-1.png"
+  },
+  {
+   "prompt": "(override) still: Chest-up close-up of Saori at night, the laptop's blue glow on her face and glas",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S09f-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Extreme close-up of the laptop screen: a blank dark window with a single empty b",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S09g-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Overhead extreme close-up: a plain white official-looking blank document lying o",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S09h-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Overhead extreme close-up: the same two blank documents side by side on the desk",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S09i-1.png"
+  },
+  {
+   "prompt": "(override) still: Chest-up close-up of Saori at night, eyes wide behind the glasses, the blue scre",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S09j-1.png"
+  },
+  {
+   "prompt": "(override) still: Wide of the dark archive at night: the steel door at the end of the aisle, a thi",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S09k-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a woman's hand pushing a small plain black USB stic",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S10a-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Extreme close-up of the laptop screen: a dark blank log window, a single empty h",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S10b-1.png"
+  },
+  {
+   "prompt": "(override) still: Chest-up close-up of Saori reading the screen at night, the blue glow sliding ac",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S10b2-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Overhead extreme close-up: a small blank thermal receipt slip stapled to a blank",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S10c-1.png"
+  },
+  {
+   "prompt": "(override) still: Chest-up close-up of Saori, eyes narrowing, a slow nod, blue screen glow on her ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S10d-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Extreme close-up of the laptop screen: a plain blank form window with an empty a",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S10e-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a woman's index finger pressing the laptop trackpad",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S10f-1.png"
+  },
+  {
+   "prompt": "(override) card: Countdown card: 廃棄まで、あと十四日.",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) still: Wide of the dark archive at night: the steel door at the end of the aisle, a thi",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S10h-1.png"
+  },
+  {
+   "prompt": "(override) card: Countdown card: 廃棄まで、あと三日.",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Completely still corridor; the far tube flickers once. No people appear. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S11b-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A faint shadow passes across the far wall. Nobody enters the frame. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S11b2-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a woman's hands closing the laptop lid quickly, the",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S11c0-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The silhouette stands still, then takes one slow heavy step inside. No face visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S11d-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The silhouette tilts its head slightly; the glasses glint. No walking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S11d2-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Saori at the desk, lamp light on one side, eyes wide and st",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S11c-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a polished black leather shoe kicking a cardboard a",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S11e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The silhouette turns its shoulders slightly toward the door and stops. No face detail. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/chika-keyframes/S11f-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a woman's trembling hand flat on the wooden desk be",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S11g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Miyamoto lifts the box a few centimetres as if showing it, then lowers it. No one walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/chika-keyframes/S11h-1.png"
+  },
+  {
+   "prompt": "(override) still: Extreme close-up: a champagne cork popping from a dark green bottle, foam bursti",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S12a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Glasses rise together; Gondo rocks slightly on his heels. Nobody walks toward the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S12a2-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Gondo flushed and grinning, chin up, gold glasses, blurred",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S12b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Champagne pours and foams over the rim onto the desk; the hand with the gold watch tilts the bottle. No faces. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/chika-keyframes/S12b2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Gondo's shoulders shake with a laugh; the glass waves once. He does not turn around. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/chika-keyframes/S12d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Chandelier light shimmers; nothing else moves. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S13a-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) gfx: Wide of the stage and head table: a long plain blank cream cloth banner hung abo",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S13a2-1.png"
+  },
+  {
+   "prompt": "(override) still: Chest-up close-up of Okochi seated at the head table, expressionless, a crystal ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S13a3-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: She steps through the doorway and stops after two steps, the doors settling behind her. The guests stay seated. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S13a4-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Gondo flushed with drink, a broad sneer, gold glasses, cha",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S13b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Gondo tips the glass slightly; Saori's shoulder stays still. Nobody walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S13c-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: red wine splashing onto the red carpet beside a pai",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S13d-1.png"
+  },
+  {
+   "prompt": "(override) still: Chest-up close-up of Saori with her eyes lowered, perfectly still, a faint tremo",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S13e-1.png"
+  },
+  {
+   "prompt": "(override) reuse: Reuse: the doors burst open, audit team silhouettes.",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) reuse: Reuse: Kiritani 「そこまでにしてください」.",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Slow motion: they walk steadily toward the camera, feet on the carpet, no one looks into the lens. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S14a-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Gondo blustering, eyebrows raised, a forced angry frown, g",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S14b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Kiritani, expressionless, rimless glasses, the cold key lig",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S14c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The staff take slow steps apart between the tables; the guests stay still. No one looks at the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/chika-keyframes/S14c2-1.png"
+  },
+  {
+   "prompt": "(override) still: Medium shot of Gondo frozen in front of the stage, the sneer gone, mouth slightl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S14d-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a fat hand with a gold wristwatch holding a crystal",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S14d2-1.png"
+  },
+  {
+   "prompt": "(override) reuse: Reuse: the wine glass slips and shatters.",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) gfx: Wide of the stage: the large projection screen above the head table just switche",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S14g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The beam's dust drifts; Gondo's shoulders sag slightly. He does not turn. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S14h-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The surrounding guests take one slow step backward together; Gondo stays rooted. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S14i-1.png"
+  },
+  {
+   "prompt": "(override) still: Chest-up close-up of Saori, eyes lifting, a long slow breath, chandeliers blurre",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S14j-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a woman's hand at her side slowly unclenching, a fo",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S14k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Miyamoto gives one slow nod; the staff stay still. Nobody walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S14l-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Gondo red-faced and shouting, eyes wide, sweat at the temp",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S15a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Gondo breaking down mid-shout, trembling jaw, eyes wild, g",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S15b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Gondo's arm jabs forward once; heads turn together along the aisle. Nobody walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S15b2-1.png"
+  },
+  {
+   "prompt": "(override) still: Medium shot of Kiritani turning his head slightly toward Saori with a faint narr",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S15c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Saori looking straight into the camera, calm and unshakable",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S15e-1.png"
+  },
+  {
+   "prompt": "(override) reuse: Reuse: the phone set on the mini tripod.",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a fat hand with a gold wristwatch gripping the edge",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S15f2-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle chest-up of Kiritani listening with a slow single nod, rimless glasse",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S15f3-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Miyamoto in his beige cardigan among the suits, lowered bro",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S15g-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Saori with a faint cool smile, eyes steady, guests blurred.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S15h-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: an old man's hands unlatching and lifting the lid o",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S15i-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Miyamoto, eyes fixed, no smile, the white moustache, a slow",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S15j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Slow motion: his shoulders slump and his head bows lower. Nobody approaches. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S15k-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a large composed hand setting a crystal glass down ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S16a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He straightens up fully and stands still, shoulders square. No walking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S16a2-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Okochi, calm commanding gaze, thick dark eyebrows, silver ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S16b-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle medium: Gondo kneeling on the carpet looking up, pale, mouth open, go",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S16b2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His head sways slightly and bows lower. No face visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S16d-1.png"
+  },
+  {
+   "prompt": "(override) still: Chest-up close-up of Okochi turning his gaze toward Saori, a flicker of interest",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S16e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Saori speaking clearly, steady eyes, a small nod, glasses c",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S16f-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle medium: Gondo on his knees staring at the floor, shoulders shaking, g",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S16f2-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Saori, a faint cool smile, eyes steady, chandeliers above ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S16g-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Okochi with his first warm approving smile, eyes crinkling",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S16h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Okochi's hand extends slowly; Saori takes one step forward. Nobody else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S16h2-1.png"
+  },
+  {
+   "prompt": "(override) still: Low angle choker close-up of Saori's face from forehead to chin, eyes looking sl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S16i-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Saori looking slightly down at the camera, perfectly still",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S16j-1.png"
+  },
+  {
+   "prompt": "(override) still: Bird's-eye view straight down: Gondo collapsed forward on his hands and knees on",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S16k-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Low angle wide of the stage: the long cream cloth banner above the stage sagging",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S17a-1.png"
+  },
+  {
+   "prompt": "(override) still: Extreme close-up: a uniformed guard's hands lifting a plain blank lanyard ID car",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S17b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Gondo and the guard walk slowly away toward the doors; the guests stay turned away. No one looks back. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/chika-keyframes/S17c-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: broken crystal shards and a dark wine stain on the ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S17d-1.png"
+  },
+  {
+   "prompt": "(override) still: Medium of the empty head table: an overturned chair, a half-full wine glass, the",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S17d2-1.png"
+  },
+  {
+   "prompt": "(override) card: Caption card: 一か月後.",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: She descends the last two steps slowly and stops just inside, looking around. Nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S18a-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He slides the box into place on the shelf and rests a hand on it. No turning to the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S18a2-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Miyamoto with a broad playful smile under the bushy white m",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S18b-1.png"
+  },
+  {
+   "prompt": "(override) still: Extreme close-up: a sealed cardboard archive box on a shelf with a plain blank w",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S18d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Miyamoto, eyes drifting to the distance, a slow sad-sweet s",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S18e-1.png"
+  },
+  {
+   "prompt": "(override) gfx: High angle extreme close-up: a plain blank certificate sheet in a simple dark fr",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S18f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Both bow slowly a few degrees and straighten. Nobody walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/chika-keyframes/S18g-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a small bouquet of white flowers laid on the worn w",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/chika-keyframes/S18g2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Nearly still; the two figures remain standing. Dust drifts in the warm light. The camera does not move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/chika-keyframes/S18h-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  }
+ ]
+}
