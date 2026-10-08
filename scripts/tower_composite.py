@@ -452,7 +452,7 @@ JOBS = {
     "S04b": [("paper", P((569, 392), (739, 392), (732, 605), (572, 605)), lambda w, h: art_notice(w, h))],
     # 현수막
     "S05d": [("ink", P((687, 102), (1144, 69), (1144, 143), (687, 176)), lambda w, h: art_banner(w, h, BANNER_RINJI))],
-    "S06e": [("ink", P((696, 153), (1088, 133), (1088, 194), (696, 200)), lambda w, h: art_banner(w, h, BANNER_RINJI))],
+    # "S06e": 역방향 재편집(2026-10-08 감독님 지적: 객석 방향) — 현수막이 화면 밖(카메라 뒤)이라 합성 없음
     "S12-3a": [("ink", P((687, 219), (1137, 203), (1137, 250), (687, 262)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     "S13a": [("ink", P((848, 163), (1215, 141), (1215, 216), (848, 225)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     "S17i": [("ink", P((706, 132), (1206, 93), (1202, 192), (706, 214)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
@@ -462,12 +462,12 @@ JOBS = {
     "S05b": [("ink", P((688, 85), (1143, 75), (1143, 153), (688, 176)), lambda w, h: art_banner(w, h, BANNER_RINJI))],
     "S06a": [("ink", P((689, 85), (1144, 76), (1144, 153), (689, 176)), lambda w, h: art_banner(w, h, BANNER_RINJI))],
     "S06d": [("ink", P((694, 85), (1150, 76), (1148, 153), (694, 176)), lambda w, h: art_banner(w, h, BANNER_RINJI))],
-    "S14b": [("ink", P((848, 165), (1240, 143), (1240, 209), (849, 228)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
+    # "S14b": 역방향 재편집(2026-10-08 감독님 지적: 객석 방향) — 현수막이 화면 밖(카메라 뒤)이라 합성 없음
     "S14k": [("ink", P((848, 165), (1239, 143), (1238, 206), (848, 226)), lambda w, h: art_banner(w, h, BANNER_TSUJO)),
              ("screen", P((889, 229), (1201, 229), (1201, 382), (889, 382)), lambda w, h: slide_registry(w, h))],   # 가리키는 대상(수정 18)
     "S14j": [("screen", P((838, 100), (1135, 100), (1135, 316), (838, 316)), lambda w, h: slide_registry(w, h))],   # S14i 슬라이드 → S14k 사이 빈 화면 방지
     "S14o": [("ink", P((848, 163), (1238, 142), (1238, 207), (848, 226)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
-    "S17h": [("ink", P((852, 163), (1240, 142), (1240, 207), (851, 225)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
+    # "S17h": 역방향 재편집(2026-10-08 감독님 지적: 객석 방향) — 현수막이 화면 밖(카메라 뒤)이라 합성 없음
     "S14g": [("ink", P((867, 174), (1239, 139), (1239, 206), (867, 222)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     "S07a2": [("ink", P((687, 85), (1142, 75), (1142, 153), (687, 176)), lambda w, h: art_banner(w, h, BANNER_RINJI))],
     "S14d": [("ink", P((860, 36), (1184, 34), (1184, 92), (860, 96)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],

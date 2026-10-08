@@ -123,7 +123,7 @@ FIX_B = {
 # 감독님 지적(2:20·2:24 2026-10-08): 앉은 주민은 단상을 보는데 서 있는 유미·박수 치는 세 엄마는 카메라(단상 반대)를 봄 → 승인 컷 편집
 EDIT_FROM = {"S05d": "assets/portraits/tower-kf-raw/S05d-turn.png", "S05c": "assets/portraits/tower-keyframes/S05c-1.png",
              "S06a": "assets/portraits/tower-kf-raw/S06a-1.png",
-             "S06e": "assets/portraits/tower-kf-raw/S06e-1.png", "S14b": "assets/portraits/tower-kf-raw/S14b-1.png",
+             "S06e": "assets/portraits/tower-kf-raw/S06e-try1.png", "S14b": "assets/portraits/tower-kf-raw/S14b-1.png",
              "S17h": "assets/portraits/tower-kf-raw/S17h-1.png"}   # S05d 2차: 1차(단상 쪽으로 돌아섬, 손을 내림)에서 손만 들게
 FIX_B["S05d"] = ("EDIT the reference image: keep EVERYTHING exactly the same — room, camera, framing, lighting, every seated resident, and the "
                  "standing woman with her back to us facing the stage. ONLY add one gesture: she raises her RIGHT arm straight up high above her "
@@ -145,8 +145,10 @@ REVERSE_BG = ("ONLY replace the background so the geometry is correct: the camer
               "toward the audience, so EVERY other resident in the background is seated and seen from the FRONT, facing the camera, softly out "
               "of focus; nobody shows the back of their head. At the far end is the plain back wall of the hall with a double door. The "
               "floor-to-ceiling windows are on the RIGHT side of the frame. NO projection screen, NO banner, NO lectern anywhere in view.")
-FIX_B["S06e"] = ("EDIT the reference image: keep EXACTLY the standing woman (face, glasses, bob, navy cardigan, grey skirt, lowered head), her "
-                 "position, size and the camera angle. " + REVERSE_BG)
+FIX_B["S06e"] = ("EDIT the reference image: keep EXACTLY the standing woman (face, glasses, bob, navy cardigan, grey skirt, lowered head), "
+                 "her position and size, the back wall with the double door and the windows. ONLY turn the SEATED residents around her: every "
+                 "seated person now faces the CAMERA (we see their faces and fronts, eyes down at their laps, faces soft and unrecognizable), "
+                 "because the stage is behind the camera. Nobody shows the back of their head. Their chairs face the camera too.")
 FIX_B["S14b"] = ("EDIT the reference image: keep EXACTLY the three seated women in the front row (faces, hair, pink sweater, white blouse, "
                  "beige cardigan, skirts, poses, uneasy glances), their positions and the camera angle. " + REVERSE_BG + " The hall is PACKED.")
 FIX_B["S17h"] = ("EDIT the reference image: keep EXACTLY the three seated women in the front row (faces, hair, wardrobe, poses, eyes down), "
