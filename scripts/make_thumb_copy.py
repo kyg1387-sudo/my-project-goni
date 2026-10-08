@@ -53,8 +53,44 @@ def thumb_a(src):
     return im
 
 
+MINCHO = os.path.join(ROOT, "scripts", "fonts", "ZenOldMincho-Bold.ttf")
+
+
+def fix_invoice(im):
+    """B 베이스(thumbB-1) 전표: AI가 그린 도장 속 외계어·제목 낙서를 지우고 실글꼴로 다시 그린다(제2장).
+    도장 중심·반지름·종이 기울기는 1280x720 실측(2026-10-08)."""
+    import cv2
+    import numpy as np
+    a = np.asarray(im).copy()
+    mk = np.zeros(a.shape[:2], np.uint8)
+    cv2.circle(mk, (729, 395), 66, 255, -1)                      # 도장 전체
+    cv2.rectangle(mk, (500, 188), (556, 216), 255, -1)            # 제목 낙서
+    cv2.rectangle(mk, (498, 243), (542, 260), 255, -1)            # 붉은 잔글씨
+    a = cv2.inpaint(a, mk, 7, cv2.INPAINT_TELEA)
+    im = Image.fromarray(a)
+    # 제목 「請求書」(종이 기울기 약 -4도)
+    t = Image.new("RGBA", (160, 40), (0, 0, 0, 0)); ImageDraw.Draw(t).text((0, 2), "請 求 書", font=ImageFont.truetype(MINCHO, 26), fill=(40, 52, 90, 230))
+    t = t.rotate(4, resample=Image.BICUBIC, expand=True); im.paste(t, (500, 180), t)
+    # 붉은 도장: 이중 원 + 「承認」(인주 번짐·얼룩)
+    r = 60; st = Image.new("RGBA", (2 * r + 20, 2 * r + 20), (0, 0, 0, 0)); d = ImageDraw.Draw(st); c = r + 10
+    red = (210, 24, 36, 235)
+    d.ellipse((c - r, c - r, c + r, c + r), outline=red, width=7)
+    d.ellipse((c - r + 12, c - r + 12, c + r - 12, c + r - 12), outline=red, width=3)
+    d.text((c, c - 18), "承", font=ImageFont.truetype(MINCHO, 40), fill=red, anchor="mm")
+    d.text((c, c + 22), "認", font=ImageFont.truetype(MINCHO, 40), fill=red, anchor="mm")
+    arr = np.asarray(st).astype(np.float32)
+    noise = np.random.default_rng(7).uniform(0.6, 1.0, arr.shape[:2])
+    arr[..., 3] *= cv2.GaussianBlur(noise.astype(np.float32), (0, 0), 1.2)
+    st = Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8)).rotate(-8, resample=Image.BICUBIC)
+    im.paste(st, (729 - c, 395 - c), st)
+    return im
+
+
 def thumb_b(src):
-    im = base(src); d = ImageDraw.Draw(im)
+    im = base(src)
+    if os.path.basename(src) == "thumbB-1.png":
+        im = fix_invoice(im)
+    d = ImageDraw.Draw(im)
     t1 = "「この伝票、見覚えありますよね？」"; px = fit_px(d, t1, W * 0.94, 70)
     outlined(d, (W / 2, 26), t1, px, TEAL, INK, 9, "ma")
     t2 = "【3,000万円 業務上横領】"; px2 = fit_px(d, t2, W * 0.78, 80)
