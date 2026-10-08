@@ -558,10 +558,37 @@ EMPH = [  # (기준 줄, 줄 시작 후 초, 길이, 스타일, 문구) — 三�
     ("line023", 1.7, 0.4, "Emph", "一千五百万円"),
     ("line023", 2.1, 2.6, "Emph", "三千万円"),
 ]
+COMPANY = "東都商事"  # 가상 회사명(고니감독님 확정 대기) — 실존 대기업명 회피
+# 화면 속 일본어 표기(고니감독님 지시 2026-10-08 「명판 등은 장면에 맞게」): 키프레임은 무지 자리만 생성 → 로컬 실글꼴·원근 합성(ja_text_overlay.py)
+# 값 = (키프레임에 넣을 무지 자리 문장, 합성할 표기). 클로즈업(cu/ch/ecu)에는 자리를 만들지 않는다(보케 속 가짜 판 방지) — 라벨·명패 ECU 전용 컷만 예외.
 SIGN_BY_LOC = {
-    "BQ_STAGE": ("A long plain blank cream cloth banner hangs above the stage.", "현수막 「祝 権藤常務取締役 就任内定」"),
-    "BQ_LOW": ("A long plain blank cream cloth banner hangs above the stage.", "현수막 「祝 権藤常務取締役 就任内定」"),
-    "BQ_REV": ("", ""),
+    "AUD_WIDE": ("A long plain blank white banner hangs above the big screen at the front of the auditorium.", f"현수막 「{COMPANY}株式会社　新規事業計画 発表会」"),
+    "AUD_STAGE": ("A long plain blank white banner hangs above the big screen; a small blank white plate is fixed to the front of the podium.", f"현수막 「{COMPANY}株式会社　新規事業計画 発表会」 / 단상 명패 「発表者」"),
+    "AUD_LAST": ("", ""),
+    "OFF_WIDE": ("A plain blank white department sign plate hangs on the wall at the end of the aisle; on the end desk stands a small blank wooden desk nameplate.", "부서 표지 「企画部」 / 책상 명패 「企画部長　権藤」"),
+    "OFF_AISLE": ("A plain blank white department sign plate hangs on the wall at the end of the aisle.", "부서 표지 「企画部」"),
+    "OFF_PART": ("A small plain blank white sign plate is fixed on the frosted partition.", "파티션 표지 「企画部」"),
+    "EV_HALL": ("A small blank brushed-steel floor plate is fixed on the wall beside the elevators.", "층 표지 「15F　企画部・総務部」"),
+    "ARC_WIDE": ("A small plain blank steel plate is fixed on the steel door at the end of the aisle; the box labels on the racks are blank white rectangles.", "문 명판 「文書管理室」 / 상자 라벨 「2016年度　支出伝票」 외(앞열만)"),
+    "ARC_REV": ("A small plain blank steel plate is fixed on the steel door.", "문 명판 「文書管理室」"),
+    "ARC_NDOOR": ("A small plain blank steel plate is fixed on the steel door.", "문 명판 「文書管理室」"),
+    "ARC_END": ("The box labels on the racks are blank white rectangles.", "상자 라벨 「権藤関連　証拠書類」(중앙 1개) / 「2016年度　支出伝票」"),
+    "ARC_LADDER": ("The box labels on the top shelf are blank white rectangles.", "상자 라벨 「2016年度　支出伝票」「2017年度　支出伝票」"),
+    "COR_WIDE": ("A small plain blank sign plate is mounted high on the corridor wall; the fire-hose cabinet door is blank red.", "벽 표지 「B2　文書管理室」 / 소화전 「消火栓」"),
+    "COR_BACK": ("A small plain blank steel plate is fixed on the open steel door.", "문 명판 「文書管理室」 / 「関係者以外立入禁止」"),
+    "COR_FLOOR": ("", ""),
+    "BQ_STAGE": ("A long plain blank cream cloth banner hangs above the stage.", "현수막 「祝　権藤常務取締役　就任内定」"),
+    "BQ_LOW": ("A long plain blank cream cloth banner hangs above the stage.", "현수막 「祝　権藤常務取締役　就任内定」"),
+    "BQ_WIDE": ("A long plain blank cream cloth banner hangs above the distant stage.", "현수막 「祝　権藤常務取締役　就任内定」"),
+    "BQ_TABLE": ("A small plain blank white folded place card stands on the tablecloth.", "좌석 명패 「大河内 様」(상석 컷만)"),
+}
+# 인물 소지 표기: 곤도 책상 명패는 OFF_WIDE 자리로 처리. 사원증 회수 컷은 ECU 전용(무지 카드 → 합성)
+SIGN_BY_SHOT = {
+    "S17b": ("The lanyard card is a plain blank white plastic ID card.", f"사원증 「{COMPANY}株式会社　企画部　権藤」"),
+    "S18d": ("The label on the box is a plain blank white rectangle.", "상자 라벨 「権藤関連　証拠書類」"),
+    "S06g2": ("The label on the box side is a plain blank white rectangle.", "상자 라벨 「2016年度　支出伝票」"),
+    "S09e": ("The labels on the top-shelf boxes are blank white rectangles.", "상자 라벨 「2016年度　支出伝票」"),
+    "S18a2": ("The label on the sealed box is a plain blank white rectangle.", "상자 라벨 「権藤関連　証拠書類」"),
 }
 SIGN_SIZES = ("ms", "ws", "ews")
 # 장면 전환: 기본 하드컷, 시간·장소 전환 디졸브 0.5~0.8, 막 종료 딥 투 블랙 1.0, 폭로 순간 화이트 플래시 0.2
@@ -774,6 +801,8 @@ def main():
         sign_txt, signage = [], []
         if s["loc"] in SIGN_BY_LOC and s["lens"] in SIGN_SIZES and SIGN_BY_LOC[s["loc"]][0]:
             sign_txt.append(SIGN_BY_LOC[s["loc"]][0]); signage.append(SIGN_BY_LOC[s["loc"]][1])
+        if sid in SIGN_BY_SHOT:
+            sign_txt.append(SIGN_BY_SHOT[sid][0]); signage.append(SIGN_BY_SHOT[sid][1])
         if keyframe:
             subj = s["subject"]
             if s["kind"] == "gfx":
@@ -934,6 +963,8 @@ def main():
           f"| {k} | {v} | {v / sum(ang.values()) * 100:.0f}% |" for k, v in ang.most_common()] + [
           "", "## 히어로 컷 (B안 상위 모델 3테이크)", ""] + [f"- {x['id']}: {x['subject'][:70]}" for x in sb if x["hero"]] + [
           "", "## 로컬 그래픽·글자 합성 (키프레임은 무지)", ""] + [f"- {k}: {v}" for k, v in GFX.items()] + [
+          "", "## 화면 속 일본어 표기 — 명판·현수막·라벨 (무지 생성 후 로컬 합성, 장면별)", ""] + [
+          f"- {x['id']} ({x['scene']}): " + " / ".join(x["signage"]) for x in sb if x["signage"]] + [
           "", "## 장면 전환 (기본 하드컷)", ""] + [f"- {x['id']} 앞: {x['transition_in'][0]} {x['transition_in'][1]}초" for x in sb if x["transition_in"][1]] + [
           "", "## 샷 표", "", "| 컷 | 타임코드 | 길이 | 방식 | 사이즈 | 앵글 | 조명 | 편집 효과 | 대사 | 내용 |", "|---|---|---|---|---|---|---|---|---|---|"]
     for x in sb:

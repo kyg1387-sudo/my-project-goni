@@ -174,10 +174,12 @@
    "line": "line003",
    "motion": "",
    "keyframe": "assets/portraits/chika-keyframes/S01e-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Medium shot of Saori standing alone among the tables in a grey knit and jeans, a folded navy apron in one hand at her side, calm face, guests blurred around her. Characters: Saori, a Japanese woman aged 34, slim, soft oval face, straight black shoulder-length hair with bangs and the upper half tied back in a small knot, thin silver-rimmed glasses, wearing a plain light-grey crew-neck knit sweater, a plain navy canvas work apron, dark blue jeans, a slim black leather-strap wristwatch on the left wrist. Camera: eye-level, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: the chandelier glow dimmed, a colder blue-white key from the stage screen, high-contrast chiaroscuro, rim light on hair. Only the people described (1 named), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Medium shot of Saori standing alone among the tables in a grey knit and jeans, a folded navy apron in one hand at her side, calm face, guests blurred around her. Characters: Saori, a Japanese woman aged 34, slim, soft oval face, straight black shoulder-length hair with bangs and the upper half tied back in a small knot, thin silver-rimmed glasses, wearing a plain light-grey crew-neck knit sweater, a plain navy canvas work apron, dark blue jeans, a slim black leather-strap wristwatch on the left wrist. Camera: eye-level, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: the chandelier glow dimmed, a colder blue-white key from the stage screen, high-contrast chiaroscuro, rim light on hair. Only the people described (1 named), no extra sharp faces. A long plain blank cream cloth banner hangs above the distant stage. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "현수막 「祝　権藤常務取締役　就任内定」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -241,7 +243,9 @@
    "keyframe_prompt": null,
    "gfx": "",
    "caption": "地下倉庫の伝票",
-   "signage": [],
+   "signage": [
+    "문 명판 「文書管理室」 / 상자 라벨 「2016年度　支出伝票」 외(앞열만)"
+   ],
    "transition_in": [
     "fadeblack",
     1.0
@@ -273,7 +277,9 @@
    "keyframe_prompt": null,
    "gfx": "",
    "caption": "二か月前",
-   "signage": [],
+   "signage": [
+    "문 명판 「文書管理室」 / 상자 라벨 「2016年度　支出伝票」 외(앞열만)"
+   ],
    "transition_in": [
     "fadeblack",
     0.6
@@ -302,10 +308,12 @@
    "line": null,
    "motion": "Static, locked off camera. Motion: Almost still; a faint shimmer of the screen light over the seated heads. Nobody stands or turns. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S02a-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide view from the back of the company auditorium over rows of seated employees (dark shapes from behind) toward the stage: a podium and a very large blank glowing screen. Characters: a few office colleagues seen from behind or as soft out-of-focus shapes, faces unrecognizable. Camera: eye-level, 24mm wide angle, deep focus, imposing perspective, sharp architectural lines. Lighting: dim auditorium, the big screen's cool white-blue glow as key light, warm stage downlight on the podium, deep shadows in the seats. Only the people described (0 named, plus soft unrecognizable background people), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide view from the back of the company auditorium over rows of seated employees (dark shapes from behind) toward the stage: a podium and a very large blank glowing screen. Characters: a few office colleagues seen from behind or as soft out-of-focus shapes, faces unrecognizable. Camera: eye-level, 24mm wide angle, deep focus, imposing perspective, sharp architectural lines. Lighting: dim auditorium, the big screen's cool white-blue glow as key light, warm stage downlight on the podium, deep shadows in the seats. Only the people described (0 named, plus soft unrecognizable background people), no extra sharp faces. A long plain blank white banner hangs above the big screen at the front of the auditorium. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "현수막 「東都商事株式会社　新規事業計画 発表会」"
+   ],
    "transition_in": [
     "fadeblack",
     0.8
@@ -529,10 +537,12 @@
    "line": "line007",
    "motion": "Static, locked off camera. Motion: A colleague far away shifts slightly in a chair; otherwise still. Nobody walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S03a-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide view down the central aisle of the planning department, colleagues at their desks seen as soft shapes, cold fluorescent panels above. Characters: a few office colleagues seen from behind or as soft out-of-focus shapes, faces unrecognizable. Camera: eye-level, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: cold even fluorescent ceiling light 5600K from directly above, faint cool cast, soft shadows under the brow. Only the people described (0 named, plus soft unrecognizable background people), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide view down the central aisle of the planning department, colleagues at their desks seen as soft shapes, cold fluorescent panels above. Characters: a few office colleagues seen from behind or as soft out-of-focus shapes, faces unrecognizable. Camera: eye-level, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: cold even fluorescent ceiling light 5600K from directly above, faint cool cast, soft shadows under the brow. Only the people described (0 named, plus soft unrecognizable background people), no extra sharp faces. A plain blank white department sign plate hangs on the wall at the end of the aisle; on the end desk stands a small blank wooden desk nameplate. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "부서 표지 「企画部」 / 책상 명패 「企画部長　権藤」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -724,10 +734,12 @@
    "line": "line010",
    "motion": "Static, locked off camera. Motion: The colleagues lower their heads slightly and keep typing. Nobody looks up or walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S03e2-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Medium from the side: three colleagues at their desks turning their faces away toward their monitors, seen from behind and in soft focus, no faces. Characters: a few office colleagues seen from behind or as soft out-of-focus shapes, faces unrecognizable. Camera: eye-level from the side or behind, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: cold even fluorescent ceiling light 5600K from directly above, faint cool cast, soft shadows under the brow. Only the people described (0 named, plus soft unrecognizable background people), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Medium from the side: three colleagues at their desks turning their faces away toward their monitors, seen from behind and in soft focus, no faces. Characters: a few office colleagues seen from behind or as soft out-of-focus shapes, faces unrecognizable. Camera: eye-level from the side or behind, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: cold even fluorescent ceiling light 5600K from directly above, faint cool cast, soft shadows under the brow. Only the people described (0 named, plus soft unrecognizable background people), no extra sharp faces. A plain blank white department sign plate hangs on the wall at the end of the aisle. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "부서 표지 「企画部」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -888,10 +900,12 @@
    "line": "line013",
    "motion": "Static, locked off camera. Motion: She sits motionless, then slowly lowers her head a few centimetres. No turning. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S04b-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Side view medium: Saori seen from behind reading something on her monitor, shoulders still, the office empty and dim. Characters: Saori, a Japanese woman aged 34, slim, soft oval face, straight black shoulder-length hair with bangs and the upper half tied back in a small knot, thin silver-rimmed glasses, wearing a plain navy-blue tailored skirt suit over a plain white blouse, a slim black leather-strap wristwatch on the left wrist, bare lapels with no pin. Camera: eye-level from the side or behind, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: cold even fluorescent ceiling light 5600K from directly above, faint cool cast, soft shadows under the brow. Only the people described (1 named), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Side view medium: Saori seen from behind reading something on her monitor, shoulders still, the office empty and dim. Characters: Saori, a Japanese woman aged 34, slim, soft oval face, straight black shoulder-length hair with bangs and the upper half tied back in a small knot, thin silver-rimmed glasses, wearing a plain navy-blue tailored skirt suit over a plain white blouse, a slim black leather-strap wristwatch on the left wrist, bare lapels with no pin. Camera: eye-level from the side or behind, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: cold even fluorescent ceiling light 5600K from directly above, faint cool cast, soft shadows under the brow. Only the people described (1 named), no extra sharp faces. A plain blank white department sign plate hangs on the wall at the end of the aisle. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "부서 표지 「企画部」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -954,10 +968,12 @@
    "line": null,
    "motion": "Static, locked off camera. Motion: Gondo walks two slow steps closer and stops; Saori stays still facing the elevators. No one turns to the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S05a-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide from the side: Saori seen from behind holding a plain cardboard box in front of the steel elevators, Gondo's bulky figure approaching from the far right as a soft shape. Characters: Saori, a Japanese woman aged 34, slim, soft oval face, straight black shoulder-length hair with bangs and the upper half tied back in a small knot, thin silver-rimmed glasses, wearing a plain navy-blue tailored skirt suit over a plain white blouse, a slim black leather-strap wristwatch on the left wrist, bare lapels with no pin | Gondo, a heavyset Japanese man aged 52, fleshy face with a double chin, salt-and-pepper hair slicked straight back, thick gold-rimmed rectangular glasses, bare lapels with no pin, wearing a glossy navy double-breasted suit, white shirt, plain wine-red silk tie, a chunky plain gold wristwatch on the right wrist, bare lapels with no pin. Camera: eye-level from the side or behind, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: cool fluorescent light, hard cold reflections on brushed steel, cold oppressive mood. Only the people described (2 named), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide from the side: Saori seen from behind holding a plain cardboard box in front of the steel elevators, Gondo's bulky figure approaching from the far right as a soft shape. Characters: Saori, a Japanese woman aged 34, slim, soft oval face, straight black shoulder-length hair with bangs and the upper half tied back in a small knot, thin silver-rimmed glasses, wearing a plain navy-blue tailored skirt suit over a plain white blouse, a slim black leather-strap wristwatch on the left wrist, bare lapels with no pin | Gondo, a heavyset Japanese man aged 52, fleshy face with a double chin, salt-and-pepper hair slicked straight back, thick gold-rimmed rectangular glasses, bare lapels with no pin, wearing a glossy navy double-breasted suit, white shirt, plain wine-red silk tie, a chunky plain gold wristwatch on the right wrist, bare lapels with no pin. Camera: eye-level from the side or behind, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: cool fluorescent light, hard cold reflections on brushed steel, cold oppressive mood. Only the people described (2 named), no extra sharp faces. A small blank brushed-steel floor plate is fixed on the wall beside the elevators. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "층 표지 「15F　企画部・総務部」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -1085,10 +1101,12 @@
    "line": null,
    "motion": "Static, locked off camera. Motion: The tube flickers twice then stays on; dust drifts. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S06a-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide from the steel door down the central aisle of the basement archive: racks converging to a vanishing point, one fluorescent tube flickering on with a stutter, dust in the air.  Camera: eye-level, 24mm wide angle, deep focus, imposing perspective, sharp architectural lines. Lighting: cold flickering fluorescent tubes overhead casting hard top light, dust in the air, deep shadows between the racks. Completely unpopulated: no people, no hands.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide from the steel door down the central aisle of the basement archive: racks converging to a vanishing point, one fluorescent tube flickering on with a stutter, dust in the air.  Camera: eye-level, 24mm wide angle, deep focus, imposing perspective, sharp architectural lines. Lighting: cold flickering fluorescent tubes overhead casting hard top light, dust in the air, deep shadows between the racks. Completely unpopulated: no people, no hands. A small plain blank steel plate is fixed on the steel door at the end of the aisle; the box labels on the racks are blank white rectangles. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "문 명판 「文書管理室」 / 상자 라벨 「2016年度　支出伝票」 외(앞열만)"
+   ],
    "transition_in": [
     "fade",
     0.6
@@ -1314,10 +1332,12 @@
    "line": null,
    "motion": "",
    "keyframe": "assets/portraits/chika-keyframes/S06g2-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. High angle extreme close-up: a woman's hands lifting the dusty lid of a yellowed cardboard archive box on a shelf, a blank white label on its side, dust rising in the cold light. Characters: Saori, a Japanese woman aged 34, slim, soft oval face, straight black shoulder-length hair with bangs and the upper half tied back in a small knot, thin silver-rimmed glasses, wearing a plain light-grey crew-neck knit sweater, a plain navy canvas work apron, dark blue jeans, a slim black leather-strap wristwatch on the left wrist. Camera: high-angle looking down, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the subject fills more than 70 percent of the frame. Lighting: cold flickering fluorescent tubes overhead casting hard top light, dust in the air, deep shadows between the racks. Only the people described (1 named), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. High angle extreme close-up: a woman's hands lifting the dusty lid of a yellowed cardboard archive box on a shelf, a blank white label on its side, dust rising in the cold light. Characters: Saori, a Japanese woman aged 34, slim, soft oval face, straight black shoulder-length hair with bangs and the upper half tied back in a small knot, thin silver-rimmed glasses, wearing a plain light-grey crew-neck knit sweater, a plain navy canvas work apron, dark blue jeans, a slim black leather-strap wristwatch on the left wrist. Camera: high-angle looking down, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the subject fills more than 70 percent of the frame. Lighting: cold flickering fluorescent tubes overhead casting hard top light, dust in the air, deep shadows between the racks. Only the people described (1 named), no extra sharp faces. The label on the box side is a plain blank white rectangle. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "상자 라벨 「2016年度　支出伝票」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -1444,10 +1464,12 @@
    "line": null,
    "motion": "",
    "keyframe": "assets/portraits/chika-keyframes/S07b-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide: the steel step-ladder against the rack, the top shelf half emptied of boxes, dust in the fluorescent light.  Camera: eye-level, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: cold flickering fluorescent tubes overhead casting hard top light, dust in the air, deep shadows between the racks. Completely unpopulated: no people, no hands.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide: the steel step-ladder against the rack, the top shelf half emptied of boxes, dust in the fluorescent light.  Camera: eye-level, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: cold flickering fluorescent tubes overhead casting hard top light, dust in the air, deep shadows between the racks. Completely unpopulated: no people, no hands. The box labels on the top shelf are blank white rectangles. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "상자 라벨 「2016年度　支出伝票」「2017年度　支出伝票」"
+   ],
    "transition_in": [
     "fade",
     0.5
@@ -1999,10 +2021,13 @@
    "line": null,
    "motion": "Static, locked off camera. Motion: He pulls the box a few centimetres toward himself on the shelf. No climbing down. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S09e-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Low angle wide: Miyamoto on the steel step-ladder reaching for an old box on the top shelf, seen from below and behind, the fluorescent tube glaring above. Characters: Miyamoto, a thin kindly Japanese man aged 64, short white hair, a full bushy white moustache, half-moon reading glasses hanging on a black cord around his neck (not on the face), wearing a plain beige wool cardigan over a plain grey shirt, grey cotton arm-sleeve protectors, plain dark grey trousers. Camera: low-angle looking up, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: cold flickering fluorescent tubes overhead casting hard top light, dust in the air, deep shadows between the racks. Only the people described (1 named), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Low angle wide: Miyamoto on the steel step-ladder reaching for an old box on the top shelf, seen from below and behind, the fluorescent tube glaring above. Characters: Miyamoto, a thin kindly Japanese man aged 64, short white hair, a full bushy white moustache, half-moon reading glasses hanging on a black cord around his neck (not on the face), wearing a plain beige wool cardigan over a plain grey shirt, grey cotton arm-sleeve protectors, plain dark grey trousers. Camera: low-angle looking up, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: cold flickering fluorescent tubes overhead casting hard top light, dust in the air, deep shadows between the racks. Only the people described (1 named), no extra sharp faces. The box labels on the top shelf are blank white rectangles. The labels on the top-shelf boxes are blank white rectangles. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "상자 라벨 「2016年度　支出伝票」「2017年度　支出伝票」",
+    "상자 라벨 「2016年度　支出伝票」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -2193,10 +2218,12 @@
    "line": null,
    "motion": "",
    "keyframe": "assets/portraits/chika-keyframes/S09k-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide of the dark archive at night: the steel door at the end of the aisle, a thin line of cold light under it, the desk lamp a small warm glow at the edge.  Camera: eye-level, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: night, the cool blue glow of a laptop screen on the face and glasses, a warm desk lamp pool beside it, everything else black. Completely unpopulated: no people, no hands.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide of the dark archive at night: the steel door at the end of the aisle, a thin line of cold light under it, the desk lamp a small warm glow at the edge.  Camera: eye-level, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: night, the cool blue glow of a laptop screen on the face and glasses, a warm desk lamp pool beside it, everything else black. Completely unpopulated: no people, no hands. A small plain blank steel plate is fixed on the steel door. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "문 명판 「文書管理室」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -2454,7 +2481,9 @@
    "keyframe_prompt": null,
    "gfx": "",
    "caption": "廃棄まで、あと十四日",
-   "signage": [],
+   "signage": [
+    "문 명판 「文書管理室」"
+   ],
    "transition_in": [
     "fade",
     0.5
@@ -2483,10 +2512,12 @@
    "line": "line028",
    "motion": "",
    "keyframe": "assets/portraits/chika-keyframes/S10h-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide of the dark archive at night: the steel door at the end of the aisle, a thin line of cold light under it, everything else black.  Camera: eye-level, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: night, the cool blue glow of a laptop screen on the face and glasses, a warm desk lamp pool beside it, everything else black. Completely unpopulated: no people, no hands.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide of the dark archive at night: the steel door at the end of the aisle, a thin line of cold light under it, everything else black.  Camera: eye-level, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: night, the cool blue glow of a laptop screen on the face and glasses, a warm desk lamp pool beside it, everything else black. Completely unpopulated: no people, no hands. A small plain blank steel plate is fixed on the steel door. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "문 명판 「文書管理室」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -2518,7 +2549,9 @@
    "keyframe_prompt": null,
    "gfx": "",
    "caption": "廃棄まで、あと三日",
-   "signage": [],
+   "signage": [
+    "벽 표지 「B2　文書管理室」 / 소화전 「消火栓」"
+   ],
    "transition_in": [
     "fade",
     0.6
@@ -2547,10 +2580,12 @@
    "line": null,
    "motion": "Static, locked off camera. Motion: Completely still corridor; the far tube flickers once. No people appear. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S11b-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide: the empty concrete basement corridor at night receding to the steel door, one cold tube lit, pipes along the ceiling, nobody in sight.  Camera: eye-level, 24mm wide angle, deep focus, imposing perspective, sharp architectural lines. Lighting: night corridor, one cold fluorescent tube far down, deep shadows, cold cyan cast. Completely unpopulated: no people, no hands.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide: the empty concrete basement corridor at night receding to the steel door, one cold tube lit, pipes along the ceiling, nobody in sight.  Camera: eye-level, 24mm wide angle, deep focus, imposing perspective, sharp architectural lines. Lighting: night corridor, one cold fluorescent tube far down, deep shadows, cold cyan cast. Completely unpopulated: no people, no hands. A small plain blank sign plate is mounted high on the corridor wall; the fire-hose cabinet door is blank red. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "벽 표지 「B2　文書管理室」 / 소화전 「消火栓」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -2644,10 +2679,12 @@
    "line": null,
    "motion": "Static, locked off camera. Motion: The silhouette stands still, then takes one slow heavy step inside. No face visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S11d-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Low angle from the archive floor: the steel door swung open, Gondo's bulky figure standing in the doorway as a pure black silhouette against blinding cold light, no facial detail. Characters: Gondo, a heavyset Japanese man aged 52, fleshy face with a double chin, salt-and-pepper hair slicked straight back, thick gold-rimmed rectangular glasses, bare lapels with no pin, wearing a glossy navy double-breasted suit, white shirt, plain wine-red silk tie, a chunky plain gold wristwatch on the right wrist, bare lapels with no pin. Camera: low-angle looking up, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: night, a single cold fluorescent tube far away, blinding cold light pouring through the open steel door behind the figure, strong backlight silhouette, darker interior. Only the people described (1 named), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Low angle from the archive floor: the steel door swung open, Gondo's bulky figure standing in the doorway as a pure black silhouette against blinding cold light, no facial detail. Characters: Gondo, a heavyset Japanese man aged 52, fleshy face with a double chin, salt-and-pepper hair slicked straight back, thick gold-rimmed rectangular glasses, bare lapels with no pin, wearing a glossy navy double-breasted suit, white shirt, plain wine-red silk tie, a chunky plain gold wristwatch on the right wrist, bare lapels with no pin. Camera: low-angle looking up, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: night, a single cold fluorescent tube far away, blinding cold light pouring through the open steel door behind the figure, strong backlight silhouette, darker interior. Only the people described (1 named), no extra sharp faces. A small plain blank steel plate is fixed on the steel door. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "문 명판 「文書管理室」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -2677,10 +2714,12 @@
    "line": "line029",
    "motion": "Static, locked off camera. Motion: The silhouette tilts its head slightly; the glasses glint. No walking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S11d2-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Low angle medium of the backlit silhouette of Gondo in the doorway, the outline of gold glasses glinting once, face in total shadow. Characters: Gondo, a heavyset Japanese man aged 52, fleshy face with a double chin, salt-and-pepper hair slicked straight back, thick gold-rimmed rectangular glasses, bare lapels with no pin, wearing a glossy navy double-breasted suit, white shirt, plain wine-red silk tie, a chunky plain gold wristwatch on the right wrist, bare lapels with no pin. Camera: low-angle looking up, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: night, a single cold fluorescent tube far away, blinding cold light pouring through the open steel door behind the figure, strong backlight silhouette, darker interior. Only the people described (1 named), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Low angle medium of the backlit silhouette of Gondo in the doorway, the outline of gold glasses glinting once, face in total shadow. Characters: Gondo, a heavyset Japanese man aged 52, fleshy face with a double chin, salt-and-pepper hair slicked straight back, thick gold-rimmed rectangular glasses, bare lapels with no pin, wearing a glossy navy double-breasted suit, white shirt, plain wine-red silk tie, a chunky plain gold wristwatch on the right wrist, bare lapels with no pin. Camera: low-angle looking up, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: night, a single cold fluorescent tube far away, blinding cold light pouring through the open steel door behind the figure, strong backlight silhouette, darker interior. Only the people described (1 named), no extra sharp faces. A small plain blank steel plate is fixed on the steel door. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "문 명판 「文書管理室」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -2776,10 +2815,12 @@
    "line": "line031",
    "motion": "Static, locked off camera. Motion: The silhouette turns its shoulders slightly toward the door and stops. No face detail. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S11f-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Low angle medium: the silhouette of Gondo in the doorway half turned to leave, one hand on the door edge, face in shadow. Characters: Gondo, a heavyset Japanese man aged 52, fleshy face with a double chin, salt-and-pepper hair slicked straight back, thick gold-rimmed rectangular glasses, bare lapels with no pin, wearing a glossy navy double-breasted suit, white shirt, plain wine-red silk tie, a chunky plain gold wristwatch on the right wrist, bare lapels with no pin. Camera: low-angle looking up, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: night, a single cold fluorescent tube far away, blinding cold light pouring through the open steel door behind the figure, strong backlight silhouette, darker interior. Only the people described (1 named), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Low angle medium: the silhouette of Gondo in the doorway half turned to leave, one hand on the door edge, face in shadow. Characters: Gondo, a heavyset Japanese man aged 52, fleshy face with a double chin, salt-and-pepper hair slicked straight back, thick gold-rimmed rectangular glasses, bare lapels with no pin, wearing a glossy navy double-breasted suit, white shirt, plain wine-red silk tie, a chunky plain gold wristwatch on the right wrist, bare lapels with no pin. Camera: low-angle looking up, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: night, a single cold fluorescent tube far away, blinding cold light pouring through the open steel door behind the figure, strong backlight silhouette, darker interior. Only the people described (1 named), no extra sharp faces. A small plain blank steel plate is fixed on the steel door. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "문 명판 「文書管理室」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -2908,10 +2949,12 @@
    "line": null,
    "motion": "Static, locked off camera. Motion: Glasses rise together; Gondo rocks slightly on his heels. Nobody walks toward the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S12a2-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Low angle wide: Gondo's bulky figure raising a glass high in the centre of the office, colleagues around him as soft shapes with raised glasses, faces blurred. Characters: Gondo, a heavyset Japanese man aged 52, fleshy face with a double chin, salt-and-pepper hair slicked straight back, thick gold-rimmed rectangular glasses, bare lapels with no pin, wearing a glossy navy double-breasted suit, white shirt, plain wine-red silk tie, a chunky plain gold wristwatch on the right wrist, bare lapels with no pin | a few office colleagues seen from behind or as soft out-of-focus shapes, faces unrecognizable. Camera: low-angle looking up, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: cold even fluorescent ceiling light 5600K from directly above, faint cool cast, soft shadows under the brow. Only the people described (1 named, plus soft unrecognizable background people), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Low angle wide: Gondo's bulky figure raising a glass high in the centre of the office, colleagues around him as soft shapes with raised glasses, faces blurred. Characters: Gondo, a heavyset Japanese man aged 52, fleshy face with a double chin, salt-and-pepper hair slicked straight back, thick gold-rimmed rectangular glasses, bare lapels with no pin, wearing a glossy navy double-breasted suit, white shirt, plain wine-red silk tie, a chunky plain gold wristwatch on the right wrist, bare lapels with no pin | a few office colleagues seen from behind or as soft out-of-focus shapes, faces unrecognizable. Camera: low-angle looking up, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: cold even fluorescent ceiling light 5600K from directly above, faint cool cast, soft shadows under the brow. Only the people described (1 named, plus soft unrecognizable background people), no extra sharp faces. A plain blank white department sign plate hangs on the wall at the end of the aisle; on the end desk stands a small blank wooden desk nameplate. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "부서 표지 「企画部」 / 책상 명패 「企画部長　権藤」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -3007,10 +3050,12 @@
    "line": "line035",
    "motion": "Static, locked off camera. Motion: Gondo's shoulders shake with a laugh; the glass waves once. He does not turn around. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S12d-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Medium over a colleague's shoulder: Gondo's bulky back and salt-and-pepper hair as he talks, one arm waving a glass, the colleague's head in soft focus in the foreground. Characters: Gondo, a heavyset Japanese man aged 52, fleshy face with a double chin, salt-and-pepper hair slicked straight back, thick gold-rimmed rectangular glasses, bare lapels with no pin, wearing a glossy navy double-breasted suit, white shirt, plain wine-red silk tie, a chunky plain gold wristwatch on the right wrist, bare lapels with no pin | a few office colleagues seen from behind or as soft out-of-focus shapes, faces unrecognizable. Camera: eye-level from the side or behind, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: cold even fluorescent ceiling light 5600K from directly above, faint cool cast, soft shadows under the brow. Only the people described (1 named, plus soft unrecognizable background people), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Medium over a colleague's shoulder: Gondo's bulky back and salt-and-pepper hair as he talks, one arm waving a glass, the colleague's head in soft focus in the foreground. Characters: Gondo, a heavyset Japanese man aged 52, fleshy face with a double chin, salt-and-pepper hair slicked straight back, thick gold-rimmed rectangular glasses, bare lapels with no pin, wearing a glossy navy double-breasted suit, white shirt, plain wine-red silk tie, a chunky plain gold wristwatch on the right wrist, bare lapels with no pin | a few office colleagues seen from behind or as soft out-of-focus shapes, faces unrecognizable. Camera: eye-level from the side or behind, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: cold even fluorescent ceiling light 5600K from directly above, faint cool cast, soft shadows under the brow. Only the people described (1 named, plus soft unrecognizable background people), no extra sharp faces. A plain blank white department sign plate hangs on the wall at the end of the aisle. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "부서 표지 「企画部」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -3043,7 +3088,7 @@
    "gfx": "",
    "caption": "",
    "signage": [
-    "현수막 「祝 権藤常務取締役 就任内定」"
+    "현수막 「祝　権藤常務取締役　就任内定」"
    ],
    "transition_in": [
     "fade",
@@ -3077,7 +3122,7 @@
    "gfx": "현수막 「祝 権藤常務取締役 就任内定」 합성",
    "caption": "",
    "signage": [
-    "현수막 「祝 権藤常務取締役 就任内定」"
+    "현수막 「祝　権藤常務取締役　就任内定」"
    ],
    "transition_in": [
     "",
@@ -3208,10 +3253,12 @@
    "line": "line037",
    "motion": "Static, locked off camera. Motion: Gondo tips the glass slightly; Saori's shoulder stays still. Nobody walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S13c-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Medium over Saori's shoulder from behind: Gondo's bulky figure a few steps away holding a wine glass, his face soft, guests blurred. Characters: Gondo, a heavyset Japanese man aged 52, fleshy face with a double chin, salt-and-pepper hair slicked straight back, thick gold-rimmed rectangular glasses, bare lapels with no pin, wearing a glossy navy double-breasted suit, white shirt, plain wine-red silk tie, a chunky plain gold wristwatch on the right wrist, bare lapels with no pin | Saori, a Japanese woman aged 34, slim, soft oval face, straight black shoulder-length hair with bangs and the upper half tied back in a small knot, thin silver-rimmed glasses, wearing a plain light-grey crew-neck knit sweater, a plain navy canvas work apron, dark blue jeans, a slim black leather-strap wristwatch on the left wrist. Camera: eye-level from the side or behind, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: warm chandelier light but a hard key from above on the face, dark eye sockets, tense chiaroscuro, specular glass highlights. Only the people described (2 named), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Medium over Saori's shoulder from behind: Gondo's bulky figure a few steps away holding a wine glass, his face soft, guests blurred. Characters: Gondo, a heavyset Japanese man aged 52, fleshy face with a double chin, salt-and-pepper hair slicked straight back, thick gold-rimmed rectangular glasses, bare lapels with no pin, wearing a glossy navy double-breasted suit, white shirt, plain wine-red silk tie, a chunky plain gold wristwatch on the right wrist, bare lapels with no pin | Saori, a Japanese woman aged 34, slim, soft oval face, straight black shoulder-length hair with bangs and the upper half tied back in a small knot, thin silver-rimmed glasses, wearing a plain light-grey crew-neck knit sweater, a plain navy canvas work apron, dark blue jeans, a slim black leather-strap wristwatch on the left wrist. Camera: eye-level from the side or behind, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: warm chandelier light but a hard key from above on the face, dark eye sockets, tense chiaroscuro, specular glass highlights. Only the people described (2 named), no extra sharp faces. A long plain blank cream cloth banner hangs above the distant stage. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "현수막 「祝　権藤常務取締役　就任内定」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -3375,7 +3422,7 @@
    "gfx": "",
    "caption": "",
    "signage": [
-    "현수막 「祝 権藤常務取締役 就任内定」"
+    "현수막 「祝　権藤常務取締役　就任内定」"
    ],
    "transition_in": [
     "",
@@ -3471,10 +3518,12 @@
    "line": null,
    "motion": "Static, locked off camera. Motion: The staff take slow steps apart between the tables; the guests stay still. No one looks at the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S14c2-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide from the side: the five audit staff in dark suits fanning out between the round tables, guests frozen in their seats, all faces soft, chandeliers warm above. Characters: five internal-audit staff in plain dark suits seen as backlit silhouettes or from behind, faces unrecognizable | banquet guests in dark suits and dresses seen as soft out-of-focus shapes or from behind, faces unrecognizable. Camera: eye-level from the side or behind, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: the chandelier glow dimmed, a colder blue-white key from the stage screen, high-contrast chiaroscuro, rim light on hair. Only the people described (0 named, plus soft unrecognizable background people), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide from the side: the five audit staff in dark suits fanning out between the round tables, guests frozen in their seats, all faces soft, chandeliers warm above. Characters: five internal-audit staff in plain dark suits seen as backlit silhouettes or from behind, faces unrecognizable | banquet guests in dark suits and dresses seen as soft out-of-focus shapes or from behind, faces unrecognizable. Camera: eye-level from the side or behind, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: the chandelier glow dimmed, a colder blue-white key from the stage screen, high-contrast chiaroscuro, rim light on hair. Only the people described (0 named, plus soft unrecognizable background people), no extra sharp faces. A long plain blank cream cloth banner hangs above the distant stage. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "현수막 「祝　権藤常務取締役　就任内定」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -3508,7 +3557,7 @@
    "gfx": "",
    "caption": "",
    "signage": [
-    "현수막 「祝 権藤常務取締役 就任内定」"
+    "현수막 「祝　権藤常務取締役　就任内定」"
    ],
    "transition_in": [
     "",
@@ -3608,7 +3657,7 @@
    "gfx": "프로젝터 스크린: 사라이즈 전표 + 자금 흐름도(25万円×120＝3,000万円 → 妻の実家) + 빔 광선",
    "caption": "",
    "signage": [
-    "현수막 「祝 権藤常務取締役 就任内定」"
+    "현수막 「祝　権藤常務取締役　就任内定」"
    ],
    "transition_in": [
     "fadewhite",
@@ -3643,7 +3692,7 @@
    "gfx": "",
    "caption": "",
    "signage": [
-    "현수막 「祝 権藤常務取締役 就任内定」"
+    "현수막 「祝　権藤常務取締役　就任内定」"
    ],
    "transition_in": [
     "",
@@ -3773,10 +3822,12 @@
    "line": null,
    "motion": "Static, locked off camera. Motion: Miyamoto gives one slow nod; the staff stay still. Nobody walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S14l-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Medium from the side: Miyamoto standing among the dark-suited audit staff with the grey steel case held against his chest, his face half turned, guests blurred. Characters: Miyamoto, a thin kindly Japanese man aged 64, short white hair, a full bushy white moustache, half-moon reading glasses hanging on a black cord around his neck (not on the face), wearing a plain beige wool cardigan over a plain grey shirt, grey cotton arm-sleeve protectors, plain dark grey trousers | five internal-audit staff in plain dark suits seen as backlit silhouettes or from behind, faces unrecognizable. Camera: eye-level from the side or behind, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: the chandelier glow dimmed, a colder blue-white key from the stage screen, high-contrast chiaroscuro, rim light on hair. Only the people described (1 named, plus soft unrecognizable background people), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Medium from the side: Miyamoto standing among the dark-suited audit staff with the grey steel case held against his chest, his face half turned, guests blurred. Characters: Miyamoto, a thin kindly Japanese man aged 64, short white hair, a full bushy white moustache, half-moon reading glasses hanging on a black cord around his neck (not on the face), wearing a plain beige wool cardigan over a plain grey shirt, grey cotton arm-sleeve protectors, plain dark grey trousers | five internal-audit staff in plain dark suits seen as backlit silhouettes or from behind, faces unrecognizable. Camera: eye-level from the side or behind, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: the chandelier glow dimmed, a colder blue-white key from the stage screen, high-contrast chiaroscuro, rim light on hair. Only the people described (1 named, plus soft unrecognizable background people), no extra sharp faces. A long plain blank cream cloth banner hangs above the distant stage. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "현수막 「祝　権藤常務取締役　就任内定」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -3905,10 +3956,12 @@
    "line": "line046",
    "motion": "",
    "keyframe": "assets/portraits/chika-keyframes/S15c-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Medium shot of Kiritani turning his head slightly toward Saori with a faint narrowing of the eyes, rimless glasses, hands clasped behind his back, guests blurred. Characters: Kiritani, a lean Japanese man in his early 50s, hollow cheeks, short neatly parted black hair with grey temples, frameless rimless glasses, cold level gaze, wearing a plain black business suit, white shirt, plain silver-grey tie, bare lapels with no pin. Camera: eye-level, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: the chandelier glow dimmed, a colder blue-white key from the stage screen, high-contrast chiaroscuro, rim light on hair. Only the people described (1 named), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Medium shot of Kiritani turning his head slightly toward Saori with a faint narrowing of the eyes, rimless glasses, hands clasped behind his back, guests blurred. Characters: Kiritani, a lean Japanese man in his early 50s, hollow cheeks, short neatly parted black hair with grey temples, frameless rimless glasses, cold level gaze, wearing a plain black business suit, white shirt, plain silver-grey tie, bare lapels with no pin. Camera: eye-level, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: the chandelier glow dimmed, a colder blue-white key from the stage screen, high-contrast chiaroscuro, rim light on hair. Only the people described (1 named), no extra sharp faces. A long plain blank cream cloth banner hangs above the distant stage. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "현수막 「祝　権藤常務取締役　就任内定」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -4271,7 +4324,7 @@
    "gfx": "",
    "caption": "",
    "signage": [
-    "현수막 「祝 権藤常務取締役 就任内定」"
+    "현수막 「祝　権藤常務取締役　就任内定」"
    ],
    "transition_in": [
     "",
@@ -4339,7 +4392,7 @@
    "gfx": "",
    "caption": "",
    "signage": [
-    "현수막 「祝 権藤常務取締役 就任内定」"
+    "현수막 「祝　権藤常務取締役　就任内定」"
    ],
    "transition_in": [
     "",
@@ -4473,7 +4526,7 @@
    "gfx": "",
    "caption": "",
    "signage": [
-    "현수막 「祝 権藤常務取締役 就任内定」"
+    "현수막 「祝　権藤常務取締役　就任内定」"
    ],
    "transition_in": [
     "",
@@ -4706,7 +4759,7 @@
    "gfx": "현수막 글자 합성 + 한쪽이 떨어지는 애니메이션",
    "caption": "",
    "signage": [
-    "현수막 「祝 権藤常務取締役 就任内定」"
+    "현수막 「祝　権藤常務取締役　就任内定」"
    ],
    "transition_in": [
     "",
@@ -4737,10 +4790,12 @@
    "line": null,
    "motion": "",
    "keyframe": "assets/portraits/chika-keyframes/S17b-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Extreme close-up: a uniformed guard's hands lifting a plain blank lanyard ID card from around a thick neck in a navy suit collar; no faces. Characters: a uniformed security guard seen only from behind or by his hands, face unrecognizable | Gondo, a heavyset Japanese man aged 52, fleshy face with a double chin, salt-and-pepper hair slicked straight back, thick gold-rimmed rectangular glasses, bare lapels with no pin, wearing a glossy navy double-breasted suit, white shirt, plain wine-red silk tie, a chunky plain gold wristwatch on the right wrist, bare lapels with no pin. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the subject fills more than 70 percent of the frame. Lighting: the chandelier glow dimmed, a colder blue-white key from the stage screen, high-contrast chiaroscuro, rim light on hair. Only the people described (1 named, plus soft unrecognizable background people), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Extreme close-up: a uniformed guard's hands lifting a plain blank lanyard ID card from around a thick neck in a navy suit collar; no faces. Characters: a uniformed security guard seen only from behind or by his hands, face unrecognizable | Gondo, a heavyset Japanese man aged 52, fleshy face with a double chin, salt-and-pepper hair slicked straight back, thick gold-rimmed rectangular glasses, bare lapels with no pin, wearing a glossy navy double-breasted suit, white shirt, plain wine-red silk tie, a chunky plain gold wristwatch on the right wrist, bare lapels with no pin. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the subject fills more than 70 percent of the frame. Lighting: the chandelier glow dimmed, a colder blue-white key from the stage screen, high-contrast chiaroscuro, rim light on hair. Only the people described (1 named, plus soft unrecognizable background people), no extra sharp faces. The lanyard card is a plain blank white plastic ID card. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "사원증 「東都商事株式会社　企画部　権藤」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -4834,10 +4889,12 @@
    "line": null,
    "motion": "",
    "keyframe": "assets/portraits/chika-keyframes/S17d2-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Medium of the empty head table: an overturned chair, a half-full wine glass, the blank banner sagging above, chandeliers dimmed, no people.  Camera: eye-level, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: the chandelier glow dimmed, a colder blue-white key from the stage screen, high-contrast chiaroscuro, rim light on hair. Completely unpopulated: no people, no hands.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Medium of the empty head table: an overturned chair, a half-full wine glass, the blank banner sagging above, chandeliers dimmed, no people.  Camera: eye-level, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: the chandelier glow dimmed, a colder blue-white key from the stage screen, high-contrast chiaroscuro, rim light on hair. Completely unpopulated: no people, no hands. A small plain blank white folded place card stands on the tablecloth. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "좌석 명패 「大河内 様」(상석 컷만)"
+   ],
    "transition_in": [
     "",
     0.0
@@ -4869,7 +4926,9 @@
    "keyframe_prompt": null,
    "gfx": "",
    "caption": "一か月後",
-   "signage": [],
+   "signage": [
+    "상자 라벨 「権藤関連　証拠書類」(중앙 1개) / 「2016年度　支出伝票」"
+   ],
    "transition_in": [
     "fadeblack",
     1.0
@@ -4899,10 +4958,12 @@
    "line": null,
    "motion": "Static, locked off camera. Motion: She descends the last two steps slowly and stops just inside, looking around. Nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S18a-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide of the archive in warm orange light: Saori in a charcoal pantsuit coming down the last steps inside the doorway holding a small bouquet of white flowers, the racks glowing warm. Characters: Saori, a Japanese woman aged 34, slim, soft oval face, straight black shoulder-length hair with bangs tied back in a low bun, thin silver-rimmed glasses, wearing a plain charcoal-grey tailored pantsuit over a plain ivory silk blouse, a slim black leather-strap wristwatch on the left wrist. Camera: eye-level, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: warm soft orange practical light strung along the racks, low contrast, gentle glow, dust in the air. Only the people described (1 named), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide of the archive in warm orange light: Saori in a charcoal pantsuit coming down the last steps inside the doorway holding a small bouquet of white flowers, the racks glowing warm. Characters: Saori, a Japanese woman aged 34, slim, soft oval face, straight black shoulder-length hair with bangs tied back in a low bun, thin silver-rimmed glasses, wearing a plain charcoal-grey tailored pantsuit over a plain ivory silk blouse, a slim black leather-strap wristwatch on the left wrist. Camera: eye-level, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: warm soft orange practical light strung along the racks, low contrast, gentle glow, dust in the air. Only the people described (1 named), no extra sharp faces. The box labels on the racks are blank white rectangles. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "상자 라벨 「権藤関連　証拠書類」(중앙 1개) / 「2016年度　支出伝票」"
+   ],
    "transition_in": [
     "fade",
     0.8
@@ -4932,10 +4993,12 @@
    "line": null,
    "motion": "Static, locked off camera. Motion: He slides the box into place on the shelf and rests a hand on it. No turning to the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S18a2-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Medium from the side: Miyamoto placing a sealed cardboard archive box onto a shelf, seen in profile in warm light, half-moon glasses on the cord. Characters: Miyamoto, a thin kindly Japanese man aged 64, short white hair, a full bushy white moustache, half-moon reading glasses hanging on a black cord around his neck (not on the face), wearing a plain beige wool cardigan over a plain grey shirt, grey cotton arm-sleeve protectors, plain dark grey trousers. Camera: eye-level from the side or behind, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: warm soft orange practical light strung along the racks, low contrast, gentle glow, dust in the air. Only the people described (1 named), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Medium from the side: Miyamoto placing a sealed cardboard archive box onto a shelf, seen in profile in warm light, half-moon glasses on the cord. Characters: Miyamoto, a thin kindly Japanese man aged 64, short white hair, a full bushy white moustache, half-moon reading glasses hanging on a black cord around his neck (not on the face), wearing a plain beige wool cardigan over a plain grey shirt, grey cotton arm-sleeve protectors, plain dark grey trousers. Camera: eye-level from the side or behind, 50mm lens, f/2.8, natural perspective, rule of thirds. Lighting: warm soft orange practical light strung along the racks, low contrast, gentle glow, dust in the air. Only the people described (1 named), no extra sharp faces. The label on the sealed box is a plain blank white rectangle. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "상자 라벨 「権藤関連　証拠書類」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -4997,10 +5060,12 @@
    "line": "line062",
    "motion": "",
    "keyframe": "assets/portraits/chika-keyframes/S18d-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Extreme close-up: a sealed cardboard archive box on a shelf with a plain blank white label, brown tape, warm orange light.  Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the subject fills more than 70 percent of the frame. Lighting: warm soft orange practical light strung along the racks, low contrast, gentle glow, dust in the air. Only the people described (0 named), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Extreme close-up: a sealed cardboard archive box on a shelf with a plain blank white label, brown tape, warm orange light.  Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the subject fills more than 70 percent of the frame. Lighting: warm soft orange practical light strung along the racks, low contrast, gentle glow, dust in the air. Only the people described (0 named), no extra sharp faces. The label on the box is a plain blank white rectangle. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "상자 라벨 「権藤関連　証拠書類」"
+   ],
    "transition_in": [
     "",
     0.0
@@ -5096,10 +5161,12 @@
    "line": "line064",
    "motion": "Static, locked off camera. Motion: Both bow slowly a few degrees and straighten. Nobody walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S18g-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide in warm light: Saori and Miyamoto facing each other in the aisle and bowing slightly to one another, both seen from the side at a distance. Characters: Saori, a Japanese woman aged 34, slim, soft oval face, straight black shoulder-length hair with bangs tied back in a low bun, thin silver-rimmed glasses, wearing a plain charcoal-grey tailored pantsuit over a plain ivory silk blouse, a slim black leather-strap wristwatch on the left wrist | Miyamoto, a thin kindly Japanese man aged 64, short white hair, a full bushy white moustache, half-moon reading glasses hanging on a black cord around his neck (not on the face), wearing a plain beige wool cardigan over a plain grey shirt, grey cotton arm-sleeve protectors, plain dark grey trousers. Camera: eye-level, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: warm soft orange practical light strung along the racks, low contrast, gentle glow, dust in the air. Only the people described (2 named), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
+   "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. Wide in warm light: Saori and Miyamoto facing each other in the aisle and bowing slightly to one another, both seen from the side at a distance. Characters: Saori, a Japanese woman aged 34, slim, soft oval face, straight black shoulder-length hair with bangs tied back in a low bun, thin silver-rimmed glasses, wearing a plain charcoal-grey tailored pantsuit over a plain ivory silk blouse, a slim black leather-strap wristwatch on the left wrist | Miyamoto, a thin kindly Japanese man aged 64, short white hair, a full bushy white moustache, half-moon reading glasses hanging on a black cord around his neck (not on the face), wearing a plain beige wool cardigan over a plain grey shirt, grey cotton arm-sleeve protectors, plain dark grey trousers. Camera: eye-level, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: warm soft orange practical light strung along the racks, low contrast, gentle glow, dust in the air. Only the people described (2 named), no extra sharp faces. The box labels on the racks are blank white rectangles. All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",
    "caption": "",
-   "signage": [],
+   "signage": [
+    "상자 라벨 「権藤関連　証拠書類」(중앙 1개) / 「2016年度　支出伝票」"
+   ],
    "transition_in": [
     "",
     0.0
