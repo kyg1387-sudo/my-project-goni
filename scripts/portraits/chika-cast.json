@@ -151,6 +151,14 @@
     "assets/portraits/chika-cast/saori-sheet-1.png"
    ],
    "prompt": "Use the exact face of the woman in the reference image (same person, same face, same black shoulder-length hair with bangs and the upper half tied back in a small knot, the same thin silver-rimmed glasses in EVERY one of the nine panels including the bottom row). STRICT GRID: exactly nine equal square photo panels in three rows of three, separated by thin white gutters on a pure white background, no header, no captions; every panel is a separate photo of the SAME single person. TOP ROW (three head-and-shoulders portraits): left = straight frontal view looking into the camera, middle = 45-degree three-quarter view, right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (three frontal head-and-shoulders expression portraits): left = warm gentle smile (wearing the glasses), middle = nostalgic soft gaze with a small smile (wearing the glasses), right = calm confident composure (wearing the glasses). Subject: Saori, Japanese woman aged 34, the same face as the reference. Wardrobe locked in every panel: a plain charcoal-grey tailored pantsuit over a plain ivory silk blouse, plain black low-heel pumps, the slim black leather-strap wristwatch on the LEFT wrist, no brooch, no pin, no badge. Identical face, hair, eyewear and clothing in all nine panels, photorealistic, soft even studio lighting. Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle cool rim light, no flat lighting. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, monograms, signage lettering, watermarks, stamps, symbols on collar, lapel pin, company badge, round pin, brooch, bad anatomy, deformed eyes, extra fingers."
+  },
+  {
+   "id": "miyamoto-stern-fix",
+   "count": 1,
+   "refs": [
+    "assets/portraits/chika-cast/cells/miyamoto-expr2.png"
+   ],
+   "prompt": "Edit this portrait photo and output the same photo with exactly one change: give this man a FULL BUSHY WHITE MOUSTACHE on his upper lip, thick and wide, matching an elderly Japanese man with short white hair. Keep the stern expression, the face, the beige cardigan, the grey shirt, the black cord around the neck, the lighting and the plain white background exactly as they are. No text anywhere. Negative: clean-shaven, thin moustache, grey moustache, beard, glasses on the face, text, watermark."
   }
  ]
 }
