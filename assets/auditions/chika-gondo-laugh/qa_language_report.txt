@@ -1,0 +1,14 @@
+=== TTS 대사 파일 검사 (오디션 chika-gondo-laugh.json) ===
+[gondo_S13_line_happy.mp3] lang=ja | 대본: 本当に来やがった！ 見ろよ全員、これが地下のカビ | 들림: 本当に来やがった見ろよ全員これが地下のカビ女だ | 
+[gondo_S13_line_normal.mp3] lang=ja | 대본: 本当に来やがった！ 見ろよ全員、これが地下のカビ | 들림: 本当に来やがった 見ろよ 全員これが地下のカビ女だ | 
+[sfx_laugh_A_sneer.mp3] lang=en | 대본: A middle-aged man's shor | 들림:  | 감지언어=en(p=0.71); 대본과 불일치(유사도 0.00)  <<< 문제
+[sfx_laugh_B_bellow.mp3] lang=en | 대본: A arrogant middle-aged b | 들림: Ha ha ha ha ha ha! | 감지언어=en(p=0.72); 영문 감지: Ha ha ha ha ha; 대본과 불일치(유사도 0.01)  <<< 문제
+[sfx_laugh_C_wheeze.mp3] lang=en | 대본: A smug middle-aged man's | 들림:  | 감지언어=en(p=0.52); 대본과 불일치(유사도 0.00)  <<< 문제
+
+=== 현장음 파일 검사 (amb*.wav) — 말소리가 들리면 안 됨 ===
+
+=== 요약 ===
+문제 파일 3개:
+  sfx_laugh_A_sneer.mp3: 감지언어=en(p=0.71); 대본과 불일치(유사도 0.00)
+  sfx_laugh_B_bellow.mp3: 감지언어=en(p=0.72); 영문 감지: Ha ha ha ha ha; 대본과 불일치(유사도 0.01)
+  sfx_laugh_C_wheeze.mp3: 감지언어=en(p=0.52); 대본과 불일치(유사도 0.00)
