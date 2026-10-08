@@ -112,7 +112,10 @@ T = {
     63: ("sad", 0.8, 0.9, 0.6, 0.8, "먼 곳을 보는 여운 (오디션 재사용)"),
     64: ("tonedown", 1.0, 0.9, 0.5, 0.5, "회상, 담담하게"),
     65: ("normal", 1.0, 0.9, 0.4, 1.0, "주제, 따뜻하고 단단하게 — 가장 느리게"),
-    66: ("happy", 0.8, 1.0, 0.5, 0, "아웃트로 진행자, 밝고 친근하게"),
+    66: ("normal", 1.0, 1.0, 0.5, 0.4, "아웃트로 인사, 정중하게 (#01 재사용)"),
+    67: ("happy", 1.0, 1.0, 0.4, 0.4, "구독 요청, 밝게 (#01 재사용) / 버튼 오버레이"),
+    68: ("happy", 1.0, 1.0, 0.5, 0.4, "시청자 질문, 친근하게 / 허리 위"),
+    69: ("happy", 1.0, 1.0, 0.4, 0, "작별 인사 (#01 재사용) → 손 흔들기"),
 }
 
 # 오디션 파일 재사용(대본 문장과 동일 + 같은 목소리) — 재생성 0
@@ -129,7 +132,8 @@ REUSE = {
     57: "chika-okochi-miyamoto/okochi_Dean_3_smile.mp3",
     63: "chika-okochi-miyamoto/miyamoto_Poseidon_3_keep.mp3",
 }
-SAME_AS = {38: 1}  # 같은 대사·같은 컷 재사용
+SAME_AS = {38: 1}
+REUSE_EXT = {66: "tower line062", 67: "tower line063", 69: "tower line065"}  # #01 채널 공통 진행자 녹음(assets/auditions/chika-tts/에 복사됨, 재생성 0)  # 같은 대사·같은 컷 재사용
 # 대안 녹음: 줄 번호 → (접미사, 입력문, 감정, 강도)
 ALT = {51: ("v2", "……その、かみが。あんたの破滅だよ、ごんどうくん", "tonedown", 1.0)}
 
@@ -152,6 +156,7 @@ def load_lines():
 def main():
     lines = load_lines()
     assert len(lines) == len(T), f"대본 {len(lines)}줄 ↔ 톤표 {len(T)}줄 불일치"
+    assert all(spk != "진행자" or n in REUSE_EXT or n == 68 for n, sc, tag, spk, omni, text in lines)
     tests, rows, chars = [], [], 0
     out_dir = os.path.join(AUD, "chika-tts")
     os.makedirs(out_dir, exist_ok=True)
@@ -162,6 +167,8 @@ def main():
         src = "신규"
         if n in SAME_AS:
             src = f"#{SAME_AS[n]} 재사용"
+        elif n in REUSE_EXT:
+            src = f"#01 {REUSE_EXT[n]} 재사용"
         elif n in REUSE:
             src = "오디션 재사용"
             shutil.copyfile(os.path.join(AUD, REUSE[n]), os.path.join(out_dir, f"{lid}.mp3"))

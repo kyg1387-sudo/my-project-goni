@@ -1,14 +1,14 @@
 {
   "_설명": "#02 B안 시네마 규격 v1 — 사용자 제공 규격(2026-10-08)을 검증·수정한 확정본 후보. 수정 근거는 각 _검증 항목 참고. 파이프라인 규칙(CLAUDE.md)과 충돌하는 부분은 파이프라인 규칙 우선.",
   "project_meta": {
-    "title": "地下倉庫の伝票",
-    "_검증_title": "사용자 규격의 「地下倉庫左遷」 → 대본 v2 타이틀 카드와 통일(결정 대기: 둘 중 택1)",
+    "title": "地下倉庫の伝票 (타이틀 카드) / 유튜브 제목은 00_script_ja.md §9 확정안",
+    "_검증_title": "고니감독님 확정(2026-10-08): 작품명·타이틀 카드 『地下倉庫の伝票』, 유튜브 제목은 키워드(左遷·無能部長·10年分の伝票·突きつけた結果) 유지하고 인용 대사·장소·【AIドラマ】 표기만 교정",
     "target_quality": "Theatrical Cinematic Film Grade",
     "market": "Japan YouTube Long-form Drama"
   },
   "visual_pipeline": {
     "aspect_ratio": "16:9 container with 2.00:1 matte",
-    "_검증_aspect": "2.39:1은 휴대폰에서 화면 손실이 큼 → 2:1 권장(결정 대기)",
+    "_검증_aspect": "고니감독님 확정(2026-10-08): 16:9 업로드 + 영상 내 2:1 레터박스",
     "render_resolution": "1920x1080 master → 3840x2160 upscale for YouTube delivery",
     "_검증_resolution": "4K 업로드 시 유튜브가 상위 코덱(VP9/AV1)을 배정해 1080p 시청 화질도 올라감(§9 계획)",
     "framing_rules": [
@@ -35,7 +35,7 @@
       "basement": "flickering cold overhead fluorescent lighting, harsh brow shadows, single tungsten desk lamp pool of warm light on documents",
       "banquet": "luxurious chandelier warm rim lighting, golden ambient fill, specular highlights on crystal glass",
       "night_work": "blue screen glow reflecting on eyeglasses and face from laptop monitor",
-      "projector_reveal": "PENDING — 대본 v2에 프로젝터 장면 없음. 채택 시 S14 감사 증거 투사 컷 1개 추가(결정 대기)"
+      "projector_reveal": "S14 only: large banquet screen lit by a cold blue projector beam with floating dust motes; the screen content (voucher + money-flow chart) is a local graphic composite on a blank glowing screen (never generated text); Gondo stands BACKLIT by the beam — face in shadow / silhouette (A10 villain close-up ban satisfied)"
     },
     "edge_lighting": "subtle rim / hair light to separate subject from dark backgrounds",
     "volumetric": "visible dust particles in the beams of the desk lamp and the doorway light (windowless basement: NO sunlight god rays)",
