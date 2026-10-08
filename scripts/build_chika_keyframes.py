@@ -99,6 +99,9 @@ FIX = {
     "S12b": "A flushed, triumphant GRIN with the lips CLOSED — corners of the mouth pulled wide, cheeks raised, eyes narrowed with glee; NO teeth, mouth not open.",
     "S15j": ("He is standing in the BANQUET HALL among guests in dark suits (chandeliers and the blank stage screen blurred behind) — NOT in the archive, "
              "NO desk lamp, NO shelves. Expression: NO smile — mouth set in a firm straight line, eyes fixed on the camera, brows level, grave and steady."),
+    # B단계 3차: S12b2 가죽끈 시계·라벨 글자 → 곤도의 금속 금시계, 무지 병
+    "S12b2": ("The hand is a FAT man's hand with thick fingers wearing a CHUNKY GOLD METAL BRACELET WATCH (no leather strap), a navy suit cuff and white shirt cuff; "
+              "the champagne bottle has a completely BLANK dark label with no printing; foam runs over the rim of the flute."),
     # B단계 2차: S10f 뒷모습 미디엄 → 손만, S16d 수직 부감
     "S10f": "ONLY a woman's hand and index finger on the laptop trackpad fill the frame, the keyboard edge and the glowing screen bottom at the top edge; the camera is 40 cm above the hand.",
     "S16d": ("Seen from DIRECTLY ABOVE at 90 degrees: the frame shows only the red carpet floor and, in the centre, the top of a heavyset man's head with "
