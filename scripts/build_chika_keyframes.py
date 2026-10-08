@@ -12,6 +12,7 @@ generate-video.yml portraits_spec=<스펙> → assets/portraits/<스펙>/<id>-1.
 """
 import json
 import os
+import re
 import shutil
 import sys
 
@@ -41,6 +42,13 @@ FACE_KINDS = ("face", "react", "d", "sil")   # sil: 실루엣이라도 체형·�
 TIGHT = ("FRAMING FIRST: a tight single-person chest-up close-up — head and shoulders fill the frame, the top of the head near the top edge, "
          "the frame cut at mid-chest; the face occupies about one third of the frame height; hands NOT visible; NOT a medium shot, NOT a full-body shot. "
          "Full-frame 16:9 image, no black bars.")
+# 눈물 규칙(고니감독님 확정 2026-10-08, #01 S03e 실증: 굵고 반짝이는 젤 같은 눈물 줄기 → 불합격)
+TEARS_RE = re.compile(r"\btear|teary|weep|sob|wet eye|brimming|welling|glisten|moist", re.I)
+TEARS = ("TEARS RULE: tears must look like real human tears — eyes brimming with a thin film of water that pools along the lower lids and catches "
+         "a tiny highlight, the eye rims and the tip of the nose slightly reddened, lashes a little damp; at most ONE thin, barely visible wet trail "
+         "on one cheek, following the natural curve from the inner corner of the eye; matte natural skin elsewhere. NO thick glossy gel-like streaks, "
+         "NO multiple parallel lines, NO shiny drawn-on drops, NO tears on both cheeks at once.")
+TEARS_DRY = "The eyes are glistening and wet but NO tear runs down the cheek — the emotion is held back."
 FULL = "Full-frame 16:9 image filling the whole canvas: NO black bars, NO white borders, NO letterbox or pillarbox."
 LOC_NOTE = {
     "loc-aud": "The auditorium walls and stage are plain; the projection screen, the stage banner and any lectern plate are completely blank.",
@@ -145,6 +153,8 @@ def build(sc, face_refs):
                      "natural skin texture, both eyes sharp and symmetrical.")
     else:
         parts.append(FULL)
+    if TEARS_RE.search(sc["subject"]):
+        parts.append(TEARS_DRY if re.search(r"but dry|held back|no tear", sc["subject"], re.I) else TEARS)
     if sc["kind"] == "sil":
         parts.append("The figure is a true backlit silhouette: no facial features readable, only outline, hair shape and body mass.")
     parts.append("Absolutely no text, letters, numbers, logos or symbols anywhere in the image.")

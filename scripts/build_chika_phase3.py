@@ -116,6 +116,12 @@ ANGLE = {"EL": "eye-level", "HA": "high-angle looking down", "LA": "low-angle lo
          "BE": "extreme bird's-eye view straight down from high above", "SIDE": "eye-level from the side or behind"}
 
 
+# 눈물 규칙(고니감독님 확정 2026-10-08): 눈물이 나오는 컷의 i2v 동작은 실제 눈물처럼 — 한 줄기가 천천히, 젤 같은 줄기 금지
+TEAR_MOTION = (" Tears: at most one thin tear slowly forms at the lower lid and runs down one cheek along its natural curve; "
+               "no thick glossy streaks, no sudden multiple lines, the skin stays matte.")
+TEAR_RE = re.compile(r"\btear|teary|weep|sob|wet eye|brimming|welling", re.I)
+
+
 def S(sid, scene, kind, lens, light, angle, who, loc, subject, line=None, fx="", motion="", expr=None, hero=False):
     """kind: d(OMNI 대사) / react(리액션 정지) / ins(인서트 정지) / face(얼굴 i2v pro) / sil(실루엣·뒷모습 i2v lite) /
     empty(무인 i2v lite) / estill(무인 정지) / gfx(로컬 그래픽 합성, 무료) / reuse:<id> / card.  hero=True: 상위 모델 3테이크(B안)."""
@@ -821,6 +827,8 @@ def main():
         item = {"prompt": "", "duration": gen}
         if tier in ("pro", "lite", "hero"):
             motion = s["motion"] or "Subtle natural motion only, micro movements, no new people."
+            if TEAR_RE.search(s["subject"] + " " + motion):
+                motion += TEAR_MOTION
             item["prompt"] = ("Static, locked off camera. Motion: " + motion +
                               " Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. "
                               "No walking toward the camera unless described, no new people, no text.")

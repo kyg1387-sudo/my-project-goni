@@ -19,7 +19,8 @@
 2. **조명·구도 우선 문장**: 참조 셀의 흰 배경·플랫 조명이 새어 들어오므로 압박 조명·로우앵글·가슴 위 CU 문장을 프롬프트 **맨 앞**에 둔다(FIX 사전).
 3. **시트 셀 정리(무료)**: 장소·앵글 셀 8장에 남아 있던 시트 라벨 글자(DAY CUDE, GLASS PARTITION, HIGH ANGLE 등)와 흰 띠를 `scripts/clean_cells.py`로 잘라냄(원본 `cells/_v1/`). 글자 참조가 키프레임에 새는 경로 차단.
 4. **승인 컷 재과금 방지**: A·B 단계 스펙은 앞 단계에서 이미 생성된 컷을 건너뛴다(`done()`); 재생성은 `pilot:ID` 형식의 `-r` 스펙 + `portraits_regen_ids`.
-5. **수집**: `collect`가 pilot/a/b(-r 우선) 결과를 스토리보드 경로 `assets/portraits/chika-keyframes/<id>-1.png`로 복사.
+5. **눈물 규칙(감독님 지시)**: 눈물 컷은 실제 눈물 질감 문장(고인 물막·붉어진 눈가·가는 줄기 1개·무광 피부, 젤 줄기 금지)을 자동 추가, 억누름 컷은 「젖었지만 흐르지 않음」. Kill Gate 항목에 눈물 질감 추가.
+6. **수집**: `collect`가 pilot/a/b(-r 우선) 결과를 스토리보드 경로 `assets/portraits/chika-keyframes/<id>-1.png`로 복사.
 
 콘택트시트: `assets/qa/chika/PHASE4_파일럿_콘택트시트.jpg`. 누적 PHASE 4 비용 0.20달러.
 
