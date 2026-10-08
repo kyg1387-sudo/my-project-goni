@@ -1,0 +1,28 @@
+# #02 『地下倉庫の伝票』 PHASE 5 준비(무료) 기록 — 2026-10-08
+
+## 1. 도구(모두 로컬·무과금)
+| 도구 | 역할 | 상태 |
+|---|---|---|
+| `scripts/generate_video.py` | 히어로 컷 N테이크(`hero_takes`, scene{NN}_take{k}.mp4, 1번 테이크를 기본 클립), Kling 페이로드(duration·aspect_ratio·negative_prompt·cfg_scale), 비용 추산에 kling 0.112/s·테이크 수 반영 | 반영 |
+| `scripts/generate_audio.py` | `letterbox: "2:1"` → 1920x1080 안에 1920x960 매트(상하 60px), 자막 MarginV 150은 매트 안쪽 | 반영 |
+| `scripts/chika_composite.py` | 일본어 표기·그래픽 합성 30곳(현수막 5·명판 5·라벨 2·사원증·표창장·PPT 2·인사 발령·전표·DB 3·등기부/신청서·로그 2·영수증·핫라인·프로젝터). S09i(빨간 선)·S10e(送信完了)는 시간차 상태(_states.json). 원본 `chika-kf-raw/` | 완료, 검수 `assets/qa/chika/PHASE5_합성_검수.jpg` |
+| `scripts/build_chika_overrides.py` | 교체 클립 115개: still(2.5D 시차·푸시인·팬, 연속 컷 밀기/당기기 교차)·omni 정지·card 6·gfx(상태 크로스페이드)·reuse 4, 돌리줌 S14d(작품 1회), 플래시 S14g. post 모드: i2v 클립에 표기 추적 합성, 더치 S05a 5°·S15b2 7°, 핸드헬드 S12a2·S12d, 풀백 S18h | 생성 중 |
+| `scripts/chika_grade.py` | 장소별 그레이딩(지하 teal-cold·엔딩 warm·사무실/강당 neutral-cool·연회장 warm/cold) + 35mm 그레인 + 약한 비네트 | 완료 |
+
+## 2. 합성 생략 컷(면이 없거나 판독 불가 → 이야기 전달에 영향 없음)
+연회장 와이드 중 현수막이 생성되지 않은 컷(S13a·S14a·S14c2·S14h·S14l·S15c·S16a2·S16b2·S16f2·S13c·S01e), 사무실 부서 표지(S03a·S03e2·S04b·S12a2·S12d), 엘리베이터 층 표지(S05a), 멀리 보이는 문 명판(S09k·S10h), 상자 라벨 원경(S07b·S09e·S18a·S18a2·S18g), 좌석 명패(S17d2). 현수막은 S13a2(확립 컷)·S14g·S17a·S14d에서 읽힌다.
+
+## 3. Kling 3.0 Pro 엔드포인트
+이 환경에서 fal.ai 문서에 접속할 수 없어(프록시 차단) 스키마를 사전 검증하지 못했다. `fal-ai/kling-video/v3/pro/image-to-video`에 Kling형 페이로드 3종을 순서대로 시도하도록 구현했고, **히어로 파일럿 1컷·1테이크(S01a 5초, 약 0.56달러)** 로 엔드포인트·응답·화질을 먼저 확인한 뒤 전체를 돌린다.
+
+## 4. 유료 단계 추정(실측 단가)
+| 단계 | 내용 | 추정 |
+|---|---|---|
+| 히어로 파일럿 | Kling 1컷 1테이크 | 0.56달러 |
+| i2v 전체 | lite 28컷 6.84 + pro 1컷 0.54 + 히어로 14컷×3테이크 26.88 | 34.26달러 |
+| burn(조립) | OmniHuman 27컷 153.8초 24.61 + BGM 7구간·앰비언스 4구간 약 1.0 | 약 25.6달러 |
+| 합계 | | **약 60.4달러** (B안 96 이내, PHASE 2~4 누적 9.24 포함 시 약 69.7) |
+
+## 5. 다음
+1. 교체 클립 115개 커밋(워크플로가 `assets/video-overrides/chika/`에서 읽음) → `generate_video.py` 사전 점검(비용·누수 차단) 통과 확인.
+2. 승인 → 히어로 파일럿 → i2v 전체 → 생성 클립 검수(헤드턴·얼굴·표기) → post(표기 추적·더치·핸드헬드) → burn(OmniHuman·자막·BGM·레터박스) → 그레이딩 → qa_assembly → 아웃트로·엔드카드.
