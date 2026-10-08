@@ -83,6 +83,10 @@ FIX = {
     # S03c: 기준 얼굴(지하 사오리 S15e)에서 얼굴만 가져오고 의상은 사무실 정장으로
     "S03c": ("WARDROBE: a plain navy-blue tailored skirt suit over a plain white blouse — NOT the grey sweater, NOT the apron of reference image 1; "
              "only the face, hair and glasses come from reference image 1."),
+    # 2차 재생성 검수: S12b 이 드러난 웃음(OmniHuman 입 다묾 위반) → 입 다문 득의의 웃음, S15j 미소+지하 창고 배경 → 무표정·연회장
+    "S12b": "A flushed, triumphant GRIN with the lips CLOSED — corners of the mouth pulled wide, cheeks raised, eyes narrowed with glee; NO teeth, mouth not open.",
+    "S15j": ("He is standing in the BANQUET HALL among guests in dark suits (chandeliers and the blank stage screen blurred behind) — NOT in the archive, "
+             "NO desk lamp, NO shelves. Expression: NO smile — mouth set in a firm straight line, eyes fixed on the camera, brows level, grave and steady."),
     # S11c: 책상 3/4 미디엄·손 노출·담담한 표정으로 생성됨 → 정면 CU + 공포
     "S11c": ("Saori faces the camera directly, seated at the desk but framed chest-up so the desk and her hands are NOT visible; the warm desk lamp lights "
              "one side of her face, the other side falls into cool shadow. Expression: FEAR held in — eyes wide and fixed, pupils large, lips pressed "
@@ -165,6 +169,10 @@ def build(sc, face_refs, drop_expr=False):
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
     if drop_expr and face_refs:
+        loc_i = next((i + 1 for i, r in enumerate(refs) if os.path.basename(r).startswith(("loc-", "angle-"))), None)
+        if loc_i:   # 2차 재생성 실증(S15j): 기준 얼굴 컷의 배경(지하 창고)이 연회장 컷으로 새어 들어옴
+            parts.insert(1, f"SETTING: the place is reference image {loc_i} ONLY; the background, furniture, lamps and lighting of reference image 1 "
+                            "must NOT appear.")
         parts.insert(1, "IDENTITY FIRST: the person is EXACTLY the one in reference image 1 — same face shape, jaw, cheekbones, nose, eyes, eyebrows, "
                         "skin tone, age, hairstyle and eyewear; only the expression, lighting and framing described below change.")
     if sc["kind"] == "d":
