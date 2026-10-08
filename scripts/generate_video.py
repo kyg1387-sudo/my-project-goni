@@ -24,6 +24,7 @@ Seedance에 폴백한다.
 
 import json
 import os
+import shutil
 import sys
 import time
 import urllib.error
@@ -65,6 +66,8 @@ def load_scenes(path):
             image = scene.get("image")  # 규격서 PHASE 5: 승인 키프레임 → Image-to-Video
             if scene.get("i2v_model") or scene.get("i2v_resolution"):  # 장면별 화질(예: 인물 컷만 pro 1080p)
                 SCENE_I2V[k + 1] = (scene.get("i2v_model") or None, scene.get("i2v_resolution") or None)
+            if int(scene.get("hero_takes") or 1) > 1:   # 히어로 컷: 같은 키프레임으로 N테이크(#02 B안, 편집에서 최고 테이크 선택)
+                SCENE_TAKES[k + 1] = int(scene["hero_takes"])
         else:
             prompt, dur, refs = scene, base_dur, []
         override = os.path.join(OUT_DIR, f"scene{k + 1:02d}.mp4")  # 오버라이드 클립이 있으면 생성 안 함 → 길이 제한 없음
@@ -222,6 +225,7 @@ def fal_generate(key, index, prompt, duration, ratio, ref_urls=None):
 FAL_I2V_MODEL = os.environ.get("FAL_I2V_MODEL", "fal-ai/bytedance/seedance/v1/lite/image-to-video")
 I2V_RESOLUTION = "720p"
 SCENE_I2V = {}  # 장면 번호 → (모델, 해상도) 개별 지정
+SCENE_TAKES = {}  # 장면 번호 → 테이크 수(히어로 컷)
 
 
 def fal_generate_i2v(key, index, prompt, duration, ratio, image_url):
@@ -257,7 +261,7 @@ def fal_generate_i2v(key, index, prompt, duration, ratio, image_url):
                 if not url:
                     print(f"  [fal i2v] 결과에 영상이 없음 (HTTP {r_status}): {result}")
                     return None
-                path = os.path.join(OUT_DIR, f"scene{index:02d}.mp4")
+                path = out_path or os.path.join(OUT_DIR, f"scene{index:02d}.mp4")
                 download(url, path)
                 return path
             if state in ("FAILED", "CANCELLED", "ERROR"):
@@ -287,7 +291,7 @@ def pick_provider(ratio):
     return candidates
 
 
-I2V_RATE_USD = {"pro": 0.108, "lite": 0.036}  # 2026-10-04 fal 잔액 차이 실측(제작규격-보강-EP4 §1)
+I2V_RATE_USD = {"pro": 0.108, "lite": 0.036, "kling": 0.112}  # 2026-10-04 fal 잔액 차이 실측(제작규격-보강-EP4 §1); kling 3.0 pro = 공시 단가(첫 실행에서 실측)
 
 
 def preflight(scenes_file, scenes):
@@ -313,8 +317,11 @@ def preflight(scenes_file, scenes):
             t2v.append(index)
         model, res = SCENE_I2V.get(index, (None, None))
         model, res = model or FAL_I2V_MODEL, res or I2V_RESOLUTION
-        tier = "lite" if "lite" in model else "pro"
-        cost += duration * I2V_RATE_USD[tier]
+        tier = "kling" if "kling" in model else ("lite" if "lite" in model else "pro")
+        takes = SCENE_TAKES.get(index, 1)
+        existing_takes = sum(1 for t in range(1, takes + 1)
+                             if os.path.exists(os.path.join(OUT_DIR, f"scene{index:02d}_take{t}.mp4")))
+        cost += duration * I2V_RATE_USD[tier] * max(0, takes - existing_takes)
         paid += 1
     if missing:
         sys.exit("교체 클립이 필요한 장면에 파일이 없습니다(유료 생성으로 새는 것 차단): "
@@ -323,7 +330,9 @@ def preflight(scenes_file, scenes):
     if t2v and not data.get("allow_t2v"):
         sys.exit("키프레임 없는 장면(t2v)은 금지입니다: " + " ".join(f"scene{i:02d}" for i in t2v)
                  + " — image를 지정하거나 의도한 경우만 allow_t2v: true")
-    print(f"[비용 추산] 새로 생성할 장면 {paid}개, 약 {cost:.2f}달러 (실측 단가 pro 0.108/s, lite 0.036/s)")
+    n_takes = sum(SCENE_TAKES.get(i, 1) for i in range(1, len(scenes) + 1) if i in SCENE_TAKES)
+    print(f"[비용 추산] 새로 생성할 장면 {paid}개(히어로 테이크 {n_takes}개 포함), 약 {cost:.2f}달러 "
+          f"(실측 단가 pro 0.108/s, lite 0.036/s, kling 0.112/s)")
     budget = data.get("budget_usd")
     if budget is not None and cost > float(budget) + 1e-9:
         sys.exit(f"추산 {cost:.2f}달러가 budget_usd {float(budget):.2f}달러를 넘어 중단합니다.")
@@ -351,6 +360,21 @@ def main():
             if not fal_key:
                 sys.exit("image(키프레임)가 있는 장면에는 FAL_API_KEY가 필요합니다.")
             img_url = fal_upload(fal_key, image)
+            takes = SCENE_TAKES.get(index, 1)
+            if takes > 1:   # 히어로 컷: scene{NN}_take{k}.mp4로 N테이크, 1번 테이크를 기본 클립으로(편집에서 교체)
+                path = None
+                for t in range(1, takes + 1):
+                    tp = os.path.join(OUT_DIR, f"scene{index:02d}_take{t}.mp4")
+                    if os.path.exists(tp) and os.path.getsize(tp) > MIN_CLIP_BYTES:
+                        print(f"  [take {t}/{takes}] 기존 파일 재사용")
+                    else:
+                        print(f"  [take {t}/{takes}] 생성")
+                        if not fal_generate_i2v(fal_key, index, prompt, duration, ratio, img_url, out_path=tp):
+                            sys.exit(f"[scene {index:02d}] 테이크 {t} 생성 실패 — 위 로그를 확인하세요.")
+                    path = path or tp
+                shutil.copy(path, existing)
+                paths.append(existing)
+                continue
             path = fal_generate_i2v(fal_key, index, prompt, duration, ratio, img_url)
             if not path:
                 sys.exit(f"[scene {index:02d}] 생성 실패 — 위 로그를 확인하세요.")

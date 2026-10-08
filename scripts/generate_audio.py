@@ -370,9 +370,14 @@ def norm_filter(cfg):
     """장면 정규화 필터 앞부분. cfg output_size [W,H](기본 1280x720), fit "pad"(기본, 화면비 유지+패딩) 또는
     "crop"(가득 채우고 넘치는 몇 픽셀만 잘라냄 — 1248x704·1920x1088 생성물에 검은 테가 생기지 않게)."""
     w, h = (cfg.get("output_size") or [1280, 720])
+    lb = ""
+    if cfg.get("letterbox"):   # 예: "2:1" — 16:9 안에 2.00:1 매트(#02 B안): 중앙 크롭 후 상하 검은 띠, 자막은 매트 안쪽(MarginV ≥ 띠 높이)
+        a, b = (float(x) for x in str(cfg["letterbox"]).split(":"))
+        mh = int(round(w / (a / b) / 2)) * 2
+        lb = f"crop={w}:{mh},pad={w}:{h}:0:(oh-ih)/2,"
     if cfg.get("fit") == "crop":
-        return f"scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},fps=24,setsar=1,"
-    return f"scale={w}:{h}:force_original_aspect_ratio=decrease,pad={w}:{h}:(ow-iw)/2:(oh-ih)/2,fps=24,setsar=1,"
+        return f"scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},{lb}fps=24,setsar=1,"
+    return f"scale={w}:{h}:force_original_aspect_ratio=decrease,pad={w}:{h}:(ow-iw)/2:(oh-ih)/2,{lb}fps=24,setsar=1,"
 
 
 # ---------- 립싱크 ----------
