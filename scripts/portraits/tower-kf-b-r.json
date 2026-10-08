@@ -1,51 +1,15 @@
 {
- "_설명": "tower PHASE 4 키프레임 b-r(build_tower_keyframes.py 생성, 직접 수정 금지). 5장 약 0.20달러.",
+ "_설명": "tower PHASE 4 키프레임 b-r(build_tower_keyframes.py 생성, 직접 수정 금지). 1장 약 0.04달러.",
  "_style_preset": "Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, modern Tokyo tower-condominium mise-en-scene, no flat lighting",
  "characters": [
   {
-   "id": "S06e",
-   "count": 1,
-   "aspect_ratio": "16:9",
-   "refs": [
-    "assets/portraits/tower-kf-raw/S06e-1.png"
-   ],
-   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the image to EDIT. EDIT the reference image: keep EXACTLY the standing woman (face, glasses, bob, navy cardigan, grey skirt, lowered head), her position, size and the camera angle. ONLY replace the background so the geometry is correct: the camera stands at the FRONT of the hall (at the stage) looking toward the audience, so EVERY other resident in the background is seated and seen from the FRONT, facing the camera, softly out of focus; nobody shows the back of their head. At the far end is the plain back wall of the hall with a double door. The floor-to-ceiling windows are on the RIGHT side of the frame. NO projection screen, NO banner, NO lectern anywhere in view. Absolutely no text, letters, numbers, logos or symbols anywhere in the image."
-  },
-  {
-   "id": "S14b",
-   "count": 1,
-   "aspect_ratio": "16:9",
-   "refs": [
-    "assets/portraits/tower-kf-raw/S14b-1.png"
-   ],
-   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the image to EDIT. EDIT the reference image: keep EXACTLY the three seated women in the front row (faces, hair, pink sweater, white blouse, beige cardigan, skirts, poses, uneasy glances), their positions and the camera angle. ONLY replace the background so the geometry is correct: the camera stands at the FRONT of the hall (at the stage) looking toward the audience, so EVERY other resident in the background is seated and seen from the FRONT, facing the camera, softly out of focus; nobody shows the back of their head. At the far end is the plain back wall of the hall with a double door. The floor-to-ceiling windows are on the RIGHT side of the frame. NO projection screen, NO banner, NO lectern anywhere in view. The hall is PACKED. Absolutely no text, letters, numbers, logos or symbols anywhere in the image."
-  },
-  {
-   "id": "S17h",
-   "count": 1,
-   "aspect_ratio": "16:9",
-   "refs": [
-    "assets/portraits/tower-kf-raw/S17h-1.png"
-   ],
-   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the image to EDIT. EDIT the reference image: keep EXACTLY the three seated women in the front row (faces, hair, wardrobe, poses, eyes down), their positions and the camera angle. ONLY replace the background so the geometry is correct: the camera stands at the FRONT of the hall (at the stage) looking toward the audience, so EVERY other resident in the background is seated and seen from the FRONT, facing the camera, softly out of focus; nobody shows the back of their head. At the far end is the plain back wall of the hall with a double door. The floor-to-ceiling windows are on the RIGHT side of the frame. NO projection screen, NO banner, NO lectern anywhere in view. The hall is PACKED. Absolutely no text, letters, numbers, logos or symbols anywhere in the image."
-  },
-  {
-   "id": "PLATE_R",
+   "id": "S06-2b",
    "count": 1,
    "aspect_ratio": "16:9",
    "refs": [
     "assets/portraits/tower-kf-raw/S05d-room.png"
    ],
-   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 shows this SAME hall: copy its materials, wall colour, grey chairs, pale wood floor, daylight and the residents' clothing style — but the camera now looks the OPPOSITE way, as described. Reverse angle of the SAME assembly hall seen FROM THE STAGE toward the audience: about forty residents seated in rows of grey chairs facing the camera with neutral, attentive expressions, hands in laps; the plain back wall with a double door at the far end; floor-to-ceiling windows with the city view on the RIGHT wall. NO projection screen, NO banner, NO lectern, nobody standing. Eye-level camera at standing head height, 35mm, deep focus. Absolutely no text, letters, numbers, logos or symbols anywhere in the image."
-  },
-  {
-   "id": "PLATE_T",
-   "count": 1,
-   "aspect_ratio": "16:9",
-   "refs": [
-    "assets/portraits/tower-kf-raw/S13a-1.png"
-   ],
-   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 shows this SAME hall: copy its materials, wall colour, grey chairs, pale wood floor, daylight and the residents' clothing style — but the camera now looks the OPPOSITE way, as described. Reverse angle of the SAME assembly hall seen FROM THE STAGE toward the audience: the hall is PACKED, over a hundred residents seated in rows of grey chairs facing the camera with tense, serious expressions, hands in laps; the plain back wall with a double door at the far end; floor-to-ceiling windows with the city view on the RIGHT wall. NO projection screen, NO banner, NO lectern, nobody standing. Eye-level camera at standing head height, 35mm, deep focus. Absolutely no text, letters, numbers, logos or symbols anywhere in the image."
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Macro INSERT, NO face: only the lap of a seated man in a plain navy polo shirt and khaki chinos — his two hands clenched into tight fists on his knees, knuckles pale with tension — filling more than 70 percent of the frame. The top edge of the frame is at his chest, so NO head, NO face. In the blurred background, the knees and laps of other seated residents in the same row, also motionless. Creamy bokeh, cool daylight from the left. Exactly five fingers per hand. Reference image 1 is the APPROVED shot of this SAME assembly hall: copy exactly its room — floor-to-ceiling windows with the city view on the left wall, the long white banner (keep it plain, NO letters), the projection screen, the wooden lectern, grey chairs, pale wood floor, lighting and colour — and its audience density. Ignore the people's poses; the camera position is described below. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, modern Tokyo tower-condominium mise-en-scene, no flat lighting. Insert: a man's hands clasped tightly on his khaki lap, knuckles pale. Characters: a Japanese man in his early 50s with short salt-and-pepper hair and light stubble, wearing a plain navy polo shirt and khaki chinos. Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the subject fills more than 70 percent of the frame. Lighting: cool crisp 5600K daylight from the tall windows on the left, soft overhead panel light, gentle rim light. Only the people described (1 named), no extra sharp faces.  All papers, screens, signs, plates and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, monograms on bags, signage lettering, posters with writing, floor numbers, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people. Full-frame 16:9 image filling the whole canvas: NO black bars, NO white borders, NO letterbox or pillarbox. Absolutely no text, letters, numbers, logos or symbols anywhere in the image."
   }
  ]
 }

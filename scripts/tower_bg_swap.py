@@ -19,13 +19,19 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 W, H, FPS, SUB_TOP = 1920, 1080, 24, 830
 # 컷 → 배경 판(키프레임, 크롭 x0,y0,x1,y1, 흐림) — 같은 회의장 만석 뒤쪽
 ERODE = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (9, 9))
+# 감독님 지적(2026-10-08 앉은 사람과 서 있는 사람 방향이 반대): 객석에 서서 단상을 보는 인물 클로즈업 뒤로 단상·스크린이 보였다
+# → 단상에서 객석을 본 역방향 판(PLATE_R 임시총회 약 40명, PLATE_T 통상총회 만석). 할아버지(맨 뒤에서 단상을 봄)는 돌아본 주민 뒷머리(S16c).
+REV_R, REV_T = "assets/portraits/tower-kf-b-r/PLATE_R-1.png", "assets/portraits/tower-kf-b-r/PLATE_T-1.png"
 PLATES = {"S16b": ("S16c", (0, 260, 1344, 768), 9), "S16f": ("S16c", (0, 260, 1344, 768), 9),
-          "S17e": ("S16c", (0, 260, 1344, 768), 9), "S14m": ("S13a", (0, 300, 1344, 768), 9)}
+          "S17e": ("S16c", (0, 260, 1344, 768), 9), "S14m": (REV_T, (0, 200, 1344, 768), 9),
+          "S05e": (REV_R, (0, 200, 1344, 768), 9), "S07b": (REV_R, (0, 200, 1344, 768), 9),
+          "S13d": (REV_T, (0, 200, 1344, 768), 9), "S17i2": (REV_T, (0, 200, 1344, 768), 9)}
 
 
 def plate(sid):
     k, box, blur = PLATES[sid]
-    im = Image.open(os.path.join(ROOT, "assets/portraits/tower-keyframes", f"{k}-1.png")).convert("RGB").crop(box)
+    path = os.path.join(ROOT, k) if "/" in k else os.path.join(ROOT, "assets/portraits/tower-keyframes", f"{k}-1.png")
+    im = Image.open(path).convert("RGB").crop(box)
     a = cv2.resize(np.asarray(im), (W, H), interpolation=cv2.INTER_CUBIC).astype(np.float32)
     a = cv2.GaussianBlur(a, (0, 0), blur)
     return a * 0.92   # 배경을 살짝 어둡게(인물 분리감)

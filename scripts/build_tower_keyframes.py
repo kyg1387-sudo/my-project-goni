@@ -151,6 +151,11 @@ FIX_B["S14b"] = ("EDIT the reference image: keep EXACTLY the three seated women 
                  "beige cardigan, skirts, poses, uneasy glances), their positions and the camera angle. " + REVERSE_BG + " The hall is PACKED.")
 FIX_B["S17h"] = ("EDIT the reference image: keep EXACTLY the three seated women in the front row (faces, hair, wardrobe, poses, eyes down), "
                  "their positions and the camera angle. " + REVERSE_BG + " The hall is PACKED.")
+# 감독님 지적(3:04 자막과 화면 인물 불일치): 설계는 '주민의 꽉 쥔 손' 매크로 인서트인데 빈 회의실 남자 정면 초상으로 나옴
+FIX_B["S06-2b"] = ("Macro INSERT, NO face: only the lap of a seated man in a plain navy polo shirt and khaki chinos — his two hands clenched "
+                   "into tight fists on his knees, knuckles pale with tension — filling more than 70 percent of the frame. The top edge of the "
+                   "frame is at his chest, so NO head, NO face. In the blurred background, the knees and laps of other seated residents in the "
+                   "same row, also motionless. Creamy bokeh, cool daylight from the left. Exactly five fingers per hand.")
 # 관객석 클로즈업(립싱크·리액션) 뒤 배경판: 단상에서 객석을 본 역방향(tower_bg_swap.py가 흐려서 사용)
 PLATE_SPEC = {
     "PLATE_R": ("assets/portraits/tower-kf-raw/S05d-room.png", "Reverse angle of the SAME assembly hall seen FROM THE STAGE toward the audience: about forty residents seated in "
@@ -265,6 +270,8 @@ def build(sc, face_refs):
                 "prompt": " ".join(["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions.",
                                     "Reference image 1 is the image to EDIT.", FIX_B[sc["id"]],
                                     "Absolutely no text, letters, numbers, logos or symbols anywhere in the image."])}
+    if sc["id"] == "S06-2b":   # 얼굴 셀이 얼굴 초상을 끌어옴 → 방 기준만
+        refs = [ROOM_RINJI]
     if sc["id"] in ("S01e", "S03d"):  # 얼굴 셀이 얼굴·전신을 끌어옴(S05c 실증) → 장소 셀만, 옷은 문장으로
         refs = [r for r in refs if "/cells/loc-" in r]
     if sc["id"] == "S05c":  # 얼굴 셀이 얼굴을 그리게 한 뒤 동그라미로 가림(B 2차) → 얼굴 셀 빼면 다른 엄마들(B 3차) → 승인 S14o(세 엄마 착석)

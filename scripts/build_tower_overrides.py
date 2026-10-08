@@ -162,8 +162,8 @@ def card(sid, out, sec):
 
 
 # 수정 9(2026-10-07): 회의장 재생성 컷 중 i2v 대신 정지 편집 카메라로(추가 과금 없이)
-FORCE_STILL = {"S07a2", "S14d", "S17b", "S14o", "S16g2", "S09a", "S16a", "S17f"}   # S09a: 담당자 대사 중 유미 입이 움직임(감독님 지적)   # S14o·S16g2: i2v가 군중 이탈·얼굴 난입(검수 불합격)
-FX_OVERRIDE = {"S02b": "push", "S16d": "crash"}   # S16d: 돌리줌 분리 실패(연설대가 갈라져 앞으로 나옴, 감독님 지적) → 빠른 푸시인   # 그래픽 패널이 팬에 잘리지 않게
+FORCE_STILL = {"S07a2", "S14d", "S17b", "S14o", "S16g2", "S09a", "S16a", "S17f", "S05d", "S06a"}   # S05d·S06a: 방향·단상 2개 편집 키프레임(감독님 지적 2026-10-08)   # S09a: 담당자 대사 중 유미 입이 움직임(감독님 지적)   # S14o·S16g2: i2v가 군중 이탈·얼굴 난입(검수 불합격)
+FX_OVERRIDE = {"S02b": "push", "S16d": "crash", "S06a": "dutch5"}   # S16d: 돌리줌 분리 실패(연설대가 갈라져 앞으로 나옴, 감독님 지적) → 빠른 푸시인   # 그래픽 패널이 팬에 잘리지 않게
 
 
 # 감독님 지적(정지 영상 과다 2026-10-07): 사람이 있는 정지 컷은 2.5D 시차(인물·배경 분리, 서로 다른 속도),
@@ -175,7 +175,7 @@ _SEG = None
 def person_mask(src):
     global _SEG
     cache = os.path.join(ROOT, "assets", "portraits", "tower-masks", os.path.basename(src))
-    if os.path.exists(cache):
+    if os.path.exists(cache) and os.path.getmtime(cache) >= os.path.getmtime(src):   # 키프레임을 바꾸면 마스크도 새로
         return np.asarray(Image.open(cache).convert("L")).astype(np.float32) / 255
     from rembg import remove, new_session
     if _SEG is None:
