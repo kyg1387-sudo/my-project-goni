@@ -53,6 +53,15 @@ TEARS = ("TEARS RULE: tears must look like real human tears — eyes brimming wi
          "on one cheek, following the natural curve from the inner corner of the eye; matte natural skin elsewhere. NO thick glossy gel-like streaks, "
          "NO multiple parallel lines, NO shiny drawn-on drops, NO tears on both cheeks at once.")
 TEARS_DRY = "The eyes are glistening and wet but NO tear runs down the cheek — the emotion is held back."
+# B단계 1차 검수(2026-10-08): 손·소품 인서트 12컷이 인물 얼굴·미디엄으로 생성됨(프롬프트의 Characters 문장이 얼굴을 그리게 함)
+INSERT_FIRST = ("INSERT SHOT — NO FACE: this frame contains ONLY the hands, object or body part described below; NO face, NO head, NO eyes, "
+                "NO full body anywhere in the frame; the frame is cut at the wrist or forearm; the camera is within one metre of the subject.")
+BE_FIRST = ("CAMERA DIRECTLY OVERHEAD, pointing STRAIGHT DOWN at 90 degrees (bird's-eye): the floor fills the entire frame, the top of the head and "
+            "shoulders are seen from above, no walls or ceiling visible, no horizon.")
+CHOKER_FIRST = ("CHOKER CLOSE-UP: the face fills the ENTIRE frame from just above the eyebrows to just below the lower lip; the top of the head, "
+                "chin, neck and shoulders are cut off by the frame edges; 85mm lens, extremely shallow depth of field.")
+BANNER_FIRST = ("The long banner above the stage is a PLAIN BLANK white cloth with NO printing, NO characters, NO logo — completely empty; "
+                "the projection screen is a plain glowing rectangle.")
 FULL = "Full-frame 16:9 image filling the whole canvas: NO black bars, NO white borders, NO letterbox or pillarbox."
 LOC_NOTE = {
     "loc-aud": "The auditorium walls and stage are plain; the projection screen, the stage banner and any lectern plate are completely blank.",
@@ -166,6 +175,8 @@ def build(sc, face_refs, drop_expr=False):
     refs = list(face_refs) + [r for r in sc["refs"] if r not in face_refs]
     if drop_expr and face_refs:
         refs = [r for r in refs if "-expr" not in os.path.basename(r)]
+    if sc["kind"] == "ins":   # 인서트는 인물 셀을 참조하면 얼굴을 그린다(B단계 실증) → 장소·소품 셀만, 손·의상은 글로
+        refs = [r for r in refs if not person_key(r)]
     swap = {**REF_SWAP["*"], **REF_SWAP.get(sc["id"], {})}
     sneer = any(os.path.basename(r) == "gondo-expr1.png" for r in refs)
     refs = [os.path.join(os.path.dirname(r), swap.get(os.path.basename(r), os.path.basename(r))) for r in refs]
@@ -184,7 +195,17 @@ def build(sc, face_refs, drop_expr=False):
         parts.insert(1, SNEER)
     if sc["id"] in FIX:
         parts.insert(1 + sneer, FIX[sc["id"]])
-    parts.append(sc["keyframe_prompt"])
+    kp = sc["keyframe_prompt"]
+    if sc["kind"] == "ins":
+        kp = re.sub(r" Characters: .*?(?= Camera:)", " No person's face is visible.", kp)
+        parts.insert(1, INSERT_FIRST)
+    if sc["angle"] == "BE":
+        parts.insert(1, BE_FIRST)
+    if sc["size"] == "ch":
+        parts.insert(1, CHOKER_FIRST)
+    if any(os.path.basename(r).startswith(("loc-bq", "angle-bq", "loc-aud")) for r in refs):
+        parts.insert(1, BANNER_FIRST)
+    parts.append(kp)
     parts += notes(refs)
     if sc["kind"] == "d":
         parts.append(TIGHT)
