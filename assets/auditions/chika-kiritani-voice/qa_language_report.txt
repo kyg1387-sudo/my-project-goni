@@ -1,0 +1,12 @@
+=== TTS 대사 파일 검사 (오디션 chika-kiritani-voice.json) ===
+[kiritani_ChunsikKang_1_dismiss.mp3] lang=ja | 대본: 部外者は、あなたの方です。……本日付で、あなたの | 들림: 部外者はあなたの方です 本日付であなたの取締役就任内定は 白紙撤回されました | 
+[kiritani_ChunsikKang_2_charge.mp3] lang=ja | 대본: 容疑は、十年にわたるサンライズ企画への不正送金。 | 들림: 容疑は10年にわたるサンライズ企画への不正送金 総額3000万円の業務上応料です | 
+[kiritani_ChunsikKang_3_doubt.mp3] lang=ja | 대본: ……森川さん。本当ですか。 | 들림: 森川さん本当ですか | 
+[kiritani_GunnKim_1_dismiss.mp3] lang=ja | 대본: 部外者は、あなたの方です。……本日付で、あなたの | 들림: 部外者はあなたの方です 本日付であなたの取締役就任内定は白紙撤回されました | 
+[kiritani_GunnKim_2_charge.mp3] lang=ja | 대본: 容疑は、十年にわたるサンライズ企画への不正送金。 | 들림: 容疑は10年にわたるサンライズ企画への不正送金 総額3000万円の業務上横領です | 
+[kiritani_GunnKim_3_doubt.mp3] lang=ja | 대본: ……森川さん。本当ですか。 | 들림: 森川さん、本当ですか? | 
+
+=== 현장음 파일 검사 (amb*.wav) — 말소리가 들리면 안 됨 ===
+
+=== 요약 ===
+문제 파일 없음
