@@ -19,7 +19,8 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 SB_PATH = os.path.join(ROOT, "scripts", "storyboard", "chika.json")
 OUT = os.path.join(ROOT, "scripts", "portraits", "chika-kf-{}.json")
 KF_DIR = "assets/portraits/chika-keyframes"
-STAGE_DIRS = ("assets/portraits/chika-kf-pilot", "assets/portraits/chika-kf-a", "assets/portraits/chika-kf-b")
+STAGE_DIRS = ("assets/portraits/chika-kf-pilot", "assets/portraits/chika-kf-pilot-r", "assets/portraits/chika-kf-a", "assets/portraits/chika-kf-a-r",
+              "assets/portraits/chika-kf-b", "assets/portraits/chika-kf-b-r")
 PILOT = ["S03d", "S15e", "S11d"]
 KF_RATE = 0.04
 
@@ -53,6 +54,22 @@ LOC_NOTE = {
     "angle-bq": "Banquet hall: the stage banner and the projection screen are completely blank; table cards and name tags are blank white.",
     "prop-case": "The attaché case has NO logo, NO monogram, NO tag — plain leather and brass only.",
     "prop-tripod": "The tripod and camera have NO brand logo or lettering.",
+}
+
+
+# 파일럿 1차 검수(2026-10-08) 결과 보정 문장 — 프롬프트 맨 앞에 넣어 참조 셀(흰 배경·플랫 조명)보다 우선시킨다
+FIX = {
+    # S03d: 미디엄(노트북·손 노출)·플랫 밝은 조명·친절한 미소·아이레벨로 생성됨 → 설계(로우앵글 CU·압박 형광등·비웃음)
+    "S03d": ("LIGHTING AND FRAMING FIRST. The office is dim at the edges: the only strong light is a hard, cold fluorescent panel directly above "
+             "Gondo, pressing straight down — bright forehead and nose bridge, deep dark eye sockets behind the gold-rimmed glasses, a hard shadow under "
+             "the chin and nose, the far desks fading into cool shadow; NO bright even daylight, NO flat lighting. Camera is BELOW his eye line "
+             "looking UP at him (low angle), tight chest-up close-up: head and shoulders fill the frame, cut at mid-chest; NO laptop, NO desk, NO hands "
+             "in the frame. Expression: a thin one-sided SNEER — lips pressed with one corner pulled up, eyes narrowed, chin raised, looking down his nose "
+             "at the camera with contempt; NOT a friendly smile, NOT warm."),
+    # S11d: 아이레벨로 생성되고 하단에 흰 띠(레터박스) → 바닥 높이 극단 로우앵글, 전체 화면
+    "S11d": ("CAMERA FIRST: the camera sits on the concrete floor of the archive (lens about 30 cm above the floor) looking UP: the open steel door and "
+             "the backlit figure tower above the lens, the floor runs away from the bottom edge of the frame toward the door, the fluorescent tube and "
+             "ceiling converge upward. Extreme low angle, 35mm lens. Full-frame 16:9 image with NO white or black strip at any edge."),
 }
 
 
@@ -105,6 +122,8 @@ def build(sc, face_refs):
     refs = list(face_refs) + [r for r in sc["refs"] if r not in face_refs]
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
+    if sc["id"] in FIX:
+        parts.insert(1, FIX[sc["id"]])
     parts.append(sc["keyframe_prompt"])
     parts += notes(refs)
     if sc["kind"] == "d":
