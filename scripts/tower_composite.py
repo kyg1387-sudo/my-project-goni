@@ -350,6 +350,26 @@ def slide_passbook(w, h):
     return im
 
 
+def slide_registry(w, h):
+    """감독님 지적(남자가 왜 오른손을 드는지): S14k 남자가 빈 스크린을 가리켰다 → 대사(この業者、理事長の弟の会社じゃないか)의
+    근거인 법인등기 슬라이드를 스크린에 띄운다(노트북 S10c와 같은 내용, 투사용으로 큰 글씨)."""
+    im = canvas(w, h, (250, 250, 248, 255)); d = ImageDraw.Draw(im)
+    d.rectangle((0, 0, w, h * 0.16), fill=(30, 60, 110, 255))
+    t = "振込先業者の法人登記"; ctext(d, w / 2, h * 0.03, t, fit(d, t, MIN_B, w * 0.8, h * 0.095), (255, 255, 255, 255))
+    rows = [("商号", COMPANY), ("代表者", "代表取締役　西園寺 剛"), ("本店", "港区（レンタルオフィス）"), ("従業員", "0名")]
+    x0, x1, kx, y, rh = w * 0.04, w * 0.96, w * 0.24, h * 0.22, h * 0.135
+    for k, v in rows:
+        hi = k == "代表者"
+        d.rectangle((x0, y, x1, y + rh), fill=(255, 228, 228, 255) if hi else (255, 255, 255, 255), outline=(170, 176, 190, 255), width=2)
+        d.rectangle((x0, y, kx, y + rh), fill=(246, 214, 214, 255) if hi else (228, 235, 246, 255), outline=(170, 176, 190, 255), width=2)
+        d.text((x0 + w * 0.015, y + rh * 0.2), k, font=font(GOTH, rh * 0.55), fill=(50, 50, 70, 255))
+        d.text((kx + w * 0.02, y + rh * 0.18), v, font=fit(d, v, GOTH, x1 - kx - w * 0.04, rh * 0.6),
+               fill=(190, 20, 30, 255) if hi else (20, 20, 30, 255))
+        y += rh
+    t = "代表者 ＝ 理事長の実弟"; ctext(d, w / 2, y + h * 0.05, t, fit(d, t, MIN_B, w * 0.8, h * 0.11), (190, 20, 30, 255))
+    return im
+
+
 def slide_pair(w, h, date, amount, sdate, caption, photo, stage):
     """스크린 쌍: 왼쪽 통장 행, 빨간 화살표, 오른쪽 SNS 게시물. stage 0 = 왼쪽만, 1 = 전부."""
     im = canvas(w, h, (246, 246, 244, 255)); d = ImageDraw.Draw(im)
@@ -443,7 +463,9 @@ JOBS = {
     "S06a": [("ink", P((689, 85), (1144, 76), (1144, 153), (689, 176)), lambda w, h: art_banner(w, h, BANNER_RINJI))],
     "S06d": [("ink", P((694, 85), (1150, 76), (1148, 153), (694, 176)), lambda w, h: art_banner(w, h, BANNER_RINJI))],
     "S14b": [("ink", P((848, 165), (1240, 143), (1240, 209), (849, 228)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
-    "S14k": [("ink", P((848, 165), (1239, 143), (1238, 206), (848, 226)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
+    "S14k": [("ink", P((848, 165), (1239, 143), (1238, 206), (848, 226)), lambda w, h: art_banner(w, h, BANNER_TSUJO)),
+             ("screen", P((889, 229), (1201, 229), (1201, 382), (889, 382)), lambda w, h: slide_registry(w, h))],   # 가리키는 대상(수정 18)
+    "S14j": [("screen", P((838, 100), (1135, 100), (1135, 316), (838, 316)), lambda w, h: slide_registry(w, h))],   # S14i 슬라이드 → S14k 사이 빈 화면 방지
     "S14o": [("ink", P((848, 163), (1238, 142), (1238, 207), (848, 226)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     "S17h": [("ink", P((852, 163), (1240, 142), (1240, 207), (851, 225)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
     "S14g": [("ink", P((867, 174), (1239, 139), (1239, 206), (867, 222)), lambda w, h: art_banner(w, h, BANNER_TSUJO))],
@@ -553,7 +575,7 @@ def apply(a, mode, q, art_fn, sigma_override=None, protect=False):
 
 # 무지 면은 질감이 없어 초점이 나간 것으로 오판됨 → 실제 초점(가장자리·나사 선명도)을 보고 직접 지정
 SIGMA = {"S03a": 0.4, "S03d": 0.6, "S03e2": 0.6, "S18a": 0.4, "S16h": 0.5, "S19b": 1.0, "S19f": 0.5, "S11a2": 0.5, "S10c": 0.6, "S14e": 0.7,
-         "S14c": 0.5, "S14a": 0.5, "S13e": 0.6, "S02c2": 0.4, "S04b": 0.4, "S12a": 0.4, "S17c": 0.4, "S10a2": 0.9, "S06a": 1.2}
+         "S14c": 0.5, "S14a": 0.5, "S13e": 0.6, "S02c2": 0.4, "S04b": 0.4, "S12a": 0.4, "S17c": 0.4, "S10a2": 0.9, "S06a": 1.2, "S14k": 0.5, "S14j": 0.7}
 PROTECT = {"S04b", "S10a", "S12a"}  # 손·펜·소매가 면을 가리는 컷
 
 
