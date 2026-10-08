@@ -74,6 +74,22 @@ FIX = {
              "looking UP at him (low angle), tight chest-up close-up: head and shoulders fill the frame, cut at mid-chest; NO laptop, NO desk, NO hands "
              "in the frame. Expression: a thin one-sided SNEER — lips pressed with one corner pulled up, eyes narrowed, chin raised, looking down his nose "
              "at the camera with contempt; NOT a friendly smile, NOT warm."),
+    # A단계 1차 검수(2026-10-08): S03g는 S03d와 같은 장면·같은 압박 조명이어야 함(밝은 대낮 사무실로 생성됨)
+    "S03g": ("LIGHTING FIRST. The office is dim at the edges: the only strong light is a hard, cold fluorescent panel directly above Gondo, pressing "
+             "straight down — bright forehead, deep dark eye sockets behind the gold-rimmed glasses, hard shadow under the chin, the far desks fading "
+             "into cool shadow; NO bright daylight, NO flat lighting. Camera BELOW his eye line looking up. He leans slightly toward the lens, eyes "
+             "narrowed, mouth closed in a hard line — cold threat, NOT smiling."),
+    # S11c: 책상 3/4 미디엄·손 노출·담담한 표정으로 생성됨 → 정면 CU + 공포
+    "S11c": ("Saori faces the camera directly, seated at the desk but framed chest-up so the desk and her hands are NOT visible; the warm desk lamp lights "
+             "one side of her face, the other side falls into cool shadow. Expression: FEAR held in — eyes wide and fixed, pupils large, lips pressed "
+             "together, a tense throat as she swallows; NOT calm, NOT smiling."),
+    # S16f: 입을 벌리고 이가 보임 → OmniHuman용 입 다묾
+    "S16f": "Her mouth is CLOSED with the lips gently together, chin level, steady eyes looking into the lens; no teeth visible.",
+    # S18b: 입 벌린 웃음·미디엄 → 입 다문 장난스러운 미소
+    "S18b": "A broad PLAYFUL smile with the lips CLOSED (no teeth), eyes crinkled, looking into the lens.",
+    # S18e: 옆을 보는 미디엄 → 정면 CU, 시선만 살짝 먼 곳
+    "S18e": ("Miyamoto's face is turned toward the camera (within 15 degrees of frontal); only his EYES drift slightly up and away to the distance, "
+             "a slow sad-sweet closed-mouth smile under the moustache. Chest-up close-up, hands not visible."),
     # S11d: 아이레벨로 생성되고 하단에 흰 띠(레터박스) → 바닥 높이 극단 로우앵글, 전체 화면
     "S11d": ("CAMERA FIRST: the camera sits on the concrete floor of the archive (lens about 30 cm above the floor) looking UP: the open steel door and "
              "the backlit figure tower above the lens, the floor runs away from the bottom edge of the frame toward the door, the fluorescent tube and "
@@ -141,6 +157,8 @@ def build(sc, face_refs):
     refs = [os.path.join(os.path.dirname(r), swap.get(os.path.basename(r), os.path.basename(r))) for r in refs]
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
+    if sc["kind"] == "d":
+        parts.insert(1, TIGHT + " Mouth CLOSED (lips together, no teeth visible); facing the camera, looking into the lens.")
     if sneer:
         parts.insert(1, SNEER)
     if sc["id"] in FIX:
