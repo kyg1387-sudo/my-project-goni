@@ -1,0 +1,67 @@
+{
+ "_설명": "#02 기리타니(50대 내부감사실장) 목소리 비교 — 사용자 지정 Chunsik Kang(중년·다큐) vs Gunn Kim(청년·다큐). 같은 감정 설정으로 공정 비교. 곤도(Shinwook)와 음높이 구분 확인.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "kiritani_ChunsikKang_1_dismiss",
+   "model": "typecast-direct",
+   "voice": "tc_6620d223b5347631a920ba83",
+   "language": "jpn",
+   "text": "部外者は、あなたの方です。……本日付で、あなたの取締役就任内定は、白紙撤回されました。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "kiritani_ChunsikKang_2_charge",
+   "model": "typecast-direct",
+   "voice": "tc_6620d223b5347631a920ba83",
+   "language": "jpn",
+   "text": "容疑は、十年にわたるサンライズ企画への不正送金。総額三千万円の、業務上横領です。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "kiritani_ChunsikKang_3_doubt",
+   "model": "typecast-direct",
+   "voice": "tc_6620d223b5347631a920ba83",
+   "language": "jpn",
+   "text": "……森川さん。本当ですか。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "kiritani_GunnKim_1_dismiss",
+   "model": "typecast-direct",
+   "voice": "tc_61c2f7741330d213c238cba6",
+   "language": "jpn",
+   "text": "部外者は、あなたの方です。……本日付で、あなたの取締役就任内定は、白紙撤回されました。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "kiritani_GunnKim_2_charge",
+   "model": "typecast-direct",
+   "voice": "tc_61c2f7741330d213c238cba6",
+   "language": "jpn",
+   "text": "容疑は、十年にわたるサンライズ企画への不正送金。総額三千万円の、業務上横領です。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "kiritani_GunnKim_3_doubt",
+   "model": "typecast-direct",
+   "voice": "tc_61c2f7741330d213c238cba6",
+   "language": "jpn",
+   "text": "……森川さん。本当ですか。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  }
+ ]
+}
