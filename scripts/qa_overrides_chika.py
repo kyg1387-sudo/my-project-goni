@@ -20,7 +20,9 @@ for i, s in enumerate(sb, 1):
     w, h, fr, nf = int(info[0]), int(info[1]), info[2], int(info[3])
     want = int(np.ceil((durs[i - 1] + 0.5) * 24)) if s["tier"] != "card" else int(np.ceil(durs[i - 1] * 24))
     if (w, h) != (1920, 1080) or fr != "24/1": bad.append(f"scene{i:02d} {s['id']}: {w}x{h} {fr}")
-    if abs(nf - want) > 2: bad.append(f"scene{i:02d} {s['id']}: {nf}프레임 ≠ {want}")
+    if s["tier"] in ("lite", "pro", "hero"):   # 생성 클립(후처리본)은 생성 길이(5·10초) 그대로, 조립에서 계획 길이로 트리밍
+        if nf < want - 2: bad.append(f"scene{i:02d} {s['id']}: 생성 클립 {nf}프레임 < 계획 {want}")
+    elif abs(nf - want) > 2: bad.append(f"scene{i:02d} {s['id']}: {nf}프레임 ≠ {want}")
     cap = cv2.VideoCapture(p); frames = []
     for k in (0, nf // 2, nf - 1):
         cap.set(cv2.CAP_PROP_POS_FRAMES, k); ok, f = cap.read()

@@ -281,7 +281,12 @@ def main(only=None):
 # ---------------- 생성 i2v 클립 후처리(무과금) ----------------
 RAW = os.path.join(ROOT, "assets", "portraits", "chika-kf-raw")
 # i2v는 카메라 지시를 무시 → 편집에서(제8장 6): 악역 컷 더치·핸드헬드(제8장 4·4-1), S18h 풀백(엔딩 크레인 대용)
-POST_FX = {"S05a": "dutch5", "S15b2": "dutch7", "S18h": "pull", "S12a2": "hand", "S12d": "hand"}
+POST_FX = {"S05a": "dutch5", "S15b2": "dutch7", "S18h": "pull", "S12a2": "hand", "S12d": "hand",
+           "S01a": "silhouette"}   # Kling이 역광 인물 얼굴을 밝혔다(3테이크 모두) → 문 영역 중간톤 압축으로 실루엣 복원(무료)
+# 히어로 테이크 선택(검수 2026-10-08): 설계 동작·결함 기준
+TAKE = {"S01a": 2, "S01c": 2, "S02a": 2, "S05d": 1, "S06a": 2, "S11b": 3, "S11d": 2, "S13a": 2, "S13a4": 2, "S14a": 2, "S14h": 3,
+        "S15k": 2, "S17c": 2, "S18h": 1}   # S15k take3: 탁자 명패에 글자 / S13a4 take3: 걷지 않음 / S06a take2: 형광등 깜빡임(설계)
+SIL_RECT = (0.37, 0.33, 0.63, 0.98)   # S01a 문 영역(비율)
 
 
 def read_frames(path):
@@ -367,6 +372,20 @@ class SignTracker:
         return out
 
 
+def silhouette(frames):
+    """문 영역 안의 중간톤(인물 얼굴·셔츠)을 눌러 역광 실루엣으로: 밝은 역광(>200)은 유지, 그 아래는 0.22배."""
+    x0, y0, x1, y1 = int(SIL_RECT[0] * W), int(SIL_RECT[1] * H), int(SIL_RECT[2] * W), int(SIL_RECT[3] * H)
+    out = []
+    for f in frames:
+        g = f.astype(np.float32); reg = g[y0:y1, x0:x1]
+        lum = reg.mean(2, keepdims=True)
+        k = np.clip((lum - 200) / 40, 0, 1)          # 200 이하 = 인물, 240 이상 = 역광
+        reg = reg * (0.22 + 0.78 * k)
+        g[y0:y1, x0:x1] = reg
+        out.append(np.clip(g, 0, 255).astype(np.uint8))
+    return out
+
+
 def cam_frames(frames, fx):
     """편집 카메라(제8장 4-1): dutchN = N° 회전 + 1.2배, pull = 풀백, hand = 미세 핸드헬드(±0.6% 위치, ±0.3° 회전, 저주파)."""
     n = len(frames); out = []
@@ -394,9 +413,11 @@ def post(clips):
     signs = set(tc.JOBS)
     for i, s in enumerate(sb, start=1):
         sid = s["id"]
-        if s["tier"] not in ("pro", "lite", "hero") or not (sid in signs or sid in POST_FX):
+        if s["tier"] not in ("pro", "lite", "hero") or not (sid in signs or sid in POST_FX or sid in TAKE):
             continue
         src = os.path.join(clips, f"scene{i:02d}.mp4")
+        if sid in TAKE and os.path.exists(os.path.join(clips, f"scene{i:02d}_take{TAKE[sid]}.mp4")):
+            src = os.path.join(clips, f"scene{i:02d}_take{TAKE[sid]}.mp4")
         if not os.path.exists(src):
             print(f"scene{i:02d} {sid}: 클립 없음 — export_files로 먼저 가져오기"); continue
         fx = POST_FX.get(sid, "")
@@ -410,8 +431,8 @@ def post(clips):
         if sid in signs:
             tr = SignTracker(sid); fr = tr.run(fr)
         if sid in POST_FX and not fx.startswith("slow"):
-            fr = cam_frames(fr, POST_FX[sid])
-        write_frames(fr, os.path.join(OUT, f"scene{i:02d}.mp4")); print(f"scene{i:02d} {sid}: " + " + ".join(x for x in ("표기 추적" if sid in signs else "", POST_FX.get(sid, "")) if x))
+            fr = silhouette(fr) if POST_FX[sid] == "silhouette" else cam_frames(fr, POST_FX[sid])
+        write_frames(fr, os.path.join(OUT, f"scene{i:02d}.mp4")); print(f"scene{i:02d} {sid}: " + " + ".join(x for x in ("표기 추적" if sid in signs else "", POST_FX.get(sid, ""), f"take{TAKE[sid]}" if sid in TAKE else "") if x))
 
 
 if __name__ == "__main__":
