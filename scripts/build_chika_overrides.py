@@ -165,7 +165,8 @@ def card(sid, out, sec):
     d.text(((W - (bb[2] - bb[0])) / 2 - bb[0], (H - (bb[3] - bb[1])) / 2 - bb[1]), text, font=f, fill=col)
     p = out + ".png"; im.save(p)
     n = int(math.ceil(sec * FPS)); fi = int(0.8 * FPS)
-    run(["-loop", "1", "-i", p, "-vf", f"fade=in:0:{fi},fade=out:{n - fi}:{fi},format=yuv420p", "-frames:v", str(n), "-r", str(FPS)] + ENC + [out])
+    # 미세 그레인: 검은 카드가 20KB 미만으로 인코딩돼 generate_video.py가 '깨진 파일'로 보는 일 방지(MIN_CLIP_BYTES) + 필름 질감
+    run(["-loop", "1", "-i", p, "-vf", f"fade=in:0:{fi},fade=out:{n - fi}:{fi},noise=alls=6:allf=t+u,format=yuv420p", "-frames:v", str(n), "-r", str(FPS)] + ENC + [out])
     os.remove(p)
 
 

@@ -6,7 +6,7 @@
 | `scripts/generate_video.py` | 히어로 컷 N테이크(`hero_takes`, scene{NN}_take{k}.mp4, 1번 테이크를 기본 클립), Kling 페이로드(duration·aspect_ratio·negative_prompt·cfg_scale), 비용 추산에 kling 0.112/s·테이크 수 반영 | 반영 |
 | `scripts/generate_audio.py` | `letterbox: "2:1"` → 1920x1080 안에 1920x960 매트(상하 60px), 자막 MarginV 150은 매트 안쪽 | 반영 |
 | `scripts/chika_composite.py` | 일본어 표기·그래픽 합성 30곳(현수막 5·명판 5·라벨 2·사원증·표창장·PPT 2·인사 발령·전표·DB 3·등기부/신청서·로그 2·영수증·핫라인·프로젝터). S09i(빨간 선)·S10e(送信完了)는 시간차 상태(_states.json). 원본 `chika-kf-raw/` | 완료, 검수 `assets/qa/chika/PHASE5_합성_검수.jpg` |
-| `scripts/build_chika_overrides.py` | 교체 클립 115개: still(2.5D 시차·푸시인·팬, 연속 컷 밀기/당기기 교차)·omni 정지·card 6·gfx(상태 크로스페이드)·reuse 4, 돌리줌 S14d(작품 1회), 플래시 S14g. post 모드: i2v 클립에 표기 추적 합성, 더치 S05a 5°·S15b2 7°, 핸드헬드 S12a2·S12d, 풀백 S18h | 생성 중 |
+| `scripts/build_chika_overrides.py` (교체 클립 114개 완료, `qa_overrides_chika.py` 검수 0건) | 교체 클립 115개: still(2.5D 시차·푸시인·팬, 연속 컷 밀기/당기기 교차)·omni 정지·card 6·gfx(상태 크로스페이드)·reuse 4, 돌리줌 S14d(작품 1회), 플래시 S14g. post 모드: i2v 클립에 표기 추적 합성, 더치 S05a 5°·S15b2 7°, 핸드헬드 S12a2·S12d, 풀백 S18h | 생성 중 |
 | `scripts/chika_grade.py` | 장소별 그레이딩(지하 teal-cold·엔딩 warm·사무실/강당 neutral-cool·연회장 warm/cold) + 35mm 그레인 + 약한 비네트 | 완료 |
 
 ## 2. 합성 생략 컷(면이 없거나 판독 불가 → 이야기 전달에 영향 없음)
@@ -26,3 +26,10 @@
 ## 5. 다음
 1. 교체 클립 115개 커밋(워크플로가 `assets/video-overrides/chika/`에서 읽음) → `generate_video.py` 사전 점검(비용·누수 차단) 통과 확인.
 2. 승인 → 히어로 파일럿 → i2v 전체 → 생성 클립 검수(헤드턴·얼굴·표기) → post(표기 추적·더치·핸드헬드) → burn(OmniHuman·자막·BGM·레터박스) → 그레이딩 → qa_assembly → 아웃트로·엔드카드.
+
+## 6. 교체 클립 검수(2026-10-08)
+- 114개 생성(still 62·omni 27·gfx 15·card 6·reuse 4). i2v 컷(hero 14·lite 28·pro 1)은 만들지 않음(처음 생성기가 hero를 정지로 만들어 유료 생성이 막힐 뻔한 것을 검수에서 발견 → 제외·삭제).
+- 검수에서 키프레임 9컷의 레터박스 띠(상하 33~93px)를 발견 → 무료 크롭(원본 `_v1/`), 합성 컷(S06a·S18f·S09i)은 좌표 보정 후 재합성, 교체 클립 7개 재생성.
+- 카드 6장은 검은 화면이라 20KB 미만으로 인코딩돼 사전 점검이 「깨진 파일」로 판정 → 미세 그레인 추가(필름 질감 겸).
+- `qa_overrides_chika.py`: 해상도·fps·길이(scene_durations+0.5)·밝기·첫 프레임↔키프레임 상관 — 0건. `verify_sync.py` 0건.
+- 유료 사전 점검(`generate_video.py preflight`): 누수 차단 통과, 새로 생성 43개(히어로 테이크 42 포함) 약 34.26달러.
