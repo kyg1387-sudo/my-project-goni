@@ -6,10 +6,10 @@ cd "$(dirname "$0")/.."
 if ls deliveries/tower-skit-final.mp4.part-* >/dev/null 2>&1; then cat deliveries/tower-skit-final.mp4.part-* > out/tower-main-burn.mp4; fi   # 조각을 지운 뒤 재실행이면 out/ 의 burn 본 사용
 # burn 이후에 고친 하드컷 컷은 완성본에서 바로 교체(무과금) — PATCH="S10a2 ..."
 cp out/tower-main-burn.mp4 out/tower-main.mp4
-for sid in ${PATCH:-}; do
-  python3 scripts/patch_final_cut.py tower "$sid" out/tower-main.mp4 out/tower-main-p.mp4 productions/tower-bossmom-ja/qa/assembly/report.txt
+if [ -n "${PATCH:-}" ]; then   # 여러 컷을 한 번의 인코딩으로(화질 누적 열화 방지)
+  python3 scripts/patch_final_cut.py tower "$PATCH" out/tower-main.mp4 out/tower-main-p.mp4 productions/tower-bossmom-ja/qa/assembly/report.txt
   mv out/tower-main-p.mp4 out/tower-main.mp4
-done
+fi
 # 립싱크 클로즈업 배경을 같은 회의장 만석으로(수정 17)
 python3 scripts/tower_bg_swap.py out/tower-main.mp4 out/tower-main-bg.mp4 productions/tower-bossmom-ja/qa/assembly/report.txt
 mv out/tower-main-bg.mp4 out/tower-main.mp4

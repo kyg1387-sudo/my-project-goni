@@ -4,7 +4,8 @@
 교체 클립(assets/video-overrides/<skit>/sceneNN.mp4)의 앞부분을 컷 구간 [t0, t1]에 덮고, 그 구간에 걸친 자막(subs/<skit>.ass)만
 같은 스타일로 다시 입힌다. 오디오는 그대로 복사. 컷 경계는 하드컷이어야 한다(디졸브 경계면 중단).
 구간은 조립 검수 report.txt(qa_assembly.py)의 장면 경계를 쓴다.
-사용법: patch_final_cut.py <skit> <장면ID> <in.mp4> <out.mp4> <report.txt>
+사용법: patch_final_cut.py <skit> "<장면ID> [장면ID ...]" <in.mp4> <out.mp4> <report.txt>
+여러 컷은 한 번의 인코딩으로 교체한다(컷마다 전체를 다시 인코딩하면 화질이 누적 열화 — 2026-10-08 10컷 교체에서 확인).
 """
 import json
 import os
@@ -25,8 +26,7 @@ def tc(s):
     return f"{int(s // 3600)}:{int(s % 3600 // 60):02d}:{s % 60:05.2f}"
 
 
-def main():
-    skit, sid, src, out, report = sys.argv[1:6]
+def prepare(skit, sid, out, report):
     sb = json.load(open(os.path.join(ROOT, "scripts", "storyboard", f"{skit}.json"), encoding="utf-8"))["scenes"]
     au = json.load(open(os.path.join(ROOT, "scripts", "audio", f"{skit}.json"), encoding="utf-8"))
     idx = next(i for i, s in enumerate(sb, start=1) if s["id"] == sid)
@@ -53,10 +53,21 @@ def main():
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", clip, "-t", f"{t1 - t0:.3f}", "-vf",
                     f"scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,fps=24,format=yuv420p,ass={ass}",
                     "-an", "-c:v", "libx264", "-crf", "16", patch], check=True)
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", src, "-i", patch, "-filter_complex",
-                    f"[1:v]setpts=PTS+{t0:.3f}/TB[p];[0:v][p]overlay=0:0:enable='between(t,{t0:.3f},{t1:.3f})':eof_action=pass,format=yuv420p[v]",
+    print(f"{sid}(scene{idx:02d}) {t0:.2f}~{t1:.2f}s 교체, 자막 {len(ev)}줄 재입힘")
+    return t0, t1, patch
+
+
+def main():
+    skit, sids, src, out, report = sys.argv[1:6]
+    segs = [prepare(skit, sid, out + "." + sid, report) for sid in sids.split()]
+    ins, fc, cur = ["-i", src], [], "[0:v]"
+    for k, (t0, t1, patch) in enumerate(segs):
+        ins += ["-i", patch]
+        fc.append(f"[{k + 1}:v]setpts=PTS+{t0:.3f}/TB[p{k}];{cur}[p{k}]overlay=0:0:enable='between(t,{t0:.3f},{t1:.3f})':eof_action=pass[o{k}]")
+        cur = f"[o{k}]"
+    subprocess.run(["ffmpeg", "-v", "error", "-y"] + ins + ["-filter_complex", ";".join(fc) + f";{cur}format=yuv420p[v]",
                     "-map", "[v]", "-map", "0:a", "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-c:a", "copy", "-movflags", "+faststart", out], check=True)
-    print(f"저장: {out} — {sid}(scene{idx:02d}) {t0:.2f}~{t1:.2f}s 교체, 자막 {len(ev)}줄 재입힘")
+    print(f"저장: {out} — {len(segs)}컷 한 번에 교체")
 
 
 if __name__ == "__main__":
