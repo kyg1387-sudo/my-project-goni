@@ -171,7 +171,7 @@ SHOTS = [
     # ── ① 후크 S01 (플래시포워드, 연회장 밤)
     S("S01a", "S01", "sil", "ws", "bq_cold", "LA", ["AUDIT"], "BQ_DOORS",
       "Low angle from the red carpet: the double doors of the banquet hall have just burst open, five internal-audit staff stand backlit in the doorway as dark silhouettes, cold light flooding past them, chandeliers above.",
-      motion="The silhouettes take two slow steps forward into the hall; the doors stay open. No one else enters.", hero=True),
+      motion="The silhouettes take two slow steps forward into the hall; the doors stay open. No one else enters. The five figures stay backlit dark silhouettes with faces in deep shadow the whole time (Kling pilot: faces lit up as they stepped in); every table card stays a plain blank white card with no digits or writing.", hero=True),
     S("S01b", "S01", "d", "cu", "bq_cold", "EL", ["KIRITANI"], "BQ_WIDE",
       "Chest-up close-up of Kiritani just inside the doorway, expressionless, rimless glasses catching a cold glint, blurred chandeliers and guests far behind.", line="line001", expr="stern"),
     S("S01c", "S01", "face", "ecu", "bq_press", "HA", [], "BQ_TABLE",
