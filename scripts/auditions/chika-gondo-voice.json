@@ -1,0 +1,19 @@
+{
+ "_설명": "#02 『地下倉庫の伝票』 곤도(52, 악역 부장) 목소리 샘플 — 사용자 지정 Shinwook(Typecast, 한국인 중년 남성). 비웃음 / 웃음 / 절규 3종으로 감정 폭과 일본어 억양 확인. 웃음 줄은 감정 2안 비교.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {"id": "gondo_Shinwook_1_sneer", "model": "typecast-direct", "voice": "tc_6465b87a4ee2060b333caf80", "language": "jpn",
+   "text": "勘違いするなよ、森川。手柄は俺のもの。部下の成果は、上司の器量だ。",
+   "emotion_preset": "normal", "emotion_intensity": 1.0, "tempo": 0.95},
+  {"id": "gondo_Shinwook_2a_laugh_happy", "model": "typecast-direct", "voice": "tc_6465b87a4ee2060b333caf80", "language": "jpn",
+   "text": "ぎゃはは！ 本当に来やがった！ 見ろよ、これが地下のカビ女だ！",
+   "emotion_preset": "happy", "emotion_intensity": 1.3, "tempo": 1.0},
+  {"id": "gondo_Shinwook_2b_laugh_toneup", "model": "typecast-direct", "voice": "tc_6465b87a4ee2060b333caf80", "language": "jpn",
+   "text": "ぎゃはは！ 本当に来やがった！ 見ろよ、これが地下のカビ女だ！",
+   "emotion_preset": "toneup", "emotion_intensity": 1.3, "tempo": 1.0},
+  {"id": "gondo_Shinwook_3_scream", "model": "typecast-direct", "voice": "tc_6465b87a4ee2060b333caf80", "language": "jpn",
+   "text": "こいつがデータを改ざんしたんだ！ 共犯……いや、こいつが主犯だ！！",
+   "emotion_preset": "angry", "emotion_intensity": 1.5, "tempo": 1.0}
+ ]
+}
