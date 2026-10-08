@@ -187,7 +187,7 @@ def build(sc, face_refs, drop_expr=False):
     if sc["id"] in NO_LOC_REF:
         refs = [r for r in refs if not os.path.basename(r).startswith(("loc-", "angle-"))]
     if sc["kind"] == "ins" or sc["id"] in NOFACE:   # 인서트는 인물 셀을 참조하면 얼굴을 그린다(B단계 실증) → 장소·소품 셀만, 손·의상은 글로
-        refs = [r for r in refs if not person_key(r)]
+        refs = [r for r in refs if not person_key(r) and not r.startswith(STAGE_DIRS) and not r.startswith(KF_DIR)]
     swap = {**REF_SWAP["*"], **REF_SWAP.get(sc["id"], {})}
     sneer = any(os.path.basename(r) == "gondo-expr1.png" for r in refs)
     refs = [os.path.join(os.path.dirname(r), swap.get(os.path.basename(r), os.path.basename(r))) for r in refs]
