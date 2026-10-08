@@ -115,7 +115,7 @@ def person_key(path):
 
 def describe(path, i):
     name = os.path.basename(path).rsplit(".", 1)[0]
-    if path.startswith(STAGE_DIRS):
+    if path.startswith(STAGE_DIRS) or path.startswith(KF_DIR):
         k = person_key(path) or next((k for k, v in FACE_KF.items() if name.startswith(v)), "")
         who = PEOPLE.get(k, "this character")
         return (f"Reference image {i} is the APPROVED keyframe face of {who}: reproduce exactly this face, hair, eyewear and wardrobe; "
@@ -186,7 +186,7 @@ def face_refs_for(sc):
     for r in sc["refs"]:
         k = person_key(r)
         if k and k in FACE_KF:
-            p = f"assets/portraits/chika-kf-a/{FACE_KF[k]}-1.png"
+            p = f"{KF_DIR}/{FACE_KF[k]}-1.png"   # collect 뒤의 승인 키프레임(파일럿·A·재생성 포함)
             if sc["id"] == FACE_KF[k]:
                 continue
             if not os.path.exists(os.path.join(ROOT, p)):

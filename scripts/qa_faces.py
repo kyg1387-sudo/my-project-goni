@@ -9,6 +9,7 @@
 """
 import json
 import os
+import re
 import sys
 
 import cv2
@@ -50,6 +51,16 @@ def main():
         if not kf or not os.path.exists(kf):
             continue
         chars = [r.split("@")[0] for r in s.get("refs", []) if "@" in r and r.split("@")[0] not in SKIP]
+        # 경로형 refs(#02 chika: assets/.../cells/<인물>-<셀>.png) — 인물 키 = 파일명에서 -front/-expr/-q45/-full/-profile 앞부분
+        for r in s.get("refs", []):
+            if "@" in r or "/cells/" not in r:
+                continue
+            b = os.path.basename(r).rsplit(".", 1)[0]
+            if b.startswith(("loc-", "angle-", "prop-")):
+                continue
+            key = re.sub(r"-(front|expr\d|q45|full(-\w+)?|profile)$", "", b)
+            chars.append(key)
+            ref_map.setdefault(key, os.path.join(os.path.dirname(r), key + "-<cell>.png"))
         for c in dict.fromkeys(chars):
             people.setdefault(c, []).append((kf, s["id"] + ("*" if len(set(chars)) > 1 else "")))
     rows = []
