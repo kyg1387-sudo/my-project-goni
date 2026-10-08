@@ -1,0 +1,92 @@
+{
+  "_설명": "#02 B안 시네마 규격 v1 — 사용자 제공 규격(2026-10-08)을 검증·수정한 확정본 후보. 수정 근거는 _검증 항목과 03_시네마규격-검증.md 참고. 파이프라인 규칙(CLAUDE.md)과 충돌하는 부분은 파이프라인 규칙 우선.",
+  "project_meta": {
+    "title": "地下倉庫の伝票",
+    "_검증_title": "사용자 규격의 「地下倉庫左遷」 → 대본 v2 타이틀 카드와 통일(결정 대기: 둘 중 택1)",
+    "target_quality": "Theatrical Cinematic Film Grade",
+    "market": "Japan YouTube Long-form Drama"
+  },
+  "visual_pipeline": {
+    "aspect_ratio": "16:9 container with 2.00:1 matte",
+    "_검증_aspect": "2.39:1은 휴대폰에서 화면 손실이 큼 → 2:1 권장(결정 대기)",
+    "render_resolution": "1920x1080 master → 3840x2160 upscale for YouTube delivery",
+    "_검증_resolution": "4K 업로드 시 유튜브가 상위 코덱(VP9/AV1)을 배정해 1080p 시청 화질도 올라감(§9 계획)",
+    "framing_rules": ["Center Framing for Confrontations", "Rule of Thirds for Solitude"],
+    "color_grading": {
+      "film_grain": "35mm_overlay_opacity_0.04",
+      "lut_profiles": {
+        "basement_archive": "Teal_Cold_Desaturated (cool fluorescent cast, warm tungsten desk-lamp pool kept warm)",
+        "basement_ending_S18": "Warm_Orange_Soft (exception: one month later, reconciliation)",
+        "office_15F_and_auditorium": "Neutral_Corporate_Slightly_Cool",
+        "banquet": "Warm_Amber_Gold_Luxury"
+      },
+      "_검증_lut": "켈빈 숫자는 생성 프롬프트에서 오해됨(4500K는 차가운 색이 아님) → 빛의 색 묘사로 지시. 사무실은 banquet과 분리, S18 엔딩은 대본상 오렌지빛 예외"
+    },
+    "depth_of_field": "Shallow DoF with f/1.8 lens emulation on dramatic monologues and all crowd scenes (background extras as soft blur)"
+  },
+  "lighting_directives": {
+    "global_ban": "NO flat anime lighting, NO evenly lit faces",
+    "portrait_shading": "Rembrandt / chiaroscuro on key character frames; on lip-sync close-ups keep a soft fill so the mouth and jaw stay readable",
+    "_검증_portrait": "입 주변이 그늘지면 립싱크 품질이 떨어질 위험 → 립싱크 컷만 입 주변 보조광 유지",
+    "location_lighting": {
+      "basement": "flickering cold overhead fluorescent lighting, harsh brow shadows, single tungsten desk lamp pool of warm light on documents",
+      "banquet": "luxurious chandelier warm rim lighting, golden ambient fill, specular highlights on crystal glass",
+      "night_work": "blue screen glow reflecting on eyeglasses and face from laptop monitor",
+      "projector_reveal": "PENDING — 대본 v2에 프로젝터 장면 없음. 채택 시 S14 감사 증거 투사 컷 1개 추가(결정 대기)"
+    },
+    "edge_lighting": "subtle rim / hair light to separate subject from dark backgrounds",
+    "volumetric": "visible dust particles in the beams of the desk lamp and the doorway light (windowless basement: NO sunlight god rays)",
+    "_검증_volumetric": "지하는 「窓のない地下」 — 햇빛 빛줄기는 설정 모순. 광원은 책상 램프·문틈·형광등으로 한정"
+  },
+  "camera_motion": {
+    "default_moves": [
+      "Slow Creep-in (0.2% per sec)",
+      "Slow Horizontal Dolly/Tracking",
+      "Static Hold with Micro-breathe"
+    ],
+    "approved_signature_moves": {
+      "S14_dolly_zoom": "once in the film, Gondo CU after 白紙撤回",
+      "S14_low_angle_slowmo_tracking": "audit team entrance",
+      "S15_rack_focus": "guests' eyes turning to Saori",
+      "S07_overhead_static": "voucher fan",
+      "S18_crane_up": "ending"
+    },
+    "_검증_camera": "허용 3종만으로는 대본 v2 히어로 컷 5개가 금지됨 → 지정 컷 한정 예외로 등록(규칙집 7·8: 왜곡 기법은 1회)",
+    "banned_moves": ["Fast Zoom", "Dynamic Whip Pan", "Exaggerated Camera Shake"],
+    "editing_rules": {
+      "dialogue_transitions": "J-Cut / L-Cut audio pre-lead 0.25s",
+      "S14_impact": "1.5s silence (room tone only) after the wine glass shatters",
+      "_검증_impact": "사용자 규격의 「scene_05 champagne glass」 → 대본 v2에서는 S14 와인잔(콜드오픈 S01 재사용). 샴페인은 S12 코르크"
+    }
+  },
+  "audio_engineering": {
+    "mastering_target": "-14.0 LUFS (+/- 0.5)",
+    "true_peak_limit": "-1.0 dBTP",
+    "acoustic_reverb_spaces": {
+      "basement": "Dry, low-decay slapback with faint 50Hz fluorescent hum",
+      "banquet_hall": "Large hall reverb with non-verbal room bed (-28dB): glass clinks, cutlery, HVAC air — NO human voices"
+    },
+    "_검증_audio": "① 생성 웅성거림은 말소리가 섞임(CLAUDE.md 규칙 3, 2회 실증) → 말소리 없는 연회장 소리로 대체, 언어 QA 필수 ② 본사가 도쿄면 전원 주파수 50Hz(서일본 60Hz) — 일본 시청자 디테일",
+    "foley_layers": ["paper_shuffle", "folder_slam", "distant_footsteps_on_concrete", "stamp_thud", "scanner_pass", "elevator_hum", "champagne_cork", "glass_shatter"]
+  },
+  "typography": {
+    "font_family": "Noto Sans JP Bold (dialogue / cards) + Noto Serif JP SemiBold (narration, Mincho style)",
+    "_검증_font": "Yu Gothic·Hiragino는 상용 라이선스 글꼴이고 자막을 굽는 리눅스 러너에 없음 → 같은 계열의 무료(OFL) 글꼴로 대체. 내레이션=명조 구분은 그대로 채택",
+    "style": "Netflix-style minimalist, 1.5px soft black drop shadow, NO colorful rounded fonts, subtitles inside the lower matte",
+    "verified_terminology": {
+      "whistleblowing": "内部通報",
+      "embezzlement": "業務上横領",
+      "dismissal": "就任内定の白紙撤回 / 懲戒解雇",
+      "fictitious_billing": "架空請求（架空のコンサルタント料）"
+    },
+    "_검증_terminology": "「取締役解任」 삭제 — 곤도는 내정 단계라 취임 전(해임 대상 아님). 「循環取引」 삭제 — 회사 간 매출 부풀리기 사기로 이 이야기와 무관(일본 시청자가 오류로 지적 가능)"
+  },
+  "qa_guardrails": {
+    "sync_tolerance_seconds": 0.1,
+    "max_allowed_silent_gap_seconds": 1.0,
+    "silent_gap_scope": "between consecutive dialogue lines inside one dialogue scene",
+    "designed_silence_exceptions": ["S01 0.7s", "S07 ad break 0.9s", "S13 0.7s + ad break 0.9s", "S14 1.5s impact", "S16 1.0s after final blow", "silent montages S09-S11 and inserts"],
+    "_검증_qa": "1.5초 임팩트 정적과 1.0초 상한이 서로 충돌 → 상한은 대사 사이에만 적용, 의도된 정적은 예외 목록으로",
+    "auto_verify_script": "scripts/verify_sync.py (미구현 — Lock 타임라인 단계에서 작성: 화자-화면 일치·립싱크 창·자막↔음성 번호·정적 간격 검사)"
+  }
+}
