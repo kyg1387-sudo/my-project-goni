@@ -121,17 +121,23 @@ FIX_B = {
 
 
 # 감독님 지적(2:20·2:24 2026-10-08): 앉은 주민은 단상을 보는데 서 있는 유미·박수 치는 세 엄마는 카메라(단상 반대)를 봄 → 승인 컷 편집
-EDIT_FROM = {"S05d": "assets/portraits/tower-kf-raw/S05d-room.png", "S05c": "assets/portraits/tower-keyframes/S05c-1.png"}
-FIX_B["S05d"] = ("EDIT the reference image: keep EXACTLY the same room, camera position, framing, lighting, the seated residents and the "
-                 "standing woman's identity, glasses, bob haircut, navy cardigan and grey skirt. ONLY change the standing woman's orientation: she now "
-                 "FACES THE STAGE on the right (the lectern and projection screen), like everyone else — seen in a three-quarter REAR view from "
-                 "the camera, her back and shoulder toward us, her face turned toward the lectern so only her cheek, glasses edge and profile "
-                 "are visible; she raises her right hand high toward the lectern to ask to speak. The seated residents keep facing the stage.")
-FIX_B["S05c"] = ("EDIT the reference image: keep EXACTLY the three women's torsos, sweaters, blouse, cardigan, skirts and clapping hands in the "
-                 "foreground and the same framing. ONLY change the blurred background so the geometry is correct: the camera is at the STAGE "
-                 "looking at the audience, so behind the three women the blurred seated residents FACE THE CAMERA (soft, unrecognizable faces and "
-                 "fronts, clapping politely), and at the far end is the BACK WALL of the hall with a plain double door — NO projection screen, NO "
-                 "banner, NO lectern in the background. The windows stay where they are.")
+EDIT_FROM = {"S05d": "assets/portraits/tower-kf-raw/S05d-turn.png", "S05c": "assets/portraits/tower-keyframes/S05c-1.png",
+             "S06a": "assets/portraits/tower-kf-raw/S06a-1.png"}   # S05d 2차: 1차(단상 쪽으로 돌아섬, 손을 내림)에서 손만 들게
+FIX_B["S05d"] = ("EDIT the reference image: keep EVERYTHING exactly the same — room, camera, framing, lighting, every seated resident, and the "
+                 "standing woman with her back to us facing the stage. ONLY add one gesture: she raises her RIGHT arm straight up high above her "
+                 "head, open palm facing the lectern, like a person asking to speak at a meeting. The raised hand is clearly visible against the wall, "
+                 "with exactly five fingers. Do not turn her toward the camera.")
+FIX_B["S05c"] = ("EDIT the reference image: keep EXACTLY the three women in the foreground — their pink sweater, white blouse, beige cardigan, "
+                 "skirts, clapping hands — and keep the top edge of the frame cutting across their collarbones so NO face, chin or mouth of these "
+                 "three women is visible. ONLY replace the background: the camera stands at the front of the hall looking toward the audience, so "
+                 "EVERY person in the background is seen from the FRONT, seated and facing the camera, softly out of focus (natural blurred faces, "
+                 "no mosaic, no pixelation); NOBODY in the background shows the back of their head. At the far end is the plain back wall with "
+                 "a double door. NO projection screen, NO banner, NO lectern anywhere.")
+FIX_B["S06a"] = ("EDIT the reference image: keep EXACTLY the same woman (face, wavy dark hair, cream tweed jacket, black top, microphone in her "
+                 "hand), the room, windows, banner, projection screen, camera angle and lighting. Fix the furniture: there is ONLY ONE wooden "
+                 "lectern in the room — the one at the front under the projection screen. REMOVE the second lectern that stands in the middle of "
+                 "the audience; she now stands BEHIND the front lectern under the screen, holding the microphone, facing the audience. Where the "
+                 "removed lectern was, show grey chairs with seated residents seen from behind, matching the rows around them.")
 
 
 FEAR_FACE = {"S14h": "assets/portraits/tower-cast/cells/reika-fear-3.png", "S16g": "assets/portraits/tower-cast/cells/reika-fear-3.png",
