@@ -397,6 +397,31 @@ def main():
                       f"{e.read().decode(errors='replace')[:300]}")
                 failed.append(t["id"])
             continue
+        if model == "elevenlabs-sfx":
+            # ElevenLabs 효과음 생성(웃음·숨소리 등 비언어 소리) — ELEVENLABS_API_KEY 필요. 응답은 mp3 바이트.
+            el_key = (os.environ.get("ELEVENLABS_API_KEY") or "").strip()
+            if not el_key:
+                failed.append(t["id"])
+                print(f"[{t['id']}] ELEVENLABS_API_KEY 시크릿이 없습니다 — 건너뜀")
+                continue
+            body = {"text": t["text"], "prompt_influence": float(t.get("prompt_influence", 0.6))}
+            if t.get("duration"):
+                body["duration_seconds"] = float(t["duration"])
+            print(f"[{t['id']}] elevenlabs-sfx: {t['text'][:40]}…")
+            req = urllib.request.Request(
+                "https://api.elevenlabs.io/v1/sound-generation",
+                data=json.dumps(body).encode("utf-8"),
+                headers={"Content-Type": "application/json", "xi-api-key": el_key},
+                method="POST")
+            try:
+                with urllib.request.urlopen(req, timeout=120) as resp:
+                    open(path, "wb").write(resp.read())
+                print(f"  저장됨 → {path}")
+            except urllib.error.HTTPError as e:
+                print(f"  [{t['id']}] ElevenLabs 효과음 오류 (HTTP {e.code}): "
+                      f"{e.read().decode(errors='replace')[:300]}")
+                failed.append(t["id"])
+            continue
         if model == "elevenlabs-direct":
             # 사용자 본인 ElevenLabs 계정의 보이스(개인 클론) — ELEVENLABS_API_KEY 필요
             el_key = (os.environ.get("ELEVENLABS_API_KEY") or "").strip()
