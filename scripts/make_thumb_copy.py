@@ -1,0 +1,89 @@
+#!/usr/bin/env python3
+"""썸네일 베이스(AI 생성, 글자 없음) 위에 일본어 카피를 실글꼴로 합성(무과금) — 생성기가 글자를 그리면 외계어가 나온다(제2장).
+감독님 지정 카피(2026-10-08): A 전후 대비형 · B 결정적 증거형 · C 권선징악 사이다형.
+사용법: make_thumb_copy.py <A베이스.png> <B베이스.png> <C베이스.png> <출력 폴더>
+"""
+import os
+import sys
+
+from PIL import Image, ImageDraw, ImageFont
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+BLACK = os.path.join(ROOT, "scripts", "fonts", "ZenMaruGothic-Black.ttf")
+W, H = 1280, 720
+YELLOW, RED, WHITE, INK, TEAL = (255, 222, 0), (220, 20, 30), (255, 255, 255), (10, 10, 10), (0, 200, 190)
+
+
+def font(px):
+    return ImageFont.truetype(BLACK, int(px))
+
+
+def fit_px(d, text, maxw, px):
+    while px > 20 and d.textlength(text, font=font(px)) > maxw:
+        px -= 2
+    return px
+
+
+def outlined(d, xy, text, px, fill, stroke, sw, anchor="la"):
+    d.text(xy, text, font=font(px), fill=fill, stroke_width=sw, stroke_fill=stroke, anchor=anchor)
+
+
+def arrow(d, x, y, size, fill, stroke):
+    """➔(글꼴에 없음) — 도형으로 그린 굵은 화살표."""
+    s = size
+    pts = [(x, y - s * 0.16), (x + s * 0.55, y - s * 0.16), (x + s * 0.55, y - s * 0.38), (x + s, y),
+           (x + s * 0.55, y + s * 0.38), (x + s * 0.55, y + s * 0.16), (x, y + s * 0.16)]
+    d.polygon(pts, fill=stroke); d.polygon([(px + (2 if px > x else 3), py) for px, py in pts], fill=fill)
+
+
+def base(path):
+    im = Image.open(path).convert("RGB")
+    s = max(W / im.width, H / im.height); im = im.resize((int(im.width * s + 0.5), int(im.height * s + 0.5)), Image.LANCZOS)
+    return im.crop(((im.width - W) // 2, (im.height - H) // 2, (im.width - W) // 2 + W, (im.height - H) // 2 + H))
+
+
+def thumb_a(src):
+    im = base(src); d = ImageDraw.Draw(im)
+    t1 = "「紙と一緒にカビてろｗ」"; px = fit_px(d, t1, W * 0.48, 76)
+    outlined(d, (24, 30), t1, px, YELLOW, RED, 9)
+    t2 = "「10年横領で即日クビ」"; px2 = fit_px(d, t2, W * 0.42, 74)
+    tw = d.textlength(t2, font=font(px2)); x = W - 28 - tw; y = H - 40
+    outlined(d, (x, y), t2, px2, WHITE, INK, 9, "ls")
+    arrow(d, x - px2 * 1.05, y - px2 * 0.36, px2 * 0.9, WHITE, INK)
+    return im
+
+
+def thumb_b(src):
+    im = base(src); d = ImageDraw.Draw(im)
+    t1 = "「この伝票、見覚えありますよね？」"; px = fit_px(d, t1, W * 0.94, 70)
+    outlined(d, (W / 2, 26), t1, px, TEAL, INK, 9, "ma")
+    t2 = "【3,000万円 業務上横領】"; px2 = fit_px(d, t2, W * 0.78, 80)
+    tw = d.textlength(t2, font=font(px2)); cx, cy = W / 2, H * 0.56
+    pad_x, pad_y = 30, 20
+    box = (cx - tw / 2 - pad_x, cy - px2 / 2 - pad_y, cx + tw / 2 + pad_x, cy + px2 / 2 + pad_y)
+    d.rectangle((box[0] - 6, box[1] - 6, box[2] + 6, box[3] + 6), fill=WHITE)
+    d.rectangle(box, fill=RED)
+    outlined(d, (cx, cy), t2, px2, WHITE, (90, 0, 0), 4, "mm")
+    return im
+
+
+def thumb_c(src):
+    im = base(src); d = ImageDraw.Draw(im)
+    t1 = "「お前の代わりは幾らでもいるｗ」"; px = fit_px(d, t1, W * 0.9, 68)
+    outlined(d, (W / 2, 24), t1, px, YELLOW, INK, 9, "ma")
+    t2 = "「無能部長、完全破滅＆逮捕！」"; px2 = fit_px(d, t2, W * 0.86, 96)
+    tw = d.textlength(t2, font=font(px2)); x = (W - tw) / 2 + px2 * 0.5; y = H - 34
+    outlined(d, (x, y), t2, px2, RED, WHITE, 10, "ls")
+    arrow(d, x - px2 * 1.0, y - px2 * 0.36, px2 * 0.85, RED, WHITE)
+    return im
+
+
+def main():
+    a, b, c, out = sys.argv[1:5]
+    os.makedirs(out, exist_ok=True)
+    for name, fn, src in (("A-전후대비형", thumb_a, a), ("B-증거폭로형", thumb_b, b), ("C-사이다형", thumb_c, c)):
+        p = os.path.join(out, f"thumb-{name}.jpg"); fn(src).save(p, quality=92); print("저장:", p)
+
+
+if __name__ == "__main__":
+    main()
