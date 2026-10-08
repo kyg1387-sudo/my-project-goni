@@ -43,13 +43,17 @@ def base(path):
 
 
 def thumb_a(src):
+    """썸네일 크기에서 읽히도록 두 줄·대형(2026-10-08 검수: 한 줄은 글자가 너무 작음)."""
     im = base(src); d = ImageDraw.Draw(im)
-    t1 = "「紙と一緒にカビてろｗ」"; px = fit_px(d, t1, W * 0.48, 76)
-    outlined(d, (24, 30), t1, px, YELLOW, RED, 9)
-    t2 = "「10年横領で即日クビ」"; px2 = fit_px(d, t2, W * 0.42, 74)
-    tw = d.textlength(t2, font=font(px2)); x = W - 28 - tw; y = H - 40
-    outlined(d, (x, y), t2, px2, WHITE, INK, 9, "ls")
-    arrow(d, x - px2 * 1.05, y - px2 * 0.36, px2 * 0.9, WHITE, INK)
+    px = 54   # 웃는 얼굴(머리 x≈360부터)을 가리지 않는 폭(실측)
+    for k, t in enumerate(("「紙と一緒に", "　カビてろｗ」")):
+        outlined(d, (22, 22 + k * (px + 10)), t, px, YELLOW, RED, 10)
+    px2 = 88; lines = ("「10年横領で", "即日クビ」")
+    ys = [H - 30 - (px2 + 10), H - 30]
+    for t, y in zip(lines, ys):
+        tw = d.textlength(t, font=font(px2)); outlined(d, (W - 26 - tw, y), t, px2, WHITE, INK, 10, "ls")
+    tw0 = d.textlength(lines[0], font=font(px2))
+    arrow(d, W - 26 - tw0 - px2 * 1.0, ys[0] - px2 * 0.36, px2 * 0.85, WHITE, INK)
     return im
 
 
@@ -94,7 +98,7 @@ def thumb_b(src):
     t1 = "「この伝票、見覚えありますよね？」"; px = fit_px(d, t1, W * 0.94, 70)
     outlined(d, (W / 2, 26), t1, px, TEAL, INK, 9, "ma")
     t2 = "【3,000万円 業務上横領】"; px2 = fit_px(d, t2, W * 0.78, 80)
-    tw = d.textlength(t2, font=font(px2)); cx, cy = W / 2, H * 0.56
+    tw = d.textlength(t2, font=font(px2)); cx, cy = W / 2, H * 0.86   # 도장(증거)을 가리지 않게 아래로
     pad_x, pad_y = 30, 20
     box = (cx - tw / 2 - pad_x, cy - px2 / 2 - pad_y, cx + tw / 2 + pad_x, cy + px2 / 2 + pad_y)
     d.rectangle((box[0] - 6, box[1] - 6, box[2] + 6, box[3] + 6), fill=WHITE)
