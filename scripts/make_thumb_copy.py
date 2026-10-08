@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """썸네일 베이스(AI 생성, 글자 없음) 위에 일본어 카피를 실글꼴로 합성(무과금) — 생성기가 글자를 그리면 외계어가 나온다(제2장).
 감독님 지정 카피(2026-10-08): A 전후 대비형 · B 결정적 증거형 · C 권선징악 사이다형.
-사용법: make_thumb_copy.py <A베이스.png> <B베이스.png> <C베이스.png> <출력 폴더>
+사용법: make_thumb_copy.py [--tower] <A베이스.png> <B베이스.png> <C베이스.png> <출력 폴더>
 """
 import os
 import sys
@@ -118,7 +118,52 @@ def thumb_c(src):
     return im
 
 
+# 『タワマンのボスママ』 애니메이션풍(2026-10-08 감독님 요청) — 카피는 본편 대사·사실(2,400만 엔·집세 체납·42층 주인)에 맞춤
+def two_lines(d, lines, px, fill, stroke, x, y, right=False, gap=10):
+    for k, t in enumerate(lines):
+        if right:
+            tw = d.textlength(t, font=font(px)); outlined(d, (x - tw, y + k * (px + gap)), t, px, fill, stroke, 10)
+        else:
+            outlined(d, (x, y + k * (px + gap)), t, px, fill, stroke, 10)
+
+
+def tower_a(src, px_left=60):
+    im = base(src); d = ImageDraw.Draw(im)
+    two_lines(d, ("「低層階は荷物用", "　エレベーターへｗ」"), px_left, YELLOW, RED, 22, 22)
+    px2 = 86; lines = ("「家賃滞納で", "即・退去」"); y0 = H - 30 - 2 * px2 - 10
+    two_lines(d, lines, px2, WHITE, INK, W - 26, y0, right=True)
+    tw0 = d.textlength(lines[0], font=font(px2)); arrow(d, W - 26 - tw0 - px2, y0 + px2 * 0.5, px2 * 0.85, WHITE, INK)
+    return im
+
+
+def tower_b(src):
+    im = base(src); d = ImageDraw.Draw(im)
+    t1 = "「この通帳、ご覧ください」"; px = fit_px(d, t1, W * 0.9, 78)
+    outlined(d, (W / 2, 24), t1, px, TEAL, INK, 10, "ma")
+    t2 = "【2,400万円 業務上横領】"; px2 = fit_px(d, t2, W * 0.78, 80)
+    tw = d.textlength(t2, font=font(px2)); cx, cy = W / 2, H * 0.86
+    box = (cx - tw / 2 - 30, cy - px2 / 2 - 20, cx + tw / 2 + 30, cy + px2 / 2 + 20)
+    d.rectangle((box[0] - 6, box[1] - 6, box[2] + 6, box[3] + 6), fill=WHITE); d.rectangle(box, fill=RED)
+    outlined(d, (cx, cy), t2, px2, WHITE, (90, 0, 0), 4, "mm")
+    return im
+
+
+def tower_c(src):
+    im = base(src); d = ImageDraw.Draw(im)
+    t1 = "「私は42階のオーナーよｗ」"; px = fit_px(d, t1, W * 0.86, 76)
+    outlined(d, (W / 2, 22), t1, px, YELLOW, INK, 10, "ma")
+    t2 = "「本当の持ち主、登場！」"; px2 = fit_px(d, t2, W * 0.8, 96)
+    tw = d.textlength(t2, font=font(px2)); x = (W - tw) / 2 + px2 * 0.5; y = H - 34
+    outlined(d, (x, y), t2, px2, RED, WHITE, 10, "ls"); arrow(d, x - px2, y - px2 * 0.36, px2 * 0.85, RED, WHITE)
+    return im
+
+
 def main():
+    if sys.argv[1] == "--tower":
+        a, b, c, out = sys.argv[2:6]; os.makedirs(out, exist_ok=True)
+        for name, fn, src in (("A-반전형-anime", tower_a, a), ("B-통장형-anime", tower_b, b), ("C-진짜주인형-anime", tower_c, c)):
+            p = os.path.join(out, f"tower-thumb-{name}.jpg"); fn(src).save(p, quality=92); print("저장:", p)
+        return
     a, b, c, out = sys.argv[1:5]
     os.makedirs(out, exist_ok=True)
     for name, fn, src in (("A-전후대비형", thumb_a, a), ("B-증거폭로형", thumb_b, b), ("C-사이다형", thumb_c, c)):
