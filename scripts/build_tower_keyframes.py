@@ -122,7 +122,9 @@ FIX_B = {
 
 # 감독님 지적(2:20·2:24 2026-10-08): 앉은 주민은 단상을 보는데 서 있는 유미·박수 치는 세 엄마는 카메라(단상 반대)를 봄 → 승인 컷 편집
 EDIT_FROM = {"S05d": "assets/portraits/tower-kf-raw/S05d-turn.png", "S05c": "assets/portraits/tower-keyframes/S05c-1.png",
-             "S06a": "assets/portraits/tower-kf-raw/S06a-1.png"}   # S05d 2차: 1차(단상 쪽으로 돌아섬, 손을 내림)에서 손만 들게
+             "S06a": "assets/portraits/tower-kf-raw/S06a-1.png",
+             "S06e": "assets/portraits/tower-kf-raw/S06e-1.png", "S14b": "assets/portraits/tower-kf-raw/S14b-1.png",
+             "S17h": "assets/portraits/tower-kf-raw/S17h-1.png"}   # S05d 2차: 1차(단상 쪽으로 돌아섬, 손을 내림)에서 손만 들게
 FIX_B["S05d"] = ("EDIT the reference image: keep EVERYTHING exactly the same — room, camera, framing, lighting, every seated resident, and the "
                  "standing woman with her back to us facing the stage. ONLY add one gesture: she raises her RIGHT arm straight up high above her "
                  "head, open palm facing the lectern, like a person asking to speak at a meeting. The raised hand is clearly visible against the wall, "
@@ -138,6 +140,36 @@ FIX_B["S06a"] = ("EDIT the reference image: keep EXACTLY the same woman (face, w
                  "lectern in the room — the one at the front under the projection screen. REMOVE the second lectern that stands in the middle of "
                  "the audience; she now stands BEHIND the front lectern under the screen, holding the microphone, facing the audience. Where the "
                  "removed lectern was, show grey chairs with seated residents seen from behind, matching the rows around them.")
+
+REVERSE_BG = ("ONLY replace the background so the geometry is correct: the camera stands at the FRONT of the hall (at the stage) looking "
+              "toward the audience, so EVERY other resident in the background is seated and seen from the FRONT, facing the camera, softly out "
+              "of focus; nobody shows the back of their head. At the far end is the plain back wall of the hall with a double door. The "
+              "floor-to-ceiling windows are on the RIGHT side of the frame. NO projection screen, NO banner, NO lectern anywhere in view.")
+FIX_B["S06e"] = ("EDIT the reference image: keep EXACTLY the standing woman (face, glasses, bob, navy cardigan, grey skirt, lowered head), her "
+                 "position, size and the camera angle. " + REVERSE_BG)
+FIX_B["S14b"] = ("EDIT the reference image: keep EXACTLY the three seated women in the front row (faces, hair, pink sweater, white blouse, "
+                 "beige cardigan, skirts, poses, uneasy glances), their positions and the camera angle. " + REVERSE_BG + " The hall is PACKED.")
+FIX_B["S17h"] = ("EDIT the reference image: keep EXACTLY the three seated women in the front row (faces, hair, wardrobe, poses, eyes down), "
+                 "their positions and the camera angle. " + REVERSE_BG + " The hall is PACKED.")
+# 관객석 클로즈업(립싱크·리액션) 뒤 배경판: 단상에서 객석을 본 역방향(tower_bg_swap.py가 흐려서 사용)
+PLATE_SPEC = {
+    "PLATE_R": ("assets/portraits/tower-kf-raw/S05d-room.png", "Reverse angle of the SAME assembly hall seen FROM THE STAGE toward the audience: about forty residents seated in "
+                            "rows of grey chairs facing the camera with neutral, attentive expressions, hands in laps; the plain back wall with a "
+                            "double door at the far end; floor-to-ceiling windows with the city view on the RIGHT wall. NO projection screen, NO "
+                            "banner, NO lectern, nobody standing. Eye-level camera at standing head height, 35mm, deep focus."),
+    "PLATE_T": ("assets/portraits/tower-kf-raw/S13a-1.png", "Reverse angle of the SAME assembly hall seen FROM THE STAGE toward the audience: the hall is PACKED, over a hundred "
+                            "residents seated in rows of grey chairs facing the camera with tense, serious expressions, hands in laps; the plain "
+                            "back wall with a double door at the far end; floor-to-ceiling windows with the city view on the RIGHT wall. NO "
+                            "projection screen, NO banner, NO lectern, nobody standing. Eye-level camera at standing head height, 35mm, deep focus."),
+}
+
+
+def plate_item(pid):
+    ref, txt = PLATE_SPEC[pid]
+    return {"id": pid, "count": 1, "aspect_ratio": "16:9", "refs": [ref],
+            "prompt": " ".join(["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions.",
+                                "Reference image 1 shows this SAME hall: copy its materials, wall colour, grey chairs, pale wood floor, daylight and the "
+                                "residents' clothing style — but the camera now looks the OPPOSITE way, as described.", txt, "Absolutely no text, letters, numbers, logos or symbols anywhere in the image."])}
 
 
 FEAR_FACE = {"S14h": "assets/portraits/tower-cast/cells/reika-fear-3.png", "S16g": "assets/portraits/tower-cast/cells/reika-fear-3.png",
@@ -300,7 +332,7 @@ def main():
         raise SystemExit("단계: pilot|a|b")
     if only:
         ids = set(only.split(","))
-        items = [x for x in items if x["id"] in ids]
+        items = [x for x in items if x["id"] in ids] + [plate_item(k) for k in PLATE_SPEC if k in ids]
         stage += "-r"
     spec = {"_설명": f"tower PHASE 4 키프레임 {stage}(build_tower_keyframes.py 생성, 직접 수정 금지). {len(items)}장 약 {len(items) * 0.04:.2f}달러.",
             "_style_preset": sb["preset"], "characters": items}
