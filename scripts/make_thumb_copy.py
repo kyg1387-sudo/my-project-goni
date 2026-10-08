@@ -129,7 +129,8 @@ def two_lines(d, lines, px, fill, stroke, x, y, right=False, gap=10):
 
 def tower_a(src, px_left=60):
     im = base(src); d = ImageDraw.Draw(im)
-    two_lines(d, ("「低層階は荷物用", "　エレベーターへｗ」"), px_left, YELLOW, RED, 22, 22)
+    # 얼굴(이마·눈 y≈130~240)을 피해 왼쪽 아래 재킷 위에(검수 2026-10-08)
+    two_lines(d, ("「低層階は荷物用", "　エレベーターへｗ」"), px_left, YELLOW, RED, 22, H - 30 - 2 * px_left - 10)
     px2 = 86; lines = ("「家賃滞納で", "即・退去」"); y0 = H - 30 - 2 * px2 - 10
     two_lines(d, lines, px2, WHITE, INK, W - 26, y0, right=True)
     tw0 = d.textlength(lines[0], font=font(px2)); arrow(d, W - 26 - tw0 - px2, y0 + px2 * 0.5, px2 * 0.85, WHITE, INK)
@@ -140,8 +141,8 @@ def tower_b(src):
     im = base(src); d = ImageDraw.Draw(im)
     t1 = "「この通帳、ご覧ください」"; px = fit_px(d, t1, W * 0.9, 78)
     outlined(d, (W / 2, 24), t1, px, TEAL, INK, 10, "ma")
-    t2 = "【2,400万円 業務上横領】"; px2 = fit_px(d, t2, W * 0.78, 80)
-    tw = d.textlength(t2, font=font(px2)); cx, cy = W / 2, H * 0.86
+    t2 = "【2,400万円 業務上横領】"; px2 = fit_px(d, t2, W * 0.48, 80)
+    tw = d.textlength(t2, font=font(px2)); cx, cy = W * 0.29, H * 0.86   # 통장(오른쪽 아래, 증거)을 가리지 않게 연단 아래로
     box = (cx - tw / 2 - 30, cy - px2 / 2 - 20, cx + tw / 2 + 30, cy + px2 / 2 + 20)
     d.rectangle((box[0] - 6, box[1] - 6, box[2] + 6, box[3] + 6), fill=WHITE); d.rectangle(box, fill=RED)
     outlined(d, (cx, cy), t2, px2, WHITE, (90, 0, 0), 4, "mm")
@@ -150,8 +151,8 @@ def tower_b(src):
 
 def tower_c(src):
     im = base(src); d = ImageDraw.Draw(im)
-    t1 = "「私は42階のオーナーよｗ」"; px = fit_px(d, t1, W * 0.86, 76)
-    outlined(d, (W / 2, 22), t1, px, YELLOW, INK, 10, "ma")
+    t1 = "「私は42階のオーナーよｗ」"; px = fit_px(d, t1, W * 0.86, 64)
+    outlined(d, (W / 2, 10), t1, px, YELLOW, INK, 10, "ma")   # 할아버지 얼굴(y≈90~)보다 위
     t2 = "「本当の持ち主、登場！」"; px2 = fit_px(d, t2, W * 0.8, 96)
     tw = d.textlength(t2, font=font(px2)); x = (W - tw) / 2 + px2 * 0.5; y = H - 34
     outlined(d, (x, y), t2, px2, RED, WHITE, 10, "ls"); arrow(d, x - px2, y - px2 * 0.36, px2 * 0.85, RED, WHITE)
