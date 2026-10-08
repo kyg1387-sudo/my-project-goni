@@ -11,7 +11,10 @@
     "_검증_aspect": "2.39:1은 휴대폰에서 화면 손실이 큼 → 2:1 권장(결정 대기)",
     "render_resolution": "1920x1080 master → 3840x2160 upscale for YouTube delivery",
     "_검증_resolution": "4K 업로드 시 유튜브가 상위 코덱(VP9/AV1)을 배정해 1080p 시청 화질도 올라감(§9 계획)",
-    "framing_rules": ["Center Framing for Confrontations", "Rule of Thirds for Solitude"],
+    "framing_rules": [
+      "Center Framing for Confrontations",
+      "Rule of Thirds for Solitude"
+    ],
     "color_grading": {
       "film_grain": "35mm_overlay_opacity_0.04",
       "lut_profiles": {
@@ -26,7 +29,7 @@
   },
   "lighting_directives": {
     "global_ban": "NO flat anime lighting, NO evenly lit faces",
-    "portrait_shading": "Rembrandt / chiaroscuro on key character frames; on lip-sync close-ups keep a soft fill so the mouth and jaw stay readable",
+    "portrait_shading": "Rembrandt / chiaroscuro on confrontation scenes (S03, S05, S11, S13-S16); soft diffused warm light with rim on S08/S18; on lip-sync close-ups keep a soft fill so the mouth and jaw stay readable",
     "_검증_portrait": "입 주변이 그늘지면 립싱크 품질이 떨어질 위험 → 립싱크 컷만 입 주변 보조광 유지",
     "location_lighting": {
       "basement": "flickering cold overhead fluorescent lighting, harsh brow shadows, single tungsten desk lamp pool of warm light on documents",
@@ -36,7 +39,8 @@
     },
     "edge_lighting": "subtle rim / hair light to separate subject from dark backgrounds",
     "volumetric": "visible dust particles in the beams of the desk lamp and the doorway light (windowless basement: NO sunlight god rays)",
-    "_검증_volumetric": "지하는 「窓のない地下」 — 햇빛 빛줄기는 설정 모순. 광원은 책상 램프·문틈·형광등으로 한정"
+    "_검증_volumetric": "지하는 「窓のない地下」 — 햇빛 빛줄기는 설정 모순. 광원은 책상 램프·문틈·형광등으로 한정",
+    "_검증_portrait_v2": "제8장 1: Chiaroscuro는 압박·대면 구간(S03·S05·S11·S13~S16)에만. S18 엔딩·S08 미야모토 고백은 디퓨즈 웜 톤 + 림라이트로 대비를 낮춤(규격 우선)"
   },
   "camera_motion": {
     "default_moves": [
@@ -52,11 +56,26 @@
       "S18_crane_up": "ending"
     },
     "_검증_camera": "허용 3종만으로는 대본 v2 히어로 컷 5개가 금지됨 → 지정 컷 한정 예외로 등록(규칙집 7·8: 왜곡 기법은 1회)",
-    "banned_moves": ["Fast Zoom", "Dynamic Whip Pan", "Exaggerated Camera Shake"],
+    "banned_moves": [
+      "Fast Zoom",
+      "Dynamic Whip Pan",
+      "Exaggerated Camera Shake",
+      "Head turn > 20° in i2v (제2장 3)",
+      "Spin / running / dramatic body movement (제2장 3)"
+    ],
     "editing_rules": {
       "dialogue_transitions": "J-Cut / L-Cut audio pre-lead 0.25s",
       "S14_impact": "1.5s silence (room tone only) after the wine glass shatters",
       "_검증_impact": "사용자 규격의 「scene_05 champagne glass」 → 대본 v2에서는 S14 와인잔(콜드오픈 S01 재사용). 샴페인은 S12 코르크"
+    },
+    "_검증_camera_v2": "CLAUDE.md 제8장(2026-10-08 도입)과 재대조: 푸시인·풀백·팬·틸트·돌리줌·랙포커스·더치·핸드헬드는 생성 지시가 아니라 편집에서 구현(제8장 6). 허용 무빙 3종은 '생성 단계' 기준으로 유지, 아래 편집 구현 목록을 추가",
+    "editing_implemented_moves": {
+      "push_in_pull_back": "zoompan on high-res keyframe (all reactions/inserts)",
+      "dolly_zoom": "S14 Gondo MS, once per film (2.5D mask)",
+      "rack_focus": "S15 guests→Saori (two keyframes, 0.8s blur dissolve)",
+      "dutch_angle": "villain only, max 2: S05 5° (elevator taunt), S15 7° (「主犯だ！」) — never on lip-sync cut, never with dolly zoom",
+      "micro_handheld": "villain only (S05·S12·S15 non-lip-sync cuts): ±0.6% pos, ±0.3° rot",
+      "protagonist_rule": "Saori/Miyamoto/Kiritani/Okochi: tripod static or slow push-in only (제8장 4-1)"
     }
   },
   "audio_engineering": {
@@ -67,7 +86,16 @@
       "banquet_hall": "Large hall reverb with non-verbal room bed (-28dB): glass clinks, cutlery, HVAC air — NO human voices"
     },
     "_검증_audio": "① 생성 웅성거림은 말소리가 섞임(CLAUDE.md 규칙 3, 2회 실증) → 말소리 없는 연회장 소리로 대체, 언어 QA 필수 ② 본사가 도쿄면 전원 주파수 50Hz(서일본 60Hz) — 일본 시청자 디테일",
-    "foley_layers": ["paper_shuffle", "folder_slam", "distant_footsteps_on_concrete", "stamp_thud", "scanner_pass", "elevator_hum", "champagne_cork", "glass_shatter"]
+    "foley_layers": [
+      "paper_shuffle",
+      "folder_slam",
+      "distant_footsteps_on_concrete",
+      "stamp_thud",
+      "scanner_pass",
+      "elevator_hum",
+      "champagne_cork",
+      "glass_shatter"
+    ]
   },
   "typography": {
     "font_family": "Noto Sans JP Bold (dialogue / cards) + Noto Serif JP SemiBold (narration, Mincho style)",
@@ -85,8 +113,15 @@
     "sync_tolerance_seconds": 0.1,
     "max_allowed_silent_gap_seconds": 1.0,
     "silent_gap_scope": "between consecutive dialogue lines inside one dialogue scene",
-    "designed_silence_exceptions": ["S01 0.7s", "S07 ad break 0.9s", "S13 0.7s + ad break 0.9s", "S14 1.5s impact", "S16 1.0s after final blow", "silent montages S09-S11 and inserts"],
+    "designed_silence_exceptions": [
+      "S01 0.7s",
+      "S07 ad break 0.9s",
+      "S13 0.7s + ad break 0.9s",
+      "S14 1.5s impact",
+      "S16 1.0s after final blow",
+      "silent montages S09-S11 and inserts"
+    ],
     "_검증_qa": "1.5초 임팩트 정적과 1.0초 상한이 서로 충돌 → 상한은 대사 사이에만 적용, 의도된 정적은 예외 목록으로",
-    "auto_verify_script": "scripts/verify_sync.py (미구현 — Lock 타임라인 단계에서 작성: 화자-화면 일치·립싱크 창·자막↔음성 번호·정적 간격 검사)"
+    "auto_verify_script": "scripts/verify_sync.py (PHASE 3 생성기 자동 검사로 구현 예정: 화자-화면 일치·립싱크 창·자막↔음성 번호·정적 간격·A1/A2/A9 앵글 검사 — 제8장 7)"
   }
 }
