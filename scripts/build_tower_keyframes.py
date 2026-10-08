@@ -120,6 +120,20 @@ FIX_B = {
 }
 
 
+# 감독님 지적(2:20·2:24 2026-10-08): 앉은 주민은 단상을 보는데 서 있는 유미·박수 치는 세 엄마는 카메라(단상 반대)를 봄 → 승인 컷 편집
+EDIT_FROM = {"S05d": "assets/portraits/tower-kf-raw/S05d-room.png", "S05c": "assets/portraits/tower-keyframes/S05c-1.png"}
+FIX_B["S05d"] = ("EDIT the reference image: keep EXACTLY the same room, camera position, framing, lighting, the seated residents and the "
+                 "standing woman's identity, glasses, bob haircut, navy cardigan and grey skirt. ONLY change the standing woman's orientation: she now "
+                 "FACES THE STAGE on the right (the lectern and projection screen), like everyone else — seen in a three-quarter REAR view from "
+                 "the camera, her back and shoulder toward us, her face turned toward the lectern so only her cheek, glasses edge and profile "
+                 "are visible; she raises her right hand high toward the lectern to ask to speak. The seated residents keep facing the stage.")
+FIX_B["S05c"] = ("EDIT the reference image: keep EXACTLY the three women's torsos, sweaters, blouse, cardigan, skirts and clapping hands in the "
+                 "foreground and the same framing. ONLY change the blurred background so the geometry is correct: the camera is at the STAGE "
+                 "looking at the audience, so behind the three women the blurred seated residents FACE THE CAMERA (soft, unrecognizable faces and "
+                 "fronts, clapping politely), and at the far end is the BACK WALL of the hall with a plain double door — NO projection screen, NO "
+                 "banner, NO lectern in the background. The windows stay where they are.")
+
+
 FEAR_FACE = {"S14h": "assets/portraits/tower-cast/cells/reika-fear-3.png", "S16g": "assets/portraits/tower-cast/cells/reika-fear-3.png",
              "S14n2": "assets/portraits/tower-cast/cells/reika-fear-1.png"}
 FEAR_HALL = "assets/portraits/tower-cast/cells/reika-fear-3.png"  # B 재생성 2차 합격 S14n2: 공포 얼굴 + 주민 배경(3차 기준)
@@ -131,7 +145,7 @@ BG_FRONT = ("Background geometry: the camera is among the seated audience facing
 
 # 감독님 지적(회의장 일관성 2026-10-07): 빈 회의장 장소 셀(loc-hall-p*)을 참조한 컷이 빈 의자·다른 방·현수막 없음으로 나옴
 # → 승인 컷(합성 전 원본: 현수막 무지)을 방 기준으로. 임시총회 = S05d(약 40명), 통상총회 = S13a(만석 100명 이상)
-ROOM_RINJI = "assets/portraits/tower-kf-raw/S05d-1.png"
+ROOM_RINJI = "assets/portraits/tower-kf-raw/S05d-room.png"   # 방 기준(S05d 원 승인 컷 사본 — S05d 편집 후에도 고정)
 ROOM_TSUJO = "assets/portraits/tower-kf-raw/S13a-1.png"
 ROOM_FIX = {**{k: ROOM_RINJI for k in ("S05a", "S05b", "S05c", "S06a", "S06d", "S06-2a")},
             "S07a2": ROOM_RINJI, "S16a": ROOM_TSUJO,
@@ -148,7 +162,7 @@ def describe(path, i):
                 "city view on the left wall, the long white banner (keep it plain, NO letters), the projection screen, the wooden lectern, grey "
                 "chairs, pale wood floor, lighting and colour — and its audience density. Ignore the people's poses; the camera position is "
                 "described below.")
-    if path == "assets/portraits/tower-kf-b/S03e-1.png":
+    if path == "assets/portraits/tower-kf-b/S03e-1.png" or path in EDIT_FROM.values():
         return f"Reference image {i} is the image to EDIT."
     if name == "mamas-s14o.png":
         return (f"Reference image {i} shows the SAME three women (pink sweater + white pleated skirt, white blouse + black trousers, "
@@ -208,6 +222,11 @@ def build(sc, face_refs):
         refs = [r for r in refs if "loc-hall" not in os.path.basename(r)] + [ROOM_FIX[sc["id"]]]
     if sc["id"] == "S03e":   # 편집: 현재 승인 컷 1장만 참조
         refs = ["assets/portraits/tower-kf-b/S03e-1.png"]
+    if sc["id"] in EDIT_FROM:   # 편집 전용: 참조 1장 + 편집 문장만(방·인원·구도 문구를 섞으면 새 그림을 그림)
+        return {"id": sc["id"], "count": 1, "aspect_ratio": "16:9", "refs": [EDIT_FROM[sc["id"]]],
+                "prompt": " ".join(["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions.",
+                                    "Reference image 1 is the image to EDIT.", FIX_B[sc["id"]],
+                                    "Absolutely no text, letters, numbers, logos or symbols anywhere in the image."])}
     if sc["id"] in ("S01e", "S03d"):  # 얼굴 셀이 얼굴·전신을 끌어옴(S05c 실증) → 장소 셀만, 옷은 문장으로
         refs = [r for r in refs if "/cells/loc-" in r]
     if sc["id"] == "S05c":  # 얼굴 셀이 얼굴을 그리게 한 뒤 동그라미로 가림(B 2차) → 얼굴 셀 빼면 다른 엄마들(B 3차) → 승인 S14o(세 엄마 착석)
