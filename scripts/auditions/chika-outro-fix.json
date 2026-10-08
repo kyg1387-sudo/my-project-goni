@@ -1,0 +1,18 @@
+{
+ "_설명": "#02 아웃트로 068 재녹음 — 시청자 호칭 あなた → 皆様(제10장 7, 고니감독님 승인 2026-10-08)",
+ "tests": [
+  {
+   "id": "line068",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "みなさまの職場にも、てがらどろぼうはいませんか？ ぜひコメントで教えてください",
+   "subtitle": "皆様の職場にも、“手柄泥棒”はいませんか？ ぜひコメントで教えてください",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  }
+ ],
+ "tc_model": "ssfm-v30",
+ "language": "jpn"
+}
