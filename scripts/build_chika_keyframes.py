@@ -38,7 +38,10 @@ PEOPLE = {
 # 인물별 기준 얼굴 = A단계 승인 OMNI 컷(제7장 7: 기준 얼굴은 대사 키프레임). 사오리 엔딩(saori-e)은 대사 컷이 없어 셀 유지.
 FACE_KF = {"saori": "S03c", "saori-b": "S15e", "gondo": "S03d", "miyamoto": "S06c", "kiritani": "S01b", "okochi": "S16b"}
 FACE_KINDS = ("face", "react", "d", "sil")
-ANCHOR_FALLBACK = {"saori": "S15e"}   # 자기 자신이 기준 얼굴인 컷을 재생성할 때 쓸 같은 인물의 다른 기준(사무실 사오리 → 지하 사오리 얼굴)   # sil: 실루엣이라도 체형·머리 윤곽은 기준 얼굴 컷을 따른다
+ANCHOR_FALLBACK = {"saori": "S15e"}
+# 표정별 기준 얼굴(A단계 2차 실증: 미소 기준 S06c로 만든 S15j가 「무표정」 지시에도 미소를 유지) — 표정 셀이 있으면 같은 표정의 승인 컷을 기준으로
+FACE_KF_BY_EXPR = {"miyamoto-expr2": "S15g", "miyamoto-expr3": "S08b", "gondo-expr3": "S14b", "gondo-expr2": "S12b",
+                   "saori-b-expr2": "S11c", "saori-expr2": "S03c", "okochi-expr3": "S16h", "kiritani-expr2": "S14c"}   # 자기 자신이 기준 얼굴인 컷을 재생성할 때 쓸 같은 인물의 다른 기준(사무실 사오리 → 지하 사오리 얼굴)   # sil: 실루엣이라도 체형·머리 윤곽은 기준 얼굴 컷을 따른다
 
 TIGHT = ("FRAMING FIRST: a tight single-person chest-up close-up — head and shoulders fill the frame, the top of the head near the top edge, "
          "the frame cut at mid-chest; the face occupies about one third of the frame height; hands NOT visible; NOT a medium shot, NOT a full-body shot. "
@@ -204,7 +207,11 @@ def face_refs_for(sc):
     for r in sc["refs"]:
         k = person_key(r)
         if k and k in FACE_KF:
-            p = f"{KF_DIR}/{FACE_KF[k]}-1.png"   # collect 뒤의 승인 키프레임(파일럿·A·재생성 포함)
+            cell = os.path.basename(r).rsplit(".", 1)[0]
+            kf_id = FACE_KF_BY_EXPR.get(cell, FACE_KF[k])
+            if kf_id == sc["id"]:
+                kf_id = FACE_KF[k]
+            p = f"{KF_DIR}/{kf_id}-1.png"   # collect 뒤의 승인 키프레임(파일럿·A·재생성 포함)
             if sc["id"] == FACE_KF[k]:
                 if k not in ANCHOR_FALLBACK:
                     continue
