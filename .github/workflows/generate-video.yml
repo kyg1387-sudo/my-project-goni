@@ -47,6 +47,10 @@ on:
         description: 언어 검사 기대 언어(ko 기본, 일본어판은 ja)
         required: false
         default: "ko"
+      recover_requests:
+        description: 무료 회수 — 이미 완료된 fal 요청을 내려받기만 함 (예 "01:request_id,03:request_id"). 생성 코드 오류로 클립을 잃었을 때
+        required: false
+        default: ""
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
@@ -286,6 +290,7 @@ jobs:
         env:
           ARK_API_KEY: ${{ secrets.ARK_API_KEY }}
           FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+          FAL_RECOVER: ${{ inputs.recover_requests }}
         run: python3 scripts/generate_video.py "scripts/scenes/${SKIT}.json"
 
       - name: ffmpeg 설치

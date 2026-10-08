@@ -228,16 +228,25 @@ SCENE_I2V = {}  # 장면 번호 → (모델, 해상도) 개별 지정
 SCENE_TAKES = {}  # 장면 번호 → 테이크 수(히어로 컷)
 
 
-def fal_generate_i2v(key, index, prompt, duration, ratio, image_url):
+KLING_NEGATIVE = ("blur, distortion, morphing faces, extra people, extra fingers, text, letters, watermark, "
+                  "fast motion, spinning, running, dramatic body movement")
+
+
+def fal_generate_i2v(key, index, prompt, duration, ratio, image_url, out_path=None):
     """승인 키프레임 1장을 첫 프레임으로 고정해 영상을 만든다(규격서 PHASE 5: Text-to-Video 금지).
-    모델별 파라미터 차이를 흡수하기 위해 페이로드를 순서대로 시도한다."""
+    모델별 파라미터 차이를 흡수하기 위해 페이로드를 순서대로 시도한다. out_path가 있으면 그 파일로 저장(히어로 테이크)."""
     headers = {"Authorization": f"Key {key}"}
     m, r = SCENE_I2V.get(index, (None, None))
     model, res = m or FAL_I2V_MODEL, r or I2V_RESOLUTION
     base = {"prompt": prompt, "image_url": image_url, "duration": str(duration), "resolution": res}
     print(f"  [fal i2v] {model} {res}")
-    payloads = [dict(base, aspect_ratio=ratio), base,
-                {"prompt": prompt, "image_url": image_url, "duration": str(duration)}]
+    if "kling" in model:   # Kling(fal): #02 파일럿 실증 — resolution·aspect_ratio를 포함한 일반 페이로드도 수락됨. 네거티브·cfg를 더한다
+        payloads = [dict(base, aspect_ratio=ratio, negative_prompt=KLING_NEGATIVE, cfg_scale=0.5),
+                    dict(base, aspect_ratio=ratio), base,
+                    {"prompt": prompt, "image_url": image_url, "duration": str(duration)}]
+    else:
+        payloads = [dict(base, aspect_ratio=ratio), base,
+                    {"prompt": prompt, "image_url": image_url, "duration": str(duration)}]
     for payload in payloads:
         status, task = http_json(f"https://queue.fal.run/{model}", payload, headers)
         if status != 200:
@@ -269,6 +278,36 @@ def fal_generate_i2v(key, index, prompt, duration, ratio, image_url):
                 break
             print(f"  [fal i2v] 대기 중... ({state})")
     return None
+
+
+def recover_requests(key):
+    """fal 큐에서 이미 COMPLETED된 요청을 내려받기만 한다(재과금 없음) — env FAL_RECOVER="01:request_id,03:request_id".
+    #02 파일럿 실증: 생성은 끝났는데 내려받기 코드 오류로 클립을 잃은 경우의 무료 회수 경로(제7장 9)."""
+    spec = os.environ.get("FAL_RECOVER", "").strip()
+    if not spec:
+        return
+    if not key:
+        sys.exit("FAL_RECOVER에는 FAL_API_KEY가 필요합니다.")
+    headers = {"Authorization": f"Key {key}"}
+    for item in spec.split(","):
+        idx, _, rid = item.strip().partition(":")
+        index = int(idx)
+        m, _r = SCENE_I2V.get(index, (None, None)); model = m or FAL_I2V_MODEL
+        parts = model.split("/")
+        cands = [f"https://queue.fal.run/{'/'.join(parts[:2])}/requests/{rid}", f"https://queue.fal.run/{model}/requests/{rid}"]
+        got = None
+        for url in cands:
+            st, res = http_json(url, headers=headers)
+            if st == 200 and isinstance(res, dict) and isinstance(res.get("video"), dict) and res["video"].get("url"):
+                got = res["video"]["url"]; break
+            print(f"  [recover {index:02d}] {url} → HTTP {st}")
+        if not got:
+            sys.exit(f"[recover {index:02d}] 요청 {rid} 결과를 찾지 못했습니다(만료 또는 잘못된 id).")
+        path = os.path.join(OUT_DIR, f"scene{index:02d}.mp4")
+        download(got, path)
+        if SCENE_TAKES.get(index, 1) > 1:
+            shutil.copy(path, os.path.join(OUT_DIR, f"scene{index:02d}_take1.mp4"))
+        print(f"  [recover {index:02d}] 회수 완료(재과금 없음)")
 
 
 # ---------- 메인 ----------
@@ -344,6 +383,7 @@ def main():
     print(f"장면 파일: {scenes_file} ({len(scenes)}개 장면, 화면비 {ratio})")
 
     os.makedirs(OUT_DIR, exist_ok=True)
+    recover_requests(os.environ.get("FAL_API_KEY"))
     preflight(scenes_file, scenes)
     paths = []
     provider = None
