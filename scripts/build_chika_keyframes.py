@@ -60,10 +60,7 @@ LOC_NOTE = {
 # 파일럿 1차 검수(2026-10-08) 결과 보정 문장 — 프롬프트 맨 앞에 넣어 참조 셀(흰 배경·플랫 조명)보다 우선시킨다
 FIX = {
     # S03d: 미디엄(노트북·손 노출)·플랫 밝은 조명·친절한 미소·아이레벨로 생성됨 → 설계(로우앵글 CU·압박 형광등·비웃음)
-    "S03d": ("EXPRESSION FIRST: Gondo is NOT smiling. His face shows cold CONTEMPT — mouth closed with the lips pressed into a thin line and ONE corner "
-             "pulled slightly up into a sneer, nostrils a little flared, eyelids half lowered, brows slightly raised as he looks DOWN his nose at the camera "
-             "while his chin is raised; a cruel, bored, superior look. "
-             "LIGHTING AND FRAMING NEXT. The office is dim at the edges: the only strong light is a hard, cold fluorescent panel directly above "
+    "S03d": ("LIGHTING AND FRAMING NEXT. The office is dim at the edges: the only strong light is a hard, cold fluorescent panel directly above "
              "Gondo, pressing straight down — bright forehead and nose bridge, deep dark eye sockets behind the gold-rimmed glasses, a hard shadow under "
              "the chin and nose, the far desks fading into cool shadow; NO bright even daylight, NO flat lighting. Camera is BELOW his eye line "
              "looking UP at him (low angle), tight chest-up close-up: head and shoulders fill the frame, cut at mid-chest; NO laptop, NO desk, NO hands "
@@ -77,7 +74,11 @@ FIX = {
 
 
 # 파일럿 2차: 시트 표정 셀 1(「비웃음」)이 실제로는 옅은 미소라 친절한 얼굴을 끌고 옴 → 정면 중립 셀 + 표정은 글로 지시
-REF_SWAP = {"S03d": {"gondo-expr1.png": "gondo-front.png"}}
+# 파일럿 2차 합격 → 곤도 「비웃음」 컷 전부에 적용(gondo-expr1 참조 시 자동 치환 + 표정 문장)
+REF_SWAP = {"*": {"gondo-expr1.png": "gondo-front.png"}}
+SNEER = ("EXPRESSION FIRST: Gondo is NOT smiling. His face shows cold CONTEMPT — mouth closed with the lips pressed into a thin line and ONE corner "
+         "pulled slightly up into a sneer, nostrils a little flared, eyelids half lowered, brows slightly raised as he looks DOWN his nose "
+         "while his chin is raised; a cruel, bored, superior look.")
 
 
 def person_key(path):
@@ -127,12 +128,15 @@ def notes(refs):
 
 def build(sc, face_refs):
     refs = list(face_refs) + [r for r in sc["refs"] if r not in face_refs]
-    swap = REF_SWAP.get(sc["id"], {})
+    swap = {**REF_SWAP["*"], **REF_SWAP.get(sc["id"], {})}
+    sneer = any(os.path.basename(r) == "gondo-expr1.png" for r in refs)
     refs = [os.path.join(os.path.dirname(r), swap.get(os.path.basename(r), os.path.basename(r))) for r in refs]
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
+    if sneer:
+        parts.insert(1, SNEER)
     if sc["id"] in FIX:
-        parts.insert(1, FIX[sc["id"]])
+        parts.insert(1 + sneer, FIX[sc["id"]])
     parts.append(sc["keyframe_prompt"])
     parts += notes(refs)
     if sc["kind"] == "d":
@@ -164,6 +168,11 @@ def face_refs_for(sc):
     return out
 
 
+def done(sc):
+    """앞 단계(파일럿 등)에서 이미 생성·승인된 컷은 유료 재생성하지 않는다."""
+    return any(os.path.exists(os.path.join(ROOT, d, f"{sc['id']}-1.png")) for d in STAGE_DIRS)
+
+
 def collect(shots):
     os.makedirs(os.path.join(ROOT, KF_DIR), exist_ok=True)
     n, missing = 0, []
@@ -190,9 +199,9 @@ def main():
     if stage == "pilot":
         items = [build(s, []) for s in shots if s["id"] in PILOT]
     elif stage == "a":
-        items = [build(s, []) for s in shots if s["kind"] == "d"]
+        items = [build(s, []) for s in shots if s["kind"] == "d" and (only or not done(s))]
     elif stage == "b":
-        items = [build(s, face_refs_for(s)) for s in shots if s["kind"] != "d"]
+        items = [build(s, face_refs_for(s)) for s in shots if s["kind"] != "d" and (only or not done(s))]
     else:
         raise SystemExit("단계: pilot|a|b[:ID,ID]|collect")
     if only:
