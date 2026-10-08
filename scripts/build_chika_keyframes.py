@@ -99,6 +99,12 @@ FIX = {
     "S12b": "A flushed, triumphant GRIN with the lips CLOSED — corners of the mouth pulled wide, cheeks raised, eyes narrowed with glee; NO teeth, mouth not open.",
     "S15j": ("He is standing in the BANQUET HALL among guests in dark suits (chandeliers and the blank stage screen blurred behind) — NOT in the archive, "
              "NO desk lamp, NO shelves. Expression: NO smile — mouth set in a firm straight line, eyes fixed on the camera, brows level, grave and steady."),
+    # 감독님 지적(2026-10-08): S17b 손이 뒤통수 뒤에서 나와 카드를 쥔 기이한 자세·검은 머리(곤도 아님)·현수막 글자 → 측면 구도로 재설계
+    "S17b": ("STAGING: side view at shoulder height, very close. On the LEFT edge, the back of a heavyset man's head and thick neck with SLICKED-BACK "
+             "SALT-AND-PEPPER hair and a navy suit collar, face turned away and NOT visible. From the RIGHT, two hands in dark security-guard uniform sleeves "
+             "lift a plain blank white ID card on a black lanyard up and over the top of his head, the lanyard loop stretched open above the hair. "
+             "Hands have exactly five fingers each, natural wrists. Background: the banquet hall dissolved into creamy bokeh — no readable banner, "
+             "no faces, only soft warm lights."),
     # B단계 3차: S12b2 가죽끈 시계·라벨 글자 → 곤도의 금속 금시계, 무지 병
     "S12b2": ("The hand is a FAT man's hand with thick fingers wearing a CHUNKY GOLD METAL BRACELET WATCH (no leather strap), a navy suit cuff and white shirt cuff; "
               "the champagne bottle has a completely BLANK dark label with no printing; foam runs over the rim of the flute."),
