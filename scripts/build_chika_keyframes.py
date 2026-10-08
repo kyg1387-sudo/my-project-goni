@@ -60,7 +60,10 @@ LOC_NOTE = {
 # 파일럿 1차 검수(2026-10-08) 결과 보정 문장 — 프롬프트 맨 앞에 넣어 참조 셀(흰 배경·플랫 조명)보다 우선시킨다
 FIX = {
     # S03d: 미디엄(노트북·손 노출)·플랫 밝은 조명·친절한 미소·아이레벨로 생성됨 → 설계(로우앵글 CU·압박 형광등·비웃음)
-    "S03d": ("LIGHTING AND FRAMING FIRST. The office is dim at the edges: the only strong light is a hard, cold fluorescent panel directly above "
+    "S03d": ("EXPRESSION FIRST: Gondo is NOT smiling. His face shows cold CONTEMPT — mouth closed with the lips pressed into a thin line and ONE corner "
+             "pulled slightly up into a sneer, nostrils a little flared, eyelids half lowered, brows slightly raised as he looks DOWN his nose at the camera "
+             "while his chin is raised; a cruel, bored, superior look. "
+             "LIGHTING AND FRAMING NEXT. The office is dim at the edges: the only strong light is a hard, cold fluorescent panel directly above "
              "Gondo, pressing straight down — bright forehead and nose bridge, deep dark eye sockets behind the gold-rimmed glasses, a hard shadow under "
              "the chin and nose, the far desks fading into cool shadow; NO bright even daylight, NO flat lighting. Camera is BELOW his eye line "
              "looking UP at him (low angle), tight chest-up close-up: head and shoulders fill the frame, cut at mid-chest; NO laptop, NO desk, NO hands "
@@ -71,6 +74,10 @@ FIX = {
              "the backlit figure tower above the lens, the floor runs away from the bottom edge of the frame toward the door, the fluorescent tube and "
              "ceiling converge upward. Extreme low angle, 35mm lens. Full-frame 16:9 image with NO white or black strip at any edge."),
 }
+
+
+# 파일럿 2차: 시트 표정 셀 1(「비웃음」)이 실제로는 옅은 미소라 친절한 얼굴을 끌고 옴 → 정면 중립 셀 + 표정은 글로 지시
+REF_SWAP = {"S03d": {"gondo-expr1.png": "gondo-front.png"}}
 
 
 def person_key(path):
@@ -120,6 +127,8 @@ def notes(refs):
 
 def build(sc, face_refs):
     refs = list(face_refs) + [r for r in sc["refs"] if r not in face_refs]
+    swap = REF_SWAP.get(sc["id"], {})
+    refs = [os.path.join(os.path.dirname(r), swap.get(os.path.basename(r), os.path.basename(r))) for r in refs]
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
     if sc["id"] in FIX:
