@@ -247,7 +247,7 @@ def main(only=None):
         if only and s["id"] not in only:
             continue
         tier, out, sec = s["tier"], os.path.join(OUT, f"scene{i:02d}.mp4"), durs[i - 1] + 0.5
-        if tier in ("pro", "lite") and s["id"] not in FORCE_STILL:
+        if tier in ("pro", "lite", "hero") and s["id"] not in FORCE_STILL:
             continue
         if tier == "card":
             card(s["id"], out, durs[i - 1]); made += 1; log.append(f"scene{i:02d} {s['id']} card"); continue

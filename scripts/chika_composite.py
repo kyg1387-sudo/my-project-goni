@@ -333,10 +333,21 @@ SIGMA = {"S02c": 0.5, "S09b": 0.6, "S09g": 0.6,  "S06a": 0.9, "S11b": 0.8, "S11d
          "S17b": 0.5, "S18f": 0.5, "S07d": 0.5, "S09h": 0.5, "S10c": 0.6, "S10b": 0.5, "S04a": 0.6, "S18d": 0.4, "S06g2": 0.5}
 
 
+# 레터박스 크롭한 원본(kf_letterbox_fix / 수동)의 좌표 보정: (l, t, w, h) → 측정 좌표는 크롭 전 기준
+CROP = {"S06a": (48, 33, 1248, 702), "S18f": (57, 38, 1230, 692), "S09i": (130, 73, 1084, 610)}
+
+
+def remap(q, sid):
+    if sid not in CROP:
+        return q
+    l, t, w, h = CROP[sid]
+    return [[(x - l) * 1344 / w, (y - t) * 768 / h] for x, y in q]
+
+
 def redline(a):
     """S09i: 등기부 주소와 신청서 주소를 잇는 빨간 선."""
     im = Image.fromarray(a).convert("RGBA"); ov = canvas(*im.size); d = ImageDraw.Draw(ov)
-    p0, p1 = (600, 552), (745, 500)   # 등기부 役員 주소 행 ↔ 신청서 故人住所 행
+    p0, p1 = (tuple(int(v) for v in remap([[600, 552]], "S09i")[0]), tuple(int(v) for v in remap([[745, 500]], "S09i")[0]))   # 등기부 役員 주소 행 ↔ 신청서 故人住所 행(크롭 보정)
     d.line([p0, p1], fill=RED + (230,), width=5)
     for p in (p0, p1):
         d.ellipse([p[0] - 9, p[1] - 9, p[0] + 9, p[1] + 9], outline=RED + (230,), width=4)
@@ -360,12 +371,13 @@ def main(only=None):
         qs = []
         if sid in JOBS:
             for mode, q, fn in JOBS[sid]:
-                a = apply(a, mode, q, fn, SIGMA.get(sid)); qs.append(q)
+                q = remap(q, sid); a = apply(a, mode, q, fn, SIGMA.get(sid)); qs.append(q)
         if sid == "S09i":
-            a = apply(a, "replace", S09I_Q[0], art_registry, 0.5); a = apply(a, "replace", S09I_Q[1], art_application, 0.5)
+            q0, q1 = remap(S09I_Q[0], sid), remap(S09I_Q[1], sid)
+            a = apply(a, "replace", q0, art_registry, 0.5); a = apply(a, "replace", q1, art_application, 0.5)
             Image.fromarray(a).save(os.path.join(OUT, f"{sid}-s0.png"))
             b = redline(a); Image.fromarray(b).save(os.path.join(OUT, f"{sid}-s1.png"))
-            states[sid] = [[t, f"{sid}-s{k}.png"] for k, (t, _) in enumerate(STATES[sid])]; a = b; qs += S09I_Q
+            states[sid] = [[t, f"{sid}-s{k}.png"] for k, (t, _) in enumerate(STATES[sid])]; a = b; qs += [q0, q1]
         elif sid == "S10e":
             raw = a.copy()
             for k, (t, fn) in enumerate(STATES[sid]):
