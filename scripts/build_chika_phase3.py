@@ -752,6 +752,9 @@ def voice_src(n):
 
 def copy_voice(dst, n):
     out = os.path.join(dst, f"line{n:03d}.mp3")
+    # 수정 9(2026-10-09): 감정 재녹음으로 채택한 줄(orig/ 보관본이 있는 줄)은 재생성 때 원본으로 되돌리지 않는다
+    if os.path.exists(os.path.join(dst, "orig", f"line{n:03d}.mp3")) and os.path.exists(out):
+        return out
     p = voice_src(n)
     a, b = speech_span(p)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", p, "-af", f"atrim={max(0, a - TRIM_PRE):.3f}:{b + TRIM_POST:.3f},asetpts=PTS-STARTPTS",
