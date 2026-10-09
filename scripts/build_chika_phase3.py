@@ -875,6 +875,11 @@ def main():
     for n in range(1, N_LINES + 1):
         copy_voice(dst, n)
 
+    # 제11장 16(2026-10-09): 정지 푸시인(still) 컷의 설명에 순간 동작 단어가 있으면 경고(정지 키프레임은 그 순간을 얼린다)
+    _motion = ("dropping", "drops", "falling", "falls", "thrown", "throws", "tossing", "tosses", "swinging", "splash", "mid-air", "in the air")
+    for s_ in sb:
+        if s_.get("tier") == "still" and any(w_ in s_.get("subject", "").lower() for w_ in _motion):
+            print(f"[경고] still 컷 {s_['id']}: 설명에 순간 동작 단어 — 「동작 직후 상태」로 바꾸거나 i2v로(제11장 16)")
     events = []
     for i, x in enumerate(script, 1):
         r = rows[f"line{i:03d}"]

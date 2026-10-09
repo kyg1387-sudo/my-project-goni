@@ -554,6 +554,21 @@ def apply(a, mode, q, art_fn, sigma_override=None, protect=False):
         out = af * (1 - m) + base * m
     elif mode == "emit":
         m = (inside * al[..., 0])[..., None]; out = af * (1 - m) + rgb * m   # 원화 알파(둥근 모서리) 반영
+    elif mode == "lcd":
+        # 발광 LCD(#02 S04a 감독님 지적 2026-10-09: 흰 종이를 붙인 듯 보임 → 「모니터에서 나오는 모습」):
+        # ① 종이 흰색이 아닌 LCD 흰색(밝기 0.86, 푸른 기) + 검정 들뜸 ② 백라이트 불균일(가장자리 어둡게)
+        # ③ 유리 반사(원본 어두운 화면의 방 반사를 20% 섞음) ④ 픽셀 격자(아주 약한 가로 주사선) ⑤ 베젤·책상으로 번지는 발광(블룸)
+        m = (inside * al[..., 0])[..., None]
+        base = rgb * 0.86 + 14; base = base * np.float32([0.97, 1.0, 1.05])            # ①
+        yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+        cx, cy = q[:, 0].mean(), q[:, 1].mean()
+        r = np.sqrt(((xx - cx) / max(qw, 1)) ** 2 + ((yy - cy) / max(qh, 1)) ** 2)
+        base = base * (1 - 0.18 * np.clip(r / 0.75, 0, 1) ** 2)[..., None]              # ②
+        base = base * 0.82 + af * 0.20                                                  # ③
+        base = base * (1 - 0.025 * (np.sin(yy * np.pi / 1.5) > 0))[..., None]            # ④
+        scr = af * (1 - m) + base * m
+        glow = cv2.GaussianBlur((base.mean(2) * m[..., 0]), (0, 0), max(4, qh * 0.07))[..., None]
+        out = scr + glow * 0.10 * (1 - m)                                               # ⑤
     elif mode in ("paper", "inpaint_ink"):
         out = af
         if mode == "inpaint_ink":   # 외계어(어두운 획)를 지우고 종이로 메움
