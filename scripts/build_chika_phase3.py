@@ -973,7 +973,7 @@ def main():
     # BGM 7곡: 곡 사이 숨 1.5초 이상, 숨은 내레이션·대사가 흐르는 시점에(제7장 8), 광고 경계 앞뒤 분리
     t_ad1, t_ad2 = ad_times
     BGM = [
-        (0.0, starts["S02a"] + 0.3, 0.40, "tense low strings and a slow heartbeat pulse, Japanese drama cold open, cold and ominous, instrumental, no vocals"),
+        (0.0, starts["S02a"] - 0.1, 0.40, "tense low strings and a slow heartbeat pulse, Japanese drama cold open, cold and ominous, instrumental, no vocals"),
         (starts["S02a"] + 1.0, t_ad1 - 0.2, 0.38, "nervous pizzicato strings and muted piano, quiet injustice and social pressure, Japanese corporate drama score, instrumental, no vocals"),
         (t_ad1 + 1.6, rows["line025"]["end"] + 0.5, 0.38, "steady minimal beat with soft synth, clock ticking, focused investigation, clever detective mood, instrumental, no vocals"),
         (rows["line026"]["start"] + 0.4, starts["S12a"] - 0.3, 0.40, "low ominous drone with sparse piano, dread in a dark basement, rising suspense, instrumental, no vocals"),
