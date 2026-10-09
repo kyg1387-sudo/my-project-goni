@@ -307,14 +307,14 @@ JOBS = {
     "S18d": [("ink", P((870, 368), (1042, 371), (1040, 506), (868, 503)), lambda w, h: art_label(w, h, "権藤関連", "証拠書類"))],
     # 전표·DB·등기부·신청서·로그·영수증·핫라인
     "S07d": [("replace", P((474, 320), (903, 378), (875, 609), (442, 545)), lambda w, h: art_voucher(w, h))],
-    "S09b": [("emit", P((709, 295), (1070, 279), (1019, 560), (656, 519)), lambda w, h: art_db(w, h))],
-    "S09g": [("emit", P((133, 306), (492, 296), (523, 508), (164, 541)), lambda w, h: art_db(w, h))],
+    "S09b": [("lcd", P((709, 295), (1070, 279), (1019, 560), (656, 519)), lambda w, h: art_db(w, h))],
+    "S09g": [("lcd", P((133, 306), (492, 296), (523, 508), (164, 541)), lambda w, h: art_db(w, h))],
     "S09h": [("replace", P((492, 385), (636, 388), (631, 583), (488, 580)), lambda w, h: art_registry(w, h)),
              ("replace", P((646, 386), (752, 388), (748, 596), (640, 592)), lambda w, h: art_application(w, h)),
-             ("emit", P((793, 298), (1034, 298), (1034, 394), (793, 394)), lambda w, h: art_db(w, h))],
-    "S10b": [("emit", P((376, 359), (590, 336), (606, 485), (393, 508)), lambda w, h: art_log(w, h))],
+             ("lcd", P((793, 298), (1034, 298), (1034, 394), (793, 394)), lambda w, h: art_db(w, h))],
+    "S10b": [("lcd", P((376, 359), (590, 336), (606, 485), (393, 508)), lambda w, h: art_log(w, h))],
     "S10c": [("replace", P((404, 408), (928, 277), (979, 479), (454, 610)), lambda w, h: art_receipt(w, h)),
-             ("emit", P((-79, 206), (201, 133), (281, 436), (0, 509)), lambda w, h: art_log(w, h))],
+             ("lcd", P((-79, 206), (201, 133), (281, 436), (0, 509)), lambda w, h: art_log(w, h))],
     # 연회장 현수막·프로젝터·사원증·표창장
     "S13a2": [("ink", P((380, 235), (962, 235), (962, 318), (380, 318)), lambda w, h: art_banner(w, h, BANNER_BQ, color=RED))],
     "S17a": [("ink", P((359, 277), (994, 277), (994, 373), (359, 373)), lambda w, h: art_banner(w, h, BANNER_BQ, color=RED))],
@@ -382,7 +382,7 @@ def main(only=None):
         elif sid == "S10e":
             raw = a.copy()
             for k, (t, fn) in enumerate(STATES[sid]):
-                b = apply(raw, "emit", S10E_Q, fn, 0.6); Image.fromarray(b).save(os.path.join(OUT, f"{sid}-s{k}.png"))
+                b = apply(raw, "lcd", S10E_Q, fn, 0.6); Image.fromarray(b).save(os.path.join(OUT, f"{sid}-s{k}.png"))
             states[sid] = [[t, f"{sid}-s{k}.png"] for k, (t, _) in enumerate(STATES[sid])]; a = b; qs.append(S10E_Q)
         Image.fromarray(a).save(os.path.join(OUT, f"{sid}-1.png"))
         for q in qs:
