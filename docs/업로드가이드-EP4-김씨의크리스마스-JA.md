@@ -9,6 +9,7 @@
 | 본편 완성본 (5:35, 1920x1080, 본편 5:02 + 아웃트로 28초 + 엔드카드 5.5초) | `deliveries/kim-christmas-ja-final-outro.mp4.part-00/01` → 윈도우 `copy /b kim-christmas-ja-final-outro.mp4.part-00 + kim-christmas-ja-final-outro.mp4.part-01 kim-christmas-ja.mp4` |
 | 미리보기 480p | `deliveries/kim-christmas-ja-final-480p.mp4` |
 | 썸네일 3종(테스트 및 비교) | `assets/thumbnails/ep4/EP4-thumb-A-ienaide-JP.jpg`(A), `EP4-thumb-B-darega-JP.jpg`(B), `EP4-thumb-C-chaimu-JP.jpg`(C) |
+| 썸네일 포스터 그래픽 테스트판(2026-10-09) | `assets/thumbnails/ep4/EP4-thumb-A-ienaide-poster-JP.jpg`(A′), `EP4-thumb-B-darega-poster-JP.jpg`(B′) — `scripts/make_thumbnails_ep4_poster.py` |
 | 쇼츠 5편(9:16) | `assets/shorts/ep4/EP4-short-1-letter-JP.mp4` ~ `EP4-short-5-merry-JP.mp4` |
 | 일본어 자막(검색 색인용, 화면 자막은 이미 들어 있음) | `subs/kim-christmas.ja.srt` |
 
@@ -20,7 +21,7 @@
 4. 시청자층: 「いいえ、子ども向けではありません」
 5. **자세히 보기**: 변경된 콘텐츠(AI 고지) → **「はい」**, 동영상 언어 → **일본어**, 자막 인증 → 없음
 6. 재생목록: 「キムさんシリーズ」
-7. 썸네일 3장 → **テストと比較** (기본 썸네일 = B 「誰が払ったの？」)
+7. 썸네일 3장 → **テストと比較** (기본 썸네일 = B 「誰が払ったの？」). 포스터판을 시험할 때는 **B(기존) · B′(포스터) · A′(포스터)** 3장으로 비교(제목은 1순위 제목 B 그대로)
 8. 자막: 일본어 → 파일 업로드 → 타이밍 포함 → `kim-christmas.ja.srt`
 9. **최종 화면(終了画面)**: 영상 끝 **5:20~5:35** 구간. 진행자가 화면 왼쪽에 있으므로 요소는 **오른쪽 2/3**에 배치.
    - 「動画」 → 「視聴者に適したコンテンツ」 1개(오른쪽 위), 「再生リスト」 キムさんシリーズ 1개(오른쪽 아래), 「登録」 버튼 1개(가운데 오른쪽)
