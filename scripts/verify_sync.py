@@ -26,7 +26,7 @@ for s in sb["scenes"]:
         if who and not any(who in r for r in s["refs"]): bad.append(f"{s['id']}: 화자 {l['spk']} ≠ 화면 인물 {s['refs']}")
         if s["assembled_s"] > 7.95: bad.append(f"{s['id']}: OMNI {s['assembled_s']:.2f}s > 7.9s")
 # ③
-n_sub = len([m for m in re.finditer(r"^Dialogue: [^,]*,[^,]*,[^,]*,(\w+),", ass, re.M) if m.group(1) not in ("Emph", "Caption")])
+n_sub = len([m for m in re.finditer(r"^Dialogue: [^,]*,[^,]*,[^,]*,(\w+),", ass, re.M) if m.group(1) not in ("Emph", "Emph2", "Caption") and not m.group(1).endswith("_c")])
 n_voice = len([l for l in lk["lines"] if l.get("start") is not None and int(l["id"][4:]) <= 65])
 if n_sub != n_voice: bad.append(f"자막 {n_sub}줄 ≠ 음성 {n_voice}줄")
 # ④

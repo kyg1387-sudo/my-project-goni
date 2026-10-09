@@ -937,8 +937,9 @@ def main():
         r = rows[f"line{i:03d}"]
         st = STYLE[x[3] if x[3] != "NA" else "NA"]
         # 제11장 21(2026-10-09): 한 이벤트 = 최대 2줄×16자. 넘치면 문장 호흡에서 조각내 글자 수 비례로 시간을 나눠 연속 표시
-        for c0, c1, txt in split_events(x[5], r["start"] - TRIM_PRE, r["end"] + 0.25):
-            events.append((c0, c1, st, STYLE_JA[st], txt, f"line{i:03d}"))   # Effect 칸 = 줄 번호(한글 검수 자막 묶음용)
+        for k_, (c0, c1, txt) in enumerate(split_events(x[5], r["start"] - TRIM_PRE, r["end"] + 0.25)):
+            # 첫 조각만 TTS 줄(스타일 그대로), 이어지는 조각은 「<스타일>_c」(silent_styles) — generate_audio가 TTS 줄로 세지 않게(#02 burn 146 실증: 123줄로 세어 TTS 실패)
+            events.append((c0, c1, st if k_ == 0 else st + "_c", STYLE_JA[st], txt, f"line{i:03d}"))   # Effect 칸 = 줄 번호(한글 검수 자막 묶음용)
     # 제11장 12(2026-10-09): 카드 컷(S01g 등)은 build_chika_overrides.py가 글자를 클립에 직접 그리므로
     # Caption 자막을 겹쳐 굽지 않는다(#02 1차 조립 실증: 카드 글자 + 자막 글자가 중앙에 이중으로 겹침).
     CARD_TEXT_IN_CLIP = True
@@ -954,8 +955,8 @@ def main():
     fmt = "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding"
     # 2:1 레터박스 안쪽 하단에 자막(MarginV 150), 내레이션은 명조(03_시네마규격)
     st_lines = "\n".join(
-        f"Style: {n},{'Noto Serif CJK JP' if n == 'Naration' else 'Noto Sans CJK JP'},{58 if n == 'Naration' else 60},{c},&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,{2 if n == 'Naration' else 3},1,2,200,200,150,1"
-        for n, c in STYLE_COLOR.items())
+        f"Style: {n}{suf},{'Noto Serif CJK JP' if n == 'Naration' else 'Noto Sans CJK JP'},{58 if n == 'Naration' else 60},{c},&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,{2 if n == 'Naration' else 3},1,2,200,200,150,1"
+        for n, c in STYLE_COLOR.items() for suf in ("", "_c"))
     ass = ["[Script Info]", "Title: 地下倉庫の伝票 字幕", "ScriptType: v4.00+", "PlayResX: 1920", "PlayResY: 1080", "WrapStyle: 2",
            "ScaledBorderAndShadow: yes", "", "[V4+ Styles]", fmt, st_lines,
            "Style: Caption,Noto Serif CJK JP,66,&H00FFF3C4,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,6,2,5,200,200,80,1",
@@ -1000,7 +1001,7 @@ def main():
         "_설명": "chika 조립·오디오(build_chika_phase3.py 생성). 음성 65줄 = assets/audio-overrides/chika/ (Typecast 확정본, 발화 구간만, line036은 폭소 SFX 포함 믹스).",
         "default_voice": "cached-typecast",
         "tts_model": "fal-ai/minimax/speech-02-hd", "language_boost": "Japanese", "speed": 1.0,
-        "style_names": STYLE_JA, "narration_styles": ["Naration"], "silent_styles": ["Caption", "Emph", "Emph2"],
+        "style_names": STYLE_JA, "narration_styles": ["Naration"], "silent_styles": ["Caption", "Emph", "Emph2"] + [n + "_c" for n in STYLE_COLOR],
         "output_size": [1920, 1080], "fit": "crop", "letterbox": "2:1",
         "scene_durations": durations, "transitions": transitions, "transition_types": ttypes,
         "omnihuman_scenes": [idx[s["id"]] for s in SHOTS if s["kind"] == "d"],

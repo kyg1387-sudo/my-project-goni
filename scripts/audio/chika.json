@@ -18,7 +18,13 @@
  "silent_styles": [
   "Caption",
   "Emph",
-  "Emph2"
+  "Emph2",
+  "Naration_c",
+  "Saori_c",
+  "Gondo_c",
+  "Miyamoto_c",
+  "Kiritani_c",
+  "Okochi_c"
  ],
  "output_size": [
   1920,
