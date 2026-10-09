@@ -119,6 +119,12 @@ FIX = {
              "floor far down the aisle, SMALL in the frame (about one fifth of the frame height), facing the camera and tilting her head up to look at the "
              "upper shelves, a cardboard box held in both arms at her waist. No desk, no printer, no lamp in this frame. Hard cold fluorescent tubes "
              "overhead, dust in the beams, deep shadows between the racks. Single coherent perspective, straight vertical racks, no tilt."),
+    # S14i(감독님 지적 2026-10-09): 역광 림라이트를 인물 윤곽선(푸른 테두리 발광)으로 그려 오려 붙인 듯 보임 → 테두리 금지, 자연광만
+    "S14i": ("LIGHTING FIRST: NO outline, NO glow, NO halo, NO luminous edge around any person — the figures are lit only by the warm chandeliers above "
+             "and the cool projector screen behind, with soft natural falloff; edges of the dark suit blend naturally into the dim room. "
+             "High angle from the balcony: Gondo stands alone in the middle of a widening empty circle of red carpet, head slightly bowed, arms at his "
+             "sides, face dim and unreadable; the guests have stepped back to the edges of the circle as soft dark shapes with faces out of focus. "
+             "Banquet tables with white cloths around, a blank white projector screen far behind, chandelier bokeh top right. No readable text."),
     "S17b": ("STAGING: side view at shoulder height, very close. On the LEFT edge, the back of a heavyset man's head and thick neck with SLICKED-BACK "
              "SALT-AND-PEPPER hair and a navy suit collar, face turned away and NOT visible. From the RIGHT, two hands in dark security-guard uniform sleeves "
              "lift a plain blank white ID card on a black lanyard up and over the top of his head, the lanyard loop stretched open above the hair. "
