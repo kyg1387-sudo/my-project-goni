@@ -1,0 +1,117 @@
+{
+ "_설명": "#02 수정 10(외부 검수: 효과음 0개): 효과음 16개 ElevenLabs sound-generation. chika_master.py가 타임코드에 믹스(scripts/audio/chika.json _효과음 + 추가 큐).",
+ "tests": [
+  {
+   "id": "glass_shatter_0007",
+   "model": "elevenlabs-sfx",
+   "duration": 1.6,
+   "prompt_influence": 0.6,
+   "text": "A thin wine glass shatters on a hard floor, sharp crisp glass break with scattering shards, indoor banquet hall, close, no music, no voices"
+  },
+  {
+   "id": "applause_0041",
+   "model": "elevenlabs-sfx",
+   "duration": 3.5,
+   "prompt_influence": 0.6,
+   "text": "Polite corporate applause from about eighty people in a company auditorium, medium room reverb, no cheering, no voices, no music"
+  },
+  {
+   "id": "elevator_close_0213",
+   "model": "elevenlabs-sfx",
+   "duration": 2.0,
+   "prompt_influence": 0.6,
+   "text": "Office elevator doors sliding shut with a soft thud and a quiet chime, modern building lobby, no voices"
+  },
+  {
+   "id": "steel_door_0218",
+   "model": "elevenlabs-sfx",
+   "duration": 2.6,
+   "prompt_influence": 0.6,
+   "text": "Heavy steel basement door creaking open slowly then clanging shut, echo in a concrete corridor, no voices, no music"
+  },
+  {
+   "id": "fluorescent_0220",
+   "model": "elevenlabs-sfx",
+   "duration": 3.0,
+   "prompt_influence": 0.6,
+   "text": "Old fluorescent tube flickering and buzzing in a damp basement, electrical hum with intermittent clicks, no voices"
+  },
+  {
+   "id": "stamp_0320",
+   "model": "elevenlabs-sfx",
+   "duration": 0.7,
+   "prompt_influence": 0.6,
+   "text": "A single rubber stamp pressed firmly onto paper on a wooden desk, short dry thud, close, no voices"
+  },
+  {
+   "id": "heartbeat_0427",
+   "model": "elevenlabs-sfx",
+   "duration": 1.4,
+   "prompt_influence": 0.6,
+   "text": "Two slow deep heartbeats, muffled, tense, cinematic, no music"
+  },
+  {
+   "id": "ding_0428",
+   "model": "elevenlabs-sfx",
+   "duration": 1.2,
+   "prompt_influence": 0.6,
+   "text": "A soft computer notification ding, single clean chime, close, no voices"
+  },
+  {
+   "id": "bassdrop_0456",
+   "model": "elevenlabs-sfx",
+   "duration": 2.0,
+   "prompt_influence": 0.6,
+   "text": "Deep cinematic sub bass drop impact with a short tail, trailer style, no music melody, no voices"
+  },
+  {
+   "id": "click_0505",
+   "model": "elevenlabs-sfx",
+   "duration": 0.5,
+   "prompt_influence": 0.6,
+   "text": "A single mouse click on a laptop, close, dry, no voices"
+  },
+  {
+   "id": "cork_0554",
+   "model": "elevenlabs-sfx",
+   "duration": 1.2,
+   "prompt_influence": 0.6,
+   "text": "A champagne cork popping with a short fizz, party room, no voices, no music"
+  },
+  {
+   "id": "glass_shatter_0723",
+   "model": "elevenlabs-sfx",
+   "duration": 1.6,
+   "prompt_influence": 0.6,
+   "text": "A wine glass hits a carpeted floor and breaks, muffled glass crack with a splash of liquid, banquet hall, no voices"
+  },
+  {
+   "id": "flash_0727",
+   "model": "elevenlabs-sfx",
+   "duration": 0.8,
+   "prompt_influence": 0.6,
+   "text": "A press camera flash with a quick electronic whine and shutter click, close, no voices"
+  },
+  {
+   "id": "bass_hit_0415",
+   "model": "elevenlabs-sfx",
+   "duration": 1.5,
+   "prompt_influence": 0.6,
+   "text": "A low cinematic bass hit, dramatic reveal accent, short, no music melody, no voices"
+  },
+  {
+   "id": "paper_rustle_0314",
+   "model": "elevenlabs-sfx",
+   "duration": 1.8,
+   "prompt_influence": 0.6,
+   "text": "Old brittle paper being lifted and turned slowly in a quiet basement, close, dry, no voices"
+  },
+  {
+   "id": "scanner_0308",
+   "model": "elevenlabs-sfx",
+   "duration": 2.5,
+   "prompt_influence": 0.6,
+   "text": "A flatbed document scanner sweeping with a soft motor whir and a light bar, office, no voices"
+  }
+ ]
+}
