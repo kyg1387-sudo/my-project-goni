@@ -108,7 +108,7 @@ FIX = {
              "a grey desk leg and a black office chair base behind it, cold fluorescent office light. No hands, no people, no readable text anywhere."),
     # S13d(자동 경고, 제11장 16): 와인이 튀는 순간이 정지 → 「쏟아진 뒤」 상태
     "S13d": ("PHYSICS FIRST: nothing is in mid-air, no flying droplets, no splash frozen in time. The moment AFTER the spill: a dark red wine stain has "
-             "already soaked into the red banquet carpet in an irregular wet patch beside a pair of plain black flat shoes seen from the side at floor "
+             "already soaked into the red banquet carpet in an irregular wet patch beside a pair of WOMEN'S plain black flat ballet shoes with dark-blue JEANS hems (Saori's feet; NOT men's leather dress shoes, NOT suit trousers) seen from the side at floor "
              "level, a toppled empty wine glass lying on its side at the edge of the stain, a few settled drops glistening on the carpet pile. "
              "High angle extreme close-up at floor level, shallow depth of field, warm chandelier light from above, banquet tables as soft bokeh. "
              "Shoes point to the right in profile, ankles and dark trouser hems only. No faces, no readable text."),

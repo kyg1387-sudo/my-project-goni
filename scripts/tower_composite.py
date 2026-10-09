@@ -564,7 +564,8 @@ def apply(a, mode, q, art_fn, sigma_override=None, protect=False):
         cx, cy = q[:, 0].mean(), q[:, 1].mean()
         r = np.sqrt(((xx - cx) / max(qw, 1)) ** 2 + ((yy - cy) / max(qh, 1)) ** 2)
         base = base * (1 - 0.18 * np.clip(r / 0.75, 0, 1) ** 2)[..., None]              # ②
-        base = base * 0.82 + af * 0.20                                                  # ③
+        refl = cv2.GaussianBlur(af, (0, 0), max(6, qh * 0.12))                           # 유리 반사는 방의 톤만(원본 화면의 창·상자 형태가 비치지 않게 크게 흐림)
+        base = base * 0.82 + refl * 0.20                                                # ③
         base = base * (1 - 0.025 * (np.sin(yy * np.pi / 1.5) > 0))[..., None]            # ④
         scr = af * (1 - m) + base * m
         glow = cv2.GaussianBlur((base.mean(2) * m[..., 0]), (0, 0), max(4, qh * 0.07))[..., None]
