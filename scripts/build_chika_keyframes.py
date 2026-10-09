@@ -100,6 +100,12 @@ FIX = {
     "S15j": ("He is standing in the BANQUET HALL among guests in dark suits (chandeliers and the blank stage screen blurred behind) — NOT in the archive, "
              "NO desk lamp, NO shelves. Expression: NO smile — mouth set in a firm straight line, eyes fixed on the camera, brows level, grave and steady."),
     # 감독님 지적(2026-10-08): S17b 손이 뒤통수 뒤에서 나와 카드를 쥔 기이한 자세·검은 머리(곤도 아님)·현수막 글자 → 측면 구도로 재설계
+    # S03e(감독님 지적 2026-10-09): 「떨어지는 순간」을 정지 컷으로 써서 서류가 5초간 공중에 떠 있음 → 「떨어진 뒤」로 재설계(정지 푸시인은 정지 상태만, 제11장 16)
+    "S03e": ("PHYSICS FIRST: nothing is in mid-air. The moment AFTER the drop: a thick stack of blank white papers studded with blank yellow sticky notes "
+             "has already landed and lies crumpled and tilted INSIDE a steel wire-mesh wastebasket on a grey office carpet, the top sheets fanned up over "
+             "the rim and one corner of the stack hanging over the edge, two blank yellow sticky notes fallen flat on the carpet beside the bin. "
+             "Everything rests on a surface and obeys gravity. High angle extreme close-up at knee height, the wastebasket fills the lower right third, "
+             "a grey desk leg and a black office chair base behind it, cold fluorescent office light. No hands, no people, no readable text anywhere."),
     "S17b": ("STAGING: side view at shoulder height, very close. On the LEFT edge, the back of a heavyset man's head and thick neck with SLICKED-BACK "
              "SALT-AND-PEPPER hair and a navy suit collar, face turned away and NOT visible. From the RIGHT, two hands in dark security-guard uniform sleeves "
              "lift a plain blank white ID card on a black lanyard up and over the top of his head, the lanyard loop stretched open above the hair. "
