@@ -46,3 +46,13 @@
 - 결함과 무료 처리: ① S01a 3테이크 모두 역광 인물 얼굴이 밝음 → post `silhouette`(문 영역 중간톤 0.22배) ② S02a·S06a·S11b·S11d·S11d2·S11f는 Kling·Seedance가 합성 글자를 다시 그려 떨림 → 표기 추적 합성(SignTracker) ③ 악역 컷 더치 S05a 5°·S15b2 7°, 핸드헬드 S12a2·S12d, S18h 풀백 — 편집 구현(제8장 6).
 - 후처리본 20개를 `assets/video-overrides/chika/`에 넣어 burn에서 생성 클립을 덮는다(나머지 23컷은 생성본 그대로). `qa_overrides_chika.py` 0건.
 - 생성 클립 길이 5·10초 ≥ 계획 길이(+디졸브 여유) 확인(S14h 4.95s·S15k 4.79s는 전환 0이라 5.04s 안에 들어감).
+
+## 9. burn·PHASE 6 결과(2026-10-09)
+- burn 1차(실행 142) 중단: 히어로 테이크 42파일이 장면으로 집계(199≠157) → `_take` 제외(제11장 11), 지출 0. 2차(143) 완료 후 BGM05 누락으로 resume(144) 재생성. 3차(145, 무과금 resume): 카드 Caption 이중 제거판.
+- 1차 조립본 검수(`qa_assembly.py` + 육안): 길이 668.42s, 전환·매트·입 크롭·인물 확대 대조(7명 105컷) 합격. 결함 2 → 카드 6컷 자막 이중(제11장 12), BGM 공백 3곳 2초 무음(제11장 13 룸톤 베드). 둘 다 무과금 수정.
+- 아웃트로: 068 OmniHuman 1컷(6.1s, 0.98달러) 합격(헤드턴·손·얼굴 일치) → `build_chika_outro.py` 47.6s(몽타주 5컷 → 구독·고평가 버튼 → 068 → 손 흔들기) → `append_outro.py`(OUT_SIZE 1920x1080, ja 엔드카드).
+- 그레이딩 `chika_grade.py` 46구간 → 마스터 `chika_master.py`(룸톤 −52dBFS + loudnorm) → 결합 → 리미터. 완성본 **721.75s**(본편 668.4 + 암전 0.8 + 아웃트로 47.6 + 엔드카드 5.5 − 겹침 0.6), −14.2 LUFS / TP −0.6 dBTP(AAC 오버슈트), `silencedetect −60dB 2s` 0건.
+- 한글 검수본: 1차는 2줄 일본어 위에 한글이 겹침 → MarginV 줄 수 가산(제11장 14) 후 재렌더.
+- 전달: `deliveries/chika-complete.mp4.part-00~06`(90MiB 분할, `cat *.part-* > chika-complete.mp4`), 480p 한글 검수본은 세션 전송.
+- **지출 합계(#02)**: PHASE 2 1.52 + PHASE 4 7.72 + 히어로 파일럿 0.56 + i2v 34.26 + burn 약 25.7(OmniHuman 24.61 + BGM·앰비언스 약 1.1) + 아웃트로 068 0.98 ≈ **70.7달러**(B안 예산 96 이내; TTS는 ElevenLabs·Typecast 크레딧 별도).
+- 남은 선택 사항: 아웃트로 몽타주 5컷은 16:9 전체 화면(본편 2:1 매트와 다름) — 매트를 맞추려면 `build_chika_outro.py` 몽타주에 2:1 패드 추가(무과금, 약 10분).
