@@ -559,6 +559,7 @@ GFX_PLATE = {
     "S17a": "Low angle wide of the stage: a long plain blank cream cloth banner sagging at one end above the stage, the blank screen behind; no people.",
 }
 EMPH = [  # (기준 줄, 줄 시작 후 초, 길이, 스타일, 문구) — 三千万円 카운트업
+    ("line004", 0.05, 1.0, "Emph2", "この一枚が、すべてを変えた"),   # 제11장 24(감독님 승인 2026-10-09): 0:19 전표 ECU 위 강조 1줄 — 썸네일·제목·후크 3중 일치
     ("line023", 0.9, 0.4, "Emph", "二十五万円"),
     ("line023", 1.3, 0.4, "Emph", "三百万円"),
     ("line023", 1.7, 0.4, "Emph", "一千五百万円"),
@@ -959,6 +960,7 @@ def main():
            "ScaledBorderAndShadow: yes", "", "[V4+ Styles]", fmt, st_lines,
            "Style: Caption,Noto Serif CJK JP,66,&H00FFF3C4,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,6,2,5,200,200,80,1",
            "Style: Emph,Noto Sans CJK JP,150,&H0000E6FF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,10,3,5,100,100,80,1",
+           "Style: Emph2,Noto Serif CJK JP,92,&H0040E6FF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,7,3,5,100,100,80,1",
            "", "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text"]
     for e in events:
         txt = e[4]
@@ -998,7 +1000,7 @@ def main():
         "_설명": "chika 조립·오디오(build_chika_phase3.py 생성). 음성 65줄 = assets/audio-overrides/chika/ (Typecast 확정본, 발화 구간만, line036은 폭소 SFX 포함 믹스).",
         "default_voice": "cached-typecast",
         "tts_model": "fal-ai/minimax/speech-02-hd", "language_boost": "Japanese", "speed": 1.0,
-        "style_names": STYLE_JA, "narration_styles": ["Naration"], "silent_styles": ["Caption", "Emph"],
+        "style_names": STYLE_JA, "narration_styles": ["Naration"], "silent_styles": ["Caption", "Emph", "Emph2"],
         "output_size": [1920, 1080], "fit": "crop", "letterbox": "2:1",
         "scene_durations": durations, "transitions": transitions, "transition_types": ttypes,
         "omnihuman_scenes": [idx[s["id"]] for s in SHOTS if s["kind"] == "d"],
