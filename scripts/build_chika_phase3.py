@@ -429,7 +429,7 @@ SHOTS = [
       motion="The beam's dust drifts; Gondo's shoulders sag slightly. He does not turn.", hero=True),
     S("S14i", "S14", "sil", "ws", "bq_cold", "HA", ["GONDO", "CROWD"], "BQ_HIGH",
       "High angle from the balcony: Gondo alone in a widening circle of red carpet as the guests around him step back, all faces soft.",
-      motion="The surrounding guests take one slow step backward together; Gondo stays rooted."),
+      motion="Gondo stays rooted in the centre of the red circle, shoulders sinking a little, head lowering slowly by a few degrees, micro chest breathing; the room stays still. No glow or outline around the figure."),
     S("S14j", "S14", "react", "cu", "bq_cold", "EL", ["SAORI_B"], "BQ_WIDE",
       "Chest-up close-up of Saori, eyes lifting, a long slow breath, chandeliers blurred behind.", line="line043", expr="resolve"),
     S("S14k", "S14", "ins", "ecu", "bq_cold", "HA", ["SAORI_B"], "BQ_WIDE",
@@ -598,7 +598,7 @@ SIGN_BY_SHOT = {
 }
 SIGN_SIZES = ("ms", "ws", "ews")
 # 장면 전환: 기본 하드컷, 시간·장소 전환 디졸브 0.5~0.8, 막 종료 딥 투 블랙 1.0, 폭로 순간 화이트 플래시 0.2
-DISSOLVE_INTO = {"S01g": ("fadeblack", 1.0), "S01h": ("fadeblack", 0.6), "S02a": ("fadeblack", 0.8), "S04a": ("fade", 0.5), "S06a": ("fade", 0.6),
+DISSOLVE_INTO = {"S01g": ("fade", 0.5), "S01h": ("fade", 0.5), "S02a": ("fade", 0.5),   # 제11장 20: 타이틀·시점 카드 암전 금지(디졸브 0.5) "S04a": ("fade", 0.5), "S06a": ("fade", 0.6),
                  "S07a": ("fade", 0.5), "S07b": ("fade", 0.5), "S08a": ("fade", 0.5), "S09a": ("fade", 0.6), "S09c": ("fade", 0.5), "S09d": ("fade", 0.5),
                  "S10g": ("fade", 0.5), "S11a": ("fade", 0.6), "S13a": ("fade", 0.6), "S14g": ("fadewhite", 0.2),
                  "S17e": ("fadeblack", 1.0), "S18a": ("fade", 0.8)}
@@ -645,6 +645,57 @@ def wrap(text, limit=19):
             k = min(c2, key=lambda i: abs(i - m2)) if c2 else m2
             out = [out[0], sub[:k], sub[k:]]
     return "\\N".join(out)
+
+
+SUB_ROW, SUB_ROWS = 16, 2
+
+
+def _chunks(text, limit=SUB_ROW):
+    """문장 호흡(、。…!?)에서 limit자 이하 조각으로 자른다. 구두점이 없으면 limit에서 강제 분할."""
+    NOHEAD = "…—、。!?？！』」"
+    out, cur = [], ""
+    for i, ch in enumerate(text):
+        cur += ch
+        nxt = text[i + 1] if i + 1 < len(text) else ""
+        if ch in "、。…!?？！』」" and nxt and nxt not in NOHEAD and len(cur) >= 6:
+            out.append(cur); cur = ""
+    if cur:
+        out.append(cur)
+    res = []
+    PART = "はがをにでとのもへやばて"
+    for c in out:
+        while len(c) > limit:
+            cands = [k for k in range(6, limit + 1) if c[k - 1] in PART and c[k] not in NOHEAD]
+            # 남은 길이가 2줄 안이면 가운데에 가까운 조사 뒤에서, 더 길면 한도에 가장 가까운 조사 뒤에서 자른다
+            k = (min(cands, key=lambda q: abs(q - len(c) / 2)) if len(c) <= 2 * limit else cands[-1]) if cands else limit
+            res.append(c[:k]); c = c[k:]
+        res.append(c)
+    return res
+
+
+def split_events(text, t0, t1, min_s=1.0):
+    """자막 이벤트 분할: 조각을 2줄×16자 안에 채워 넣고, 이벤트 시간은 글자 수 비례(최소 1.0초)."""
+    pieces = _chunks(text)
+    groups, g = [], []
+    for pc in pieces:
+        if len(g) < SUB_ROWS and (not g or len(g[-1]) + len(pc) > SUB_ROW):
+            g.append(pc)
+        elif g and len(g[-1]) + len(pc) <= SUB_ROW:
+            g[-1] += pc
+        else:
+            groups.append(g); g = [pc]
+    if g:
+        groups.append(g)
+    if len(groups) == 1:
+        return [(t0, t1, "\\N".join(groups[0]))]
+    total = sum(len("".join(x)) for x in groups); span = t1 - t0
+    # 글자 수 비례, 최소 길이 보장
+    durs = [max(min_s, span * len("".join(x)) / total) for x in groups]
+    k = span / sum(durs); durs = [d * k for d in durs]
+    out, t = [], t0
+    for x, d in zip(groups, durs):
+        out.append((round(t, 3), round(t + d, 3), "\\N".join(x))); t += d
+    return out
 
 
 def check_rules(shots):
@@ -884,7 +935,9 @@ def main():
     for i, x in enumerate(script, 1):
         r = rows[f"line{i:03d}"]
         st = STYLE[x[3] if x[3] != "NA" else "NA"]
-        events.append((r["start"] - TRIM_PRE, r["end"] + 0.25, st, STYLE_JA[st], wrap(x[5])))
+        # 제11장 21(2026-10-09): 한 이벤트 = 최대 2줄×16자. 넘치면 문장 호흡에서 조각내 글자 수 비례로 시간을 나눠 연속 표시
+        for c0, c1, txt in split_events(x[5], r["start"] - TRIM_PRE, r["end"] + 0.25):
+            events.append((c0, c1, st, STYLE_JA[st], txt, f"line{i:03d}"))   # Effect 칸 = 줄 번호(한글 검수 자막 묶음용)
     # 제11장 12(2026-10-09): 카드 컷(S01g 등)은 build_chika_overrides.py가 글자를 클립에 직접 그리므로
     # Caption 자막을 겹쳐 굽지 않는다(#02 1차 조립 실증: 카드 글자 + 자막 글자가 중앙에 이중으로 겹침).
     CARD_TEXT_IN_CLIP = True
@@ -900,7 +953,7 @@ def main():
     fmt = "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding"
     # 2:1 레터박스 안쪽 하단에 자막(MarginV 150), 내레이션은 명조(03_시네마규격)
     st_lines = "\n".join(
-        f"Style: {n},{'Noto Serif CJK JP' if n == 'Naration' else 'Noto Sans CJK JP'},{54 if n == 'Naration' else 56},{c},&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,{2 if n == 'Naration' else 3},1,2,200,200,150,1"
+        f"Style: {n},{'Noto Serif CJK JP' if n == 'Naration' else 'Noto Sans CJK JP'},{58 if n == 'Naration' else 60},{c},&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,{2 if n == 'Naration' else 3},1,2,200,200,150,1"
         for n, c in STYLE_COLOR.items())
     ass = ["[Script Info]", "Title: 地下倉庫の伝票 字幕", "ScriptType: v4.00+", "PlayResX: 1920", "PlayResY: 1080", "WrapStyle: 2",
            "ScaledBorderAndShadow: yes", "", "[V4+ Styles]", fmt, st_lines,
@@ -911,14 +964,14 @@ def main():
         txt = e[4]
         if e[2] == "Emph":
             txt = "{\\fscx130\\fscy130\\t(0,120,\\fscx100\\fscy100)}" + txt
-        ass.append(f"Dialogue: 0,{ass_t(max(0, e[0]))},{ass_t(e[1])},{e[2]},{e[3]},0,0,0,,{txt}")
+        ass.append(f"Dialogue: 0,{ass_t(max(0, e[0]))},{ass_t(e[1])},{e[2]},{e[3]},0,0,0,{e[5] if len(e) > 5 else ''},{txt}")
     open(os.path.join(ROOT, "subs", f"{SKIT}.ass"), "w", encoding="utf-8").write("\n".join(ass) + "\n")
 
     # BGM 7곡: 곡 사이 숨 1.5초 이상, 숨은 내레이션·대사가 흐르는 시점에(제7장 8), 광고 경계 앞뒤 분리
     t_ad1, t_ad2 = ad_times
     BGM = [
-        (0.0, starts["S01g"] - 0.3, 0.40, "tense low strings and a slow heartbeat pulse, Japanese drama cold open, cold and ominous, instrumental, no vocals"),
-        (starts["S02a"] + 0.8, t_ad1 - 0.2, 0.38, "nervous pizzicato strings and muted piano, quiet injustice and social pressure, Japanese corporate drama score, instrumental, no vocals"),
+        (0.0, starts["S02a"] + 0.3, 0.40, "tense low strings and a slow heartbeat pulse, Japanese drama cold open, cold and ominous, instrumental, no vocals"),
+        (starts["S02a"] + 1.0, t_ad1 - 0.2, 0.38, "nervous pizzicato strings and muted piano, quiet injustice and social pressure, Japanese corporate drama score, instrumental, no vocals"),
         (t_ad1 + 1.6, rows["line025"]["end"] + 0.5, 0.38, "steady minimal beat with soft synth, clock ticking, focused investigation, clever detective mood, instrumental, no vocals"),
         (rows["line026"]["start"] + 0.4, starts["S12a"] - 0.3, 0.40, "low ominous drone with sparse piano, dread in a dark basement, rising suspense, instrumental, no vocals"),
         (starts["S12a"] + 1.2, t_ad2 - 0.2, 0.38, "brassy drunken celebration turning uneasy, swing rhythm with dark undertone, Japanese drama score, instrumental, no vocals"),

@@ -824,7 +824,7 @@
    "hero_takes": 3
   },
   {
-   "prompt": "Static, locked off camera, high angle. Motion: Gondo stays rooted in the centre of the red circle, shoulders sinking a little, head lowering slowly by a few degrees, micro chest breathing; the room stays still. Keep the exact faces, wardrobe, props and lighting of the first frame — a heavyset man with gold-rimmed glasses in a navy double-breasted suit. No glow or outline around the figure, no new people, no text. Head turns under 20 degrees.",
+   "prompt": "Static, locked off camera. Motion: Gondo stays rooted in the centre of the red circle, shoulders sinking a little, head lowering slowly by a few degrees, micro chest breathing; the room stays still. No glow or outline around the figure. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/chika-keyframes/S14i-1.png"
   },

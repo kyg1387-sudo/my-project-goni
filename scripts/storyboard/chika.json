@@ -247,8 +247,8 @@
     "문 명판 「文書管理室」 / 상자 라벨 「2016年度　支出伝票」 외(앞열만)"
    ],
    "transition_in": [
-    "fadeblack",
-    1.0
+    "fade",
+    0.5
    ]
   },
   {
@@ -281,8 +281,8 @@
     "문 명판 「文書管理室」 / 상자 라벨 「2016年度　支出伝票」 외(앞열만)"
    ],
    "transition_in": [
-    "fadeblack",
-    0.6
+    "fade",
+    0.5
    ]
   },
   {
@@ -315,8 +315,8 @@
     "현수막 「帝都商事株式会社　新規事業計画 発表会」"
    ],
    "transition_in": [
-    "fadeblack",
-    0.8
+    "fade",
+    0.5
    ]
   },
   {
@@ -872,8 +872,8 @@
    "caption": "",
    "signage": [],
    "transition_in": [
-    "fade",
-    0.5
+    "",
+    0.0
    ]
   },
   {
@@ -1108,8 +1108,8 @@
     "문 명판 「文書管理室」 / 상자 라벨 「2016年度　支出伝票」 외(앞열만)"
    ],
    "transition_in": [
-    "fade",
-    0.6
+    "",
+    0.0
    ]
   },
   {
@@ -3721,7 +3721,7 @@
    ],
    "subject": "High angle from the balcony: Gondo alone in a widening circle of red carpet as the guests around him step back, all faces soft.",
    "line": null,
-   "motion": "Static, locked off camera. Motion: The surrounding guests take one slow step backward together; Gondo stays rooted. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "motion": "Static, locked off camera. Motion: Gondo stays rooted in the centre of the red circle, shoulders sinking a little, head lowering slowly by a few degrees, micro chest breathing; the room stays still. No glow or outline around the figure. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "keyframe": "assets/portraits/chika-keyframes/S14i-1.png",
    "keyframe_prompt": "Photorealistic live-action Japanese corporate drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, mid-size Tokyo trading company mise-en-scene, no flat lighting. High angle from the balcony: Gondo alone in a widening circle of red carpet as the guests around him step back, all faces soft. Characters: Gondo, a heavyset Japanese man aged 52, fleshy face with a double chin, salt-and-pepper hair slicked straight back, thick gold-rimmed rectangular glasses, bare lapels with no pin, wearing a glossy navy double-breasted suit, white shirt, plain wine-red silk tie, a chunky plain gold wristwatch on the right wrist, bare lapels with no pin | banquet guests in dark suits and dresses seen as soft out-of-focus shapes or from behind, faces unrecognizable. Camera: high-angle looking down, 35mm lens, f/4.0, environmental storytelling, balanced composition. Lighting: the chandelier glow dimmed, a colder blue-white key from the stage screen, high-contrast chiaroscuro, rim light on hair. Only the people described (1 named, plus soft unrecognizable background people), no extra sharp faces.  All papers, screens, signs, banners, box labels and plates are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, brand logos, lapel pin, company badge, signage lettering, posters with writing, printed labels, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people.",
    "gfx": "",

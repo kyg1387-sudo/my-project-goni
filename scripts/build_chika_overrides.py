@@ -61,6 +61,36 @@ def zoom_vf(n, fx):
     return vf
 
 
+# 제11장 20(2026-10-09, 외부 검수 「0:23~0:30 암전 8.6초」): 타이틀·시점 카드를 검은 바탕 대신 장면 위에 올린다
+OVERLAY_CARDS = {"S01g": ("S01f", "title"), "S01h": ("S02a", "corner")}
+
+
+def card_overlay(sid, out, sec):
+    from PIL import ImageFilter
+    base_id, mode = OVERLAY_CARDS[sid]
+    text, path, px, col = CARDS[sid]
+    base = Image.open(fit_png(os.path.join(KF, f"{base_id}-1.png"), out + ".base.png")).convert("RGB")
+    n = int(math.ceil(sec * FPS))
+    if mode == "title":   # 직전 후크 컷(전표 ECU)을 블러·어둡게 깔고 타이틀을 가운데에
+        base = base.filter(ImageFilter.GaussianBlur(18)).point(lambda v: int(v * 0.45))
+        d = ImageDraw.Draw(base); f = ImageFont.truetype(path, px); bb = d.textbbox((0, 0), text, font=f)
+        d.text(((W - (bb[2] - bb[0])) / 2 - bb[0], (H - (bb[3] - bb[1])) / 2 - bb[1]), text, font=f, fill=col)
+        p = out + ".png"; base.save(p)
+        run(["-loop", "1", "-i", p, "-vf", f"noise=alls=5:allf=t+u,format=yuv420p", "-frames:v", str(n), "-r", str(FPS)] + ENC + [out])
+        os.remove(p)
+    else:   # 다음 장면 첫 프레임(2개월 전 발표회장) 위에 좌하단 소자막이 0.3초에 떠서 2.6초에 사라짐
+        p = out + ".png"; base.save(p)
+        cap = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(cap); f = ImageFont.truetype(path, 54)
+        d.rectangle([110, H - 215, 110 + d.textlength(text, font=f) + 60, H - 135], fill=(0, 0, 0, 140))
+        d.text((140, H - 205), text, font=f, fill=col + (255,))
+        c = out + ".cap.png"; cap.save(c)
+        run(["-loop", "1", "-i", p, "-loop", "1", "-i", c, "-filter_complex",
+             f"[1]fade=in:st=0.3:d=0.3:alpha=1,fade=out:st={min(2.6, sec - 0.8):.2f}:d=0.4:alpha=1[c];[0][c]overlay=format=auto,noise=alls=5:allf=t+u,format=yuv420p",
+             "-frames:v", str(n), "-r", str(FPS)] + ENC + [out])
+        os.remove(p); os.remove(c)
+    os.remove(out + ".base.png")
+
+
 def fit_png(src, dst):
     """키프레임(1344x768 등)을 16:9로 가운데 맞춰 1920x1080 PNG로."""
     im = Image.open(src).convert("RGB"); w, h = im.size
@@ -251,6 +281,8 @@ def main(only=None):
         if tier in ("pro", "lite", "hero") and s["id"] not in FORCE_STILL:
             continue
         if tier == "card":
+            if s["id"] in OVERLAY_CARDS:
+                card_overlay(s["id"], out, durs[i - 1]); made += 1; log.append(f"scene{i:02d} {s['id']} card-overlay"); continue
             card(s["id"], out, durs[i - 1]); made += 1; log.append(f"scene{i:02d} {s['id']} card"); continue
         src_id = s["kind"].split(":", 1)[1] if tier == "reuse" else s["id"]
         src = os.path.join(KF, f"{src_id}-1.png")

@@ -21,15 +21,22 @@ def _mv(m):   # MarginL, MarginR, MarginV, Encoding — 한글은 일본어 자�
     f = m.group(0).split(","); f[-2] = str(int(f[-2]) + 86); return ",".join(f)
 head = re.sub(r"^Style: .*$", _mv, head, flags=re.M)
 out, k = [], 0
+groups, order = {}, []   # 제11장 21: 분할된 일본어 조각(Effect=line###)을 줄 단위로 묶어 한글은 줄 전체 시간에 1번
 for ln in events.split("\n"):
     m = re.match(r"^Dialogue: (\d+),([^,]+),([^,]+),(\w+),([^,]*),(\d+),(\d+),(\d+),([^,]*),(.*)$", ln)
     if not m or m.group(4) in ("Emph", "Caption"):
         continue
+    key = m.group(9) or f"ev{len(order):03d}"
+    if key not in groups:
+        groups[key] = [m]; order.append(key)
+    else:
+        groups[key].append(m)
+for key in order:
+    ms = groups[key]; m = ms[0]; last = ms[-1]
     k += 1
     if k > len(ko): break
-    # 제11장 14(2026-10-09): 일본어 자막이 2줄 이상이면 한글을 그 줄 수만큼 더 올린다(1차 검수본: 2줄 일본어 위에 한글이 겹침)
-    n_ja = m.group(10).count("\\N") + 1
+    n_ja = max(mm.group(10).count("\\N") + 1 for mm in ms)
     mv = str(150 + 86 + 68 * (n_ja - 1)) if n_ja > 1 else m.group(8)
-    out.append(f"Dialogue: {m.group(1)},{m.group(2)},{m.group(3)},{m.group(4)},{m.group(5)},{m.group(6)},{m.group(7)},{mv},{m.group(9)},{ko[k - 1]}")
+    out.append(f"Dialogue: {m.group(1)},{m.group(2)},{last.group(3)},{m.group(4)},{m.group(5)},{m.group(6)},{m.group(7)},{mv},{m.group(9)},{ko[k - 1]}")
 open(os.path.join(ROOT, "subs/chika-ko.ass"), "w", encoding="utf-8").write(head + "[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n" + "\n".join(out) + "\n")
 print(f"한글 번역 {len(ko)}줄, 자막 이벤트 {len(out)}줄 → subs/chika-ko.ass")
