@@ -27,6 +27,9 @@ for ln in events.split("\n"):
         continue
     k += 1
     if k > len(ko): break
-    out.append(f"Dialogue: {m.group(1)},{m.group(2)},{m.group(3)},{m.group(4)},{m.group(5)},{m.group(6)},{m.group(7)},{m.group(8)},{m.group(9)},{ko[k - 1]}")
+    # 제11장 14(2026-10-09): 일본어 자막이 2줄 이상이면 한글을 그 줄 수만큼 더 올린다(1차 검수본: 2줄 일본어 위에 한글이 겹침)
+    n_ja = m.group(10).count("\\N") + 1
+    mv = str(150 + 86 + 68 * (n_ja - 1)) if n_ja > 1 else m.group(8)
+    out.append(f"Dialogue: {m.group(1)},{m.group(2)},{m.group(3)},{m.group(4)},{m.group(5)},{m.group(6)},{m.group(7)},{mv},{m.group(9)},{ko[k - 1]}")
 open(os.path.join(ROOT, "subs/chika-ko.ass"), "w", encoding="utf-8").write(head + "[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n" + "\n".join(out) + "\n")
 print(f"한글 번역 {len(ko)}줄, 자막 이벤트 {len(out)}줄 → subs/chika-ko.ass")
