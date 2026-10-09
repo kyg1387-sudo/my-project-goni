@@ -572,6 +572,23 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
                         "-af", f"atrim={t0:.3f}:{t1:.3f},asetpts=PTS-STARTPTS", seg],
                        check=True, capture_output=True)
         if i in omni_set:
+            # 제11장 19(2026-10-09, #02 S15h 실증): 구동 오디오는 이 컷의 화자 대사만. 창 안에 다른 화자의 꼬리가 섞이면
+            # (미야모토 11초 대사가 8초 컷을 넘어 사오리 CU까지 이어짐) 사오리 입이 미야모토 목소리에 맞춰 움직였다.
+            # 화자 = 창 안에서 시작하는 대사의 스타일(없으면 겹침이 가장 긴 대사). 다른 화자 구간은 무음 처리.
+            win = [(st, st + probe_duration(pp) / tp, sty) for st, tp, sty, pp in placed_dialogue
+                   if st < t1 and (st + probe_duration(pp) / tp) > t0]
+            owner = cfg.get("omnihuman_speakers", {}).get(str(i))
+            if not owner:
+                inside = [w for w in win if w[0] >= t0 - 1e-3]
+                owner = (inside or sorted(win, key=lambda w: -(min(w[1], t1) - max(w[0], t0))))[0][2] if win else None
+            others = [w for w in win if w[2] != owner]
+            if others:
+                keep = [w for w in win if w[2] == owner]
+                cond = "+".join(f"between(t,{max(w[0], t0) - t0:.3f},{min(w[1], t1) - t0:.3f})" for w in keep) or "0"
+                seg2 = os.path.join(WORK_DIR, f"seg{i:02d}_own.wav")
+                subprocess.run(["ffmpeg", "-y", "-i", seg, "-af", f"volume=0:enable='not({cond})'", seg2], check=True, capture_output=True)
+                print(f"[scene {i:02d}] 화자 {owner} 외 대사 {len(others)}줄({', '.join(w[2] for w in others)}) 무음 처리 → 구동 오디오")
+                seg = seg2
             print(f"[scene {i:02d}] 오디오 구동 생성(omnihuman) 중... ({t0:.1f}~{t1:.1f}s)")
             omni = omnihuman_scene(cfg, key, scene, seg, i)
             if omni:
