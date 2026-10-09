@@ -880,7 +880,12 @@ def main():
         r = rows[f"line{i:03d}"]
         st = STYLE[x[3] if x[3] != "NA" else "NA"]
         events.append((r["start"] - TRIM_PRE, r["end"] + 0.25, st, STYLE_JA[st], wrap(x[5])))
+    # 제11장 12(2026-10-09): 카드 컷(S01g 등)은 build_chika_overrides.py가 글자를 클립에 직접 그리므로
+    # Caption 자막을 겹쳐 굽지 않는다(#02 1차 조립 실증: 카드 글자 + 자막 글자가 중앙에 이중으로 겹침).
+    CARD_TEXT_IN_CLIP = True
     for sid, cap in CARDS.items():
+        if CARD_TEXT_IN_CLIP:
+            continue
         c0 = starts[sid] + DISSOLVE_INTO.get(sid, ("", 0.2))[1] + 0.1
         events.append((c0, min(ends[sid] - 0.2, c0 + 3.5), "Caption", "", cap))
     for lid, off, ln, style, txt in EMPH:
