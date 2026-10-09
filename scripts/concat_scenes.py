@@ -31,7 +31,7 @@ def main():
     durations = [int(s.get("duration", default_dur)) if isinstance(s, dict) else default_dur
                  for s in data["scenes"]]
 
-    clips = sorted(glob.glob(os.path.join(clips_dir, "scene*.mp4")), key=scene_key)
+    clips = sorted([p for p in glob.glob(os.path.join(clips_dir, "scene*.mp4")) if "_take" not in os.path.basename(p)], key=scene_key)
     if len(clips) != len(durations):
         sys.exit(f"클립 {len(clips)}개 != 계획 장면 {len(durations)}개")
 

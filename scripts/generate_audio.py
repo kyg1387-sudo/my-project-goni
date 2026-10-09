@@ -500,7 +500,7 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
 
     (재조립된 영상 경로, [(시작초, 현장음 wav)]) 를 돌려준다.
     """
-    scenes = sorted(glob.glob(os.path.join(scenes_dir, "scene*.mp4")), key=scene_key)
+    scenes = sorted([p for p in glob.glob(os.path.join(scenes_dir, "scene*.mp4")) if "_take" not in os.path.basename(p)], key=scene_key)
     if not scenes:
         sys.exit(f"장면 클립을 찾을 수 없습니다: {scenes_dir}/scene*.mp4")
     # 계획 길이가 있으면 그 길이로 장면을 정확히 잘라 쓴다. 생성 클립이 몇 프레임씩
@@ -696,7 +696,7 @@ def main():
         planned = cfg.get("scene_durations")
         durations = ([float(d) for d in planned] if planned
                      else [probe_duration(s) for s in
-                           sorted(glob.glob(os.path.join(args.scenes_dir, "scene*.mp4")), key=scene_key)])
+                           sorted([p for p in glob.glob(os.path.join(args.scenes_dir, "scene*.mp4")) if "_take" not in os.path.basename(p)], key=scene_key)])
         overlaps = [float(x) for x in cfg.get("transitions", [])]
         overlaps += [0.0] * (len(durations) - len(overlaps))
         overlaps = [o if o >= 1 / 24 else 1 / 24 for o in overlaps]
