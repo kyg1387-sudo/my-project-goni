@@ -112,6 +112,13 @@ FIX = {
              "level, a toppled empty wine glass lying on its side at the edge of the stain, a few settled drops glistening on the carpet pile. "
              "High angle extreme close-up at floor level, shallow depth of field, warm chandelier light from above, banquet tables as soft bokeh. "
              "Shoes point to the right in profile, ankles and dark trouser hems only. No faces, no readable text."),
+    # S06d(감독님 지적 2026-10-09 「구도가 이상」): 선반 꼭대기 부감이 공간 붕괴(책상이 벽에 매달림, 인물이 큼) → 통로 끝 천장 높이에서 긴 통로를 내려다보는 명료한 기하
+    "S06d": ("GEOMETRY FIRST: a long straight basement aisle seen from a camera mounted at ceiling height at the near end of the aisle, looking down "
+             "and along the aisle. Two tall grey steel racks run from the bottom corners of the frame to a vanishing point near the top centre, loaded "
+             "with yellow archive boxes with blank labels; the concrete floor is clearly visible as a bright strip down the middle. Saori stands on that "
+             "floor far down the aisle, SMALL in the frame (about one fifth of the frame height), facing the camera and tilting her head up to look at the "
+             "upper shelves, a cardboard box held in both arms at her waist. No desk, no printer, no lamp in this frame. Hard cold fluorescent tubes "
+             "overhead, dust in the beams, deep shadows between the racks. Single coherent perspective, straight vertical racks, no tilt."),
     "S17b": ("STAGING: side view at shoulder height, very close. On the LEFT edge, the back of a heavyset man's head and thick neck with SLICKED-BACK "
              "SALT-AND-PEPPER hair and a navy suit collar, face turned away and NOT visible. From the RIGHT, two hands in dark security-guard uniform sleeves "
              "lift a plain blank white ID card on a black lanyard up and over the top of his head, the lanyard loop stretched open above the hair. "
