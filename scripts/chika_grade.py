@@ -60,5 +60,5 @@ vf.append("vignette=angle=PI/5.5")
 vf.append("noise=alls=5:allf=t+u")
 vf.append("format=yuv420p")
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", src, "-vf", ",".join(vf), "-map", "0:v", "-map", "0:a?",
-                "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-c:a", "copy", "-movflags", "+faststart", out], check=True)
+                "-c:v", "libx264", "-preset", "fast", "-crf", "18", "-c:a", "copy", "-movflags", "+faststart", out], check=True)
 print(f"저장: {out} — 구간 {len(segs)}개: " + ", ".join(f"{g} {a:.1f}~{b:.1f}" for g, a, b in segs[:12]) + (" …" if len(segs) > 12 else ""))
