@@ -12,7 +12,7 @@ for ln in body.split("\n"):
         pending = True; continue
     m = re.match(r"^\s+→\s*(.+)$", ln)
     if pending and m:
-        ko.append(m.group(1).strip()); pending = False
+        ko.append(re.sub(r"\s*〔[^〕]*〕", "", m.group(1)).strip()); pending = False   # 〔감정 메모〕는 자막에서 제거
 ass = open(os.path.join(ROOT, "subs/chika.ass"), encoding="utf-8").read()
 head, _, events = ass.partition("[Events]")
 styles = re.findall(r"^Style: (\w+),", head, re.M)
@@ -24,7 +24,7 @@ out, k = [], 0
 groups, order = {}, []   # 제11장 21: 분할된 일본어 조각(Effect=line###)을 줄 단위로 묶어 한글은 줄 전체 시간에 1번
 for ln in events.split("\n"):
     m = re.match(r"^Dialogue: (\d+),([^,]+),([^,]+),(\w+),([^,]*),(\d+),(\d+),(\d+),([^,]*),(.*)$", ln)
-    if not m or m.group(4) in ("Emph", "Caption"):
+    if not m or m.group(4) in ("Emph", "Emph2", "Caption") or not m.group(9):   # 제11장 26: 줄 ID(Effect) 없는 강조·카드 이벤트는 제외(0:19 Emph2가 그룹으로 세어져 이후 한글이 한 줄씩 밀린 실증)
         continue
     key = m.group(9) or f"ev{len(order):03d}"
     if key not in groups:
