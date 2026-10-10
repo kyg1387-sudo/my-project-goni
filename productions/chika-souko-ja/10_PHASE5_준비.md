@@ -68,3 +68,9 @@
 - `deliveries/chika-complete.mp4.part-00~06`(90MiB 분할 7개, `cat *.part-* > chika-complete.mp4`), 721.55s = 본편 668.2 + 암전 0.8 + 아웃트로 47.6 + 엔드카드 5.5 − 겹침 0.6. 검수본 `deliveries/preview/chika-preview-ko-480p.mp4`.
 - 마스터: 그레이딩 46구간(병렬 4조각, 경계 색 연속 확인) → 효과음 18큐 + 룸톤 −52dBFS → loudnorm −14 LUFS → 리미터 −1 dBTP. 무음(−60dB 2s) 0건.
 - 그레이딩 단일 패스가 2시간 상한에 두 번 걸려(제11장 15 실증) 장면 경계 4조각 병렬 인코딩 + 무손실 concat으로 교체(`chika_grade.py`, GRADE_CHUNKS).
+
+### 12. 완성본 v3 (2026-10-10) — 수정 11·12 반영
+- 변경: 수정 11 검수용 한글 자막 한 줄 밀림(0:19 Emph2 그룹 제외), 수정 12 S15h 사오리 CU OmniHuman 재생성(burn 150, invalidate=omni125.mp4, 1.28달러). 그 외 그림·음성 v2와 동일.
+- 검수: 길이 721.55s(본편 668.42 + 아웃트로), −14.3 LUFS / TP −0.3 dBTP(리미터), 무음(−60dB 2s) 0건, 1:39·1:51·2:31 한글 화자 일치, 8:37.25~8:40.5 사오리 입 다묾·8:40.75 본인 대사부터 개폐.
+- 전달: `deliveries/chika-complete.mp4.part-00~20`(28MB 분할, `cat` 결합) 업로드본(한글 없음) + `deliveries/preview/chika-preview-ko-480p.mp4` 검수본.
+- 누계 지출 약 76.2달러.
