@@ -51,14 +51,41 @@ for sid, a, b in T:
         segs[-1][2] = b
     else:
         segs.append([g, a, b])
-vf = []
-for g, a, b in segs:
-    for f in LUT[g].split(","):
-        name, _, args = f.partition("=")
-        vf.append(f"{name}={args}:enable='between(t,{a:.3f},{b:.3f})'")
-vf.append("vignette=angle=PI/5.5")
-vf.append("noise=alls=5:allf=t+u")
-vf.append("format=yuv420p")
-subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", src, "-vf", ",".join(vf), "-map", "0:v", "-map", "0:a?",
-                "-c:v", "libx264", "-preset", "fast", "-crf", "18", "-c:a", "copy", "-movflags", "+faststart", out], check=True)
-print(f"저장: {out} — 구간 {len(segs)}개: " + ", ".join(f"{g} {a:.1f}~{b:.1f}" for g, a, b in segs[:12]) + (" …" if len(segs) > 12 else ""))
+# 제11장 15 보강(2026-10-10): 단일 패스 인코딩이 2시간 상한을 넘겨 두 번 중단 → 장면 경계에서 N조각으로 나눠 병렬 인코딩 후 무손실 이어붙임
+import math
+from concurrent.futures import ThreadPoolExecutor
+N = int(os.environ.get("GRADE_CHUNKS", str(max(1, min(4, os.cpu_count() or 1)))))
+total = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", src]).decode())
+bounds = sorted(set([0.0] + [b for _, _, b in T if b < total - 0.5] + [total]))
+targets = [total * k / N for k in range(1, N)]
+cuts = [0.0] + [min(bounds, key=lambda x: abs(x - t)) for t in targets] + [total]
+cuts = sorted(set(cuts))
+
+
+def vf_for(off):
+    vf = []
+    for g, a, b in segs:
+        for f in LUT[g].split(","):
+            name, _, args = f.partition("=")
+            vf.append(f"{name}={args}:enable='between(t,{a - off:.3f},{b - off:.3f})'")
+    vf += ["vignette=angle=PI/5.5", "noise=alls=5:allf=t+u", "format=yuv420p"]
+    return ",".join(vf)
+
+
+def encode(k):
+    a, b = cuts[k], cuts[k + 1]
+    part = f"{out}.part{k:02d}.mp4"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{a:.3f}", "-to", f"{b:.3f}", "-i", src, "-vf", vf_for(a), "-map", "0:v", "-an",
+                    "-c:v", "libx264", "-preset", "fast", "-crf", "18", "-threads", "1" if len(cuts) > 2 else "0", "-r", "24", part], check=True)
+    return part
+
+
+with ThreadPoolExecutor(max_workers=len(cuts) - 1) as pool:
+    parts = list(pool.map(encode, range(len(cuts) - 1)))
+lst = out + ".concat.txt"
+open(lst, "w").write("".join(f"file '{os.path.abspath(p_)}'\n" for p_ in parts))
+subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-i", src, "-map", "0:v", "-map", "1:a?",
+                "-c:v", "copy", "-c:a", "copy", "-shortest", "-movflags", "+faststart", out], check=True)
+for p_ in parts + [lst]:
+    os.remove(p_)
+print(f"저장: {out} — 구간 {len(segs)}개, 병렬 {len(parts)}조각 {[round(c, 1) for c in cuts]}: " + ", ".join(f"{g} {a:.1f}~{b:.1f}" for g, a, b in segs[:8]) + " …")
