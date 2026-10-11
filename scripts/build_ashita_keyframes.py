@@ -28,9 +28,10 @@ PEOPLE = [  # (셀 파일 접두어, 설명) — 더 긴 접두어를 먼저(sat
     ("takahashi", "Takahashi (55, client division head, very short grey hair, NO glasses, black overcoat)"),
     ("mori", "Mori (24, young female engineer, black bob with bangs, NO glasses)"),
 ]
-# B단계 인물별 기준 얼굴 = A단계 대사 키프레임 (A 검수 후 확정)
-FACE_KF = {"sato": "S14d", "sato-b": "S26a", "tanaka": "S12c", "takahashi": "S24c"}
+# B단계 인물별 기준 얼굴 = A단계 대사 키프레임 (A 검수 2026-10-11 확정: 밝고 중립에 가까운 정면 컷)
+FACE_KF = {"sato": "S09d", "sato-b": "S26c", "tanaka": "S05d", "takahashi": "S24c"}
 FACE_KINDS = ("face", "react", "d")
+PILOT_DONE = {"S14a", "S24d"}  # 시범에서 승인·보정 완료(assets/portraits/ashita-kf-pilot/*-fixed 사용) → B에서 제외
 
 LOC_NOTE = {  # 로케이션별 고정 문장(PHASE 2 Kill Gate 잔여 결함 대응)
     "loc-control": ("All control-room walls are completely bare: NO papers, notices, charts or signs on the walls; consoles have plain "
@@ -54,6 +55,19 @@ COMPOSITION = {
     "S14a": ("Wide night shot of the open-plan office: Sato in the navy work jacket and silver-rimmed glasses stands at his lamp-lit desk "
              "placing a folder into a cardboard box, seen in three-quarter view; Mori in the light-blue uniform stands two steps behind him, "
              "seen from behind. Only one warm desk lamp lights the scene. " + FULL),
+}
+# A단계(2026-10-11) 교훈: ⑤ 대사 CU가 소리 지르는 입으로 나옴(S12b) → 분노는 눈·이마·턱으로, 입은 닫힘
+# ⑥ 낮 로케이션 시트를 참조하면 암전 장면이 낮 조명으로 나옴(S24c) → 조명 고정 문장을 참조보다 우선
+# ⑦ '무릎 꿇은' 지시가 있으면 미디엄으로 넓어짐(S25a 2회) → 자세는 화면 밖, 머리·어깨만
+COMPOSITION["S12b"] = ("Fury shown only in the eyes, furrowed brow, flared nostrils and clenched jaw: lips pressed tightly together, "
+                       "mouth CLOSED, NOT shouting, NOT yelling. " + TIGHT)
+COMPOSITION["S25a"] = (TIGHT + " Only Tanaka's head and the top of his shoulders are visible, seen from slightly above; his kneeling "
+                       "posture is NOT shown. Face crumpled in sobbing despair, looking up toward someone just off camera; the background "
+                       "is dark and out of focus with no consoles or wall papers in frame.")
+LIGHT_NOTE = {  # 장면 조명 고정 — 로케이션 참조의 낮 조명을 덮어쓴다
+    "red_door": ("LIGHTING OVERRIDES THE LOCATION REFERENCE: the control room is in a power blackout — NO daylight, windows dark, ceiling "
+                 "lights off; lit only by a red emergency lamp and a strong white backlight from the open doorway behind; deep shadows."),
+    "red": ("LIGHTING OVERRIDES THE LOCATION REFERENCE: blackout, NO daylight, ceiling lights off; only red emergency light, deep shadows."),
 }
 EXTRA_REFS = {}
 
@@ -96,6 +110,8 @@ def build(sc, face_refs):
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
     parts.append(sc["keyframe_prompt"])
     parts += notes(sc["refs"])
+    if sc.get("lighting") in LIGHT_NOTE:
+        parts.append(LIGHT_NOTE[sc["lighting"]])
     if sc["id"] in COMPOSITION:
         parts.append(COMPOSITION[sc["id"]])
     elif sc["kind"] == "d":
@@ -125,8 +141,10 @@ def main():
             is_a = sc["kind"] == "d"
             if (stage == "a") != is_a or (only and sc["id"] not in only):
                 continue
+            if stage == "b" and not only and sc["id"] in PILOT_DONE:
+                continue
         face = []
-        if stage == "b" and sc["kind"] in FACE_KINDS:
+        if (stage == "b" or (stage == "a" and only)) and sc["kind"] in FACE_KINDS:  # 재생성분도 승인 얼굴 참조
             for r in sc["refs"]:
                 k, _ = who_of(os.path.basename(r))
                 if k in FACE_KF:
@@ -146,7 +164,8 @@ def main():
     head = {"_설명": f"ashita-kara PHASE 4 키프레임 {name} (build_ashita_keyframes.py 생성, 직접 수정 금지).", "_style_preset": sb["preset"]}
     path = OUT.format(name)
     json.dump({**head, "characters": chars}, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    print(f"{name} 키프레임 {len(chars)}장 → {path} (약 {len(chars) * 0.04:.2f}달러)")
+    n = sum(c["count"] for c in chars)
+    print(f"{name} 키프레임 {len(chars)}컷 {n}장 → {path} (약 {n * 0.04:.2f}달러)")
 
 
 if __name__ == "__main__":
