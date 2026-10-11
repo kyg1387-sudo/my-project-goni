@@ -194,6 +194,12 @@ CONVO["S12c"] = ("Over-the-shoulder conversation shot in the meeting room, TIGHT
                  "both hands on the table edge, his face turned about 35 degrees toward Sato with a slow cruel sneer, eyes narrowed. "
                  "Framing from mid-chest up: Tanaka's head and shoulders fill the left-center of the frame, his face about one third of the "
                  "frame height, sharp; 85mm lens.")
+# 고니감독님 지적(7:35): S22c 인서트가 원경으로 나오고 몸 없는 팔이 빈 의자 뒤에서 나옴 + 「START」 글자를 흐린 자국이 빨간 얼룩으로 보임
+# → 진짜 인서트(손가락·버튼만 화면 가득), 버튼은 무지 빨간 버섯형 버튼(글자 없음). 일본어 「試運転」 라벨은 필요하면 합성.
+COMPOSITION["S22c"] = ("EXTREME CLOSE-UP INSERT filling the whole frame: a man's index finger, the cuff of a navy suit sleeve and a chunky gold "
+                       "wristwatch, the finger hovering one centimetre above a large round red mushroom-shaped emergency start button set in a "
+                       "grey steel control panel; the button top is completely plain glossy red with NO letters; shallow depth of field, the "
+                       "control room softly blurred behind; NO face, NO chair, NO monitors in focus. " + FULL)
 CONVO_REFS = {"S09d": ["assets/portraits/ashita-cast-2/cells/tanaka-full-back.png"],
               "S12c": ["assets/portraits/ashita-cast-2/cells/sato-full-back.png"],
               "S24c": ["assets/portraits/ashita-cast-2/cells/yamamoto-full-back.png"]}
