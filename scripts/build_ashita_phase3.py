@@ -87,6 +87,13 @@ NEGATIVE = ("gibberish, foreign text, incomprehensible letters, fake alphabets, 
             "logo on shirt, signage lettering, posters with writing, documents with writing, screens with text, printed labels, brand logos, "
             "watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, handcuffs, police")
 PLAIN = "All papers, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame."
+# 고니감독님 지시(2026-10-11): 눈물·땀은 실사 촬영처럼 자연스럽게(만화식 물방울 금지), 안경 착용은 인물별 고정
+TEARS = ("Realistic tears as in a live-action film: reddened eye rims, glossy wet eyes, one or two thin clear tear tracks running naturally down "
+         "the cheeks and catching the light, a small tear bead on the lower lashes, slightly reddened nose; no cartoon droplets.")
+SWEAT = ("Realistic sweat as in a live-action film: fine tiny beads of perspiration on the forehead, temples and upper lip, a natural oily sheen, "
+         "a few damp strands at the hairline; no large cartoon drops.")
+GLASSES = {"SATO": "He wears his thin silver-rimmed glasses.", "YAMA": "He wears his thin gold-rimmed glasses.",
+           "TANAKA": "He wears no glasses.", "TAKA": "He wears no glasses.", "MORI": "She wears no glasses."}
 LENS = {
     "ecu": "100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame",
     "cu": "85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, cinematic portrait",
@@ -488,7 +495,11 @@ def main():
         keyframe = None if s["kind"].startswith("reuse") or s["kind"] == "card" else f"assets/portraits/{SKIT}-keyframes/{sid}-1.png"
         kf_prompt = None
         if keyframe:
-            kf_prompt = " ".join([PRESET + ".", s["subject"], ("Characters: " + " | ".join(ids) + ".") if ids else "",
+            low = s["subject"].lower()
+            real = " ".join(x for x, keys in ((TEARS, ("tear", "sob", "cry")), (SWEAT, ("sweat",))) if any(k in low for k in keys)
+                            or (s["expr"] in ("sob",) and x == TEARS) or (s["expr"] in ("sob", "fear", "shock") and x == SWEAT))
+            glasses = " ".join(GLASSES[w.split(":")[0]] for w in s["who"] if w.split(":")[0] in GLASSES)
+            kf_prompt = " ".join([PRESET + ".", s["subject"], ("Characters: " + " | ".join(ids) + ".") if ids else "", glasses, real,
                                   f"Camera: {ANGLE[s['angle']]}, {LENS[s['lens']]}.", f"Lighting: {LIGHT[s['light']]}.", comp, PLAIN,
                                   f"Negative: {NEGATIVE}."]).strip()
             cost["kf"] += 1
