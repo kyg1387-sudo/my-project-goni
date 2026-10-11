@@ -1,0 +1,67 @@
+{
+ "_설명": "ashita-tts 재녹음 6줄 언어 검사 대조용(생성 없음 — 파일은 ashita-tts에서 복사).",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "line011",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "山本せんむのおい、たなかしょう、二十八歳。現場経験ゼロのまま総括責任者に送り込まれた、いわゆる落下傘だ。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line013",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "安全規格だの監理承認だの、正直、古いんですよね。工期、にかげつ前倒しでいきますから",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "line014",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "にかげつ……？ 検査工程を削れば、できなくはない。だが、人が死ぬぞ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line021",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "浮いた金は、およそさんおくえん。その書類には、もりのはんこが押されていた。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line069",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "佐藤さん……お願いだ、助けてくれ……！ 俺が、わるかった……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.1,
+   "tempo": 0.9
+  },
+  {
+   "id": "line073",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "山本せんむと田中は、懲戒解雇。電気事業法違反と詐欺の疑いで、刑事こくそされた。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  }
+ ]
+}
