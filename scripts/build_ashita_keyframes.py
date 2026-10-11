@@ -188,6 +188,12 @@ CONVO = {
              "suit shoulder of Yamamoto seen from behind; Takahashi stands facing him at about 35 degrees, black overcoat open, one hand holding a "
              "plain folder at his side, condemning glare, lit by the red emergency lamp and the white doorway backlight. Medium close-up from mid-chest up, face sharp."),
 }
+# 시범 교훈 ⑱: 「Medium close-up」만으로는 서 있는 인물이 전신 원경으로 나옴(S12c r5) → 얼굴 크기를 명시
+CONVO["S12c"] = ("Over-the-shoulder conversation shot in the meeting room, TIGHT on Tanaka: in the dark soft foreground right edge, the back "
+                 "of Sato's grey-streaked head and navy work-jacket shoulder; Tanaka stands beside the long black table leaning forward with "
+                 "both hands on the table edge, his face turned about 35 degrees toward Sato with a slow cruel sneer, eyes narrowed. "
+                 "Framing from mid-chest up: Tanaka's head and shoulders fill the left-center of the frame, his face about one third of the "
+                 "frame height, sharp; 85mm lens.")
 CONVO_REFS = {"S09d": ["assets/portraits/ashita-cast-2/cells/tanaka-full-back.png"],
               "S12c": ["assets/portraits/ashita-cast-2/cells/sato-full-back.png"],
               "S24c": ["assets/portraits/ashita-cast-2/cells/yamamoto-full-back.png"]}
