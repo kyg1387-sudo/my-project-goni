@@ -248,7 +248,7 @@
    "image": "assets/portraits/ashita-kara-keyframes/S04c-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Tanaka leans casually on the desk corner and tilts his head mockingly; Sato's shoulder stays still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Tanaka, seen from behind, leans on the desk corner and tilts his head mockingly, keeping his back to the camera; Sato stays seated. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/ashita-kara-keyframes/S05a-1.png"
   },
@@ -311,7 +311,7 @@
    "image": "assets/portraits/ashita-kara-keyframes/S06bc-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Tanaka taps the desk once with his finger; Mori shrinks slightly. No one walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Tanaka keeps his back to the camera and taps the desk once with his finger; Mori shrinks slightly. No one walks. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 10,
    "image": "assets/portraits/ashita-kara-keyframes/S07a-1.png"
   },
@@ -357,7 +357,7 @@
    "image": "assets/portraits/ashita-kara-keyframes/S08d-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Sato takes two steps forward from the background, holding the paper; he does not turn his head. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Sato walks slowly away from the camera toward the far desk, holding the paper; his back stays to the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/ashita-kara-keyframes/S09a-1.png"
   },
@@ -450,7 +450,7 @@
    "image": "assets/portraits/ashita-kara-keyframes/S11f-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Tanaka rises from his chair and points across the table; his face stays turned away from the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Tanaka, back to the camera, jabs his pointing arm forward once; his face stays turned away from the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/ashita-kara-keyframes/S12a-1.png"
   },
@@ -610,7 +610,7 @@
    "image": "assets/portraits/ashita-kara-keyframes/S17da-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Tanaka gestures toward the cabinet; Mori stays still by the cabinet. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Tanaka keeps his back to the camera and gestures toward the cabinet; Mori stays still by the cabinet. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/ashita-kara-keyframes/S17ba-1.png"
   },
@@ -752,7 +752,7 @@
    "image": "assets/portraits/ashita-kara-keyframes/S21h-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Mori turns her shoulders toward Tanaka (under 20 degrees); Tanaka stays still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Mori keeps her back to the camera and glances slightly toward Tanaka (under 15 degrees); Tanaka stays still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/ashita-kara-keyframes/S22a-1.png"
   },
@@ -809,7 +809,7 @@
    "image": "assets/portraits/ashita-kara-keyframes/S24a-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Takahashi holds up a plain folder; his face stays in shadow. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Takahashi stands still as a backlit silhouette, his coat stirring slightly; his face stays in black shadow. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 10,
    "image": "assets/portraits/ashita-kara-keyframes/S24b-1.png"
   },
@@ -916,7 +916,7 @@
    "image": "assets/portraits/ashita-kara-keyframes/S27e-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Mori stops in the doorway and bows slightly; Sato lowers his cup. No walking toward the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Mori stands in the doorway with her back to the camera and bows slightly; Sato lowers his cup and smiles. No walking toward the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/ashita-kara-keyframes/S28a-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
