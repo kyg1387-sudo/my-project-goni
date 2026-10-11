@@ -37,17 +37,17 @@ SHOT_TARGET = 1.6
 
 # ---------- 고정 문장(PHASE 2 시트와 1:1) ----------
 C1 = "assets/portraits/ashita-cast/cells/"
-C2 = "assets/portraits/ashita-cast-2/cells/"  # 2차: 사토 B(차콜 정장)
+C2 = "assets/portraits/ashita-cast-2/cells/"  # Kill Gate 2차 합격 셀(인물 전원·사토 B·회의실·제어실·앵글·사옥 낮)
 WHO = {
     "SATO": ("Sato Makoto, a Japanese man aged 48, square-jawed weathered face, calm deep-set eyes, short black hair heavily streaked with grey, "
-             "thin rectangular silver-rimmed glasses, a small pale scar just above his LEFT eyebrow, clean-shaven", C1 + "sato-front.png"),
+             "thin rectangular silver-rimmed glasses, a small pale scar just above his LEFT eyebrow, clean-shaven", C2 + "sato-front.png"),
     "TANAKA": ("Tanaka Sho, a slim Japanese man aged 28, narrow smug face with sharp cheekbones, light-brown dyed two-block hair swept up and back, "
-               "no glasses, clean-shaven, a chunky gold wristwatch on his RIGHT wrist", C1 + "tanaka-front.png"),
+               "no glasses, clean-shaven, a chunky gold wristwatch on his RIGHT wrist", C2 + "tanaka-front.png"),
     "YAMA": ("Yamamoto Tsuyoshi, a heavy-set Japanese man aged 63, round fleshy face, bald crown with white hair only at the sides, thin gold-rimmed glasses",
-             C1 + "yamamoto-front.png"),
-    "TAKA": ("Takahashi, a stocky Japanese man aged 55, stern square face, very short grey hair, thick dark eyebrows, no glasses", C1 + "takahashi-front.png"),
+             C2 + "yamamoto-front.png"),
+    "TAKA": ("Takahashi, a stocky Japanese man aged 55, stern square face, very short grey hair, thick dark eyebrows, no glasses", C2 + "takahashi-front.png"),
     "MORI": ("Mori Misaki, a slim Japanese woman aged 24, gentle earnest face with no makeup, straight black chin-length bob with full bangs, no glasses, "
-             "a plain black hair tie on her LEFT wrist", C1 + "mori-front.png"),
+             "a plain black hair tie on her LEFT wrist", C2 + "mori-front.png"),
     "YHANDS": ("a young man's hands only, no face, a plain grey sweatshirt sleeve (flashback)", None),
     "SUITS": ("several men in dark suits seen only as faceless backlit silhouettes", None),
 }
@@ -60,24 +60,26 @@ WARD = {
     "MORI": "a plain light-blue work uniform jacket and trousers with no logo, patch or name tag, a white T-shirt underneath",
 }
 EXPR = {  # 표정 셀(키프레임에 감정 50~70% 선반영 — 규격 제2장 3)
-    ("SATO", "cold"): C1 + "sato-expr2.png", ("SATO", "smile"): C1 + "sato-expr3.png",
-    ("TANAKA", "smug"): C1 + "tanaka-expr1.png", ("TANAKA", "rage"): C1 + "tanaka-expr2.png", ("TANAKA", "sob"): C1 + "tanaka-expr3.png",
-    ("YAMA", "cold"): C1 + "yamamoto-expr1.png", ("YAMA", "shock"): C1 + "yamamoto-expr2.png", ("YAMA", "fear"): C1 + "yamamoto-expr3.png",
-    ("TAKA", "stern"): C1 + "takahashi-expr1.png", ("TAKA", "fury"): C1 + "takahashi-expr2.png",
-    ("MORI", "smile"): C1 + "mori-expr1.png", ("MORI", "tears"): C1 + "mori-expr2.png", ("MORI", "firm"): C1 + "mori-expr3.png",
+    # PHASE 2 Kill Gate 2차 합격 셀(안경 일치·실사 눈물/땀). 타나카 「smug」는 45도 셀(옅은 비웃음),
+    # 야마모토 「fear」는 2차 expr3 불합격(다른 얼굴·안경 없음) → 놀람 셀로 대체하고 땀은 프롬프트로.
+    ("SATO", "cold"): C2 + "sato-expr2.png", ("SATO", "smile"): C2 + "sato-expr3.png",
+    ("TANAKA", "smug"): C2 + "tanaka-45.png", ("TANAKA", "rage"): C2 + "tanaka-expr2.png", ("TANAKA", "sob"): C2 + "tanaka-expr3.png",
+    ("YAMA", "cold"): C2 + "yamamoto-front.png", ("YAMA", "shock"): C2 + "yamamoto-expr2.png", ("YAMA", "fear"): C2 + "yamamoto-expr2.png",
+    ("TAKA", "stern"): C2 + "takahashi-expr1.png", ("TAKA", "fury"): C2 + "takahashi-expr2.png",
+    ("MORI", "smile"): C2 + "mori-expr1.png", ("MORI", "tears"): C2 + "mori-expr2.png", ("MORI", "firm"): C2 + "mori-expr3.png",
     ("SATO_B", "front"): C2 + "sato-b-front.png",
 }
 LOC = {
     "OFF_DAY": C1 + "loc-office-day.png", "OFF_NIGHT": C1 + "loc-office-night.png", "OFF_DESK": C1 + "loc-office-key1.png",
-    "OFF_DOOR": C1 + "loc-office-key2.png", "OFF_REV": C1 + "loc-office-angles-day.png", "OFF_HIGH": C1 + "loc-office-angles-night.png",
-    "OFF_LOW": C1 + "loc-office-angles-key1.png", "OFF_GLASS": C1 + "loc-office-angles-key2.png",
-    "MEET": C1 + "loc-meeting-day.png", "MEET_NIGHT": C1 + "loc-meeting-night.png", "MEET_HEAD": C1 + "loc-meeting-key1.png",
-    "MEET_SIDE": C1 + "loc-meeting-key2.png", "MEET_REV": C1 + "loc-meeting-angles-day.png", "MEET_HIGH": C1 + "loc-meeting-angles-night.png",
-    "MEET_LOW": C1 + "loc-meeting-angles-key1.png", "MEET_DOOR": C1 + "loc-meeting-angles-key2.png",
-    "CTRL": C1 + "loc-control-day.png", "CTRL_RED": C1 + "loc-control-night.png", "CTRL_CONSOLE": C1 + "loc-control-key1.png",
-    "YARD": C1 + "loc-control-key2.png", "CTRL_REV": C1 + "loc-control-angles-day.png", "CTRL_HIGH": C1 + "loc-control-angles-night.png",
-    "CTRL_LOW": C1 + "loc-control-angles-key1.png", "CTRL_MON": C1 + "loc-control-angles-key2.png",
-    "HQ_DAY": C1 + "loc-hq-day.png", "HQ_RAIN": C1 + "loc-hq-night.png", "ROOF": C1 + "loc-hq-key1.png", "NEWOFF": C1 + "loc-hq-key2.png",
+    "OFF_DOOR": C1 + "loc-office-key2.png", "OFF_REV": C2 + "loc-office-angles-day.png", "OFF_HIGH": C2 + "loc-office-angles-night.png",
+    "OFF_LOW": C2 + "loc-office-angles-key1.png", "OFF_GLASS": C2 + "loc-office-angles-key2.png",
+    "MEET": C2 + "loc-meeting-angles-key1.png", "MEET_NIGHT": C2 + "loc-meeting-night.png", "MEET_HEAD": C2 + "loc-meeting-angles-key1.png",
+    "MEET_SIDE": C2 + "loc-meeting-key2.png", "MEET_REV": C2 + "loc-meeting-angles-day.png", "MEET_HIGH": C2 + "loc-meeting-angles-night.png",
+    "MEET_LOW": C2 + "loc-meeting-angles-key1.png", "MEET_DOOR": C2 + "loc-meeting-angles-key2.png",
+    "CTRL": C2 + "loc-control-day.png", "CTRL_RED": C2 + "loc-control-night.png", "CTRL_CONSOLE": C2 + "loc-control-key1.png",
+    "YARD": C2 + "loc-control-key2.png", "CTRL_REV": C2 + "loc-control-angles-day.png", "CTRL_HIGH": C2 + "loc-control-angles-night.png",
+    "CTRL_LOW": C2 + "loc-control-angles-key1.png", "CTRL_MON": C2 + "loc-control-angles-key2.png",
+    "HQ_DAY": C2 + "loc-hq-day.png", "HQ_RAIN": C1 + "loc-hq-night.png", "ROOF": C1 + "loc-hq-key1.png", "NEWOFF": C1 + "loc-hq-key2.png",
     "LOUNGE": C1 + "loc-misc-day.png", "CORRIDOR": C1 + "loc-misc-night.png", "ALLEY": C1 + "loc-misc-key1.png", "BREAKER_RM": C1 + "loc-misc-key2.png",
     "P_HANKO": C1 + "props-hanko.png", "P_BREAKER": C1 + "props-breaker.png", "P_RELAY": C1 + "props-relay.png", "P_HELMET": C1 + "props-helmet.png",
 }

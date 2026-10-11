@@ -586,7 +586,7 @@
    "lighting": "hq",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/loc-hq-day.png"
+    "assets/portraits/ashita-cast-2/cells/loc-hq-day.png"
    ],
    "subject": "No people. Low angle on the clean glass-and-concrete headquarters of a mid-sized engineering company on a clear morning, blank facade.",
    "line": "NA1",
@@ -610,7 +610,7 @@
    "lighting": "hq",
    "edit_fx": "pullback",
    "refs": [
-    "assets/portraits/ashita-cast/cells/loc-hq-day.png"
+    "assets/portraits/ashita-cast-2/cells/loc-hq-day.png"
    ],
    "subject": "No people. High angle over the empty forecourt in front of the headquarters entrance.",
    "line": "NA2",
@@ -634,7 +634,7 @@
    "lighting": "hq",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/loc-hq-day.png"
+    "assets/portraits/ashita-cast-2/cells/loc-hq-day.png"
    ],
    "subject": "No people. Detail of the blank glass facade reflecting drifting clouds.",
    "line": null,
@@ -658,7 +658,7 @@
    "lighting": "lamp",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
     "assets/portraits/ashita-cast/cells/loc-office-key1.png"
    ],
    "subject": "Insert from above: a man's weathered hands turn a large blank engineering drawing under a warm desk lamp, navy work-jacket cuffs.",
@@ -683,7 +683,7 @@
    "lighting": "lamp",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
     "assets/portraits/ashita-cast/cells/loc-office-night.png"
    ],
    "subject": "Close-up profile of Sato reading the drawing late at night, glasses catching the lamp light, warm rim light, calm and focused.",
@@ -708,8 +708,8 @@
    "lighting": "lamp",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
-    "assets/portraits/ashita-cast/cells/loc-office-angles-key2.png"
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-office-angles-key2.png"
    ],
    "subject": "Through the glass partition: the dark empty office, Sato alone at the only lit desk, small in frame.",
    "line": "NA4",
@@ -733,8 +733,8 @@
    "lighting": "lamp",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/mori-front.png",
-    "assets/portraits/ashita-cast/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/mori-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
     "assets/portraits/ashita-cast/cells/loc-office-key2.png"
    ],
    "subject": "Wide from the office entrance: Mori seen from behind walks in holding two canned coffees; Sato far away at his lit desk.",
@@ -759,7 +759,7 @@
    "lighting": "lamp",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
     "assets/portraits/ashita-cast/cells/loc-office-key1.png"
    ],
    "subject": "Side medium of Sato leaning over the drawing, his face turned down to the paper so his mouth is not visible, warm lamp light.",
@@ -784,7 +784,7 @@
    "lighting": "lamp",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
     "assets/portraits/ashita-cast/cells/loc-office-key1.png"
    ],
    "subject": "Insert: Sato's finger traces a line on the blank drawing beside a canned coffee with no label.",
@@ -809,8 +809,8 @@
    "lighting": "lamp",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/mori-front.png",
-    "assets/portraits/ashita-cast/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/mori-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
     "assets/portraits/ashita-cast/cells/loc-office-night.png"
    ],
    "subject": "Over Mori's shoulder (her back and bob hair soft in the foreground) toward Sato, who glances up with a faint kind look.",
@@ -835,7 +835,7 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-expr1.png",
+    "assets/portraits/ashita-cast-2/cells/tanaka-45.png",
     "assets/portraits/ashita-cast/cells/loc-office-key2.png"
    ],
    "subject": "Low angle medium at the office entrance: Tanaka strides in holding a takeaway coffee cup with no logo, chin raised, arrogant smirk, cold fluorescent backlight.",
@@ -860,8 +860,8 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
-    "assets/portraits/ashita-cast/cells/loc-office-angles-key1.png"
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-office-angles-key1.png"
    ],
    "subject": "Insert at floor level: polished brown leather shoes stepping on the office floor, a chunky gold wristwatch on the right wrist of the swinging hand.",
    "line": "NA6",
@@ -885,7 +885,7 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-expr1.png",
+    "assets/portraits/ashita-cast-2/cells/tanaka-45.png",
     "assets/portraits/ashita-cast/cells/loc-office-day.png"
    ],
    "subject": "Close-up of Tanaka glancing sideways at the engineers with contempt as he passes, mouth closed.",
@@ -910,8 +910,8 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
     "assets/portraits/ashita-cast/cells/loc-office-key1.png"
    ],
    "subject": "Over Sato's shoulder (soft in the foreground): Tanaka arrives at the desk and perches on its corner, smug.",
@@ -936,7 +936,7 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
     "assets/portraits/ashita-cast/cells/loc-office-day.png"
    ],
    "subject": "Side medium of Tanaka sitting on the desk corner, waving the coffee cup dismissively, face in profile turned away so his mouth is hidden.",
@@ -961,7 +961,7 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
     "assets/portraits/ashita-cast/cells/loc-office-key1.png"
    ],
    "subject": "Insert: Sato's hand stops still on the blank drawing.",
@@ -986,7 +986,7 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
     "assets/portraits/ashita-cast/cells/loc-office-key1.png"
    ],
    "subject": "High angle side view of Sato seated, looking up from his drawings, firm and unafraid, mouth hidden by the angle.",
@@ -1011,7 +1011,7 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
     "assets/portraits/ashita-cast/cells/loc-office-day.png"
    ],
    "subject": "Insert: a finger with a gold wristwatch tapping impatiently on a takeaway coffee cup with no logo.",
@@ -1036,7 +1036,7 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-expr1.png",
+    "assets/portraits/ashita-cast-2/cells/tanaka-45.png",
     "assets/portraits/ashita-cast/cells/loc-office-day.png"
    ],
    "subject": "Chest-up close-up of Tanaka, slightly low angle, sneering mockingly with a raised eyebrow, cold top light.",
@@ -1061,7 +1061,7 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
     "assets/portraits/ashita-cast/cells/props-hanko.png"
    ],
    "subject": "Insert from above: a gold wristwatch on a wrist beside a blank government subsidy approval document and a red ink pad.",
@@ -1086,8 +1086,8 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
-    "assets/portraits/ashita-cast/cells/loc-office-angles-key2.png"
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-office-angles-key2.png"
    ],
    "subject": "Through half-open blinds: the office, Tanaka far away in silhouette strutting between desks.",
    "line": null,
@@ -1111,7 +1111,7 @@
    "lighting": "corridor",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
     "assets/portraits/ashita-cast/cells/loc-misc-night.png"
    ],
    "subject": "Through a frosted-glass wall in a corridor: Tanaka seen from the side-back, phone to his ear, pacing slowly.",
@@ -1136,7 +1136,7 @@
    "lighting": "corridor",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
     "assets/portraits/ashita-cast/cells/loc-misc-night.png"
    ],
    "subject": "Insert: a hand with a chunky gold wristwatch holding a smartphone with a dark blank screen to an ear.",
@@ -1161,7 +1161,7 @@
    "lighting": "corridor",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-expr1.png",
+    "assets/portraits/ashita-cast-2/cells/tanaka-45.png",
     "assets/portraits/ashita-cast/cells/loc-misc-night.png"
    ],
    "subject": "Side medium of Tanaka grinning greedily into the phone, face turned so his mouth is hidden.",
@@ -1186,8 +1186,8 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/mori-front.png",
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/mori-front.png",
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
     "assets/portraits/ashita-cast/cells/loc-office-day.png"
    ],
    "subject": "High angle: Mori seated at her desk, Tanaka standing over her from behind so his shadow falls across her desk; Tanaka seen from the back.",
@@ -1212,7 +1212,7 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/mori-expr2.png",
+    "assets/portraits/ashita-cast-2/cells/mori-expr2.png",
     "assets/portraits/ashita-cast/cells/loc-office-day.png"
    ],
    "subject": "Choker profile of Mori, eyes lowered, hesitant and afraid, lips pressed, cold top light.",
@@ -1237,8 +1237,8 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
-    "assets/portraits/ashita-cast/cells/loc-office-angles-key1.png"
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-office-angles-key1.png"
    ],
    "subject": "Low angle side silhouette of Tanaka against the ceiling fluorescent tubes, leaning down toward someone off-frame; his mouth is not visible.",
    "line": "L11",
@@ -1286,7 +1286,7 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/mori-front.png",
+    "assets/portraits/ashita-cast-2/cells/mori-front.png",
     "assets/portraits/ashita-cast/cells/props-hanko.png"
    ],
    "subject": "Insert from above: a small round hanko seal pressed down onto the blank document, a woman's hand.",
@@ -1311,7 +1311,7 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/mori-front.png",
+    "assets/portraits/ashita-cast-2/cells/mori-front.png",
     "assets/portraits/ashita-cast/cells/loc-office-day.png"
    ],
    "subject": "Insert: Mori's trembling hand still holding the hanko, a black hair tie on her left wrist.",
@@ -1336,8 +1336,8 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/mori-front.png",
-    "assets/portraits/ashita-cast/cells/loc-office-angles-key2.png"
+    "assets/portraits/ashita-cast-2/cells/mori-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-office-angles-key2.png"
    ],
    "subject": "Through the glass partition: Mori sitting alone at her desk in profile, shoulders slumped.",
    "line": "NA9",
@@ -1385,7 +1385,7 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
     "assets/portraits/ashita-cast/cells/loc-office-day.png"
    ],
    "subject": "Past a monitor in the foreground (abstract grey diagram, no text): Sato walks toward Tanaka's desk holding a sheet of paper.",
@@ -1434,7 +1434,7 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
     "assets/portraits/ashita-cast/cells/loc-office-day.png"
    ],
    "subject": "Side medium of Tanaka lounging in his chair, shrugging, face in profile so his mouth is hidden.",
@@ -1459,7 +1459,7 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-expr2.png",
+    "assets/portraits/ashita-cast-2/cells/sato-expr2.png",
     "assets/portraits/ashita-cast/cells/loc-office-day.png"
    ],
    "subject": "Chest-up close-up of Sato, restrained anger, eyes hard behind silver glasses, cold top light.",
@@ -1484,7 +1484,7 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-expr1.png",
+    "assets/portraits/ashita-cast-2/cells/tanaka-45.png",
     "assets/portraits/ashita-cast/cells/loc-office-day.png"
    ],
    "subject": "Chest-up close-up of Tanaka, slightly low angle, condescending smirk.",
@@ -1509,7 +1509,7 @@
    "lighting": "roof",
    "edit_fx": "craneup",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
     "assets/portraits/ashita-cast/cells/loc-hq-key1.png"
    ],
    "subject": "Night rooftop: Sato seen from behind, both hands on the plain metal railing, looking at the Tokyo skyline.",
@@ -1558,7 +1558,7 @@
    "lighting": "roof",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
     "assets/portraits/ashita-cast/cells/loc-hq-key1.png"
    ],
    "subject": "Very high wide: a tiny figure on the rooftop against the vast night city.",
@@ -1583,10 +1583,10 @@
    "lighting": "meeting",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/yamamoto-front.png",
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
-    "assets/portraits/ashita-cast/cells/sato-front.png",
-    "assets/portraits/ashita-cast/cells/loc-meeting-angles-night.png"
+    "assets/portraits/ashita-cast-2/cells/yamamoto-front.png",
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-angles-night.png"
    ],
    "subject": "High angle from a ceiling corner: the long black meeting table, Yamamoto at the head, Tanaka beside him, Sato small on the opposite side; tense stillness.",
    "line": "NA12",
@@ -1610,8 +1610,8 @@
    "lighting": "meeting",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/yamamoto-expr1.png",
-    "assets/portraits/ashita-cast/cells/loc-meeting-key1.png"
+    "assets/portraits/ashita-cast-2/cells/yamamoto-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-angles-key1.png"
    ],
    "subject": "Side medium of Yamamoto at the head of the table, leaning back, condescending, face turned so his mouth is hidden.",
    "line": "L16",
@@ -1635,8 +1635,8 @@
    "lighting": "meeting",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/yamamoto-front.png",
-    "assets/portraits/ashita-cast/cells/loc-meeting-key1.png"
+    "assets/portraits/ashita-cast-2/cells/yamamoto-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-angles-key1.png"
    ],
    "subject": "Insert: Yamamoto's thick fingers drumming slowly on the glossy table.",
    "line": null,
@@ -1660,8 +1660,8 @@
    "lighting": "meeting",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
-    "assets/portraits/ashita-cast/cells/loc-meeting-key2.png"
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-key2.png"
    ],
    "subject": "Side medium of Sato sitting upright, a document under his hand, face in profile, mouth hidden.",
    "line": "L17",
@@ -1685,8 +1685,8 @@
    "lighting": "meeting",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
-    "assets/portraits/ashita-cast/cells/loc-meeting-key2.png"
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-key2.png"
    ],
    "subject": "Insert from above: Sato's hand pressing flat on a blank document on the table.",
    "line": null,
@@ -1710,8 +1710,8 @@
    "lighting": "meeting",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-expr2.png",
-    "assets/portraits/ashita-cast/cells/loc-meeting-key2.png"
+    "assets/portraits/ashita-cast-2/cells/sato-expr2.png",
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-key2.png"
    ],
    "subject": "Chest-up close-up of Sato, resolute, lips firm, eyes unwavering, chiaroscuro top light.",
    "line": "L18",
@@ -1735,8 +1735,8 @@
    "lighting": "meeting",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/yamamoto-expr1.png",
-    "assets/portraits/ashita-cast/cells/loc-meeting-key1.png"
+    "assets/portraits/ashita-cast-2/cells/yamamoto-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-angles-key1.png"
    ],
    "subject": "Side medium close-up of Yamamoto looking over his gold glasses, the lenses catching the light, mouth hidden.",
    "line": "L19",
@@ -1760,8 +1760,8 @@
    "lighting": "meeting",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/yamamoto-front.png",
-    "assets/portraits/ashita-cast/cells/loc-meeting-angles-key1.png"
+    "assets/portraits/ashita-cast-2/cells/yamamoto-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-angles-key1.png"
    ],
    "subject": "Insert from above: a stack of blank papers slammed onto the glossy black table, sheets scattering, a heavy hand withdrawing.",
    "line": null,
@@ -1785,8 +1785,8 @@
    "lighting": "meeting",
    "edit_fx": "dutch5,handheld",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-expr2.png",
-    "assets/portraits/ashita-cast/cells/loc-meeting-angles-key1.png"
+    "assets/portraits/ashita-cast-2/cells/tanaka-expr2.png",
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-angles-key1.png"
    ],
    "subject": "Low angle from the side-back: Tanaka shoves his chair back and stands up, face red, pointing across the table.",
    "line": "L20",
@@ -1810,8 +1810,8 @@
    "lighting": "meeting",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-expr2.png",
-    "assets/portraits/ashita-cast/cells/loc-meeting-day.png"
+    "assets/portraits/ashita-cast-2/cells/tanaka-expr2.png",
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-angles-key1.png"
    ],
    "subject": "Chest-up close-up of Tanaka shouting in fury, veins on his forehead, low angle, cold top light.",
    "line": "L21",
@@ -1835,8 +1835,8 @@
    "lighting": "meeting",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-expr1.png",
-    "assets/portraits/ashita-cast/cells/loc-meeting-day.png"
+    "assets/portraits/ashita-cast-2/cells/tanaka-45.png",
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-angles-key1.png"
    ],
    "subject": "Chest-up close-up of Tanaka with a slow cruel sneer, eyes narrowed, savoring the moment.",
    "line": "L22",
@@ -1860,8 +1860,8 @@
    "lighting": "meeting",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/yamamoto-expr1.png",
-    "assets/portraits/ashita-cast/cells/loc-meeting-key1.png"
+    "assets/portraits/ashita-cast-2/cells/yamamoto-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-angles-key1.png"
    ],
    "subject": "Side medium of Yamamoto sliding a blank envelope across the table with two fingers, cold, mouth hidden.",
    "line": "L23",
@@ -1885,8 +1885,8 @@
    "lighting": "meeting",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-expr2.png",
-    "assets/portraits/ashita-cast/cells/loc-meeting-key2.png"
+    "assets/portraits/ashita-cast-2/cells/sato-expr2.png",
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-key2.png"
    ],
    "subject": "Choker close-up of Sato in silence, jaw tight, eyes calm and cold behind the glasses.",
    "line": null,
@@ -1910,8 +1910,8 @@
    "lighting": "meeting",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-expr2.png",
-    "assets/portraits/ashita-cast/cells/loc-meeting-key2.png"
+    "assets/portraits/ashita-cast-2/cells/sato-expr2.png",
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-key2.png"
    ],
    "subject": "Chest-up close-up of Sato speaking quietly after a long silence, cold restraint.",
    "line": "L24",
@@ -1935,8 +1935,8 @@
    "lighting": "meeting",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-expr1.png",
-    "assets/portraits/ashita-cast/cells/loc-meeting-day.png"
+    "assets/portraits/ashita-cast-2/cells/tanaka-45.png",
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-angles-key1.png"
    ],
    "subject": "Side medium of Tanaka scoffing, arms crossed, face turned so his mouth is hidden.",
    "line": "P3",
@@ -1960,8 +1960,8 @@
    "lighting": "meeting",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
-    "assets/portraits/ashita-cast/cells/loc-meeting-angles-key2.png"
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-angles-key2.png"
    ],
    "subject": "Through the half-open door frame: Sato stands up from the table and turns toward the door, his back to camera.",
    "line": null,
@@ -1985,8 +1985,8 @@
    "lighting": "lamp",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
-    "assets/portraits/ashita-cast/cells/mori-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/mori-front.png",
     "assets/portraits/ashita-cast/cells/loc-office-night.png"
    ],
    "subject": "Night office: Sato packs a cardboard box at his desk; Mori approaches from behind, seen from the back.",
@@ -2011,7 +2011,7 @@
    "lighting": "lamp",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/mori-expr2.png",
+    "assets/portraits/ashita-cast-2/cells/mori-expr2.png",
     "assets/portraits/ashita-cast/cells/loc-office-night.png"
    ],
    "subject": "Side medium of Mori holding back tears, lip trembling, warm lamp rim light.",
@@ -2036,7 +2036,7 @@
    "lighting": "lamp",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
     "assets/portraits/ashita-cast/cells/loc-office-key1.png"
    ],
    "subject": "Side medium of Sato pausing over the box, a gentle sad look, face turned down so his mouth is hidden.",
@@ -2061,7 +2061,7 @@
    "lighting": "lamp",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
     "assets/portraits/ashita-cast/cells/loc-office-night.png"
    ],
    "subject": "Chest-up close-up of Sato, earnest and grave, asking a final favor, warm lamp light.",
@@ -2086,7 +2086,7 @@
    "lighting": "lamp",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/mori-expr3.png",
+    "assets/portraits/ashita-cast-2/cells/mori-expr3.png",
     "assets/portraits/ashita-cast/cells/loc-office-night.png"
    ],
    "subject": "Close-up from the side-back of Mori nodding firmly, tears in her eyes, mouth not visible.",
@@ -2111,7 +2111,7 @@
    "lighting": "rain",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
     "assets/portraits/ashita-cast/cells/loc-hq-night.png"
    ],
    "subject": "Static rear shot: Sato walks out of the glass revolving door into heavy rain, carrying a cardboard box.",
@@ -2136,7 +2136,7 @@
    "lighting": "rain",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
     "assets/portraits/ashita-cast/cells/loc-hq-night.png"
    ],
    "subject": "From a second-floor window streaked with raindrops: the small figure of Sato crossing the wet forecourt with the box.",
@@ -2161,7 +2161,7 @@
    "lighting": "rain",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
     "assets/portraits/ashita-cast/cells/loc-hq-night.png"
    ],
    "subject": "Insert at ground level: black work shoes stepping into a puddle on wet asphalt, rain splashing.",
@@ -2186,7 +2186,7 @@
    "lighting": "rain",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
     "assets/portraits/ashita-cast/cells/loc-misc-key1.png"
    ],
    "subject": "A narrow rainy back street at night: Sato walks away from the camera carrying the box.",
@@ -2235,7 +2235,7 @@
    "lighting": "rain",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
     "assets/portraits/ashita-cast/cells/loc-misc-key1.png"
    ],
    "subject": "Under a shop awning with no lettering: Sato seen from the side-back, phone at his ear, rain beyond.",
@@ -2260,7 +2260,7 @@
    "lighting": "rain",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-front.png",
+    "assets/portraits/ashita-cast-2/cells/sato-front.png",
     "assets/portraits/ashita-cast/cells/loc-misc-key1.png"
    ],
    "subject": "Insert: Sato's hand holding a smartphone with a dark blank screen, rain bokeh behind.",
@@ -2285,7 +2285,7 @@
    "lighting": "rain",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/sato-expr3.png",
+    "assets/portraits/ashita-cast-2/cells/sato-expr3.png",
     "assets/portraits/ashita-cast/cells/loc-misc-key1.png"
    ],
    "subject": "Close-up side profile of Sato with a faint restrained smile, rain light on his glasses.",
@@ -2310,8 +2310,8 @@
    "lighting": "lounge",
    "edit_fx": "handheld",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
-    "assets/portraits/ashita-cast/cells/yamamoto-front.png",
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/yamamoto-front.png",
     "assets/portraits/ashita-cast/cells/loc-misc-day.png"
    ],
    "subject": "Low angle two-shot in silhouette: Tanaka and Yamamoto raise champagne glasses in a dim gold executive lounge, faces in shadow.",
@@ -2336,7 +2336,7 @@
    "lighting": "lounge",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/yamamoto-front.png",
+    "assets/portraits/ashita-cast-2/cells/yamamoto-front.png",
     "assets/portraits/ashita-cast/cells/loc-misc-day.png"
    ],
    "subject": "Side medium of Yamamoto smiling with satisfaction, glass in hand, face in profile, mouth hidden.",
@@ -2385,7 +2385,7 @@
    "lighting": "lounge",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/yamamoto-front.png",
+    "assets/portraits/ashita-cast-2/cells/yamamoto-front.png",
     "assets/portraits/ashita-cast/cells/loc-misc-day.png"
    ],
    "subject": "Insert: a heavy hand raising a champagne glass, golden bubbles rising.",
@@ -2410,7 +2410,7 @@
    "lighting": "lounge",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/yamamoto-front.png",
+    "assets/portraits/ashita-cast-2/cells/yamamoto-front.png",
     "assets/portraits/ashita-cast/cells/loc-misc-day.png"
    ],
    "subject": "Low angle side of Yamamoto raising his glass, pleased, mouth hidden.",
@@ -2435,7 +2435,7 @@
    "lighting": "lounge",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-expr1.png",
+    "assets/portraits/ashita-cast-2/cells/tanaka-45.png",
     "assets/portraits/ashita-cast/cells/loc-misc-day.png"
    ],
    "subject": "Side-back medium of Tanaka holding a champagne glass, greedy grin seen only at the cheek.",
@@ -2484,8 +2484,8 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/mori-front.png",
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/mori-front.png",
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
     "assets/portraits/ashita-cast/cells/loc-misc-key2.png"
    ],
    "subject": "Through the door frame of a small substation room: Mori stands by an old grey breaker cabinet; Tanaka in the doorway in foreground silhouette.",
@@ -2510,7 +2510,7 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/mori-expr3.png",
+    "assets/portraits/ashita-cast-2/cells/mori-expr3.png",
     "assets/portraits/ashita-cast/cells/loc-misc-key2.png"
    ],
    "subject": "Side medium of Mori standing in front of the breaker cabinet, firm, mouth hidden.",
@@ -2535,7 +2535,7 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
     "assets/portraits/ashita-cast/cells/loc-misc-key2.png"
    ],
    "subject": "Wide from inside the room: Tanaka in the doorway seen from behind, turning away dismissively.",
@@ -2560,7 +2560,7 @@
    "lighting": "office",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/mori-expr3.png",
+    "assets/portraits/ashita-cast-2/cells/mori-expr3.png",
     "assets/portraits/ashita-cast/cells/loc-misc-key2.png"
    ],
    "subject": "Close-up side of Mori alone, her hand resting on the cabinet, eyes determined, mouth hidden.",
@@ -2609,7 +2609,7 @@
    "lighting": "dawn",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/loc-control-key2.png"
+    "assets/portraits/ashita-cast-2/cells/loc-control-key2.png"
    ],
    "subject": "No people. Low wide of the substation yard at dawn, huge grey transformers behind yellow safety rails.",
    "line": "NA15",
@@ -2633,8 +2633,8 @@
    "lighting": "control",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/mori-front.png",
-    "assets/portraits/ashita-cast/cells/loc-control-key1.png"
+    "assets/portraits/ashita-cast-2/cells/mori-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-control-key1.png"
    ],
    "subject": "Side medium of Mori at the control console, monitors lit, alarmed, mouth hidden.",
    "line": "L36",
@@ -2658,8 +2658,8 @@
    "lighting": "control",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
-    "assets/portraits/ashita-cast/cells/loc-control-angles-key1.png"
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-control-angles-key1.png"
    ],
    "subject": "Low angle from the side-back: Tanaka storms in through the control room door.",
    "line": "L37",
@@ -2683,8 +2683,8 @@
    "lighting": "control",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/mori-expr2.png",
-    "assets/portraits/ashita-cast/cells/loc-control-key1.png"
+    "assets/portraits/ashita-cast-2/cells/mori-expr2.png",
+    "assets/portraits/ashita-cast-2/cells/loc-control-key1.png"
    ],
    "subject": "Close-up side of Mori lit by the monitor glow, frightened, mouth hidden.",
    "line": "L38",
@@ -2708,8 +2708,8 @@
    "lighting": "control",
    "edit_fx": "handheld",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
-    "assets/portraits/ashita-cast/cells/loc-control-day.png"
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-control-day.png"
    ],
    "subject": "Side medium of Tanaka slamming his palm on the console, panicking, face turned away.",
    "line": "P8",
@@ -2733,8 +2733,8 @@
    "lighting": "control",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/mori-front.png",
-    "assets/portraits/ashita-cast/cells/loc-control-angles-key2.png"
+    "assets/portraits/ashita-cast-2/cells/mori-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-control-angles-key2.png"
    ],
    "subject": "High angle over Mori's shoulder toward a wall of monitors flashing red with no text.",
    "line": "P9",
@@ -2758,8 +2758,8 @@
    "lighting": "meeting",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/yamamoto-front.png",
-    "assets/portraits/ashita-cast/cells/loc-meeting-night.png"
+    "assets/portraits/ashita-cast-2/cells/yamamoto-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-night.png"
    ],
    "subject": "Wide of the executive office: Yamamoto in profile shouting into a desk phone receiver.",
    "line": "P10",
@@ -2783,7 +2783,7 @@
    "lighting": "red",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/loc-control-angles-key2.png"
+    "assets/portraits/ashita-cast-2/cells/loc-control-angles-key2.png"
    ],
    "subject": "Monitors flashing solid red with a blank warning panel (Japanese warning text composited later).",
    "line": null,
@@ -2807,8 +2807,8 @@
    "lighting": "meeting",
    "edit_fx": "dutch7",
    "refs": [
-    "assets/portraits/ashita-cast/cells/yamamoto-expr2.png",
-    "assets/portraits/ashita-cast/cells/loc-meeting-night.png"
+    "assets/portraits/ashita-cast-2/cells/yamamoto-expr2.png",
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-night.png"
    ],
    "subject": "Medium close-up of Yamamoto frozen with the receiver, eyes wide, sweat on his forehead, profile so his mouth is hidden.",
    "line": "L39",
@@ -2832,8 +2832,8 @@
    "lighting": "meeting",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/yamamoto-front.png",
-    "assets/portraits/ashita-cast/cells/loc-meeting-night.png"
+    "assets/portraits/ashita-cast-2/cells/yamamoto-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-night.png"
    ],
    "subject": "Insert: a desk-phone receiver slipping from a heavy trembling hand.",
    "line": null,
@@ -2949,7 +2949,7 @@
    "lighting": "dawn",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/loc-control-key2.png"
+    "assets/portraits/ashita-cast-2/cells/loc-control-key2.png"
    ],
    "subject": "No people. The substation's huge transformers from a low angle, mist.",
    "line": "NA18",
@@ -3069,7 +3069,7 @@
    "lighting": "control",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/loc-control-angles-night.png"
+    "assets/portraits/ashita-cast-2/cells/loc-control-angles-night.png"
    ],
    "subject": "No people. The empty control room from a ceiling corner, monitors dark.",
    "line": null,
@@ -3093,9 +3093,9 @@
    "lighting": "control",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/mori-front.png",
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
-    "assets/portraits/ashita-cast/cells/loc-control-angles-day.png"
+    "assets/portraits/ashita-cast-2/cells/mori-front.png",
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-control-angles-day.png"
    ],
    "subject": "Low wide of the control room: Mori at the console in the foreground side, Tanaka behind her by the start button, staff silhouettes.",
    "line": "L40",
@@ -3119,8 +3119,8 @@
    "lighting": "control",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-expr1.png",
-    "assets/portraits/ashita-cast/cells/loc-control-day.png"
+    "assets/portraits/ashita-cast-2/cells/tanaka-45.png",
+    "assets/portraits/ashita-cast-2/cells/loc-control-day.png"
    ],
    "subject": "Close-up side of Tanaka sweating, chest-up distance, forcing a brave face, mouth hidden.",
    "line": "L41",
@@ -3144,8 +3144,8 @@
    "lighting": "control",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
-    "assets/portraits/ashita-cast/cells/loc-control-key1.png"
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-control-key1.png"
    ],
    "subject": "Insert: a finger with a gold wristwatch hovering over a large unlabeled start button.",
    "line": null,
@@ -3169,8 +3169,8 @@
    "lighting": "control",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/mori-expr2.png",
-    "assets/portraits/ashita-cast/cells/loc-control-key1.png"
+    "assets/portraits/ashita-cast-2/cells/mori-expr2.png",
+    "assets/portraits/ashita-cast-2/cells/loc-control-key1.png"
    ],
    "subject": "Side medium of Mori shutting her eyes tight.",
    "line": null,
@@ -3194,7 +3194,7 @@
    "lighting": "spark",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/loc-control-key2.png"
+    "assets/portraits/ashita-cast-2/cells/loc-control-key2.png"
    ],
    "subject": "No people. A huge transformer erupts in a blinding white-blue electrical flash and sparks.",
    "line": "NA20",
@@ -3218,7 +3218,7 @@
    "lighting": "red",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/loc-control-key2.png"
+    "assets/portraits/ashita-cast-2/cells/loc-control-key2.png"
    ],
    "subject": "No people. The substation yard plunged into darkness, only distant red lamps.",
    "line": null,
@@ -3242,7 +3242,7 @@
    "lighting": "red",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/loc-control-night.png"
+    "assets/portraits/ashita-cast-2/cells/loc-control-night.png"
    ],
    "subject": "No people. High angle of the control room in blackout, red emergency lamp, an overturned chair.",
    "line": "NA21",
@@ -3290,8 +3290,8 @@
    "lighting": "red",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/mori-expr2.png",
-    "assets/portraits/ashita-cast/cells/loc-control-night.png"
+    "assets/portraits/ashita-cast-2/cells/mori-expr2.png",
+    "assets/portraits/ashita-cast-2/cells/loc-control-night.png"
    ],
    "subject": "Side medium of Mori exhaling in relief in the red light, hand on her chest.",
    "line": null,
@@ -3315,8 +3315,8 @@
    "lighting": "backlit",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/takahashi-front.png",
-    "assets/portraits/ashita-cast/cells/loc-control-angles-key1.png"
+    "assets/portraits/ashita-cast-2/cells/takahashi-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-control-angles-key1.png"
    ],
    "subject": "The control room door swings open: Takahashi strides in, hard backlit silhouette, faceless suited silhouettes behind him.",
    "line": "L42",
@@ -3340,8 +3340,8 @@
    "lighting": "backlit",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/takahashi-front.png",
-    "assets/portraits/ashita-cast/cells/loc-control-angles-key1.png"
+    "assets/portraits/ashita-cast-2/cells/takahashi-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-control-angles-key1.png"
    ],
    "subject": "Low angle medium of Takahashi against the bright doorway, coat open, face mostly in shadow.",
    "line": "L43",
@@ -3365,8 +3365,8 @@
    "lighting": "control",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/takahashi-expr2.png",
-    "assets/portraits/ashita-cast/cells/loc-control-angles-day.png"
+    "assets/portraits/ashita-cast-2/cells/takahashi-expr2.png",
+    "assets/portraits/ashita-cast-2/cells/loc-control-angles-day.png"
    ],
    "subject": "Chest-up close-up of Takahashi, slightly low angle, condemning glare.",
    "line": "L44",
@@ -3390,8 +3390,8 @@
    "lighting": "control",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/yamamoto-expr3.png",
-    "assets/portraits/ashita-cast/cells/loc-control-day.png"
+    "assets/portraits/ashita-cast-2/cells/yamamoto-expr2.png",
+    "assets/portraits/ashita-cast-2/cells/loc-control-day.png"
    ],
    "subject": "Side medium of Yamamoto trembling, sweat on his face, hands shaking, mouth hidden.",
    "line": "L45",
@@ -3415,8 +3415,8 @@
    "lighting": "control",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/takahashi-expr1.png",
-    "assets/portraits/ashita-cast/cells/loc-control-angles-day.png"
+    "assets/portraits/ashita-cast-2/cells/takahashi-expr1.png",
+    "assets/portraits/ashita-cast-2/cells/loc-control-angles-day.png"
    ],
    "subject": "Side medium of Takahashi turning his head slightly toward Yamamoto, stern, mouth hidden.",
    "line": "L46",
@@ -3440,8 +3440,8 @@
    "lighting": "control",
    "edit_fx": "dollyzoom",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-expr3.png",
-    "assets/portraits/ashita-cast/cells/loc-control-day.png"
+    "assets/portraits/ashita-cast-2/cells/tanaka-expr3.png",
+    "assets/portraits/ashita-cast-2/cells/loc-control-day.png"
    ],
    "subject": "Close-up of Tanaka recognizing someone at the door, face draining of color (dolly zoom in the edit).",
    "line": null,
@@ -3466,7 +3466,7 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/ashita-cast-2/cells/sato-b-front.png",
-    "assets/portraits/ashita-cast/cells/loc-control-angles-key1.png"
+    "assets/portraits/ashita-cast-2/cells/loc-control-angles-key1.png"
    ],
    "subject": "Low angle medium of Sato in a charcoal suit standing in the bright doorway, calm and composed.",
    "line": null,
@@ -3490,8 +3490,8 @@
    "lighting": "red",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-expr3.png",
-    "assets/portraits/ashita-cast/cells/loc-control-night.png"
+    "assets/portraits/ashita-cast-2/cells/tanaka-expr3.png",
+    "assets/portraits/ashita-cast-2/cells/loc-control-night.png"
    ],
    "subject": "Chest-up close-up of Tanaka on his knees, sobbing and begging, tears and sweat, red emergency light.",
    "line": "L47",
@@ -3515,8 +3515,8 @@
    "lighting": "red",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/tanaka-expr3.png",
-    "assets/portraits/ashita-cast/cells/loc-control-angles-night.png"
+    "assets/portraits/ashita-cast-2/cells/tanaka-expr3.png",
+    "assets/portraits/ashita-cast-2/cells/loc-control-angles-night.png"
    ],
    "subject": "Bird's-eye view straight down: Tanaka kneeling small on the control room floor under the red lamp.",
    "line": null,
@@ -3540,7 +3540,7 @@
    "lighting": "red",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/loc-control-night.png"
+    "assets/portraits/ashita-cast-2/cells/loc-control-night.png"
    ],
    "subject": "Insert: a drop of sweat falls onto the hard floor.",
    "line": null,
@@ -3565,7 +3565,7 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/ashita-cast-2/cells/sato-b-front.png",
-    "assets/portraits/ashita-cast/cells/loc-control-angles-key1.png"
+    "assets/portraits/ashita-cast-2/cells/loc-control-angles-key1.png"
    ],
    "subject": "Chest-up close-up of Sato, low angle, looking down coldly at the kneeling man.",
    "line": "L48",
@@ -3589,7 +3589,7 @@
    "lighting": "red",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/loc-control-night.png"
+    "assets/portraits/ashita-cast-2/cells/loc-control-night.png"
    ],
    "subject": "Insert: a single blank white business card lands on the floor (Japanese text composited later).",
    "line": null,
@@ -3614,7 +3614,7 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/ashita-cast-2/cells/sato-b-front.png",
-    "assets/portraits/ashita-cast/cells/loc-control-angles-key1.png"
+    "assets/portraits/ashita-cast-2/cells/loc-control-angles-key1.png"
    ],
    "subject": "Chest-up close-up of Sato with an icy faint smile.",
    "line": "L49",
@@ -3639,8 +3639,8 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/ashita-cast-2/cells/sato-b-front.png",
-    "assets/portraits/ashita-cast/cells/tanaka-front.png",
-    "assets/portraits/ashita-cast/cells/loc-control-angles-night.png"
+    "assets/portraits/ashita-cast-2/cells/tanaka-front.png",
+    "assets/portraits/ashita-cast-2/cells/loc-control-angles-night.png"
    ],
    "subject": "From straight above: Sato's polished shoes in front of the kneeling Tanaka.",
    "line": null,
@@ -3686,7 +3686,7 @@
    "lighting": "meeting",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/loc-meeting-day.png"
+    "assets/portraits/ashita-cast-2/cells/loc-meeting-angles-key1.png"
    ],
    "subject": "No people. The empty executive meeting room, chairs pushed out.",
    "line": null,
@@ -3781,7 +3781,7 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/ashita-cast-2/cells/sato-b-front.png",
-    "assets/portraits/ashita-cast/cells/mori-front.png",
+    "assets/portraits/ashita-cast-2/cells/mori-front.png",
     "assets/portraits/ashita-cast/cells/loc-hq-key2.png"
    ],
    "subject": "The bright new office: Sato at the window with a white coffee cup; Mori steps into the doorway in her light-blue uniform.",
@@ -3806,7 +3806,7 @@
    "lighting": "morning",
    "edit_fx": "",
    "refs": [
-    "assets/portraits/ashita-cast/cells/mori-expr1.png",
+    "assets/portraits/ashita-cast-2/cells/mori-expr1.png",
     "assets/portraits/ashita-cast/cells/loc-hq-key2.png"
    ],
    "subject": "Side medium of Mori, hopeful and earnest, golden rim light.",
@@ -3857,7 +3857,7 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/ashita-cast-2/cells/sato-b-front.png",
-    "assets/portraits/ashita-cast/cells/mori-front.png",
+    "assets/portraits/ashita-cast-2/cells/mori-front.png",
     "assets/portraits/ashita-cast/cells/loc-hq-key2.png"
    ],
    "subject": "From outside the window: the two figures inside the bright office, the Tokyo skyline reflected on the glass.",
