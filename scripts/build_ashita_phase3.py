@@ -332,13 +332,16 @@ AMBIENCE = {  # 사람이 나오는 컷은 현장음 금지(제6장 4) — 무�
     "S26b": "a small card landing on the floor", "S27c": "morning birds after rain, dripping water",
 }
 BGM = [  # (시작, 끝, 볼륨, 프롬프트) — 0~4초는 BGM 없음(결정 ①: 경보 저음 드론 + 심장 박동 1회는 PHASE 6에서 로컬 믹스)
-    (4.0, 20.0, 0.36, "low ominous synth drone and a slow heartbeat pulse building to a sharp hit, Japanese thriller cold open, instrumental, no vocals"),
+    (4.0, 19.5, 0.36, "low ominous synth drone and a slow heartbeat pulse building to a sharp hit, Japanese thriller cold open, instrumental, no vocals"),
     (20.5, 205.0, 0.40, "tense modern office drama score, muted piano ostinato and low strings, quiet unease, Japanese TV drama, instrumental, no vocals"),
     (207.0, 300.0, 0.40, "dark brooding strings and heavy low piano, injustice and anger, Japanese drama score, instrumental, no vocals"),
     (301.5, 411.5, 0.40, "melancholic rain piano turning into suspense pulses and rising strings, Japanese drama score, instrumental, no vocals"),
     (414.0, 505.0, 0.42, "rising suspense to a dramatic reveal, powerful drums and brass, triumphant turn, Japanese drama score, instrumental, no vocals"),
     (506.5, None, 0.40, "cold victorious strings resolving into warm hopeful piano, Japanese drama finale, instrumental, no vocals"),
 ]
+# PHASE 6 실증(2026-10-11): 구간 간격 0.5초 → generate_audio.py가 「겹쳐 들림」으로 생성 중단. 간격 1.0초 이상을 생성기에서 미리 검사
+for _a, _b in zip(BGM, BGM[1:]):
+    assert _b[0] - _a[1] >= 1.0, f"BGM 구간 간격 {_b[0] - _a[1]:.1f}s < 1.0s ({_a[1]}→{_b[0]})"
 STYLE = {"NA": "Naration", "佐藤": "Sato", "田中": "Tanaka", "山本": "Yamamoto", "高橋": "Takahashi", "森": "Mori"}
 STYLE_JA = {"Naration": "ナレーター", "Sato": "佐藤", "Tanaka": "田中", "Yamamoto": "山本", "Takahashi": "高橋", "Mori": "森"}
 STYLE_COLOR = {"Naration": "&H00DDDDDD", "Sato": "&H00FFFFFF", "Tanaka": "&H00B4D2FF", "Yamamoto": "&H00C8C8F0",
