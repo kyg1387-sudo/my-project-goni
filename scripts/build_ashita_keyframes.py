@@ -118,6 +118,50 @@ DAY_LOCS = ("loc-control-day", "loc-control-angles-day", "loc-control-key", "loc
 # ⑬ 소품만 참조한 인서트가 엉뚱한 장소(사무실)에 놓임(S17be) → 같은 장면 로케이션 참조 추가
 COMPOSITION["S24e"] = ("Side medium of Takahashi ONLY (55, very short grey hair, NO glasses, black overcoat, stern) — NOT a bald man, "
                        "NOT wearing glasses; he turns his head slightly toward someone off screen-left, mouth hidden by the angle, hands down. " + FULL)
+# ⑯ 「mouth hidden」 지시를 무시하고 화자의 입이 또렷이 보임(비-OMNI 대사 시작 컷 48개 중 27개) → 컷별 가림 방법을 구체적으로 고정
+#    (뒷모습·어깨 너머 / 손수건·컵·수화기로 가림 / 역광 실루엣). 규격 조명카메라앵글 §AI 한계: 측면·뒷모습은 입이 안 보이는 대사 처리에만.
+NO_MOUTH = "The speaking character's mouth and lips are NOT visible anywhere in the frame."
+BACK = "seen strictly from behind — only the back of the head, hair, ears and shoulders are visible, the face turned away from the camera"
+MOUTH_HIDE = {
+    "S05a": f"Tanaka in the foreground {BACK}, perching on the corner of Sato's desk; beyond him Sato sits at the desk looking up, calm.",
+    "S05b": f"Tanaka sitting on the desk corner {BACK}, raising a white paper coffee cup dismissively; the office stretches out in front of him.",
+    "S05c": f"High angle from behind Sato's shoulder: Sato seated {BACK}, his hands on the drawings, looking up toward a blurred figure across the desk.",
+    "S06bc": f"Tanaka in the corridor {BACK}, phone pressed to his ear by a hand wearing a chunky gold wristwatch, shoulders shaking with a laugh.",
+    "S07a": f"High angle: Tanaka stands in the foreground {BACK}, looming over Mori seated at her desk beyond him; his shadow falls across her drawing.",
+    "S09a": f"Past a monitor in the foreground: Sato walks away from the camera toward a desk across the office, {BACK}, a sheet of paper in his hand.",
+    "S09c": f"Tanaka lounging in his office chair {BACK}, the high chair back and the back of his head filling the left of the frame, one hand raised in a shrug.",
+    "S11c": f"Over-the-shoulder from behind Sato: Sato sits upright {BACK}, his hand flat on a blank document on the long black table; Yamamoto blurred at the far end.",
+    "S12a": f"Low angle: Tanaka has shoved his chair back and stands {BACK}, his arm thrust out pointing across the long meeting table.",
+    "S12d": f"From behind Yamamoto's shoulder: Yamamoto {BACK}, his hand sliding a blank white envelope across the black table with two fingers.",
+    "S13b": f"Tanaka stands with arms crossed {BACK}, in the meeting room, his head tilted in a scoff.",
+    "S14c": f"From behind and slightly above Sato's shoulder: Sato {BACK}, head bowed over the open cardboard box, his hands placing a folder inside; warm lamp light.",
+    "S14e": ("Close-up from behind Mori's shoulder: the back of her black bob and her ear, only the edge of her cheek with one tear catching the lamp "
+             "light; her face turned away from the camera."),
+    "S17a": ("Low angle two-shot: Tanaka and Yamamoto as pure black silhouettes against a bright warm gold window glow, raising champagne glasses; "
+             "their faces completely dark with NO facial features visible."),
+    "S17d": f"Tanaka {BACK} — only the edge of his cheek and ear visible — holding a champagne glass, the gold lounge and night city beyond.",
+    "S17ba": (f"Through the door frame of a small concrete substation room: Tanaka in the foreground doorway {BACK} as a dark silhouette; "
+              "beyond him Mori stands by the old grey breaker cabinet facing him."),
+    "S17bb": f"Mori stands facing the old grey breaker cabinet {BACK}, her hand near the cabinet, firm posture; bare concrete room, one bulb.",
+    "S17bc": f"Wide from inside the concrete room: Tanaka in the bright doorway {BACK}, walking out, one hand flicked dismissively.",
+    "S17bd": "Close-up from behind Mori's shoulder: the back of her black bob and her ear, her hand resting on the grey cabinet; her face turned away.",
+    "S18e": f"Tanaka {BACK}, slamming his palm down on the control console, monitors and the substation window beyond.",
+    "S18f": "High angle over Mori's shoulder from behind: the back of her black bob in the foreground, a wall of monitors flashing solid red beyond.",
+    "S19c": ("Medium close-up of Yamamoto frozen, the telephone receiver pressed against his face so it COVERS his mouth and chin, eyes wide, "
+             "fine realistic sweat on his forehead, gold-rimmed glasses."),
+    "S22a": (f"Low wide of the control room: Mori in the foreground at the console {BACK}; beyond her Tanaka stands by the start button, "
+             "staff silhouettes at the back."),
+    "S22b": ("Close-up side of Tanaka sweating, pressing a white handkerchief against his mouth and chin with one hand so the mouth is "
+             "COVERED, eyes forcing a brave look."),
+    "S24b": ("Low angle medium of Takahashi as a hard backlit silhouette against the bright doorway, coat open; his face completely in black "
+             "shadow with NO facial features visible."),
+    "S28a": (f"The bright new office: Mori in the foreground doorway {BACK} in her light-blue uniform; beyond her Sato in a charcoal suit "
+             "stands at the window holding a white coffee cup, facing her with a gentle look."),
+    "S28c": ("Side close-up of Sato raising a white coffee cup to his lips so the cup COVERS his mouth, a warm restrained smile in his eyes; "
+             "golden morning window light."),
+}
+for _k, _v in MOUTH_HIDE.items():
+    COMPOSITION[_k] = _v + " " + NO_MOUTH + " " + FULL
 EXTRA_REFS = {"S17be": ["assets/portraits/ashita-cast/cells/loc-misc-key2.png"]}
 COMPOSITION["S17be"] = ("Extreme close-up of the large black lever on the front of the old grey mechanical breaker cabinet, mounted on the "
                         "bare concrete wall of the small substation room lit by one bare bulb; NO desks, NO office. " + FULL)
@@ -177,7 +221,7 @@ def build(sc, face_refs):
     people = [r for r in refs if who_of(os.path.basename(r))[0] or r.startswith(FACE_DIR)]
     if sc["kind"] == "ins" and people:
         parts.append(INSERT)
-    if sc.get("angle") in ANGLE and (sc["angle"] != "SIDE" or people):
+    if sc.get("angle") in ANGLE and (sc["angle"] != "SIDE" or people) and not (sc["angle"] == "SIDE" and sc["id"] in MOUTH_HIDE):
         parts.append(ANGLE[sc["angle"]])
     if sc.get("ja_overlay") or sc["id"] in ("S21e", "S21g"):
         parts.append(BLANK)
