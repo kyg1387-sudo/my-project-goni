@@ -174,6 +174,23 @@ MOUTH_HIDE.update({
     "S17bd": f"Camera directly behind Mori: Mori {BACK}, her hand resting flat on the grey breaker cabinet in the bare concrete room.",
     "S19c": f"Camera directly behind Yamamoto: Yamamoto {BACK} (bald crown), frozen with a telephone receiver at his ear, the dark meeting room beyond.",
 })
+# 고니감독님 요청(2026-10-11, B안): 정면 대사 CU → 「일하면서 옆에서 나누는 대화」 3/4 구도. OmniHuman은 정면~45°까지만 안정(규격 제8장 5)
+# → 화자는 30~40° 3/4, 앞쪽에 상대의 흐린 어깨·뒤통수(어깨 너머), 손은 작업 중. 입은 화면에 또렷이(립싱크 대상).
+CONVO = {
+    "S09d": ("Over-the-shoulder conversation shot in the bright design office: in the soft out-of-focus foreground left, the back of Tanaka's "
+             "light-brown hair and navy suit shoulder; Sato sits at his drafting desk, body angled toward the drawings, his left hand flat on "
+             "a large blank technical drawing and his right index finger pointing at it, his head turned about 35 degrees toward Tanaka, "
+             "speaking firmly with restrained anger behind silver-rimmed glasses. Medium close-up from mid-chest up, face sharp, 50mm lens."),
+    "S12c": ("Over-the-shoulder conversation shot in the meeting room: in the dark soft foreground right, the back of Sato's head and navy work "
+             "jacket shoulder (seated); Tanaka stands beside the long black table, one hand resting on the back of a chair, leaning slightly "
+             "forward, his face turned about 35 degrees toward Sato with a slow cruel sneer, eyes narrowed. Medium close-up from mid-chest up, face sharp, 50mm lens."),
+    "S24c": ("Over-the-shoulder conversation shot in the blacked-out control room: in the dark soft foreground left, the bald crown and black "
+             "suit shoulder of Yamamoto seen from behind; Takahashi stands facing him at about 35 degrees, black overcoat open, one hand holding a "
+             "plain folder at his side, condemning glare, lit by the red emergency lamp and the white doorway backlight. Medium close-up from mid-chest up, face sharp."),
+}
+CONVO_REFS = {"S09d": ["assets/portraits/ashita-cast-2/cells/tanaka-full-back.png"],
+              "S12c": ["assets/portraits/ashita-cast-2/cells/sato-full-back.png"],
+              "S24c": ["assets/portraits/ashita-cast-2/cells/yamamoto-full-back.png"]}
 for _k, _v in MOUTH_HIDE.items():
     COMPOSITION[_k] = _v + " " + NO_MOUTH + " " + FULL
 EXTRA_REFS = {"S17be": ["assets/portraits/ashita-cast/cells/loc-misc-key2.png"]}
@@ -221,6 +238,9 @@ def notes(refs):
 
 def build(sc, face_refs):
     refs = list(face_refs) + list(sc["refs"]) + EXTRA_REFS.get(sc["id"], [])
+    convo = STAGE.startswith("r5") and sc["id"] in CONVO
+    if convo:
+        refs += CONVO_REFS[sc["id"]]
     if sc["id"] in BACK_ONLY:  # 뒷모습 전용: 얼굴 크롭 제거, 화자 셀 → <화자>-full-back
         out = []
         for r in refs:
@@ -250,7 +270,9 @@ def build(sc, face_refs):
         parts.append(ANGLE[sc["angle"]])
     if sc.get("ja_overlay") or sc["id"] in ("S21e", "S21g"):
         parts.append(BLANK)
-    if sc["id"] in COMPOSITION:
+    if convo:
+        parts.append(CONVO[sc["id"]] + " Full-frame 16:9 image, no black bars, no letterbox.")
+    elif sc["id"] in COMPOSITION:
         parts.append(COMPOSITION[sc["id"]])
     elif sc["kind"] == "d":
         parts.append(TIGHT)
@@ -262,8 +284,13 @@ def build(sc, face_refs):
     return {"id": sc["id"], "count": 1, "aspect_ratio": "16:9", "refs": refs, "prompt": " ".join(parts)}
 
 
+STAGE = ""
+
+
 def main():
+    global STAGE
     arg = sys.argv[1] if len(sys.argv) > 1 else "a"
+    STAGE = arg
     stage, _, only = arg.partition(":")
     stage = stage.lower()
     only = set(only.split(",")) if only else None
