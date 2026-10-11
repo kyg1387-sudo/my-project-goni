@@ -22,6 +22,10 @@ fal.ai의 TTS(MiniMax speech), 음악 생성(Lyria 2), 립싱크(sync-lipsync �
         --lipsync --scenes-dir out
 
 ffmpeg/ffprobe가 PATH에 있어야 한다. BGM 생성에 실패하면 경고만 남기고 계속 진행한다.
+
+설정(JSON) 주요 키: language_boost(Korean/Japanese 등 TTS 언어), silent_styles(화면 전용
+자막 스타일 — TTS 제외), narration_styles(립싱크 제외), scene_speakers(장면별 화면 속 화자),
+emotion_overrides/speed_overrides(줄 번호 기준, silent_styles 제외 후 번호).
 """
 
 import argparse
@@ -331,6 +335,8 @@ def ambience_scene(cfg, key, v_url, index, duration):
         return None
     prompts = cfg.get("ambience_prompts", [])
     prompt = prompts[index - 1] if index - 1 < len(prompts) else "realistic ambient sound"
+    if not prompt.strip():  # 빈 프롬프트 = 이 장면은 현장음 생략 (인물 장면의 말소리 혼입 방지)
+        return None
     payload = {
         "video_url": v_url,
         "prompt": prompt,
@@ -497,6 +503,13 @@ def main():
     os.makedirs(WORK_DIR, exist_ok=True)
 
     lines = parse_ass(args.ass)
+    # 화면 전용 스타일(자막 카드·명찰 등)은 TTS 대상에서 제외한다.
+    # 이후 줄 번호(emotion_overrides/speed_overrides 인덱스)는 제외 후 기준이다.
+    silent = set(cfg.get("silent_styles", []))
+    if silent:
+        before = len(lines)
+        lines = [l for l in lines if l[2] not in silent]
+        print(f"화면 전용 자막 {before - len(lines)}줄 제외 (silent_styles={sorted(silent)})")
     print(f"자막 {len(lines)}줄 파싱됨")
 
     def make_tts(item):

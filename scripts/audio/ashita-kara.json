@@ -1,0 +1,385 @@
+{
+  "tts_model": "fal-ai/minimax/speech-02-hd",
+  "language_boost": "Japanese",
+  "speed": 1.0,
+  "default_voice": "Deep_Voice_Man",
+  "style_voices": {
+    "Naration": "Deep_Voice_Man",
+    "Sato": "Determined_Man",
+    "Tanaka": "Casual_Guy",
+    "Exec": "Elegant_Man",
+    "Client": "Imposing_Manner"
+  },
+  "name_voices": {
+    "佐藤": "Determined_Man",
+    "田中": "Casual_Guy",
+    "山本": "Elegant_Man",
+    "高橋": "Imposing_Manner"
+  },
+  "style_names": {
+    "Sato": "佐藤",
+    "Tanaka": "田中",
+    "Exec": "山本",
+    "Client": "高橋"
+  },
+  "style_emotions": {
+    "Naration": "neutral",
+    "Sato": "neutral",
+    "Tanaka": "angry",
+    "Exec": "angry",
+    "Client": "angry"
+  },
+  "emotion_overrides": {
+    "1": "neutral",
+    "2": "neutral",
+    "3": "angry",
+    "4": "neutral",
+    "5": "neutral",
+    "6": "neutral",
+    "7": "neutral",
+    "8": "neutral",
+    "9": "neutral",
+    "10": "neutral",
+    "11": "neutral",
+    "12": "neutral",
+    "13": "neutral",
+    "14": "disgusted",
+    "15": "angry",
+    "16": "neutral",
+    "17": "neutral",
+    "18": "angry",
+    "19": "disgusted",
+    "20": "sad",
+    "21": "sad",
+    "22": "neutral",
+    "23": "neutral",
+    "24": "neutral",
+    "25": "angry",
+    "26": "angry",
+    "27": "angry",
+    "28": "angry",
+    "29": "angry",
+    "30": "neutral",
+    "31": "neutral",
+    "32": "neutral",
+    "33": "sad",
+    "34": "happy",
+    "35": "neutral",
+    "36": "neutral",
+    "37": "neutral",
+    "38": "neutral",
+    "39": "neutral",
+    "40": "neutral",
+    "41": "neutral",
+    "42": "surprised",
+    "43": "fearful",
+    "44": "fearful",
+    "45": "neutral",
+    "46": "fearful",
+    "47": "surprised",
+    "48": "surprised",
+    "49": "neutral",
+    "50": "angry",
+    "51": "angry",
+    "52": "neutral",
+    "53": "neutral",
+    "54": "neutral",
+    "55": "neutral",
+    "56": "neutral",
+    "57": "sad",
+    "58": "neutral",
+    "59": "neutral",
+    "60": "neutral",
+    "61": "happy",
+    "62": "happy",
+    "63": "happy"
+  },
+  "speed_overrides": {
+    "1": 1.05,
+    "2": 1.05,
+    "3": 1.1,
+    "4": 1.0,
+    "5": 1.05,
+    "6": 1.05,
+    "7": 1.0,
+    "8": 1.0,
+    "9": 0.95,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.1,
+    "16": 0.9,
+    "17": 1.0,
+    "18": 0.95,
+    "19": 1.05,
+    "20": 0.95,
+    "21": 0.95,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 0.95,
+    "25": 0.9,
+    "26": 0.9,
+    "27": 1.1,
+    "28": 1.1,
+    "29": 0.95,
+    "30": 0.85,
+    "31": 1.0,
+    "32": 1.0,
+    "33": 0.95,
+    "34": 0.9,
+    "35": 1.0,
+    "36": 1.0,
+    "37": 1.0,
+    "38": 0.85,
+    "39": 1.05,
+    "40": 1.0,
+    "41": 1.0,
+    "42": 1.0,
+    "43": 1.1,
+    "44": 0.95,
+    "45": 0.95,
+    "46": 0.9,
+    "47": 1.05,
+    "48": 1.05,
+    "49": 1.0,
+    "50": 1.05,
+    "51": 1.05,
+    "52": 1.0,
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0,
+    "56": 1.0,
+    "57": 0.95,
+    "58": 0.9,
+    "59": 0.85,
+    "60": 0.95,
+    "61": 1.0,
+    "62": 1.0,
+    "63": 1.0
+  },
+  "narration_styles": [
+    "Naration"
+  ],
+  "silent_styles": [
+    "Caption",
+    "Title"
+  ],
+  "scene_speakers": [
+    [],
+    [],
+    [
+      "田中"
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "田中"
+    ],
+    [
+      "田中"
+    ],
+    [
+      "田中"
+    ],
+    [
+      "佐藤"
+    ],
+    [],
+    [],
+    [
+      "佐藤"
+    ],
+    [
+      "田中"
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "佐藤"
+    ],
+    [
+      "佐藤"
+    ],
+    [
+      "佐藤"
+    ],
+    [],
+    [
+      "山本"
+    ],
+    [
+      "田中"
+    ],
+    [
+      "田中"
+    ],
+    [
+      "田中"
+    ],
+    [
+      "佐藤"
+    ],
+    [],
+    [],
+    [],
+    [
+      "佐藤"
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "田中"
+    ],
+    [
+      "山本"
+    ],
+    [],
+    [
+      "田中"
+    ],
+    [],
+    [],
+    [],
+    [],
+    [
+      "高橋"
+    ],
+    [
+      "高橋"
+    ],
+    [
+      "高橋"
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "田中"
+    ],
+    [],
+    [
+      "佐藤"
+    ],
+    [
+      "佐藤"
+    ],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  "section_ends": [
+    7,
+    10,
+    25,
+    39,
+    50,
+    68,
+    72
+  ],
+  "lipsync_models": [
+    "fal-ai/sync-lipsync",
+    "fal-ai/latentsync"
+  ],
+  "ambience_model": "fal-ai/mmaudio-v2",
+  "ambience_volume": 0.35,
+  "ambience_prompts": [
+    "police siren wailing in the distance, light rain on asphalt",
+    "police siren wailing in the distance, light rain on asphalt",
+    "",
+    "steady rain, footsteps on wet asphalt",
+    "repeating electronic alarm beeps, server fan hum",
+    "repeating electronic alarm beeps, server fan hum",
+    "low cinematic heartbeat pulse, distant city hum",
+    "morning birds, distant traffic",
+    "morning birds, distant traffic",
+    "",
+    "paper pages turning, quiet night office",
+    "paper pages turning, quiet night office",
+    "leather shoes on office floor, ceramic cup set down",
+    "leather shoes on office floor, ceramic cup set down",
+    "",
+    "",
+    "",
+    "",
+    "fountain pen scratching on paper",
+    "fountain pen scratching on paper",
+    "",
+    "",
+    "night wind on a rooftop, distant city",
+    "night wind on a rooftop, distant city",
+    "",
+    "wall clock ticking, tense silence",
+    "wall clock ticking, tense silence",
+    "",
+    "",
+    "",
+    "papers slammed on a table, sheets scattering",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "office hum, slow footsteps",
+    "office hum, slow footsteps",
+    "steady rain, footsteps on wet asphalt",
+    "rain under an awning",
+    "champagne glasses clinking",
+    "server fans, soft keyboard clicks",
+    "sharp electronic alarm",
+    "alarm beeping, hurried footsteps",
+    "paper pages turning",
+    "paper pages turning",
+    "",
+    "",
+    "",
+    "low transformer hum, dawn wind",
+    "",
+    "electrical explosion crack, breakers tripping, sudden silence",
+    "emergency light buzz",
+    "emergency light buzz",
+    "heavy door swinging open, many footsteps",
+    "",
+    "",
+    "",
+    "dawn wind, distant birds",
+    "dawn wind, distant birds",
+    "paper rustle",
+    "police siren, rain",
+    "police siren, rain",
+    "",
+    "rain, a card landing on wet ground",
+    "",
+    "",
+    "rain, siren fading",
+    "morning birds, ceramic cup",
+    "",
+    "",
+    "gentle wind"
+  ],
+  "bgm_model": "fal-ai/lyria2",
+  "bgm_prompt": "tense Japanese suspense drama score, low pulsing heartbeat bass, dark piano and strings building to a cold triumphant climax, cinematic, instrumental only, no vocals",
+  "bgm_volume": 0.2
+}

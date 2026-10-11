@@ -24,19 +24,27 @@ def probe_duration(path):
 
 def main():
     video, scenes_json, outdir = sys.argv[1], sys.argv[2], sys.argv[3]
-    n = len(json.load(open(scenes_json, encoding="utf-8"))["scenes"])
+    data = json.load(open(scenes_json, encoding="utf-8"))
+    default_dur = int(data.get("duration", 5))
+    # 장면별 길이(5/10초 혼용)가 있으면 그 비율대로, 없으면 균등 분할
+    weights = [int(s.get("duration", default_dur)) if isinstance(s, dict) else default_dur
+               for s in data["scenes"]]
+    n = len(weights)
     total = probe_duration(video)
-    seg = total / n
+    unit = total / sum(weights)
     os.makedirs(outdir, exist_ok=True)
-    print(f"{video} ({total:.2f}s) → 장면 {n}개 × {seg:.3f}s")
-    for k in range(n):
+    print(f"{video} ({total:.2f}s) → 장면 {n}개 (기준 {unit * default_dur:.3f}s/{default_dur}s 장면)")
+    t = 0.0
+    for k, w in enumerate(weights):
+        seg = unit * w
         out = os.path.join(outdir, f"scene{k + 1:02d}.mp4")
         subprocess.run(
-            ["ffmpeg", "-y", "-ss", f"{k * seg:.3f}", "-i", video,
+            ["ffmpeg", "-y", "-ss", f"{t:.3f}", "-i", video,
              "-t", f"{seg:.3f}", "-an",
              "-c:v", "libx264", "-preset", "fast", "-crf", "18", out],
             check=True, capture_output=True)
-        print(f"  scene{k + 1:02d}.mp4")
+        print(f"  scene{k + 1:02d}.mp4 ({seg:.2f}s)")
+        t += seg
     print("슬라이스 완료")
 
 
