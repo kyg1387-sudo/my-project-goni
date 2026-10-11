@@ -115,7 +115,7 @@ def main():
         problems.append(f"전체 {tc(total)} < 9:40 — PHASE 2로 넘어가지 말고 대본(이야기 비트) 보강")
     hook_speech = sum(x["dur"] for x in hook)
     outro_speech = sum(x["dur"] for x in outro)
-    md = ["# 『明日から来なくていい』 PHASE 1 Lock 타임라인", "",
+    md = ["# 『明日から来なくていい』 PHASE 1 Lock 타임라인 — 🔒 승인(2026-10-11 고니감독님)", "",
           f"> 실측 음성(Typecast {len(lines)}줄, 앞뒤 무음 제외 발화 구간) + 규칙: 대사 사이 {GAP_SAME}/{GAP_CHANGE}초 · 대사 끝→컷 {TAIL_D}초 · "
           f"내레이션 끝→컷 {TAIL_N}초 · 독립 무언 컷 {INSERT}초 · 광고 여운 {AD_TAIL}초 · 후크 {HOOK:.0f}초 · 아웃트로 {OUTRO:.0f}초.",
           "> 생성기: `build_lock.py` (무료). **PHASE 3 샷 리스트는 이 타임코드를 기준으로 한다.**", "",
