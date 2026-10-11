@@ -6,7 +6,7 @@
 
 ## 1. 현재 위치
 
-**PHASE 1 진행 중.** 대본 v1.1 동결(82줄) → 오디션 26샘플·캐스트 확정 → 본녹음 81줄(언어 검사 통과, 6줄 재녹음) → 실측 Lock 9:38.6으로 기준 미달 → **보강안 10줄(`productions/ashita-kara-ja/13_Lock보강안.md`) 고니감독님 승인 대기**. 달러 지출 0(Typecast 크레딧만).
+**PHASE 1 완료, Lock 승인 대기.** 대본 v1.2(92줄, 보강 P1~P10) 동결 → 본녹음 81줄(`assets/auditions/ashita-tts/line###`) + 보강 10줄(`assets/auditions/ashita-tts-add/P##`) 전부 언어 검사 통과 → 실측 Lock 10:29.7·광고 3:26.3/6:52.8 ✅. 다음: Lock 승인 → PHASE 2 시트 14장(`scripts/portraits/ashita-cast.json`, 약 0.56달러) 비용 승인 후 `generate-video.yml portraits_spec=ashita-cast`. 달러 지출 0.
 브랜치 `claude/happy-volta-9w5oxb`. 최신 제작 도구·워크플로·규격서는 `claude/sweet-galileo-xbd5iu`(버들잎·EP4 일본판 제작 브랜치)에서 **파일 단위로** 가져왔다(제9장 6항, 미디어·글꼴 제외).
 
 ## 2. 이전 작업과의 관계 (중요)
