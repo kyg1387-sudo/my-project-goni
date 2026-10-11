@@ -14,6 +14,7 @@ import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, "..", ".."))
 AUDIO = os.path.join(REPO, "assets", "auditions", "ashita-tts")
+AUDIO_ADD = os.path.join(REPO, "assets", "auditions", "ashita-tts-add")  # v1.2 보강 P1~P10
 GAP_SAME, GAP_CHANGE, TAIL_D, TAIL_N, INSERT, PER_CUT, AD_TAIL = 0.6, 0.8, 1.8, 1.0, 2.5, 3.5, 1.0
 HOOK, OUTRO = 20.0, 50.0
 AD_AFTER = {"NA11": ("1차 광고", 210.0), "NA16": ("2차 광고", 420.0)}
@@ -44,10 +45,13 @@ def load_lines():
         m = re.match(r"^(H\d|S\d+b?|OUT-\d)\b", l)
         if m:
             scene = m.group(1)
-        m = re.match(r"^\s+((?:NA|L|OUT)\d+)\s*([^\s:「(]*)[^「\n]*「", l)
+        m = re.match(r"^\s+((?:NA|L|OUT|P)\d+)\s*([^\s:「(]*)[^「\n]*「", l)
         if m and m.group(1) != "OUT3":
             tag = m.group(1)
-            spk = "NA" if tag.startswith("NA") else "OUT" if tag.startswith("OUT") else m.group(2)
+            if tag.startswith("NA") or (tag.startswith("P") and not m.group(2)):
+                spk = "NA"
+            else:
+                spk = "OUT" if tag.startswith("OUT") else m.group(2)
             out.append({"tag": tag, "spk": spk, "scene": scene})
     return out
 
@@ -64,9 +68,15 @@ def tc(x):
 
 def build():
     lines, cuts = load_lines(), load_cuts()
-    for n, x in enumerate(lines, 1):
-        x["id"] = f"line{n:03d}"
-        a, b = speech_span(os.path.join(AUDIO, x["id"] + ".mp3"))
+    n = 0
+    for x in lines:
+        if x["tag"].startswith("P"):
+            x["id"] = f"P{int(x['tag'][1:]):02d}"
+            a, b = speech_span(os.path.join(AUDIO_ADD, x["id"] + ".mp3"))
+        else:
+            n += 1
+            x["id"] = f"line{n:03d}"
+            a, b = speech_span(os.path.join(AUDIO, x["id"] + ".mp3"))
         x["lead"], x["dur"] = a, b - a
     body = [x for x in lines if x["scene"].startswith("S")]
     scenes = collections.OrderedDict()

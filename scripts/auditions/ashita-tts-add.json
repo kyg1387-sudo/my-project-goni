@@ -1,0 +1,107 @@
+{
+ "_설명": "『明日から来なくていい』 PHASE 1 Lock 보강 녹음(P1~P10) 10줄 (확정 캐스트, Typecast ssfm-v30 jpn). 음성 입력만 가나 변형, 자막은 한자 유지. line### = 시간 순서. OUT3(예고)은 보류, 후크 H1은 L22 재사용. TTS 구독 크레딧만 사용. 생성: productions/ashita-kara-ja/build_tts_spec.py",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "P01",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "叔父さん？ 例の件、にかげつ前倒しで、さんおくは浮きますよ",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "P02",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "……ええ。国の補助金も、満額で引っ張ってきますから",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "P03",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "負け惜しみですか？ お疲れさまでした、元社員さん",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.9,
+   "tempo": 1.0
+  },
+  {
+   "id": "P04",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "雨の中、佐藤が向かったのは、自宅ではなかった。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "P05",
+   "model": "typecast-direct",
+   "voice": "tc_673eb45cdc1073aef51e6b90",
+   "language": "jpn",
+   "text": "試運転は予定通り、なのかごだ。役所への書類は、私が通しておく",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "P06",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "さすが叔父さん。佐藤の名前なんて、書類から全部消しときますよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "P07",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "……佐藤さん。約束は、守りますから",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 0.9
+  },
+  {
+   "id": "P08",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "再起動しろ！ 何度でもだ！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.1
+  },
+  {
+   "id": "P09",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "……ダメです。どの画面も、佐藤さんの認証を求めてきます",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "P10",
+   "model": "typecast-direct",
+   "voice": "tc_673eb45cdc1073aef51e6b90",
+   "language": "jpn",
+   "text": "法務部か！ 佐藤との契約書を、今すぐ持ってこい！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.1,
+   "tempo": 1.05
+  }
+ ]
+}

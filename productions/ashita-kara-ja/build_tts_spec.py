@@ -66,6 +66,12 @@ TONE = {
     "NA25": ("normal", 1.0, 0.95, "여운"), "NA26": ("normal", 1.0, 0.9, "가장 느리게, 마무리"),
     "OUT1": ("happy", 1.0, 1.0, "밝게 감사"), "OUT2": ("happy", 1.0, 1.0, "질문은 또렷이"),
     "OUT4": ("happy", 1.0, 1.0, "손 흔들며 인사"),
+    # v1.2 Lock 보강(13_Lock보강안.md) — 별도 스펙 ashita-tts-add로 녹음해 기존 line### 번호를 유지
+    "P1": ("toneup", 1.0, 1.05, "득의양양한 통화"), "P2": ("happy", 0.8, 1.0, "능글맞게"),
+    "P3": ("happy", 0.9, 1.0, "비꼬는 웃음, 「元」에 힘"), "P4": ("tonedown", 1.0, 0.95, "궁금증 장치"),
+    "P5": ("tonedown", 1.0, 0.95, "느긋한 확정"), "P6": ("happy", 1.0, 1.05, "아첨 섞인 들뜸 — 복선"),
+    "P7": ("sad", 0.8, 0.9, "혼잣말 다짐"), "P8": ("angry", 1.2, 1.1, "패닉 고함"),
+    "P9": ("sad", 1.0, 1.0, "절망적 보고"), "P10": ("angry", 1.1, 1.05, "다급한 호통"),
 }
 
 KANA = [("大東", "だいとう"), ("佐藤誠", "佐藤まこと"), ("田中翔", "たなかしょう"), ("翔", "しょう"),
@@ -82,6 +88,9 @@ TAG_KANA = {
     "L07": [("二か月", "にかげつ")],                    # 「二月」로 들림
     "NA9": [("判子", "はんこ")],                       # 「ハンチ」로 들림
     "L47": [("悪かった", "わるかった")],                 # 「おるかった」로 들림(울음 강도 1.3 → 1.1)
+    "P1": [("二か月", "にかげつ"), ("三億", "さんおく")],   # 본녹음과 같은 예방 보정
+    "P3": [("元社員", "もと社員")],                     # 「げん」 오독 예방
+    "P5": [("七日後", "なのかご")],                      # 「なのかあと」 오독 예방
 }
 
 
@@ -101,17 +110,25 @@ def load():
     t = open(os.path.join(HERE, "00_script_ja.md"), encoding="utf-8").read()
     body = t.split("## 4. 대본")[1].split("## 4-1.")[0]
     out = []
-    for m in re.finditer(r"^\s+((?:NA|L|OUT)\d+)\s*([^\s:「(]*)[^「\n]*「(.+?)」", body, re.M):
+    for m in re.finditer(r"^\s+((?:NA|L|OUT|P)\d+)\s*([^\s:「(]*)[^「\n]*「(.+?)」", body, re.M):
         tag, spk, text = m.group(1), m.group(2), m.group(3)
         if tag == "OUT3":
             continue  # 다음 작품 예고 — 문안 보류
-        role = "NA" if tag.startswith("NA") else "OUT" if tag.startswith("OUT") else spk
+        if tag.startswith("NA") or (tag.startswith("P") and not spk):
+            role = "NA"
+        else:
+            role = "OUT" if tag.startswith("OUT") else spk
         out.append((tag, role, text))
     return out
 
 
 def main():
-    lines = load()
+    allx = load()
+    write_spec([x for x in allx if not x[0].startswith("P")], "ashita-tts", "line", allx)
+    write_spec([x for x in allx if x[0].startswith("P")], "ashita-tts-add", "P", None)
+
+
+def write_spec(lines, spec_name, prefix, table_lines):
     missing = [tag for tag, _, _ in lines if tag not in TONE]
     if missing:
         raise SystemExit(f"톤 지정 없는 줄: {missing}")
@@ -119,24 +136,42 @@ def main():
     for n, (tag, role, text) in enumerate(lines, 1):
         emo, inten, tempo, note = TONE[tag]
         name, vid = VOICE[role]
-        tests.append({"id": f"line{n:03d}", "model": "typecast-direct", "voice": vid, "language": "jpn",
+        fid = f"line{n:03d}" if prefix == "line" else f"P{int(tag[1:]):02d}"
+        tests.append({"id": fid, "model": "typecast-direct", "voice": vid, "language": "jpn",
                       "text": kana_tag(tag, text), "emotion_preset": emo, "emotion_intensity": inten, "tempo": tempo})
-        rows.append(f"| line{n:03d} | {tag} | {'내레이터' if role == 'NA' else '진행자' if role == 'OUT' else role} | {name} | "
+        rows.append(f"| {fid} | {tag} | {'내레이터' if role == 'NA' else '진행자' if role == 'OUT' else role} | {name} | "
                     f"{text} | {emo} | {inten} | {tempo} | {note} |")
-    spec = {"_설명": f"『明日から来なくていい』 PHASE 1 본녹음 {len(tests)}줄 (확정 캐스트, Typecast ssfm-v30 jpn). "
+    if not tests:
+        return
+    spec = {"_설명": f"『明日から来なくていい』 PHASE 1 {'본녹음' if prefix == 'line' else 'Lock 보강 녹음(P1~P10)'} {len(tests)}줄 (확정 캐스트, Typecast ssfm-v30 jpn). "
                     "음성 입력만 가나 변형, 자막은 한자 유지. line### = 시간 순서. OUT3(예고)은 보류, 후크 H1은 L22 재사용. "
                     "TTS 구독 크레딧만 사용. 생성: productions/ashita-kara-ja/build_tts_spec.py",
             "tc_model": "ssfm-v30", "language": "jpn", "tests": tests}
-    with open(os.path.join(REPO, "scripts", "auditions", "ashita-tts.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(REPO, "scripts", "auditions", f"{spec_name}.json"), "w", encoding="utf-8") as f:
         json.dump(spec, f, ensure_ascii=False, indent=1)
+    if prefix != "line":
+        print(f"보강 {len(tests)}줄 → scripts/auditions/{spec_name}.json")
+        ADD_ROWS[:] = rows
+        return
     md = ["# 『明日から来なくていい』 줄별 톤 연출표 (규칙 8-2)", "",
           f"> 🔒 동결 대본 기준 본녹음 {len(tests)}줄. 지정 없는 줄 0개. 생성기: `build_tts_spec.py` (대본·캐스트가 바뀌면 다시 실행).",
           "> 감정 프리셋은 Typecast ssfm-v30(normal·happy·sad·angry·tonedown·toneup·whisper). 장면 키프레임 표정도 같은 감정으로 맞춘다(규칙 7).",
           "> 가나 변형(음성 입력만): " + " · ".join(f"{a}→{b}" for a, b in KANA if b and a not in "“”『』"), "",
           "| 녹음 | 대본 | 화자 | 목소리 | 일본어 | 감정 | 강도 | 템포 | 연기 메모 |", "|---|---|---|---|---|---|---|---|---|"] + rows
+    TABLE_MD[:] = md
+    print(f"본녹음 {len(tests)}줄 → scripts/auditions/{spec_name}.json")
+
+
+ADD_ROWS, TABLE_MD = [], []
+
+
+def finish():
+    md = TABLE_MD + ["", "## v1.2 Lock 보강 녹음 (P1~P10, `ashita-tts-add`)", "",
+                     "| 녹음 | 대본 | 화자 | 목소리 | 일본어 | 감정 | 강도 | 템포 | 연기 메모 |", "|---|---|---|---|---|---|---|---|---|"] + ADD_ROWS
     open(os.path.join(HERE, "05_톤연출표.md"), "w", encoding="utf-8").write("\n".join(md) + "\n")
-    print(f"본녹음 {len(tests)}줄 → scripts/auditions/ashita-tts.json, 05_톤연출표.md")
+    print("05_톤연출표.md 갱신")
 
 
 if __name__ == "__main__":
     main()
+    finish()
