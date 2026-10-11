@@ -112,9 +112,12 @@ COMPOSITION.update({
 })
 # A단계 재생성(2026-10-11) 교훈: ⑧ 조명 고정 문장만으로는 낮 로케이션 참조·낮 배경의 얼굴 참조를 못 이김(S24c 2장 모두 낮)
 # → 암전 장면은 낮 로케이션 참조를 빼고, 같은 장면의 승인 컷(시범 S24d)을 조명·공간 참조로 쓴다. 얼굴은 시트 셀로만.
-LIGHT_REF = {"S24": "assets/portraits/ashita-kf-pilot/S24d-fixed.png"}  # 장면 → 같은 장면 승인 컷(조명·공간 참조)
+# ⑮ 조명 참조 컷 속 인물(山本)이 옮겨 붙음(S24e 2장·S24b 1장이 山本로) → 조명 참조는 인물을 잘라낸 판(S24-light: S24d 좌·우만 이어 붙임)
+LIGHT_REF = {"S24": "assets/portraits/ashita-kf-pilot/S24-light.png"}  # 장면 → 같은 장면 승인 컷의 무인 조명·공간 참조
 DAY_LOCS = ("loc-control-day", "loc-control-angles-day", "loc-control-key", "loc-control-angles-key")
 # ⑬ 소품만 참조한 인서트가 엉뚱한 장소(사무실)에 놓임(S17be) → 같은 장면 로케이션 참조 추가
+COMPOSITION["S24e"] = ("Side medium of Takahashi ONLY (55, very short grey hair, NO glasses, black overcoat, stern) — NOT a bald man, "
+                       "NOT wearing glasses; he turns his head slightly toward someone off screen-left, mouth hidden by the angle, hands down. " + FULL)
 EXTRA_REFS = {"S17be": ["assets/portraits/ashita-cast/cells/loc-misc-key2.png"]}
 COMPOSITION["S17be"] = ("Extreme close-up of the large black lever on the front of the old grey mechanical breaker cabinet, mounted on the "
                         "bare concrete wall of the small substation room lit by one bare bulb; NO desks, NO office. " + FULL)
