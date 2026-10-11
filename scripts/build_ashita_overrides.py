@@ -24,6 +24,9 @@ KF = os.path.join(ROOT, "assets", "portraits", "ashita-kara-keyframes")
 OUT = os.path.join(ROOT, "assets", "video-overrides", "ashita-kara")
 FF = shutil.which("ffmpeg") or __import__("imageio_ffmpeg").get_ffmpeg_exe()
 W, H, FPS = 1280, 720, 24
+# i2v 검수 불합격 → 무료 정지 푸시인 폴백(사람이 걷지 않는 컷만, 규격 제6장 3)
+# S05a: 田中가 카메라 쪽으로 돌아봐 화자 입 노출 / S24b: 역광 실루엣이 밝아져 화자 얼굴 노출(대사 8.4초)
+I2V_FALLBACK = {"S05a", "S24b"}
 
 
 def run(args):
@@ -73,8 +76,10 @@ def main(only=None):
         out = os.path.join(OUT, f"scene{i:02d}.mp4")
         sec = s["assembled_s"] + 0.5
         tier = s["tier"]
-        if tier in ("pro", "lite") or (only and s["id"] not in only):
+        if (tier in ("pro", "lite") and s["id"] not in I2V_FALLBACK) or (only and s["id"] not in only):
             continue
+        if s["id"] in I2V_FALLBACK:
+            cam(os.path.join(KF, f"{s['id']}-1.png"), out, sec, "push"); made += 1; continue
         if tier == "card":
             black(out, sec); made += 1; continue
         src_id = s["kind"].split(":", 1)[1] if tier == "reuse" else s["id"]
