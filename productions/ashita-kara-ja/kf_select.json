@@ -13,7 +13,7 @@
  "S09b": "assets/portraits/ashita-kf-r1/S09b-2.png",
  "S11ca": "assets/portraits/ashita-kf-r1/S11ca-2.png",
  "S12e": "assets/portraits/ashita-kf-r1/S12e-2.png",
- "S13b": "assets/portraits/ashita-kf-r1/S13b-2.png",
+ "S13b": "assets/portraits/ashita-kf-r4/S13b-2.png",
  "S15b": "assets/portraits/ashita-kf-r1/S15b-2.png",
  "S16b": "assets/portraits/ashita-kf-r1/S16b-1.png",
  "S17be": "assets/portraits/ashita-kf-r1/S17be-2.png",
@@ -43,5 +43,12 @@
  "S18f": "assets/portraits/ashita-kf-r3/S18f-2.png",
  "S22a": "assets/portraits/ashita-kf-r3/S22a-2.png",
  "S22b": "assets/portraits/ashita-kf-r3/S22b-2.png",
- "S28a": "assets/portraits/ashita-kf-r3/S28a-1.png"
+ "S28a": "assets/portraits/ashita-kf-r3/S28a-1.png",
+ "S05a": "assets/portraits/ashita-kf-r4/S05a-2.png",
+ "S05b": "assets/portraits/ashita-kf-r4/S05b-1.png",
+ "S11c": "assets/portraits/ashita-kf-r4/S11c-1.png",
+ "S14e": "assets/portraits/ashita-kf-r4/S14e-2.png",
+ "S17d": "assets/portraits/ashita-kf-r4/S17d-2.png",
+ "S17bd": "assets/portraits/ashita-kf-r4/S17bd-1.png",
+ "S19c": "assets/portraits/ashita-kf-r4/S19c-2.png"
 }
