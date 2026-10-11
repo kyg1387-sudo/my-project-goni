@@ -6,7 +6,7 @@
 
 ## 1. 현재 위치
 
-**PHASE 1 대본 v1 작성 완료, 고니감독님 승인(동결) 대기.** 유료·크레딧 실행은 아직 0회.
+**PHASE 1 진행 중.** 대본 v1.1 동결(82줄) → 오디션 26샘플·캐스트 확정 → 본녹음 81줄(언어 검사 통과, 6줄 재녹음) → 실측 Lock 9:38.6으로 기준 미달 → **보강안 10줄(`productions/ashita-kara-ja/13_Lock보강안.md`) 고니감독님 승인 대기**. 달러 지출 0(Typecast 크레딧만).
 브랜치 `claude/happy-volta-9w5oxb`. 최신 제작 도구·워크플로·규격서는 `claude/sweet-galileo-xbd5iu`(버들잎·EP4 일본판 제작 브랜치)에서 **파일 단위로** 가져왔다(제9장 6항, 미디어·글꼴 제외).
 
 ## 2. 이전 작업과의 관계 (중요)
@@ -14,7 +14,7 @@
 이 브랜치의 첫 작업(2026-10-11 오전)은 옛 main 기준 규칙으로 만든 텍스트→영상 자산(장면 72개·10초 블록·MiniMax·sync-lipsync)이었다.
 최신 규격서와 충돌(텍스트→영상 금지, OmniHuman만 사용, 제0장 구간 공식)해서 **전부 삭제**했고, 그때 만든 일본어 번역은 v1 대본의 바탕으로만 썼다.
 
-## 3. 다음 단계
+## 3. 다음 단계 (보강안 승인 후: 대본 10줄 삽입·v1.2 표시 → 추가 10줄은 별도 스펙으로 녹음해 기존 번호 유지 → `remap_tts_cache.py`로 시간 순 번호 통합 → `build_lock.py` 재계산 → Lock 승인 → 아래 4번부터)
 
 1. 고니감독님 대본 승인 → `00_script_ja.md` 상태를 🔒 동결로 바꾼다(이후 문장·쉼표 수정 금지).
 2. 오디션: `generate-video.yml` 실행, 입력 `audition_spec=ashita-voices` (Typecast 크레딧, 달러 0). 샘플은 `assets/auditions/ashita-voices/`에 커밋된다 → `qa_audio_dir=assets/auditions/ashita-voices, qa_lang=ja, qa_model=large-v3`로 언어 검사(무료) → 고니감독님 청취로 배역 확정 → `04_목소리추천.md`.
