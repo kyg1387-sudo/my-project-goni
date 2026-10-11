@@ -1,0 +1,817 @@
+{
+ "_설명": "『明日から来なくていい』 PHASE 1 본녹음 81줄 (확정 캐스트, Typecast ssfm-v30 jpn). 음성 입력만 가나 변형, 자막은 한자 유지. line### = 시간 순서. OUT3(예고)은 보류, 후크 H1은 L22 재사용. TTS 구독 크레딧만 사용. 생성: productions/ashita-kara-ja/build_tts_spec.py",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "line001",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "彼が持ち去ったのは、段ボール箱ひとつ。……の、はずだった。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line002",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "東京郊外の中堅エンジニアリング企業、だいとうテクノロジー。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line003",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "この会社はいま、スマートシティ事業の心臓部となる変電設備、総額ひゃくおくえんの工事を任されようとしていた。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line004",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "その現場を、三十年支えてきた男がいる。佐藤まこと、四十八歳。だいいっしゅ電気主任技術者。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line005",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "出世には目もくれず、役職の打診を断り続けてきた、現場一筋の平社員だった。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line006",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "佐藤さん、まだ残ってたんですか？ もう十一時ですよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 1.0
+  },
+  {
+   "id": "line007",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "図面は嘘をつかない。だが、現場はたまに嘘をつく",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line008",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "だから、最後は自分の目で確かめるんだ",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line009",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "……勉強になります",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line010",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "ところが、この工事には、ひとつだけ異物が紛れ込んでいた。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line011",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "山本専務の甥、たなかしょう、二十八歳。現場経験ゼロのまま総括責任者に送り込まれた、いわゆる落下傘だ。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line012",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "どうも、今日から総括の田中です。佐藤さん、でしたっけ？",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "line013",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "安全規格だの監理承認だの、正直、古いんですよね。工期、二か月前倒しでいきますから",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "line014",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "二か月……？ 検査工程を削れば、できなくはない。だが、人が死ぬぞ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line015",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "はいはい、出ました。老害の説教",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line016",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "田中の狙いは、ただ一つ。工期を縮めて浮いた予算と、国の補助金、そして自分の成果報酬だった。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line017",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "もりさんだっけ。この保護継電器、ワンランク下の型番に替えといて",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "line018",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "え……でも、佐藤さんの承認が……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 0.95
+  },
+  {
+   "id": "line019",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "承認？ 責任者は、俺。判子はお前が押せ。浮いた分はお前の手柄、何かあればお前の責任。……わかるよな？",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line020",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "過電流を一瞬で断ち切る保護継電器。雷から設備を守るサージ保護装置。田中は、その等級を無断で引き下げた。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line021",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "浮いた金は、およそさんおくえん。その書類には、もりの判子が押されていた。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line022",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "田中さん。継電器の型番が変わっている。これでは過負荷の瞬間に、遮断が間に合わない",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line023",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "数字の上では問題ないって、メーカーも言ってますけど？",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "line024",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "メーカーは、現場を知らない。変圧器が、吹き飛ぶぞ",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.8,
+   "tempo": 0.95
+  },
+  {
+   "id": "line025",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "だったら、あなたが責任取ります？ 取れないでしょ。ヒラなんだから",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line026",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "佐藤は、正式な是正勧告書を、さんど、役員会に提出した。だが返ってきたのは、一枚の呼び出し状だった。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line027",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "そして一週間後。役員会議室で、誰も思いもよらないことが起きたのです……",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line028",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "試運転まで、あとなのか。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line029",
+   "model": "typecast-direct",
+   "voice": "tc_673eb45cdc1073aef51e6b90",
+   "language": "jpn",
+   "text": "佐藤くん。勧告書を、さんども出したそうだね",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line030",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "はい。この変更のまま試運転を強行すれば、変圧器の爆発で、大規模停電と人身事故が起きます",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line031",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "電気主任技術者として、私は、絶対に承認しません",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.7,
+   "tempo": 0.9
+  },
+  {
+   "id": "line032",
+   "model": "typecast-direct",
+   "voice": "tc_673eb45cdc1073aef51e6b90",
+   "language": "jpn",
+   "text": "君はいつから、この会社の経営方針を決める立場になったのかね？",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line033",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "うるさいんだよ！ あんたがいなきゃ、この工事ができないとでも思ってんのか？",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.1
+  },
+  {
+   "id": "line034",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "今すぐ、俺の前から消えろ！ あんたがいなくても、この会社は回るんだよ！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.1
+  },
+  {
+   "id": "line035",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "今日付けでクビだ。明日から、会社に来るな！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line036",
+   "model": "typecast-direct",
+   "voice": "tc_673eb45cdc1073aef51e6b90",
+   "language": "jpn",
+   "text": "退職届は、こちらで用意しておいた。若くて素直な代わりなど、いくらでもいる",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line037",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "……分かりました。では、その言葉。忘れないでください",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line038",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "佐藤さん……私のせいです。私が、判子を押したから……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.2,
+   "tempo": 0.9
+  },
+  {
+   "id": "line039",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "君のせいじゃない。……もりくん。ひとつだけ、頼みがある",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line040",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "変電室の、古い機械式の遮断器。あれだけは、絶対に外させるな",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line041",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "……はい。約束します",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.9,
+   "tempo": 0.9
+  },
+  {
+   "id": "line042",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "三十年、会社を支えてきた男が、段ボール箱ひとつで追い出された。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line043",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "皆さんなら、この仕打ちを、許せますか？",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line044",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "高橋ほんぶちょう、佐藤です。ええ……たった今、クビになりました",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line045",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "予定通り、例の契約を、終わらせてください",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line046",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "いやあ、叔父さん。これで工期も予算も、思いのままですよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "line047",
+   "model": "typecast-direct",
+   "voice": "tc_673eb45cdc1073aef51e6b90",
+   "language": "jpn",
+   "text": "よくやった、しょう。来月の役員会で、お前を取締役に推しておこう",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 0.95
+  },
+  {
+   "id": "line048",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "もりさん。その古い遮断器、邪魔だから撤去しといて",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "line049",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "……これは、佐藤さんが残した安全装置です。外せません",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line050",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "……勝手にしろ。どうせ、ただの飾りだ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line051",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "翌朝。佐藤の後任に指名されたのは、入社二年目のもりだった。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line052",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "田中さん……！ 制御システムが、ログインを拒否しています！",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.1
+  },
+  {
+   "id": "line053",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "はあ？ 佐藤のパスワードを使えばいいだろ！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.0,
+   "tempo": 1.1
+  },
+  {
+   "id": "line054",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "使いました！ でも……権限失効って……",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.1
+  },
+  {
+   "id": "line055",
+   "model": "typecast-direct",
+   "voice": "tc_673eb45cdc1073aef51e6b90",
+   "language": "jpn",
+   "text": "……特許？ 使用契約？ そんな話、私は聞いていないぞ……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line056",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "佐藤が持ち去ったもの。その正体を知った時、彼らは、本当の意味で震え上がることになるのです……",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line057",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "この設備を動かす、ただ一つの制御プログラム。それは佐藤が、入社する前から一人で作り上げてきたものだった。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line058",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "会社はそれを、佐藤個人との使用契約で借りていたにすぎない。条件は、ただ一つ。佐藤が、現場の責任者であること。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line059",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "さらに、国に届け出た電気主任技術者もまた、佐藤だった。彼を解雇したその瞬間、この設備は、法律上、いちびょうたりとも動かせなくなっていたのだ。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line060",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "田中さん、主任技術者がいないまま試運転するのは、法律違反です！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.8,
+   "tempo": 1.05
+  },
+  {
+   "id": "line061",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "……構わない。押せ。止まるわけがない",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line062",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "試運転のスイッチが入った、その瞬間。変圧器から巨大な火花が散り、現場のすべての電気が消えた。",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "line063",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "だが、けが人は一人も出なかった。もりが守り抜いたあの古い遮断器が、最後の一瞬で、作業員たちの命を救ったのだ。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line064",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "だいとうテクノロジーの皆さん。経済産業省との、合同監査です",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line065",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "この事業の核心技術は、本日付で、使用契約がすべて解除されました。佐藤顧問の、正式な手続きでね",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line066",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "主任技術者なしの試運転。等級の改ざん。補助金の不正請求。……言い逃れは、できませんよ",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.8,
+   "tempo": 0.95
+  },
+  {
+   "id": "line067",
+   "model": "typecast-direct",
+   "voice": "tc_673eb45cdc1073aef51e6b90",
+   "language": "jpn",
+   "text": "た、高橋ほんぶちょう……これは、何かの間違いで……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line068",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "間違い？ 間違えたのは、あなた方が誰を追い出したか、ですよ",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.9,
+   "tempo": 0.95
+  },
+  {
+   "id": "line069",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "佐藤さん……お願いだ、助けてくれ……！ 俺が、悪かった……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.3,
+   "tempo": 0.9
+  },
+  {
+   "id": "line070",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "明日から会社に来るなって言ったのは、君たちの方だろう？",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line071",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "さあ。ここからが、本当の地獄だ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line072",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "だいとうテクノロジーは、補助金の全額返還と、ひゃくおくえんの損害賠償を求められ、株価は一夜で暴落した。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line073",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "山本専務と田中は、懲戒解雇。電気事業法違反と詐欺の疑いで、刑事告訴された。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line074",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "さらに田中個人にも、浮かせたさんおくえんをめぐって、会社からの損害賠償請求が突きつけられた。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line075",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "佐藤さん。私も、ここで働かせてください",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line076",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "……約束を守った技術者を、断る理由はないさ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 0.9
+  },
+  {
+   "id": "line077",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "佐藤が最後まで守ろうとしたのは、会社ではなかった。そこで働く、人の命だった。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line078",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "誠実に積み上げた技術は、誰にも奪えない。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line079",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "最後までご覧いただき、ありがとうございました。スカッとした方は、ぜひチャンネル登録と高評価をお願いします",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line080",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "あなたの職場にも、田中のような上司はいますか？ コメントで教えてください",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line081",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "それでは、また次回お会いしましょう",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  }
+ ]
+}
