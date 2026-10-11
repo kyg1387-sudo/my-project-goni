@@ -38,6 +38,8 @@ LINES = {
     "pad3": "それでは、また次回お会いしましょう",
 }
 FONT = "Noto Sans CJK JP"
+# 고니감독님 지적(9:58): 허리 위 컷 왼쪽 가장자리로 몸과 떨어진 손이 지나감(OmniHuman 잔상) → 왼쪽 20%를 잘라 확대(x0, y0, 폭 비율)
+CROP = {"omni-out2": (0.20, 0.04, 0.80)}
 
 
 def run(args):
@@ -66,7 +68,11 @@ def main():
     hosts = []
     for vid, _ in HOSTS:
         p = os.path.join(tmp, f"{vid}.mp4")
-        norm(os.path.join(A, f"{vid}.mp4"), p, extra=f",tpad=stop_mode=clone:stop_duration={HOLD}"); hosts.append(p)
+        pre = ""
+        if vid in CROP:
+            x0, y0, k = CROP[vid]
+            pre = f",crop=iw*{k}:ih*{k}:iw*{x0}:ih*{y0},scale={W}:{H}:flags=lanczos"
+        norm(os.path.join(A, f"{vid}.mp4"), p, extra=f"{pre},tpad=stop_mode=clone:stop_duration={HOLD}"); hosts.append(p)
     wave = os.path.join(tmp, "wave.mp4")
     ov.cam(WAVE_KF, wave, 2.6 + XF, "push")
     clips = parts + hosts + [wave]
