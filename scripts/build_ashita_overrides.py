@@ -9,6 +9,7 @@ i2v 컷(pro·lite)의 편집 효과(craneup·handheld·dutch5)는 조립 후 마
 키프레임은 assets/portraits/ashita-kara-keyframes/(assemble_ashita_keyframes.py). 1280x720 24fps(concat 규격).
 사용법: python3 scripts/build_ashita_overrides.py            # 전부
         python3 scripts/build_ashita_overrides.py replace_reuse <clips_dir>
+        python3 scripts/build_ashita_overrides.py only S05c,S09c      # 키프레임 교체한 컷만 다시
 """
 import json
 import math
@@ -63,7 +64,7 @@ def black(out, sec):
          "-frames:v", str(n), "-c:v", "libx264", "-crf", "26", "-an", out])
 
 
-def main():
+def main(only=None):
     sb = json.load(open(SB, encoding="utf-8"))["scenes"]
     ids = {s["id"]: i + 1 for i, s in enumerate(sb)}
     os.makedirs(OUT, exist_ok=True)
@@ -72,7 +73,7 @@ def main():
         out = os.path.join(OUT, f"scene{i:02d}.mp4")
         sec = s["assembled_s"] + 0.5
         tier = s["tier"]
-        if tier in ("pro", "lite"):
+        if tier in ("pro", "lite") or (only and s["id"] not in only):
             continue
         if tier == "card":
             black(out, sec); made += 1; continue
@@ -90,7 +91,8 @@ def main():
         else:
             cam(src, out, sec, s["edit_fx"])
         made += 1
-    json.dump(pending, open(os.path.join(OUT, "_reuse_pending.json"), "w"), ensure_ascii=False)
+    if not only:
+        json.dump(pending, open(os.path.join(OUT, "_reuse_pending.json"), "w"), ensure_ascii=False)
     print(f"교체 클립 {made}개 → {OUT}\n생성 후 교체할 재사용 컷: {pending}")
     if miss:
         sys.exit(f"키프레임 없음: {miss}")
@@ -118,5 +120,7 @@ def replace_reuse(clips):
 if __name__ == "__main__":
     if len(sys.argv) > 2 and sys.argv[1] == "replace_reuse":
         replace_reuse(sys.argv[2])
+    elif len(sys.argv) > 2 and sys.argv[1] == "only":
+        main(set(sys.argv[2].split(",")))
     else:
         main()

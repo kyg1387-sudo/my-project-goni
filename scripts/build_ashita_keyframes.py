@@ -160,6 +160,20 @@ MOUTH_HIDE = {
     "S28c": ("Side close-up of Sato raising a white coffee cup to his lips so the cup COVERS his mouth, a warm restrained smile in his eyes; "
              "golden morning window light."),
 }
+# ⑰ r3에서도 8컷은 측면·돌아보는 얼굴로 나옴(얼굴 크롭·정면 셀 참조가 얼굴을 끌어냄) → 인물 참조를 시트의 「뒷모습 전신」 칸으로
+#    바꾸고 얼굴 크롭을 빼며, 가림 방법을 모두 뒷모습으로 통일
+BACK_ONLY = {"S05a": "tanaka", "S05b": "tanaka", "S11c": "sato", "S13b": "tanaka", "S14e": "mori", "S17d": "tanaka",
+             "S17bd": "mori", "S19c": "yamamoto"}  # 컷 → 뒷모습으로 바꿀 화자
+MOUTH_HIDE.update({
+    "S05a": f"Camera directly behind Tanaka: Tanaka {BACK}, perched on the corner of the desk, filling the left foreground; Sato sits beyond, facing the camera.",
+    "S05b": f"Camera directly behind Tanaka: Tanaka {BACK}, sitting on the desk corner, one hand raising a white paper cup; the bright office beyond.",
+    "S11c": f"Camera directly behind Sato: Sato {BACK}, sitting upright at the long black table, his hand flat on a blank document; the far end of the table empty.",
+    "S13b": f"Camera directly behind Tanaka: Tanaka {BACK}, standing with his arms crossed at the meeting table, head tilted.",
+    "S14e": f"Camera directly behind Mori: Mori {BACK}, standing by the lamp-lit desk at night, her shoulders trembling slightly, nodding.",
+    "S17d": f"Camera directly behind Tanaka: Tanaka {BACK}, holding up a champagne glass toward the night city window in the dim gold lounge.",
+    "S17bd": f"Camera directly behind Mori: Mori {BACK}, her hand resting flat on the grey breaker cabinet in the bare concrete room.",
+    "S19c": f"Camera directly behind Yamamoto: Yamamoto {BACK} (bald crown), frozen with a telephone receiver at his ear, the dark meeting room beyond.",
+})
 for _k, _v in MOUTH_HIDE.items():
     COMPOSITION[_k] = _v + " " + NO_MOUTH + " " + FULL
 EXTRA_REFS = {"S17be": ["assets/portraits/ashita-cast/cells/loc-misc-key2.png"]}
@@ -207,6 +221,17 @@ def notes(refs):
 
 def build(sc, face_refs):
     refs = list(face_refs) + list(sc["refs"]) + EXTRA_REFS.get(sc["id"], [])
+    if sc["id"] in BACK_ONLY:  # 뒷모습 전용: 얼굴 크롭 제거, 화자 셀 → <화자>-full-back
+        out = []
+        for r in refs:
+            if r.startswith(FACE_DIR):
+                continue
+            k, _ = who_of(os.path.basename(r))
+            if k == BACK_ONLY[sc["id"]]:
+                r = os.path.join(os.path.dirname(r), f"{k}-full-back.png")
+            if r not in out:
+                out.append(r)
+        refs = out
     lr = LIGHT_REF.get(sc["scene"])
     if lr and sc["id"] != "S24d" and sc.get("lighting") in ("red_door", "backlit"):
         # 낮 로케이션·낮 배경 승인 얼굴(高橋 S24c-1) 참조를 빼고 같은 장면 조명 참조로 교체
