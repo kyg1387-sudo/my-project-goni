@@ -69,6 +69,10 @@ LIGHT_NOTE = {  # 장면 조명 고정 — 로케이션 참조의 낮 조명을 
                  "lights off; lit only by a red emergency lamp and a strong white backlight from the open doorway behind; deep shadows."),
     "red": ("LIGHTING OVERRIDES THE LOCATION REFERENCE: blackout, NO daylight, ceiling lights off; only red emergency light, deep shadows."),
 }
+# A단계 재생성(2026-10-11) 교훈: ⑧ 조명 고정 문장만으로는 낮 로케이션 참조·낮 배경의 얼굴 참조를 못 이김(S24c 2장 모두 낮)
+# → 암전 장면은 낮 로케이션 참조를 빼고, 같은 장면의 승인 컷(시범 S24d)을 조명·공간 참조로 쓴다. 얼굴은 시트 셀로만.
+LIGHT_REF = {"red_door": "assets/portraits/ashita-kf-pilot/S24d-fixed.png"}
+DAY_LOCS = ("loc-control-day", "loc-control-angles-day", "loc-control-key", "loc-control-angles-key")
 EXTRA_REFS = {}
 
 
@@ -78,6 +82,9 @@ def who_of(name):
 
 def describe(path, i):
     name = os.path.basename(path)
+    if path in LIGHT_REF.values():
+        return (f"Reference image {i} is the LIGHTING and LOCATION reference for this scene: match its blackout darkness, red emergency "
+                "lamp and white doorway backlight exactly; ignore the person in it.")
     if "/ashita-kf-" in path:
         k = next((k for k, s in FACE_KF.items() if name.startswith(s + "-")), None)
         who = dict(PEOPLE).get(k, "the character")
@@ -105,6 +112,10 @@ def notes(refs):
 
 def build(sc, face_refs):
     refs = list(face_refs) + list(sc["refs"]) + EXTRA_REFS.get(sc["id"], [])
+    lr = LIGHT_REF.get(sc.get("lighting"))
+    if lr and sc["id"] != "S24d":
+        # 낮 로케이션·낮 배경 승인 얼굴(高橋 S24c-1) 참조를 빼고 같은 장면 조명 참조로 교체
+        refs = [r for r in refs if not os.path.basename(r).startswith(DAY_LOCS) and "/ashita-kf-a/" not in r] + [lr]
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, "
              "no borders, no captions."]
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
