@@ -9,7 +9,8 @@ scripts/storyboard/ashita-kara.json(PHASE 3, build_ashita_phase3.py 생성)을 �
   a            OMNI 대사 CU 12장 — 참조 = PHASE 2 셀(표정 셀 + 로케이션)
   b            나머지 — 얼굴이 보이는 컷은 A에서 승인한 인물별 기준 얼굴 키프레임을 1번 참조로 추가(FACE_KF, A 검수 후 확정)
 generate-video.yml portraits_spec=<스펙> → assets/portraits/<스펙>/<id>-1.png
-사용법: python3 scripts/build_ashita_keyframes.py p:S25a,S24d,S14a | a | b | a:S12c,S25a(재생성분만 -r)
+  r<n>:<id,…>  검수 불합격 재생성(단계 무관, 컷당 후보 2장) — scripts/portraits/ashita-kf-r<n>.json
+사용법: python3 scripts/build_ashita_keyframes.py p:S25a,S24d,S14a | a | b | a:S12c,S25a(재생성분만 -r) | r1:S24c,S01b
 """
 import json
 import os
@@ -31,6 +32,9 @@ PEOPLE = [  # (셀 파일 접두어, 설명) — 더 긴 접두어를 먼저(sat
 # B단계 인물별 기준 얼굴 = A단계 대사 키프레임 (A 검수 2026-10-11 확정: 밝고 중립에 가까운 정면 컷)
 FACE_KF = {"sato": "S09d", "sato-b": "S26c", "tanaka": "S05d", "takahashi": "S24c"}
 FACE_KINDS = ("face", "react", "d")
+# B단계(2026-10-11) 교훈 ⑨: 기준 얼굴 키프레임을 통째로 참조하면 그 배경(사무실)·정면 구도가 다른 장소·측면 컷에 새어 들어감
+# (S12e·S13b 회의실→사무실, S28c·S28e 측면→정면) → 기준 얼굴은 배경 없는 얼굴 크롭(assets/portraits/ashita-faces/<인물>.png)으로 참조
+FACE_DIR = "assets/portraits/ashita-faces"
 PILOT_DONE = {"S14a", "S24d"}  # 시범에서 승인·보정 완료(assets/portraits/ashita-kf-pilot/*-fixed 사용) → B에서 제외
 
 LOC_NOTE = {  # 로케이션별 고정 문장(PHASE 2 Kill Gate 잔여 결함 대응)
@@ -68,12 +72,52 @@ LIGHT_NOTE = {  # 장면 조명 고정 — 로케이션 참조의 낮 조명을 
     "red_door": ("LIGHTING OVERRIDES THE LOCATION REFERENCE: the control room is in a power blackout — NO daylight, windows dark, ceiling "
                  "lights off; lit only by a red emergency lamp and a strong white backlight from the open doorway behind; deep shadows."),
     "red": ("LIGHTING OVERRIDES THE LOCATION REFERENCE: blackout, NO daylight, ceiling lights off; only red emergency light, deep shadows."),
+    "lamp": ("LIGHTING OVERRIDES THE LOCATION REFERENCE: late at night, windows black with distant city lights, ceiling lights off; "
+             "the only light is one warm desk lamp."),
 }
+# B단계 교훈 ⑩ 인물 참조가 있는 손·소품 인서트가 얼굴 미디엄으로 나옴(S03c·S04b·S08b·S11ca·S16b·S19d) → 인서트 고정 문장
+INSERT = ("EXTREME CLOSE-UP INSERT: only the hands / object described fill the frame; NO face, NO head and NO shoulders anywhere in "
+          "the frame — the person is out of frame except the hands, wrists and sleeves. Shallow depth of field.")
+# ⑪ 같은 로케이션 참조의 연속 무인·원경 컷이 같은 구도로 나옴(S01a~c, S15a·b) → 앵글 고정 문장
+ANGLE = {
+    "HA": "CAMERA: steep high angle, looking down from about 6 metres above.",
+    "OH": "CAMERA: directly overhead, looking straight down.",
+    "BE": "CAMERA: bird's-eye view straight down from the ceiling.",
+    "SIDE": "CAMERA: from the side — the face in clear side profile or three-quarter profile, NOT facing the camera.",
+}
+# ⑫ 일본어 글자를 합성할 문서·화면에 가짜 글자가 빽빽이 나옴(S21e·S21g·S27d·S09b) → 무지 면 고정 문장
+BLANK = ("Every paper, document, form, envelope and screen surface is completely blank and clean: NO printed lines, NO characters, "
+         "NO headings, NO tables of text, NO stamps with characters (Japanese text is composited later).")
+COMPOSITION.update({
+    "S01b": ("No people. Steep high angle from a third-floor window looking DOWN onto the wide paved forecourt in front of the entrance; "
+             "the revolving door small at the top of the frame; long morning shadows. " + FULL),
+    "S01c": ("No people. Extreme close-up detail of the glass curtain-wall panels only, filling the whole frame, reflecting drifting white "
+             "clouds and blue sky; NO door, NO ground visible. " + FULL),
+    "S15b": ("Steep high angle from a second-floor window: raindrops streaking down the glass in the foreground, and far below a tiny "
+             "Sato walks away across the wet forecourt carrying a cardboard box. " + FULL),
+    "S19b": ("A wall of control-room monitors all glowing solid red; in the centre one large monitor shows a plain blank white rectangular "
+             "warning panel with a thin red border and nothing written on it. Dark room. " + FULL),
+    "S21e": ("Insert from above: one sheet of completely blank white paper on a warm wooden desk, a single thin grey signature line near "
+             "the bottom and nothing else printed. " + FULL),
+    "S21g": ("Insert from above: one sheet of plain blank white paper with only a faint ruled grid and one round red seal mark with no "
+             "characters, on a grey desk; background softly out of focus with NO signs or labels. " + FULL),
+    "S27d": ("Insert from above: a plain beige envelope and one sheet of completely blank white paper on a grey desk under cold "
+             "fluorescent light; nothing printed anywhere. " + FULL),
+    "S09b": ("Insert: a monitor showing a plain spreadsheet-like table of empty grey cells, two rows highlighted in pale yellow, "
+             "every cell empty with no characters. Background out of focus. " + FULL),
+    "S28c": ("Side close-up: Sato in three-quarter profile facing screen-left toward Mori off camera, a warm restrained smile, mouth hidden "
+             "by the angle; golden morning window light rims his face. " + FULL),
+    "S28e": ("Close-up true side profile of Sato facing screen-right, looking out of the window at the city skyline in morning light, "
+             "peaceful; the window and city soft in the background. " + FULL),
+})
 # A단계 재생성(2026-10-11) 교훈: ⑧ 조명 고정 문장만으로는 낮 로케이션 참조·낮 배경의 얼굴 참조를 못 이김(S24c 2장 모두 낮)
 # → 암전 장면은 낮 로케이션 참조를 빼고, 같은 장면의 승인 컷(시범 S24d)을 조명·공간 참조로 쓴다. 얼굴은 시트 셀로만.
-LIGHT_REF = {"red_door": "assets/portraits/ashita-kf-pilot/S24d-fixed.png"}
+LIGHT_REF = {"S24": "assets/portraits/ashita-kf-pilot/S24d-fixed.png"}  # 장면 → 같은 장면 승인 컷(조명·공간 참조)
 DAY_LOCS = ("loc-control-day", "loc-control-angles-day", "loc-control-key", "loc-control-angles-key")
-EXTRA_REFS = {}
+# ⑬ 소품만 참조한 인서트가 엉뚱한 장소(사무실)에 놓임(S17be) → 같은 장면 로케이션 참조 추가
+EXTRA_REFS = {"S17be": ["assets/portraits/ashita-cast/cells/loc-misc-key2.png"]}
+COMPOSITION["S17be"] = ("Extreme close-up of the large black lever on the front of the old grey mechanical breaker cabinet, mounted on the "
+                        "bare concrete wall of the small substation room lit by one bare bulb; NO desks, NO office. " + FULL)
 
 
 def who_of(name):
@@ -85,6 +129,10 @@ def describe(path, i):
     if path in LIGHT_REF.values():
         return (f"Reference image {i} is the LIGHTING and LOCATION reference for this scene: match its blackout darkness, red emergency "
                 "lamp and white doorway backlight exactly; ignore the person in it.")
+    if path.startswith(FACE_DIR):
+        who = dict(PEOPLE).get(name[:-4], "the character")
+        return (f"Reference image {i} is a tight face crop of {who}: reproduce exactly this face, age, hairstyle and glasses (or no glasses); "
+                "it is for identity ONLY — do NOT copy its camera angle, background or lighting.")
     if "/ashita-kf-" in path:
         k = next((k for k, s in FACE_KF.items() if name.startswith(s + "-")), None)
         who = dict(PEOPLE).get(k, "the character")
@@ -112,8 +160,8 @@ def notes(refs):
 
 def build(sc, face_refs):
     refs = list(face_refs) + list(sc["refs"]) + EXTRA_REFS.get(sc["id"], [])
-    lr = LIGHT_REF.get(sc.get("lighting"))
-    if lr and sc["id"] != "S24d":
+    lr = LIGHT_REF.get(sc["scene"])
+    if lr and sc["id"] != "S24d" and sc.get("lighting") in ("red_door", "backlit"):
         # 낮 로케이션·낮 배경 승인 얼굴(高橋 S24c-1) 참조를 빼고 같은 장면 조명 참조로 교체
         refs = [r for r in refs if not os.path.basename(r).startswith(DAY_LOCS) and "/ashita-kf-a/" not in r] + [lr]
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, "
@@ -123,6 +171,13 @@ def build(sc, face_refs):
     parts += notes(sc["refs"])
     if sc.get("lighting") in LIGHT_NOTE:
         parts.append(LIGHT_NOTE[sc["lighting"]])
+    people = [r for r in refs if who_of(os.path.basename(r))[0] or r.startswith(FACE_DIR)]
+    if sc["kind"] == "ins" and people:
+        parts.append(INSERT)
+    if sc.get("angle") in ANGLE and (sc["angle"] != "SIDE" or people):
+        parts.append(ANGLE[sc["angle"]])
+    if sc.get("ja_overlay") or sc["id"] in ("S21e", "S21g"):
+        parts.append(BLANK)
     if sc["id"] in COMPOSITION:
         parts.append(COMPOSITION[sc["id"]])
     elif sc["kind"] == "d":
@@ -145,7 +200,7 @@ def main():
     for sc in sb["scenes"]:
         if not sc.get("keyframe"):
             continue
-        if stage == "p":
+        if stage == "p" or stage.startswith("r"):
             if sc["id"] not in only:
                 continue
         else:
@@ -155,6 +210,13 @@ def main():
             if stage == "b" and not only and sc["id"] in PILOT_DONE:
                 continue
         face = []
+        if stage.startswith("r") and sc["kind"] in FACE_KINDS:  # 재생성: 배경 없는 얼굴 크롭 참조
+            for r in sc["refs"]:
+                k, _ = who_of(os.path.basename(r))
+                if k in FACE_KF:
+                    f = f"{FACE_DIR}/{k}.png"
+                    if f not in face:
+                        face.append(f)
         if (stage == "b" or (stage == "a" and only)) and sc["kind"] in FACE_KINDS:  # 재생성분도 승인 얼굴 참조
             for r in sc["refs"]:
                 k, _ = who_of(os.path.basename(r))
@@ -167,11 +229,11 @@ def main():
         if only and stage != "p":
             c["count"] = 2
         chars.append(c)
-    if stage == "p" and len(chars) != len(only):
+    if (stage == "p" or stage.startswith("r")) and len(chars) != len(only):
         raise SystemExit(f"시범 컷 일부 없음: {sorted(only - {c['id'] for c in chars})}")
     if missing:
         raise SystemExit("참조 파일 없음: " + ", ".join(sorted(set(missing))))
-    name = "pilot" if stage == "p" else stage + ("-r" if only else "")
+    name = "pilot" if stage == "p" else stage if stage.startswith("r") else stage + ("-r" if only else "")
     head = {"_설명": f"ashita-kara PHASE 4 키프레임 {name} (build_ashita_keyframes.py 생성, 직접 수정 금지).", "_style_preset": sb["preset"]}
     path = OUT.format(name)
     json.dump({**head, "characters": chars}, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
