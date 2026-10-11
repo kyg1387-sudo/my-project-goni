@@ -59,7 +59,7 @@ TONE = {
     "NA21": ("normal", 1.0, 0.95, "안도, 따뜻하게"), "L42": ("normal", 1.0, 0.95, "공식 선언"),
     "L43": ("normal", 1.0, 0.95, "냉정하게 통보"), "L44": ("angry", 0.8, 0.95, "단죄 [Omni]"),
     "L45": ("sad", 1.0, 0.9, "더듬는 변명"), "L46": ("angry", 0.9, 0.95, "일갈"),
-    "L47": ("sad", 1.3, 0.9, "울며 애원 [Omni]"), "L48": ("tonedown", 1.0, 0.9, "차갑게 [Omni]"),
+    "L47": ("sad", 1.1, 0.9, "울며 애원 [Omni] — 1.3은 발음이 뭉개져 1.1"), "L48": ("tonedown", 1.0, 0.9, "차갑게 [Omni]"),
     "L49": ("tonedown", 1.0, 0.85, "서늘하게 [Omni]"), "NA22": ("normal", 1.0, 1.0, "결과 통보"),
     "NA23": ("normal", 1.0, 1.0, "단호하게"), "NA24": ("normal", 1.0, 1.0, "개인 타격, 마지막 한 방"),
     "L50": ("normal", 1.0, 0.95, "간절하게"), "L51": ("happy", 0.7, 0.9, "무뚝뚝한 따뜻함"),
@@ -74,10 +74,27 @@ KANA = [("大東", "だいとう"), ("佐藤誠", "佐藤まこと"), ("田中�
         ("“", ""), ("”", ""), ("『", ""), ("』", "")]
 
 
+# 본녹음 언어 검사(run 509)에서 발음이 실제로 흔들린 줄만 줄 단위 가나 보정 후 재녹음(동음이의어 오인은 제외)
+TAG_KANA = {
+    "NA6": [("専務", "せんむ"), ("甥", "おい")],        # 「山本千鶴の愛知」로 들림
+    "NA23": [("専務", "せんむ"), ("告訴", "こくそ")],    # 「千鶴」「ごそこ」로 들림
+    "L06": [("二か月", "にかげつ")],                    # 「多か月」로 들림
+    "L07": [("二か月", "にかげつ")],                    # 「二月」로 들림
+    "NA9": [("判子", "はんこ")],                       # 「ハンチ」로 들림
+    "L47": [("悪かった", "わるかった")],                 # 「おるかった」로 들림(울음 강도 1.3 → 1.1)
+}
+
+
 def kana(s):
     for a, b in KANA:
         s = s.replace(a, b)
     return s
+
+
+def kana_tag(tag, s):
+    for a, b in TAG_KANA.get(tag, []):
+        s = s.replace(a, b)
+    return kana(s)
 
 
 def load():
@@ -103,7 +120,7 @@ def main():
         emo, inten, tempo, note = TONE[tag]
         name, vid = VOICE[role]
         tests.append({"id": f"line{n:03d}", "model": "typecast-direct", "voice": vid, "language": "jpn",
-                      "text": kana(text), "emotion_preset": emo, "emotion_intensity": inten, "tempo": tempo})
+                      "text": kana_tag(tag, text), "emotion_preset": emo, "emotion_intensity": inten, "tempo": tempo})
         rows.append(f"| line{n:03d} | {tag} | {'내레이터' if role == 'NA' else '진행자' if role == 'OUT' else role} | {name} | "
                     f"{text} | {emo} | {inten} | {tempo} | {note} |")
     spec = {"_설명": f"『明日から来なくていい』 PHASE 1 본녹음 {len(tests)}줄 (확정 캐스트, Typecast ssfm-v30 jpn). "

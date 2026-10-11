@@ -108,7 +108,7 @@
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
-   "text": "山本専務の甥、たなかしょう、二十八歳。現場経験ゼロのまま総括責任者に送り込まれた、いわゆる落下傘だ。",
+   "text": "山本せんむのおい、たなかしょう、二十八歳。現場経験ゼロのまま総括責任者に送り込まれた、いわゆる落下傘だ。",
    "emotion_preset": "normal",
    "emotion_intensity": 1.0,
    "tempo": 1.0
@@ -128,7 +128,7 @@
    "model": "typecast-direct",
    "voice": "tc_63478295af3bab65523c3237",
    "language": "jpn",
-   "text": "安全規格だの監理承認だの、正直、古いんですよね。工期、二か月前倒しでいきますから",
+   "text": "安全規格だの監理承認だの、正直、古いんですよね。工期、にかげつ前倒しでいきますから",
    "emotion_preset": "toneup",
    "emotion_intensity": 1.0,
    "tempo": 1.05
@@ -138,7 +138,7 @@
    "model": "typecast-direct",
    "voice": "tc_6322940059d649937b97f326",
    "language": "jpn",
-   "text": "二か月……？ 検査工程を削れば、できなくはない。だが、人が死ぬぞ",
+   "text": "にかげつ……？ 検査工程を削れば、できなくはない。だが、人が死ぬぞ",
    "emotion_preset": "tonedown",
    "emotion_intensity": 1.0,
    "tempo": 0.9
@@ -208,7 +208,7 @@
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
-   "text": "浮いた金は、およそさんおくえん。その書類には、もりの判子が押されていた。",
+   "text": "浮いた金は、およそさんおくえん。その書類には、もりのはんこが押されていた。",
    "emotion_preset": "tonedown",
    "emotion_intensity": 1.0,
    "tempo": 0.95
@@ -688,9 +688,9 @@
    "model": "typecast-direct",
    "voice": "tc_63478295af3bab65523c3237",
    "language": "jpn",
-   "text": "佐藤さん……お願いだ、助けてくれ……！ 俺が、悪かった……！",
+   "text": "佐藤さん……お願いだ、助けてくれ……！ 俺が、わるかった……！",
    "emotion_preset": "sad",
-   "emotion_intensity": 1.3,
+   "emotion_intensity": 1.1,
    "tempo": 0.9
   },
   {
@@ -728,7 +728,7 @@
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
-   "text": "山本専務と田中は、懲戒解雇。電気事業法違反と詐欺の疑いで、刑事告訴された。",
+   "text": "山本せんむと田中は、懲戒解雇。電気事業法違反と詐欺の疑いで、刑事こくそされた。",
    "emotion_preset": "normal",
    "emotion_intensity": 1.0,
    "tempo": 1.0
