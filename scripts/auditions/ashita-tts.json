@@ -18,7 +18,7 @@
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
-   "text": "東京郊外の中堅エンジニアリング企業、だいとうテクノロジー。",
+   "text": "東京郊外の中堅エンジニアリング企業、あさなぎテクノロジー。",
    "emotion_preset": "normal",
    "emotion_intensity": 1.0,
    "tempo": 1.0
@@ -638,7 +638,7 @@
    "model": "typecast-direct",
    "voice": "tc_6a8f9d53322676d2f0934a21",
    "language": "jpn",
-   "text": "だいとうテクノロジーの皆さん。経済産業省との、合同監査です",
+   "text": "あさなぎテクノロジーの皆さん。経済産業省との、合同監査です",
    "emotion_preset": "normal",
    "emotion_intensity": 1.0,
    "tempo": 0.95
@@ -718,7 +718,7 @@
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
-   "text": "だいとうテクノロジーは、補助金の全額返還と、ひゃくおくえんの損害賠償を求められ、株価は一夜で暴落した。",
+   "text": "あさなぎテクノロジーは、補助金の全額返還と、ひゃくおくえんの損害賠償を求められ、株価は一夜で暴落した。",
    "emotion_preset": "normal",
    "emotion_intensity": 1.0,
    "tempo": 1.0
