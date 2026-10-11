@@ -9,7 +9,7 @@
 3) 색감 통일: 전편 공통 미세 대비·채도 + 필름 그레인
 4) 아웃트로: out/ashita-outro.mp4(+구독 버튼) → append_outro.py(본편 1.0초 페이드아웃 → 검은 화면 0.8초 → 아웃트로 → 엔드카드)
 5) 전달본: deliveries/ashita-kara/ashita-kara-final.mp4(28MB 조각) + 480p 미리보기
-사용법: python3 scripts/finalize_ashita.py <burn 완성본.mp4> [--no-outro]
+사용법: python3 scripts/finalize_ashita.py <burn 완성본.mp4> [--no-outro | --outro-only(out/fin/main.mp4 재사용)]
 """
 import glob
 import json
@@ -114,6 +114,9 @@ def main():
     src0 = sys.argv[1]
     outro_on = "--no-outro" not in sys.argv
     tmp = os.path.join(OUTD, "fin"); os.makedirs(tmp, exist_ok=True)
+    main_out = os.path.join(tmp, "main.mp4")
+    if "--outro-only" in sys.argv:
+        return outro(main_out, tmp)
     B = bounds()
     src = os.path.join(tmp, "patched.mp4")
     patch(src0, src, tmp)
@@ -150,8 +153,11 @@ def main():
     run(["-i", src, "-i", os.path.join(tmp, "h1.mp4"), "-i", v22, "-i", bed, "-filter_complex", fc, "-map", "[v]", "-map", "[a]",
          "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-c:a", "aac", "-b:a", "192k", main_out])
     print(f"본편 마무리: {main_out} ({dur(main_out):.2f}초), H1 음성 L22 {t22:.2f}s")
-    if not outro_on:
-        return
+    if outro_on:
+        outro(main_out, tmp)
+
+
+def outro(main_out, tmp):
     # 4) 아웃트로 + 엔드카드
     outro = os.path.join(OUTD, "ashita-outro.mp4")
     meta = json.load(open(os.path.join(OUTD, "ashita-outro.json")))
