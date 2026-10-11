@@ -359,6 +359,21 @@ deformed eyes, extra fingers.
 
 ---
 
+## 제11장. 『明日から来なくていい』 실증 보강 (2026-10-11 확정, 다음 작품부터 오차 0)
+
+고니감독님 지시: 「요청한 것들과 수정한 것은 지침서에 등록해서 다음 영상 제작하는 데 오차가 없도록」. 상세·점검표는 `docs/제작규격-보강-ashita실증.md`(요청 ★1~★18, 결함 ●, 시작 체크리스트 12항). 반드시 지키는 요약:
+
+1. **인물 일관성**: 안경 유무·테 색, 귀걸이 없음, 실사 눈물·땀을 고정 문장으로 넣는다. 표정 칸과 모든 키프레임은 정면 셀과 「같은 사람인지」 대조한다.
+2. **키프레임 생성 규칙**: 기준 얼굴은 배경 없는 얼굴 크롭으로 참조, 조명 참조는 인물을 잘라낸 판, 인서트는 「얼굴 없음」, 일본어 합성 면은 「무지」, 연속 컷은 앵글 고정 문장. 띠는 상하좌우 모두 검사(`kf_letterbox_fix.py`), 가짜 글자는 흐림(`kf_glyph_blur.py`) 또는 재생성.
+3. **일본어 글자 합성은 조립 전에 끝낸다**(서류·화면·명함·그래프·봉투, `ashita_ja_overlay.py` 방식). PHASE 4 마감 체크 항목.
+4. **음성 교체는 Lock을 다시 계산하지 않는다**: 새 줄은 무음 정리 후 원래 슬롯에 배속(≤1.15)으로 맞추고 원본은 보관한다.
+5. **조립 안전**: BGM 구간 간격 1.0초 이상(생성기 사전 검사), OmniHuman 8초 초과 멘트는 컷 분할, 검은 카드 클립은 옅은 그레인(20KB 미만 = 깨진 파일 판정).
+6. **마무리(로컬)**: 후크 0~4초는 드론·심장 박동(−60dB 2초 무음 금지), 후크 재사용 대사 컷은 본편 립싱크 구간+음성, i2v 편집 효과·색감 통일은 `finalize_*.py`에서.
+7. **아웃트로는 필수**: 일본 채널 공식 진행자(젊은 여성, `ashita-host-1/host-cu-4` · `ashita-host-2/host-wu-1`·`host-wave-2`, 목소리 Yui Sato)로 몽타주 → 구독·좋아요 버튼 → 댓글 유도 → 다음 화 예고(미정이면 일반 예고) → 손 흔들기 → 엔드카드. OmniHuman 가장자리 잔상(몸과 떨어진 손)은 0.25초로 검수해 크롭한다.
+8. **전달**: 28MB 조각 + 480p + 한국어 자막 검수판(금액 통화 표기) + 업로드 가이드(수익화 후 광고 타임코드).
+
+---
+
 ## 부록. 프로젝트 운영 정보 (규칙이 아닌 참조 사실)
 
 - API 키는 GitHub Secrets(FAL_API_KEY, ARK_API_KEY, ELEVENLABS_API_KEY, TYPECAST_API_KEY)에만 둔다.
@@ -373,3 +388,11 @@ deformed eyes, extra fingers.
   `docs/아카이브-이전제작지침(CLAUDE.md-2026-10-01까지).md`에 보관되어 있다(참조용).
   `docs/영화제작규칙집.md`, `docs/기획안-김씨시리즈.md`, `docs/EP3-인수인계.md`, `docs/제작규격-보강-EP3실증.md`,
   `docs/시리즈-제작비용.md`, `docs/제작규격-보강-조명카메라앵글.md`도 참조.
+- 일본 채널 「美談ものがたり」: 공식 아웃트로 진행자 이미지 `assets/portraits/ashita-host-1/host-cu-4.png`·
+  `assets/portraits/ashita-host-2/host-wu-1.png`·`host-wave-2.png`, 목소리 Typecast Yui Sato `tc_629fe972013e90b4db213fd8`.
+  『明日から来なくていい』 배역 목소리(Typecast ssfm-v30 jpn): 내레이터 Lloyd `tc_65681f21097fc4326ceb5e21`, 佐藤 Rex
+  `tc_6322940059d649937b97f326`, 田中 Takuya Murakami `tc_63478295af3bab65523c3237`, 山本 Dean `tc_673eb45cdc1073aef51e6b90`,
+  高橋 Poseidon `tc_6a8f9d53322676d2f0934a21`, 森 Nanami Ichikawa `tc_64a66e30679f68b9bf301edb`.
+- 『明日から来なくていい』 도구(다음 작품은 작품명만 바꿔 복사): `build_ashita_phase3.py`·`build_ashita_keyframes.py`·
+  `assemble_ashita_keyframes.py`·`build_ashita_overrides.py`·`ashita_ja_overlay.py`·`finalize_ashita.py`·`build_ashita_outro.py`·
+  `make_ko_review_ashita.py`·`kf_letterbox_fix.py`·`kf_glyph_blur.py`. 실증 기록 `docs/제작규격-보강-ashita실증.md`.
