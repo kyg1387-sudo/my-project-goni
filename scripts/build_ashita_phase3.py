@@ -61,10 +61,10 @@ WARD = {
 }
 EXPR = {  # 표정 셀(키프레임에 감정 50~70% 선반영 — 규격 제2장 3)
     # PHASE 2 Kill Gate 2차 합격 셀(안경 일치·실사 눈물/땀). 타나카 「smug」는 45도 셀(옅은 비웃음),
-    # 야마모토 「fear」는 2차 expr3 불합격(다른 얼굴·안경 없음) → 놀람 셀로 대체하고 땀은 프롬프트로.
+    # 야마모토 「fear」는 2차 expr3 불합격(다른 얼굴·안경 없음) → 3차에서 정면 셀 참조로 재생성(ashita-cast-3).
     ("SATO", "cold"): C2 + "sato-expr2.png", ("SATO", "smile"): C2 + "sato-expr3.png",
     ("TANAKA", "smug"): C2 + "tanaka-45.png", ("TANAKA", "rage"): C2 + "tanaka-expr2.png", ("TANAKA", "sob"): C2 + "tanaka-expr3.png",
-    ("YAMA", "cold"): C2 + "yamamoto-front.png", ("YAMA", "shock"): C2 + "yamamoto-expr2.png", ("YAMA", "fear"): C2 + "yamamoto-expr2.png",
+    ("YAMA", "cold"): C2 + "yamamoto-front.png", ("YAMA", "shock"): C2 + "yamamoto-expr2.png", ("YAMA", "fear"): "assets/portraits/ashita-cast-3/yamamoto-fear-1.png",  # 3차 재생성(고니감독님 지적)
     ("TAKA", "stern"): C2 + "takahashi-expr1.png", ("TAKA", "fury"): C2 + "takahashi-expr2.png",
     ("MORI", "smile"): C2 + "mori-expr1.png", ("MORI", "tears"): C2 + "mori-expr2.png", ("MORI", "firm"): C2 + "mori-expr3.png",
     ("SATO_B", "front"): C2 + "sato-b-front.png",
