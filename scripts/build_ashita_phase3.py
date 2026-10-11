@@ -42,7 +42,7 @@ WHO = {
     "SATO": ("Sato Makoto, a Japanese man aged 48, square-jawed weathered face, calm deep-set eyes, short black hair heavily streaked with grey, "
              "thin rectangular silver-rimmed glasses, a small pale scar just above his LEFT eyebrow, clean-shaven", C2 + "sato-front.png"),
     "TANAKA": ("Tanaka Sho, a slim Japanese man aged 28, narrow smug face with sharp cheekbones, light-brown dyed two-block hair swept up and back, "
-               "no glasses, clean-shaven, a chunky gold wristwatch on his RIGHT wrist", C2 + "tanaka-front.png"),
+               "no glasses, no earrings, clean-shaven, a chunky gold wristwatch on his RIGHT wrist", C2 + "tanaka-front.png"),
     "YAMA": ("Yamamoto Tsuyoshi, a heavy-set Japanese man aged 63, round fleshy face, bald crown with white hair only at the sides, thin gold-rimmed glasses",
              C2 + "yamamoto-front.png"),
     "TAKA": ("Takahashi, a stocky Japanese man aged 55, stern square face, very short grey hair, thick dark eyebrows, no glasses", C2 + "takahashi-front.png"),

@@ -23,7 +23,7 @@ KF_A = "assets/portraits/ashita-kf-a"
 PEOPLE = [  # (셀 파일 접두어, 설명) — 더 긴 접두어를 먼저(sato-b가 sato보다 먼저)
     ("sato-b", "Sato (48, engineer, thin silver-rimmed glasses, charcoal suit)"),
     ("sato", "Sato (48, engineer, thin silver-rimmed glasses, navy work jacket)"),
-    ("tanaka", "Tanaka (28, arrogant manager, light-brown swept-up hair, NO glasses)"),
+    ("tanaka", "Tanaka (28, arrogant manager, light-brown swept-up hair, NO glasses, NO earrings)"),
     ("yamamoto", "Yamamoto (63, executive, bald crown, thin gold-rimmed glasses)"),
     ("takahashi", "Takahashi (55, client division head, very short grey hair, NO glasses, black overcoat)"),
     ("mori", "Mori (24, young female engineer, black bob with bangs, NO glasses)"),
@@ -41,7 +41,11 @@ LOC_NOTE = {  # 로케이션별 고정 문장(PHASE 2 Kill Gate 잔여 결함 �
     "props-breaker": "The breaker unit has NO stickers or labels at all, only scuffed grey metal.",
 }
 TIGHT = ("Tight chest-up close-up: head and shoulders fill the frame, the top of the head near the top edge, the frame cut at mid-chest; "
-         "the face occupies about one third of the frame height; hands NOT visible. Full-frame 16:9 image, no black bars.")
+         "the face occupies about one third of the frame height; hands, wrists and wristwatch NOT visible anywhere; no earrings. "
+         "Full-frame 16:9 image, no black bars, no letterbox.")
+# 시범(2026-10-11) 교훈: ① 립싱크 CU 지시에도 미디엄으로 나와 손·시계가 들어옴 → 위 문장 강화 + 생성 후 가슴 위 재구도(무료)
+# ② 위아래 검은 띠가 생김 → 생성 직후 kf_letterbox_fix.py ③ 콘솔·기기의 작은 가짜 글자 → 해당 영역 얕은 심도 처리(무료)
+# ④ 타나카 귀걸이가 생김(시트 표정 칸에서 전이) → 인물 문장에 'no earrings' 고정
 FULL = "Full-frame 16:9 image filling the whole canvas: NO black bars, NO white borders, NO letterbox or pillarbox."
 COMPOSITION = {
     "S25a": TIGHT + " Tanaka is on his knees, face crumpled in sobbing despair, looking up toward someone just off camera.",
