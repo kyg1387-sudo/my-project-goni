@@ -28,8 +28,14 @@ LOCK = {l["tag"]: l for l in json.load(open(os.path.join(ROOT, "productions", "a
 KF = os.path.join(ROOT, "assets", "portraits", "ashita-kara-keyframes")
 W, H = 1920, 1080
 
-STILL_REDO = ["S17da", "S15bb"]                       # 흰 띠(한쪽만 잘랐던 실수) 다시 잡은 키프레임
-FX = {"S10a": "jib", "S12a": "dutch5+hh", "S17a": "hh", "S18e": "hh"}   # 스토리보드 edit_fx(craneup·dutch5,handheld·handheld)
+STILL_REDO = ["S17da", "S15bb",                       # 흰 띠(한쪽만 잘랐던 실수) 다시 잡은 키프레임
+              "S19c"]                                 # 고니감독님 검수 6:35: 떠 있는 안경 → 후보 1로 교체(R53)
+FX = {"S10a": "jib", "S12a": "dutch5+hh", "S17a": "hh", "S18e": "hh",   # 스토리보드 edit_fx(craneup·dutch5,handheld·handheld)
+      "S24a": "punch"}   # 고니감독님 지적 7:58: 전경 검은 모니터가 화면 2/3을 가림 → 문 쪽으로 1.35배 당겨 高橋 입장을 크게
+# 고니감독님 지적(7:58·8:04 「너무 어둡다」): 정전 구간(S23b~S25c) 평균 밝기 9~35/255 → 휴대폰에서 거의 검정.
+# 검정은 그대로 두고 어두운 중간 톤만 들어 올려(곡선) 분위기는 유지, 평균 약 2배(실측 9→24, 24→53, 35→60).
+BLACKOUT = ("S23b", "S25c")
+LIFT = "curves=all='0/0 0.06/0.13 0.25/0.38 0.6/0.72 1/1',eq=gamma=1.12:saturation=1.05"
 
 
 def run(args):
@@ -58,6 +64,8 @@ def fx_filter(fx):
         return zp("1.10", y="(ih-ih/zoom)*(0.9-0.8*min(1,on/110))")
     if fx == "hh":
         return f"scale=2112:1188,{shake}"
+    if fx == "punch":    # 정지 당김(1.35배) — 문 쪽(화면 가운데 약간 위)
+        return "crop=iw/1.35:ih/1.35:(iw-iw/1.35)/2:(ih-ih/1.35)*0.4,scale=1920:1080:flags=lanczos"
     if fx == "dutch5+hh":
         return f"rotate=5*PI/180:ow=iw:oh=ih:c=black,scale=2400:1350,{shake}"
     return "null"
@@ -143,7 +151,9 @@ def main():
     t22 = h0 + (LOCK["L22"]["start"] - s0)
     d22 = dur(v22)
     bed = os.path.join(tmp, "hookbed.wav"); hook_bed(bed)
-    grade = "eq=contrast=1.03:saturation=0.96:gamma=0.99,noise=alls=4:allf=t+u"
+    b0, b1 = B[BLACKOUT[0]][0], B[BLACKOUT[1]][1]
+    lift = ",".join(f"{f.split('=', 1)[0]}=enable='between(t,{b0:.3f},{b1:.3f})':{f.split('=', 1)[1]}" for f in LIFT.split(",", 1))
+    grade = f"{lift},eq=contrast=1.03:saturation=0.96:gamma=0.99,noise=alls=4:allf=t+u"
     fc = (f"[1:v]setpts=PTS-STARTPTS+{h0:.3f}/TB[h];[0:v][h]overlay=enable='between(t,{h0:.3f},{h1:.3f})':eof_action=pass,{grade},format=yuv420p[v];"
           f"[0:a]volume=enable='between(t,{t22 - 0.2:.3f},{t22 + d22 + 0.3:.3f})':volume=0.5[ab];"
           f"[2:a]aformat=sample_rates=44100:channel_layouts=stereo,adelay={int(t22 * 1000)}|{int(t22 * 1000)}[vo];"
