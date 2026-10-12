@@ -1,0 +1,19 @@
+{
+ "_설명": "S24b 高橋 L43(9.1초, 8초 상한 초과) → 문장 사이 쉼(5.6초)에서 두 컷으로 나눈 립싱크. A=서류를 든 3/4(S24b-1c), B=다른 각도(S24b-2c). 마무리 단계 패치. 약 9.1초 x 0.16 = 약 1.5달러.",
+ "tests": [
+  {
+   "id": "omni-S24b-a",
+   "model": "omnihuman",
+   "image": "assets/portraits/ashita-kf-r7/S24b-1c.png",
+   "audio_id": "L43a",
+   "prompt": "Takahashi coldly delivers a formal notice, holding the folder at chest height, calm and precise. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward Yamamoto at the same three-quarter angle, hands stay where they are; no exaggerated motion, same person."
+  },
+  {
+   "id": "omni-S24b-b",
+   "model": "omnihuman",
+   "image": "assets/portraits/ashita-kf-r7/S24b-2c.png",
+   "audio_id": "L43b",
+   "prompt": "Takahashi adds the last words with a faint cold edge, unhurried. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward Yamamoto at the same three-quarter angle, hands stay where they are; no exaggerated motion, same person."
+  }
+ ]
+}

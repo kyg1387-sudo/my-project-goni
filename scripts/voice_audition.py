@@ -258,8 +258,14 @@ def omnihuman_test(t, key):
     for model in t.get("models", ["fal-ai/bytedance/omnihuman/v1.5",
                                   "fal-ai/bytedance/omnihuman"]):
         print(f"[{t['id']}] {model} 생성 중...")
-        result = fal_run(model, {"image_url": img_url, "audio_url": a_url},
-                         key, t["id"])
+        # 연기 지시(prompt)가 있으면 함께 보내고, 모델이 받지 않으면 빼고 재시도(burn의 omnihuman_prompts와 같은 방식)
+        payloads = ([{"image_url": img_url, "audio_url": a_url, "prompt": t["prompt"]}] if t.get("prompt") else []) + \
+                   [{"image_url": img_url, "audio_url": a_url}]
+        result = None
+        for payload in payloads:
+            result = fal_run(model, payload, key, t["id"])
+            if result:
+                break
         url = find_video_url(result) if result else None
         if url:
             urllib.request.urlretrieve(url, path)
