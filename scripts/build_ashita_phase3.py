@@ -345,6 +345,7 @@ for _a, _b in zip(BGM, BGM[1:]):
 
 # B안(제10장 3·7): 사람이 나오는 정지 컷을 i2v로 — 실제 배우처럼 작고 자연스러운 연기(숨·눈 깜빡임·손의 일), 톤연출표 감정에 맞춘 크기.
 # 입이 보이면 안 되는 컷은 「등·옆을 유지, 고개 15° 이내, 입 안 보임」을 붙인다. 글자 합성 면·무인 정물·편집 효과(흑백·돌리줌)는 정지 유지.
+# i2v 검수(2026-10-12): 고개 동작 동사(으쓱·끄덕·의자 회전·기대기)가 있으면 화자가 카메라 쪽으로 돌아봄(8컷) → 몸·손·숨만 움직이고 「머리는 그대로」를 명시
 HIDE = " The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible."
 LIVE = {
     "S01c": "Clouds drift slowly across the sky reflected in the glass panels. No people.",
@@ -355,7 +356,7 @@ LIVE = {
     "S03d": "Mori shifts her weight shyly in the foreground; Sato glances up and gives a small tired nod." + HIDE,
     "S04b": "The polished shoes take one slow arrogant step across the floor; the gold watch glints.",
     "S04c": "Tanaka's eyes slide sideways with contempt, chin slightly raised, a slow breath out through the nose; mouth stays closed.",
-    "S05b": "Tanaka waves the paper cup lazily once with a mocking, condescending shrug, shoulders loose and smug." + HIDE,
+    "S05b": "Tanaka's hand lazily swirls the paper cup once and his shoulders give one small smug shrug; his head stays completely still in the same profile facing away, he never turns toward the camera and never leans back." + HIDE,
     "S05ba": "Sato's hand freezes on the drawing, fingers tensing slightly, then still.",
     "S05c": "Sato looks up from the drawings and holds still, a slow steady breath, unafraid." + HIDE,
     "S05ca": "The finger with the gold watch taps impatiently on the cup three times.",
@@ -365,20 +366,20 @@ LIVE = {
     "S08a": "A woman's hand presses the hanko down firmly once and lifts it slowly.",
     "S08b": "Mori's hand trembles slightly, still holding the hanko, fingers tightening.",
     "S08c": "Mori sits motionless, then her shoulders sink with a slow heavy breath.",
-    "S09c": "Tanaka shrugs lazily with a dismissive, mocking toss of the hand and swivels the chair a few degrees." + HIDE,
+    "S09c": "Tanaka's hand gives one lazy dismissive flick on the armrest with a mocking exhale; his head and the chair stay still in the same profile, he never turns toward the camera." + HIDE,
     "S11a": "Very subtle: Yamamoto taps a pen once; the others sit still; faint air from the vent.",
     "S11b": "Yamamoto leans back slowly in the chair, condescending, fingers interlaced." + HIDE,
     "S11ba": "Thick fingers drum slowly on the glossy table, one-two-three-four, then stop.",
-    "S11c": "Sato sits upright, his hand pressing the document; a slow controlled breath." + HIDE,
+    "S11c": "Sato's fingers press the document a little harder and a slow controlled breath lifts his shoulders; he stays in exactly the same back view, his head does not move." + HIDE,
     "S11ca": "Sato's hand presses flat on the document, knuckles whitening slightly.",
-    "S11e": "Yamamoto lowers his chin and looks over his gold glasses, the lenses catching light; a slow cold blink." + HIDE,
+    "S11e": "Light glints on Yamamoto's gold glasses as he gives one slow cold blink; his head stays fixed in the same profile, he never turns toward the camera." + HIDE,
     "S11f": "The stack of papers settles after the slam, a few sheets sliding apart.",
     "S12d": "Yamamoto slides the envelope across the table with two fingers, slowly, coldly." + HIDE,
     "S12e": "Sato stays silent, jaw tightening, eyes calm; a single slow blink; barely perceptible breathing.",
-    "S13b": "Tanaka scoffs, tightening his crossed arms, head tilting slightly." + HIDE,
+    "S13b": "Tanaka tightens his crossed arms with a contemptuous exhale, his shoulders rising once; his head stays fixed at the same angle turned away, he never turns toward the camera." + HIDE,
     "S14b": "Mori's eyes glisten, her lips tremble as she holds back tears, a shaky breath; one tear forms.",
     "S14c": "Sato pauses over the box, then gently places a folder inside; a quiet sigh." + HIDE,
-    "S14e": "Mori nods firmly twice, a tear sliding down her cheek." + HIDE,
+    "S14e": "A tear slides slowly down Mori's cheek and she gives one small firm nod under 5 degrees; she stays turned away at the same side-back angle, the same dark jacket, never turning toward the camera." + HIDE,
     "S15bb": "Raindrops fall and splash on the cardboard lid, darkening the surface.",
     "S15c": "The black work shoe steps into the puddle, water rippling and splashing; rain keeps falling.",
     "S16b": "Rain falls in the bokeh behind; his hand grips the phone a little tighter, calm and steady.",
@@ -388,7 +389,7 @@ LIVE = {
     "S17ca": "Yamamoto lifts his glass a little higher, pleased, then sips." + HIDE,
     "S17d": "Tanaka turns the champagne glass in his fingers, shoulders relaxed with greed." + HIDE,
     "S17bb": "Mori stands firm, her hand rising to rest on the cabinet door; a determined breath." + HIDE,
-    "S17bd": "Her hand presses gently on the cabinet, a sad but firm quiet resolve, a small trembling breath." + HIDE,
+    "S17bd": "Her hand presses gently on the cabinet door and her shoulders rise with one small trembling breath; her head stays still at the same side angle, never turning toward the camera." + HIDE,
     "S18b": "Mori's hands move quickly over the console keys, then freeze in alarm; monitor glow flickers." + HIDE,
     "S18d": "Mori's breath quickens, her hand rising toward her mouth, monitor light flickering on her face." + HIDE,
     "S18f": "The wall of monitors flashes red in pulses; Mori's shoulders sag in despair, her hands trembling on the console." + HIDE,
@@ -404,7 +405,7 @@ LIVE = {
     "S25b": "From straight above: Tanaka's shoulders shake as he sobs, kneeling; red light pulses faintly.",
     "S26d": "From straight above: Sato's polished shoes stay still; Tanaka's hands tremble on the floor.",
     "S28b": "Mori smiles hopefully, eyes shining, a small earnest nod; golden light." + HIDE,
-    "S28c": "Sato lowers the cup slightly, a warm smile in his eyes; the cup still covers his mouth.",
+    "S28c": "Sato keeps the cup at his lips the whole time, a warm smile only in his eyes, steam rising from the cup; the cup never moves away from his mouth and his head stays still.",
     "S28e": "Sato looks out at the city, a slow peaceful breath, the morning light shifting softly on his face." + HIDE,
 }
 
