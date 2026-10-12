@@ -171,5 +171,41 @@ def main():
         print("저장:", p, os.path.getsize(p) // 1024, "KB")
 
 
+
+
+# ---------------------------------------------------------------- 그림체 샘플 + A 글자(애니메이션·아바타 비교)
+def thumb_styled(src_png):
+    """생성 일러스트(글자 없음) 위에 A형 글자 배치. 왼쪽을 살짝 어둡게 해 글자 가독성 확보."""
+    a = cover(cv2.cvtColor(cv2.imread(src_png), cv2.COLOR_BGR2RGB), W, H, 0.5, 0.5).astype(np.float32)
+    ramp = np.clip((np.arange(W) - 200) / 700, 0, 1)[None, :, None]
+    a = a * (0.45 + 0.55 * ramp)
+    img = to_pil(a).convert("RGBA")
+    img.alpha_composite(label("スカッとする話", 64, (255, 255, 255, 255), (20, 20, 20)), (36, 30))
+    img.alpha_composite(white("クビにした男が", 116), (24, 168))
+    img.alpha_composite(big("百億円の", 230), (0, 318))
+    img.alpha_composite(big("鍵だった", 250), (0, 596))
+    badge = label("上司の不正、暴かれる", 44, (190, 20, 20, 255), (255, 255, 255), pad=(28, 10))
+    num = big("三億円の改ざん", 90, gradient=((255, 255, 170), (255, 220, 40), (255, 160, 0)), stroke_w=8, outer_w=6)
+    box = Image.new("RGBA", (max(badge.width, num.width) + 40, badge.height + num.height + 6), (0, 0, 0, 0))
+    ImageDraw.Draw(box).rounded_rectangle([0, 0, box.width - 1, box.height - 1], 26, fill=(255, 200, 40, 255))
+    ImageDraw.Draw(box).rounded_rectangle([7, 7, box.width - 8, box.height - 8], 22, fill=(170, 16, 16, 245))
+    box.alpha_composite(badge, ((box.width - badge.width) // 2, 10))
+    box.alpha_composite(num, ((box.width - num.width) // 2, badge.height - 4))
+    img.alpha_composite(box, (W - box.width - 40, 560))
+    img.alpha_composite(band(["懲戒解雇、そして…"], 62, alpha=235), (1150, 860))
+    return img.convert("RGB")
+
+
+def styled_samples(out):
+    d = os.path.join(ROOT, "assets", "portraits", "ashita-style-samples")
+    for n in ("anime-1", "anime-2", "avatar-1", "avatar-2"):
+        p = os.path.join(out, f"ashita-thumb-{n}-JP.jpg")
+        thumb_styled(os.path.join(d, f"{n}.png")).save(p, quality=92)
+        print("저장:", p)
+
+
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) > 1 and sys.argv[1] == "styled":
+        styled_samples(os.path.join(ROOT, "assets", "thumbnails", "ashita"))
+    else:
+        main()
