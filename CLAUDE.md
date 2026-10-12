@@ -399,6 +399,14 @@ deformed eyes, extra fingers.
 
 ---
 
+## 제12장. #03 실증 보강 규격 (2026-10-12 착수, #03부터 적용) — 수정에서 나온 규칙은 반드시 여기에 저장한다
+
+상세 근거·도구는 `docs/제작규격-보강-03실증.md`. 아래는 반드시 지키는 요약 규칙이다.
+
+1. **프롬프트 5단 공식(고니감독님 확정 2026-10-12)**: 모든 키프레임·i2v 프롬프트는 **[CAMERA] 구도·앵글·렌즈 → [CHARACTER] 인물(IDENTITY FIRST·시트 참조) → [ACTION] 행동·표정(소동작) → [SETTING] 배경·조명(로케이션 시트) → [NEGATIVE]** 순서로 조립한다(`scripts/prompt_format.py` `compose_keyframe`·`compose_motion`, PHASE 3·4 생성기 내장). 검토 결과 채택하지 않은 것: ① 오디오·대사·효과음 지시를 영상 프롬프트에 넣는 Veo 계열 문법(배역 음성 고정·대본 동결·효과음 믹스 규칙과 충돌 — 음성은 Typecast→OmniHuman, 효과음은 제11장 22), ② 「tracking camera」 같은 편집 전용 무빙(제8장 6, i2v 무시), ③ 「slamming」 같은 큰 동작(제2장 3). 생성기가 `check_order`·`check_motion`으로 순서 위반·큰 동작·오디오 지시·편집 전용 무빙을 경고한다. 「run」류는 사람이 주어일 때만 경고(#02 「foam running over」 오탐 실증).
+
+---
+
 ## 부록. 프로젝트 운영 정보 (규칙이 아닌 참조 사실)
 
 - API 키는 GitHub Secrets(FAL_API_KEY, ARK_API_KEY, ELEVENLABS_API_KEY, TYPECAST_API_KEY)에만 둔다.

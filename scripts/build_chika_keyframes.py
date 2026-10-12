@@ -10,6 +10,7 @@ scripts/storyboard/chika.json(PHASE 3)을 읽어 generate_portraits.py 스펙을
 generate-video.yml portraits_spec=<스펙> → assets/portraits/<스펙>/<id>-1.png
 사용법: python3 scripts/build_chika_keyframes.py pilot|a|b[:ID,ID]|collect
 """
+from prompt_format import compose_keyframe, check_order, check_motion, split_sections  # 제12장 1
 import json
 import os
 import re
@@ -228,44 +229,62 @@ def build(sc, face_refs, drop_expr=False):
     swap = {**REF_SWAP["*"], **REF_SWAP.get(sc["id"], {})}
     sneer = any(os.path.basename(r) == "gondo-expr1.png" for r in refs)
     refs = [os.path.join(os.path.dirname(r), swap.get(os.path.basename(r), os.path.basename(r))) for r in refs]
-    parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
-    parts += [describe(p, i + 1) for i, p in enumerate(refs)]
-    if drop_expr and face_refs:
-        loc_i = next((i + 1 for i, r in enumerate(refs) if os.path.basename(r).startswith(("loc-", "angle-"))), None)
-        if loc_i:   # 2차 재생성 실증(S15j): 기준 얼굴 컷의 배경(지하 창고)이 연회장 컷으로 새어 들어옴
-            parts.insert(1, f"SETTING: the place is reference image {loc_i} ONLY; the background, furniture, lamps and lighting of reference image 1 "
-                            "must NOT appear.")
-        parts.insert(1, "IDENTITY FIRST: the person is EXACTLY the one in reference image 1 — same face shape, jaw, cheekbones, nose, eyes, eyebrows, "
-                        "skin tone, age, hairstyle and eyewear; only the expression, lighting and framing described below change.")
-    if sc["kind"] == "d":
-        parts.insert(1, TIGHT + " Mouth CLOSED (lips together, no teeth visible); facing the camera, looking into the lens.")
-    if sneer:
-        parts.insert(1, SNEER)
-    if sc["id"] in FIX:
-        parts.insert(1 + sneer, FIX[sc["id"]])
+    # 제12장 1(2026-10-12) 5단 공식: 스타일 → [CAMERA] 구도·앵글 → [CHARACTER] 인물 참조·IDENTITY → [ACTION] 표정·동작·장면 문장
+    #                              → [SETTING] 장소 잠금·참조 메모·조명 → [NEGATIVE]. 이전의 insert(1) 누적 방식은 순서가 뒤집혔다.
+    style = "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."
+    camera, character, action, setting = [], [], [], []
+    if sc["size"] == "ch":
+        camera.append(CHOKER_FIRST)
+    if sc["angle"] == "BE":
+        camera.append(BE_FIRST)
     kp = sc["keyframe_prompt"]
     if sc["kind"] == "ins" or sc["id"] in NOFACE:
         kp = re.sub(r" Characters: .*?(?= Camera:)", " No person's face is visible.", kp)
-        parts.insert(1, INSERT_FIRST)
-    if sc["angle"] == "BE":
-        parts.insert(1, BE_FIRST)
-    if sc["size"] == "ch":
-        parts.insert(1, CHOKER_FIRST)
-    if any(os.path.basename(r).startswith(("loc-bq", "angle-bq", "loc-aud")) for r in refs):
-        parts.insert(1, BANNER_FIRST)
-    parts.append(kp)
-    parts += notes(refs)
+        kp = re.sub(r"\[CHARACTER\][^\[]*", "[CHARACTER] No person's face is visible. ", kp)
+        camera.append(INSERT_FIRST)
     if sc["kind"] == "d":
-        parts.append(TIGHT)
-        parts.append("Soft fill light keeps the mouth and jaw readable (lip-sync cut). Mouth gently closed or barely parted (speech is added later); "
-                     "natural skin texture, both eyes sharp and symmetrical.")
+        camera.append(TIGHT + " Mouth CLOSED (lips together, no teeth visible); facing the camera, looking into the lens.")
+    character += [describe(p, i + 1) for i, p in enumerate(refs)]
+    if drop_expr and face_refs:
+        character.append("IDENTITY FIRST: the person is EXACTLY the one in reference image 1 — same face shape, jaw, cheekbones, nose, eyes, eyebrows, "
+                         "skin tone, age, hairstyle and eyewear; only the expression, lighting and framing described below change.")
+    if sneer:
+        action.append(SNEER)
+    if sc["id"] in FIX:
+        action.append(FIX[sc["id"]])
+    # PHASE 3가 5단 라벨로 만든 kp는 같은 버킷으로 합친다(#03부터); 라벨 없는 구형 kp(#02)는 [ACTION]에 통째로
+    secs = split_sections(kp)
+    if "CAMERA" in secs or "ACTION" in secs:
+        if secs.get("_pre"):
+            style += " " + secs["_pre"]
+        camera.append(secs.get("CAMERA", "")); character.append(secs.get("CHARACTER", ""))
+        action.append(secs.get("ACTION", "")); setting.append(secs.get("SETTING", ""))
+        extra_neg = secs.get("NEGATIVE", "")
     else:
-        parts.append(FULL)
+        action.append(kp); extra_neg = ""
     if TEARS_RE.search(sc["subject"]):
-        parts.append(TEARS_DRY if re.search(r"but dry|held back|no tear", sc["subject"], re.I) else TEARS)
+        action.append(TEARS_DRY if re.search(r"but dry|held back|no tear", sc["subject"], re.I) else TEARS)
     if sc["kind"] == "sil":
-        parts.append("The figure is a true backlit silhouette: no facial features readable, only outline, hair shape and body mass.")
-    parts.append("Absolutely no text, letters, numbers, logos or symbols anywhere in the image.")
+        action.append("The figure is a true backlit silhouette: no facial features readable, only outline, hair shape and body mass.")
+    if drop_expr and face_refs:
+        loc_i = next((i + 1 for i, r in enumerate(refs) if os.path.basename(r).startswith(("loc-", "angle-"))), None)
+        if loc_i:   # 2차 재생성 실증(S15j): 기준 얼굴 컷의 배경(지하 창고)이 연회장 컷으로 새어 들어옴
+            setting.append(f"SETTING: the place is reference image {loc_i} ONLY; the background, furniture, lamps and lighting of reference image 1 "
+                           "must NOT appear.")
+    if any(os.path.basename(r).startswith(("loc-bq", "angle-bq", "loc-aud")) for r in refs):
+        setting.append(BANNER_FIRST)
+    setting += notes(refs)
+    if sc["kind"] == "d":
+        setting.append(TIGHT)
+        setting.append("Soft fill light keeps the mouth and jaw readable (lip-sync cut). Mouth gently closed or barely parted (speech is added later); "
+                       "natural skin texture, both eyes sharp and symmetrical.")
+    else:
+        setting.append(FULL)
+    prompt = compose_keyframe(" ".join(camera), " ".join(character), " ".join(action), " ".join(setting),
+                              ("Absolutely no text, letters, numbers, logos or symbols anywhere in the image. " + extra_neg).strip(), style=style)
+    for w in check_order(prompt) + check_motion(prompt, sc["id"]):
+        print("  [경고 제12장 1] " + w)
+    parts = [prompt]
     return {"id": sc["id"], "count": 1, "aspect_ratio": "16:9", "refs": refs, "prompt": " ".join(parts)}
 
 

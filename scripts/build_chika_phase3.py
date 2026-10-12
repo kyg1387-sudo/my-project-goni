@@ -14,6 +14,7 @@
 규칙: CLAUDE.md 제0~9장, 03_시네마규격.json(B안), 제8장 자동 검사. 아웃트로(진행자 4줄)는 PHASE 6 append_outro로 별도.
 사용법: python3 scripts/build_chika_phase3.py
 """
+from prompt_format import compose_keyframe, compose_motion, check_motion  # 제12장 1
 import collections
 import json
 import os
@@ -869,10 +870,13 @@ def main():
             if s["kind"] == "gfx":
                 subj = GFX_PLATE.get(sid) or re.sub(r"\s*\([^)]*\)|「[^」]*」|[0-9,]+円", "", subj)
                 subj += " Every surface that will carry writing is completely blank and evenly lit."
-            kf_prompt = " ".join([
-                PRESET + ".", subj, ("Characters: " + " | ".join(ids) + ".") if ids else "",
-                f"Camera: {ANGLE[s['angle']]}, {LENS[s['lens']]}.", f"Lighting: {LIGHT[s['light']]}.", comp, " ".join(sign_txt), PLAIN,
-                f"Negative: {NEGATIVE}."]).strip()
+            # 제12장 1(2026-10-12): 5단 공식 — 구도 → 인물 → 행동·표정 → 배경·조명 → 네거티브(오디오·대사 없음)
+            kf_prompt = compose_keyframe(
+                camera=f"{ANGLE[s['angle']]}, {LENS[s['lens']]}. {comp}".strip(),
+                character=(" | ".join(ids) + ".") if ids else "",
+                action=subj,
+                setting=f"Lighting: {LIGHT[s['light']]}. {' '.join(sign_txt)} {PLAIN}".strip(),
+                negative=f"{NEGATIVE}.", style=PRESET + ".")
             cost["kf"] += 1
         tier = {"d": "omni", "react": "still", "ins": "still", "estill": "still", "gfx": "gfx", "face": "pro", "sil": "lite",
                 "empty": "lite", "card": "card"}.get(s["kind"], "reuse")
@@ -884,9 +888,13 @@ def main():
             motion = s["motion"] or "Subtle natural motion only, micro movements, no new people."
             if TEAR_RE.search(s["subject"] + " " + motion):
                 motion += TEAR_MOTION
-            item["prompt"] = ("Static, locked off camera. Motion: " + motion +
-                              " Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. "
-                              "No walking toward the camera unless described, no new people, no text.")
+            item["prompt"] = compose_motion(
+                action=motion,
+                character="Keep the exact faces, wardrobe, props and lighting of the first frame.",
+                locks="Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.")
+            _bad = check_motion(item["prompt"], sid)
+            if _bad:
+                print("  [경고 제12장 1] " + "; ".join(_bad))
             item["image"] = keyframe
             if tier == "pro":
                 item["i2v_model"], item["i2v_resolution"] = PRO_MODEL, "1080p"; cost["pro"] += gen
