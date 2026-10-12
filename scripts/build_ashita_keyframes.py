@@ -203,6 +203,50 @@ COMPOSITION["S22c"] = ("EXTREME CLOSE-UP INSERT filling the whole frame: a man's
 CONVO_REFS = {"S09d": ["assets/portraits/ashita-cast-2/cells/tanaka-full-back.png"],
               "S12c": ["assets/portraits/ashita-cast-2/cells/sato-full-back.png"],
               "S24c": ["assets/portraits/ashita-cast-2/cells/yamamoto-full-back.png"]}
+# B안 전체(고니감독님 승인 2026-10-12): 나머지 대사 10컷 — 어깨 너머 3/4, 일하는 손, 톤연출표 감정에 맞춘 표정·동작(제10장 7)
+FACE13 = ("Framing from mid-chest up: the speaker's head and shoulders fill the frame, the face about one third of the frame height and "
+          "sharp, turned about 35 degrees toward the other person; 85mm lens, f/2.0, shallow depth of field.")
+EXTRA_REFS["S24b"] = ["assets/portraits/ashita-faces/takahashi.png"]   # 실루엣 컷이던 S24b를 립싱크 대화 컷으로 — 얼굴 기준 추가
+CONVO.update({
+    "S05d": ("Over-the-shoulder conversation shot in the bright design office: in the soft foreground left, the back of Sato's grey-streaked "
+             "head and navy work-jacket shoulder (seated). Tanaka perches on the corner of the desk holding a white paper coffee cup loosely, "
+             "head tilted, one eyebrow raised in a mocking smirk (L08 mocking laugh). " + FACE13),
+    "S09e": ("Over-the-shoulder conversation shot in the design office: in the soft foreground right, the back of Sato's grey-streaked head "
+             "and navy jacket shoulder. Tanaka leans back in his office chair, one arm over the backrest, the other hand gesturing lazily "
+             "with an open palm, a condescending smirk (L15 looking-down laugh). " + FACE13),
+    "S11d": ("Over-the-shoulder conversation shot across the long black meeting table: in the dark soft foreground left, the bald crown "
+             "and gold-rimmed glasses temple of Yamamoto seen from behind. Sato sits upright, both hands flat on a closed plain folder on "
+             "the table, jaw set, eyes unwavering, resolute (L18 determined). Chiaroscuro top light. " + FACE13),
+    "S12b": ("Over-the-shoulder conversation shot in the meeting room: in the dark soft foreground right, the back of Sato's grey-streaked "
+             "head (seated). Tanaka has just stood up, one fist pressed on the black table, leaning forward over it, furious, brow knotted, "
+             "lips pressed tight between words (L21 shouting rage — mouth closed in the still). " + FACE13),
+    "S13a": ("Over-the-shoulder conversation shot in the meeting room: in the soft foreground left, the navy suit shoulder and light-brown "
+             "hair of Tanaka from behind, standing. Sato is slowly rising from his chair, one hand on the table edge, the other holding his "
+             "folder, eyes lowered then looking up, quiet cold restraint after a long silence (L24 low and quiet). " + FACE13),
+    "S14d": ("Over-the-shoulder conversation shot in the night office lit by one warm desk lamp: in the soft foreground right, the back of "
+             "Mori's black bob and light-blue uniform shoulder. Sato stands beside the open cardboard box, one hand resting on its edge, "
+             "leaning slightly toward Mori, earnest and grave, asking a final favor (L27 entrusting, word by word). " + FACE13),
+    "S24b": ("Over-the-shoulder conversation shot in the blacked-out control room: in the dark soft foreground left, the bald crown and black "
+             "suit shoulder of Yamamoto seen from behind. Takahashi stands facing him, black overcoat open, holding up a plain closed folder "
+             "at chest height, calm and cold, delivering a notice (L43 cold announcement). His face is lit by the red emergency lamp from one "
+             "side and the white doorway backlight from behind — face clearly visible. " + FACE13),
+    "S25a": ("Over-the-shoulder shot from behind Sato standing (soft charcoal suit shoulder and grey hair in the dark foreground right): "
+             "Tanaka kneels on the control room floor looking up, both hands clasped in front of his chest begging, face crumpled, real tears "
+             "streaming and sweat glistening, red emergency light (L47 sobbing plea). Seen from slightly above. " + FACE13),
+    "S26a": ("Over-the-shoulder shot from low behind the kneeling Tanaka (soft light-brown hair and navy shoulder in the dark foreground "
+             "left): Sato in a charcoal suit stands looking down at him, hands at his sides, cold calm eyes behind silver glasses, backlit by "
+             "the open doorway (L48 cold). Low angle. " + FACE13),
+    "S26c": ("Over-the-shoulder shot from low behind the kneeling Tanaka (soft light-brown hair in the dark foreground left): Sato in a "
+             "charcoal suit, slightly closer, adjusts his cuff with one hand, an icy faint smile at one corner of the mouth, backlit by the "
+             "doorway (L49 chilling). Low angle. " + FACE13),
+})
+CONVO_REFS.update({
+    "S05d": ["assets/portraits/ashita-cast-2/cells/sato-full-back.png"], "S09e": ["assets/portraits/ashita-cast-2/cells/sato-full-back.png"],
+    "S11d": ["assets/portraits/ashita-cast-2/cells/yamamoto-full-back.png"], "S12b": ["assets/portraits/ashita-cast-2/cells/sato-full-back.png"],
+    "S13a": ["assets/portraits/ashita-cast-2/cells/tanaka-full-back.png"], "S14d": ["assets/portraits/ashita-cast-2/cells/mori-full-back.png"],
+    "S24b": ["assets/portraits/ashita-cast-2/cells/yamamoto-full-back.png"], "S25a": ["assets/portraits/ashita-cast-2/cells/sato-b-full-back.png"],
+    "S26a": ["assets/portraits/ashita-cast-2/cells/tanaka-full-back.png"], "S26c": ["assets/portraits/ashita-cast-2/cells/tanaka-full-back.png"],
+})
 for _k, _v in MOUTH_HIDE.items():
     COMPOSITION[_k] = _v + " " + NO_MOUTH + " " + FULL
 EXTRA_REFS = {"S17be": ["assets/portraits/ashita-cast/cells/loc-misc-key2.png"]}
@@ -250,7 +294,7 @@ def notes(refs):
 
 def build(sc, face_refs):
     refs = list(face_refs) + list(sc["refs"]) + EXTRA_REFS.get(sc["id"], [])
-    convo = STAGE.startswith("r5") and sc["id"] in CONVO
+    convo = (STAGE.startswith("r5") or STAGE.startswith("r7")) and sc["id"] in CONVO
     if convo:
         refs += CONVO_REFS[sc["id"]]
     if sc["id"] in BACK_ONLY:  # 뒷모습 전용: 얼굴 크롭 제거, 화자 셀 → <화자>-full-back
