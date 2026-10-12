@@ -1,0 +1,24 @@
+{
+ "_설명": "아웃트로 진행자 2단계 — 승인 얼굴(후보 4) 기준 허리 위·손 흔들기 각 후보 2장. OmniHuman 입력(정면).",
+ "_style_preset": "Photorealistic live-action, Arri Alexa cinematic color grade, soft Kodak 35mm film grain, 16:9",
+ "characters": [
+  {
+   "id": "host-wu",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the APPROVED host: reproduce exactly this woman's face, age, hairstyle (long dark-brown waves with soft bangs), pearl stud earrings, ivory knit top and the bright living-room studio; keep the same warm morning light. Waist-up medium shot: she sits on the beige sofa facing the camera directly, hands resting lightly together on her lap, relaxed friendly posture, about 35mm lens f/2.8, the shelf and green plant softly out of focus behind her. Mouth gently closed in a soft smile (speech is added later); both eyes sharp and symmetrical; natural five-fingered hands. Full-frame 16:9 image, no black bars, no letterbox. Absolutely no text, letters, numbers, logos or symbols anywhere in the image."
+  },
+  {
+   "id": "host-wave",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the APPROVED host: reproduce exactly this woman's face, age, hairstyle (long dark-brown waves with soft bangs), pearl stud earrings, ivory knit top and the bright living-room studio; keep the same warm morning light. Chest-and-waist shot: she sits on the beige sofa facing the camera, raising her right hand beside her face in a small friendly wave goodbye, palm open toward the camera, warm smile. Mouth gently closed in a soft smile (speech is added later); both eyes sharp and symmetrical; natural five-fingered hands. Full-frame 16:9 image, no black bars, no letterbox. Absolutely no text, letters, numbers, logos or symbols anywhere in the image."
+  }
+ ]
+}

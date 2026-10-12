@@ -1,0 +1,29 @@
+{
+ "_설명": "『明日から来なくていい』 아웃트로 진행자(후보 4) OmniHuman 4컷 — OUT1 가슴 위(구독) / OUT2 허리 위(댓글) / OUT3 가슴 위(예고) / OUT4 손 흔들기. 음성은 앞뒤 무음 정리 + 0.15초 여백, tempo 0.92(버들잎 교훈: 말이 빠름). 8초 이하. 약 23초 x 0.16 = 약 3.7달러.",
+ "tests": [
+  {
+   "id": "omni-out1",
+   "model": "omnihuman",
+   "image": "assets/portraits/ashita-host-1/host-cu-4.png",
+   "audio_id": "pad1"
+  },
+  {
+   "id": "omni-out2",
+   "model": "omnihuman",
+   "image": "assets/portraits/ashita-host-2/host-wu-1.png",
+   "audio_id": "pad2a"
+  },
+  {
+   "id": "omni-out3",
+   "model": "omnihuman",
+   "image": "assets/portraits/ashita-host-1/host-cu-4.png",
+   "audio_id": "pad2b"
+  },
+  {
+   "id": "omni-out4",
+   "model": "omnihuman",
+   "image": "assets/portraits/ashita-host-2/host-wave-2.png",
+   "audio_id": "pad3"
+  }
+ ]
+}
