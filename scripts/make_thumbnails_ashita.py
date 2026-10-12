@@ -37,9 +37,20 @@ def big(s, size, gradient=FIRE, fill=None, stroke_w=14, outer_w=10, font=GOTH):
 
 
 def glow(lay, color=(255, 30, 0), r=22, strength=1.6):
+    """글자 뒤 빛 번짐. 레이어 가장자리에서 번짐이 잘려 네모 띠가 보이지 않도록 먼저 2r만큼 여백을 둔다."""
+    padded = Image.new("RGBA", (lay.width + 4 * r, lay.height + 4 * r), (0, 0, 0, 0))
+    padded.alpha_composite(lay, (2 * r, 2 * r))
+    lay = padded
     a = lay.split()[3].filter(ImageFilter.GaussianBlur(r)).point(lambda v: min(255, int(v * strength)))
     g = Image.new("RGBA", lay.size, color + (0,)); g.putalpha(a)
     return Image.alpha_composite(g, lay)
+
+
+def put(img, lay, x, y):
+    """음수 좌표도 받는 합성(글로 여백만큼 왼쪽·위로 나가도 됨)."""
+    tmp = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    tmp.paste(lay, (x, y), lay)
+    img.alpha_composite(tmp)
 
 
 def label(s, size, bg, fg, border=None, pad=(34, 14), radius=18):
@@ -204,8 +215,64 @@ def styled_samples(out):
         print("저장:", p)
 
 
+# ---------------------------------------------------------------- 아바타 확정판(휴대폰 기준, 강한 글자) — 고니감독님 선택 2026-10-12
+def thumb_avatar(src_png, crop=(0.49, 0.0, 1.0, 1.0)):
+    """휴대폰 썸네일(폭 약 360px)에서도 읽히게: 인물은 크게 오른쪽, 글자는 왼쪽 3줄만, 오른쪽 아래(재생 시간) 비움.
+    글자 = 기울임 + 3D 돌출 + 금속 그라데이션 + 이중 테 + 글로."""
+    from make_thumbnails_yanagi_v2 import banner as _banner  # noqa
+    src = cv2.cvtColor(cv2.imread(src_png), cv2.COLOR_BGR2RGB)
+    h0, w0 = src.shape[:2]
+    x0, y0, x1, y1 = int(crop[0] * w0), int(crop[1] * h0), int(crop[2] * w0), int(crop[3] * h0)
+    part = src[y0:y1, x0:x1]
+    s = H / part.shape[0]
+    part = cv2.resize(part, (int(part.shape[1] * s), H), interpolation=cv2.INTER_LANCZOS4)
+    part = cv2.addWeighted(part, 1.35, cv2.GaussianBlur(part, (0, 0), 2.2), -0.35, 0)        # 확대 후 선명도 보정
+    canvas = np.zeros((H, W, 3), np.float32)
+    left = cv2.GaussianBlur(cover(src, W, H, 0.3, 0.5), (0, 0), 25).astype(np.float32) * 0.35   # 왼쪽 = 같은 장면을 흐리고 어둡게
+    canvas[:] = left
+    px = W - part.shape[1]
+    feather = np.clip((np.arange(part.shape[1]) - 0) / 380, 0, 1)[None, :, None]
+    canvas[:, px:] = canvas[:, px:] * (1 - feather) + part.astype(np.float32) * feather
+    canvas = canvas * np.array([1.06, 0.97, 0.95])                                             # 붉은 조명 톤 살짝 강조
+    img = to_pil(vignette(canvas, 0.35)).convert("RGBA")
+    # 글자
+    img.alpha_composite(_banner("スカッとする話", 58, (214, 20, 24)), (30, 30))
+    l1 = text_layer("クビにした男が", GOTH, 108, (255, 255, 255), (0, 0, 0), 12, extrude=8, extrude_color=(60, 0, 0), shear=0.14)
+    img.alpha_composite(l1, (22, 150))
+    gold = ((255, 252, 215), (255, 205, 40), (205, 95, 0))
+    red = ((255, 150, 120), (235, 20, 20), (130, 0, 0))
+    l2 = text_layer("百億円の", GOTH, 208, None, (40, 0, 0), 14, extrude=16, extrude_color=(120, 20, 0), shear=0.14,
+                    gradient=gold, outer=(255, 255, 255), outer_w=8)
+    put(img, glow(l2, (255, 140, 0), 26, 1.1), -52, 290 - 52)
+    l3 = text_layer("鍵だった", GOTH, 226, None, (20, 0, 0), 14, extrude=18, extrude_color=(70, 0, 0), shear=0.14,
+                    gradient=red, outer=(255, 255, 255), outer_w=8)
+    put(img, glow(l3, (255, 30, 0), 30, 1.3), -60, 560 - 60)
+    # 오른쪽 붉은 도장(재생 시간이 뜨는 오른쪽 아래는 비움)
+    st = Image.new("RGBA", (470, 170), (0, 0, 0, 0))
+    d = ImageDraw.Draw(st)
+    d.rounded_rectangle([0, 0, 469, 169], 16, outline=(230, 20, 20, 255), width=12)
+    d.rounded_rectangle([18, 18, 451, 151], 8, outline=(230, 20, 20, 255), width=4)
+    f = ImageFont.truetype(GOTH, 104)
+    d.text((235, 88), "懲戒解雇", font=f, fill=(235, 25, 25, 255), anchor="mm", stroke_width=3, stroke_fill=(255, 255, 255, 255))
+    st = st.rotate(-9, expand=True, resample=Image.BICUBIC)
+    img.alpha_composite(st, (W - st.width - 30, 470))      # 사토의 얼굴(위)·田中의 얼굴(가운데)을 가리지 않는 위치
+    return img.convert("RGB")
+
+
+def avatar_final(out):
+    d = os.path.join(ROOT, "assets", "portraits", "ashita-style-samples")
+    for n in ("avatar-1", "avatar-2"):
+        p = os.path.join(out, f"ashita-thumb-{n}-final-JP.jpg")
+        im = thumb_avatar(os.path.join(d, f"{n}.png"))
+        im.save(p, quality=92)
+        im.resize((360, 203), Image.LANCZOS).save(p.replace("-JP.jpg", "-phone360.jpg"), quality=90)   # 휴대폰 크기 확인용
+        print("저장:", p)
+
+
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] == "styled":
+    if len(sys.argv) > 1 and sys.argv[1] == "avatar":
+        avatar_final(os.path.join(ROOT, "assets", "thumbnails", "ashita"))
+    elif len(sys.argv) > 1 and sys.argv[1] == "styled":
         styled_samples(os.path.join(ROOT, "assets", "thumbnails", "ashita"))
     else:
         main()
