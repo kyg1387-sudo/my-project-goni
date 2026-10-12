@@ -216,7 +216,7 @@ def styled_samples(out):
 
 
 # ---------------------------------------------------------------- 아바타 확정판(휴대폰 기준, 강한 글자) — 고니감독님 선택 2026-10-12
-def thumb_avatar(src_png, crop=(0.49, 0.0, 1.0, 1.0)):
+def thumb_avatar(src_png, crop=(0.49, 0.0, 1.0, 1.0), stamp_xy=None):
     """휴대폰 썸네일(폭 약 360px)에서도 읽히게: 인물은 크게 오른쪽, 글자는 왼쪽 3줄만, 오른쪽 아래(재생 시간) 비움.
     글자 = 기울임 + 3D 돌출 + 금속 그라데이션 + 이중 테 + 글로."""
     from make_thumbnails_yanagi_v2 import banner as _banner  # noqa
@@ -255,8 +255,19 @@ def thumb_avatar(src_png, crop=(0.49, 0.0, 1.0, 1.0)):
     f = ImageFont.truetype(GOTH, 104)
     d.text((235, 88), "懲戒解雇", font=f, fill=(235, 25, 25, 255), anchor="mm", stroke_width=3, stroke_fill=(255, 255, 255, 255))
     st = st.rotate(-9, expand=True, resample=Image.BICUBIC)
-    img.alpha_composite(st, (W - st.width - 30, 470))      # 사토의 얼굴(위)·田中의 얼굴(가운데)을 가리지 않는 위치
+    img.alpha_composite(st, stamp_xy or (W - st.width - 30, 470))      # 사토의 얼굴(위)·田中의 얼굴(가운데)을 가리지 않는 위치
     return img.convert("RGB")
+
+
+def anime_final(out):
+    """고니감독님 지시(2026-10-12): 썸네일 화풍 = 애니메이션(일본 드라마 만화풍). 배치·글자는 아바타 확정판과 같은 휴대폰 기준."""
+    d = os.path.join(ROOT, "assets", "portraits", "ashita-style-samples")
+    for n, crop, sxy in (("anime-2", (0.43, 0.0, 1.0, 1.0), (1090, 660)), ("anime-1", (0.45, 0.0, 1.0, 1.0), None)):
+        p = os.path.join(out, f"ashita-thumb-{n}-final-JP.jpg")
+        im = thumb_avatar(os.path.join(d, f"{n}.png"), crop, sxy)
+        im.save(p, quality=92)
+        im.resize((360, 203), Image.LANCZOS).save(p.replace("-JP.jpg", "-phone360.jpg"), quality=90)
+        print("저장:", p)
 
 
 def avatar_final(out):
@@ -270,7 +281,9 @@ def avatar_final(out):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] == "avatar":
+    if len(sys.argv) > 1 and sys.argv[1] == "anime":
+        anime_final(os.path.join(ROOT, "assets", "thumbnails", "ashita"))
+    elif len(sys.argv) > 1 and sys.argv[1] == "avatar":
         avatar_final(os.path.join(ROOT, "assets", "thumbnails", "ashita"))
     elif len(sys.argv) > 1 and sys.argv[1] == "styled":
         styled_samples(os.path.join(ROOT, "assets", "thumbnails", "ashita"))
