@@ -4,6 +4,8 @@
 
 사용법: make_shorts.py <본편.mp4(자막 입힘, 아웃트로 전)> <subs.ass> <spec.json> <out_dir>
 spec: {"shorts":[{"id":"1-letter","start":88.9,"end":112.3,"title":"…\\N…"}]}
+선택 키: "keep"(원 화면 위쪽 사용 비율, 기본 0.80 — 2줄 자막이 80% 선에 걸리면 0.78), "skip_styles"(쇼츠 자막에서 뺄
+원 스타일 — 화면에 이미 구워진 강조 자막과 겹칠 때), "sub_font"(자막 글꼴, 기본 IPAGothic)
 """
 import json
 import os
@@ -29,6 +31,9 @@ def s2t(x):
 
 def wrap(text, limit=15):
     """세로 화면용 줄바꿈: 한 줄 최대 약 15자. 범위 안의 마지막 。、…』」 뒤에서 끊고, 없으면 15자에서 끊는다."""
+    parts = text.split("\\N")
+    if len(parts) > 1 and all(len(x) <= limit + 4 for x in parts):  # 원 자막 줄바꿈이 세로 화면에도 맞으면 그대로(「…の / は、」 분리 방지)
+        return text
     t = text.replace("\\N", "")
     out = []
     while len(t) > limit + 2:
@@ -76,24 +81,27 @@ def main():
     os.makedirs(out_dir, exist_ok=True)
     ev = events(ass_path)
     spec = json.load(open(spec_path, encoding="utf-8"))
+    keep = float(spec.get("keep", 0.80))
+    skip = set(spec.get("skip_styles", []))
+    head = HEAD.replace("Style: Sub,IPAGothic", f"Style: Sub,{spec.get('sub_font', 'IPAGothic')}")
     for sh in spec["shorts"]:
         a, b = float(sh["start"]), float(sh["end"])
         dur = b - a
         tail = 1.2
         lines = [f"Dialogue: 0,{s2t(0)},{s2t(dur + tail)},Title,,0,0,0,,{sh['title']}"]
         for s, e, style, text in ev:
-            if e <= a or s >= b:
+            if e <= a or s >= b or style in skip:
                 continue
             st = "Cap" if style == "Caption" else "Sub"
             lines.append(f"Dialogue: 0,{s2t(s - a)},{s2t(min(e, b) - a)},{st},,0,0,0,,{wrap(text)}")
         lines.append(f"Dialogue: 0,{s2t(dur)},{s2t(dur + tail)},End,,0,0,0,,{sh.get('end_text', '続きは本編で')}")
         sub = os.path.join(out_dir, f"_{sh['id']}.ass")
-        open(sub, "w", encoding="utf-8").write(HEAD + "\n".join(lines) + "\n")
+        open(sub, "w", encoding="utf-8").write(head + "\n".join(lines) + "\n")
         out = os.path.join(out_dir, f"{spec['prefix']}-short-{sh['id']}-JP.mp4")
-        # 원 자막(하단)을 피해 위 80%만 쓰고, 흐린 배경 위 가운데(위쪽 약간)에 놓는다
+        # 원 자막(하단)을 피해 위 80%만 쓰고(흐린 배경도 같은 영역 — 배경에 흐린 자막 줄이 비치지 않게), 흐린 배경 위 가운데(위쪽 약간)에 놓는다
         fc = (f"[0:v]trim=start={a}:end={b},setpts=PTS-STARTPTS,tpad=stop_mode=clone:stop_duration={tail},split[s1][s2];"
-              f"[s1]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=30:2,eq=brightness=-0.12[bg];"
-              f"[s2]crop=iw:ih*0.80:0:0,scale=1080:-2[fg];"
+              f"[s1]crop=iw:ih*{keep}:0:0,scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=30:2,eq=brightness=-0.12[bg];"
+              f"[s2]crop=iw:ih*{keep}:0:0,scale=1080:-2[fg];"
               f"[bg][fg]overlay=0:560,ass={sub}:fontsdir={FONTS},fade=t=in:st=0:d=0.3[v];"
               f"[0:a]atrim=start={a}:end={b},asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.3,"
               f"afade=t=out:st={dur - 0.6:.3f}:d=0.6,apad=pad_dur={tail}[a]")

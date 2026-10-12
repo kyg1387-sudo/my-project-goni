@@ -1,0 +1,13 @@
+{
+ "prefix": "ashita",
+ "keep": 0.78,
+ "skip_styles": ["Caption"],
+ "sub_font": "Zen Maru Gothic",
+ "shorts": [
+  {"id": "1-kubi", "start": 236.9, "end": 265.2, "title": "30年支えた技術者に\\N「明日から来るな！」"},
+  {"id": "2-hira", "start": 166.6, "end": 188.8, "title": "命がけの警告を\\N「ヒラなんだから」"},
+  {"id": "3-login", "start": 369.9, "end": 402.4, "title": "クビにした翌朝\\N会社が動かない"},
+  {"id": "4-kansa", "start": 476.6, "end": 510.4, "title": "追い出したのは\\N百億円の鍵だった"},
+  {"id": "5-jigoku", "start": 510.9, "end": 531.7, "title": "「助けてくれ」\\N土下座した上司に…"}
+ ]
+}
