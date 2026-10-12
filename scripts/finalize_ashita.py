@@ -34,6 +34,10 @@ FX = {"S10a": "jib", "S12a": "dutch5+hh", "S17a": "hh", "S18e": "hh",   # 스토
       "S24a": "punch"}   # 고니감독님 지적 7:58: 전경 검은 모니터가 화면 2/3을 가림 → 문 쪽으로 1.35배 당겨 高橋 입장을 크게
 # 고니감독님 지적(7:58·8:04 「너무 어둡다」): 정전 구간(S23b~S25c) 평균 밝기 9~35/255 → 휴대폰에서 거의 검정.
 # 검정은 그대로 두고 어두운 중간 톤만 들어 올려(곡선) 분위기는 유지, 평균 약 2배(실측 9→24, 24→53, 35→60).
+# 8초 상한을 넘는 대사(S24b 高橋 L43, 9.1초)는 문장 쉼에서 나눈 립싱크 2컷으로 패치(R60).
+# (장면, 대사 태그, [(클립, 대사 파일 안 시작 초)]) — 대사 파일은 (Lock start − lead)에 놓인다.
+OMNI_SPLIT = [("S24b", "L43", [("assets/auditions/ashita-s24b-omni/omni-S24b-a.mp4", 0.0),
+                               ("assets/auditions/ashita-s24b-omni/omni-S24b-b.mp4", 5.62)])]
 BLACKOUT = ("S23b", "S25c")
 LIFT = "curves=all='0/0 0.06/0.13 0.25/0.38 0.6/0.72 1/1',eq=gamma=1.12:saturation=1.05"
 
@@ -97,6 +101,31 @@ def patch(src, out, tmp):
         if not os.path.exists(clip):
             print("편집 카메라 원본 없음(건너뜀):", sid); continue
         fx_clip(clip, c, fx, b - a)
+        segs.append((a, b, c))
+    for sid, tag, parts in OMNI_SPLIT:
+        a, b = B[sid]; c = os.path.join(tmp, f"o_{sid}.mp4")
+        t_file = LOCK[tag]["start"] - LOCK[tag]["lead"]          # 대사 파일이 놓인 본편 시각
+        norm = f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps=24,setsar=1,format=yuv420p"
+        ins, chain = [], []
+        for k, (clip, off) in enumerate(parts):
+            ins += ["-i", os.path.join(ROOT, clip)]
+            nxt = parts[k + 1][1] if k + 1 < len(parts) else None
+            seg_len = (nxt - off) if nxt is not None else None
+            shift = (t_file + off) - a if k == 0 else 0.0          # +: 장면 시작 후 대사 시작(앞을 정지로 채움) / −: 대사가 먼저 시작(앞을 잘라냄)
+            pad_head, cut_head = max(0.0, shift), max(0.0, -shift)
+            f = f"[{k}:v]{norm}"
+            if cut_head:
+                f += f",trim=start={cut_head:.3f},setpts=PTS-STARTPTS"
+                seg_len = seg_len - cut_head if seg_len else None
+            if seg_len:
+                f += f",tpad=stop_mode=clone:stop_duration=1,trim=0:{seg_len:.3f}"
+            if pad_head:
+                f += f",tpad=start_mode=clone:start_duration={pad_head:.3f}"
+            chain.append(f + f",setpts=PTS-STARTPTS[s{k}]")
+        n = len(parts)
+        flt = ";".join(chain) + ";" + "".join(f"[s{k}]" for k in range(n)) + \
+            f"concat=n={n}:v=1:a=0,tpad=stop_mode=clone:stop_duration=3,trim=0:{b - a + 0.05:.3f},setpts=PTS-STARTPTS[v]"
+        run(ins + ["-filter_complex", flt, "-map", "[v]", "-an", "-c:v", "libx264", "-crf", "16", c])
         segs.append((a, b, c))
     inputs, fc, last = ["-i", src], [], "[0:v]"
     for k, (a, b, c) in enumerate(segs, start=1):
