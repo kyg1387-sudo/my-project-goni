@@ -206,7 +206,6 @@ CONVO_REFS = {"S09d": ["assets/portraits/ashita-cast-2/cells/tanaka-full-back.pn
 # B안 전체(고니감독님 승인 2026-10-12): 나머지 대사 10컷 — 어깨 너머 3/4, 일하는 손, 톤연출표 감정에 맞춘 표정·동작(제10장 7)
 FACE13 = ("Framing from mid-chest up: the speaker's head and shoulders fill the frame, the face about one third of the frame height and "
           "sharp, turned about 35 degrees toward the other person; 85mm lens, f/2.0, shallow depth of field.")
-EXTRA_REFS["S24b"] = ["assets/portraits/ashita-faces/takahashi.png"]   # 실루엣 컷이던 S24b를 립싱크 대화 컷으로 — 얼굴 기준 추가
 CONVO.update({
     "S05d": ("Over-the-shoulder conversation shot in the bright design office: in the soft foreground left, the back of Sato's grey-streaked "
              "head and navy work-jacket shoulder (seated). Tanaka perches on the corner of the desk holding a white paper coffee cup loosely, "
@@ -250,6 +249,7 @@ CONVO_REFS.update({
 for _k, _v in MOUTH_HIDE.items():
     COMPOSITION[_k] = _v + " " + NO_MOUTH + " " + FULL
 EXTRA_REFS = {"S17be": ["assets/portraits/ashita-cast/cells/loc-misc-key2.png"]}
+EXTRA_REFS["S24b"] = ["assets/portraits/ashita-faces/takahashi.png"]   # 실루엣 컷이던 S24b를 립싱크 대화 컷으로 — 얼굴 기준 추가
 COMPOSITION["S17be"] = ("Extreme close-up of the large black lever on the front of the old grey mechanical breaker cabinet, mounted on the "
                         "bare concrete wall of the small substation room lit by one bare bulb; NO desks, NO office. " + FULL)
 
