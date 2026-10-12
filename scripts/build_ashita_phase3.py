@@ -413,18 +413,18 @@ OMNI_BASE = (" Natural, realistic acting like a real film actor: subtle breathin
              "keeps looking toward the other person at the same three-quarter angle, hands stay where they are in the first frame; "
              "no exaggerated motion, the face and body stay the same person.")
 OMNI_ACT = {
-    "S05d": "Tanaka speaks with a lazy mocking smile, one eyebrow up, a small dismissive tilt of the head, the cup held loosely." + OMNI_BASE,
-    "S09d": "Sato speaks with restrained anger, jaw tight, his finger pressing the drawing for emphasis on the last words." + OMNI_BASE,
-    "S09e": "Tanaka speaks with a condescending smirk, a lazy open-palm gesture, leaning back in the chair." + OMNI_BASE,
-    "S11d": "Sato speaks firmly with restrained anger and resolve, jaw set, hands flat on the folder, a small forward lean and a harder glare on 「絶対に」." + OMNI_BASE,
-    "S12b": "Tanaka shouts in fury, leaning over the table on his fist, sharp short head movements, brow knotted." + OMNI_BASE,
-    "S12c": "Tanaka delivers the firing slowly, savoring it, a cruel smile spreading, leaning on the table." + OMNI_BASE,
-    "S13a": "Sato speaks low and quiet after a long silence, slow and controlled, eyes steady, minimal movement." + OMNI_BASE,
-    "S14d": "Sato speaks earnestly and gently, word by word, a slight nod as he asks, his hand resting on the box." + OMNI_BASE,
-    "S24c": "Takahashi condemns coldly and precisely, chin slightly down, the folder held at his side, a slow deliberate rhythm." + OMNI_BASE,
-    "S25a": "Tanaka sobs and begs, face crumpling, shoulders shaking, clasped hands trembling, tears running." + OMNI_BASE,
-    "S26a": "Sato speaks coldly and quietly, looking down, almost motionless, one slow blink." + OMNI_BASE,
-    "S26c": "Sato speaks with an icy faint smile, adjusting his cuff once, unhurried." + OMNI_BASE,
+    "S05d": "Tanaka speaks with a lazy mocking smile, one eyebrow up, a small dismissive tilt of the head, the cup held loosely. Replying to Sato's warning, as if brushing off what he just said." + OMNI_BASE,
+    "S09d": "Sato speaks with restrained anger, jaw tight, his finger pressing the drawing for emphasis on the last words. Answering Tanaka directly, looking him in the eye across the desk." + OMNI_BASE,
+    "S09e": "Tanaka speaks with a condescending smirk, a lazy open-palm gesture, leaning back in the chair. Answering Sato's warning with a dismissive comeback, looking at him." + OMNI_BASE,
+    "S11d": "Sato speaks firmly with restrained anger and resolve, jaw set, hands flat on the folder, a small forward lean and a harder glare on 「絶対に」. Answering Yamamoto across the table, holding his gaze." + OMNI_BASE,
+    "S12b": "Tanaka shouts in fury, leaning over the table on his fist, sharp short head movements, brow knotted. Shouting at Sato across the table, right after Yamamoto's sneer." + OMNI_BASE,
+    "S12c": "Tanaka delivers the firing slowly, savoring it, a cruel smile spreading, leaning on the table. Delivering the final blow to Sato, savoring his reaction." + OMNI_BASE,
+    "S13a": "Sato speaks low and quiet after a long silence, slow and controlled, eyes steady, minimal movement. Replying to Tanaka after a long silence, looking at him steadily." + OMNI_BASE,
+    "S14d": "Sato speaks earnestly and gently, word by word, a slight nod as he asks, his hand resting on the box. Speaking to Mori who stands beside him, gently, as a last request." + OMNI_BASE,
+    "S24c": "Takahashi condemns coldly and precisely, chin slightly down, the folder held at his side, a slow deliberate rhythm. Addressing Yamamoto face to face, answering his excuses." + OMNI_BASE,
+    "S25a": "Tanaka sobs and begs, face crumpling, shoulders shaking, clasped hands trembling, tears running. Begging Sato who stands over him, looking up at him." + OMNI_BASE,
+    "S26a": "Sato speaks coldly and quietly, looking down, almost motionless, one slow blink. Answering Tanaka's plea, looking down at him." + OMNI_BASE,
+    "S26c": "Sato speaks with an icy faint smile, adjusting his cuff once, unhurried. Following up to Tanaka, quietly, still looking down at him." + OMNI_BASE,
 }
 STYLE = {"NA": "Naration", "佐藤": "Sato", "田中": "Tanaka", "山本": "Yamamoto", "高橋": "Takahashi", "森": "Mori"}
 STYLE_JA = {"Naration": "ナレーター", "Sato": "佐藤", "Tanaka": "田中", "Yamamoto": "山本", "Takahashi": "高橋", "Mori": "森"}

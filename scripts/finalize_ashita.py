@@ -38,6 +38,10 @@ FX = {"S10a": "jib", "S12a": "dutch5+hh", "S17a": "hh", "S18e": "hh",   # 스토
 # (장면, 대사 태그, [(클립, 대사 파일 안 시작 초)]) — 대사 파일은 (Lock start − lead)에 놓인다.
 OMNI_SPLIT = [("S24b", "L43", [("assets/auditions/ashita-s24b-omni/omni-S24b-a.mp4", 0.0),
                                ("assets/auditions/ashita-s24b-omni/omni-S24b-b.mp4", 5.62)])]
+# 고니감독님 지시(2026-10-12) 「대사는 서로 대화하면서 자연스럽게」: 4.5초 넘는 립싱크 대사는 말 끝 무렵 듣는 사람의 반응으로 잠깐 넘어갔다가
+# (L컷 — 목소리는 이어짐) 돌아온다. (말하는 컷, 대사 태그, 듣는 사람 반응 키프레임, 반응 길이 초) — 듣는 사람은 같은 장면의 어깨 너머 역방향 컷.
+LCUT = [("S05d", "L08", "S05c", 1.3), ("S09e", "L15", "S09d", 1.4), ("S11d", "L18", "S11e", 1.2), ("S12b", "L21", "S13a", 1.2),
+        ("S13a", "L24", "S12c", 1.2), ("S14d", "L27", "S14e", 1.4), ("S24c", "L44", "S24d", 1.5)]
 BLACKOUT = ("S23b", "S25c")
 LIFT = "curves=all='0/0 0.06/0.13 0.25/0.38 0.6/0.72 1/1',eq=gamma=1.12:saturation=1.05"
 
@@ -126,6 +130,16 @@ def patch(src, out, tmp):
         flt = ";".join(chain) + ";" + "".join(f"[s{k}]" for k in range(n)) + \
             f"concat=n={n}:v=1:a=0,tpad=stop_mode=clone:stop_duration=3,trim=0:{b - a + 0.05:.3f},setpts=PTS-STARTPTS[v]"
         run(ins + ["-filter_complex", flt, "-map", "[v]", "-an", "-c:v", "libx264", "-crf", "16", c])
+        segs.append((a, b, c))
+    for sid, tag, lis, sec in LCUT:
+        e = LOCK[tag]["end"]
+        a, b = e - sec, e + 0.15                                     # 말 끝 직전 ~ 끝 직후(장면 안)
+        lo, hi = B[sid]
+        a, b = max(a, lo + 1.5), min(b, hi - 0.6)                    # 말하는 얼굴로 시작하고, 끝 여운은 다시 말하는 사람
+        if b - a < 0.8:
+            continue
+        c = os.path.join(tmp, f"l_{sid}.mp4")
+        ov.cam(os.path.join(KF, f"{lis}-1.png"), c, b - a + 0.1, "push")
         segs.append((a, b, c))
     inputs, fc, last = ["-i", src], [], "[0:v]"
     for k, (a, b, c) in enumerate(segs, start=1):
