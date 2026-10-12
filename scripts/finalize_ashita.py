@@ -28,10 +28,11 @@ LOCK = {l["tag"]: l for l in json.load(open(os.path.join(ROOT, "productions", "a
 KF = os.path.join(ROOT, "assets", "portraits", "ashita-kara-keyframes")
 W, H = 1920, 1080
 
-STILL_REDO = ["S17da", "S15bb",                       # 흰 띠(한쪽만 잘랐던 실수) 다시 잡은 키프레임
-              "S19c"]                                 # 고니감독님 검수 6:35: 떠 있는 안경 → 후보 1로 교체(R53)
+STILL_REDO = ["S17da"]                                # 흰 띠(한쪽만 잘랐던 실수) 다시 잡은 키프레임
+# B안(R57): S15bb·S19c는 고친 키프레임(띠 제거·안경 후보 1)으로 i2v를 새로 만들어 정지 재패치가 필요 없음 → 편집 카메라만
 FX = {"S10a": "jib", "S12a": "dutch5+hh", "S17a": "hh", "S18e": "hh",   # 스토리보드 edit_fx(craneup·dutch5,handheld·handheld)
-      "S24a": "punch"}   # 고니감독님 지적 7:58: 전경 검은 모니터가 화면 2/3을 가림 → 문 쪽으로 1.35배 당겨 高橋 입장을 크게
+      "S24a": "punch",
+      "S19c": "dutch7"}  # B안: 정지(dutch7)였던 S19c가 i2v가 되어 더치 7°(비리 발각, 작품당 2회 중 두 번째)를 편집에서 다시 건다   # 고니감독님 지적 7:58: 전경 검은 모니터가 화면 2/3을 가림 → 문 쪽으로 1.35배 당겨 高橋 입장을 크게
 # 고니감독님 지적(7:58·8:04 「너무 어둡다」): 정전 구간(S23b~S25c) 평균 밝기 9~35/255 → 휴대폰에서 거의 검정.
 # 검정은 그대로 두고 어두운 중간 톤만 들어 올려(곡선) 분위기는 유지, 평균 약 2배(실측 9→24, 24→53, 35→60).
 # 8초 상한을 넘는 대사(S24b 高橋 L43, 9.1초)는 문장 쉼에서 나눈 립싱크 2컷으로 패치(R60).
@@ -74,6 +75,8 @@ def fx_filter(fx):
         return f"scale=2112:1188,{shake}"
     if fx == "punch":    # 정지 당김(1.35배) — 문 쪽(화면 가운데 약간 위)
         return "crop=iw/1.35:ih/1.35:(iw-iw/1.35)/2:(ih-ih/1.35)*0.4,scale=1920:1080:flags=lanczos"
+    if fx == "dutch7":   # 7° 회전 + 1.25배(16:9 모서리 검은 부분 가림)
+        return "rotate=7*PI/180:ow=iw:oh=ih:c=black,scale=2400:1350,crop=1920:1080"
     if fx == "dutch5+hh":
         return f"rotate=5*PI/180:ow=iw:oh=ih:c=black,scale=2400:1350,{shake}"
     return "null"
