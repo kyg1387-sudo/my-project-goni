@@ -342,6 +342,90 @@ BGM = [  # (시작, 끝, 볼륨, 프롬프트) — 0~4초는 BGM 없음(결정 �
 # PHASE 6 실증(2026-10-11): 구간 간격 0.5초 → generate_audio.py가 「겹쳐 들림」으로 생성 중단. 간격 1.0초 이상을 생성기에서 미리 검사
 for _a, _b in zip(BGM, BGM[1:]):
     assert _b[0] - _a[1] >= 1.0, f"BGM 구간 간격 {_b[0] - _a[1]:.1f}s < 1.0s ({_a[1]}→{_b[0]})"
+
+# B안(제10장 3·7): 사람이 나오는 정지 컷을 i2v로 — 실제 배우처럼 작고 자연스러운 연기(숨·눈 깜빡임·손의 일), 톤연출표 감정에 맞춘 크기.
+# 입이 보이면 안 되는 컷은 「등·옆을 유지, 고개 15° 이내, 입 안 보임」을 붙인다. 글자 합성 면·무인 정물·편집 효과(흑백·돌리줌)는 정지 유지.
+HIDE = " The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible."
+LIVE = {
+    "S01c": "Clouds drift slowly across the sky reflected in the glass panels. No people.",
+    "S02a": "His weathered hands slowly smooth the drawing flat and turn its corner, unhurried, careful.",
+    "S02b": "Sato reads intently, eyes moving along a line, one slow blink, the lamp light flickering faintly on his glasses; tiny breathing.",
+    "S03b": "Sato leans closer over the drawing, his pencil tapping once, a small thoughtful exhale." + HIDE,
+    "S03c": "His finger slowly traces along a line on the drawing and stops; steam rises faintly from the coffee can.",
+    "S03d": "Mori shifts her weight shyly in the foreground; Sato glances up and gives a small tired nod." + HIDE,
+    "S04b": "The polished shoes take one slow arrogant step across the floor; the gold watch glints.",
+    "S04c": "Tanaka's eyes slide sideways with contempt, chin slightly raised, a slow breath out through the nose; mouth stays closed.",
+    "S05b": "Tanaka waves the paper cup lazily once, shoulders loose and smug." + HIDE,
+    "S05ba": "Sato's hand freezes on the drawing, fingers tensing slightly, then still.",
+    "S05c": "Sato looks up from the drawings and holds still, a slow steady breath, unafraid." + HIDE,
+    "S05ca": "The finger with the gold watch taps impatiently on the cup three times.",
+    "S06bb": "The hand presses the phone closer to the ear, the gold watch catching the light; small shift.",
+    "S06bc": "Tanaka's shoulders shake with a silent greedy laugh, phone at his ear." + HIDE,
+    "S07b": "Mori lowers her eyes further, swallows, her shoulders drawing in slightly; lips pressed; one slow blink.",
+    "S08a": "A woman's hand presses the hanko down firmly once and lifts it slowly.",
+    "S08b": "Mori's hand trembles slightly, still holding the hanko, fingers tightening.",
+    "S08c": "Mori sits motionless, then her shoulders sink with a slow heavy breath.",
+    "S09c": "Tanaka shrugs lazily and swivels the chair a few degrees." + HIDE,
+    "S11a": "Very subtle: Yamamoto taps a pen once; the others sit still; faint air from the vent.",
+    "S11b": "Yamamoto leans back slowly in the chair, condescending, fingers interlaced." + HIDE,
+    "S11ba": "Thick fingers drum slowly on the glossy table, one-two-three-four, then stop.",
+    "S11c": "Sato sits upright, his hand pressing the document; a slow controlled breath." + HIDE,
+    "S11ca": "Sato's hand presses flat on the document, knuckles whitening slightly.",
+    "S11e": "Yamamoto lowers his chin and looks over his gold glasses, the lenses catching light; a slow cold blink." + HIDE,
+    "S11f": "The stack of papers settles after the slam, a few sheets sliding apart.",
+    "S12d": "Yamamoto slides the envelope across the table with two fingers, slowly, coldly." + HIDE,
+    "S12e": "Sato stays silent, jaw tightening, eyes calm; a single slow blink; barely perceptible breathing.",
+    "S13b": "Tanaka scoffs, tightening his crossed arms, head tilting slightly." + HIDE,
+    "S14b": "Mori's eyes glisten, her lips tremble as she holds back tears, a shaky breath; one tear forms.",
+    "S14c": "Sato pauses over the box, then gently places a folder inside; a quiet sigh." + HIDE,
+    "S14e": "Mori nods firmly twice, a tear sliding down her cheek." + HIDE,
+    "S15bb": "Raindrops fall and splash on the cardboard lid, darkening the surface.",
+    "S15c": "The black work shoe steps into the puddle, water rippling and splashing; rain keeps falling.",
+    "S16b": "Rain falls in the bokeh behind; his hand grips the phone a little tighter.",
+    "S16c": "Rain light shimmers on his glasses; a faint restrained smile deepens slightly; a slow blink.",
+    "S17b": "Yamamoto swirls the champagne glass slowly, satisfied." + HIDE,
+    "S17c": "The heavy hand raises the glass slowly; golden bubbles rise.",
+    "S17ca": "Yamamoto lifts his glass a little higher, pleased, then sips." + HIDE,
+    "S17d": "Tanaka turns the champagne glass in his fingers, shoulders relaxed with greed." + HIDE,
+    "S17bb": "Mori stands firm, her hand rising to rest on the cabinet door; a determined breath." + HIDE,
+    "S17bd": "Her hand presses gently on the cabinet, fingers spreading; she stays still." + HIDE,
+    "S18b": "Mori's hands move quickly over the console keys, then freeze in alarm; monitor glow flickers." + HIDE,
+    "S18d": "Mori's breath quickens, her hand rising toward her mouth, monitor light flickering on her face." + HIDE,
+    "S18f": "The wall of monitors flashes red in pulses; Mori stays still in the foreground." + HIDE,
+    "S19c": "Yamamoto freezes, the receiver pressed to his ear, his free hand trembling slightly." + HIDE,
+    "S19d": "The heavy hand trembles and the receiver slips slowly from the fingers.",
+    "S21f": "Sato's hands close the folder slowly and rest on it.",
+    "S22b": "Tanaka dabs his mouth with the handkerchief, sweat glistening, eyes darting once.",
+    "S22c": "The finger hovers, trembles once, then presses down on the red button.",
+    "S22d": "Mori squeezes her eyes shut tighter, her shoulders tensing.",
+    "S23e": "Mori exhales slowly in relief, her hand pressed to her chest, shoulders dropping.",
+    "S24d": "Yamamoto trembles, wiping sweat from his forehead with a shaking hand." + HIDE,
+    "S24e": "Takahashi turns his head slightly toward Yamamoto, unhurried, stern." + HIDE,
+    "S25b": "From straight above: Tanaka's shoulders shake as he sobs, kneeling; red light pulses faintly.",
+    "S26d": "From straight above: Sato's polished shoes stay still; Tanaka's hands tremble on the floor.",
+    "S28b": "Mori smiles hopefully, eyes shining, a small earnest nod; golden light." + HIDE,
+    "S28c": "Sato lowers the cup slightly, a warm smile in his eyes; the cup still covers his mouth.",
+    "S28e": "Sato looks out at the city, a slow peaceful breath, the morning light shifting softly on his face." + HIDE,
+}
+
+# B안 립싱크 연기 지시(OmniHuman prompt, 제10장 7): 톤연출표 감정에 맞춘 실제 배우 같은 작은 몸짓. 고개는 상대 쪽 3/4 유지.
+OMNI_BASE = (" Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, "
+             "keeps looking toward the other person at the same three-quarter angle, hands stay where they are in the first frame; "
+             "no exaggerated motion, the face and body stay the same person.")
+OMNI_ACT = {
+    "S05d": "Tanaka speaks with a lazy mocking smile, one eyebrow up, a small dismissive tilt of the head, the cup held loosely." + OMNI_BASE,
+    "S09d": "Sato speaks with restrained anger, jaw tight, his finger pressing the drawing for emphasis on the last words." + OMNI_BASE,
+    "S09e": "Tanaka speaks with a condescending smirk, a lazy open-palm gesture, leaning back in the chair." + OMNI_BASE,
+    "S11d": "Sato speaks firmly and resolutely, hands flat on the folder, a small forward lean on 「絶対に」." + OMNI_BASE,
+    "S12b": "Tanaka shouts in fury, leaning over the table on his fist, sharp short head movements, brow knotted." + OMNI_BASE,
+    "S12c": "Tanaka delivers the firing slowly, savoring it, a cruel smile spreading, leaning on the table." + OMNI_BASE,
+    "S13a": "Sato speaks low and quiet after a long silence, slow and controlled, eyes steady, minimal movement." + OMNI_BASE,
+    "S14d": "Sato speaks earnestly and gently, word by word, a slight nod as he asks, his hand resting on the box." + OMNI_BASE,
+    "S24c": "Takahashi condemns coldly and precisely, chin slightly down, the folder held at his side, a slow deliberate rhythm." + OMNI_BASE,
+    "S25a": "Tanaka sobs and begs, face crumpling, shoulders shaking, clasped hands trembling, tears running." + OMNI_BASE,
+    "S26a": "Sato speaks coldly and quietly, looking down, almost motionless, one slow blink." + OMNI_BASE,
+    "S26c": "Sato speaks with an icy faint smile, adjusting his cuff once, unhurried." + OMNI_BASE,
+}
 STYLE = {"NA": "Naration", "佐藤": "Sato", "田中": "Tanaka", "山本": "Yamamoto", "高橋": "Takahashi", "森": "Mori"}
 STYLE_JA = {"Naration": "ナレーター", "Sato": "佐藤", "Tanaka": "田中", "Yamamoto": "山本", "Takahashi": "高橋", "Mori": "森"}
 STYLE_COLOR = {"Naration": "&H00DDDDDD", "Sato": "&H00FFFFFF", "Tanaka": "&H00B4D2FF", "Yamamoto": "&H00C8C8F0",
@@ -510,6 +594,9 @@ def main():
                                   f"Negative: {NEGATIVE}."]).strip()
             cost["kf"] += 1
         tier = {"d": "omni", "react": "still", "ins": "still", "estill": "still", "face": "pro", "sil": "lite", "empty": "lite", "card": "card"}.get(s["kind"], "reuse")
+        if sid in LIVE:   # B안(고니감독님 승인 2026-10-12): 사람 정지 컷 → i2v 일반 화질, 실제 배우 같은 미세 연기
+            tier = "lite"
+            s = dict(s, motion=LIVE[sid])
         gen = 10 if d > 5.0 else 5
         item = {"prompt": "", "duration": gen}
         if tier in ("pro", "lite"):
@@ -546,6 +633,9 @@ def main():
     mapping = []
     for i, x in enumerate(tts_order, 1):
         src = os.path.join(ROOT, "assets", "auditions", "ashita-tts-add" if x["id"].startswith("P") else "ashita-tts", x["id"] + ".mp3")
+        fit = os.path.join(ROOT, "assets", "auditions", "ashita-tts-fit", x["id"] + ".mp3")   # 회사명 재녹음을 Lock 슬롯에 맞춘 판(R45)
+        if os.path.exists(fit):
+            src = fit
         shutil.copyfile(src, os.path.join(dst, f"line{i:03d}.mp3"))
         mapping.append((f"line{i:03d}", x["tag"], x["id"]))
 
@@ -599,6 +689,7 @@ def main():
         "output_size": [1920, 1080], "fit": "crop",
         "scene_durations": durations, "transitions": [0.0] * len(durations),
         "omnihuman_scenes": [idx[s["id"]] for s in SHOTS if s["kind"] == "d"],
+        "omnihuman_prompts": {str(idx[k]): v for k, v in OMNI_ACT.items() if k in idx},
         "omnihuman_models": ["fal-ai/bytedance/omnihuman/v1.5", "fal-ai/bytedance/omnihuman"], "omnihuman_max_s": 8.0,
         "legacy_lipsync": False,
         "ambience_model": "fal-ai/mmaudio-v2", "ambience_volume": 0.35,

@@ -1,7 +1,7 @@
 {
  "_설명": "ashita-kara 장면 설정(build_ashita_phase3.py 생성). override_required 장면은 정지 푸시인·OMNI 정지 프레임·재사용·카드를 video-overrides로 먼저 넣는다.",
  "ratio": "16:9",
- "budget_usd": 12.37,
+ "budget_usd": 27.45,
  "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
  "durations": [
   5,
@@ -183,21 +183,18 @@
    "image": "assets/portraits/ashita-kara-keyframes/S01b-1.png"
   },
   {
-   "prompt": "(override) still: No people. Detail of the blank glass facade reflecting drifting clouds.",
+   "prompt": "Static, locked off camera. Motion: Clouds drift slowly across the sky reflected in the glass panels. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S01c-1.png"
   },
   {
-   "prompt": "(override) still: Insert from above: a man's weathered hands turn a large blank engineering drawin",
+   "prompt": "Static, locked off camera. Motion: His weathered hands slowly smooth the drawing flat and turn its corner, unhurried, careful. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S02a-1.png"
   },
   {
-   "prompt": "(override) still: Close-up profile of Sato reading the drawing late at night, glasses catching the",
+   "prompt": "Static, locked off camera. Motion: Sato reads intently, eyes moving along a line, one slow blink, the lamp light flickering faintly on his glasses; tiny breathing. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S02b-1.png"
   },
   {
@@ -211,21 +208,18 @@
    "image": "assets/portraits/ashita-kara-keyframes/S03a-1.png"
   },
   {
-   "prompt": "(override) still: Side medium of Sato leaning over the drawing, his face turned down to the paper ",
+   "prompt": "Static, locked off camera. Motion: Sato leans closer over the drawing, his pencil tapping once, a small thoughtful exhale. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S03b-1.png"
   },
   {
-   "prompt": "(override) still: Insert: Sato's finger traces a line on the blank drawing beside a canned coffee ",
+   "prompt": "Static, locked off camera. Motion: His finger slowly traces along a line on the drawing and stops; steam rises faintly from the coffee can. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S03c-1.png"
   },
   {
-   "prompt": "(override) still: Over Mori's shoulder (her back and bob hair soft in the foreground) toward Sato,",
+   "prompt": "Static, locked off camera. Motion: Mori shifts her weight shyly in the foreground; Sato glances up and gives a small tired nod. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S03d-1.png"
   },
   {
@@ -236,15 +230,13 @@
    "i2v_resolution": "1080p"
   },
   {
-   "prompt": "(override) still: Insert at floor level: polished brown leather shoes stepping on the office floor",
+   "prompt": "Static, locked off camera. Motion: The polished shoes take one slow arrogant step across the floor; the gold watch glints. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 10,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S04b-1.png"
   },
   {
-   "prompt": "(override) still: Close-up of Tanaka glancing sideways at the engineers with contempt as he passes",
+   "prompt": "Static, locked off camera. Motion: Tanaka's eyes slide sideways with contempt, chin slightly raised, a slow breath out through the nose; mouth stays closed. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 10,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S04c-1.png"
   },
   {
@@ -253,27 +245,23 @@
    "image": "assets/portraits/ashita-kara-keyframes/S05a-1.png"
   },
   {
-   "prompt": "(override) still: Side medium of Tanaka sitting on the desk corner, waving the coffee cup dismissi",
+   "prompt": "Static, locked off camera. Motion: Tanaka waves the paper cup lazily once, shoulders loose and smug. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S05b-1.png"
   },
   {
-   "prompt": "(override) still: Insert: Sato's hand stops still on the blank drawing.",
+   "prompt": "Static, locked off camera. Motion: Sato's hand freezes on the drawing, fingers tensing slightly, then still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S05ba-1.png"
   },
   {
-   "prompt": "(override) still: High angle side view of Sato seated, looking up from his drawings, firm and unaf",
+   "prompt": "Static, locked off camera. Motion: Sato looks up from the drawings and holds still, a slow steady breath, unafraid. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S05c-1.png"
   },
   {
-   "prompt": "(override) still: Insert: a finger with a gold wristwatch tapping impatiently on a takeaway coffee",
+   "prompt": "Static, locked off camera. Motion: The finger with the gold watch taps impatiently on the cup three times. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S05ca-1.png"
   },
   {
@@ -299,15 +287,13 @@
    "image": "assets/portraits/ashita-kara-keyframes/S06ba-1.png"
   },
   {
-   "prompt": "(override) still: Insert: a hand with a chunky gold wristwatch holding a smartphone with a dark bl",
+   "prompt": "Static, locked off camera. Motion: The hand presses the phone closer to the ear, the gold watch catching the light; small shift. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S06bb-1.png"
   },
   {
-   "prompt": "(override) still: Side medium of Tanaka grinning greedily into the phone, face turned so his mouth",
+   "prompt": "Static, locked off camera. Motion: Tanaka's shoulders shake with a silent greedy laugh, phone at his ear. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 10,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S06bc-1.png"
   },
   {
@@ -316,9 +302,8 @@
    "image": "assets/portraits/ashita-kara-keyframes/S07a-1.png"
   },
   {
-   "prompt": "(override) still: Choker profile of Mori, eyes lowered, hesitant and afraid, lips pressed, cold to",
+   "prompt": "Static, locked off camera. Motion: Mori lowers her eyes further, swallows, her shoulders drawing in slightly; lips pressed; one slow blink. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S07b-1.png"
   },
   {
@@ -333,21 +318,18 @@
    "image": "assets/portraits/ashita-kara-keyframes/S07d-1.png"
   },
   {
-   "prompt": "(override) still: Insert from above: a small round hanko seal pressed down onto the blank document",
+   "prompt": "Static, locked off camera. Motion: A woman's hand presses the hanko down firmly once and lifts it slowly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 10,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S08a-1.png"
   },
   {
-   "prompt": "(override) still: Insert: Mori's trembling hand still holding the hanko, a black hair tie on her l",
+   "prompt": "Static, locked off camera. Motion: Mori's hand trembles slightly, still holding the hanko, fingers tightening. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 10,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S08b-1.png"
   },
   {
-   "prompt": "(override) still: Through the glass partition: Mori sitting alone at her desk in profile, shoulder",
+   "prompt": "Static, locked off camera. Motion: Mori sits motionless, then her shoulders sink with a slow heavy breath. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S08c-1.png"
   },
   {
@@ -368,9 +350,8 @@
    "image": "assets/portraits/ashita-kara-keyframes/S09b-1.png"
   },
   {
-   "prompt": "(override) still: Side medium of Tanaka lounging in his chair, shrugging, face in profile so his m",
+   "prompt": "Static, locked off camera. Motion: Tanaka shrugs lazily and swivels the chair a few degrees. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S09c-1.png"
   },
   {
@@ -402,33 +383,28 @@
    "image": "assets/portraits/ashita-kara-keyframes/S10c-1.png"
   },
   {
-   "prompt": "(override) still: High angle from a ceiling corner: the long black meeting table, Yamamoto at the ",
+   "prompt": "Static, locked off camera. Motion: Very subtle: Yamamoto taps a pen once; the others sit still; faint air from the vent. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S11a-1.png"
   },
   {
-   "prompt": "(override) still: Side medium of Yamamoto at the head of the table, leaning back, condescending, f",
+   "prompt": "Static, locked off camera. Motion: Yamamoto leans back slowly in the chair, condescending, fingers interlaced. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S11b-1.png"
   },
   {
-   "prompt": "(override) still: Insert: Yamamoto's thick fingers drumming slowly on the glossy table.",
+   "prompt": "Static, locked off camera. Motion: Thick fingers drum slowly on the glossy table, one-two-three-four, then stop. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S11ba-1.png"
   },
   {
-   "prompt": "(override) still: Side medium of Sato sitting upright, a document under his hand, face in profile,",
+   "prompt": "Static, locked off camera. Motion: Sato sits upright, his hand pressing the document; a slow controlled breath. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S11c-1.png"
   },
   {
-   "prompt": "(override) still: Insert from above: Sato's hand pressing flat on a blank document on the table.",
+   "prompt": "Static, locked off camera. Motion: Sato's hand presses flat on the document, knuckles whitening slightly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S11ca-1.png"
   },
   {
@@ -438,15 +414,13 @@
    "image": "assets/portraits/ashita-kara-keyframes/S11d-1.png"
   },
   {
-   "prompt": "(override) still: Side medium close-up of Yamamoto looking over his gold glasses, the lenses catch",
+   "prompt": "Static, locked off camera. Motion: Yamamoto lowers his chin and looks over his gold glasses, the lenses catching light; a slow cold blink. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S11e-1.png"
   },
   {
-   "prompt": "(override) still: Insert from above: a stack of blank papers slammed onto the glossy black table, ",
+   "prompt": "Static, locked off camera. Motion: The stack of papers settles after the slam, a few sheets sliding apart. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S11f-1.png"
   },
   {
@@ -467,15 +441,13 @@
    "image": "assets/portraits/ashita-kara-keyframes/S12c-1.png"
   },
   {
-   "prompt": "(override) still: Side medium of Yamamoto sliding a blank envelope across the table with two finge",
+   "prompt": "Static, locked off camera. Motion: Yamamoto slides the envelope across the table with two fingers, slowly, coldly. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S12d-1.png"
   },
   {
-   "prompt": "(override) still: Choker close-up of Sato in silence, jaw tight, eyes calm and cold behind the gla",
+   "prompt": "Static, locked off camera. Motion: Sato stays silent, jaw tightening, eyes calm; a single slow blink; barely perceptible breathing. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S12e-1.png"
   },
   {
@@ -485,9 +457,8 @@
    "image": "assets/portraits/ashita-kara-keyframes/S13a-1.png"
   },
   {
-   "prompt": "(override) still: Side medium of Tanaka scoffing, arms crossed, face turned so his mouth is hidden",
+   "prompt": "Static, locked off camera. Motion: Tanaka scoffs, tightening his crossed arms, head tilting slightly. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S13b-1.png"
   },
   {
@@ -501,15 +472,13 @@
    "image": "assets/portraits/ashita-kara-keyframes/S14a-1.png"
   },
   {
-   "prompt": "(override) still: Side medium of Mori holding back tears, lip trembling, warm lamp rim light.",
+   "prompt": "Static, locked off camera. Motion: Mori's eyes glisten, her lips tremble as she holds back tears, a shaky breath; one tear forms. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S14b-1.png"
   },
   {
-   "prompt": "(override) still: Side medium of Sato pausing over the box, a gentle sad look, face turned down so",
+   "prompt": "Static, locked off camera. Motion: Sato pauses over the box, then gently places a folder inside; a quiet sigh. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 10,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S14c-1.png"
   },
   {
@@ -519,9 +488,8 @@
    "image": "assets/portraits/ashita-kara-keyframes/S14d-1.png"
   },
   {
-   "prompt": "(override) still: Close-up from the side-back of Mori nodding firmly, tears in her eyes, mouth not",
+   "prompt": "Static, locked off camera. Motion: Mori nods firmly twice, a tear sliding down her cheek. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S14e-1.png"
   },
   {
@@ -535,9 +503,8 @@
    "image": "assets/portraits/ashita-kara-keyframes/S15b-1.png"
   },
   {
-   "prompt": "(override) still: Insert at ground level: black work shoes stepping into a puddle on wet asphalt, ",
+   "prompt": "Static, locked off camera. Motion: The black work shoe steps into the puddle, water rippling and splashing; rain keeps falling. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S15c-1.png"
   },
   {
@@ -546,9 +513,8 @@
    "image": "assets/portraits/ashita-kara-keyframes/S15ba-1.png"
   },
   {
-   "prompt": "(override) still: Insert from above: raindrops falling on the lid of a plain cardboard box.",
+   "prompt": "Static, locked off camera. Motion: Raindrops fall and splash on the cardboard lid, darkening the surface. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S15bb-1.png"
   },
   {
@@ -557,15 +523,13 @@
    "image": "assets/portraits/ashita-kara-keyframes/S16a-1.png"
   },
   {
-   "prompt": "(override) still: Insert: Sato's hand holding a smartphone with a dark blank screen, rain bokeh be",
+   "prompt": "Static, locked off camera. Motion: Rain falls in the bokeh behind; his hand grips the phone a little tighter. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S16b-1.png"
   },
   {
-   "prompt": "(override) still: Close-up side profile of Sato with a faint restrained smile, rain light on his g",
+   "prompt": "Static, locked off camera. Motion: Rain light shimmers on his glasses; a faint restrained smile deepens slightly; a slow blink. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S16c-1.png"
   },
   {
@@ -574,9 +538,8 @@
    "image": "assets/portraits/ashita-kara-keyframes/S17a-1.png"
   },
   {
-   "prompt": "(override) still: Side medium of Yamamoto smiling with satisfaction, glass in hand, face in profil",
+   "prompt": "Static, locked off camera. Motion: Yamamoto swirls the champagne glass slowly, satisfied. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S17b-1.png"
   },
   {
@@ -586,21 +549,18 @@
    "image": "assets/portraits/ashita-kara-keyframes/S17ba0-1.png"
   },
   {
-   "prompt": "(override) still: Insert: a heavy hand raising a champagne glass, golden bubbles rising.",
+   "prompt": "Static, locked off camera. Motion: The heavy hand raises the glass slowly; golden bubbles rise. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S17c-1.png"
   },
   {
-   "prompt": "(override) still: Low angle side of Yamamoto raising his glass, pleased, mouth hidden.",
+   "prompt": "Static, locked off camera. Motion: Yamamoto lifts his glass a little higher, pleased, then sips. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S17ca-1.png"
   },
   {
-   "prompt": "(override) still: Side-back medium of Tanaka holding a champagne glass, greedy grin seen only at t",
+   "prompt": "Static, locked off camera. Motion: Tanaka turns the champagne glass in his fingers, shoulders relaxed with greed. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S17d-1.png"
   },
   {
@@ -615,9 +575,8 @@
    "image": "assets/portraits/ashita-kara-keyframes/S17ba-1.png"
   },
   {
-   "prompt": "(override) still: Side medium of Mori standing in front of the breaker cabinet, firm, mouth hidden",
+   "prompt": "Static, locked off camera. Motion: Mori stands firm, her hand rising to rest on the cabinet door; a determined breath. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S17bb-1.png"
   },
   {
@@ -626,9 +585,8 @@
    "image": "assets/portraits/ashita-kara-keyframes/S17bc-1.png"
   },
   {
-   "prompt": "(override) still: Close-up side of Mori alone, her hand resting on the cabinet, eyes determined, m",
+   "prompt": "Static, locked off camera. Motion: Her hand presses gently on the cabinet, fingers spreading; she stays still. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S17bd-1.png"
   },
   {
@@ -643,9 +601,8 @@
    "image": "assets/portraits/ashita-kara-keyframes/S18a-1.png"
   },
   {
-   "prompt": "(override) still: Side medium of Mori at the control console, monitors lit, alarmed, mouth hidden.",
+   "prompt": "Static, locked off camera. Motion: Mori's hands move quickly over the console keys, then freeze in alarm; monitor glow flickers. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S18b-1.png"
   },
   {
@@ -654,9 +611,8 @@
    "image": "assets/portraits/ashita-kara-keyframes/S18c-1.png"
   },
   {
-   "prompt": "(override) still: Close-up side of Mori lit by the monitor glow, frightened, mouth hidden.",
+   "prompt": "Static, locked off camera. Motion: Mori's breath quickens, her hand rising toward her mouth, monitor light flickering on her face. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S18d-1.png"
   },
   {
@@ -665,9 +621,8 @@
    "image": "assets/portraits/ashita-kara-keyframes/S18e-1.png"
   },
   {
-   "prompt": "(override) still: High angle over Mori's shoulder toward a wall of monitors flashing red with no t",
+   "prompt": "Static, locked off camera. Motion: The wall of monitors flashes red in pulses; Mori stays still in the foreground. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 10,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S18f-1.png"
   },
   {
@@ -682,15 +637,13 @@
    "image": "assets/portraits/ashita-kara-keyframes/S19b-1.png"
   },
   {
-   "prompt": "(override) still: Medium close-up of Yamamoto frozen with the receiver, eyes wide, sweat on his fo",
+   "prompt": "Static, locked off camera. Motion: Yamamoto freezes, the receiver pressed to his ear, his free hand trembling slightly. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S19c-1.png"
   },
   {
-   "prompt": "(override) still: Insert: a desk-phone receiver slipping from a heavy trembling hand.",
+   "prompt": "Static, locked off camera. Motion: The heavy hand trembles and the receiver slips slowly from the fingers. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S19d-1.png"
   },
   {
@@ -734,9 +687,8 @@
    "image": "assets/portraits/ashita-kara-keyframes/S21e-1.png"
   },
   {
-   "prompt": "(override) still: Medium insert: Sato's hands closing a plain document folder on the desk.",
+   "prompt": "Static, locked off camera. Motion: Sato's hands close the folder slowly and rest on it. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S21f-1.png"
   },
   {
@@ -757,21 +709,18 @@
    "image": "assets/portraits/ashita-kara-keyframes/S22a-1.png"
   },
   {
-   "prompt": "(override) still: Close-up side of Tanaka sweating, chest-up distance, forcing a brave face, mouth",
+   "prompt": "Static, locked off camera. Motion: Tanaka dabs his mouth with the handkerchief, sweat glistening, eyes darting once. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S22b-1.png"
   },
   {
-   "prompt": "(override) still: Insert: a finger with a gold wristwatch hovering over a large unlabeled start bu",
+   "prompt": "Static, locked off camera. Motion: The finger hovers, trembles once, then presses down on the red button. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S22c-1.png"
   },
   {
-   "prompt": "(override) still: Side medium of Mori shutting her eyes tight.",
+   "prompt": "Static, locked off camera. Motion: Mori squeezes her eyes shut tighter, her shoulders tensing. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S22d-1.png"
   },
   {
@@ -798,9 +747,8 @@
    "image": "assets/portraits/ashita-kara-keyframes/S23d-1.png"
   },
   {
-   "prompt": "(override) still: Side medium of Mori exhaling in relief in the red light, hand on her chest.",
+   "prompt": "Static, locked off camera. Motion: Mori exhales slowly in relief, her hand pressed to her chest, shoulders dropping. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S23e-1.png"
   },
   {
@@ -820,15 +768,13 @@
    "image": "assets/portraits/ashita-kara-keyframes/S24c-1.png"
   },
   {
-   "prompt": "(override) still: Side medium of Yamamoto trembling, sweat on his face, hands shaking, mouth hidde",
+   "prompt": "Static, locked off camera. Motion: Yamamoto trembles, wiping sweat from his forehead with a shaking hand. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 10,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S24d-1.png"
   },
   {
-   "prompt": "(override) still: Side medium of Takahashi turning his head slightly toward Yamamoto, stern, mouth",
+   "prompt": "Static, locked off camera. Motion: Takahashi turns his head slightly toward Yamamoto, unhurried, stern. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S24e-1.png"
   },
   {
@@ -851,9 +797,8 @@
    "image": "assets/portraits/ashita-kara-keyframes/S25a-1.png"
   },
   {
-   "prompt": "(override) still: Bird's-eye view straight down: Tanaka kneeling small on the control room floor u",
+   "prompt": "Static, locked off camera. Motion: From straight above: Tanaka's shoulders shake as he sobs, kneeling; red light pulses faintly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S25b-1.png"
   },
   {
@@ -881,9 +826,8 @@
    "image": "assets/portraits/ashita-kara-keyframes/S26c-1.png"
   },
   {
-   "prompt": "(override) still: From straight above: Sato's polished shoes in front of the kneeling Tanaka.",
+   "prompt": "Static, locked off camera. Motion: From straight above: Sato's polished shoes stay still; Tanaka's hands tremble on the floor. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S26d-1.png"
   },
   {
@@ -923,15 +867,13 @@
    "i2v_resolution": "1080p"
   },
   {
-   "prompt": "(override) still: Side medium of Mori, hopeful and earnest, golden rim light.",
+   "prompt": "Static, locked off camera. Motion: Mori smiles hopefully, eyes shining, a small earnest nod; golden light. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S28b-1.png"
   },
   {
-   "prompt": "(override) still: Side close-up of Sato with a warm restrained smile, face turned so his mouth is ",
+   "prompt": "Static, locked off camera. Motion: Sato lowers the cup slightly, a warm smile in his eyes; the cup still covers his mouth. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S28c-1.png"
   },
   {
@@ -940,9 +882,8 @@
    "image": "assets/portraits/ashita-kara-keyframes/S28d-1.png"
   },
   {
-   "prompt": "(override) still: Close-up side profile of Sato looking out at the city in morning light, peaceful",
+   "prompt": "Static, locked off camera. Motion: Sato looks out at the city, a slow peaceful breath, the morning light shifting softly on his face. The speaker keeps the same back or profile angle to the camera, head turns under 15 degrees, the mouth is never visible. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "override_required": true,
    "image": "assets/portraits/ashita-kara-keyframes/S28e-1.png"
   },
   {
