@@ -154,7 +154,7 @@ SHOTS = [
     S("S02c", "S02", "sil", "ws", "lamp", "EL", ["SATO:SATO_A"], "OFF_GLASS", "Through the glass partition: the dark empty office, Sato alone at the only lit desk, small in frame.", line="NA4",
       motion="Sato slowly turns a page of the drawing; everything else is still."),
     S("S03a", "S03", "sil", "ws", "lamp", "EL", ["MORI:MORI", "SATO:SATO_A"], "OFF_DOOR", "Wide from the office entrance: Mori seen from behind walks in holding two canned coffees; Sato far away at his lit desk.", line="L01",
-      motion="Mori takes two slow steps toward Sato's desk, her back to the camera; Sato stays seated."),
+      motion="Mori takes two slow steps toward Sato's desk, her back to the camera, a worried but bright little tilt of the head as she holds up the coffee cans with a gentle smile in her posture; Sato stays seated."),
     S("S03b", "S03", "react", "ms", "lamp", "SIDE", ["SATO:SATO_A"], "OFF_DESK", "Side medium of Sato leaning over the drawing, his face turned down to the paper so his mouth is not visible, warm lamp light.", line="L02"),
     S("S03c", "S03", "ins", "ecu", "lamp", "OH", ["SATO:SATO_A"], "OFF_DESK", "Insert: Sato's finger traces a line on the blank drawing beside a canned coffee with no label.", line="L03"),
     S("S03d", "S03", "react", "ms", "lamp", "EL", ["MORI:MORI", "SATO:SATO_A"], "OFF_NIGHT", "Over Mori's shoulder (her back and bob hair soft in the foreground) toward Sato, who glances up with a faint kind look.", line="L04"),
@@ -163,7 +163,7 @@ SHOTS = [
     S("S04b", "S04", "ins", "ecu", "office", "LA", [T], "OFF_LOW", "Insert at floor level: polished brown leather shoes stepping on the office floor, a chunky gold wristwatch on the right wrist of the swinging hand.", line="NA6"),
     S("S04c", "S04", "react", "cu", "office", "SIDE", [T], "OFF_DAY", "Close-up of Tanaka glancing sideways at the engineers with contempt as he passes, mouth closed.", expr="smug"),
     S("S05a", "S05", "sil", "ms", "office", "EL", ["SATO:SATO_A", T], "OFF_DESK", "Over Sato's shoulder (soft in the foreground): Tanaka arrives at the desk and perches on its corner, smug.", line="L05",
-      motion="Tanaka, seen from behind, leans on the desk corner and tilts his head mockingly, keeping his back to the camera; Sato stays seated."),
+      motion="Tanaka, seen from behind, leans on the desk corner and tilts his head mockingly with a breezy, careless excite in his shoulders, keeping his back to the camera; Sato stays seated."),
     S("S05b", "S05", "react", "ms", "office", "SIDE", [T], "OFF_DAY", "Side medium of Tanaka sitting on the desk corner, waving the coffee cup dismissively, face in profile turned away so his mouth is hidden.", line="L06"),
     S("S05ba", "S05", "ins", "ecu", "office", "OH", ["SATO:SATO_A"], "OFF_DESK", "Insert: Sato's hand stops still on the blank drawing."),
     S("S05c", "S05", "react", "ms", "office", "HA", ["SATO:SATO_A"], "OFF_DESK", "High angle side view of Sato seated, looking up from his drawings, firm and unafraid, mouth hidden by the angle.", line="L07"),
@@ -172,7 +172,7 @@ SHOTS = [
     S("S06a", "S06", "ins", "ecu", "office", "OH", [T], "P_HANKO", "Insert from above: a gold wristwatch on a wrist beside a blank government subsidy approval document and a red ink pad.", line="NA7"),
     S("S06b", "S06", "sil", "ws", "office", "EL", [T], "OFF_GLASS", "Through half-open blinds: the office, Tanaka far away in silhouette strutting between desks."),
     S("S06ba", "S06b", "sil", "ws", "corridor", "EL", [T], "CORRIDOR", "Through a frosted-glass wall in a corridor: Tanaka seen from the side-back, phone to his ear, pacing slowly.", line="P1",
-      motion="Tanaka paces one slow step with the phone at his ear; his back stays to the camera."),
+      motion="Tanaka paces one slow step with the phone at his ear, shoulders bouncing with smug excite and a silent laugh; his back stays to the camera."),
     S("S06bb", "S06b", "ins", "ecu", "corridor", "EL", [T], "CORRIDOR", "Insert: a hand with a chunky gold wristwatch holding a smartphone with a dark blank screen to an ear."),
     S("S06bc", "S06b", "react", "ms", "corridor", "SIDE", [T], "CORRIDOR", "Side medium of Tanaka grinning greedily into the phone, face turned so his mouth is hidden.", line="P2", expr="smug"),
     S("S07a", "S07", "sil", "ms", "office", "HA", [M, T], "OFF_DAY", "High angle: Mori seated at her desk, Tanaka standing over her from behind so his shadow falls across her desk; Tanaka seen from the back.", line="L09",
@@ -206,7 +206,7 @@ SHOTS = [
     S("S11e", "S11", "react", "ms", "meeting", "SIDE", [Y], "MEET_HEAD", "Side medium close-up of Yamamoto looking over his gold glasses, the lenses catching the light, mouth hidden.", line="L19", expr="cold"),
     S("S11f", "S11", "ins", "ecu", "meeting", "OH", [Y], "MEET_LOW", "Insert from above: a stack of blank papers slammed onto the glossy black table, sheets scattering, a heavy hand withdrawing."),
     S("S12a", "S12", "sil", "ms", "meeting", "LA", [T], "MEET_LOW", "Low angle from the side-back: Tanaka shoves his chair back and stands up, face red, pointing across the table.", line="L20", fx="dutch5,handheld",
-      motion="Tanaka, back to the camera, jabs his pointing arm forward once; his face stays turned away from the camera.", expr="rage"),
+      motion="Tanaka, back to the camera, jabs his pointing arm forward once in explosive fury, shoulders heaving; his face stays turned away from the camera.", expr="rage"),
     S("S12b", "S12", "d", "cu", "meeting", "LA", [T], "MEET", "Chest-up close-up of Tanaka shouting in fury, veins on his forehead, low angle, cold top light.", line="L21", expr="rage"),
     S("S12c", "S12", "d", "cu", "meeting", "EL", [T], "MEET", "Chest-up close-up of Tanaka with a slow cruel sneer, eyes narrowed, savoring the moment.", line="L22", expr="smug"),
     S("S12d", "S12", "react", "ms", "meeting", "SIDE", [Y], "MEET_HEAD", "Side medium of Yamamoto sliding a blank envelope across the table with two fingers, cold, mouth hidden.", line="L23", expr="cold"),
@@ -216,7 +216,7 @@ SHOTS = [
     S("S13c", "S13", "sil", "ws", "meeting", "EL", ["SATO:SATO_A"], "MEET_DOOR", "Through the half-open door frame: Sato stands up from the table and turns toward the door, his back to camera.",
       motion="Sato rises slowly and squares his shoulders; he does not walk toward the camera."),
     S("S14a", "S14", "sil", "ws", "lamp", "EL", ["SATO:SATO_A", M], "OFF_NIGHT", "Night office: Sato packs a cardboard box at his desk; Mori approaches from behind, seen from the back.", line="L25",
-      motion="Sato places a folder into the box; Mori stops two steps behind him. No head turns."),
+      motion="Sato places a folder into the box; Mori stops two steps behind him, her shoulders trembling as she holds back tears, one hand rising to her eyes. No head turns."),
     S("S14b", "S14", "react", "ms", "lamp", "SIDE", [M], "OFF_NIGHT", "Side medium of Mori holding back tears, lip trembling, warm lamp rim light.", expr="tears"),
     S("S14c", "S14", "react", "ms", "lamp", "SIDE", ["SATO:SATO_A"], "OFF_DESK", "Side medium of Sato pausing over the box, a gentle sad look, face turned down so his mouth is hidden.", line="L26"),
     S("S14d", "S14", "d", "cu", "lamp", "EL", ["SATO:SATO_A"], "OFF_NIGHT", "Chest-up close-up of Sato, earnest and grave, asking a final favor, warm lamp light.", line="L27"),
@@ -227,7 +227,7 @@ SHOTS = [
       motion="Raindrops run down the glass in the foreground; the small figure keeps walking away."),
     S("S15c", "S15", "ins", "ecu", "rain", "LA", ["SATO:SATO_A"], "HQ_RAIN", "Insert at ground level: black work shoes stepping into a puddle on wet asphalt, rain splashing."),
     S("S15ba", "S15b", "sil", "ws", "rain", "SIDE", ["SATO:SATO_A"], "ALLEY", "A narrow rainy back street at night: Sato walks away from the camera carrying the box.", line="P4",
-      motion="Sato walks steadily away down the wet street; rain falls."),
+      motion="Sato walks steadily and calm away down the wet street, quiet and unhurried; rain falls."),
     S("S15bb", "S15b", "ins", "ecu", "rain", "OH", [], "ALLEY", "Insert from above: raindrops falling on the lid of a plain cardboard box."),
     S("S16a", "S16", "sil", "ms", "rain", "SIDE", ["SATO:SATO_A"], "ALLEY", "Under a shop awning with no lettering: Sato seen from the side-back, phone at his ear, rain beyond.", line="L29",
       motion="Sato stands still with the phone at his ear; rain falls beyond the awning."),
@@ -245,14 +245,14 @@ SHOTS = [
       motion="Tanaka keeps his back to the camera and gestures toward the cabinet; Mori stays still by the cabinet."),
     S("S17bb", "S17b", "react", "ms", "office", "SIDE", [M], "BREAKER_RM", "Side medium of Mori standing in front of the breaker cabinet, firm, mouth hidden.", line="L34", expr="firm"),
     S("S17bc", "S17b", "sil", "ws", "office", "SIDE", [T], "BREAKER_RM", "Wide from inside the room: Tanaka in the doorway seen from behind, turning away dismissively.", line="L35",
-      motion="Tanaka turns his shoulders away and steps out of the doorway; his face is not visible."),
+      motion="Tanaka turns his shoulders away with a cold, low click-of-the-tongue shrug and steps out of the doorway; his face is not visible."),
     S("S17bd", "S17b", "react", "cu", "office", "SIDE", [M], "BREAKER_RM", "Close-up side of Mori alone, her hand resting on the cabinet, eyes determined, mouth hidden.", line="P7", expr="firm"),
     S("S17be", "S17b", "ins", "ecu", "office", "EL", [], "P_BREAKER", "Insert: the large black lever of the old grey mechanical breaker, scuffed metal, no labels."),
     S("S18a", "S18", "empty", "ews", "dawn", "LA", [], "YARD", "No people. Low wide of the substation yard at dawn, huge grey transformers behind yellow safety rails.", line="NA15",
       motion="Thin mist drifts over the yard. No people."),
     S("S18b", "S18", "react", "ms", "control", "SIDE", [M], "CTRL_CONSOLE", "Side medium of Mori at the control console, monitors lit, alarmed, mouth hidden.", line="L36"),
     S("S18c", "S18", "sil", "ms", "control", "LA", [T], "CTRL_LOW", "Low angle from the side-back: Tanaka storms in through the control room door.", line="L37",
-      motion="Tanaka strides one step in and throws a hand up; his face stays turned away."),
+      motion="Tanaka strides one step in and throws a hand up in irritated anger, panicking; his face stays turned away."),
     S("S18d", "S18", "react", "cu", "control", "SIDE", [M], "CTRL_CONSOLE", "Close-up side of Mori lit by the monitor glow, frightened, mouth hidden.", line="L38", expr="tears"),
     S("S18e", "S18", "sil", "ms", "control", "SIDE", [T], "CTRL", "Side medium of Tanaka slamming his palm on the console, panicking, face turned away.", line="P8", fx="handheld",
       motion="Tanaka slams his palm down on the console once; his face stays turned away."),
@@ -276,7 +276,7 @@ SHOTS = [
     S("S21g", "S21", "ins", "ecu", "control", "OH", [], None, "Insert from above: a blank official registration form with a red seal impression and no readable text."),
     S("S21h", "S21", "estill", "ews", "control", "HA", [], "CTRL_HIGH", "No people. The empty control room from a ceiling corner, monitors dark."),
     S("S22a", "S22", "sil", "ws", "control", "LA", [M, T], "CTRL_REV", "Low wide of the control room: Mori at the console in the foreground side, Tanaka behind her by the start button, staff silhouettes.", line="L40",
-      motion="Mori keeps her back to the camera and glances slightly toward Tanaka (under 15 degrees); Tanaka stays still."),
+      motion="Mori keeps her back to the camera and turns her shoulders slightly toward Tanaka (under 15 degrees), urgent, her hand raised in a tense warning gesture; Tanaka stays still with a jaw-set glare."),
     S("S22b", "S22", "react", "cu", "control", "SIDE", [T], "CTRL", "Close-up side of Tanaka sweating, chest-up distance, forcing a brave face, mouth hidden.", line="L41", expr="smug"),
     S("S22c", "S22", "ins", "ecu", "control", "EL", [T], "CTRL_CONSOLE", "Insert: a finger with a gold wristwatch hovering over a large unlabeled start button."),
     S("S22d", "S22", "react", "ms", "control", "SIDE", [M], "CTRL_CONSOLE", "Side medium of Mori shutting her eyes tight.", expr="tears"),
@@ -355,17 +355,17 @@ LIVE = {
     "S03d": "Mori shifts her weight shyly in the foreground; Sato glances up and gives a small tired nod." + HIDE,
     "S04b": "The polished shoes take one slow arrogant step across the floor; the gold watch glints.",
     "S04c": "Tanaka's eyes slide sideways with contempt, chin slightly raised, a slow breath out through the nose; mouth stays closed.",
-    "S05b": "Tanaka waves the paper cup lazily once, shoulders loose and smug." + HIDE,
+    "S05b": "Tanaka waves the paper cup lazily once with a mocking, condescending shrug, shoulders loose and smug." + HIDE,
     "S05ba": "Sato's hand freezes on the drawing, fingers tensing slightly, then still.",
     "S05c": "Sato looks up from the drawings and holds still, a slow steady breath, unafraid." + HIDE,
     "S05ca": "The finger with the gold watch taps impatiently on the cup three times.",
     "S06bb": "The hand presses the phone closer to the ear, the gold watch catching the light; small shift.",
     "S06bc": "Tanaka's shoulders shake with a silent greedy laugh, phone at his ear." + HIDE,
-    "S07b": "Mori lowers her eyes further, swallows, her shoulders drawing in slightly; lips pressed; one slow blink.",
+    "S07b": "Mori lowers her eyes, hesitant and afraid, swallows, her trembling fingers twisting together; lips pressed; one slow blink.",
     "S08a": "A woman's hand presses the hanko down firmly once and lifts it slowly.",
     "S08b": "Mori's hand trembles slightly, still holding the hanko, fingers tightening.",
     "S08c": "Mori sits motionless, then her shoulders sink with a slow heavy breath.",
-    "S09c": "Tanaka shrugs lazily and swivels the chair a few degrees." + HIDE,
+    "S09c": "Tanaka shrugs lazily with a dismissive, mocking toss of the hand and swivels the chair a few degrees." + HIDE,
     "S11a": "Very subtle: Yamamoto taps a pen once; the others sit still; faint air from the vent.",
     "S11b": "Yamamoto leans back slowly in the chair, condescending, fingers interlaced." + HIDE,
     "S11ba": "Thick fingers drum slowly on the glossy table, one-two-three-four, then stop.",
@@ -381,26 +381,26 @@ LIVE = {
     "S14e": "Mori nods firmly twice, a tear sliding down her cheek." + HIDE,
     "S15bb": "Raindrops fall and splash on the cardboard lid, darkening the surface.",
     "S15c": "The black work shoe steps into the puddle, water rippling and splashing; rain keeps falling.",
-    "S16b": "Rain falls in the bokeh behind; his hand grips the phone a little tighter.",
+    "S16b": "Rain falls in the bokeh behind; his hand grips the phone a little tighter, calm and steady.",
     "S16c": "Rain light shimmers on his glasses; a faint restrained smile deepens slightly; a slow blink.",
     "S17b": "Yamamoto swirls the champagne glass slowly, satisfied." + HIDE,
     "S17c": "The heavy hand raises the glass slowly; golden bubbles rise.",
     "S17ca": "Yamamoto lifts his glass a little higher, pleased, then sips." + HIDE,
     "S17d": "Tanaka turns the champagne glass in his fingers, shoulders relaxed with greed." + HIDE,
     "S17bb": "Mori stands firm, her hand rising to rest on the cabinet door; a determined breath." + HIDE,
-    "S17bd": "Her hand presses gently on the cabinet, fingers spreading; she stays still." + HIDE,
+    "S17bd": "Her hand presses gently on the cabinet, a sad but firm quiet resolve, a small trembling breath." + HIDE,
     "S18b": "Mori's hands move quickly over the console keys, then freeze in alarm; monitor glow flickers." + HIDE,
     "S18d": "Mori's breath quickens, her hand rising toward her mouth, monitor light flickering on her face." + HIDE,
-    "S18f": "The wall of monitors flashes red in pulses; Mori stays still in the foreground." + HIDE,
+    "S18f": "The wall of monitors flashes red in pulses; Mori's shoulders sag in despair, her hands trembling on the console." + HIDE,
     "S19c": "Yamamoto freezes, the receiver pressed to his ear, his free hand trembling slightly." + HIDE,
     "S19d": "The heavy hand trembles and the receiver slips slowly from the fingers.",
     "S21f": "Sato's hands close the folder slowly and rest on it.",
-    "S22b": "Tanaka dabs his mouth with the handkerchief, sweat glistening, eyes darting once.",
+    "S22b": "Tanaka dabs his mouth with the handkerchief, sweat glistening, eyes darting once, a calm mask forced over panic; steady breathing.",
     "S22c": "The finger hovers, trembles once, then presses down on the red button.",
     "S22d": "Mori squeezes her eyes shut tighter, her shoulders tensing.",
     "S23e": "Mori exhales slowly in relief, her hand pressed to her chest, shoulders dropping.",
     "S24d": "Yamamoto trembles, wiping sweat from his forehead with a shaking hand." + HIDE,
-    "S24e": "Takahashi turns his head slightly toward Yamamoto, unhurried, stern." + HIDE,
+    "S24e": "Takahashi turns his head slightly toward Yamamoto with a stern condemning glare, jaw set." + HIDE,
     "S25b": "From straight above: Tanaka's shoulders shake as he sobs, kneeling; red light pulses faintly.",
     "S26d": "From straight above: Sato's polished shoes stay still; Tanaka's hands tremble on the floor.",
     "S28b": "Mori smiles hopefully, eyes shining, a small earnest nod; golden light." + HIDE,
@@ -416,7 +416,7 @@ OMNI_ACT = {
     "S05d": "Tanaka speaks with a lazy mocking smile, one eyebrow up, a small dismissive tilt of the head, the cup held loosely." + OMNI_BASE,
     "S09d": "Sato speaks with restrained anger, jaw tight, his finger pressing the drawing for emphasis on the last words." + OMNI_BASE,
     "S09e": "Tanaka speaks with a condescending smirk, a lazy open-palm gesture, leaning back in the chair." + OMNI_BASE,
-    "S11d": "Sato speaks firmly and resolutely, hands flat on the folder, a small forward lean on 「絶対に」." + OMNI_BASE,
+    "S11d": "Sato speaks firmly with restrained anger and resolve, jaw set, hands flat on the folder, a small forward lean and a harder glare on 「絶対に」." + OMNI_BASE,
     "S12b": "Tanaka shouts in fury, leaning over the table on his fist, sharp short head movements, brow knotted." + OMNI_BASE,
     "S12c": "Tanaka delivers the firing slowly, savoring it, a cruel smile spreading, leaning on the table." + OMNI_BASE,
     "S13a": "Sato speaks low and quiet after a long silence, slow and controlled, eyes steady, minimal movement." + OMNI_BASE,
@@ -727,7 +727,54 @@ def main():
         md.append(f"| {x['id']} | {x['timecode']} | {x['assembled_s']:.2f}s | {x['tier']} | {x['size']} | {x['angle']} | {x['lighting']} | {x['edit_fx']} | {x['line'] or ''} | {len(x['refs'])}장 |")
     md += ["", "## 음성 번호 대응 (자막 TTS 줄 = 캐시 파일)", "", "| 캐시 | 대본 | 원본 녹음 |", "|---|---|---|"] + [f"| {a} | {b} | {c} |" for a, b, c in mapping]
     open(os.path.join(PROD, "07_샷리스트.md"), "w", encoding="utf-8").write("\n".join(md) + "\n")
+    emotion_table(sb)
     print(f"완료: 컷 {len(SHOTS)}개, 본편 {tc(main_end)}, 방식 {dict(tiers)}, 1차 비용 약 {total_cost:.2f}달러 (i2v budget {budget}), 앵글 {dict(ang)}")
+
+
+# ---------- 감정 일치표(제10장 7) ----------
+# 음성 감정(톤연출표) ↔ 키프레임 표정(expr·subject) ↔ 동작(i2v LIVE / 립싱크 OMNI_ACT)이 어긋나면 경고.
+EMO_OK = {   # 감정 → 화면에 있어야 할 신호(하나 이상)
+    "angry": ("anger", "fury", "rage", "glare", "condemn", "furious", "shout", "jaw", "restrained", "sneer", "cruel", "slam", "fist", "panick"),
+    "happy": ("smile", "smirk", "sneer", "laugh", "grin", "mock", "pleased", "satisf", "condescend", "scoff"),
+    "sad": ("sob", "tear", "cry", "beg", "plea", "sad", "tremb"),
+    "tonedown": ("cold", "quiet", "calm", "restrain", "grave", "low", "icy", "earnest", "silence", "gentle", "steady", "firm"),
+    "toneup": ("alarm", "panic", "shock", "excite", "fright", "urgent", "mock", "breezy", "careless", "dismiss"),
+    "normal": (),
+}
+EMO_BAD = {   # 감정과 정면으로 부딪히는 신호(연기 메모에 의도가 없으면 경고)
+    "angry": ("sob", "tear", "gentle", "peaceful"),
+    "happy": ("sob", "tear", "fury", "rage"),
+    "sad": ("smile", "smirk", "laugh", "grin", "sneer"),
+    "tonedown": ("shout", "laugh", "slam"),
+}
+INTENDED = ("비웃", "즐기", "깔보", "억누른", "서늘", "냉정", "차갑")   # 연기 메모의 의도된 예외(분노+비웃음 등)
+
+
+def emotion_table(sb):
+    import sys
+    sys.path.insert(0, PROD)
+    from build_tts_spec import TONE
+    rows, warn = [], 0
+    for x in sb:
+        tag = x["line"]
+        if not tag or tag not in TONE or tag.startswith(("NA", "OUT")):
+            continue
+        emo, inten, tempo, memo = TONE[tag]
+        act = OMNI_ACT.get(x["id"]) or LIVE.get(x["id"]) or x.get("motion") or ""
+        seen = " ".join([x["subject"], act]).lower()
+        ok = not EMO_OK.get(emo) or any(k in seen for k in EMO_OK[emo])
+        bad = [k for k in EMO_BAD.get(emo, ()) if k in seen]
+        intended = any(k in memo for k in INTENDED)
+        state = "✅" if ok and (not bad or intended) else "⚠️"
+        if state == "⚠️":
+            warn += 1
+        how = "립싱크" if x["tier"] == "omni" else ("i2v" if x["tier"] in ("lite", "pro") else "정지")
+        rows.append(f"| {state} | {x['id']} | {tag} | {how} | {emo} {inten} · {tempo} | {memo} | {x['subject'][:70]} | {act[:90]} |")
+    md = ["# 감정 일치표 — 음성 톤 · 표정 · 동작 (CLAUDE.md 제10장 7, build_ashita_phase3.py 생성)", "",
+          f"> 대사 컷 {len(rows)}개 · 경고 {warn}개. ⚠️ = 음성 감정과 화면 표정·동작이 맞지 않거나 부딪힘(연기 메모에 의도가 없으면 키프레임·동작 문장을 고친다).", "",
+          "| 판정 | 컷 | 대사 | 방식 | 음성 감정·세기·템포 | 연기 메모 | 화면(표정·구도) | 동작·연기 지시 |", "|---|---|---|---|---|---|---|---|"] + rows
+    open(os.path.join(PROD, "16_감정일치표.md"), "w", encoding="utf-8").write("\n".join(md) + "\n")
+    print(f"감정 일치표: 대사 컷 {len(rows)}개, 경고 {warn}개 → 16_감정일치표.md")
 
 
 if __name__ == "__main__":
