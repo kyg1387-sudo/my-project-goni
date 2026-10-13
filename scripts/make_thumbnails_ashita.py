@@ -280,8 +280,50 @@ def avatar_final(out):
         print("저장:", p)
 
 
+# ---------------------------------------------------------------- 인용구 클로즈업형 v2 (고니감독님 참고: 倉庫番 「土下座しろ」 썸네일)
+def thumb_quote(kf_name, cx, cy, zoom, lines, quote, bright=1.0):
+    """어두운 실사 + 오른쪽 큰 얼굴 + 왼쪽 흰 고딕 3줄(검은 테·그림자) + 아래 초대형 명조 인용구(노랑→주황→빨강, 흰 테, 붉은 글로)."""
+    src = kf(kf_name)
+    a = cover(src, W, H, cx, cy, zoom=zoom)
+    a = cv2.addWeighted(a, 1.5, cv2.GaussianBlur(a, (0, 0), 2.5), -0.5, 0).astype(np.float32)   # 확대 후 선명도
+    g = a.mean(axis=2, keepdims=True)
+    a = a * 0.62 + g * 0.38                                       # 채도 낮춤(참고 썸네일의 탁한 실사 톤)
+    a = a * np.array([0.9, 0.97, 1.06])                           # 차가운 푸른 그늘
+    a = (a - 128) * 1.15 + 112
+    a = 255 * (np.clip(a, 0, 255) / 255) ** (1 / bright)              # 밤 장면은 중간 톤을 들어 올림
+    ramp = np.clip((np.arange(W) - 380) / 620, 0, 1)[None, :, None]
+    a = a * (0.32 + 0.68 * ramp)                                  # 왼쪽(글자 자리) 어둡게
+    img = to_pil(vignette(a, 0.6)).convert("RGBA")
+    # 위에서 떨어지는 전등 빛(참고 썸네일의 매달린 전등 느낌)
+    cone = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(cone).polygon([(820, 0), (1100, 0), (1350, H), (560, H)], fill=38)
+    img = Image.alpha_composite(img, Image.merge("RGBA", [Image.new("L", (W, H), 255)] * 3 + [cone.filter(ImageFilter.GaussianBlur(80))]))
+    for i, s in enumerate(lines):
+        lay = text_layer(s, GOTH, 104, (255, 255, 255), (0, 0, 0), 12)
+        sh = Image.new("RGBA", lay.size, (0, 0, 0, 0)); sh.putalpha(lay.split()[3].filter(ImageFilter.GaussianBlur(10)))
+        put(img, sh, 46 + 8, 170 + i * 140 + 10)
+        put(img, lay, 46, 170 + i * 140)
+    q = text_layer(quote, MIN, 184, None, (255, 255, 255), 12, gradient=((255, 238, 90), (255, 140, 20), (215, 20, 10)),
+                   outer=(10, 0, 0), outer_w=8)
+    q = glow(q, (220, 20, 0), 40, 2.0)
+    put(img, q, (W - q.width) // 2 - 60, H - q.height + 40)
+    return img.convert("RGB")
+
+
+def quote_final(out):
+    jobs = (("C1-quote", "S13a", 0.53, 0.30, 2.0, 1.0), ("C2-quote", "S14d", 0.30, 0.30, 1.85, 1.35))
+    for name, k, cx, cy, z, br in jobs:
+        p = os.path.join(out, f"ashita-thumb-{name}-JP.jpg")
+        im = thumb_quote(k, cx, cy, z, ["30年", "会社を支えた男に", "上司は言った…"], "「明日から来るな」", br)
+        im.save(p, quality=92)
+        im.resize((360, 203), Image.LANCZOS).save(p.replace("-JP.jpg", "-phone360.jpg"), quality=90)
+        print("저장:", p)
+
+
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] == "anime":
+    if len(sys.argv) > 1 and sys.argv[1] == "quote":
+        quote_final(os.path.join(ROOT, "assets", "thumbnails", "ashita"))
+    elif len(sys.argv) > 1 and sys.argv[1] == "anime":
         anime_final(os.path.join(ROOT, "assets", "thumbnails", "ashita"))
     elif len(sys.argv) > 1 and sys.argv[1] == "avatar":
         avatar_final(os.path.join(ROOT, "assets", "thumbnails", "ashita"))
