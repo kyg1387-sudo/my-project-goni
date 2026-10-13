@@ -1,0 +1,337 @@
+{
+ "_설명": "『運転手のくせに』 PHASE 1 배역 오디션(Typecast ssfm-v30, language=jpn). 7배역 후보 15명 × 대비되는 감정 대사 33샘플(대본 v1.0 🔒 원문, 음성 입력만 가나 변형: 昨夜→ゆうべ·大塚→おおつか·白鷺精機→しらさぎせいき·東雲物産→しののめぶっさん, 따옴표 제거). TTS 구독 크레딧만 사용(달러 지출 0). 언어 검사(ja/large-v3) 후 고니감독님 청취로 채택. 실행: generate-video.yml audition_spec=untenshu-voices",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "kuroda_Zeus_L02",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "近い遠いは、関係ありませんよ。足元、お気をつけて",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "kuroda_Zeus_L44",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "ゆうべ、あなたの命を預かっていたのは……その運転手ですよ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "kuroda_Sindarin_L02",
+   "model": "typecast-direct",
+   "voice": "tc_61095ebc03c0e5b98f8ba69c",
+   "language": "jpn",
+   "text": "近い遠いは、関係ありませんよ。足元、お気をつけて",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "kuroda_Sindarin_L44",
+   "model": "typecast-direct",
+   "voice": "tc_61095ebc03c0e5b98f8ba69c",
+   "language": "jpn",
+   "text": "ゆうべ、あなたの命を預かっていたのは……その運転手ですよ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "kuroda_Kwonil_L02",
+   "model": "typecast-direct",
+   "voice": "tc_675a73eb789ff3ea6cc80235",
+   "language": "jpn",
+   "text": "近い遠いは、関係ありませんよ。足元、お気をつけて",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "kuroda_Kwonil_L44",
+   "model": "typecast-direct",
+   "voice": "tc_675a73eb789ff3ea6cc80235",
+   "language": "jpn",
+   "text": "ゆうべ、あなたの命を預かっていたのは……その運転手ですよ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "kuroda_HideoWatanabe_L02",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "近い遠いは、関係ありませんよ。足元、お気をつけて",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "kuroda_HideoWatanabe_L44",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "ゆうべ、あなたの命を預かっていたのは……その運転手ですよ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "ishii_Zeus_L27",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "おおつかくん、今日は頼むよ。しらさぎせいきさんは、取引先を、人で選ぶ会社だ。くれぐれも、失礼のないように",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "ishii_Sindarin_L27",
+   "model": "typecast-direct",
+   "voice": "tc_61095ebc03c0e5b98f8ba69c",
+   "language": "jpn",
+   "text": "おおつかくん、今日は頼むよ。しらさぎせいきさんは、取引先を、人で選ぶ会社だ。くれぐれも、失礼のないように",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "ishii_Kwonil_L27",
+   "model": "typecast-direct",
+   "voice": "tc_675a73eb789ff3ea6cc80235",
+   "language": "jpn",
+   "text": "おおつかくん、今日は頼むよ。しらさぎせいきさんは、取引先を、人で選ぶ会社だ。くれぐれも、失礼のないように",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "ishii_HideoWatanabe_L27",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "おおつかくん、今日は頼むよ。しらさぎせいきさんは、取引先を、人で選ぶ会社だ。くれぐれも、失礼のないように",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "otsuka_Simon_L11",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "運転手のくせに、俺に指図するな！ 黙って、言われた通りに走ってろ！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.1
+  },
+  {
+   "id": "otsuka_Simon_L41",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "か、会長！ どうか、どうかお考え直しを……！ この契約がなければ、私は……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.1,
+   "tempo": 0.9
+  },
+  {
+   "id": "otsuka_Viktor_L11",
+   "model": "typecast-direct",
+   "voice": "tc_67888393646bd9364605d57a",
+   "language": "jpn",
+   "text": "運転手のくせに、俺に指図するな！ 黙って、言われた通りに走ってろ！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.1
+  },
+  {
+   "id": "otsuka_Viktor_L41",
+   "model": "typecast-direct",
+   "voice": "tc_67888393646bd9364605d57a",
+   "language": "jpn",
+   "text": "か、会長！ どうか、どうかお考え直しを……！ この契約がなければ、私は……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.1,
+   "tempo": 0.9
+  },
+  {
+   "id": "otsuka_Bruce_L11",
+   "model": "typecast-direct",
+   "voice": "tc_672c5f873e4ac3afd2c02019",
+   "language": "jpn",
+   "text": "運転手のくせに、俺に指図するな！ 黙って、言われた通りに走ってろ！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.1
+  },
+  {
+   "id": "otsuka_Bruce_L41",
+   "model": "typecast-direct",
+   "voice": "tc_672c5f873e4ac3afd2c02019",
+   "language": "jpn",
+   "text": "か、会長！ どうか、どうかお考え直しを……！ この契約がなければ、私は……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.1,
+   "tempo": 0.9
+  },
+  {
+   "id": "ogawa_SakuraTanaka_L20",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "それと、これ……落ちてました。奥様、ですか？ 大事なお写真なのに……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "ogawa_SakuraTanaka_L47",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "わ、私が……ですか？",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "ogawa_TomokoNomura_L20",
+   "model": "typecast-direct",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
+   "language": "jpn",
+   "text": "それと、これ……落ちてました。奥様、ですか？ 大事なお写真なのに……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "ogawa_TomokoNomura_L47",
+   "model": "typecast-direct",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
+   "language": "jpn",
+   "text": "わ、私が……ですか？",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "ogawa_MikiYamamoto_L20",
+   "model": "typecast-direct",
+   "voice": "tc_63b6650135703800462c1eb0",
+   "language": "jpn",
+   "text": "それと、これ……落ちてました。奥様、ですか？ 大事なお写真なのに……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "ogawa_MikiYamamoto_L47",
+   "model": "typecast-direct",
+   "voice": "tc_63b6650135703800462c1eb0",
+   "language": "jpn",
+   "text": "わ、私が……ですか？",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "miura_Elise_L31",
+   "model": "typecast-direct",
+   "voice": "tc_686dc45bbd6351e06ee64daf",
+   "language": "jpn",
+   "text": "しののめぶっさんの皆様ですね。本日は、会長が直接お会いしたいと申しております",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "miura_MikiYamamoto_L31",
+   "model": "typecast-direct",
+   "voice": "tc_63b6650135703800462c1eb0",
+   "language": "jpn",
+   "text": "しののめぶっさんの皆様ですね。本日は、会長が直接お会いしたいと申しております",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "chiyoko_Emma_L29",
+   "model": "typecast-direct",
+   "voice": "tc_61d55a84b8c48f42d69b2399",
+   "language": "jpn",
+   "text": "あなた……偉くなっても、ハンドルを握っていた頃のこと、忘れないでね",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.85
+  },
+  {
+   "id": "chiyoko_Agatha_L29",
+   "model": "typecast-direct",
+   "voice": "tc_63049449e7dfae64b10c6cb9",
+   "language": "jpn",
+   "text": "あなた……偉くなっても、ハンドルを握っていた頃のこと、忘れないでね",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.85
+  },
+  {
+   "id": "chiyoko_Lucille_L29",
+   "model": "typecast-direct",
+   "voice": "tc_674808a7602c751359c7b280",
+   "language": "jpn",
+   "text": "あなた……偉くなっても、ハンドルを握っていた頃のこと、忘れないでね",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.85
+  },
+  {
+   "id": "rofujin_Emma_L01",
+   "model": "typecast-direct",
+   "voice": "tc_61d55a84b8c48f42d69b2399",
+   "language": "jpn",
+   "text": "すみませんねえ。こんな近くまで、乗せてもらって……",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.5,
+   "tempo": 0.9
+  },
+  {
+   "id": "rofujin_Agatha_L01",
+   "model": "typecast-direct",
+   "voice": "tc_63049449e7dfae64b10c6cb9",
+   "language": "jpn",
+   "text": "すみませんねえ。こんな近くまで、乗せてもらって……",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.5,
+   "tempo": 0.9
+  },
+  {
+   "id": "rofujin_Lucille_L01",
+   "model": "typecast-direct",
+   "voice": "tc_674808a7602c751359c7b280",
+   "language": "jpn",
+   "text": "すみませんねえ。こんな近くまで、乗せてもらって……",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.5,
+   "tempo": 0.9
+  },
+  {
+   "id": "nar_Lloyd_NA10",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "この夜のことを、おおつかはすぐに忘れた。だが翌朝、彼は思いもよらない場所で、この運転手と再会することになるのです……",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  }
+ ]
+}
