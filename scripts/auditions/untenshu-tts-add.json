@@ -58,7 +58,7 @@
    "model": "typecast-direct",
    "voice": "tc_65b34b05b3fb844f3d6b7aab",
    "language": "jpn",
-   "text": "ああ、俺だ。今日、さんじゅうおく、決めてくるからな。……ゆうべ？ ひどい運転手に当たってさ。ちょっと、しつけてやったよ",
+   "text": "ああ、俺だ。今日、さんじゅうおく、決めてくるからな。……ゆうべ？ ひどい、運転手に当たってさ。ちょっと、しつけてやったよ",
    "emotion_preset": "happy",
    "emotion_intensity": 0.9,
    "tempo": 1.05
@@ -78,7 +78,7 @@
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
-   "text": "写真立ての角には、ゆうべついた、小さな傷が残っていた。",
+   "text": "写真立てのかどには、ゆうべついた、小さな傷が残っていた。",
    "emotion_preset": "tonedown",
    "emotion_intensity": 1.0,
    "tempo": 0.95
