@@ -74,7 +74,7 @@ def fal_upload(key, path):
     return init["file_url"]
 
 
-def fal_image(key, prompt, num_images, ref_urls=None, model=None, aspect_ratio=None):
+def fal_image(key, prompt, num_images, ref_urls=None, model=None, aspect_ratio=None, extra=None):
     headers = {"Authorization": f"Key {key}"}
     model = model or (FAL_EDIT_MODEL if ref_urls else FAL_IMAGE_MODEL)
     # 모델별 파라미터 차이를 흡수: 실패하면 다음 페이로드로 재시도
@@ -87,6 +87,9 @@ def fal_image(key, prompt, num_images, ref_urls=None, model=None, aspect_ratio=N
             # 키프레임(16:9 등) 화면비 지정 — 모델이 파라미터를 거부하면 위 기본 페이로드로 폴백
             payloads.insert(0, {"prompt": prompt, "image_urls": ref_urls,
                                 "num_images": num_images, "aspect_ratio": aspect_ratio})
+        if extra:
+            # 스펙의 extra(모델 전용 파라미터, 예: seedream v4 edit의 image_size 2560x1440 고해상도) — 거부되면 아래로 폴백
+            payloads.insert(0, {"prompt": prompt, "image_urls": ref_urls, "num_images": num_images, **extra})
     else:
         # 스펙의 aspect_ratio(로케이션 시트 16:9 등)를 t2i에도 적용 — 예전에는 3:4로 고정돼 16:9 지정이 무시됨
         ar = aspect_ratio or "3:4"
@@ -160,7 +163,7 @@ def main():
         print(f"[{pid}] {len(todo)}장 생성: {person['prompt'][:60]}…")
         urls = fal_image(key, person["prompt"], len(todo),
                          ref_urls=ref_urls, model=person.get("model"),
-                         aspect_ratio=person.get("aspect_ratio"))
+                         aspect_ratio=person.get("aspect_ratio"), extra=person.get("extra"))
         if len(urls) < len(todo):
             failed.append(pid)
         for n, url in zip(todo, urls):
