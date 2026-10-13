@@ -1,0 +1,157 @@
+{
+ "_설명": "『運転手のくせに』 v1.1 Lock 보강 11줄(P01~) + 발음 보정 재녹음 4줄(같은 line 번호). build_lock.py는 이 폴더의 line###을 원본보다 우선한다. TTS 구독 크레딧만 사용. 생성: productions/untenshu-ja/build_tts_spec.py",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "line041",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "同じ朝。くろだは、小さな車庫でタクシーを降り、静かにせいぼうをぬいだ。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line050",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "会長がじきじきに？ ……ほらな。俺の実績が、評価されてるってことだ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line051",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "お待たせいたしました。しらさぎせいきの、クロダです",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line058",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "ち、違うんです、せんむ！ あれは、その……運転手の態度が、悪くて……！",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.1
+  },
+  {
+   "id": "P01",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "おがわは、何も言い返せなかった。ただ、ゆうべの運転手の、静かな目が、頭から離れなかった。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "P02",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "ああ、俺だ。今日、さんじゅうおく、決めてくるからな。……ゆうべ？ ひどい運転手に当たってさ。ちょっと、しつけてやったよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.9,
+   "tempo": 1.05
+  },
+  {
+   "id": "P03",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "……ちよこ。ゆうべは、少し、騒がしかったな",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.5,
+   "tempo": 0.85
+  },
+  {
+   "id": "P04",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "写真立ての角には、ゆうべついた、小さな傷が残っていた。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "P05",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "それから半年後。ちよこは、くろだの手を握ったまま、静かに旅立った。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 0.9
+  },
+  {
+   "id": "P06",
+   "model": "typecast-direct",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
+   "language": "jpn",
+   "text": "部長……。あの写真のタクシー、ゆうべの車に、似ていませんか？",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "P07",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "タクシーなんて、どれも同じだろ。くだらないこと言ってないで、愛想笑いの練習でもしとけ",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.6,
+   "tempo": 1.05
+  },
+  {
+   "id": "P08",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "いいか。名刺は両手で、頭は深く下げろよ。会長ってのは、礼儀にうるさいもんだ",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "P09",
+   "model": "typecast-direct",
+   "voice": "tc_61095ebc03c0e5b98f8ba69c",
+   "language": "jpn",
+   "text": "お、お待ちください、会長！ おおつかの、しょぶんは、私どもで、必ず……",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.1
+  },
+  {
+   "id": "P10",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "しょぶんの、問題ではないんです",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "P11",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "その夜。おおつかは、冷たい雨の中で、何度も手を挙げた。だが、彼の前で止まるタクシーは、一台もなかった。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  }
+ ]
+}

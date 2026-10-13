@@ -21,7 +21,8 @@ HOOK, OUTRO = 20.0, 50.0
 AD_AFTER = {"NA10": ("1차 광고", 210.0), "NA19": ("2차 광고", 420.0)}
 REUSED = {"OUT1", "OUT3", "OUT4"}  # 『明日から』 진행자 녹음 재사용 — 녹음 번호 없음
 # 대본의 독립 무언 비트(대사·내레이션이 덮지 않는 그림): S06 공사 유도등 와이드 · S17 문이 열림 · S20 무릎 꿇는 순간 · S23 택시가 멈춰 섬
-SILENT = {"S06": 1, "S17": 1, "S20": 1, "S23": 1}
+SILENT = {"S17": 1, "S20": 1, "S23": 1}  # v1.1: S06 와이드는 L08 첫 마디 J컷으로 덮음
+DELETED = {"NA5", "NA7"}  # v1.1 삭제 — 번호만 유지
 SECTION_START = {"S01": "② 발단·갈등"}
 MIN_TOTAL = 9 * 60 + 40
 
@@ -83,8 +84,14 @@ def build():
         else:
             n += 1
             x["id"] = f"line{n:03d}"
-            a, b = speech_span(os.path.join(AUDIO, x["id"] + ".mp3"))
+            if x["tag"] in DELETED:
+                x["dur"] = 0.0
+                continue
+            fix = os.path.join(AUDIO_ADD, x["id"] + ".mp3")  # 발음 보정 재녹음이 있으면 우선
+            x["fixed"] = os.path.exists(fix)
+            a, b = speech_span(fix if x["fixed"] else os.path.join(AUDIO, x["id"] + ".mp3"))
         x["lead"], x["dur"] = a, b - a
+    lines = [x for x in lines if x["tag"] not in DELETED]
     body = [x for x in lines if x["scene"].startswith("S")]
     scenes = collections.OrderedDict()
     for x in body:

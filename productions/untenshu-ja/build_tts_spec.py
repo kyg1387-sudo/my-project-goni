@@ -21,6 +21,8 @@ VOICE = {  # 04_목소리추천.md 확정 캐스트 (2026-10-13 고니감독님 
     "OUT": ("Yui Sato", "tc_629fe972013e90b4db213fd8"),
 }
 REUSED = {"OUT1", "OUT3", "OUT4"}
+DELETED = {"NA5", "NA7"}  # v1.1 삭제 — 녹음 번호(line008·line015)를 지키려고 번호는 세고 사용만 안 함
+RETAKE = {"NA12", "L32", "L33", "L37"}  # 본녹음 언어 검사 발음 보정 → untenshu-tts-add에 같은 line 번호로 재녹음
 
 # 태그: (감정 프리셋, 강도, 템포, 연기 메모 — 표정·동작까지 한 줄에서 결정, 제10장 7). 지정 없는 줄 0개.
 TONE = {
@@ -73,7 +75,7 @@ TONE = {
     "NA16": ("normal", 1.0, 0.95, "약속의 무게"),
     "NA17": ("tonedown", 1.0, 0.9, "주제 문장, 천천히"),
     "L31": ("normal", 1.0, 1.0, "단정한 안내 — 걸으며 손으로 방향 안내"),
-    "L32": ("whisper", 1.0, 1.0, "우쭐한 귓속말 — 小川 쪽으로 몸을 기울임"),
+    "L32": ("tonedown", 0.8, 1.0, "우쭐한 작은 목소리(귓속말 톤) — 小川 쪽으로 몸을 기울임 (whisper는 「ほらな」가 뭉개져 교체)"),
     "L33": ("normal", 1.0, 0.95, "정중하고 위엄 있게 — 문 앞에서 가볍게 목례"),
     "L34": ("tonedown", 1.0, 0.85, "조용한 압박 — 大塚를 똑바로 봄, 미동 없이 [Omni]"),
     "NA18": ("tonedown", 1.0, 0.95, "충격, 핏기가 가심"),
@@ -99,6 +101,18 @@ TONE = {
     "L49": ("happy", 0.7, 0.9, "다정한 농담 — 백미러 속 웃는 눈"),
     "L50": ("happy", 0.8, 1.0, "웃으며 거절 — 우산을 접으며 탐"),
     "NA24": ("normal", 1.0, 0.85, "가장 느리게, 마무리"),
+    # v1.1 Lock 보강(13_Lock보강안.md, 4-3절 증폭 설계) — 별도 스펙 untenshu-tts-add(P01~P11)
+    "P1": ("sad", 0.6, 0.95, "억눌린 小川의 마음, 「静かな目」에서 반 박자"),
+    "P2": ("happy", 0.9, 1.05, "반성 없는 자랑, 「しつけてやったよ」 비웃듯 — 의자에 기대 통화 [Omni] · 분노 정점"),
+    "P3": ("sad", 0.5, 0.85, "액자에 건네는 혼잣말, 쓸쓸한 미소 — 손·뒷모습"),
+    "P4": ("tonedown", 1.0, 0.95, "「小さな傷」에서 멈칫"),
+    "P5": ("sad", 0.8, 0.9, "감정의 바닥, 가장 조용히"),
+    "P6": ("toneup", 0.8, 1.0, "멈칫한 의문 — 사진 앞에서 발을 멈춤"),
+    "P7": ("angry", 0.6, 1.05, "코웃음, 귀찮다는 듯 — 걸으며 넥타이"),
+    "P8": ("normal", 1.0, 1.0, "자신만만한 훈계(아이러니) — 창에 비친 자기 모습"),
+    "P9": ("toneup", 1.0, 1.1, "다급한 수습 — 반쯤 일어나 손을 뻗음"),
+    "P10": ("tonedown", 1.0, 0.9, "조용히 탈출구를 막음 — 미동 없이"),
+    "P11": ("tonedown", 1.0, 0.95, "응징의 여운, 「一台もなかった」 천천히"),
     "OUT2": ("happy", 1.0, 0.92, "질문은 또렷이(진행자 립싱크 입력 tempo 0.92 표준)"),
 }
 
@@ -112,7 +126,13 @@ KANA = [("黒田宗一郎", "くろだそういちろう"), ("大塚浩二", "�
         ("一言", "ひとこと"), ("取締役", "とりしまりやく"), ("専務", "せんむ"), ("負け組", "まけぐみ"),
         ("指図", "さしず"), ("――", "……"), ("“", ""), ("”", "")]
 
-TAG_KANA = {}  # 본녹음 언어 검사에서 발음이 흔들린 줄만 줄 단위 보정(ashita R6 방식)
+TAG_KANA = {  # 본녹음 언어 검사(run 38399414508)에서 발음이 흔들린 줄만 줄 단위 보정(ashita R6 방식)
+    "NA12": [("脱いだ", "ぬいだ")],                       # 「正母を向いた」로 들림
+    "L33": [("黒田です", "クロダです")],                    # 「クローダ」로 들림
+    "L37": [("違うんです専務", "違うんです、せんむ")],         # 「さテム」로 들림
+    "P9": [("大塚の処分", "おおつかの、しょぶん")],            # 예방
+    "P10": [("処分", "しょぶん")],                          # 예방
+}
 
 
 def kana(tag, s):
@@ -133,34 +153,55 @@ def load():
 
 
 def main():
-    lines = [x for x in load() if x[0] not in REUSED]
-    missing = [tag for tag, _, _ in lines if tag not in TONE]
+    allx = [x for x in load() if x[0] not in REUSED]
+    lines = [x for x in allx if not x[0].startswith("P")]
+    adds = [x for x in allx if x[0].startswith("P")]
+    missing = [tag for tag, _, _ in allx if tag not in TONE and tag not in DELETED]
     if missing:
         sys.exit(f"톤 지정 없는 줄: {missing}")
-    tests, rows = [], []
-    for n, (tag, role, text) in enumerate(lines, 1):
+    tests, rows, add_tests, add_rows = [], [], [], []
+
+    def entry(fid, tag, role, text):
         emo, inten, tempo, note = TONE[tag]
-        name, vid = VOICE[role] or ("(오디션)", None)
-        fid = f"line{n:03d}"
-        tests.append({"id": fid, "model": "typecast-direct", "voice": vid, "language": "jpn", "text": kana(tag, text),
-                      "emotion_preset": emo, "emotion_intensity": inten, "tempo": tempo})
+        name, vid = VOICE[role]
         who = "내레이터" if role == "NA" else "진행자" if role == "OUT" else role
-        rows.append(f"| {fid} | {tag} | {who} | {name} | {text} | {emo} | {inten} | {tempo} | {note} |")
+        test = {"id": fid, "model": "typecast-direct", "voice": vid, "language": "jpn", "text": kana(tag, text),
+                "emotion_preset": emo, "emotion_intensity": inten, "tempo": tempo}
+        return test, f"| {fid} | {tag} | {who} | {name} | {text} | {emo} | {inten} | {tempo} | {note} |"
+
+    for n, (tag, role, text) in enumerate(lines, 1):
+        fid = f"line{n:03d}"
+        if tag in DELETED:
+            rows.append(f"| {fid} | {tag} | 내레이터 | Lloyd | ~~{text}~~ | — | — | — | v1.1 삭제(녹음 보관·미사용) |")
+            continue
+        test, row = entry(fid, tag, role, text)
+        tests.append(test)
+        if tag in RETAKE:
+            row += " **재녹음(보정)**"
+            add_tests.append(test)
+        rows.append(row)
+    for tag, role, text in adds:
+        test, row = entry(f"P{int(tag[1:]):02d}", tag, role, text)
+        add_tests.append(test)
+        add_rows.append(row)
+    head = "| 녹음 | 대본 | 화자 | 목소리 | 일본어 | 감정 | 강도 | 템포 | 연기 메모(음성·표정·동작) |"
     md = ["# 『運転手のくせに』 줄별 톤 연출표 (규칙 8-2·제10장 7)", "",
-          f"> 🔒 v1.0 동결 대본 기준 본녹음 {len(tests)}줄 + 재사용 3줄(OUT1·OUT3·OUT4 『明日から』 진행자). 지정 없는 줄 0개. 생성기: `build_tts_spec.py`.",
+          f"> 🔒 v1.1 동결 대본 기준 본녹음 {len(tests)}줄(+삭제 2줄 번호 유지) · 보강 {len(add_rows)}줄 · 재사용 3줄(OUT1·OUT3·OUT4 『明日から』 진행자). 지정 없는 줄 0개. 생성기: `build_tts_spec.py`.",
           "> 감정 프리셋 Typecast ssfm-v30(normal·happy·sad·angry·tonedown·toneup·whisper). **연기 메모의 표정·동작이 키프레임·i2v 동작 문장·립싱크 연기 지시의 원본이다**(감정 일치표가 대조).",
           "> 재사용: 후크 H1 = L11 · S18 드라이브 레코더 = L11·L14(스피커 필터).",
           "> 가나 변형(음성 입력만): " + " · ".join(f"{a}→{b}" for a, b in KANA if a not in "“”"), "",
-          "| 녹음 | 대본 | 화자 | 목소리 | 일본어 | 감정 | 강도 | 템포 | 연기 메모(음성·표정·동작) |", "|---|---|---|---|---|---|---|---|---|"] + rows
+          head, "|---|---|---|---|---|---|---|---|---|"] + rows + ["", "## v1.1 Lock 보강 녹음 (P01~P11, `untenshu-tts-add` — 재녹음 4줄과 같은 실행)", "",
+          head, "|---|---|---|---|---|---|---|---|---|"] + add_rows
     open(os.path.join(HERE, "05_톤연출표.md"), "w", encoding="utf-8").write("\n".join(md) + "\n")
-    if any(t["voice"] is None for t in tests):
-        print(f"톤연출표 {len(tests)}줄 작성 — 캐스트 미확정이라 녹음 스펙은 쓰지 않음")
-        return
     spec = {"_설명": f"『運転手のくせに』 PHASE 1 본녹음 {len(tests)}줄(확정 캐스트, Typecast ssfm-v30 jpn). 음성 입력만 가나 변형, 자막은 한자. "
-                    "line### = 시간 순서. OUT1·OUT3·OUT4는 『明日から』 재사용. TTS 구독 크레딧만 사용. 생성: productions/untenshu-ja/build_tts_spec.py",
+                    "line### = 시간 순서(v1.1 삭제 NA5·NA7 번호 유지). OUT1·OUT3·OUT4는 『明日から』 재사용. TTS 구독 크레딧만 사용. 생성: productions/untenshu-ja/build_tts_spec.py",
             "tc_model": "ssfm-v30", "language": "jpn", "tests": tests}
     json.dump(spec, open(os.path.join(REPO, "scripts", "auditions", "untenshu-tts.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    print(f"본녹음 {len(tests)}줄 → scripts/auditions/untenshu-tts.json")
+    add = {"_설명": f"『運転手のくせに』 v1.1 Lock 보강 {len(add_rows)}줄(P01~) + 발음 보정 재녹음 {len(add_tests) - len(add_rows)}줄(같은 line 번호). "
+                   "build_lock.py는 이 폴더의 line###을 원본보다 우선한다. TTS 구독 크레딧만 사용. 생성: productions/untenshu-ja/build_tts_spec.py",
+           "tc_model": "ssfm-v30", "language": "jpn", "tests": add_tests}
+    json.dump(add, open(os.path.join(REPO, "scripts", "auditions", "untenshu-tts-add.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    print(f"본녹음 {len(tests)}줄 · 보강+재녹음 {len(add_tests)}줄 → scripts/auditions/untenshu-tts-add.json")
 
 
 if __name__ == "__main__":

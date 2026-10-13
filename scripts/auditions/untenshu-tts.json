@@ -1,5 +1,5 @@
 {
- "_설명": "『運転手のくせに』 PHASE 1 본녹음 76줄(확정 캐스트, Typecast ssfm-v30 jpn). 음성 입력만 가나 변형, 자막은 한자. line### = 시간 순서. OUT1·OUT3·OUT4는 『明日から』 재사용. TTS 구독 크레딧만 사용. 생성: productions/untenshu-ja/build_tts_spec.py",
+ "_설명": "『運転手のくせに』 PHASE 1 본녹음 74줄(확정 캐스트, Typecast ssfm-v30 jpn). 음성 입력만 가나 변형, 자막은 한자. line### = 시간 순서(v1.1 삭제 NA5·NA7 번호 유지). OUT1·OUT3·OUT4는 『明日から』 재사용. TTS 구독 크레딧만 사용. 생성: productions/untenshu-ja/build_tts_spec.py",
  "tc_model": "ssfm-v30",
  "language": "jpn",
  "tests": [
@@ -74,16 +74,6 @@
    "tempo": 0.95
   },
   {
-   "id": "line008",
-   "model": "typecast-direct",
-   "voice": "tc_65681f21097fc4326ceb5e21",
-   "language": "jpn",
-   "text": "ごごじゅういちじ。繁華街で手を挙げたのは、二人の会社員だった。",
-   "emotion_preset": "normal",
-   "emotion_intensity": 1.0,
-   "tempo": 1.0
-  },
-  {
    "id": "line009",
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
@@ -141,16 +131,6 @@
    "text": "ああ。しらさぎせいきと、さんじゅうおくの契約だぞ。これが決まりゃ、俺も来月からとりしまりやくだ",
    "emotion_preset": "happy",
    "emotion_intensity": 0.9,
-   "tempo": 1.0
-  },
-  {
-   "id": "line015",
-   "model": "typecast-direct",
-   "voice": "tc_65681f21097fc4326ceb5e21",
-   "language": "jpn",
-   "text": "しらさぎせいき。業界でも名の知れた、精密機器メーカーだ。その契約は、おおつかの出世が懸かった大一番だった。",
-   "emotion_preset": "normal",
-   "emotion_intensity": 1.0,
    "tempo": 1.0
   },
   {
@@ -408,7 +388,7 @@
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
-   "text": "同じ朝。くろだは、小さな車庫でタクシーを降り、静かにせいぼうを脱いだ。",
+   "text": "同じ朝。くろだは、小さな車庫でタクシーを降り、静かにせいぼうをぬいだ。",
    "emotion_preset": "normal",
    "emotion_intensity": 1.0,
    "tempo": 0.95
@@ -499,8 +479,8 @@
    "voice": "tc_65b34b05b3fb844f3d6b7aab",
    "language": "jpn",
    "text": "会長がじきじきに？ ……ほらな。俺の実績が、評価されてるってことだ",
-   "emotion_preset": "whisper",
-   "emotion_intensity": 1.0,
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 0.8,
    "tempo": 1.0
   },
   {
@@ -508,7 +488,7 @@
    "model": "typecast-direct",
    "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
-   "text": "お待たせいたしました。しらさぎせいきの、くろだです",
+   "text": "お待たせいたしました。しらさぎせいきの、クロダです",
    "emotion_preset": "normal",
    "emotion_intensity": 1.0,
    "tempo": 0.95
@@ -578,7 +558,7 @@
    "model": "typecast-direct",
    "voice": "tc_65b34b05b3fb844f3d6b7aab",
    "language": "jpn",
-   "text": "ち、違うんですせんむ！ あれは、その……運転手の態度が、悪くて……！",
+   "text": "ち、違うんです、せんむ！ あれは、その……運転手の態度が、悪くて……！",
    "emotion_preset": "toneup",
    "emotion_intensity": 1.0,
    "tempo": 1.1
