@@ -82,7 +82,7 @@ def main():
     # 오디션 폴더(assets/auditions/<spec>)는 파일명이 line*이 아니다 → 스펙 JSON의 id→대사로 대조
     spec_text = {}
     spec_path = os.path.join("scripts", "auditions", os.path.basename(os.path.normpath(args.audio_dir)) + ".json")
-    if not files and os.path.exists(spec_path):
+    if os.path.exists(spec_path):  # 스펙이 있으면 line*·P* 등 폴더의 모든 mp3를 스펙 대사로 대조(보강 P*.mp3 누락 방지)
         import json
         spec = json.load(open(spec_path, encoding="utf-8"))
         spec_text = {t["id"]: t.get("text", "") for t in spec.get("tests", [])}
