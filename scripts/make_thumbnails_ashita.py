@@ -366,8 +366,52 @@ def anime_hd_final(out):
         print("저장:", p)
 
 
+# ---------------------------------------------------------------- 고니감독님이 직접 만든 그림(2026-10-13)에 글자만 얹기
+def thumb_user(src_png, wm=(1288, 670, 24)):
+    """여성(왼쪽, 얼굴 위쪽)·무릎 꿇은 악역(가운데)·서 있는 남자(오른쪽) 구도. 얼굴 3개를 피해 글자 배치:
+    라벨 = 왼쪽 위 / 큰 글자 3줄 = 여성의 어깨·서류 위(얼굴 아래) / 배지 = 위쪽 가운데(관중·조명) / 검은 띠 = 아래 가운데."""
+    a = cv2.imread(src_png)
+    if wm:                                                         # 생성 도구의 작은 표시(✦) 지우기
+        m = np.zeros(a.shape[:2], np.uint8); cv2.circle(m, (wm[0], wm[1]), wm[2], 255, -1)
+        a = cv2.inpaint(a, m, 7, cv2.INPAINT_TELEA)
+    a = cv2.cvtColor(a, cv2.COLOR_BGR2RGB)
+    a = cv2.resize(a, (W, H), interpolation=cv2.INTER_LANCZOS4)
+    a = cv2.addWeighted(a, 1.4, cv2.GaussianBlur(a, (0, 0), 2.0), -0.4, 0)   # 확대 후 선 선명도
+    a = a.astype(np.float32)
+    shade = np.clip((np.arange(H) - 520) / 400, 0, 1)[:, None, None] * np.clip((900 - np.arange(W)) / 500, 0, 1)[None, :, None]
+    a = a * (1 - 0.45 * shade)                                     # 글자 자리(왼쪽 아래)만 살짝 어둡게
+    img = to_pil(a).convert("RGBA")
+    img.alpha_composite(label("スカッとする話", 64, (255, 255, 255, 255), (20, 20, 20)), (26, 22))
+    fire = ((255, 236, 60), (255, 150, 20), (225, 30, 20))
+    yellow = ((255, 250, 150), (255, 225, 30), (250, 180, 0))
+    put(img, text_layer("クビにした男が", GOTH, 118, (255, 255, 255), (0, 0, 0), 12), 8, 420)
+    put(img, text_layer("百億円の", GOTH, 196, None, (255, 255, 255), 12, gradient=fire, outer=(0, 0, 0), outer_w=9), 0, 540)
+    put(img, text_layer("鍵だった", GOTH, 214, None, (255, 255, 255), 12, gradient=yellow, outer=(0, 0, 0), outer_w=9), 0, 735)
+    badge = label("上司の不正、暴かれる", 46, (175, 18, 18, 255), (255, 255, 255), pad=(30, 8))
+    num = big("三億円の改ざん", 98, gradient=((255, 255, 190), (255, 225, 40), (255, 160, 0)), stroke_w=8, outer_w=6)
+    box = Image.new("RGBA", (max(badge.width, num.width) + 44, badge.height + num.height + 4), (0, 0, 0, 0))
+    ImageDraw.Draw(box).rounded_rectangle([0, 0, box.width - 1, box.height - 1], 28, fill=(255, 200, 40, 255))
+    ImageDraw.Draw(box).rounded_rectangle([7, 7, box.width - 8, box.height - 8], 24, fill=(165, 14, 14, 245))
+    box.alpha_composite(badge, ((box.width - badge.width) // 2, 12))
+    box.alpha_composite(num, ((box.width - num.width) // 2, badge.height - 6))
+    img.alpha_composite(box, (720, 210))
+    bd = band(["懲戒解雇、そして…"], 70, alpha=235, pad=(32, 14))
+    img.alpha_composite(bd, (900, 930))
+    return img.convert("RGB")
+
+
+def user_final(out):
+    p = os.path.join(out, "ashita-thumb-FINAL-JP.jpg")
+    im = thumb_user(os.path.join(out, "user-anime-src.png"))
+    im.save(p, quality=94)
+    im.resize((360, 203), Image.LANCZOS).save(p.replace("-JP.jpg", "-phone360.jpg"), quality=90)
+    print("저장:", p)
+
+
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] == "hd":
+    if len(sys.argv) > 1 and sys.argv[1] == "user":
+        user_final(os.path.join(ROOT, "assets", "thumbnails", "ashita"))
+    elif len(sys.argv) > 1 and sys.argv[1] == "hd":
         anime_hd_final(os.path.join(ROOT, "assets", "thumbnails", "ashita"))
     elif len(sys.argv) > 1 and sys.argv[1] == "quote":
         quote_final(os.path.join(ROOT, "assets", "thumbnails", "ashita"))
