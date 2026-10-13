@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """『運転手のくせに』 PHASE 1 본녹음 스펙 + 줄별 톤 연출표 생성기 (무료). ashita build_tts_spec.py 복사·수정.
 
-입력: 00_script_ja.md (🔒 v1.0 동결), 04_목소리추천.md의 확정 캐스트(아래 VOICE).
+입력: 00_script_ja.md (🔒 v1.0 동결), 04_목소리추천.md의 확정 캐스트(아래 VOICE, 2026-10-13 고니감독님 확정).
 출력: scripts/auditions/untenshu-tts.json (Typecast ssfm-v30 jpn, line### = 시간 순서), 05_톤연출표.md.
 가나 변형은 음성 입력에만 적용하고 자막은 한자를 유지한다.
 재사용(녹음 안 함): OUT1·OUT3·OUT4 = 『明日から』 진행자 녹음·립싱크(assets/auditions/ashita-outro-omni),
@@ -12,9 +12,12 @@ import json, os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, "..", ".."))
 
-VOICE = {  # 04_목소리추천.md 확정 캐스트 — 오디션 후 채운다(None이면 스펙을 쓰지 않음)
+VOICE = {  # 04_목소리추천.md 확정 캐스트 (2026-10-13 고니감독님 추천안 그대로 확정)
     "NA": ("Lloyd", "tc_65681f21097fc4326ceb5e21"),
-    "黒田": None, "大塚": None, "小川": None, "石井": None, "三浦": None, "千代子": None, "老婦人": None,
+    "黒田": ("Zeus", "tc_6a5882fe54564e2a06a218bb"), "大塚": ("Simon", "tc_65b34b05b3fb844f3d6b7aab"),
+    "小川": ("Tomoko Nomura", "tc_63be4f467ac1708d9ccd75d4"), "石井": ("Sindarin", "tc_61095ebc03c0e5b98f8ba69c"),
+    "三浦": ("Miki Yamamoto", "tc_63b6650135703800462c1eb0"), "千代子": ("Emma", "tc_61d55a84b8c48f42d69b2399"),
+    "老婦人": ("Lucille", "tc_674808a7602c751359c7b280"),
     "OUT": ("Yui Sato", "tc_629fe972013e90b4db213fd8"),
 }
 REUSED = {"OUT1", "OUT3", "OUT4"}

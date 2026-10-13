@@ -1,0 +1,767 @@
+{
+ "_설명": "『運転手のくせに』 PHASE 1 본녹음 76줄(확정 캐스트, Typecast ssfm-v30 jpn). 음성 입력만 가나 변형, 자막은 한자. line### = 시간 순서. OUT1·OUT3·OUT4는 『明日から』 재사용. TTS 구독 크레딧만 사용. 생성: productions/untenshu-ja/build_tts_spec.py",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "line001",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "翌朝、会議室の扉を開けたのは……",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line002",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "雨の夜の東京。一台の個人タクシーが、静かに街を流していた。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line003",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "ハンドルを握るのは、くろだそういちろう、ろくじゅうななさい。白い手袋に、きちんと整えたせいぼう。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line004",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "ダッシュボードには、いつも小さな写真立てがひとつ。ななねんまえに亡くなった、妻の写真だった。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "line005",
+   "model": "typecast-direct",
+   "voice": "tc_674808a7602c751359c7b280",
+   "language": "jpn",
+   "text": "すみませんねえ。こんな近くまで、乗せてもらって……",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.5,
+   "tempo": 0.9
+  },
+  {
+   "id": "line006",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "近い遠いは、関係ありませんよ。足元、お気をつけて",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "line007",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "くろだは、どんな客にも、同じように頭を下げた。それが、よんじゅうねんまえから変わらない、彼の流儀だった。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line008",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "ごごじゅういちじ。繁華街で手を挙げたのは、二人の会社員だった。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line009",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "しののめぶっさんの営業部長、おおつかこうじ、よんじゅうごさい。そして部下の、おがわゆい、にじゅうろくさい。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line010",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "おい、早く出せよ。……ったく、雨の日はタクシーもろくに捕まらねえ",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.7,
+   "tempo": 1.05
+  },
+  {
+   "id": "line011",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "ご乗車、ありがとうございます。どちらまで、参りましょうか",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line012",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "みなとくまで。高速乗れよ。……こっちは明日、大事な商談なんだ",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "line013",
+   "model": "typecast-direct",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
+   "language": "jpn",
+   "text": "部長、明日の資料、最終確認しておきますね",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line014",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "ああ。しらさぎせいきと、さんじゅうおくの契約だぞ。これが決まりゃ、俺も来月からとりしまりやくだ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.9,
+   "tempo": 1.0
+  },
+  {
+   "id": "line015",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "しらさぎせいき。業界でも名の知れた、精密機器メーカーだ。その契約は、おおつかの出世が懸かった大一番だった。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line016",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "お客様、申し訳ございません。この先の入口は、今夜、工事で閉鎖されておりまして。ひとつ先の入口から、回らせていただきます",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line017",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "はあ？ 遠回りして、メーター稼ごうってんだろ",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.8,
+   "tempo": 1.05
+  },
+  {
+   "id": "line018",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "いえ、決してそのようなことは……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "line019",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "運転手のくせに、俺にさしずするな！ 黙って、言われた通りに走ってろ！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.1
+  },
+  {
+   "id": "line020",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "その衝撃で、ダッシュボードの写真立てが、足元に転がり落ちた。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line021",
+   "model": "typecast-direct",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
+   "language": "jpn",
+   "text": "部長、やめてください……！",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.1
+  },
+  {
+   "id": "line022",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "お前は黙ってろ。……いいか、じいさん。こっちは客だ。客は、神様なんだよ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line023",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "その歳になって、こんな夜中までハンドル握ってる時点でな、人生のまけぐみなんだよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 0.95
+  },
+  {
+   "id": "line024",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "……申し訳ございません。安全に、お送りいたします",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line025",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "くろだは、ひとことも言い返さなかった。ただ静かに、ミラー越しに、男の顔を見ていた。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line026",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "せんえんで十分だろ。散々遠回りしやがって。……明日、お前んとこの会社に、クレーム入れてやるからな",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.8,
+   "tempo": 1.05
+  },
+  {
+   "id": "line027",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "あいにく、個人タクシーでございますので。会社は、ございません",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line028",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "……ちっ。運転手のくせに、口だけは達者だな",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.6,
+   "tempo": 1.0
+  },
+  {
+   "id": "line029",
+   "model": "typecast-direct",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
+   "language": "jpn",
+   "text": "本当に、申し訳ありません。……足りない分、私が払いますので",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 0.95
+  },
+  {
+   "id": "line030",
+   "model": "typecast-direct",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
+   "language": "jpn",
+   "text": "それと、これ……落ちてました。奥様、ですか？ 大事なお写真なのに……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "line031",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "……ありがとうございます。お名前を、伺ってもよろしいですか",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line032",
+   "model": "typecast-direct",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
+   "language": "jpn",
+   "text": "しののめぶっさんの、おがわと申します。……おやすみなさい。お気をつけて",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.5,
+   "tempo": 1.0
+  },
+  {
+   "id": "line033",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "この夜のことを、おおつかはすぐに忘れた。だが翌朝、彼は思いもよらない場所で、この運転手と再会することになるのです……",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line034",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "翌朝。しののめぶっさんの営業部は、契約の調印を前に、浮き足立っていた。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line035",
+   "model": "typecast-direct",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
+   "language": "jpn",
+   "text": "部長。ゆうべのタクシー、足りなかった分は、私がお支払いしておきました",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line036",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "余計なことすんなよ。……いいか、運転手なんかにペコペコするから、うちがなめられるんだ",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line037",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "今日の商談、余計な口は挟むなよ。お前は、資料配ってりゃいいんだ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line038",
+   "model": "typecast-direct",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
+   "language": "jpn",
+   "text": "……はい",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 0.9
+  },
+  {
+   "id": "line039",
+   "model": "typecast-direct",
+   "voice": "tc_61095ebc03c0e5b98f8ba69c",
+   "language": "jpn",
+   "text": "おおつかくん、今日は頼むよ。しらさぎせいきさんは、取引先を人で選ぶ会社だ。くれぐれも、失礼のないように",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line040",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "お任せください、せんむ。さんじゅうおく、今日で決めてみせますよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "line041",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "同じ朝。くろだは、小さな車庫でタクシーを降り、静かにせいぼうを脱いだ。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line042",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "よんじゅうねんまえ。くろだは、一台のタクシーで、家族を養う運転手だった。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "line043",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "後ろの席から聞こえてくるのは、町工場の社長たちの、ため息だった。……この部品さえ、もっと精密に作れたら。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line044",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "くろだは、妻と二人、車庫の片隅で、小さなせんばんを回し始めた。それが、しらさぎせいきの始まりだった。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.5,
+   "tempo": 0.95
+  },
+  {
+   "id": "line045",
+   "model": "typecast-direct",
+   "voice": "tc_61d55a84b8c48f42d69b2399",
+   "language": "jpn",
+   "text": "あなた……偉くなっても、ハンドルを握っていた頃のこと、忘れないでね",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.85
+  },
+  {
+   "id": "line046",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "ああ……。約束するよ",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 0.85
+  },
+  {
+   "id": "line047",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "妻との約束。くろだは、会長になった今も、しゅうにいちどだけ、あの頃と同じタクシーで、夜の街を走っている。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line048",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "後ろの席にこそ、人の本当の顔が出る。それを、決して忘れないために。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line049",
+   "model": "typecast-direct",
+   "voice": "tc_63b6650135703800462c1eb0",
+   "language": "jpn",
+   "text": "しののめぶっさんの皆様ですね。本日は、会長が直接お会いしたいと申しております",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line050",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "会長がじきじきに？ ……ほらな。俺の実績が、評価されてるってことだ",
+   "emotion_preset": "whisper",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line051",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "お待たせいたしました。しらさぎせいきの、くろだです",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line052",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "……ゆうべは、どうも",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line053",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "おおつかの顔から、血の気が引いた。目の前に立っていたのは、ゆうべ、自分が怒鳴りつけた、あの運転手だった。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line054",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "な……なんで、あんたが……。い、いや、その、ゆうべは、酒が入っておりまして……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "line055",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "くろだは何も言わず、一台のタブレットを、机に置いた。そこに残っていたのは、ゆうべの、すべてだった……",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line056",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "ドライブレコーダー。そこには、おおつかの怒鳴り声も、座席を蹴る音も、はっきりと残っていた。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line057",
+   "model": "typecast-direct",
+   "voice": "tc_61095ebc03c0e5b98f8ba69c",
+   "language": "jpn",
+   "text": "おおつかくん……。これは、本当なのかね",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.7,
+   "tempo": 0.9
+  },
+  {
+   "id": "line058",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "ち、違うんですせんむ！ あれは、その……運転手の態度が、悪くて……！",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.1
+  },
+  {
+   "id": "line059",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "おおつかさん。私が取引先を選ぶ基準は、ひとつだけです",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line060",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "立場の弱い相手に、その会社の人間が、どう接するか。……金額では、ないんです",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line061",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "このお話は、お受けできません",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line062",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "か、会長！ どうか、どうかお考え直しを……！ この契約がなければ、私は……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.1,
+   "tempo": 0.9
+  },
+  {
+   "id": "line063",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "運転手のくせにと、おっしゃいましたね",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line064",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "ハンドルを握る人間はね、後ろに乗せたお客様の命を、預かっているんです",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line065",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "ゆうべ、あなたの命を預かっていたのは……その運転手ですよ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line066",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "ただ……ゆうべ、床に落ちた妻の写真を、拾ってくださった方がいましてね",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.5,
+   "tempo": 0.9
+  },
+  {
+   "id": "line067",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "おがわさん。あなたが担当してくださるなら……このお話、もう一度、考えさせてください",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 0.9
+  },
+  {
+   "id": "line068",
+   "model": "typecast-direct",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
+   "language": "jpn",
+   "text": "わ、私が……ですか？",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line069",
+   "model": "typecast-direct",
+   "voice": "tc_61095ebc03c0e5b98f8ba69c",
+   "language": "jpn",
+   "text": "……承知いたしました。担当は、おがわに。……おおつかくん。君はほんじつづけで、担当を外れてもらう",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line070",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "契約は、おがわを担当として、改めて結ばれた。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line071",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "おおつかは、とりしまりやくの内定を取り消され、営業部長の職も解かれた。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line072",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "客は神様だと言い放った男は、その日、自分が一番大切な客を失ったことを、思い知らされた。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line073",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "どうぞ、お乗りください。……今夜は、お代は結構ですよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 0.9
+  },
+  {
+   "id": "line074",
+   "model": "typecast-direct",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
+   "language": "jpn",
+   "text": "ふふ……だめですよ。ちゃんと、払いますから",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line075",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "人の本当の値打ちは、肩書きではなく、誰も見ていない場所での、振る舞いに表れる。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line076",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "あなたのまわりにも、こんな人はいませんか？ コメントで教えてください",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  }
+ ]
+}
