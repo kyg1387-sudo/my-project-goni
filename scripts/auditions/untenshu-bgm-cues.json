@@ -1,0 +1,40 @@
+{
+ "_설명": "R53 「장면에 맞게 BGM 더 강하게」: 장면별 강조 음악 7곡(lyria2, 각 약 30초) — 마무리에서 해당 장면에 겹쳐 깔고 1~3kHz 감쇄",
+ "tests": [
+  {
+   "id": "cue-hook",
+   "model": "fal-ai/lyria2",
+   "text": "a dramatic cinematic cold open: deep taiko boom, tense staccato strings rising fast to a huge orchestral hit, Japanese drama trailer, instrumental, no vocals, no singing"
+  },
+  {
+   "id": "cue-outburst",
+   "model": "fal-ai/lyria2",
+   "text": "aggressive tense orchestral cue: pounding low drums, harsh dissonant strings, a menacing brass stab, anger and injustice, Japanese drama score, instrumental, no vocals, no singing"
+  },
+  {
+   "id": "cue-sorrow",
+   "model": "fal-ai/lyria2",
+   "text": "a sad emotional sting: a single low piano note then mournful solo cello, quiet heartbreak, Japanese drama score, instrumental, no vocals, no singing"
+  },
+  {
+   "id": "cue-flashback",
+   "model": "fal-ai/lyria2",
+   "text": "a deeply emotional orchestral swell: tender piano with full warm strings rising to a tearful climax, a promise and a farewell, Japanese drama score, instrumental, no vocals, no singing"
+  },
+  {
+   "id": "cue-reveal",
+   "model": "fal-ai/lyria2",
+   "text": "a shocking reveal: silence then a massive orchestral boom, deep drums and a chilling string tremolo, the truth revealed, Japanese drama score, instrumental, no vocals, no singing"
+  },
+  {
+   "id": "cue-verdict",
+   "model": "fal-ai/lyria2",
+   "text": "powerful cathartic justice cue: driving drums, heroic low brass and surging strings building to a triumphant climax, Japanese drama score, instrumental, no vocals, no singing"
+  },
+  {
+   "id": "cue-hope",
+   "model": "fal-ai/lyria2",
+   "text": "an uplifting warm finale: bright piano with soaring strings, hope and kindness rewarded, gentle tears of joy, Japanese drama ending, instrumental, no vocals, no singing"
+  }
+ ]
+}
