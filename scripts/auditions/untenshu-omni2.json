@@ -1,0 +1,26 @@
+{
+ "_설명": "R45·R51·R52 립싱크: S10b(뒷좌석 구도, 크롭 수정) · S17f · S18f(당황·홍조·땀) — 약 5.5+6.4+7.9초 x 0.16 ≈ 3.2달러",
+ "tests": [
+  {
+   "id": "omni-S10b",
+   "model": "omnihuman",
+   "image": "assets/portraits/untenshu-keyframes/S10b-1.png",
+   "audio_id": "L20",
+   "prompt": "Ogawa speaks gently and apologetically from the back seat, holding out the small photo frame with both hands, a small concerned tilt of the head. Speaking to the driver in the front seat after her boss has left. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands stay where they are in the first frame; no exaggerated motion, the face and body stay the same person. The driver at the left front stays still facing forward."
+  },
+  {
+   "id": "omni-S17f",
+   "model": "omnihuman",
+   "image": "assets/portraits/untenshu-keyframes/S17f-1.png",
+   "audio_id": "L35",
+   "prompt": "Otsuka stammers in panic, sweating, the business card trembling, eyes darting, a forced nervous half-smile. Making excuses to the chairman. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands stay where they are in the first frame; no exaggerated motion, the face and body stay the same person. His face is flushed red and sweat runs down his temples; he is flustered and at a loss, eyes darting, voice shaking."
+  },
+  {
+   "id": "omni-S18f",
+   "model": "omnihuman",
+   "image": "assets/portraits/untenshu-keyframes/S18f-1.png",
+   "audio_id": "L37",
+   "prompt": "Otsuka pleads in panic, leaning forward, palms stay pressed on the table, sweating, voice rising. Desperately answering Ishii's question. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands stay where they are in the first frame; no exaggerated motion, the face and body stay the same person. His face is flushed red and sweat runs down his temples; he is flustered and at a loss, eyes darting, voice shaking."
+  }
+ ]
+}

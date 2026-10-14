@@ -1,0 +1,24 @@
+{
+ "_설명": "S10b 듣는 黒田(크롭 수정 키프레임) + S15g(뒷좌석 시점) lite 각 10초 ≈ 0.72달러",
+ "ratio": "16:9",
+ "budget_usd": 1.0,
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "scenes": [
+  {
+   "prompt": "Completely static tripod camera inside a parked taxi at night; the view outside stays still, only raindrops trickle. The elderly driver at the left front (wearing his navy peaked cap) listens to the young woman in the back seat holding out the photo frame: his mouth stays closed, his eyes soften and glisten slightly, a slow breath, one slow blink, a very small nod; his head stays in profile and never turns toward the camera. The young woman stays completely still. Keep the exact faces, wardrobe, props and lighting of the first frame. No new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S10b-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/lite/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: in the rear-view mirror the driver's eyes glance back toward the empty rear seat, thoughtful, one slow blink; the back of his head and cap barely move; night city lights drift softly through the windshield. The rear seat stays empty. Keep the exact faces, wardrobe, props and lighting of the first frame. No new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S15g-1.png"
+  }
+ ],
+ "durations": [
+  10,
+  10
+ ]
+}
