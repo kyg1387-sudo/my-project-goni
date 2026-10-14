@@ -1,0 +1,15 @@
+{
+ "_설명": "R48 재설계: S15g 뒷좌석 시점(빈 뒷좌석 전경 + 앞쪽 룸미러 속 黒田의 눈) 2장 약 0.08달러",
+ "characters": [
+  {
+   "id": "S15g",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-cast/cells/kuroda-driver-sheet-back.png",
+    "assets/portraits/untenshu-cast/cells/loc-taxi-c1.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still, inside a Japanese taxi at night, camera low in the EMPTY REAR SEAT looking forward: the empty grey rear bench seat with its white lace cover soft in the foreground; ahead, the back of the driver's head in a plain navy peaked cap and the white lace-covered headrest of the driver's seat (the driver seen only from behind, as in the first reference); above the windshield the small rear-view mirror, in which only the driver's calm eyes and the brim of his cap are reflected, glancing back toward the empty seat. Blurred night city lights through the windshield, soft teal and amber light. Only one person (the driver). No text, no letters. Full-frame 16:9, no borders."
+  }
+ ]
+}
