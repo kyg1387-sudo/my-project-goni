@@ -1,0 +1,23 @@
+{
+ "_설명": "『運転手のくせに』 PHASE 4 글자 지우기 편집(d): 2컷 x 2 = 4장 약 0.16달러.",
+ "characters": [
+  {
+   "id": "S04b",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-kf-a/S04b-1.png"
+   ],
+   "prompt": "Edit this image only: make the white paper sign with black brush calligraphy on the left wall completely blank plain white paper with nothing written on it, make the small paper notice below it blank too, and make the car in the street on the right a glossy black sedan taxi with a plain white dome roof lamp. Keep everything else exactly the same: same framing, same two people, same faces, same poses, same lantern, same rain. Full-frame 16:9, no borders, no text anywhere."
+  },
+  {
+   "id": "S22b",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-kf-b/S22b-1.png"
+   ],
+   "prompt": "Edit this image only: replace all the posters and notices on the right wall with plain blank pale paper sheets and a plain blank cork board, with no writing, no letters, no symbols. Keep everything else exactly the same: same corridor, same man walking away, same doors, same light. Full-frame 16:9, no borders, no text anywhere."
+  }
+ ]
+}

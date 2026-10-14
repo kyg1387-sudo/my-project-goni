@@ -8,7 +8,7 @@ from PIL import Image
 
 def bands(a, axis):
     m = a.mean(axis=(axis, 2)); s = a.std(axis=(axis, 2))
-    flat = ((m < 14) | (m > 242)) & (s < 6)
+    flat = ((m < 14) | (m > 226)) & (s < 6)  # 흰 띠가 235 정도로 나오는 경우(untenshu S06a)
     n = len(flat); lo = 0
     while lo < n // 3 and flat[lo]:
         lo += 1
