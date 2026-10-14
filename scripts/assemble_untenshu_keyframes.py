@@ -8,7 +8,9 @@ import json, os, shutil, subprocess, sys
 # 대사 컷 얼굴 1/4 이상 크롭(제10장 1) — 복사 뒤 매번 다시 적용(복사가 크롭을 덮어쓰므로).
 # 자동 검출이 엉뚱한 사람을 고르는 컷은 원본 좌표로 고정: id → (hint_x, fg, x, y, w, h)
 FACE_MANUAL = {"S12a": ("0.7", "L", 868, 156, 157, 157), "S21c": ("0.25", "R", 242, 77, 156, 156)}
-FACE_SKIP = {"S06e", "S17c"}   # 시범에서 이미 크롭한 판을 선택(kf_select)
+FACE_SKIP = {"S06e", "S17c"}
+# R38: 조수석 쪽에서 본 운전 컷은 기사가 화면 왼쪽(앞유리)을 봐야 함(우핸들) — 반대로 나온 컷은 좌우 반전
+MIRROR = {"S01b", "S08b", "S09d"}   # 시범에서 이미 크롭한 판을 선택(kf_select)
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 SB = os.path.join(ROOT, "scripts", "storyboard", "untenshu.json")
@@ -34,6 +36,7 @@ def main():
             os.makedirs(os.path.dirname(os.path.join(ROOT, dst)), exist_ok=True)
             shutil.copy(os.path.join(ROOT, src), os.path.join(ROOT, dst))
     if not check:
+        from PIL import Image, ImageOps
         for sc in scenes:
             if sc["kind"] != "d" or sc["id"] in FACE_SKIP:
                 continue
@@ -41,6 +44,9 @@ def main():
             m = FACE_MANUAL.get(sc["id"])
             args = [m[0], m[1]] + [str(v) for v in m[2:]] if m else ["0.5", sc.get("fg") or "-"]
             subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "kf_face_frame.py"), k, k, "0.27"] + args, check=True, capture_output=True)
+        for sc in scenes:   # 반전은 얼굴 크롭 뒤에(검출기가 반전 얼굴을 못 찾음)
+            if sc["id"] in MIRROR:
+                k = os.path.join(ROOT, sc["keyframe"]); ImageOps.mirror(Image.open(k)).save(k)
     print(f"키프레임 {len(plan)}컷 {'확인' if check else '복사'} 완료 (선택 지정 {sum(1 for s in scenes if s['id'] in sel)}컷)")
 
 
