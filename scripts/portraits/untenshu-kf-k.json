@@ -1,0 +1,14 @@
+{
+ "_설명": "S10b 기사 모자 편집(k) 2장 약 0.08달러 — S06e와 같은 방법(단일 참조 편집 → 정렬 → 기사 영역만 합성)",
+ "characters": [
+  {
+   "id": "S10b",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-kf-g/S10b-1.png"
+   ],
+   "prompt": "Image edit. The elderly white-haired taxi driver at the left of this photo must now be WEARING a dark navy peaked taxi-driver cap (a uniform cap with a stiff black visor/brim, plain navy crown, no badge) on top of his head; his white hair shows at the sides below the cap. Change nothing else at all: same framing, same faces, same expressions, same poses, same lace seat covers, same photo frame in the young woman's hands. Full-frame 16:9, no borders, no text."
+  }
+ ]
+}
