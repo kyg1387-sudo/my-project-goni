@@ -61,6 +61,13 @@ def main():
             for x0, y0, x1, y1, r in boxes:
                 im.paste(im.crop((x0, y0, x1, y1)).filter(ImageFilter.GaussianBlur(r)), (x0, y0))
             im.save(kf[sid])
+        from PIL import ImageDraw
+        for sid, boxes in pl.get("softblur", {}).items():   # 깃털 경계 타원 흐림(젖은 유리·김 서림처럼, 모자이크처럼 보이지 않게)
+            im = Image.open(kf[sid]).convert("RGB")
+            for x0, y0, x1, y1, r, fe in boxes:
+                m = Image.new("L", im.size, 0); ImageDraw.Draw(m).ellipse((x0, y0, x1, y1), fill=255)
+                im = Image.composite(im.filter(ImageFilter.GaussianBlur(r)), im, m.filter(ImageFilter.GaussianBlur(fe)))
+            im.save(kf[sid])
         subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "untenshu_ja_overlay.py")], check=True)   # 미터·블랙박스·명패
         for sc in scenes:   # 반전은 얼굴 크롭 뒤에(검출기가 반전 얼굴을 못 찾음)
             if sc["id"] in MIRROR:
