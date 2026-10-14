@@ -1,0 +1,15 @@
+{
+ "_설명": "R55: S23c 小川 「ふふ…だめですよ」 — 얼굴이 보이는 립싱크용 키프레임 2장 약 0.08달러",
+ "characters": [
+  {
+   "id": "S23c",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-cast/cells/ogawa-sheet-v2-expr2.png",
+    "assets/portraits/untenshu-keyframes/S23a-1.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still. Night, soft rain, warm amber street light (the same street and the same glossy black taxi as the second image). Close-up at chest height: the young Japanese woman from the first image (brown hair tied low, beige trench coat, bare unadorned earlobes) stands at the OPEN rear door of the taxi, bending slightly toward the car, her face in three-quarter view turned toward the driver inside the car (screen left), a warm genuine gentle smile with soft eyes and slightly raised cheeks, lips gently closed; one hand holds a folded wet navy umbrella. Her face fills at least one quarter of the frame height, sharp focus on her eyes; the dark interior of the taxi and the edge of the door frame soft in the foreground left. Raindrops glitter in the light. 85mm lens, f/1.8. No text, no letters. Full-frame 16:9, no borders."
+  }
+ ]
+}
