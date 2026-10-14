@@ -1,9 +1,9 @@
 {
- "_설명": "美談ものがたり 아웃트로 진행자 스타일 라이브러리 (2026-10-14 고니감독님 지시: 「아웃트로 이미지는 전체 저장했다가 다음 영상에 적용」). 얼굴·목소리(Yui Sato tc_629fe972013e90b4db213fd8)는 고정, 머리·옷만 스타일별. 새 작품은 여기서 스타일을 골라 그대로 쓰고(이미지 재생성 0원), 같은 스타일을 두 작품 연달아 쓰지 않는다. 립싱크는 범용 멘트(OUT1 구독 요청·OUT4 인사)만 같은 장르끼리 재사용, 작품별 멘트(댓글 질문·예고)는 새로 만든다.",
+ "_설명": "美談ものがたり 아웃트로 진행자 스타일 라이브러리 (2026-10-14 고니감독님 지시: 「아웃트로 이미지는 전체 저장했다가 다음 영상에 적용」). 얼굴·목소리(Yui Sato tc_629fe972013e90b4db213fd8)는 고정, 머리·옷만 스타일별. 새 작품은 여기서 스타일을 골라 그대로 쓰고(이미지 재생성 0원), 같은 스타일을 두 작품 연달아 쓰지 않는다. 립싱크는 범용 멘트(OUT1 구독 요청·OUT3 다음 화 예고(장르 공통)·OUT4 인사)만 같은 장르끼리 재사용, 작품별 멘트(댓글 질문·예고)는 새로 만든다.",
  "face_ref": "assets/portraits/ashita-host-1/host-cu-4.png",
  "styles": [
   {"id": "s1-ashita", "look": "긴 웨이브 + 앞머리 · 아이보리 니트 · 진주 귀걸이", "images": {"cu": "s1-ashita/cu.png", "wu": "s1-ashita/wu.png", "wave": "s1-ashita/wave.png"},
-   "lipsync": {"genre": "スカッと", "dir": "assets/auditions/ashita-outro-omni", "generic": ["omni-out1.mp4", "omni-out4.mp4"], "work_specific": ["omni-out2.mp4", "omni-out3.mp4"]},
+   "lipsync": {"genre": "スカッと", "dir": "assets/auditions/ashita-outro-omni", "generic": ["omni-out1.mp4", "omni-out3.mp4", "omni-out4.mp4"], "work_specific": ["omni-out2.mp4"]},
    "used_in": ["明日から来なくていい (10/20)"], "status": "완성(3컷 + 립싱크)"},
   {"id": "s2-untenshu-A", "look": "로우번 + 잔머리 · 카멜 터틀넥 · 골드 후프", "images": {"cu": "s2-untenshu-A/cu.png", "wu": "s2-untenshu-A/wu.png", "wave": "s2-untenshu-A/wave.png"},
    "lipsync": {"genre": "スカッと", "dir": "(PHASE 5 후 기록)", "generic": [], "work_specific": []},
