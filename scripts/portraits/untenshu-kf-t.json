@@ -1,0 +1,14 @@
+{
+ "_설명": "R52: S18f 大塚 더 당황(홍조·땀·흔들리는 눈) 편집 2장 약 0.08달러",
+ "characters": [
+  {
+   "id": "S18f",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-keyframes/S18f-1.png"
+   ],
+   "prompt": "Edit this image only. Change only the man's face and expression: he is in a total panic, cornered and flustered — eyebrows raised high and knitted, eyes wide with fear and darting, mouth half open as if stammering an excuse, his face visibly flushed red (cheeks, ears and neck reddened, natural skin tone, not painted), clear beads of sweat on his forehead and temples with a few clear drops running down his temple and cheek, a damp sheen on his skin. Realistic like a real actor. Keep everything else exactly the same: same person, same hair, same suit and tie, same hands on the table, same framing, same background, same man in the foreground. Full-frame 16:9, no borders, no text."
+  }
+ ]
+}
