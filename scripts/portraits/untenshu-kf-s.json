@@ -1,0 +1,14 @@
+{
+ "_설명": "R51: S17f 大塚 당황·홍조·땀 표정 편집 2장 약 0.08달러",
+ "characters": [
+  {
+   "id": "S17f",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-keyframes/S17f-1.png"
+   ],
+   "prompt": "Edit this image only. Change only the man's face and expression: he is panicked and flustered, at a loss for what to say — eyebrows raised and knitted, eyes wide and darting slightly to the side, a forced nervous half-smile with tense lips, his face visibly flushed deep red (cheeks, ears and neck reddened), real beads of clear sweat on his forehead and temples with one or two clear drops running down his temple and cheek, skin with a natural damp sheen. Realistic like a real actor, clear colorless sweat, no paint-like gloss. Keep everything else exactly the same: same person, same hair, same suit and tie, same pose, same framing, same background, same person in the foreground. Full-frame 16:9, no borders, no text."
+  }
+ ]
+}
