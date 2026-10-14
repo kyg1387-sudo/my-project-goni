@@ -1,0 +1,38 @@
+{
+ "_설명": "R42·R45 재생성: S06c(룸미러 손님 2명) lite · S06d(大塚 옆 小川) pro · S10a(뒷좌석 무릎 위 액자) lite · S10b 듣는 黒田 lite. 약 0.18+0.54+0.36+0.36 = 1.44달러",
+ "ratio": "16:9",
+ "budget_usd": 2.0,
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "scenes": [
+  {
+   "prompt": "Static, locked off camera. Motion: Kuroda's eyes stay steady and patient in the mirror; one slow blink; light slides across the glass. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S06c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Otsuka leans forward a little more, his jaw tightening, nostrils flaring; red light pulses. His mouth stays closed. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S06d-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Her hands wipe the glass of the frame on her lap gently and apologetically with the handkerchief, trembling slightly; the car stays parked. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S10a-1.png"
+  },
+  {
+   "prompt": "Completely static tripod camera inside a parked taxi at night; the view outside stays still, only raindrops trickle. The elderly driver at the left front (wearing his navy peaked cap) listens to the young woman in the back seat holding out the photo frame: his mouth stays closed, his eyes soften and glisten slightly, a slow breath, one slow blink, a very small nod; his head stays in profile and never turns toward the camera. The young woman stays completely still. Keep the exact faces, wardrobe, props and lighting of the first frame. No new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S10b-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/lite/image-to-video",
+   "i2v_resolution": "1080p"
+  }
+ ],
+ "durations": [
+  5,
+  5,
+  10,
+  10
+ ]
+}

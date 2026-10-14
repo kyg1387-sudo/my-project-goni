@@ -1,0 +1,14 @@
+{
+ "_설명": "R47: S13c 액자 모서리 흠집 매크로(소품 시트 은색 액자) 2장 약 0.08달러",
+ "characters": [
+  {
+   "id": "S13c",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-cast/cells/props-frame.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still. Macro close-up (100mm macro lens, f/2.8) of ONE CORNER of the small plain silver metal photo frame from the reference image (exactly the same frame: thin brushed silver edges), the corner filling most of the frame: the metal corner is clearly bent with a small fresh dent, and a short bright scratch line cuts across the silver surface with a tiny chip of exposed metal; the edge of the photo of the smiling white-haired elderly woman in a lavender cardigan is just visible inside, out of focus. Soft golden dawn light from a garage door raking across the scratch so it glints. Shallow depth of field, Kodak 35mm film grain. No hands, no people, no text, no letters. Full-frame 16:9, no borders."
+  }
+ ]
+}
