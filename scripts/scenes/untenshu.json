@@ -345,12 +345,12 @@
    "image": "assets/portraits/untenshu-keyframes/S09e-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Her hands wipe the glass of the frame gently and apologetically with the handkerchief, trembling slightly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Her hands wipe the glass of the frame on her lap gently and apologetically with the handkerchief, trembling slightly; the car stays parked. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
    "duration": 10,
    "image": "assets/portraits/untenshu-keyframes/S10a-1.png"
   },
   {
-   "prompt": "(override) omni: Taxi cabin layout (right-hand drive): the driver in the FRONT right seat, Ogawa ",
+   "prompt": "(override) omni: Taxi cabin layout (right-hand drive, R45 depth): the camera sits low on the dash",
    "duration": 10,
    "override_required": true,
    "image": "assets/portraits/untenshu-keyframes/S10b-1.png"
