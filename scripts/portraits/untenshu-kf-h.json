@@ -1,0 +1,50 @@
+{
+ "_설명": "R37·R38 편집(h): 택시 검은색·레이스 커버·세 번째 인물 제거, 5컷 x 2 = 10장 약 0.40달러",
+ "characters": [
+  {
+   "id": "S01c",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-kf-f/S01c-2.png"
+   ],
+   "prompt": "Edit this image only: put white lace covers on every seat headrest and over the tops of the seat backs (the same as a Japanese taxi) on the seats visible inside the cabin. Keep everything else exactly the same: same framing, same people, same faces, same expressions, same poses, same lighting, same rain. Full-frame 16:9, no borders, no text anywhere."
+  },
+  {
+   "id": "S06b",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-kf-f/S06b-1.png"
+   ],
+   "prompt": "Edit this image only: put white lace covers on every seat headrest and over the tops of the seat backs (the same as a Japanese taxi) on the seats visible inside the cabin. Keep everything else exactly the same: same framing, same people, same faces, same expressions, same poses, same lighting, same rain. Full-frame 16:9, no borders, no text anywhere."
+  },
+  {
+   "id": "S15e",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-kf-f/S15e-2.png"
+   ],
+   "prompt": "Edit this image only: make the whole car body a glossy black paint (black hood, black roof and pillars, the plain white dome roof lamp stays white), and put white lace covers on every seat headrest and over the tops of the seat backs (the same as a Japanese taxi) on the seats visible inside the cabin. Keep everything else exactly the same: same framing, same people, same faces, same expressions, same poses, same lighting, same rain. Full-frame 16:9, no borders, no text anywhere."
+  },
+  {
+   "id": "S05e",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-kf-f/S05e-1.png"
+   ],
+   "prompt": "Edit this image only: remove the dark-haired man at the left edge of the frame completely; in his place show the soft out-of-focus edge of the front passenger seat with a white lace headrest cover. Only two people remain: the heavy-set man in the grey suit and the young woman beside him on the rear bench. Put white lace covers on every seat headrest and over the tops of the seat backs (the same as a Japanese taxi) on the visible seats. Keep everything else exactly the same: same framing, same people, same faces, same expressions, same poses, same lighting, same rain. Full-frame 16:9, no borders, no text anywhere."
+  },
+  {
+   "id": "S07e",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-kf-f/S07e-1.png"
+   ],
+   "prompt": "Edit this image only: remove the dark-haired man in the black suit at the left of the rear seat completely; in his place show the empty rear seat with a white lace cover. Only two people remain: the young woman in the beige trench coat and the heavy-set man in the grey suit beside her. Put white lace covers on every seat headrest and over the tops of the seat backs (the same as a Japanese taxi) on the visible seats. Keep everything else exactly the same: same framing, same people, same faces, same expressions, same poses, same lighting, same rain. Full-frame 16:9, no borders, no text anywhere."
+  }
+ ]
+}
