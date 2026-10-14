@@ -1,5 +1,5 @@
 {
- "_설명": "R45 S10b 립싱크 재생성(뒷좌석 구도) — L20 약 6초 x 0.16 ≈ 1.0달러",
+ "_설명": "R45 S10b 립싱크(뒷좌석 구도) + R50 S17a 립싱크(배경 문 움직임 제거) — 약 5.5+7.9초 x 0.16 ≈ 2.1달러",
  "tests": [
   {
    "id": "omni-S10b",
@@ -7,6 +7,13 @@
    "image": "assets/portraits/untenshu-keyframes/S10b-1.png",
    "audio_id": "L20",
    "prompt": "Ogawa speaks gently and apologetically from the back seat, holding out the small photo frame with both hands, a small concerned tilt of the head. Speaking to the driver in the front seat after her boss has left. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands stay where they are in the first frame; no exaggerated motion, the face and body stay the same person."
+  },
+  {
+   "id": "omni-S17a",
+   "model": "omnihuman",
+   "image": "assets/portraits/untenshu-keyframes/S17a-1.png",
+   "audio_id": "P8",
+   "prompt": "Otsuka lectures smugly while straightening his tie in the window reflection, a self-satisfied smile, chin up. Instructing Ogawa just before the door opens. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands stay where they are in the first frame; no exaggerated motion, the face and body stay the same person. The camera and the background stay completely still: the window frames, walls and doors behind him do not move, slide or open."
   }
  ]
 }
