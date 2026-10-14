@@ -1,0 +1,16 @@
+{
+ "_설명": "R56: S05a 택시 뒤에서 본 뒷유리 너머 — 세 사람 모두 앞을 봄(뒤통수만) 2장 약 0.08달러",
+ "characters": [
+  {
+   "id": "S05a",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-cast/cells/otsuka-sheet-v2-back.png",
+    "assets/portraits/untenshu-cast/cells/ogawa-sheet-v2-back.png",
+    "assets/portraits/untenshu-cast/cells/kuroda-driver-sheet-back.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still. Night, rain, neon city bokeh. The camera is OUTSIDE BEHIND a glossy black Japanese sedan taxi, looking forward through its rain-beaded REAR WINDOW into the cabin. Everyone inside faces FORWARD, away from the camera — we see only the backs of their heads: in the rear bench seat, side by side, on the LEFT the back of a heavy-set man's head with gelled black hair and grey suit shoulders (first reference, turned slightly toward the right as he speaks), on the RIGHT the back of a young woman's head with brown hair tied low and a beige trench coat (second reference); in front, in the FRONT RIGHT driver's seat (right-hand drive), the back of the driver's head in a plain navy peaked cap (third reference), facing the windshield. NO faces visible, nobody looks back at the camera. A plain white dome roof lamp on the roof, a plain green license plate with no characters on the trunk. No text, no letters. Full-frame 16:9, no borders."
+  }
+ ]
+}
