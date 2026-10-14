@@ -60,6 +60,9 @@ LCUT = [("S05e", "L07", "S05c", 1.3), ("S06e", "L11", "S06c", 1.2), ("S07e", "L1
 # 대사 아래 낮게 깔고(−30 LUFS 정규화 후 BED_VOL), 공간이 바뀔 때 0.5초 교차. 무인 컷은 burn의 장면 현장음(mmaudio)이 이미 있어 건너뜀.
 SFX = os.path.join(ROOT, "assets", "auditions", "untenshu-sfx")
 BED_VOL = 0.55
+# 공간별 목표 크기(LUFS): 비·차는 또렷이, 방 소리는 은은하게
+TARGET = {"amb-meeting": -44.0, "amb-hospital": -44.0, "amb-lobby": -42.0, "amb-office": -38.0, "amb-garage-dawn": -36.0,
+          "amb-lathe": -32.0, "amb-old-taxi": -32.0}
 def bed_for(sid):
     if sid in ("H3",) or sid in AMB_SKIP:
         return None
@@ -253,7 +256,11 @@ def soundscape(path, total, tmp):
         if not os.path.exists(src):
             print("현장음 없음(건너뜀):", bed); continue
         n = os.path.join(tmp, f"n_{bed}.wav")
-        run(["-i", src, "-af", "loudnorm=I=-30:TP=-6:LRA=11,aformat=sample_rates=44100:channel_layouts=stereo", n]); norm[bed] = n
+        e = subprocess.run([FF, "-i", src, "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
+        lufs = float([l for l in e.splitlines() if l.strip().startswith("I:")][-1].split()[1])
+        target = TARGET.get(bed, -20.0 if bed.startswith("fx-") else -30.0)
+        gain = max(-30.0, min(20.0, target - lufs))          # 거의 무음인 방 소리를 −30까지 끌어올리면 잡음이 커진다 → +20dB 상한
+        run(["-i", src, "-af", f"volume={gain:.1f}dB,aformat=sample_rates=44100:channel_layouts=stereo", n]); norm[bed] = n
     ins, fc, labels = [], [], []
     for bed, a, b in runs:
         if bed not in norm:
@@ -270,7 +277,7 @@ def soundscape(path, total, tmp):
         k = len(ins) // 4
         ins += ["-stream_loop", "0", "-i", norm[fx]]
         t = max(0.0, B[sid][0] + off)
-        fc.append(f"[{k}:a]volume={vol * 3.2:.2f},adelay={int(t * 1000)}|{int(t * 1000)}[f{k}]"); labels.append(f"[f{k}]")
+        fc.append(f"[{k}:a]volume={vol:.2f},adelay={int(t * 1000)}|{int(t * 1000)}[f{k}]"); labels.append(f"[f{k}]")
     if not labels:
         run(["-f", "lavfi", "-i", f"anullsrc=r=44100:cl=stereo", "-t", f"{total:.2f}", path]); return
     fc.append("".join(labels) + f"amix=inputs={len(labels)}:normalize=0:duration=longest,atrim=0:{total:.3f}[a]")
