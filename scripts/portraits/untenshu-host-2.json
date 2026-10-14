@@ -1,0 +1,23 @@
+{
+ "_설명": "『運転手のくせに』 아웃트로 진행자 2단계 — 고니감독님 선택 스타일 A(untenshu-host-1/host-a-1)로 허리 위(OUT2 댓글 유도)·손 흔들기(OUT4) 각 후보 2장 = 4장 약 0.16달러.",
+ "characters": [
+  {
+   "id": "host-wu",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-host-1/host-a-1.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is this episode's APPROVED host look: reproduce exactly this woman's face, hairstyle and outfit (a soft low chignon at the nape with a few face-framing loose strands and light see-through bangs, dark-brown hair; a camel-brown fine-knit turtleneck sweater; small thin gold hoop earrings) and the same bright living-room studio with warm morning window light. Waist-up medium shot: she sits on the beige sofa facing the camera directly, hands resting lightly together on her lap, relaxed friendly posture, about 35mm lens f/2.8, the shelf and green plant softly out of focus behind her. Mouth gently closed in a soft smile (speech is added later); both eyes sharp and symmetrical; natural five-fingered hands; real skin texture. Full-frame 16:9 image, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  },
+  {
+   "id": "host-wave",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-host-1/host-a-1.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is this episode's APPROVED host look: reproduce exactly this woman's face, hairstyle and outfit (a soft low chignon at the nape with a few face-framing loose strands and light see-through bangs, dark-brown hair; a camel-brown fine-knit turtleneck sweater; small thin gold hoop earrings) and the same bright living-room studio with warm morning window light. Chest-and-waist shot: she sits on the beige sofa facing the camera, raising her right hand beside her face in a small friendly wave goodbye, palm open toward the camera, warm smile. Mouth gently closed in a soft smile (speech is added later); both eyes sharp and symmetrical; natural five-fingered hands, exactly two hands; real skin texture. Full-frame 16:9 image, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  }
+ ]
+}
