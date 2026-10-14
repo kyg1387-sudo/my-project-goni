@@ -19,7 +19,7 @@ CONVO = ("Over-the-shoulder conversation framing: the speaker's face fills at le
          "the listener's shoulder and back of the head are a soft blurred shape at the frame edge; the speaker's mouth is gently CLOSED in this frame "
          "(speech is added later), emotion shown in the eyes, brows and jaw. Natural five-fingered hands only where described.")
 CONVO_CAR = ("Car-interior conversation framing: the speaker's face fills at least one quarter of the frame height and is in razor-sharp focus; "
-             "the driver is only a soft side profile at the frame edge, facing forward toward the windshield, never turned toward the back seat; "
+             "the other person is only a soft side profile at the frame edge: a driver always faces forward toward the windshield, never turned toward the back seat; rear-seat passengers sit side by side on the same bench facing forward, never face to face; "
              "the speaker's mouth is gently CLOSED in this frame (speech is added later), emotion shown in the eyes, brows and jaw. "
              "Natural five-fingered hands only where described.")
 # ⑩ 인서트에 얼굴이 나옴 → 인서트 고정 문장

@@ -211,7 +211,7 @@ SHOTS = [
       motion="Ogawa dabs her wet hair, then glances sideways uneasily; light stripes slide across her; she does not speak."),
     S("S05d", "S05", "live", "ecu", "taxi", "OH", [GT], "TAXI_REAR", "Insert from above: a woman's hands in a beige trench coat flipping through blank documents on her lap.", line="L06",
       motion="Her hands turn a page of the blank documents carefully and smooth it down."),
-    S("S05e", "S05", "d", "cu", "taxi", "EL", [ON, GT], "TAXI_REAR", "Over Ogawa's shoulder (soft in the foreground, right): Otsuka sprawled in the back seat, tie loosened, a smug grin, one hand stroking his chin, city light sliding across his face.",
+    S("S05e", "S05", "d", "cu", "taxi", "EL", [ON, GT + ":profile"], "TAXI_REAR", "Camera low in the front of the cabin, looking back diagonally at the rear bench seat: Otsuka and Ogawa sit SIDE BY SIDE on the same rear bench, both bodies facing forward; Ogawa is a soft out-of-focus side profile at the left edge of the frame, at the same depth as him, NOT in front of him; Otsuka sprawled on the right of the bench, his head turned about 30 degrees toward her, tie loosened, a smug grin, one hand stroking his chin, city light sliding across his face.",
       line="L07", expr="smug", fg="R"),
     S("S06a", "S06", "empty", "ews", "rain", "EL", [], "RAMP", "No people. An expressway on-ramp closed for construction at night: striped barriers, flashing amber warning lamps smeared by heavy rain.",
       line="L08", vo=True, motion="The amber warning lamps flash in rhythm; rain falls. No people, no cars."),
@@ -229,7 +229,7 @@ SHOTS = [
       motion="Her hand grips the sleeve urgently and tugs it once, trembling; his arm jerks away."),
     S("S07d", "S07", "live", "cu", "taxi", "SIDE", [GT], "TAXI_REAR", "Close-up of Ogawa shrinking back against the seat, stunned and hurt, eyes lowered.", line="L13", vo=True, expr="hurt",
       motion="Ogawa flinches back and lowers her eyes, her breath catching; her lips stay pressed together."),
-    S("S07e", "S07", "d", "cu", "taxi", "EL", [ON, GT], "TAXI_REAR", "Over Ogawa's shoulder (soft in the foreground, right): Otsuka leaning back in the seat with a slow contemptuous sneer, chin raised.",
+    S("S07e", "S07", "d", "cu", "taxi", "EL", [ON, GT + ":profile"], "TAXI_REAR", "Camera low in the front of the cabin, looking back diagonally at the rear bench seat: Otsuka and Ogawa sit SIDE BY SIDE on the same rear bench, both bodies facing forward; Ogawa is a soft out-of-focus side profile at the left edge of the frame, at the same depth as him, NOT in front of him; Otsuka leaning back on the right of the bench, looking forward toward the driver at a three-quarter angle, with a slow contemptuous sneer, chin raised.",
       line="L14", expr="smug", fg="R"),
     S("S08a", "S08", "react", "ecu", "taxi", "EL", [KD], "MIRROR", "Rear-view mirror close-up: Kuroda in his plain navy peaked cap with no badge, his eyes reflected, calm and unreadable, not angry; his mouth is outside the mirror; soft even light on his face, no colored stripes across it.", line="L15", fx="pushin", expr="calm"),
     S("S08b", "S08", "live", "ecu", "taxi", "SIDE", [KD], "P_GLOVES", "Insert: white-gloved hands holding the steering wheel steady, wiper shadows passing.", line="NA9",
@@ -603,8 +603,10 @@ def main():
             view = parts[2] if len(parts) > 2 else ("back" if s["kind"] == "d" and wi > 0 else "")  # 립싱크 컷의 둘째 인물 = 전경 듣는 사람(뒷모습)
             if view == "profile":   # 차 안 운전자: 늘 앞(전면 유리)을 보므로 옆모습으로 화면 가장자리(운전석 공간 문법, R33)
                 desc, front, _ = WHO[key]
-                ids.append(desc + (f", wearing {WARD[ward]}" if ward else "") + ", seen in side profile at the frame edge facing forward toward the windshield")
-                refs.append(C + ("kuroda-driver-sheet-profile.png" if key == "KURODA_D" else front.split("/")[-1]))
+                drv = key == "KURODA_D"
+                ids.append(desc + (f", wearing {WARD[ward]}" if ward else "") + (", seen in side profile at the frame edge facing forward toward the windshield" if drv else
+                           ", a soft side profile at the frame edge sitting BESIDE the speaker on the same rear bench seat, body facing forward (R37: 뒷좌석은 나란히 앉음)"))
+                refs.append(C + ("kuroda-driver-sheet-profile.png" if drv else front.split("/")[-1].replace("-front", "-profile")))
                 continue
             back = view == "back"
             desc, front, backcell = WHO[key]

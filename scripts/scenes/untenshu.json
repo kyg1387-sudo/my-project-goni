@@ -238,7 +238,7 @@
    "image": "assets/portraits/untenshu-keyframes/S05d-1.png"
   },
   {
-   "prompt": "(override) omni: Over Ogawa's shoulder (soft in the foreground, right): Otsuka sprawled in the ba",
+   "prompt": "(override) omni: Camera low in the front of the cabin, looking back diagonally at the rear bench ",
    "duration": 10,
    "override_required": true,
    "image": "assets/portraits/untenshu-keyframes/S05e-1.png"
@@ -295,7 +295,7 @@
    "image": "assets/portraits/untenshu-keyframes/S07d-1.png"
   },
   {
-   "prompt": "(override) omni: Over Ogawa's shoulder (soft in the foreground, right): Otsuka leaning back in th",
+   "prompt": "(override) omni: Camera low in the front of the cabin, looking back diagonally at the rear bench ",
    "duration": 10,
    "override_required": true,
    "image": "assets/portraits/untenshu-keyframes/S07e-1.png"
