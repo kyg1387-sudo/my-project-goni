@@ -1,0 +1,17 @@
+{
+ "_설명": "美談ものがたり 아웃트로 진행자 스타일 라이브러리 (2026-10-14 고니감독님 지시: 「아웃트로 이미지는 전체 저장했다가 다음 영상에 적용」). 얼굴·목소리(Yui Sato tc_629fe972013e90b4db213fd8)는 고정, 머리·옷만 스타일별. 새 작품은 여기서 스타일을 골라 그대로 쓰고(이미지 재생성 0원), 같은 스타일을 두 작품 연달아 쓰지 않는다. 립싱크는 범용 멘트(OUT1 구독 요청·OUT4 인사)만 같은 장르끼리 재사용, 작품별 멘트(댓글 질문·예고)는 새로 만든다.",
+ "face_ref": "assets/portraits/ashita-host-1/host-cu-4.png",
+ "styles": [
+  {"id": "s1-ashita", "look": "긴 웨이브 + 앞머리 · 아이보리 니트 · 진주 귀걸이", "images": {"cu": "s1-ashita/cu.png", "wu": "s1-ashita/wu.png", "wave": "s1-ashita/wave.png"},
+   "lipsync": {"genre": "スカッと", "dir": "assets/auditions/ashita-outro-omni", "generic": ["omni-out1.mp4", "omni-out4.mp4"], "work_specific": ["omni-out2.mp4", "omni-out3.mp4"]},
+   "used_in": ["明日から来なくていい (10/20)"], "status": "완성(3컷 + 립싱크)"},
+  {"id": "s2-untenshu-A", "look": "로우번 + 잔머리 · 카멜 터틀넥 · 골드 후프", "images": {"cu": "s2-untenshu-A/cu.png", "wu": "s2-untenshu-A/wu.png", "wave": "s2-untenshu-A/wave.png"},
+   "lipsync": {"genre": "スカッと", "dir": "(PHASE 5 후 기록)", "generic": [], "work_specific": []},
+   "used_in": ["運転手のくせに (10/27)"], "status": "이미지 3컷 완성 · 립싱크는 PHASE 5에서"},
+  {"id": "s3-B-halfup-ribbon", "look": "하프업 웨이브 + 리본 · 더스티 로즈 블라우스", "images": {"cu": "s3-B-halfup-ribbon/cu.png"},
+   "lipsync": null, "used_in": [], "status": "가슴 위 1컷만. 사용 시: 머리 위 검은 물체 제거 편집 + 허리 위·손 흔들기 생성(약 0.2달러). 美談 작품에 어울림"},
+  {"id": "s4-C-bob-tweed", "look": "단발 안말음 · 크림 트위드 재킷", "images": {"cu": "s4-C-bob-tweed/cu.png"},
+   "lipsync": null, "used_in": [], "status": "가슴 위 1컷만. 얼굴이 기준보다 성숙하게 나옴 → 사용 시 face_ref로 얼굴 맞춤 편집 후 허리 위·손 흔들기 생성(약 0.2달러)"}
+ ],
+ "_unused": "채택되지 않은 후보 컷(_unused/) — 같은 스타일 재생성 시 참조용"
+}
