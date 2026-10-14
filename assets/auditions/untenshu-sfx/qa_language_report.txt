@@ -1,0 +1,54 @@
+=== TTS 대사 파일 검사 (오디션 untenshu-sfx.json) ===
+[amb-garage-dawn.mp3] lang=nn | 대본: An old small garage at d | 들림:  | 감지언어=nn(p=0.30); 대본과 불일치(유사도 0.00)  <<< 문제
+[amb-hospital.mp3] lang=nn | 대본: A quiet hospital room in | 들림: Thank you for watching! | 감지언어=nn(p=0.24); 영문 감지: Thank you for watching; 대본과 불일치(유사도 0.05)  <<< 문제
+[amb-izakaya-rain.mp3] lang=nn | 대본: A narrow Japanese izakay | 들림:  | 감지언어=nn(p=0.80); 대본과 불일치(유사도 0.00)  <<< 문제
+[amb-lathe.mp3] lang=en | 대본: A small old metal worksh | 들림: Thank you. | 감지언어=en(p=0.35); 영문 감지: Thank you; 대본과 불일치(유사도 0.02)  <<< 문제
+[amb-lobby.mp3] lang=nn | 대본: A large quiet marble cor | 들림:  | 감지언어=nn(p=0.56); 대본과 불일치(유사도 0.00)  <<< 문제
+[amb-meeting.mp3] lang=nn | 대본: A large quiet executive  | 들림:  | 감지언어=nn(p=0.56); 대본과 불일치(유사도 0.00)  <<< 문제
+[amb-office.mp3] lang=nn | 대본: A quiet modern office in | 들림:  | 감지언어=nn(p=0.78); 대본과 불일치(유사도 0.00)  <<< 문제
+[amb-old-taxi.mp3] lang=nn | 대본: Inside an old 1980s car  | 들림:  | 감지언어=nn(p=0.59); 대본과 불일치(유사도 0.00)  <<< 문제
+[amb-rain-street.mp3] lang=nn | 대본: Heavy rain on a city str | 들림: When the soup comes out of the water, add the Th | 감지언어=nn(p=0.52); 영문 감지: When the soup comes out; 대본과 불일치(유사도 0.15)  <<< 문제
+[amb-taxi-drive.mp3] lang=nn | 대본: Inside a moving car at n | 들림:  | 감지언어=nn(p=0.54); 대본과 불일치(유사도 0.00)  <<< 문제
+[amb-taxi-rain.mp3] lang=nn | 대본: Inside a quiet car at ni | 들림:  | 감지언어=nn(p=0.44); 대본과 불일치(유사도 0.00)  <<< 문제
+[fx-car-door-close.mp3] lang=en | 대본: A car rear door closed g | 들림: Thanks for watching! | 감지언어=en(p=0.32); 영문 감지: Thanks for watching; 대본과 불일치(유사도 0.04)  <<< 문제
+[fx-car-door-slam.mp3] lang=nn | 대본: A heavy car rear door sl | 들림:  | 감지언어=nn(p=0.28); 대본과 불일치(유사도 0.00)  <<< 문제
+[fx-car-pull-away.mp3] lang=ru | 대본: A car slowly pulling awa | 들림: Продолжение следует... | 감지언어=ru(p=0.22); 대본과 불일치(유사도 0.00)  <<< 문제
+[fx-footsteps-marble.mp3] lang=nn | 대본: Slow confident leather s | 들림:  | 감지언어=nn(p=0.70); 대본과 불일치(유사도 0.00)  <<< 문제
+[fx-frame-fall.mp3] lang=nn | 대본: A small metal photo fram | 들림:  | 감지언어=nn(p=0.37); 대본과 불일치(유사도 0.00)  <<< 문제
+[fx-knees-floor.mp3] lang=nn | 대본: A heavy man dropping to  | 들림:  | 감지언어=nn(p=0.48); 대본과 불일치(유사도 0.00)  <<< 문제
+[fx-meter-beep.mp3] lang=en | 대본: A taxi fare meter beepin | 들림: Thank you. | 감지언어=en(p=0.27); 영문 감지: Thank you; 대본과 불일치(유사도 0.00)  <<< 문제
+[fx-paper-toss.mp3] lang=nn | 대본: A crumpled banknote toss | 들림:  | 감지언어=nn(p=0.65); 대본과 불일치(유사도 0.00)  <<< 문제
+[fx-pen-sign.mp3] lang=en | 대본: A fountain pen signing o | 들림:  | 감지언어=en(p=0.51); 대본과 불일치(유사도 0.00)  <<< 문제
+[fx-seat-kick.mp3] lang=en | 대본: A hard kick against the  | 들림: Thank you. | 감지언어=en(p=0.26); 영문 감지: Thank you; 대본과 불일치(유사도 0.02)  <<< 문제
+[fx-tablet-slide.mp3] lang=nn | 대본: A tablet being set down  | 들림:  | 감지언어=nn(p=0.64); 대본과 불일치(유사도 0.00)  <<< 문제
+[fx-umbrella-fold.mp3] lang=nn | 대본: A wet umbrella being clo | 들림: God bless you. | 감지언어=nn(p=0.46); 영문 감지: God bless you; 대본과 불일치(유사도 0.02)  <<< 문제
+[fx-wiper.mp3] lang=ru | 대본: A single slow windshield | 들림: Продолжение следует... | 감지언어=ru(p=0.23); 대본과 불일치(유사도 0.00)  <<< 문제
+
+=== 현장음 파일 검사 (amb*.wav) — 말소리가 들리면 안 됨 ===
+
+=== 요약 ===
+문제 파일 24개:
+  amb-garage-dawn.mp3: 감지언어=nn(p=0.30); 대본과 불일치(유사도 0.00)
+  amb-hospital.mp3: 감지언어=nn(p=0.24); 영문 감지: Thank you for watching; 대본과 불일치(유사도 0.05)
+  amb-izakaya-rain.mp3: 감지언어=nn(p=0.80); 대본과 불일치(유사도 0.00)
+  amb-lathe.mp3: 감지언어=en(p=0.35); 영문 감지: Thank you; 대본과 불일치(유사도 0.02)
+  amb-lobby.mp3: 감지언어=nn(p=0.56); 대본과 불일치(유사도 0.00)
+  amb-meeting.mp3: 감지언어=nn(p=0.56); 대본과 불일치(유사도 0.00)
+  amb-office.mp3: 감지언어=nn(p=0.78); 대본과 불일치(유사도 0.00)
+  amb-old-taxi.mp3: 감지언어=nn(p=0.59); 대본과 불일치(유사도 0.00)
+  amb-rain-street.mp3: 감지언어=nn(p=0.52); 영문 감지: When the soup comes out; 대본과 불일치(유사도 0.15)
+  amb-taxi-drive.mp3: 감지언어=nn(p=0.54); 대본과 불일치(유사도 0.00)
+  amb-taxi-rain.mp3: 감지언어=nn(p=0.44); 대본과 불일치(유사도 0.00)
+  fx-car-door-close.mp3: 감지언어=en(p=0.32); 영문 감지: Thanks for watching; 대본과 불일치(유사도 0.04)
+  fx-car-door-slam.mp3: 감지언어=nn(p=0.28); 대본과 불일치(유사도 0.00)
+  fx-car-pull-away.mp3: 감지언어=ru(p=0.22); 대본과 불일치(유사도 0.00)
+  fx-footsteps-marble.mp3: 감지언어=nn(p=0.70); 대본과 불일치(유사도 0.00)
+  fx-frame-fall.mp3: 감지언어=nn(p=0.37); 대본과 불일치(유사도 0.00)
+  fx-knees-floor.mp3: 감지언어=nn(p=0.48); 대본과 불일치(유사도 0.00)
+  fx-meter-beep.mp3: 감지언어=en(p=0.27); 영문 감지: Thank you; 대본과 불일치(유사도 0.00)
+  fx-paper-toss.mp3: 감지언어=nn(p=0.65); 대본과 불일치(유사도 0.00)
+  fx-pen-sign.mp3: 감지언어=en(p=0.51); 대본과 불일치(유사도 0.00)
+  fx-seat-kick.mp3: 감지언어=en(p=0.26); 영문 감지: Thank you; 대본과 불일치(유사도 0.02)
+  fx-tablet-slide.mp3: 감지언어=nn(p=0.64); 대본과 불일치(유사도 0.00)
+  fx-umbrella-fold.mp3: 감지언어=nn(p=0.46); 영문 감지: God bless you; 대본과 불일치(유사도 0.02)
+  fx-wiper.mp3: 감지언어=ru(p=0.23); 대본과 불일치(유사도 0.00)
