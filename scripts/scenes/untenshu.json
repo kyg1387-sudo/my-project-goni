@@ -1,0 +1,783 @@
+{
+ "_설명": "untenshu 장면 설정(build_untenshu_phase3.py 생성). override_required 장면은 정지·OMNI 정지 프레임·재사용·카드를 video-overrides로 먼저 넣는다.",
+ "ratio": "16:9",
+ "budget_usd": 26.1,
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "durations": [
+  5,
+  5,
+  5,
+  10,
+  5,
+  10,
+  10,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  10,
+  10,
+  10,
+  10,
+  10,
+  5,
+  10,
+  10,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5
+ ],
+ "scenes": [
+  {
+   "prompt": "(override) reuse: Reuse of S20a (Otsuka sliding to his knees, bird's-eye).",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S20e (a drop of sweat hits the floor).",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S06e (Otsuka: 'Just a driver—don't tell me what to do!'). Voice = L11 m",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S17b (the meeting-room door opens, a backlit silhouette). NA0 over it.",
+   "duration": 10,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) card: Title card 『運転手のくせに』 with subtitle over dark rain.",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The taxi glides slowly away down the avenue; rain falls; traffic lights reflect and shimmer. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S01a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The white-gloved hands turn the wheel smoothly a few degrees and settle; light stripes slide across them. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S01b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The wipers sweep once across the glass; Kuroda blinks slowly and checks the road with calm eyes; his head barely moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S01c-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The shadow of the wiper sweeps across the frame once; rain light flickers softly. Nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S02a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes glance down toward the photo and soften; one slow blink; street light slides across the mirror. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S02b-1.png"
+  },
+  {
+   "prompt": "(override) still: Wide under the hospital canopy in the rain: the taxi's rear door open, the elder",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S03a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the elderly woman's shoulder (soft in the foreground, left): Kuroda in his ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S03b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: She bows slowly and gratefully, leaning on her cane; rain falls beyond the canopy. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S03c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Kuroda bows deeply and slowly straightens; rain beads on his cap. His face stays turned away. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S03d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The taxi pulls slowly away into the rain; the canopy lamp glows. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S03e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The man waves his raised hand impatiently; the woman shields her head with her bag; rain falls; lanterns sway slightly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S04a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Otsuka flaps his raised hand impatiently with a drunken scowl; Ogawa glances at him uneasily and blinks; rain falls. No one walks toward the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S04b-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Raindrops run down the window; the two blurred figures settle into the seat. Faces stay blurred behind the wet glass. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S05a-1.png"
+  },
+  {
+   "prompt": "(override) still: Rear-view mirror close-up: Kuroda's calm eyes reflected, looking back politely a",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S05b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ogawa dabs her wet hair, then glances sideways uneasily; light stripes slide across her; she does not speak. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S05c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Her hands turn a page of the blank documents carefully and smooth it down. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S05d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Ogawa's shoulder (soft in the foreground, right): Otsuka sprawled in the ba",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S05e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The amber warning lamps flash in rhythm; rain falls. No people, no cars. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S06a-1.png"
+  },
+  {
+   "prompt": "(override) still: Through the rain-streaked windshield: Kuroda in his cap at the wheel, his face s",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S06b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Kuroda's eyes stay steady and patient in the mirror; one slow blink; light slides across the glass. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S06c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Otsuka leans forward a little more, his jaw tightening, nostrils flaring; red light pulses. His mouth stays closed. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S06d-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) omni: Over the driver's headrest (soft in the foreground, left): Otsuka exploding with",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S06e-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: the small silver photo frame tipping over on the dashboard from the jolt",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S07a-1.png"
+  },
+  {
+   "prompt": "(override) still: No people. From above: the small silver photo frame lying face up on the dark fl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S07b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Her hand grips the sleeve urgently and tugs it once, trembling; his arm jerks away. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S07c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ogawa flinches back and lowers her eyes, her breath catching; her lips stay pressed together. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S07d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Ogawa's shoulder (soft in the foreground, right): Otsuka leaning back in th",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S07e-1.png"
+  },
+  {
+   "prompt": "(override) still: Rear-view mirror close-up: Kuroda's eyes reflected, calm and unreadable, not ang",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S08a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The gloved hands hold the wheel steady, fingers tightening once and relaxing; wiper shadows pass. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S08b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The taxi turns slowly through the intersection; light trails streak; rain falls. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S08c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Rain falls on the taxi roof; the lobby light glows. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S09a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: the taxi fare meter's blank glowing display (fare composited later).",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S09b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand flicks the crumpled note onto the seat; it bounces and settles. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S09c-1.png"
+  },
+  {
+   "prompt": "(override) omni: From the front passenger seat at a three-quarter angle: Kuroda in his cap at the",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S09d-1.png"
+  },
+  {
+   "prompt": "(override) still: Outside in the rain: Otsuka seen from behind climbing out of the taxi and slammi",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S09e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Her hands wipe the glass of the frame gently and apologetically with the handkerchief, trembling slightly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S10a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the driver's shoulder (soft in the foreground, left): Ogawa in the back sea",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S10b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The gloved hands take the frame gently; the woman's hands let go. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S10c-1.png"
+  },
+  {
+   "prompt": "(override) still: Outside the open rear door in the rain: Ogawa seen from behind, bowing politely ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S10d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Kuroda places the frame back upright on the dashboard and rests his hand beside it for a moment. His head stays still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S10e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The taxi drives slowly away into the rain; reflections ripple. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S10f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Otsuka adjusts his tie and leans back, pleased; the fluorescent light hums. No other people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S11a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ogawa walks slowly away from the camera between the desks, holding the documents. She never turns. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S11b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Otsuka's brows draw together in irritation, he exhales sharply through his nose; mouth closed. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S11c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Ogawa's shoulder (soft in the foreground, right): Otsuka at his desk tossin",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S11d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ogawa's fingers tighten on the documents; she swallows and keeps her eyes lowered; lips pressed. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S11e-1.png"
+  },
+  {
+   "prompt": "(override) still: Choker close-up of Ogawa with her head bowed, eyes down, her mouth hidden by the",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S11f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ogawa sets the documents down slowly and sits still, staring ahead, a slow breath. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S11g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Her fingers loosen from the documents and tremble slightly, then rest still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S11g2-1.png"
+  },
+  {
+   "prompt": "(override) omni: Otsuka leaning back in his leather chair with a smartphone with a dark blank scr",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S11h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ogawa's jaw tightens and her eyes close for a moment in quiet disgust; her head stays still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S11i-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Otsuka's shoulder (soft in the foreground, left): Executive Director Ishii ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S12a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Otsuka nods eagerly twice and straightens his tie, grinning; his mouth stays closed. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S12b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ishii nods slowly once and taps the folder with two fingers; his mouth stays closed. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S12c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Kuroda removes his cap slowly and holds it at his side; dust floats in the golden beam. His face stays turned away. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S13a-1.png"
+  },
+  {
+   "prompt": "(override) still: Over Kuroda's shoulder from behind: his hands holding the small silver photo fra",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S13b-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro insert: the corner of the small silver photo frame with a fresh tiny dent ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S13c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The young driver turns the wheel slowly; old street lights pass. He never turns around. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S14a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The silhouettes' shoulders sink with a sigh; light passes over them. No faces. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S14b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The two pairs of hands turn the lathe handle together; a metal shaving curls off. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S14c-1.png"
+  },
+  {
+   "prompt": "(override) still: No people. Flashback: the corner of the old garage with the small lathe on a wor",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S14d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kuroda's shoulder (his white hair soft in the foreground, left): Chiyoko in",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S15a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Chiyoko smiles tenderly, a tear gathering; she blinks slowly; her lips stay softly closed. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S15b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The man's hands tighten gently around hers; her fingers loosen slowly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S15c-1.png"
+  },
+  {
+   "prompt": "(override) still: No people. The same hospital room, the bed neatly made and empty, a beam of gold",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S15d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The wipers sweep; Kuroda's eyes move calmly to the mirror and back; he does not speak. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S15e-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Street light slides across the frame; a wiper shadow passes. Nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S15f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes glance toward the back seat in the mirror, thoughtful; one slow blink. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S15g-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Otsuka's shoulder (soft in the foreground, right): Secretary Miura in the m",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S16a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ogawa's eyes slide toward the wall and she slows a little, uneasy; her mouth stays closed. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S16b-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: the large black-and-white framed photograph on the lobby wall — an old t",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S16c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Otsuka's shoulder (soft in the foreground, left): Ogawa stopping in front o",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S16d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ogawa glances back once toward the lobby, then faces forward again; she keeps walking slowly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S16e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Ogawa's shoulder (soft in the foreground, right): Otsuka in the meeting roo",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S17a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The doors swing open slowly; the silhouette stands perfectly still in the light; haze drifts. The face stays completely black. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S17b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Slightly low angle over Otsuka's shoulder (soft in the foreground, left): Chairm",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S17c-1.png"
+  },
+  {
+   "prompt": "(override) still: Close-up of Otsuka frozen with a business card held out, the color draining from",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S17d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand holding the card trembles; the card shakes. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S17e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kuroda's shoulder (soft in the foreground, right): Otsuka stammering in pan",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S17f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand sets the tablet down and slides it slowly forward, then withdraws. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S17g-1.png"
+  },
+  {
+   "prompt": "(override) still: No people. The black tablet lying on the dark meeting table, its screen dark.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S17h-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: the tablet screen playing dashcam footage of a taxi's back seat at night",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S18a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ishii lowers his glasses slowly from his face, his eyes fixed on the tablet; his mouth stays closed. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S18b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A bead of sweat slides slowly down his temple; his jaw muscle twitches. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S18c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ogawa holds her breath, her eyes widening slightly; her lips stay pressed together. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S18d-1.png"
+  },
+  {
+   "prompt": "(override) still: Ishii holding his removed glasses in one hand, his other hand pressed to his mou",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S18e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Ishii's shoulder (soft in the foreground, left): Otsuka waving both hands i",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S18f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The folded hands rest still, then one thumb taps the tablet once. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S19a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle over Otsuka's shoulder (soft in the foreground, left): Chairman Kuroda",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S19b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Otsuka's face slackens and his eyes go wide, a slow shaky breath; his mouth stays slightly open but silent. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S19c-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) still: Ishii half-rising from his chair in profile, one hand reaching out across the ta",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S19d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Ishii's shoulder (soft in the foreground, right): Chairman Kuroda looking a",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S19e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Otsuka sinks onto his knees and bows his head; his shoulders shake. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S20a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Slightly high angle: Otsuka on his knees looking up, begging, real tears and a f",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S20b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle over the kneeling Otsuka's head (soft in the foreground, left): Chairm",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S20c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His hands tremble on the floor and his shoulders shake; he does not look up. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S20d-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a single drop of sweat falling onto the polished marble floor.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S20e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle over the kneeling Otsuka (soft in the foreground, right): Chairman Kur",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S20f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Ogawa's eyes fill with tears and she blinks them back; her fingers tighten on the documents; mouth closed. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S21a-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "(override) omni: Over Ogawa's shoulder (soft in the foreground, left): Chairman Kuroda turned tow",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S21b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the chairman's shoulder (soft in the foreground, right): Ogawa with tears i",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S21c-1.png"
+  },
+  {
+   "prompt": "(override) still: Through the half-open door frame: Ishii bowing deeply toward the chairman, his f",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S21d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Otsuka's shoulders slump further; he stays kneeling, head down. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S21e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The pen moves across the blank signature line in a short flowing stroke and lifts. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S22a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Otsuka walks slowly away from the camera down the corridor, shoulders sagging. He never turns. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S22b-1.png"
+  },
+  {
+   "prompt": "(override) still: No people. The manager's empty desk by the window, the leather chair pushed back",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S22c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Otsuka raises his hand again and again; light trails of taxis pass without stopping; rain falls. He never turns. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S22d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Taxis streak past one after another without slowing; rain spray. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S22e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Otsuka lowers his hand slowly and his shoulders sink; rain pours. His face stays turned away. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S22f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The taxi glides to a stop and the rear door swings open; Ogawa lowers her hand and smiles. No one walks toward the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S23a-1.png"
+  },
+  {
+   "prompt": "(override) still: Rear-view mirror close-up: Kuroda's eyes reflected, crinkling into a warm smile,",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/untenshu-keyframes/S23b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Her hands fold the wet umbrella lightly and cheerfully with a gentle happy rhythm and shake off the rain. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S23c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Warm street light glides across the frame; rain glitters beyond the windshield. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S23d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The taxi drives slowly away down the street; lanterns glow; rain glitters. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/untenshu-keyframes/S23e-1.png"
+  }
+ ]
+}

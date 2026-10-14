@@ -21,7 +21,9 @@ HOOK, OUTRO = 20.0, 50.0
 AD_AFTER = {"NA10": ("1차 광고", 210.0), "NA19": ("2차 광고", 420.0)}
 REUSED = {"OUT1", "OUT3", "OUT4"}  # 『明日から』 진행자 녹음 재사용 — 녹음 번호 없음
 # 대본의 독립 무언 비트(대사·내레이션이 덮지 않는 그림): S06 공사 유도등 와이드 · S17 문이 열림 · S20 무릎 꿇는 순간 · S23 택시가 멈춰 섬
-SILENT = {"S17": 1, "S20": 1, "S23": 1}  # v1.1: S06 와이드는 L08 첫 마디 J컷으로 덮음
+SILENT = {"S17": 1, "S18": 2, "S20": 1, "S23": 1}  # v1.1: S06 와이드는 L08 첫 마디 J컷으로 덮음
+SILENT_AFTER = {"S17": "P8"}
+# S18 첫머리 5.0초 = 드라이브 레코더 재생(L11 「運転手のくせに」 4.9초를 태블릿 스피커 필터로 — 4-3절 B-2, 작품 안 네 번째 반복). PHASE 3 설계 때 추가(2026-10-14)  # 무언 비트 위치: 기본은 장면 첫머리, S17은 P8(「礼儀にうるさい」) 직후 = 문이 열리는 순간(4-3절 B-1)
 DELETED = {"NA5", "NA7"}  # v1.1 삭제 — 번호만 유지
 SECTION_START = {"S01": "② 발단·갈등"}
 MIN_TOTAL = 9 * 60 + 40
@@ -63,7 +65,7 @@ def load_lines():
 
 def load_cuts():
     p = os.path.join(HERE, "02_카메라앵글설계.md")
-    if not os.path.exists(p):
+    if True:  # 이 작품은 무언 비트를 SILENT로 직접 지정한다(02는 PHASE 3 생성기 산출물이라 Lock 입력으로 쓰지 않음)
         return None
     t = open(p, encoding="utf-8").read()
     return {r.split("|")[1].strip(): len(r.split("|")[2].split("→"))
@@ -106,10 +108,13 @@ def build():
             cover = sum(max(1, math.ceil(x["dur"] / PER_CUT)) for x in ls)
             silent = max(0, cuts.get(sid, 0) - cover)
         start = t
-        t += silent * INSERT
+        if sid not in SILENT_AFTER:
+            t += silent * INSERT
         for k, x in enumerate(ls):
             x["start"], x["end"] = t, t + x["dur"]
             t = x["end"]
+            if SILENT_AFTER.get(sid) == x["tag"]:
+                t += silent * INSERT
             nxt = ls[k + 1] if k < len(ls) - 1 else None
             if x["tag"] in AD_AFTER:
                 t += AD_TAIL
