@@ -56,6 +56,49 @@ LCUT = [("S05e", "L07", "S05c", 1.3), ("S06e", "L11", "S06c", 1.2), ("S07e", "L1
         ("S11d", "L24", "S11e", 1.2), ("S11h", "P2", "S11i", 1.2), ("S12a", "L27", "S12b", 1.2),
         ("S18f", "L37", "S18b", 1.2), ("S19b", "L39", "S19c", 1.4), ("S20f", "L44", "S20d", 1.3),
         ("S21b", "L46", "S21a", 1.3)]
+# 현장음(고니감독님 「현장감 있게 사운드」): 목소리 없는 환경음 베드(ElevenLabs SFX, assets/auditions/untenshu-sfx)를 장면 공간마다
+# 대사 아래 낮게 깔고(−30 LUFS 정규화 후 BED_VOL), 공간이 바뀔 때 0.5초 교차. 무인 컷은 burn의 장면 현장음(mmaudio)이 이미 있어 건너뜀.
+SFX = os.path.join(ROOT, "assets", "auditions", "untenshu-sfx")
+BED_VOL = 0.55
+def bed_for(sid):
+    if sid in ("H3",) or sid in AMB_SKIP:
+        return None
+    pre = sid[:3]
+    table = {"H0a": "amb-meeting", "H0b": "amb-meeting", "H1": "amb-taxi-rain", "H2": "amb-meeting"}
+    if sid in table:
+        return table[sid]
+    if pre in ("S01", "S02") or sid in ("S05b", "S05c", "S05d", "S05e", "S06b", "S06c", "S06d", "S06e", "S07a", "S07b", "S07c", "S07d", "S07e",
+                                       "S08a", "S08b", "S15e", "S15g"):
+        return "amb-taxi-drive"
+    if sid in ("S05a", "S09e", "S10d") or pre == "S03":
+        return "amb-rain-street"
+    if pre in ("S09", "S10") or sid in ("S23b", "S23c", "S23d"):
+        return "amb-taxi-rain"
+    if pre == "S04" or sid in ("S22d", "S22e", "S22f", "S23a", "S23e"):
+        return "amb-izakaya-rain"
+    if pre in ("S11", "S12") or sid in ("S22a", "S22c"):
+        return "amb-office"
+    if pre == "S13" or sid == "S14d":
+        return "amb-garage-dawn"
+    if sid in ("S14a", "S14b"):
+        return "amb-old-taxi"
+    if sid == "S14c":
+        return "amb-lathe"
+    if sid in ("S15a", "S15b", "S15c", "S15d"):
+        return "amb-hospital"
+    if pre == "S16" or sid == "S22b":
+        return "amb-lobby"
+    if pre in ("S17", "S18", "S19", "S20", "S21"):
+        return "amb-meeting"
+    return None
+AMB_SKIP = set(AUDIO_AMB := [s["id"] for s, p in zip(SB, AUDIO.get("ambience_prompts", [])) if p.strip()])
+# 효과음: (장면, 장면 안 시각, 파일, 볼륨)
+FOLEY = [("S01c", 0.8, "fx-wiper", 0.5), ("S03e", 0.1, "fx-car-pull-away", 0.7), ("S05a", 0.4, "fx-car-door-close", 0.6),
+         ("S07a", -0.25, "fx-seat-kick", 0.9), ("S07a", 0.35, "fx-frame-fall", 0.8), ("S09b", 0.3, "fx-meter-beep", 0.5),
+         ("S09c", 0.4, "fx-paper-toss", 0.7), ("S09e", 3.6, "fx-car-door-slam", 0.9), ("S10d", 4.2, "fx-car-door-close", 0.6),
+         ("S10f", 0.0, "fx-car-pull-away", 0.6), ("S15e", 0.6, "fx-wiper", 0.4), ("S17b", 2.4, "fx-footsteps-marble", 0.6),
+         ("S17g", 0.3, "fx-tablet-slide", 0.6), ("S20a", 0.2, "fx-knees-floor", 0.8), ("S22a", 0.4, "fx-pen-sign", 0.6),
+         ("S23c", 0.2, "fx-umbrella-fold", 0.6), ("S23e", 0.0, "fx-car-pull-away", 0.6)]
 LIFT = "curves=all='0/0 0.06/0.13 0.25/0.38 0.6/0.72 1/1',eq=gamma=1.12:saturation=1.05"
 LIFT_BELOW = 40.0
 
@@ -194,6 +237,47 @@ def door_click(path):
     run(["-filter_complex", fc, "-map", "[a]", "-t", "0.7", path])
 
 
+def soundscape(path, total, tmp):
+    """현장음 베드(공간별 연속 구간마다 루프·교차 0.5초) + 효과음 → 한 트랙 wav."""
+    B = bounds()
+    runs = []
+    for sc in SB:
+        bed = bed_for(sc["id"]); a, b = B[sc["id"]]
+        if bed and runs and runs[-1][0] == bed and abs(runs[-1][2] - a) < 0.1:
+            runs[-1][2] = b
+        elif bed:
+            runs.append([bed, a, b])
+    norm = {}
+    for bed in {r[0] for r in runs} | {f[2] for f in FOLEY}:
+        src = os.path.join(SFX, f"{bed}.mp3")
+        if not os.path.exists(src):
+            print("현장음 없음(건너뜀):", bed); continue
+        n = os.path.join(tmp, f"n_{bed}.wav")
+        run(["-i", src, "-af", "loudnorm=I=-30:TP=-6:LRA=11,aformat=sample_rates=44100:channel_layouts=stereo", n]); norm[bed] = n
+    ins, fc, labels = [], [], []
+    for bed, a, b in runs:
+        if bed not in norm:
+            continue
+        k = len(ins) // 4
+        ins += ["-stream_loop", "-1", "-i", norm[bed]]
+        L = b - a + 0.5
+        fc.append(f"[{k}:a]atrim=start={(a * 7.3) % 5:.2f}:duration={L:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.5,"
+                  f"afade=t=out:st={L - 0.5:.3f}:d=0.5,volume={BED_VOL},adelay={int(max(0, a - 0.25) * 1000)}|{int(max(0, a - 0.25) * 1000)}[b{k}]")
+        labels.append(f"[b{k}]")
+    for sid, off, fx, vol in FOLEY:
+        if fx not in norm:
+            continue
+        k = len(ins) // 4
+        ins += ["-stream_loop", "0", "-i", norm[fx]]
+        t = max(0.0, B[sid][0] + off)
+        fc.append(f"[{k}:a]volume={vol * 3.2:.2f},adelay={int(t * 1000)}|{int(t * 1000)}[f{k}]"); labels.append(f"[f{k}]")
+    if not labels:
+        run(["-f", "lavfi", "-i", f"anullsrc=r=44100:cl=stereo", "-t", f"{total:.2f}", path]); return
+    fc.append("".join(labels) + f"amix=inputs={len(labels)}:normalize=0:duration=longest,atrim=0:{total:.3f}[a]")
+    run(ins + ["-filter_complex", ";".join(fc), "-map", "[a]", path])
+    print(f"현장음: 베드 {len(runs)}구간, 효과음 {len(FOLEY)}개")
+
+
 def dark_ranges(src):
     """장면마다 가운데 프레임 평균 밝기 → 40/255 미만 장면 구간(R55)."""
     B, out = bounds(), []
@@ -227,6 +311,7 @@ def main():
     t_rec = B["S18a"][0] + 0.3
     t_door = max(0.0, B["S17b"][0] - 0.15)
     bed = os.path.join(tmp, "hookbed.wav"); hook_bed(bed)
+    amb = os.path.join(tmp, "soundscape.wav"); soundscape(amb, dur(src), tmp)
     door = os.path.join(tmp, "door.wav"); door_click(door)
     ranges = "+".join(f"between(t,{a:.3f},{b:.3f})" for _, a, b, _ in dark) or "0"
     lift = ",".join(f"{f.split('=', 1)[0]}=enable='{ranges}':{f.split('=', 1)[1]}" for f in LIFT.split(",", 1))
@@ -239,8 +324,9 @@ def main():
           f"[x2]highpass=f=300,lowpass=f=3400,acrusher=bits=9:mix=0.25,volume=0.8,adelay={int(t_rec * 1000)}|{int(t_rec * 1000)}[rec];"
           f"[2:a]aformat=sample_rates=44100:channel_layouts=stereo[hb];"
           f"[3:a]aformat=sample_rates=44100:channel_layouts=stereo,adelay={int(t_door * 1000)}|{int(t_door * 1000)}[dc];"
-          f"[ab][vo][rec][hb][dc]amix=inputs=5:normalize=0:duration=first,alimiter=limit=0.89[a]")
-    run(["-i", src, "-i", l11, "-i", bed, "-i", door, "-filter_complex", fc, "-map", "[v]", "-map", "[a]",
+          f"[4:a]aformat=sample_rates=44100:channel_layouts=stereo[sc];"
+          f"[ab][vo][rec][hb][dc][sc]amix=inputs=6:normalize=0:duration=first,alimiter=limit=0.89[a]")
+    run(["-i", src, "-i", l11, "-i", bed, "-i", door, "-i", amb, "-filter_complex", fc, "-map", "[v]", "-map", "[a]",
          "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-c:a", "aac", "-b:a", "192k", main_out])
     print(f"본편 마무리: {main_out} ({dur(main_out):.2f}초), H1 L11 {t_h1:.2f}s, 블랙박스 {t_rec:.2f}s, 문 {t_door:.2f}s")
     if outro_on:
