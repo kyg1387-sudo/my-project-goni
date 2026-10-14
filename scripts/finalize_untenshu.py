@@ -63,6 +63,7 @@ REDO = {
     "S10b": ("assets/auditions/untenshu-omni2/omni-S10b.mp4", 0.0, None),       # 뒷좌석 구도 립싱크(R45)
     "S17f": ("assets/auditions/untenshu-omni2/omni-S17f.mp4", 0.0, None),       # 당황·홍조·땀(R51)
     "S18f": ("assets/auditions/untenshu-omni2/omni-S18f.mp4", 0.0, None),       # 당황·홍조·땀(R52)
+    "S23c": ("assets/auditions/untenshu-s23c-omni/omni-S23c.mp4", 0.0, None),   # 미소 짓는 小川 립싱크(R55)
 }
 STILL_REDO = ["S06b", "S05b", "S08a", "S23b", "S13c"]   # 새 키프레임 정지+편집 카메라(R41·R42·R47)
 # (말하는 컷, 대사 태그, 듣는 사람 반응 클립 장면, 반응 길이) — 같은 장면의 역방향 반응(제10장 8)
