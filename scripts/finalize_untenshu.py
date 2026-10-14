@@ -43,10 +43,9 @@ NORM = f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps=24,
 # 듣는 사람 합성: (말하지 않는 사람 i2v, 마스크 도형(키프레임 1344x768 좌표), 편집 카메라, 반복 필요 여부)
 LISTEN = {
     "S06e": ("assets/preview/untenshu-drv/scene01.mp4", [("rect", 0, 0, 511, 768)], "dutch5+hh"),
-    "S05e": ("assets/preview/untenshu-listen/scene01.mp4",
-             [("ell", 160, 40, 440, 320), ("poly", [(150, 320), (570, 320), (585, 768), (125, 768)])], ""),
+    "S05e": ("assets/preview/untenshu-listen/scene01.mp4", [("poly", [(0, 0), (640, 0), (640, 360), (585, 420), (570, 768), (0, 768)])], ""),   # R57 얼굴 전체가 한 클립에서(경계가 얼굴을 가르면 번짐)
     "S07e": ("assets/preview/untenshu-listen/scene02.mp4",
-             [("ell", 360, 100, 585, 360), ("poly", [(330, 370), (600, 370), (610, 768), (300, 768)])], ""),
+             [("poly", [(290, 80), (640, 80), (632, 405), (578, 468), (495, 700), (430, 768), (290, 768)])], ""),   # R57 얼굴 전체 포함
     "S10b": ("assets/preview/untenshu-fix2/scene01-3s.mp4", [("rect", 0, 0, 600, 768)], ""),   # R45 새 구도: 기사 앞 왼쪽
 }
 FX = {"S20a": "dutch7",
@@ -56,7 +55,6 @@ REDO = {
     "S06c": ("assets/preview/untenshu-fix1/scene01.mp4", 0.0, None),     # 룸미러 손님 2명(R42)
     "S06d": ("assets/preview/untenshu-fix1/scene02.mp4", 0.0, None),     # 大塚 옆 小川(R42)
     "S10a": ("assets/preview/untenshu-fix1/scene03.mp4", 0.0, None),     # 뒷좌석 무릎 위 액자(R45)
-    "S15g": ("assets/preview/untenshu-fix2/scene02.mp4", 0.0, None),     # 뒷좌석 시점 룸미러(R48)
     "S13a": ("assets/preview/untenshu/scene60.mp4", 0.0, 1.2),           # 모자가 손에 있는 구간까지 → 정지(R46)
     "S09c": ("assets/preview/untenshu/scene38.mp4", 0.0, 0.15),          # 지폐가 좌석에 놓인 첫 프레임 정지(R43)
     "S17a": ("assets/auditions/untenshu-s10b-omni/omni-S17a.mp4", 0.0, None),   # 배경 고정 립싱크(R50)
@@ -65,7 +63,7 @@ REDO = {
     "S18f": ("assets/auditions/untenshu-omni2/omni-S18f.mp4", 0.0, None),       # 당황·홍조·땀(R52)
     "S23c": ("assets/auditions/untenshu-s23c-omni/omni-S23c.mp4", 0.0, None),   # 미소 짓는 小川 립싱크(R55)
 }
-STILL_REDO = ["S06b", "S05b", "S08a", "S23b", "S13c"]   # 새 키프레임 정지+편집 카메라(R41·R42·R47)
+STILL_REDO = ["S06b", "S05b", "S08a", "S23b", "S13c", "S05a", "S15g"]   # 새 키프레임 정지+편집 카메라(R41·R42·R47·R56·R58)
 # (말하는 컷, 대사 태그, 듣는 사람 반응 클립 장면, 반응 길이) — 같은 장면의 역방향 반응(제10장 8)
 LCUT_OFF = True   # 고니감독님 「말하는 사람과 화면 인물 일치」(R44) — 듣는 사람 L컷 사용 안 함
 LCUT = [("S05e", "L07", "S05c", 1.3), ("S06e", "L11", "S06c", 1.2), ("S07e", "L14", "S07d", 1.3),
