@@ -1,7 +1,7 @@
 {
  "_설명": "untenshu 장면 설정(build_untenshu_phase3.py 생성). override_required 장면은 정지·OMNI 정지 프레임·재사용·카드를 video-overrides로 먼저 넣는다.",
  "ratio": "16:9",
- "budget_usd": 26.1,
+ "budget_usd": 25.65,
  "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
  "durations": [
   5,
@@ -151,7 +151,7 @@
    "override_required": true
   },
   {
-   "prompt": "Static, locked off camera. Motion: The taxi glides slowly away down the avenue; rain falls; traffic lights reflect and shimmer. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: The taxi glides slowly away down the avenue; rain falls; traffic lights reflect and shimmer. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. The green license plate and the roof lamp keep exactly the same shape and characters as in the first frame. No walking toward the camera, no new people, no text.",
    "duration": 10,
    "image": "assets/portraits/untenshu-keyframes/S01a-1.png"
   },
@@ -161,7 +161,7 @@
    "image": "assets/portraits/untenshu-keyframes/S01b-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: The wipers sweep once across the glass; Kuroda blinks slowly and checks the road with calm eyes; his head barely moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: The wipers sweep once across the glass; Kuroda blinks slowly and checks the road with calm eyes; his head barely moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. The green license plate and the roof lamp keep exactly the same shape and characters as in the first frame. No walking toward the camera, no new people, no text.",
    "duration": 10,
    "image": "assets/portraits/untenshu-keyframes/S01c-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
@@ -190,22 +190,22 @@
    "image": "assets/portraits/untenshu-keyframes/S03b-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: She bows slowly and gratefully, leaning on her cane; rain falls beyond the canopy. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: She bows slowly and gratefully, leaning on her cane; rain falls beyond the canopy. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. The green license plate and the roof lamp keep exactly the same shape and characters as in the first frame. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/untenshu-keyframes/S03c-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Kuroda bows deeply and slowly straightens; rain beads on his cap. His face stays turned away. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Kuroda bows deeply and slowly straightens; rain beads on his cap. His face stays turned away. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. The green license plate and the roof lamp keep exactly the same shape and characters as in the first frame. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/untenshu-keyframes/S03d-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: The taxi pulls slowly away into the rain; the canopy lamp glows. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: The taxi pulls slowly away into the rain; the canopy lamp glows. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. The green license plate and the roof lamp keep exactly the same shape and characters as in the first frame. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/untenshu-keyframes/S03e-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: The man waves his raised hand impatiently; the woman shields her head with her bag; rain falls; lanterns sway slightly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: The man waves his raised hand impatiently; the woman shields her head with her bag; rain falls; lanterns sway slightly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. The green license plate and the roof lamp keep exactly the same shape and characters as in the first frame. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/untenshu-keyframes/S04a-1.png"
   },
@@ -217,7 +217,7 @@
    "i2v_resolution": "1080p"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Raindrops run down the window; the two blurred figures settle into the seat. Faces stay blurred behind the wet glass. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Raindrops run down the window; the two blurred figures settle into the seat. Faces stay blurred behind the wet glass. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. The green license plate and the roof lamp keep exactly the same shape and characters as in the first frame. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/untenshu-keyframes/S05a-1.png"
   },
@@ -312,12 +312,12 @@
    "image": "assets/portraits/untenshu-keyframes/S08b-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: The taxi turns slowly through the intersection; light trails streak; rain falls. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: The taxi turns slowly through the intersection; light trails streak; rain falls. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. The green license plate and the roof lamp keep exactly the same shape and characters as in the first frame. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/untenshu-keyframes/S08c-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Rain falls on the taxi roof; the lobby light glows. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Rain falls on the taxi roof; the lobby light glows. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. The green license plate and the roof lamp keep exactly the same shape and characters as in the first frame. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/untenshu-keyframes/S09a-1.png"
   },
@@ -372,7 +372,7 @@
    "image": "assets/portraits/untenshu-keyframes/S10e-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: The taxi drives slowly away into the rain; reflections ripple. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: The taxi drives slowly away into the rain; reflections ripple. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. The green license plate and the roof lamp keep exactly the same shape and characters as in the first frame. No walking toward the camera, no new people, no text.",
    "duration": 10,
    "image": "assets/portraits/untenshu-keyframes/S10f-1.png"
   },
@@ -446,7 +446,7 @@
    "image": "assets/portraits/untenshu-keyframes/S12c-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Kuroda removes his cap slowly and holds it at his side; dust floats in the golden beam. His face stays turned away. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Kuroda removes his cap slowly and holds it at his side; dust floats in the golden beam. His face stays turned away. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. The green license plate and the roof lamp keep exactly the same shape and characters as in the first frame. No walking toward the camera, no new people, no text.",
    "duration": 10,
    "image": "assets/portraits/untenshu-keyframes/S13a-1.png"
   },
@@ -506,7 +506,7 @@
    "image": "assets/portraits/untenshu-keyframes/S15d-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: The wipers sweep; Kuroda's eyes move calmly to the mirror and back; he does not speak. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: The wipers sweep; Kuroda's eyes move calmly to the mirror and back; he does not speak. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. The green license plate and the roof lamp keep exactly the same shape and characters as in the first frame. No walking toward the camera, no new people, no text.",
    "duration": 10,
    "image": "assets/portraits/untenshu-keyframes/S15e-1.png",
    "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
@@ -557,8 +557,9 @@
    "image": "assets/portraits/untenshu-keyframes/S17a-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: The doors swing open slowly; the silhouette stands perfectly still in the light; haze drifts. The face stays completely black. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "(override) still: Low angle from inside: the tall meeting-room doors swing open, a man in a suit s",
    "duration": 10,
+   "override_required": true,
    "image": "assets/portraits/untenshu-keyframes/S17b-1.png"
   },
   {
@@ -739,12 +740,12 @@
    "image": "assets/portraits/untenshu-keyframes/S22c-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Otsuka raises his hand again and again; light trails of taxis pass without stopping; rain falls. He never turns. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Otsuka raises his hand again and again; light trails of taxis pass without stopping; rain falls. He never turns. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. The green license plate and the roof lamp keep exactly the same shape and characters as in the first frame. No walking toward the camera, no new people, no text.",
    "duration": 10,
    "image": "assets/portraits/untenshu-keyframes/S22d-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Taxis streak past one after another without slowing; rain spray. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Taxis streak past one after another without slowing; rain spray. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. The green license plate and the roof lamp keep exactly the same shape and characters as in the first frame. No walking toward the camera, no new people, no text.",
    "duration": 10,
    "image": "assets/portraits/untenshu-keyframes/S22e-1.png"
   },
@@ -754,7 +755,7 @@
    "image": "assets/portraits/untenshu-keyframes/S22f-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: The taxi glides to a stop and the rear door swings open; Ogawa lowers her hand and smiles. No one walks toward the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: The taxi stays stopped with its rear door open; rain falls on the umbrella; Ogawa looks toward the open door and her smile grows warm, a soft breath; she stays where she is. No one walks toward the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. The green license plate and the roof lamp keep exactly the same shape and characters as in the first frame. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/untenshu-keyframes/S23a-1.png"
   },
@@ -765,7 +766,7 @@
    "image": "assets/portraits/untenshu-keyframes/S23b-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Her hands fold the wet umbrella lightly and cheerfully with a gentle happy rhythm and shake off the rain. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Her hands fold the wet umbrella lightly and cheerfully with a gentle happy rhythm and shake off the rain. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. The green license plate and the roof lamp keep exactly the same shape and characters as in the first frame. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/untenshu-keyframes/S23c-1.png"
   },
@@ -775,7 +776,7 @@
    "image": "assets/portraits/untenshu-keyframes/S23d-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: The taxi drives slowly away down the street; lanterns glow; rain glitters. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: The taxi drives slowly away down the street; lanterns glow; rain glitters. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. The green license plate and the roof lamp keep exactly the same shape and characters as in the first frame. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/untenshu-keyframes/S23e-1.png"
   }

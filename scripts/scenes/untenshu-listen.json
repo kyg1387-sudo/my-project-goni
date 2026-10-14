@@ -1,0 +1,34 @@
+{
+ "_설명": "R34 방식: 두 사람이 보이는 립싱크 컷의 말하지 않는 사람만 움직이는 i2v(합성용) — S05e 小川 · S07e 小川 · S10b 黒田. lite 1080p 10초 x 3 ≈ 1.08달러.",
+ "ratio": "16:9",
+ "budget_usd": 1.5,
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "scenes": [
+  {
+   "prompt": "Completely static tripod camera inside a taxi STOPPED at a red light at night; the view outside the windows stays still, only raindrops trickle. The young woman on the left (Ogawa) listens to her boss beside her: her mouth stays closed, a polite uneasy half-smile, slow breathing, two blinks, her eyes glance at him and then down at her lap; her head moves less than 10 degrees and never turns toward the camera. The man on the right stays completely still. Keep the exact faces, wardrobe, props and lighting of the first frame. No new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S05e-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/lite/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "Completely static tripod camera inside a taxi STOPPED at a red light at night; the view outside the windows stays still, only raindrops trickle. The young woman in the middle (Ogawa) has just been silenced by her boss: her mouth stays closed and pressed, her eyes lower, a small tense swallow, slow breathing, one slow blink; her head never turns toward the camera. The heavy-set man on the right stays completely still. Keep the exact faces, wardrobe, props and lighting of the first frame. No new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S07e-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/lite/image-to-video",
+   "i2v_resolution": "1080p"
+  },
+  {
+   "prompt": "Completely static tripod camera inside a parked taxi at night; the view outside stays still, only raindrops trickle. The elderly driver at the left (Kuroda, in his cap) listens to the young woman holding out the photo frame: his mouth stays closed, his eyes soften and glisten slightly, a slow breath, one slow blink, a very small nod; his head never turns toward the camera. The young woman stays completely still. Keep the exact faces, wardrobe, props and lighting of the first frame. No new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/untenshu-keyframes/S10b-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/lite/image-to-video",
+   "i2v_resolution": "1080p"
+  }
+ ],
+ "durations": [
+  10,
+  10,
+  10
+ ]
+}

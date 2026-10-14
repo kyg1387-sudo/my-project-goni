@@ -320,8 +320,8 @@ SHOTS = [
       motion="Ogawa glances back once toward the lobby, then faces forward again; she keeps walking slowly."),
     S("S17a", "S17", "d", "cu", "chiaro", "EL", [O, G], "MEET", "Over Ogawa's shoulder (soft in the foreground, right): Otsuka in the meeting room adjusting his tie in his reflection in the tall window, smug and lecturing.",
       line="P8", expr="smug", fg="R"),
-    S("S17b", "S17", "live", "ws", "backlit", "LA", ["KURODA:CHAIR"], "DOOR_BACKLIT", "Low angle from inside: the tall meeting-room doors swing open, a man in a suit stands in blinding white backlight, a hard silhouette, face completely black.",
-      line="L33", motion="The doors swing open slowly; the silhouette stands perfectly still in the light; haze drifts. The face stays completely black."),
+    S("S17b", "S17", "react", "ws", "backlit", "LA", ["KURODA:CHAIR"], "DOOR_BACKLIT", "Low angle from inside: the tall meeting-room doors swing open, a man in a suit stands in blinding white backlight, a hard silhouette, face completely black.",
+      line="L33", fx="pushin", motion="The doors swing open slowly; the silhouette stands perfectly still in the light; haze drifts. The face stays completely black."),
     S("S17c", "S17", "d", "cu", "chiaro", "LA", [K, O], "MEET_LOW", "Slightly low angle over Otsuka's shoulder (soft in the foreground, left): Chairman Kuroda in his dark-navy suit, looking straight at Otsuka, quiet and still, a cold calm.",
       line="L34", expr="cold", fg="L"),
     S("S17d", "S17", "react", "cu", "chiaro", "EL", [O], "MEET", "Close-up of Otsuka frozen with a business card held out, the color draining from his face, eyes wide.", line="NA18", expr="beg", fx="dollyzoom"),
@@ -383,7 +383,7 @@ SHOTS = [
     S("S22f", "S22", "live", "ms", "rain_cold", "SIDE", ["OTSUKA:OTSUKA_N:back"], "IZA_SPOT", "Otsuka seen from behind at the curb, slowly lowering his hand, soaked, under a plain red lantern.", line="NA23",
       motion="Otsuka lowers his hand slowly and his shoulders sink; rain pours. His face stays turned away."),
     S("S23a", "S23", "live", "ws", "amber", "EL", [GT], "IZA_WARM", "A week later, the same curbside spot in soft rain and warm amber light: Ogawa under an umbrella raising her hand; the black taxi glides to a stop and its rear door opens.",
-      motion="The taxi glides to a stop and the rear door swings open; Ogawa lowers her hand and smiles. No one walks toward the camera."),
+      motion="The taxi stays stopped with its rear door open; rain falls on the umbrella; Ogawa looks toward the open door and her smile grows warm, a soft breath; she stays where she is. No one walks toward the camera."),
     S("S23b", "S23", "react", "ecu", "amber", "EL", [KD], "MIRROR", "Rear-view mirror close-up: Kuroda's eyes reflected, crinkling into a warm smile, warm amber street light.", line="L49", expr="smile", fx="pushin"),
     S("S23c", "S23", "live", "ecu", "amber", "EL", [GT], "TAXI_OUT", "Insert: a woman's hands folding a wet umbrella at the open rear door, amber light. Hands only.", line="L50",
       motion="Her hands fold the wet umbrella lightly and cheerfully with a gentle happy rhythm and shake off the rain."),
@@ -423,17 +423,17 @@ OMNI_BASE = (" Natural, realistic acting like a real film actor: subtle breathin
              "no exaggerated motion, the face and body stay the same person.")
 OMNI_ACT = {
     "S03b": "Kuroda reassures the elderly passenger with a warm gentle smile, a small courteous nod, holding the door. Answering her apology kindly." + OMNI_BASE,
-    "S05e": "Otsuka boasts lazily with a smug grin, stroking his chin, leaning back, savoring 「取締役」. Talking to Ogawa beside him, showing off." + OMNI_BASE,
+    "S05e": "Otsuka boasts lazily with a smug grin, his hand resting at his chin, leaning back, savoring 「取締役」. Talking to Ogawa sitting beside him on the rear bench, his head turned toward her, showing off." + OMNI_BASE,
     "S06e": "Otsuka explodes in rage, leaning forward between the front seats, his hand stays gripping the seat back, sharp short head movements, brow knotted, hardest on 「運転手のくせに」. Shouting at the back of the driver's head; the driver keeps facing the road and never turns." + OMNI_BASE,
-    "S07e": "Otsuka sneers slowly with contempt, chin raised, leaning back, a slow dismissive shake of the head on 「負け組」. Mocking the driver after silencing Ogawa." + OMNI_BASE,
+    "S07e": "Otsuka sneers slowly with contempt, chin raised, leaning back on the rear bench, a slow dismissive shake of the head on 「負け組」, hands stay where they are. Mocking the driver in front after silencing Ogawa beside him." + OMNI_BASE,
     "S09d": "Kuroda answers quietly and politely, eyes forward then to the mirror, a calm pause before 「会社は、ございません」, hands still on the wheel. Replying to Otsuka's threat without any anger." + OMNI_BASE,
-    "S10b": "Ogawa speaks gently and apologetically, holding out the wiped photo frame with both hands, a small concerned tilt of the head. Speaking to the driver after her boss has left." + OMNI_BASE,
-    "S11d": "Otsuka scolds with irritated contempt, tossing the documents down, a sharp jab of the finger, jaw tight. Answering Ogawa's report about paying the taxi fare." + OMNI_BASE,
-    "S11h": "Otsuka boasts on the phone with a smug grin, feet up, lazily waving his free hand, a mocking laugh on 「しつけてやったよ」. Talking to a friend on the phone about last night's driver." + OMNI_BASE,
+    "S10b": "Ogawa speaks gently and apologetically from the back seat, holding out the small photo frame with both hands, a small concerned tilt of the head. Speaking to the driver in the front seat after her boss has left." + OMNI_BASE,
+    "S11d": "Otsuka scolds with irritated contempt, his hand pressing down on the documents on the desk, jaw tight, a sharp exhale. Answering Ogawa's report about paying the taxi fare." + OMNI_BASE,
+    "S11h": "Otsuka boasts on the phone with a smug grin, the phone held at his ear, leaning back in the chair, a mocking chuckle on 「しつけてやったよ」, his free hand stays still. Talking to someone on the phone about last night's driver." + OMNI_BASE,
     "S12a": "Ishii speaks earnestly and gravely, holding the folder, a slow emphatic nod on 「人」. Warning Otsuka face to face before the meeting." + OMNI_BASE,
     "S15a": "Chiyoko speaks softly and weakly with a loving smile, squeezing her husband's hand, eyes glistening. Asking her husband for a promise." + OMNI_BASE,
     "S16a": "Miura greets the visitors politely with a professional smile, a small bow, hands stay folded in front of her. Welcoming the three guests." + OMNI_BASE,
-    "S16d": "Ogawa asks hesitantly, pointing at the framed photograph, puzzled, glancing between the photo and her boss. Speaking to Otsuka beside her." + OMNI_BASE,
+    "S16d": "Ogawa asks hesitantly, her pointing hand stays still toward the framed photograph, puzzled, glancing between the photo and her boss. Speaking to Otsuka beside her." + OMNI_BASE,
     "S17a": "Otsuka lectures smugly while straightening his tie in the window reflection, a self-satisfied smile, chin up. Instructing Ogawa just before the door opens." + OMNI_BASE,
     "S17c": "Kuroda speaks very quietly and coldly, almost motionless, eyes fixed on Otsuka, one slow blink. Greeting the man who insulted him last night." + OMNI_BASE,
     "S17f": "Otsuka stammers in panic, sweating, the business card trembling, eyes darting, a forced nervous half-smile. Making excuses to the chairman." + OMNI_BASE,
@@ -660,7 +660,8 @@ def main():
         item = {"prompt": "", "duration": gen}
         if tier in ("pro", "lite"):
             item["prompt"] = ("Static, locked off camera. Motion: " + (s["motion"] or "Subtle natural motion only.") +
-                              " Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. "
+                              " Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 15 degrees. " +
+                              ("The green license plate and the roof lamp keep exactly the same shape and characters as in the first frame. " if s["loc"] in TAXI_LOCS else "") +
                               "No walking toward the camera, no new people, no text.")
             item["image"] = keyframe
             if tier == "pro":
