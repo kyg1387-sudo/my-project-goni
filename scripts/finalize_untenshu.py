@@ -55,7 +55,7 @@ FX = {"S20a": "dutch7"}
 LCUT = [("S05e", "L07", "S05c", 1.3), ("S06e", "L11", "S06c", 1.2), ("S07e", "L14", "S07d", 1.3),
         ("S11d", "L24", "S11e", 1.2), ("S11h", "P2", "S11i", 1.2), ("S12a", "L27", "S12b", 1.2),
         ("S18f", "L37", "S18b", 1.2), ("S19b", "L39", "S19c", 1.4), ("S20f", "L44", "S20d", 1.3),
-        ("S21b", "L46", "S21a", 1.3)]
+        ("S21b", "L46", "S21a", 1.8)]
 # 현장음(고니감독님 「현장감 있게 사운드」): 목소리 없는 환경음 베드(ElevenLabs SFX, assets/auditions/untenshu-sfx)를 장면 공간마다
 # 대사 아래 낮게 깔고(−30 LUFS 정규화 후 BED_VOL), 공간이 바뀔 때 0.5초 교차. 무인 컷은 burn의 장면 현장음(mmaudio)이 이미 있어 건너뜀.
 SFX = os.path.join(ROOT, "assets", "auditions", "untenshu-sfx")
