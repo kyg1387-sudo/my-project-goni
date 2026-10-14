@@ -49,7 +49,8 @@ LISTEN = {
              [("ell", 360, 100, 585, 360), ("poly", [(330, 370), (600, 370), (610, 768), (300, 768)])], ""),
     "S10b": ("assets/preview/untenshu-fix2/scene01-3s.mp4", [("rect", 0, 0, 600, 768)], ""),   # R45 새 구도: 기사 앞 왼쪽
 }
-FX = {"S20a": "dutch7"}
+FX = {"S20a": "dutch7",
+      "S02b": "mirrorcrop"}   # R54: 룸미러 아래 매달린 빈 태그가 흔들려 「공중에 뜬 액자」처럼 보임 → 거울 안쪽으로 1.9배 당김
 # 고니감독님 검수 수정(R41~R52): 장면 → (교체 클립, 사용 시작초, 사용 길이 — 그 뒤는 마지막 프레임 정지)
 REDO = {
     "S06c": ("assets/preview/untenshu-fix1/scene01.mp4", 0.0, None),     # 룸미러 손님 2명(R42)
@@ -183,6 +184,8 @@ def fx_filter(fx):
     shake = "crop=1920:1080:x='(iw-1920)/2+9*sin(t*5.3)+4*sin(t*11.7)':y='(ih-1080)/2+6*sin(t*4.1)+3*sin(t*9.3)'"
     if fx == "hh":
         return f"scale=2112:1188,{shake}"
+    if fx == "mirrorcrop":
+        return "crop=iw/1.9:ih/1.9:(iw-iw/1.9)*0.55:ih*0.05,scale=1920:1080:flags=lanczos"
     if fx == "dutch7":
         return "rotate=7*PI/180:ow=iw:oh=ih:c=black,scale=2400:1350,crop=1920:1080"
     if fx == "dutch5+hh":
