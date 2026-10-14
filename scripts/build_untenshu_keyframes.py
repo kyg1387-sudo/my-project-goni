@@ -18,6 +18,10 @@ FULL = "Full-frame 16:9 image filling the whole canvas: NO black bars, NO white 
 CONVO = ("Over-the-shoulder conversation framing: the speaker's face fills at least one quarter of the frame height and is in razor-sharp focus; "
          "the listener's shoulder and back of the head are a soft blurred shape at the frame edge; the speaker's mouth is gently CLOSED in this frame "
          "(speech is added later), emotion shown in the eyes, brows and jaw. Natural five-fingered hands only where described.")
+CONVO_CAR = ("Car-interior conversation framing: the speaker's face fills at least one quarter of the frame height and is in razor-sharp focus; "
+             "the driver is only a soft side profile at the frame edge, facing forward toward the windshield, never turned toward the back seat; "
+             "the speaker's mouth is gently CLOSED in this frame (speech is added later), emotion shown in the eyes, brows and jaw. "
+             "Natural five-fingered hands only where described.")
 # ⑩ 인서트에 얼굴이 나옴 → 인서트 고정 문장
 INSERT = ("EXTREME CLOSE-UP INSERT: only the hands / object described fill the frame; NO face, NO head and NO shoulders anywhere in the frame.")
 # ⑪ 같은 로케이션 연속 컷 같은 구도 → 앵글 고정 문장
@@ -39,7 +43,8 @@ def spec_for(shot, n):
     p = shot["keyframe_prompt"]
     extra = []
     if shot["kind"] == "d":
-        extra.append(CONVO)
+        # R33: 차 안 운전석은 항상 정면(앞유리) — 어깨 너머 문장 대신 측면 프로필 문장
+        extra.append(CONVO_CAR if "side profile at the frame edge" in p else CONVO)
     if shot["kind"] == "ins" or (shot["kind"] in ("live",) and "Insert" in shot["subject"][:20]):
         extra.append(INSERT)
     if shot["angle"] in ANGLE:

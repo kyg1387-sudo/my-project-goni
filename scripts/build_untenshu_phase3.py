@@ -220,7 +220,7 @@ SHOTS = [
       motion="Kuroda's eyes stay steady and patient in the mirror; one slow blink; light slides across the glass."),
     S("S06d", "S06", "face", "ms", "taxi_red", "LA", [ON], "TAXI_LOW", "Low angle from dashboard height: Otsuka leaning forward from the back seat, glaring at the driver, red brake light washing over his face.", line="L10", vo=True, expr="anger",
       motion="Otsuka leans forward a little more, his jaw tightening, nostrils flaring; red light pulses. His mouth stays closed."),
-    S("S06e", "S06", "d", "cu", "taxi_red", "LA", [ON, KD], "TAXI_HEADREST", "Over the driver's headrest (soft in the foreground, left): Otsuka exploding with rage in the back seat, leaning forward, pointing a finger, red brake light on his face.",
+    S("S06e", "S06", "d", "cu", "taxi_red", "LA", [ON, "KURODA_D:DRIVER:profile"], "TAXI_REAR", "Camera on the dashboard at the passenger side looking back into the rear seat: Otsuka in the back seat leaning forward into the gap between the two front seats, one hand gripping the top of the front passenger seat, glaring toward the driver, red brake light on his face; at the left edge of the frame the driver is seen in side profile, eyes on the road ahead through the windshield, NOT looking at Otsuka.",
       line="L11", expr="anger", fx="dutch5,handheld", fg="L"),
     S("S07a", "S07", "ins", "ecu", "taxi_red", "EL", [], "P_FRAME", "Insert: the small silver photo frame tipping over on the dashboard from the jolt, frozen mid-fall.", line="NA8", fx="slowfall"),
     S("S07b", "S07", "estill", "ecu", "taxi", "OH", [], "P_FRAME", "No people. From above: the small silver photo frame lying face up on the dark floor mat, the photo of the smiling elderly woman, raindrops of light on the glass."),
@@ -245,7 +245,7 @@ SHOTS = [
     S("S09e", "S09", "react", "ms", "rain", "SIDE", ["OTSUKA:OTSUKA_N:back"], "TAXI_OUT", "Outside in the rain: Otsuka seen from behind climbing out of the taxi and slamming the rear door.", line="L18", fx="handheld"),
     S("S10a", "S10", "live", "ecu", "taxi", "OH", [GT], "TAXI_REAR", "Insert from above: a woman's hands picking up the small silver photo frame from the floor mat and wiping the rain off the glass with a plain handkerchief.",
       line="L19", motion="Her hands wipe the glass of the frame gently and apologetically with the handkerchief, trembling slightly."),
-    S("S10b", "S10", "d", "cu", "taxi", "EL", [GT, KD], "TAXI_REAR", "Over the driver's shoulder (soft in the foreground, left): Ogawa in the back seat holding the wiped photo frame out with both hands, gentle and apologetic.",
+    S("S10b", "S10", "d", "cu", "taxi", "EL", [GT, "KURODA_D:DRIVER:profile"], "TAXI_REAR", "Camera on the dashboard at the passenger side looking back into the rear seat: Ogawa in the back seat leaning slightly forward, holding the wiped photo frame out toward the driver with both hands, gentle and apologetic; at the left edge of the frame the driver is seen in side profile, the car parked, his head turned only slightly toward her.",
       line="L20", expr="hurt", fg="L"),
     S("S10c", "S10", "live", "ecu", "taxi", "EL", [KD, GT], "TAXI_HEADREST", "Insert: white-gloved hands gently receiving the small silver photo frame from a woman's hands between the seats.", line="L21",
       motion="The gloved hands take the frame gently; the woman's hands let go."),
@@ -498,7 +498,7 @@ def check_rules(shots, rows, silent):
     for s in shots:
         if s["kind"] == "d" and s["angle"] in ("SIDE", "BE", "OH"):
             errs.append(f"{s['id']}: OMNI 대사 컷 각도 {s['angle']} 금지(정면~45°만)")
-        if s["kind"] == "d" and len(s["who"]) > 1 and s["fg"] not in ("L", "R"):
+        if s["kind"] == "d" and len(s["who"]) > 1 and s["fg"] not in ("L", "R") and not s["who"][1].endswith(":profile"):
             errs.append(f"{s['id']}: 어깨 너머 립싱크인데 전경 쪽(fg L/R) 미지정")
         if prev and prev["scene"] == s["scene"] and not s["kind"].startswith("reuse") and not prev["kind"].startswith("reuse"):
             if order.index(prev["lens"]) == order.index(s["lens"]) and prev["angle"] == s["angle"] and prev["loc"] == s["loc"]:
@@ -599,7 +599,13 @@ def main():
         for wi, w in enumerate(s["who"]):
             parts = w.split(":")
             key, ward = parts[0], (parts[1] if len(parts) > 1 else "")
-            back = (len(parts) > 2 and parts[2] == "back") or (s["kind"] == "d" and wi > 0)  # 립싱크 컷의 둘째 인물 = 전경 듣는 사람(뒷모습)
+            view = parts[2] if len(parts) > 2 else ("back" if s["kind"] == "d" and wi > 0 else "")  # 립싱크 컷의 둘째 인물 = 전경 듣는 사람(뒷모습)
+            if view == "profile":   # 차 안 운전자: 늘 앞(전면 유리)을 보므로 옆모습으로 화면 가장자리(운전석 공간 문법, R33)
+                desc, front, _ = WHO[key]
+                ids.append(desc + (f", wearing {WARD[ward]}" if ward else "") + ", seen in side profile at the frame edge facing forward toward the windshield")
+                refs.append(C + ("kuroda-driver-sheet-profile.png" if key == "KURODA_D" else front.split("/")[-1]))
+                continue
+            back = view == "back"
             desc, front, backcell = WHO[key]
             ids.append(desc + (f", wearing {WARD[ward]}" if ward else "") +
                        ((", the listener in the soft blurred foreground seen only from behind (back of the head and one shoulder), face not visible" if s["kind"] == "d" and wi > 0
@@ -613,7 +619,10 @@ def main():
         if s["loc"]:
             refs.append(LOC[s["loc"]])
         n = len(s["who"])
-        if s["kind"] == "d" and n > 1:
+        if s["kind"] == "d" and n > 1 and s["who"][1].endswith(":profile"):
+            comp = ("Car-interior geometry: the driver always faces forward toward the windshield; the passenger in the back seat speaks toward the driver from behind. "
+                    "The speaker's face at least one quarter of the frame height at a three-quarter angle, sharp focus on the speaker's eyes; the driver only a soft side profile at the frame edge.")
+        elif s["kind"] == "d" and n > 1:
             side = {"L": "left", "R": "right"}[s["fg"]]
             comp = (f"Over-the-shoulder conversation shot: the listener's blurred shoulder and back of the head fill the {side} edge of the foreground; "
                     f"the speaker faces the listener at a three-quarter angle (30 to 40 degrees from the camera), the speaker's face at least one quarter of the frame height, "
