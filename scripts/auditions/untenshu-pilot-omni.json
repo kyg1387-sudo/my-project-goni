@@ -1,0 +1,26 @@
+{
+ "_설명": "『運転手のくせに』 시범 립싱크 3컷(OmniHuman, 어깨 너머 3/4) — S06e 大塚 폭언(L11) · S17c 黒田 「昨夜は、どうも」(L34) · S21b 黒田→小川(L46). 음성 = 본녹음 확정본 앞뒤 0.15초 여백. 약 14초 x 0.16 ≈ 2.3달러.",
+ "tests": [
+  {
+   "id": "omni-S06e",
+   "model": "omnihuman",
+   "image": "assets/portraits/untenshu-kf-pilot/S06e-fixed.png",
+   "audio_id": "L11",
+   "prompt": "Otsuka explodes in rage, leaning forward, jabbing a finger at the driver, sharp short head movements, brow knotted, hardest on 「運転手のくせに」. Shouting at the driver who just suggested a detour. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands stay where they are in the first frame; no exaggerated motion, the face and body stay the same person."
+  },
+  {
+   "id": "omni-S17c",
+   "model": "omnihuman",
+   "image": "assets/portraits/untenshu-kf-pilot/S17c-fixed.png",
+   "audio_id": "L34",
+   "prompt": "Kuroda speaks very quietly and coldly, almost motionless, eyes fixed on Otsuka, one slow blink. Greeting the man who insulted him last night. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands stay where they are in the first frame; no exaggerated motion, the face and body stay the same person."
+  },
+  {
+   "id": "omni-S21b",
+   "model": "omnihuman",
+   "image": "assets/portraits/untenshu-kf-pilot/S21b-fixed.png",
+   "audio_id": "L46",
+   "prompt": "Kuroda speaks warmly and gently to Ogawa, a soft smile, a small open-hand gesture toward her. Offering her the contract. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands stay where they are in the first frame; no exaggerated motion, the face and body stay the same person."
+  }
+ ]
+}
