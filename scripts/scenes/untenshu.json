@@ -350,7 +350,7 @@
    "image": "assets/portraits/untenshu-keyframes/S10a-1.png"
   },
   {
-   "prompt": "(override) omni: Camera on the dashboard at the passenger side looking back into the rear seat: O",
+   "prompt": "(override) omni: Taxi cabin layout (right-hand drive): the driver in the FRONT right seat, Ogawa ",
    "duration": 10,
    "override_required": true,
    "image": "assets/portraits/untenshu-keyframes/S10b-1.png"
