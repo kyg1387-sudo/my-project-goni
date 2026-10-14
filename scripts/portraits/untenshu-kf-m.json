@@ -1,0 +1,69 @@
+{
+ "_설명": "R42: 운행 중 뒷좌석이 보이는 컷에 손님 추가(편집 6컷 x 2 = 12장 약 0.48달러)",
+ "characters": [
+  {
+   "id": "S06b",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-keyframes/S06b-1.png",
+    "assets/portraits/untenshu-cast/cells/otsuka-sheet-v2-front.png",
+    "assets/portraits/untenshu-cast/cells/ogawa-sheet-v2-front.png"
+   ],
+   "prompt": "Edit the FIRST image only. The driver stays EXACTLY where he is, on the LEFT side of the frame behind the steering wheel. Through the windshield, in the REAR bench seat, add two passengers slightly soft-focused behind the rain-beaded glass: a young Japanese woman aged 26 with brown hair tied low and a beige trench coat (the woman in the reference), sitting upright and uneasy in the back seat on the RIGHT side directly behind the empty front passenger seat, fully visible; and a thickset Japanese man aged 45 with gelled black hair, a grey pinstripe suit and a loosened red necktie (the man in the reference), in the back seat behind the driver, half hidden by the driver's head and shoulders, scowling. Keep everything else exactly the same: same driver, same cap, same face, same framing and camera position, same light. Exactly ONE driver and these passengers only, no other people. Full-frame 16:9, no borders, no text."
+  },
+  {
+   "id": "S05b",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-keyframes/S05b-1.png",
+    "assets/portraits/untenshu-cast/cells/otsuka-sheet-v2-front.png",
+    "assets/portraits/untenshu-cast/cells/ogawa-sheet-v2-front.png"
+   ],
+   "prompt": "Edit the FIRST image only. Inside the rear-view mirror, behind the reflected driver, the rear bench seat must now show two passengers sitting side by side, small and slightly soft-focused in the mirror reflection: a thickset Japanese man aged 45 with gelled black hair, a grey pinstripe suit and a loosened red necktie (the man in the reference) sprawled and smug, and a young Japanese woman aged 26 with brown hair tied low and a beige trench coat (the woman in the reference) quiet and polite. The driver's reflected face stays exactly the same and in front of them. Keep everything else exactly the same: same driver, same cap, same face, same framing and camera position, same light. Exactly ONE driver and these passengers only, no other people. Full-frame 16:9, no borders, no text."
+  },
+  {
+   "id": "S06c",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-keyframes/S06c-1.png",
+    "assets/portraits/untenshu-cast/cells/otsuka-sheet-v2-front.png",
+    "assets/portraits/untenshu-cast/cells/ogawa-sheet-v2-front.png"
+   ],
+   "prompt": "Edit the FIRST image only. Inside the rear-view mirror, behind the reflected driver, the rear bench seat must now show two passengers sitting side by side, small and slightly soft-focused in the mirror reflection: a thickset Japanese man aged 45 with gelled black hair, a grey pinstripe suit and a loosened red necktie (the man in the reference) leaning forward and glaring, and a young Japanese woman aged 26 with brown hair tied low and a beige trench coat (the woman in the reference) shrinking back, uneasy. The driver's reflected face stays exactly the same and in front of them. Keep everything else exactly the same: same driver, same cap, same face, same framing and camera position, same light. Exactly ONE driver and these passengers only, no other people. Full-frame 16:9, no borders, no text."
+  },
+  {
+   "id": "S08a",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-keyframes/S08a-1.png",
+    "assets/portraits/untenshu-cast/cells/otsuka-sheet-v2-front.png",
+    "assets/portraits/untenshu-cast/cells/ogawa-sheet-v2-front.png"
+   ],
+   "prompt": "Edit the FIRST image only. Inside the rear-view mirror, behind the reflected driver, the rear bench seat must now show two passengers sitting side by side, small and slightly soft-focused in the mirror reflection: a thickset Japanese man aged 45 with gelled black hair, a grey pinstripe suit and a loosened red necktie (the man in the reference) leaning back with a contemptuous sneer, and a young Japanese woman aged 26 with brown hair tied low and a beige trench coat (the woman in the reference) looking down, hurt. The driver's reflected face stays exactly the same and in front of them. Keep everything else exactly the same: same driver, same cap, same face, same framing and camera position, same light. Exactly ONE driver and these passengers only, no other people. Full-frame 16:9, no borders, no text."
+  },
+  {
+   "id": "S23b",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-keyframes/S23b-1.png",
+    "assets/portraits/untenshu-cast/cells/ogawa-sheet-v2-front.png"
+   ],
+   "prompt": "Edit the FIRST image only. Inside the rear-view mirror, behind the reflected driver, the rear seat must now show a young Japanese woman aged 26 with brown hair tied low and a beige trench coat (the woman in the reference) sitting alone in the back seat, small and slightly soft-focused in the mirror reflection, smiling warmly. The driver's reflected face stays exactly the same. Keep everything else exactly the same: same driver, same cap, same face, same framing and camera position, same light. Exactly ONE driver and these passengers only, no other people. Full-frame 16:9, no borders, no text."
+  },
+  {
+   "id": "S06d",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-keyframes/S06d-1.png",
+    "assets/portraits/untenshu-cast/cells/ogawa-sheet-v2-front.png"
+   ],
+   "prompt": "Edit the FIRST image only. The angry man leaning forward between the front seats stays exactly the same. Add a young Japanese woman aged 26 with brown hair tied low and a beige trench coat (the woman in the reference) sitting in the rear bench seat beside him on the RIGHT side of the frame, partly visible between the front headrest and the man, shrinking back against the seat, frightened, soft red brake light on her. Keep everything else exactly the same: same driver, same cap, same face, same framing and camera position, same light. Exactly ONE driver and these passengers only, no other people. Full-frame 16:9, no borders, no text."
+  }
+ ]
+}
