@@ -1,0 +1,270 @@
+#!/usr/bin/env python3
+"""『運転手のくせに』 PHASE 6 마무리 (로컬, 무과금). finalize_ashita.py 구조 + 運転手 교훈(R33·R34·R37·R38).
+
+1) 조립 후 패치(구운 자막을 덮으므로 패치 클립에 같은 자막을 같은 시각으로 다시 굽는다)
+   - LISTEN: 두 사람이 보이는 립싱크 컷 = 립싱크 클립 위에 「말하지 않는 사람만 움직이는 i2v」를 그 사람 윤곽(깃털 마스크)으로 합성
+     (R34 — OmniHuman은 말하지 않는 사람까지 입을 움직이거나 돌아본다. 정지 고정은 「얼어 있는 사람」이라 금지)
+   - FX: 편집 카메라(제8장 6) — S06e 더치 5°+핸드헬드(갑질 1회), S20a 더치 7°(몰락 1회)
+   - LCUT: 4.5초 넘는 립싱크 대사는 말 끝 무렵 듣는 사람의 실제 반응(i2v)으로 잠깐 넘어갔다 돌아온다(제10장 8)
+   - 후크 재사용: H0a = S20a 실제 클립(더치 7°), H1 = S06e 합성 클립 + L11 음성(입 모양 위치)
+2) 소리: 후크 0~4.3초 드론+심장 박동(−60dB 2초 무음 금지), S18 첫머리 블랙박스 스피커 음(L11 원음 대역 제한),
+   S17b 문 열림 직전 문손잡이 소리
+3) 밝기: 밤 장면 평균 40/255 미만이면 어두운 중간 톤만 곡선으로 들어 올림(R55 LIFT) + 전편 공통 그레이딩·그레인
+4) 아웃트로: out/untenshu-outro.mp4(build_untenshu_outro.py) + 구독 버튼 → append_outro.py → 엔드카드
+5) 전달본: deliveries/untenshu/untenshu-final.mp4(28MB 조각) + 480p
+사용법: python3 scripts/finalize_untenshu.py <burn 완성본.mp4> [--no-outro | --outro-only]
+입력: assets/preview/untenshu/sceneNN.mp4(생성 클립, export_files), assets/preview/untenshu-omni/omniNN.mp4(burn export_omni),
+      assets/preview/untenshu-listen/sceneNN.mp4·untenshu-drv/scene01.mp4(듣는 사람 i2v)
+"""
+import glob
+import json
+import os
+import shutil
+import subprocess
+import sys
+
+from PIL import Image, ImageDraw, ImageFilter
+
+ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+FF = shutil.which("ffmpeg")
+OUTD = os.path.join(ROOT, "out")
+SBJ = json.load(open(os.path.join(ROOT, "scripts", "storyboard", "untenshu.json"), encoding="utf-8"))
+SB = SBJ["scenes"]
+AUDIO = json.load(open(os.path.join(ROOT, "scripts", "audio", "untenshu.json"), encoding="utf-8"))
+LOCK = {l["tag"]: l for l in json.load(open(os.path.join(ROOT, "productions", "untenshu-ja", "lock.json"), encoding="utf-8"))["lines"]}
+KF = os.path.join(ROOT, "assets", "portraits", "untenshu-keyframes")
+PREV = os.path.join(ROOT, "assets", "preview", "untenshu")
+OMNI = os.path.join(ROOT, "assets", "preview", "untenshu-omni")
+OVR = os.path.join(ROOT, "assets", "video-overrides", "untenshu")
+IDX = {s["id"]: i + 1 for i, s in enumerate(SB)}
+W, H = 1920, 1080
+NORM = f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps=24,setsar=1,format=yuv420p"
+
+# 듣는 사람 합성: (말하지 않는 사람 i2v, 마스크 도형(키프레임 1344x768 좌표), 편집 카메라, 반복 필요 여부)
+LISTEN = {
+    "S06e": ("assets/preview/untenshu-drv/scene01.mp4", [("rect", 0, 0, 511, 768)], "dutch5+hh"),
+    "S05e": ("assets/preview/untenshu-listen/scene01.mp4",
+             [("ell", 160, 40, 440, 320), ("poly", [(150, 320), (570, 320), (585, 768), (125, 768)])], ""),
+    "S07e": ("assets/preview/untenshu-listen/scene02.mp4",
+             [("ell", 360, 100, 585, 360), ("poly", [(330, 370), (600, 370), (610, 768), (300, 768)])], ""),
+    "S10b": ("assets/preview/untenshu-listen2/scene01.mp4",
+             [("ell", 70, -30, 430, 340), ("poly", [(55, 320), (470, 320), (560, 768), (35, 768)])], ""),
+}
+FX = {"S20a": "dutch7"}
+# (말하는 컷, 대사 태그, 듣는 사람 반응 클립 장면, 반응 길이) — 같은 장면의 역방향 반응(제10장 8)
+LCUT = [("S05e", "L07", "S05c", 1.3), ("S06e", "L11", "S06c", 1.2), ("S07e", "L14", "S07d", 1.3),
+        ("S11d", "L24", "S11e", 1.2), ("S11h", "P2", "S11i", 1.2), ("S12a", "L27", "S12b", 1.2),
+        ("S18f", "L37", "S18b", 1.2), ("S19b", "L39", "S19c", 1.4), ("S20f", "L44", "S20d", 1.3),
+        ("S21b", "L46", "S21a", 1.3)]
+LIFT = "curves=all='0/0 0.06/0.13 0.25/0.38 0.6/0.72 1/1',eq=gamma=1.12:saturation=1.05"
+LIFT_BELOW = 40.0
+
+
+def run(args):
+    subprocess.run([FF, "-v", "error", "-y"] + args, check=True)
+
+
+def dur(p):
+    e = subprocess.run([FF, "-i", p], capture_output=True, text=True).stderr
+    h, m, s = e.split("Duration: ")[1].split(",")[0].split(":")
+    return int(h) * 3600 + int(m) * 60 + float(s)
+
+
+def bounds():
+    d = [float(x) for x in AUDIO["scene_durations"]]
+    t, out = 0.0, {}
+    for k, (s, x) in enumerate(zip(SB, d)):
+        out[s["id"]] = (t, t + x); t += x - (1 / 24 if k < len(d) - 1 else 0)
+    return out
+
+
+def line_file(tag):
+    lid = next(f for f, t, _ in SBJ["audio_map"] if t == tag)
+    p = os.path.join(ROOT, "assets", "audio-overrides", "untenshu", f"{lid}.mp3")
+    return p if os.path.exists(p) else next(src for f, t, src in SBJ["audio_map"] if t == tag)
+
+
+def src_clip(sid):
+    """그 장면의 실제 클립: 립싱크 → i2v 생성 클립 → 교체 클립(정지) 순."""
+    for p in (os.path.join(OMNI, f"omni{IDX[sid]:02d}.mp4"), os.path.join(PREV, f"scene{IDX[sid]:02d}.mp4"),
+              os.path.join(OVR, f"scene{IDX[sid]:02d}.mp4")):
+        if os.path.exists(p):
+            return p
+    raise SystemExit(f"클립 없음: {sid}")
+
+
+def mask_png(shapes, path):
+    k, oy = W / 1344, (W * 768 / 1344 - H) / 2
+    tr = lambda x, y: (x * k, y * k - oy)
+    m = Image.new("L", (W, H), 0); d = ImageDraw.Draw(m)
+    for sh in shapes:
+        if sh[0] == "rect":
+            d.rectangle([tr(sh[1], sh[2]), tr(sh[3], sh[4])], fill=255)
+        elif sh[0] == "ell":
+            d.ellipse([tr(sh[1], sh[2]), tr(sh[3], sh[4])], fill=255)
+        else:
+            d.polygon([tr(x, y) for x, y in sh[1]], fill=255)
+    m.filter(ImageFilter.GaussianBlur(18)).save(path)
+
+
+def fx_filter(fx):
+    shake = "crop=1920:1080:x='(iw-1920)/2+9*sin(t*5.3)+4*sin(t*11.7)':y='(ih-1080)/2+6*sin(t*4.1)+3*sin(t*9.3)'"
+    if fx == "hh":
+        return f"scale=2112:1188,{shake}"
+    if fx == "dutch7":
+        return "rotate=7*PI/180:ow=iw:oh=ih:c=black,scale=2400:1350,crop=1920:1080"
+    if fx == "dutch5+hh":
+        return f"rotate=5*PI/180:ow=iw:oh=ih:c=black,scale=2400:1350,{shake}"
+    return "null"
+
+
+def listen_clip(sid, out, sec, tmp):
+    """립싱크 + 말하지 않는 사람 i2v(그 사람 윤곽만) 합성, 짧으면 앞뒤로 되감아 이어 붙임(숨·깜빡임은 되감아도 자연스럽다)."""
+    lis, shapes, fx = LISTEN[sid]
+    mpath = os.path.join(tmp, f"mask_{sid}.png"); mask_png(shapes, mpath)
+    lis = os.path.join(ROOT, lis)
+    ll = dur(lis)
+    lchain = f"[1:v]{NORM}"
+    if ll < sec + 0.1:
+        lchain += f",split[la][lb];[lb]reverse[lr];[la][lr]concat=n=2:v=1:a=0"
+    lchain += f",trim=0:{sec + 0.05:.3f},setpts=PTS-STARTPTS,format=rgba[l]"
+    fc = (f"[0:v]{NORM},tpad=stop_mode=clone:stop_duration=2,trim=0:{sec + 0.05:.3f},setpts=PTS-STARTPTS[o];{lchain};"
+          f"[2:v]format=gray,scale={W}:{H}[m];[l][m]alphamerge[lm];[o][lm]overlay=0:0:shortest=1,{fx_filter(fx)},format=yuv420p[v]")
+    run(["-i", src_clip(sid), "-i", lis, "-loop", "1", "-i", mpath, "-filter_complex", fc, "-map", "[v]", "-an",
+         "-c:v", "libx264", "-crf", "16", out])
+
+
+def fx_clip(src, out, fx, sec, start=0.0):
+    run(["-ss", f"{start:.3f}", "-i", src, "-filter_complex",
+         f"[0:v]{NORM},tpad=stop_mode=clone:stop_duration=2,trim=0:{sec + 0.05:.3f},setpts=PTS-STARTPTS,{fx_filter(fx)},format=yuv420p[v]",
+         "-map", "[v]", "-an", "-c:v", "libx264", "-crf", "16", out])
+
+
+def patch(src, out, tmp):
+    B = bounds()
+    fdir = os.environ.get("FONTSDIR", "/usr/share/fonts")
+    ass = os.path.join(ROOT, "subs", "untenshu.ass")
+    segs, made = [], {}
+    for sid in LISTEN:
+        a, b = B[sid]; c = os.path.join(tmp, f"L_{sid}.mp4")
+        listen_clip(sid, c, b - a, tmp); segs.append((a, b, c)); made[sid] = c
+    for sid, fx in FX.items():
+        a, b = B[sid]; c = os.path.join(tmp, f"F_{sid}.mp4")
+        fx_clip(src_clip(sid), c, fx, b - a); segs.append((a, b, c)); made[sid] = c
+    for sid, tag, lis, sec in LCUT:
+        if LOCK[tag]["dur"] < 4.5:
+            continue
+        e = LOCK[tag]["end"]
+        a, b = e - sec, e + 0.15
+        lo, hi = B[sid]
+        a, b = max(a, lo + 1.5), min(b, hi - 0.6)
+        if b - a < 0.8:
+            continue
+        c = os.path.join(tmp, f"C_{sid}.mp4")
+        fx_clip(made.get(lis) or src_clip(lis), c, "", b - a + 0.1, start=0.6)
+        segs.append((a, b, c))
+    # 후크 재사용 컷
+    h0, h1 = B["H0a"]; c = os.path.join(tmp, "H0a.mp4"); fx_clip(made["S20a"], c, "", h1 - h0); segs.append((h0, h1, c))
+    h0, h1 = B["H1"]; c = os.path.join(tmp, "H1.mp4"); fx_clip(made["S06e"], c, "", h1 - h0); segs.append((h0, h1, c))
+    inputs, fc, last = ["-i", src], [], "[0:v]"
+    for k, (a, b, c) in enumerate(segs, start=1):
+        inputs += ["-i", c]
+        fc.append(f"[{k}:v]trim=0:{b - a:.3f},setpts=PTS-STARTPTS+{a:.3f}/TB,ass={ass}:fontsdir={fdir}[p{k}]")
+        fc.append(f"{last}[p{k}]overlay=enable='between(t,{a:.3f},{b:.3f})':eof_action=pass[o{k}]"); last = f"[o{k}]"
+    run(inputs + ["-filter_complex", ";".join(fc), "-map", last, "-map", "0:a", "-c:v", "libx264", "-preset", "medium",
+                  "-crf", "17", "-c:a", "copy", out])
+    print("패치:", ", ".join(f"{os.path.basename(c)[:-4]} {a:.2f}-{b:.2f}" for a, b, c in segs))
+
+
+def hook_bed(path):
+    beat = lambda t: (f"sine=f=52:d=0.16,afade=t=out:st=0.04:d=0.12,volume=1.6,adelay={int(t * 1000)}|{int(t * 1000)}")
+    fc = ("sine=f=48:d=4.3[s1];sine=f=96:d=4.3,volume=0.35[s2];anoisesrc=d=4.3:c=brown:a=0.25,lowpass=f=180[n];"
+          "[s1][s2][n]amix=inputs=3:normalize=0,volume=0.30,afade=t=in:st=0:d=1.2,afade=t=out:st=3.9:d=0.4[dr];"
+          f"{beat(1.55)}[b1];{beat(1.85)}[b2];{beat(2.95)}[b3];{beat(3.25)}[b4];"
+          "[dr][b1][b2][b3][b4]amix=inputs=5:normalize=0,aformat=sample_rates=44100:channel_layouts=stereo[a]")
+    run(["-filter_complex", fc, "-map", "[a]", "-t", "4.3", path])
+
+
+def door_click(path):
+    """문손잡이: 짧은 금속성 클릭 2번 + 낮은 쿵(문이 밀리는 소리)."""
+    fc = ("anoisesrc=d=0.05:c=white:a=0.6,bandpass=f=3200:width_type=q:w=4,afade=t=out:st=0:d=0.05[c1];"
+          "anoisesrc=d=0.04:c=white:a=0.5,bandpass=f=2600:width_type=q:w=4,afade=t=out:st=0:d=0.04,adelay=140|140[c2];"
+          "sine=f=90:d=0.35,afade=t=out:st=0.05:d=0.3,volume=0.6,adelay=260|260[th];"
+          "[c1][c2][th]amix=inputs=3:normalize=0,aformat=sample_rates=44100:channel_layouts=stereo[a]")
+    run(["-filter_complex", fc, "-map", "[a]", "-t", "0.7", path])
+
+
+def dark_ranges(src):
+    """장면마다 가운데 프레임 평균 밝기 → 40/255 미만 장면 구간(R55)."""
+    B, out = bounds(), []
+    tmpf = os.path.join(OUTD, "fin", "_lum.png")
+    for s in SB:
+        a, b = B[s["id"]]
+        run(["-ss", f"{(a + b) / 2:.3f}", "-i", src, "-frames:v", "1", "-vf", "scale=320:-2", tmpf])
+        im = Image.open(tmpf).convert("L")
+        mean = sum(im.getdata()) / (im.width * im.height)
+        if mean < LIFT_BELOW:
+            out.append((s["id"], a, b, mean))
+    return out
+
+
+def main():
+    src0 = sys.argv[1]
+    outro_on = "--no-outro" not in sys.argv
+    tmp = os.path.join(OUTD, "fin"); os.makedirs(tmp, exist_ok=True)
+    main_out = os.path.join(tmp, "main.mp4")
+    if "--outro-only" in sys.argv:
+        return outro(main_out, tmp)
+    B = bounds()
+    src = os.path.join(tmp, "patched.mp4")
+    patch(src0, src, tmp)
+    dark = dark_ranges(src)
+    print("밝기 보정(평균<40):", ", ".join(f"{sid} {m:.0f}" for sid, _, _, m in dark) or "없음")
+    # 음성: H1 = L11(본편 S06e와 같은 입 모양 위치), S18a 첫머리 = L11 블랙박스 스피커 음, S17b 직전 문손잡이
+    l11 = line_file("L11")
+    h0 = B["H1"][0]; s0 = B["S06e"][0]
+    t_h1 = h0 + (LOCK["L11"]["start"] - s0)
+    t_rec = B["S18a"][0] + 0.3
+    t_door = max(0.0, B["S17b"][0] - 0.15)
+    bed = os.path.join(tmp, "hookbed.wav"); hook_bed(bed)
+    door = os.path.join(tmp, "door.wav"); door_click(door)
+    ranges = "+".join(f"between(t,{a:.3f},{b:.3f})" for _, a, b, _ in dark) or "0"
+    lift = ",".join(f"{f.split('=', 1)[0]}=enable='{ranges}':{f.split('=', 1)[1]}" for f in LIFT.split(",", 1))
+    grade = f"{lift},eq=contrast=1.03:saturation=0.96:gamma=0.99,noise=alls=4:allf=t+u"
+    d11 = dur(l11)
+    fc = (f"[0:v]{grade},format=yuv420p[v];"
+          f"[0:a]volume=enable='between(t,{t_h1 - 0.2:.3f},{t_h1 + d11 + 0.3:.3f})':volume=0.5[ab];"
+          f"[1:a]aformat=sample_rates=44100:channel_layouts=stereo,asplit=2[x1][x2];"
+          f"[x1]adelay={int(t_h1 * 1000)}|{int(t_h1 * 1000)}[vo];"
+          f"[x2]highpass=f=300,lowpass=f=3400,acrusher=bits=9:mix=0.25,volume=0.8,adelay={int(t_rec * 1000)}|{int(t_rec * 1000)}[rec];"
+          f"[2:a]aformat=sample_rates=44100:channel_layouts=stereo[hb];"
+          f"[3:a]aformat=sample_rates=44100:channel_layouts=stereo,adelay={int(t_door * 1000)}|{int(t_door * 1000)}[dc];"
+          f"[ab][vo][rec][hb][dc]amix=inputs=5:normalize=0:duration=first,alimiter=limit=0.89[a]")
+    run(["-i", src, "-i", l11, "-i", bed, "-i", door, "-filter_complex", fc, "-map", "[v]", "-map", "[a]",
+         "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-c:a", "aac", "-b:a", "192k", main_out])
+    print(f"본편 마무리: {main_out} ({dur(main_out):.2f}초), H1 L11 {t_h1:.2f}s, 블랙박스 {t_rec:.2f}s, 문 {t_door:.2f}s")
+    if outro_on:
+        outro(main_out, tmp)
+
+
+def outro(main_out, tmp):
+    outro = os.path.join(OUTD, "untenshu-outro.mp4")
+    meta = json.load(open(os.path.join(OUTD, "untenshu-outro.json")))
+    hs = meta["host_start"]
+    cta = os.path.join(tmp, "outro-cta.mp4")
+    subprocess.run([sys.executable, os.path.join(ROOT, "scripts/outro_cta_overlay.py"), outro, cta,
+                    f"{hs[0] + 4.3:.2f}", f"{hs[0] + 5.0:.2f}", f"{hs[1] - 0.2:.2f}"], check=True)
+    final = os.path.join(OUTD, "untenshu-final.mp4")
+    env = {**os.environ, "OUTRO": cta, "ENDCARD": os.path.join(ROOT, "assets/brand/endcard-midam-ja.mp4"), "OUT_SIZE": "1920x1080"}
+    subprocess.run([sys.executable, os.path.join(ROOT, "scripts/append_outro.py"), main_out, final], check=True, env=env)
+    dd = os.path.join(ROOT, "deliveries", "untenshu"); os.makedirs(dd, exist_ok=True)
+    for f in glob.glob(os.path.join(dd, "untenshu-final.mp4.part-*")):
+        os.remove(f)
+    subprocess.run(["split", "-b", "28m", "-d", final, os.path.join(dd, "untenshu-final.mp4.part-")], check=True)
+    run(["-i", final, "-vf", "scale=-2:480", "-c:v", "libx264", "-crf", "28", "-c:a", "aac", "-b:a", "96k",
+         os.path.join(dd, "untenshu-final-480p.mp4")])
+    print(f"완성: {final} ({dur(final):.1f}초) / 본편 {dur(main_out):.1f}초 / 아웃트로 {dur(cta):.1f}초")
+
+
+if __name__ == "__main__":
+    main()
