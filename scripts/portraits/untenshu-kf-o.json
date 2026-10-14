@@ -1,0 +1,16 @@
+{
+ "_설명": "R45 S10b 재시도: 구도가 검증된 S06e(대시보드 카메라·기사 앞 왼쪽 옆모습·뒷좌석 승객)에서 승객만 小川로 바꾸는 편집 2장 약 0.08달러",
+ "characters": [
+  {
+   "id": "S10b",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-kf-e/S06e-cap.png",
+    "assets/portraits/untenshu-cast/cells/ogawa-sheet-v2-expr3.png",
+    "assets/portraits/untenshu-cast/cells/props-frame.png"
+   ],
+   "prompt": "Edit the FIRST image only. Keep the exact same camera position, car interior geometry, seats, lace covers and the driver in his navy peaked cap at the left front edge. Change only these: (1) the angry man in the back seat is replaced by the young woman from the second image (brown hair tied low, beige trench coat), sitting in the same rear seat and leaning slightly forward between the two front seats, gentle and apologetic, holding out the small silver photo frame from the third image with both hands toward the driver; (2) the harsh red brake light becomes soft teal and amber street light (the car is parked, calm mood); (3) the driver turns his head about 30 degrees back over his left shoulder toward her, his face in three-quarter profile, a gentle surprised look. Exactly two people. Full-frame 16:9, no borders, no text."
+  }
+ ]
+}
