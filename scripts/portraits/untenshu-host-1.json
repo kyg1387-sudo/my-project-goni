@@ -1,0 +1,32 @@
+{
+ "_설명": "『運転手のくせに』 아웃트로 진행자 — 고니감독님 지시(2026-10-14) 「작품마다 헤어스타일과 옷을 다르게, 예쁘게」. 얼굴은 채널 공식 진행자(ashita-host-1/host-cu-4) 그대로, 머리·옷만 새로. 1단계: 가슴 위 후보 3종(가을 스타일 A 로우번+카멜 터틀넥 / B 하프업 웨이브+더스티 로즈 블라우스 / C 단정한 단발+크림 트위드) 3장 약 0.12달러 → 고니감독님 선택 → 2단계: 같은 스타일 허리 위·손 흔들기(untenshu-host-2) → 립싱크 4컷(OUT1~4).",
+ "characters": [
+  {
+   "id": "host-a",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE (same eyes, nose, lips, face shape, skin, age about 24) — she is the same person. Keep the same bright living-room studio (window light from the left, beige sofa, wooden shelf, green plant softly out of focus) and the same warm morning light. This episode she has a NEW hairstyle and a NEW outfit: a soft low chignon at the nape with a few face-framing loose strands and light see-through bangs, dark-brown hair; a camel-brown fine-knit turtleneck sweater; small thin gold hoop earrings. Chest-up close-up facing the camera directly, a warm natural smile with the mouth gently closed (speech is added later), both eyes sharp and symmetrical, real skin texture with natural makeup, elegant and lovely, like a real Japanese TV presenter. 85mm f/1.8, soft bokeh. Full-frame 16:9 image, no black bars, no letterbox. Absolutely no text, letters, numbers, logos or symbols anywhere in the image."
+  },
+  {
+   "id": "host-b",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE (same eyes, nose, lips, face shape, skin, age about 24) — she is the same person. Keep the same bright living-room studio (window light from the left, beige sofa, wooden shelf, green plant softly out of focus) and the same warm morning light. This episode she has a NEW hairstyle and a NEW outfit: long dark-brown hair in a half-up style with soft loose waves, the top section tied back with a small dark-navy satin ribbon; a dusty-rose silky blouse with a soft bow at the neck; tiny gold stud earrings. Chest-up close-up facing the camera directly, a warm natural smile with the mouth gently closed (speech is added later), both eyes sharp and symmetrical, real skin texture with natural makeup, elegant and lovely, like a real Japanese TV presenter. 85mm f/1.8, soft bokeh. Full-frame 16:9 image, no black bars, no letterbox. Absolutely no text, letters, numbers, logos or symbols anywhere in the image."
+  },
+  {
+   "id": "host-c",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE (same eyes, nose, lips, face shape, skin, age about 24) — she is the same person. Keep the same bright living-room studio (window light from the left, beige sofa, wooden shelf, green plant softly out of focus) and the same warm morning light. This episode she has a NEW hairstyle and a NEW outfit: shoulder-length straight dark-brown hair with a gentle inward curl at the ends, side-parted with no bangs, tucked behind one ear; a cream boucle tweed jacket over a simple black top; small silver stud earrings. Chest-up close-up facing the camera directly, a warm natural smile with the mouth gently closed (speech is added later), both eyes sharp and symmetrical, real skin texture with natural makeup, elegant and lovely, like a real Japanese TV presenter. 85mm f/1.8, soft bokeh. Full-frame 16:9 image, no black bars, no letterbox. Absolutely no text, letters, numbers, logos or symbols anywhere in the image."
+  }
+ ]
+}
