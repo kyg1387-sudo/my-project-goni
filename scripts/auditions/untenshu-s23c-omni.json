@@ -1,0 +1,12 @@
+{
+ "_설명": "R55 S23c 小川 미소 립싱크 L50",
+ "tests": [
+  {
+   "id": "omni-S23c",
+   "model": "omnihuman",
+   "image": "assets/portraits/untenshu-kf-u/S23c-1.png",
+   "audio_id": "L50",
+   "prompt": "Ogawa speaks softly to the driver inside the car with a warm, genuine little laugh on 「ふふ」, gentle smiling eyes, cheeks slightly raised, a small natural nod; playful but kind, insisting on paying. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the driver at the same angle, hands stay where they are in the first frame; no exaggerated motion, the face stays the same person."
+  }
+ ]
+}
