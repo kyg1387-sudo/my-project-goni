@@ -178,7 +178,7 @@
    "image": "assets/portraits/untenshu-keyframes/S02b-1.png"
   },
   {
-   "prompt": "(override) still: Wide under the hospital canopy in the rain: the taxi's rear door open, the elder",
+   "prompt": "(override) still: Wide under the hospital canopy in the rain: Kuroda's glossy black sedan taxi (pl",
    "duration": 5,
    "override_required": true,
    "image": "assets/portraits/untenshu-keyframes/S03a-1.png"
@@ -222,7 +222,7 @@
    "image": "assets/portraits/untenshu-keyframes/S05a-1.png"
   },
   {
-   "prompt": "(override) still: Rear-view mirror close-up: Kuroda's calm eyes reflected, looking back politely a",
+   "prompt": "(override) still: Rear-view mirror close-up: Kuroda in his plain navy peaked cap with no badge, hi",
    "duration": 5,
    "override_required": true,
    "image": "assets/portraits/untenshu-keyframes/S05b-1.png"
@@ -301,7 +301,7 @@
    "image": "assets/portraits/untenshu-keyframes/S07e-1.png"
   },
   {
-   "prompt": "(override) still: Rear-view mirror close-up: Kuroda's eyes reflected, calm and unreadable, not ang",
+   "prompt": "(override) still: Rear-view mirror close-up: Kuroda in his plain navy peaked cap with no badge, hi",
    "duration": 5,
    "override_required": true,
    "image": "assets/portraits/untenshu-keyframes/S08a-1.png"
@@ -339,7 +339,7 @@
    "image": "assets/portraits/untenshu-keyframes/S09d-1.png"
   },
   {
-   "prompt": "(override) still: Outside in the rain: Otsuka seen from behind climbing out of the taxi and slammi",
+   "prompt": "(override) still: Outside in the rain: Otsuka seen from behind climbing out of Kuroda's glossy bla",
    "duration": 10,
    "override_required": true,
    "image": "assets/portraits/untenshu-keyframes/S09e-1.png"
@@ -361,7 +361,7 @@
    "image": "assets/portraits/untenshu-keyframes/S10c-1.png"
   },
   {
-   "prompt": "(override) still: Outside the open rear door in the rain: Ogawa seen from behind, bowing politely ",
+   "prompt": "(override) still: Outside the open rear door of Kuroda's glossy black sedan taxi (plain white dome",
    "duration": 10,
    "override_required": true,
    "image": "assets/portraits/untenshu-keyframes/S10d-1.png"
@@ -623,7 +623,7 @@
    "image": "assets/portraits/untenshu-keyframes/S18e-1.png"
   },
   {
-   "prompt": "(override) omni: Over Ishii's shoulder (soft in the foreground, left): Otsuka waving both hands i",
+   "prompt": "(override) omni: Over Ishii's shoulder (soft in the foreground, left): Otsuka leaning forward wit",
    "duration": 10,
    "override_required": true,
    "image": "assets/portraits/untenshu-keyframes/S18f-1.png"
