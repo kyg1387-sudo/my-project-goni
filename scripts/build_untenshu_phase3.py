@@ -596,12 +596,14 @@ def main():
         sid = s["id"]; d = ends[sid] - starts[sid]
         durations.append(round(d + HARD, 4))
         refs, ids = [], []
-        for w in s["who"]:
+        for wi, w in enumerate(s["who"]):
             parts = w.split(":")
             key, ward = parts[0], (parts[1] if len(parts) > 1 else "")
-            back = len(parts) > 2 and parts[2] == "back"
+            back = (len(parts) > 2 and parts[2] == "back") or (s["kind"] == "d" and wi > 0)  # 립싱크 컷의 둘째 인물 = 전경 듣는 사람(뒷모습)
             desc, front, backcell = WHO[key]
-            ids.append(desc + (f", wearing {WARD[ward]}" if ward else "") + (", seen only from behind, face not visible" if back else ""))
+            ids.append(desc + (f", wearing {WARD[ward]}" if ward else "") +
+                       ((", the listener in the soft blurred foreground seen only from behind (back of the head and one shoulder), face not visible" if s["kind"] == "d" and wi > 0
+                         else ", seen only from behind, face not visible") if back else ""))
             if back and backcell:
                 refs.append(backcell)
             elif s["expr"] and (key, s["expr"]) in EXPR and w == s["who"][0]:
