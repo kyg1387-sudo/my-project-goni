@@ -51,7 +51,22 @@ LISTEN = {
              [("ell", 70, -30, 430, 340), ("poly", [(55, 320), (470, 320), (560, 768), (35, 768)])], ""),
 }
 FX = {"S20a": "dutch7"}
+# 고니감독님 검수 수정(R41~R52): 장면 → (교체 클립, 사용 시작초, 사용 길이 — 그 뒤는 마지막 프레임 정지)
+REDO = {
+    "S06c": ("assets/preview/untenshu-fix1/scene01.mp4", 0.0, None),     # 룸미러 손님 2명(R42)
+    "S06d": ("assets/preview/untenshu-fix1/scene02.mp4", 0.0, None),     # 大塚 옆 小川(R42)
+    "S10a": ("assets/preview/untenshu-fix1/scene03.mp4", 0.0, None),     # 뒷좌석 무릎 위 액자(R45)
+    "S15g": ("assets/preview/untenshu-fix2/scene02.mp4", 0.0, None),     # 뒷좌석 시점 룸미러(R48)
+    "S13a": ("assets/preview/untenshu/scene60.mp4", 0.0, 1.2),           # 모자가 손에 있는 구간까지 → 정지(R46)
+    "S09c": ("assets/preview/untenshu/scene38.mp4", 0.0, 0.15),          # 지폐가 좌석에 놓인 첫 프레임 정지(R43)
+    "S17a": ("assets/auditions/untenshu-s10b-omni/omni-S17a.mp4", 0.0, None),   # 배경 고정 립싱크(R50)
+    "S10b": ("assets/auditions/untenshu-omni2/omni-S10b.mp4", 0.0, None),       # 뒷좌석 구도 립싱크(R45)
+    "S17f": ("assets/auditions/untenshu-omni2/omni-S17f.mp4", 0.0, None),       # 당황·홍조·땀(R51)
+    "S18f": ("assets/auditions/untenshu-omni2/omni-S18f.mp4", 0.0, None),       # 당황·홍조·땀(R52)
+}
+STILL_REDO = ["S06b", "S05b", "S08a", "S23b", "S13c"]   # 새 키프레임 정지+편집 카메라(R41·R42·R47)
 # (말하는 컷, 대사 태그, 듣는 사람 반응 클립 장면, 반응 길이) — 같은 장면의 역방향 반응(제10장 8)
+LCUT_OFF = True   # 고니감독님 「말하는 사람과 화면 인물 일치」(R44) — 듣는 사람 L컷 사용 안 함
 LCUT = [("S05e", "L07", "S05c", 1.3), ("S06e", "L11", "S06c", 1.2), ("S07e", "L14", "S07d", 1.3),
         ("S11d", "L24", "S11e", 1.2), ("S11h", "P2", "S11i", 1.2), ("S12a", "L27", "S12b", 1.2),
         ("S18f", "L37", "S18b", 1.2), ("S19b", "L39", "S19c", 1.4), ("S20f", "L44", "S20d", 1.3),
@@ -131,7 +146,9 @@ def line_file(tag):
 
 
 def src_clip(sid):
-    """그 장면의 실제 클립: 립싱크 → i2v 생성 클립 → 교체 클립(정지) 순."""
+    """그 장면의 실제 클립: 검수 교체(REDO) → 립싱크 → i2v 생성 클립 → 교체 클립(정지) 순."""
+    if sid in REDO and os.path.exists(os.path.join(ROOT, REDO[sid][0])):
+        return os.path.join(ROOT, REDO[sid][0])
     for p in (os.path.join(OMNI, f"omni{IDX[sid]:02d}.mp4"), os.path.join(PREV, f"scene{IDX[sid]:02d}.mp4"),
               os.path.join(OVR, f"scene{IDX[sid]:02d}.mp4")):
         if os.path.exists(p):
@@ -191,13 +208,30 @@ def patch(src, out, tmp):
     fdir = os.environ.get("FONTSDIR", "/usr/share/fonts")
     ass = os.path.join(ROOT, "subs", "untenshu.ass")
     segs, made = [], {}
+    sys.path.insert(0, os.path.join(ROOT, "scripts"))
+    import build_untenshu_overrides as ov
+    ov.W, ov.H = W, H
+    for sid in STILL_REDO:
+        a, b = B[sid]; c = os.path.join(tmp, f"S_{sid}.mp4")
+        sc = next(x for x in SB if x["id"] == sid)
+        ov.cam(os.path.join(KF, f"{sid}-1.png"), c, b - a + 0.1, sc["edit_fx"] or "push")
+        segs.append((a, b, c)); made[sid] = c
+    for sid, (clip, st, use) in REDO.items():
+        if sid in LISTEN or not os.path.exists(os.path.join(ROOT, clip)):
+            continue
+        a, b = B[sid]; c = os.path.join(tmp, f"R_{sid}.mp4")
+        cut = f",trim=0:{use:.3f},setpts=PTS-STARTPTS" if use else ""
+        run(["-ss", f"{st:.3f}", "-i", os.path.join(ROOT, clip), "-filter_complex",
+             f"[0:v]{NORM}{cut},tpad=stop_mode=clone:stop_duration={b - a + 1:.2f},trim=0:{b - a + 0.05:.3f},setpts=PTS-STARTPTS,format=yuv420p[v]",
+             "-map", "[v]", "-an", "-c:v", "libx264", "-crf", "16", c])
+        segs.append((a, b, c)); made[sid] = c
     for sid in LISTEN:
         a, b = B[sid]; c = os.path.join(tmp, f"L_{sid}.mp4")
         listen_clip(sid, c, b - a, tmp); segs.append((a, b, c)); made[sid] = c
     for sid, fx in FX.items():
         a, b = B[sid]; c = os.path.join(tmp, f"F_{sid}.mp4")
         fx_clip(src_clip(sid), c, fx, b - a); segs.append((a, b, c)); made[sid] = c
-    for sid, tag, lis, sec in LCUT:
+    for sid, tag, lis, sec in ([] if LCUT_OFF else LCUT):
         if LOCK[tag]["dur"] < 4.5:
             continue
         e = LOCK[tag]["end"]
