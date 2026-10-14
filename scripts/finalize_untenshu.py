@@ -47,8 +47,7 @@ LISTEN = {
              [("ell", 160, 40, 440, 320), ("poly", [(150, 320), (570, 320), (585, 768), (125, 768)])], ""),
     "S07e": ("assets/preview/untenshu-listen/scene02.mp4",
              [("ell", 360, 100, 585, 360), ("poly", [(330, 370), (600, 370), (610, 768), (300, 768)])], ""),
-    "S10b": ("assets/preview/untenshu-listen2/scene01.mp4",
-             [("ell", 70, -30, 430, 340), ("poly", [(55, 320), (470, 320), (560, 768), (35, 768)])], ""),
+    "S10b": ("assets/preview/untenshu-fix2/scene01.mp4", [("rect", 0, 0, 600, 768)], ""),   # R45 새 구도: 기사 앞 왼쪽
 }
 FX = {"S20a": "dutch7"}
 # 고니감독님 검수 수정(R41~R52): 장면 → (교체 클립, 사용 시작초, 사용 길이 — 그 뒤는 마지막 프레임 정지)
@@ -116,7 +115,17 @@ FOLEY = [("S01c", 0.8, "fx-wiper", 0.5), ("S03e", 0.1, "fx-car-pull-away", 0.7),
          ("S09c", 0.4, "fx-paper-toss", 0.7), ("S09e", 3.6, "fx-car-door-slam", 0.9), ("S10d", 4.2, "fx-car-door-close", 0.6),
          ("S10f", 0.0, "fx-car-pull-away", 0.6), ("S15e", 0.6, "fx-wiper", 0.4), ("S17b", 2.4, "fx-footsteps-marble", 0.6),
          ("S17g", 0.3, "fx-tablet-slide", 0.6), ("S20a", 0.2, "fx-knees-floor", 0.8), ("S22a", 0.4, "fx-pen-sign", 0.6),
-         ("S23c", 0.2, "fx-umbrella-fold", 0.6), ("S23e", 0.0, "fx-car-pull-away", 0.6)]
+         ("S23c", 0.2, "fx-umbrella-fold", 0.6), ("S23e", 0.0, "fx-car-pull-away", 0.6),
+         # R49 발소리·동작음(고니감독님 「복도 걸을 때 구두 발소리」)
+         ("S11b", 0.0, "fx-heels-office", 0.7), ("S16b", 0.0, "fx-heels-marble", 0.7), ("S16e", 0.0, "fx-heels-marble", 0.8),
+         ("S16e", 4.5, "fx-heels-marble", 0.6), ("S22b", 0.0, "fx-men-shoes-corridor", 0.8), ("S22f", 0.3, "fx-men-shoes-wet", 0.6),
+         ("S11h", 0.3, "fx-chair-creak", 0.6), ("S18b", 0.3, "fx-glasses-fold", 0.6), ("S11d", 0.4, "fx-documents", 0.6),
+         ("S23a", 0.2, "fx-door-car-open", 0.6), ("S05a", 0.0, "fx-door-car-open", 0.5)]
+# R53 장면별 강조 음악(고니감독님 「장면에 맞게 BGM 더 강하게」): (장면, 장면 안 시작초, 곡, 볼륨, 길이)
+CUES = [("H0a", 0.0, "cue-hook", 0.55, 19.0), ("S06e", -1.5, "cue-outburst", 0.5, 12.0), ("S07a", -0.3, "cue-sorrow", 0.5, 9.0),
+        ("S15a", 0.0, "cue-flashback", 0.5, 26.0), ("S17b", 0.0, "cue-reveal", 0.6, 12.0), ("S20a", 0.0, "cue-verdict", 0.5, 26.0),
+        ("S21b", 0.0, "cue-hope", 0.45, 28.0)]
+CUE_DIR = os.path.join(ROOT, "assets", "auditions", "untenshu-bgm-cues")
 LIFT = "curves=all='0/0 0.06/0.13 0.25/0.38 0.6/0.72 1/1',eq=gamma=1.12:saturation=1.05"
 LIFT_BELOW = 40.0
 
@@ -312,11 +321,22 @@ def soundscape(path, total, tmp):
         ins += ["-stream_loop", "0", "-i", norm[fx]]
         t = max(0.0, B[sid][0] + off)
         fc.append(f"[{k}:a]volume={vol:.2f},adelay={int(t * 1000)}|{int(t * 1000)}[f{k}]"); labels.append(f"[f{k}]")
+    for sid, off, cue, vol, L in CUES:
+        src = os.path.join(CUE_DIR, f"{cue}.mp3")
+        if not os.path.exists(src):
+            print("강조 음악 없음(건너뜀):", cue); continue
+        k = len(ins) // 4
+        ins += ["-stream_loop", "0", "-i", src]
+        t = max(0.0, B[sid][0] + off)
+        fc.append(f"[{k}:a]aformat=sample_rates=44100:channel_layouts=stereo,atrim=0:{L:.2f},asetpts=PTS-STARTPTS,"
+                  f"equalizer=f=2000:t=q:w=1.0:g=-4,loudnorm=I=-20:TP=-3,volume={vol},afade=t=in:d=0.8,"
+                  f"afade=t=out:st={L - 2.5:.2f}:d=2.5,adelay={int(t * 1000)}|{int(t * 1000)}[c{k}]")
+        labels.append(f"[c{k}]")
     if not labels:
         run(["-f", "lavfi", "-i", f"anullsrc=r=44100:cl=stereo", "-t", f"{total:.2f}", path]); return
     fc.append("".join(labels) + f"amix=inputs={len(labels)}:normalize=0:duration=longest,atrim=0:{total:.3f}[a]")
     run(ins + ["-filter_complex", ";".join(fc), "-map", "[a]", path])
-    print(f"현장음: 베드 {len(runs)}구간, 효과음 {len(FOLEY)}개")
+    print(f"현장음: 베드 {len(runs)}구간, 효과음 {len(FOLEY)}개, 강조 음악 {len(CUES)}곡")
 
 
 def dark_ranges(src):
