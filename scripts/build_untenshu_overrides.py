@@ -25,7 +25,11 @@ OUT = os.path.join(ROOT, "assets", "video-overrides", "untenshu")
 FF = shutil.which("ffmpeg") or __import__("imageio_ffmpeg").get_ffmpeg_exe()
 W, H, FPS = 1280, 720, 24
 # i2v 검수 불합격 → 무료 정지 푸시인 폴백(제11장 9). 비립싱크 화자 컷은 처음부터 생성기 react(정지)로 설계(S17b 역광 실루엣 화자 등).
-I2V_FALLBACK = set()
+# PHASE 5 검수(2026-10-14, 실제 쓰는 샷 길이 안): S05a 대사 화자(大塚)가 카메라 쪽으로 돌아 입 노출 + 카메라가 차를 돌며 인물 추가 /
+# S09a 지붕등이 파란 경광등처럼 변함 / S10a 小川 머리가 긴 밝은 갈색 풀어 내린 머리로 바뀜 / S11e 듣는 小川가 大塚 대사 중 입을 벌림
+I2V_FALLBACK = {"S05a", "S09a", "S10a", "S11e"}
+# S21a(pro): 3.5초부터 小川가 고개를 돌리며 입을 벌림 → 생성 클립 0~3.4초(눈물 고이는 실제 움직임) + 그 마지막 프레임 슬로 푸시인 3.6초를
+# assets/video-overrides/untenshu/scene104.mp4로 손으로 만들어 둠(원본 assets/preview/untenshu/scene104.mp4). 이 스크립트로 덮어쓰지 않는다.
 
 
 def run(args):
