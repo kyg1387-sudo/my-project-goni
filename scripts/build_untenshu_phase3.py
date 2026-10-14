@@ -420,7 +420,7 @@ OMNI_BASE = (" Natural, realistic acting like a real film actor: subtle breathin
 OMNI_ACT = {
     "S03b": "Kuroda reassures the elderly passenger with a warm gentle smile, a small courteous nod, holding the door. Answering her apology kindly." + OMNI_BASE,
     "S05e": "Otsuka boasts lazily with a smug grin, stroking his chin, leaning back, savoring 「取締役」. Talking to Ogawa beside him, showing off." + OMNI_BASE,
-    "S06e": "Otsuka explodes in rage, leaning forward, jabbing a finger at the driver, sharp short head movements, brow knotted, hardest on 「運転手のくせに」. Shouting at the driver who just suggested a detour." + OMNI_BASE,
+    "S06e": "Otsuka explodes in rage, leaning forward between the front seats, his hand stays gripping the seat back, sharp short head movements, brow knotted, hardest on 「運転手のくせに」. Shouting at the back of the driver's head; the driver keeps facing the road and never turns." + OMNI_BASE,
     "S07e": "Otsuka sneers slowly with contempt, chin raised, leaning back, a slow dismissive shake of the head on 「負け組」. Mocking the driver after silencing Ogawa." + OMNI_BASE,
     "S09d": "Kuroda answers quietly and politely, eyes forward then to the mirror, a calm pause before 「会社は、ございません」, hands still on the wheel. Replying to Otsuka's threat without any anger." + OMNI_BASE,
     "S10b": "Ogawa speaks gently and apologetically, holding out the wiped photo frame with both hands, a small concerned tilt of the head. Speaking to the driver after her boss has left." + OMNI_BASE,
@@ -428,7 +428,7 @@ OMNI_ACT = {
     "S11h": "Otsuka boasts on the phone with a smug grin, feet up, lazily waving his free hand, a mocking laugh on 「しつけてやったよ」. Talking to a friend on the phone about last night's driver." + OMNI_BASE,
     "S12a": "Ishii speaks earnestly and gravely, holding the folder, a slow emphatic nod on 「人」. Warning Otsuka face to face before the meeting." + OMNI_BASE,
     "S15a": "Chiyoko speaks softly and weakly with a loving smile, squeezing her husband's hand, eyes glistening. Asking her husband for a promise." + OMNI_BASE,
-    "S16a": "Miura greets the visitors politely with a professional smile, a small bow and an open-hand gesture toward the corridor. Welcoming the three guests." + OMNI_BASE,
+    "S16a": "Miura greets the visitors politely with a professional smile, a small bow, hands stay folded in front of her. Welcoming the three guests." + OMNI_BASE,
     "S16d": "Ogawa asks hesitantly, pointing at the framed photograph, puzzled, glancing between the photo and her boss. Speaking to Otsuka beside her." + OMNI_BASE,
     "S17a": "Otsuka lectures smugly while straightening his tie in the window reflection, a self-satisfied smile, chin up. Instructing Ogawa just before the door opens." + OMNI_BASE,
     "S17c": "Kuroda speaks very quietly and coldly, almost motionless, eyes fixed on Otsuka, one slow blink. Greeting the man who insulted him last night." + OMNI_BASE,
@@ -439,7 +439,7 @@ OMNI_ACT = {
     "S20b": "Otsuka begs desperately on his knees, looking up, hands clasped and shaking, real tears, voice breaking. Begging the chairman standing over him." + OMNI_BASE,
     "S20c": "Kuroda speaks quietly, looking down at the kneeling man, motionless, letting 「運転手のくせに」 land. Turning Otsuka's own words back on him." + OMNI_BASE,
     "S20f": "Kuroda delivers the final words coldly and calmly, a slight forward lean on 「その運転手」. Looking down at Otsuka." + OMNI_BASE,
-    "S21b": "Kuroda speaks warmly and gently to Ogawa, a soft smile, a small open-hand gesture toward her. Offering her the contract." + OMNI_BASE,
+    "S21b": "Kuroda speaks warmly and gently to Ogawa, a soft smile, his hands stay still where they rest in the first frame. Offering her the contract." + OMNI_BASE,
     "S21c": "Ogawa answers in a trembling voice, tears welling, holding the documents to her chest, eyes wide in disbelief. Answering the chairman's offer." + OMNI_BASE,
 }
 # 사람 i2v(live·face)는 동작 문장(motion)을 그대로 쓴다. 말하지 않는 사람·손·뒷모습만 i2v(제11장 9).

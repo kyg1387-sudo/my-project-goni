@@ -1,0 +1,12 @@
+{
+ "_설명": "『運転手のくせに』 S06e 위치 수정 립싱크 재생성(R33): 대시보드 카메라 · 기사 측면 프로필 · 大塚 뒷좌석. 음성 L11 재사용. 약 5.3초 x 0.16 ≈ 0.84달러(설계 실수 비용).",
+ "tests": [
+  {
+   "id": "omni-S06e",
+   "model": "omnihuman",
+   "image": "assets/portraits/untenshu-kf-pilot2/S06e-fixed.png",
+   "audio_id": "L11",
+   "prompt": "Otsuka explodes in rage, leaning forward between the front seats, his hand stays gripping the seat back, sharp short head movements, brow knotted, hardest on 「運転手のくせに」. Shouting at the back of the driver's head; the driver keeps facing the road and never turns. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands stay where they are in the first frame; no exaggerated motion, the face and body stay the same person."
+  }
+ ]
+}
