@@ -1,0 +1,15 @@
+{
+ "_설명": "S18a 태블릿 화면 = 어젯밤 블랙박스(뒷좌석) 편집 2장 약 0.08달러",
+ "characters": [
+  {
+   "id": "S18a",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-kf-b/S18a-1.png",
+    "assets/portraits/untenshu-kf-e/S06e-cap.png"
+   ],
+   "prompt": "Edit the FIRST image only: replace the picture shown on the tablet screen with the SECOND image, rendered as a grainy black-and-white night-vision dashcam recording (desaturated, slightly soft), fitted exactly inside the tablet's screen area with the screen's correct perspective, glare and reflections; a small red recording dot in the top-left corner of the screen. No letters, no numbers anywhere. Keep everything else in the first image exactly the same: same table, same tablet position, same framing, same light. Full-frame 16:9, no borders."
+  }
+ ]
+}

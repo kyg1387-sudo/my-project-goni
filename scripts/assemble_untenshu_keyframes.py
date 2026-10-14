@@ -44,6 +44,24 @@ def main():
             m = FACE_MANUAL.get(sc["id"])
             args = [m[0], m[1]] + [str(v) for v in m[2:]] if m else ["0.5", sc.get("fg") or "-"]
             subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "kf_face_frame.py"), k, k, "0.27"] + args, check=True, capture_output=True)
+        # 번호판·행등 합성 + 작은 가짜 글자 흐림(제11장 3 — 조립 전에, 재조립 때마다 다시)
+        pl = json.load(open(os.path.join(ROOT, "productions", "untenshu-ja", "plates.json"), encoding="utf-8"))
+        kf = {sc["id"]: os.path.join(ROOT, sc["keyframe"]) for sc in scenes}
+        po = os.path.join(ROOT, "scripts", "plate_overlay.py")
+        for sid, boxes in pl["plates"].items():
+            for b in boxes:
+                extra = ["--text", b[5]] if len(b) > 5 else []
+                subprocess.run([sys.executable, po, kf[sid], kf[sid]] + [str(v) for v in b[:4]] + ["--light", str(b[4])] + extra, check=True, capture_output=True)
+        for sid, boxes in pl["andon"].items():
+            for b in boxes:
+                subprocess.run([sys.executable, po, kf[sid], kf[sid]] + [str(v) for v in b[:4]] + ["--light", str(b[4]), "--andon"], check=True, capture_output=True)
+        from PIL import ImageFilter
+        for sid, boxes in pl["blur"].items():
+            im = Image.open(kf[sid]).convert("RGB")
+            for x0, y0, x1, y1, r in boxes:
+                im.paste(im.crop((x0, y0, x1, y1)).filter(ImageFilter.GaussianBlur(r)), (x0, y0))
+            im.save(kf[sid])
+        subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "untenshu_ja_overlay.py")], check=True)   # 미터·블랙박스·명패
         for sc in scenes:   # 반전은 얼굴 크롭 뒤에(검출기가 반전 얼굴을 못 찾음)
             if sc["id"] in MIRROR:
                 k = os.path.join(ROOT, sc["keyframe"]); ImageOps.mirror(Image.open(k)).save(k)
