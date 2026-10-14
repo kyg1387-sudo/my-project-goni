@@ -51,6 +51,10 @@ on:
         description: 제작 대신 오디오 캐시 언어 검사만 실행 (resume_run_id의 Artifact 대상, 무료)
         required: false
         default: "false"
+      export_omni:
+        description: 전달 전용 모드에서 립싱크 클립(out/audio/omni*.mp4)도 assets/preview/<skit>-omni/에 커밋 (로컬 마무리용, 무료)
+        required: false
+        default: "false"
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
@@ -270,6 +274,11 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ "${{ inputs.export_omni }}" = "true" ] && ls out/audio/omni*.mp4 >/dev/null 2>&1; then
+            mkdir -p "assets/preview/${SKIT}-omni"
+            cp -v out/audio/omni*.mp4 "assets/preview/${SKIT}-omni/"
+            git add "assets/preview/${SKIT}-omni"
+          fi
           git add deliveries
           git commit -m "완성 영상 추가 (${SKIT})"
           # 실행 중 브랜치에 다른 커밋이 올라온 경우에 대비

@@ -1,0 +1,33 @@
+{
+ "_설명": "『運転手のくせに』 아웃트로 진행자(스타일 s2 A) 립싱크 4컷 — OUT1·OUT3·OUT4 녹음은 『明日から』 재사용, OUT2 신규(line076). 약 19.6초 x 0.16 ≈ 3.1달러. 결과는 host-library s2 lipsync로 등록(다음 スカッと 작품 재사용).",
+ "tests": [
+  {
+   "id": "omni-out1",
+   "model": "omnihuman",
+   "image": "assets/host-library/s2-untenshu-A/cu.png",
+   "audio_id": "pad1",
+   "prompt": "The host thanks the viewers warmly and asks them to subscribe and like, a bright friendly smile. Natural, warm presenter acting like a real TV host: gentle smile, natural blinks, small head movements under 10 degrees, looking into the camera, hands stay where they are in the first frame; no exaggerated motion, the face stays the same person."
+  },
+  {
+   "id": "omni-out2",
+   "model": "omnihuman",
+   "image": "assets/host-library/s2-untenshu-A/wu.png",
+   "audio_id": "pad2a",
+   "prompt": "The host asks the viewers a question with curious, kind eyes, a small tilt of the head. Natural, warm presenter acting like a real TV host: gentle smile, natural blinks, small head movements under 10 degrees, looking into the camera, hands stay where they are in the first frame; no exaggerated motion, the face stays the same person."
+  },
+  {
+   "id": "omni-out3",
+   "model": "omnihuman",
+   "image": "assets/host-library/s2-untenshu-A/cu.png",
+   "audio_id": "pad2b",
+   "prompt": "The host promises another satisfying story next time, cheerful and confident. Natural, warm presenter acting like a real TV host: gentle smile, natural blinks, small head movements under 10 degrees, looking into the camera, hands stay where they are in the first frame; no exaggerated motion, the face stays the same person."
+  },
+  {
+   "id": "omni-out4",
+   "model": "omnihuman",
+   "image": "assets/host-library/s2-untenshu-A/wave.png",
+   "audio_id": "pad3",
+   "prompt": "The host says goodbye with a warm smile while her raised hand waves gently and slowly. Natural, warm presenter acting, natural blinks, the face stays the same person."
+  }
+ ]
+}
