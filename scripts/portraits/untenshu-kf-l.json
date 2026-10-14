@@ -1,0 +1,16 @@
+{
+ "_설명": "R41: S06b 앞유리 너머 컷에 뒷좌석 손님 두 명 추가(편집 2장 약 0.08달러)",
+ "characters": [
+  {
+   "id": "S06b",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-kf-h/S06b-2.png",
+    "assets/portraits/untenshu-cast/cells/otsuka-sheet-v2-front.png",
+    "assets/portraits/untenshu-cast/cells/ogawa-sheet-v2-front.png"
+   ],
+   "prompt": "Edit the FIRST image only. Through the windshield, in the REAR bench seat behind the front seats, add two passengers sitting side by side, slightly soft-focused behind the rain-beaded glass: on the left behind the driver, a thickset Japanese man aged 45 with gelled black hair, grey pinstripe suit and a loosened red necktie (the man in the second image), leaning back with a sour scowl; on the right, a young Japanese woman aged 26 with brown hair tied low, a beige trench coat (the woman in the third image), sitting upright and uneasy. They are smaller and dimmer than the driver, clearly in the back row. Keep everything else exactly the same: same driver, same cap, same face, same framing, same wipers, same rain, same lace seat covers. Full-frame 16:9, no borders, no text."
+  }
+ ]
+}
