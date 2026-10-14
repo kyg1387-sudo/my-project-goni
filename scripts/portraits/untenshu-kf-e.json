@@ -1,0 +1,14 @@
+{
+ "_설명": "S06e 기사 모자 편집 재시도(e): 단일 참조 편집 2장 약 0.08달러.",
+ "characters": [
+  {
+   "id": "S06e",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-kf-pilot2/S06e-fixed.png"
+   ],
+   "prompt": "Image edit. The elderly white-haired taxi driver at the left of this photo must now be WEARING a dark navy peaked taxi-driver cap (a uniform cap with a stiff black visor/brim, plain navy crown, no badge) on top of his head; his white hair shows at the sides below the cap. Change nothing else at all: same framing, same faces, same expressions, same poses, same red light, same lace seat covers, same rain on the windows. Full-frame 16:9, no borders, no text."
+  }
+ ]
+}
