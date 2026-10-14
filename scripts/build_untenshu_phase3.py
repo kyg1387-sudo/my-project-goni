@@ -93,6 +93,9 @@ EXPR = {  # 표정 칸(키프레임에 감정 50~70% 선반영 — 제2장 3)
     ("ROFUJIN", "grateful"): C + "rofujin-sheet-v2-expr1.png",
 }
 # R36: loc-taxi-angles c1·c2·c3은 실내 컷(라벨 불일치) → TAXI_OUT은 외부 c4, 보닛 카메라는 새 시트 loc-taxi-hood
+# R38: 택시 실내 고정 문장(컷마다 좌석·커버·배치가 달라지던 문제)
+TAXI_CABIN = ("Taxi cabin (same car in every shot): a Japanese right-hand-drive sedan taxi, light grey fabric seats with white lace covers on every headrest and over the tops of the seat backs, "
+              "a dark grey dashboard, the driver always in the FRONT RIGHT seat, passengers only in the REAR bench seat sitting side by side.")
 LOC = {
     "STREET": C + "loc-street-night-c1.png", "RAMP": C + "loc-street-night-c2.png", "HOSP": C + "loc-street-night-c3.png",
     "MANSION": C + "loc-street-night-c4.png",
@@ -649,7 +652,7 @@ def main():
             plate = ("The taxi has a plain green license plate with no characters and a plain white dome roof lamp with no characters."
                      if s["loc"] in TAXI_LOCS else "")
             kf_prompt = " ".join(x for x in [PRESET + ".", s["subject"], ("Characters: " + " | ".join(ids) + ".") if ids else "", NAT if ids else "",
-                                             glasses, real, plate, f"Camera: {ANGLE[s['angle']]}, {LENS[s['lens']]}.", f"Lighting: {LIGHT[s['light']]}.",
+                                             glasses, real, plate, f"Camera: {ANGLE[s['angle']]}, {LENS[s['lens']]}.", f"Lighting: {LIGHT[s['light']]}." + (" " + TAXI_CABIN if s['light'] in ("taxi", "taxi_red") else ""),
                                              comp, PLAIN, f"Negative: {NEGATIVE}."] if x).strip()
             cost["kf"] += 1
         tier = {"d": "omni", "react": "still", "ins": "still", "estill": "still", "face": "pro", "live": "lite", "empty": "lite", "card": "card"}.get(s["kind"], "reuse")
