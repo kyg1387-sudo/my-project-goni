@@ -1,0 +1,173 @@
+{
+ "_설명": "『運転手のくせに』 현장음 베드·효과음(ElevenLabs 사운드 생성, 구독 크레딧 — 추가 달러 없음). 고니감독님 「현장감 있게 사운드 넣어줘」. 모두 사람 목소리 없음(제6장 4 — 사람 있는 장면도 이 베드를 대사 아래 낮게).",
+ "tests": [
+  {
+   "id": "amb-rain-street",
+   "model": "elevenlabs-sfx",
+   "text": "Heavy rain on a city street at night in Tokyo, rain hitting wet asphalt and puddles, distant traffic hiss and tires on wet road. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 22,
+   "influence": 0.6
+  },
+  {
+   "id": "amb-taxi-rain",
+   "model": "elevenlabs-sfx",
+   "text": "Inside a quiet car at night in heavy rain: rain drumming on the car roof and windshield, a soft engine idle hum, muffled city traffic outside, an occasional slow rubber wiper sweep. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 22,
+   "influence": 0.6
+  },
+  {
+   "id": "amb-taxi-drive",
+   "model": "elevenlabs-sfx",
+   "text": "Inside a moving car at night in the rain: low steady engine and tire road noise, rain on the roof, muffled passing cars. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 22,
+   "influence": 0.6
+  },
+  {
+   "id": "amb-izakaya-rain",
+   "model": "elevenlabs-sfx",
+   "text": "A narrow Japanese izakaya alley at night in light rain: rain dripping from eaves, paper lanterns creaking softly in the wind, a distant car passing. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 22,
+   "influence": 0.6
+  },
+  {
+   "id": "amb-office",
+   "model": "elevenlabs-sfx",
+   "text": "A quiet modern office in the morning: steady air-conditioning hum, distant keyboard typing, a printer whirring once far away. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 22,
+   "influence": 0.6
+  },
+  {
+   "id": "amb-garage-dawn",
+   "model": "elevenlabs-sfx",
+   "text": "An old small garage at dawn with the shutter open: early morning birds chirping outside, distant quiet street, a faint metal creak. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 22,
+   "influence": 0.6
+  },
+  {
+   "id": "amb-hospital",
+   "model": "elevenlabs-sfx",
+   "text": "A quiet hospital room in the afternoon: soft room tone, distant birds outside the window, a faint medical monitor beep every few seconds. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 22,
+   "influence": 0.6
+  },
+  {
+   "id": "amb-lobby",
+   "model": "elevenlabs-sfx",
+   "text": "A large quiet marble corporate lobby: soft air hiss, big room reverb, distant footsteps echoing on marble far away. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 22,
+   "influence": 0.6
+  },
+  {
+   "id": "amb-meeting",
+   "model": "elevenlabs-sfx",
+   "text": "A large quiet executive meeting room: very soft air-conditioning hum, faint distant city through thick windows, a quiet wall clock ticking. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 22,
+   "influence": 0.6
+  },
+  {
+   "id": "amb-old-taxi",
+   "model": "elevenlabs-sfx",
+   "text": "Inside an old 1980s car driving slowly at night: rattling old engine, road noise, a soft ticking turn signal. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 20,
+   "influence": 0.6
+  },
+  {
+   "id": "amb-lathe",
+   "model": "elevenlabs-sfx",
+   "text": "A small old metal workshop: a lathe machine turning and cutting metal with a soft whine, metal shavings falling. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 12,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-car-door-slam",
+   "model": "elevenlabs-sfx",
+   "text": "A heavy car rear door slammed shut hard in the rain, outdoor. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 2,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-car-door-close",
+   "model": "elevenlabs-sfx",
+   "text": "A car rear door closed gently, outdoor in the rain. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 2,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-car-pull-away",
+   "model": "elevenlabs-sfx",
+   "text": "A car slowly pulling away from the curb on a wet road and driving off into the rain. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 6,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-frame-fall",
+   "model": "elevenlabs-sfx",
+   "text": "A small metal photo frame tipping over and falling onto a car floor mat with a soft thud and clatter. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 2,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-seat-kick",
+   "model": "elevenlabs-sfx",
+   "text": "A hard kick against the back of a car seat, a dull thump and the seat creaking. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 2,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-meter-beep",
+   "model": "elevenlabs-sfx",
+   "text": "A taxi fare meter beeping twice electronically. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 2,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-wiper",
+   "model": "elevenlabs-sfx",
+   "text": "A single slow windshield wiper sweep with a soft rubber squeak on wet glass. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 3,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-tablet-slide",
+   "model": "elevenlabs-sfx",
+   "text": "A tablet being set down and slid across a polished wooden table. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 3,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-knees-floor",
+   "model": "elevenlabs-sfx",
+   "text": "A heavy man dropping to his knees on a hard marble floor, cloth rustle and a dull knock. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 3,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-pen-sign",
+   "model": "elevenlabs-sfx",
+   "text": "A fountain pen signing on paper on a wooden desk, a short scratching stroke. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 3,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-umbrella-fold",
+   "model": "elevenlabs-sfx",
+   "text": "A wet umbrella being closed and shaken off, water droplets, fabric rustle. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 3,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-footsteps-marble",
+   "model": "elevenlabs-sfx",
+   "text": "Slow confident leather shoe footsteps on a marble floor in a large quiet room. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 5,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-paper-toss",
+   "model": "elevenlabs-sfx",
+   "text": "A crumpled banknote tossed onto a car seat, a light paper rustle. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 2,
+   "influence": 0.6
+  }
+ ]
+}
