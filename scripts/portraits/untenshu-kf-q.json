@@ -1,0 +1,14 @@
+{
+ "_설명": "R48: S15g 룸미러 컷 — 거울 밖 실제 운전자 몸 제거(편집 2장 약 0.08달러)",
+ "characters": [
+  {
+   "id": "S15g",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/untenshu-keyframes/S15g-1.png"
+   ],
+   "prompt": "Edit this image only. The driver must appear ONLY as the reflection inside the rear-view mirror. Remove the real driver's body, shoulders, vest and shirt that appear below and outside the mirror; in their place show the dark car ceiling, the windshield edge and blurred night city lights through the windshield, with the colored light stripes removed. The mirror and the face reflected inside it stay exactly the same. No other people. Full-frame 16:9, no borders, no text."
+  }
+ ]
+}

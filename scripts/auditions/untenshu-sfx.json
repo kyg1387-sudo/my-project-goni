@@ -168,6 +168,62 @@
    "text": "A crumpled banknote tossed onto a car seat, a light paper rustle. Realistic field recording, no people talking, no voices, no music.",
    "seconds": 2,
    "influence": 0.6
+  },
+  {
+   "id": "fx-heels-marble",
+   "model": "elevenlabs-sfx",
+   "text": "A woman's low-heeled pumps walking briskly on a polished marble floor in a quiet corridor, clear echoing footsteps, about 8 steps. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 8,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-heels-office",
+   "model": "elevenlabs-sfx",
+   "text": "A woman's low-heeled pumps walking on an office floor between desks, soft footsteps, about 6 steps. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 6,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-men-shoes-corridor",
+   "model": "elevenlabs-sfx",
+   "text": "A man's leather shoes walking slowly away down a long quiet carpeted corridor, heavy tired footsteps fading. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 7,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-men-shoes-wet",
+   "model": "elevenlabs-sfx",
+   "text": "A man's leather shoes stepping on a wet rainy pavement, splashing footsteps, a few steps. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 5,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-chair-creak",
+   "model": "elevenlabs-sfx",
+   "text": "An office leather chair creaking as a heavy man leans back. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 2,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-door-car-open",
+   "model": "elevenlabs-sfx",
+   "text": "A car rear door opening, outdoor in the rain. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 2,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-glasses-fold",
+   "model": "elevenlabs-sfx",
+   "text": "Eyeglasses being taken off and folded, a small plastic click. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 2,
+   "influence": 0.6
+  },
+  {
+   "id": "fx-documents",
+   "model": "elevenlabs-sfx",
+   "text": "Papers being set down on a desk and shuffled. Realistic field recording, no people talking, no voices, no music.",
+   "seconds": 2,
+   "influence": 0.6
   }
  ]
 }
