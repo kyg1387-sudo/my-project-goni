@@ -1,0 +1,30 @@
+{
+ "_설명": "고니감독님 요청(2026-10-12): 애니메이션·아바타 형식 비교 샘플 — 같은 클라이맥스 장면을 ① 일본 드라마 만화풍 ② 3D 아바타(애니메이션 영화)풍으로 각 2장. 글자 없음(썸네일 글자는 로컬 합성). 약 0.16달러 승인.",
+ "_style_preset": "",
+ "characters": [
+  {
+   "id": "anime",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-faces/tanaka.png",
+    "assets/portraits/ashita-faces/sato-b.png",
+    "assets/portraits/ashita-kara-keyframes/S14b-1.png",
+    "assets/portraits/ashita-kara-keyframes/S25a-1.png"
+   ],
+   "prompt": "Create ONE single illustration in 16:9 widescreen for a YouTube thumbnail — one image only, NOT a grid, no panels, no borders. Style: semi-realistic Japanese webtoon / anime illustration with bold clean ink outlines, cel shading with soft gradients, glossy highlights, dramatic lighting, rich saturated colors (like a premium Japanese drama manga cover). Setting: a dark power-plant control room after a blackout, lit only by red emergency lamps and a single white spotlight from above; banks of dark monitors (blank screens, no text) and a glossy floor reflecting red light; a few blurred office workers in suits watching in shock in the background. Composition (important — leave the LEFT 45% of the frame mostly dark for large text to be added later): LEFT EDGE, cut off at the frame edge and seen from the chest up, the young woman from reference image 3 (black bob with bangs, light-blue work uniform, no glasses, no earrings) clutching a thick stack of papers to her chest, looking toward the viewer with a determined, slightly teary expression. CENTER-RIGHT, in the spotlight: the arrogant young manager from reference images 1 and 4 (light-brown upswept two-block hair, glossy navy three-piece suit, thick gold wristwatch) has fallen to his knees on the floor, one hand on the floor and the other raised pleading, sweating heavily, eyes wide, mouth open in panic. FAR RIGHT, standing tall over him and looking down coldly: the older man from reference image 2 (grey-streaked short hair, silver rectangular glasses, small scar above the left eyebrow, charcoal suit, grey tie), low-angle so he looks powerful. All faces must clearly resemble the reference people; correct anatomy, five fingers per hand, symmetrical eyes. Absolutely no text, letters, numbers, logos, signs or symbols anywhere — monitors and papers are blank."
+  },
+  {
+   "id": "avatar",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-faces/tanaka.png",
+    "assets/portraits/ashita-faces/sato-b.png",
+    "assets/portraits/ashita-kara-keyframes/S14b-1.png",
+    "assets/portraits/ashita-kara-keyframes/S25a-1.png"
+   ],
+   "prompt": "Create ONE single image in 16:9 widescreen for a YouTube thumbnail — one image only, NOT a grid, no panels, no borders. Style: high-quality 3D animated feature-film look (stylized 3D characters like a modern Pixar or Disney animated movie): slightly larger heads and expressive eyes, smooth stylized skin, soft subsurface lighting, rich cinematic color, shallow depth of field. Keep each character recognisable from the references (hair, glasses, clothes, age). Setting: a dark power-plant control room after a blackout, lit only by red emergency lamps and a single white spotlight from above; banks of dark monitors (blank screens, no text) and a glossy floor reflecting red light; a few blurred office workers in suits watching in shock in the background. Composition (important — leave the LEFT 45% of the frame mostly dark for large text to be added later): LEFT EDGE, cut off at the frame edge and seen from the chest up, the young woman from reference image 3 (black bob with bangs, light-blue work uniform, no glasses, no earrings) clutching a thick stack of papers to her chest, looking toward the viewer with a determined, slightly teary expression. CENTER-RIGHT, in the spotlight: the arrogant young manager from reference images 1 and 4 (light-brown upswept two-block hair, glossy navy three-piece suit, thick gold wristwatch) has fallen to his knees on the floor, one hand on the floor and the other raised pleading, sweating heavily, eyes wide, mouth open in panic. FAR RIGHT, standing tall over him and looking down coldly: the older man from reference image 2 (grey-streaked short hair, silver rectangular glasses, small scar above the left eyebrow, charcoal suit, grey tie), low-angle so he looks powerful. All faces must clearly resemble the reference people; correct anatomy, five fingers per hand, symmetrical eyes. Absolutely no text, letters, numbers, logos, signs or symbols anywhere — monitors and papers are blank."
+  }
+ ]
+}
