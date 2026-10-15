@@ -294,6 +294,9 @@ def render_track(placed, total, out_wav):
     return out_wav
 
 
+DUCK_DB = 0.0  # 오디오 설정 duck_db(대사 중 환경음·BGM 감쇠 dB) — generate_audio main에서 설정
+
+
 def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume=0.4):
     """배치된 대사·현장음·BGM을 영상 오디오 트랙으로 믹싱해 out_path에 저장."""
     ambience = ambience or []
@@ -335,11 +338,22 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
             f"afade=t=out:st={fade_out_st:.3f}:d=2,"
             f"volume={vol},adelay={int(round(seg_s * 1000))}:all=1[bg{k}]")
         mix_inputs.append(f"[bg{k}]")
-    parts.append(
-        "".join(mix_inputs)
-        + f"amix=inputs={len(mix_inputs)}:duration=longest:normalize=0,"
-        + "alimiter=limit=0.95:attack=5:release=80,"  # BGM·현장음을 올려도 대사 피크가 클리핑되지 않게
-        + f"atrim=0:{duration:.3f},aformat=channel_layouts=stereo[aout]")
+    if DUCK_DB and placed and len(mix_inputs) > len(placed):
+        # 대사 우선 덕킹(tsuki 7-3절): 대사 트랙을 사이드체인으로 환경음·BGM을 눌렀다가 말이 끝나면 복귀. BGM·현장음 1~3kHz −3dB EQ
+        voice_in = "".join(mix_inputs[:len(placed)]); bed_in = "".join(mix_inputs[len(placed):])
+        ratio = 1 + DUCK_DB / 3.0
+        parts.append(f"{voice_in}amix=inputs={len(placed)}:duration=longest:normalize=0,asplit=2[voice][sc]")
+        parts.append(f"{bed_in}amix=inputs={len(mix_inputs) - len(placed)}:duration=longest:normalize=0,"
+                     f"equalizer=f=2000:t=q:w=1.2:g=-3[bed0]")
+        parts.append(f"[bed0][sc]sidechaincompress=threshold=0.03:ratio={ratio:.2f}:attack=20:release=800:makeup=1:level_sc=1[bed]")
+        parts.append(f"[voice][bed]amix=inputs=2:duration=longest:normalize=0,alimiter=limit=0.95:attack=5:release=80,"
+                     f"atrim=0:{duration:.3f},aformat=channel_layouts=stereo[aout]")
+    else:
+        parts.append(
+            "".join(mix_inputs)
+            + f"amix=inputs={len(mix_inputs)}:duration=longest:normalize=0,"
+            + "alimiter=limit=0.95:attack=5:release=80,"  # BGM·현장음을 올려도 대사 피크가 클리핑되지 않게
+            + f"atrim=0:{duration:.3f},aformat=channel_layouts=stereo[aout]")
 
     script = os.path.join(WORK_DIR, "filter.txt")
     with open(script, "w") as f:
@@ -643,6 +657,8 @@ def main():
 
     with open(args.config, encoding="utf-8") as f:
         cfg = json.load(f)
+    global DUCK_DB
+    DUCK_DB = float(cfg.get("duck_db", 0) or 0)
 
     WORK_DIR = os.path.join(os.path.dirname(args.out) or ".", "audio")
     os.makedirs(WORK_DIR, exist_ok=True)

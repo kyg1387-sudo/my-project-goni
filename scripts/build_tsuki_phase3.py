@@ -781,7 +781,7 @@ def main():
         "omnihuman_scenes": [idx[s["id"]] for s in SHOTS if s["kind"] == "d" and s["line"]],
         "omnihuman_prompts": {str(idx[k]): v for k, v in omni_prompts.items()},
         "omnihuman_models": ["fal-ai/bytedance/omnihuman/v1.5", "fal-ai/bytedance/omnihuman"], "omnihuman_max_s": 8.0, "legacy_lipsync": False,
-        "ambience_model": "fal-ai/mmaudio-v2", "ambience_volume": 0.35, "ambience_prompts": [x["ambience"] for x in sb],
+        "ambience_model": "fal-ai/mmaudio-v2", "ambience_volume": 0.35, "duck_db": 8, "ambience_prompts": [x["ambience"] for x in sb],
         "bgm_model": "fal-ai/lyria2", "bgm_volume": 0.40, "bgm_prompt": BGM[1][3],
         "bgm_segments": [{"start": s, "end": round(main_end, 2) if e is None else e, "volume": v, "prompt": p} for s, e, v, p in BGM],
         "_후크": "0~3.5초 BGM 없음: 서버 팬 정지 드론 + 심장 박동 1회(자막 등장 순간)를 PHASE 6 로컬 믹스. H1 화면은 S14c 재사용, 음성은 L26 원본을 로컬 믹스. NA0은 자막 1번 줄(1.0초).",

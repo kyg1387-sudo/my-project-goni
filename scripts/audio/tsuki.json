@@ -456,6 +456,7 @@
  "legacy_lipsync": false,
  "ambience_model": "fal-ai/mmaudio-v2",
  "ambience_volume": 0.35,
+ "duck_db": 8,
  "ambience_prompts": [
   "server fans spinning down one by one, low electrical hum fading, a distant alarm beep",
   "server fans spinning down one by one, low electrical hum fading, a distant alarm beep",
