@@ -318,7 +318,7 @@
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
-   "text": "かぐや姫が五人の貴公子に求めた、五つの宝。わしおが光に突きつけたのは、五つの無理難題だった。",
+   "text": "かぐや姫が五人の貴公子に求めた、五つの宝。わしおがひかるに突きつけたのは、五つの無理難題だった。",
    "emotion_preset": "normal",
    "emotion_intensity": 1.0,
    "tempo": 1.0
@@ -428,7 +428,7 @@
    "model": "typecast-direct",
    "voice": "tc_66bc600762cab997910b107b",
    "language": "jpn",
-   "text": "契約社員の分際で、特許だと？ 月から来たゴミが、何を言ってる！",
+   "text": "契約社員のぶんざいで、特許だと？ 月から来たゴミが、何を言ってる！",
    "emotion_preset": "angry",
    "emotion_intensity": 1.2,
    "tempo": 1.05
@@ -788,7 +788,7 @@
    "model": "typecast-direct",
    "voice": "tc_62a8974c6fe31dc29ac53b0d",
    "language": "jpn",
-   "text": "室長。……病院と、水道と、信号。人の命に関わる所だけは、止めていません。最初から",
+   "text": "室長。……病院と、水道と、信号。人の命に関わるところだけは、止めていません。最初から",
    "emotion_preset": "tonedown",
    "emotion_intensity": 1.0,
    "tempo": 0.9
@@ -828,7 +828,7 @@
    "model": "typecast-direct",
    "voice": "tc_5d01a52563338e00072b8c9c",
    "language": "jpn",
-   "text": "光。月の子は、どこにいたって、夜に働くもんだよ",
+   "text": "ひかる。月の子は、どこにいたって、夜に働くもんだよ",
    "emotion_preset": "happy",
    "emotion_intensity": 0.7,
    "tempo": 0.85

@@ -1,0 +1,47 @@
+{
+ "_설명": "tsuki-tts 가나 보정 재녹음 4줄(光→ひかる, 分際→ぶんざい, 所→ところ — 오디션 언어 검사 실증). 크레딧만. 완료 후 assets/auditions/tsuki-tts/로 복사.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "line032",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "かぐや姫が五人の貴公子に求めた、五つの宝。わしおがひかるに突きつけたのは、五つの無理難題だった。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line043",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "契約社員のぶんざいで、特許だと？ 月から来たゴミが、何を言ってる！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.05
+  },
+  {
+   "id": "line079",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "室長。……病院と、水道と、信号。人の命に関わるところだけは、止めていません。最初から",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line083",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "ひかる。月の子は、どこにいたって、夜に働くもんだよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 0.85
+  }
+ ]
+}
