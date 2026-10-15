@@ -1,0 +1,927 @@
+{
+ "_설명": "『月に帰った契約社員』 PHASE 1 본녹음 92줄 (확정 캐스트, Typecast ssfm-v30 jpn). 음성 입력만 가나 변형, 자막은 한자 유지. line### = 시간 순서. 후크 H1은 L26 재사용. TTS 구독 크레딧만 사용. 생성: productions/tsuki-ja/build_tts_spec.py",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "line001",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "彼が消えた夜、会社の灯りも、消えた。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line002",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "東京湾岸に本社を構える電力インフラ大手、つきうらエナジー。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line003",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "この会社はいま、国のモデル事業「つきみのスマートシティ",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line004",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "その現場の、いちばん下で働く青年がいた。たけうちひかる、二十六歳。契約社員。昼は設備の保守と清掃、夜は——",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line005",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "誰にも頼まれていない、街の電気の通り道を、ひとりで書き続けていた。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line006",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "たけうちさん、また夕飯抜きでしょ。はい、おにぎり。余ったやつですけど",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line007",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "……いつも、すみません。みずたにさんこそ、こんな時間まで",
+   "emotion_preset": "normal",
+   "emotion_intensity": 0.9,
+   "tempo": 0.95
+  },
+  {
+   "id": "line008",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "それ、何書いてるんですか。ずっと",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 1.0
+  },
+  {
+   "id": "line009",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "街の電気の、通り道です。……婆ちゃんが、月の子は夜に働くもんだって",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.5,
+   "tempo": 0.95
+  },
+  {
+   "id": "line010",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "月の子？",
+   "emotion_preset": "normal",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line011",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "たけやぶで拾われたんです、僕。赤ん坊の時に",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line012",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "たけざいくの老夫婦に拾われ、育てられた子ども。学費はなく、独学で電力制御を学び、工房の片隅で五年。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line013",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "彼が書き上げた制御プログラムの名は、「かぐや",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line014",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "一方、本社の開発部は、納期十日前に、最悪の壁にぶつかっていた。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line015",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "負荷分散が、また落ちた……。十日で直せるのか、これ",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.7,
+   "tempo": 1.05
+  },
+  {
+   "id": "line016",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "国の事業だぞ。落ちたら、俺も常務も終わりだ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line017",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "……お前が、やったのか",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line018",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "はい。勝手に、すみません。配電盤の掃除のついでに……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "line019",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "名前は。このプログラムの",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line020",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "かぐや、です",
+   "emotion_preset": "normal",
+   "emotion_intensity": 0.9,
+   "tempo": 0.9
+  },
+  {
+   "id": "line021",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "開発部が総力を挙げて完成させた、新型制御システムです",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line022",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "素晴らしい。これなら、つきみのの全区画を一括で制御できる",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line023",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "当社の技術力の結晶ですよ、室長",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.9,
+   "tempo": 0.95
+  },
+  {
+   "id": "line024",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "その場に、たけうちひかるの名前は、一度も出なかった。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line025",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "たけうち。お前、正社員になりたいだろ？ ……これにはんこ、押してくれ。特許の、譲渡証",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 0.9,
+   "tempo": 1.0
+  },
+  {
+   "id": "line026",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "……これは、会社に入る前に作ったものです。婆ちゃんの工房で、五年かけて",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line027",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "すみません。譲渡は……できません。使ってもらう分には、構いません。契約書の通りで",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line028",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "契約社員が、国の事業の鍵を握ってる？ ……冗談じゃない",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line029",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "特許はうちの名義で出し直せ。成果報酬はさんぜんまん。社長の椅子は——俺のものだ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.1,
+   "tempo": 0.95
+  },
+  {
+   "id": "line030",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "契約社員が、国の事業の鍵を握っている。——わしおには、それが許せなかった。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line031",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "その時、わしおの目に宿ったのは、感謝ではなく……欲でした。——さんじゅうにち後、その欲が、会社ごと飲み込むことになるとも知らずに。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line032",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "かぐや姫が五人の貴公子に求めた、五つの宝。わしおが光に突きつけたのは、五つの無理難題だった。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line033",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "ソースは全部提出。後任の教育。夜勤は連続さんじゅうにち。仕様書は一週間で書き直せ",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.9,
+   "tempo": 1.05
+  },
+  {
+   "id": "line034",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "そして五つ目。——給料は、今のままだ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 0.9
+  },
+  {
+   "id": "line035",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "……わかりました",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line036",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "青年は、何ひとつ言い返さなかった。ただ黙って、五つの難題を、ひとつずつ片付けていった。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line037",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "たけうちさん、三週間ずっと夜勤って……。倒れますよ",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line038",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "大丈夫です。……月が、見てますから",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.5,
+   "tempo": 0.9
+  },
+  {
+   "id": "line039",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "月……?",
+   "emotion_preset": "normal",
+   "emotion_intensity": 0.8,
+   "tempo": 0.95
+  },
+  {
+   "id": "line040",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "さんじゅうにち目の朝、譲渡証には、たけうちひかるのはんこが押されていた。——本人の知らないうちに。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line041",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "机の引き出しにあった、契約社員用のみとめいんで。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line042",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "譲渡証は、もう出来ている。お前の役目は、終わりだ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line043",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "契約社員の分際で、特許だと？ 月から来たゴミが、何を言ってる！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.05
+  },
+  {
+   "id": "line044",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "今日で契約終了だ。拾われっ子は、たけやぶにでも帰れ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 0.95
+  },
+  {
+   "id": "line045",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "……はい。でも、ひとつだけ",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line046",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "かぐやの鍵は、月に一度、私が回します。契約書の、じゅうにじょうです",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line047",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "鍵なんか、こっちで作り直す。出て行け",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 0.9,
+   "tempo": 1.05
+  },
+  {
+   "id": "line048",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "たけうちさん！ ……本当に、行っちゃうんですか",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.9,
+   "tempo": 1.05
+  },
+  {
+   "id": "line049",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "これ。婆ちゃんの作り方で。……おにぎり、ありがとうございました",
+   "emotion_preset": "normal",
+   "emotion_intensity": 0.9,
+   "tempo": 0.9
+  },
+  {
+   "id": "line050",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "そんなの……ずるいですよ",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line051",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "満月の夜。青年は、段ボール箱ひとつを抱えて、つきうらエナジーから姿を消した。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line052",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "これでつきみのは、我々のものだ。社長の椅子も、な",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line053",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "鍵の件は……技術陣に、書き換えさせています",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line054",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "だが、にじゅうくにちめ。技術陣が書き換えた鍵は、一度も回らなかった。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line055",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "何で回らない！ 鍵ひとつだろう！ 明日までに何とかしろ！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.1
+  },
+  {
+   "id": "line056",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "たけうちの番号が……。現在、使われておりませんって……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line057",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "消えた青年を、会社中が探した。だが彼は、どこにもいなかった。——月に帰ったかのように。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line058",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "ひの部長。たけうちさんの、鍵の更新が来ていません。……どういうことですか",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line059",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "た、たけうちは……退職しました。鍵は、当社で……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.9,
+   "tempo": 1.0
+  },
+  {
+   "id": "line060",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "電話の向こうで、しのだは、何も言わなかった。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line061",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "さんじゅうにち目の夜。つきうらエナジーは、本当の意味で……闇に落ちたのです。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line062",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "商業地区、オフィス街、物流拠点。つきみのの金になる区画の制御が、次々と止まった。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line063",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "止まる……全部、止まる……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.1,
+   "tempo": 1.05
+  },
+  {
+   "id": "line064",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "……連れ戻せ。たけうちを、今すぐ……。金は、いくらでも出す……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.1,
+   "tempo": 0.85
+  },
+  {
+   "id": "line065",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "さんじゅうにち前に「ゴミ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line066",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "たけうちひかるさん名義の特許証です。二年前に、登録されています",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line067",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "譲渡証ならある。ほら、本人のはんこだ",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 0.9,
+   "tempo": 1.0
+  },
+  {
+   "id": "line068",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "こちらが、特許庁に届け出ている本人のじついんです。——このみとめいんとは、違いますね",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line069",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "国のモデル事業に、偽造書類。契約は本日付で解除。違約金は、にひゃくおくえんです",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.1,
+   "tempo": 0.9
+  },
+  {
+   "id": "line070",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "ひ、ひの！ お前が……お前が勝手に押したんだろう！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.1,
+   "tempo": 1.1
+  },
+  {
+   "id": "line071",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "常務の指示です！ 私は、言われた通りに……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.1,
+   "tempo": 1.1
+  },
+  {
+   "id": "line072",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "室長……たけうちに、頼んでくれ。頭を下げる。金も、役職も、何でも……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.1,
+   "tempo": 0.9
+  },
+  {
+   "id": "line073",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "たけうちさんの言葉を、そのまま伝えます。——「つきうらエナジーとは、二度と契約しません",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line074",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "……押したのは、私です。常務に言われて……全部、記録してあります",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line075",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "権力の椅子は、たった一枚のはんこで、音を立てて崩れた。その日の午後、社長はわしおを、その場で解任した。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line076",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "つきうらエナジーの株価は一週間でななわりを失い、三か月後、会社は解散。わしおとひのは、私文書偽造で告訴された。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line077",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "そしてしのだ室長は、ひとりの青年を探して——山あいの、たけやぶへ向かった。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line078",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "たけうちさん。……探しましたよ",
+   "emotion_preset": "normal",
+   "emotion_intensity": 0.9,
+   "tempo": 0.9
+  },
+  {
+   "id": "line079",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "室長。……病院と、水道と、信号。人の命に関わる所だけは、止めていません。最初から",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line080",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "……知っています。だから、来たんです",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.7,
+   "tempo": 0.9
+  },
+  {
+   "id": "line081",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "つきみの市が、あなたと直接契約します。お金は、正当に払う。……戻ってきてくれませんか",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line082",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "街のものは、街に。でも……僕は、ここにいたい。婆ちゃんの傍に",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.5,
+   "tempo": 0.9
+  },
+  {
+   "id": "line083",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "光。月の子は、どこにいたって、夜に働くもんだよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 0.85
+  },
+  {
+   "id": "line084",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "ここから、働いてください。回線は、市が引きます",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 0.95
+  },
+  {
+   "id": "line085",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "たけうちさん。お弁当、また忘れてるでしょ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line086",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "派遣契約を終えたみずたにさくらは、たけとんぼ一本を頼りに、このたけやぶにたどり着いていた。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line087",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "「月から来たゴミ",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line088",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "そして今夜も、つきみのの病院の灯りは、消えていない。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line089",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "皆さんの職場にも、誰にも気づかれずに、灯りを守っている人はいませんか？",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line090",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "ご視聴ありがとうございました。月に帰った契約社員、いかがでしたか？",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "line091",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "あなたの職場にも、静かに灯りを守っている人はいませんか？ ぜひコメントで教えてください。チャンネル登録と高評価も、よろしくお願いします",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "line092",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "次回も、胸が熱くなる物語をお届けします。お楽しみに",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  }
+ ]
+}
