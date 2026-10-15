@@ -29,8 +29,8 @@ def s2t(x):
     return f"{int(h)}:{int(m):02d}:{s:05.2f}"
 
 
-def wrap(text, limit=15):
-    """세로 화면용 줄바꿈: 한 줄 최대 약 15자. 범위 안의 마지막 。、…』」 뒤에서 끊고, 없으면 15자에서 끊는다."""
+def wrap(text, limit=13):
+    """세로 화면용 줄바꿈: 한 줄 최대 약 13자(제12장 휴대폰 기준, 자막 62px). 범위 안의 마지막 。、…』」 뒤에서 끊고, 없으면 15자에서 끊는다."""
     parts = text.split("\\N")
     if len(parts) > 1 and all(len(x) <= limit + 4 for x in parts):  # 원 자막 줄바꿈이 세로 화면에도 맞으면 그대로(「…の / は、」 분리 방지)
         return text
@@ -67,8 +67,8 @@ ScaledBorderAndShadow: yes
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Title,Zen Old Mincho,74,&H0040E0FF,&H000000FF,&H00000000,&H90000000,-1,0,0,0,100,100,0,0,1,6,3,8,60,60,330,1
-Style: Sub,IPAGothic,52,&H00FFFFFF,&H000000FF,&H00000000,&H90000000,-1,0,0,0,100,100,0,0,1,5,2,8,70,70,1250,1
-Style: Cap,Zen Old Mincho,58,&H00C4F3FF,&H000000FF,&H00000000,&H90000000,-1,0,0,0,100,100,0,0,1,5,2,8,70,70,1250,1
+Style: Sub,IPAGothic,62,&H00FFFFFF,&H000000FF,&H00000000,&H90000000,-1,0,0,0,100,100,0,0,1,5,2,8,70,70,1250,1
+Style: Cap,Zen Old Mincho,64,&H00C4F3FF,&H000000FF,&H00000000,&H90000000,-1,0,0,0,100,100,0,0,1,5,2,8,70,70,1250,1
 Style: End,Zen Old Mincho,80,&H00FFFFFF,&H000000FF,&H00000000,&H90000000,-1,0,0,0,100,100,0,0,1,6,3,5,60,60,0,1
 
 [Events]
