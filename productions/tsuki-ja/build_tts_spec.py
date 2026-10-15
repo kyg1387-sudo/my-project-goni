@@ -84,7 +84,7 @@ KANA = [("竹内光", "たけうちひかる"), ("竹内", "たけうち"), ("�
         ("二百億円", "にひゃくおくえん"), ("三千万", "さんぜんまん"), ("十二条", "じゅうにじょう"), ("竹とんぼ", "たけとんぼ"),
         ("竹藪", "たけやぶ"), ("竹細工", "たけざいく"), ("認印", "みとめいん"), ("実印", "じついん"), ("判子", "はんこ"),
         ("七割", "ななわり"), ("三十日", "さんじゅうにち"), ("二十九日目", "にじゅうくにちめ"), ("三十日目", "さんじゅうにちめ"),
-        ("“", ""), ("”", ""), ("『", ""), ("』", "")]
+        ("“", ""), ("”", ""), ("『", ""), ("』", ""), ("「", ""), ("」", "")]  # 안쪽 인용부호는 음성에서 제거
 TAG_KANA = {}  # 본녹음 언어 검사 후 흔들린 줄만 추가
 
 
@@ -101,10 +101,10 @@ def load():
     body = t.split("## 4. 대본")[1].split("## 5.")[0]
     body = "\n".join(l for l in body.splitlines() if not re.match(r"^\s+OUT[15]\b", l))  # 몽타주·손 흔들기(대사 없음)
     out = []
-    for m in re.finditer(r"^\s+((?:NA|L)\d+[a-c]?)\s*([^\s:「(\[]*)[^「\n]*「(.+?)」", body, re.M):
+    for m in re.finditer(r"^\s+((?:NA|L)\d+[a-c]?)\s*([^\s:「(\[]*)[^「\n]*「(.+)」", body, re.M):
         tag, spk, text = m.group(1), m.group(2), m.group(3)
         out.append((tag, "NA" if tag.startswith("NA") else spk, text))
-    for m in re.finditer(r"^(OUT[234])\b[^\n]*\n\s*「(.+?)」", body, re.M):  # 진행자 멘트는 다음 줄에 「」
+    for m in re.finditer(r"^(OUT[234])\b[^\n]*\n\s*「(.+)」", body, re.M):  # 진행자 멘트는 다음 줄에 「」
         out.append((m.group(1), "OUT", m.group(2)))
     return out
 
