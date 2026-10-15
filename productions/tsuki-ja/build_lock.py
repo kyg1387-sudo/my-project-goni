@@ -16,10 +16,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, "..", ".."))
 AUDIO = os.path.join(REPO, "assets", "auditions", "tsuki-tts")
 GAP_SAME, GAP_CHANGE, TAIL_D, TAIL_N, INSERT, PER_CUT, AD_TAIL = 0.6, 0.8, 1.8, 1.0, 2.5, 3.5, 1.0
-HOOK, OUTRO = 20.0, 55.0
+HOOK, OUTRO = 20.0, 45.0  # 아웃트로는 선례 실측 33.8초 + 몽타주 여유
 AD_AFTER = {"NA10": ("1차 광고", 210.0), "NA18": ("2차 광고", 420.0)}
 OVERLAP = {"L44": 0.2, "L43": 0.2}  # 이 줄은 앞 줄 끝에 0.2초 겹쳐 시작
 SECTION_START = {"S01": "② 발단·갈등"}
+SKIP = {"NA4", "NA12", "NA23"}  # 길이 조정(제0장 1·4): 화면이 이미 말해 주는 설명 내레이션 — 녹음은 보관, 타임라인·자막에서 제외
 MIN_TOTAL, MAX_TOTAL = 9 * 60 + 40, 11 * 60
 
 
@@ -76,7 +77,7 @@ def build():
         x["id"] = f"line{n:03d}"
         a, b = speech_span(os.path.join(AUDIO, x["id"] + ".mp3"))
         x["lead"], x["dur"] = a, b - a
-    body = [x for x in lines if x["scene"].startswith("S")]
+    body = [x for x in lines if x["scene"].startswith("S") and x["tag"] not in SKIP]
     scenes = collections.OrderedDict()
     for x in body:
         scenes.setdefault(x["scene"], []).append(x)
@@ -143,7 +144,9 @@ def main():
         md.append(f"| {sid} | {tc(a)} | {tc(b)} | {b - a:.2f}s | {n} | {s} |")
     md += ["", "## 줄별 타임코드", "", "| 녹음 | 대본 | 화자 | 장면 | 시작 | 끝 | 길이 |", "|---|---|---|---|---|---|---|"]
     for x in lines:
-        if "start" in x:
+        if x["tag"] in SKIP:
+            md.append(f"| {x['id']} | {x['tag']} | {x['spk']} | {x['scene']} | (길이 조정으로 제외) | | {x['dur']:.2f}s |")
+        elif "start" in x:
             md.append(f"| {x['id']} | {x['tag']} | {x['spk']} | {x['scene']} | {tc(x['start'])} | {tc(x['end'])} | {x['dur']:.2f}s |")
         else:
             md.append(f"| {x['id']} | {x['tag']} | {x['spk']} | {x['scene']} | (고정 구간) | | {x['dur']:.2f}s |")
