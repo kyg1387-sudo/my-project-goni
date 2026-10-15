@@ -279,27 +279,27 @@ def thumb_c():
         ImageDraw.Draw(bg).text((x + 4, y + 5), text, font=f, fill=(0, 0, 0), stroke_width=12, stroke_fill=(0, 0, 0))
         ImageDraw.Draw(bg).text((x, y), text, font=f, fill=(255, 255, 255), stroke_width=9, stroke_fill=(255, 255, 255))
         gradient_text(bg, (x, y), text, f, top, bot, sw=0, depth=0)
-    f1 = font(GOTH, 64)
+    f1 = font(GOTH, 72)
     t1 = "床に落ちた妻の写真…"
     w1 = d.textlength(t1, font=f1)
     title((W - 36 - w1, 14), t1, f1, red_top, red_bot)
-    f2 = font(GOTH, 76)
+    f2 = font(GOTH, 88)
     a2, b2 = "拾った部下の", "運命"
     wa, wb = d.textlength(a2, font=f2), d.textlength(b2, font=f2)
     x2 = W - 36 - (wa + wb)
-    title((x2, 96), a2, f2, red_top, red_bot)
-    title((x2 + wa, 96), b2, f2, (255, 250, 150), (255, 190, 0))
+    title((x2, 100), a2, f2, red_top, red_bot)
+    title((x2 + wa, 100), b2, f2, (255, 250, 150), (255, 190, 0))
     # 아래 반투명 박스
-    fb2 = font(GOTH, 50)
+    fb2 = font(GOTH, 62)
     lines = ["その運転手は、", "取引先の会長だった"]
-    x0, y0 = 420, 572
+    x0, y0 = 300, 548
     wmax = max(d.textlength(s, font=fb2) for s in lines)
     box = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    ImageDraw.Draw(box).rectangle((x0, y0, x0 + wmax + 50, y0 + 140), fill=(0, 0, 0, 175))
+    ImageDraw.Draw(box).rectangle((x0, y0, x0 + wmax + 50, y0 + 165), fill=(0, 0, 0, 175))
     bg = bg.convert("RGBA"); bg.alpha_composite(box); bg = bg.convert("RGB")
     d = ImageDraw.Draw(bg)
     for k, s in enumerate(lines):
-        d.text((x0 + 25, y0 + 12 + k * 64), s, font=fb2, fill=(255, 222, 40), stroke_width=2, stroke_fill=(0, 0, 0))
+        d.text((x0 + 25, y0 + 12 + k * 76), s, font=fb2, fill=(255, 222, 40), stroke_width=2, stroke_fill=(0, 0, 0))
     return bg
 
 

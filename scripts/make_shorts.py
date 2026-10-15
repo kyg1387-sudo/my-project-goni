@@ -42,6 +42,8 @@ def wrap(text, limit=13):
             cut = max((k + 1 for k in range(7, limit + 1) if t[k] in "がでにをはのと"), default=limit)
         while cut < len(t) and t[cut] in "…。、』」？！?!—":  # 구두점·말줄임표로 시작하는 줄 금지
             cut += 1
+        while 1 < cut < len(t) and (t[cut] in "っゃゅょぁぃぅぇぉッャュョァィゥェォー" or t[cut - 1] in "っッ"):  # 촉음·작은 글자에서 낱말 끊김 금지
+            cut -= 1
         out.append(t[:cut]); t = t[cut:]
     if t:
         out.append(t)
