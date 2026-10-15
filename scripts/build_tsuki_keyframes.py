@@ -65,6 +65,14 @@ LIGHT_NOTE = {
     "dawn": "LIGHTING OVERRIDES THE LOCATION REFERENCE: pale blue dawn, thin mist, no sodium lamps.",
     "board_night": "LIGHTING OVERRIDES THE LOCATION REFERENCE: night, warm interior lights, city lights beyond the glass, sky black.",
 }
+# 키프레임 a 검수(2026-10-15): 감정이 약하거나 반대로 나온 컷 — 표정을 문장 맨 앞에 못 박아 재생성
+EMO_OVERRIDE = {
+    "S10e": "EXPRESSION LOCKED: Washio is ANGRY and domineering — hard glaring eyes, furrowed brow, jaw clenched, NO smile at all; his index finger stabs down on a sheet of paper.",
+    "S15i": "EXPRESSION LOCKED: Sakura is CRYING — eyes red and wet with real tears, one tear track on each cheek, lips pressed and trembling, holding the bamboo dragonfly to her chest; NOT smiling.",
+    "S18g": "EXPRESSION LOCKED: Washio is TERRIFIED and broken — eyes wide and wet, face grey, sweat on his forehead, mouth slightly open in dread, NO smile; dim red emergency light only.",
+    "S19k": "EXPRESSION LOCKED: Hino is PANICKING — eyes wide, face wet with tears and sweat, mouth open mid-cry, back pressed against the wall, both hands half raised, pointing with one hand.",
+    "S19l": "POSE LOCKED: Washio is ON HIS KNEES on the carpet beside the chair, looking UP at the standing Shinoda, begging with clasped hands, face wet with tears and sweat, gold glasses askew, NO smile; seen from slightly above over Shinoda's coat shoulder.",
+}
 ANGER_CLOSED = ("Fury shown only in the wide-open glaring eyes, furrowed brow, flared nostrils and clenched jaw: eyes OPEN and fixed on the listener, "
                 "lips pressed together, mouth CLOSED, NOT shouting (speech is added later).")
 
@@ -110,6 +118,8 @@ def build(sc, stage):
             refs = [r for r in refs if r != people[1]] + [back]
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
+    if sc["id"] in EMO_OVERRIDE:
+        parts.append(EMO_OVERRIDE[sc["id"]])
     parts.append(sc["keyframe_prompt"])
     for r in sc["refs"]:
         b = os.path.basename(r)
