@@ -25,6 +25,7 @@ PEOPLE = [
     ("haru", "Takeuchi Haru (83, tiny old woman, white hair in a low bun, deeply wrinkled, NO glasses, tiny dark stud earrings, indigo apron)"),
 ]
 FACE_KINDS = ("face", "d")
+PILOT_DONE = {"S08g", "S14c", "S14h", "S21l", "S21f"}  # 시범에서 생성·승인(assets/portraits/tsuki-kf-pilot/*-fixed, tsuki-kf-r1/S14c-fixed)
 LOC_NOTE = {
     "loc-ctrl": "All control-room walls are bare; consoles have plain unlabeled panels; monitors show only abstract shapes, solid colour or are dark.",
     "loc-board": "The boardroom walls are bare: no posters, no plaques; the long table is glossy dark wood; the screen is plain grey.",
@@ -149,6 +150,8 @@ def main():
                 continue
         else:
             if (stage == "a") != (sc["kind"] == "d" and bool(sc.get("line"))) or (only and sc["id"] not in only):
+                continue
+            if not only and sc["id"] in PILOT_DONE:
                 continue
         c = build(sc, stage)
         missing += [f for f in c["refs"] if not os.path.exists(os.path.join(ROOT, f))]
