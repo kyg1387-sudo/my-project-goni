@@ -1,0 +1,33 @@
+{
+ "_설명": "『月に帰った契約社員』 아웃트로 공식 진행자(Yui Sato) OmniHuman 4컷 — OUT2 가슴 위(감사·제목) / OUT3a 허리 위(댓글 질문) / OUT3b 가슴 위(구독·좋아요) / OUT4 손 흔들기(예고). 음성 앞뒤 무음 정리+0.15초 여백. 8초 이하. 약 20초 x 0.16 ≈ 3.2달러.",
+ "tests": [
+  {
+   "id": "omni-out1",
+   "model": "omnihuman",
+   "image": "assets/portraits/ashita-host-1/host-cu-4.png",
+   "audio_id": "pad1",
+   "prompt": "A friendly young Japanese TV host speaks warmly to the camera with a bright smile, small natural nods, hands still."
+  },
+  {
+   "id": "omni-out2",
+   "model": "omnihuman",
+   "image": "assets/portraits/ashita-host-2/host-wu-1.png",
+   "audio_id": "pad2a",
+   "prompt": "The host asks the viewers a warm question, slight head tilt, gentle smile, hands relaxed and still."
+  },
+  {
+   "id": "omni-out3",
+   "model": "omnihuman",
+   "image": "assets/portraits/ashita-host-1/host-cu-4.png",
+   "audio_id": "pad2b",
+   "prompt": "The host cheerfully asks for subscribe and like with a bright smile and a small nod."
+  },
+  {
+   "id": "omni-out4",
+   "model": "omnihuman",
+   "image": "assets/portraits/ashita-host-2/host-wave-2.png",
+   "audio_id": "pad3",
+   "prompt": "The host gives the next-episode teaser with a warm smile, keeps the raised waving hand still."
+  }
+ ]
+}
