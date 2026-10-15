@@ -1,16 +1,16 @@
 {
- "_설명": "썸네일 A안 인물 교체 2차: 1차는 마지막 참조(세로 셀) 화면비로 나와 실패 → 16:9 썸네일을 마지막 참조로. 2장 약 0.08달러",
+ "_설명": "썸네일 A안 인물 교체 3차: 인물이 있는 오른쪽 정사각 부분만 편집 → 로컬에서 원본(글자·번개·말풍선)에 합성. 2장 약 0.08달러",
  "characters": [
   {
-   "id": "thumbA2",
+   "id": "thumbA3",
    "count": 2,
-   "aspect_ratio": "16:9",
+   "aspect_ratio": "1:1",
    "refs": [
     "assets/portraits/untenshu-cast/cells/kuroda-sheet-v2-45.png",
     "assets/portraits/untenshu-keyframes/S17f-1.png",
-    "assets/thumbnails/untenshu/src-A-user.png"
+    "assets/thumbnails/untenshu/src-A-right.png"
    ],
-   "prompt": "Edit the THIRD image (a wide 16:9 YouTube thumbnail). The output must keep the THIRD image's exact wide 16:9 framing. Keep the layout, background office, lightning bolt, manga speed lines, flames, sparks, white speech bubble, all Japanese text, the gold badge and the color grade EXACTLY the same, same positions and sizes. Change ONLY the two men on the right: (1) Replace the panicking crouching man with the man from the SECOND image: the same face and identity, a heavy-set 45-year-old Japanese man with gelled black side-parted slicked-back hair, thick eyebrows, wearing a grey pinstripe suit, white shirt and a RED tie, gold wristwatch; keep the same pose, position and size, and the same extreme panic expression: face flushed bright red, drenched in sweat drops, wide terrified eyes, teeth clenched in a desperate grimace. (2) Replace the standing older man with the man from the FIRST image: the same face and identity, swept-back white hair, short neat white mustache, wearing a dark NAVY suit, white shirt and a PURPLE tie; keep the same pose, position, size and his cold stern look down at the panicking man. Photorealistic faces, sharp detail. Full-frame 16:9, no borders."
+   "prompt": "Edit the THIRD image and keep its exact square framing, background office, lightning bolt, speed lines, flames, sparks, white speech bubble and dark box exactly in place. You MUST replace BOTH men with different people: (1) The crouching panicking man in the lower middle must become the man from the SECOND image: the SAME face and identity as the second image (heavy-set 45-year-old Japanese man, broad face, gelled black slicked-back side-parted hair, thick eyebrows), wearing a grey pinstripe suit, white shirt and a bright RED tie; same pose, position and size; extreme panic: face flushed bright red, many sweat drops, wide terrified eyes, clenched teeth grimace. (2) The standing older man on the right must become the man from the FIRST image: the SAME face and identity as the first image (swept-back white hair, short neat white mustache), wearing a dark NAVY suit, white shirt and a PURPLE tie; same pose, position and size, cold stern look down at the panicking man. Photorealistic, sharp faces. No new text."
   }
  ]
 }
