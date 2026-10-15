@@ -18,14 +18,14 @@
   {
    "id": "omni-S14h",
    "model": "omnihuman",
-   "image": "assets/portraits/tsuki-kf-pilot/S14h-1.png",
+   "image": "assets/portraits/tsuki-kf-pilot/S14h-fixed.png",
    "audio_id": "L29",
    "prompt": "Hikaru speaks clearly, word by word, looking Washio in the eye, a slight emphasis and a pause on 'juu-ni-jou', no tremor. Reminding Washio of the contract clause. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout."
   },
   {
    "id": "omni-S21l",
    "model": "omnihuman",
-   "image": "assets/portraits/tsuki-kf-pilot/S21l-1.png",
+   "image": "assets/portraits/tsuki-kf-pilot/S21l-fixed.png",
    "audio_id": "L50",
    "prompt": "Haru speaks slowly and warmly with a proud wrinkled smile, a small nod to Hikaru, her hands on the bamboo strips. Telling her grandson the moon-child works at night anywhere. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout."
   }
