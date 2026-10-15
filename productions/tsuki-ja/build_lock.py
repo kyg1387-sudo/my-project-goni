@@ -20,7 +20,7 @@ HOOK, OUTRO = 20.0, 45.0  # 아웃트로는 선례 실측 33.8초 + 몽타주 �
 AD_AFTER = {"NA10": ("1차 광고", 210.0), "NA18": ("2차 광고", 420.0)}
 OVERLAP = {"L44": 0.2, "L43": 0.2}  # 이 줄은 앞 줄 끝에 0.2초 겹쳐 시작
 SECTION_START = {"S01": "② 발단·갈등"}
-SKIP = {"NA4", "NA7", "NA12", "NA17", "NA23"}  # 길이 조정(제0장 1·4): 화면이 이미 말해 주는 설명 내레이션 — 녹음은 보관, 타임라인·자막에서 제외
+SKIP = {"NA4", "NA23"}  # 길이 조정(제0장 1·4): 화면이 이미 말해 주는 설명 내레이션 — 녹음은 보관, 타임라인·자막에서 제외
 MIN_TOTAL, MAX_TOTAL = 9 * 60 + 40, 11 * 60
 
 
@@ -58,6 +58,25 @@ def load_lines():
 
 
 def load_cuts():
+    """장면별 컷 수 — PHASE 3 생성기의 SHOTS(실제 샷 설계)에서 센다(02 표보다 정확). 생성기가 없으면 02 표."""
+    try:
+        import sys
+        sys.path.insert(0, os.path.join(REPO, "scripts"))
+        import build_tsuki_phase3 as p3
+        out = {}
+        for sh in p3.SHOTS:  # 장면의 첫 대사 앵커 앞에 놓인 무언 컷 수(각 INSERT초) — 대사 중 컷은 발화가 덮는다
+            sc = sh["scene"]
+            if sc == "H":
+                continue
+            if sc not in out:
+                out[sc] = [0, False]
+            if sh["line"]:
+                out[sc][1] = True
+            elif not out[sc][1]:
+                out[sc][0] += 1
+        return {k: v[0] for k, v in out.items()}
+    except Exception as e:  # noqa
+        print("SHOTS 불러오기 실패, 02 표 사용:", e)
     t = open(os.path.join(HERE, "02_카메라앵글설계.md"), encoding="utf-8").read()
     out = {}
     for r in t.split("\n"):
@@ -88,8 +107,7 @@ def build():
     t, srows, ads = HOOK, [], []
     for sid in order:
         ls = scenes.get(sid, [])
-        cover = sum(max(1, math.ceil(x["dur"] / PER_CUT)) for x in ls)
-        silent = max(0, cuts.get(sid, 0) - cover)
+        silent = cuts.get(sid, 0)  # 첫 대사 앞 무언 컷 수
         start = t
         t += silent * INSERT
         for k, x in enumerate(ls):

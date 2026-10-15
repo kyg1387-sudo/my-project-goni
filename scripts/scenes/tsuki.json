@@ -1,0 +1,1105 @@
+{
+ "_설명": "tsuki 장면 설정(build_tsuki_phase3.py 생성). override_required 장면은 정지 푸시인·OMNI 정지 프레임·재사용·카드를 video-overrides로 먼저 넣는다.",
+ "ratio": "16:9",
+ "budget_usd": 33.07,
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "durations": [
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10
+ ],
+ "scenes": [
+  {
+   "prompt": "(override) reuse: Reuse of S18b (monitor wall going dark one panel at a time, overhead). Caption c",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S18c (Hino's hand wiping sweat).",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S14c (Washio: 'Trash from the moon, what are you saying!'). Voice = L26",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The curtain sways gently in a night breeze; moonlight shifts slightly; the bamboo dragonfly stays still. No people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/H2-1.png"
+  },
+  {
+   "prompt": "(override) card: Black title card 『月に帰った契約社員』 with subtitle.",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Clouds drift slowly across the glass; distant seagulls; no people, no text. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S01a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A few leaves skitter across the plaza; a flag-less pole; no people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S01b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Moths flicker around the sodium lamp; the fence stays still; no people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S02a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His hands wipe the floor in slow steady arcs, wring the cloth into the bucket once; his back stays to the camera. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S02b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Water drips from the wrung cloth; the hands squeeze once more and set the cloth down. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S02c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He blinks slowly once, breathes, the towel stays over his mouth; the moonlight flickers faintly on his hair. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S02d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sakura walks three slow steps away from the camera along the path holding the bag, her back to the camera, hair moving slightly in the night wind. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S03a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes widen slightly and soften, a small breath, a tiny nod; head stays within 10 degrees. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S03b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Sakura's blurred shoulder (her bob hair, right foreground): Hikaru standing",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S03c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He glances at the laptop and back, a shy half-smile, the towel turning in his hands. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S03d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Sakura's blurred shoulder (right foreground): Hikaru at three-quarter angle",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S03e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A faint amused breath, eyes steady on her, the towel still; one blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S03f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Sakura's blurred shoulder (right foreground): Hikaru at three-quarter angle",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S03g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Her breath catches, a slow blink, her fingers tighten on the plastic bag; she does not speak. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S03h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Thin clouds pass over the moon; the two figures stay still, backs to camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S03i-1.png"
+  },
+  {
+   "prompt": "(override) still: An old faded photo print in a plain wooden frame: in front of a bamboo-craft wor",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S04a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The palms tilt the photo slightly toward the light; the hands hold still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S04aa-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His thumb slowly brushes dust from the glass of the photo; the hands hold still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S04b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The red light on the video wall pulses slowly; nothing else moves; no people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S05a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He dabs his temple with the handkerchief twice, shoulders rising with a tense breath; back stays to camera. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S05b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over a seated engineer's blurred shoulder (foreground left, back of head): Hino ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S05c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The handkerchief wipes the temple slowly; red light pulses on the skin. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S05d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Hikaru slowly starts to rise from the chair, back to camera; the green light holds steady. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S06a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Hino's hand grips the door frame, he leans in slightly, eyes narrowing in disbelief, mouth closed; head within 10 degrees. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S06b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He hides the cloth behind him, bows his head halfway, a nervous swallow, then his eyes lift to the door. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S06c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Hino's blurred shoulder (grey suit, left foreground): Hikaru at three-quart",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S06d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes follow the pointing hand to the wall and return to Hino, calm; a small breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S06e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He hears the name, a slow blink, the fist tightens on the handkerchief; lips stay closed. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S06f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He swallows, eyes flick to the wall and back, the fist tightens on the handkerchief; a slow calculating blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S06g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Washio's fingers slowly interlace, his chin lifts a degree, light moves on the glasses; he stays seated and still otherwise. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S07a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Hino's forced modest smile widens, eyes flick toward the head seat and back; the remote hand lowers slowly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S07c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He nods politely twice, a courteous smile, closes the folder gently. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S07d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The cup is set down slowly, a faint ripple in the tea, the hand withdraws. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S07e-1.png"
+  },
+  {
+   "prompt": "(override) still: No people. The far end of the long boardroom table and one empty black chair, co",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S07f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Hino slides the sheet an inch forward with two fingers; Hikaru stays standing still; the glass reflection shifts slightly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S08a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert from above: a blank white document with an empty red-ringed stamp box sli",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S08b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Hikaru's blurred shoulder (grey jacket, right foreground): Hino seated at t",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S08c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes move from the pen to the paper to Hino's face, one slow breath; his hands stay at his sides. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S08d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The forced smile fades slowly, the pen hand lowers an inch, a swallow. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S08e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The pen hand freezes, the smile stiffens, a slow blink, the other hand reaches for the handkerchief. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S08f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Hino's blurred shoulder (left foreground): Hikaru lifts his head and meets ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S08g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He wipes his neck slowly with the handkerchief, eyes dropping to the desk, jaw tightening. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S08h-1.png"
+  },
+  {
+   "prompt": "(override) still: No people. High angle of the desk: the blank document and the pen lying between ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S08i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand slowly removes the glasses and folds them; light stripes move on the lenses. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S09a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Hino's blurred shoulder (left foreground), slightly low angle: Washio behin",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S09b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes dart once, the handkerchief presses to his lips, a shallow breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S09ba-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Hino's blurred shoulder (left foreground): Washio leaning forward, fingers ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S09c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He swallows, nods once slowly, eyes down, the fist tightening on the handkerchief. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S09d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His clasped hands tighten behind his back, shoulders rise with a slow breath; he stays facing the window. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S09e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The finger taps four times slowly, then stops flat on the desk. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S09f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Washio's hand lifts the top sheet; Hikaru stands perfectly still, back to camera. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S10a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand slaps the sheet down hard and withdraws; the paper settles. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S10b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The finger stabs the paper twice, the corner crumples. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S10c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes lower to the papers, a slow breath, no other movement. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S10d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Hikaru's blurred shoulder (grey jacket, right foreground), low angle: Washi",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S10e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes lift slowly from the papers, a single blink, no other movement. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S10f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes drop to the last sheet, a slow breath, no other movement. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S10g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The mouth corner lifts slowly into a sneer and holds. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S10h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The sneer settles, he leans back a degree, fingers lace on the desk. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S10i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He walks three slow steps toward the door, back to the camera, the sheets held against his chest. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S10j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hands type steadily; the monitor light flickers faintly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S11a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Hikaru points at the screen and traces a line with his finger, the engineer nods; Hikaru's head stays in profile. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S11b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Water drips from the cloth; the hands wring once more slowly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S11c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Mist drifts slowly; the sky brightens a little; no people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S11d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: She walks two slow steps along the path with the bag, her back to the camera. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S12a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sakura holds the bag out a little further, eyebrows drawn together, a worried breath; head stays at the same angle. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S12b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He keeps wringing the cloth slowly, a weary smile forming, a slow blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S12c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Sakura's blurred shoulder (left foreground): Hikaru at three-quarter angle ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S12d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His tired smile deepens a little, he looks down at the bag, a soft exhale. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S12e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Thin clouds drift across the moon slowly; no people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S12f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Hino's shoulders shift as he reaches into the drawer; Washio at the window stays motionless; the lamp flickers faintly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S13a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The drawer slides open; the hand lifts the small seal out slowly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S13b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand presses the seal down firmly, holds, trembles slightly, lifts; a red mark remains. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S13c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The fingers tremble as they set the seal down and withdraw. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S13d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: City lights shimmer; his clasped hands squeeze once; he stays facing the window. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S13e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Washio waves the sheet once; Hino dabs his brow; Hikaru stands still, back to camera. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S14a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes stay steady, a slow breath, no other movement. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S14b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Hikaru's blurred shoulder (right foreground), low angle: Washio half-rising",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S14c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His shoulders flinch once at the shout, then settle; his eyes do not leave the man; a slow breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S14d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Hikaru's blurred shoulder (right foreground): Washio leaning back in the le",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S14e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He dabs his temple, eyes flick to Washio and back, a nervous swallow. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S14f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He leans back, contempt in the set of his mouth, fingers tapping once on the armrest. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S14g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His frown deepens, the head tilts a degree, lips stay closed; a hard breath through the nose. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S14ga-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Washio's blurred shoulder (left foreground): Hikaru looking Washio straight",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S14h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: One finger pushes the glasses up; the eyes flicker once with unease then harden. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S14i-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Hikaru's blurred shoulder (right foreground): Hino at three-quarter angle f",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S14j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He turns his shoulders away and walks two slow steps toward the door, back to the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S14k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Thin clouds drift past the moon; a puddle ripples in the wind; no people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S15a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He walks three slow steps away from the camera carrying the box; his back stays to the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S15b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: She runs three quick steps away from the camera, hair flying, one hand reaching out; her back stays to the camera. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S15c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand draws the bamboo dragonfly out of the pocket and holds it out. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S15f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Sakura's blurred shoulder (left foreground): Hikaru at three-quarter angle ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S15g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Her fingers close around the toy, tears well and one spills, her lips press together. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S15h-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Hikaru's blurred shoulder (right foreground): Sakura at three-quarter angle",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S15i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The fingers tighten around the toy; the hand trembles slightly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S15j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The small figure walks slowly away; clouds pass the moon. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S15k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: City lights shimmer in the reflection; no people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S16a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The glasses clink once and part; ice turns in the whisky. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S16b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Washio raises the glass higher with a broad silent laugh, shoulders shaking once; head stays at the same angle. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S16c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He lowers the glass slowly, the smile thins, one slow blink behind the gold glasses. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S16d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The ice turns slowly and melts; a drop runs down the glass. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S16e-1.png"
+  },
+  {
+   "prompt": "(override) still: A blank dark monitor corner (red countdown numerals composited later), red glow.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S16ba-1.png"
+  },
+  {
+   "prompt": "(override) still: A blank red-pulsing monitor panel (Japanese 'authentication failed' composited l",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S16bb-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Washio strides one step in through the doorway, coat flaring; his face stays turned away. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S16bc-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Hino's blurred shoulder (right foreground), low angle: Washio both hands pl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S16bd-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He presses the phone closer, his face pales, his lips part; the handkerchief hand trembles. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S16be-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Washio's blurred shoulder (left foreground): Hino at three-quarter angle, p",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S16bf-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes waver for the first time, a slow swallow, the pupils shifting; no other movement. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S16bg-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The engineers stay bowed; one rubs his neck; the red wall pulses. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S16bh-1.png"
+  },
+  {
+   "prompt": "(override) still: A smartphone lying face up on a desk, screen blank (caller name composited later",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S17a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He snatches the phone and raises it to his ear, shoulders tense; his face stays turned away. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S17b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Shinoda lowers the document slowly, eyes narrowing, the receiver steady at his ear; mouth hidden behind the receiver. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S17c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sweat beads on his temple, his eyes widen, a shaky breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S17d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes narrow, the document lowers to the desk, the receiver stays steady. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S17e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He says nothing, a slow blink, the jaw sets; the receiver stays still. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S17f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The few red panels flicker and one more goes dark; no people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S17g-1.png"
+  },
+  {
+   "prompt": "(override) still: A blank red-pulsing control monitor panel filling the frame (Japanese 'license e",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S18a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Monitor panels switch off one after another from left to right; the room darkens; no people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S18b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The handkerchief wipes slowly; red light pulses on the skin. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S18c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His hands freeze on the keys; his face slackens; the monitor light dies a little. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S18d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over an engineer's blurred shoulder (left foreground): Hino at three-quarter ang",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S18e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up of Washio at three-quarter angle under dim red emergency light, gold gl",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S18g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The red lamps pulse slowly; nothing else moves; no people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S18h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He walks two steady steps into the room, back to the camera, the coat moving. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S19a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand sets the two folders down, squares them, withdraws. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S19b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Washio's blurred shoulder (navy suit, right foreground): Shinoda standing a",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S19c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He pushes the glasses up, nostrils flare, a hard breath; no other movement. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S19d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He watches the sheet, calm, a single slow blink, then reaches for it. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S19e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He takes the sheet, tilts it to the light, eyes studying the seal mark, silent; a slow blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S19f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Washio's blurred shoulder (right foreground): Shinoda at three-quarter angl",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S19g-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert from above: two red seal impressions side by side on two blank sheets, on",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S19h-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Washio's blurred shoulder (right foreground), slightly high angle: Shinoda ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S19i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He half-rises, legs fail, he collapses back into the chair, arm flung out pointing, glasses slipping askew. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S19j-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Washio's blurred shoulder (right foreground): Hino backed against the wall ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S19k-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Shinoda's blurred coat (left foreground), high angle: Washio on his knees o",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S19l-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the kneeling Washio's blurred head (bottom foreground), low angle: Shinoda ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S19m-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand slips from the coat hem, drops to the carpet, fingers spread and go still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S19n-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Shinoda's blurred shoulder (left foreground): Hino slumped against the wall",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S19o-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His head lifts slowly within 15 degrees toward Hino, eyes widening with betrayal, mouth closed. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S19p-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Light shifts slowly across the table; nothing moves; no people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S19q-1.png"
+  },
+  {
+   "prompt": "(override) still: No people. An overturned black leather chair on the carpet beside the glossy tab",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S19r-1.png"
+  },
+  {
+   "prompt": "(override) still: A folded newspaper page with a plunging line graph and blank headline blocks (Ja",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S20a-1.png"
+  },
+  {
+   "prompt": "(override) still: A blank white official notice on a glass door (Japanese notice composited later)",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S20b-1.png"
+  },
+  {
+   "prompt": "(override) still: A plain cream envelope on a desk beside a red seal (Japanese title composited la",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S20c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Dust drifts in a shaft of light; no people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S20d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He walks three slow steps up the path, back to the camera, the bamboo leaves swaying. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S21a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Hikaru's knife shaves the bamboo in slow strokes; Haru's hands sort strips; neither looks up. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S21b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The knife shaves off a thin curl of bamboo which falls; the hands continue steadily. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S21c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The knife pauses mid-stroke, he looks up within 15 degrees, calm recognition, a small breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S21d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He sets the knife down slowly, looks up within 15 degrees, a calm breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S21e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Shinoda's blurred shoulder (beige coat, left foreground): Hikaru rising to ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S21f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He lets out a slow breath, eyes glisten, a restrained smile forms. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S21g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes soften, a slow blink, the bamboo strip turns once in his fingers. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S21h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand draws the envelope out slowly and holds it with both hands. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S21ha-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Hikaru's blurred shoulder (right foreground): Shinoda holding out a plain c",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S21i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Her smile deepens, she nods once very slowly, her hands rest on the strips. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S21j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His expression gentles, the envelope lowers an inch, a slow nod begins. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S21k-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Hikaru's blurred shoulder (right foreground): old Haru on the veranda at th",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S21l-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A smile spreads slowly, eyes soften, a quiet exhale; head within 10 degrees. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S21m-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Haru nods slowly; Hikaru's hand rests on the veranda edge; both watch the envelope, still. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S21n-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The bamboo sways in the wind; the three figures stay where they are; dappled light moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S21o-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The small figure walks slowly up the path toward the camera; her face is too far to read; the bamboo sways in golden light. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S22a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His head lifts within 15 degrees toward the path, surprise softening into a smile, a slow blink. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S22b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand lifts the bamboo dragonfly a little higher; golden light flares through its blades. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S22c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Hikaru's blurred shoulder (right foreground): Sakura at three-quarter angle",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/tsuki-keyframes/S22d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He laughs silently, shoulders shaking once, eyes wet, a slow happy exhale; head within 10 degrees. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/tsuki-keyframes/S22e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The bamboo sways slowly in the night wind; thin clouds cross the moon; no people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S23a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Bamboo leaves sway slowly across the moon; thin clouds drift; no people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S23aa-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The window light flickers warmly; leaves move; no people. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/tsuki-keyframes/S23b-1.png"
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S03c frame (rice balls handed over), still push-in for the closing ques",
+   "duration": 10,
+   "override_required": true
+  }
+ ]
+}

@@ -154,11 +154,13 @@ SHOTS = [
     S("S03i", "S03", "face", "ews", "yard", "LA", [HA_, K], "YARD_HIGH", "Low wide: the two small figures standing by the cabinets under the huge full moon, seen from behind as silhouettes.",
       motion="Thin clouds pass over the moon; the two figures stay still, backs to camera.", expr="back"),
     S("S04a", "S04", "estill", "ecu", "product", "EL", [], None, "An old faded photo print in a plain wooden frame: in front of a bamboo-craft workshop, an elderly Japanese couple in work aprons and a small boy of about five holding a bamboo dragonfly, warm faded colors, slightly blurred, no text.", line="NA5", fx="pushin"),
+    S("S04aa", "S04", "ins", "cu", "yard", "HA", [HA_], "YARD_ROW", "Insert from above: the small framed photo resting on a young man's open palms, grey jacket cuffs, lamp light, no face.",
+      motion="The palms tilt the photo slightly toward the light; the hands hold still."),
     S("S04b", "S04", "ins", "ecu", "yard", "EL", [HA_], "YARD_ROW", "Insert: Hikaru's hands holding the small framed photo, a thumb brushing the glass, grey jacket cuffs, lamp light.", line="NA6",
       motion="His thumb slowly brushes dust from the glass of the photo; the hands hold still."),
-    S("S05a", "S05", "empty", "ws", "dev_red", "EL", [], "DEV_RED", "No people. The development office at night seen past a glass partition in the foreground: the huge video wall glowing solid red, desks empty.", line="L07", vo=True,
+    S("S05a", "S05", "empty", "ws", "dev_red", "EL", [], "DEV_RED", "No people. The development office at night seen past a glass partition in the foreground: the huge video wall glowing solid red, desks empty.", line="NA7",
       motion="The red light on the video wall pulses slowly; nothing else moves; no people."),
-    S("S05b", "S05", "face", "ms", "dev_red", "HA", [N], "DEV_RED", "High angle: Hino standing in front of the red video wall wiping his temple with a white handkerchief, shoulders tense, seen from the side-back so his mouth is hidden.",
+    S("S05b", "S05", "face", "ms", "dev_red", "HA", [N], "DEV_RED", "High angle: Hino standing in front of the red video wall wiping his temple with a white handkerchief, shoulders tense, seen from the side-back so his mouth is hidden.", line="L07", vo=True,
       motion="He dabs his temple with the handkerchief twice, shoulders rising with a tense breath; back stays to camera." + HOLD, expr="back"),
     S("S05c", "S05", "d", "ots", "dev_red", "EL", [N, "STAFF"], "DEV_RED", "Over a seated engineer's blurred shoulder (foreground left, back of head): Hino standing at three-quarter angle, handkerchief clutched, red light on his face, frightened and urgent.", line="L08",
       act="Hino speaks low and frightened, clutching the handkerchief, a glance at the red wall and back to the engineer. Warning his subordinate what is at stake." + OB, expr="fear"),
@@ -241,7 +243,7 @@ SHOTS = [
       act="Hikaru gathers the five sheets calmly, looks at Washio, answers with quiet acceptance and no resentment, a small bow of the head. Accepting the demands." + OB, expr="calm"),
     S("S10j", "S10", "face", "ws", "exec", "HA", [HA_], "EXEC_DAY", "High wide: Hikaru walks away from the desk toward the door carrying the sheets, seen from behind, small in the striped light.",
       motion="He walks three slow steps toward the door, back to the camera, the sheets held against his chest.", expr="back"),
-    S("S11a", "S11", "ins", "ecu", "dev", "EL", [HA_], "DEV_DESK", "Insert: a young man's hands typing fast on a keyboard at night, a monitor glow with abstract blue diagrams and no text, grey jacket cuffs.",
+    S("S11a", "S11", "ins", "ecu", "dev", "EL", [HA_], "DEV_DESK", "Insert: a young man's hands typing fast on a keyboard at night, a monitor glow with abstract blue diagrams and no text, grey jacket cuffs.", line="NA12",
       motion="The hands type steadily; the monitor light flickers faintly."),
     S("S11b", "S11", "face", "ms", "dev", "SIDE", [HA_, "STAFF"], "DEV_DESK", "Side medium: Hikaru standing beside a seated engineer (back of head only) pointing at a monitor with abstract diagrams, his face in profile turned toward the screen, mouth hidden by the angle.",
       motion="Hikaru points at the screen and traces a line with his finger, the engineer nods; Hikaru's head stays in profile." + HOLD, expr="back"),
@@ -301,10 +303,6 @@ SHOTS = [
       motion="He walks three slow steps away from the camera carrying the box; his back stays to the camera.", expr="back"),
     S("S15c", "S15", "face", "ms", "hq_moon", "EL", [K], "HQ_GATE", "Medium: Sakura runs out through the gate toward the camera's far side in her office vest, seen from behind, hair flying, one hand reaching forward.", line="L31", vo=True,
       motion="She runs three quick steps away from the camera, hair flying, one hand reaching out; her back stays to the camera.", expr="back"),
-    S("S15d", "S15", "d", "ots", "hq_moon", "EL", [K, HA_], "HQ_MOON", "Over Hikaru's blurred shoulder (right foreground): Sakura at three-quarter angle out of breath, chest heaving, eyes wet, moon and sodium light.", line=None,
-      act="", expr="worry", motion="Sakura catches her breath, chest heaving, eyes wet and searching his face; head stays at the same angle." + HOLD),
-    S("S15e", "S15", "face", "cu", "hq_moon", "EL", [HA_], "HQ_MOON", "Close-up of Hikaru turning his head slowly toward her, the box under one arm, a gentle look.",
-      motion="He turns his head slowly within 15 degrees toward her, a gentle look, a slow blink.", expr="calm"),
     S("S15f", "S15", "ins", "ecu", "hq_moon", "EL", [HA_], "P_TONBO", "Insert: a hand takes a small hand-made bamboo dragonfly toy from a jacket pocket, moonlight on the pale bamboo.",
       motion="The hand draws the bamboo dragonfly out of the pocket and holds it out."),
     S("S15g", "S15", "d", "ots", "hq_moon", "EL", [HA_, K], "HQ_MOON", "Over Sakura's blurred shoulder (left foreground): Hikaru at three-quarter angle holding out the bamboo dragonfly, the box under his other arm, a warm quiet smile, moonlight.", line="L32",
@@ -350,7 +348,7 @@ SHOTS = [
       motion="Sweat beads on his temple, his eyes widen, a shaky breath." + HOLD, expr="fear"),
     S("S17e", "S17", "d", "ots", "dev", "EL", [N, "STAFF"], "DEV_DESK", "Close-up of Hino at three-quarter angle, phone at his ear, stammering, the handkerchief crushed in his fist.", line="L37",
       act="Hino stammers into the phone, the handkerchief crushed in his fist, eyes darting, voice thin. Answering Shinoda's question, lying badly." + OB, expr="fear"),
-    S("S17f", "S17", "face", "cu", "board_morn", "EL", [D], "BOARD_DAY", "Close-up of Shinoda silent, the receiver at his ear, eyes steady behind the black glasses, saying nothing.",
+    S("S17f", "S17", "face", "cu", "board_morn", "EL", [D], "BOARD_DAY", "Close-up of Shinoda silent, the receiver at his ear, eyes steady behind the black glasses, saying nothing.", line="NA17",
       motion="He says nothing, a slow blink, the jaw sets; the receiver stays still." + HOLD, expr="firm"),
     S("S17g", "S17", "empty", "ews", "dev", "HA", [], "DEV_RED", "No people. High wide of the development office at night, the video wall dark except a few red panels.", line="NA18",
       motion="The few red panels flicker and one more goes dark; no people.", fx="dissolve"),
@@ -364,8 +362,6 @@ SHOTS = [
       motion="His hands freeze on the keys; his face slackens; the monitor light dies a little." + HOLD, expr="fear"),
     S("S18e", "S18", "d", "ots", "ctrl_black", "EL", [N, "STAFF"], "CTRL_EMER", "Over an engineer's blurred shoulder (left foreground): Hino at three-quarter angle, hands on the dead keyboard, red emergency light, terror.", line="L38", fx="handheld",
       act="Hino whispers then rises to a frightened cry, hands pressing the dead keys, eyes wide. Realizing everything is stopping." + OB, expr="fear"),
-    S("S18f", "S18", "ins", "ecu", "ctrl_black", "EL", [W], "CTRL_EMER", "Insert: a smartphone vibrating in a heavy hand under red emergency light, screen blank (caller name composited later), the hand not answering.",
-      motion="The phone vibrates in the hand; the thumb hovers and does not press."),
     S("S18g", "S18", "d", "cu", "ctrl_black", "EL", [W], "CTRL_EMER", "Close-up of Washio at three-quarter angle under dim red emergency light, gold glasses, face cracked with fear, voice gone hoarse, sweat.", line="L38a",
       act="Washio speaks hoarse and broken, barely above a whisper, swallowing between phrases, sweat on his brow, eyes pleading at no one. Ordering them to bring Hikaru back." + OB, expr="fear"),
     S("S18h", "S18", "empty", "ews", "ctrl_black", "HA", [], "CTRL_BLACK", "No people. The dark control room from a ceiling corner, only red emergency lamps.", line="NA19b",
@@ -403,6 +399,7 @@ SHOTS = [
       motion="His head lifts slowly within 15 degrees toward Hino, eyes widening with betrayal, mouth closed." + HOLD, expr="fear"),
     S("S19q", "S19", "empty", "ews", "board_morn", "BE", [], "BOARD_BIRD", "No people. Bird's-eye view straight down on the boardroom: the long table, an overturned chair, two folders, morning light.", line="NA20",
       motion="Light shifts slowly across the table; nothing moves; no people."),
+    S("S19r", "S19", "estill", "ecu", "board_morn", "EL", [], "BOARD_DAY", "No people. An overturned black leather chair on the carpet beside the glossy table, morning light.", fx="pushin"),
     S("S20a", "S20", "estill", "ecu", "product", "EL", [], None, "A folded newspaper page with a plunging line graph and blank headline blocks (Japanese headline composited later), no readable text.", line="NA21", fx="handheld"),
     S("S20b", "S20", "estill", "ms", "product", "LA", [], None, "A blank white official notice on a glass door (Japanese notice composited later), no readable text.", fx="pushin"),
     S("S20c", "S20", "estill", "ecu", "product", "OH", [], None, "A plain cream envelope on a desk beside a red seal (Japanese title composited later), no readable text.", fx="pushin"),
@@ -452,6 +449,8 @@ SHOTS = [
       motion="He laughs silently, shoulders shaking once, eyes wet, a slow happy exhale; head within 10 degrees." + HOLD, expr="smile"),
     S("S23a", "S23", "empty", "ews", "moon", "LA", [], "BAM_MOON", "No people. Low wide: a huge full moon over the swaying bamboo, cold blue light.", line="NA24",
       motion="The bamboo sways slowly in the night wind; thin clouds cross the moon; no people."),
+    S("S23aa", "S23", "empty", "ecu", "moon", "LA", [], "BAM_MOON", "No people. Extreme close-up of the full moon's surface behind a few swaying bamboo leaves in silhouette.",
+      motion="Bamboo leaves sway slowly across the moon; thin clouds drift; no people."),
     S("S23b", "S23", "empty", "ws", "moon", "EL", [], "BAM_MOON", "No people. The little workshop house under the moon with one warm window light, bamboo around.", line="NA25", fx="tiltdown",
       motion="The window light flickers warmly; leaves move; no people."),
     S("S24a", "S24", "reuse:S03c", "ots", "yard", "EL", [], None, "Reuse of S03c frame (rice balls handed over), still push-in for the closing question.", line="NA26"),
@@ -816,7 +815,7 @@ def main():
 
 EMO_OK = {"angry": ("anger", "fury", "rage", "glare", "furious", "shout", "jaw", "jab", "slam", "fist", "spit", "scream", "hard"),
           "happy": ("smile", "smirk", "sneer", "laugh", "grin", "mock", "pleased", "satisf", "proud", "warm", "tease"),
-          "sad": ("sob", "tear", "cry", "beg", "plea", "sad", "tremb", "break", "wet", "pale", "frighten", "stammer", "confess", "hoarse", "fear"),
+          "sad": ("sob", "tear", "cry", "beg", "plea", "sad", "tremb", "break", "wet", "pale", "frighten", "stammer", "confess", "hoarse", "fear", "apolog", "sorry", "worr"),
           "tonedown": ("cold", "quiet", "calm", "restrain", "low", "icy", "earnest", "silence", "gentle", "steady", "firm", "plain", "precise", "contempt", "narrow"),
           "toneup": ("alarm", "panic", "shock", "excite", "fright", "urgent", "mock", "dismiss", "scoff", "bluster", "forced", "fake"),
           "normal": ()}
@@ -840,7 +839,10 @@ def emotion_table(sb, live):
         ok = not EMO_OK.get(emo) or any(k in seen for k in EMO_OK[emo])
         bad = [k for k in EMO_BAD.get(emo, ()) if k in seen]
         intended = any(k in memo for k in INTENDED)
-        state = "✅" if ok and (not bad or intended) else "⚠️"
+        if x["vo"]:  # 듣는 사람 리액션 위 목소리 — 화자 표정 대조 대상 아님(리액션이 「방금 들은 말」에 맞는지는 동작 문장으로 검수)
+            state = "👂"
+        else:
+            state = "✅" if ok and (not bad or intended) else "⚠️"
         warn += state == "⚠️"
         how = "립싱크" if x["tier"] == "omni" else ("i2v(목소리만)" if x["vo"] else "i2v")
         rows.append(f"| {state} | {x['id']} | {tag} | {how} | {emo} {inten} · {tempo} | {memo} | {x['subject'][:70]} | {act[:90]} |")
