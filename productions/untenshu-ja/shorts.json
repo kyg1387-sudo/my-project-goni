@@ -1,0 +1,12 @@
+{
+ "prefix": "untenshu",
+ "keep": 0.76,
+ "skip_styles": ["Caption", "Title"],
+ "sub_font": "Zen Maru Gothic",
+ "shorts": [
+  {"id": "1-kuseni", "start": 114.4, "end": 149.2, "title": "タクシーで怒鳴る部長\\N「運転手のくせに！」"},
+  {"id": "2-shashin", "start": 180.9, "end": 203.2, "title": "床に落ちた妻の写真を\\N拾ったのは…"},
+  {"id": "3-sakuya", "start": 381.9, "end": 413.9, "title": "商談相手の会長は\\N昨夜の運転手だった"},
+  {"id": "4-inochi", "start": 478.9, "end": 503.6, "title": "土下座する部長に\\N会長のひと言"}
+ ]
+}
