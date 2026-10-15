@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """『運転手のくせに』 썸네일 A안 최종(고니감독님 제작본 기반, 무과금·로컬).
 고니감독님 썸네일의 왼쪽(글자·배경·번개)은 그대로 두고, 번개 오른쪽 인물 영역을 본편 인물로 다시 합성한다.
-  부장 = 大塚(S17f: 홍조·땀·빨간 넥타이·회색 스트라이프), 회장 = 黒田(S17c: 백발 올백·흰 콧수염·남색 정장·보라 넥타이)
+  부장 = 大塚(S18f 공황 + 로컬 홍조·식은땀·빨간 넥타이·회색 스트라이프), 회장 = 黒田(S17c: 백발 올백·흰 콧수염·남색 정장·보라 넥타이)
   말풍선 「違うんです!!」(세로) 다시 그림, 「部長の末路」 박스는 재생 시간 표시 위로 올림, 1280x720 JPG.
 사용법: make_thumbnail_untenshu_a_final.py
 """
@@ -44,6 +44,40 @@ def speed_lines(center, seed, n=140, inner=330, alpha=150):
     return lay
 
 
+def flush_and_sweat(im, seed=5):
+    """얼굴 피부만 벌겋게(피부색 마스크 × 얼굴 타원) + 작은 식은땀 방울·흘러내린 자국·번들거림."""
+    a = np.array(im).astype(float)
+    r, g, b = a[..., 0], a[..., 1], a[..., 2]
+    skin = ((r > 70) & (r > g * 1.05) & (r > b * 1.15)).astype(float)
+    face = Image.new("L", im.size, 0); ImageDraw.Draw(face).ellipse((1150, 470, 1450, 790), fill=255)
+    m = np.array(face.filter(ImageFilter.GaussianBlur(35))).astype(float) / 255 * skin
+    m = np.array(Image.fromarray((m * 255).astype("uint8")).filter(ImageFilter.GaussianBlur(4))).astype(float) / 255
+    k = 0.75
+    a[..., 0] = r + (np.minimum(255, r * 1.18 + 40) - r) * m * k
+    a[..., 1] = g + (g * 0.62 - g) * m * k
+    a[..., 2] = b + (b * 0.55 - b) * m * k
+    out = Image.fromarray(np.clip(a, 0, 255).astype("uint8")).convert("RGBA")
+    rnd = random.Random(seed)
+    lay = Image.new("RGBA", im.size, (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
+    spots = [(1215, 528), (1248, 520), (1282, 516), (1318, 519), (1352, 527), (1386, 538), (1232, 548), (1300, 545),
+             (1370, 556), (1176, 585), (1424, 590), (1172, 640), (1428, 648), (1300, 640), (1205, 690), (1400, 700),
+             (1265, 538), (1335, 541)]
+    for i, (x, y) in enumerate(spots):
+        x += rnd.uniform(-4, 4); y += 26 + rnd.uniform(-4, 4)
+        rr = rnd.uniform(4.0, 6.5); hh = rr * rnd.uniform(1.3, 1.8)
+        if i % 3 == 0:
+            ln = rnd.uniform(18, 34)
+            d.line([(x, y - ln), (x, y)], fill=(255, 235, 225, 28), width=int(rr * 1.4))
+        d.ellipse((x - rr, y - hh, x + rr, y + hh), fill=(120, 40, 30, 70))
+        d.ellipse((x - rr * 0.8, y - hh * 0.8, x + rr * 0.8, y + hh * 0.85), fill=(255, 230, 220, 60))
+        d.ellipse((x - rr * 0.5, y - hh * 0.65, x - rr * 0.05, y - hh * 0.2), fill=(255, 255, 255, 230))
+    out.alpha_composite(lay.filter(ImageFilter.GaussianBlur(0.6)))
+    sh = Image.new("L", im.size, 0); sd = ImageDraw.Draw(sh)
+    sd.ellipse((1240, 505, 1360, 545), fill=55); sd.ellipse((1285, 600, 1315, 680), fill=45)
+    out = Image.composite(Image.new("RGBA", im.size, (255, 236, 225, 255)), out, sh.filter(ImageFilter.GaussianBlur(14)))
+    return out.convert("RGB")
+
+
 def main():
     user = Image.open(os.path.join(TH, "src-A-user.png")).convert("RGB")
     a = np.array(user).astype(int)
@@ -65,9 +99,6 @@ def main():
     ImageDraw.Draw(km).polygon([(1600, 0), (W, 0), (W, H), (1640, H), (1600, 700)], fill=255)
     km = km.filter(ImageFilter.GaussianBlur(45))
     panel = Image.composite(kuroda, panel, km)
-    # 홍조(R51 표정과 같은 방향): 大塚 얼굴에 붉은 기
-    fl = Image.new("L", (W, H), 0); ImageDraw.Draw(fl).ellipse((1150, 400, 1430, 720), fill=95)
-    panel = Image.composite(Image.blend(panel, Image.new("RGB", (W, H), (235, 40, 30)), 0.5), panel, fl.filter(ImageFilter.GaussianBlur(45)))
     panel = ImageEnhance.Contrast(panel).enhance(1.12)
     panel = ImageEnhance.Color(panel).enhance(1.15)
     # 만화 집중선(검정)·불꽃 빛(아래 주황)
@@ -92,6 +123,8 @@ def main():
     for y in range(900, H):
         gd.line([(1270, y), (W, y)], fill=int(200 * (y - 900) / (H - 900)))
     panel = Image.composite(glow, panel, gm.filter(ImageFilter.GaussianBlur(20)))
+    # 식은땀: 이마·관자놀이·볼에 맺힌 물방울(어두운 가장자리 + 밝은 하이라이트) + 흘러내린 자국
+    panel = flush_and_sweat(panel, seed=5)
     # 왼쪽(원본) + 오른쪽(패널)
     mask = Image.new("L", (W, H), 0); md = ImageDraw.Draw(mask)
     for y in range(H):
