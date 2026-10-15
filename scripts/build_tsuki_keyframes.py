@@ -67,6 +67,10 @@ LIGHT_NOTE = {
 }
 # 키프레임 a 검수(2026-10-15): 감정이 약하거나 반대로 나온 컷 — 표정을 문장 맨 앞에 못 박아 재생성
 EMO_OVERRIDE = {
+    "S12d": "FRAMING LOCKED: medium close-up, camera about 1.2 metres from Hikaru, his head and shoulders fill the centre, face about one third of the frame height; Sakura's blurred shoulder at the left edge.",
+    "S19c": "FRAMING LOCKED: medium close-up, camera about 1.5 metres from Shinoda; his head and shoulders fill the centre of the frame, face about one third of the frame height, Washio's blurred shoulder at the right edge; NOT a wide shot of the room.",
+    "S19i": "FRAMING LOCKED: medium close-up from slightly above, camera about 1.5 metres from Shinoda standing; his head and shoulders fill the centre, face about one third of the frame height, Washio's blurred head at the lower right edge; NOT a wide shot.",
+    "S19m": "FRAMING LOCKED: medium close-up from a low angle, camera about 1.5 metres from Shinoda standing and closing his coat; his head and shoulders fill the centre, face about one third of the frame height, the kneeling Washio's blurred hair at the bottom edge; NOT a wide shot.",
     "S10e": "EXPRESSION LOCKED: Washio is ANGRY and domineering — hard glaring eyes, furrowed brow, jaw clenched, NO smile at all; his index finger stabs down on a sheet of paper.",
     "S15i": "EXPRESSION LOCKED: Sakura is CRYING — eyes red and wet with real tears, one tear track on each cheek, lips pressed and trembling, holding the bamboo dragonfly to her chest; NOT smiling.",
     "S18g": "EXPRESSION LOCKED: Washio is TERRIFIED and broken — eyes wide and wet, face grey, sweat on his forehead, mouth slightly open in dread, NO smile; dim red emergency light only.",
