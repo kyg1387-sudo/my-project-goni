@@ -306,7 +306,8 @@ def thumb_c():
 def main():
     out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, "assets", "thumbnails", "untenshu")
     os.makedirs(out, exist_ok=True)
-    for name, fn in (("A-manga", thumb_a), ("B-dogeza", thumb_b), ("C-drama", thumb_c)):
+    # A안 최종은 make_thumbnail_untenshu_a_final.py(고니감독님 제작본 기반)가 만든다 — 여기서는 B·C만
+    for name, fn in (("B-dogeza", thumb_b), ("C-drama", thumb_c)):
         p = os.path.join(out, f"untenshu-thumb-{name}-JP.jpg")
         fn().save(p, quality=93); print("저장:", p)
 
