@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """『運転手のくせに』 A/B/C 테스트 썸네일 3종(1280x720, 무과금·로컬, 승인 키프레임만) — 고니감독님 2026-10-15 기획.
   A 화려한 만화/웹툰풍(30~40대 직장인·젊은 층): 공황 大塚 + 오른쪽 로우앵글 黒田, 번개·불꽃·집중선, 「怒鳴った運転手は… 会長だった」
-  B 결말 충격형 도게자(사이다 매니아): 스포트라이트 속 무릎 꿇은 大塚(버즈아이), 흰 극태 고딕 + 두꺼운 검정 외곽선
-  C 정통 TV 드라마풍(50~60대 시니어): 효과 없이 실제 드라마 캡처처럼 어깨 너머 黒田, 하단 중앙 흰 명조 + 은은한 글로우
+  B 결말 충격형(사이다 매니아, 고니감독님 예시 형식): 눈물 흘리는 大塚 얼굴 + 상황 3줄 + 거대 인용구 「運転手のくせに」
+  C 정통 TV 드라마풍(50~60대 시니어, 고니감독님 예시 형식): 택시 안 黒田와 사진을 내미는 小川, 빨강 제목 2줄 + 노란 박스
 오른쪽 아래(재생 시간 표시)는 비운다. 피·폭력 없음. 실존 기업명 없음.
 사용법: make_thumbnails_untenshu_abc.py [out_dir]  (기본 assets/thumbnails/untenshu)
 """
@@ -11,7 +11,7 @@ import os
 import random
 import sys
 
-from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageOps
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 K = os.path.join(ROOT, "assets", "portraits", "untenshu-keyframes")
@@ -219,48 +219,87 @@ def thumb_a():
 
 # ───────── B: 결말 충격형 도게자 ─────────
 def thumb_b():
-    bg = cover(kf("S20d"), W, H, cx=0.42, cy=0.52, zoom=1.22)
-    bg = ImageEnhance.Contrast(bg).enhance(1.18)
-    bg = ImageEnhance.Color(bg).enhance(0.85)
-    bg = Image.blend(bg, Image.new("RGB", bg.size, (20, 26, 36)), 0.10)
-    bg = vignette(bg, 0.75)
-    bg = left_shade(bg, frac=0.42, dark=0.55)
-    badge(bg, (34, 26), "スカッとする話", font(GOTH, 40))
-    text3d(bg, (30, 100), "運転手を", font(GOTH, 104), sw=12, depth=6)
-    text3d(bg, (30, 226), "怒鳴った部長", font(GOTH, 104), sw=12, depth=6)
-    text3d(bg, (30, 400), "翌朝、", font(GOTH, 90), sw=11, depth=6)
-    text3d(bg, (30, 500), "土下座", font(GOTH, 128), fill=(255, 225, 0), sw=13, depth=7)
+    """B안(2026-10-15 고니감독님 예시 형식): 오른쪽 눈물·식은땀의 大塚 얼굴 크게(S19c 좌우 반전), 어두운 배경 +
+    위 조명, 왼쪽 상황 3줄(흰 극태 고딕), 아래 거대한 인용구 「運転手のくせに」(명조, 빨강→노랑 + 붉은 글로우)."""
+    src = ImageOps.mirror(kf("S19c"))
+    bg = cover(src, W, H, cx=0.57, cy=0.36, zoom=1.3)
+    bg = ImageEnhance.Color(bg).enhance(0.75)
+    bg = ImageEnhance.Contrast(bg).enhance(1.12)
+    bg = ImageEnhance.Brightness(bg).enhance(0.62)
+    bg = Image.blend(bg, Image.new("RGB", bg.size, (14, 22, 30)), 0.22)
+    # 얼굴에 빛을 남기고 나머지를 어둡게(위 조명)
+    m = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(m).ellipse((640, 20, 1240, 660), fill=255)
+    m = m.filter(ImageFilter.GaussianBlur(110))
+    lit = ImageEnhance.Brightness(cover(src, W, H, cx=0.57, cy=0.36, zoom=1.3)).enhance(0.95)
+    lit = ImageEnhance.Color(lit).enhance(0.85)
+    bg = Image.composite(lit, bg, m)
+    bg = vignette(bg, 0.7)
+    bg = left_shade(bg, frac=0.5, dark=0.6)
+    for k, line in enumerate(["タクシーで", "怒鳴った部長に", "会長は言った…"]):
+        text3d(bg, (40, 120 + k * 112), line, font(GOTH, 84), sw=8, depth=5)
+    # 아래 인용구: 붉은 글로우 → 그라데이션 글자
+    q = "「運転手のくせに」"
+    fq = font(MIN, 150)
     d = ImageDraw.Draw(bg)
-    f = font(MIN, 46)
-    d.text((W - 40, 40), "相手は――", font=f, fill=(255, 255, 255), anchor="ra", stroke_width=5, stroke_fill=(0, 0, 0))
-    d.text((W - 40, 100), "昨夜の運転手", font=font(MIN, 58), fill=(255, 255, 255), anchor="ra", stroke_width=6, stroke_fill=(0, 0, 0))
+    bb = d.textbbox((0, 0), q, font=fq)
+    x = (W - (bb[2] - bb[0])) // 2 - bb[0] - 20; y = 505
+    glow = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(glow).text((x, y), q, font=fq, fill=255, stroke_width=18, stroke_fill=255)
+    glow = glow.filter(ImageFilter.GaussianBlur(22)).point(lambda v: int(v * 0.85))
+    bg = Image.composite(Image.new("RGB", (W, H), (200, 20, 10)), bg, glow)
+    gradient_text(bg, (x, y), q, fq, (255, 236, 90), (225, 25, 15), sw=9, depth=0)
     return bg
 
 
-# ───────── C: 정통 TV 드라마풍 ─────────
+# ───────── C: 정통 TV 드라마풍(2026-10-15 고니감독님 예시 형식) ─────────
 def thumb_c():
-    bg = cover(kf("S17c"), W, H, cx=0.62, cy=0.40, zoom=1.18)
-    bg = ImageEnhance.Color(bg).enhance(0.82)
-    bg = ImageEnhance.Contrast(bg).enhance(1.05)
-    bg = Image.blend(bg, Image.new("RGB", bg.size, (60, 50, 40)), 0.08)     # 따뜻한 드라마 톤
-    g = Image.new("L", (W, H), 0); gd = ImageDraw.Draw(g)
-    for y in range(int(H * 0.62), H):
-        gd.line([(0, y), (W, y)], fill=int(235 * min(1, (y - H * 0.62) / (H * 0.24))))
+    """택시 안 黒田(기사)와 아내 사진을 내미는 小川(S10b), 따뜻한 앰버 톤. 위 오른쪽 둥근 검정 배지 + 빨강 제목 2줄
+    (끝 낱말만 노랑), 아래 반투명 검정 박스에 노란 2줄."""
+    bg = cover(kf("S10b"), W, H, cx=0.5, cy=0.55, zoom=1.0)
+    bg = ImageEnhance.Color(bg).enhance(0.9)
+    bg = Image.blend(bg, Image.new("RGB", bg.size, (120, 70, 25)), 0.16)      # 따뜻한 앰버
+    bg = ImageEnhance.Contrast(bg).enhance(1.08)
+    bg = vignette(bg, 0.5)
+    g = Image.new("L", (W, H), 0); gd = ImageDraw.Draw(g)                     # 위쪽 제목 자리 어둡게
+    for y in range(0, 220):
+        gd.line([(0, y), (W, y)], fill=int(170 * (1 - y / 220)))
     bg = Image.composite(Image.new("RGB", (W, H)), bg, g)
-    bg = vignette(bg, 0.45)
-    bg = grain(bg, 12)
-    # 글자: 흰 명조 + 은은한 글로우(외곽선 없음)
-    def glow_text(xy, text, f, anchor="ma", alpha=170):
-        lay = Image.new("L", (W, H), 0)
-        ImageDraw.Draw(lay).text(xy, text, font=f, fill=255, anchor=anchor)
-        gl = lay.filter(ImageFilter.GaussianBlur(10)).point(lambda v: int(v * alpha / 255))
-        nonlocal bg
-        bg = Image.composite(Image.new("RGB", (W, H), (255, 236, 200)), bg, gl)
-        ImageDraw.Draw(bg).text(xy, text, font=f, fill=(255, 255, 255), anchor=anchor)
-    glow_text((W // 2, 492), "タクシーで怒鳴りつけた運転手は", font(MIN, 50), alpha=120)
-    glow_text((W // 2, 566), "取引先の会長だった", font(MIN, 96), alpha=160)
     d = ImageDraw.Draw(bg)
-    d.text((44, 36), "「昨夜は、どうも」", font=font(MIN, 44), fill=(240, 236, 228))
+    # 배지(둥근 검정 + 흰 테)
+    fb = font(GOTH, 42)
+    bb = d.textbbox((0, 0), "スカッとする話", font=fb)
+    bw, bh = bb[2] - bb[0] + 48, bb[3] - bb[1] + 26
+    bx = 30; by = 22
+    d.rounded_rectangle((bx, by, bx + bw, by + bh), 14, fill=(0, 0, 0), outline=(255, 255, 255), width=3)
+    d.text((bx + 24 - bb[0], by + 13 - bb[1]), "スカッとする話", font=fb, fill=(255, 255, 255))
+    red_top, red_bot = (255, 70, 60), (190, 10, 10)
+    def title(xy, text, f, top, bot):
+        x, y = xy
+        ImageDraw.Draw(bg).text((x + 4, y + 5), text, font=f, fill=(0, 0, 0), stroke_width=12, stroke_fill=(0, 0, 0))
+        ImageDraw.Draw(bg).text((x, y), text, font=f, fill=(255, 255, 255), stroke_width=9, stroke_fill=(255, 255, 255))
+        gradient_text(bg, (x, y), text, f, top, bot, sw=0, depth=0)
+    f1 = font(GOTH, 64)
+    t1 = "床に落ちた妻の写真…"
+    w1 = d.textlength(t1, font=f1)
+    title((W - 36 - w1, 14), t1, f1, red_top, red_bot)
+    f2 = font(GOTH, 76)
+    a2, b2 = "拾った部下の", "運命"
+    wa, wb = d.textlength(a2, font=f2), d.textlength(b2, font=f2)
+    x2 = W - 36 - (wa + wb)
+    title((x2, 96), a2, f2, red_top, red_bot)
+    title((x2 + wa, 96), b2, f2, (255, 250, 150), (255, 190, 0))
+    # 아래 반투명 박스
+    fb2 = font(GOTH, 50)
+    lines = ["その運転手は、", "取引先の会長だった"]
+    x0, y0 = 420, 572
+    wmax = max(d.textlength(s, font=fb2) for s in lines)
+    box = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ImageDraw.Draw(box).rectangle((x0, y0, x0 + wmax + 50, y0 + 140), fill=(0, 0, 0, 175))
+    bg = bg.convert("RGBA"); bg.alpha_composite(box); bg = bg.convert("RGB")
+    d = ImageDraw.Draw(bg)
+    for k, s in enumerate(lines):
+        d.text((x0 + 25, y0 + 12 + k * 64), s, font=fb2, fill=(255, 222, 40), stroke_width=2, stroke_fill=(0, 0, 0))
     return bg
 
 
