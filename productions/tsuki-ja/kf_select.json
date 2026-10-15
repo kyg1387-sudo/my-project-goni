@@ -26,5 +26,15 @@
  "S03e": "assets/portraits/tsuki-kf-a/S03e-fixed.png",
  "S05c": "assets/portraits/tsuki-kf-a/S05c-fixed.png",
  "S19o": "assets/portraits/tsuki-kf-a/S19o-fixed.png",
- "_설명": "PHASE 4 검수에서 고른 키프레임(재구도 -fixed 우선). assemble_tsuki_keyframes.py가 읽는다."
+ "_설명": "PHASE 4 검수에서 고른 키프레임(재구도 -fixed 우선). assemble_tsuki_keyframes.py가 읽는다.",
+ "S05a": "assets/portraits/tsuki-ja/S05a-1.png",
+ "S06a": "assets/portraits/tsuki-ja/S06a-1.png",
+ "S08b": "assets/portraits/tsuki-ja/S08b-1.png",
+ "S16ba": "assets/portraits/tsuki-ja/S16ba-1.png",
+ "S16bb": "assets/portraits/tsuki-ja/S16bb-1.png",
+ "S17a": "assets/portraits/tsuki-ja/S17a-1.png",
+ "S18a": "assets/portraits/tsuki-ja/S18a-1.png",
+ "S20a": "assets/portraits/tsuki-ja/S20a-1.png",
+ "S20b": "assets/portraits/tsuki-ja/S20b-1.png",
+ "S20c": "assets/portraits/tsuki-ja/S20c-1.png"
 }
