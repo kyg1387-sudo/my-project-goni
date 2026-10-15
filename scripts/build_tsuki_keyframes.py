@@ -67,6 +67,12 @@ LIGHT_NOTE = {
 }
 # 키프레임 a 검수(2026-10-15): 감정이 약하거나 반대로 나온 컷 — 표정을 문장 맨 앞에 못 박아 재생성
 EMO_OVERRIDE = {
+    "S02b": "WARDROBE LOCKED: Hikaru wears the plain LIGHT-GREY cotton work jacket (not brown, not tan) with a white towel around his neck; high angle from behind, kneeling, wiping the concrete with a wet grey cloth, bucket beside him, old laptop closed on the cabinet.",
+    "S04aa": "INSERT ONLY: two open palms (grey work-jacket cuffs) holding a small framed old photo, seen from above; the photo fills the centre; NO face, NO head anywhere in the frame; sodium lamp light.",
+    "S08f": "EXPRESSION LOCKED: Hino's forced smile has FROZEN and is fading — lips closed, eyes gone flat, the pen still held out in mid-air; NOT a happy grin.",
+    "S19d": "A PERSON MUST BE IN FRAME: close-up of Washio seated at the head of the boardroom table pushing his thin round gold-rimmed glasses up with one finger, nostrils flared, forced bluster over unease; morning light.",
+    "S19j": "POSE LOCKED: Washio has half-risen and is COLLAPSING back into the black leather chair, legs failing, one arm flung out pointing toward the door, gold glasses slipping askew, face grey with panic, mouth open; high angle; NOT calm, NOT seated upright.",
+    "S19p": "EXPRESSION LOCKED: close-up of Washio on the carpet floor lifting his head toward Hino with BETRAYAL in his eyes — eyes wide and wet, mouth closed and trembling, gold glasses askew, hair disheveled, sweat; NOT calm, NOT composed.",
     "S12d": "FRAMING LOCKED: medium close-up, camera about 1.2 metres from Hikaru, his head and shoulders fill the centre, face about one third of the frame height; Sakura's blurred shoulder at the left edge.",
     "S19c": "FRAMING LOCKED: medium close-up, camera about 1.5 metres from Shinoda; his head and shoulders fill the centre of the frame, face about one third of the frame height, Washio's blurred shoulder at the right edge; NOT a wide shot of the room.",
     "S19i": "FRAMING LOCKED: medium close-up from slightly above, camera about 1.5 metres from Shinoda standing; his head and shoulders fill the centre, face about one third of the frame height, Washio's blurred head at the lower right edge; NOT a wide shot.",
