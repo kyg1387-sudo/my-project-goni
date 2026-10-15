@@ -20,9 +20,9 @@ PEOPLE = [
     ("hikaru", "Takeuchi Hikaru (26, slim contract worker, short black hair with long bangs, mole under LEFT eye, NO glasses, NO earrings)"),
     ("washio", "Washio (59, heavy executive, greying slicked-back hair, thin round GOLD-rimmed glasses, NO earrings)"),
     ("hino", "Hino (46, manager, black 7:3 side-parted hair, thick eyebrows, NO glasses, NO earrings, white handkerchief)"),
-    ("sakura", "Mizutani Sakura (24, office clerk, black chin-length bob with side bangs, NO glasses, NO earrings, NO name tag)"),
+    ("sakura", "Mizutani Sakura (24, office clerk, black chin-length bob with side bangs, NO glasses, small pearl stud earrings, NO name tag)"),
     ("shinoda", "Shinoda (52, city official, grey-streaked short hair, thin rectangular BLACK-framed glasses, beige trench coat, NO earrings)"),
-    ("haru", "Takeuchi Haru (83, tiny old woman, white hair in a low bun, deeply wrinkled, NO glasses, NO earrings, indigo apron)"),
+    ("haru", "Takeuchi Haru (83, tiny old woman, white hair in a low bun, deeply wrinkled, NO glasses, tiny dark stud earrings, indigo apron)"),
 ]
 FACE_KINDS = ("face", "d")
 LOC_NOTE = {

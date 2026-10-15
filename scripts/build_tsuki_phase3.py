@@ -27,10 +27,10 @@ WHO = {
     "HIN": ("Hino, a Japanese man aged 46, slightly sunken cheeks, black hair in a neat 7:3 side part, thick straight eyebrows, no glasses, clean-shaven",
             C + "hino-front.png"),
     "SAK": ("Mizutani Sakura, a slim Japanese woman aged 24, soft round earnest face with light natural makeup, straight black chin-length bob with "
-            "side-swept bangs, no glasses, no earrings", C + "sakura-front.png"),
+            "side-swept bangs, no glasses, small pearl stud earrings (fixed trait from the approved sheet), no name tag", C + "sakura-front.png"),
     "SHI": ("Shinoda, a lean Japanese man aged 52, long calm face with fine lines, short black hair streaked with grey, thin rectangular BLACK "
             "plastic-framed glasses, clean-shaven", C + "shinoda-front.png"),
-    "HAR": ("Takeuchi Haru, a small slightly stooped Japanese woman aged 83, deeply wrinkled kind face, white hair in a neat low bun, no glasses, no earrings",
+    "HAR": ("Takeuchi Haru, a small slightly stooped Japanese woman aged 83, deeply wrinkled kind face, white hair in a neat low bun, no glasses, tiny dark stud earrings (fixed trait from the approved sheet)",
             C + "haru-front.png"),
     "STAFF": ("two or three engineers seen only from behind as faceless silhouettes at consoles", None),
 }
