@@ -12,12 +12,13 @@ src, out = sys.argv[1], sys.argv[2]
 target = float(sys.argv[3]) if len(sys.argv) > 3 else 0.30
 hint = float(sys.argv[4]) if len(sys.argv) > 4 else 0.5
 im = Image.open(src).convert("RGB"); W, H = im.size
-g = cv2.cvtColor(cv2.imread(src), cv2.COLOR_BGR2GRAY)
-cas = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
 fg = sys.argv[5] if len(sys.argv) > 5 else "-"
-fs = list(cas.detectMultiScale(g, 1.08, 5, minSize=(40, 40)))
 if len(sys.argv) > 9:
     fs = [tuple(int(v) for v in sys.argv[6:10])]
+else:  # cv2 5.x에는 CascadeClassifier가 없을 수 있어 수동 좌표를 우선, 검출은 가능할 때만
+    g = cv2.cvtColor(cv2.imread(src), cv2.COLOR_BGR2GRAY)
+    cas = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+    fs = list(cas.detectMultiScale(g, 1.08, 5, minSize=(40, 40)))
 if not fs:
     sys.exit(f"얼굴 없음: {src}")
 x, y, w, h = min(fs, key=lambda r: abs((r[0] + r[2] / 2) / W - hint) - r[2] / W)   # 힌트 위치에 가깝고 큰 얼굴

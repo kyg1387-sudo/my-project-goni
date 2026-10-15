@@ -35,7 +35,9 @@ LOC_NOTE = {
     "loc-yard": "Switchgear cabinets have blank smooth doors with NO labels, NO stickers, NO warning signs.",
 }
 FULL = "Full-frame 16:9 image filling the whole canvas: NO black bars, NO white borders, NO letterbox or pillarbox."
-FACE13 = ("Framing from mid-chest up: the speaker's head and shoulders fill the frame, the face about one third of the frame height and sharp, "
+FACE13 = ("MEDIUM CLOSE-UP, the camera about 1.5 metres from the speaker: the speaker's head is near the top edge of the frame and the frame is cut at "
+          "mid-chest, so the speaker's head and shoulders fill the centre of the frame and the face is about one third of the frame height (NOT a wide "
+          "shot, NOT full body, the room is only a blurred background). Framing from mid-chest up: the speaker's head and shoulders fill the frame, the face about one third of the frame height and sharp, "
           "turned about 35 degrees toward the other person (never straight at the camera, never full profile); the speaker's hands and what "
           "they hold are visible at the bottom of the frame; 50mm lens, f/2.0, shallow depth of field.")
 OTS = ("Over-the-shoulder two-shot composition: the listener is at the near foreground edge seen strictly from behind — only the back of the "
@@ -62,8 +64,8 @@ LIGHT_NOTE = {
     "dawn": "LIGHTING OVERRIDES THE LOCATION REFERENCE: pale blue dawn, thin mist, no sodium lamps.",
     "board_night": "LIGHTING OVERRIDES THE LOCATION REFERENCE: night, warm interior lights, city lights beyond the glass, sky black.",
 }
-ANGER_CLOSED = ("Fury shown only in the eyes, furrowed brow, flared nostrils and clenched jaw: lips pressed together, mouth CLOSED, NOT shouting "
-                "(speech is added later).")
+ANGER_CLOSED = ("Fury shown only in the wide-open glaring eyes, furrowed brow, flared nostrils and clenched jaw: eyes OPEN and fixed on the listener, "
+                "lips pressed together, mouth CLOSED, NOT shouting (speech is added later).")
 
 
 def who_of(name):
