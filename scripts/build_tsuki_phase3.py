@@ -113,7 +113,7 @@ def S(sid, scene, kind, lens, light, angle, who, loc, subject, line=None, fx="",
 HA_, HB, W, N, K, D, R = "HIK:HIK_A", "HIK:HIK_B", "WAS:WAS", "HIN:HIN", "SAK:SAK", "SHI:SHI", "HAR:HAR"
 OB = (" Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking "
       "toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout.")
-HOLD = " Head stays at the same angle, never turns toward the camera; only body, hands and breath move."
+HOLD = " Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking."
 SHOTS = [
     # ① 도입 후크 0:00~0:20 (H0a·H0b·H1 재사용 = 추가 생성 0, H2 1컷 생성)
     S("H0a", "H", "reuse:S18b", "ews", "ctrl_black", "OH", [], None, "Reuse of S18b (monitor wall going dark one panel at a time, overhead). Caption composited."),
