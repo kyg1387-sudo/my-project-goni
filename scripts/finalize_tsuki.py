@@ -40,7 +40,9 @@ MANUAL = [("S16e", "S16c", 3.3, 2.6),      # 얼음 잔 7초 → 鷲尾 듣는 �
           ("S24a", "S03b", 0.0, None)]
 MANUAL = [m for m in MANUAL if m[0] not in ("S04aa", "S04b")]
 MANUAL.append(("S16bc", "S16bc", 0.0, None))   # i2v 2회 모두 조명 변화·헬멧/정면 노출(●) → 정지 푸시인(제11장 9)
-FX.pop("S16bc", None)     # 재사용 정지(립싱크 원본 S03c는 조립에서 정지 프레임) → S03b 光 CU 푸시인
+FX.pop("S16bc", None)
+for _sid in ("S16ba", "S16bb"):           # 대시보드 합성 키프레임(조립본은 옛 합성) → 정지 푸시인으로 덮어씀
+    MANUAL.append((_sid, _sid, 0.0, None))     # 재사용 정지(립싱크 원본 S03c는 조립에서 정지 프레임) → S03b 光 CU 푸시인
 DARK = [("S18a", "S18h"), ("S16ba", "S16bh")]
 LIFT = "curves=all='0/0 0.06/0.13 0.25/0.38 0.6/0.72 1/1',eq=gamma=1.10:saturation=1.04"
 HOOK_VOICE = ("H1", "S14c", "L26")
