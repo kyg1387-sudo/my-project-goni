@@ -30,6 +30,12 @@ for i, s in enumerate(SB):
         lis = next((x for x in SB[i + 1:i + 4] if x["scene"] == s["scene"] and x["kind"] == "face" and x.get("keyframe")), None)
         if lis:
             LCUT.append((s["id"], s["line"], lis["id"], 1.3))
+# 조립 검수(1초 시트)에서 5초 넘게 한 구도가 이어진 컷 → 같은 장면 키프레임 푸시인 인서트(제4장 시청 리듬감). (컷, 인서트 키프레임, 컷 시작 후 초, 길이 None=컷 끝까지)
+MANUAL = [("S16e", "S16c", 3.3, 2.6),      # 얼음 잔 7초 → 鷲尾 듣는 얼굴
+          ("S16bh", "S16bg", 3.6, 2.6),    # 고개 숙인 기술진 하이와이드 9.6초 → 鷲尾 눈 ECU
+          ("S18h", "S18g", 3.7, 2.6),      # 빈 관제실 8초 → 붉은 비상등 아래 鷲尾
+          ("S20d", "S21a", 3.7, None),     # 빈 회의실 7.6초 → 대나무 숲(다음 장면 J컷)
+          ("S24a", "S03b", 0.0, None)]     # 재사용 정지(립싱크 원본 S03c는 조립에서 정지 프레임) → S03b 光 CU 푸시인
 DARK = [("S18a", "S18h"), ("S16ba", "S16bh")]
 LIFT = "curves=all='0/0 0.06/0.13 0.25/0.38 0.6/0.72 1/1',eq=gamma=1.10:saturation=1.04"
 HOOK_VOICE = ("H1", "S14c", "L26")
@@ -102,6 +108,11 @@ def patch(src, out, tmp):
             continue
         c = os.path.join(tmp, f"l_{sid}.mp4")
         ov.cam(os.path.join(KF, f"{lis}-1.png"), c, b - a + 0.1, "push"); segs.append((a, b, c))
+    for sid, kf_id, off, sec in MANUAL:
+        lo, hi = B[sid]
+        a = lo + off; b = hi - 0.02 if sec is None else min(hi - 0.02, a + sec)
+        c = os.path.join(tmp, f"m_{sid}.mp4")
+        ov.cam(os.path.join(KF, f"{kf_id}-1.png"), c, b - a + 0.1, "push"); segs.append((a, b, c))
     if not segs:
         shutil.copy(src, out); return
     inputs, fc, last = ["-i", src], [], "[0:v]"
@@ -110,7 +121,7 @@ def patch(src, out, tmp):
         fc.append(f"[{k}:v]trim=0:{b - a:.3f},setpts=PTS-STARTPTS+{a:.3f}/TB,ass={ass}:fontsdir={fdir}[p{k}]")
         fc.append(f"{last}[p{k}]overlay=enable='between(t,{a:.3f},{b:.3f})':eof_action=pass[o{k}]"); last = f"[o{k}]"
     run(inputs + ["-filter_complex", ";".join(fc), "-map", last, "-map", "0:a", "-c:v", "libx264", "-preset", "medium", "-crf", "17", "-c:a", "copy", out])
-    print("패치:", ", ".join(f"{sid} {a:.1f}-{b:.1f}" for (a, b, _), sid in zip(segs, list(FX) + [l[0] for l in LCUT])))
+    print("패치:", ", ".join(f"{sid} {a:.1f}-{b:.1f}" for (a, b, _), sid in zip(segs, [k for k in FX if os.path.exists(os.path.join(tmp, f"f_{k}.mp4"))] + [l[0] for l in LCUT] + [m[0] for m in MANUAL])))
 
 
 def hook_bed(path):
