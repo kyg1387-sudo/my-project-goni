@@ -180,6 +180,9 @@ def outro(main_out, tmp):
     for f in glob.glob(os.path.join(dd, "tsuki-final.mp4.part-*")):
         os.remove(f)
     subprocess.run(["split", "-b", "28m", "-d", final, os.path.join(dd, "tsuki-final.mp4.part-")], check=True)
+    parts = sorted(os.path.basename(f) for f in glob.glob(os.path.join(dd, "tsuki-final.mp4.part-*")))
+    with open(os.path.join(dd, "join.bat"), "w", encoding="utf-8", newline="\r\n") as f:   # Windows: 더블클릭으로 조각 합치기
+        f.write("@echo off\ncd /d %~dp0\ncopy /b " + "+".join(parts) + " tsuki-final.mp4\necho 완료: tsuki-final.mp4\npause\n")
     run(["-i", final, "-vf", "scale=-2:480", "-c:v", "libx264", "-crf", "28", "-c:a", "aac", "-b:a", "96k", os.path.join(dd, "tsuki-final-480p.mp4")])
     print(f"완성: {final} ({dur(final):.1f}초) / 본편 {dur(main_out):.1f}초 / 아웃트로 {dur(cta):.1f}초")
 
