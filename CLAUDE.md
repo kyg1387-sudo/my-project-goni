@@ -386,6 +386,22 @@ deformed eyes, extra fingers.
 
 ---
 
+## 제12장. 『月に帰った契約社員』(작품 ②) 실증 보강 (2026-10-16 확정, 작품 ③부터 적용)
+
+상세·비용은 `docs/제작규격-보강-tsuki실증.md`(요청 ★28~★35, 결함 ●1~●11). 반드시 지키는 요약:
+
+1. **동영상 우선·현장음 설계는 대본에 넣는다**: 사람·움직임 컷은 i2v(lite), 정지는 글자 합성 면·무인 정물만. 현장음은 장소 그룹(약 14개)별 1회 생성, BGM 6구간 + 사이드체인 덕킹(`duck_db`). 후크 0~3.5초는 BGM 없이 드론+심장 박동.
+2. **짧은 대사는 VO**: 2.5초 이하 대사는 듣는 사람 i2v 위 목소리만(`vo=True`)으로 처리해 정지 화자 컷을 0으로 만든다. 립싱크는 32컷 안팎(≈18달러).
+3. **휴대폰 기준 수치**: 자막 66px/테 6, 대사 얼굴 화면 높이 1/3 이상(`kf_face_frame.py`), 마스터 −14 LUFS(−1 dBTP 이하, `alimiter level=0`), 썸네일·검수는 360px 축소본.
+4. **조립 검수 = 1초 시트 전수 + 0.25초 크롭**: 조립본을 장면별 1초 간격 6열 시트로 보고, 손·소품의 가짜 글자(S12d 분홍 포장)는 흐림이 아니라 키프레임 편집 재생성(seedream edit, 정사각 출력은 16:9로 다시 크롭) → `regen_scenes` → burn `invalidate omniNN.mp4` → `splice_tsuki_cut.py`로 영상만 교체.
+5. **5초 넘는 한 구도는 인서트로 깬다**: `finalize_*.py` MANUAL 목록(같은 장면 키프레임 푸시인). 재사용 컷의 원본이 립싱크 컷이면 조립에서는 정지 프레임이 되므로 다른 키프레임으로 바꾼다.
+6. **FX 원본은 `export_files`로**: Actions Artifact 직접 다운로드는 막혀 있으므로 편집 카메라 대상 컷만 `assets/preview/`에 커밋해 쓴다.
+7. **광고 지점**: 2차 광고가 7:00 −10초를 넘기면 대본 ③구간을 보강한다(이번 편 6:37, 다음 편부터 대본 단계에서 교정).
+8. **썸네일**: 생성 그림 왼쪽에 인물이 있으면 글자는 2줄, 배지는 무릎 아래. A(泣ける)/B(スカッと) 2장 + 360px 확인본.
+9. **마감 순서(로컬)**: burn → 1초 시트 검수 → 재생성 컷 splice → `finalize`(FX·인서트·후크·색감) → 라우드니스 → 28MB 조각 + `join.bat` + 480p → 한국어 검수판 → 쇼츠(≥20초) + 한국어 검수판 → SRT(아웃트로 줄 포함) → 업로드 가이드 → 실증 문서.
+
+---
+
 ## 부록. 프로젝트 운영 정보 (규칙이 아닌 참조 사실)
 
 - API 키는 GitHub Secrets(FAL_API_KEY, ARK_API_KEY, ELEVENLABS_API_KEY, TYPECAST_API_KEY)에만 둔다.
@@ -408,3 +424,7 @@ deformed eyes, extra fingers.
 - 『明日から来なくていい』 도구(다음 작품은 작품명만 바꿔 복사): `build_ashita_phase3.py`·`build_ashita_keyframes.py`·
   `assemble_ashita_keyframes.py`·`build_ashita_overrides.py`·`ashita_ja_overlay.py`·`finalize_ashita.py`·`build_ashita_outro.py`·
   `make_ko_review_ashita.py`·`kf_letterbox_fix.py`·`kf_glyph_blur.py`·`kf_face_frame.py`(대사 컷 얼굴 1/4 이상 크롭). 실증 기록 `docs/제작규격-보강-ashita실증.md`.
+- 『月に帰った契約社員』(작품 ②) 도구: `build_tsuki_phase3.py`·`build_tsuki_keyframes.py`·`assemble_tsuki_keyframes.py`·`build_tsuki_overrides.py`·`tsuki_ja_overlay.py`·
+  `finalize_tsuki.py`(MANUAL 인서트)·`splice_tsuki_cut.py`·`build_tsuki_outro.py`·`make_ko_review_tsuki.py`·`make_ko_review_shorts_tsuki.py`·`make_thumbnails_tsuki.py`·`ass_to_srt.py`.
+  배역 목소리(Typecast): 내레이터 Lloyd, 光 Kenta Yoshida `tc_62a8974c6fe31dc29ac53b0d`, 鷲尾 Robert `tc_66bc600762cab997910b107b`, 日野 Simon `tc_65b34b05b3fb844f3d6b7aab`,
+  さくら Haruna Suzuki `tc_62b17ef6695ad26f7fb8e7f3`, 篠田 Poseidon, ハル Juha `tc_5d01a52563338e00072b8c9c`. 실증 기록 `docs/제작규격-보강-tsuki실증.md`.
