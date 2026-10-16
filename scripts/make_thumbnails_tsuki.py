@@ -106,11 +106,13 @@ def fix_B_certificate(img):
     return img
 
 
-def thumb_user(v):
+def thumb_user(v, fix=None):
     src = Image.open(os.path.join(OUT, v["src"])).convert("RGB").resize((W, H), Image.LANCZOS).convert("RGBA")
     img = src
     if v["src"] == "user-B-src.png":
         img = fix_B_certificate(img)
+    if fix:
+        img = fix(img)
     # 글자 자리 어둡게(왼쪽 또는 오른쪽 위)
     shade = Image.new("L", (W, H), 0); d = ImageDraw.Draw(shade)
     if v["side"] == "L": d.rectangle([0, 0, 1000 if "B2" not in v["src"] else 640, 760], fill=140)
@@ -150,6 +152,51 @@ def user_final():
         print("저장:", p)
 
 
+# ---------------------------------------------------------------- 지침 생성판(tsuki-thumb-abc, 2560x1440 → 1920x1080)
+GEN_SRC = os.path.join(ROOT, "assets", "portraits", "tsuki-thumb-abc")
+
+
+def fix_gen_B(img):
+    """웹툰 생성판 특허증 「PATENT」 가짜 글자 → 실글꼴 「特許証」 종이."""
+    from PIL import ImageFont
+    d = ImageDraw.Draw(img)
+    box = (262, 690, 700, 1040)
+    d.rectangle(box, fill=(246, 240, 222, 255)); d.rectangle((box[0] + 10, box[1] + 10, box[2] - 10, box[3] - 10), outline=(200, 170, 90, 255), width=4)
+    f = ImageFont.truetype(os.path.join(ROOT, "scripts", "fonts", "ZenOldMincho-Bold.ttf"), 72)
+    d.text(((box[0] + box[2]) // 2, box[1] + 80), "特許証", font=f, fill=(60, 40, 30, 255), anchor="mm")
+    f2 = ImageFont.truetype(os.path.join(ROOT, "scripts", "fonts", "ZenOldMincho-Regular.ttf"), 30)
+    for i, t in enumerate(["発明の名称　負荷分散制御", "特許権者　竹内　光", "登録日　二年前"]):
+        d.text((box[0] + 36, box[1] + 150 + i * 54), t, font=f2, fill=(70, 50, 40, 255))
+    d.ellipse((box[2] - 120, box[3] - 120, box[2] - 40, box[3] - 40), outline=(190, 40, 40, 220), width=4)
+    for bx in [(1470, 530, 1620, 650)]:                                  # 篠田 손의 서류(작은 글자) 흐림
+        reg = img.crop(bx).filter(ImageFilter.GaussianBlur(8)); img.paste(reg, bx[:2])
+    return img
+
+
+def fix_gen_C(img):
+    for bx in [(860, 390, 1250, 480)]:                                   # 건물 간판 가짜 글자 흐림(배경)
+        reg = img.crop(bx).filter(ImageFilter.GaussianBlur(14)); img.paste(reg, bx[:2])
+    return img
+
+
+GEN = {
+    "A": dict(src="thumbA-dark-2.png", fix=None, **{k: v for k, v in USER["A"].items() if k not in ("src", "quote_size")}, quote_size=196),
+    "B": dict(src="thumbB-toon-2.png", fix=fix_gen_B, **{k: v for k, v in USER["B"].items() if k not in ("src", "badge_xy", "band_xy")}, badge_xy=(1180, 640), band_xy=(1100, 940)),
+    "C": dict(src="thumbC-warm-1.png", fix=fix_gen_C, **{k: v for k, v in USER["C"].items() if k != "src"}),
+}
+
+
+def gen_final():
+    for tag, v in GEN.items():
+        src = Image.open(os.path.join(GEN_SRC, v["src"])).convert("RGB").resize((W, H), Image.LANCZOS)
+        tmp = os.path.join(OUT, f"gen-{tag}-src.png"); src.save(tmp)
+        vv = dict(v); vv["src"] = f"gen-{tag}-src.png"
+        im = thumb_user(vv, fix=v["fix"])
+        p = os.path.join(OUT, f"tsuki-thumb-gen{tag}-JP.jpg"); im.save(p, quality=94)
+        im.resize((360, 203), Image.LANCZOS).save(p.replace("-JP.jpg", "-phone360.jpg"), quality=90)
+        print("저장:", p)
+
+
 def main(na=1, nb=2):
     os.makedirs(OUT, exist_ok=True)
     for tag, n in (("A", na), ("B", nb)):
@@ -164,4 +211,6 @@ if __name__ == "__main__":
     a = sys.argv[1:]
     if a and a[0] == "user":
         user_final(); sys.exit()
+    if a and a[0] == "gen":
+        gen_final(); sys.exit()
     main(int(a[0]) if a else 1, int(a[1]) if len(a) > 1 else 2)
