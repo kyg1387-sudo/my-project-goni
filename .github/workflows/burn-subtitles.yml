@@ -205,6 +205,8 @@ jobs:
           if [ -d "assets/audio-overrides/${SKIT}" ]; then
             mkdir -p out/audio
             cp -v "assets/audio-overrides/${SKIT}"/*.mp3 out/audio/
+            # 시범에서 승인한 OmniHuman 클립(omniNN.mp4)도 캐시로 — 재과금 없이 재사용
+            cp -nv "assets/audio-overrides/${SKIT}"/omni*.mp4 out/audio/ 2>/dev/null || true
           fi
 
       - name: 대사 TTS와 배경음악 생성 후 믹싱 (립싱크·현장음 옵션)
