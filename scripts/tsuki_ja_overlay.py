@@ -3,7 +3,7 @@
 무지로 생성한 키프레임(1344x768) 위에 실글꼴로 그린 평면 캔버스를 원근 변형해 얹는다. 화면 = 덮기, 종이 = 곱하기.
 출력: assets/portraits/tsuki-ja/<id>-1.png → kf_select.json에 등록(assemble_tsuki_keyframes.py가 읽음).
 사용법: python3 scripts/tsuki_ja_overlay.py"""
-import json, os
+import json, os, sys
 import numpy as np
 from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
@@ -57,6 +57,14 @@ def screen(im, quad, lines, color=(255, 255, 255), bg=(190, 20, 20, 230), font=G
     return place(im, L, quad, blur=0.8)
 
 
+def dash(im, quad, mode, big, sub=None, title=None, w=1000, h=420, seed=7):
+    """실감나는 관제 대시보드(tsuki_dashboard) 합성 — 고니감독님 지시 2026-10-16."""
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from tsuki_dashboard import dashboard
+    L = dashboard(w, h, mode, big=big, sub=sub, title=title, seed=seed)
+    return place(im, L, quad, blur=0.7)
+
+
 def patch_blur(im, box, r=14):
     """작은 배경 가짜 글자(제11장 10: 배경 글자만 흐림 허용) — 영역을 강하게 흐려 지운다."""
     x0, y0, x1, y1 = [int(v) for v in box]
@@ -73,13 +81,13 @@ def paper(im, quad, title, body=(), tsize=54, bsize=30, w=800, h=1100, mode="mul
     return place(im, L, quad, mode)
 
 
-def s05a(im): return screen(im, Q((0.33, 0.14), (0.72, 0.17), (0.72, 0.49), (0.33, 0.52)), ["負荷分散　失敗"], bg=(0, 0, 0, 0), size=84, sub="月見野スマートシティ 電力グリッド")
-def s06a(im): return screen(im, Q((0.37, 0.03), (0.80, 0.03), (0.80, 0.27), (0.37, 0.27)), ["負荷分散　正常"], color=(10, 60, 20), bg=(120, 235, 140, 215), size=78, sub="KAGUYA　稼働中")
+def s05a(im): return dash(im, Q((0.33, 0.14), (0.72, 0.17), (0.72, 0.49), (0.33, 0.52)), "red", "負荷分散　失敗", "月見野スマートシティ 電力グリッド", seed=5)
+def s06a(im): return dash(im, Q((0.37, 0.03), (0.80, 0.03), (0.80, 0.27), (0.37, 0.27)), "green", "負荷分散　正常", "KAGUYA 稼働中　全区画 安定", seed=6)
 def s08b(im): return paper(im, Q((0.22, 0.40), (0.69, 0.40), (0.79, 0.95), (0.10, 0.95)), "特許権譲渡証", ["特許第　　　号「電力系統負荷分散制御プログラム」", "譲渡人　竹内　光", "譲受人　月浦エナジー株式会社", "上記特許を受ける権利を、譲受人に譲渡します。"], tsize=50, bsize=26)
-def s16ba(im): return screen(im, Q((0.22, 0.14), (0.79, 0.14), (0.79, 0.40), (0.22, 0.40)), ["期限まで、あと一日"], bg=(0, 0, 0, 0), size=100, sub="かぐや ライセンス更新待ち　23:59:41")
-def s16bb(im): return screen(im, Q((0.265, 0.18), (0.745, 0.18), (0.745, 0.485), (0.265, 0.485)), ["認証失敗"], bg=(212, 38, 34, 255), size=118, sub="かぐや ライセンスキー　認証エラー　KGY-0x30")
+def s16ba(im): return dash(im, Q((0.22, 0.14), (0.79, 0.14), (0.79, 0.475), (0.22, 0.475)), "countdown", "期限まで、あと一日", "かぐや ライセンス更新待ち　23:59:41", seed=16)
+def s16bb(im): return dash(im, Q((0.262, 0.175), (0.748, 0.175), (0.748, 0.505), (0.262, 0.505)), "red", "認証失敗", "かぐや ライセンスキー　認証エラー　KGY-0x30", seed=17)
 def s17a(im): return screen(im, Q((0.665, 0.59), (0.80, 0.55), (0.835, 0.68), (0.70, 0.73)), ["篠田室長"], color=(240, 240, 240), bg=(18, 18, 22, 250), size=90, sub="着信中…")
-def s18a(im): return screen(patch_blur(im, (1344 * 0.90, 768 * 0.08, 1344 * 1.0, 768 * 0.16)), Q((0.40, 0.13), (0.60, 0.13), (0.60, 0.41), (0.40, 0.41)), ["ライセンス", "期限切れ"], bg=(0, 0, 0, 0), size=128, sub="かぐや 制御ライセンス　有効期限 終了")
+def s18a(im): return dash(patch_blur(im, (1344 * 0.90, 768 * 0.08, 1344 * 1.0, 768 * 0.16)), Q((0.365, 0.12), (0.63, 0.115), (0.63, 0.70), (0.365, 0.70)), "expired", "期限切れ", "かぐや 制御ライセンス　無効", w=720, h=620, seed=18)
 def s20a(im): return paper(im, Q((0.12, 0.22), (0.52, 0.13), (0.55, 0.20), (0.15, 0.30)), "月浦エナジー　株価急落", tsize=60, w=900, h=180, title_y=90)
 def s20b(im): return paper(im, Q((0.44, 0.16), (0.65, 0.19), (0.66, 0.74), (0.40, 0.72)), "解散のお知らせ", ["月浦エナジー株式会社は、", "本日をもって解散いたしました。", "長らくのご愛顧、誠にありがとう", "ございました。"], tsize=72, bsize=38)
 def s20c(im): return paper(im, Q((0.20, 0.48), (0.60, 0.48), (0.60, 0.66), (0.20, 0.66)), "告　訴　状", tsize=66, w=800, h=260, title_y=130)

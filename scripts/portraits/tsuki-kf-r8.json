@@ -1,0 +1,18 @@
+{
+ "_설명": "tsuki 키프레임 r8: 참조 이미지(서버랙 스파크·발광 네트워크 케이블)에 맞춘 기술 인서트 2컷 — 정지 푸시인용(무인, 글자 없음).",
+ "_style_preset": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting",
+ "characters": [
+  {
+   "id": "INS-rack",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "prompt": "ONE single photorealistic cinematic film still, 16:9, no grid, no text. Extreme close-up inside a dark server room at night: a rack-mounted network switch and server blades with rows of status LEDs; the LEDs are flickering out one by one, most already dark, a few amber and red lights still blinking; a thin wisp of smoke and a few small orange electrical sparks jump from a connector at the top edge; dim red emergency light from the right, cold blue fill from the left; shallow depth of field, Arri Alexa look, Kodak 35mm grain. No letters, no labels, no logos, no numbers, no people."
+  },
+  {
+   "id": "INS-cable",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "prompt": "ONE single photorealistic cinematic film still, 16:9, no grid, no text. Macro close-up of fibre-optic and network cables plugged into a glossy dark switch, the cable ends glowing warm orange and the switch ports glowing cool blue, soft bokeh of many small blue and orange lights in the background, clean and alive; shallow depth of field, Arri Alexa look, Kodak 35mm grain. No letters, no labels, no logos, no numbers, no people."
+  }
+ ]
+}
