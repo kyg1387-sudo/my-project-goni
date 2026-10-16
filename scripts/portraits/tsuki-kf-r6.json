@@ -1,0 +1,26 @@
+{
+ "_설명": "tsuki 키프레임 r6: S07a·S07d 인물이 탁자 가운데에 앉은 것처럼 나온 결함(고니감독님 지적 2026-10-16) — 승인 키프레임을 seedream edit로 부분 수정.",
+ "_style_preset": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting",
+ "characters": [
+  {
+   "id": "S07a",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "refs": [
+    "assets/portraits/tsuki-keyframes/S07a-1.png"
+   ],
+   "prompt": "Edit reference image 1 and output ONE single photorealistic film still with exactly the same framing, same person, same face, same expression, same wardrobe, same lighting and colours. ONLY fix the geometry: the person must sit on a black leather chair BEHIND the end of the long glossy boardroom table, the near edge of the table in front of his chest with his hands resting ON the table top; the table must not pass through his body and must not extend behind him. Photorealistic, no text, no watermark, not a grid, no borders."
+  },
+  {
+   "id": "S07d",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "refs": [
+    "assets/portraits/tsuki-keyframes/S07d-1.png"
+   ],
+   "prompt": "Edit reference image 1 and output ONE single photorealistic film still with exactly the same framing, same person, same face, same expression, same wardrobe, same lighting and colours. ONLY fix the geometry: the person must sit on a black leather chair BEHIND the end of the long glossy boardroom table, the near edge of the table in front of his chest with his hands resting ON the table top; the table must not pass through his body and must not extend behind him. Photorealistic, no text, no watermark, not a grid, no borders."
+  }
+ ]
+}
