@@ -675,5 +675,36 @@
    "prompt": "warm hopeful piano and soft strings resolving in a bamboo grove under the moon, tender Japanese drama finale, instrumental, no vocals"
   }
  ],
- "_후크": "0~3.5초 BGM 없음: 서버 팬 정지 드론 + 심장 박동 1회(자막 등장 순간)를 PHASE 6 로컬 믹스. H1 화면은 S14c 재사용, 음성은 L26 원본을 로컬 믹스. NA0은 자막 1번 줄(1.0초)."
+ "_후크": "0~3.5초 BGM 없음: 서버 팬 정지 드론 + 심장 박동 1회(자막 등장 순간)를 PHASE 6 로컬 믹스. H1 화면은 S14c 재사용, 음성은 L26 원본을 로컬 믹스. NA0은 자막 1번 줄(1.0초).",
+ "foley_prompts": {
+  "9": "wet cloth wiping concrete floor, bucket water drip, outdoor night",
+  "12": "light footsteps on gravel approaching, plastic bag rustle",
+  "13": "plastic convenience-store bag rustling, handed over",
+  "26": "hurried typing on a keyboard, mouse clicks, nervous breathing",
+  "30": "office chair creak, a man standing up, soft footsteps",
+  "36": "paper folder pages turning, pen tap on glossy table",
+  "41": "ballpoint pen writing on paper, paper sliding on desk",
+  "47": "hand pushing a document across a desk, paper slide",
+  "50": "metal eyeglasses being folded, set on a wooden desk",
+  "57": "a sheet of paper slapped down hard on a desk",
+  "58": "finger stabbing and crumpling a sheet of paper",
+  "66": "fast keyboard typing, mechanical keys, late night office",
+  "68": "wet rag wrung out over a metal bucket, water splash",
+  "77": "desk drawer sliding open, small wooden seal case rattling",
+  "78": "rubber stamp pressed firmly onto paper, red ink pad tap",
+  "94": "slow footsteps on wet pavement with a cardboard box, night",
+  "95": "quick running footsteps of a woman on wet pavement",
+  "103": "two whisky glasses clinking, ice rattling",
+  "109": "office door burst open, heavy footsteps rushing in",
+  "116": "smartphone vibrating and ringing on a desk",
+  "125": "frantic keyboard typing, keys hammered, then silence",
+  "130": "documents set down on a glossy conference table, paper shuffle",
+  "134": "two sheets of paper laid side by side on a table",
+  "141": "a man collapsing to his knees onto carpet, cloth rustle",
+  "149": "envelope dropped on a desk, heavy paper thud",
+  "152": "knife carving bamboo, thin shavings curling, birds far away",
+  "153": "light footsteps on grass and dry leaves approaching",
+  "168": "small bamboo dragonfly spun between palms, fluttering"
+ },
+ "foley_volume": 0.55
 }

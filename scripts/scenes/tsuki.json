@@ -745,7 +745,7 @@
    "image": "assets/portraits/tsuki-keyframes/S16bb-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Washio strides one step in through the doorway, coat flaring; his face stays turned away. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. The man in the doorway is Washio: a heavy 59-year-old Japanese executive with greying slicked-back hair, thin gold-rimmed glasses, dark navy suit and red tie — a normal human head with hair, NO helmet, NO mask, NO hat, NO visor. Motion: Washio strides one step in through the doorway, coat flaring; his face stays turned away toward the red screens. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Keep the exact faces, wardrobe, props and lighting of the first frame. Negative: helmet, motorcycle helmet, mask, astronaut, visor, bald white head.",
    "duration": 5,
    "image": "assets/portraits/tsuki-keyframes/S16bc-1.png"
   },

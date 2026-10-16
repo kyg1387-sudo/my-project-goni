@@ -27,6 +27,7 @@ ffmpeg/ffprobe가 PATH에 있어야 한다. BGM 생성에 실패하면 경고만
 import argparse
 import glob
 import json
+import math
 import os
 import re
 import subprocess
@@ -504,6 +505,34 @@ def ambience_scene(cfg, key, v_url, index, duration):
     return wav
 
 
+def foley_scene(cfg, key, v_url, index, duration):
+    """행동 효과음(폴리, tsuki ★ 고니감독님 2026-10-16 「사람 행동에 따라 소리나는 것도」): 그 장면 클립에서 동작에 맞춰
+    mmaudio로 생성(장면마다 별도 과금). cfg["foley_prompts"] = {"장면번호": "prompt"}. 볼륨은 foley_volume/ambience_volume 비율로 미리 적용."""
+    prompts = cfg.get("foley_prompts") or {}
+    prompt = prompts.get(str(index))
+    if not prompt:
+        return None
+    wav = os.path.join(WORK_DIR, f"foley{index:02d}.wav")
+    if cached(wav):
+        print(f"  [foley {index:02d}] 기존 파일 재사용")
+        return wav
+    raw = os.path.join(WORK_DIR, f"foley{index:02d}.media")
+    if not cached(raw):
+        result = fal_run(cfg.get("foley_model") or cfg["ambience_model"], {
+            "video_url": v_url, "prompt": prompt, "negative_prompt": AMB_NEGATIVE,
+            "duration": max(1, min(30, int(math.ceil(duration)))),
+        }, key, f"foley {index:02d}")
+        url = result and (find_video_url(result) or find_audio_url(result))
+        if not url or not download_retry(url, raw):
+            print(f"  [foley {index:02d}] 생성 실패 — 건너뜀")
+            return None
+    gain = float(cfg.get("foley_volume", 0.6)) / max(float(cfg.get("ambience_volume", 0.4)), 1e-3)
+    subprocess.run(["ffmpeg", "-y", "-i", raw, "-vn", "-af",
+                    f"atrim=0:{duration:.3f},asetpts=PTS-STARTPTS,highpass=f=80,volume={gain:.3f}", wav],
+                   check=True, capture_output=True)
+    return wav
+
+
 def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_video):
     """장면별 대사 구간 립싱크·현장음 생성 후 재조립하고 자막을 입힌 영상을 돌려준다.
 
@@ -563,7 +592,8 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
         v_url = fal_upload(scene, key)
 
         amb = ambience_scene(cfg, key, v_url, i, t1 - t0)  # 실패해도 계속
-        amb_item = (t0, amb) if amb else None
+        fol = foley_scene(cfg, key, v_url, i, t1 - t0)
+        amb_item = [(t0, x) for x in (amb, fol) if x] or None
         if not amb:
             print(f"  [scene {i:02d}] 현장음 없음")
 
@@ -603,7 +633,7 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
     with ThreadPoolExecutor(max_workers=int(cfg.get("scene_workers", 4))) as pool:
         results = list(pool.map(process_scene, jobs))
     final_scenes = [r[0] for r in results]
-    ambience = [r[1] for r in results if r[1]]
+    ambience = [it for r in results if r[1] for it in r[1]]
 
     # 재조립(해상도/프레임레이트 정규화) + 자막 입히기
     cmd = ["ffmpeg", "-y"]
@@ -712,9 +742,9 @@ def main():
         bounds, t = [], 0.0
         for i, d in enumerate(durations, start=1):
             bounds.append((t, t + d))
-            p = os.path.join(WORK_DIR, f"amb{i:02d}.wav")
-            if cached(p):
-                ambience.append((t, p))
+            for p in (os.path.join(WORK_DIR, f"amb{i:02d}.wav"), os.path.join(WORK_DIR, f"foley{i:02d}.wav")):
+                if cached(p):
+                    ambience.append((t, p))
             t += d - overlaps[i - 1]
         print(f"재믹스 모드: 영상 {video}, 캐시 현장음 {len(ambience)}개 재사용")
 
