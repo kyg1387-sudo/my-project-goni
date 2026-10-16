@@ -24,21 +24,20 @@ ICE = ((225, 245, 255), (150, 205, 255), (60, 120, 230))
 
 VARIANTS = {
     # rows: (글자, 크기, 그라데이션, 단색)  — 3줄 이내
-    "A": dict(tag="泣ける話", rows=[("「ゴミ」と", 150, None, (255, 255, 255)), ("捨てた男が", 170, FIRE, None),
-                                   ("二百億円の鍵", 178, YELLOW, None)],
+    "A": dict(tag="泣ける話", rows=[("「ゴミ」と捨てた男が", 112, None, (255, 255, 255)), ("二百億円の鍵", 158, FIRE, None)],
               badge="役員全員、土下座", num="三十日後、倒産", band="月に帰った契約社員"),
-    "B": dict(tag="スカッとする話", rows=[("月から来た", 150, ICE, None), ("ゴミと笑った", 160, FIRE, None),
-                                      ("役員の末路", 186, YELLOW, None)],
+    "B": dict(tag="スカッとする話", rows=[("月から来た", 136, ICE, None), ("ゴミと笑った", 146, FIRE, None),
+                                      ("役員の末路", 166, YELLOW, None)],
               badge="契約社員の逆襲", num="違約金 二百億円", band="三十日後、会社が止まった"),
 }
 
 
-def darken_left(src):
+def darken_left(src, h=700):
     """왼쪽 위 글자 자리를 어둡게(그림은 그대로, 오른쪽 光 얼굴은 손대지 않음)."""
     img = src.convert("RGBA")
     shade = Image.new("L", (W, H), 0)
     d = ImageDraw.Draw(shade)
-    d.rectangle([0, 0, 1040, 700], fill=150)
+    d.rectangle([0, 0, 1040, h], fill=150)
     shade = shade.filter(ImageFilter.GaussianBlur(120))
     dark = Image.new("RGBA", (W, H), (0, 0, 0, 255)); dark.putalpha(shade)
     img.alpha_composite(dark)
@@ -47,7 +46,7 @@ def darken_left(src):
 
 def thumb(n, v):
     src = Image.open(os.path.join(SRC, f"anime-hd-{n}.png")).convert("RGB").resize((W, H), Image.LANCZOS)
-    img = darken_left(src)
+    img = darken_left(src, 700 if len(v["rows"]) > 2 else 420)
     img.alpha_composite(label(v["tag"], 66, (255, 255, 255, 255), (20, 20, 20)), (34, 26))
     y = 128
     for s, size, grad, fill in v["rows"]:
@@ -62,8 +61,7 @@ def thumb(n, v):
     ImageDraw.Draw(box).rounded_rectangle([7, 7, box.width - 8, box.height - 8], 24, fill=(165, 14, 14, 245))
     box.alpha_composite(badge, ((box.width - badge.width) // 2, 12))
     box.alpha_composite(num, ((box.width - num.width) // 2, badge.height - 6))
-    img.alpha_composite(box, (40, 700))                               # 왼쪽 아래(무릎 꿇은 鷲尾 위쪽)
-    img.alpha_composite(band([v["band"]], 64, alpha=235, pad=(32, 14)), (40, 950))
+    img.alpha_composite(box, (40, 830))                               # 왼쪽 아래(鷲尾의 무릎·비상등 위, 얼굴은 가리지 않음)
     return img.convert("RGB")
 
 
