@@ -9,21 +9,30 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 GOTH = os.path.join(ROOT, "scripts", "fonts", "ZenMaruGothic-Black.ttf")
 # 비디오월 네 모서리(원본 클립 해상도 기준 비율) — 상단 중앙 큰 벽
-WALL = [(0.125, 0.11), (0.835, 0.11), (0.835, 0.70), (0.125, 0.70)]
+WALL = [(0.32, 0.115), (0.665, 0.115), (0.665, 0.345), (0.32, 0.345)]   # 1248x704 클립 실측
 DISTRICTS = ["商業地区", "オフィス街", "物流拠点", "住宅地区", "工業団地", "港湾地区",
              "鉄道沿線", "大学キャンパス", "データセンター", "官庁街", "倉庫街", "空港周辺"]
 
 
+def fit(d, text, size, maxw):
+    """글자가 maxw 안에 들어오게 크기를 줄인 폰트."""
+    while size > 10:
+        f = ImageFont.truetype(GOTH, size)
+        if d.textlength(text, font=f) <= maxw:
+            return f
+        size -= 4
+    return ImageFont.truetype(GOTH, size)
+
+
 def layer(w, h):
+    """벽이 화면의 1/3 폭이라 휴대폰에서 읽히게 큰 글자 3줄만(폭에 맞춰 자동 축소)."""
     L = Image.new("RGBA", (w, h), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
-    big = ImageFont.truetype(GOTH, int(h * 0.19)); mid = ImageFont.truetype(GOTH, int(h * 0.075)); sm = ImageFont.truetype(GOTH, int(h * 0.055))
-    d.text((w / 2, h * 0.17), "かぐや　制御ライセンス　期限切れ", font=mid, fill=(255, 235, 230, 255), anchor="mm")
-    d.text((w / 2, h * 0.40), "月見野　電力グリッド　制御停止", font=big, fill=(255, 255, 255, 255), anchor="mm")
-    cols, rows = 4, 3
-    for i, name in enumerate(DISTRICTS):
-        cx = w * (0.14 + 0.24 * (i % cols)); cy = h * (0.62 + 0.13 * (i // cols))
-        d.text((cx, cy), f"{name}　停止", font=sm, fill=(255, 225, 220, 255), anchor="mm")
-    a = L.split()[3].filter(ImageFilter.GaussianBlur(10)).point(lambda v: min(255, int(v * 1.2)))
+    rows = [("制御ライセンス　期限切れ", 0.15, 0.20, (255, 235, 230, 255)),
+            ("電力グリッド　停止", 0.26, 0.50, (255, 255, 255, 255)),
+            ("商業地区 停止　オフィス街 停止　物流拠点 停止", 0.11, 0.80, (255, 225, 220, 255))]
+    for text, fs, y, col in rows:
+        d.text((w / 2, h * y), text, font=fit(d, text, int(h * fs), w * 0.92), fill=col, anchor="mm")
+    a = L.split()[3].filter(ImageFilter.GaussianBlur(12)).point(lambda v: min(255, int(v * 1.2)))
     G = Image.new("RGBA", (w, h), (255, 240, 235, 0)); G.putalpha(a)
     G.alpha_composite(L)
     return G
