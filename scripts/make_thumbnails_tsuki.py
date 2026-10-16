@@ -73,6 +73,9 @@ USER = {
     "B": dict(src="user-B-src.png", label="感動する話", side="L",
               rows=[("捨てた男が", 150, FIRE, None), ("二百億円の", 160, YELLOW, None), ("鍵だった", 186, FIRE, None)],
               quote=None, badge=("偽造の判子、暴かれる", "違約金 二百億円"), band="三十日後、会社が止まった", badge_xy=(1120, 640), band_xy=(1080, 940)),
+    "B2": dict(src="user-B2-src.png", label="感動する話", side="L",      # 얼굴 중앙 확대판(좌우는 흐린 확장) — 글자를 좌우 흐린 면에
+               rows=[("捨てた男が", 140, FIRE, None), ("二百億円の", 150, YELLOW, None), ("鍵だった", 170, FIRE, None)],
+               quote=None, badge=("偽造の判子、暴かれる", "違約金 二百億円"), band="三十日後、会社が止まった", badge_xy=(1180, 520), band_xy=(1130, 840), badge_num=76),
     "C": dict(src="user-C-src.png", label="感動する話", side="R",
               rows=[("契約社員をクビにした…", 84, ((255, 120, 110), (235, 40, 40), (160, 10, 10)), None),
                     ("三十日後、", 108, YELLOW, None), ("灯りが消えた", 108, YELLOW, None)],
@@ -106,11 +109,11 @@ def fix_B_certificate(img):
 def thumb_user(v):
     src = Image.open(os.path.join(OUT, v["src"])).convert("RGB").resize((W, H), Image.LANCZOS).convert("RGBA")
     img = src
-    if v["src"].startswith("user-B"):
+    if v["src"] == "user-B-src.png":
         img = fix_B_certificate(img)
     # 글자 자리 어둡게(왼쪽 또는 오른쪽 위)
     shade = Image.new("L", (W, H), 0); d = ImageDraw.Draw(shade)
-    if v["side"] == "L": d.rectangle([0, 0, 1000, 760], fill=140)
+    if v["side"] == "L": d.rectangle([0, 0, 1000 if "B2" not in v["src"] else 640, 760], fill=140)
     else: d.rectangle([900, 0, W, 440], fill=150)
     shade = shade.filter(ImageFilter.GaussianBlur(120)); dark = Image.new("RGBA", (W, H), (0, 0, 0, 255)); dark.putalpha(shade); img.alpha_composite(dark)
     x0 = 34 if v["side"] == "L" else 1000
@@ -126,7 +129,7 @@ def thumb_user(v):
         put(img, lay, 60, H - lay.height - 20)
     if v["badge"]:
         b1 = label(v["badge"][0], 44, (175, 18, 18, 255), (255, 255, 255), pad=(26, 8))
-        num = big(v["badge"][1], 88, gradient=((255, 255, 190), (255, 225, 40), (255, 160, 0)), stroke_w=8, outer_w=6)
+        num = big(v["badge"][1], v.get("badge_num", 88), gradient=((255, 255, 190), (255, 225, 40), (255, 160, 0)), stroke_w=8, outer_w=6)
         box = Image.new("RGBA", (max(b1.width, num.width) + 44, b1.height + num.height + 4), (0, 0, 0, 0))
         ImageDraw.Draw(box).rounded_rectangle([0, 0, box.width - 1, box.height - 1], 28, fill=(255, 200, 40, 255))
         ImageDraw.Draw(box).rounded_rectangle([7, 7, box.width - 8, box.height - 8], 24, fill=(165, 14, 14, 245))
@@ -134,7 +137,7 @@ def thumb_user(v):
         img.alpha_composite(box, v["badge_xy"])
     if v["band"]:
         lines = v["band"] if isinstance(v["band"], list) else [v["band"]]
-        img.alpha_composite(band(lines, 62, alpha=235, pad=(32, 14)), v["band_xy"])
+        img.alpha_composite(band(lines, 62 if "B2" not in v["src"] else 52, alpha=235, pad=(32, 14)), v["band_xy"])
     return img.convert("RGB")
 
 
