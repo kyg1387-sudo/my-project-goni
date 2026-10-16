@@ -14,57 +14,62 @@ DISTRICTS = ["商業地区", "オフィス街", "物流拠点", "住宅地区", 
              "鉄道沿線", "大学キャンパス", "データセンター", "官庁街", "倉庫街", "空港周辺"]
 
 
-def fit(d, text, size, maxw):
-    """글자가 maxw 안에 들어오게 크기를 줄인 폰트."""
-    while size > 10:
-        f = ImageFont.truetype(GOTH, size)
-        if d.textlength(text, font=f) <= maxw:
-            return f
-        size -= 4
-    return ImageFont.truetype(GOTH, size)
+def red_mask(f):
+    b, g, r = f[:, :, 0].astype(np.int16), f[:, :, 1].astype(np.int16), f[:, :, 2].astype(np.int16)
+    return ((r > 120) & (r - g > 60) & (r - b > 60)).astype(np.uint8) * 255
 
 
-def layer(w, h):
-    """벽이 화면의 1/3 폭이라 휴대폰에서 읽히게 큰 글자 3줄만(폭에 맞춰 자동 축소)."""
-    L = Image.new("RGBA", (w, h), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
-    rows = [("制御ライセンス　期限切れ", 0.15, 0.20, (255, 235, 230, 255)),
-            ("電力グリッド　停止", 0.26, 0.50, (255, 255, 255, 255)),
-            ("商業地区 停止　オフィス街 停止　物流拠点 停止", 0.11, 0.80, (255, 225, 220, 255))]
-    for text, fs, y, col in rows:
-        d.text((w / 2, h * y), text, font=fit(d, text, int(h * fs), w * 0.92), fill=col, anchor="mm")
-    a = L.split()[3].filter(ImageFilter.GaussianBlur(12)).point(lambda v: min(255, int(v * 1.2)))
-    G = Image.new("RGBA", (w, h), (255, 240, 235, 0)); G.putalpha(a)
-    G.alpha_composite(L)
-    return G
+def green_mask(f):
+    b, g, r = f[:, :, 0].astype(np.int16), f[:, :, 1].astype(np.int16), f[:, :, 2].astype(np.int16)
+    return ((g > 110) & (g - r > 40) & (g - b > 30)).astype(np.uint8) * 255
 
 
-def main():
-    src, out = sys.argv[1], sys.argv[2]
+# 장면번호: (쿼드 비율 TL,TR,BR,BL, 대시보드 모드, 큰 문구, 작은 문구, 마스크, seed)
+JOBS = {
+    24: ([(0.345, 0.17), (0.72, 0.19), (0.72, 0.50), (0.345, 0.52)], "red", "負荷分散　失敗", "月見野スマートシティ 電力グリッド", red_mask, 5),
+    28: ([(0.375, 0.027), (0.792, 0.027), (0.792, 0.258), (0.375, 0.258)], "green", "負荷分散　正常", "KAGUYA 稼働中　全区画 安定", green_mask, 6),
+    114: ([(0.26, 0.18), (0.86, 0.18), (0.86, 0.578), (0.26, 0.578)], "red", "制御停止", "かぐや ライセンス認証 失敗　全区画 応答なし", red_mask, 14),
+    121: ([(0.32, 0.115), (0.665, 0.115), (0.665, 0.345), (0.32, 0.345)], "expired", "電力グリッド　停止", "制御ライセンス 期限切れ　商業地区・オフィス街・物流拠点", red_mask, 21),
+}
+
+
+def apply(src, out, quad_r, mode, big, sub, maskf, seed):
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from tsuki_dashboard import dashboard
     cap = cv2.VideoCapture(src)
     W, H, fps = int(cap.get(3)), int(cap.get(4)), cap.get(5) or 24
-    quad = np.float32([(x * W, y * H) for x, y in WALL])
-    lw, lh = 1600, 900
-    L = np.array(layer(lw, lh))
+    quad = np.float32([(x * W, y * H) for x, y in quad_r])
+    lw, lh = 1400, 700
+    L = np.array(dashboard(lw, lh, mode, big=big, sub=sub, seed=seed))
     M = cv2.getPerspectiveTransform(np.float32([[0, 0], [lw, 0], [lw, lh], [0, lh]]), quad)
-    warped = cv2.warpPerspective(L, M, (W, H))
-    wa = warped[:, :, 3].astype(np.float32) / 255.0
-    wrgb = warped[:, :, :3][:, :, ::-1].astype(np.float32)          # RGB→BGR
+    warped = cv2.warpPerspective(L, M, (W, H), flags=cv2.INTER_AREA)
+    wa = cv2.GaussianBlur(warped[:, :, 3], (0, 0), 1.0).astype(np.float32) / 255.0
+    wrgb = warped[:, :, :3][:, :, ::-1].astype(np.float32)
     tmp = tempfile.mkdtemp(); raw = os.path.join(tmp, "v.mp4")
-    wr = cv2.VideoWriter(raw, cv2.VideoWriter_fourcc(*"mp4v"), fps, (W, H))
-    n = 0
+    wr = cv2.VideoWriter(raw, cv2.VideoWriter_fourcc(*"mp4v"), fps, (W, H)); n = 0
     while True:
         ok, f = cap.read()
         if not ok: break
-        b, g, r = f[:, :, 0].astype(np.int16), f[:, :, 1].astype(np.int16), f[:, :, 2].astype(np.int16)
-        red = ((r > 120) & (r - g > 60) & (r - b > 60)).astype(np.uint8) * 255   # 켜진(붉은) 타일만
-        red = cv2.erode(red, np.ones((9, 9), np.uint8))
-        m = cv2.GaussianBlur(red, (0, 0), 3).astype(np.float32) / 255.0 * wa
-        a3 = m[:, :, None] * 0.92
-        f = (f.astype(np.float32) * (1 - a3) + wrgb * a3).astype(np.uint8)
+        m = cv2.erode(maskf(f), np.ones((7, 7), np.uint8))
+        m = cv2.GaussianBlur(m, (0, 0), 3).astype(np.float32) / 255.0 * wa
+        a3 = (m * 0.94)[:, :, None]
+        # 화면의 원래 밝기 변화(점멸·소등)를 살리기 위해 원본 밝기로 변조
+        lum = (f.astype(np.float32).max(2) / 255.0)[:, :, None]
+        f = (f.astype(np.float32) * (1 - a3) + wrgb * (0.35 + 0.65 * lum) * a3).astype(np.uint8)
         wr.write(f); n += 1
     wr.release()
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", raw, "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p", "-an", out], check=True)
     print(f"{out}: {n}프레임 {W}x{H}")
+
+
+def main():
+    if len(sys.argv) > 2:                      # 단일: <scene.mp4> <out.mp4> [장면번호]
+        n = int(sys.argv[3]) if len(sys.argv) > 3 else 121
+        apply(sys.argv[1], sys.argv[2], *JOBS[n]); return
+    for n, job in JOBS.items():
+        src = os.path.join(ROOT, f"assets/preview/tsuki/scene{n}.mp4")
+        if os.path.exists(src):
+            apply(src, os.path.join(ROOT, f"assets/video-overrides/tsuki/scene{n:02d}.mp4"), *job)
 
 
 if __name__ == "__main__":
