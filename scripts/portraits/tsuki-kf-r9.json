@@ -1,0 +1,16 @@
+{
+ "_설명": "tsuki 키프레임 r9: S07d 재생성 — r6 편집본은 탁자 끝에 작게 앉아 빈 상석 옆에 있는 어색한 구도(얼굴 1/3 미만). 긴 탁자 옆자리 3/4 미디엄 CU로 새로 생성.",
+ "_style_preset": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting",
+ "characters": [
+  {
+   "id": "S07d",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/tsuki-faces/shinoda.png",
+    "assets/portraits/tsuki-cast/cells/loc-board-head.png"
+   ],
+   "prompt": "ONE single photorealistic cinematic film still, 16:9, NOT a grid, no text. Reference image 1 is the face of Shinoda (early 50s, grey hair, black-framed glasses, beige trench coat over a dark suit and tie): keep this exact face. Reference image 2 is the location (bright morning boardroom, glossy dark wood table, black leather chairs, tall windows with a city skyline): match it. Medium close-up: Shinoda SEATED on a black leather chair at the LONG SIDE of the boardroom table, body turned three-quarter toward the head of the table (to the left), listening politely with a courteous small smile and a slight nod, hands folded on a closed paper folder resting on the table. The near edge of the table runs across the lower foreground in front of his chest; the row of empty chairs and the windows are BEHIND him; the table never passes behind or through his body. His face fills about 40% of the frame height, sharp eyes, 85mm lens look, shallow depth of field, soft window light. Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting No name tag, no logos, no letters."
+  }
+ ]
+}
