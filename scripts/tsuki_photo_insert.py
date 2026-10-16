@@ -37,7 +37,18 @@ def skin_mask(bgr):
     return cv2.GaussianBlur(m, (0, 0), 2).astype(np.float32) / 255.0
 
 
-def composite(frame, quad, photo, lum_ref):
+def occluder(frame, ref, H, alpha):
+    """기준 프레임의 액자 안쪽을 현재 위치로 옮겨 비교 — 크게 달라진 화소(손가락)는 원본을 남긴다."""
+    h, w = frame.shape[:2]
+    ref_fwd = cv2.warpPerspective(ref, H, (w, h))
+    d = np.abs(frame.astype(np.int16) - ref_fwd.astype(np.int16)).max(2).astype(np.uint8)
+    m = ((d > 55) & (alpha > 0.3)).astype(np.uint8) * 255
+    m = cv2.morphologyEx(m, cv2.MORPH_OPEN, np.ones((7, 7), np.uint8))
+    m = cv2.dilate(m, np.ones((9, 9), np.uint8))
+    return cv2.GaussianBlur(m, (0, 0), 2).astype(np.float32) / 255.0
+
+
+def composite(frame, quad, photo, lum_ref, ref=None, H=None):
     h, w = frame.shape[:2]
     ph, pw = photo.shape[:2]
     src = np.float32([[0, 0], [pw, 0], [pw, ph], [0, ph]])
@@ -54,28 +65,51 @@ def composite(frame, quad, photo, lum_ref):
         warped = np.clip(warped.astype(np.float32) * (0.35 + 0.65 * tint / tint.mean()) * (0.6 + 0.4 * tint.mean()), 0, 255)
         glass = frame.astype(np.float32)
         warped = 0.82 * warped + 0.18 * glass          # 유리 반사 살짝
-    alpha = alpha * (1.0 - skin_mask(frame))
+    if ref is not None:
+        alpha = alpha * (1.0 - occluder(frame, ref, H, alpha))
     a3 = alpha[:, :, None]
     return (frame.astype(np.float32) * (1 - a3) + warped * a3).astype(np.uint8)
 
 
 def track(frames, quad0, win):
-    """ECC 호모그래피(첫 프레임 기준, 이전 결과로 초기화)."""
+    """SIFT 특징 매칭 + RANSAC 호모그래피(첫 프레임 기준). 액자 주변(사각형을 90px 넓힌 영역)의 특징만 쓴다."""
+    sift = cv2.SIFT_create(nfeatures=3000)
+    g0 = cv2.cvtColor(frames[0], cv2.COLOR_BGR2GRAY)
+    mask0 = np.zeros(g0.shape, np.uint8)
+    cv2.fillPoly(mask0, [np.int32(quad0)], 255)
+    mask0 = cv2.dilate(mask0, np.ones((181, 181), np.uint8))
+    k0, d0 = sift.detectAndCompute(g0, mask0)
     x0, y0, x1, y1 = win
-    ref = cv2.cvtColor(frames[0], cv2.COLOR_BGR2GRAY)[y0:y1, x0:x1]
-    H = np.eye(3, dtype=np.float32)
-    quads, crit = [], (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 60, 1e-5)
-    pts = np.float32(quad0).reshape(-1, 1, 2) - np.float32([x0, y0])
+    bf = cv2.BFMatcher(cv2.NORM_L2)
+    H = np.eye(3, dtype=np.float64)
+    pts = np.float32(quad0).reshape(-1, 1, 2)
+    quads, Hs = [], []
     for k, f in enumerate(frames):
         if k:
-            g = cv2.cvtColor(f, cv2.COLOR_BGR2GRAY)[y0:y1, x0:x1]
-            try:
-                _, H = cv2.findTransformECC(ref, g, H.copy(), cv2.MOTION_HOMOGRAPHY, crit, None, 5)
-            except cv2.error:
-                pass
-        q = cv2.perspectiveTransform(pts, H).reshape(-1, 2) + np.float32([x0, y0])
-        quads.append(q)
-    return quads
+            g = cv2.cvtColor(f, cv2.COLOR_BGR2GRAY)
+            wmask = np.zeros(g.shape, np.uint8)
+            q_prev = cv2.perspectiveTransform(pts, H)
+            cv2.fillPoly(wmask, [np.int32(q_prev)], 255)
+            wmask = cv2.dilate(wmask, np.ones((261, 261), np.uint8))
+            k1, d1 = sift.detectAndCompute(g, wmask)
+            if d1 is not None and len(k1) >= 8:
+                m = bf.knnMatch(d0, d1, k=2)
+                good = [a for a, b in (x for x in m if len(x) == 2) if a.distance < 0.75 * b.distance]
+                if len(good) >= 10:
+                    src = np.float32([k0[a.queryIdx].pt for a in good]).reshape(-1, 1, 2)
+                    dst = np.float32([k1[a.trainIdx].pt for a in good]).reshape(-1, 1, 2)
+                    Hn, inl = cv2.findHomography(src, dst, cv2.RANSAC, 4.0)
+                    if Hn is not None and inl.sum() >= 8:
+                        H = Hn
+        q = cv2.perspectiveTransform(pts, H).reshape(-1, 2)
+        quads.append(q); Hs.append(H.copy())
+    # 떨림 완화: 꼭짓점 좌표를 5프레임 이동 평균
+    arr = np.array(quads)
+    sm = arr.copy()
+    for i in range(len(arr)):
+        a, b = max(0, i - 2), min(len(arr), i + 3)
+        sm[i] = arr[a:b].mean(0)
+    return [q for q in sm], Hs
 
 
 def main():
@@ -94,17 +128,17 @@ def main():
             if not ok: break
             frames.append(fr)
         cap.release()
-        quads = track(frames, quad0, win)
+        quads, Hs = track(frames, quad0, win)
         lum = None
         seg = os.path.join(tmp, f"{sid}.mp4")
         wr = cv2.VideoWriter(seg, cv2.VideoWriter_fourcc(*"mp4v"), FPS, (1920, 1080))
-        for fr, q in zip(frames, quads):
-            if lum is None:
-                lum = photo.astype(np.float32).mean()
-            wr.write(composite(fr, q, photo, lum))
+        lum = photo.astype(np.float32).mean()
+        for fr, q, Hk in zip(frames, quads, Hs):
+            wr.write(composite(fr, q, photo, lum, frames[0], Hk))
         wr.release()
         segs.append((a, a + len(frames) / FPS, seg))
-        cv2.imwrite(os.path.join(tmp, f"{sid}_mid.jpg"), composite(frames[len(frames) // 2], quads[len(frames) // 2], photo, lum))
+        for tag, j in (("mid", len(frames) // 2), ("end", len(frames) - 1)):
+            cv2.imwrite(os.path.join(tmp, f"{sid}_{tag}.jpg"), composite(frames[j], quads[j], photo, lum, frames[0], Hs[j]))
         print(f"{sid}: {a:.2f}-{b:.2f} {len(frames)}프레임, 추적 끝점 이동 {np.abs(quads[-1] - quads[0]).max():.1f}px → {tmp}/{sid}_mid.jpg")
     if "--preview" in sys.argv:
         return
