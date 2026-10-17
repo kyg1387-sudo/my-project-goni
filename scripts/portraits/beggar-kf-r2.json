@@ -1,0 +1,14 @@
+{
+ "_설명": "S13i 재생성 r2 — 위치 참조 없이 얼굴 셀만, 타이트 클로즈업(r1까지 2회 원경으로 나옴).",
+ "characters": [
+  {
+   "id": "S13i",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/beggar-cast/cells/genzo-expr1.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen, one frame only. Reference image 1 is the face of Takamiya Genzo (78, close-cropped white hair, short white beard, one small mole above LEFT eyebrow, NO glasses): reproduce exactly this face. TIGHT CLOSE-UP PORTRAIT: the camera is 80 centimetres from his face; his head and white beard fill the centre of the frame, the face occupies about 55 percent of the frame height, cut just below the collar of a plain faded grey zip-up jacket; turned about 30 degrees toward someone off-screen on the right, never looking at the camera; 85mm lens f/1.8, the background is only soft dark wood and a bright window glow behind him creating a warm rim light on his white hair. EXPRESSION: after a long silence, quiet deep sorrow and dignity, lips closed. Realistic tears as in a live-action film: reddened eye rims, glossy wet eyes catching the light, tears pooled on the lower lids but NOT running down, matte natural skin; no glossy gel streams. Photorealistic live-action Japanese drama, Arri Alexa color grade, Kodak 35mm grain. Full-frame 16:9, NO borders. Absolutely no text, letters or symbols anywhere. Negative: wide shot, table, cup, papers, anime, 3d render, glasses, gibberish text."
+  }
+ ]
+}
