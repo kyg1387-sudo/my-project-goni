@@ -165,7 +165,7 @@ def tts_line(cfg, key, index, voice, text, emotion=None):
     payload = {
         "text": text,
         "voice_setting": voice_setting,
-        "language_boost": cfg.get("language_boost", "Korean"),
+        "language_boost": cfg.get("language_boost", "Japanese"),  # 일본 제작 기준 기본값
     }
     result = fal_run(cfg["tts_model"], payload, key, f"tts {index:03d}")
     if result is None:
