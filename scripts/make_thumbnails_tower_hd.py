@@ -5,7 +5,7 @@
   A 【スカッと】 「荷物用エレベーターへ」と笑ったボスママの末路   — 통장을 든 유미 / 무릎 꿇은 레이카
   B 【泣ける】   「上の子専用」と締め出された娘、母の反撃       — 리코를 안은 유미 / 놀이방 유리문
   C 【スカッと】 「私は42階のオーナーよ！」本当の持ち主は…      — 오다기리 / 애원하는 레이카
-사용법: python3 scripts/make_thumbnails_tower_hd.py [A번호 B번호 C번호]   (기본 1 1 1)
+사용법: python3 scripts/make_thumbnails_tower_hd.py [A번호 B번호 C번호]   (확정 2026-10-17: fix 2 1 — A는 유미 귀걸이·립스틱 제거 편집본)
 """
 import os
 import sys
