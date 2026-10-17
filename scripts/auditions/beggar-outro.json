@@ -1,0 +1,45 @@
+{
+ "_설명": "『みすぼらしい老人は、財閥会長だった』 아웃트로 진행자 음성(대본 OUT2~OUT4, 동결본) — Yui Sato, Typecast ssfm-v30 jpn. 진행자 새 스타일이라 재사용 대신 전부 신규(고니감독님 지시 2026-10-17).",
+ "tests": [
+  {
+   "id": "pad1",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "最後までご覧いただき、ありがとうございました。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "pad2",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "スカッとした方は、ぜひチャンネル登録と高評価をお願いします",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "pad3",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "皆様のまわりにも、一杯のうどんを差し出せる人はいますか？　コメントで教えてください",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "pad4",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "次回も、胸がスカッとする物語をお届けします。お楽しみに。それでは、また次回お会いしましょう",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  }
+ ]
+}
