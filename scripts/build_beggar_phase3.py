@@ -185,8 +185,8 @@ SHOTS = [
       act="Iwaki leans over the table and tells the old man in a low hiss to drink his water and leave, contempt barely hidden." + OB, expr="sneer"),
     S("S05k", "S05", "face", "cu", "corner", "EL", [G_], "CORNER", "Close-up of Genzo turning his gaze to the window, silent, the city light on his face.",
       motion="He turns his eyes toward the window within 15 degrees, silent, a slow breath." + HOLD, expr="calm"),
-    S("S05l", "S05", "ins", "ecu", "corner", "EL", [], "CORNER", "Insert: a hand placing a black leather check presenter on the white tablecloth with a sharp tap, no face.",
-      motion="The hand sets the folder down flat on the white tablecloth with a small tap, then slowly withdraws out of frame; the folder stays lying flat on the tabletop, never on a chair, its size unchanged.", line="L12a", vo=True),
+    S("S05l", "S05", "d", "ots", "corner", "LA", [I_, G_], "CORNER", "Over Genzo's blurred shoulder (seated, left foreground), low angle: Iwaki standing beside the corner table at three-quarter angle, setting a black leather check presenter down in front of the old man, looking down at him.", line="L12a",
+      act="Iwaki sets the black check presenter down on the table in front of the seated old man with a curt tap, keeps two fingers on it, and dismissively demands payment in advance, looking down at him. Speaking to the old man directly." + OB, expr="cold"),
     S("S05m", "S05", "ins", "ecu", "corner", "EL", [G_], "CORNER", "Insert: old hands opening a worn brown leather wallet; tucked inside, a small faded black-and-white photograph of a tiny wooden udon shop with a woman in an apron and a small boy, no writing anywhere.",
       motion="The old fingers open the wallet slowly; the photo comes into view.", line="L12b", vo=True),
     S("S05n", "S05", "d", "ots", "corner", "HA", [G_, I_], "CORNER", "Over Iwaki's blurred shoulder: Genzo stroking the old photo with his thumb, a faint smile.", line="L12c",
@@ -443,6 +443,11 @@ for _s in SHOTS:
     if _s["line"] in VO:
         who, lens, angle, loc, subj, mot, ex = VO[_s["line"]]
         _s.update(kind="face", who=who, lens=lens, angle=angle, loc=loc, subject=subj, motion=mot, expr=ex, act="", vo=True)
+# 듣는 사람 VO 컷 = 어깨 너머 리버스숏(고니감독님 지적 2026-10-17 「서로 주고받고 대화하는 장면」): 말하는 사람의 흐린 뒷머리·어깨를
+# 앞에 걸고 듣는 사람은 그 사람을 3/4로 본다(카메라 응시 금지). 화자 입은 보이지 않는다(제10장 2).
+SPK_WHO = {"源蔵": G_, "岩城": I_, "間宮": M_, "ちひろ": C_, "榊": K_}
+VO_OTS_SKIP = {"S04h", "S05m", "S06b", "S06d", "S10e", "S11e", "S10n", "S10m", "S10q2",
+               "S05e", "S07d", "S07i", "S10s"}  # 뒤 4컷은 현재 키프레임이 이미 상대를 보는 구도(재생성 안 함)
 
 CARDS = {"H2": "三十分後、この支配人は土下座することになる", "H3": "みすぼらしい老人は、財閥会長だった", "S09b": "この後――支配人の顔が、真っ青に",
          "S16b": "かけうどん　お代は、お気持ちで", "S17a": "次回――会長の最後の配達", "S01a": "一時間前"}
@@ -602,6 +607,11 @@ def main():
     texts = script_texts()
     scenes = {s["id"]: (s["start"], s["end"]) for s in lock["scenes"]}
     main_end = lock["body_end"]
+    for s in SHOTS:
+        sp = SPK_WHO.get(rows[s["line"]]["spk"]) if s.get("vo") and s["line"] in rows else None
+        s["ots"] = bool(sp and s["id"] not in VO_OTS_SKIP and s["kind"] == "face" and len(s["who"]) == 1 and sp != s["who"][0])
+        if s["ots"]:
+            s["who"] = s["who"] + [sp]
     errs = check_rules(SHOTS, rows)
     body_tags = {t for t, x in rows.items() if x["scene"].startswith("S") and x.get("start") is not None}
     used = [s["line"] for s in SHOTS if s["line"]]
@@ -675,6 +685,10 @@ def main():
             comp = ("Over-the-shoulder two-shot: the listener's blurred shoulder and back of the head at the near foreground edge, the speaker beyond "
                     "facing the listener at 30 to 40 degrees from the camera axis, the speaker's face at least one third of the frame height, "
                     "the speaker's mouth closed, hands visible doing the described work. Exactly two people, no extra people.")
+        elif s.get("ots"):
+            comp = ("Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth "
+                    "NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking "
+                    "at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people.")
         elif s["kind"] in ("empty", "estill") or (s["kind"] == "ins" and not s["who"]):
             comp = "Completely unpopulated: no people, no hands, no faces."
         else:
@@ -712,7 +726,7 @@ def main():
         amb = AMB_BY_SHOT.get(sid, AMB_BY_SCENE.get(s["scene"], ""))
         sb.append({"id": sid, "scene": s["scene"], "kind": s["kind"], "tier": tier, "timecode": f"{tc(starts[sid])} - {tc(ends[sid])}",
                    "assembled_s": round(d, 3), "generate_s": gen, "size": s["lens"], "lens": LENS[s["lens"]], "angle": s["angle"],
-                   "lighting": s["light"], "edit_fx": s["fx"], "refs": refs, "subject": s["subject"], "line": s["line"], "vo": s["vo"],
+                   "lighting": s["light"], "edit_fx": s["fx"], "refs": refs, "ots": s.get("ots", False), "subject": s["subject"], "line": s["line"], "vo": s["vo"],
                    "motion": item["prompt"] if tier == "lite" else "", "act": s["act"], "keyframe": keyframe, "keyframe_prompt": kf_prompt,
                    "ja_overlay": JA_OVERLAY.get(sid, ""), "caption": CARDS.get(sid, ""), "ambience": G.get(amb, "")})
     budget = round(cost["lite"] * RATE["lite"] * 1.25, 2)

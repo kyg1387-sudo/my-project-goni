@@ -1,7 +1,7 @@
 {
  "_설명": "beggar-chairman 장면 설정(build_beggar_phase3.py 생성). override_required 장면은 정지 푸시인·OMNI 정지 프레임·재사용·카드를 video-overrides로 먼저 넣는다.",
  "ratio": "16:9",
- "budget_usd": 29.7,
+ "budget_usd": 29.25,
  "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
  "durations": [
   5,
@@ -324,8 +324,9 @@
    "image": "assets/portraits/beggar-chairman-keyframes/S05k-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: The hand sets the folder down flat on the white tablecloth with a small tap, then slowly withdraws out of frame; the folder stays lying flat on the tabletop, never on a chair, its size unchanged. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "(override) omni: Over Genzo's blurred shoulder (seated, left foreground), low angle: Iwaki standi",
    "duration": 10,
+   "override_required": true,
    "image": "assets/portraits/beggar-chairman-keyframes/S05l-1.png"
   },
   {

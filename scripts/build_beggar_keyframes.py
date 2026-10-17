@@ -58,11 +58,12 @@ LIGHT_NOTE = {
 EMO_OVERRIDE = {
     "H3": "NO title, NO words, NO letters anywhere in the image; the empty sky above the tower is clean.",
     "S04a": "NO captions, NO labels, NO words anywhere.",
-    "S11b": "POSE LOCKED: Iwaki is STANDING upright in the dim restaurant corner aisle, seen from a low angle, chest-up, both arms down at his sides; NO table in front of him, NO cards, NO hands of other people, NO other people or silhouettes anywhere, NO earrings. Only this one person.",
+    "S05l": "SPEAKER LOCKED: Iwaki (black slicked-back hair, thin black moustache, black three-piece suit, black sleeves, NOT a white shirt sleeve) STANDS beside the small corner table by the restroom corridor and is the face at three-quarter angle, his hand setting a plain black leather check presenter on the white tablecloth; the old man SITS at the table and appears ONLY as a blurred back of white hair and grey jacket shoulder at the near left edge. NO writing on the folder.",
+    "S11b": "POSE LOCKED: Iwaki is STANDING upright in the dim restaurant corner aisle, chest-up, both arms down at his sides, facing the old man in the foreground; NO table in front of him, NO cards, NO other people or silhouettes beyond, NO earrings.",
     "S04d": "NO captions, NO labels, NO words anywhere.",
     "S04c": "SPEAKER LOCKED: Iwaki (black slicked-back hair, thin black moustache, black three-piece suit) has stepped out from the podium into the doorway and is the face at three-quarter angle, his right arm stretched straight out across the entrance with the palm raised toward the old man, blocking him; the old man appears ONLY as a blurred back of white hair and grey jacket shoulder at the near left edge, stopped in front of the raised palm.",
     "S04b": "Iwaki is at three-quarter angle turned toward the doorway on the LEFT, looking toward the arriving guest off-screen left, NOT looking at the camera. Only this one person.",
-    "S04f": "Iwaki is at three-quarter angle facing screen LEFT toward the old man off-screen, NOT looking at the camera. Only this one person: NO other person, NO foreground shoulder.",
+    "S04f": "Iwaki is at three-quarter angle facing screen LEFT toward the old man in the foreground, NOT looking at the camera.",
     "S04i": "SPEAKER LOCKED: Iwaki (black slicked-back hair, thin black moustache, black three-piece suit) is the face at three-quarter angle, jerking his chin toward the back of the hall; the old man appears ONLY as a blurred back of white hair and grey jacket shoulder at the near left edge. Both people STANDING.",
     "S04e": "SPEAKER LOCKED: Iwaki (black slicked-back hair, thin black moustache, black three-piece suit) stands behind the podium scoffing, both people STANDING (the old man is NOT seated), the face at three-quarter angle; the old man appears ONLY as a blurred back of white hair at the near left edge.",
     "S07b": "PEOPLE LOCKED: exactly two people. Chihiro (young woman, black low ponytail, white blouse, navy apron) is the face at three-quarter angle setting down tea; the ONLY other person is the old man seen strictly from behind (white hair, grey jacket) at the near left edge. Do NOT show the old man's face.",
@@ -128,12 +129,12 @@ def build(sc, stage):
         for r in people:
             k, _ = who_of(os.path.basename(r))
             f = f"{FACE_DIR}/{k}.png"
-            if k in NO_FACE.get(sc["id"], ()):  # 뒷모습 화자(비립싱크 VO)는 얼굴 크롭 참조 제외 — 정면을 끌어온다
+            if k in NO_FACE.get(sc["id"], ()) or (sc.get("ots") and r == people[-1]):  # 뒷모습 화자(비립싱크 VO)는 얼굴 크롭 제외 — 정면을 끌어온다
                 continue
             if os.path.exists(os.path.join(ROOT, f)) and f not in face and not os.path.basename(r).endswith("-fullback.png"):
                 face.append(f)
         refs = face + refs
-    if sc["kind"] == "d":  # 전경 인물(두 번째 who)은 뒷모습 셀로
+    if sc["kind"] == "d" or sc.get("ots"):  # 전경 인물(두 번째 who)은 뒷모습 셀로
         if len(people) >= 2:
             k2, _ = who_of(os.path.basename(people[1]))
             back = f"{CELLS}/{k2}-fullback.png"
@@ -158,6 +159,10 @@ def build(sc, stage):
         parts.append(ANGLE[sc["angle"]])
     if sc.get("ja_overlay"):
         parts.append(BLANK)
+    if sc.get("ots"):
+        parts.append("REVERSE OVER-THE-SHOULDER COMPOSITION: the near-edge foreground person is the one SPEAKING, seen strictly from behind — only the "
+                     "blurred back of the head and one shoulder at the frame edge, face and mouth NOT visible. The person beyond is the LISTENER at "
+                     "three-quarter angle, eyes on the speaker, NEVER looking into the camera, face at least one third of the frame height, mouth closed.")
     if sc["kind"] == "d":
         parts.append((OTS + " " + FACE13) if len(people) >= 2 else (FACE13 + " Only this one person is in the frame: NO other person, NO foreground shoulder or head."))
         if any(k in (sc.get("act") or "") for k in ("NOT smiling",)):

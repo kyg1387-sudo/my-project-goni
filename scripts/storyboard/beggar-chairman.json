@@ -516,6 +516,7 @@
    "lighting": "tension",
    "edit_fx": "",
    "refs": [],
+   "ots": false,
    "subject": "Reuse of S10r (Iwaki yanking the old man's frayed sleeve, dutch 5 degrees). L01 audio.",
    "line": null,
    "vo": false,
@@ -541,6 +542,7 @@
    "lighting": "hall",
    "edit_fx": "",
    "refs": [],
+   "ots": false,
    "subject": "Reuse of S10m (Mamiya filming with his phone, grinning). L02 audio.",
    "line": null,
    "vo": false,
@@ -569,6 +571,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Close-up of Genzo sitting alone at the dim corner table, looking up calmly without anger, dignified, quiet eyes.",
    "line": null,
    "vo": false,
@@ -596,6 +599,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-hotel-afternoon-steps.png"
    ],
+   "ots": false,
    "subject": "Low wide of the glass hotel tower at golden hour, empty granite steps, no signage. Title composited.",
    "line": null,
    "vo": false,
@@ -624,6 +628,7 @@
     "assets/portraits/beggar-cast/cells/genzo-front.png",
     "assets/portraits/beggar-cast/cells/loc-hotel-afternoon-steps.png"
    ],
+   "ots": false,
    "subject": "Insert: a pair of old scuffed white sneakers stopping on the bottom granite step, worn beige trouser hems, no face.",
    "line": "NA1",
    "vo": false,
@@ -652,6 +657,7 @@
     "assets/portraits/beggar-cast/cells/genzo-fullback.png",
     "assets/portraits/beggar-cast/cells/loc-hotel-afternoon-steps.png"
    ],
+   "ots": false,
    "subject": "Wide low angle from behind: the old man in the faded grey jacket looking up at the towering glass hotel, small against it.",
    "line": "NA2",
    "vo": false,
@@ -679,6 +685,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-udonya-1955-exterior.png"
    ],
+   "ots": false,
    "subject": "Sepia high wide: a narrow snowy post-war Tokyo alley at night, one warm window of a tiny udon shop glowing, snow falling.",
    "line": null,
    "vo": false,
@@ -707,6 +714,7 @@
     "assets/portraits/beggar-cast/cells/boy-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-udonya-1955-exterior.png"
    ],
+   "ots": false,
    "subject": "Sepia winter night 1955: a thin boy shivering under the snowy eaves of a tiny wooden udon shop, hugging himself, snow falling.",
    "line": "NA3",
    "vo": false,
@@ -734,6 +742,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-udonya-1955-doorway.png"
    ],
+   "ots": false,
    "subject": "Sepia: in the warm doorway behind rising steam, the shop mistress as a backlit silhouette beckoning with her hand, face not visible.",
    "line": "NA4",
    "vo": false,
@@ -761,6 +770,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-udonya-1955-bowl.png"
    ],
+   "ots": false,
    "subject": "Sepia insert: small cold hands receiving a steaming bowl of plain kake udon from a woman's hands over the wooden counter.",
    "line": null,
    "vo": false,
@@ -789,6 +799,7 @@
     "assets/portraits/beggar-cast/cells/boy-expr3.png",
     "assets/portraits/beggar-cast/cells/loc-udonya-1955-counter.png"
    ],
+   "ots": false,
    "subject": "Sepia close-up of the boy holding the bowl to his chest, eyes filling with tears, steam on his face.",
    "line": "NA5",
    "vo": false,
@@ -817,6 +828,7 @@
     "assets/portraits/beggar-cast/cells/genzo-front.png",
     "assets/portraits/beggar-cast/cells/loc-hotel-afternoon-steps.png"
    ],
+   "ots": false,
    "subject": "Insert: an old wrinkled hand slowly brushing over the smooth polished granite of the hotel wall, golden light.",
    "line": "NA6",
    "vo": false,
@@ -845,6 +857,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hotel-afternoon-steps.png"
    ],
+   "ots": false,
    "subject": "Close-up profile of Genzo gazing at the wall with longing, a warm golden-hour rim light on his white beard.",
    "line": "NA7",
    "vo": false,
@@ -872,6 +885,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-entrance-front.png"
    ],
+   "ots": false,
    "subject": "Wide of the restaurant entrance: plain indigo noren, a wooden reception podium with a closed blank book, stone floor.",
    "line": null,
    "vo": false,
@@ -900,6 +914,7 @@
     "assets/portraits/beggar-cast/cells/iwaki-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-entrance-low-podium.png"
    ],
+   "ots": false,
    "subject": "Low angle medium: Iwaki behind the podium at three-quarter angle, turned toward the doorway on the left, looking the arriving old man up and down with cold contempt.",
    "line": null,
    "vo": false,
@@ -929,6 +944,7 @@
     "assets/portraits/beggar-cast/cells/genzo-front.png",
     "assets/portraits/beggar-cast/cells/loc-entrance-low-podium.png"
    ],
+   "ots": false,
    "subject": "Over Genzo's blurred shoulder (left foreground), low angle: Iwaki stepping into the doorway at three-quarter angle, arm stretched across the entrance with the palm raised, blocking the old man.",
    "line": "L03",
    "vo": false,
@@ -958,6 +974,7 @@
     "assets/portraits/beggar-cast/cells/iwaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-entrance-over-podium.png"
    ],
+   "ots": false,
    "subject": "Over Iwaki's blurred shoulder (right foreground), high angle: Genzo at three-quarter angle, hands folded in front, calm and polite.",
    "line": "L04",
    "vo": false,
@@ -987,6 +1004,7 @@
     "assets/portraits/beggar-cast/cells/genzo-front.png",
     "assets/portraits/beggar-cast/cells/loc-entrance-low-podium.png"
    ],
+   "ots": false,
    "subject": "Over Genzo's blurred shoulder, low angle: Iwaki scoffing, eyebrows raised, one hand on the podium.",
    "line": "L05",
    "vo": false,
@@ -1013,15 +1031,17 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/beggar-cast/cells/iwaki-expr3.png",
+    "assets/portraits/beggar-cast/cells/genzo-front.png",
     "assets/portraits/beggar-cast/cells/loc-entrance-low-podium.png"
    ],
+   "ots": true,
    "subject": "Low close-up of Iwaki at three-quarter angle facing screen left toward the old man, hearing him say he has money, a contemptuous half-smile.",
    "line": "L06",
    "vo": true,
    "motion": "Static, locked off camera. Motion: A contemptuous half-smile spreads slowly, one eyebrow lifts; lips stay closed. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "act": "",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S04f-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Low close-up of Iwaki at three-quarter angle facing screen left toward the old man, hearing him say he has money, a contemptuous half-smile. Characters: Iwaki, a Japanese man aged 45, slim oval face, black hair slicked back with pomade, a thin neat black moustache, no glasses, small black stud earrings in both ears (fixed trait from the approved sheet), wearing a black three-piece suit, white shirt, silver tie, a small blank brushed-metal name plate with no engraving. He wears no glasses.  Camera: low-angle looking up, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: warm 3200K entrance spotlights from above, hard shadows on the podium. Exactly 1 person (or their hands) as described, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Low close-up of Iwaki at three-quarter angle facing screen left toward the old man, hearing him say he has money, a contemptuous half-smile. Characters: Iwaki, a Japanese man aged 45, slim oval face, black hair slicked back with pomade, a thin neat black moustache, no glasses, small black stud earrings in both ears (fixed trait from the approved sheet), wearing a black three-piece suit, white shirt, silver tie, a small blank brushed-metal name plate with no engraving | Takamiya Genzo, a lean Japanese man aged 78, angular weathered face with deep wrinkles, close-cropped white hair, a short neat white beard, one small dark mole above his LEFT eyebrow, no glasses, no earrings, wearing a plain faded grey zip-up jacket with frayed cuffs and no logo, plain worn beige cotton trousers, old scuffed white sneakers, an old wristwatch with a cracked leather strap. He wears no glasses. He wears no glasses.  Camera: low-angle looking up, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: warm 3200K entrance spotlights from above, hard shadows on the podium. Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": "a leather book slapped shut, footsteps on stone floor"
@@ -1044,6 +1064,7 @@
     "assets/portraits/beggar-cast/cells/iwaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-entrance-over-podium.png"
    ],
+   "ots": false,
    "subject": "Over Iwaki's blurred shoulder: Genzo looking past him into the restaurant with longing.",
    "line": "L06a",
    "vo": false,
@@ -1072,6 +1093,7 @@
     "assets/portraits/beggar-cast/cells/iwaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-entrance-book.png"
    ],
+   "ots": false,
    "subject": "Insert: a hand in a black suit sleeve slapping the blank leather reservation book shut, no face.",
    "line": "L06b",
    "vo": true,
@@ -1101,6 +1123,7 @@
     "assets/portraits/beggar-cast/cells/genzo-front.png",
     "assets/portraits/beggar-cast/cells/loc-entrance-front.png"
    ],
+   "ots": false,
    "subject": "Low medium: Iwaki sighing and jerking his chin toward the back of the hall, the old man's blurred shoulder at the edge.",
    "line": "L07",
    "vo": false,
@@ -1129,6 +1152,7 @@
     "assets/portraits/beggar-cast/cells/genzo-fullback.png",
     "assets/portraits/beggar-cast/cells/loc-hall-angles-reverse.png"
    ],
+   "ots": false,
    "subject": "High wide: the old man walking alone between white-clothed tables toward the dim corner, seen from behind.",
    "line": null,
    "vo": false,
@@ -1157,6 +1181,7 @@
     "assets/portraits/beggar-cast/cells/mamiya-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-angles-pillar.png"
    ],
+   "ots": false,
    "subject": "Peeking past a blurred pillar: diners at the bright window tables glancing toward the corner, Mamiya in a beige coat with a wine glass.",
    "line": null,
    "vo": false,
@@ -1185,6 +1210,7 @@
     "assets/portraits/beggar-cast/cells/mamiya-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-window.png"
    ],
+   "ots": false,
    "subject": "Low medium: Mamiya setting down his wine glass and calling out loudly, wrinkling his nose.",
    "line": "L08",
    "vo": false,
@@ -1214,6 +1240,7 @@
     "assets/portraits/beggar-cast/cells/mamiya-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-window.png"
    ],
+   "ots": false,
    "subject": "Medium past Mamiya's blurred shoulder: Iwaki bowing low with an exaggerated fawning smile.",
    "line": "L09",
    "vo": false,
@@ -1242,6 +1269,7 @@
     "assets/portraits/beggar-cast/cells/iwaki-expr2.png",
     "assets/portraits/beggar-cast/cells/loc-hall-window.png"
    ],
+   "ots": false,
    "subject": "Close-up of Iwaki half-bowed, nodding servilely at the young customer's boast.",
    "line": "L09a",
    "vo": true,
@@ -1268,15 +1296,17 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/beggar-cast/cells/mamiya-expr1.png",
+    "assets/portraits/beggar-cast/cells/iwaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-window.png"
    ],
+   "ots": true,
    "subject": "Low close-up of Mamiya smirking, satisfied, swirling his wine.",
    "line": "L09b",
    "vo": true,
    "motion": "Static, locked off camera. Motion: He smirks, satisfied, swirls the wine once. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "act": "",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S05f-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Low close-up of Mamiya smirking, satisfied, swirling his wine. Characters: Mamiya, a stocky Japanese man aged 32, round face, reddish-brown hair cut short on the sides and longer on top, small silver stud earrings in both ears (fixed trait), no glasses, wearing a plain cream knit sweater with no logo, a plain beige double-breasted overcoat, dark slacks, a thick silver wristwatch. He wears no glasses.  Camera: low-angle looking up, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: warm 3200K amber pendant lamps, a cool 5600K window light from the left, dark wood walls, soft contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Low close-up of Mamiya smirking, satisfied, swirling his wine. Characters: Mamiya, a stocky Japanese man aged 32, round face, reddish-brown hair cut short on the sides and longer on top, small silver stud earrings in both ears (fixed trait), no glasses, wearing a plain cream knit sweater with no logo, a plain beige double-breasted overcoat, dark slacks, a thick silver wristwatch | Iwaki, a Japanese man aged 45, slim oval face, black hair slicked back with pomade, a thin neat black moustache, no glasses, small black stud earrings in both ears (fixed trait from the approved sheet), wearing a black three-piece suit, white shirt, silver tie, a small blank brushed-metal name plate with no engraving. He wears no glasses. He wears no glasses.  Camera: low-angle looking up, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: warm 3200K amber pendant lamps, a cool 5600K window light from the left, dark wood walls, soft contrast. Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": "porcelain bowls set on tablecloth, chopsticks clicking, a teacup on a saucer"
@@ -1298,6 +1328,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "High close-up of Genzo at the corner table, hearing it all, eyes lowered, dignified.",
    "line": null,
    "vo": false,
@@ -1324,15 +1355,17 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/beggar-cast/cells/chihiro-expr1.png",
+    "assets/portraits/beggar-cast/cells/iwaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": true,
    "subject": "Close-up of Chihiro hearing the order, startled, the tray tightening against her chest.",
    "line": "L10",
    "vo": true,
    "motion": "Static, locked off camera. Motion: Her eyes widen, the tray tightens against her chest, a small breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "act": "",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S05h-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Close-up of Chihiro hearing the order, startled, the tray tightening against her chest. Characters: Harukawa Chihiro, a slim Japanese woman aged 21, oval face, straight blunt bangs, black hair in a low ponytail, no glasses, tiny black stud earrings (fixed trait from the approved sheet), wearing a plain white long-sleeve blouse, a plain navy waist apron with no print, black slacks. She wears no glasses.  Camera: eye-level, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: cold overhead light falling vertically, harsh shadows under the brows, the warm pendants dimmed, high contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Close-up of Chihiro hearing the order, startled, the tray tightening against her chest. Characters: Harukawa Chihiro, a slim Japanese woman aged 21, oval face, straight blunt bangs, black hair in a low ponytail, no glasses, tiny black stud earrings (fixed trait from the approved sheet), wearing a plain white long-sleeve blouse, a plain navy waist apron with no print, black slacks | Iwaki, a Japanese man aged 45, slim oval face, black hair slicked back with pomade, a thin neat black moustache, no glasses, small black stud earrings in both ears (fixed trait from the approved sheet), wearing a black three-piece suit, white shirt, silver tie, a small blank brushed-metal name plate with no engraving. She wears no glasses. He wears no glasses.  Camera: eye-level, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: cold overhead light falling vertically, harsh shadows under the brows, the warm pendants dimmed, high contrast. Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": "porcelain bowls set on tablecloth, chopsticks clicking, a teacup on a saucer"
@@ -1352,15 +1385,17 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/beggar-cast/cells/iwaki-expr1.png",
+    "assets/portraits/beggar-cast/cells/chihiro-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": true,
    "subject": "Chest-up close-up of Iwaki glaring sideways at the waitress, jaw tight.",
    "line": "L11",
    "vo": true,
    "motion": "Static, locked off camera. Motion: He glares sideways, jaw tightening, one slow blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "act": "",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S05i-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Chest-up close-up of Iwaki glaring sideways at the waitress, jaw tight. Characters: Iwaki, a Japanese man aged 45, slim oval face, black hair slicked back with pomade, a thin neat black moustache, no glasses, small black stud earrings in both ears (fixed trait from the approved sheet), wearing a black three-piece suit, white shirt, silver tie, a small blank brushed-metal name plate with no engraving. He wears no glasses.  Camera: eye-level, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: warm 3200K amber pendant lamps, a cool 5600K window light from the left, dark wood walls, soft contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Chest-up close-up of Iwaki glaring sideways at the waitress, jaw tight. Characters: Iwaki, a Japanese man aged 45, slim oval face, black hair slicked back with pomade, a thin neat black moustache, no glasses, small black stud earrings in both ears (fixed trait from the approved sheet), wearing a black three-piece suit, white shirt, silver tie, a small blank brushed-metal name plate with no engraving | Harukawa Chihiro, a slim Japanese woman aged 21, oval face, straight blunt bangs, black hair in a low ponytail, no glasses, tiny black stud earrings (fixed trait from the approved sheet), wearing a plain white long-sleeve blouse, a plain navy waist apron with no print, black slacks. He wears no glasses. She wears no glasses.  Camera: eye-level, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: warm 3200K amber pendant lamps, a cool 5600K window light from the left, dark wood walls, soft contrast. Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": "porcelain bowls set on tablecloth, chopsticks clicking, a teacup on a saucer"
@@ -1380,15 +1415,17 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/beggar-cast/cells/genzo-expr1.png",
+    "assets/portraits/beggar-cast/cells/iwaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": true,
    "subject": "High close-up of Genzo enduring the hissed words, eyes lowered, dignified.",
    "line": "L12",
    "vo": true,
    "motion": "Static, locked off camera. Motion: He keeps his eyes lowered, a slow breath, hands still on the table. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "act": "",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S05j-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. High close-up of Genzo enduring the hissed words, eyes lowered, dignified. Characters: Takamiya Genzo, a lean Japanese man aged 78, angular weathered face with deep wrinkles, close-cropped white hair, a short neat white beard, one small dark mole above his LEFT eyebrow, no glasses, no earrings, wearing a plain faded grey zip-up jacket with frayed cuffs and no logo, plain worn beige cotton trousers, old scuffed white sneakers, an old wristwatch with a cracked leather strap. He wears no glasses.  Camera: high-angle looking down, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: cold overhead light falling vertically, harsh shadows under the brows, the warm pendants dimmed, high contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. High close-up of Genzo enduring the hissed words, eyes lowered, dignified. Characters: Takamiya Genzo, a lean Japanese man aged 78, angular weathered face with deep wrinkles, close-cropped white hair, a short neat white beard, one small dark mole above his LEFT eyebrow, no glasses, no earrings, wearing a plain faded grey zip-up jacket with frayed cuffs and no logo, plain worn beige cotton trousers, old scuffed white sneakers, an old wristwatch with a cracked leather strap | Iwaki, a Japanese man aged 45, slim oval face, black hair slicked back with pomade, a thin neat black moustache, no glasses, small black stud earrings in both ears (fixed trait from the approved sheet), wearing a black three-piece suit, white shirt, silver tie, a small blank brushed-metal name plate with no engraving. He wears no glasses. He wears no glasses.  Camera: high-angle looking down, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: cold overhead light falling vertically, harsh shadows under the brows, the warm pendants dimmed, high contrast. Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": "porcelain bowls set on tablecloth, chopsticks clicking, a teacup on a saucer"
@@ -1410,6 +1447,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Close-up of Genzo turning his gaze to the window, silent, the city light on his face.",
    "line": null,
    "vo": false,
@@ -1424,26 +1462,29 @@
   {
    "id": "S05l",
    "scene": "S05",
-   "kind": "ins",
-   "tier": "lite",
+   "kind": "d",
+   "tier": "omni",
    "timecode": "02:20.02 - 02:27.01",
    "assembled_s": 6.959,
    "generate_s": 10,
-   "size": "ecu",
-   "lens": "100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame",
-   "angle": "EL",
+   "size": "ots",
+   "lens": "50mm lens, f/2.0, over-the-shoulder three-quarter framing, the listener's blurred shoulder and back of the head in the near foreground edge, the speaker's face at least one third of the frame height",
+   "angle": "LA",
    "lighting": "corner",
    "edit_fx": "",
    "refs": [
+    "assets/portraits/beggar-cast/cells/iwaki-expr1.png",
+    "assets/portraits/beggar-cast/cells/genzo-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
-   "subject": "Insert: a hand placing a black leather check presenter on the white tablecloth with a sharp tap, no face.",
+   "ots": false,
+   "subject": "Over Genzo's blurred shoulder (seated, left foreground), low angle: Iwaki standing beside the corner table at three-quarter angle, setting a black leather check presenter down in front of the old man, looking down at him.",
    "line": "L12a",
-   "vo": true,
-   "motion": "Static, locked off camera. Motion: The hand sets the folder down flat on the white tablecloth with a small tap, then slowly withdraws out of frame; the folder stays lying flat on the tabletop, never on a chair, its size unchanged. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
-   "act": "",
+   "vo": false,
+   "motion": "",
+   "act": "Iwaki sets the black check presenter down on the table in front of the seated old man with a curt tap, keeps two fingers on it, and dismissively demands payment in advance, looking down at him. Speaking to the old man directly. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout.",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S05l-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Insert: a hand placing a black leather check presenter on the white tablecloth with a sharp tap, no face.    Camera: eye-level, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Lighting: the dim cramped corner by the restroom corridor: cold flat fluorescent spill from the corridor, the warm pendants far away, a lonely mood, faces readable. Completely unpopulated: no people, no hands, no faces. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Over Genzo's blurred shoulder (seated, left foreground), low angle: Iwaki standing beside the corner table at three-quarter angle, setting a black leather check presenter down in front of the old man, looking down at him. Characters: Iwaki, a Japanese man aged 45, slim oval face, black hair slicked back with pomade, a thin neat black moustache, no glasses, small black stud earrings in both ears (fixed trait from the approved sheet), wearing a black three-piece suit, white shirt, silver tie, a small blank brushed-metal name plate with no engraving | Takamiya Genzo, a lean Japanese man aged 78, angular weathered face with deep wrinkles, close-cropped white hair, a short neat white beard, one small dark mole above his LEFT eyebrow, no glasses, no earrings, wearing a plain faded grey zip-up jacket with frayed cuffs and no logo, plain worn beige cotton trousers, old scuffed white sneakers, an old wristwatch with a cracked leather strap. He wears no glasses. He wears no glasses.  Camera: low-angle looking up, 50mm lens, f/2.0, over-the-shoulder three-quarter framing, the listener's blurred shoulder and back of the head in the near foreground edge, the speaker's face at least one third of the frame height. Lighting: the dim cramped corner by the restroom corridor: cold flat fluorescent spill from the corridor, the warm pendants far away, a lonely mood, faces readable. Over-the-shoulder two-shot: the listener's blurred shoulder and back of the head at the near foreground edge, the speaker beyond facing the listener at 30 to 40 degrees from the camera axis, the speaker's face at least one third of the frame height, the speaker's mouth closed, hands visible doing the described work. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": "porcelain bowls set on tablecloth, chopsticks clicking, a teacup on a saucer"
@@ -1465,6 +1506,7 @@
     "assets/portraits/beggar-cast/cells/genzo-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Insert: old hands opening a worn brown leather wallet; tucked inside, a small faded black-and-white photograph of a tiny wooden udon shop with a woman in an apron and a small boy, no writing anywhere.",
    "line": "L12b",
    "vo": true,
@@ -1494,6 +1536,7 @@
     "assets/portraits/beggar-cast/cells/iwaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Over Iwaki's blurred shoulder: Genzo stroking the old photo with his thumb, a faint smile.",
    "line": "L12c",
    "vo": false,
@@ -1522,6 +1565,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-angles-birdseye.png"
    ],
+   "ots": false,
    "subject": "High wide: the old man alone and small at the corner table, the bright hall beyond.",
    "line": "NA7a",
    "vo": false,
@@ -1549,6 +1593,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-hotel-dusk-drive.png"
    ],
+   "ots": false,
    "subject": "Wide: a black luxury sedan gliding to a stop at the empty hotel driveway, golden hour.",
    "line": "NA8",
    "vo": false,
@@ -1577,6 +1622,7 @@
     "assets/portraits/beggar-cast/cells/sakaki-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-kitchen-car-car-day.png"
    ],
+   "ots": false,
    "subject": "Wide from outside the sedan: through the half-lowered tinted rear window, Sakaki in the back seat checking his wristwatch, the hotel entrance reflected in the glass.",
    "line": null,
    "vo": false,
@@ -1605,6 +1651,7 @@
     "assets/portraits/beggar-cast/cells/sakaki-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hotel-dusk-drive.png"
    ],
+   "ots": false,
    "subject": "Wide from outside: the black sedan parked at the entrance, Sakaki visible through the tinted glass with a phone to his ear, mouth not visible.",
    "line": "L13",
    "vo": true,
@@ -1632,6 +1679,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-kitchen-car-car-day.png"
    ],
+   "ots": false,
    "subject": "Insert: a smartphone screen in a gloved hand showing a shaky video of an old man's back in a restaurant (screen composited).",
    "line": null,
    "vo": false,
@@ -1660,6 +1708,7 @@
     "assets/portraits/beggar-cast/cells/sakaki-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-kitchen-car-car-day.png"
    ],
+   "ots": false,
    "subject": "Close-up of Sakaki staring at the phone, face hardening behind silver glasses.",
    "line": "L13a",
    "vo": true,
@@ -1688,6 +1737,7 @@
     "assets/portraits/beggar-cast/cells/sakaki-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-kitchen-car-car-day.png"
    ],
+   "ots": false,
    "subject": "Medium: Sakaki lowering the phone and looking toward the hotel entrance through the tinted window, waiting.",
    "line": "NA9",
    "vo": false,
@@ -1716,6 +1766,7 @@
     "assets/portraits/beggar-cast/cells/genzo-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Insert: an old wristwatch with a cracked leather strap on a thin wrist, the hand resting on the tablecloth.",
    "line": "NA10",
    "vo": false,
@@ -1743,6 +1794,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-hall-wide.png"
    ],
+   "ots": false,
    "subject": "Wide of the hall, diners and waiters moving quietly, the corner in shadow.",
    "line": "NA11",
    "vo": false,
@@ -1771,6 +1823,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": false,
    "subject": "Insert: a young woman's hand setting a steaming cup of green tea gently in front of an old man's hands.",
    "line": null,
    "vo": false,
@@ -1800,6 +1853,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr2.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Over Genzo's blurred shoulder (left foreground): Chihiro at three-quarter angle, sliding the tea toward him, kind smile.",
    "line": "L14",
    "vo": false,
@@ -1829,6 +1883,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-expr2.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Over Chihiro's blurred shoulder (right foreground): Genzo cupping the tea in both hands, a first faint smile.",
    "line": "L15",
    "vo": false,
@@ -1857,6 +1912,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr2.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Close-up of Genzo listening to her, a gentle nod, the tea in his hands.",
    "line": "L16",
    "vo": true,
@@ -1883,15 +1939,17 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/beggar-cast/cells/chihiro-expr2.png",
+    "assets/portraits/beggar-cast/cells/genzo-expr2.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": true,
    "subject": "Medium of Chihiro with the tray, surprised by the kind question, a shy smile beginning.",
    "line": "L16a",
    "vo": true,
    "motion": "Static, locked off camera. Motion: A shy smile begins, she lowers her eyes then looks back. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "act": "",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S07e-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Medium of Chihiro with the tray, surprised by the kind question, a shy smile beginning. Characters: Harukawa Chihiro, a slim Japanese woman aged 21, oval face, straight blunt bangs, black hair in a low ponytail, no glasses, tiny black stud earrings (fixed trait from the approved sheet), wearing a plain white long-sleeve blouse, a plain navy waist apron with no print, black slacks. She wears no glasses.  Camera: eye-level, 50mm lens, f/2.8, natural perspective, rule of thirds, the person's face at least one quarter of the frame height. Lighting: the dim cramped corner by the restroom corridor: cold flat fluorescent spill from the corridor, the warm pendants far away, a lonely mood, faces readable. Exactly 1 person (or their hands) as described, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Medium of Chihiro with the tray, surprised by the kind question, a shy smile beginning. Characters: Harukawa Chihiro, a slim Japanese woman aged 21, oval face, straight blunt bangs, black hair in a low ponytail, no glasses, tiny black stud earrings (fixed trait from the approved sheet), wearing a plain white long-sleeve blouse, a plain navy waist apron with no print, black slacks | Takamiya Genzo, a lean Japanese man aged 78, angular weathered face with deep wrinkles, close-cropped white hair, a short neat white beard, one small dark mole above his LEFT eyebrow, no glasses, no earrings, wearing a plain faded grey zip-up jacket with frayed cuffs and no logo, plain worn beige cotton trousers, old scuffed white sneakers, an old wristwatch with a cracked leather strap. She wears no glasses. He wears no glasses.  Camera: eye-level, 50mm lens, f/2.8, natural perspective, rule of thirds, the person's face at least one quarter of the frame height. Lighting: the dim cramped corner by the restroom corridor: cold flat fluorescent spill from the corridor, the warm pendants far away, a lonely mood, faces readable. Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": "porcelain bowls set on tablecloth, chopsticks clicking, a teacup on a saucer"
@@ -1913,6 +1971,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-expr2.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Close-up of Chihiro smiling shyly, eyes bright with her dream.",
    "line": "L16b",
    "vo": false,
@@ -1941,6 +2000,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr2.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Close-up of Genzo listening, his eyes softening with warmth.",
    "line": null,
    "vo": false,
@@ -1967,15 +2027,17 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/beggar-cast/cells/genzo-expr1.png",
+    "assets/portraits/beggar-cast/cells/chihiro-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": true,
    "subject": "Medium of Genzo listening, touched, the tea steaming in front of him.",
    "line": "L17",
    "vo": true,
    "motion": "Static, locked off camera. Motion: He listens, a slow nod, steam rising from the tea. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "act": "",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S07h-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Medium of Genzo listening, touched, the tea steaming in front of him. Characters: Takamiya Genzo, a lean Japanese man aged 78, angular weathered face with deep wrinkles, close-cropped white hair, a short neat white beard, one small dark mole above his LEFT eyebrow, no glasses, no earrings, wearing a plain faded grey zip-up jacket with frayed cuffs and no logo, plain worn beige cotton trousers, old scuffed white sneakers, an old wristwatch with a cracked leather strap. He wears no glasses.  Camera: eye-level, 50mm lens, f/2.8, natural perspective, rule of thirds, the person's face at least one quarter of the frame height. Lighting: the dim cramped corner by the restroom corridor: cold flat fluorescent spill from the corridor, the warm pendants far away, a lonely mood, faces readable. Exactly 1 person (or their hands) as described, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Medium of Genzo listening, touched, the tea steaming in front of him. Characters: Takamiya Genzo, a lean Japanese man aged 78, angular weathered face with deep wrinkles, close-cropped white hair, a short neat white beard, one small dark mole above his LEFT eyebrow, no glasses, no earrings, wearing a plain faded grey zip-up jacket with frayed cuffs and no logo, plain worn beige cotton trousers, old scuffed white sneakers, an old wristwatch with a cracked leather strap | Harukawa Chihiro, a slim Japanese woman aged 21, oval face, straight blunt bangs, black hair in a low ponytail, no glasses, tiny black stud earrings (fixed trait from the approved sheet), wearing a plain white long-sleeve blouse, a plain navy waist apron with no print, black slacks. He wears no glasses. She wears no glasses.  Camera: eye-level, 50mm lens, f/2.8, natural perspective, rule of thirds, the person's face at least one quarter of the frame height. Lighting: the dim cramped corner by the restroom corridor: cold flat fluorescent spill from the corridor, the warm pendants far away, a lonely mood, faces readable. Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": "porcelain bowls set on tablecloth, chopsticks clicking, a teacup on a saucer"
@@ -1997,6 +2059,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-expr2.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Close-up of Chihiro smiling at the old man's words.",
    "line": "L18",
    "vo": true,
@@ -2026,6 +2089,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Medium, slight high angle: Genzo setting down the tea and looking up at her earnestly.",
    "line": "L19",
    "vo": false,
@@ -2054,6 +2118,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-expr2.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Close-up of Chihiro thinking a moment, then answering with a simple smile.",
    "line": "L20",
    "vo": false,
@@ -2082,6 +2147,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Close-up of Genzo moved, eyes glistening, a long breath.",
    "line": null,
    "vo": false,
@@ -2108,15 +2174,17 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/beggar-cast/cells/genzo-expr1.png",
+    "assets/portraits/beggar-cast/cells/chihiro-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": true,
    "subject": "High close-up of Genzo watching her hurry toward the kitchen, eyes glistening.",
    "line": "L21",
    "vo": true,
    "motion": "Static, locked off camera. Motion: His eyes follow her toward the kitchen, glistening, a long breath. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "act": "",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S07m-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. High close-up of Genzo watching her hurry toward the kitchen, eyes glistening. Characters: Takamiya Genzo, a lean Japanese man aged 78, angular weathered face with deep wrinkles, close-cropped white hair, a short neat white beard, one small dark mole above his LEFT eyebrow, no glasses, no earrings, wearing a plain faded grey zip-up jacket with frayed cuffs and no logo, plain worn beige cotton trousers, old scuffed white sneakers, an old wristwatch with a cracked leather strap. He wears no glasses.  Camera: high-angle looking down, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: the dim cramped corner by the restroom corridor: cold flat fluorescent spill from the corridor, the warm pendants far away, a lonely mood, faces readable. Exactly 1 person (or their hands) as described, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. High close-up of Genzo watching her hurry toward the kitchen, eyes glistening. Characters: Takamiya Genzo, a lean Japanese man aged 78, angular weathered face with deep wrinkles, close-cropped white hair, a short neat white beard, one small dark mole above his LEFT eyebrow, no glasses, no earrings, wearing a plain faded grey zip-up jacket with frayed cuffs and no logo, plain worn beige cotton trousers, old scuffed white sneakers, an old wristwatch with a cracked leather strap | Harukawa Chihiro, a slim Japanese woman aged 21, oval face, straight blunt bangs, black hair in a low ponytail, no glasses, tiny black stud earrings (fixed trait from the approved sheet), wearing a plain white long-sleeve blouse, a plain navy waist apron with no print, black slacks. He wears no glasses. She wears no glasses.  Camera: high-angle looking down, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: the dim cramped corner by the restroom corridor: cold flat fluorescent spill from the corridor, the warm pendants far away, a lonely mood, faces readable. Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": "porcelain bowls set on tablecloth, chopsticks clicking, a teacup on a saucer"
@@ -2137,6 +2205,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-kitchen-car-kitchen-pot.png"
    ],
+   "ots": false,
    "subject": "Insert: a ladle lifting clear broth from a large steaming staff-meal stockpot.",
    "line": "NA12",
    "vo": false,
@@ -2165,6 +2234,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-kitchen-car-kitchen-pass.png"
    ],
+   "ots": false,
    "subject": "Medium: Chihiro quietly pouring broth over noodles in a plain white bowl at the serving pass, glancing over her shoulder.",
    "line": null,
    "vo": false,
@@ -2193,6 +2263,7 @@
     "assets/portraits/beggar-cast/cells/iwaki-expr2.png",
     "assets/portraits/beggar-cast/cells/loc-hall-window.png"
    ],
+   "ots": false,
    "subject": "Low medium: Iwaki bowing deeply to a well-dressed regular customer seen from behind at the window table.",
    "line": "NA13",
    "vo": false,
@@ -2221,6 +2292,7 @@
     "assets/portraits/beggar-cast/cells/iwaki-expr3.png",
     "assets/portraits/beggar-cast/cells/loc-hall-window.png"
    ],
+   "ots": false,
    "subject": "Close-up: still half-bowed, Iwaki turns his eyes toward the corner and scoffs. Mid-story card composited.",
    "line": null,
    "vo": false,
@@ -2248,6 +2320,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": false,
    "subject": "Insert: a steaming bowl of plain kake udon in a simple white bowl on the white tablecloth, chopsticks resting on it, steam curling.",
    "line": null,
    "vo": false,
@@ -2276,6 +2349,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Close-up of Genzo looking down at the steaming bowl, eyes wet, steam on his face.",
    "line": null,
    "vo": false,
@@ -2305,6 +2379,7 @@
     "assets/portraits/beggar-cast/cells/genzo-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Over Genzo's blurred shoulder, low angle: Mamiya standing over the table, phone in hand, sneering.",
    "line": "L22",
    "vo": false,
@@ -2334,6 +2409,7 @@
     "assets/portraits/beggar-cast/cells/mamiya-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Over Mamiya's blurred shoulder: Genzo not looking up from the bowl, speaking quietly.",
    "line": "L23",
    "vo": false,
@@ -2361,6 +2437,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-udonya-1955-doorway.png"
    ],
+   "ots": false,
    "subject": "Sepia flashback through steam: the backlit silhouette of the shop mistress leaning toward the counter, warm.",
    "line": "L23a",
    "vo": true,
@@ -2388,6 +2465,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-udonya-1955-bowl.png"
    ],
+   "ots": false,
    "subject": "Sepia insert: steam rising from a bowl on the old wooden counter of 1955.",
    "line": "NA13a",
    "vo": false,
@@ -2417,6 +2495,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": false,
    "subject": "Low medium: Iwaki striding in, glaring at the waitress, handheld feel.",
    "line": "L24",
    "vo": false,
@@ -2443,15 +2522,17 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/beggar-cast/cells/iwaki-expr3.png",
+    "assets/portraits/beggar-cast/cells/chihiro-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": true,
    "subject": "Low chest-up close-up of Iwaki glaring down at her excuse, nostrils flaring.",
    "line": "L25",
    "vo": true,
    "motion": "Static, locked off camera. Motion: His nostrils flare, the glare hardens; lips stay pressed. Both arms stay down at his sides out of frame, hands never rise, no fists, no gestures. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "act": "",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S10h-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Low chest-up close-up of Iwaki glaring down at her excuse, nostrils flaring. Characters: Iwaki, a Japanese man aged 45, slim oval face, black hair slicked back with pomade, a thin neat black moustache, no glasses, small black stud earrings in both ears (fixed trait from the approved sheet), wearing a black three-piece suit, white shirt, silver tie, a small blank brushed-metal name plate with no engraving. He wears no glasses.  Camera: low-angle looking up, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: cold overhead light falling vertically, harsh shadows under the brows, the warm pendants dimmed, high contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Low chest-up close-up of Iwaki glaring down at her excuse, nostrils flaring. Characters: Iwaki, a Japanese man aged 45, slim oval face, black hair slicked back with pomade, a thin neat black moustache, no glasses, small black stud earrings in both ears (fixed trait from the approved sheet), wearing a black three-piece suit, white shirt, silver tie, a small blank brushed-metal name plate with no engraving | Harukawa Chihiro, a slim Japanese woman aged 21, oval face, straight blunt bangs, black hair in a low ponytail, no glasses, tiny black stud earrings (fixed trait from the approved sheet), wearing a plain white long-sleeve blouse, a plain navy waist apron with no print, black slacks. He wears no glasses. She wears no glasses.  Camera: low-angle looking up, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: cold overhead light falling vertically, harsh shadows under the brows, the warm pendants dimmed, high contrast. Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": "porcelain bowls set on tablecloth, chopsticks clicking, a teacup on a saucer"
@@ -2474,6 +2555,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": false,
    "subject": "Over Chihiro's blurred shoulder, low angle: Iwaki looking down coldly.",
    "line": "L26",
    "vo": false,
@@ -2502,6 +2584,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-expr3.png",
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": false,
    "subject": "High close-up of Chihiro stunned, eyes welling.",
    "line": null,
    "vo": false,
@@ -2528,15 +2611,17 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/beggar-cast/cells/chihiro-expr3.png",
+    "assets/portraits/beggar-cast/cells/iwaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": true,
    "subject": "High medium of Chihiro staring at the outstretched hand, frozen.",
    "line": "L26a",
    "vo": true,
    "motion": "Static, locked off camera. Motion: She stares at the hand, frozen, a trembling breath. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "act": "",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S10k-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. High medium of Chihiro staring at the outstretched hand, frozen. Characters: Harukawa Chihiro, a slim Japanese woman aged 21, oval face, straight blunt bangs, black hair in a low ponytail, no glasses, tiny black stud earrings (fixed trait from the approved sheet), wearing a plain white long-sleeve blouse, a plain navy waist apron with no print, black slacks. She wears no glasses. Realistic tears as in a live-action film: reddened eye rims, glossy wet eyes catching the light, a small clear tear bead on the lower lashes, at most one thin translucent tear track on one cheek, a slightly reddened nose tip, matte natural skin; no glossy gel streams, no cartoon droplets. Camera: high-angle looking down, 50mm lens, f/2.8, natural perspective, rule of thirds, the person's face at least one quarter of the frame height. Lighting: cold overhead light falling vertically, harsh shadows under the brows, the warm pendants dimmed, high contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. High medium of Chihiro staring at the outstretched hand, frozen. Characters: Harukawa Chihiro, a slim Japanese woman aged 21, oval face, straight blunt bangs, black hair in a low ponytail, no glasses, tiny black stud earrings (fixed trait from the approved sheet), wearing a plain white long-sleeve blouse, a plain navy waist apron with no print, black slacks | Iwaki, a Japanese man aged 45, slim oval face, black hair slicked back with pomade, a thin neat black moustache, no glasses, small black stud earrings in both ears (fixed trait from the approved sheet), wearing a black three-piece suit, white shirt, silver tie, a small blank brushed-metal name plate with no engraving. She wears no glasses. He wears no glasses. Realistic tears as in a live-action film: reddened eye rims, glossy wet eyes catching the light, a small clear tear bead on the lower lashes, at most one thin translucent tear track on one cheek, a slightly reddened nose tip, matte natural skin; no glossy gel streams, no cartoon droplets. Camera: high-angle looking down, 50mm lens, f/2.8, natural perspective, rule of thirds, the person's face at least one quarter of the frame height. Lighting: cold overhead light falling vertically, harsh shadows under the brows, the warm pendants dimmed, high contrast. Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": "porcelain bowls set on tablecloth, chopsticks clicking, a teacup on a saucer"
@@ -2558,6 +2643,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": false,
    "subject": "Insert: trembling young hands untying the strings of a plain navy apron at the waist.",
    "line": null,
    "vo": false,
@@ -2586,6 +2672,7 @@
     "assets/portraits/beggar-cast/cells/mamiya-expr2.png",
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": false,
    "subject": "Low medium: Mamiya filming with his phone held up, grinning.",
    "line": "L27",
    "vo": true,
@@ -2614,6 +2701,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": false,
    "subject": "Medium on Chihiro's hands clutching the removed apron, head bowed, face hidden by her bangs.",
    "line": "L27a",
    "vo": true,
@@ -2641,6 +2729,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": false,
    "subject": "Insert: a smartphone screen showing an upload with a rising like counter (screen composited).",
    "line": null,
    "vo": false,
@@ -2667,15 +2756,17 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/beggar-cast/cells/chihiro-expr3.png",
+    "assets/portraits/beggar-cast/cells/mamiya-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": true,
    "subject": "Close-up of Chihiro hearing the boast, hurt, eyes welling.",
    "line": "L27b",
    "vo": true,
    "motion": "Static, locked off camera. Motion: Her eyes well, her lips tremble. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "act": "",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S10p-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Close-up of Chihiro hearing the boast, hurt, eyes welling. Characters: Harukawa Chihiro, a slim Japanese woman aged 21, oval face, straight blunt bangs, black hair in a low ponytail, no glasses, tiny black stud earrings (fixed trait from the approved sheet), wearing a plain white long-sleeve blouse, a plain navy waist apron with no print, black slacks. She wears no glasses. Realistic tears as in a live-action film: reddened eye rims, glossy wet eyes catching the light, a small clear tear bead on the lower lashes, at most one thin translucent tear track on one cheek, a slightly reddened nose tip, matte natural skin; no glossy gel streams, no cartoon droplets. Camera: eye-level, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: warm 3200K amber pendant lamps, a cool 5600K window light from the left, dark wood walls, soft contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Close-up of Chihiro hearing the boast, hurt, eyes welling. Characters: Harukawa Chihiro, a slim Japanese woman aged 21, oval face, straight blunt bangs, black hair in a low ponytail, no glasses, tiny black stud earrings (fixed trait from the approved sheet), wearing a plain white long-sleeve blouse, a plain navy waist apron with no print, black slacks | Mamiya, a stocky Japanese man aged 32, round face, reddish-brown hair cut short on the sides and longer on top, small silver stud earrings in both ears (fixed trait), no glasses, wearing a plain cream knit sweater with no logo, a plain beige double-breasted overcoat, dark slacks, a thick silver wristwatch. She wears no glasses. He wears no glasses. Realistic tears as in a live-action film: reddened eye rims, glossy wet eyes catching the light, a small clear tear bead on the lower lashes, at most one thin translucent tear track on one cheek, a slightly reddened nose tip, matte natural skin; no glossy gel streams, no cartoon droplets. Camera: eye-level, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: warm 3200K amber pendant lamps, a cool 5600K window light from the left, dark wood walls, soft contrast. Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": "porcelain bowls set on tablecloth, chopsticks clicking, a teacup on a saucer"
@@ -2698,6 +2789,7 @@
     "assets/portraits/beggar-cast/cells/mamiya-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": false,
    "subject": "Over Mamiya's blurred shoulder: Chihiro turning to face him, eyes wet but steady.",
    "line": "L27c",
    "vo": false,
@@ -2726,6 +2818,7 @@
     "assets/portraits/beggar-cast/cells/mamiya-expr2.png",
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": false,
    "subject": "Low close-up of Mamiya shrugging with a smirk.",
    "line": "L27d",
    "vo": true,
@@ -2755,6 +2848,7 @@
     "assets/portraits/beggar-cast/cells/genzo-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Low medium, dutch 5 degrees: Iwaki yanking the old man's frayed grey jacket sleeve, the old man calm.",
    "line": null,
    "vo": false,
@@ -2783,6 +2877,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Close-up of Genzo seated, looking up at the young waitress as she steps in to defend him, deeply moved, eyes glistening.",
    "line": "L28",
    "vo": true,
@@ -2811,6 +2906,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-expr3.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Close-up of Chihiro, a tear finally running down her cheek, lips pressed.",
    "line": null,
    "vo": false,
@@ -2840,6 +2936,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Low medium: Iwaki exploding, a vein on his temple, leaning forward, handheld.",
    "line": "L29",
    "vo": false,
@@ -2868,6 +2965,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr3.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Eye-level medium: the old man slowly rising from his chair for the first time, steady, the window light behind him.",
    "line": null,
    "vo": false,
@@ -2894,15 +2992,17 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/beggar-cast/cells/iwaki-expr1.png",
+    "assets/portraits/beggar-cast/cells/genzo-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": true,
    "subject": "Low chest-up close-up of Iwaki freezing as the old man calmly offers to pay, eyes narrowing in disbelief.",
    "line": "L30",
    "vo": true,
    "motion": "Static, locked off camera. Motion: He freezes, eyes narrow in disbelief, a sharp breath; lips stay pressed; both arms stay down, hands never rise. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "act": "",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S11b-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Low chest-up close-up of Iwaki freezing as the old man calmly offers to pay, eyes narrowing in disbelief. Characters: Iwaki, a Japanese man aged 45, slim oval face, black hair slicked back with pomade, a thin neat black moustache, no glasses, small black stud earrings in both ears (fixed trait from the approved sheet), wearing a black three-piece suit, white shirt, silver tie, a small blank brushed-metal name plate with no engraving. He wears no glasses.  Camera: low-angle looking up, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: a strong warm backlight rim from the tall window behind, the old man's silhouette edged with light, faces still readable, dramatic. Exactly 1 person (or their hands) as described, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Low chest-up close-up of Iwaki freezing as the old man calmly offers to pay, eyes narrowing in disbelief. Characters: Iwaki, a Japanese man aged 45, slim oval face, black hair slicked back with pomade, a thin neat black moustache, no glasses, small black stud earrings in both ears (fixed trait from the approved sheet), wearing a black three-piece suit, white shirt, silver tie, a small blank brushed-metal name plate with no engraving | Takamiya Genzo, a lean Japanese man aged 78, angular weathered face with deep wrinkles, close-cropped white hair, a short neat white beard, one small dark mole above his LEFT eyebrow, no glasses, no earrings, wearing a plain faded grey zip-up jacket with frayed cuffs and no logo, plain worn beige cotton trousers, old scuffed white sneakers, an old wristwatch with a cracked leather strap. He wears no glasses. He wears no glasses.  Camera: low-angle looking up, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: a strong warm backlight rim from the tall window behind, the old man's silhouette edged with light, faces still readable, dramatic. Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": "porcelain bowls set on tablecloth, chopsticks clicking, a teacup on a saucer"
@@ -2924,6 +3024,7 @@
     "assets/portraits/beggar-cast/cells/genzo-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Insert: an old thumb pressing one button on a worn silver flip phone, screen dark.",
    "line": null,
    "vo": false,
@@ -2951,6 +3052,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-kitchen-car-car-day.png"
    ],
+   "ots": false,
    "subject": "Insert: a smartphone vibrating once on a cream leather car seat.",
    "line": null,
    "vo": false,
@@ -2979,6 +3081,7 @@
     "assets/portraits/beggar-cast/cells/sakaki-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hotel-dusk-drive.png"
    ],
+   "ots": false,
    "subject": "Wide: Sakaki stepping out of the black sedan at the hotel entrance, buttoning his jacket.",
    "line": "L30a",
    "vo": true,
@@ -3007,6 +3110,7 @@
     "assets/portraits/beggar-cast/cells/sakaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-hotel-lobby.png"
    ],
+   "ots": false,
    "subject": "Low insert: polished black shoes striding across the marble lobby floor.",
    "line": null,
    "vo": false,
@@ -3033,15 +3137,17 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/beggar-cast/cells/genzo-expr3.png",
+    "assets/portraits/beggar-cast/cells/iwaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": true,
    "subject": "Low close-up of Genzo standing calm, unmoved by the threat, backlit.",
    "line": "L30b",
    "vo": true,
    "motion": "Static, locked off camera. Motion: He stands unmoved, a slow breath, eyes steady. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "act": "",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S11g-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Low close-up of Genzo standing calm, unmoved by the threat, backlit. Characters: Takamiya Genzo, a lean Japanese man aged 78, angular weathered face with deep wrinkles, close-cropped white hair, a short neat white beard, one small dark mole above his LEFT eyebrow, no glasses, no earrings, wearing a plain faded grey zip-up jacket with frayed cuffs and no logo, plain worn beige cotton trousers, old scuffed white sneakers, an old wristwatch with a cracked leather strap. He wears no glasses.  Camera: low-angle looking up, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: cold overhead light falling vertically, harsh shadows under the brows, the warm pendants dimmed, high contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Low close-up of Genzo standing calm, unmoved by the threat, backlit. Characters: Takamiya Genzo, a lean Japanese man aged 78, angular weathered face with deep wrinkles, close-cropped white hair, a short neat white beard, one small dark mole above his LEFT eyebrow, no glasses, no earrings, wearing a plain faded grey zip-up jacket with frayed cuffs and no logo, plain worn beige cotton trousers, old scuffed white sneakers, an old wristwatch with a cracked leather strap | Iwaki, a Japanese man aged 45, slim oval face, black hair slicked back with pomade, a thin neat black moustache, no glasses, small black stud earrings in both ears (fixed trait from the approved sheet), wearing a black three-piece suit, white shirt, silver tie, a small blank brushed-metal name plate with no engraving. He wears no glasses. He wears no glasses.  Camera: low-angle looking up, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: cold overhead light falling vertically, harsh shadows under the brows, the warm pendants dimmed, high contrast. Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": "porcelain bowls set on tablecloth, chopsticks clicking, a teacup on a saucer"
@@ -3062,6 +3168,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-hall-wide.png"
    ],
+   "ots": false,
    "subject": "Wide: two security guards in plain dark suits approaching the corner from behind, reaching for the old man's arm.",
    "line": null,
    "vo": false,
@@ -3091,6 +3198,7 @@
     "assets/portraits/beggar-cast/cells/genzo-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Over the old man's blurred shoulder: Chihiro spreading her arms in front of him, crying out.",
    "line": "L30c",
    "vo": false,
@@ -3118,6 +3226,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-hall-wide.png"
    ],
+   "ots": false,
    "subject": "Wide of the whole hall frozen, every diner watching the corner, silence.",
    "line": "NA14",
    "vo": false,
@@ -3146,6 +3255,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr3.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Low close-up of Genzo standing calm and dignified, backlit.",
    "line": "NA14a",
    "vo": false,
@@ -3173,6 +3283,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-hall-angles-reverse.png"
    ],
+   "ots": false,
    "subject": "Wide: the heavy wooden door at the far end of the hall swinging open, light spilling in.",
    "line": null,
    "vo": false,
@@ -3201,6 +3312,7 @@
     "assets/portraits/beggar-cast/cells/sakaki-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-wide.png"
    ],
+   "ots": false,
    "subject": "Medium: Sakaki walking into the hall in a black three-piece suit, silver glasses, composed. Dolly zoom applied in edit.",
    "line": null,
    "vo": false,
@@ -3229,6 +3341,7 @@
     "assets/portraits/beggar-cast/cells/sakaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-angles-lowfloor.png"
    ],
+   "ots": false,
    "subject": "Low insert at floor level: polished black shoes taking three measured steps on the wooden floor.",
    "line": null,
    "vo": false,
@@ -3258,6 +3371,7 @@
     "assets/portraits/beggar-cast/cells/genzo-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Side two-shot: Sakaki bowing deeply before the old man, who stands calm.",
    "line": null,
    "vo": false,
@@ -3287,6 +3401,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Over Genzo's blurred shoulder: Sakaki rising from the bow, speaking respectfully.",
    "line": "L31",
    "vo": false,
@@ -3315,6 +3430,7 @@
     "assets/portraits/beggar-cast/cells/iwaki-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Close-up of Iwaki gone pale, lips trembling, cold sweat, dutch 7 degrees.",
    "line": "L32",
    "vo": false,
@@ -3344,6 +3460,7 @@
     "assets/portraits/beggar-cast/cells/iwaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Over Iwaki's blurred shoulder: Sakaki standing upright beside the chairman, announcing clearly.",
    "line": "L33",
    "vo": false,
@@ -3372,6 +3489,7 @@
     "assets/portraits/beggar-cast/cells/mamiya-expr3.png",
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": false,
    "subject": "Medium on Mamiya's hand slowly lowering his phone, his face going slack behind it.",
    "line": null,
    "vo": false,
@@ -3398,15 +3516,17 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/beggar-cast/cells/genzo-expr3.png",
+    "assets/portraits/beggar-cast/cells/iwaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": true,
    "subject": "Low close-up of Genzo, backlit, watching the manager's excuses in silence.",
    "line": "L34",
    "vo": true,
    "motion": "Static, locked off camera. Motion: He watches in silence, eyes steady, a slow breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "act": "",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S13a-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Low close-up of Genzo, backlit, watching the manager's excuses in silence. Characters: Takamiya Genzo, a lean Japanese man aged 78, angular weathered face with deep wrinkles, close-cropped white hair, a short neat white beard, one small dark mole above his LEFT eyebrow, no glasses, no earrings, wearing a plain faded grey zip-up jacket with frayed cuffs and no logo, plain worn beige cotton trousers, old scuffed white sneakers, an old wristwatch with a cracked leather strap. He wears no glasses.  Camera: low-angle looking up, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: cold overhead light falling vertically, harsh shadows under the brows, the warm pendants dimmed, high contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Low close-up of Genzo, backlit, watching the manager's excuses in silence. Characters: Takamiya Genzo, a lean Japanese man aged 78, angular weathered face with deep wrinkles, close-cropped white hair, a short neat white beard, one small dark mole above his LEFT eyebrow, no glasses, no earrings, wearing a plain faded grey zip-up jacket with frayed cuffs and no logo, plain worn beige cotton trousers, old scuffed white sneakers, an old wristwatch with a cracked leather strap | Iwaki, a Japanese man aged 45, slim oval face, black hair slicked back with pomade, a thin neat black moustache, no glasses, small black stud earrings in both ears (fixed trait from the approved sheet), wearing a black three-piece suit, white shirt, silver tie, a small blank brushed-metal name plate with no engraving. He wears no glasses. He wears no glasses.  Camera: low-angle looking up, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: cold overhead light falling vertically, harsh shadows under the brows, the warm pendants dimmed, high contrast. Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": ""
@@ -3428,6 +3548,7 @@
     "assets/portraits/beggar-cast/cells/iwaki-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "High close-up of Iwaki, a bead of cold sweat running down his temple.",
    "line": null,
    "vo": false,
@@ -3457,6 +3578,7 @@
     "assets/portraits/beggar-cast/cells/iwaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Over Iwaki's blurred shoulder, low angle: Genzo backlit, looking straight at him.",
    "line": "L35",
    "vo": false,
@@ -3485,6 +3607,7 @@
     "assets/portraits/beggar-cast/cells/iwaki-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "High close-up of Iwaki's eyes widening, mouth slightly open.",
    "line": null,
    "vo": false,
@@ -3513,6 +3636,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr3.png",
     "assets/portraits/beggar-cast/cells/loc-hall-wide.png"
    ],
+   "ots": false,
    "subject": "Low medium: Genzo looking slowly around the hall, speaking with quiet authority.",
    "line": "L36",
    "vo": false,
@@ -3539,15 +3663,17 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/beggar-cast/cells/iwaki-expr1.png",
+    "assets/portraits/beggar-cast/cells/sakaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": true,
    "subject": "High close-up of Iwaki flinching at his own evaluation being quoted, sweat on his brow.",
    "line": "L36a",
    "vo": true,
    "motion": "Static, locked off camera. Motion: He flinches, eyes darting. A thin bead of cold sweat slowly runs from the temple down toward the jaw; a shaky breath, a hard swallow. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "act": "",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S13f-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. High close-up of Iwaki flinching at his own evaluation being quoted, sweat on his brow. Characters: Iwaki, a Japanese man aged 45, slim oval face, black hair slicked back with pomade, a thin neat black moustache, no glasses, small black stud earrings in both ears (fixed trait from the approved sheet), wearing a black three-piece suit, white shirt, silver tie, a small blank brushed-metal name plate with no engraving. He wears no glasses. Realistic sweat as in a live-action film: fine tiny beads of perspiration on the forehead, temples and upper lip, a faint natural oily sheen, one thin bead line near the temple, a few damp strands at the hairline; no large cartoon drops, no face-wide shine. Camera: high-angle looking down, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: a strong warm backlight rim from the tall window behind, the old man's silhouette edged with light, faces still readable, dramatic. Exactly 1 person (or their hands) as described, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. High close-up of Iwaki flinching at his own evaluation being quoted, sweat on his brow. Characters: Iwaki, a Japanese man aged 45, slim oval face, black hair slicked back with pomade, a thin neat black moustache, no glasses, small black stud earrings in both ears (fixed trait from the approved sheet), wearing a black three-piece suit, white shirt, silver tie, a small blank brushed-metal name plate with no engraving | Sakaki, a Japanese man aged 64, neatly combed-back silver-white hair, a short grey moustache, thin SILVER-rimmed glasses, upright posture, wearing a black three-piece suit, white shirt, dark grey tie, no pin or badge. He wears no glasses. He wears his thin silver-rimmed glasses. Realistic sweat as in a live-action film: fine tiny beads of perspiration on the forehead, temples and upper lip, a faint natural oily sheen, one thin bead line near the temple, a few damp strands at the hairline; no large cartoon drops, no face-wide shine. Camera: high-angle looking down, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: a strong warm backlight rim from the tall window behind, the old man's silhouette edged with light, faces still readable, dramatic. Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": ""
@@ -3569,6 +3695,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Close-up of Genzo gazing into the distance, remembering.",
    "line": "L37",
    "vo": false,
@@ -3596,6 +3723,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Insert flash: the faded black-and-white photograph of the udon shop mistress and the small boy, in the old wallet, no writing.",
    "line": null,
    "vo": false,
@@ -3624,6 +3752,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Choker close-up of Genzo, eyes wet, after a long silence.",
    "line": "L38",
    "vo": false,
@@ -3652,6 +3781,7 @@
     "assets/portraits/beggar-cast/cells/iwaki-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "High close-up of Iwaki frozen, the color draining from his face.",
    "line": null,
    "vo": false,
@@ -3681,6 +3811,7 @@
     "assets/portraits/beggar-cast/cells/iwaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Low medium: Genzo speaking firmly, the hall behind him.",
    "line": "L39",
    "vo": false,
@@ -3709,6 +3840,7 @@
     "assets/portraits/beggar-cast/cells/iwaki-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "High medium: Iwaki sinking to his knees on the floor.",
    "line": null,
    "vo": false,
@@ -3737,6 +3869,7 @@
     "assets/portraits/beggar-cast/cells/iwaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-angles-birdseye.png"
    ],
+   "ots": false,
    "subject": "Bird's-eye view straight down: Iwaki prostrate in dogeza on the wooden floor between the tables, forehead to the floor.",
    "line": null,
    "vo": false,
@@ -3766,6 +3899,7 @@
     "assets/portraits/beggar-cast/cells/genzo-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Over Genzo's blurred legs, high angle: Iwaki on the floor lifting only his head, begging, tears and sweat.",
    "line": "L40",
    "vo": false,
@@ -3795,6 +3929,7 @@
     "assets/portraits/beggar-cast/cells/iwaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Over Iwaki's blurred head, low angle: Genzo looking down with bitter calm.",
    "line": "L41",
    "vo": false,
@@ -3823,6 +3958,7 @@
     "assets/portraits/beggar-cast/cells/iwaki-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-angles-lowfloor.png"
    ],
+   "ots": false,
    "subject": "High close-up of Iwaki on the floor, sweat dripping, eyes darting.",
    "line": null,
    "vo": false,
@@ -3851,6 +3987,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr3.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Close-up of Genzo at three-quarter angle, delivering the dismissal quietly and politely.",
    "line": "L42",
    "vo": false,
@@ -3877,15 +4014,17 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/beggar-cast/cells/genzo-expr3.png",
+    "assets/portraits/beggar-cast/cells/mamiya-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": true,
    "subject": "Low close-up of Genzo listening to the young man's excuse without a flicker of expression.",
    "line": "L43",
    "vo": true,
    "motion": "Static, locked off camera. Motion: He listens without expression, one slow blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "act": "",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S14g-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Low close-up of Genzo listening to the young man's excuse without a flicker of expression. Characters: Takamiya Genzo, a lean Japanese man aged 78, angular weathered face with deep wrinkles, close-cropped white hair, a short neat white beard, one small dark mole above his LEFT eyebrow, no glasses, no earrings, wearing a plain faded grey zip-up jacket with frayed cuffs and no logo, plain worn beige cotton trousers, old scuffed white sneakers, an old wristwatch with a cracked leather strap. He wears no glasses.  Camera: low-angle looking up, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: warm 3200K amber pendant lamps, a cool 5600K window light from the left, dark wood walls, soft contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Low close-up of Genzo listening to the young man's excuse without a flicker of expression. Characters: Takamiya Genzo, a lean Japanese man aged 78, angular weathered face with deep wrinkles, close-cropped white hair, a short neat white beard, one small dark mole above his LEFT eyebrow, no glasses, no earrings, wearing a plain faded grey zip-up jacket with frayed cuffs and no logo, plain worn beige cotton trousers, old scuffed white sneakers, an old wristwatch with a cracked leather strap | Mamiya, a stocky Japanese man aged 32, round face, reddish-brown hair cut short on the sides and longer on top, small silver stud earrings in both ears (fixed trait), no glasses, wearing a plain cream knit sweater with no logo, a plain beige double-breasted overcoat, dark slacks, a thick silver wristwatch. He wears no glasses. He wears no glasses.  Camera: low-angle looking up, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: warm 3200K amber pendant lamps, a cool 5600K window light from the left, dark wood walls, soft contrast. Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": ""
@@ -3905,15 +4044,17 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/beggar-cast/cells/mamiya-expr3.png",
+    "assets/portraits/beggar-cast/cells/sakaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": true,
    "subject": "Close-up of Mamiya going pale as he hears it, the forced smile collapsing, sweat.",
    "line": "L44",
    "vo": true,
    "motion": "Static, locked off camera. Motion: The forced smile collapses, he swallows hard. A thin bead of cold sweat slowly runs from the temple down toward the jaw; a shaky breath, a hard swallow. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "act": "",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S14h-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Close-up of Mamiya going pale as he hears it, the forced smile collapsing, sweat. Characters: Mamiya, a stocky Japanese man aged 32, round face, reddish-brown hair cut short on the sides and longer on top, small silver stud earrings in both ears (fixed trait), no glasses, wearing a plain cream knit sweater with no logo, a plain beige double-breasted overcoat, dark slacks, a thick silver wristwatch. He wears no glasses. Realistic sweat as in a live-action film: fine tiny beads of perspiration on the forehead, temples and upper lip, a faint natural oily sheen, one thin bead line near the temple, a few damp strands at the hairline; no large cartoon drops, no face-wide shine. Camera: eye-level, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: a strong warm backlight rim from the tall window behind, the old man's silhouette edged with light, faces still readable, dramatic. Exactly 1 person (or their hands) as described, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Close-up of Mamiya going pale as he hears it, the forced smile collapsing, sweat. Characters: Mamiya, a stocky Japanese man aged 32, round face, reddish-brown hair cut short on the sides and longer on top, small silver stud earrings in both ears (fixed trait), no glasses, wearing a plain cream knit sweater with no logo, a plain beige double-breasted overcoat, dark slacks, a thick silver wristwatch | Sakaki, a Japanese man aged 64, neatly combed-back silver-white hair, a short grey moustache, thin SILVER-rimmed glasses, upright posture, wearing a black three-piece suit, white shirt, dark grey tie, no pin or badge. He wears no glasses. He wears his thin silver-rimmed glasses. Realistic sweat as in a live-action film: fine tiny beads of perspiration on the forehead, temples and upper lip, a faint natural oily sheen, one thin bead line near the temple, a few damp strands at the hairline; no large cartoon drops, no face-wide shine. Camera: eye-level, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: a strong warm backlight rim from the tall window behind, the old man's silhouette edged with light, faces still readable, dramatic. Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": ""
@@ -3934,6 +4075,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": false,
    "subject": "Insert: a thumb deleting a video on a dark smartphone screen (screen composited, dim).",
    "line": null,
    "vo": false,
@@ -3960,15 +4102,17 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/beggar-cast/cells/mamiya-expr3.png",
+    "assets/portraits/beggar-cast/cells/sakaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": true,
    "subject": "Close-up of Mamiya frozen, the phone lowered, face slack.",
    "line": "L45",
    "vo": true,
    "motion": "Static, locked off camera. Motion: He stays frozen, a hard swallow, eyes lowered. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "act": "",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S14j-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Close-up of Mamiya frozen, the phone lowered, face slack. Characters: Mamiya, a stocky Japanese man aged 32, round face, reddish-brown hair cut short on the sides and longer on top, small silver stud earrings in both ears (fixed trait), no glasses, wearing a plain cream knit sweater with no logo, a plain beige double-breasted overcoat, dark slacks, a thick silver wristwatch. He wears no glasses.  Camera: eye-level, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: warm 3200K amber pendant lamps, a cool 5600K window light from the left, dark wood walls, soft contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Close-up of Mamiya frozen, the phone lowered, face slack. Characters: Mamiya, a stocky Japanese man aged 32, round face, reddish-brown hair cut short on the sides and longer on top, small silver stud earrings in both ears (fixed trait), no glasses, wearing a plain cream knit sweater with no logo, a plain beige double-breasted overcoat, dark slacks, a thick silver wristwatch | Sakaki, a Japanese man aged 64, neatly combed-back silver-white hair, a short grey moustache, thin SILVER-rimmed glasses, upright posture, wearing a black three-piece suit, white shirt, dark grey tie, no pin or badge. He wears no glasses. He wears his thin silver-rimmed glasses.  Camera: eye-level, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: warm 3200K amber pendant lamps, a cool 5600K window light from the left, dark wood walls, soft contrast. Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": ""
@@ -3989,6 +4133,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": false,
    "subject": "Insert: the bowl of kake udon now cold on the tablecloth, no steam, chopsticks untouched.",
    "line": null,
    "vo": false,
@@ -4018,6 +4163,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-expr2.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Over Chihiro's blurred shoulder: Genzo sitting back down, looking up at her warmly.",
    "line": "L46",
    "vo": false,
@@ -4044,15 +4190,17 @@
    "edit_fx": "",
    "refs": [
     "assets/portraits/beggar-cast/cells/genzo-expr2.png",
+    "assets/portraits/beggar-cast/cells/chihiro-expr2.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": true,
    "subject": "Close-up of Genzo smiling warmly at her bright answer, eyes wet.",
    "line": "L47",
    "vo": true,
    "motion": "Static, locked off camera. Motion: He smiles warmly, a small nod. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "act": "",
    "keyframe": "assets/portraits/beggar-chairman-keyframes/S15c-1.png",
-   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Close-up of Genzo smiling warmly at her bright answer, eyes wet. Characters: Takamiya Genzo, a lean Japanese man aged 78, angular weathered face with deep wrinkles, close-cropped white hair, a short neat white beard, one small dark mole above his LEFT eyebrow, no glasses, no earrings, wearing a plain faded grey zip-up jacket with frayed cuffs and no logo, plain worn beige cotton trousers, old scuffed white sneakers, an old wristwatch with a cracked leather strap. He wears no glasses. Realistic tears as in a live-action film: reddened eye rims, glossy wet eyes catching the light, a small clear tear bead on the lower lashes, at most one thin translucent tear track on one cheek, a slightly reddened nose tip, matte natural skin; no glossy gel streams, no cartoon droplets. Camera: eye-level, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: warm 3200K amber pendant lamps, a cool 5600K window light from the left, dark wood walls, soft contrast. Exactly 1 person (or their hands) as described, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
+   "keyframe_prompt": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Close-up of Genzo smiling warmly at her bright answer, eyes wet. Characters: Takamiya Genzo, a lean Japanese man aged 78, angular weathered face with deep wrinkles, close-cropped white hair, a short neat white beard, one small dark mole above his LEFT eyebrow, no glasses, no earrings, wearing a plain faded grey zip-up jacket with frayed cuffs and no logo, plain worn beige cotton trousers, old scuffed white sneakers, an old wristwatch with a cracked leather strap | Harukawa Chihiro, a slim Japanese woman aged 21, oval face, straight blunt bangs, black hair in a low ponytail, no glasses, tiny black stud earrings (fixed trait from the approved sheet), wearing a plain white long-sleeve blouse, a plain navy waist apron with no print, black slacks. He wears no glasses. She wears no glasses. Realistic tears as in a live-action film: reddened eye rims, glossy wet eyes catching the light, a small clear tear bead on the lower lashes, at most one thin translucent tear track on one cheek, a slightly reddened nose tip, matte natural skin; no glossy gel streams, no cartoon droplets. Camera: eye-level, 85mm prime lens, f/1.8, shallow depth of field, razor-sharp focus on the irises, soft optical bokeh, the face fills at least half of the frame height. Lighting: warm 3200K amber pendant lamps, a cool 5600K window light from the left, dark wood walls, soft contrast. Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people, no extra people. All papers, menus, screens, signs, cards and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, police, anime, 3d render, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks.",
    "ja_overlay": "",
    "caption": "",
    "ambience": "steam hissing softly, a bowl set down"
@@ -4073,6 +4221,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": false,
    "subject": "Insert: a fresh steaming bowl of kake udon set down, steam rising strongly.",
    "line": null,
    "vo": false,
@@ -4101,6 +4250,7 @@
     "assets/portraits/beggar-cast/cells/genzo-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": false,
    "subject": "Insert: old hands lifting noodles with chopsticks, steam swirling.",
    "line": null,
    "vo": false,
@@ -4129,6 +4279,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Close-up of Genzo chewing slowly, a tear escaping.",
    "line": null,
    "vo": false,
@@ -4158,6 +4309,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-expr2.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Over Chihiro's blurred shoulder (right foreground): Genzo holding the chopsticks, voice trembling with emotion, eyes wet.",
    "line": "L48",
    "vo": false,
@@ -4187,6 +4339,7 @@
     "assets/portraits/beggar-cast/cells/genzo-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Over Genzo's blurred shoulder: Chihiro with hands clasped, choking up.",
    "line": "L49",
    "vo": false,
@@ -4216,6 +4369,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-expr2.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Over Chihiro's blurred shoulder: Genzo shaking his head gently with a kind smile.",
    "line": "L50",
    "vo": false,
@@ -4244,6 +4398,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-expr3.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Close-up of Chihiro listening, eyes brimming.",
    "line": null,
    "vo": false,
@@ -4273,6 +4428,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-expr2.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Medium: Genzo telling her kindly about the scholarship.",
    "line": "L51",
    "vo": false,
@@ -4301,6 +4457,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-expr3.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Close-up of Chihiro covering her mouth with both hands, tears running.",
    "line": null,
    "vo": false,
@@ -4330,6 +4487,7 @@
     "assets/portraits/beggar-cast/cells/sakaki-front.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Medium: Genzo turning to Sakaki, speaking firmly and warmly.",
    "line": "L52",
    "vo": false,
@@ -4358,6 +4516,7 @@
     "assets/portraits/beggar-cast/cells/sakaki-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-hall-corner.png"
    ],
+   "ots": false,
    "subject": "Close-up of Sakaki bowing his head slightly in acknowledgment, a faint smile.",
    "line": null,
    "vo": false,
@@ -4386,6 +4545,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-kitchen-car-car-night.png"
    ],
+   "ots": false,
    "subject": "Night, back seat of the sedan: Genzo's peaceful profile as Tokyo lights slide across the window.",
    "line": "NA15",
    "vo": false,
@@ -4413,6 +4573,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-hall-tablelevel.png"
    ],
+   "ots": false,
    "subject": "Insert: a plain cream menu card on a wooden table, its last line blank for a composited line.",
    "line": null,
    "vo": false,
@@ -4441,6 +4602,7 @@
     "assets/portraits/beggar-cast/cells/chihiro-expr2.png",
     "assets/portraits/beggar-cast/cells/loc-kitchen-car-kitchen-pass.png"
    ],
+   "ots": false,
    "subject": "Medium: Chihiro carrying a steaming bowl from the pass, smiling, a few months later.",
    "line": "NA15a",
    "vo": false,
@@ -4469,6 +4631,7 @@
     "assets/portraits/beggar-cast/cells/genzo-front.png",
     "assets/portraits/beggar-cast/cells/loc-kitchen-car-car-night.png"
    ],
+   "ots": false,
    "subject": "Insert: an old hand writing with a fountain pen on cream paper under a reading light, no legible writing.",
    "line": "NA16",
    "vo": false,
@@ -4497,6 +4660,7 @@
     "assets/portraits/beggar-cast/cells/genzo-expr1.png",
     "assets/portraits/beggar-cast/cells/loc-kitchen-car-car-night.png"
    ],
+   "ots": false,
    "subject": "Close-up of Genzo setting down the pen, looking out at the night with quiet resolve.",
    "line": "NA17",
    "vo": false,
@@ -4524,6 +4688,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-hotel-night-front.png"
    ],
+   "ots": false,
    "subject": "Low wide of the hotel entrance glowing at night.",
    "line": "NA18",
    "vo": false,
@@ -4551,6 +4716,7 @@
    "refs": [
     "assets/portraits/beggar-cast/cells/loc-hotel-night-front.png"
    ],
+   "ots": false,
    "subject": "Wide of the Tokyo night skyline beyond the hotel. Next-story card composited.",
    "line": null,
    "vo": false,
