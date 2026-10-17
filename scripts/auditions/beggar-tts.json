@@ -1,5 +1,5 @@
 {
- "_설명": "『みすぼらしい老人は、財閥会長だった』 PHASE 1 본녹음 83줄 (확정 캐스트, Typecast ssfm-v30 jpn). 음성 입력만 가나 변형, 자막은 한자 유지. line### = 시간 순서. 콜드오픈 합류(S10)는 L01 녹음 재사용. TTS 구독 크레딧만 사용. 생성: productions/beggar-chairman-ja/build_tts_spec.py",
+ "_설명": "『みすぼらしい老人は、財閥会長だった』 PHASE 1 본녹음 84줄 (확정 캐스트, Typecast ssfm-v30 jpn). 음성 입력만 가나 변형, 자막은 한자 유지. line### = 시간 순서. 콜드오픈 합류(S10)는 L01 녹음 재사용. TTS 구독 크레딧만 사용. 생성: productions/beggar-chairman-ja/build_tts_spec.py",
  "tc_model": "ssfm-v30",
  "language": "jpn",
  "tests": [
@@ -8,7 +8,7 @@
    "model": "typecast-direct",
    "voice": "tc_62baac31e1c614d37b9160e3",
    "language": "jpn",
-   "text": "物乞いは裏口から出てってくださいって！何度言わせるんですか！",
+   "text": "ものごいは裏口から出てってくださいって！何度言わせるんですか！",
    "emotion_preset": "angry",
    "emotion_intensity": 1.1,
    "tempo": 1.1
@@ -168,7 +168,7 @@
    "model": "typecast-direct",
    "voice": "tc_62baac31e1c614d37b9160e3",
    "language": "jpn",
-   "text": "……はぁ。じゃあ、あっちの隅の席にどうぞ。トイレの横です",
+   "text": "……はぁ、じゃあ、あっちの隅の席にどうぞ。トイレの横です",
    "emotion_preset": "toneup",
    "emotion_intensity": 0.8,
    "tempo": 1.0
@@ -318,7 +318,7 @@
    "model": "typecast-direct",
    "voice": "tc_633d5244093ca33db95ddfce",
    "language": "jpn",
-   "text": "三ヶ月です。学費を、稼いでるんです",
+   "text": "さんかげつです。学費を、稼いでるんです",
    "emotion_preset": "happy",
    "emotion_intensity": 0.6,
    "tempo": 1.0
@@ -468,7 +468,7 @@
    "model": "typecast-direct",
    "voice": "tc_63478295af3bab65523c3237",
    "language": "jpn",
-   "text": "ははっ、物乞いとバイト、セットでクビかよ",
+   "text": "ははっ、ものごいとバイト、セットでクビかよ",
    "emotion_preset": "toneup",
    "emotion_intensity": 1.0,
    "tempo": 1.08
@@ -498,7 +498,7 @@
    "model": "typecast-direct",
    "voice": "tc_62baac31e1c614d37b9160e3",
    "language": "jpn",
-   "text": "お前も一緒に出ていけ！　二人とも、今すぐだ！",
+   "text": "お前も一緒に出ていけ！　ふたりとも、今すぐだ！",
    "emotion_preset": "angry",
    "emotion_intensity": 1.2,
    "tempo": 1.1
@@ -518,13 +518,23 @@
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
-   "text": "その一言で、店の空気が変わりました。誰も知らなかったのです。この老人が、何者なのかを……。",
+   "text": "そのひとことで、店の空気が、変わりました。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "line053",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "誰も知らなかったのです。この老人が、何者なのかを……。",
    "emotion_preset": "tonedown",
    "emotion_intensity": 1.0,
    "tempo": 0.88
   },
   {
-   "id": "line053",
+   "id": "line054",
    "model": "typecast-direct",
    "voice": "tc_673eb45cdc1073aef51e6b90",
    "language": "jpn",
@@ -534,7 +544,7 @@
    "tempo": 0.9
   },
   {
-   "id": "line054",
+   "id": "line055",
    "model": "typecast-direct",
    "voice": "tc_62baac31e1c614d37b9160e3",
    "language": "jpn",
@@ -544,7 +554,7 @@
    "tempo": 0.9
   },
   {
-   "id": "line055",
+   "id": "line056",
    "model": "typecast-direct",
    "voice": "tc_673eb45cdc1073aef51e6b90",
    "language": "jpn",
@@ -554,7 +564,7 @@
    "tempo": 0.92
   },
   {
-   "id": "line056",
+   "id": "line057",
    "model": "typecast-direct",
    "voice": "tc_62baac31e1c614d37b9160e3",
    "language": "jpn",
@@ -564,7 +574,7 @@
    "tempo": 1.0
   },
   {
-   "id": "line057",
+   "id": "line058",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
@@ -574,7 +584,7 @@
    "tempo": 0.85
   },
   {
-   "id": "line058",
+   "id": "line059",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
@@ -584,7 +594,7 @@
    "tempo": 0.88
   },
   {
-   "id": "line059",
+   "id": "line060",
    "model": "typecast-direct",
    "voice": "tc_673eb45cdc1073aef51e6b90",
    "language": "jpn",
@@ -594,7 +604,7 @@
    "tempo": 0.92
   },
   {
-   "id": "line060",
+   "id": "line061",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
@@ -604,7 +614,7 @@
    "tempo": 0.88
   },
   {
-   "id": "line061",
+   "id": "line062",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
@@ -614,7 +624,7 @@
    "tempo": 0.85
   },
   {
-   "id": "line062",
+   "id": "line063",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
@@ -624,7 +634,7 @@
    "tempo": 0.88
   },
   {
-   "id": "line063",
+   "id": "line064",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
@@ -634,7 +644,7 @@
    "tempo": 0.88
   },
   {
-   "id": "line064",
+   "id": "line065",
    "model": "typecast-direct",
    "voice": "tc_62baac31e1c614d37b9160e3",
    "language": "jpn",
@@ -644,7 +654,7 @@
    "tempo": 0.95
   },
   {
-   "id": "line065",
+   "id": "line066",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
@@ -654,7 +664,7 @@
    "tempo": 0.88
   },
   {
-   "id": "line066",
+   "id": "line067",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
@@ -664,7 +674,7 @@
    "tempo": 0.88
   },
   {
-   "id": "line067",
+   "id": "line068",
    "model": "typecast-direct",
    "voice": "tc_63478295af3bab65523c3237",
    "language": "jpn",
@@ -674,7 +684,7 @@
    "tempo": 1.0
   },
   {
-   "id": "line068",
+   "id": "line069",
    "model": "typecast-direct",
    "voice": "tc_673eb45cdc1073aef51e6b90",
    "language": "jpn",
@@ -684,7 +694,7 @@
    "tempo": 0.92
   },
   {
-   "id": "line069",
+   "id": "line070",
    "model": "typecast-direct",
    "voice": "tc_673eb45cdc1073aef51e6b90",
    "language": "jpn",
@@ -694,7 +704,7 @@
    "tempo": 0.95
   },
   {
-   "id": "line070",
+   "id": "line071",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
@@ -704,7 +714,7 @@
    "tempo": 0.88
   },
   {
-   "id": "line071",
+   "id": "line072",
    "model": "typecast-direct",
    "voice": "tc_633d5244093ca33db95ddfce",
    "language": "jpn",
@@ -714,7 +724,7 @@
    "tempo": 1.0
   },
   {
-   "id": "line072",
+   "id": "line073",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
@@ -724,7 +734,7 @@
    "tempo": 0.85
   },
   {
-   "id": "line073",
+   "id": "line074",
    "model": "typecast-direct",
    "voice": "tc_633d5244093ca33db95ddfce",
    "language": "jpn",
@@ -734,7 +744,7 @@
    "tempo": 0.92
   },
   {
-   "id": "line074",
+   "id": "line075",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
@@ -744,7 +754,7 @@
    "tempo": 0.85
   },
   {
-   "id": "line075",
+   "id": "line076",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
@@ -754,17 +764,17 @@
    "tempo": 0.9
   },
   {
-   "id": "line076",
+   "id": "line077",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
-   "text": "さかき。今日からこの店のメニューに、かけうどんを載せなさい。腹を空かせた人からは、おだいはもらわんように",
+   "text": "さかき、今日からこの店のメニューに、かけうどんを載せなさい。腹を空かせた人からは、おだいはもらわんように",
    "emotion_preset": "normal",
    "emotion_intensity": 1.0,
    "tempo": 0.9
   },
   {
-   "id": "line077",
+   "id": "line078",
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
@@ -774,7 +784,7 @@
    "tempo": 0.92
   },
   {
-   "id": "line078",
+   "id": "line079",
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
@@ -784,7 +794,7 @@
    "tempo": 0.95
   },
   {
-   "id": "line079",
+   "id": "line080",
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
@@ -794,17 +804,17 @@
    "tempo": 0.92
   },
   {
-   "id": "line080",
+   "id": "line081",
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
-   "text": "その夜、たかみや会長は、ゆいごんしょに一行を書き加えました。",
+   "text": "その夜、たかみや会長は、ゆいごんしょにいちぎょうを書き加えました。",
    "emotion_preset": "tonedown",
    "emotion_intensity": 1.0,
    "tempo": 0.92
   },
   {
-   "id": "line081",
+   "id": "line082",
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
@@ -814,17 +824,17 @@
    "tempo": 0.85
   },
   {
-   "id": "line082",
+   "id": "line083",
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
-   "text": "そして一年後。この一行が、彼の孫を、配達員にするのです。",
+   "text": "そして一年後。このいちぎょうが、彼の孫を、配達員にするのです。",
    "emotion_preset": "tonedown",
    "emotion_intensity": 1.0,
    "tempo": 0.92
   },
   {
-   "id": "line083",
+   "id": "line084",
    "model": "typecast-direct",
    "voice": "tc_629fe972013e90b4db213fd8",
    "language": "jpn",
