@@ -13,12 +13,12 @@ import json, os, re
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, "..", ".."))
 
-VOICE = {  # 04_목소리추천.md — 오디션 전 임시(추천 1순위). 고니감독님 청취 후 확정값으로 갱신.
+VOICE = {  # 2026-10-17 고니감독님 청취 확정(회장 3·지배인 3·알바생 3·비서실장 2). 間宮는 미지정 → 추천 1순위 임시.
     "NA": ("Lloyd", "tc_65681f21097fc4326ceb5e21"),
-    "源蔵": ("Hideo Watanabe", "tc_640997d2c535f40558c0722c"),
-    "黒田": ("Ryouta Takahashi", "tc_62baac31e1c614d37b9160e3"),
+    "源蔵": ("Zeus", "tc_6a5882fe54564e2a06a218bb"),
+    "黒田": ("Simon", "tc_65b34b05b3fb844f3d6b7aab"),
     "間宮": ("Takuya Murakami", "tc_63478295af3bab65523c3237"),
-    "ゆい": ("Ai Shimizu", "tc_633d5244093ca33db95ddfce"),
+    "ゆい": ("Tomoko Nomura", "tc_63be4f467ac1708d9ccd75d4"),
     "榊": ("Dean", "tc_673eb45cdc1073aef51e6b90"),
     "OUT": ("Yui Sato", "tc_629fe972013e90b4db213fd8"),
 }

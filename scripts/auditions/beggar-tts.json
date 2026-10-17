@@ -6,7 +6,7 @@
   {
    "id": "line001",
    "model": "typecast-direct",
-   "voice": "tc_62baac31e1c614d37b9160e3",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
    "language": "jpn",
    "text": "ものごいは裏口から出てってくださいって！何度言わせるんですか！",
    "emotion_preset": "angry",
@@ -106,7 +106,7 @@
   {
    "id": "line011",
    "model": "typecast-direct",
-   "voice": "tc_62baac31e1c614d37b9160e3",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
    "language": "jpn",
    "text": "ちょっと、お客さん。ここ、入られちゃ困るんですけど",
    "emotion_preset": "toneup",
@@ -116,7 +116,7 @@
   {
    "id": "line012",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "飯を一杯、食べに来たんじゃ。かけうどんは、あるかね？",
    "emotion_preset": "normal",
@@ -126,7 +126,7 @@
   {
    "id": "line013",
    "model": "typecast-direct",
-   "voice": "tc_62baac31e1c614d37b9160e3",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
    "language": "jpn",
    "text": "かけうどん？　うちのコースは、一番安くてもさんまんえんですよ",
    "emotion_preset": "toneup",
@@ -136,7 +136,7 @@
   {
    "id": "line014",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "金なら、ある",
    "emotion_preset": "tonedown",
@@ -146,7 +146,7 @@
   {
    "id": "line015",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "昔、この場所にあった店を、知っとるかね？",
    "emotion_preset": "normal",
@@ -156,7 +156,7 @@
   {
    "id": "line016",
    "model": "typecast-direct",
-   "voice": "tc_62baac31e1c614d37b9160e3",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
    "language": "jpn",
    "text": "知りませんよ、そんな昔のこと",
    "emotion_preset": "toneup",
@@ -166,7 +166,7 @@
   {
    "id": "line017",
    "model": "typecast-direct",
-   "voice": "tc_62baac31e1c614d37b9160e3",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
    "language": "jpn",
    "text": "……はぁ、じゃあ、あっちの隅の席にどうぞ。トイレの横です",
    "emotion_preset": "toneup",
@@ -186,7 +186,7 @@
   {
    "id": "line019",
    "model": "typecast-direct",
-   "voice": "tc_62baac31e1c614d37b9160e3",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
    "language": "jpn",
    "text": "これは大変失礼いたしました、まみや社長。すぐに片付けますので",
    "emotion_preset": "happy",
@@ -206,7 +206,7 @@
   {
    "id": "line021",
    "model": "typecast-direct",
-   "voice": "tc_62baac31e1c614d37b9160e3",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
    "language": "jpn",
    "text": "重々、承知しております",
    "emotion_preset": "normal",
@@ -216,7 +216,7 @@
   {
    "id": "line022",
    "model": "typecast-direct",
-   "voice": "tc_62baac31e1c614d37b9160e3",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
    "language": "jpn",
    "text": "はるかわさん。あの席に、しょうしゅうスプレー",
    "emotion_preset": "tonedown",
@@ -226,7 +226,7 @@
   {
    "id": "line023",
    "model": "typecast-direct",
-   "voice": "tc_633d5244093ca33db95ddfce",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
    "language": "jpn",
    "text": "……えっ、でも、お客様の前で……",
    "emotion_preset": "sad",
@@ -236,7 +236,7 @@
   {
    "id": "line024",
    "model": "typecast-direct",
-   "voice": "tc_62baac31e1c614d37b9160e3",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
    "language": "jpn",
    "text": "お客さん、水だけ飲んだら帰ってください。他のお客様のご迷惑なんで",
    "emotion_preset": "tonedown",
@@ -296,7 +296,7 @@
   {
    "id": "line030",
    "model": "typecast-direct",
-   "voice": "tc_633d5244093ca33db95ddfce",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
    "language": "jpn",
    "text": "おじいさん、温かいお茶です。ゆっくり飲んでくださいね",
    "emotion_preset": "happy",
@@ -306,7 +306,7 @@
   {
    "id": "line031",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "ありがとう。お嬢さんは、ここで働いて長いのかね？",
    "emotion_preset": "happy",
@@ -316,7 +316,7 @@
   {
    "id": "line032",
    "model": "typecast-direct",
-   "voice": "tc_633d5244093ca33db95ddfce",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
    "language": "jpn",
    "text": "さんかげつです。学費を、稼いでるんです",
    "emotion_preset": "happy",
@@ -326,7 +326,7 @@
   {
    "id": "line033",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "学費か……。何を、勉強しとるんじゃ？",
    "emotion_preset": "normal",
@@ -336,7 +336,7 @@
   {
    "id": "line034",
    "model": "typecast-direct",
-   "voice": "tc_633d5244093ca33db95ddfce",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
    "language": "jpn",
    "text": "栄養学です。いつか、子ども食堂を開きたくて",
    "emotion_preset": "happy",
@@ -346,7 +346,7 @@
   {
    "id": "line035",
    "model": "typecast-direct",
-   "voice": "tc_633d5244093ca33db95ddfce",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
    "language": "jpn",
    "text": "うちの祖父も、昔は苦労したって、よく話してくれました",
    "emotion_preset": "normal",
@@ -356,7 +356,7 @@
   {
    "id": "line036",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "……そうかい。いい、おじいさんじゃな",
    "emotion_preset": "happy",
@@ -366,7 +366,7 @@
   {
    "id": "line037",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "なぜ、わしなんかに、親切にしてくれるんじゃ？",
    "emotion_preset": "normal",
@@ -376,7 +376,7 @@
   {
    "id": "line038",
    "model": "typecast-direct",
-   "voice": "tc_633d5244093ca33db95ddfce",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
    "language": "jpn",
    "text": "お腹が空いてる人に、身なりは関係ありませんから",
    "emotion_preset": "happy",
@@ -386,7 +386,7 @@
   {
    "id": "line039",
    "model": "typecast-direct",
-   "voice": "tc_633d5244093ca33db95ddfce",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
    "language": "jpn",
    "text": "かけうどんは、メニューにないんですけど……厨房に、聞いてみますね",
    "emotion_preset": "whisper",
@@ -426,7 +426,7 @@
   {
    "id": "line043",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "……そうかね。わしには、懐かしい場所なんじゃが",
    "emotion_preset": "normal",
@@ -436,7 +436,7 @@
   {
    "id": "line044",
    "model": "typecast-direct",
-   "voice": "tc_62baac31e1c614d37b9160e3",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
    "language": "jpn",
    "text": "はるかわさん！　まかないを客に出すなんて、何考えてるんですか！",
    "emotion_preset": "angry",
@@ -446,7 +446,7 @@
   {
    "id": "line045",
    "model": "typecast-direct",
-   "voice": "tc_633d5244093ca33db95ddfce",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
    "language": "jpn",
    "text": "おじいさんが、かけうどんを食べたいって、おっしゃったので……",
    "emotion_preset": "sad",
@@ -456,7 +456,7 @@
   {
    "id": "line046",
    "model": "typecast-direct",
-   "voice": "tc_62baac31e1c614d37b9160e3",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
    "language": "jpn",
    "text": "バイトのくせに、出しゃばらないでください。今日で、辞めてもらいます",
    "emotion_preset": "angry",
@@ -476,7 +476,7 @@
   {
    "id": "line048",
    "model": "typecast-direct",
-   "voice": "tc_633d5244093ca33db95ddfce",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
    "language": "jpn",
    "text": "……学費、まだ足りないのに",
    "emotion_preset": "whisper",
@@ -486,7 +486,7 @@
   {
    "id": "line049",
    "model": "typecast-direct",
-   "voice": "tc_633d5244093ca33db95ddfce",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
    "language": "jpn",
    "text": "支配人、うどん代は私が払います。おじいさんに、食べさせてあげてください",
    "emotion_preset": "sad",
@@ -496,7 +496,7 @@
   {
    "id": "line050",
    "model": "typecast-direct",
-   "voice": "tc_62baac31e1c614d37b9160e3",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
    "language": "jpn",
    "text": "お前も一緒に出ていけ！　ふたりとも、今すぐだ！",
    "emotion_preset": "angry",
@@ -506,7 +506,7 @@
   {
    "id": "line051",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "……そのうどん代は、わしが払おう",
    "emotion_preset": "tonedown",
@@ -546,7 +546,7 @@
   {
    "id": "line055",
    "model": "typecast-direct",
-   "voice": "tc_62baac31e1c614d37b9160e3",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
    "language": "jpn",
    "text": "か、会長……ですって……？",
    "emotion_preset": "sad",
@@ -566,7 +566,7 @@
   {
    "id": "line057",
    "model": "typecast-direct",
-   "voice": "tc_62baac31e1c614d37b9160e3",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
    "language": "jpn",
    "text": "こ、これは、店の規則でして……",
    "emotion_preset": "sad",
@@ -576,7 +576,7 @@
   {
    "id": "line058",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "規則を作ったのは、わしじゃ",
    "emotion_preset": "tonedown",
@@ -586,7 +586,7 @@
   {
    "id": "line059",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "開店の日に、わしが決めた規則は、一つだけじゃった。腹を空かせた客を、帰すな",
    "emotion_preset": "normal",
@@ -606,7 +606,7 @@
   {
    "id": "line061",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "ななじゅうねん前、ここは小さなうどん屋じゃった。家も親もないやっつの子に、タダでかけうどんを出してくれた店じゃ",
    "emotion_preset": "sad",
@@ -616,7 +616,7 @@
   {
    "id": "line062",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "その子が、わしじゃよ",
    "emotion_preset": "sad",
@@ -626,7 +626,7 @@
   {
    "id": "line063",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "ホテルを建てる時も、あの店の場所だけは、誰にも譲らなかった",
    "emotion_preset": "normal",
@@ -636,7 +636,7 @@
   {
    "id": "line064",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "腹を空かせた人を追い返す店に……たかみやの名を、掲げる資格はない",
    "emotion_preset": "tonedown",
@@ -646,7 +646,7 @@
   {
    "id": "line065",
    "model": "typecast-direct",
-   "voice": "tc_62baac31e1c614d37b9160e3",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
    "language": "jpn",
    "text": "会長……存じ上げず、本当に、申し訳ございません……！",
    "emotion_preset": "sad",
@@ -656,7 +656,7 @@
   {
    "id": "line066",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "知らなかったから申し訳ない、か……。知っておったら、しなかったということじゃな",
    "emotion_preset": "sad",
@@ -666,7 +666,7 @@
   {
    "id": "line067",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "明日からは、もう来なくて結構です",
    "emotion_preset": "tonedown",
@@ -706,7 +706,7 @@
   {
    "id": "line071",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "お嬢さん、うどんを……もう一杯、温めてくれるかね？",
    "emotion_preset": "happy",
@@ -716,7 +716,7 @@
   {
    "id": "line072",
    "model": "typecast-direct",
-   "voice": "tc_633d5244093ca33db95ddfce",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
    "language": "jpn",
    "text": "はい！　すぐ、温めてきます！",
    "emotion_preset": "happy",
@@ -726,7 +726,7 @@
   {
    "id": "line073",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "ななじゅうねんぶりじゃ……。同じ味が、する",
    "emotion_preset": "sad",
@@ -736,7 +736,7 @@
   {
    "id": "line074",
    "model": "typecast-direct",
-   "voice": "tc_633d5244093ca33db95ddfce",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
    "language": "jpn",
    "text": "私、本当に、何も知らなくて……",
    "emotion_preset": "sad",
@@ -746,7 +746,7 @@
   {
    "id": "line075",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "知らなかったから、よかったんじゃよ",
    "emotion_preset": "happy",
@@ -756,7 +756,7 @@
   {
    "id": "line076",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "お嬢さんはらいねんどから、たかみやのしょうがくせいじゃ。学費の心配は、いらんよ",
    "emotion_preset": "happy",
@@ -766,7 +766,7 @@
   {
    "id": "line077",
    "model": "typecast-direct",
-   "voice": "tc_640997d2c535f40558c0722c",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
    "text": "さかき、今日からこの店のメニューに、かけうどんを載せなさい。腹を空かせた人からは、おだいはもらわんように",
    "emotion_preset": "normal",
