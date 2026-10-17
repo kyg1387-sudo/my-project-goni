@@ -503,7 +503,7 @@
    "image": "assets/portraits/beggar-chairman-keyframes/S10e-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Steam rises and slowly dissolves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Only the steam rises and slowly dissolves; the camera and the room stay still. The doorway and the snowy street outside stay completely EMPTY: NO person appears, nobody walks in or stands at the door. The noren stays plain white and blank with no writing. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 10,
    "image": "assets/portraits/beggar-chairman-keyframes/S10f-1.png"
   },

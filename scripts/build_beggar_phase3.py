@@ -256,7 +256,7 @@ SHOTS = [
     S("S10e", "S10", "face", "ms", "sepia", "EL", [], "U_DOOR", "Sepia flashback through steam: the backlit silhouette of the shop mistress leaning toward the counter, warm.",
       motion="Steam rises across the silhouette, a gentle nod; the face stays in shadow.", line="L23a", vo=True),
     S("S10f", "S10", "ins", "ecu", "sepia", "EL", [], "U_BOWL", "Sepia insert: steam rising from a bowl on the old wooden counter of 1955.",
-      motion="Steam rises and slowly dissolves.", line="NA13a"),
+      motion="Only the steam rises and slowly dissolves; the camera and the room stay still. The doorway and the snowy street outside stay completely EMPTY: NO person appears, nobody walks in or stands at the door. The noren stays plain white and blank with no writing.", line="NA13a"),
     S("S10g", "S10", "d", "ms", "tension", "LA", [I_, C_], "TABLE", "Low medium: Iwaki striding in, glaring at the waitress, handheld feel.", line="L24", fx="handheld",
       act="Iwaki snaps angrily at Chihiro, striding in, glaring, jabbing a finger at the bowl. Scolding her for serving staff food." + OB, expr="sneer"),
     S("S10h", "S10", "d", "ots", "tension", "HA", [C_, I_], "TABLE", "Over Iwaki's blurred shoulder, high angle: Chihiro shrinking back, voice trembling.", line="L25",
