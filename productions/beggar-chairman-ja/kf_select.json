@@ -2,9 +2,9 @@
 "_설명": "PHASE 4 Kill Gate 2차 선택(2026-10-17). r3 재생성 후보 중 합격본, 로컬 보정(-fixed) 포함.",
 "H3": "assets/portraits/beggar-kf-r3/H3-2.png",
 "S04a": "assets/portraits/beggar-kf-r3/S04a-fixed.png",
-"S04c": "assets/portraits/beggar-kf-r3/S04c-1.png",
+"S04c": "assets/portraits/beggar-kf-r6/S04c-1.png",
 "S04d": "assets/portraits/beggar-kf-r3/S04d-1.png",
-"S04e": "assets/portraits/beggar-kf-r3/S04e-2.png",
+"S04e": "assets/portraits/beggar-kf-r6/S04e-2.png",
 "S06c": "assets/portraits/beggar-kf-r3/S06c-2.png",
 "S07b": "assets/portraits/beggar-kf-r3/S07b-2.png",
 "S07k": "assets/portraits/beggar-kf-r3/S07k-1.png",
@@ -42,5 +42,7 @@
 "S11g": "assets/portraits/beggar-kf-r7/S11g-2.png",
 "S13f": "assets/portraits/beggar-kf-r7/S13f-2.png",
 "S14h": "assets/portraits/beggar-kf-r7/S14h-1.png",
-"S14j": "assets/portraits/beggar-kf-r7/S14j-1.png"
+"S14j": "assets/portraits/beggar-kf-r7/S14j-1.png",
+"S04b": "assets/portraits/beggar-kf-r6/S04b-2.png",
+"S04i": "assets/portraits/beggar-kf-r6/S04i-fixed.png"
 }
