@@ -32,6 +32,9 @@ def run(args):
     subprocess.run([FF, "-v", "error", "-y"] + args, check=True)
 
 
+CAM_OVERRIDE = {"S16b": "pushto:0.547:0.64:2.1"}  # 메뉴판 → 마지막 줄 「かけうどん　お代は、お気持ちで」로 다가감
+
+
 def cam(src, out, sec, fx):
     """편집 카메라 — 4배 업스케일 위 zoompan(서브픽셀, 떨림 방지). 한 컷 한 무빙(제8장 6)."""
     n = max(1, int(math.ceil(sec * FPS)))
@@ -48,6 +51,11 @@ def cam(src, out, sec, fx):
         z = f"if(lt(on,{k}),1+0.14*on/{k},1.14)"
     elif mv == "static":
         z = "1.0"
+    elif mv.startswith("pushto"):  # pushto:cx:cy:zmax — 핵심 소품(메뉴 마지막 줄)으로 다가가는 푸시인(제8장 4-2, 휴대폰 가독성)
+        _, cx, cy, zm = mv.split(":")
+        z = f"1+{float(zm) - 1:.3f}*{t}"
+        x = f"min(max(iw*{cx}-iw/zoom/2,0),iw-iw/zoom)"
+        y = f"min(max(ih*{cy}-ih/zoom/2,0),ih-ih/zoom)"
     vf = f"scale={W * 4}:{H * 4},zoompan=z='{z}':x='{x}':y='{y}':d={n}:s={W}x{H}:fps={FPS}"
     if mv.startswith("dutch"):
         deg = float(mv[5:] or 5)
@@ -93,7 +101,7 @@ def main(only=None):
         elif tier == "omni":
             cam(src, out, sec, "static")
         else:
-            cam(src, out, sec, s["edit_fx"])
+            cam(src, out, sec, CAM_OVERRIDE.get(s["id"], s["edit_fx"]))
         made += 1
     if not only:
         json.dump(pending, open(os.path.join(OUT, "_reuse_pending.json"), "w"), ensure_ascii=False)
