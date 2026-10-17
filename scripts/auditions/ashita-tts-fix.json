@@ -1,0 +1,35 @@
+{
+ "_설명": "회사명 가상화(고니감독님 확정 2026-10-11: 大東テクノロジー → 朝凪テクノロジー) 재녹음 3줄 — 원본과 같은 목소리·감정·템포. 구독 크레딧만 사용.",
+ "tests": [
+  {
+   "id": "line002",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "東京郊外の中堅エンジニアリング企業、あさなぎテクノロジー。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line064",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "あさなぎテクノロジーの皆さん。経済産業省との、合同監査です",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line072",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "あさなぎテクノロジーは、補助金の全額返還と、ひゃくおくえんの損害賠償を求められ、株価は一夜で暴落した。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  }
+ ]
+}

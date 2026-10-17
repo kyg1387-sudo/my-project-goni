@@ -1,0 +1,59 @@
+{
+ "_설명": "『月に帰った契約社員』 썸네일 A/B/C(고니감독님 참조 형식 3종, 2026-10-16). 2560x1440 생성 후 make_thumbnails_tsuki.py로 글자 합성. 3종×2장 ≈ 0.18달러.",
+ "_style_preset": "",
+ "characters": [
+  {
+   "id": "thumbA-dark",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/tsuki-faces/sakura.png",
+    "assets/portraits/tsuki-keyframes/S15h-1.png"
+   ],
+   "prompt": "[A 어두운 실사 감정 클로즈업형] Photorealistic cinematic still, Arri Alexa look, shallow depth of field, ultra sharp face, 16:9, ONE single image, NOT a grid, no panels, no borders, no text, no letters, no logos, no watermark. Night, outdoor electrical substation yard under a huge full moon, one cold lamp above. RIGHT HALF of the frame: close-up of the young woman from reference image 1 (Sakura, 24, chin-length bob hair, navy office vest over white blouse, NO glasses, NO earrings) looking slightly past the camera with realistic tears on both cheeks, lips pressed, holding a small hand-made bamboo dragonfly toy at her chest; her face about half the frame height, cool blue moonlight with a warm rim light from the lamp, dust motes in the air. LEFT 45% of the frame: dark, simple, out of focus — rows of grey switchgear cabinets and the wet concrete yard — left empty for large text. Mood: heartbreak, quiet night, cinematic."
+  },
+  {
+   "id": "thumbB-toon",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/tsuki-faces/hikaru.png",
+    "assets/portraits/tsuki-faces/washio.png",
+    "assets/portraits/ashita-style-samples/anime-1.png"
+   ],
+   "prompt": "[B 웹툰 일러스트형] Semi-realistic Japanese webtoon / drama-manga illustration, crisp bold black ink outlines, detailed cel shading, glossy highlights, rich saturated colors, strong rim light, every face crisp and in focus, 16:9, ONE single image, NOT a grid, no panels, no borders, no text, no letters, no logos, no watermark. Art style exactly like reference image 3. Setting: a bright corporate boardroom in the morning, glossy dark table, tall windows with a city skyline, chandelier-like ceiling lights. LEFT FOREGROUND, LARGE: the young man from reference image 1 (Hikaru, 26, slim, short black hair with long bangs, small mole under his left eye, NO glasses, light-grey work jacket, white towel around his neck) shown from the chest up, calm and dignified, eyes looking down at the scene, holding a thick patent certificate document against his chest; his face at about one third from the left edge, upper half of the frame. CENTER-RIGHT, on the carpet: the heavy executive from reference image 2 (Washio, 59, greying slicked-back hair, thin gold-rimmed glasses, navy double-breasted suit, red tie) on his knees, sweating, mouth open in panic, clutching a spilled whisky glass, gold watch on his wrist. RIGHT EDGE, standing tall and looking down at him coldly: a man in a beige trench coat and black-framed glasses (Shinoda, 50s, grey hair), holding two sheets of paper. Background: a few shocked office workers in dark suits, softly out of focus. Leave the upper-left corner relatively simple for a label, and the bottom-right corner free of faces."
+  },
+  {
+   "id": "thumbC-warm",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/tsuki-faces/hikaru.png",
+    "assets/portraits/tsuki-faces/sakura.png",
+    "assets/portraits/tsuki-keyframes/S15g-1.png"
+   ],
+   "prompt": "[C 실사 투샷 따뜻한 조명형] Photorealistic cinematic still, Arri Alexa look, shallow depth of field, ultra sharp face, 16:9, ONE single image, NOT a grid, no panels, no borders, no text, no letters, no logos, no watermark. Night, the front gate of a corporate headquarters, wet pavement, two warm gate lamps, a huge full moon in the dark blue sky. LEFT HALF, LARGE: the young man from reference image 1 (Hikaru, 26, slim, short black hair with long bangs, small mole under his left eye, NO glasses, light-grey work jacket, white towel around his neck) seen from the chest up, holding a single cardboard box under one arm and offering a small hand-made bamboo dragonfly toy with the other hand, a gentle sad smile, warm lamp light on his face; his face about 40% of the frame height. RIGHT-CENTER, slightly behind and smaller: the young woman from reference image 2 (Sakura, 24, chin-length bob, navy office vest over white blouse, NO glasses, NO earrings) looking at him with wet eyes, lips parted. Keep the upper-right area dark and simple for large text, and the bottom-right corner empty. Mood: warm farewell, bittersweet."
+  }
+ ]
+}

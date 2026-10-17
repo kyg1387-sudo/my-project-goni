@@ -1,0 +1,13 @@
+{
+ "_설명": "『明日から来なくていい』 아웃트로 진행자(고니감독님 지시 2026-10-11: 예쁜 젊은 아가씨) 1단계 — 가슴 위 CU 후보 4장. 고른 1장을 얼굴 기준으로 2단계(허리 위·손 흔들기) 편집 생성. OmniHuman 입력이므로 정면, 입 살짝 다묾, 손 없음.",
+ "_style_preset": "Photorealistic live-action, Arri Alexa cinematic color grade, soft Kodak 35mm film grain, 16:9",
+ "characters": [
+  {
+   "id": "host-cu",
+   "count": 4,
+   "aspect_ratio": "16:9",
+   "refs": [],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. A beautiful young Japanese woman, about 24 years old, the friendly host of a Japanese storytelling YouTube channel, sitting and facing the camera directly. Bright clear eyes with soft catchlights, gentle warm smile, mouth gently closed, natural light makeup, smooth healthy skin with real skin texture. Glossy long dark-brown hair with soft loose waves falling past her shoulders, neat side part. Wearing an elegant ivory knit blouse with a simple round neckline, tiny pearl stud earrings, no other jewellery. Tight chest-up close-up: head and shoulders fill the frame, face about one third of the frame height, both eyes sharp and symmetrical; hands NOT visible. Background: a bright, cozy modern living-room studio with soft morning window light, warm wood shelf and a green plant softly out of focus, creamy bokeh, gentle warm rim light on her hair. 85mm lens f/1.8, soft key light from the front-left, flattering and natural, high-end Japanese TV presenter look. Full-frame 16:9 image, no black bars, no letterbox. Absolutely no text, letters, numbers, logos or symbols anywhere in the image."
+  }
+ ]
+}

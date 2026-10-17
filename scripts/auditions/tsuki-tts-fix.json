@@ -1,0 +1,47 @@
+{
+ "_설명": "tsuki-tts 본녹음 중 안쪽 「」 때문에 잘려 녹음된 4줄 재녹음(생성기 오류 — 크레딧만). 완료 후 assets/auditions/tsuki-tts/로 복사.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "line013",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "彼が書き上げた制御プログラムの名は、かぐや。二年前、彼は自分の名で、特許を取っていた。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line065",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "さんじゅうにち前にゴミと呼んだ男の名を、わしおは、その夜、何度も口にした。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line073",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "たけうちさんの言葉を、そのまま伝えます。——つきうらエナジーとは、二度と契約しません",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line087",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "月から来たゴミと笑われた青年は、月に帰ったのではない。ただ、帰る場所を、自分で選んだだけだった。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "_설명": "B안 시범 — 어깨 너머 3/4 대화 구도 립싱크 3컷(OmniHuman, 8초 이하). 음성은 본편 확정 녹음(audio-overrides) 그대로. 약 15.5초 x 0.16 = 약 2.5달러.",
+ "tests": [
+  {
+   "id": "omni-S09d",
+   "model": "omnihuman",
+   "image": "assets/portraits/ashita-kf-r5/S09d-2.png",
+   "audio_id": "L14"
+  },
+  {
+   "id": "omni-S12c",
+   "model": "omnihuman",
+   "image": "assets/portraits/ashita-kf-r5b/S12c-1c.png",
+   "audio_id": "L22"
+  },
+  {
+   "id": "omni-S24c",
+   "model": "omnihuman",
+   "image": "assets/portraits/ashita-kf-r5/S24c-2c.png",
+   "audio_id": "L44"
+  }
+ ]
+}

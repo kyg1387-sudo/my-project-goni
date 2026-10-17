@@ -1,0 +1,347 @@
+{
+ "_설명": "『月に帰った契約社員』(tsuki-ja) PHASE 1 배역 오디션(Typecast ssfm-v30, language=jpn). 7배역 후보 16명 × 대비 감정 대사 2줄 = 34샘플(대본 v0.4 원문, 음성 입력만 가나 변형). TTS 구독 크레딧만 사용(fal 달러 0). 언어 검사(ja/large-v3) 후 고니감독님 청취로 채택. 실행: generate-video.yml audition_spec=tsuki-voices.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "nar_Lloyd_NA3",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "その現場の、いちばん下で働く青年がいた。たけうちひかる、二十六歳。契約社員。昼は設備の保守と清掃、夜は——",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "nar_Lloyd_NA18",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "三十日目の夜。つきうらエナジーは、本当の意味で……闇に落ちたのです。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "nar_Simon_NA3",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "その現場の、いちばん下で働く青年がいた。たけうちひかる、二十六歳。契約社員。昼は設備の保守と清掃、夜は——",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "nar_Simon_NA18",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "三十日目の夜。つきうらエナジーは、本当の意味で……闇に落ちたのです。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "hikaru_KentaYoshida_L18",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "すみません。譲渡は……できません。使ってもらう分には、構いません。契約書の通りで",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "hikaru_KentaYoshida_L46",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "室長。……病院と、水道と、信号。人の命に関わる所だけは、止めていません。最初から",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "hikaru_RyoutaTakahashi_L18",
+   "model": "typecast-direct",
+   "voice": "tc_62baac31e1c614d37b9160e3",
+   "language": "jpn",
+   "text": "すみません。譲渡は……できません。使ってもらう分には、構いません。契約書の通りで",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "hikaru_RyoutaTakahashi_L46",
+   "model": "typecast-direct",
+   "voice": "tc_62baac31e1c614d37b9160e3",
+   "language": "jpn",
+   "text": "室長。……病院と、水道と、信号。人の命に関わる所だけは、止めていません。最初から",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "hikaru_DaichiInoue_L18",
+   "model": "typecast-direct",
+   "voice": "tc_63622a97ee3708cc70012f94",
+   "language": "jpn",
+   "text": "すみません。譲渡は……できません。使ってもらう分には、構いません。契約書の通りで",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "hikaru_DaichiInoue_L46",
+   "model": "typecast-direct",
+   "voice": "tc_63622a97ee3708cc70012f94",
+   "language": "jpn",
+   "text": "室長。……病院と、水道と、信号。人の命に関わる所だけは、止めていません。最初から",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "washio_Robert_L26",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "契約社員の分際で、特許だと？ 月から来たゴミが、何を言ってる！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.05
+  },
+  {
+   "id": "washio_Robert_L44a",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "室長……たけうちに、頼んでくれ。頭を下げる。金も、役職も、何でも……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.1,
+   "tempo": 0.9
+  },
+  {
+   "id": "washio_HideoWatanabe_L26",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "契約社員の分際で、特許だと？ 月から来たゴミが、何を言ってる！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.05
+  },
+  {
+   "id": "washio_HideoWatanabe_L44a",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "室長……たけうちに、頼んでくれ。頭を下げる。金も、役職も、何でも……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.1,
+   "tempo": 0.9
+  },
+  {
+   "id": "washio_Dean_L26",
+   "model": "typecast-direct",
+   "voice": "tc_673eb45cdc1073aef51e6b90",
+   "language": "jpn",
+   "text": "契約社員の分際で、特許だと？ 月から来たゴミが、何を言ってる！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.05
+  },
+  {
+   "id": "washio_Dean_L44a",
+   "model": "typecast-direct",
+   "voice": "tc_673eb45cdc1073aef51e6b90",
+   "language": "jpn",
+   "text": "室長……たけうちに、頼んでくれ。頭を下げる。金も、役職も、何でも……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.1,
+   "tempo": 0.9
+  },
+  {
+   "id": "hino_Simon_L16",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "たけうち。お前、正社員になりたいだろ？ ……これに判子、押してくれ。特許の、譲渡証",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "hino_Simon_L44c",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "……押したのは、私です。常務に言われて……全部、記録してあります",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "hino_Rex_L16",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "たけうち。お前、正社員になりたいだろ？ ……これに判子、押してくれ。特許の、譲渡証",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "hino_Rex_L44c",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "……押したのは、私です。常務に言われて……全部、記録してあります",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "sakura_HarunaSuzuki_L01",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "たけうちさん、また夕飯抜きでしょ。はい、おにぎり。余ったやつですけど",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "sakura_HarunaSuzuki_L33",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "そんなの……ずるいですよ",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "sakura_AiShimizu_L01",
+   "model": "typecast-direct",
+   "voice": "tc_633d5244093ca33db95ddfce",
+   "language": "jpn",
+   "text": "たけうちさん、また夕飯抜きでしょ。はい、おにぎり。余ったやつですけど",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "sakura_AiShimizu_L33",
+   "model": "typecast-direct",
+   "voice": "tc_633d5244093ca33db95ddfce",
+   "language": "jpn",
+   "text": "そんなの……ずるいですよ",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "sakura_TomokoNomura_L01",
+   "model": "typecast-direct",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
+   "language": "jpn",
+   "text": "たけうちさん、また夕飯抜きでしょ。はい、おにぎり。余ったやつですけど",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "sakura_TomokoNomura_L33",
+   "model": "typecast-direct",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
+   "language": "jpn",
+   "text": "そんなの……ずるいですよ",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "shinoda_Poseidon_L42",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "国のモデル事業に、偽造書類。契約は本日付で解除。違約金は、にひゃくおくえんです",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "shinoda_Poseidon_L47",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "……知っています。だから、来たんです",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.7,
+   "tempo": 0.9
+  },
+  {
+   "id": "shinoda_Rex_L42",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "国のモデル事業に、偽造書類。契約は本日付で解除。違約金は、にひゃくおくえんです",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "shinoda_Rex_L47",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "……知っています。だから、来たんです",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.7,
+   "tempo": 0.9
+  },
+  {
+   "id": "haru_Juha_L50",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "光。月の子は、どこにいたって、夜に働くもんだよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 0.85
+  },
+  {
+   "id": "haru_Juha_L50b",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "お帰り、光。……よく、帰ってきたね",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.85
+  },
+  {
+   "id": "haru_Shana_L50",
+   "model": "typecast-direct",
+   "voice": "tc_673eb42eef5b688d8cadd086",
+   "language": "jpn",
+   "text": "光。月の子は、どこにいたって、夜に働くもんだよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 0.85
+  },
+  {
+   "id": "haru_Shana_L50b",
+   "model": "typecast-direct",
+   "voice": "tc_673eb42eef5b688d8cadd086",
+   "language": "jpn",
+   "text": "お帰り、光。……よく、帰ってきたね",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.85
+  }
+ ]
+}

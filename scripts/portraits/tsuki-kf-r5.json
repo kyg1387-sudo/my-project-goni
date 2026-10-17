@@ -1,0 +1,16 @@
+{
+ "_설명": "tsuki 키프레임 r5: S12d 손의 분홍 포장(외계어 글자) 제거 — 승인 키프레임을 seedream edit로 부분 수정(제7장 5 EDIT_FROM 방식).",
+ "_style_preset": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting",
+ "characters": [
+  {
+   "id": "S12d",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "refs": [
+    "assets/portraits/tsuki-kf-r3/S12d-fixed.png"
+   ],
+   "prompt": "Edit reference image 1 and output ONE single photorealistic film still of exactly the same framing, same people, same faces, same expressions, same lighting and colours. ONLY change: remove the bright pink/magenta printed package from the young man's hands completely — his hands are empty and relaxed at his sides, nothing held, no bag, no package, no printed object, no letters or logos anywhere. Keep the white towel around his neck, the light-grey work jacket, the blurred shoulder of the woman in the foreground, the moonlit transformer yard background. Photorealistic, no text, no watermark, not a grid, no borders."
+  }
+ ]
+}

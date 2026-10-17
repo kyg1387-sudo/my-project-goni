@@ -1,0 +1,307 @@
+{
+ "_설명": "『みすぼらしい老人は、財閥会長だった』(beggar-chairman-ja) PHASE 1 배역 오디션(Typecast ssfm-v30, language=jpn). 5배역 후보 14명 + 내레이터 Lloyd 확인 × 대비 감정 대사 2줄 = 30샘플(대본 v0.5 원문, 음성 입력만 가나 변형). TTS 구독 크레딧만 사용(fal 달러 0). 언어 검사(ja/large-v3) 후 고니감독님 청취로 채택. 실행: generate-video.yml audition_spec=beggar-voices.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "genzo_HideoWatanabe_L38",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "その子が、わしじゃよ。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 0.85
+  },
+  {
+   "id": "genzo_HideoWatanabe_L42",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "明日からは、もう来なくて結構です。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "genzo_Poseidon_L38",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "その子が、わしじゃよ。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 0.85
+  },
+  {
+   "id": "genzo_Poseidon_L42",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "明日からは、もう来なくて結構です。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "genzo_Zeus_L38",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "その子が、わしじゃよ。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 0.85
+  },
+  {
+   "id": "genzo_Zeus_L42",
+   "model": "typecast-direct",
+   "voice": "tc_6a5882fe54564e2a06a218bb",
+   "language": "jpn",
+   "text": "明日からは、もう来なくて結構です。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "kuroda_RyoutaTakahashi_L01",
+   "model": "typecast-direct",
+   "voice": "tc_62baac31e1c614d37b9160e3",
+   "language": "jpn",
+   "text": "物乞いは裏口から出てってくださいって！何度言わせるんですか！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.0,
+   "tempo": 1.1
+  },
+  {
+   "id": "kuroda_RyoutaTakahashi_L40",
+   "model": "typecast-direct",
+   "voice": "tc_62baac31e1c614d37b9160e3",
+   "language": "jpn",
+   "text": "会長……存じ上げず、本当に、申し訳ございません……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.1,
+   "tempo": 0.95
+  },
+  {
+   "id": "kuroda_DaichiInoue_L01",
+   "model": "typecast-direct",
+   "voice": "tc_63622a97ee3708cc70012f94",
+   "language": "jpn",
+   "text": "物乞いは裏口から出てってくださいって！何度言わせるんですか！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.0,
+   "tempo": 1.1
+  },
+  {
+   "id": "kuroda_DaichiInoue_L40",
+   "model": "typecast-direct",
+   "voice": "tc_63622a97ee3708cc70012f94",
+   "language": "jpn",
+   "text": "会長……存じ上げず、本当に、申し訳ございません……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.1,
+   "tempo": 0.95
+  },
+  {
+   "id": "kuroda_Simon_L01",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "物乞いは裏口から出てってくださいって！何度言わせるんですか！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.0,
+   "tempo": 1.1
+  },
+  {
+   "id": "kuroda_Simon_L40",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "会長……存じ上げず、本当に、申し訳ございません……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.1,
+   "tempo": 0.95
+  },
+  {
+   "id": "mamiya_TakuyaMurakami_L22",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "じいさん、ここはあんたの来る店じゃないよ。帰りな。",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 0.9,
+   "tempo": 1.05
+  },
+  {
+   "id": "mamiya_TakuyaMurakami_L43",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "会長、あの……うちの父が、たかみやさんの取引先をやってまして……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.9,
+   "tempo": 1.0
+  },
+  {
+   "id": "mamiya_Tonakaisan_L22",
+   "model": "typecast-direct",
+   "voice": "tc_639ad2a0b3863ffe1948a241",
+   "language": "jpn",
+   "text": "じいさん、ここはあんたの来る店じゃないよ。帰りな。",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 0.9,
+   "tempo": 1.05
+  },
+  {
+   "id": "mamiya_Tonakaisan_L43",
+   "model": "typecast-direct",
+   "voice": "tc_639ad2a0b3863ffe1948a241",
+   "language": "jpn",
+   "text": "会長、あの……うちの父が、たかみやさんの取引先をやってまして……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.9,
+   "tempo": 1.0
+  },
+  {
+   "id": "yui_AiShimizu_L20",
+   "model": "typecast-direct",
+   "voice": "tc_633d5244093ca33db95ddfce",
+   "language": "jpn",
+   "text": "お腹が空いてる人に、身なりは関係ありませんから。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 0.95
+  },
+  {
+   "id": "yui_AiShimizu_L28",
+   "model": "typecast-direct",
+   "voice": "tc_633d5244093ca33db95ddfce",
+   "language": "jpn",
+   "text": "支配人、うどん代は私が払います。おじいさんに、食べさせてあげてください。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "yui_SakuraTanaka_L20",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "お腹が空いてる人に、身なりは関係ありませんから。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 0.95
+  },
+  {
+   "id": "yui_SakuraTanaka_L28",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "支配人、うどん代は私が払います。おじいさんに、食べさせてあげてください。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "yui_TomokoNomura_L20",
+   "model": "typecast-direct",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
+   "language": "jpn",
+   "text": "お腹が空いてる人に、身なりは関係ありませんから。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 0.95
+  },
+  {
+   "id": "yui_TomokoNomura_L28",
+   "model": "typecast-direct",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
+   "language": "jpn",
+   "text": "支配人、うどん代は私が払います。おじいさんに、食べさせてあげてください。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "sakaki_Dean_L31",
+   "model": "typecast-direct",
+   "voice": "tc_673eb45cdc1073aef51e6b90",
+   "language": "jpn",
+   "text": "会長。お車の用意が、できております。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "sakaki_Dean_L45",
+   "model": "typecast-direct",
+   "voice": "tc_673eb45cdc1073aef51e6b90",
+   "language": "jpn",
+   "text": "消しても、今夜のことは、皆が覚えていますよ。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "sakaki_Lorenzo_L31",
+   "model": "typecast-direct",
+   "voice": "tc_68f0422cc863e7c17af5183d",
+   "language": "jpn",
+   "text": "会長。お車の用意が、できております。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "sakaki_Lorenzo_L45",
+   "model": "typecast-direct",
+   "voice": "tc_68f0422cc863e7c17af5183d",
+   "language": "jpn",
+   "text": "消しても、今夜のことは、皆が覚えていますよ。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "sakaki_Antonio_L31",
+   "model": "typecast-direct",
+   "voice": "tc_62ce5451b130717df10ea36e",
+   "language": "jpn",
+   "text": "会長。お車の用意が、できております。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "sakaki_Antonio_L45",
+   "model": "typecast-direct",
+   "voice": "tc_62ce5451b130717df10ea36e",
+   "language": "jpn",
+   "text": "消しても、今夜のことは、皆が覚えていますよ。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "nar_Lloyd_NA0",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "このレストランで、彼の正体に気づいた者は、一人もいませんでした。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "nar_Lloyd_NA17",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "どん底でひざまずいたことのある者だけが、人をひざまずかせない。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.88
+  }
+ ]
+}

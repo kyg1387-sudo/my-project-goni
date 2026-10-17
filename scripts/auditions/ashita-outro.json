@@ -1,0 +1,15 @@
+{
+ "_설명": "『明日から来なくていい』 아웃트로 OUT3 예고(고니감독님 승인 2026-10-11) — 진행자 Yui Sato, Typecast ssfm-v30 jpn. 구독 크레딧만 사용.",
+ "tests": [
+  {
+   "id": "OUT3",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "次回も、胸がスカッとする物語をお届けします。お楽しみに",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  }
+ ]
+}
