@@ -10,7 +10,7 @@
 "S07k": "assets/portraits/beggar-kf-r3/S07k-1.png",
 "S09b": "assets/portraits/beggar-kf-r3/S09b-1.png",
 "S10p": "assets/portraits/beggar-kf-r7/S10p-2.png",
-"S10t": "assets/portraits/beggar-kf-r3/S10p-2.png",
+"S10t": "assets/portraits/beggar-kf-r11/S10t-1.png",
 "S10r": "assets/portraits/beggar-kf-r3/S10r-1.png",
 "S11f": "assets/portraits/beggar-kf-r3/S11f-1.png",
 "S12a": "assets/portraits/beggar-kf-b/S11j-1.png",
@@ -24,7 +24,7 @@
 "S14f": "assets/portraits/beggar-kf-r3/S14f-2.png",
 "S14g": "assets/portraits/beggar-kf-r7/S14g-2.png",
 "S15c": "assets/portraits/beggar-kf-r7/S15c-2.png",
-"S15f": "assets/portraits/beggar-kf-r3/S15f-2.png",
+"S15f": "assets/portraits/beggar-kf-r11/S15f-2.png",
 "S17a": "assets/portraits/beggar-kf-r3/S17a-1.png",
 "S10s": "assets/portraits/beggar-kf-r4/S10s-2.png",
 "S11b": "assets/portraits/beggar-kf-r7/S11b-1.png",
@@ -49,5 +49,12 @@
 "S07i": "assets/portraits/beggar-kf-r9/S07i-2.png",
 "S11d": "assets/portraits/beggar-kf-r9/S11d-2.png",
 "S06d": "assets/portraits/beggar-kf-r10/S06d-2.png",
-"S06e": "assets/portraits/beggar-kf-r10/S06e-1.png"
+"S06e": "assets/portraits/beggar-kf-r10/S06e-1.png",
+"S05k": "assets/portraits/beggar-kf-r11/S05k-1.png",
+"S07l": "assets/portraits/beggar-kf-r11/S07l-2.png",
+"S13b": "assets/portraits/beggar-kf-r11/S13b-1.png",
+"S13d": "assets/portraits/beggar-kf-r11/S13d-1.png",
+"S13j": "assets/portraits/beggar-kf-r11/S13j-1.png",
+"S15j": "assets/portraits/beggar-kf-r11/S15j-1.png",
+"S15n": "assets/portraits/beggar-kf-r11/S15n-2.png"
 }
