@@ -1,0 +1,65 @@
+{
+  "work": "beggar-chairman",
+  "jobs": [
+    {
+      "id": "char-genzo",
+      "out": "assets/refs/beggar-chairman/char-genzo.png",
+      "prompt": "Character reference sheet, one single 16:9 image on a pure white background, photorealistic, soft studio lighting, minimal style, Kodak 35mm film grain, absolutely no text, no letters, no labels, no logos anywhere in the image, fashion-lookbook layout. Left half: full-body front view and full-body back view of the same 78-year-old Japanese man, thin build, slightly stooped standing side by side, feet visible, both figures cropped at the neck so the head is cut off by the top edge of the frame — no face shown on the left side. Wardrobe: worn-out plain grey zip jacket with frayed cuffs, grey cotton trousers worn at the knees, old scuffed white sneakers, no logos. Right half: one large close-up portrait from the shoulders up, straight to camera, calm gentle expression, very short cropped white hair, lean angular face, short white chin beard, small mole above the left eyebrow, deep forehead wrinkles. Exactly one person depicted."
+    },
+    {
+      "id": "char-kuroda",
+      "out": "assets/refs/beggar-chairman/char-kuroda.png",
+      "prompt": "Character reference sheet, one single 16:9 image on a pure white background, photorealistic, soft studio lighting, minimal style, Kodak 35mm film grain, absolutely no text, no letters, no labels, no logos anywhere in the image, fashion-lookbook layout. Left half: full-body front view and full-body back view of the same 45-year-old Japanese man, slim upright build standing side by side, feet visible, both figures cropped at the neck so the head is cut off by the top edge of the frame — no face shown on the left side. Wardrobe: black three-piece suit, silver tie, white shirt, plain blank metal name badge with no lettering, polished black shoes. Right half: one large close-up portrait from the shoulders up, straight to camera, arrogant composed expression, black hair slicked back with pomade, narrow face, thin moustache, sharp eyes. Exactly one person depicted."
+    },
+    {
+      "id": "char-mamiya",
+      "out": "assets/refs/beggar-chairman/char-mamiya.png",
+      "prompt": "Character reference sheet, one single 16:9 image on a pure white background, photorealistic, soft studio lighting, minimal style, Kodak 35mm film grain, absolutely no text, no letters, no labels, no logos anywhere in the image, fashion-lookbook layout. Left half: full-body front view and full-body back view of the same 32-year-old Japanese man, medium build standing side by side, feet visible, both figures cropped at the neck so the head is cut off by the top edge of the frame — no face shown on the left side. Wardrobe: plain cream knit sweater without logo, beige long coat, dark slacks, brown loafers, thick silver wristwatch. Right half: one large close-up portrait from the shoulders up, straight to camera, smug half-smile, brown two-block haircut, sides cropped short, round face, small silver stud earring in the left ear. Exactly one person depicted."
+    },
+    {
+      "id": "char-yui",
+      "out": "assets/refs/beggar-chairman/char-yui.png",
+      "prompt": "Character reference sheet, one single 16:9 image on a pure white background, photorealistic, soft studio lighting, minimal style, Kodak 35mm film grain, absolutely no text, no letters, no labels, no logos anywhere in the image, fashion-lookbook layout. Left half: full-body front view and full-body back view of the same 21-year-old Japanese woman, petite build standing side by side, feet visible, both figures cropped at the neck so the head is cut off by the top edge of the frame — no face shown on the left side. Wardrobe: white shirt, plain navy waist apron without logo, black trousers, black flat shoes. Right half: one large close-up portrait from the shoulders up, straight to camera, kind warm smile, straight black bangs, black hair tied in a low ponytail, oval face, small mole under the left eye. Exactly one person depicted."
+    },
+    {
+      "id": "char-sakaki",
+      "out": "assets/refs/beggar-chairman/char-sakaki.png",
+      "prompt": "Character reference sheet, one single 16:9 image on a pure white background, photorealistic, soft studio lighting, minimal style, Kodak 35mm film grain, absolutely no text, no letters, no labels, no logos anywhere in the image, fashion-lookbook layout. Left half: full-body front view and full-body back view of the same 64-year-old Japanese man, tall dignified build standing side by side, feet visible, both figures cropped at the neck so the head is cut off by the top edge of the frame — no face shown on the left side. Wardrobe: black three-piece suit, dark tie, white shirt, polished black shoes. Right half: one large close-up portrait from the shoulders up, straight to camera, composed respectful expression, neatly combed-back white hair, silver-rimmed glasses, short grey moustache. Exactly one person depicted."
+    },
+    {
+      "id": "char-host",
+      "out": "assets/refs/beggar-chairman/char-host.png",
+      "prompt": "Character reference sheet, one single 16:9 image on a pure white background, photorealistic, soft studio lighting, minimal style, Kodak 35mm film grain, absolutely no text, no letters, no labels, no logos anywhere in the image, fashion-lookbook layout. Left half: full-body front view and full-body back view of the same 50-year-old Japanese man, medium build standing side by side, feet visible, both figures cropped at the neck so the head is cut off by the top edge of the frame — no face shown on the left side. Wardrobe: plain navy suit, white shirt, no tie, brown shoes. Right half: one large close-up portrait from the shoulders up, straight to camera, warm friendly smile, neat grey hair, black horn-rimmed glasses, gentle eyes. Exactly one person depicted."
+    },
+    {
+      "id": "loc-hall",
+      "out": "assets/refs/beggar-chairman/loc-hall.png",
+      "prompt": "Location reference sheet, one single 16:9 image divided into a 2x2 grid of four photographs of the same place, no people at all, empty space, photorealistic, soft studio lighting, minimal style, Kodak 35mm film grain, absolutely no text, no letters, no labels, no logos anywhere in the image, warm amber and deep brown palette. Place: the dining hall of an upscale Japanese restaurant on the ground floor of a Tokyo hotel: warm indirect lighting, white tablecloths, dark wooden walls, shoji-style partitions, large floor-to-ceiling windows, completely blank menus and noren curtains. Top-left: daytime wide shot. Top-right: evening wide shot. Bottom-left: a small corner table beside the restroom passage. Bottom-right: a central table by the window."
+    },
+    {
+      "id": "loc-entrance",
+      "out": "assets/refs/beggar-chairman/loc-entrance.png",
+      "prompt": "Location reference sheet, one single 16:9 image divided into a 2x2 grid of four photographs of the same place, no people at all, empty space, photorealistic, soft studio lighting, minimal style, Kodak 35mm film grain, absolutely no text, no letters, no labels, no logos anywhere in the image, warm amber and deep brown palette. Place: the entrance of the same upscale Japanese restaurant: heavy dark wooden door, blank plain noren curtain with no lettering, warm indirect lighting. Top-left: daytime wide shot. Top-right: evening wide shot. Bottom-left: the doorway seen from inside the hall. Bottom-right: the reception podium area."
+    },
+    {
+      "id": "loc-kitchen",
+      "out": "assets/refs/beggar-chairman/loc-kitchen.png",
+      "prompt": "Location reference sheet, one single 16:9 image divided into a 2x2 grid of four photographs of the same place, no people at all, empty space, photorealistic, soft studio lighting, minimal style, Kodak 35mm film grain, absolutely no text, no letters, no labels, no logos anywhere in the image, warm amber and deep brown palette. Place: the kitchen of the same Japanese restaurant: stainless steel counters, a large staff-meal stockpot on the stove, warm practical lighting. Top-left: daytime wide shot. Top-right: evening wide shot. Bottom-left: the stove with the large pot. Bottom-right: a prep counter with ceramic bowls."
+    },
+    {
+      "id": "loc-street",
+      "out": "assets/refs/beggar-chairman/loc-street.png",
+      "prompt": "Location reference sheet, one single 16:9 image divided into a 2x2 grid of four photographs of the same place, no people at all, empty space, photorealistic, soft studio lighting, minimal style, Kodak 35mm film grain, absolutely no text, no letters, no labels, no logos anywhere in the image, warm amber and deep brown palette. Place: the front of a tall glass hotel tower in central Tokyo: wide stone entrance steps, smooth stone facade with no signage or lettering. Top-left: daytime wide shot. Top-right: evening wide shot. Bottom-left: the stone steps seen from street level. Bottom-right: the smooth stone wall beside the entrance."
+    },
+    {
+      "id": "loc-car",
+      "out": "assets/refs/beggar-chairman/loc-car.png",
+      "prompt": "Location reference sheet, one single 16:9 image divided into a 2x2 grid of four photographs of the same place, no people at all, empty space, photorealistic, soft studio lighting, minimal style, Kodak 35mm film grain, absolutely no text, no letters, no labels, no logos anywhere in the image, warm amber and deep brown palette. Place: the back seat of a black luxury sedan at night, Tokyo city lights streaming past the window. Top-left: daytime wide shot. Top-right: evening wide shot. Bottom-left: the rear seat by the window. Bottom-right: view through the side window."
+    },
+    {
+      "id": "loc-studio",
+      "out": "assets/refs/beggar-chairman/loc-studio.png",
+      "prompt": "Location reference sheet, one single 16:9 image divided into a 2x2 grid of four photographs of the same place, no people at all, empty space, photorealistic, soft studio lighting, minimal style, Kodak 35mm film grain, absolutely no text, no letters, no labels, no logos anywhere in the image, warm amber and deep brown palette. Place: a tidy study set with bookshelves and warm lighting, softly blurred background, plain props. Top-left: daytime wide shot. Top-right: evening wide shot. Bottom-left: an armchair facing the camera. Bottom-right: the bookshelf background."
+    }
+  ]
+}

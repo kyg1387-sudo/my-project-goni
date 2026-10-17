@@ -29,6 +29,7 @@ import glob
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import time
@@ -152,11 +153,31 @@ def cached(path):
     return os.path.exists(path) and os.path.getsize(path) > 1000
 
 
+def tts_key(cfg, index, voice, text, emotion):
+    """캐시 식별값 — 대사·목소리·감정·속도·태그가 바뀌면 줄 번호가 같아도 다시 만든다."""
+    speed = cfg.get("speed_overrides", {}).get(str(index), cfg.get("speed", 1.05))
+    tag = cfg.get("tag_overrides", {}).get(str(index), "")
+    return json.dumps([voice, text, emotion or "", speed, tag], ensure_ascii=False)
+
+
 def tts_line(cfg, key, index, voice, text, emotion=None):
     path = os.path.join(WORK_DIR, f"line{index:03d}.mp3")
+    key_path = path + ".key"
+    want = tts_key(cfg, index, voice, text, emotion)
     if cached(path):
-        print(f"  [tts {index:03d}] 기존 파일 재사용")
-        return path
+        # .key가 없는 옛 산출물은 그대로 재사용, 있는데 내용이 다르면(대본·설정 변경) 다시 생성
+        if not os.path.exists(key_path) or open(key_path, encoding="utf-8").read() == want:
+            print(f"  [tts {index:03d}] 기존 파일 재사용")
+            return path
+        print(f"  [tts {index:03d}] 대사·설정이 바뀌어 다시 생성")
+    result_path = _tts_generate(cfg, key, index, voice, text, emotion, path)
+    if result_path:
+        with open(key_path, "w", encoding="utf-8") as f:
+            f.write(want)
+    return result_path
+
+
+def _tts_generate(cfg, key, index, voice, text, emotion, path):
     if voice.startswith("el:"):
         # ElevenLabs v3 (fal 경유) — 감정은 대사 앞 연기 태그로 (2~4단어, 긴 지시문은 낭독으로 누출됨)
         tag = cfg.get("tag_overrides", {}).get(str(index), "")
@@ -660,8 +681,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--ass", required=True)
     ap.add_argument("--config", required=True)
-    ap.add_argument("--video", required=True)
-    ap.add_argument("--out", required=True)
+    ap.add_argument("--video", default="")
+    ap.add_argument("--out", default="out/final.mp4")
+    ap.add_argument("--tts-only", action="store_true",
+                    help="대사 음성만 생성하고 실측 길이를 저장한 뒤 종료 (영상 생성 전 타이밍 확정용)")
+    ap.add_argument("--durations-out", default="",
+                    help="--tts-only: 줄별 실측 길이 JSON 저장 경로")
+    ap.add_argument("--export-dir", default="",
+                    help="--tts-only: 생성된 lineNNN.mp3(+.key)를 복사해 둘 폴더 (커밋해 재사용·청취)")
     ap.add_argument("--lipsync", action="store_true")
     ap.add_argument("--scenes-dir", default="out")
     ap.add_argument("--no-burn", action="store_true",
@@ -706,6 +733,22 @@ def main():
 
     with ThreadPoolExecutor(max_workers=int(cfg.get("tts_workers", 4))) as pool:
         clips = list(pool.map(make_tts, enumerate(lines, start=1)))
+
+    if args.tts_only:
+        durations = {str(i): round(probe_duration(c[3]), 3) for i, c in enumerate(clips, start=1)}
+        if args.durations_out:
+            with open(args.durations_out, "w", encoding="utf-8") as f:
+                json.dump(durations, f, ensure_ascii=False, indent=1)
+        if args.export_dir:
+            os.makedirs(args.export_dir, exist_ok=True)
+            for c in clips:
+                for src in (c[3], c[3] + ".key"):
+                    if os.path.exists(src):
+                        shutil.copy(src, args.export_dir)
+        print(f"대사 음성 {len(clips)}줄 생성 완료 (총 {sum(durations.values()):.1f}초)")
+        return
+    if not args.video:
+        sys.exit("--video가 필요합니다 (--tts-only가 아닐 때)")
 
     if args.lipsync:
         # 재조립 기준인 장면 클립들의 합으로 전체 길이를 계산 (subbed 영상이 부분본일 수 있음)

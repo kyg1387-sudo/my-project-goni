@@ -25,17 +25,20 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 WORK = "beggar-chairman"
 
 # ---------- 고정 외형·장소 문구 (모든 장면에서 동일 반복 — 인물 일관성 규칙 5) ----------
-GENZO = ("78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, "
-         "소매가 닳은 낡은 회색 무지 점퍼, 무릎이 해진 회색 면바지, 해진 흰 운동화)")
-GENZO_FACE = ("78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, "
-              "소매가 닳은 낡은 회색 무지 점퍼)")
-KURODA = ("45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 머리, 검은 쓰리피스 정장, "
-          "은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰)")
-MAMIYA = ("32세 일본인 남성 사업가(둥근 얼굴, 옆을 짧게 친 갈색 머리, 로고 없는 크림색 무지 니트와 "
-          "베이지 코트, 손목에 굵은 은시계)")
-YUI = "21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 낮게 묶은 검은 머리, 흰 셔츠에 남색 무지 앞치마)"
-SAKAKI = "64세 일본인 남성 비서실장(단정히 빗어 넘긴 백발, 은테 안경, 검은 쓰리피스 정장)"
-HOST = "50대 일본인 남성 진행자(단정한 회색 머리, 남색 무지 정장, 흰 셔츠, 온화한 미소)"
+# 인물마다 물리적 고정 식별자 2~3개(규칙집 2장 — 미묘한 인상보다 물리적 표식이 일관성에 강함)를 반복한다.
+GENZO = ("78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, "
+         "깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼, 무릎이 해진 회색 면바지, 해진 흰 운동화)")
+GENZO_FACE = ("78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, "
+              "깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼)")
+KURODA = ("45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 올백 머리, 얇은 콧수염, "
+          "검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰)")
+MAMIYA = ("32세 일본인 남성 사업가(둥근 얼굴, 옆을 짧게 친 갈색 투블럭 머리, 왼쪽 귀에 작은 은색 귀걸이, "
+          "로고 없는 크림색 무지 니트와 베이지 코트, 손목에 굵은 은시계)")
+YUI = ("21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 일자 앞머리와 낮게 묶은 검은 머리, 왼쪽 눈 밑 작은 점, "
+       "흰 셔츠에 남색 무지 앞치마)")
+SAKAKI = ("64세 일본인 남성 비서실장(단정히 빗어 넘긴 백발 올백, 은테 안경, 짧은 회색 콧수염, "
+          "검은 쓰리피스 정장)")
+HOST = "50대 일본인 남성 진행자(단정한 회색 머리, 검은 뿔테 안경, 남색 무지 정장, 흰 셔츠, 온화한 미소)"
 
 HALL = ("도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 "
         "장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)")
@@ -71,6 +74,33 @@ NARR_SPEED = 0.9
 def speech_len(text, speed):
     chars = len(re.sub(r"[\s、。！？!?…「」『』（）・―─]", "", text))
     return max(MIN_DUR, chars / (CHAR_RATE * speed) + LINE_PAD)
+
+
+# 실측 TTS 길이(대사 음성 미리 생성 후 커밋되는 파일) — 있으면 추정 대신 사용하고 대사 장면을 실측 길이로 다듬는다(규칙 6)
+MEASURED_PATH = os.path.join(ROOT, "scripts", "audio", f"{WORK}.tts-durations.json")
+MEASURED = {}
+if os.path.exists(MEASURED_PATH):
+    with open(MEASURED_PATH, encoding="utf-8") as _f:
+        MEASURED = {int(k): float(v) for k, v in json.load(_f).items()}
+MIN_TRIM = 2.5
+
+# ---------- 참조 이미지 (기준 초상 = 캐릭터 시트, 로케이션 시트 — 규칙 5·교훈 ⑫) ----------
+REF_DIR = f"assets/refs/{WORK}"
+CHAR_MARKERS = {"genzo": "78세 일본인 노인", "kuroda": "45세 일본인 남성 레스토랑 지배인",
+                "mamiya": "32세 일본인 남성 사업가", "yui": "21세 일본인 여성", "sakaki": "64세 일본인 남성 비서실장",
+                "host": "50대 일본인 남성 진행자"}
+LOC_MARKERS = [("loc-street", ("호텔 정문 앞 돌계단", "호텔 외관")), ("loc-entrance", ("레스토랑의 입구",)),
+               ("loc-kitchen", ("레스토랑의 주방",)), ("loc-car", ("세단 뒷좌석",)), ("loc-studio", ("서재 세트",)),
+               ("loc-hall", ("일식 레스토랑 홀", "식탁 위 정물"))]
+
+
+def refs_for(text):
+    """프롬프트에 등장하는 인물·장소의 참조 시트 경로 목록 (Seedance reference-to-video 최대 4장)."""
+    refs = [f"{REF_DIR}/char-{k}.png" for k, m in CHAR_MARKERS.items() if m in text]
+    loc = next((k for k, ms in LOC_MARKERS if any(m in text for m in ms)), None)
+    if loc:
+        refs.append(f"{REF_DIR}/{loc}.png")
+    return refs[:4]
 
 
 # ---------- 프롬프트 (규칙집 5블록) ----------
@@ -306,7 +336,7 @@ L23 = line(K, "か、会長…ですって…？", "회, 회장님…이라고�
 L24 = line(S, "天城グループ創業者、天城源蔵会長でいらっしゃいます。このホテルのオーナーです。",
            "天城그룹 창업자, 아마기 겐조 회장님이십니다. 이 호텔의 주인이시죠.", "neutral", 0.90, lead=0.8)
 seg("S7 문 열림", 7, [(5, silent([NAMES[S]],
-    f"{ENTRANCE}, 원목 문이 열리고 {SAKAKI}가 검은 정장 경호원 없이 홀로 걸어 들어오는 장면, 위엄 있는 걸음",
+    f"{ENTRANCE}, 활짝 열린 원목 문으로 {SAKAKI}가 홀로 걸어 들어오는 장면, 위엄 있는 걸음",
     "static", "locked off", "full shot from inside the hall toward the door", "hold the last 1 second"),
     [], "heavy wooden door opening, three leather shoe footsteps on wooden floor", None)],
     silence_before=1.0)
@@ -417,14 +447,103 @@ seg("S10 세단 뒷좌석", 10, [
 ], [card("次回──会長の最後の配達", "다음 이야기 — 회장님의 마지막 배달", "after", 3.0)])
 
 # ===== S#11 아웃트로 =====
-HOST_LINE = line(H, "皆さんの周りにも、こんな人はいますか？ぜひコメントで教えてください。チャンネル登録も、よろしくお願いします。",
-                 "여러분 곁에도 이런 분이 계신가요? 댓글로 들려주세요. 구독도 잘 부탁드립니다.",
-                 "happy", 1.0, "[warm, friendly]", 0.5)
+HOST_LINE = line(H, "皆さんの周りにも、こんな人はいますか？ぜひコメントで教えてください。",
+                 "여러분 곁에도 이런 분이 계신가요? 댓글로 들려주세요.", "happy", 1.0, "[warm, friendly]", 0.5)
+HOST_LINE2 = line(H, "チャンネル登録も、よろしくお願いします。", "구독도 잘 부탁드립니다.", "happy", 1.0, "[warm, bright]", 0.3)
 seg("S11 아웃트로", 11, [("auto", talk(H, STUDIO, "카메라를 향해 앉아 있음", "온화한 미소", "warm, friendly",
-                                     HOST_LINE["jp"], ""), [NAMES[H]], "", None)], [HOST_LINE])
+                                     HOST_LINE["jp"], ""), [NAMES[H]], "", None)], [HOST_LINE, HOST_LINE2])
+
+
+# ---------- 참조 이미지 프롬프트 (규칙집 2·3장. 시트 안 글자는 넣지 않음 — 글자 금지 규칙이 우선) ----------
+SHEET_STYLE = ("photorealistic, soft studio lighting, minimal style, Kodak 35mm film grain, "
+               "absolutely no text, no letters, no labels, no logos anywhere in the image")
+CHAR_SHEETS = {
+    "genzo": ("78-year-old Japanese man, thin build, slightly stooped",
+              "worn-out plain grey zip jacket with frayed cuffs, grey cotton trousers worn at the knees, "
+              "old scuffed white sneakers, no logos",
+              "calm gentle expression", "very short cropped white hair",
+              "lean angular face, short white chin beard, small mole above the left eyebrow, deep forehead wrinkles"),
+    "kuroda": ("45-year-old Japanese man, slim upright build",
+               "black three-piece suit, silver tie, white shirt, plain blank metal name badge with no lettering, "
+               "polished black shoes",
+               "arrogant composed expression", "black hair slicked back with pomade",
+               "narrow face, thin moustache, sharp eyes"),
+    "mamiya": ("32-year-old Japanese man, medium build",
+               "plain cream knit sweater without logo, beige long coat, dark slacks, brown loafers, "
+               "thick silver wristwatch",
+               "smug half-smile", "brown two-block haircut, sides cropped short",
+               "round face, small silver stud earring in the left ear"),
+    "yui": ("21-year-old Japanese woman, petite build",
+            "white shirt, plain navy waist apron without logo, black trousers, black flat shoes",
+            "kind warm smile", "straight black bangs, black hair tied in a low ponytail",
+            "oval face, small mole under the left eye"),
+    "sakaki": ("64-year-old Japanese man, tall dignified build",
+               "black three-piece suit, dark tie, white shirt, polished black shoes",
+               "composed respectful expression", "neatly combed-back white hair",
+               "silver-rimmed glasses, short grey moustache"),
+    "host": ("50-year-old Japanese man, medium build",
+             "plain navy suit, white shirt, no tie, brown shoes",
+             "warm friendly smile", "neat grey hair", "black horn-rimmed glasses, gentle eyes"),
+}
+LOC_SHEETS = {
+    "loc-hall": ("the dining hall of an upscale Japanese restaurant on the ground floor of a Tokyo hotel: warm indirect "
+                 "lighting, white tablecloths, dark wooden walls, shoji-style partitions, large floor-to-ceiling windows, "
+                 "completely blank menus and noren curtains",
+                 "a small corner table beside the restroom passage", "a central table by the window"),
+    "loc-entrance": ("the entrance of the same upscale Japanese restaurant: heavy dark wooden door, blank plain noren "
+                     "curtain with no lettering, warm indirect lighting",
+                     "the doorway seen from inside the hall", "the reception podium area"),
+    "loc-kitchen": ("the kitchen of the same Japanese restaurant: stainless steel counters, a large staff-meal stockpot "
+                    "on the stove, warm practical lighting",
+                    "the stove with the large pot", "a prep counter with ceramic bowls"),
+    "loc-street": ("the front of a tall glass hotel tower in central Tokyo: wide stone entrance steps, smooth stone "
+                   "facade with no signage or lettering",
+                   "the stone steps seen from street level", "the smooth stone wall beside the entrance"),
+    "loc-car": ("the back seat of a black luxury sedan at night, Tokyo city lights streaming past the window",
+                "the rear seat by the window", "view through the side window"),
+    "loc-studio": ("a tidy study set with bookshelves and warm lighting, softly blurred background, plain props",
+                   "an armchair facing the camera", "the bookshelf background"),
+}
+
+
+def image_jobs():
+    jobs = []
+    for cid, (who, wardrobe, expr, hair, face) in CHAR_SHEETS.items():
+        jobs.append({"id": f"char-{cid}", "out": f"{REF_DIR}/char-{cid}.png", "prompt": (
+            f"Character reference sheet, one single 16:9 image on a pure white background, {SHEET_STYLE}, "
+            f"fashion-lookbook layout. Left half: full-body front view and full-body back view of the same {who} "
+            "standing side by side, feet visible, both figures cropped at the neck so the head is cut off by the top "
+            f"edge of the frame — no face shown on the left side. Wardrobe: {wardrobe}. Right half: one large close-up "
+            f"portrait from the shoulders up, straight to camera, {expr}, {hair}, {face}. Exactly one person depicted.")})
+    for lid, (place, pos1, pos2) in LOC_SHEETS.items():
+        jobs.append({"id": lid, "out": f"{REF_DIR}/{lid}.png", "prompt": (
+            "Location reference sheet, one single 16:9 image divided into a 2x2 grid of four photographs of the same "
+            f"place, no people at all, empty space, {SHEET_STYLE}, warm amber and deep brown palette. Place: {place}. "
+            f"Top-left: daytime wide shot. Top-right: evening wide shot. Bottom-left: {pos1}. Bottom-right: {pos2}.")})
+    return jobs
 
 
 # ---------- 빌드 ----------
+# 모바일 시청 기준: 1줄 최대 글자 수(일본어) — 넘으면 문장부호 근처에서 두 줄로 나눈다(최대 2줄)
+MAX_LINE = 18
+
+
+def _best_cut(text, marks, limit):
+    mid = len(text) / 2
+    cuts = [i + 1 for i, c in enumerate(text[:-1])
+            if c in marks and max(i + 1, len(text) - i - 1) <= limit]
+    return min(cuts, key=lambda i: abs(i - mid)) if cuts else None
+
+
+def wrap_jp(text, limit=MAX_LINE):
+    """두 줄로 나눈다 — 문장부호 → 조사 뒤 → 정가운데 순으로 자를 곳을 찾는다(단어 중간 자르기 최소화)."""
+    if len(text) <= limit:
+        return text
+    cut = (_best_cut(text, "、。！？…」", limit + 4) or _best_cut(text, "はがをにでのもとへ", limit + 2)
+           or round(len(text) / 2))
+    return text[:cut] + "\\N" + text[cut:]
+
+
 def fmt_ass(t):
     return f"{int(t // 3600)}:{int(t % 3600 // 60):02d}:{t % 60:05.2f}"
 
@@ -444,15 +563,14 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Naration,Noto Sans CJK JP,52,&H00DDDDDD,&H000000FF,&H00000000,&H80000000,-1,-1,0,0,100,100,0,0,1,5,2,2,160,160,80,1
-Style: Genzo,Noto Sans CJK JP,60,&H00FFFFFF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,160,160,80,1
-Style: Kuroda,Noto Sans CJK JP,60,&H0000E5FF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,160,160,80,1
-Style: Mamiya,Noto Sans CJK JP,60,&H0080C0FF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,160,160,80,1
-Style: Yui,Noto Sans CJK JP,60,&H00C8C8FF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,160,160,80,1
-Style: Sakaki,Noto Sans CJK JP,60,&H00FFC896,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,160,160,80,1
-Style: Host,Noto Sans CJK JP,56,&H00FFFFFF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,160,160,80,1
-Style: Caption,Noto Serif CJK JP,84,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,2,0,1,4,0,5,160,160,0,1
-
+Style: Naration,Noto Sans CJK JP,62,&H00E6E6E6,&H000000FF,&H00000000,&H99000000,-1,0,0,0,100,100,0,0,1,6,2,2,140,140,110,1
+Style: Genzo,Noto Sans CJK JP,68,&H00FFFFFF,&H000000FF,&H00000000,&H99000000,-1,0,0,0,100,100,0,0,1,6,2,2,140,140,110,1
+Style: Kuroda,Noto Sans CJK JP,68,&H0000E5FF,&H000000FF,&H00000000,&H99000000,-1,0,0,0,100,100,0,0,1,6,2,2,140,140,110,1
+Style: Mamiya,Noto Sans CJK JP,68,&H0080C0FF,&H000000FF,&H00000000,&H99000000,-1,0,0,0,100,100,0,0,1,6,2,2,140,140,110,1
+Style: Yui,Noto Sans CJK JP,68,&H00C8C8FF,&H000000FF,&H00000000,&H99000000,-1,0,0,0,100,100,0,0,1,6,2,2,140,140,110,1
+Style: Sakaki,Noto Sans CJK JP,68,&H00FFC896,&H000000FF,&H00000000,&H99000000,-1,0,0,0,100,100,0,0,1,6,2,2,140,140,110,1
+Style: Host,Noto Sans CJK JP,64,&H00FFFFFF,&H000000FF,&H00000000,&H99000000,-1,0,0,0,100,100,0,0,1,6,2,2,140,140,110,1
+Style: Caption,Noto Serif CJK JP,96,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,2,0,1,5,0,5,140,140,0,1
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
@@ -477,7 +595,8 @@ def main():
         cursor, placed = 0.0, []
         for ln in sg["lines"]:
             start = cursor + ln["lead"]
-            dur = speech_len(ln["jp"], ln["speed"])
+            idx = len(tts_meta) + len(placed) + 1
+            dur = MEASURED.get(idx) or speech_len(ln["jp"], ln["speed"])
             placed.append((start, dur, ln))
             cursor = start + dur
         need = cursor + SHOT_TAIL
@@ -491,18 +610,27 @@ def main():
         if need > total + 0.01:
             errors.append(f"{sg['name']}: 줄 길이 {need:.1f}s > 장면 {total}s")
 
+        # 실측 길이가 있으면 대사 장면(장면 1개짜리 세그먼트)을 "앞침묵+대사+여운"으로 다듬는다
+        trim = None
+        if MEASURED and sg["lines"] and len(shots) == 1:
+            trim = round(max(MIN_TRIM, min(need, shots[0][0])) + 0.04, 1)
+            total = trim
         seg_start = t
         for length, fn, vis, amb, reuse in shots:
             item = {"duration": length}
             if reuse:
                 item["reuse_of"] = reuse
                 item["prompt"] = scenes[reuse - 1]["prompt"]
+                item["refs"] = scenes[reuse - 1].get("refs", [])
             else:
                 item["prompt"] = fn(length)
+                item["refs"] = refs_for(item["prompt"])
+            if trim:
+                item["trim_to"] = trim
             scenes.append(item)
             ambience.append(amb)
             speakers.append(vis)
-            t += length
+            t += trim or length
 
         for start, dur, ln in placed:
             a = seg_start + start
@@ -543,7 +671,8 @@ def main():
     with open(os.path.join(ROOT, "subs", f"{WORK}.ass"), "w", encoding="utf-8") as f:
         f.write(ASS_HEADER)
         for s, e, st, nm, text in rows:
-            f.write(f"Dialogue: 0,{fmt_ass(s)},{fmt_ass(e)},{st},{nm},0,0,0,,{text}\n")
+            # 이벤트를 나누면 TTS 줄 번호가 밀리므로 나누지 않는다 — 긴 줄은 대본에서 두 줄로 쪼갤 것
+            f.write(f"Dialogue: 0,{fmt_ass(s)},{fmt_ass(e)},{st},{nm},0,0,0,,{wrap_jp(text)}\n")
 
     # 3) 한국어 검수 자막(.srt)
     ko = [(s, e, (f"（{nm}）" if nm else "（내레이션）" if st == N else "") + k) for s, e, st, nm, _, k in events]
@@ -603,6 +732,10 @@ def main():
     }
     with open(os.path.join(ROOT, "scripts", "audio", f"{WORK}.json"), "w", encoding="utf-8") as f:
         json.dump(audio, f, ensure_ascii=False, indent=2)
+
+    os.makedirs(os.path.join(ROOT, "scripts", "images"), exist_ok=True)
+    with open(os.path.join(ROOT, "scripts", "images", f"{WORK}.json"), "w", encoding="utf-8") as f:
+        json.dump({"work": WORK, "jobs": image_jobs()}, f, ensure_ascii=False, indent=2)
 
     n_new = sum(1 for s in scenes if "reuse_of" not in s)
     secs = sum(s["duration"] for s in scenes if "reuse_of" not in s)

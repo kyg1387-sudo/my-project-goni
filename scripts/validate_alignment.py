@@ -7,8 +7,9 @@
   3. 내레이션이 대사와 시간상 겹치지 않는지 (내레이션은 무언 구간 전용)
   4. 줄별 연출 지정 누락 — MiniMax 줄은 speed_overrides, ElevenLabs 줄은 tag_overrides (빈 줄 0개)
   5. TTS 문장에 아라비아 숫자·영문자가 없는지 (해당 언어 문자로 표기)
-  6. 장면 프롬프트 5블록·인원수·No blood·End 지정 여부
+  6. 장면 프롬프트 5블록·인원수·No blood·End 지정 여부, 일본어 문자 없음, 참조 이미지(refs) 지정·존재
   7. 장면 수와 scene_speakers / ambience_prompts 길이 일치
+  8. 모바일 시청 기준 — 자막 1줄 22자·최대 2줄, 글자 크기 60px 이상
 
 사용법: python3 scripts/validate_alignment.py <작품>
 """
@@ -35,7 +36,8 @@ def main():
     lines = parse_ass(os.path.join(ROOT, "subs", f"{work}.ass"))
 
     default = int(sc.get("duration", 5))
-    durs = [int(s.get("duration", default)) if isinstance(s, dict) else default for s in sc["scenes"]]
+    durs = [float(s.get("trim_to") or s.get("duration", default)) if isinstance(s, dict) else default
+            for s in sc["scenes"]]
     bounds, t = [], 0.0
     for d in durs:
         bounds.append((t, t + d))
@@ -105,6 +107,25 @@ def main():
             errors.append(f"장면 {k}: CAMERA End 없음")
         if "Exactly zero" in p and "인물 없음" not in p:
             errors.append(f"장면 {k}: 무인 장면에 '인물 없음' 이중 명시 없음")
+        if re.search(r"[\u3040-\u30ff\u4e00-\u9fff]", p):
+            errors.append(f"장면 {k}: 프롬프트에 일본어 문자 — 화면에 가짜 글자로 번질 위험")
+        refs = s.get("refs", []) if isinstance(s, dict) else []
+        if not refs:
+            warns.append(f"장면 {k}: 참조 이미지(refs) 없음 — 텍스트만으로 생성")
+        missing = [r for r in refs if not os.path.exists(os.path.join(ROOT, r))]
+        if missing:
+            warns.append(f"장면 {k}: 참조 이미지 파일 아직 없음 {missing} (참조 이미지 생성 후 해소)")
+
+    # 모바일 시청 기준: 자막 1줄 22자 이하·최대 2줄, 대사 글자 크기 60px 이상(1080p 기준)
+    with open(os.path.join(ROOT, "subs", f"{work}.ass"), encoding="utf-8") as f:
+        raw = f.read()
+    for m in re.finditer(r"^Dialogue:(?:[^,]*,){9}(.*)$", raw, re.M):
+        rows = m.group(1).split("\\N")
+        if len(rows) > 2 or max(len(r) for r in rows) > 22:
+            errors.append(f"모바일 자막 기준 초과(2줄·22자): {m.group(1)}")
+    for m in re.finditer(r"^Style: ([^,]+),[^,]+,(\d+)", raw, re.M):
+        if m.group(1) != "Caption" and int(m.group(2)) < 60:
+            errors.append(f"모바일 자막 크기 부족: {m.group(1)} {m.group(2)}px (60px 이상)")
 
     print(f"장면 {len(durs)}개 / {t:.0f}초, TTS 줄 {len(tts)}개 (대사 {len(dialogue)}, 내레이션 {len(narr)})")
     for w in warns:
