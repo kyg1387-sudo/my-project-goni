@@ -4,7 +4,7 @@
   B 인용구 클로즈업형(「土下座しろ」): 어두운 실사, 얼굴 오른쪽 크게 + 왼쪽 흰 3줄 + 아래 초대형 명조 인용구(불꽃 그라데이션·붉은 글로)
   C 웹툰형(「地獄を見せてやる」): 일러스트, 흰 라벨 + 왼쪽 세로 4줄 + 금테 붉은 배지 + 검은 띠
 A·B는 승인 키프레임(실사, 자막 없음), C는 assets/portraits/thumb-tower-fmtC/fmtC-N.png(2560x1440 생성). 오른쪽 아래(재생 시간)는 비운다.
-사용법: python3 scripts/make_thumbnails_tower_fmt.py [C그림번호]
+사용법: python3 scripts/make_thumbnails_tower_fmt.py [C그림번호]   (확정 2026-10-17: 1)
 """
 import os
 import sys
@@ -87,11 +87,17 @@ def thumb_b():
 def thumb_c(n):
     """웹툰형: 왼쪽 유미 위로 세로 4줄, 가운데 무릎 꿇은 레이카 위 배지, 아래 검은 띠."""
     src = Image.open(os.path.join(ROOT, "assets", "portraits", "thumb-tower-fmtC", f"fmtC-{n}.png")).convert("RGB").resize((W, H), Image.LANCZOS)
-    img = src.convert("RGBA")
-    shade = Image.new("L", (W, H), 0); ImageDraw.Draw(shade).rectangle([0, 0, 760, H], fill=120)
-    dark = Image.new("RGBA", (W, H), (0, 0, 0, 255)); dark.putalpha(shade.filter(ImageFilter.GaussianBlur(90))); img.alpha_composite(dark)
+    # 유미 얼굴이 글자 옆에 오도록 그림을 0.85배로 줄여 오른쪽 아래에 두고, 왼쪽·위 빈자리는 같은 그림을 흐리고 어둡게 채운다(ashita hd 방식)
+    k = 0.85; sw, sh = int(W * k), int(H * k); ox, oy = W - sw, H - sh
+    canvas = Image.eval(src.filter(ImageFilter.GaussianBlur(22)), lambda v: int(v * 0.35))
+    small = src.resize((sw, sh), Image.LANCZOS)
+    m = Image.new("L", (sw, sh), 255); md = ImageDraw.Draw(m)
+    for i in range(60):
+        md.line([(i, 0), (i, sh)], fill=int(255 * i / 60)); md.line([(0, i), (sw, i)], fill=int(255 * i / 60))
+    canvas.paste(small, (ox, oy), m.filter(ImageFilter.GaussianBlur(6)))
+    img = canvas.convert("RGBA")
     img.alpha_composite(label("スカッとする話", 70, (255, 255, 255, 255), (20, 20, 20)), (34, 26))
-    rows = [("最上階の", 150, FIRE, None), ("女王を", 196, None, (255, 255, 255)), ("堕とした", 196, FIRE, None), ("1冊の通帳", 176, YELLOW, None)]
+    rows = [("最上階の", 112, FIRE, None), ("女王を", 140, None, (255, 255, 255)), ("堕とした", 168, FIRE, None), ("1冊の通帳", 186, YELLOW, None)]   # 위 2줄은 유미 얼굴(x≈490~) 왼쪽, 아래 2줄은 가슴 아래
     y = 132
     for s, size, grad, fill in rows:
         lay = text_layer(s, GOTH, size, fill, (255, 255, 255) if grad else (0, 0, 0), 12,
@@ -108,7 +114,7 @@ def thumb_c(n):
     return img.convert("RGB")
 
 
-C_BADGE, C_BAND = (1080, 600), (1030, 860)   # 레이카 얼굴 아래·오다기리 다리 앞(생성 그림 확인 후 조정)
+C_BADGE, C_BAND = (790, 250), (800, 905)   # 무릎 꿇은 레이카(x≈1210~1430)를 가리지 않게: 배지는 위 창 쪽, 띠는 그녀 왼쪽 바닥(검수 2026-10-17)
 
 
 def save(im, tag):
