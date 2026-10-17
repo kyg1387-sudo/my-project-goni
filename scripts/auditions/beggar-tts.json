@@ -408,7 +408,7 @@
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
-   "text": "同じ店の中で、くろだの態度は、客の身なりひとつで変わりました。",
+   "text": "同じ店の中で、いわきの態度は、客の身なりひとつで変わりました。",
    "emotion_preset": "tonedown",
    "emotion_intensity": 1.0,
    "tempo": 0.95
@@ -598,7 +598,7 @@
    "model": "typecast-direct",
    "voice": "tc_673eb45cdc1073aef51e6b90",
    "language": "jpn",
-   "text": "くろだ支配人。あなたの評価表には、いつも客単価、優秀とありましたね",
+   "text": "いわき支配人。あなたの評価表には、いつも客単価、優秀とありましたね",
    "emotion_preset": "tonedown",
    "emotion_intensity": 1.0,
    "tempo": 0.92
@@ -788,7 +788,7 @@
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
-   "text": "はるかわゆいさんは今、栄養士を目指して、勉強を続けています。",
+   "text": "はるかわちひろさんは今、栄養士を目指して、勉強を続けています。",
    "emotion_preset": "happy",
    "emotion_intensity": 0.6,
    "tempo": 0.95
