@@ -139,7 +139,8 @@ def describe(path, i):
             "borders, labels or wall papers.")
 
 
-NO_FACE = {}
+NO_FACE = {"S13k": ("iwaki",), "S14d": ("iwaki",)}
+NO_BACKCELL = {"S13k", "S14d"}  # 뒷모습 전신 셀이 원경 전신 구도를 끌어옴 — 앞 인물은 글로만
 NO_LOC = {"S13c", "S13e", "S13k", "S14d"}  # 장소 참조가 원경·후광(오려 붙인 테두리)을 만든 립싱크 컷 — 장소는 글로만
 
 
@@ -163,7 +164,7 @@ def build(sc, stage):
         if len(people) >= 2:
             k2, _ = who_of(os.path.basename(people[1]))
             back = f"{CELLS}/{k2}-fullback.png"
-            refs = [r for r in refs if r != people[1]] + [back]
+            refs = [r for r in refs if r != people[1]] + ([] if sc["id"] in NO_BACKCELL else [back])
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
     if sc["id"] in EMO_OVERRIDE:
