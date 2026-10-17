@@ -1,0 +1,13 @@
+{
+ "_설명": "beggar-chairman 차 내부(낮) 장소 셀 재생성 — 고니감독님 지적(3:02 차 내부 구조가 이상함). 실제 일본 고급 세단 뒷좌석 구조(우핸들).",
+ "_style_preset": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 16:9",
+ "characters": [
+  {
+   "id": "car-day",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [],
+   "prompt": "ONE single photorealistic cinematic film still, 16:9, no people. The REAR passenger cabin of a black Japanese chauffeur-driven luxury sedan (like a Toyota Century or Lexus LS, but NO logo, NO badge), RIGHT-HAND DRIVE as in Japan: the steering wheel and driver's seat are on the FRONT RIGHT, the front passenger seat on the FRONT LEFT. Camera at seated eye level in the rear LEFT seat corner, looking forward and slightly right across the cabin: the backs of exactly TWO front seats with headrests (driver on the right, passenger on the left), between them a normal centre console with gear lever area and dashboard beyond; the empty rear RIGHT seat beside the camera with a folded-down centre armrest between the two rear seats; the rear right door with its window showing a blurred hotel driveway and trees in soft afternoon daylight. Cream leather seats, dark walnut wood trim, beige roof lining, white lace seat-cover headrest covers are optional. Correct real car geometry: seats face forward, one steering wheel only, nothing floating, no extra seats, no duplicated headrests, no seat-back screens. Natural soft daylight through the windows, 5600K. Absolutely no text, logos, numbers or screens with writing."
+  }
+ ]
+}
