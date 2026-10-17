@@ -56,8 +56,8 @@ LIGHT_NOTE = {
     "dusk": "LIGHTING OVERRIDES THE LOCATION REFERENCE: golden hour, low warm sun, long shadows.",
 }
 EMO_OVERRIDE = {
-    "S13i": "EXPRESSION LOCKED: Genzo's eyes are wet and glistening with tears pooled on the lower lids but NOT running; a quiet, deep, sorrowful dignity; lips closed; a warm window rim light behind him.",
-    "S12f": "EXPRESSION LOCKED: Iwaki is in SHOCK — face gone pale, eyes wide, lips parted and trembling slightly, fine beads of cold sweat on his forehead and temples, NO smile; frame tilted 7 degrees (dutch).",
+    "S13i": "FRAMING LOCKED: CLOSE-UP, camera about 1 metre from Genzo, his face fills about HALF of the frame height, cut at the upper chest, NOT a wide shot, NO table, NO papers, NO cards in frame. EXPRESSION LOCKED: Genzo's eyes are wet and glistening with tears pooled on the lower lids but NOT running; a quiet, deep, sorrowful dignity; lips closed; a warm window rim light behind him.",
+    "S12f": "FRAMING LOCKED: Iwaki is STANDING (not seated), medium close-up cut at mid-chest, camera about 1.2 metres away, his face about one third of the frame height, NO cup, NO papers; the frame is NOT rotated (the tilt is added in editing). EXPRESSION LOCKED: Iwaki is in SHOCK — face gone pale, eyes wide, lips parted and trembling slightly, fine beads of cold sweat on his forehead and temples, NO smile; no tilt.",
     "S11i": "POSE LOCKED: Chihiro stands with both arms spread wide in front of the old man (his blurred back at the near edge), eyes wet and brimming with tears that do not run, jaw set, protective and brave.",
 }
 ANGER_CLOSED = ("Fury shown only in the wide-open glaring eyes, furrowed brow, flared nostrils and clenched jaw: eyes OPEN and fixed on the listener, "
