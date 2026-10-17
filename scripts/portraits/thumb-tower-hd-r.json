@@ -1,0 +1,7 @@
+{"_설명": "썸네일 지침판 A 편집(2026-10-17): 유미에게 레이카 특징(진주 귀걸이·빨간 립스틱)이 섞임 + 통장 표지 가짜 글자 → 제거. 1장 약 0.03달러.",
+ "characters": [
+  {"id": "towerhdA", "count": 1, "aspect_ratio": "16:9", "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {"image_size": {"width": 2560, "height": 1440}},
+   "refs": ["assets/portraits/thumb-tower-hd/towerhdA-src.png", "assets/portraits/tower-kf-a/S13d-1.png"],
+   "prompt": "EDIT reference image 1 and keep EVERYTHING else exactly the same — composition, art style, the kneeling crying woman on the left, the hall, lights, the right woman's pose, hair, glasses, cardigan and the passbook in her hands. ONLY fix the woman on the right so she matches reference image 2: NO earrings at all (remove the pearl earrings), natural pale lip color (no red lipstick), no tears on her cheeks, calm resolute eyes. Make the dark-green passbook cover completely plain with no letters, no emblem. Also make the small plate on the wooden lectern blank. No text, letters or numbers anywhere."}
+ ]}
