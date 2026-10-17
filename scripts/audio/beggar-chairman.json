@@ -328,8 +328,11 @@
   0.0
  ],
  "omnihuman_scenes": [
+  16,
   17,
+  18,
   20,
+  22,
   25,
   26,
   36,
@@ -364,8 +367,11 @@
   137
  ],
  "omnihuman_prompts": {
+  "16": "Iwaki blocks the old man at the door, arm stretched out with the palm raised, keeping the arm up while he speaks, telling him dismissively that he cannot come in here, eyes looking him up and down. Answering the old man who has just stepped in. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout.",
   "17": "Genzo answers gently and politely, hands folded in front of him, looking up at Iwaki, asking for a simple bowl of kake udon. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout.",
+  "18": "Iwaki scoffs mockingly, eyebrows raised, tapping the podium, telling him the cheapest course is thirty thousand yen. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout.",
   "20": "Genzo asks quietly, looking past Iwaki into the restaurant with longing, about the old shop that stood here. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout.",
+  "22": "Iwaki sighs with dismissive irritation and jerks his chin toward the back corner, directing the old man to the seat by the restroom. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout.",
   "25": "Mamiya complains loudly and dismissively, mocking the old man, setting down his wine glass and wrinkling his nose, gesturing toward the corner. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout.",
   "26": "Iwaki apologizes with an exaggerated fawning smile, bowing low to Mamiya, hands together. Promising to clear it away. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout.",
   "36": "Genzo says quietly that it is his treasure, stroking the photograph with his thumb, eyes soft. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout.",

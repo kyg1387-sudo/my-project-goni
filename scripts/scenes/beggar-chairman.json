@@ -1,7 +1,7 @@
 {
  "_설명": "beggar-chairman 장면 설정(build_beggar_phase3.py 생성). override_required 장면은 정지 푸시인·OMNI 정지 프레임·재사용·카드를 video-overrides로 먼저 넣는다.",
  "ratio": "16:9",
- "budget_usd": 30.82,
+ "budget_usd": 29.7,
  "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
  "durations": [
   5,
@@ -227,8 +227,9 @@
    "image": "assets/portraits/beggar-chairman-keyframes/S04b-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: He stands politely, hands folded, a slow blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "(override) omni: Over Genzo's blurred shoulder (left foreground), low angle: Iwaki stepping into ",
    "duration": 5,
+   "override_required": true,
    "image": "assets/portraits/beggar-chairman-keyframes/S04c-1.png"
   },
   {
@@ -238,8 +239,9 @@
    "image": "assets/portraits/beggar-chairman-keyframes/S04d-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: He listens calmly, a slow blink, hands stay folded. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "(override) omni: Over Genzo's blurred shoulder, low angle: Iwaki scoffing, eyebrows raised, one h",
    "duration": 10,
+   "override_required": true,
    "image": "assets/portraits/beggar-chairman-keyframes/S04e-1.png"
   },
   {
@@ -259,8 +261,9 @@
    "image": "assets/portraits/beggar-chairman-keyframes/S04h-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: He gives a small bow and walks slowly past the podium. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "(override) omni: Low medium: Iwaki sighing and jerking his chin toward the back of the hall, the ",
    "duration": 10,
+   "override_required": true,
    "image": "assets/portraits/beggar-chairman-keyframes/S04i-1.png"
   },
   {
