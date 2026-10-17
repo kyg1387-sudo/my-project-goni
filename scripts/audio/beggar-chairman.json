@@ -1,0 +1,438 @@
+{
+  "tts_model": "fal-ai/minimax/speech-02-hd",
+  "language_boost": "Japanese",
+  "el_model": "fal-ai/elevenlabs/tts/eleven-v3",
+  "el_language_code": "ja",
+  "speed": 1.0,
+  "default_voice": "el:Brian",
+  "style_voices": {
+    "Genzo": "Japanese_SeriousCommander",
+    "Kuroda": "el:Daniel",
+    "Mamiya": "Japanese_DominantMan",
+    "Yui": "Japanese_DecisivePrincess",
+    "Sakaki": "Japanese_GentleButler",
+    "Naration": "el:Brian",
+    "Host": "el:Brian"
+  },
+  "style_names": {
+    "Genzo": "源蔵",
+    "Kuroda": "黒田",
+    "Mamiya": "間宮",
+    "Yui": "ゆい",
+    "Sakaki": "榊",
+    "Host": "司会者"
+  },
+  "narration_styles": [
+    "Naration"
+  ],
+  "silent_styles": [
+    "Caption"
+  ],
+  "emotion_overrides": {
+    "1": "angry",
+    "2": "happy",
+    "10": "disgusted",
+    "12": "happy",
+    "14": "disgusted",
+    "15": "disgusted",
+    "17": "angry",
+    "18": "happy",
+    "19": "happy",
+    "20": "happy",
+    "23": "angry",
+    "24": "fearful",
+    "25": "angry",
+    "26": "happy",
+    "27": "angry",
+    "28": "sad",
+    "29": "angry",
+    "32": "fearful",
+    "35": "sad",
+    "36": "sad",
+    "37": "sad",
+    "39": "fearful",
+    "40": "sad",
+    "42": "fearful",
+    "44": "happy",
+    "45": "happy",
+    "46": "sad",
+    "47": "happy",
+    "48": "happy",
+    "49": "happy",
+    "53": "happy"
+  },
+  "speed_overrides": {
+    "1": 1.1,
+    "2": 1.05,
+    "3": 0.9,
+    "4": 0.9,
+    "5": 0.9,
+    "6": 0.9,
+    "7": 0.9,
+    "8": 0.9,
+    "9": 0.85,
+    "10": 1.0,
+    "11": 0.85,
+    "12": 1.05,
+    "13": 0.8,
+    "14": 1.0,
+    "15": 1.05,
+    "16": 1.1,
+    "17": 0.95,
+    "18": 0.95,
+    "19": 0.85,
+    "20": 1.0,
+    "21": 0.95,
+    "22": 0.9,
+    "23": 1.1,
+    "24": 0.9,
+    "25": 1.0,
+    "26": 1.05,
+    "27": 1.1,
+    "28": 0.95,
+    "29": 1.15,
+    "30": 0.8,
+    "31": 0.9,
+    "32": 0.85,
+    "33": 0.9,
+    "34": 0.8,
+    "35": 0.8,
+    "36": 0.8,
+    "37": 0.75,
+    "38": 0.85,
+    "39": 0.9,
+    "40": 0.8,
+    "41": 0.8,
+    "42": 1.0,
+    "43": 0.9,
+    "44": 0.85,
+    "45": 1.0,
+    "46": 0.75,
+    "47": 0.85,
+    "48": 0.85,
+    "49": 0.85,
+    "50": 0.9,
+    "51": 0.8,
+    "52": 0.9,
+    "53": 1.0
+  },
+  "tag_overrides": {
+    "1": "[shouting, irritated]",
+    "2": "[mocking laugh]",
+    "3": "[low, secretive]",
+    "4": "[slow, weighty]",
+    "5": "[calm, introducing]",
+    "6": "[quiet]",
+    "7": "[curious]",
+    "8": "[warm]",
+    "9": "[slow, nostalgic]",
+    "10": "[cold, condescending]",
+    "12": "[scoffing]",
+    "14": "[annoyed sigh]",
+    "16": "[fawning]",
+    "17": "[low, threatening]",
+    "22": "[warm]",
+    "23": "[shouting]",
+    "25": "[cold]",
+    "27": "[shouting, irritated]",
+    "29": "[yelling]",
+    "32": "[stammering, shocked]",
+    "39": "[trembling, desperate]",
+    "50": "[quiet]",
+    "51": "[slow, gentle]",
+    "52": "[teasing, curious]",
+    "53": "[warm, friendly]"
+  },
+  "scene_speakers": [
+    [
+      "黒田"
+    ],
+    [
+      "間宮"
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "黒田"
+    ],
+    [
+      "源蔵"
+    ],
+    [
+      "黒田"
+    ],
+    [
+      "源蔵"
+    ],
+    [
+      "黒田"
+    ],
+    [],
+    [
+      "間宮"
+    ],
+    [
+      "黒田"
+    ],
+    [
+      "黒田"
+    ],
+    [],
+    [],
+    [
+      "ゆい"
+    ],
+    [
+      "源蔵"
+    ],
+    [
+      "ゆい"
+    ],
+    [
+      "ゆい"
+    ],
+    [],
+    [],
+    [
+      "黒田"
+    ],
+    [
+      "ゆい"
+    ],
+    [
+      "黒田"
+    ],
+    [
+      "間宮"
+    ],
+    [
+      "黒田"
+    ],
+    [
+      "ゆい"
+    ],
+    [
+      "黒田"
+    ],
+    [
+      "源蔵"
+    ],
+    [],
+    [],
+    [
+      "榊"
+    ],
+    [
+      "黒田"
+    ],
+    [
+      "榊"
+    ],
+    [],
+    [
+      "源蔵"
+    ],
+    [],
+    [
+      "源蔵"
+    ],
+    [
+      "源蔵"
+    ],
+    [
+      "源蔵"
+    ],
+    [
+      "源蔵"
+    ],
+    [],
+    [
+      "黒田"
+    ],
+    [
+      "源蔵"
+    ],
+    [
+      "源蔵"
+    ],
+    [
+      "間宮"
+    ],
+    [
+      "榊"
+    ],
+    [],
+    [
+      "源蔵"
+    ],
+    [
+      "ゆい"
+    ],
+    [],
+    [
+      "源蔵"
+    ],
+    [
+      "源蔵"
+    ],
+    [],
+    [
+      "源蔵"
+    ],
+    [
+      "源蔵"
+    ],
+    [],
+    [],
+    [
+      "司会者"
+    ]
+  ],
+  "section_ends": [
+    5,
+    9,
+    15,
+    20,
+    26,
+    31,
+    35,
+    41,
+    53,
+    62,
+    64
+  ],
+  "lipsync_models": [
+    "fal-ai/sync-lipsync",
+    "fal-ai/latentsync"
+  ],
+  "ambience_model": "fal-ai/mmaudio-v2",
+  "ambience_volume": 0.35,
+  "ambience_prompts": [
+    "fabric yank, chair scraping on wooden floor",
+    "",
+    "",
+    "",
+    "",
+    "city street traffic hum, distant footsteps, no voices",
+    "city street traffic hum, wind, no voices",
+    "city street traffic hum, no voices",
+    "city street traffic hum, no voices",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "ceramic teacup set gently on a table",
+    "",
+    "",
+    "",
+    "",
+    "ladle pouring broth into a ceramic bowl, kitchen simmer, no voices",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "fabric yank, chair scraping on wooden floor",
+    "",
+    "",
+    "",
+    "heavy wooden door opening, three leather shoe footsteps on wooden floor",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "knees hitting a wooden floor, fabric rustle",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "chopsticks touching a ceramic bowl, soft slurp",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "quiet luxury car interior, low engine hum, no voices",
+    "distant city night ambience, no voices",
+    ""
+  ],
+  "bgm_model": "fal-ai/lyria2",
+  "bgm_segments": [
+    {
+      "start": 0,
+      "end": 284.0,
+      "volume": 0.22,
+      "fade_in": 1.5,
+      "fade_out": 1.5,
+      "prompt": "tense Japanese drama underscore, low drone and sparse mysterious piano, slowly rising strings, suspenseful, instrumental only, no vocals"
+    },
+    {
+      "start": 298.664,
+      "end": 423.0,
+      "volume": 0.26,
+      "fade_in": 0.3,
+      "fade_out": 2.0,
+      "prompt": "majestic cinematic orchestral swell, triumphant and dignified, Japanese drama climax, instrumental only, no vocals"
+    },
+    {
+      "start": 425.0,
+      "end": 525.0,
+      "volume": 0.22,
+      "fade_in": 2.0,
+      "fade_out": 3.0,
+      "prompt": "warm gentle solo piano, emotional and tender, Japanese human drama ending, instrumental only, no vocals"
+    }
+  ],
+  "silence_hits": [
+    [
+      284.0,
+      285.0
+    ]
+  ],
+  "sfx_cues": [
+    {
+      "time": 275.1,
+      "file": "assets/sfx/heartbeat.wav",
+      "gain_db": -14
+    },
+    {
+      "time": 298.664,
+      "file": "assets/sfx/impact-low.wav",
+      "gain_db": -6
+    }
+  ],
+  "ducking": {
+    "threshold": 0.03,
+    "ratio": 8,
+    "attack": 20,
+    "release": 400
+  },
+  "master": {
+    "lufs": -14,
+    "tp": -1
+  }
+}

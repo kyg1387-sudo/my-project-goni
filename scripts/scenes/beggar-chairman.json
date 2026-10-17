@@ -1,0 +1,268 @@
+{
+  "duration": 5,
+  "ratio": "16:9",
+  "style": "",
+  "scenes": [
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지), 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 머리, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 노인 쪽으로 몸을 숙이고 낡은 점퍼 소매를 거칠게 잡아당기는 순간(손은 프레임 밖). 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 경멸로 일그러진 화난 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (shouting, irritated), lips moving naturally, no on-screen text [SOUND] fabric yank, chair scrape"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Mamiya. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지), 32세 일본인 남성 사업가(둥근 얼굴, 옆을 짧게 친 갈색 머리, 로고 없는 크림색 무지 니트와 베이지 코트, 손목에 굵은 은시계) 혼자 단독 인물 샷, 옆 테이블에 앉아 휴대폰을 얼굴 높이로 들고 촬영하는 자세(휴대폰은 프레임 아래쪽). 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 비웃는 입꼬리, 즐거워하는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] Mamiya speaks one line in Japanese (mocking laugh), lips moving naturally, no on-screen text [SOUND] phone camera shutter click"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지), 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자, 화내지 않고 담담하게 위를 올려다보는 얼굴, 김이 오르는 우동 그릇이 앞에 흐릿하게 [CAMERA] Movement: static. Speed: locked off. Framing: close-up, face centered. End: hold the whole shot like a freeze frame. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly zero people in frame — 사람이 한 명도 없는, 인물 없음. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 흰 식탁보 위 김이 오르는 가케우동 한 그릇(맑은 국물의 일본식 우동, 파 몇 조각, 무지 도자기 그릇), 사람이 한 명도 없는, 인물 없음. 레스토랑 흰 식탁 위 정물, 배경은 따뜻한 조명의 흐림 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: insert close-up of the bowl. End: hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly zero people in frame — 사람이 한 명도 없는, 인물 없음. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 해 질 녘 도쿄 도심의 고층 유리 호텔 외관, 사람이 한 명도 없는, 인물 없음. 간판·글자 없는 매끈한 외벽, 따뜻한 노을빛 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: wide establishing shot of the hotel tower. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 도심의 오후, 고층 유리 호텔 정문 앞 돌계단(간판·글자 없는 매끈한 석재 외벽), 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼, 무릎이 해진 회색 면바지, 해진 흰 운동화)가 해진 운동화로 돌계단 위에 멈춰 서는 발걸음, 발과 계단 위주 [CAMERA] Movement: static. Speed: locked off. Framing: low angle insert on worn sneakers on stone steps. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 도심의 오후, 고층 유리 호텔 정문 앞 돌계단(간판·글자 없는 매끈한 석재 외벽), 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼, 무릎이 해진 회색 면바지, 해진 흰 운동화) 혼자 고개를 들어 높은 유리 호텔 건물을 올려다보는 뒷모습 [CAMERA] Movement: tilt up. Speed: slow. Framing: from his back to the top of the glass tower, full shot to wide. End: stops on the tower top, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 도심의 오후, 고층 유리 호텔 정문 앞 돌계단(간판·글자 없는 매끈한 석재 외벽), 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼, 무릎이 해진 회색 면바지, 해진 흰 운동화) 혼자 호텔 외벽의 매끈한 돌을 손바닥으로 천천히 쓸어 보는 모습, 그리운 표정 [CAMERA] Movement: slow push-in. Speed: slow. Framing: medium shot to close-up on his hand and profile. End: hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 도심의 오후, 고층 유리 호텔 정문 앞 돌계단(간판·글자 없는 매끈한 석재 외벽), 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 눈을 감고 옛일을 떠올리는 얼굴, 오후 햇살 [CAMERA] Movement: static. Speed: locked off. Framing: close-up, face centered. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly 2 people in frame: Kuroda, Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 같은 일식 레스토랑의 입구(짙은 원목 문, 아무 글자 없는 무지 노렌, 따뜻한 간접 조명), 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 머리, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰)가 입구에 들어선 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼, 무릎이 해진 회색 면바지, 해진 흰 운동화)의 옷차림을 위아래로 훑어보는 투샷, 지배인의 경멸하는 눈빛 [CAMERA] Movement: static. Speed: locked off. Framing: two-shot, full body, both faces visible. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 같은 일식 레스토랑의 입구(짙은 원목 문, 아무 글자 없는 무지 노렌, 따뜻한 간접 조명), 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 머리, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 입구에 서서 노인을 내려다봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 차갑고 거만한 무표정, 위아래로 훑는 눈 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (cold, condescending), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 같은 일식 레스토랑의 입구(짙은 원목 문, 아무 글자 없는 무지 노렌, 따뜻한 간접 조명), 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 입구에 서서 지배인을 바라봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 온화한 무표정, 차분한 눈빛 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (calm, gentle), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 같은 일식 레스토랑의 입구(짙은 원목 문, 아무 글자 없는 무지 노렌, 따뜻한 간접 조명), 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 머리, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 입구에 서서 노인을 내려다봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 코웃음 치며 비웃는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (scoffing), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 같은 일식 레스토랑의 입구(짙은 원목 문, 아무 글자 없는 무지 노렌, 따뜻한 간접 조명), 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 입구에 서서 지배인을 똑바로 바라봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 조용하고 단단한 눈빛, 눈을 피하지 않음 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] Genzo speaks one line in Japanese (quiet, firm), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 같은 일식 레스토랑의 입구(짙은 원목 문, 아무 글자 없는 무지 노렌, 따뜻한 간접 조명), 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 머리, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 턱으로 홀 안쪽을 가리키는 동작(손은 프레임 밖). 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 귀찮다는 듯 한숨 쉬는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (annoyed sigh), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼, 무릎이 해진 회색 면바지, 해진 흰 운동화) 혼자 구석 자리에 조용히 앉는 모습, 주변은 흐릿한 빈 테이블들 [CAMERA] Movement: static. Speed: locked off. Framing: medium wide shot, he sits alone at a small table. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Mamiya. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지), 32세 일본인 남성 사업가(둥근 얼굴, 옆을 짧게 친 갈색 머리, 로고 없는 크림색 무지 니트와 베이지 코트, 손목에 굵은 은시계) 혼자 단독 인물 샷, 자기 테이블에 앉아 구석 쪽을 흘끗 봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 코를 찡그린 불쾌한 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Mamiya speaks one line in Japanese (whiny, loud), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지), 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 머리, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 손님 테이블 앞에서 허리를 살짝 굽힘. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 과장된 굽신 미소 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (fawning), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 머리, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 노인 쪽으로 몸을 숙여 목소리를 낮춤. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 낮고 위협적인 화난 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (low, threatening), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 말없이 창밖을 바라보는 옆얼굴, 쓸쓸하지만 담담한 표정 [CAMERA] Movement: static. Speed: locked off. Framing: close-up profile. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly 2 people in frame: Yui, Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 낮게 묶은 검은 머리, 흰 셔츠에 남색 무지 앞치마)가 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼, 무릎이 해진 회색 면바지, 해진 흰 운동화) 앞 식탁에 김이 오르는 무지 찻잔을 조용히 내려놓는 장면, 찻잔과 손 위주 [CAMERA] Movement: static. Speed: locked off. Framing: insert close-up on the teacup being set down. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Yui. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 낮게 묶은 검은 머리, 흰 셔츠에 남색 무지 앞치마) 혼자 단독 인물 샷, 식탁 옆에 서서 노인을 내려다봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 다정한 미소 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Yui speaks one line in Japanese (soft, kind), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 자리에 앉아 아가씨를 올려다봄, 앞에 찻잔. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 처음으로 옅은 미소 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (warm), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Yui. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 낮게 묶은 검은 머리, 흰 셔츠에 남색 무지 앞치마) 혼자 단독 인물 샷, 식탁 옆에 서 있음. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 수줍게 웃는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] Yui speaks one line in Japanese (shy), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Yui. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 낮게 묶은 검은 머리, 흰 셔츠에 남색 무지 앞치마) 혼자 단독 인물 샷, 주위를 살피며 몸을 살짝 숙임. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 결심한 듯 작게 속삭이는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Yui speaks one line in Japanese (whisper), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Yui. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 같은 일식 레스토랑의 주방(스테인리스 조리대, 직원 식사용 큰 냄비, 따뜻한 조명), 21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 낮게 묶은 검은 머리, 흰 셔츠에 남색 무지 앞치마) 혼자 직원 식사용 큰 냄비에서 국자로 우동 국물을 무지 도자기 그릇에 붓는 장면 [CAMERA] Movement: slow push-in. Speed: slow. Framing: medium shot to close-up on the bowl. End: hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 앞에 놓인 김이 오르는 가케우동 그릇을 한참 내려다보는 얼굴, 눈가가 촉촉함 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: close-up, the steaming bowl soft in the foreground. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 머리, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 성큼 다가와 아르바이트생을 노려봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 화난 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (shouting), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Yui. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 낮게 묶은 검은 머리, 흰 셔츠에 남색 무지 앞치마) 혼자 단독 인물 샷, 몸을 움츠림. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 겁먹은 눈, 떨리는 입술 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Yui speaks one line in Japanese (timid, shaky), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 머리, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 차갑게 내려다봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 차갑고 화난 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (cold), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Mamiya. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지), 32세 일본인 남성 사업가(둥근 얼굴, 옆을 짧게 친 갈색 머리, 로고 없는 크림색 무지 니트와 베이지 코트, 손목에 굵은 은시계) 혼자 단독 인물 샷, 휴대폰을 든 채 웃음(휴대폰은 프레임 아래쪽). 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 비웃으며 웃는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Mamiya speaks one line in Japanese (laughing), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "reuse_of": 1,
+      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지), 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 머리, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 노인 쪽으로 몸을 숙이고 낡은 점퍼 소매를 거칠게 잡아당기는 순간(손은 프레임 밖). 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 경멸로 일그러진 화난 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (shouting, irritated), lips moving naturally, no on-screen text [SOUND] fabric yank, chair scrape"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Yui. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 낮게 묶은 검은 머리, 흰 셔츠에 남색 무지 앞치마) 혼자 단독 인물 샷, 지배인 앞을 막아섬. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 눈물 고인 간절한 눈 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Yui speaks one line in Japanese (pleading), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 머리, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 삿대질 직전처럼 몸을 앞으로 내밈(손은 프레임 밖). 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 핏대 선 분노한 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (yelling), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 자리에 앉은 채 지배인을 올려다봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 처음으로 단단해진 눈빛, 낮고 위엄 있는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (low, commanding), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Sakaki. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 같은 일식 레스토랑의 입구(짙은 원목 문, 아무 글자 없는 무지 노렌, 따뜻한 간접 조명), 원목 문이 열리고 64세 일본인 남성 비서실장(단정히 빗어 넘긴 백발, 은테 안경, 검은 쓰리피스 정장)가 검은 정장 경호원 없이 홀로 걸어 들어오는 장면, 위엄 있는 걸음 [CAMERA] Movement: static. Speed: locked off. Framing: full shot from inside the hall toward the door. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly 2 people in frame: Sakaki, Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 64세 일본인 남성 비서실장(단정히 빗어 넘긴 백발, 은테 안경, 검은 쓰리피스 정장)가 자리에 앉은 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼, 무릎이 해진 회색 면바지, 해진 흰 운동화) 앞에 서서 허리를 깊이 숙여 인사하는 장면 [CAMERA] Movement: static. Speed: locked off. Framing: two-shot, side angle, full body. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Sakaki. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 64세 일본인 남성 비서실장(단정히 빗어 넘긴 백발, 은테 안경, 검은 쓰리피스 정장) 혼자 단독 인물 샷, 인사 후 고개를 든 자세. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 정중하고 깊은 무표정 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] Sakaki speaks one line in Japanese (respectful, deep), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 머리, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 얼어붙은 채 서 있음. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 새파랗게 질린 얼굴, 떨리는 입술 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (stammering, shocked), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Sakaki. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 64세 일본인 남성 비서실장(단정히 빗어 넘긴 백발, 은테 안경, 검은 쓰리피스 정장) 혼자 단독 인물 샷, 회장 옆에 곧게 서 있음. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 단호한 무표정 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Sakaki speaks one line in Japanese (firm), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Mamiya. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지), 32세 일본인 남성 사업가(둥근 얼굴, 옆을 짧게 친 갈색 머리, 로고 없는 크림색 무지 니트와 베이지 코트, 손목에 굵은 은시계) 혼자 들고 있던 휴대폰을 천천히 내리는 모습, 당황해 굳은 얼굴 [CAMERA] Movement: static. Speed: locked off. Framing: medium shot. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 자리에서 일어나 지배인을 마주 봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 차분하고 조용한 정면 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (calm, quiet), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 머리, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 겁에 질려 천천히 고개를 젓는 얼굴 [CAMERA] Movement: static. Speed: locked off. Framing: close-up. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 자리에서 일어나 지배인을 마주 봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 먼 곳을 보는 그리운 눈빛 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (nostalgic, soft), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 자리에서 일어나 지배인을 마주 봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 그리움에 젖은 눈빛, 옅게 떨리는 입가 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (nostalgic, soft), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 자리에서 일어나 지배인을 마주 봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 긴 침묵 끝에 눈가가 젖은 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] Genzo speaks one line in Japanese (low, sad), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 자리에서 일어나 지배인을 마주 봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 단단한 정면 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (firm, steady), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 머리, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 나무 바닥에 무릎을 꿇고 이마를 숙여 엎드리는 도게자(일본식 엎드려 사죄) 동작 [CAMERA] Movement: static. Speed: locked off. Framing: full shot, side angle. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 머리, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 바닥에 엎드렸다가 고개만 든 자세. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 떨며 절박하게 올려다보는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (trembling, desperate), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 자리에서 일어나 지배인을 마주 봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 씁쓸한 눈빛 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (bitter, quiet), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 자리에서 일어나 지배인을 마주 봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 소리치지 않는 차분하고 냉정한 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (calm, final), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Mamiya. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지), 32세 일본인 남성 사업가(둥근 얼굴, 옆을 짧게 친 갈색 머리, 로고 없는 크림색 무지 니트와 베이지 코트, 손목에 굵은 은시계) 혼자 단독 인물 샷, 자리에서 엉거주춤 일어남. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 식은땀 흘리며 억지로 웃는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Mamiya speaks one line in Japanese (nervous), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Sakaki. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 64세 일본인 남성 비서실장(단정히 빗어 넘긴 백발, 은테 안경, 검은 쓰리피스 정장) 혼자 단독 인물 샷, 곧게 서서 마미야를 바라봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 차갑고 정중한 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Sakaki speaks one line in Japanese (polite, cold), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly zero people in frame — 사람이 한 명도 없는, 인물 없음. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 흰 식탁보 위 김이 나지 않는 식어 버린 가케우동 한 그릇(무지 도자기 그릇), 사람이 한 명도 없는, 인물 없음. 레스토랑 구석 식탁 위 정물 [CAMERA] Movement: static. Speed: locked off. Framing: insert close-up of the cold bowl. End: hold the whole shot. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 다시 자리에 앉아 아가씨를 올려다봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 따뜻하고 다정한 미소 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (warm, gentle), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Yui. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 낮게 묶은 검은 머리, 흰 셔츠에 남색 무지 앞치마) 혼자 단독 인물 샷, 식탁 옆에 서 있음. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 젖은 눈으로 밝게 웃는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] Yui speaks one line in Japanese (teary, bright), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼, 무릎이 해진 회색 면바지, 해진 흰 운동화) 혼자 김이 오르는 가케우동을 젓가락으로 한 입 드는 모습, 눈가가 젖음 [CAMERA] Movement: static. Speed: locked off. Framing: medium close-up, bowl and face. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 식탁 앞에 앉아 있음(그릇은 프레임 밖). 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 눈물이 고인 채 떨리는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (tearful, trembling), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 아가씨를 올려다봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 인자한 미소 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (warm, kind), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 5,
+      "prompt": "[LOCK] Exactly one person in frame: Yui. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 낮게 묶은 검은 머리, 흰 셔츠에 남색 무지 앞치마) 혼자 두 손으로 입을 막고 눈물을 흘리는 얼굴 [CAMERA] Movement: static. Speed: locked off. Framing: close-up. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 옆에 선 비서실장 쪽을 바라봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 단단하고 따뜻한 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (warm but firm), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 비서실장을 바라본 채. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 따뜻하게 미소 짓는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (warm but firm), lips moving naturally, no on-screen text [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 밤, 검은 고급 세단 뒷좌석 안(창밖으로 흐르는 도쿄의 불빛), 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 흰 수염, 깊은 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 창밖 도시 불빛을 말없이 바라보는 옆얼굴, 평온한 표정 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up profile. End: hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly zero people in frame — 사람이 한 명도 없는, 인물 없음. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 밤 도쿄 도심의 고층 빌딩 야경, 사람이 한 명도 없는, 인물 없음. 간판·글자 없는 건물들 [CAMERA] Movement: slow pan right. Speed: slow. Framing: wide establishing shot of the night skyline. End: hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] none [SOUND] none"
+    },
+    {
+      "duration": 10,
+      "prompt": "[LOCK] Exactly one person in frame: Host. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 따뜻한 조명의 단정한 서재 세트(책장, 은은한 배경 흐림, 글자 없는 무지 소품), 50대 일본인 남성 진행자(단정한 회색 머리, 남색 무지 정장, 흰 셔츠, 온화한 미소) 혼자 단독 인물 샷, 카메라를 향해 앉아 있음. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 온화한 미소 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Host speaks one line in Japanese (warm, friendly), lips moving naturally, no on-screen text [SOUND] none"
+    }
+  ]
+}

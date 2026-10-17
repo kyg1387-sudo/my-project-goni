@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""생성된 대사 TTS를 Whisper로 전사해 언어 오염(중국어/영어 혼입)을 검사한다.
+"""생성된 대사 TTS를 Whisper로 전사해 언어 오염(중국어/영어/한국어 혼입)을 검사한다.
 
 out/audio/line*.mp3 각각을 fal Whisper로 전사한 뒤, 자막(.ass)의 원문과 비교해
 한글 비율이 낮거나(다른 언어로 발화) 원문과 겹치는 글자가 적은 줄을 플래그한다.
@@ -7,7 +7,8 @@ out/audio/line*.mp3 각각을 fal Whisper로 전사한 뒤, 자막(.ass)의 원�
 
 사용법:
     export FAL_API_KEY=... ; pip install fal-client
-    python3 scripts/qc_tts.py --ass subs/<스킷>.ass --audio-dir out/audio
+    python3 scripts/qc_tts.py --ass subs/<스킷>.ass --audio-dir out/audio \
+        --config scripts/audio/<스킷>.json [--lang ja|ko]
 """
 
 import argparse
@@ -19,6 +20,30 @@ from concurrent.futures import ThreadPoolExecutor
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from generate_audio import parse_ass, fal_run, fal_upload  # noqa: E402
+
+
+def is_ja(c):
+    return "\u3040" <= c <= "\u30ff" or "\u4e00" <= c <= "\u9fff"
+
+
+def is_kana(c):
+    return "\u3040" <= c <= "\u30ff"
+
+
+def ja_ratio(text):
+    """일본어 문자(가나·한자) 비율. 가나가 하나도 없으면 중국어 의심으로 0 처리."""
+    letters = [c for c in text if c.isalpha()]
+    if not letters or not any(is_kana(c) for c in letters):
+        return 0.0
+    return sum(1 for c in letters if is_ja(c)) / len(letters)
+
+
+def ja_overlap(expected, transcript):
+    exp = [c for c in expected if is_ja(c)]
+    if not exp:
+        return 1.0
+    tr = set(transcript)
+    return sum(1 for c in exp if c in tr) / len(exp)
 
 
 def hangul_ratio(text):
@@ -43,6 +68,10 @@ def main():
     ap.add_argument("--ass", required=True)
     ap.add_argument("--audio-dir", default="out/audio")
     ap.add_argument("--model", default="fal-ai/whisper")
+    ap.add_argument("--lang", default="", choices=["", "ja", "ko"],
+                    help="기대 언어 (생략 시 오디오 설정의 language_boost로 판단, 없으면 ja)")
+    ap.add_argument("--config", default="",
+                    help="오디오 설정 — silent_styles(자막 카드)를 제외해 줄 번호를 TTS와 맞춤")
     args = ap.parse_args()
 
     key = os.environ.get("FAL_API_KEY")
@@ -50,6 +79,14 @@ def main():
         sys.exit("FAL_API_KEY 환경 변수가 필요합니다.")
 
     lines = parse_ass(args.ass)
+    if args.config:
+        import json
+        with open(args.config, encoding="utf-8") as f:
+            cfg = json.load(f)
+        lines = [l for l in lines if l[2] not in set(cfg.get("silent_styles", []))]
+        if not args.lang:
+            args.lang = "ko" if cfg.get("language_boost") == "Korean" else "ja"
+    args.lang = args.lang or "ja"
     files = sorted(glob.glob(os.path.join(args.audio_dir, "line*.mp3")))
     print(f"자막 {len(lines)}줄, 오디오 파일 {len(files)}개")
 
@@ -60,11 +97,13 @@ def main():
         result = fal_run(args.model, {"audio_url": url, "task": "transcribe"},
                          key, f"qc {idx:03d}")
         transcript = (result or {}).get("text", "").strip()
-        ratio = hangul_ratio(transcript)
-        overlap = char_overlap(expected, transcript)
+        if args.lang == "ja":
+            ratio, overlap, label = ja_ratio(transcript), ja_overlap(expected, transcript), "일본어비율"
+        else:
+            ratio, overlap, label = hangul_ratio(transcript), char_overlap(expected, transcript), "한글비율"
         bad = ratio < 0.8 or overlap < 0.5
         mark = "❌" if bad else "✅"
-        print(f"{mark} [{idx:03d}] 한글비율 {ratio:.2f} 일치 {overlap:.2f}\n"
+        print(f"{mark} [{idx:03d}] {label} {ratio:.2f} 일치 {overlap:.2f}\n"
               f"      원문: {expected}\n      전사: {transcript}")
         return idx, bad
 

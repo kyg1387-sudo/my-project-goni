@@ -513,6 +513,8 @@ def ambience_scene(cfg, key, v_url, index, duration):
         return None
     prompts = cfg.get("ambience_prompts", [])
     prompt = prompts[index - 1] if index - 1 < len(prompts) else "realistic ambient sound"
+    if not prompt:  # 빈 프롬프트 = 현장음 생략 (인물 장면 룸톤은 말소리가 섞임 — 규칙 3)
+        return None
     payload = {
         "video_url": v_url,
         "prompt": prompt,
@@ -679,7 +681,10 @@ def main():
     os.makedirs(WORK_DIR, exist_ok=True)
 
     lines = parse_ass(args.ass)
-    print(f"자막 {len(lines)}줄 파싱됨")
+    # 화면 전용 스타일(자막 카드 등)은 TTS에서 제외 — 줄 번호(emotion/speed/tag_overrides)도 제외 후 기준
+    silent = set(cfg.get("silent_styles", []))
+    lines = [l for l in lines if l[2] not in silent]
+    print(f"자막 {len(lines)}줄 파싱됨" + (f" (화면 전용 {sorted(silent)} 제외)" if silent else ""))
 
     def make_tts(item):
         i, (start, _end, style, name, text) = item

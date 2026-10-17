@@ -10,9 +10,10 @@ Seedance에 폴백한다.
     python3 scripts/generate_video.py [scripts/scenes/<스킷>.json]
 
 장면 파일(JSON) 형식:
-    duration  장면당 길이(초). 5 또는 10. 생략 시 5
+    duration  장면당 기본 길이(초). 5 또는 10. 생략 시 5 (장면 항목의 duration이 우선)
+    reuse_of  장면 항목에 지정하면 그 번호 장면 클립을 복사해 재사용 (생성 비용 0원 — 콜드 오픈 합류 등)
     style     모든 장면 프롬프트 뒤에 붙는 공통 지시문(인물/의상/장소 일관성 유지용)
-    scenes    장면별 프롬프트 목록 — 같은 인물은 매 장면 동일한 외형 문구로 묘사할 것
+    scenes    장면별 프롬프트 문자열 또는 {"prompt", "duration", "reuse_of"} — 같은 인물은 매 장면 동일한 외형 문구로 묘사할 것
 
 환경 변수(선택):
     ARK_BASE_URL, ARK_VIDEO_MODEL  Ark 엔드포인트/모델 직접 지정
@@ -24,6 +25,7 @@ Seedance에 폴백한다.
 import json
 import os
 import re
+import shutil
 import sys
 import time
 import urllib.error
@@ -43,8 +45,15 @@ def load_scenes(path):
     with open(path, encoding="utf-8") as f:
         data = json.load(f)
     style = data.get("style", "").strip()
-    prompts = [f"{scene}, {style}" if style else scene for scene in data["scenes"]]
-    return prompts, int(data.get("duration", 5)), data.get("ratio", "9:16")
+    default = int(data.get("duration", 5))
+    prompts, durations, reuses = [], [], []
+    for scene in data["scenes"]:
+        reuses.append(int(scene["reuse_of"]) if isinstance(scene, dict) and scene.get("reuse_of") else None)
+        # 항목은 프롬프트 문자열 또는 {"prompt", "duration": 5|10} (장면별 길이)
+        text = scene["prompt"] if isinstance(scene, dict) else scene
+        prompts.append(f"{text}, {style}" if style else text)
+        durations.append(int(scene.get("duration", default)) if isinstance(scene, dict) else default)
+    return prompts, durations, data.get("ratio", "9:16"), reuses
 
 
 def http_json(url, payload=None, headers=None):
@@ -140,7 +149,7 @@ def fal_generate(key, index, prompt, duration, ratio):
 
 # ---------- 메인 ----------
 
-def pick_provider(duration, ratio):
+def pick_provider(ratio):
     """실제로 첫 장면 생성에 성공하는 공급자 함수를 골라 돌려준다."""
     ark_key = os.environ.get("ARK_API_KEY")
     fal_key = os.environ.get("FAL_API_KEY")
@@ -150,9 +159,9 @@ def pick_provider(duration, ratio):
         pairs = [override] if all(override) else ARK_CANDIDATES
         for base_url, model in pairs:
             candidates.append((f"ark {base_url} / {model}",
-                               lambda i, p, b=base_url, m=model: ark_generate(b, m, ark_key, i, p, duration, ratio)))
+                               lambda i, p, d, b=base_url, m=model: ark_generate(b, m, ark_key, i, p, d, ratio)))
     if fal_key:
-        candidates.append((f"fal.ai {FAL_MODEL}", lambda i, p: fal_generate(fal_key, i, p, duration, ratio)))
+        candidates.append((f"fal.ai {FAL_MODEL}", lambda i, p, d: fal_generate(fal_key, i, p, d, ratio)))
     if not candidates:
         sys.exit("ARK_API_KEY 또는 FAL_API_KEY 환경 변수가 필요합니다. (키를 코드나 채팅에 넣지 마세요)")
     return candidates
@@ -160,34 +169,46 @@ def pick_provider(duration, ratio):
 
 def main():
     scenes_file = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_SCENES_FILE
-    scenes, duration, ratio = load_scenes(scenes_file)
+    scenes, durations, ratio, reuses = load_scenes(scenes_file)
     # SCENES_ONLY="3,5,7" 처럼 지정하면 해당 번호 장면만 재생성 (번호는 1부터)
     only = {int(x) for x in re.split(r"[,\s]+", os.environ.get("SCENES_ONLY", "")) if x}
-    print(f"장면 파일: {scenes_file} ({len(scenes)}개 장면, 장면당 {duration}초, 화면비 {ratio}"
+    print(f"장면 파일: {scenes_file} ({len(scenes)}개 장면, 총 {sum(durations)}초, 화면비 {ratio}"
           + (f", 대상: {sorted(only)}" if only else "") + ")")
 
     os.makedirs(OUT_DIR, exist_ok=True)
     paths = []
     provider = None
-    for index, prompt in enumerate(scenes, start=1):
+    for index, (prompt, duration) in enumerate(zip(scenes, durations), start=1):
         if only and index not in only:
             continue
+        if reuses[index - 1]:
+            continue  # 재사용 장면은 원본 생성 후 아래에서 복사
         print(f"[scene {index:02d}] {prompt[:40]}...")
         if provider:
-            path = provider(index, prompt)
+            path = provider(index, prompt, duration)
             if not path:
                 sys.exit(f"[scene {index:02d}] 생성 실패 — 위 로그를 확인하세요.")
         else:
             path = None
-            for name, fn in pick_provider(duration, ratio):
+            for name, fn in pick_provider(ratio):
                 print(f"  공급자 시도: {name}")
-                path = fn(index, prompt)
+                path = fn(index, prompt, duration)
                 if path:
                     provider = fn
                     break
             if not path:
                 sys.exit("모든 공급자에서 생성에 실패했습니다 — 위 로그를 확인하세요.")
         paths.append(path)
+
+    for index, src in enumerate(reuses, start=1):
+        if src and (not only or index in only or src in only):
+            dst, src_path = (os.path.join(OUT_DIR, f"scene{n:02d}.mp4") for n in (index, src))
+            if not os.path.exists(src_path):
+                print(f"[scene {index:02d}] 원본 scene{src:02d}이 없어 재사용 불가 — 원본과 함께 지정하세요")
+                continue
+            shutil.copyfile(src_path, dst)
+            print(f"[scene {index:02d}] scene{src:02d} 재사용 (생성 비용 0원)")
+            paths.append(dst)
 
     print("\n생성 완료. 클립 이어붙이기 (ffmpeg 필요):")
     print("  ls out/scene*.mp4 | sed \"s/^/file '/;s/$/'/\" > out/list.txt")

@@ -96,10 +96,17 @@
   "일본인"으로, bgm_prompt의 Korean drama를 Japanese drama로 바꿀 것.)
   새 작품은 이 파일의 SECTIONS 구조(beat 정렬 방식)를 복사해 만든다.
   실행하면 화자-장면 정렬이 자동 계산된다. 생성 후 반드시 정렬 검증을 돌릴 것.
-- `scripts/scenes/<작품>.json` — 장면 프롬프트. 항목은 `{"prompt", "duration": 5|10}`.
+- `scripts/build_beggar_chairman.py` — 일본 제작 기준 첫 작품의 자산 생성기(세그먼트 방식: 대사 1줄 = 화자 1명 장면,
+  내레이션 = 무언 장면 묶음, 장면 길이 auto=5/10초 자동, 규칙집 5블록 프롬프트, 한국어 검수 .srt 동시 생성).
+  새 일본 작품은 이 파일을 복사해 SEGMENTS만 바꾼다.
+- `scripts/validate_alignment.py <작품>` — 생성 전 무료 검증(화자-장면 일치, 한 장면 한 화자, 내레이션-대사 겹침,
+  줄별 속도/태그 누락, 숫자·영문 표기, 5블록·인원수·No blood). 불일치 0건이어야 생성 워크플로 실행.
+- `scripts/scenes/<작품>.json` — 장면 프롬프트. 항목은 문자열 또는 `{"prompt", "duration": 5|10, "reuse_of": N}`
+  (reuse_of = N번 장면 클립 복사 재사용, 생성 비용 0원).
 - `subs/<작품>.ass` — 자막. 스타일: 화자별 색상 + Naration(보이스오버) + Caption(무음 카드).
 - `scripts/audio/<작품>.json` — 목소리·감정·현장음·BGM 설정.
   `narration_styles`=립싱크 제외, `silent_styles`=TTS 제외(화면 전용).
+  `qc_tts.py`(언어 검사)는 `--config`로 silent_styles를 제외하고, language_boost로 기대 언어(ja/ko)를 판단한다.
 - `scripts/generate_video.py` — 장면별 클립 생성 (Ark Seedance / fal.ai 폴백,
   장면별 5/10초, out/sceneNN.mp4가 이미 있으면 재사용 = 이어하기).
 - `scripts/generate_audio.py` — TTS·립싱크·현장음·BGM 생성 후 믹싱.
