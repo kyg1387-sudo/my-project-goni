@@ -22,7 +22,7 @@ PEOPLE = [
     ("boy", "the boy (8, winter 1955, close-shaved head, chapped red cheeks, patched dark wool jacket, NO glasses)"),
 ]
 FACE_KINDS = ("face", "d")
-PILOT_DONE = set()
+PILOT_DONE = {"S13i", "S12f"}  # 시범 승인(assets/portraits/beggar-kf-pilot/*-fixed). S11i는 표정 강화로 a단계에서 재생성
 LOC_NOTE = {
     "loc-hall": "The restaurant walls are bare dark wood: no posters, no menus on the wall, no signs; tables have plain white cloths and plain ceramic.",
     "loc-entrance": "The entrance has a plain indigo noren with NO print, a blank closed book, NO sign boards.",
@@ -124,7 +124,9 @@ def build(sc, stage):
     if sc.get("ja_overlay"):
         parts.append(BLANK)
     if sc["kind"] == "d":
-        parts.append(OTS + " " + FACE13)
+        parts.append((OTS + " " + FACE13) if len(people) >= 2 else (FACE13 + " Only this one person is in the frame: NO other person, NO foreground shoulder or head."))
+        if any(k in (sc.get("act") or "") for k in ("NOT smiling",)):
+            parts.append("EXPRESSION AT 70 PERCENT: brows knotted, the corners of the mouth pulled down, eyes red and wet with pooled tears, jaw tight; absolutely NO smile.")
         if any(k in (sc.get("act") or "").lower() for k in ("fury", "shout", "scream", "explode")):
             parts.append(ANGER_CLOSED)
         parts.append("Mouth gently closed or barely parted (speech is added later); natural skin texture, both eyes sharp and symmetrical; earrings exactly as in the reference (none if the reference has none).")
