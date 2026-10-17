@@ -45,6 +45,15 @@ for l in open(os.path.join(ROOT, "subs/beggar-chairman.ass"), encoding="utf-8"):
         miss.append(text); ko = "（번역 없음）"
     rows.append([a, b, f"[{SPK.get(style, style)}] {ko}"])
 assert not miss, f"번역 대응 실패 {len(miss)}줄: {miss[:3]}"
+if len(sys.argv) > 3:  # 아웃트로 진행자 멘트(build_beggar_outro.py LINES의 번역, 시작 = out/beggar-outro.json host_start)
+    import json
+    o0 = float(sys.argv[3]); oj = json.load(open(os.path.join(ROOT, "out/beggar-outro.json")))
+    OUTRO_KO = ["끝까지 시청해 주셔서 감사합니다.", "통쾌하셨다면 채널 구독과 좋아요 부탁드립니다.",
+                "여러분 주변에도 우동 한 그릇을 내밀 수 있는 사람이 있나요? 댓글로 알려 주세요.",
+                "다음에도 통쾌한 이야기를 전해 드리겠습니다. 기대해 주세요. 그럼 다음에 또 만나요."]
+    hs = oj["host_start"] + [oj["total"] - 0.3]
+    for i, k in enumerate(OUTRO_KO):
+        rows.append([o0 + hs[i], o0 + hs[i + 1] - 0.1, f"[진행자] {k}"])
 ass = os.path.join(ROOT, "out/beggar-ko.ass"); os.makedirs(os.path.dirname(ass), exist_ok=True)
 with open(ass, "w", encoding="utf-8") as fp:
     fp.write("[Script Info]\nScriptType: v4.00+\nPlayResX: 1920\nPlayResY: 1080\nWrapStyle: 0\n\n[V4+ Styles]\n"
