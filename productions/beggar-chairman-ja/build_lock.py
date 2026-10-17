@@ -21,7 +21,7 @@ PAUSE = {"L38": 2.0, "L31": 1.0 + 3 * 0.5, "L48": 1.5}  # その子が 앞 2초 
 LEAD = {"S01": 2, "S02": 2, "S03": 1, "S04": 2, "S05": 2, "S06": 2, "S07": 2, "S08": 1, "S09": 2, "S10": 2,
         "S11": 1, "S12": 2, "S13": 1, "S14": 2, "S15": 2, "S16": 2, "S17": 2}
 # 장면 안 대사 사이에 끼는 무언 컷(지문: 間宮 휴대폰 내림, 영상 삭제 인서트, 눈물 등) — 그 줄 앞에 INSERT초씩
-MID = {"L34": 1, "L45": 1, "L47": 0, "L48": 1, "L52": 1, "NA9": 0, "NA10": 1, "L22": 1, "L28": 1, "L40": 1}
+MID = {"L12b": 1, "L27b": 1, "L30a": 1, "L30b": 1, "L34": 1, "L45": 1, "L47": 0, "L48": 1, "L52": 1, "NA9": 0, "NA10": 1, "L22": 1, "L28": 1, "L40": 1}
 MIN_TOTAL, MAX_TOTAL = 9 * 60 + 40, 11 * 60
 
 
@@ -45,7 +45,7 @@ def load_lines():
             if m.group(1) == "OUT3":
                 out.append({"tag": "OUT3", "spk": "OUT", "scene": "OUT"})
             continue
-        m = re.match(r"^\s+((?:NA|L)\d+[a-c]?)\s*([^\s:「(\[]*)[^「\n]*「", l)
+        m = re.match(r"^\s+((?:NA|L)\d+[a-z]?)\s*([^\s:「(\[]*)[^「\n]*「", l)
         if m:
             tag = m.group(1)
             out.append({"tag": tag, "spk": "NA" if tag.startswith("NA") else m.group(2), "scene": scene})
