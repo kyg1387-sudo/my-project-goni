@@ -206,8 +206,10 @@ API 키는 GitHub Secrets(FAL_API_KEY, ARK_API_KEY)에만 둔다. 코드/채팅�
 모델·API·도구가 있으면, 필요 시점에 비용·효과·필요한 키와 함께 먼저 제안할 것.
 
 **EP2 실증 교훈 (다음 작품 제작 전 필수 점검 — EP1 교훈에 추가):**
-⑨ **시리즈 배역 목소리 대장**: (일본 작품은 배역별 일본어 EL 보이스를 오디션 후 이 대장에 추가 — 아래는
-  한국어 작품용 기록) 김씨=EL `8vwSOQHQApfVx993mKf9`(EP1부터 audio-overrides로 교체 —
+⑨ **시리즈 배역 목소리 대장**: (일본 작품은 배역별 일본어 보이스를 오디션 후 이 대장에 추가.
+  天城グループ 시리즈: 源蔵=MiniMax Japanese_SeriousCommander, 黒田=Japanese_LoyalKnight,
+  間宮=Japanese_DominantMan, ゆい=Japanese_DecisivePrincess, 榊=Japanese_GentleButler,
+  내레이터=Japanese_CalmLady(잠정) — 같은 목소리를 두 배역에 쓰지 말 것. 아래는 한국어 작품용 기록) 김씨=EL `8vwSOQHQApfVx993mKf9`(EP1부터 audio-overrides로 교체 —
   오디오 설정의 MiniMax 값은 폴백일 뿐), 내레이터·아웃트로=EL `5n5gqmaQi9Ewevrz7bOS`,
   준호=MiniMax Casual_Guy. 새 작품 오디오 설계 때 이 표부터 확인 — EP2에서 김씨를 MiniMax로
   생성해 전 대사가 딴사람(여성풍)으로 나온 실증. MiniMax는 emotion 파라미터로도 음색이 흔들림.
