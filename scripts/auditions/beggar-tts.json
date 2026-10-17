@@ -78,7 +78,7 @@
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
-   "text": "代金は、一度も受け取りませんでした。",
+   "text": "だいきんは、一度も受け取りませんでした。",
    "emotion_preset": "tonedown",
    "emotion_intensity": 1.0,
    "tempo": 0.9
@@ -138,7 +138,7 @@
    "model": "typecast-direct",
    "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
-   "text": "金なら、ある",
+   "text": "かねなら、ある",
    "emotion_preset": "tonedown",
    "emotion_intensity": 1.0,
    "tempo": 0.85
@@ -208,7 +208,7 @@
    "model": "typecast-direct",
    "voice": "tc_65b34b05b3fb844f3d6b7aab",
    "language": "jpn",
-   "text": "重々、承知しております",
+   "text": "じゅうじゅう、承知しております",
    "emotion_preset": "normal",
    "emotion_intensity": 0.9,
    "tempo": 0.95
@@ -486,7 +486,7 @@
   {
    "id": "line049",
    "model": "typecast-direct",
-   "voice": "tc_5d01a52563338e00072b8c9c",
+   "voice": "tc_63049449e7dfae64b10c6cb9",
    "language": "jpn",
    "text": "お腹が空いたら、いつでもおいで",
    "emotion_preset": "happy",
@@ -728,7 +728,7 @@
    "model": "typecast-direct",
    "voice": "tc_6a5882fe54564e2a06a218bb",
    "language": "jpn",
-   "text": "開店の日に、わしが決めた規則は、一つだけじゃった。腹を空かせた客を、帰すな",
+   "text": "開店の日に、わしが決めた規則は、一つだけじゃった。腹を空かせた客を、かえすな",
    "emotion_preset": "normal",
    "emotion_intensity": 1.0,
    "tempo": 0.88
