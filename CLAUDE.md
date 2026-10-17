@@ -103,6 +103,15 @@
 - `scripts/generate_video.py` — 장면별 클립 생성 (Ark Seedance / fal.ai 폴백,
   장면별 5/10초, out/sceneNN.mp4가 이미 있으면 재사용 = 이어하기).
 - `scripts/generate_audio.py` — TTS·립싱크·현장음·BGM 생성 후 믹싱.
+  오디오 설정에 아래 키가 하나라도 있으면 고급 믹서(mix_advanced)로 전환된다(없으면 기존 믹서 그대로):
+  `bgm_segments`(구간별 BGM — prompt 생성 또는 file=라이선스 확인한 로컬 완곡, 곡 사이 겹침 금지),
+  `silence_hits`(반전 직전 정적 — BGM·현장음 완전 무음), `sfx_cues`(효과음 {time, file, gain_db}),
+  `ducking`(대사 중 BGM 자동 낮춤, 실측 약 -8~-14dB), `ambience_lowpass`(Hz), `master`(-14 LUFS / -1 dBTP).
+  효과음·로컬 BGM 파일은 `assets/sfx/`, `assets/bgm/`에 출처·라이선스 메모와 함께 둔다.
+- `scripts/voice_audition.py` + `scripts/audition/<작품>.json` — 배역 목소리 오디션(MiniMax 일본어
+  시스템 보이스 + ElevenLabs v3 비교). `목소리 오디션` 워크플로(voice-audition.yml)는 설정 JSON을
+  커밋 메시지 `[audition]`과 함께 푸시하면 자동 실행(소액 과금 — 사용자 승인 후에만),
+  결과는 같은 브랜치 `auditions/<작품>/`(번호표 index.md)에 커밋된다.
 
 ## 제작 순서 (GitHub Actions)
 

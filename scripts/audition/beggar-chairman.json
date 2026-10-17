@@ -1,0 +1,93 @@
+{
+  "work": "beggar-chairman",
+  "note": "일본어 배역 목소리 오디션. MiniMax 일본어 시스템 보이스 3종 + 핵심 배역은 ElevenLabs v3 비교. 대사는 docs/톤연출표-거지노인회장.md 기준.",
+  "engines": {
+    "mm": {"model": "fal-ai/minimax/speech-02-hd", "language_boost": "Japanese"},
+    "el": {"model": "fal-ai/elevenlabs/tts/eleven-v3", "language_code": "ja"}
+  },
+  "roles": [
+    {
+      "role": "genzo",
+      "label": "天城源蔵 (70대 회장)",
+      "lines": [
+        {"text": "その子が、わしじゃよ。", "emotion": "sad", "speed": 0.75, "tag": "[low, sad]"},
+        {"text": "明日からは、もう来なくて結構です。", "emotion": "neutral", "speed": 0.8, "tag": "[calm, firm]"}
+      ],
+      "candidates": [
+        {"engine": "mm", "voice": "Japanese_IntellectualSenior"},
+        {"engine": "mm", "voice": "Japanese_GenerousIzakayaOwner"},
+        {"engine": "mm", "voice": "Japanese_SeriousCommander"},
+        {"engine": "el", "voice": "Bill"},
+        {"engine": "el", "voice": "George"}
+      ]
+    },
+    {
+      "role": "kuroda",
+      "label": "黒田 支配人 (40대 지배인)",
+      "lines": [
+        {"text": "物乞いは裏口から出てってくださいって！何度言わせるんですか！", "emotion": "angry", "speed": 1.1, "tag": "[shouting]"},
+        {"text": "会長…存じ上げず、本当に申し訳ございません…！", "emotion": "fearful", "speed": 0.9, "tag": "[trembling]"}
+      ],
+      "candidates": [
+        {"engine": "mm", "voice": "Japanese_DominantMan"},
+        {"engine": "mm", "voice": "Japanese_LoyalKnight"},
+        {"engine": "mm", "voice": "Japanese_SeriousCommander"},
+        {"engine": "el", "voice": "Daniel"}
+      ]
+    },
+    {
+      "role": "mamiya",
+      "label": "間宮 翔 (30대 진상 사장)",
+      "lines": [
+        {"text": "ははっ、物乞いとバイト、セットでクビかよ。", "emotion": "happy", "speed": 1.05, "tag": "[mocking laugh]"}
+      ],
+      "candidates": [
+        {"engine": "mm", "voice": "Japanese_OptimisticYouth"},
+        {"engine": "mm", "voice": "Japanese_SportyStudent"},
+        {"engine": "mm", "voice": "Japanese_DominantMan"}
+      ]
+    },
+    {
+      "role": "yui",
+      "label": "春川ゆい (20대 알바생)",
+      "lines": [
+        {"text": "おじいさん、温かいお茶です。ゆっくり飲んでくださいね。", "emotion": "happy", "speed": 0.95, "tag": "[soft, kind]"},
+        {"text": "はい、おじいさん！すぐ温めてきます！", "emotion": "happy", "speed": 1.0, "tag": "[teary, bright]"}
+      ],
+      "candidates": [
+        {"engine": "mm", "voice": "Japanese_GracefulMaiden"},
+        {"engine": "mm", "voice": "Japanese_KindLady"},
+        {"engine": "mm", "voice": "Japanese_DecisivePrincess"},
+        {"engine": "el", "voice": "Lily"}
+      ]
+    },
+    {
+      "role": "sakaki",
+      "label": "榊 秘書室長 (60대 비서실장)",
+      "lines": [
+        {"text": "会長、お車の用意ができております。", "emotion": "neutral", "speed": 0.9, "tag": "[respectful]"},
+        {"text": "天城グループ創業者、天城源蔵会長でいらっしゃいます。このホテルのオーナーです。", "emotion": "neutral", "speed": 0.9, "tag": "[firm]"}
+      ],
+      "candidates": [
+        {"engine": "mm", "voice": "Japanese_GentleButler"},
+        {"engine": "mm", "voice": "Japanese_IntellectualSenior"},
+        {"engine": "mm", "voice": "Japanese_LoyalKnight"}
+      ]
+    },
+    {
+      "role": "narrator",
+      "label": "ナレーター (스토리텔러)",
+      "lines": [
+        {"text": "このレストランで、彼に気づいた者は、一人もいませんでした。", "emotion": "neutral", "speed": 0.9, "tag": "[warm, storytelling]"},
+        {"text": "どん底でひざまずいたことのある者だけが、人をひざまずかせない。", "emotion": "neutral", "speed": 0.8, "tag": "[slow, gentle]"}
+      ],
+      "candidates": [
+        {"engine": "mm", "voice": "Japanese_CalmLady"},
+        {"engine": "mm", "voice": "Japanese_DependableWoman"},
+        {"engine": "mm", "voice": "Japanese_GentleButler"},
+        {"engine": "el", "voice": "Alice"},
+        {"engine": "el", "voice": "Brian"}
+      ]
+    }
+  ]
+}

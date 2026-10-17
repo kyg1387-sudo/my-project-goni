@@ -1,0 +1,49 @@
+name: 목소리 오디션
+
+# 오디션 설정을 커밋할 때 커밋 메시지에 [audition]이 있으면 자동 실행(소액 과금 — 실행 전 사용자 승인 필수).
+# 결과 mp3와 번호표(index.md)는 같은 브랜치의 auditions/<작품>/ 에 커밋된다.
+on:
+  push:
+    paths:
+      - "scripts/audition/*.json"
+  workflow_dispatch:
+    inputs:
+      config:
+        description: 오디션 설정 파일 (scripts/audition/<작품>.json)
+        required: true
+        default: "scripts/audition/beggar-chairman.json"
+
+jobs:
+  audition:
+    if: ${{ github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[audition]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: ffmpeg 설치
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: 후보 목소리 생성
+        env:
+          FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            CONFIGS="${{ inputs.config }}"
+          else
+            CONFIGS=$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- 'scripts/audition/*.json' || ls scripts/audition/*.json)
+          fi
+          for c in $CONFIGS; do
+            [ -f "$c" ] && python3 scripts/voice_audition.py "$c"
+          done
+
+      - name: 결과 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add auditions
+          git diff --cached --quiet && exit 0
+          git commit -m "목소리 오디션 결과 추가"
+          git push

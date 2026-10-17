@@ -197,6 +197,38 @@ def make_bgm(cfg, key):
     return path if download_retry(url, path) else None
 
 
+def make_bgm_segments(cfg, key):
+    """bgm_segments 구간별 BGM을 준비해 [(시작, 끝, 파일, 볼륨, 페이드인, 페이드아웃)]을 돌려준다.
+
+    구간마다 로컬 음원(file — DOVA-SYNDROME 등 라이선스 확인한 완곡)이 있으면 그것을,
+    없으면 prompt로 생성한다(bgm_segNN.audio 캐시 재사용). 곡 사이 겹침 크로스페이드는
+    조 충돌로 두 곡이 동시에 들리므로 금지 — 구간을 띄워 "페이드아웃 → 숨 → 페이드인"으로 잇는다.
+    """
+    segments = []
+    for n, seg in enumerate(cfg.get("bgm_segments", []), start=1):
+        path = seg.get("file")
+        if path:
+            path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", path)
+            if not os.path.exists(path):
+                print(f"  [bgm {n}] 음원 파일 없음: {seg['file']} — 이 구간 생략")
+                continue
+        else:
+            path = os.path.join(WORK_DIR, f"bgm_seg{n:02d}.audio")
+            if cached(path):
+                print(f"  [bgm {n}] 기존 파일 재사용")
+            else:
+                model = seg.get("model") or cfg.get("bgm_model")
+                result = fal_run(model, {"prompt": seg["prompt"]}, key, f"bgm {n}") if model else None
+                url = find_audio_url(result) if result else None
+                if not url or not download_retry(url, path):
+                    print(f"  [bgm {n}] 생성 실패 — 이 구간 생략")
+                    continue
+        segments.append((float(seg["start"]), float(seg["end"]), path,
+                         float(seg.get("volume", cfg.get("bgm_volume", 0.22))),
+                         float(seg.get("fade_in", 1.5)), float(seg.get("fade_out", 2.0))))
+    return segments
+
+
 # ---------- 배치 계획 ----------
 
 def probe_duration(path):
@@ -286,6 +318,144 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
         "".join(mix_inputs)
         + f"amix=inputs={len(mix_inputs)}:duration=longest:normalize=0,"
         + f"atrim=0:{duration:.3f}[aout]")
+
+    script = os.path.join(WORK_DIR, "filter.txt")
+    with open(script, "w") as f:
+        f.write(";\n".join(parts))
+    cmd += ["-filter_complex_script", script,
+            "-map", "0:v", "-map", "[aout]",
+            "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", out_path]
+    subprocess.run(cmd, check=True)
+
+
+ADVANCED_MIX_KEYS = ("bgm_segments", "silence_hits", "sfx_cues", "ducking", "master", "ambience_lowpass")
+
+
+def mute_windows(windows):
+    """[[시작, 끝], ...] 구간을 완전 무음으로 만드는 volume 필터 체인(앞에 쉼표 포함)."""
+    return "".join(f",volume=enable='between(t,{a:.3f},{b:.3f})':volume=0" for a, b in windows)
+
+
+def mix_advanced(video, placed, cfg, bgm_segments, out_path, ambience=None):
+    """구간별 BGM·정적·효과음 큐·덕킹·마스터링을 지원하는 믹서.
+
+    오디오 설정 키 (모두 선택):
+      bgm_segments  [{"start", "end", "prompt" 또는 "file", "volume", "fade_in", "fade_out"}]
+      silence_hits  [[시작, 끝], ...]  — 반전 직전 정적: BGM·현장음 완전 무음(대사·효과음은 유지)
+      sfx_cues      [{"time", "file", "gain_db"}]  — 효과음을 지정 시각에 배치 (gain_db: 원본 대비 dB)
+      ducking       true 또는 {"threshold", "ratio", "attack", "release"} — 대사 중 BGM 자동 낮춤
+      ambience_lowpass  Hz — 현장음을 건조하게(로우패스)
+      master        true 또는 {"lufs", "tp"} — 최종 음량 정규화 (기본 -14 LUFS / -1 dBTP)
+    """
+    ambience = ambience or []
+    root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+    duration = probe_duration(video)
+    fmt = "aformat=sample_rates=44100:channel_layouts=stereo"
+    silences = cfg.get("silence_hits", [])
+    cues = []
+    for cue in cfg.get("sfx_cues", []):
+        path = os.path.join(root, cue["file"])
+        if os.path.exists(path):
+            cues.append((float(cue["time"]), path, float(cue.get("gain_db", -12))))
+        else:
+            print(f"  [sfx] 파일 없음: {cue['file']} — 건너뜀")
+
+    cmd = ["ffmpeg", "-y", "-i", video]
+    for entry in placed:
+        cmd += ["-i", entry[-1]]
+    for _, path in ambience:
+        cmd += ["-i", path]
+    for _, path, _ in cues:
+        cmd += ["-i", path]
+    for seg in bgm_segments:
+        cmd += ["-stream_loop", "-1", "-i", seg[2]]
+
+    parts, idx = [], 1
+    # 대사(+내레이션)
+    dlg = []
+    for k, (start, tempo, *_rest) in enumerate(placed):
+        chain = f"[{idx}:a]{fmt},"
+        if tempo > 1.0:
+            chain += f"atempo={tempo:.4f},"
+        parts.append(chain + f"adelay={int(round(start * 1000))}:all=1[d{k}]")
+        dlg.append(f"[d{k}]")
+        idx += 1
+    # 현장음
+    amb = []
+    lowpass = cfg.get("ambience_lowpass")
+    for k, (start, _path) in enumerate(ambience):
+        chain = f"[{idx}:a]{fmt},volume={float(cfg.get('ambience_volume', 0.4))}"
+        if lowpass:
+            chain += f",lowpass=f={int(lowpass)}"
+        parts.append(chain + f",adelay={int(round(start * 1000))}:all=1[amb{k}]")
+        amb.append(f"[amb{k}]")
+        idx += 1
+    # 효과음 큐
+    sfx = []
+    for k, (t, _path, gain) in enumerate(cues):
+        parts.append(f"[{idx}:a]{fmt},volume={gain}dB,adelay={int(round(t * 1000))}:all=1[sfx{k}]")
+        sfx.append(f"[sfx{k}]")
+        idx += 1
+    # 구간별 BGM
+    bgm = []
+    for k, (start, end, _path, vol, fin, fout) in enumerate(bgm_segments):
+        length = max(min(end, duration) - start, 0.1)
+        fades = f"afade=t=in:st=0:d={fin}," if fin > 0 else ""
+        if fout > 0:
+            fades += f"afade=t=out:st={max(length - fout, 0):.3f}:d={fout},"
+        parts.append(
+            f"[{idx}:a]{fmt},atrim=0:{length:.3f},asetpts=N/SR/TB,{fades}"
+            f"volume={vol},adelay={int(round(start * 1000))}:all=1[bg{k}]")
+        bgm.append(f"[bg{k}]")
+        idx += 1
+
+    def bus(labels, name, extra=""):
+        if not labels:
+            return None
+        if len(labels) == 1:
+            parts.append(f"{labels[0]}anull{extra}[{name}]")
+        else:
+            parts.append("".join(labels)
+                         + f"amix=inputs={len(labels)}:duration=longest:normalize=0{extra}[{name}]")
+        return f"[{name}]"
+
+    finals = []
+    ducking = cfg.get("ducking")
+    dlg_bus = bus(dlg, "dlg")
+    if dlg_bus and ducking and bgm:
+        # 덕킹 키는 영상 끝까지 늘림 — 마지막 대사에서 키가 끝나면 압축기가 BGM까지 끊는다
+        parts.append(f"{dlg_bus}asplit=2[dlgmix][dlgk0]")
+        parts.append(f"[dlgk0]apad=whole_dur={duration:.3f}[dlgkey]")
+        finals.append("[dlgmix]")
+    elif dlg_bus:
+        finals.append(dlg_bus)
+    amb_bus = bus(amb, "ambbus", mute_windows(silences))
+    if amb_bus:
+        finals.append(amb_bus)
+    sfx_bus = bus(sfx, "sfxbus")
+    if sfx_bus:
+        finals.append(sfx_bus)
+    bgm_bus = bus(bgm, "bgmbus", mute_windows(silences))
+    if bgm_bus:
+        if dlg_bus and ducking:
+            d = ducking if isinstance(ducking, dict) else {}
+            parts.append(
+                f"{bgm_bus}[dlgkey]sidechaincompress=threshold={d.get('threshold', 0.03)}:"
+                f"ratio={d.get('ratio', 8)}:attack={d.get('attack', 20)}:"
+                f"release={d.get('release', 400)}[bgmduck]")
+            bgm_bus = "[bgmduck]"
+        finals.append(bgm_bus)
+
+    tail = f"atrim=0:{duration:.3f}"
+    master = cfg.get("master")
+    if master:
+        m = master if isinstance(master, dict) else {}
+        tail += f",loudnorm=I={m.get('lufs', -14)}:TP={m.get('tp', -1)}:LRA=11,aresample=48000"
+    if len(finals) == 1:
+        parts.append(f"{finals[0]}{tail}[aout]")
+    else:
+        parts.append("".join(finals)
+                     + f"amix=inputs={len(finals)}:duration=longest:normalize=0,{tail}[aout]")
 
     script = os.path.join(WORK_DIR, "filter.txt")
     with open(script, "w") as f:
@@ -538,6 +708,18 @@ def main():
                                                placed_dialogue,
                                                os.path.join(WORK_DIR, "rebuilt.mp4"),
                                                args.no_burn, burn_scenes)
+
+    if any(k in cfg for k in ADVANCED_MIX_KEYS):
+        print("배경음악 준비 중 (구간별)...")
+        segments = make_bgm_segments(cfg, key)
+        if not segments and "bgm_segments" not in cfg:
+            bgm = make_bgm(cfg, key)  # 단일 BGM을 전체 구간 1곡으로 취급
+            if bgm:
+                segments = [(0.0, 1e9, bgm, float(cfg.get("bgm_volume", 0.22)), 0.0, 2.0)]
+        print("믹싱 중 (정적·효과음·덕킹·마스터링)...")
+        mix_advanced(video, placed, cfg, segments, args.out, ambience)
+        print(f"완료 → {args.out}")
+        return
 
     print("배경음악 생성 중...")
     bgm = make_bgm(cfg, key)
