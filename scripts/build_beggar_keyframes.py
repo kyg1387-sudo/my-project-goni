@@ -58,6 +58,8 @@ LIGHT_NOTE = {
 EMO_OVERRIDE = {
     "H3": "NO title, NO words, NO letters anywhere in the image; the empty sky above the tower is clean.",
     "S04a": "NO captions, NO labels, NO words anywhere.",
+    "S07d": "FURNITURE LOCKED: the old man sits properly ON one wooden chair that is fully behind the far side of the small table, his legs under the table; the chair is not in front of him and does not pass through his body or legs; NO extra empty chair between him and the camera. Correct, solid furniture geometry.",
+    "S07i": "FURNITURE LOCKED: correct, solid furniture geometry — chairs stand on the floor behind or beside the table, no chair passes through any person, no floating chair legs.",
     "S05l": "SPEAKER LOCKED: Iwaki (black slicked-back hair, thin black moustache, black three-piece suit, black sleeves, NOT a white shirt sleeve) STANDS beside the small corner table by the restroom corridor and is the face at three-quarter angle, his hand setting a plain black leather check presenter on the white tablecloth; the old man SITS at the table and appears ONLY as a blurred back of white hair and grey jacket shoulder at the near left edge. NO writing on the folder.",
     "S11b": "POSE LOCKED: Iwaki is STANDING upright in the dim restaurant corner aisle, chest-up, both arms down at his sides, facing the old man in the foreground; NO table in front of him, NO cards, NO other people or silhouettes beyond, NO earrings.",
     "S04d": "NO captions, NO labels, NO words anywhere.",
