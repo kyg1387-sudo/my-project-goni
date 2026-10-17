@@ -22,6 +22,7 @@ LEAD = {"S01": 2, "S02": 2, "S03": 1, "S04": 2, "S05": 2, "S06": 2, "S07": 2, "S
         "S11": 1, "S12": 2, "S13": 1, "S14": 2, "S15": 2, "S16": 2, "S17": 2}
 # 장면 안 대사 사이에 끼는 무언 컷(지문: 間宮 휴대폰 내림, 영상 삭제 인서트, 눈물 등) — 그 줄 앞에 INSERT초씩
 MID = {"L13a": 1, "L23a": 2, "L30c": 1, "L27": 1, "L30a": 2, "L12b": 1, "L27b": 1, "L30b": 1, "L34": 1, "L45": 1, "L47": 0, "L48": 1, "L52": 1, "NA9": 0, "NA10": 1, "L22": 1, "L28": 1, "L40": 1}
+HOOK_AT = {"L01": 0.4, "L02": 4.2, "NA0": 7.6}
 MIN_TOTAL, MAX_TOTAL = 9 * 60 + 40, 11 * 60
 
 
@@ -112,7 +113,14 @@ def main():
     md += [f"| {x['id']} | {x['tag']} | {x['spk']} | {x['scene']} | {tc(x['start']) if 'start' in x else '-'} | "
            f"{tc(x['end']) if 'end' in x else '-'} | {x['dur']:.2f}초 |" for x in lines]
     open(os.path.join(HERE, "06_Lock타임라인.md"), "w", encoding="utf-8").write("\n".join(md) + "\n")
-    json.dump({"total": total, "main_end": main_end, "ads": ads, "scenes": srows, "lines": lines},
+    for x in lines:  # 후크 줄(H0 L01 · H1 L02 · H2 NA0) 고정 시각 — 후크 컷 길이 H0 4.0 / H1 3.0 / H2 8.0 / H3 5.0
+        if x["tag"] in HOOK_AT:
+            x["start"] = HOOK_AT[x["tag"]]; x["end"] = round(x["start"] + x["dur"], 3)
+    replay = next(x for x in lines if x["tag"] == "L28")["start"] - 0.8 - next(x for x in lines if x["tag"] == "L01")["dur"]
+    json.dump({"hook": HOOK, "outro": OUTRO, "total": total, "body_end": main_end,
+               "ads": [{"name": n, "at": round(a, 3), "target": tg, "after": tag} for n, a, tg, tag in ads],
+               "scenes": [{"id": s, "start": round(a, 3), "end": round(b, 3), "lines": n} for s, a, b, n in srows],
+               "replay": [{"tag": "L01", "start": round(replay, 3)}], "lines": lines},
               open(os.path.join(HERE, "lock.json"), "w"), ensure_ascii=False, indent=1)
     print("\n".join(md[:8]))
 

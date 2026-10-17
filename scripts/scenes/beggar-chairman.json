@@ -1,525 +1,919 @@
 {
-  "duration": 5,
-  "ratio": "16:9",
-  "style": "",
-  "scenes": [
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지), 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 올백 머리, 얇은 콧수염, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 노인 쪽으로 몸을 숙이고 낡은 점퍼 소매를 거칠게 잡아당기는 순간(손은 프레임 밖). 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 경멸로 일그러진 화난 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (shouting, irritated), lips moving naturally, no on-screen text [SOUND] fabric yank, chair scrape",
-      "refs": [
-        "assets/refs/beggar-chairman/char-kuroda.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Mamiya. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지), 32세 일본인 남성 사업가(둥근 얼굴, 옆을 짧게 친 갈색 투블럭 머리, 왼쪽 귀에 작은 은색 귀걸이, 로고 없는 크림색 무지 니트와 베이지 코트, 손목에 굵은 은시계) 혼자 단독 인물 샷, 옆 테이블에 앉아 휴대폰을 얼굴 높이로 들고 촬영하는 자세(휴대폰은 프레임 아래쪽). 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 비웃는 입꼬리, 즐거워하는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] Mamiya speaks one line in Japanese (mocking laugh), lips moving naturally, no on-screen text [SOUND] phone camera shutter click",
-      "refs": [
-        "assets/refs/beggar-chairman/char-mamiya.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지), 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자, 화내지 않고 담담하게 위를 올려다보는 얼굴, 김이 오르는 우동 그릇이 앞에 흐릿하게 [CAMERA] Movement: static. Speed: locked off. Framing: close-up, face centered. End: hold the whole shot like a freeze frame. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly zero people in frame — 사람이 한 명도 없는, 인물 없음. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 흰 식탁보 위 김이 오르는 가케우동 한 그릇(맑은 국물의 일본식 우동, 파 몇 조각, 무지 도자기 그릇), 사람이 한 명도 없는, 인물 없음. 레스토랑 흰 식탁 위 정물, 배경은 따뜻한 조명의 흐림 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: insert close-up of the bowl. End: hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly zero people in frame — 사람이 한 명도 없는, 인물 없음. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 해 질 녘 도쿄 도심의 고층 유리 호텔 외관, 사람이 한 명도 없는, 인물 없음. 간판·글자 없는 매끈한 외벽, 따뜻한 노을빛 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: wide establishing shot of the hotel tower. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/loc-street.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 도심의 오후, 고층 유리 호텔 정문 앞 돌계단(간판·글자 없는 매끈한 석재 외벽), 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼, 무릎이 해진 회색 면바지, 해진 흰 운동화)가 해진 운동화로 돌계단 위에 멈춰 서는 발걸음, 발과 계단 위주 [CAMERA] Movement: static. Speed: locked off. Framing: low angle insert on worn sneakers on stone steps. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-street.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 도심의 오후, 고층 유리 호텔 정문 앞 돌계단(간판·글자 없는 매끈한 석재 외벽), 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼, 무릎이 해진 회색 면바지, 해진 흰 운동화) 혼자 고개를 들어 높은 유리 호텔 건물을 올려다보는 뒷모습 [CAMERA] Movement: tilt up. Speed: slow. Framing: from his back to the top of the glass tower, full shot to wide. End: stops on the tower top, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-street.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 도심의 오후, 고층 유리 호텔 정문 앞 돌계단(간판·글자 없는 매끈한 석재 외벽), 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼, 무릎이 해진 회색 면바지, 해진 흰 운동화) 혼자 호텔 외벽의 매끈한 돌을 손바닥으로 천천히 쓸어 보는 모습, 그리운 표정 [CAMERA] Movement: slow push-in. Speed: slow. Framing: medium shot to close-up on his hand and profile. End: hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-street.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 도심의 오후, 고층 유리 호텔 정문 앞 돌계단(간판·글자 없는 매끈한 석재 외벽), 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 눈을 감고 옛일을 떠올리는 얼굴, 오후 햇살 [CAMERA] Movement: static. Speed: locked off. Framing: close-up, face centered. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-street.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly 2 people in frame: Kuroda, Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 같은 일식 레스토랑의 입구(짙은 원목 문, 아무 글자 없는 무지 노렌, 따뜻한 간접 조명), 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 올백 머리, 얇은 콧수염, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰)가 입구에 들어선 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼, 무릎이 해진 회색 면바지, 해진 흰 운동화)의 옷차림을 위아래로 훑어보는 투샷, 지배인의 경멸하는 눈빛 [CAMERA] Movement: static. Speed: locked off. Framing: two-shot, full body, both faces visible. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/char-kuroda.png",
-        "assets/refs/beggar-chairman/loc-entrance.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 같은 일식 레스토랑의 입구(짙은 원목 문, 아무 글자 없는 무지 노렌, 따뜻한 간접 조명), 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 올백 머리, 얇은 콧수염, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 입구에 서서 노인을 내려다봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 차갑고 거만한 무표정, 위아래로 훑는 눈 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (cold, condescending), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-kuroda.png",
-        "assets/refs/beggar-chairman/loc-entrance.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 같은 일식 레스토랑의 입구(짙은 원목 문, 아무 글자 없는 무지 노렌, 따뜻한 간접 조명), 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 입구에 서서 지배인을 바라봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 온화한 무표정, 차분한 눈빛 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (calm, gentle), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-entrance.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 같은 일식 레스토랑의 입구(짙은 원목 문, 아무 글자 없는 무지 노렌, 따뜻한 간접 조명), 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 올백 머리, 얇은 콧수염, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 입구에 서서 노인을 내려다봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 코웃음 치며 비웃는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (scoffing), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-kuroda.png",
-        "assets/refs/beggar-chairman/loc-entrance.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 같은 일식 레스토랑의 입구(짙은 원목 문, 아무 글자 없는 무지 노렌, 따뜻한 간접 조명), 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 입구에 서서 지배인을 똑바로 바라봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 조용하고 단단한 눈빛, 눈을 피하지 않음 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] Genzo speaks one line in Japanese (quiet, firm), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-entrance.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 같은 일식 레스토랑의 입구(짙은 원목 문, 아무 글자 없는 무지 노렌, 따뜻한 간접 조명), 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 올백 머리, 얇은 콧수염, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 턱으로 홀 안쪽을 가리키는 동작(손은 프레임 밖). 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 귀찮다는 듯 한숨 쉬는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (annoyed sigh), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-kuroda.png",
-        "assets/refs/beggar-chairman/loc-entrance.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼, 무릎이 해진 회색 면바지, 해진 흰 운동화) 혼자 구석 자리에 조용히 앉는 모습, 주변은 흐릿한 빈 테이블들 [CAMERA] Movement: static. Speed: locked off. Framing: medium wide shot, he sits alone at a small table. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Mamiya. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지), 32세 일본인 남성 사업가(둥근 얼굴, 옆을 짧게 친 갈색 투블럭 머리, 왼쪽 귀에 작은 은색 귀걸이, 로고 없는 크림색 무지 니트와 베이지 코트, 손목에 굵은 은시계) 혼자 단독 인물 샷, 자기 테이블에 앉아 구석 쪽을 흘끗 봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 코를 찡그린 불쾌한 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Mamiya speaks one line in Japanese (whiny, loud), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-mamiya.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지), 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 올백 머리, 얇은 콧수염, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 손님 테이블 앞에서 허리를 살짝 굽힘. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 과장된 굽신 미소 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (fawning), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-kuroda.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 올백 머리, 얇은 콧수염, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 노인 쪽으로 몸을 숙여 목소리를 낮춤. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 낮고 위협적인 화난 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (low, threatening), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-kuroda.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 말없이 창밖을 바라보는 옆얼굴, 쓸쓸하지만 담담한 표정 [CAMERA] Movement: static. Speed: locked off. Framing: close-up profile. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly 2 people in frame: Yui, Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 일자 앞머리와 낮게 묶은 검은 머리, 왼쪽 눈 밑 작은 점, 흰 셔츠에 남색 무지 앞치마)가 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼, 무릎이 해진 회색 면바지, 해진 흰 운동화) 앞 식탁에 김이 오르는 무지 찻잔을 조용히 내려놓는 장면, 찻잔과 손 위주 [CAMERA] Movement: static. Speed: locked off. Framing: insert close-up on the teacup being set down. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/char-yui.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Yui. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 일자 앞머리와 낮게 묶은 검은 머리, 왼쪽 눈 밑 작은 점, 흰 셔츠에 남색 무지 앞치마) 혼자 단독 인물 샷, 식탁 옆에 서서 노인을 내려다봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 다정한 미소 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Yui speaks one line in Japanese (soft, kind), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-yui.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 자리에 앉아 아가씨를 올려다봄, 앞에 찻잔. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 처음으로 옅은 미소 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (warm), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Yui. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 일자 앞머리와 낮게 묶은 검은 머리, 왼쪽 눈 밑 작은 점, 흰 셔츠에 남색 무지 앞치마) 혼자 단독 인물 샷, 식탁 옆에 서 있음. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 수줍게 웃는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] Yui speaks one line in Japanese (shy), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-yui.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Yui. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 일자 앞머리와 낮게 묶은 검은 머리, 왼쪽 눈 밑 작은 점, 흰 셔츠에 남색 무지 앞치마) 혼자 단독 인물 샷, 주위를 살피며 몸을 살짝 숙임. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 결심한 듯 작게 속삭이는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Yui speaks one line in Japanese (whisper), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-yui.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Yui. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 같은 일식 레스토랑의 주방(스테인리스 조리대, 직원 식사용 큰 냄비, 따뜻한 조명), 21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 일자 앞머리와 낮게 묶은 검은 머리, 왼쪽 눈 밑 작은 점, 흰 셔츠에 남색 무지 앞치마) 혼자 직원 식사용 큰 냄비에서 국자로 우동 국물을 무지 도자기 그릇에 붓는 장면 [CAMERA] Movement: slow push-in. Speed: slow. Framing: medium shot to close-up on the bowl. End: hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-yui.png",
-        "assets/refs/beggar-chairman/loc-kitchen.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 앞에 놓인 김이 오르는 가케우동 그릇을 한참 내려다보는 얼굴, 눈가가 촉촉함 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: close-up, the steaming bowl soft in the foreground. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 올백 머리, 얇은 콧수염, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 성큼 다가와 아르바이트생을 노려봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 화난 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (shouting), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-kuroda.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Yui. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 일자 앞머리와 낮게 묶은 검은 머리, 왼쪽 눈 밑 작은 점, 흰 셔츠에 남색 무지 앞치마) 혼자 단독 인물 샷, 몸을 움츠림. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 겁먹은 눈, 떨리는 입술 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Yui speaks one line in Japanese (timid, shaky), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-yui.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 올백 머리, 얇은 콧수염, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 차갑게 내려다봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 차갑고 화난 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (cold), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-kuroda.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Mamiya. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지), 32세 일본인 남성 사업가(둥근 얼굴, 옆을 짧게 친 갈색 투블럭 머리, 왼쪽 귀에 작은 은색 귀걸이, 로고 없는 크림색 무지 니트와 베이지 코트, 손목에 굵은 은시계) 혼자 단독 인물 샷, 휴대폰을 든 채 웃음(휴대폰은 프레임 아래쪽). 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 비웃으며 웃는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Mamiya speaks one line in Japanese (laughing), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-mamiya.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "reuse_of": 1,
-      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지), 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 올백 머리, 얇은 콧수염, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 노인 쪽으로 몸을 숙이고 낡은 점퍼 소매를 거칠게 잡아당기는 순간(손은 프레임 밖). 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 경멸로 일그러진 화난 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (shouting, irritated), lips moving naturally, no on-screen text [SOUND] fabric yank, chair scrape",
-      "refs": [
-        "assets/refs/beggar-chairman/char-kuroda.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Yui. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 일자 앞머리와 낮게 묶은 검은 머리, 왼쪽 눈 밑 작은 점, 흰 셔츠에 남색 무지 앞치마) 혼자 단독 인물 샷, 지배인 앞을 막아섬. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 눈물 고인 간절한 눈 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Yui speaks one line in Japanese (pleading), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-yui.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 올백 머리, 얇은 콧수염, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 삿대질 직전처럼 몸을 앞으로 내밈(손은 프레임 밖). 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 핏대 선 분노한 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (yelling), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-kuroda.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 자리에 앉은 채 지배인을 올려다봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 처음으로 단단해진 눈빛, 낮고 위엄 있는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (low, commanding), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Sakaki. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 같은 일식 레스토랑의 입구(짙은 원목 문, 아무 글자 없는 무지 노렌, 따뜻한 간접 조명), 활짝 열린 원목 문으로 64세 일본인 남성 비서실장(단정히 빗어 넘긴 백발 올백, 은테 안경, 짧은 회색 콧수염, 검은 쓰리피스 정장)가 홀로 걸어 들어오는 장면, 위엄 있는 걸음 [CAMERA] Movement: static. Speed: locked off. Framing: full shot from inside the hall toward the door. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-sakaki.png",
-        "assets/refs/beggar-chairman/loc-entrance.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly 2 people in frame: Sakaki, Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 64세 일본인 남성 비서실장(단정히 빗어 넘긴 백발 올백, 은테 안경, 짧은 회색 콧수염, 검은 쓰리피스 정장)가 자리에 앉은 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼, 무릎이 해진 회색 면바지, 해진 흰 운동화) 앞에 서서 허리를 깊이 숙여 인사하는 장면 [CAMERA] Movement: static. Speed: locked off. Framing: two-shot, side angle, full body. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/char-sakaki.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Sakaki. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 64세 일본인 남성 비서실장(단정히 빗어 넘긴 백발 올백, 은테 안경, 짧은 회색 콧수염, 검은 쓰리피스 정장) 혼자 단독 인물 샷, 인사 후 고개를 든 자세. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 정중하고 깊은 무표정 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] Sakaki speaks one line in Japanese (respectful, deep), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-sakaki.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 올백 머리, 얇은 콧수염, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 얼어붙은 채 서 있음. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 새파랗게 질린 얼굴, 떨리는 입술 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (stammering, shocked), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-kuroda.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Sakaki. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 64세 일본인 남성 비서실장(단정히 빗어 넘긴 백발 올백, 은테 안경, 짧은 회색 콧수염, 검은 쓰리피스 정장) 혼자 단독 인물 샷, 회장 옆에 곧게 서 있음. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 단호한 무표정 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Sakaki speaks one line in Japanese (firm), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-sakaki.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Mamiya. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지), 32세 일본인 남성 사업가(둥근 얼굴, 옆을 짧게 친 갈색 투블럭 머리, 왼쪽 귀에 작은 은색 귀걸이, 로고 없는 크림색 무지 니트와 베이지 코트, 손목에 굵은 은시계) 혼자 들고 있던 휴대폰을 천천히 내리는 모습, 당황해 굳은 얼굴 [CAMERA] Movement: static. Speed: locked off. Framing: medium shot. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-mamiya.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 자리에서 일어나 지배인을 마주 봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 차분하고 조용한 정면 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (calm, quiet), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 올백 머리, 얇은 콧수염, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 겁에 질려 천천히 고개를 젓는 얼굴 [CAMERA] Movement: static. Speed: locked off. Framing: close-up. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-kuroda.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 자리에서 일어나 지배인을 마주 봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 먼 곳을 보는 그리운 눈빛 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (nostalgic, soft), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 자리에서 일어나 지배인을 마주 봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 그리움에 젖은 눈빛, 옅게 떨리는 입가 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (nostalgic, soft), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 자리에서 일어나 지배인을 마주 봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 긴 침묵 끝에 눈가가 젖은 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] Genzo speaks one line in Japanese (low, sad), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 자리에서 일어나 지배인을 마주 봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 단단한 정면 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (firm, steady), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 올백 머리, 얇은 콧수염, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 나무 바닥에 무릎을 꿇고 이마를 숙여 엎드리는 도게자(일본식 엎드려 사죄) 동작 [CAMERA] Movement: static. Speed: locked off. Framing: full shot, side angle. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-kuroda.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Kuroda. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 45세 일본인 남성 레스토랑 지배인(갸름한 얼굴, 포마드로 넘긴 검은 올백 머리, 얇은 콧수염, 검은 쓰리피스 정장, 은색 넥타이, 가슴에 아무 글자 없는 무지 금속 명찰) 혼자 단독 인물 샷, 바닥에 엎드렸다가 고개만 든 자세. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 떨며 절박하게 올려다보는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Kuroda speaks one line in Japanese (trembling, desperate), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-kuroda.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 자리에서 일어나 지배인을 마주 봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 씁쓸한 눈빛 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (bitter, quiet), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 자리에서 일어나 지배인을 마주 봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 소리치지 않는 차분하고 냉정한 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (calm, final), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Mamiya. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지), 32세 일본인 남성 사업가(둥근 얼굴, 옆을 짧게 친 갈색 투블럭 머리, 왼쪽 귀에 작은 은색 귀걸이, 로고 없는 크림색 무지 니트와 베이지 코트, 손목에 굵은 은시계) 혼자 단독 인물 샷, 자리에서 엉거주춤 일어남. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 식은땀 흘리며 억지로 웃는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Mamiya speaks one line in Japanese (nervous), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-mamiya.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Sakaki. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 64세 일본인 남성 비서실장(단정히 빗어 넘긴 백발 올백, 은테 안경, 짧은 회색 콧수염, 검은 쓰리피스 정장) 혼자 단독 인물 샷, 곧게 서서 마미야를 바라봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 차갑고 정중한 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Sakaki speaks one line in Japanese (polite, cold), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-sakaki.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly zero people in frame — 사람이 한 명도 없는, 인물 없음. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 흰 식탁보 위 김이 나지 않는 식어 버린 가케우동 한 그릇(무지 도자기 그릇), 사람이 한 명도 없는, 인물 없음. 레스토랑 구석 식탁 위 정물 [CAMERA] Movement: static. Speed: locked off. Framing: insert close-up of the cold bowl. End: hold the whole shot. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 다시 자리에 앉아 아가씨를 올려다봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 따뜻하고 다정한 미소 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (warm, gentle), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Yui. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 일자 앞머리와 낮게 묶은 검은 머리, 왼쪽 눈 밑 작은 점, 흰 셔츠에 남색 무지 앞치마) 혼자 단독 인물 샷, 식탁 옆에 서 있음. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 젖은 눈으로 밝게 웃는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] Yui speaks one line in Japanese (teary, bright), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-yui.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼, 무릎이 해진 회색 면바지, 해진 흰 운동화) 혼자 김이 오르는 가케우동을 젓가락으로 한 입 드는 모습, 눈가가 젖음 [CAMERA] Movement: static. Speed: locked off. Framing: medium close-up, bowl and face. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 식탁 앞에 앉아 있음(그릇은 프레임 밖). 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 눈물이 고인 채 떨리는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (tearful, trembling), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 아가씨를 올려다봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 인자한 미소 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (warm, kind), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 5,
-      "prompt": "[LOCK] Exactly one person in frame: Yui. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 21세 일본인 여성 아르바이트 홀 직원(계란형 얼굴, 일자 앞머리와 낮게 묶은 검은 머리, 왼쪽 눈 밑 작은 점, 흰 셔츠에 남색 무지 앞치마) 혼자 두 손으로 입을 막고 눈물을 흘리는 얼굴 [CAMERA] Movement: static. Speed: locked off. Framing: close-up. End: hold the last 1 second. [DURATION] 5 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-yui.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 옆에 선 비서실장 쪽을 바라봄. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 단단하고 따뜻한 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (warm but firm), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 도쿄 고급 호텔 1층 일식 레스토랑 홀(따뜻한 간접 조명, 흰 식탁보, 짙은 원목 벽과 장지문풍 칸막이, 큰 통유리창, 간판·메뉴판·노렌은 아무 글자 없는 무지)의 안쪽 화장실 옆 구석 자리, 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 단독 인물 샷, 비서실장을 바라본 채. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 따뜻하게 미소 짓는 얼굴 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Genzo speaks one line in Japanese (warm but firm), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-hall.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Genzo. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 밤, 검은 고급 세단 뒷좌석 안(창밖으로 흐르는 도쿄의 불빛), 78세 일본인 노인 남성(마르고 각진 얼굴, 짧게 깎은 흰머리와 짧은 흰 턱수염, 왼쪽 눈썹 위 작은 점, 깊은 이마 주름, 소매가 닳은 낡은 회색 무지 점퍼) 혼자 창밖 도시 불빛을 말없이 바라보는 옆얼굴, 평온한 표정 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up profile. End: hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-genzo.png",
-        "assets/refs/beggar-chairman/loc-car.png"
-      ]
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly zero people in frame — 사람이 한 명도 없는, 인물 없음. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 밤 도쿄 도심의 고층 빌딩 야경, 사람이 한 명도 없는, 인물 없음. 간판·글자 없는 건물들 [CAMERA] Movement: slow pan right. Speed: slow. Framing: wide establishing shot of the night skyline. End: hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] none [SOUND] none",
-      "refs": []
-    },
-    {
-      "duration": 10,
-      "prompt": "[LOCK] Exactly one person in frame: Host. 모든 인물은 일본인. Photorealistic live-action Japanese drama, Kodak 35mm film grain, 24fps, 16:9, warm amber and deep brown palette. 화면에 글자·간판 문자·자막 없음. No blood. [SCENE] 따뜻한 조명의 단정한 서재 세트(책장, 은은한 배경 흐림, 글자 없는 무지 소품), 50대 일본인 남성 진행자(단정한 회색 머리, 검은 뿔테 안경, 남색 무지 정장, 흰 셔츠, 온화한 미소) 혼자 단독 인물 샷, 카메라를 향해 앉아 있음. 정면 상반신, 가슴 위 클로즈업(손은 프레임 밖), 입을 자연스럽게 움직이며 일본어로 말하는 입 모양(한국어·영어 없음), 온화한 미소 [CAMERA] Movement: slow push-in. Speed: very slow. Framing: medium close-up, face centered, chest-up, hands out of frame. End: stops at close-up, hold the last 1 second. [DURATION] 10 seconds. [DIALOGUE] Host speaks one line in Japanese (warm, friendly), lips moving naturally, no on-screen text [SOUND] none",
-      "refs": [
-        "assets/refs/beggar-chairman/char-host.png",
-        "assets/refs/beggar-chairman/loc-studio.png"
-      ]
-    }
-  ]
+ "_설명": "beggar-chairman 장면 설정(build_beggar_phase3.py 생성). override_required 장면은 정지 푸시인·OMNI 정지 프레임·재사용·카드를 video-overrides로 먼저 넣는다.",
+ "ratio": "16:9",
+ "budget_usd": 30.37,
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "durations": [
+  5,
+  5,
+  10,
+  5,
+  10,
+  10,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  10,
+  10,
+  10,
+  10,
+  5
+ ],
+ "scenes": [
+  {
+   "prompt": "(override) reuse: Reuse of S10r (Iwaki yanking the old man's frayed sleeve, dutch 5 degrees). L01 ",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S10m (Mamiya filming with his phone, grinning). L02 audio.",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He looks up calmly, one slow blink, a quiet breath; no other movement. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/H2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Clouds drift slowly, the glass glints; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/H3-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The sneakers settle on the step, a small shift of weight; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S01a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He stands still looking up, his jacket stirs in the breeze, a slow breath; he does not turn. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S01b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Snow falls steadily, the warm window glows; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S02o-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Snow falls, the boy shivers and rubs his arms, breath fogging; he stays under the eaves. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S02a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Steam rises, the silhouette's hand beckons slowly twice; the face stays in shadow. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S02b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The bowl passes from the woman's hands into the small hands, steam curling; a gentle tremble. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S02c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He holds the bowl close, steam rising. One clear tear slowly spills over the lower lid and runs down the cheek along its natural curve, catching the light; a slow blink, a trembling breath; only one tear line, thin and translucent. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S02d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand slides slowly across the stone, fingers spreading; golden light shifts. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S03a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He gazes at the wall, a slow blink, a long breath; head still. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S03b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The noren sways gently; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S04a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes travel down and up slowly, a faint sneer; hands rest on the podium. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S04b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He stands politely, hands folded, a slow blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S04c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Iwaki's blurred shoulder (right foreground), high angle: Genzo at three-qua",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S04d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He listens calmly, a slow blink, hands stay folded. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S04e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A contemptuous half-smile spreads slowly, one eyebrow lifts; lips stay closed. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S04f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Iwaki's blurred shoulder: Genzo looking past him into the restaurant with l",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S04g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand slaps the book shut and presses it flat; a small bounce. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S04h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He gives a small bow and walks slowly past the podium. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S04i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He walks slowly away from the camera toward the corner; diners' heads turn slightly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S05a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Mamiya swirls the wine glass and glances sideways with a smirk; others glance. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S05b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low medium: Mamiya setting down his wine glass and calling out loudly, wrinkling",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S05c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Medium past Mamiya's blurred shoulder: Iwaki bowing low with an exaggerated fawn",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S05d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He nods servilely twice, the fawning smile fixed. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S05e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He smirks, satisfied, swirls the wine once. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S05f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes lower to the tablecloth, a slow breath, his hands rest still. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S05g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Her eyes widen, the tray tightens against her chest, a small breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S05h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He glares sideways, jaw tightening, one slow blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S05i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He keeps his eyes lowered, a slow breath, hands still on the table. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S05j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He turns his eyes toward the window within 15 degrees, silent, a slow breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S05k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The folder lands with a tap, the hand withdraws. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S05l-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The old fingers open the wallet slowly; the photo comes into view. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S05m-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Iwaki's blurred shoulder: Genzo stroking the old photo with his thumb, a fa",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S05n-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He sits still, the wallet in his hands; diners move in the distance. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S05o-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The sedan glides in and stops; reflections slide over the paint. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S06a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He lifts his wrist and checks the watch, then lowers it; composed. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S06a2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Reflections slide over the glass; the figure inside sits still with the phone. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S06b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The thumb scrolls slightly; the screen glows. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S06c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His jaw tightens, eyes narrow behind the glasses, the phone held still. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S06d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He lowers the phone and looks out the window, still, waiting. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S06e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The second hand ticks; the wrist turns slightly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S06f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Waiters pass quietly in the distance; pendant lamps glow. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S06g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The cup is set down gently, steam rising; the old hands move toward it. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S07a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Genzo's blurred shoulder (left foreground): Chihiro at three-quarter angle,",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S07b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Chihiro's blurred shoulder (right foreground): Genzo cupping the tea in bot",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S07c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He nods gently, the tea held in both hands, eyes warm. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S07d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A shy smile begins, she lowers her eyes then looks back. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S07e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up of Chihiro smiling shyly, eyes bright with her dream.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S07f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes soften, a small nod, the tea held still. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S07g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He listens, a slow nod, steam rising from the tea. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S07h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: She smiles warmly, a small nod, the tray against her chest. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S07i-1.png"
+  },
+  {
+   "prompt": "(override) omni: Medium, slight high angle: Genzo setting down the tea and looking up at her earn",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S07j-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up of Chihiro thinking a moment, then answering with a simple smile.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S07k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes glisten, a long breath, lips press together. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S07l-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes follow her toward the kitchen, glistening, a long breath. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S07m-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The ladle lifts, broth pours back, steam billows. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S08a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: She pours carefully, glances over her shoulder, steam rising. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S08b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He bows deeply and holds it, hands together. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S09a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes slide toward the corner, a scoff curls his lip; the bow holds. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S09b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Steam curls up slowly from the bowl. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Steam drifts across his face, his eyes glisten. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Genzo's blurred shoulder, low angle: Mamiya standing over the table, phone ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Mamiya's blurred shoulder: Genzo not looking up from the bowl, speaking qui",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Steam rises across the silhouette, a gentle nod; the face stays in shadow. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Steam rises and slowly dissolves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low medium: Iwaki striding in, glaring at the waitress, handheld feel.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His nostrils flare, the glare hardens; lips stay pressed. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10h-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Chihiro's blurred shoulder, low angle: Iwaki looking down coldly.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: She freezes, eyes welling, a shaky breath. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: She stares at the hand, frozen, a trembling breath. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The fingers tremble as they pull the apron strings loose. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10l-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He holds the phone up filming, grinning wider, shoulders shaking with a laugh. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10m-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Her hands clutch the apron tighter, head bowed, shoulders trembling. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10n-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The counter ticks up; the screen glows. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10o-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Her eyes well, her lips tremble. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10p-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Mamiya's blurred shoulder: Chihiro turning to face him, eyes wet but steady",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10q-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He shrugs with a smirk, rolling his eyes. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10q2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Iwaki yanks the sleeve twice, the old man sways but stays calm; Iwaki's mouth stays closed. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10r-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Iwaki's blurred shoulder: Chihiro stepping between them, eyes brimming with",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10s-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: She presses her lips together. One clear tear slowly spills over the lower lid and runs down the cheek along its natural curve, catching the light; a slow blink, a trembling breath; only one tear line, thin and translucent. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10t-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low medium: Iwaki exploding, a vein on his temple, leaning forward, handheld.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S10u-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He rises slowly from the chair to his full height, steady, hands at his sides. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S11a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Iwaki's blurred shoulder, eye level: Genzo standing, calm and firm.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S11b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The thumb presses the button once and lifts. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S11c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The phone buzzes once, a small rattle on the leather. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S11d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He steps out and buttons his jacket, then walks toward the entrance. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S11e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The shoes stride steadily across the marble, reflections sliding. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S11f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He stands unmoved, a slow breath, eyes steady. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S11g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The guards walk in and reach out; diners stand to watch. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S11h-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the old man's blurred shoulder: Chihiro spreading her arms in front of him,",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S11i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Everyone stays frozen; only the pendant lamps sway slightly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S11j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He stands calm, a slow breath, eyes steady. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S11k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The door swings open slowly, light spills across the floor. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S12a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He walks steadily forward, composed, eyes fixed ahead. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S12b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Three measured steps toward the camera, then stop. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S12c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sakaki lowers into a deep bow and holds it; the old man stands still. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S12d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Genzo's blurred shoulder: Sakaki rising from the bow, speaking respectfully",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S12e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up of Iwaki gone pale, lips trembling, cold sweat, dutch 7 degrees.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S12f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Iwaki's blurred shoulder: Sakaki standing upright beside the chairman, anno",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S12g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The phone lowers slowly, his face goes slack. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S12h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He watches in silence, eyes steady, a slow breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S13a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He swallows hard. A thin bead of cold sweat slowly runs from the temple down toward the jaw; a shaky breath, a hard swallow. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S13b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Iwaki's blurred shoulder, low angle: Genzo backlit, looking straight at him",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S13c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes widen, his mouth opens slightly, a sharp breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S13d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low medium: Genzo looking slowly around the hall, speaking with quiet authority.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S13e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He flinches, eyes darting. A thin bead of cold sweat slowly runs from the temple down toward the jaw; a shaky breath, a hard swallow. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S13f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up of Genzo gazing into the distance, remembering.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S13g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A slow push toward the photograph; a faint tremble of the old hand holding it. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S13h-1.png"
+  },
+  {
+   "prompt": "(override) omni: Choker close-up of Genzo, eyes wet, after a long silence.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S13i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He stands frozen, his lips part, a shaky breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S13j-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low medium: Genzo speaking firmly, the hall behind him.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S13k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He sinks slowly to his knees, hands trembling. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S14a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He presses his forehead to the floor, shoulders trembling; he does not look up. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S14b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Genzo's blurred legs, high angle: Iwaki on the floor lifting only his head,",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S14c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Iwaki's blurred head, low angle: Genzo looking down with bitter calm.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S14d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes dart, his breath shakes. A thin bead of cold sweat slowly runs from the temple down toward the jaw; a shaky breath, a hard swallow. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S14e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up of Genzo at three-quarter angle, delivering the dismissal quietly and p",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S14f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He listens without expression, one slow blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S14g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The forced smile collapses, he swallows hard. A thin bead of cold sweat slowly runs from the temple down toward the jaw; a shaky breath, a hard swallow. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S14h-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a thumb deleting a video on a dark smartphone screen (screen composited,",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S14i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He stays frozen, a hard swallow, eyes lowered. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S14j-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: the bowl of kake udon now cold on the tablecloth, no steam, chopsticks u",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S15a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Chihiro's blurred shoulder: Genzo sitting back down, looking up at her warm",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S15b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He smiles warmly, a small nod. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S15c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Steam rises strongly from the fresh bowl. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S15d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The chopsticks lift the noodles slowly, steam swirling. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S15e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He chews slowly, eyes closing. One clear tear slowly spills over the lower lid and runs down the cheek along its natural curve, catching the light; a slow blink, a trembling breath; only one tear line, thin and translucent. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S15f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Chihiro's blurred shoulder (right foreground): Genzo holding the chopsticks",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S15g-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Genzo's blurred shoulder: Chihiro with hands clasped, choking up.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S15h-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Chihiro's blurred shoulder: Genzo shaking his head gently with a kind smile",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S15i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Her eyes brim, she breathes in shakily. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S15j-1.png"
+  },
+  {
+   "prompt": "(override) omni: Medium: Genzo telling her kindly about the scholarship.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S15k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: She covers her mouth with both hands. One clear tear slowly spills over the lower lid and runs down the cheek along its natural curve, catching the light; a slow blink, a trembling breath; only one tear line, thin and translucent. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S15l-1.png"
+  },
+  {
+   "prompt": "(override) omni: Medium: Genzo turning to Sakaki, speaking firmly and warmly.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S15m-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He bows his head slightly, a faint smile. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S15n-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: City lights slide across his face, a slow peaceful blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S16a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a plain cream menu card on a wooden table, its last line blank for a com",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/beggar-chairman-keyframes/S16b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: She carries the bowl carefully, smiling, steam rising. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S16c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The pen moves slowly across the paper. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S16d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He sets the pen down and looks out the window, a slow breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S16e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Cars pass, lights glow. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/beggar-chairman-keyframes/S16f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Lights twinkle, a slow cloud drift. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/beggar-chairman-keyframes/S17a-1.png"
+  }
+ ]
 }
