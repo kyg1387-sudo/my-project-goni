@@ -58,6 +58,7 @@ LIGHT_NOTE = {
 EMO_OVERRIDE = {
     "H3": "NO title, NO words, NO letters anywhere in the image; the empty sky above the tower is clean.",
     "S04a": "NO captions, NO labels, NO words anywhere.",
+    "S11b": "POSE LOCKED: Iwaki is STANDING upright in the dim restaurant corner aisle, seen from a low angle, chest-up, both arms down at his sides; NO table in front of him, NO cards, NO hands of other people, NO other people or silhouettes anywhere, NO earrings. Only this one person.",
     "S04d": "NO captions, NO labels, NO words anywhere.",
     "S04c": "SPEAKER LOCKED: Iwaki (black slicked-back hair, thin black moustache, black three-piece suit) stands behind the podium and is the face at three-quarter angle; the old man appears ONLY as a blurred back of white hair and grey jacket shoulder at the near left edge.",
     "S04e": "SPEAKER LOCKED: Iwaki (black slicked-back hair, thin black moustache, black three-piece suit) stands behind the podium scoffing, the face at three-quarter angle; the old man appears ONLY as a blurred back of white hair at the near left edge.",
