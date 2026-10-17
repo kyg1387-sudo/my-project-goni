@@ -1,0 +1,47 @@
+{
+ "_설명": "회상 속 우동집 여주인(L23a) 목소리 오디션 4후보(Typecast jpn). Juha는 『月に帰った』 할머니 ハル.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "okami_Juha",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "お腹が空いたら、いつでもおいで。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 0.85
+  },
+  {
+   "id": "okami_Hera",
+   "model": "typecast-direct",
+   "voice": "tc_6a7446f56a91f3d41108bfca",
+   "language": "jpn",
+   "text": "お腹が空いたら、いつでもおいで。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 0.85
+  },
+  {
+   "id": "okami_Agatha",
+   "model": "typecast-direct",
+   "voice": "tc_63049449e7dfae64b10c6cb9",
+   "language": "jpn",
+   "text": "お腹が空いたら、いつでもおいで。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 0.85
+  },
+  {
+   "id": "okami_Kyungae",
+   "model": "typecast-direct",
+   "voice": "tc_6a867e7a0e6ddfd2f2dd17b6",
+   "language": "jpn",
+   "text": "お腹が空いたら、いつでもおいで。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 0.85
+  }
+ ]
+}
