@@ -321,7 +321,7 @@
    "image": "assets/portraits/beggar-chairman-keyframes/S05k-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: The folder lands with a tap, the hand withdraws. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: The hand sets the folder down flat on the white tablecloth with a small tap, then slowly withdraws out of frame; the folder stays lying flat on the tabletop, never on a chair, its size unchanged. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 10,
    "image": "assets/portraits/beggar-chairman-keyframes/S05l-1.png"
   },
@@ -377,7 +377,7 @@
    "image": "assets/portraits/beggar-chairman-keyframes/S06f-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Waiters pass quietly in the distance; pendant lamps glow. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Two small waiters far in the background cross slowly from left to right at the same distance; nobody walks toward the camera; pendant lamps glow softly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 10,
    "image": "assets/portraits/beggar-chairman-keyframes/S06g-1.png"
   },
@@ -510,7 +510,7 @@
    "image": "assets/portraits/beggar-chairman-keyframes/S10g-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: His nostrils flare, the glare hardens; lips stay pressed. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: His nostrils flare, the glare hardens; lips stay pressed. Both arms stay down at his sides out of frame, hands never rise, no fists, no gestures. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/beggar-chairman-keyframes/S10h-1.png"
   },
@@ -567,7 +567,7 @@
    "image": "assets/portraits/beggar-chairman-keyframes/S10q2-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Iwaki yanks the sleeve twice, the old man sways but stays calm; Iwaki's mouth stays closed. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: Iwaki keeps gripping the sleeve the whole time and tugs it hard twice, never letting go, staying right beside the old man; the old man sways slightly but stays calm; Iwaki's mouth stays closed. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/beggar-chairman-keyframes/S10r-1.png"
   },
@@ -578,7 +578,7 @@
    "image": "assets/portraits/beggar-chairman-keyframes/S10s-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: She presses her lips together. One clear tear slowly spills over the lower lid and runs down the cheek along its natural curve, catching the light; a slow blink, a trembling breath; only one tear line, thin and translucent. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: NOT smiling at any moment: her lips press tight and the corners of the mouth pull down, chin trembling, brows knotted in held-back pain. One clear tear slowly spills over the lower lid and runs down the cheek along its natural curve, catching the light; a slow blink, a trembling breath; only one tear line, thin and translucent. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/beggar-chairman-keyframes/S10t-1.png"
   },
@@ -906,7 +906,7 @@
    "image": "assets/portraits/beggar-chairman-keyframes/S16e-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: Cars pass, lights glow. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: The building stays perfectly still and unchanged; only a faint shimmer of the warm entrance lights; no cars arrive, no headlights, no glare. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 10,
    "image": "assets/portraits/beggar-chairman-keyframes/S16f-1.png"
   },
