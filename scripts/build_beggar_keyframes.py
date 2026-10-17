@@ -58,6 +58,10 @@ LIGHT_NOTE = {
 EMO_OVERRIDE = {
     "H3": "NO title, NO words, NO letters anywhere in the image; the empty sky above the tower is clean.",
     "S04a": "NO captions, NO labels, NO words anywhere.",
+    "S13c": "FRAMING LOCKED: MEDIUM CLOSE-UP from chest up, the camera about 1.5 metres away, the old man's face at least ONE THIRD of the frame height, standing; NOT a wide shot, NO full body, NO legs. LIGHT INTEGRATION: he is lit by the same soft light as the room, natural soft edges; NO glowing outline, NO halo or rim glow around his body, NOT a pasted cut-out. Low angle, backlit softly by the corner window, looking straight at the manager whose blurred back of slicked black hair and black suit shoulder is at the near LEFT edge. Setting: the dim restaurant corner, dark wood walls, a small table with a white cloth behind him.",
+    "S13e": "FRAMING LOCKED: MEDIUM CLOSE-UP from chest up, the camera about 1.5 metres away, the old man's face at least ONE THIRD of the frame height, standing; NOT a wide shot, NO full body, NO legs. LIGHT INTEGRATION: he is lit by the same soft light as the room, natural soft edges; NO glowing outline, NO halo or rim glow around his body, NOT a pasted cut-out. Low angle, he turns his gaze slowly across the hall, speaking with quiet authority; NOT seated, NO bowl. Setting: the bright restaurant hall behind him, out of focus: tall windows with the city, white tablecloths, amber pendant lamps.",
+    "S13k": "FRAMING LOCKED: MEDIUM CLOSE-UP from chest up, the camera about 1.5 metres away, the old man's face at least ONE THIRD of the frame height, standing; NOT a wide shot, NO full body, NO legs. LIGHT INTEGRATION: he is lit by the same soft light as the room, natural soft edges; NO glowing outline, NO halo or rim glow around his body, NOT a pasted cut-out. Low angle, speaking firmly to the manager whose blurred back of slicked black hair and black suit shoulder is at the near LEFT edge. Setting: the dim restaurant corner, dark wood walls, out of focus.",
+    "S14d": "FRAMING LOCKED: MEDIUM CLOSE-UP from chest up, the camera about 1.5 metres away, the old man's face at least ONE THIRD of the frame height, standing; NOT a wide shot, NO full body, NO legs. LIGHT INTEGRATION: he is lit by the same soft light as the room, natural soft edges; NO glowing outline, NO halo or rim glow around his body, NOT a pasted cut-out. Slightly low angle, looking DOWN with bitter calm at the manager kneeling below frame; only the top of the manager's slicked black head is blurred at the bottom LEFT edge; NOT seated. Setting: the dim restaurant corner, dark wood walls, out of focus.",
     "S07a": "INSERT IDENTITY LOCKED: the old man's hands are wrinkled, thin, with an old wristwatch, in plain GREY zip work-jacket sleeves (NOT a dark suit); the young woman's hand in a white blouse sleeve sets the cup down. Only hands, no faces.",
     "S11h": "IDENTITY LOCKED: the old man is Takamiya Genzo exactly as referenced — close-cropped white hair, short white beard, one small mole above the left eyebrow, plain grey zip-up work jacket, beige trousers, white sneakers; he is NOT in a suit. He stands calmly at the small corner table by the restroom corridor (dark wood walls). Exactly three people: the old man and two hotel security guards in plain black suits with NO caps, NO badges, NO uniforms, entering from the LEFT, one reaching toward his arm. NO diners, NO windows.",
     "S10b": "FRAMING LOCKED: CLOSE shot from across the small table at seated eye level: the old man seated on a chair pulled in to the table, seen from the chest up behind the near edge of the white tablecloth, both hands around the steaming bowl ON the table; NO legs, NO feet, NO shoes visible, he is NOT crouching; NO other person or shadowy figure anywhere in the background; only steam rises.",
@@ -94,12 +98,10 @@ EMO_OVERRIDE = {
     "S11f": "INSERT ONLY: polished black leather shoes and black trouser hems striding across a white marble lobby floor, camera at ground level; NO torso, NO hands, NO envelope, NO face.",
     "S12a": "LOCATION LOCKED: the SAME dark-wood restaurant hall with white tablecloths and amber pendant lamps as the reference; a heavy dark wooden door at the far end swinging open; NO posters, NO light wood, NO counter seats, NO signs.",
     "S13a": "POSE LOCKED: Genzo is STANDING upright (he has risen from his chair), tall and calm, backlit by the bright window behind him; low angle close-up; NOT seated, NO bowl.",
-    "S13e": "POSE LOCKED: Genzo is STANDING upright in the hall, looking slowly around, backlit; low angle medium shot; NOT seated, NO bowl in his hands.",
     "S13g": "FRAMING LOCKED: CLOSE-UP of Genzo STANDING, his face about half of the frame height, gazing into the distance, warm window rim light; NOT seated, NOT a wide shot.",
     "S14a": "POSE LOCKED: Iwaki is sinking DOWN onto his knees on the dark wooden floor, knees touching the floor, hands trembling; high angle; NOT standing.",
     "S14b": "LOCATION LOCKED: the SAME dark-wood restaurant with white tablecloths. Bird's-eye view straight down from the ceiling: Iwaki in a black suit prostrate in dogeza, forehead on the dark wooden floor between white-clothed tables; NO light wood, NO counter, NO bright windows.",
     "S14c": "POSE LOCKED: Iwaki is ON HIS KNEES on the floor, lifting only his head to look UP at the standing old man (only the old man's grey trouser legs, blurred, at the near edge), begging, tears and sweat, NO smile; high angle looking down at Iwaki.",
-    "S14d": "POSE LOCKED: Genzo is STANDING, looking DOWN at the man kneeling below him (only the kneeling man's blurred black hair at the bottom edge); low angle; NOT seated.",
     "S14f": "POSE LOCKED: Genzo is STANDING, close-up at three-quarter angle, calm and stern; low angle; NOT seated, NO black bars.",
     "S14g": "A PERSON MUST BE IN FRAME: low-angle close-up of Genzo STANDING in the corner, listening without expression.",
     "S15c": "POSE LOCKED: Genzo is SEATED on the wooden chair at the corner table (NOT on the floor), close-up, smiling warmly, eyes wet.",
@@ -137,10 +139,13 @@ def describe(path, i):
 
 
 NO_FACE = {}
+NO_LOC = {"S13c", "S13e", "S13k", "S14d"}  # 장소 참조가 원경·후광(오려 붙인 테두리)을 만든 립싱크 컷 — 장소는 글로만
 
 
 def build(sc, stage):
     refs = list(sc["refs"])
+    if sc["id"] in NO_LOC:
+        refs = [r for r in refs if not os.path.basename(r).startswith("loc-")]
     people = [r for r in refs if who_of(os.path.basename(r))[0]]
     is_back = any(os.path.basename(r).endswith("-fullback.png") for r in refs) and sc["kind"] != "d"
     if stage != "p" and sc["kind"] in FACE_KINDS and not is_back:  # 배경 없는 얼굴 크롭을 1번 참조로(동일 인물)
