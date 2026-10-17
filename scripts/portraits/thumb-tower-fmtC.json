@@ -1,0 +1,24 @@
+{
+ "_설명": "『タワマンのボスママ』 썸네일 C(倉庫番 「地獄を見せてやる」 형식) 베이스 — 고니감독님 참고 이미지(2026-10-17) 구도: 왼쪽 서류를 안은 유미 · 가운데~오른쪽 무릎 꿇은 레이카(스포트라이트) · 맨 오른쪽 내려다보는 오다기리. 2장 약 0.06달러.",
+ "characters": [
+  {
+   "id": "fmtC",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/tower-kf-a/S13d-1.png",
+    "assets/portraits/tower-kf-a/S06b-1.png",
+    "assets/portraits/tower-kf-a/S16f-1.png",
+    "assets/portraits/ashita-style-samples/anime-1.png"
+   ],
+   "prompt": "Create ONE single ultra-sharp, highly detailed illustration in 16:9 widescreen for a YouTube thumbnail — one image only, NOT a grid, no panels, no borders. Art style exactly like reference image 4 but cleaner and sharper: semi-realistic Japanese webtoon / drama-manga illustration, crisp bold black ink outlines on every figure, detailed cel shading with soft gradients, glossy highlights, rich saturated colors, strong rim light, every face crisp and in focus. Setting: a packed residents' meeting hall of a luxury Tokyo tower condominium at night — floor-to-ceiling windows with a glittering city skyline, two bright white spotlight beams from the ceiling, glossy pale-wood floor reflecting the light; in the background a crowd of residents in dark clothes watching in shock (softly out of focus). Composition (keep exactly): LEFT THIRD of the frame — the woman from reference image 1 (42, straight black chin-length bob with side-swept fringe, thin silver rectangular glasses, navy cardigan over a white collared blouse, NO earrings, natural lips), seen from the waist up and turned three-quarters toward the viewer, her face at about one third from the left edge in the upper half, hugging a thick stack of plain documents and a dark-green bank passbook to her chest, determined eyes glistening with tears. CENTER-RIGHT, in the spotlight on the floor — the glamorous woman from reference image 2 (about 40, long wavy dark-brown hair, cream tweed jacket, black top, pearl earrings, red lipstick) fallen to her knees, one hand on the floor and the other hand raised and trembling, sweat and tears, eyes wide, mouth open in panic. FAR RIGHT, standing tall at full height and looking down at her coldly — the elderly gentleman from reference image 3 (white combed-back hair, full bushy white moustache, charcoal three-piece suit, dark wooden cane), slightly low angle so he looks powerful. Faces must clearly resemble the reference people; correct anatomy, five fingers per hand, symmetrical eyes. Absolutely no text, letters, numbers, logos, signs or symbols anywhere — papers and passbook are blank."
+  }
+ ]
+}
