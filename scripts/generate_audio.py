@@ -157,6 +157,18 @@ def tts_line(cfg, key, index, voice, text, emotion=None):
     if cached(path):
         print(f"  [tts {index:03d}] 기존 파일 재사용")
         return path
+    if voice.startswith("el:"):
+        # ElevenLabs v3 (fal 경유) — 감정은 대사 앞 연기 태그로 (2~4단어, 긴 지시문은 낭독으로 누출됨)
+        tag = cfg.get("tag_overrides", {}).get(str(index), "")
+        payload = {"text": f"{tag} {text}".strip(), "voice": voice[3:],
+                   "language_code": cfg.get("el_language_code", "ja")}
+        result = fal_run(cfg.get("el_model", "fal-ai/elevenlabs/tts/eleven-v3"),
+                         payload, key, f"tts {index:03d}")
+        url = find_audio_url(result) if result else None
+        if not url:
+            print(f"  [tts {index:03d}] ElevenLabs 생성 실패: {result}")
+            return None
+        return path if download_retry(url, path) else None
     # 상황별 억양: 줄 번호별 말 속도 지정이 있으면 사용 (긴박=빠르게, 무게 있는 대사=느리게)
     speed = float(cfg.get("speed_overrides", {}).get(str(index), cfg.get("speed", 1.05)))
     voice_setting = {"voice_id": voice, "speed": speed}
