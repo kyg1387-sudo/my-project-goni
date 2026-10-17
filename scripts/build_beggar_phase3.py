@@ -438,6 +438,8 @@ VO = {  # line: (who, lens, angle, loc, subject, motion, expr)
  "L36a": ([I_], "cu", "HA", "CORNER", "High close-up of Iwaki flinching at his own evaluation being quoted, sweat on his brow.", "He flinches, eyes darting." + SWEAT_FLOW + HOLD, "cold"),
  "L43": ([G_], "cu", "LA", "CORNER", "Low close-up of Genzo listening to the young man's excuse without a flicker of expression.", "He listens without expression, one slow blink." + HOLD, "stern"),
  "L44": ([M_], "cu", "EL", "TABLE", "Close-up of Mamiya going pale as he hears it, the forced smile collapsing, sweat.", "The forced smile collapses, he swallows hard." + SWEAT_FLOW + HOLD, "panic"),
+ "L28": ([G_], "cu", "EL", "CORNER", "Close-up of Genzo seated, looking up at the young waitress as she steps in to defend him, deeply moved, eyes glistening.", "His eyes soften and glisten, a slow breath, lips stay closed, hands still." + WET_HOLD + HOLD, "calm"),
+ "L30": ([I_], "cu", "LA", "CORNER", "Low chest-up close-up of Iwaki freezing as the old man calmly offers to pay, eyes narrowing in disbelief.", "He freezes, eyes narrow in disbelief, a sharp breath; lips stay pressed; both arms stay down, hands never rise." + HOLD, "cold"),
  "L47": ([G_], "cu", "EL", "CORNER", "Close-up of Genzo smiling warmly at her bright answer, eyes wet.", "He smiles warmly, a small nod." + WET_HOLD + HOLD, "smile"),
 }
 for _s in SHOTS:
@@ -493,23 +495,58 @@ def ass_t(sec):
     return f"{int(h)}:{int(m):02d}:{s:05.2f}"
 
 
-def wrap(text, limit=18):
-    """휴대폰 기준(8절): 1줄 18자 이내·2줄. libass 일본어 자동 줄바꿈 불가 → 구두점에서 수동 \\N."""
-    NOHEAD = "…—、。!?？！』」"
-    out, cur = [], ""
-    for i, ch in enumerate(text):
-        cur += ch
-        nxt = text[i + 1] if i + 1 < len(text) else ""
-        if len(cur) >= limit and ch in "、。…!?？！』」" and nxt and nxt not in NOHEAD:
-            out.append(cur); cur = ""
-    if cur:
-        out.append(cur)
-    if len(out) > 2 or max(len(x) for x in out) > limit + 6:
-        mid = len(text) // 2
-        cands = [i + 1 for i, ch in enumerate(text[:-1]) if ch in "、。…!?？！" and text[i + 1] not in NOHEAD]
-        cut = min(cands, key=lambda i: abs(i - mid)) if cands else mid
-        out = [text[:cut], text[cut:]]
-    return "\\N".join(out)
+def wrap_lines(text, limit=20):
+    """휴대폰 기준(제13장 1·제17장 2): 줄당 20자 이내. libass 일본어 자동 줄바꿈 불가 → 수동 분할.
+    줄 수는 최소로, 끊는 자리는 구두점 > 조사 뒤 > 글자 종류 경계 순(낱말 중간 「告げま/した」 금지), 줄 길이는 고르게."""
+    n = len(text)
+    if n <= limit:
+        return [text]
+    NOHEAD = "…—、。!?？！』」ーぁぃぅぇぉっゃゅょゎァィゥェォッャュョ"
+    def kind(c):
+        return "h" if "ぁ" <= c <= "ゖ" else "k" if "ァ" <= c <= "ヺ" or c == "ー" else "p" if c in "、。…!?？！』」「『" else "c"
+    def cost(i):  # text[:i] | text[i:]
+        a, b = text[i - 1], text[i]
+        if b in NOHEAD or a in "「『":
+            return 99
+        if a in "、。!?？！』」" or (a == "…" and b != "…"):
+            return 0
+        if a in "はがをにでともへやねよ" and kind(b) != "h":
+            return 3
+        if kind(a) != kind(b) and kind(b) != "h":
+            return 6
+        return 30
+    def solve(lines):
+        best = {0: (0, [])}
+        for _ in range(lines):
+            nxt = {}
+            for st, (c0, br) in best.items():
+                for e in range(st + 1, min(n, st + limit) + 1):
+                    c = c0 + (0 if e == n else cost(e)) + abs((e - st) - n / lines) * 0.4
+                    if e not in nxt or c < nxt[e][0]:
+                        nxt[e] = (c, br + [e])
+            best = nxt
+        return best.get(n)
+    lo = -(-n // limit)
+    # 낱말 중간에서 끊느니 한 줄 더(3줄째는 다음 조각으로 넘어감) — 줄 하나 늘 때 비용 12
+    sols = [(r[0] + 12 * (k - lo), r[1]) for k in (lo, lo + 1) for r in [solve(k)] if r]
+    br = [0] + min(sols)[1]
+    return [text[br[k]:br[k + 1]] for k in range(len(br) - 1)]
+
+
+WRAP_FIX = {  # 자동 분할이 구절 중간에서 끊는 줄(눈 검수 후 수동 지정)
+    "榊、今日からこの店のメニューに、かけうどんを載せなさい。腹を空かせた人からは、お代はもらわんように":
+        ["榊、今日からこの店のメニューに、", "かけうどんを載せなさい。", "腹を空かせた人からは、", "お代はもらわんように"],
+    "知らなかったから申し訳ない、か……。知っておったら、しなかったということじゃな":
+        ["知らなかったから申し訳ない、か……。", "知っておったら、", "しなかったということじゃな"],
+}
+
+
+def chunks(text, limit=20):
+    """한 이벤트 2줄 이내(제15장 21): 3줄 이상이면 2줄씩 조각."""
+    ls = WRAP_FIX.get(text) or wrap_lines(text, limit)
+    if len(ls) == 3 and ls[0][-1] in "、。…!?？！』」" and ls[1][-1] not in "、。…!?？！』」":
+        return [ls[0], "\\N".join(ls[1:])]
+    return ["\\N".join(ls[i:i + 2]) for i in range(0, len(ls), 2)]
 
 
 def script_texts():
@@ -699,13 +736,17 @@ def main():
         st = STYLE["NA" if x["spk"] == "NA" else x["spk"]]
         s0 = x["start"] - x["lead"]
         e0 = x["end"] + 0.2
-        events.append((s0, e0, st, STYLE_JA[st], wrap(texts[x["tag"].rstrip("r") if x["tag"].endswith("r") and x["tag"][:-1] in texts else x["tag"]])))
+        parts = chunks(texts[x["tag"].rstrip("r") if x["tag"].endswith("r") and x["tag"][:-1] in texts else x["tag"]])
+        tot = sum(len(q) for q in parts); t = s0
+        for k, q in enumerate(parts):  # 조각은 「<스타일>_c」(silent) — TTS 줄 수 유지(제15장 21)
+            t1 = e0 if k == len(parts) - 1 else t + (e0 - s0) * len(q) / tot
+            events.append((t, t1, st if k == 0 else st + "_c", STYLE_JA[st], q)); t = t1
     # 화면 카드(후크·중반 예고·메뉴판·다음 이야기·타이틀)는 클립에 직접 그린다 — .ass Caption 없음(제15장 12)
     events.sort(key=lambda e: e[0])
-    # 휴대폰 기준(8절): 대사 66px·외곽선 6, 내레이션 60px
+    # 휴대폰 기준(제13장 1): 대사 70px·내레이션 66px·외곽선 6, 좌우 여백 120px. 조각 스타일 _c도 같은 모양
     st_lines = "\n".join(
-        f"Style: {n},Noto Sans CJK JP,{66 if n != 'Naration' else 60},{c},&H000000FF,&H00000000,&H80000000,-1,{-1 if n == 'Naration' else 0},0,0,100,100,0,0,1,6,2,2,200,200,90,1"
-        for n, c in STYLE_COLOR.items())
+        f"Style: {n}{suf},Noto Sans CJK JP,{70 if n != 'Naration' else 66},{c},&H000000FF,&H00000000,&H80000000,-1,{-1 if n == 'Naration' else 0},0,0,100,100,0,0,1,6,2,2,120,120,90,1"
+        for n, c in STYLE_COLOR.items() for suf in ("", "_c"))
     ass = ["[Script Info]", "Title: みすぼらしい老人は、財閥会長だった 字幕", "ScriptType: v4.00+", "PlayResX: 1920", "PlayResY: 1080", "WrapStyle: 2",
            "ScaledBorderAndShadow: yes", "", "[V4+ Styles]",
            "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding",
@@ -732,7 +773,7 @@ def main():
     audio = {
         "_설명": f"{SKIT} 조립·오디오(build_beggar_phase3.py 생성). 음성 {len(tts_order)}줄 = assets/audio-overrides/{SKIT}/ (Typecast 확정본).",
         "default_voice": "cached-typecast", "tts_model": "fal-ai/minimax/speech-02-hd", "language_boost": "Japanese", "speed": 1.0,
-        "style_names": STYLE_JA, "narration_styles": ["Naration"], "silent_styles": ["Caption", "HookLine", "Title"],
+        "style_names": STYLE_JA, "narration_styles": ["Naration"], "silent_styles": ["Caption", "HookLine", "Title"] + [n + "_c" for n in STYLE_COLOR],
         "output_size": [1920, 1080], "fit": "crop", "scene_durations": durations, "transitions": [0.0] * len(durations),
         "omnihuman_scenes": [idx[s["id"]] for s in SHOTS if s["kind"] == "d" and s["line"]],
         "omnihuman_prompts": {str(idx[k]): v for k, v in omni_prompts.items()},
