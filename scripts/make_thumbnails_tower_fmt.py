@@ -63,7 +63,7 @@ def thumb_a():
     x0 = 1890 - l2a.width - l2b.width + 30
     img.alpha_composite(glow(l2b, (255, 200, 0), 18, 1.2), (x0 + l2a.width - 30, 302))
     img.alpha_composite(l2a, (x0, 310))
-    img.alpha_composite(band(["ボスママの正体は、", "ただの賃借人だった"], 70, alpha=200), (1000, 720))
+    img.alpha_composite(band(["正体は", "ただの賃借人"], 104, alpha=210, pad=(34, 14)), (1040, 640))   # 2026-10-17 검토: 휴대폰에서 작음 → 짧게·크게
     return img.convert("RGB")
 
 
@@ -73,6 +73,7 @@ def thumb_b():
     cone = Image.new("L", (W, H), 0)
     ImageDraw.Draw(cone).polygon([(820, 0), (1100, 0), (1350, H), (560, H)], fill=34)
     img = Image.alpha_composite(img, Image.merge("RGBA", [Image.new("L", (W, H), 255)] * 3 + [cone.filter(ImageFilter.GaussianBlur(80))]))
+    img.alpha_composite(label("→ 3か月後、母の大逆転", 74, (200, 16, 16, 255), (255, 240, 120), border=(255, 210, 60, 255), pad=(26, 10)), (40, 40))   # 2026-10-17 검토: 해소 암시
     for i, s in enumerate(["5歳の娘を", "締め出した", "ボスママは言った…"]):
         lay = text_layer(s, GOTH, 104, (255, 255, 255), (0, 0, 0), 12)
         sh = Image.new("RGBA", lay.size, (0, 0, 0, 0)); sh.putalpha(lay.split()[3].filter(ImageFilter.GaussianBlur(10)))
@@ -103,14 +104,13 @@ def thumb_c(n):
         lay = text_layer(s, GOTH, size, fill, (255, 255, 255) if grad else (0, 0, 0), 12,
                          gradient=grad, outer=(0, 0, 0) if grad else None, outer_w=9 if grad else 0)
         put(img, lay, 6, y); y += lay.height - 44
-    badge = label("ボスママの横領、暴かれる", 46, (175, 18, 18, 255), (255, 255, 255), pad=(30, 8))
-    num = big("27件の証拠", 104, gradient=((255, 255, 190), (255, 225, 40), (255, 160, 0)), stroke_w=8, outer_w=6)
+    badge = label("横領", 52, (175, 18, 18, 255), (255, 255, 255), pad=(30, 6))   # 2026-10-17 검토: 정보 과다 → 배지 짧게
+    num = big("27件の証拠", 124, gradient=((255, 255, 190), (255, 225, 40), (255, 160, 0)), stroke_w=8, outer_w=6)
     box = Image.new("RGBA", (max(badge.width, num.width) + 44, badge.height + num.height + 4), (0, 0, 0, 0))
     ImageDraw.Draw(box).rounded_rectangle([0, 0, box.width - 1, box.height - 1], 28, fill=(255, 200, 40, 255))
     ImageDraw.Draw(box).rounded_rectangle([7, 7, box.width - 8, box.height - 8], 24, fill=(165, 14, 14, 245))
     box.alpha_composite(badge, ((box.width - badge.width) // 2, 12)); box.alpha_composite(num, ((box.width - num.width) // 2, badge.height - 6))
     img.alpha_composite(box, C_BADGE)
-    img.alpha_composite(band(["家賃滞納、そして…"], 72, alpha=235, pad=(34, 16)), C_BAND)
     return img.convert("RGB")
 
 
