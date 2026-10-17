@@ -1,0 +1,63 @@
+{
+ "_설명": "『タワマンのボスママ』 썸네일 A/B/C 지침판(제0장 8: 썸네일 = 일본 드라마 만화풍, 2560x1440 seedream v4 edit). 각 2장 약 0.18달러. 글자는 make_thumbnails_tower_hd.py로 로컬 합성.",
+ "_style_preset": "Semi-realistic Japanese webtoon illustration, crisp bold ink outlines, detailed cel shading, ultra sharp, 16:9",
+ "characters": [
+  {
+   "id": "towerhdA",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/tower-kf-a/S13d-1.png",
+    "assets/portraits/tower-kf-a/S06b-1.png",
+    "assets/portraits/tower-keyframes/S17b-1.png",
+    "assets/portraits/ashita-style-samples/anime-1.png"
+   ],
+   "prompt": "Create ONE single ultra-sharp, highly detailed illustration in 16:9 widescreen for a YouTube thumbnail — one image only, NOT a grid, no panels, no borders. Art style exactly like the LAST reference image but cleaner and sharper: semi-realistic Japanese webtoon / drama-manga illustration, crisp bold black ink outlines, detailed cel shading with soft gradients, glossy highlights, rich saturated colors, strong rim light, every face crisp and in focus. Setting: a packed residents' meeting hall on a high floor of a luxury Tokyo tower condominium at dusk — floor-to-ceiling windows with the city skyline, rows of grey chairs full of residents in the background watching in shock (softly out of focus), a wooden lectern, two bright spotlight beams from the ceiling, glossy pale-wood floor. Composition (keep exactly): RIGHT THIRD, LARGE — the woman from reference image 1 (42, straight black chin-length bob with a soft side-swept fringe, thin silver rectangular glasses, navy cardigan over a white collared blouse) standing calm and composed, seen from the chest up, her face big and sharp at about one third from the right edge in the upper half of the frame, holding up an open dark-green bank passbook at chest height, quiet resolute eyes. LEFT-CENTER, in a white spotlight on the floor — the glamorous woman from reference image 2 (about 40, long wavy dark-brown hair, cream tweed jacket, black top, pearl earrings, red lipstick) fallen to her knees, one hand on the floor, face wet with tears and running mascara, mouth open in despair, as in reference image 3. Leave the LEFT edge and the TOP-LEFT area relatively simple (darker) for large text to be added later; keep the bottom-right corner empty of faces. Faces must clearly resemble the reference people; correct anatomy, five fingers per hand, symmetrical eyes. No text, letters, numbers, logos, signs or watermarks anywhere — papers, passbook and signs are blank. Negative: grid, collage, panels, borders, blurry, extra fingers, deformed eyes, duplicate people, realistic photo, 3D avatar, chibi, blood."
+  },
+  {
+   "id": "towerhdB",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/tower-kf-a/S13d-1.png",
+    "assets/portraits/tower-cast/cells/riko-front.png",
+    "assets/portraits/tower-keyframes/S03e-1.png",
+    "assets/portraits/ashita-style-samples/anime-1.png"
+   ],
+   "prompt": "Create ONE single ultra-sharp, highly detailed illustration in 16:9 widescreen for a YouTube thumbnail — one image only, NOT a grid, no panels, no borders. Art style exactly like the LAST reference image but cleaner and sharper: semi-realistic Japanese webtoon / drama-manga illustration, crisp bold black ink outlines, detailed cel shading with soft gradients, glossy highlights, rich saturated colors, strong rim light, every face crisp and in focus. Setting: the hallway outside the glass wall of a bright children's playroom in a luxury tower condominium — inside the glass (left side, softly out of focus) colorful play mats, toy shelves and other children playing; warm afternoon backlight. Composition (keep exactly): RIGHT HALF, LARGE — the woman from reference image 1 (42, straight black chin-length bob with a soft side-swept fringe, thin silver rectangular glasses, navy cardigan over a white collared blouse) kneeling and hugging her little daughter, the 5-year-old girl from reference image 2 (black hair in two pigtails, yellow dress), both faces big and sharp in the upper half of the right side: the girl with big eyes brimming with tears looking toward the playroom as in reference image 3, the mother holding her protectively with a determined, quietly angry gaze. LEFT side: the closed glass door of the playroom with a plain blank white sign on it. Leave the LEFT edge and the TOP-LEFT area relatively simple (darker) for large text to be added later; keep the bottom-right corner empty of faces. Faces must clearly resemble the reference people; correct anatomy, five fingers per hand, symmetrical eyes. No text, letters, numbers, logos, signs or watermarks anywhere — papers, passbook and signs are blank. Negative: grid, collage, panels, borders, blurry, extra fingers, deformed eyes, duplicate people, realistic photo, 3D avatar, chibi, blood."
+  },
+  {
+   "id": "towerhdC",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/tower-kf-a/S16f-1.png",
+    "assets/portraits/tower-kf-a/S06b-1.png",
+    "assets/portraits/tower-keyframes/S17g-1.png",
+    "assets/portraits/ashita-style-samples/anime-1.png"
+   ],
+   "prompt": "Create ONE single ultra-sharp, highly detailed illustration in 16:9 widescreen for a YouTube thumbnail — one image only, NOT a grid, no panels, no borders. Art style exactly like the LAST reference image but cleaner and sharper: semi-realistic Japanese webtoon / drama-manga illustration, crisp bold black ink outlines, detailed cel shading with soft gradients, glossy highlights, rich saturated colors, strong rim light, every face crisp and in focus. Setting: a packed residents' meeting hall on a high floor of a luxury Tokyo tower condominium at dusk — floor-to-ceiling windows with the city skyline, rows of grey chairs full of residents in the background watching in shock (softly out of focus), a wooden lectern, two bright spotlight beams from the ceiling, glossy pale-wood floor. Composition (keep exactly): RIGHT THIRD, LARGE — the dignified elderly gentleman from reference image 1 (white combed-back hair, full bushy white moustache, deep wrinkles, charcoal three-piece suit, dark wooden cane in his hand) standing tall, seen from the chest up with a slight low angle, his face big and sharp at about one third from the right edge in the upper half, looking down coldly. LEFT-CENTER, in a white spotlight on the floor — the glamorous woman from reference image 2 (about 40, long wavy dark-brown hair, cream tweed jacket, black top, pearl earrings, red lipstick) on her knees looking up at him pleadingly with clasped hands, tears and running mascara, as in reference image 3. Leave the LEFT edge and the TOP-LEFT area relatively simple (darker) for large text to be added later; keep the bottom-right corner empty of faces. Faces must clearly resemble the reference people; correct anatomy, five fingers per hand, symmetrical eyes. No text, letters, numbers, logos, signs or watermarks anywhere — papers, passbook and signs are blank. Negative: grid, collage, panels, borders, blurry, extra fingers, deformed eyes, duplicate people, realistic photo, 3D avatar, chibi, blood."
+  }
+ ]
+}
