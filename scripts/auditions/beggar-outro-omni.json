@@ -1,0 +1,33 @@
+{
+ "_설명": "『みすぼらしい老人は、財閥会長だった』 아웃트로 진행자(새 스타일) OmniHuman 4컷 — 음성은 beggar-outro(무음 정리+0.15초 여백), 8초 이하. 약 22초 x 0.16 ≈ 3.5달러.",
+ "tests": [
+  {
+   "id": "omni-out1",
+   "model": "omnihuman",
+   "image": "assets/portraits/beggar-host/host-cu-2.png",
+   "audio_id": "pad1",
+   "prompt": "A friendly young Japanese TV host thanks the viewers warmly with a bright gentle smile and a small bow of the head, hands still."
+  },
+  {
+   "id": "omni-out2",
+   "model": "omnihuman",
+   "image": "assets/portraits/beggar-host/host-cu-2.png",
+   "audio_id": "pad2",
+   "prompt": "The host cheerfully asks for subscribe and like with a bright smile and a small nod."
+  },
+  {
+   "id": "omni-out3",
+   "model": "omnihuman",
+   "image": "assets/portraits/beggar-host/host-wu-2.png",
+   "audio_id": "pad3",
+   "prompt": "The host asks the viewers a warm heartfelt question, slight head tilt, gentle smile, hands relaxed and still on her lap."
+  },
+  {
+   "id": "omni-out4",
+   "model": "omnihuman",
+   "image": "assets/portraits/beggar-host/host-wave-1.png",
+   "audio_id": "pad4",
+   "prompt": "The host gives the next-episode teaser and says goodbye with a warm smile, keeps the raised waving hand still and open."
+  }
+ ]
+}
