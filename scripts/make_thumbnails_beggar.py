@@ -94,8 +94,8 @@ ABC = {
               rows=[("みすぼらしい", 112, None, (255, 255, 255)), ("老人に", 112, None, (255, 255, 255)), ("支配人は言った…", 112, None, (255, 255, 255))],
               row_y=300, quote="「裏口から出ろ」", quote_size=210),
     "B": dict(src="beggar-thumb-abc/thumbB-{n}.png", side="L", label="スカッとする話",
-              rows=[("追い出した", 128, FIRE, None), ("老人は", 140, None, (255, 255, 255)), ("財閥の", 150, FIRE, None), ("会長だった", 138, YELLOW, None)],
-              shade=95, shade_w=640, badge=("支配人、土下座", "七十年前の恩"), badge_xy=(780, 24), band=None),
+              rows=[("追い出した", 134, FIRE, None), ("老人は", 140, None, (255, 255, 255)), ("財閥の", 184, FIRE, None), ("会長だった", 162, YELLOW, None)],
+              row_y=320, shade=95, shade_w=640, badge=("支配人、土下座", "七十年前の恩"), badge_xy=(780, 24), band=None),
     "C": dict(src="beggar-thumb-abc2/thumbC2-{n}fix.png", side="R", label="感動する話", label_style="black",
               rows=[("三万円の店で…", 112, RED, None), ("老人が頼んだもの", 104, YELLOW, None)], x0=1010,
               band=["その一杯が、", "店の運命を変える"], band_xy=(1060, 760)),
@@ -121,7 +121,7 @@ def thumb_fmt(tag, n):
             lab = label(v["label"], 62, (10, 10, 10, 255), (255, 255, 255), border=(255, 255, 255, 255))
         else:
             lab = label(v["label"], 64, (255, 255, 255, 255), (20, 20, 20))
-        img.alpha_composite(lab, (x0, 26)); y = 130
+        img.alpha_composite(lab, (x0, 26)); y = v.get("row_y", 130)
     for s_, size, grad, fill in v["rows"]:
         lay = text_layer(s_, GOTH, size, fill, (255, 255, 255) if grad else (0, 0, 0), 12,
                          gradient=grad, outer=(0, 0, 0) if grad else None, outer_w=9 if grad else 0)
