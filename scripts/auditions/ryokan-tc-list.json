@@ -1,4 +1,6 @@
 {
  "_설명": "#03 Typecast 보이스 목록 조회(무과금) — 일본어(jpn) 지원 후보를 배역별로 고르기 위한 전수 목록. 결과는 assets/auditions/ryokan-tc-list/typecast_voices.jsonl에 커밋됨.",
- "typecast_list": {}
+ "typecast_list": {
+  "_all": 1
+ }
 }
