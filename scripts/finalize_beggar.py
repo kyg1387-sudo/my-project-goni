@@ -64,7 +64,11 @@ def phone_clip(out, sec, tmp):
     PW, PH = 480, 304
     for i in range(n):
         dx = int((sw - cw) * 0.5 + 14 * np.sin(i * 0.37) + 7 * np.sin(i * 1.1))
-        crop = src.crop((dx, 0, dx + cw, chh)).resize((PW, PH))
+        # 휴대폰으로 찍은 영상처럼: 좌우 흔들림 + 미세 회전·확대 흔들림 + 약간 무른 화질(고니감독님 지적 2:55 — 영화 장면처럼 너무 깨끗함)
+        z = 1.08 + 0.02 * np.sin(i * 0.23)
+        cw2, ch2 = int(cw / z), int(chh / z); dy = int((chh - ch2) * (0.5 + 0.35 * np.sin(i * 0.53)))
+        crop = src.crop((dx, dy, dx + cw2, dy + ch2)).rotate(1.2 * np.sin(i * 0.41), resample=Image.BICUBIC).resize((PW, PH))
+        crop = crop.filter(ImageFilter.GaussianBlur(0.7))
         crop = Image.blend(crop, Image.new("RGB", crop.size, (215, 228, 255)), 0.10)  # 백라이트 푸른 기
         d = ImageDraw.Draw(crop)
         d.rectangle((0, PH - 10, PW, PH - 5), fill=(90, 90, 90)); d.rectangle((0, PH - 10, int(PW * (0.15 + 0.6 * i / n)), PH - 5), fill=(235, 50, 50))  # 진행 바
