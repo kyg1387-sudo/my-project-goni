@@ -277,6 +277,9 @@ deformed eyes, extra fingers.
 - 시리즈 배역 목소리: 김씨=ElevenLabs `8vwSOQHQApfVx993mKf9`, 내레이터·아웃트로=ElevenLabs
   `5n5gqmaQi9Ewevrz7bOS`, 준호=MiniMax Casual_Guy, 최사장(EP3)=Typecast 명주
   `tc_656059fc4db338e38f77d0bc`(ssfm-v30), 폐지 할머니(EP3)=Typecast `tc_60ad0841061ee28740ec2e1c`(ssfm-v30).
+- **유튜브 등록 대장** `docs/유튜브-등록대장.md`: 이 저장소에서 만든 모든 본편·쇼츠의 등록(공개) 일자·시간·URL을
+  기록한다(사용자 요청 2026-10-18). 완성본을 전달할 때 행을 추가하고, 사용자가 업로드·예약 시각을 알려 주면 즉시 기입해
+  커밋한다. AI는 유튜브에 접근할 수 없으므로 실제 등록 시각은 사용자가 알려 준 값만 적는다.
 - 2026-10-01 이전까지의 제작 지침·EP1~EP3 실증 교훈 ①~㉔·성장 전략 체크리스트는
   `docs/아카이브-이전제작지침(CLAUDE.md-2026-10-01까지).md`에 보관되어 있다(참조용).
   `docs/영화제작규칙집.md`, `docs/기획안-김씨시리즈.md`, `docs/EP3-인수인계.md`, `docs/제작규격-보강-EP3실증.md`,
