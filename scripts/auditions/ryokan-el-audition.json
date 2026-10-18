@@ -1,0 +1,194 @@
+{
+ "_설명": "#03 『老舗旅館の嫁』 ElevenLabs 2차 오디션 — 도서관 검색(ryokan-el-search) 34개 중 배역별 3개 후보에 실제 대사 1줄, eleven_v3 + 짧은 연기 태그(2~3단어). 도서관 목소리는 생성 시 계정에 자동 추가. 비용: EL 약 1,200자 크레딧. 1차(Typecast·MiniMax 25건)와 같은 대사라 A/B 청취 가능.",
+ "tests": [
+  {
+   "id": "wakana_el_Chihiro",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[calm, quietly firm] お義母さん。月見荘は、私がいなくても百年やってきたんですよね。……それに、よそ者の嫁は、裏方で十分なんでしょう？",
+   "subtitle": "お義母さん。月見荘は、私がいなくても百年やってきたんですよね。……それに、よそ者の嫁は、裏方で十分なんでしょう？"
+  },
+  {
+   "id": "wakana_el_Naomi",
+   "model": "elevenlabs-direct",
+   "voice": "LKxkO9LRDlHs9Bn5f0J2",
+   "voice_name": "Naomi",
+   "el_model": "eleven_v3",
+   "text": "[calm, quietly firm] お義母さん。月見荘は、私がいなくても百年やってきたんですよね。……それに、よそ者の嫁は、裏方で十分なんでしょう？",
+   "subtitle": "お義母さん。月見荘は、私がいなくても百年やってきたんですよね。……それに、よそ者の嫁は、裏方で十分なんでしょう？"
+  },
+  {
+   "id": "wakana_el_Shino",
+   "model": "elevenlabs-direct",
+   "voice": "Kohz4YYGbPgnEUrf8CZl",
+   "voice_name": "Shino",
+   "el_model": "eleven_v3",
+   "text": "[calm, quietly firm] お義母さん。月見荘は、私がいなくても百年やってきたんですよね。……それに、よそ者の嫁は、裏方で十分なんでしょう？",
+   "subtitle": "お義母さん。月見荘は、私がいなくても百年やってきたんですよね。……それに、よそ者の嫁は、裏方で十分なんでしょう？"
+  },
+  {
+   "id": "narr_el_Chihiro",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[soft, reflective] 下働き。それが、嫁いで五年になる私の肩書きだった。……でも二人は、まだ知らなかった。",
+   "subtitle": "下働き。それが、嫁いで五年になる私の肩書きだった。……でも二人は、まだ知らなかった。"
+  },
+  {
+   "id": "narr_el_Naomi",
+   "model": "elevenlabs-direct",
+   "voice": "LKxkO9LRDlHs9Bn5f0J2",
+   "voice_name": "Naomi",
+   "el_model": "eleven_v3",
+   "text": "[soft, reflective] 下働き。それが、嫁いで五年になる私の肩書きだった。……でも二人は、まだ知らなかった。",
+   "subtitle": "下働き。それが、嫁いで五年になる私の肩書きだった。……でも二人は、まだ知らなかった。"
+  },
+  {
+   "id": "narr_el_Shino",
+   "model": "elevenlabs-direct",
+   "voice": "Kohz4YYGbPgnEUrf8CZl",
+   "voice_name": "Shino",
+   "el_model": "eleven_v3",
+   "text": "[soft, reflective] 下働き。それが、嫁いで五年になる私の肩書きだった。……でも二人は、まだ知らなかった。",
+   "subtitle": "下働き。それが、嫁いで五年になる私の肩書きだった。……でも二人は、まだ知らなかった。"
+  },
+  {
+   "id": "tomiko_el_Chieko",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko",
+   "el_model": "eleven_v3",
+   "text": "[cold, dismissive] そうよ。嫌なら、出て行けばいいわ。月見荘はね、あなたがいなくても、百年やってきたんですから。",
+   "subtitle": "そうよ。嫌なら、出て行けばいいわ。月見荘はね、あなたがいなくても、百年やってきたんですから。"
+  },
+  {
+   "id": "tomiko_el_Lisa",
+   "model": "elevenlabs-direct",
+   "voice": "p2Wol3C7j3rHbfOrbL18",
+   "voice_name": "Lisa",
+   "el_model": "eleven_v3",
+   "text": "[cold, dismissive] そうよ。嫌なら、出て行けばいいわ。月見荘はね、あなたがいなくても、百年やってきたんですから。",
+   "subtitle": "そうよ。嫌なら、出て行けばいいわ。月見荘はね、あなたがいなくても、百年やってきたんですから。"
+  },
+  {
+   "id": "tomiko_el_Tomo",
+   "model": "elevenlabs-direct",
+   "voice": "vuzURFNcGxdkmY9AleMn",
+   "voice_name": "Tomo",
+   "el_model": "eleven_v3",
+   "text": "[cold, dismissive] そうよ。嫌なら、出て行けばいいわ。月見荘はね、あなたがいなくても、百年やってきたんですから。",
+   "subtitle": "そうよ。嫌なら、出て行けばいいわ。月見荘はね、あなたがいなくても、百年やってきたんですから。"
+  },
+  {
+   "id": "mai_el_Kaori",
+   "model": "elevenlabs-direct",
+   "voice": "mDxkcO3nsRCNeB4si9qg",
+   "voice_name": "Kaori",
+   "el_model": "eleven_v3",
+   "text": "[sneering, mocking] はあ？ 英語なんて、翻訳アプリで十分でしょ。あんたの代わりなんて、いくらでもいるんだから。",
+   "subtitle": "はあ？ 英語なんて、翻訳アプリで十分でしょ。あんたの代わりなんて、いくらでもいるんだから。"
+  },
+  {
+   "id": "mai_el_Momoka",
+   "model": "elevenlabs-direct",
+   "voice": "cLHFgsz6RJ4EBhuBmR7a",
+   "voice_name": "Momoka",
+   "el_model": "eleven_v3",
+   "text": "[sneering, mocking] はあ？ 英語なんて、翻訳アプリで十分でしょ。あんたの代わりなんて、いくらでもいるんだから。",
+   "subtitle": "はあ？ 英語なんて、翻訳アプリで十分でしょ。あんたの代わりなんて、いくらでもいるんだから。"
+  },
+  {
+   "id": "mai_el_Kagami",
+   "model": "elevenlabs-direct",
+   "voice": "ScazEYvwuU9vkWE1NJuE",
+   "voice_name": "Kagami",
+   "el_model": "eleven_v3",
+   "text": "[sneering, mocking] はあ？ 英語なんて、翻訳アプリで十分でしょ。あんたの代わりなんて、いくらでもいるんだから。",
+   "subtitle": "はあ？ 英語なんて、翻訳アプリで十分でしょ。あんたの代わりなんて、いくらでもいるんだから。"
+  },
+  {
+   "id": "takayuki_el_Asu",
+   "model": "elevenlabs-direct",
+   "voice": "ronK01G13l5Jag13vEpH",
+   "voice_name": "Asu",
+   "el_model": "eleven_v3",
+   "text": "[bored, annoyed] 母さんに逆らうなよ。お前はうちの嫁なんだから、黙って手伝ってればいいんだって。",
+   "subtitle": "母さんに逆らうなよ。お前はうちの嫁なんだから、黙って手伝ってればいいんだって。"
+  },
+  {
+   "id": "takayuki_el_Nagi",
+   "model": "elevenlabs-direct",
+   "voice": "XyteuzpsRwhuNEnFiQlX",
+   "voice_name": "Nagi",
+   "el_model": "eleven_v3",
+   "text": "[bored, annoyed] 母さんに逆らうなよ。お前はうちの嫁なんだから、黙って手伝ってればいいんだって。",
+   "subtitle": "母さんに逆らうなよ。お前はうちの嫁なんだから、黙って手伝ってればいいんだって。"
+  },
+  {
+   "id": "takayuki_el_Riku",
+   "model": "elevenlabs-direct",
+   "voice": "BTbWO7AM0mRTFVwdodpJ",
+   "voice_name": "Riku",
+   "el_model": "eleven_v3",
+   "text": "[bored, annoyed] 母さんに逆らうなよ。お前はうちの嫁なんだから、黙って手伝ってればいいんだって。",
+   "subtitle": "母さんに逆らうなよ。お前はうちの嫁なんだから、黙って手伝ってればいいんだって。"
+  },
+  {
+   "id": "sakurai_el_Akari",
+   "model": "elevenlabs-direct",
+   "voice": "5Y52LJ80BoqKDtJh7hSM",
+   "voice_name": "Akari",
+   "el_model": "eleven_v3",
+   "text": "[warm, amused] 若菜さん。うちの支配人になってくれない？ お給料は……あら、ゼロだったわね。じゃあ、あなたが決めて。",
+   "subtitle": "若菜さん。うちの支配人になってくれない？ お給料は……あら、ゼロだったわね。じゃあ、あなたが決めて。"
+  },
+  {
+   "id": "sakurai_el_Hiyori",
+   "model": "elevenlabs-direct",
+   "voice": "AP6mVmGgRkbG5mCR7fCS",
+   "voice_name": "Hiyori",
+   "el_model": "eleven_v3",
+   "text": "[warm, amused] 若菜さん。うちの支配人になってくれない？ お給料は……あら、ゼロだったわね。じゃあ、あなたが決めて。",
+   "subtitle": "若菜さん。うちの支配人になってくれない？ お給料は……あら、ゼロだったわね。じゃあ、あなたが決めて。"
+  },
+  {
+   "id": "sakurai_el_Tomo",
+   "model": "elevenlabs-direct",
+   "voice": "vuzURFNcGxdkmY9AleMn",
+   "voice_name": "Tomo",
+   "el_model": "eleven_v3",
+   "text": "[warm, amused] 若菜さん。うちの支配人になってくれない？ お給料は……あら、ゼロだったわね。じゃあ、あなたが決めて。",
+   "subtitle": "若菜さん。うちの支配人になってくれない？ お給料は……あら、ゼロだったわね。じゃあ、あなたが決めて。"
+  },
+  {
+   "id": "chen_el_Shintarou",
+   "model": "elevenlabs-direct",
+   "voice": "Z9CocQcpiyoQFqRiRwRE",
+   "voice_name": "Shintarou",
+   "el_model": "eleven_v3",
+   "text": "[polite, firm] 私たちが契約したのは、月見荘さんではありません。若菜さんです。",
+   "subtitle": "私たちが契約したのは、月見荘さんではありません。若菜さんです。"
+  },
+  {
+   "id": "chen_el_Masa",
+   "model": "elevenlabs-direct",
+   "voice": "MvMFbhzZT2zcr5QsG1xY",
+   "voice_name": "Masa",
+   "el_model": "eleven_v3",
+   "text": "[polite, firm] 私たちが契約したのは、月見荘さんではありません。若菜さんです。",
+   "subtitle": "私たちが契約したのは、月見荘さんではありません。若菜さんです。"
+  },
+  {
+   "id": "chen_el_Kujira",
+   "model": "elevenlabs-direct",
+   "voice": "SaLLKRezWJhhtqdlXuLo",
+   "voice_name": "Kujira",
+   "el_model": "eleven_v3",
+   "text": "[polite, firm] 私たちが契約したのは、月見荘さんではありません。若菜さんです。",
+   "subtitle": "私たちが契約したのは、月見荘さんではありません。若菜さんです。"
+  }
+ ]
+}
