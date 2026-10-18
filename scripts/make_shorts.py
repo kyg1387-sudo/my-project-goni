@@ -29,18 +29,22 @@ def s2t(x):
     return f"{int(h)}:{int(m):02d}:{s:05.2f}"
 
 
-def wrap(text, limit=15):
-    """세로 화면용 줄바꿈: 한 줄 최대 약 15자. 범위 안의 마지막 。、…』」 뒤에서 끊고, 없으면 15자에서 끊는다."""
-    parts = text.split("\\N")
-    if len(parts) > 1 and all(len(x) <= limit + 4 for x in parts):  # 원 자막 줄바꿈이 세로 화면에도 맞으면 그대로(「…の / は、」 분리 방지)
-        return text
-    t = text.replace("\\N", "")
+PUNCT = "。、…』」？！?!"
+HANG = "…。、』」？！?!—"
+
+
+def wrap(text, limit=13):
+    """세로 화면용 줄바꿈(제13장 4, 휴대폰): 한 줄 최대 13자(줄 끝 구두점 1자는 매달기 허용), 최대 3줄.
+    문장 전체를 다시 나눈다 — 구두점 뒤 > 조사 뒤 > 13자 순. 줄머리 구두점·전각 공백 금지. 한 줄에 들어가면 한 줄."""
+    t = text.replace("\\N", "").replace("　", "").strip()
     out = []
-    while len(t) > limit + 2:
-        cut = max((k + 1 for k in range(5, limit + 1) if t[k] in "。、…』」？！?!"), default=0)
-        if not cut:  # 문장부호가 없으면 조사 뒤에서 끊는다
-            cut = max((k + 1 for k in range(7, limit + 1) if t[k] in "がでにをはのと"), default=limit)
-        while cut < len(t) and t[cut] in "…。、』」？！?!—":  # 구두점·말줄임표로 시작하는 줄 금지
+    while len(t) > limit:
+        n_left = -(-len(t) // limit)                                    # 남은 최소 줄 수
+        lo = max(4, len(t) - limit * (n_left - 1))                      # 뒤 줄들이 13자 안에 들어가게
+        cut = max((k + 1 for k in range(lo - 1, limit) if t[k] in PUNCT), default=0)
+        if not cut:
+            cut = max((k + 1 for k in range(lo - 1, limit) if t[k] in "がでにをはのともへ"), default=limit)
+        while cut < len(t) and t[cut] in HANG:                          # 줄머리 구두점(……。 포함) → 앞 줄 끝에 매단다
             cut += 1
         out.append(t[:cut]); t = t[cut:]
     if t:
@@ -67,8 +71,8 @@ ScaledBorderAndShadow: yes
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Title,Zen Old Mincho,74,&H0040E0FF,&H000000FF,&H00000000,&H90000000,-1,0,0,0,100,100,0,0,1,6,3,8,60,60,330,1
-Style: Sub,IPAGothic,52,&H00FFFFFF,&H000000FF,&H00000000,&H90000000,-1,0,0,0,100,100,0,0,1,5,2,8,70,70,1250,1
-Style: Cap,Zen Old Mincho,58,&H00C4F3FF,&H000000FF,&H00000000,&H90000000,-1,0,0,0,100,100,0,0,1,5,2,8,70,70,1250,1
+Style: Sub,IPAGothic,62,&H00FFFFFF,&H000000FF,&H00000000,&H90000000,-1,0,0,0,100,100,0,0,1,5,2,8,70,70,1250,1
+Style: Cap,Zen Old Mincho,62,&H00C4F3FF,&H000000FF,&H00000000,&H90000000,-1,0,0,0,100,100,0,0,1,5,2,8,70,70,1250,1
 Style: End,Zen Old Mincho,80,&H00FFFFFF,&H000000FF,&H00000000,&H90000000,-1,0,0,0,100,100,0,0,1,6,3,5,60,60,0,1
 
 [Events]
@@ -85,6 +89,7 @@ def main():
     skip = set(spec.get("skip_styles", []))
     head = HEAD.replace("Style: Sub,IPAGothic", f"Style: Sub,{spec.get('sub_font', 'IPAGothic')}")
     for sh in spec["shorts"]:
+        assert all(len(x) <= 13 for x in sh["title"].split("\\N")), f"쇼츠 제목 한 줄 13자 초과(제13장 4): {sh['title']}"
         a, b = float(sh["start"]), float(sh["end"])
         dur = b - a
         tail = 1.2

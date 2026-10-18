@@ -90,7 +90,7 @@ def main(na=1, nb=2, badge_xy=None, band_xy=(0, 1000)):
 ABC_SRC = os.path.join(ROOT, "assets", "portraits")
 RED = ((255, 120, 110), (235, 40, 40), (160, 10, 10))
 ABC = {
-    "A": dict(src="beggar-thumb-a3/thumbA3-{n}.png", side="L", label=None,
+    "A": dict(src="beggar-thumb-a3/thumbA3-{n}fix.png", side="L", label=None,
               rows=[("みすぼらしい", 112, None, (255, 255, 255)), ("老人に", 112, None, (255, 255, 255)), ("支配人は言った…", 112, None, (255, 255, 255))],
               row_y=300, quote="「裏口から出ろ」", quote_size=210),
     "B": dict(src="beggar-thumb-abc/thumbB-{n}.png", side="L", label="スカッとする話",
