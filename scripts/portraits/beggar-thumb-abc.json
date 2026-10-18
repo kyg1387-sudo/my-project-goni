@@ -1,0 +1,59 @@
+{
+ "_설명": "beggar-chairman 썸네일 A·B·C(고니감독님 첨부 형식 2026-10-18): A 어두운 실사 얼굴 클로즈업+인용구, B 웹툰 3인 구도, C 따뜻한 실사 투샷. 2560x1440 고해상도(제0장 8), 각 3장 약 0.27달러.",
+ "_style_preset": "Japanese human drama thumbnail, 16:9, ultra sharp",
+ "characters": [
+  {
+   "id": "thumbA",
+   "refs": [
+    "assets/portraits/beggar-faces/genzo.png",
+    "assets/portraits/beggar-chairman-keyframes/S13c-1.png"
+   ],
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "aspect_ratio": "16:9",
+   "count": 3,
+   "prompt": "Create ONE photorealistic cinematic film still in 16:9 for a YouTube thumbnail, dark and moody like a Japanese human drama poster. RIGHT 45 percent of the frame: a large emotional close-up of Takamiya Genzo (Japanese man aged 78, lean angular weathered face with deep wrinkles, close-cropped white hair, short neat white beard, one small dark mole above his LEFT eyebrow, NO glasses, NO earrings, plain faded grey zip-up jacket) from reference image 1 (match his face exactly), seen from the chest up, his face filling about 55 percent of the frame height, placed right of centre, turned three-quarters toward the camera, looking slightly down-left with deep sorrow and quiet dignity: eyes red-rimmed and glistening, a thin clear tear line on one cheek, lips pressed, brows drawn together. Setting: a dim corner seat of an upscale Japanese restaurant at night, dark wood walls, one single warm pendant lamp hanging above in the upper centre casting a cone of light, floating dust specks in the air; the LEFT HALF of the frame is dark and nearly empty (soft out-of-focus dark wood and a blurred white tablecloth) for title text. Low-key chiaroscuro lighting, cool teal shadows, warm rim light on his white hair, shallow depth of field, 85mm, Arri Alexa color grade, film grain. Reference image 2 is only for the restaurant look. Absolutely no text, letters, numbers, logos, signs or symbols anywhere in the image; menus and papers are blank. Correct anatomy, five fingers per hand, symmetrical eyes. ONE continuous scene filling the whole 16:9 canvas edge to edge."
+  },
+  {
+   "id": "thumbB",
+   "refs": [
+    "assets/portraits/beggar-faces/chihiro.png",
+    "assets/portraits/beggar-faces/iwaki.png",
+    "assets/portraits/beggar-faces/genzo.png"
+   ],
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "aspect_ratio": "16:9",
+   "count": 3,
+   "prompt": "Create ONE single ultra-sharp, highly detailed illustration in 16:9 for a YouTube thumbnail. ART STYLE: semi-realistic Japanese drama-manga / webtoon illustration (NOT photorealistic, NOT 3D): crisp bold black ink outlines, detailed cel shading with soft gradients, glossy highlights, rich saturated warm colors, strong spotlights and rim light, every face crisp. SETTING: a luxurious Japanese restaurant hall at night with crystal chandeliers, warm red-orange light, a red carpet, white tablecloths; in the background a crowd of diners and staff in dark clothes watching in shock (softly out of focus). COMPOSITION (keep exactly): LEFT THIRD — Chihiro (Japanese woman aged 20, black hair with straight bangs tied in a low ponytail, white blouse, navy apron, NO glasses) from reference image 1, seen from the waist up, turned three-quarters toward the viewer, her face in the upper part of the left third, holding a steaming bowl of plain udon on a tray against her chest with both hands, eyes glistening with tears, determined. CENTER, in a white spotlight on the red carpet — Iwaki (Japanese man aged 45, slim oval face, black hair slicked back, thin neat black moustache, small black stud earrings, black three-piece suit, white shirt, silver tie) from reference image 2 fallen to his knees in panic, one hand on the floor, the other hand raised and trembling, sweat drops, eyes wide, mouth open. FAR RIGHT — Takamiya Genzo (Japanese man aged 78, lean angular weathered face with deep wrinkles, close-cropped white hair, short neat white beard, one small dark mole above his LEFT eyebrow, NO glasses, NO earrings, plain faded grey zip-up jacket) from reference image 3 standing tall at full height in his grey zip-up jacket, looking down at the kneeling man with calm stern dignity, slight low angle so he looks powerful. Absolutely no text, letters, numbers, logos, signs or symbols anywhere in the image; menus and papers are blank. Correct anatomy, five fingers per hand, symmetrical eyes. ONE continuous scene filling the whole 16:9 canvas edge to edge."
+  },
+  {
+   "id": "thumbC",
+   "refs": [
+    "assets/portraits/beggar-faces/genzo.png",
+    "assets/portraits/beggar-faces/chihiro.png",
+    "assets/portraits/beggar-chairman-keyframes/S15c-1.png"
+   ],
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "aspect_ratio": "16:9",
+   "count": 3,
+   "prompt": "Create ONE photorealistic cinematic film still in 16:9 for a YouTube thumbnail, warm and touching Japanese human drama. LEFT HALF: Takamiya Genzo (Japanese man aged 78, lean angular weathered face with deep wrinkles, close-cropped white hair, short neat white beard, one small dark mole above his LEFT eyebrow, NO glasses, NO earrings, plain faded grey zip-up jacket) from reference image 1 (match his face exactly), seen from the waist up and large in frame, his face in the upper-left area about 40 percent of the frame height, turned three-quarters toward the camera, a gentle moved smile with glistening eyes, holding a steaming bowl of plain kake udon with both hands in front of his chest. RIGHT, slightly behind and smaller: Chihiro (Japanese woman aged 20, black hair with straight bangs tied in a low ponytail, white blouse, NO glasses) from reference image 2, standing, her face in the middle-right of the frame (not in the top right corner), looking at him warmly with soft eyes. Setting: the dim corner seat of an upscale restaurant with dark wood walls; a single warm pendant lamp between them at the centre glowing amber; the TOP-RIGHT area and the lower-centre area are darker and simpler for title text. Warm 3200K tungsten light, soft rim light, shallow depth of field, 50mm, Arri Alexa color grade, film grain. Reference image 3 is only for the restaurant look. Absolutely no text, letters, numbers, logos, signs or symbols anywhere in the image; menus and papers are blank. Correct anatomy, five fingers per hand, symmetrical eyes. ONE continuous scene filling the whole 16:9 canvas edge to edge."
+  }
+ ]
+}
