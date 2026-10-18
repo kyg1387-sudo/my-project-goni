@@ -1,0 +1,15 @@
+{
+ "_설명": "beggar-chairman S06c 휴대폰 인서트 재생성 r20(고니감독님 지적 2:55 — 팔이 차 앞 허공으로 뻗음). 화면은 무지, finalize에서 합성.",
+ "_style_preset": "Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting",
+ "characters": [
+  {
+   "id": "S06c",
+   "count": 4,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/beggar-cast/cells/loc-kitchen-car-car-day.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. CAMERA: close insert shot from the rear seat of a luxury Japanese sedan, the camera just behind and above the right shoulder of a man sitting in the back seat, looking down at what he holds; 50mm lens, f/2.0, shallow depth of field. ACTION: his right hand in a thin black leather glove holds a smartphone horizontally in landscape orientation about 35 centimetres in front of his chest, at lap-to-chest height, the forearm in a black suit sleeve with a white shirt cuff coming from the bottom-right corner; the thumb rests naturally on the edge of the phone. The phone is large in the frame, about 40 percent of the frame width, centred slightly left, the screen facing the camera and fully visible, tilted slightly toward the viewer. The phone screen is a completely plain flat medium-grey glowing panel: NO image, NO video, NO icons, NO text on the screen (content is composited later). The phone is a plain black modern smartphone with thin bezels, no logo. SETTING (soft, out of focus behind the phone): the back of the beige leather front passenger seat with a white lace headrest cover, part of the dark dashboard and the right-hand-drive steering wheel far ahead, the windshield showing a hotel driveway at golden hour, all blurred into bokeh. Reference image 1 is the interior of this exact car: match its beige leather, white lace covers and wood trim, but use the close insert framing described above, NOT its wide framing. Only the one hand and sleeve are visible; NO face, NO other people. Warm late-afternoon light through the side window, the phone screen gently glowing. Photorealistic live-action Japanese human drama, contemporary Tokyo, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, text on screen, icons, app interface, brand logos, watermarks, extra fingers, deformed hand, two phones, arm stretching across the car, anime, 3d render. Full-frame 16:9 image filling the whole canvas: NO black bars, NO white borders. Absolutely no text, letters, numbers, logos or symbols anywhere in the image."
+  }
+ ]
+}
