@@ -1,0 +1,36 @@
+name: ElevenLabs 키 확인
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 키 존재 여부
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          if [ -z "$ELEVENLABS_API_KEY" ]; then
+            echo "::error::ELEVENLABS_API_KEY Secret이 등록되어 있지 않습니다 (이름 확인: ELEVENLABS_API_KEY)"
+            exit 1
+          fi
+          echo "Secret 등록됨 (길이 ${#ELEVENLABS_API_KEY}자, 앞 3자: ${ELEVENLABS_API_KEY:0:3})"
+      - name: 키 유효성·요금제 조회
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          code=$(curl -s -o /tmp/sub.json -w '%{http_code}' \
+            -H "xi-api-key: $ELEVENLABS_API_KEY" \
+            https://api.elevenlabs.io/v1/user/subscription)
+          echo "HTTP $code"
+          if [ "$code" != "200" ]; then
+            echo "::error::키가 유효하지 않거나 권한이 없습니다"; cat /tmp/sub.json; exit 1
+          fi
+          python3 - <<'PY'
+          import json; d=json.load(open('/tmp/sub.json'))
+          print("요금제:", d.get("tier"))
+          print("글자 한도:", d.get("character_limit"), "/ 사용:", d.get("character_count"))
+          print("남은 글자:", (d.get("character_limit") or 0)-(d.get("character_count") or 0))
+          print("음성 복제 가능:", d.get("can_use_instant_voice_cloning"))
+          PY
