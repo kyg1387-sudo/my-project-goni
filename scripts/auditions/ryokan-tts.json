@@ -1,0 +1,708 @@
+{
+ "_설명": "#03 본녹음(PHASE 1). build_tts.py 생성물 — 직접 고치지 말 것. 대본 동결 승인 후 실행.",
+ "tests": [
+  {
+   "id": "line003",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[soft, reflective] したばたらき。それが、とついで五年の私の肩書きだった。",
+   "subtitle": "下働き。それが、嫁いで五年の私の肩書きだった。"
+  },
+  {
+   "id": "line004",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[low, suspenseful] はんぼうきのみっかまえ、私は旅館を去った。……百年ののれんに、何が起きたのか。",
+   "subtitle": "繁忙期の三日前、私は旅館を去った。……百年の暖簾に、何が起きたのか。"
+  },
+  {
+   "id": "line005",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[neutral, gentle] 私はわかな、さんじゅうさんさい。東京のがいしけいホテルで働いていた。",
+   "subtitle": "私は若菜、三十三歳。東京の外資系ホテルで働いていた。"
+  },
+  {
+   "id": "line006",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[neutral, gentle] たかゆきさんと出会い、温泉街の老舗つきみそうに嫁いだ。",
+   "subtitle": "隆之さんと出会い、温泉街の老舗「月見荘」に嫁いだ。"
+  },
+  {
+   "id": "line007",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[steady, brisk] 朝はよじに起きて、朝食の仕込み。昼は予約サイトと、海外のお客様の対応。",
+   "subtitle": "朝は四時に起きて、朝食の仕込み。昼は予約サイトと、海外のお客様の対応。"
+  },
+  {
+   "id": "line008",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[steady] 英語と中国語ができるのは、この旅館で私だけ。",
+   "subtitle": "英語と中国語ができるのは、この旅館で私だけ。"
+  },
+  {
+   "id": "line009",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[steady, proud] 海外の旅行会社との契約を、一から作った。外国人のお客様は、五年でじゅうばいになった。",
+   "subtitle": "海外の旅行会社との契約を、一から作った。外国人のお客様は、五年で十倍になった。"
+  },
+  {
+   "id": "line010",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "わかなさんの顔を見ると、来た気がするんだよ",
+   "subtitle": "若菜さんの顔を見ると、来た気がするんだよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 0.85
+  },
+  {
+   "id": "line011",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[warm, polite] お帰りなさいませ。今年も、お待ちしておりました",
+   "subtitle": "お帰りなさいませ。今年も、お待ちしておりました"
+  },
+  {
+   "id": "line012",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko",
+   "el_model": "eleven_v3",
+   "text": "[cold, dismissive] お給料？ 家族なんだから、当然でしょう",
+   "subtitle": "お給料？ 家族なんだから、当然でしょう"
+  },
+  {
+   "id": "line013",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko",
+   "el_model": "eleven_v3",
+   "text": "[flat, indifferent] まいは別よ。あの子は、外で働いていたんだから",
+   "subtitle": "麻衣は別よ。あの子は、外で働いていたんだから"
+  },
+  {
+   "id": "line014",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[low, hurt] とついで五年。私の給料は、いちえんもなかった。",
+   "subtitle": "嫁いで五年。私の給料は、一円もなかった。"
+  },
+  {
+   "id": "line015",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[hesitant, quiet] たかゆきさん。……せめて、おねえさんと同じようにお給料を",
+   "subtitle": "隆之さん。……せめて、お義姉さんと同じようにお給料を"
+  },
+  {
+   "id": "line016",
+   "model": "elevenlabs-direct",
+   "voice": "BTbWO7AM0mRTFVwdodpJ",
+   "voice_name": "Riku",
+   "el_model": "eleven_v3",
+   "text": "[bored, annoyed] かあさんに逆らうなよ。お前はうちの嫁なんだから",
+   "subtitle": "母さんに逆らうなよ。お前はうちの嫁なんだから"
+  },
+  {
+   "id": "line017",
+   "model": "elevenlabs-direct",
+   "voice": "BTbWO7AM0mRTFVwdodpJ",
+   "voice_name": "Riku",
+   "el_model": "eleven_v3",
+   "text": "[dismissive, tired] 黙って手伝ってればいいんだって",
+   "subtitle": "黙って手伝ってればいいんだって"
+  },
+  {
+   "id": "line018",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[low, weary] 夜じゅういちじ、帳簿を閉じる。それが、私の一日だった。",
+   "subtitle": "夜十一時、帳簿を閉じる。それが、私の一日だった。"
+  },
+  {
+   "id": "line019",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko",
+   "el_model": "eleven_v3",
+   "text": "[bright, hospitable] 皆さま、こちらが当館のわかおかみ、娘のまいでございます",
+   "subtitle": "皆さま、こちらが当館の若女将、娘の麻衣でございます"
+  },
+  {
+   "id": "line020",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko",
+   "el_model": "eleven_v3",
+   "text": "[cold, quiet] ……あちらはしたばたらきの者ですので、お気になさらず",
+   "subtitle": "……あちらは下働きの者ですので、お気になさらず"
+  },
+  {
+   "id": "line021",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[flat, hurt] お客様の前で、私はしたばたらきになった。",
+   "subtitle": "お客様の前で、私は「下働き」になった。"
+  },
+  {
+   "id": "line022",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko",
+   "el_model": "eleven_v3",
+   "text": "[firm, formal] 来月から、予約もお客様の対応も、全部まいに任せます",
+   "subtitle": "来月から、予約もお客様の対応も、全部麻衣に任せます"
+  },
+  {
+   "id": "line023",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko",
+   "el_model": "eleven_v3",
+   "text": "[flat, dismissive] わかなさん、あなたは厨房と掃除だけでいいわ",
+   "subtitle": "若菜さん、あなたは厨房と掃除だけでいいわ"
+  },
+  {
+   "id": "line024",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[softly, uncertain] でも……海外の旅行会社とのやり取りは、私でないと――",
+   "subtitle": "でも……海外の旅行会社とのやり取りは、私でないと――"
+  },
+  {
+   "id": "line025",
+   "model": "elevenlabs-direct",
+   "voice": "mDxkcO3nsRCNeB4si9qg",
+   "voice_name": "Kaori",
+   "el_model": "eleven_v3",
+   "text": "[sneering, mocking] はあ？ 英語なんて、翻訳アプリでじゅうぶんでしょ",
+   "subtitle": "はあ？ 英語なんて、翻訳アプリで十分でしょ"
+  },
+  {
+   "id": "line026",
+   "model": "elevenlabs-direct",
+   "voice": "mDxkcO3nsRCNeB4si9qg",
+   "voice_name": "Kaori",
+   "el_model": "eleven_v3",
+   "text": "[mocking, slow] よそ者の嫁は裏方でじゅうぶんなのよ。あんたの代わりなんて、いくらでもいるんだから",
+   "subtitle": "よそ者の嫁は裏方で十分なのよ。あんたの代わりなんて、いくらでもいるんだから"
+  },
+  {
+   "id": "line027",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko",
+   "el_model": "eleven_v3",
+   "text": "[cold, decisive] そうよ。嫌なら、出て行けばいいわ",
+   "subtitle": "そうよ。嫌なら、出て行けばいいわ"
+  },
+  {
+   "id": "line028",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko",
+   "el_model": "eleven_v3",
+   "text": "[proud, cold] つきみそうはね、あなたがいなくても、百年やってきたんですから",
+   "subtitle": "月見荘はね、あなたがいなくても、百年やってきたんですから"
+  },
+  {
+   "id": "line029",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[soft, relieved] その言葉を聞いた瞬間、不思議と、胸のつかえが取れた。",
+   "subtitle": "その言葉を聞いた瞬間、不思議と、胸のつかえが取れた。"
+  },
+  {
+   "id": "line030",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[calm, clear] ……分かりました。では、そうさせていただきます",
+   "subtitle": "……分かりました。では、そうさせていただきます"
+  },
+  {
+   "id": "line031",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[low, ominous] ……その言葉が、すべての始まりだった。",
+   "subtitle": "……その言葉が、すべての始まりだった。"
+  },
+  {
+   "id": "line032",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[steady, calm] 私は、ごじゅっページの引き継ぎ書を残した。",
+   "subtitle": "私は、五十ページの引き継ぎ書を残した。"
+  },
+  {
+   "id": "line033",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[steady, listing] 予約サイトの管理方法。海外の担当者と、アレルギー対応が必要な常連のお客様。",
+   "subtitle": "予約サイトの管理方法。海外の担当者と、アレルギー対応が必要な常連のお客様。"
+  },
+  {
+   "id": "line034",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[low, measured] 旅館に損をさせるつもりは、なかった。……それをどう使うかは、あの人たち次第だった。",
+   "subtitle": "旅館に損をさせるつもりは、なかった。……それをどう使うかは、あの人たち次第だった。"
+  },
+  {
+   "id": "line035",
+   "model": "elevenlabs-direct",
+   "voice": "mDxkcO3nsRCNeB4si9qg",
+   "voice_name": "Kaori",
+   "el_model": "eleven_v3",
+   "text": "[smug, airy] こんなの、読まなくても分かるわよ",
+   "subtitle": "こんなの、読まなくても分かるわよ"
+  },
+  {
+   "id": "line036",
+   "model": "elevenlabs-direct",
+   "voice": "mDxkcO3nsRCNeB4si9qg",
+   "voice_name": "Kaori",
+   "el_model": "eleven_v3",
+   "text": "[smug, dismissive] 旅館のことは、私の方がずっと詳しいんだから",
+   "subtitle": "旅館のことは、私の方がずっと詳しいんだから"
+  },
+  {
+   "id": "line037",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[tense, counting] 私がいなくなって、いつか。最初に崩れたのは、予約だった。",
+   "subtitle": "私がいなくなって、五日。最初に崩れたのは、予約だった。"
+  },
+  {
+   "id": "line038",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[steady, reporting] 義姉はざいこせっていを理解していなかった。同じ部屋に、ふたくみのお客様を入れてしまった。",
+   "subtitle": "義姉は在庫設定を理解していなかった。同じ部屋に、二組のお客様を入れてしまった。"
+  },
+  {
+   "id": "line039",
+   "model": "elevenlabs-direct",
+   "voice": "mDxkcO3nsRCNeB4si9qg",
+   "voice_name": "Kaori",
+   "el_model": "eleven_v3",
+   "text": "[flustered, stammering] で、ですから、システムの不具合で……！",
+   "subtitle": "で、ですから、システムの不具合で……！"
+  },
+  {
+   "id": "line040",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[low, fading] 海外からのメールは、翻訳アプリでは返せなかった。返事のない予約は、次々と消えていった。",
+   "subtitle": "海外からのメールは、翻訳アプリでは返せなかった。返事のない予約は、次々と消えていった。"
+  },
+  {
+   "id": "line041",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[steady, grave] 次は、常連のお客様の食事。そばこアレルギーの方の膳に、そばちゃが出された。",
+   "subtitle": "次は、常連のお客様の食事。そば粉アレルギーの方の膳に、そば茶が出された。"
+  },
+  {
+   "id": "line042",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[low, bitter] 幸い大事には至らなかった。……引き継ぎ書のさんページめに、赤字で書いてあったことだった。",
+   "subtitle": "幸い大事には至らなかった。……引き継ぎ書の三ページ目に、赤字で書いてあったことだった。"
+  },
+  {
+   "id": "line043",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko",
+   "el_model": "eleven_v3",
+   "text": "[shouting, furious] まい！ 一体、どうなってるの！",
+   "subtitle": "麻衣！ 一体、どうなってるの！"
+  },
+  {
+   "id": "line044",
+   "model": "elevenlabs-direct",
+   "voice": "mDxkcO3nsRCNeB4si9qg",
+   "voice_name": "Kaori",
+   "el_model": "eleven_v3",
+   "text": "[panicked, tearful] わ、私のせいじゃないわよ！ システムが分かりにくいのが悪いのよ！",
+   "subtitle": "わ、私のせいじゃないわよ！ システムが分かりにくいのが悪いのよ！"
+  },
+  {
+   "id": "line045",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko",
+   "el_model": "eleven_v3",
+   "text": "[anguished, sharp] あのお客様は、二十年の常連なのよ……！",
+   "subtitle": "あのお客様は、二十年の常連なのよ……！"
+  },
+  {
+   "id": "line046",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[warm, calm] つきみそうを出た翌週。温泉街一の旅館はないかだのさくらい社長から、連絡をいただいた。",
+   "subtitle": "月見荘を出た翌週。温泉街一の旅館「花筏」の桜井社長から、連絡をいただいた。"
+  },
+  {
+   "id": "line047",
+   "model": "elevenlabs-direct",
+   "voice": "5Y52LJ80BoqKDtJh7hSM",
+   "voice_name": "Akari",
+   "el_model": "eleven_v3",
+   "text": "[warm, playful] わかなさん。うちの支配人になってくれない？",
+   "subtitle": "若菜さん。うちの支配人になってくれない？"
+  },
+  {
+   "id": "line048",
+   "model": "elevenlabs-direct",
+   "voice": "5Y52LJ80BoqKDtJh7hSM",
+   "voice_name": "Akari",
+   "el_model": "eleven_v3",
+   "text": "[amused, teasing] お給料は、前の職場の……あら、ゼロだったわね。じゃあ、あなたが決めて",
+   "subtitle": "お給料は、前の職場の……あら、ゼロだったわね。じゃあ、あなたが決めて"
+  },
+  {
+   "id": "line049",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[soft, grateful] 前からずっと、私の仕事を見ていてくださったのだという。",
+   "subtitle": "前からずっと、私の仕事を見ていてくださったのだという。"
+  },
+  {
+   "id": "line050",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[tense, low] はんぼうき、初日。その電話は、朝一番にかかってきた。",
+   "subtitle": "繁忙期、初日。その電話は、朝一番にかかってきた。"
+  },
+  {
+   "id": "line051",
+   "model": "elevenlabs-direct",
+   "voice": "SaLLKRezWJhhtqdlXuLo",
+   "voice_name": "Kujira",
+   "el_model": "eleven_v3",
+   "text": "[polite, formal] つきみそうさんですか。台湾の旅行社の、チンです",
+   "subtitle": "月見荘さんですか。台湾の旅行社の、陳です"
+  },
+  {
+   "id": "line052",
+   "model": "elevenlabs-direct",
+   "voice": "SaLLKRezWJhhtqdlXuLo",
+   "voice_name": "Kujira",
+   "el_model": "eleven_v3",
+   "text": "[polite, firm] 来月からのさんかげつ分。毎週の団体予約を、すべてキャンセルいたします",
+   "subtitle": "来月からの三か月分。毎週の団体予約を、すべてキャンセルいたします"
+  },
+  {
+   "id": "line053",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko",
+   "el_model": "eleven_v3",
+   "text": "[shocked, stammering] キャ、キャンセル！？ ……どうして、ですか！",
+   "subtitle": "キャ、キャンセル！？ ……どうして、ですか！"
+  },
+  {
+   "id": "line054",
+   "model": "elevenlabs-direct",
+   "voice": "SaLLKRezWJhhtqdlXuLo",
+   "voice_name": "Kujira",
+   "el_model": "eleven_v3",
+   "text": "[calm, firm] 私たちが契約したのは、つきみそうさんではありません。わかなさんです",
+   "subtitle": "私たちが契約したのは、月見荘さんではありません。若菜さんです"
+  },
+  {
+   "id": "line055",
+   "model": "elevenlabs-direct",
+   "voice": "SaLLKRezWJhhtqdlXuLo",
+   "voice_name": "Kujira",
+   "el_model": "eleven_v3",
+   "text": "[calm, final] 彼女のいない旅館に、お客様はお送りできません",
+   "subtitle": "彼女のいない旅館に、お客様はお送りできません"
+  },
+  {
+   "id": "line056",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[low, matter-of-fact] 団体キャンセルの損失は、さんかげつでにせんまんえんを超えた。",
+   "subtitle": "団体キャンセルの損失は、三か月で二千万円を超えた。"
+  },
+  {
+   "id": "line057",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[low, pointed] 売り上げのよんわりは、私が作った海外ルート。それを支えていたのがしたばたらきの嫁だった。",
+   "subtitle": "売り上げの四割は、私が作った海外ルート。それを支えていたのが「下働きの嫁」だった。"
+  },
+  {
+   "id": "line058",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[hushed, revealing] 義母はその夜、ゴミ箱から引き継ぎ書を拾い上げた。……さんページめは、赤字だった。",
+   "subtitle": "義母はその夜、ゴミ箱から引き継ぎ書を拾い上げた。……三ページ目は、赤字だった。"
+  },
+  {
+   "id": "line059",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[suspended, soft] そして、その頃――私は。",
+   "subtitle": "そして、その頃――私は。"
+  },
+  {
+   "id": "line060",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[clear, honest] チンさんのことは、私からは何も言っていない。",
+   "subtitle": "陳さんのことは、私からは何も言っていない。"
+  },
+  {
+   "id": "line061",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[calm, clear] わかなさんがいる宿に送る。それは、チンさんがご自分で決めたことだった。",
+   "subtitle": "「若菜さんがいる宿に送る」。それは、陳さんがご自分で決めたことだった。"
+  },
+  {
+   "id": "line062",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "わかなさんがこっちにいると聞いてねえ",
+   "subtitle": "若菜さんがこっちにいると聞いてねえ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 0.85
+  },
+  {
+   "id": "line063",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "わしらは、宿じゃなくて、人に会いに来とるんだよ",
+   "subtitle": "わしらは、宿じゃなくて、人に会いに来とるんだよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 0.85
+  },
+  {
+   "id": "line064",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[calm, level] ……おねえさん。うちで働きたい、ですか",
+   "subtitle": "……お義姉さん。うちで働きたい、ですか"
+  },
+  {
+   "id": "line065",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[calm, slightly cold] 申し訳ありませんが、あなたの代わりなら、いくらでもいますから",
+   "subtitle": "申し訳ありませんが、あなたの代わりなら、いくらでもいますから"
+  },
+  {
+   "id": "line066",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[gentle, final] ――では、どうぞ、代わりの方と",
+   "subtitle": "――では、どうぞ、代わりの方と"
+  },
+  {
+   "id": "line067",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[steady, reporting] 責任を押し付けられることを恐れた義姉は、旅館を捨てて逃げた。",
+   "subtitle": "責任を押し付けられることを恐れた義姉は、旅館を捨てて逃げた。"
+  },
+  {
+   "id": "line068",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[steady, reporting] 私は五年分のむきゅうろうどうを、べんごしを通じてせいきゅうした。離婚は、正式に成立した。",
+   "subtitle": "私は五年分の無給労働を、弁護士を通じて請求した。離婚は、正式に成立した。"
+  },
+  {
+   "id": "line069",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[low, closing] 夫からの電話には、いちども出なかった。",
+   "subtitle": "夫からの電話には、一度も出なかった。"
+  },
+  {
+   "id": "line070",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[quiet, desolate] 義母は一人で、百年の帳場に座っていた。",
+   "subtitle": "義母は一人で、百年の帳場に座っていた。"
+  },
+  {
+   "id": "line071",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko",
+   "el_model": "eleven_v3",
+   "text": "[tearful, pleading] わかなさん……お願い。戻ってきて",
+   "subtitle": "若菜さん……お願い。戻ってきて"
+  },
+  {
+   "id": "line072",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko",
+   "el_model": "eleven_v3",
+   "text": "[sobbing, broken] 私が、間違ってたわ。つきみそうが……百年ののれんが……",
+   "subtitle": "私が、間違ってたわ。月見荘が……百年の暖簾が……"
+  },
+  {
+   "id": "line073",
+   "model": "elevenlabs-direct",
+   "voice": "BTbWO7AM0mRTFVwdodpJ",
+   "voice_name": "Riku",
+   "el_model": "eleven_v3",
+   "text": "[desperate, urgent] わかな！ 頼む、かあさんの言う通りに――",
+   "subtitle": "若菜！ 頼む、母さんの言う通りに――"
+  },
+  {
+   "id": "line074",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[gentle, steady] おかあさん。つきみそうは、私がいなくても百年やってきたんですよね",
+   "subtitle": "お義母さん。月見荘は、私がいなくても百年やってきたんですよね"
+  },
+  {
+   "id": "line075",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[calm, quietly firm] ……それに。よそ者の嫁は、裏方でじゅうぶんなんでしょう？",
+   "subtitle": "……それに。よそ者の嫁は、裏方で十分なんでしょう？"
+  },
+  {
+   "id": "line076",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[warm, sincere] 代わりはいくらでもいる。そう扱う場所に、かけがえのないものは残らない。",
+   "subtitle": "「代わりはいくらでもいる」。そう扱う場所に、かけがえのないものは残らない。"
+  },
+  {
+   "id": "line077",
+   "model": "elevenlabs-direct",
+   "voice": "vsOHlw2syHreLeo0GXA1",
+   "voice_name": "Chihiro",
+   "el_model": "eleven_v3",
+   "text": "[warm, bright] 私は今、私を必要としてくれる場所で、毎日お客様を迎えている。",
+   "subtitle": "私は今、私を必要としてくれる場所で、毎日お客様を迎えている。"
+  },
+  {
+   "id": "line080",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "皆様がわかなさんなら、つきみそうに戻りますか？ コメントで教えてください",
+   "subtitle": "皆様が若菜さんなら、月見荘に戻りますか？ コメントで教えてください",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line081",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "次回は、どうそうかいで私を笑った元同級生が、めんせつしつに来た話です",
+   "subtitle": "次回は、「同窓会で私を笑った元同級生が、面接室に来た話」です",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  }
+ ]
+}
