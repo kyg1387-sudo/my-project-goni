@@ -26,7 +26,8 @@ W, H = 1920, 1080
 MANUAL = [("S06g", "S04a", 0.0, 3.9), ("S06g", "S05o", 3.9, None)]
 SEPIA = ["S10e", "S10f"]
 # S06c 휴대폰 화면 사각형(키프레임 1344x768 기준, r9 S06c-1) — 화면 안쪽 꼭짓점 TL, TR, BR, BL
-PHONE = ("S06c", "S04c", [(566, 345), (806, 345), (806, 497), (566, 497)])  # 가로로 든 휴대폰
+# r20 S06c-3(고니감독님 지적 2:55: 팔이 차 앞 허공으로 뻗은 r9를 뒷좌석 손 가까이 인서트로 교체, r9는 S06c-1_old.png)
+PHONE = ("S06c", "S04c", [(522, 341), (751, 335), (754, 451), (523, 457)])  # 가로로 든 휴대폰
 
 
 def run(args):
@@ -58,16 +59,18 @@ def phone_clip(out, sec, tmp):
     base = Image.open(os.path.join(KF, f"{sid}-1.png")).convert("RGB")
     src = Image.open(os.path.join(KF, f"{src_id}-1.png")).convert("RGB")
     sw, sh = src.size
-    cw, chh = int(sh * 1.58), sh  # 화면 비율(240x152)에 맞춘 가로 영상
+    (x0, y0), (x1, _), (_, y2) = quad[0], quad[1], quad[3]
+    ratio = (x1 - x0) / (y2 - y0)  # 화면 사각형 비율에 맞춘 가로 영상
+    cw = int(sw * 0.9); chh = min(sh, int(cw / ratio))
     n = int(sec * 24) + 2
     fdir = os.path.join(tmp, "phone"); os.makedirs(fdir, exist_ok=True)
-    PW, PH = 480, 304
+    PW = 480; PH = int(PW / ratio)
     for i in range(n):
         dx = int((sw - cw) * 0.5 + 14 * np.sin(i * 0.37) + 7 * np.sin(i * 1.1))
         # 휴대폰으로 찍은 영상처럼: 좌우 흔들림 + 미세 회전·확대 흔들림 + 약간 무른 화질(고니감독님 지적 2:55 — 영화 장면처럼 너무 깨끗함)
         z = 1.08 + 0.02 * np.sin(i * 0.23)
         cw2, ch2 = int(cw / z), int(chh / z); dy = int((chh - ch2) * (0.5 + 0.35 * np.sin(i * 0.53)))
-        crop = src.crop((dx, dy, dx + cw2, dy + ch2)).rotate(1.2 * np.sin(i * 0.41), resample=Image.BICUBIC).resize((PW, PH))
+        crop = src.crop((dx, dy + (sh - chh) // 2, dx + cw2, dy + (sh - chh) // 2 + ch2)).rotate(1.2 * np.sin(i * 0.41), resample=Image.BICUBIC).resize((PW, PH))
         crop = crop.filter(ImageFilter.GaussianBlur(0.7))
         crop = Image.blend(crop, Image.new("RGB", crop.size, (215, 228, 255)), 0.10)  # 백라이트 푸른 기
         d = ImageDraw.Draw(crop)
