@@ -1,0 +1,265 @@
+{
+ "_설명": "#03 『老舗旅館の嫁』 배역 오디션 1차 — Typecast(일본 네이티브 보이스 우선, 노년 여성은 한국 보이스 jpn) + MiniMax(language_boost Japanese) A/B. 각 배역 대표 대사 1줄. ElevenLabs는 키 권한(voices_read) 보강 후 2차. 비용: Typecast 약 1,100자 크레딧 + fal MiniMax 6건 약 0.2달러. 고니감독님 오디션 착수 승인 2026-10-18.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "language_boost": "Japanese",
+ "tests": [
+  {
+   "id": "wakana_tc_AiShimizu",
+   "model": "typecast-direct",
+   "voice": "tc_633d5244093ca33db95ddfce",
+   "language": "jpn",
+   "text": "お義母さん。月見荘は、私がいなくても百年やってきたんですよね。……それに、よそ者の嫁は、裏方で十分なんでしょう？",
+   "subtitle": "お義母さん。月見荘は、私がいなくても百年やってきたんですよね。……それに、よそ者の嫁は、裏方で十分なんでしょう？",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.1,
+   "tempo": 0.92
+  },
+  {
+   "id": "wakana_tc_TomokoNomura",
+   "model": "typecast-direct",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
+   "language": "jpn",
+   "text": "お義母さん。月見荘は、私がいなくても百年やってきたんですよね。……それに、よそ者の嫁は、裏方で十分なんでしょう？",
+   "subtitle": "お義母さん。月見荘は、私がいなくても百年やってきたんですよね。……それに、よそ者の嫁は、裏方で十分なんでしょう？",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.1,
+   "tempo": 0.92
+  },
+  {
+   "id": "wakana_tc_HarunaSuzuki",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "お義母さん。月見荘は、私がいなくても百年やってきたんですよね。……それに、よそ者の嫁は、裏方で十分なんでしょう？",
+   "subtitle": "お義母さん。月見荘は、私がいなくても百年やってきたんですよね。……それに、よそ者の嫁は、裏方で十分なんでしょう？",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.1,
+   "tempo": 0.92
+  },
+  {
+   "id": "wakana_mm_Calm_Woman",
+   "model": "fal-ai/minimax/speech-02-hd",
+   "voice": "Calm_Woman",
+   "text": "お義母さん。月見荘は、私がいなくても百年やってきたんですよね。……それに、よそ者の嫁は、裏方で十分なんでしょう？",
+   "emotion": "neutral",
+   "speed": 0.92
+  },
+  {
+   "id": "narr_tc_AiShimizu",
+   "model": "typecast-direct",
+   "voice": "tc_633d5244093ca33db95ddfce",
+   "language": "jpn",
+   "text": "下働き。それが、嫁いで五年になる私の肩書きだった。でも二人は、まだ知らなかった。",
+   "subtitle": "下働き。それが、嫁いで五年になる私の肩書きだった。でも二人は、まだ知らなかった。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "narr_tc_TomokoNomura",
+   "model": "typecast-direct",
+   "voice": "tc_63be4f467ac1708d9ccd75d4",
+   "language": "jpn",
+   "text": "下働き。それが、嫁いで五年になる私の肩書きだった。でも二人は、まだ知らなかった。",
+   "subtitle": "下働き。それが、嫁いで五年になる私の肩書きだった。でも二人は、まだ知らなかった。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "tomiko_tc_Kyungae",
+   "model": "typecast-direct",
+   "voice": "tc_6a867e7a0e6ddfd2f2dd17b6",
+   "language": "jpn",
+   "text": "そうよ。嫌なら、出て行けばいいわ。月見荘はね、あなたがいなくても、百年やってきたんですから。",
+   "subtitle": "そうよ。嫌なら、出て行けばいいわ。月見荘はね、あなたがいなくても、百年やってきたんですから。",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "tomiko_tc_Jungsoon",
+   "model": "typecast-direct",
+   "voice": "tc_5ebea242728f5b00075e6211",
+   "language": "jpn",
+   "text": "そうよ。嫌なら、出て行けばいいわ。月見荘はね、あなたがいなくても、百年やってきたんですから。",
+   "subtitle": "そうよ。嫌なら、出て行けばいいわ。月見荘はね、あなたがいなくても、百年やってきたんですから。",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "tomiko_tc_Sookhee",
+   "model": "typecast-direct",
+   "voice": "tc_61c2f70c343884babeed840b",
+   "language": "jpn",
+   "text": "そうよ。嫌なら、出て行けばいいわ。月見荘はね、あなたがいなくても、百年やってきたんですから。",
+   "subtitle": "そうよ。嫌なら、出て行けばいいわ。月見荘はね、あなたがいなくても、百年やってきたんですから。",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "tomiko_mm_Wise_Woman",
+   "model": "fal-ai/minimax/speech-02-hd",
+   "voice": "Wise_Woman",
+   "text": "そうよ。嫌なら、出て行けばいいわ。月見荘はね、あなたがいなくても、百年やってきたんですから。",
+   "emotion": "angry",
+   "speed": 1.0
+  },
+  {
+   "id": "mai_tc_SakuraTanaka",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "はあ？ 英語なんて、翻訳アプリで十分でしょ。あんたの代わりなんて、いくらでもいるんだから。",
+   "subtitle": "はあ？ 英語なんて、翻訳アプリで十分でしょ。あんたの代わりなんて、いくらでもいるんだから。",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.9,
+   "tempo": 1.08
+  },
+  {
+   "id": "mai_tc_MikiYamamoto",
+   "model": "typecast-direct",
+   "voice": "tc_63b6650135703800462c1eb0",
+   "language": "jpn",
+   "text": "はあ？ 英語なんて、翻訳アプリで十分でしょ。あんたの代わりなんて、いくらでもいるんだから。",
+   "subtitle": "はあ？ 英語なんて、翻訳アプリで十分でしょ。あんたの代わりなんて、いくらでもいるんだから。",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.9,
+   "tempo": 1.08
+  },
+  {
+   "id": "mai_tc_YuiSato",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "はあ？ 英語なんて、翻訳アプリで十分でしょ。あんたの代わりなんて、いくらでもいるんだから。",
+   "subtitle": "はあ？ 英語なんて、翻訳アプリで十分でしょ。あんたの代わりなんて、いくらでもいるんだから。",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.9,
+   "tempo": 1.08
+  },
+  {
+   "id": "mai_mm_Lively_Girl",
+   "model": "fal-ai/minimax/speech-02-hd",
+   "voice": "Lively_Girl",
+   "text": "はあ？ 英語なんて、翻訳アプリで十分でしょ。あんたの代わりなんて、いくらでもいるんだから。",
+   "emotion": "angry",
+   "speed": 1.08
+  },
+  {
+   "id": "takayuki_tc_TakuyaMurakami",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "母さんに逆らうなよ。お前はうちの嫁なんだから、黙って手伝ってればいいんだって。",
+   "subtitle": "母さんに逆らうなよ。お前はうちの嫁なんだから、黙って手伝ってればいいんだって。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "takayuki_tc_KentaYoshida",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "母さんに逆らうなよ。お前はうちの嫁なんだから、黙って手伝ってればいいんだって。",
+   "subtitle": "母さんに逆らうなよ。お前はうちの嫁なんだから、黙って手伝ってればいいんだって。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "takayuki_mm_Casual_Guy",
+   "model": "fal-ai/minimax/speech-02-hd",
+   "voice": "Casual_Guy",
+   "text": "母さんに逆らうなよ。お前はうちの嫁なんだから、黙って手伝ってればいいんだって。",
+   "emotion": "neutral",
+   "speed": 1.05
+  },
+  {
+   "id": "sakurai_tc_Hyejin",
+   "model": "typecast-direct",
+   "voice": "tc_6a21054564d676539427427e",
+   "language": "jpn",
+   "text": "若菜さん。うちの支配人になってくれない？ お給料は……あら、ゼロだったわね。じゃあ、あなたが決めて。",
+   "subtitle": "若菜さん。うちの支配人になってくれない？ お給料は……あら、ゼロだったわね。じゃあ、あなたが決めて。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.9,
+   "tempo": 1.0
+  },
+  {
+   "id": "sakurai_tc_LadyCho",
+   "model": "typecast-direct",
+   "voice": "tc_602bd483b1837361b08c1ab6",
+   "language": "jpn",
+   "text": "若菜さん。うちの支配人になってくれない？ お給料は……あら、ゼロだったわね。じゃあ、あなたが決めて。",
+   "subtitle": "若菜さん。うちの支配人になってくれない？ お給料は……あら、ゼロだったわね。じゃあ、あなたが決めて。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.9,
+   "tempo": 1.0
+  },
+  {
+   "id": "sakurai_tc_Mikyung",
+   "model": "typecast-direct",
+   "voice": "tc_633d52c5febcba27f45eced7",
+   "language": "jpn",
+   "text": "若菜さん。うちの支配人になってくれない？ お給料は……あら、ゼロだったわね。じゃあ、あなたが決めて。",
+   "subtitle": "若菜さん。うちの支配人になってくれない？ お給料は……あら、ゼロだったわね。じゃあ、あなたが決めて。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.9,
+   "tempo": 1.0
+  },
+  {
+   "id": "sakurai_mm_Friendly_Person",
+   "model": "fal-ai/minimax/speech-02-hd",
+   "voice": "Friendly_Person",
+   "text": "若菜さん。うちの支配人になってくれない？ お給料は……あら、ゼロだったわね。じゃあ、あなたが決めて。",
+   "emotion": "happy",
+   "speed": 1.0
+  },
+  {
+   "id": "chen_tc_RyoutaTakahashi",
+   "model": "typecast-direct",
+   "voice": "tc_62baac31e1c614d37b9160e3",
+   "language": "jpn",
+   "text": "私たちが契約したのは、月見荘さんではありません。若菜さんです。",
+   "subtitle": "私たちが契約したのは、月見荘さんではありません。若菜さんです。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "chen_tc_DaichiInoue",
+   "model": "typecast-direct",
+   "voice": "tc_63622a97ee3708cc70012f94",
+   "language": "jpn",
+   "text": "私たちが契約したのは、月見荘さんではありません。若菜さんです。",
+   "subtitle": "私たちが契約したのは、月見荘さんではありません。若菜さんです。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "chen_mm_Elegant_Man",
+   "model": "fal-ai/minimax/speech-02-hd",
+   "voice": "Elegant_Man",
+   "text": "私たちが契約したのは、月見荘さんではありません。若菜さんです。",
+   "emotion": "neutral",
+   "speed": 0.95
+  },
+  {
+   "id": "regular_tc_HideoWatanabe",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "わしらは、宿じゃなくて、人に会いに来とるんだよ。",
+   "subtitle": "わしらは、宿じゃなくて、人に会いに来とるんだよ。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 0.9
+  }
+ ]
+}
