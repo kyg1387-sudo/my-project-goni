@@ -18,6 +18,7 @@ from make_thumbnails_ashita import GOTH, W, H, band, big, label, put  # noqa: E4
 from make_thumbnails_yanagi_v2 import text_layer  # noqa: E402
 
 SRC = os.path.join(ROOT, "assets", "portraits", "beggar-thumb-anime-hd")
+PREFIX = os.environ.get("THUMB_PREFIX", "anime-hd2")  # 2차 생성(1차 anime-hd는 源蔵 귀걸이·여성 비서 결함)
 OUT = os.path.join(ROOT, "assets", "thumbnails", "beggar")
 FIRE = ((255, 236, 60), (255, 150, 20), (225, 30, 20))
 YELLOW = ((255, 250, 150), (255, 225, 30), (250, 180, 0))
@@ -46,7 +47,7 @@ def darken_left(src, h):
 
 
 def thumb(n, v, badge_xy, band_xy):
-    src = Image.open(os.path.join(SRC, f"anime-hd-{n}.png")).convert("RGB").resize((W, H), Image.LANCZOS)
+    src = Image.open(os.path.join(SRC, f"{PREFIX}-{n}.png")).convert("RGB").resize((W, H), Image.LANCZOS)
     img = darken_left(src, 720)
     img.alpha_composite(label(v["tag"], 64, (255, 255, 255, 255), (20, 20, 20)), (34, 26))
     y = 124
