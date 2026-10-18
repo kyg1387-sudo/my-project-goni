@@ -1,0 +1,23 @@
+{
+ "_설명": "beggar-chairman 썸네일 A 3차 — A2 결함(붉은 홍채·점 3개) 수정 문장. 3장 약 0.09달러.",
+ "_style_preset": "Photorealistic Japanese human drama thumbnail, 16:9",
+ "characters": [
+  {
+   "id": "thumbA3",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/beggar-faces/genzo.png",
+    "assets/portraits/beggar-chairman-keyframes/S10b-1.png"
+   ],
+   "prompt": "[CAMERA] Close-up portrait, 85mm, f/1.8, eye level, subject on the right third, the LEFT HALF of the frame kept dark and empty for text. 16:9 widescreen, one single photorealistic film still, NOT a grid. [CHARACTER] The Japanese man from reference image 1 — Takamiya Genzo, aged 78, lean angular weathered face with deep wrinkles, close-cropped white hair, a short neat white beard, one small dark mole above his LEFT eyebrow, NO glasses, NO earrings, wearing a plain faded grey zip-up jacket. Reproduce exactly this face. No name tag, no text. [ACTION] Looking straight into the lens, eyebrows drawn together, lips parted and trembling, natural dark brown irises with clear whites of the eyes (the irises are NOT red), only the edges of the eyelids slightly pink and wet, a thin film of tears on the lower lids, one thin clear tear track down each cheek, matte natural skin (no glossy gel tears). Exactly ONE small dark mole, above his LEFT eyebrow; no other moles or spots on the forehead. [SETTING] The dim corner seat of an upscale Japanese restaurant at night: dark wood wall panels and a white tablecloth blurred in the background, a single pendant lamp overhead casting a cold cone of light, dust motes in the air, teal-grey color grade, low key, cinematic film grain. Reference image 2 is only for the restaurant look. [NEGATIVE] red irises, glowing eyes, bloodshot red pupils, multiple moles, text, letters, logo, watermark, extra fingers, anime, smile, bright lighting, glasses, earrings, grid, split panels."
+  }
+ ]
+}
