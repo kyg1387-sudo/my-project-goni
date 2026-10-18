@@ -18,7 +18,7 @@ from make_thumbnails_ashita import GOTH, W, H, band, big, label, put  # noqa: E4
 from make_thumbnails_yanagi_v2 import text_layer  # noqa: E402
 
 SRC = os.path.join(ROOT, "assets", "portraits", "beggar-thumb-anime-hd")
-PREFIX = os.environ.get("THUMB_PREFIX", "anime-hd2")  # 2차 생성(1차 anime-hd는 源蔵 귀걸이·여성 비서 결함)
+PREFIX = os.environ.get("THUMB_PREFIX", "anime-hdfix")  # 1차 anime-hd-4에서 源蔵 귀걸이·땀방울을 로컬 인페인트(2차 anime-hd2는 전부 분할 화면 → 불채택)
 OUT = os.path.join(ROOT, "assets", "thumbnails", "beggar")
 FIRE = ((255, 236, 60), (255, 150, 20), (225, 30, 20))
 YELLOW = ((255, 250, 150), (255, 225, 30), (250, 180, 0))
@@ -56,6 +56,9 @@ def thumb(n, v, badge_xy, band_xy):
                          gradient=grad, outer=(0, 0, 0) if grad else None, outer_w=9 if grad else 0)
         put(img, lay, 6, y)
         y += lay.height - 48
+    if badge_xy is None:  # 무릎 꿇은 岩城(왼쪽 아래 가운데)을 가리지 않게 배지 생략, 띠만
+        img.alpha_composite(band([v["band"]], 46, alpha=230, pad=(26, 10)), band_xy)
+        return img.convert("RGB")
     b1 = label(v["badge"], 44, (175, 18, 18, 255), (255, 255, 255), pad=(26, 8))
     num = big(v["num"], 80, gradient=((255, 255, 190), (255, 225, 40), (255, 160, 0)), stroke_w=8, outer_w=6)
     box = Image.new("RGBA", (max(b1.width, num.width) + 44, b1.height + num.height + 4), (0, 0, 0, 0))
@@ -67,7 +70,7 @@ def thumb(n, v, badge_xy, band_xy):
     return img.convert("RGB")
 
 
-def main(na=1, nb=2, badge_xy=(40, 700), band_xy=(0, 960)):
+def main(na=1, nb=2, badge_xy=None, band_xy=(0, 1000)):
     os.makedirs(OUT, exist_ok=True)
     for tag, n in (("A", na), ("B", nb)):
         im = thumb(n, VARIANTS[tag], badge_xy, band_xy)
