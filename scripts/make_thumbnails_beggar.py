@@ -87,17 +87,17 @@ def main(na=1, nb=2, badge_xy=None, band_xy=(0, 1000)):
 #  A 어두운 실사: 오른쪽 얼굴 크게 + 왼쪽 흰 글자 3줄 + 아래 초대형 인용구 「」(불꽃 그라데이션·붉은 글로)
 #  B 웹툰: 왼쪽 위 흰 라벨 + 세로 4줄 초대형 그라데이션 글자 + 금테 붉은 배지 + 검은 띠
 #  C 따뜻한 실사 투샷: 오른쪽 위 검은 라벨 + 빨강/노랑 2줄 제목(흰 테) + 아래 반투명 검은 띠 노란 글자 2줄
-ABC_SRC = os.path.join(ROOT, "assets", "portraits", "beggar-thumb-abc")
+ABC_SRC = os.path.join(ROOT, "assets", "portraits")
 RED = ((255, 120, 110), (235, 40, 40), (160, 10, 10))
 ABC = {
-    "A": dict(src="thumbA-{n}.png", side="L", label=None,
+    "A": dict(src="beggar-thumb-a3/thumbA3-{n}.png", side="L", label=None,
               rows=[("みすぼらしい", 112, None, (255, 255, 255)), ("老人に", 112, None, (255, 255, 255)), ("支配人は言った…", 112, None, (255, 255, 255))],
               row_y=300, quote="「裏口から出ろ」", quote_size=210),
-    "B": dict(src="thumbB-{n}.png", side="L", label="スカッとする話",
-              rows=[("追い出した", 150, FIRE, None), ("老人は", 150, None, (255, 255, 255)), ("財閥の", 166, FIRE, None), ("会長だった", 176, YELLOW, None)],
-              badge=("支配人、土下座", "七十年前の恩"), badge_xy=(1180, 600), band=["三万円の店で、かけうどん一杯"], band_xy=(1060, 900)),
-    "C": dict(src="thumbC-{n}.png", side="R", label="感動する話", label_style="black",
-              rows=[("三万円の店で…", 120, RED, None), ("老人が頼んだもの", 120, YELLOW, None)],
+    "B": dict(src="beggar-thumb-abc/thumbB-{n}.png", side="L", label="スカッとする話",
+              rows=[("追い出した", 128, FIRE, None), ("老人は", 140, None, (255, 255, 255)), ("財閥の", 150, FIRE, None), ("会長だった", 138, YELLOW, None)],
+              shade=95, shade_w=640, badge=("支配人、土下座", "七十年前の恩"), badge_xy=(780, 24), band=None),
+    "C": dict(src="beggar-thumb-abc2/thumbC2-{n}fix.png", side="R", label="感動する話", label_style="black",
+              rows=[("三万円の店で…", 112, RED, None), ("老人が頼んだもの", 104, YELLOW, None)], x0=1010,
               band=["その一杯が、", "店の運命を変える"], band_xy=(1060, 760)),
 }
 
@@ -107,7 +107,7 @@ def thumb_fmt(tag, n):
     img = Image.open(os.path.join(ABC_SRC, v["src"].format(n=n))).convert("RGB").resize((W, H), Image.LANCZOS).convert("RGBA")
     shade = Image.new("L", (W, H), 0); d = ImageDraw.Draw(shade)
     if v["side"] == "L":
-        d.rectangle([0, 0, 980, H if tag == "A" else 820], fill=140 if tag != "A" else 110)
+        d.rectangle([0, 0, v.get("shade_w", 980), H if tag == "A" else 820], fill=v.get("shade", 140 if tag != "A" else 110))
     else:
         d.rectangle([900, 0, W, 420], fill=150)
     shade = shade.filter(ImageFilter.GaussianBlur(120)); dark = Image.new("RGBA", (W, H), (0, 0, 0, 255)); dark.putalpha(shade)
@@ -115,7 +115,7 @@ def thumb_fmt(tag, n):
     if v["side"] == "L":
         x0, y = 34, v.get("row_y", 40)
     else:
-        x0, y = 1010, 40
+        x0, y = v.get("x0", 1010), 40
     if v["label"]:
         if v.get("label_style") == "black":
             lab = label(v["label"], 62, (10, 10, 10, 255), (255, 255, 255), border=(255, 255, 255, 255))
@@ -142,9 +142,11 @@ def thumb_fmt(tag, n):
     return img.convert("RGB")
 
 
-def abc_final(picks):
+def abc_final(picks, only=None):
     os.makedirs(OUT, exist_ok=True)
     for tag, n in picks.items():
+        if only and tag not in only:
+            continue
         im = thumb_fmt(tag, n)
         p = os.path.join(OUT, f"beggar-thumb-{tag}-JP.jpg")
         im.resize((1280, 720), Image.LANCZOS).save(p, quality=92)
@@ -157,5 +159,5 @@ def abc_final(picks):
 if __name__ == "__main__":
     a = sys.argv[1:]
     if a and a[0] == "abc":  # abc A번호 B번호 C번호
-        abc_final(dict(zip("ABC", [int(x) for x in (a[1:] + ["1", "1", "1"])[:3]]))); sys.exit()
+        abc_final(dict(zip("ABC", (a[1:] + ["1", "1", "1"])[:3]))); sys.exit()
     main(int(a[0]) if a else 1, int(a[1]) if len(a) > 1 else 2)
