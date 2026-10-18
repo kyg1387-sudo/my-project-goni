@@ -117,13 +117,22 @@ def hook_bed(path):
 def main():
     src0 = sys.argv[1]
     tmp = os.path.join(OUTD, "fin"); os.makedirs(tmp, exist_ok=True)
-    patched = os.path.join(tmp, "patched.mp4"); patch(src0, patched, tmp)
-    bed = os.path.join(tmp, "hookbed.wav"); hook_bed(bed)
     mixed = os.path.join(tmp, "mixed.mp4")
-    run(["-i", patched, "-i", bed, "-filter_complex", "[0:a][1:a]amix=inputs=2:normalize=0:duration=first[a]", "-map", "0:v", "-map", "[a]",
-         "-c:v", "copy", "-c:a", "pcm_s16le", mixed.replace(".mp4", ".mov")])
+    if "--from-mixed" not in sys.argv:  # 오디오만 다시 마감할 때는 영상 패치를 건너뛴다
+        patched = os.path.join(tmp, "patched.mp4"); patch(src0, patched, tmp)
+        bed = os.path.join(tmp, "hookbed.wav"); hook_bed(bed)
+        run(["-i", patched, "-i", bed, "-filter_complex", "[0:a][1:a]amix=inputs=2:normalize=0:duration=first[a]", "-map", "0:v", "-map", "[a]",
+             "-c:v", "copy", "-c:a", "pcm_s16le", mixed.replace(".mp4", ".mov")])
     main_out = os.path.join(tmp, "main.mp4")
-    run(["-i", mixed.replace(".mp4", ".mov"), "-af", "loudnorm=I=-14:TP=-1.5:LRA=11,alimiter=limit=0.89:level=0", "-ar", "44100",
+    mov = mixed.replace(".mp4", ".mov")
+    # burn 산출 오디오가 영상보다 5.5초 짧아 본편 끝에서 BGM이 뚝 끊기고 6초 무음이 생겼다(1차 최종본 실증) →
+    # 오디오 끝 3초 페이드 + 영상 길이까지 채움 + 전편 룸톤 베드 약 −52dBFS(제15장 13)
+    ad = float(subprocess.check_output(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=duration", "-of", "csv=p=0", mov]))
+    vd = dur(mov)
+    fc = (f"[0:a]afade=t=out:st={max(ad - 3.0, 0):.3f}:d=3,apad=whole_dur={vd:.3f}[m];"
+          f"anoisesrc=d={vd:.3f}:c=brown:a=1,lowpass=f=250,volume=-40dB,aformat=sample_rates=44100:channel_layouts=stereo[rt];"
+          "[m][rt]amix=inputs=2:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=11,alimiter=limit=0.89:level=0[a]")
+    run(["-i", mov, "-filter_complex", fc, "-map", "0:v", "-map", "[a]", "-ar", "44100",
          "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", main_out])
     print("본편 마무리:", main_out, round(dur(main_out), 2))
     if "--no-outro" not in sys.argv:
@@ -140,7 +149,25 @@ def outro(main_out, tmp):
     env = {**os.environ, "OUTRO": cta, "ENDCARD": os.path.join(ROOT, "assets/brand/endcard-midam-ja.mp4"), "OUT_SIZE": "1920x1080"}
     subprocess.run([sys.executable, os.path.join(ROOT, "scripts/append_outro.py"), main_out, final], check=True, env=env)
     print(f"완성: {final} ({dur(final):.1f}초) / 본편 {dur(main_out):.1f}초 / 아웃트로 {dur(cta):.1f}초")
+    fix_glyphs(final)
+
+
+# 1955 회상 S10f: 랙 포커스 끝에서 노렌의 가짜 한자(「抉粋什」「口白」)가 선명해짐(최종본 검수) → 무지 노렌으로 채움(배경 소품, 제11장 10)
+DELOGO = [("S10f", [(1195, 140, 110, 340), (1418, 385, 80, 120)])]
+
+
+def fix_glyphs(final):
+    b = bounds(); vf = []
+    for sid, boxes in DELOGO:
+        a, e = b[sid]
+        vf += [f"delogo=x={x}:y={y}:w={w}:h={h}:enable='between(t,{a - 0.1:.2f},{e + 0.1:.2f})'" for x, y, w, h in boxes]
+    tmpf = final.replace(".mp4", "_g.mp4")
+    run(["-i", final, "-vf", ",".join(vf), "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-c:a", "copy", tmpf])
+    os.replace(tmpf, final); print("가짜 글자 채움:", [d[0] for d in DELOGO])
 
 
 if __name__ == "__main__":
-    main()
+    if "--glyphs-only" in sys.argv:
+        fix_glyphs(os.path.join(OUTD, "beggar-final.mp4"))
+    else:
+        main()
