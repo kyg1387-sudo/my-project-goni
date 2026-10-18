@@ -1,0 +1,66 @@
+{
+ "_설명": "#03 『老舗旅館の嫁』 배역 목소리 대장 — 고니감독님 청취 확정 2026-10-18 (1차 Typecast·MiniMax 25건 + 2차 ElevenLabs 21건 중 선택). 본녹음(PHASE 1)은 이 표만 쓴다.",
+ "engine": "elevenlabs-direct",
+ "el_model": "eleven_v3",
+ "roles": {
+  "wakana": {
+   "name": "Chihiro",
+   "voice_id": "vsOHlw2syHreLeo0GXA1",
+   "note": "와카나 대사 + 1인칭 내레이션 동일 목소리"
+  },
+  "narr": {
+   "name": "Chihiro",
+   "voice_id": "vsOHlw2syHreLeo0GXA1"
+  },
+  "tomiko": {
+   "name": "Chieko",
+   "voice_id": "xE6NbKmUvY3BhBzNAYsV"
+  },
+  "mai": {
+   "name": "Kaori",
+   "voice_id": "mDxkcO3nsRCNeB4si9qg"
+  },
+  "takayuki": {
+   "name": "Riku",
+   "voice_id": "BTbWO7AM0mRTFVwdodpJ"
+  },
+  "sakurai": {
+   "name": "Akari",
+   "voice_id": "5Y52LJ80BoqKDtJh7hSM"
+  },
+  "chen": {
+   "name": "Kujira",
+   "voice_id": "SaLLKRezWJhhtqdlXuLo"
+  },
+  "regular": {
+   "name": "Hideo Watanabe",
+   "engine": "typecast-direct",
+   "voice_id": "tc_640997d2c535f40558c0722c",
+   "note": "단골 노인 1줄 — Typecast 일본 네이티브 노년 남성(EL 후보 미검색, 필요 시 EL old male 검색 후 교체)"
+  }
+ },
+ "kana": {
+  "月見荘": "つきみそう",
+  "花筏": "はないかだ",
+  "若菜": "わかな",
+  "富子": "とみこ",
+  "麻衣": "まい",
+  "隆之": "たかゆき",
+  "桜井": "さくらい",
+  "陳": "チン",
+  "暖簾": "のれん",
+  "下働き": "したばたらき",
+  "若女将": "わかおかみ",
+  "繁忙期": "はんぼうき",
+  "嫁いで": "とついで",
+  "お義母さん": "おかあさん",
+  "お義姉さん": "おねえさん",
+  "母さん": "かあさん",
+  "十分": "じゅうぶん",
+  "四割": "よんわり",
+  "十倍": "じゅうばい",
+  "二千万円": "にせんまんえん",
+  "そば粉": "そばこ",
+  "そば茶": "そばちゃ"
+ }
+}
