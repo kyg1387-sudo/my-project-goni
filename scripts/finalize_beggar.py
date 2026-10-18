@@ -26,7 +26,9 @@ W, H = 1920, 1080
 MANUAL = [("S06g", "S04a", 0.0, 3.9), ("S06g", "S05o", 3.9, None)]
 SEPIA = ["S10e", "S10f"]
 # 고니감독님 지적(0:04): S10r 지배인 표정·할아버지 흔들림 부자연 → 키프레임 r21 + i2v 재생성 클립으로 본편 S10r과 후크 H0(S10r 재사용) 모두 교체
-CLIPS = [("S10r", "assets/preview/beggar-chairman/scene81.mp4"), ("H0", "assets/preview/beggar-chairman/scene81.mp4")]
+CLIPS = [("S10r", "assets/preview/beggar-chairman/scene81.mp4"), ("H0", "assets/preview/beggar-chairman/scene81.mp4"),
+         # 8:03 L41: 앞 岩城의 입이 같이 움직임 → 源蔵 CU + 岩城 뒷모습(r22-3) 립싱크, 구동 음성은 본편 정렬(line079 +0.065초)
+         ("S14d", "assets/auditions/beggar-s14d-omni/omni-s14d.mp4")]
 # S06c 휴대폰 화면 사각형(키프레임 1344x768 기준, r9 S06c-1) — 화면 안쪽 꼭짓점 TL, TR, BR, BL
 # r20 S06c-3(고니감독님 지적 2:55: 팔이 차 앞 허공으로 뻗은 r9를 뒷좌석 손 가까이 인서트로 교체, r9는 S06c-1_old.png)
 PHONE = ("S06c", "S04c", [(522, 341), (751, 335), (754, 451), (523, 457)])  # 가로로 든 휴대폰
