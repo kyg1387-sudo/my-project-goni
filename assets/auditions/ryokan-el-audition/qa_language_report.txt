@@ -1,0 +1,27 @@
+=== TTS 대사 파일 검사 (오디션 ryokan-el-audition.json) ===
+[chen_el_Kujira.mp3] lang=ja | 대본: [polite, firm] 私たちが契約したの | 들림: 私たちが契約したのは月見草さんではありません。若菜さんです。 | 
+[chen_el_Masa.mp3] lang=ja | 대본: [polite, firm] 私たちが契約したの | 들림: 私たちが契約したのは月見草さんではありません。若野さんです。 | 
+[chen_el_Shintarou.mp3] lang=ja | 대본: [polite, firm] 私たちが契約したの | 들림: 私たちが契約したのは月見草さんではありません 若菜さんです | 
+[mai_el_Kagami.mp3] lang=ja | 대본: [sneering, mocking] はあ？  | 들림: はあ?英語なんて翻訳アプリで十分でしょ? あんたの代わりなんていくらでもいるんだから。 | 
+[mai_el_Kaori.mp3] lang=ja | 대본: [sneering, mocking] はあ？  | 들림: はあ?英語なんて翻訳アプリで十分でしょ。あんたの代わりなんていくらでもいるんだから。 | 
+[mai_el_Momoka.mp3] lang=ja | 대본: [sneering, mocking] はあ？  | 들림: はぁ?英語なんて翻訳アプリで十分でしょ? あんたの代わりなんていくらでもいるんだから | 
+[narr_el_Chihiro.mp3] lang=ja | 대본: [soft, reflective] 下働き。そ | 들림: 舌葉だらき。それが、とついで五年になる私の肩書だった。 でも二人はまだ知らなかった。 | 
+[narr_el_Naomi.mp3] lang=ja | 대본: [soft, reflective] 下働き。そ | 들림: 下働き、それがとついで5年になる私の肩書だった。 でも二人はまだ知らなかった。 | 
+[narr_el_Shino.mp3] lang=ja | 대본: [soft, reflective] 下働き。そ | 들림: しまばたき それが嫁いで5年になる私の肩書だった でも2人はまだ知らなかった | 
+[sakurai_el_Akari.mp3] lang=ja | 대본: [warm, amused] 若菜さん。うちの支 | 들림: 中名さん、うちの支配人になってくれない? お給料は、あら、ゼロだったわね。 じゃあ、あなたが決め | 
+[sakurai_el_Hiyori.mp3] lang=ja | 대본: [warm, amused] 若菜さん。うちの支 | 들림: ラカナさん、うちの支配人になってくれない? お給料は…あら、ゼロだったわね。 じゃあ、あなたが決 | 
+[sakurai_el_Tomo.mp3] lang=ja | 대본: [warm, amused] 若菜さん。うちの支 | 들림: 中田さんうちの支配人になってくれない? お給料は…あらゼロだったわね じゃああなたが決めて | 
+[takayuki_el_Asu.mp3] lang=ja | 대본: [bored, annoyed] 母さんに逆らう | 들림: 甲さんに逆らうなよ。お前はうちの嫁なんだから黙って手伝ってればいいんだって。 | 
+[takayuki_el_Nagi.mp3] lang=ja | 대본: [bored, annoyed] 母さんに逆らう | 들림: 母さんに逆らうなよ。お前はうちの嫁なんだから、黙って手伝ってればいいんだって。 | 
+[takayuki_el_Riku.mp3] lang=ja | 대본: [bored, annoyed] 母さんに逆らう | 들림: コウさんに逆らうなよ。お前はうちの嫁なんだから黙って手伝ってればいいんだって。 | 
+[tomiko_el_Chieko.mp3] lang=ja | 대본: [cold, dismissive] そうよ。嫌 | 들림: そうよ。嫌なら出て行けばいいわ。月見草はね、あなたがいなくても百年やってきたんですから。 | 
+[tomiko_el_Lisa.mp3] lang=ja | 대본: [cold, dismissive] そうよ。嫌 | 들림: そうよ。嫌なら出て行けばいいわ。月見草はね、あなたがいなくても100年やってきたんですから。 | 
+[tomiko_el_Tomo.mp3] lang=ja | 대본: [cold, dismissive] そうよ。嫌 | 들림: そうよ、嫌なら出ていけばいいわ。月味噌はね、あなたがいなくても100年やってきたんですから。 | 
+[wakana_el_Chihiro.mp3] lang=ja | 대본: [calm, quietly firm] お義母 | 들림: お母さん、月見草は私がいなくても百年やってきたんですよね。それに、よそ者の嫁は裏方で十分なんでし | 
+[wakana_el_Naomi.mp3] lang=ja | 대본: [calm, quietly firm] お義母 | 들림: お母さん、月見草は私がいなくても百年やってきたんですよね。 それに、よそ者の嫁は裏方で十分なんで | 
+[wakana_el_Shino.mp3] lang=ja | 대본: [calm, quietly firm] お義母 | 들림: お母さん月未曽は私がいなくても100年やってきたんですよね それによそ者の嫁は裏方で十分なんでし | 
+
+=== 현장음 파일 검사 (amb*.wav) — 말소리가 들리면 안 됨 ===
+
+=== 요약 ===
+문제 파일 없음
