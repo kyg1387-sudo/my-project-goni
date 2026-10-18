@@ -468,8 +468,8 @@
    "voice": "SaLLKRezWJhhtqdlXuLo",
    "voice_name": "Kujira",
    "el_model": "eleven_v3",
-   "text": "[calm, firm] 私たちが契約したのは、つきみそうさんではありません。わかなさんです",
-   "subtitle": "私たちが契約したのは、月見荘さんではありません。若菜さんです"
+   "text": "[calm, firm] 私たちがしんらいして契約したのは、つきみそうさんではありません。わかなさんです",
+   "subtitle": "私たちが信頼して契約したのは、月見荘さんではありません。若菜さんです"
   },
   {
    "id": "line055",
@@ -598,8 +598,8 @@
    "voice": "vsOHlw2syHreLeo0GXA1",
    "voice_name": "Chihiro",
    "el_model": "eleven_v3",
-   "text": "[steady, reporting] 私は五年分のむきゅうろうどうを、べんごしを通じてせいきゅうした。離婚は、正式に成立した。",
-   "subtitle": "私は五年分の無給労働を、弁護士を通じて請求した。離婚は、正式に成立した。"
+   "text": "[steady, reporting] 私は五年分の働きを、ざいさんぶんよとしてせいきゅうした。離婚は、正式に成立した。",
+   "subtitle": "私は五年分の働きを、財産分与として請求した。離婚は、正式に成立した。"
   },
   {
    "id": "line069",
