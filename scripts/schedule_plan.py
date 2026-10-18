@@ -87,15 +87,16 @@ def next_slot(L, work, genre, start=None):
 
 
 def table(L):
-    print("| 날짜 | 본편 | 상태 |\n|---|---|---|")
+    def tm(x):
+        t = x.get("time", "—")
+        return t + ("?" if "미확인" in x.get("time_src", "미확인") and t != "—" else "")
+    print("| 날짜 | 시각 | 본편 | 상태 |\n|---|---|---|---|")
     for m in sorted(L["main"], key=lambda x: x["date"]):
-        print(f"| {m['date'][5:]}({WD[d(m['date']).weekday()]}) {m.get('time', '')} | {m['work']} — {m['title']} | {m['status']} |")
-    print("\n| 본편 | 쇼츠 등록일 | 편수 |\n|---|---|---|")
-    g = collections.defaultdict(list)
-    for s in sorted(L["shorts"], key=lambda x: x["date"]):
-        g[s["work"]].append(s["date"][5:].replace("-", "/") + (f" {s['time']}" if s.get("time") else ""))
-    for w, ds in g.items():
-        print(f"| {w} | {' · '.join(ds)} | {len(ds)} |")
+        print(f"| {m['date'][5:].replace('-', '/')}({WD[d(m['date']).weekday()]}) | {tm(m)} | {m['work']} — {m['title']} | {m['status']} |")
+    print("\n| 날짜 | 시각 | 쇼츠 | 본편 | 상태 |\n|---|---|---|---|---|")
+    for s in sorted(L["shorts"], key=lambda x: (x["date"], x.get("time", ""))):
+        print(f"| {s['date'][5:].replace('-', '/')}({WD[d(s['date']).weekday()]}) | {tm(s)} | {s['title']} | {s['work']} | {s['status']} |")
+    print("\n시각: — = 스튜디오 목록에 시각이 없어 미확인, ? = 계획값(스튜디오 미확인)")
 
 
 if __name__ == "__main__":
