@@ -1,0 +1,17 @@
+{
+ "_설명": "#02 S13 곤도 비웃음 분리(사용자 확정 (나)): 웃음 없는 대사 TTS 2안(Shinwook) + 비웃음 효과음 3안(ElevenLabs sound-generation, 말소리 없음). 로컬에서 「웃음 → 대사」 믹스 미리듣기를 만든다.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {"id": "gondo_S13_line_happy", "model": "typecast-direct", "voice": "tc_6465b87a4ee2060b333caf80", "language": "jpn",
+   "text": "本当に来やがった！ 見ろよ全員、これが地下のカビ女だ！", "emotion_preset": "happy", "emotion_intensity": 1.0, "tempo": 1.0},
+  {"id": "gondo_S13_line_normal", "model": "typecast-direct", "voice": "tc_6465b87a4ee2060b333caf80", "language": "jpn",
+   "text": "本当に来やがった！ 見ろよ全員、これが地下のカビ女だ！", "emotion_preset": "normal", "emotion_intensity": 1.0, "tempo": 1.0},
+  {"id": "sfx_laugh_A_sneer", "model": "elevenlabs-sfx", "duration": 1.6, "prompt_influence": 0.7,
+   "text": "A middle-aged man's short, nasty, mocking laugh through the nose and teeth, slightly drunk, low baritone voice, close microphone, dry, no words, no speech"},
+  {"id": "sfx_laugh_B_bellow", "model": "elevenlabs-sfx", "duration": 1.8, "prompt_influence": 0.7,
+   "text": "A arrogant middle-aged businessman bursts into a loud scornful laugh, two or three harsh 'ha' bursts, deep chesty baritone, slightly drunk, close microphone, no words, no speech"},
+  {"id": "sfx_laugh_C_wheeze", "model": "elevenlabs-sfx", "duration": 1.5, "prompt_influence": 0.7,
+   "text": "A smug middle-aged man's contemptuous wheezing chuckle, ugly and gloating, deep raspy voice, slightly drunk, close microphone, no words, no speech"}
+ ]
+}

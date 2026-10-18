@@ -1,0 +1,19 @@
+{
+ "_설명": "chika 히어로 파일럿(S01a 1컷·1테이크, Kling 3.0 Pro 엔드포인트·화질 검증). 승인 2026-10-08.",
+ "ratio": "16:9",
+ "budget_usd": 1.0,
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "scenes": [
+  {
+   "prompt": "Static, locked off camera. Motion: The silhouettes take two slow steps forward into the hall; the doors stay open. No one else enters. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/chika-keyframes/S01a-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 1
+  }
+ ],
+ "durations": [
+  5
+ ]
+}

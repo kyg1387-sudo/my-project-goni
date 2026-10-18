@@ -1,0 +1,16 @@
+{
+ "_설명": "#03 『老舗旅館の嫁』 ElevenLabs 일본어 목소리 도서관 검색(무과금, 미리듣기만). 키 유효성 확인 겸 배역 후보 수집. 태그=배역.",
+ "el_shared_search": {
+  "per_query": 8,
+  "queries": [
+   {"tag": "wakana33", "language": "ja", "gender": "female", "age": "young"},
+   {"tag": "wakana33b", "language": "ja", "gender": "female", "age": "middle_aged"},
+   {"tag": "tomiko62", "language": "ja", "gender": "female", "age": "old"},
+   {"tag": "mai38", "language": "ja", "gender": "female", "age": "middle_aged", "use_case": "characters_animation"},
+   {"tag": "takayuki35", "language": "ja", "gender": "male", "age": "young"},
+   {"tag": "sakurai50", "language": "ja", "gender": "female", "age": "middle_aged", "use_case": "narrative_story"},
+   {"tag": "chen40", "language": "ja", "gender": "male", "age": "middle_aged"},
+   {"tag": "narr", "language": "ja", "gender": "female", "use_case": "narrative_story"}
+  ]
+ }
+}

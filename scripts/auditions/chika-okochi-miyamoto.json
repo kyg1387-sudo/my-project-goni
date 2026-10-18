@@ -1,0 +1,67 @@
+{
+ "_설명": "#02 오코치=Dean, 미야모토=Poseidon (사용자 확정 2026-10-08) 배역 대사 샘플. 인명·숫자는 가나 입력(자막은 한자 유지).",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "okochi_Dean_1_question",
+   "model": "typecast-direct",
+   "voice": "tc_673eb45cdc1073aef51e6b90",
+   "language": "jpn",
+   "text": "ごんどうくん。一つだけ答えてもらおう。君が私に見せた企画書の、よんじゅうにページ。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "okochi_Dean_2_basis",
+   "model": "typecast-direct",
+   "voice": "tc_673eb45cdc1073aef51e6b90",
+   "language": "jpn",
+   "text": "あのモデルケースの、選定根拠は何だ？",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "okochi_Dean_3_smile",
+   "model": "typecast-direct",
+   "voice": "tc_673eb45cdc1073aef51e6b90",
+   "language": "jpn",
+   "text": "……なるほど。現場を歩いた人間の言葉だ。森川さん。年間じゅうおくえんのこの契約、あなたがリーダーなら、今ここで調印しよう。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 0.95
+  },
+  {
+   "id": "miyamoto_Poseidon_1_greet",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "……おや、珍しいね。こんなふきだまりに、若い人が。宮本だ。定年まであと三か月の、番人だよ。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "miyamoto_Poseidon_2_ruin",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "……その紙が、あんたの破滅だよ、ごんどうくん。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "miyamoto_Poseidon_3_keep",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "わしはな、ただ、捨てられなかっただけさ。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 0.9
+  }
+ ]
+}
