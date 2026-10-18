@@ -6,7 +6,7 @@
 | 시트 | 판정 | 사용 셀 | 비고 |
 |---|---|---|---|
 | wakana-fix-1 | ✅ 기준 | 정면(하단 좌)·45도 없음(전신 측면으로 대체) | 점 2개 — 식별자 문장은 「small beauty marks below the left eye」. 의상 A(사무에+앞치마) |
-| wakana-b | ⏳ 3차 | — | 1·2차: 참조 시트의 의상(앞치마)을 그대로 따라감 → 3차는 얼굴 크롭만 참조(`cells/wakana-front.png`) |
+| wakana-b-1 (3차) | ✅ 기준(의상 B) | 전신 정면·측면, 45도, 하단 3 | 얼굴 크롭 참조로 의상 유출 해결. 기모노는 감색(연남색 지시보다 짙음) — 대본 §3 의상 B를 「무지 감색 기모노 + 아이보리 오비」로 확정 |
 | tomiko-fix-1 | ✅ 기준 | 상단 3셀(정면·45도·측면, 안경), 하단 좌(미소) | 엄격·애원 셀은 안경 누락 → 정면 셀 + 표정 문장(제11장 1) |
 | mai-sheet-1 | ✅ | 상단 좌(정면)·전신 3·하단 3 | 비웃음 셀이 웃음으로 생성 → 정면 + 「sneer」 문장 |
 | takayuki-sheet-1 | ✅ | 전신 정면·측면, 하단 3 | 45도 셀 없음(전신 측면으로 대체) |
@@ -20,7 +20,7 @@
 | loc-tsukimiso-kitchen (2차) | ✅ 부분 | KITCHEN-DAWN / CUTTING BOARD / OFFICE-NIGHT | 1차 벽보 글자·격자 붕괴 → 2차 합격 3셀(흰 상자 선반 셀 미사용) |
 | loc-couple-room (2차) | ⚠ 부분 | WINDOW / LAMP CLOSE | 벽보·노렌 가문·바닥 휴대폰 반복 → 어두운 장면이라 2셀로 충분, 키프레임은 「bare walls」 선행 |
 | loc-hanaikada-genkan (2차) | ✅ | DAY-WIDE / LOBBY SOFAS / BUS BAY / FRONT DESK | 프런트 셀 벽 소형 종이 1장(보케로 처리) |
-| loc-hanaikada-office (2차) | ❌ 3차 | — | 2차가 **일러스트풍** + 노렌 가문 + 벽보 → 실사 선언문 선두·노렌 금지로 3차 |
+| loc-hanaikada-office (3차) | ✅ | NIGHT-WIDE / DESK CLOSE / WINDOW / DOOR TO LOBBY | 3차 실사·노렌 없음·벽 무지 ✅ |
 | loc-taipei-office | ✅ 부분 | DESK FROM BEHIND / PHONE CLOSE / WINDOW | WIDE 셀에 노렌·벽보 → 미사용 |
 | loc-back-alley | ✅ 부분 | NIGHT-WIDE / GATE / TAXI END | HIGH ANGLE 셀에 노렌 → 미사용(부감은 글로만, 제11장 3) |
 | angle-tsukimiso-genkan (2차) | ✅ 부분 | REVERSE / THROUGH DOORWAY | HIGH(노렌 가문)·LOW(벽보) 미사용 |
@@ -32,3 +32,6 @@
 - 일본 실내 시트는 **벽보(종이 공지)**를 기본으로 그린다 → WALL RULE(「every wall is completely bare」) 선두 문장 필수. 그래도 남으면 셀 단위로 버리고 합격 셀만 쓴다(장소 시트는 4셀 중 2~3셀이면 충분).
 - refs 참조 시트에 의상이 있으면 **의상까지 복제**된다(wakana-b 2회 실증) → 의상이 다른 변형 시트는 얼굴만 크롭한 셀을 refs로 쓴다.
 - 장소 시트도 실사 선언문(REAL PHOTOGRAPH ONLY) 없이는 일러스트풍이 나올 수 있다(hanaikada-office 2차).
+
+## 4. 결과
+PHASE 2 완료(2026-10-19): 인물 6시트(의상 변형 포함) + 장소 8 + 앵글 2 + 소품 1 = 17시트 합격(부분 합격은 사용 셀 명시). 생성 총 26장 ≈ 1.2달러. 다음: 셀 분할(`split_sheet_cells.py` + `clean_cells.py`) → PHASE 3 생성기.
