@@ -1,7 +1,7 @@
 {
  "_설명": "ryokan 장면 설정(build_ryokan_phase3.py 생성). override_required 장면(정지 푸시인·OMNI 정지 프레임·그래픽·재사용·카드)은 video-overrides로 먼저 넣는다. hero_takes 컷은 B안 상위 모델 3테이크.",
  "ratio": "16:9",
- "budget_usd": 47.7,
+ "budget_usd": 46.3,
  "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
  "durations": [
   10,
@@ -467,7 +467,7 @@
    "image": "assets/portraits/ryokan-keyframes/S10b-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
    "i2v_resolution": "1080p",
-   "hero_takes": 2
+   "hero_takes": 1
   },
   {
    "prompt": "(override) still: Overhead extreme close-up: two different hands reaching for the same old-fashion",
@@ -736,7 +736,7 @@
    "hero_takes": 2
   },
   {
-   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] The taxi drives slowly away down the alley until its tail lights shrink; nothing else moves. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] The taxi is already driving AWAY from the camera, its rear and red tail lights facing us, shrinking slowly into the distance; it never turns, never comes toward the camera, no headlights toward the lens; nothing else moves. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "duration": 10,
    "image": "assets/portraits/ryokan-keyframes/S17b-1.png"
   },

@@ -421,7 +421,7 @@ SHOTS = [
       motion="Mai climbs into the taxi; its door closes; Takayuki stops a few steps out of the gate and stands still. Faces stay unrecognizable.", hero=True),
     S("S17b", "S17", "empty", "ws", "alley", "EL", [], "ALLEY_TAXI",
       "Wide view down the wet alley at night: a taxi's red tail lights receding between stone walls, wet asphalt reflecting them, no people.", line="line068",
-      motion="The taxi drives slowly away down the alley until its tail lights shrink; nothing else moves."),
+      motion="The taxi is already driving AWAY from the camera, its rear and red tail lights facing us, shrinking slowly into the distance; it never turns, never comes toward the camera, no headlights toward the lens; nothing else moves."),
     S("S17c", "S17", "sil", "ms", "alley", "SIDE", ["TAKAYUKI"], "ALLEY_GATE",
       "Medium shot from behind: Takayuki in charcoal samue standing alone under the orange street lamp by the wooden gate, his back to the camera, head hanging, a smartphone glowing in his lowered hand.", line="line069",
       motion="His shoulders sag; the phone glow flickers in his hand. He does not turn around."),
@@ -497,6 +497,7 @@ STYLE_COLOR = {"Naration": "&H00FFFFFF", "Wakana": "&H00F0E6C8", "Tomiko": "&H00
 PRO_MODEL = "fal-ai/bytedance/seedance/v1/pro/image-to-video"
 HERO_MODEL = "fal-ai/kling-video/v3/pro/image-to-video"  # 히어로 컷(3테이크) — PHASE 5 실행 전 fal 모델 ID·응답 형식 확인
 HERO_TAKES = 2
+SINGLE_TAKE = {"S10b"}   # 재생성 시 복원된 take 파일이 재사용되는 것을 피하기 위해 1테이크(2026-10-19 실증: regen_scenes는 sceneNN.mp4만 지운다)
 RATE = {"pro": 0.108, "lite": 0.036, "omni": 0.16, "kf": 0.04, "hero": 0.112}
 
 def tc(sec):
@@ -780,7 +781,8 @@ def main():
             if tier == "pro":
                 item["i2v_model"], item["i2v_resolution"] = PRO_MODEL, "1080p"; cost["pro"] += gen
             elif tier == "hero":
-                item["i2v_model"], item["i2v_resolution"], item["hero_takes"] = HERO_MODEL, "1080p", HERO_TAKES; cost["hero"] += gen * HERO_TAKES
+                tk = 1 if sid in SINGLE_TAKE else HERO_TAKES
+                item["i2v_model"], item["i2v_resolution"], item["hero_takes"] = HERO_MODEL, "1080p", tk; cost["hero"] += gen * tk
             else:
                 cost["lite"] += gen
         else:
