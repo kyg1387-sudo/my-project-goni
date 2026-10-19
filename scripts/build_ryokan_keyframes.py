@@ -350,11 +350,14 @@ def build(sc, face_refs, drop_expr=False):
     return {"id": sc["id"], "count": 1, "aspect_ratio": "16:9", "refs": refs, "prompt": prompt, "_expr": ek or ""}
 
 
-OFFICE_ANCHOR = {"S18c": "S11d", "S18d": "S11d", "S09a": "S07e"}   # 같은 장소의 승인 컷을 기준으로(배경 유출 완화)
+OFFICE_ANCHOR = {"S18c": "S11d", "S18d": "S11d"}
+NO_FACE_ANCHOR = {"S09a"}   # a-r 3차: 기준 얼굴 S07e(다다미방)의 구도·배경을 그대로 복제 → 셀 참조로 되돌림(1차 A가 장소는 맞았음)   # 같은 장소의 승인 컷을 기준으로(배경 유출 완화)
 
 
 def face_refs_for(sc):
     out = []
+    if sc["id"] in NO_FACE_ANCHOR:
+        return out
     if sc["id"] in OFFICE_ANCHOR:
         p = f"{KF_DIR}/{OFFICE_ANCHOR[sc['id']]}-1.png"
         if os.path.exists(os.path.join(ROOT, p)):
