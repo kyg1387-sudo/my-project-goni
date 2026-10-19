@@ -134,12 +134,31 @@ def art_board_v(w, h, text):
     return im
 
 
+def white_quad(sid, box, thr=170):
+    """무지 발광 화면(흰 면)을 자동 검출: box(x0,y0,x1,y1) 안의 밝은 픽셀 → 최소 외접 회전 사각형 → TL·TR·BR·BL 순."""
+    a = np.asarray(Image.open(os.path.join(RAW, f"{sid}-1.png")).convert("RGB"))
+    x0, y0, x1, y1 = box; g = a[y0:y1, x0:x1].mean(2)
+    m = (g > thr).astype(np.uint8); m = cv2.morphologyEx(m, cv2.MORPH_OPEN, np.ones((5, 5), np.uint8))
+    cs, _ = cv2.findContours(m, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    c = max(cs, key=cv2.contourArea)
+    ap = cv2.approxPolyDP(c, 0.04 * cv2.arcLength(c, True), True).reshape(-1, 2).astype(np.float32)
+    pts = (ap if len(ap) == 4 else cv2.boxPoints(cv2.minAreaRect(c))) + np.float32([x0, y0])
+    cen = pts.mean(0); pts = pts[np.argsort(np.arctan2(pts[:, 1] - cen[1], pts[:, 0] - cen[0]))]   # 시계 방향(화면 좌표)
+    e = [np.linalg.norm(pts[(k + 1) % 4] - pts[k]) for k in range(4)]
+    # 긴 변이 화면 세로(휴대폰 세로 화면): 짧은 변 두 개 중 위쪽(평균 y 작은 쪽)이 「위」 → 그 변의 시작점을 TL로
+    short = [0, 2] if e[0] + e[2] < e[1] + e[3] else [1, 3]
+    top = min(short, key=lambda k: (pts[k][1] + pts[(k + 1) % 4][1]))
+    pts = np.roll(pts, -top, axis=0)
+    return [list(map(float, p)) for p in pts]
+
+
+
 # ---------------- 합성 지시(키프레임 1344x768 좌표: 왼위·오른위·오른아래·왼아래) ----------------
 JOBS = {
-    "S05d": [("lcd", P((470, 582), (1040, 425), (905, 660), (462, 612)), lambda w, h: art_game(w, h))],
+    "S05d": [("lcd", P((765, 462), (1130, 520), (980, 768), (455, 690)), lambda w, h: art_game(w, h))],
     "S10d": [("lcd", P((833, 392), (1063, 392), (1072, 535), (840, 540)), lambda w, h: art_mail(w, h))],
-    "S16a": [("lcd", P((608, 648), (722, 607), (782, 630), (686, 676)), lambda w, h: art_call(w, h, "麻衣"))],
-    "S18a": [("lcd", P((590, 556), (700, 538), (718, 585), (608, 606)), lambda w, h: art_call(w, h, "義母"))],
+    "S16a": [("lcd", white_quad("S16a", (560, 580, 820, 700)), lambda w, h: art_call(w, h, "麻衣"))],
+    "S18a": [("lcd", white_quad("S18a", (530, 570, 770, 690)), lambda w, h: art_call(w, h, "義母"))],
     "S10a2": [("lcd", P((600, 295), (770, 290), (770, 630), (590, 635)), lambda w, h: art_mail(w, h))],
     "S18k": [("replace", P((940, 415), (1080, 415), (1080, 440), (940, 440)), lambda w, h: art_plate(w, h, "花筏　フロント"))],
     "S03a": [("ink", P((195, 225), (240, 225), (240, 345), (195, 345)), lambda w, h: art_board_v(w, h, "月見荘"))],
@@ -157,7 +176,12 @@ STATE_Q = {"S11c": ("lcd", S11C_Q), "S13h": ("ink", S13H_Q)}
 SIGMA = {"S05d": 1.2, "S10d": 0.5, "S11c": 0.5, "S13h": 0.6, "S16a": 0.8, "S18a": 0.8, "S10a2": 0.5, "S18k": 0.8, "S03a": 0.9}
 
 
+NO_REMAP = {"S05d", "S18a", "S16a"}   # 크롭 후 현재 키프레임에서 직접 측정한 좌표
+
+
 def remap(q, sid):
+    if sid in NO_REMAP:
+        return q
     """좌표는 B단계 원본(1344x768, 크롭 전)에서 측정 → kf_letterbox_fix가 크롭·재확대한 현재 키프레임 좌표로 변환(_v1 원본에서 띠를 다시 계산)."""
     v1 = os.path.join(OUT, "_v1", f"{sid}-1.png")
     if not os.path.exists(v1):
