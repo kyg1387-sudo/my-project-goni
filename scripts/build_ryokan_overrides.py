@@ -478,6 +478,9 @@ def post(clips):
             fr = silhouette(fr) if POST_FX[sid] == "silhouette" else cam_frames(fr, POST_FX[sid])
         if sid in CAPTION_OVER:
             fr = caption_frames(fr, CAPTION_OVER[sid])
+        need = int(math.ceil((durs[i - 1] + 0.5) * FPS))
+        if len(fr) < need:   # 생성 클립이 계획 길이보다 짧으면(S13g 121<128) 마지막 프레임을 복제해 채운다(조립에서 검은 프레임·길이 오류 방지)
+            fr = list(fr) + [fr[-1]] * (need - len(fr)); print(f"  scene{i:02d}: {need - len(fr) + (need - len(fr))}프레임 패딩" if False else f"  scene{i:02d}: 마지막 프레임 패딩 → {need}")
         write_frames(fr, os.path.join(OUT, f"scene{i:02d}.mp4")); print(f"scene{i:02d} {sid}: " + " + ".join(x for x in ("표기 추적" if sid in signs else "", POST_FX.get(sid, ""), f"take{TAKE[sid]}" if sid in TAKE else "") if x))
 
 
