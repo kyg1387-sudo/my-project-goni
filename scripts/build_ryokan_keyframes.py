@@ -229,8 +229,8 @@ HEAD.update({
     "S03c": ("FULL-FRAME 16:9 LANDSCAPE image, NO white borders. EXACTLY TWO people: ONE elderly man (the regular guest) and ONE elderly WOMAN, "
              "his wife, in a beige shawl — a husband and wife, NOT two men — at the inn entrance step, seen from a slight distance, warm wood."),
     "S08c2": "A traditional Japanese tatami room at morning with a folded FUTON and a small low table — there is NO bed, NO mattress, NO bed frame anywhere.",
-    "S10b": ("WIDE SHOT of the whole entrance hall from the doorway: Mai is a SMALL figure far behind the counter, her face barely readable; a Western family "
-             "and a Japanese couple seen from behind in the foreground; NOT a close-up, NOT a portrait."),
+    "S10b": ("FULL-FRAME 16:9 LANDSCAPE image filling the whole canvas — NO white bars, NO black bars, NO letterbox. WIDE SHOT of the whole entrance hall from the doorway: Mai is a SMALL figure far behind the counter, her face barely readable; a Western family "
+             "and a Japanese couple seen from behind in the foreground; NOT a close-up, NOT a portrait. The noren is plain solid indigo with NO circular crest, NO writing."),
     "S13j": ("ONLY a hand and forearm in a plum kimono sleeve enter the frame from the top edge, lifting a crumpled navy binder out of a steel wastebasket; "
              "NO face, NO torso, NO shoulders, NO body — the frame is cut at the forearm; high angle looking down into the bin."),
 })
