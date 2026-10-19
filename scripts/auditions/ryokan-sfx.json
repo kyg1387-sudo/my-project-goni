@@ -1,0 +1,180 @@
+{
+ "_설명": "#03 효과음 소스(제11장 22: 설계와 동시에 생성·믹스). scripts/audio/ryokan.json _효과음 23큐 + 환경 보강 4종. ryokan_master.py가 타임코드에 믹스.",
+ "tests": [
+  {
+   "id": "handset_creak",
+   "model": "elevenlabs-sfx",
+   "duration": 1.8,
+   "prompt_influence": 0.6,
+   "text": "An old plastic telephone handset gripped tightly, faint plastic creak and a trembling breath close to the receiver, quiet Japanese inn at night, no voices, no music"
+  },
+  {
+   "id": "phone_set_down",
+   "model": "elevenlabs-sfx",
+   "duration": 1.2,
+   "prompt_influence": 0.6,
+   "text": "A smartphone placed gently face down on a wooden desk, soft tap of glass on wood, quiet room, no voices"
+  },
+  {
+   "id": "fluorescent_on",
+   "model": "elevenlabs-sfx",
+   "duration": 1.6,
+   "prompt_influence": 0.6,
+   "text": "A single old fluorescent tube in a kitchen switched on: click, flicker buzz, then steady hum, pre-dawn silence, no voices"
+  },
+  {
+   "id": "knife_on_board",
+   "model": "elevenlabs-sfx",
+   "duration": 2.5,
+   "prompt_influence": 0.6,
+   "text": "Steady rhythmic chopping of a kitchen knife on a wooden cutting board, vegetables, close, Japanese inn kitchen, no voices, no music"
+  },
+  {
+   "id": "lamp_switch",
+   "model": "elevenlabs-sfx",
+   "duration": 0.8,
+   "prompt_influence": 0.6,
+   "text": "A small paper lamp switch clicked once in a quiet tatami room, soft click, no voices"
+  },
+  {
+   "id": "wiping_stop",
+   "model": "elevenlabs-sfx",
+   "duration": 1.5,
+   "prompt_influence": 0.6,
+   "text": "A damp cloth wiping a wooden corridor floor then stopping abruptly, soft fabric on polished wood, quiet inn, no voices"
+  },
+  {
+   "id": "teacup_click",
+   "model": "elevenlabs-sfx",
+   "duration": 0.9,
+   "prompt_influence": 0.6,
+   "text": "A ceramic tea cup set down firmly on a lacquered low table, single sharp click with a tiny ring, tatami room, no voices"
+  },
+  {
+   "id": "fan_snap",
+   "model": "elevenlabs-sfx",
+   "duration": 0.8,
+   "prompt_influence": 0.6,
+   "text": "A folding paper fan snapped shut sharply in one motion, crisp snap, quiet tatami room, no voices"
+  },
+  {
+   "id": "binder_drop",
+   "model": "elevenlabs-sfx",
+   "duration": 1.4,
+   "prompt_influence": 0.6,
+   "text": "A heavy ring binder thrown into a steel wastebasket, hollow metallic thud with papers rustling, small office at night, no voices"
+  },
+  {
+   "id": "phone_notify",
+   "model": "elevenlabs-sfx",
+   "duration": 1.0,
+   "prompt_influence": 0.6,
+   "text": "A single smartphone notification chime, soft modern two-note ping, close, no music, no voices"
+  },
+  {
+   "id": "notify_triple",
+   "model": "elevenlabs-sfx",
+   "duration": 1.6,
+   "prompt_influence": 0.6,
+   "text": "Three rapid smartphone notification pings in a row, modern soft chimes, close, no music, no voices"
+  },
+  {
+   "id": "bass_hit",
+   "model": "elevenlabs-sfx",
+   "duration": 2.5,
+   "prompt_influence": 0.6,
+   "text": "A deep cinematic sub-bass impact hit with a short dark tail, dramatic drama sting, no melody, no voices"
+  },
+  {
+   "id": "phone_ring",
+   "model": "elevenlabs-sfx",
+   "duration": 3.0,
+   "prompt_influence": 0.6,
+   "text": "An old-fashioned Japanese desk telephone ringing, mechanical bell ring twice, wooden reception counter, quiet hall, no voices"
+  },
+  {
+   "id": "handset_drop",
+   "model": "elevenlabs-sfx",
+   "duration": 1.2,
+   "prompt_influence": 0.6,
+   "text": "A telephone handset slipping from a hand and clattering onto a wooden counter, plastic knock and coiled cord rattle, no voices"
+  },
+  {
+   "id": "pen_scratch",
+   "model": "elevenlabs-sfx",
+   "duration": 2.2,
+   "prompt_influence": 0.6,
+   "text": "A ballpoint pen scratching numbers hard onto paper in a ledger, pressing hard, quiet office at night, no voices"
+  },
+  {
+   "id": "bus_airbrake",
+   "model": "elevenlabs-sfx",
+   "duration": 2.5,
+   "prompt_influence": 0.6,
+   "text": "A large tour bus pulling up and releasing its air brakes with a hiss, door folding open, heard from inside a bright hotel lobby through glass, no voices"
+  },
+  {
+   "id": "phone_vibrate2",
+   "model": "elevenlabs-sfx",
+   "duration": 1.8,
+   "prompt_influence": 0.6,
+   "text": "A smartphone vibrating twice on a wooden desk, buzzing rattle against wood, quiet office at night, no voices"
+  },
+  {
+   "id": "phone_vibrate3",
+   "model": "elevenlabs-sfx",
+   "duration": 2.4,
+   "prompt_influence": 0.6,
+   "text": "A smartphone vibrating three times on a wooden desk, buzzing rattle against wood, quiet office at night, no voices"
+  },
+  {
+   "id": "taxi_door",
+   "model": "elevenlabs-sfx",
+   "duration": 1.6,
+   "prompt_influence": 0.6,
+   "text": "A Japanese taxi rear door closing automatically with a soft thump and the car pulling away on a wet narrow street at night, no voices"
+  },
+  {
+   "id": "phone_face_down",
+   "model": "elevenlabs-sfx",
+   "duration": 1.0,
+   "prompt_influence": 0.6,
+   "text": "A smartphone turned over and set face down on a wooden desk, soft glass tap, quiet office, no voices"
+  },
+  {
+   "id": "distant_laughter_no_words",
+   "model": "elevenlabs-sfx",
+   "duration": 3.0,
+   "prompt_influence": 0.6,
+   "text": "Distant warm muffled laughter of a few hotel guests heard through a wall, no distinct words, bright lobby ambience, no music"
+  },
+  {
+   "id": "chair_creak",
+   "model": "elevenlabs-sfx",
+   "duration": 1.2,
+   "prompt_influence": 0.6,
+   "text": "A wooden chair creaking as someone shifts their weight, small old office, quiet, no voices"
+  },
+  {
+   "id": "footsteps_tatami",
+   "model": "elevenlabs-sfx",
+   "duration": 2.5,
+   "prompt_influence": 0.6,
+   "text": "Soft slow footsteps in tabi socks on a wooden corridor floor of a Japanese inn, approaching, quiet, no voices"
+  },
+  {
+   "id": "shoji_slide",
+   "model": "elevenlabs-sfx",
+   "duration": 1.6,
+   "prompt_influence": 0.6,
+   "text": "A paper sliding door (shoji) sliding open then shut with a soft wooden rumble and tap, quiet Japanese inn, no voices"
+  },
+  {
+   "id": "rain_roof",
+   "model": "elevenlabs-sfx",
+   "duration": 4.0,
+   "prompt_influence": 0.6,
+   "text": "Steady rain dripping from the roof tiles of an old Japanese inn onto stone, close, no voices, no music"
+  }
+ ]
+}
