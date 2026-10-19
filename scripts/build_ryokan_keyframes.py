@@ -224,8 +224,18 @@ HEAD.update({
     "S17d": ("TRUE BIRD'S-EYE: camera straight down from the ceiling, the floor fills the frame, the elderly woman in a PLUM kimono is a tiny figure seen "
              "from directly above at the counter under one paper lantern; no walls, no horizon."),
 })
+# B단계 2차(b-r 1차 검수): S03c 세로 사진 + 흰 필러박스, S08c2 여전히 침대(장소 셀의 침대 유출), S10b 마이 CU(와이드 아님), S13j 상반신 노출
+HEAD.update({
+    "S03c": ("FULL-FRAME 16:9 LANDSCAPE image, NO white borders. EXACTLY TWO people: ONE elderly man (the regular guest) and ONE elderly WOMAN, "
+             "his wife, in a beige shawl — a husband and wife, NOT two men — at the inn entrance step, seen from a slight distance, warm wood."),
+    "S08c2": "A traditional Japanese tatami room at morning with a folded FUTON and a small low table — there is NO bed, NO mattress, NO bed frame anywhere.",
+    "S10b": ("WIDE SHOT of the whole entrance hall from the doorway: Mai is a SMALL figure far behind the counter, her face barely readable; a Western family "
+             "and a Japanese couple seen from behind in the foreground; NOT a close-up, NOT a portrait."),
+    "S13j": ("ONLY a hand and forearm in a plum kimono sleeve enter the frame from the top edge, lifting a crumpled navy binder out of a steel wastebasket; "
+             "NO face, NO torso, NO shoulders, NO body — the frame is cut at the forearm; high angle looking down into the bin."),
+})
 NOFACE = {"S13j"}
-NO_LOC_REF = {"S17d"}   # 장소 셀이 원근을 강제해 수직 부감이 안 나옴(#02 S16d 실증)
+NO_LOC_REF = {"S17d", "S08c2"}   # 장소 셀이 원근을 강제해 수직 부감이 안 나옴(#02 S16d 실증)
 
 
 def person_key(path):
