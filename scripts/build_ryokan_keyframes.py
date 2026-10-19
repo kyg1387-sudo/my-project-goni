@@ -421,6 +421,17 @@ def main():
         ids = set(only.split(","))
         items = [x for x in items if x["id"] in ids]
         stage += "-r"
+        # generate_portraits.py는 출력 파일이 있으면 건너뛴다(2026-10-19 a-r 2차: 3장 미생성, 1차와 동일 파일) → 이전 결과를 _v1/로 이동
+        d = os.path.join(ROOT, f"assets/portraits/ryokan-kf-{stage}")
+        for i in ids:
+            old = os.path.join(d, f"{i}-1.png")
+            if os.path.exists(old):
+                os.makedirs(os.path.join(d, "_v1"), exist_ok=True)
+                k = 1
+                while os.path.exists(os.path.join(d, "_v1", f"{i}-1.v{k}.png")):
+                    k += 1
+                shutil.move(old, os.path.join(d, "_v1", f"{i}-1.v{k}.png"))
+                print(f"  {i}: 이전 결과 → _v1/{i}-1.v{k}.png")
     for x in items:
         for r in x["refs"]:
             if not os.path.exists(os.path.join(ROOT, r)):
