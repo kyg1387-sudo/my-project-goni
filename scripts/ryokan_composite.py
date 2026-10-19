@@ -50,7 +50,7 @@ def art_game(w, h):
     d.rounded_rectangle([w * 0.08, h * 0.84, w * 0.62, h * 0.9], radius=h * 0.03, fill=(80, 220, 120, 255))
     for i in range(3):
         cx = w * (0.25 + 0.25 * i); d.ellipse([cx - w * 0.07, h * 0.92, cx + w * 0.07, h * 0.92 + w * 0.14], fill=(255, 200, 60, 255))
-    return im.filter(ImageFilter.GaussianBlur(max(2, w * 0.012)))
+    return im.filter(ImageFilter.GaussianBlur(float(max(1.5, w * 0.006))))
 
 
 MAILS = [("Booking request for October 12 – family of four", True), ("Re: Room availability in autumn season", True),
@@ -73,7 +73,7 @@ def art_mail(w, h):
         d.text((w * 0.25, y + row * 0.15), subj, font=fb if unread else fr, fill=(30, 30, 36, 255) if unread else (120, 120, 128, 255))
         d.line([w * 0.2, y + row, w, y + row], fill=(224, 226, 232, 255), width=1)
         y += row
-    return im.filter(ImageFilter.GaussianBlur(max(1.0, w * 0.0025)))
+    return im.filter(ImageFilter.GaussianBlur(float(max(1.0, w * 0.0025))))
 
 
 def art_review(w, h, score):
@@ -136,10 +136,10 @@ def art_board_v(w, h, text):
 
 # ---------------- 합성 지시(키프레임 1344x768 좌표: 왼위·오른위·오른아래·왼아래) ----------------
 JOBS = {
-    "S05d": [("lcd", P((455, 585), (1040, 425), (905, 660), (455, 585)), lambda w, h: art_game(w, h))],
+    "S05d": [("lcd", P((470, 582), (1040, 425), (905, 660), (462, 612)), lambda w, h: art_game(w, h))],
     "S10d": [("lcd", P((833, 392), (1063, 392), (1072, 535), (840, 540)), lambda w, h: art_mail(w, h))],
-    "S16a": [("lcd", P((600, 645), (720, 605), (785, 628), (685, 680)), lambda w, h: art_call(w, h, "麻衣"))],
-    "S18a": [("lcd", P((578, 590), (695, 540), (718, 580), (600, 610)), lambda w, h: art_call(w, h, "義母"))],
+    "S16a": [("lcd", P((608, 648), (722, 607), (782, 630), (686, 676)), lambda w, h: art_call(w, h, "麻衣"))],
+    "S18a": [("lcd", P((590, 556), (700, 538), (718, 585), (608, 606)), lambda w, h: art_call(w, h, "義母"))],
     "S10a2": [("lcd", P((600, 295), (770, 290), (770, 630), (590, 635)), lambda w, h: art_mail(w, h))],
     "S18k": [("replace", P((940, 415), (1080, 415), (1080, 440), (940, 440)), lambda w, h: art_plate(w, h, "花筏　フロント"))],
     "S03a": [("ink", P((195, 225), (240, 225), (240, 345), (195, 345)), lambda w, h: art_board_v(w, h, "月見荘"))],
@@ -155,6 +155,21 @@ STATES = {
 }
 STATE_Q = {"S11c": ("lcd", S11C_Q), "S13h": ("ink", S13H_Q)}
 SIGMA = {"S05d": 1.2, "S10d": 0.5, "S11c": 0.5, "S13h": 0.6, "S16a": 0.8, "S18a": 0.8, "S10a2": 0.5, "S18k": 0.8, "S03a": 0.9}
+
+
+def remap(q, sid):
+    """좌표는 B단계 원본(1344x768, 크롭 전)에서 측정 → kf_letterbox_fix가 크롭·재확대한 현재 키프레임 좌표로 변환(_v1 원본에서 띠를 다시 계산)."""
+    v1 = os.path.join(OUT, "_v1", f"{sid}-1.png")
+    if not os.path.exists(v1):
+        return q
+    from kf_letterbox_fix import bands
+    im = Image.open(v1).convert("RGB"); W0, H0 = im.size; a = np.asarray(im).astype(float)
+    t, b = bands(a, 1); l, r = bands(a, 0); cw, ch = r - l, b - t
+    if cw / ch > 16 / 9:
+        nw = int(ch * 16 / 9); l += (cw - nw) // 2; cw = nw
+    else:
+        nh = int(cw * 9 / 16); t += (ch - nh) // 2; ch = nh
+    return [[(x - l) * W0 / cw, (y - t) * H0 / ch] for x, y in q]
 
 
 def main(only=None):
@@ -174,9 +189,9 @@ def main(only=None):
         qs = []
         if sid in JOBS:
             for mode, q, fn in JOBS[sid]:
-                a = apply(a, mode, q, fn, SIGMA.get(sid)); qs.append(q)
+                q = remap(q, sid); a = apply(a, mode, q, fn, SIGMA.get(sid)); qs.append(q)
         if sid in STATES:
-            mode, q = STATE_Q[sid]; raw = a.copy()
+            mode, q = STATE_Q[sid]; q = remap(q, sid); raw = a.copy()
             for k, (t, fn) in enumerate(STATES[sid]):
                 b = apply(raw, mode, q, fn, SIGMA.get(sid)); Image.fromarray(b).save(os.path.join(OUT, f"{sid}-s{k}.png"))
             states[sid] = [[t, f"{sid}-s{k}.png"] for k, (t, _) in enumerate(STATES[sid])]; a = b; qs.append(q)
