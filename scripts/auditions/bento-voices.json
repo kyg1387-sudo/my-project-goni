@@ -1,0 +1,197 @@
+{
+ "_설명": "『閉店間際の弁当屋』(bento-ja) PHASE 1 배역 오디션 1차(Typecast ssfm-v30, language=jpn). 어른 배역 3명(修三·澄江·拓海 어른) 후보 각 3명 × 대비 감정 대사 2줄 + 내레이터 Lloyd 확인 = 19샘플(대본 v1.0 원문, 음성 입력만 가나 변형). 아역(拓海 소년·美緒·陽菜)은 bento-tclist 목록 조회 뒤 2차. TTS 구독 크레딧만 사용(fal 달러 0). 실행: generate-video.yml audition_spec=bento-voices.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "shuzo_HideoWatanabe_L21",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "じゃあ、しゅっせばらいだ。大きくなったら、返しに来い",
+   "emotion_preset": "normal",
+   "emotion_intensity": 0.9,
+   "tempo": 0.95
+  },
+  {
+   "id": "shuzo_HideoWatanabe_L39",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "しゅっせばらいは、もう、払ってもらった。……これで、十分だ",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.7,
+   "tempo": 0.85
+  },
+  {
+   "id": "shuzo_Rex_L21",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "じゃあ、しゅっせばらいだ。大きくなったら、返しに来い",
+   "emotion_preset": "normal",
+   "emotion_intensity": 0.9,
+   "tempo": 0.95
+  },
+  {
+   "id": "shuzo_Rex_L39",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "しゅっせばらいは、もう、払ってもらった。……これで、十分だ",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.7,
+   "tempo": 0.85
+  },
+  {
+   "id": "shuzo_Poseidon_L21",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "じゃあ、しゅっせばらいだ。大きくなったら、返しに来い",
+   "emotion_preset": "normal",
+   "emotion_intensity": 0.9,
+   "tempo": 0.95
+  },
+  {
+   "id": "shuzo_Poseidon_L39",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "しゅっせばらいは、もう、払ってもらった。……これで、十分だ",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.7,
+   "tempo": 0.85
+  },
+  {
+   "id": "sumie_NanamiIchikawa_L11",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "……あんた、また。お店、潰れちゃうよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "sumie_NanamiIchikawa_L26k",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "あんたのからあげ、もう一度、食べさせてあげたかったね",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.7,
+   "tempo": 0.85
+  },
+  {
+   "id": "sumie_Shana_L11",
+   "model": "typecast-direct",
+   "voice": "tc_673eb42eef5b688d8cadd086",
+   "language": "jpn",
+   "text": "……あんた、また。お店、潰れちゃうよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "sumie_Shana_L26k",
+   "model": "typecast-direct",
+   "voice": "tc_673eb42eef5b688d8cadd086",
+   "language": "jpn",
+   "text": "あんたのからあげ、もう一度、食べさせてあげたかったね",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.7,
+   "tempo": 0.85
+  },
+  {
+   "id": "sumie_SakuraTanaka_L11",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "……あんた、また。お店、潰れちゃうよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "sumie_SakuraTanaka_L26k",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "あんたのからあげ、もう一度、食べさせてあげたかったね",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.7,
+   "tempo": 0.85
+  },
+  {
+   "id": "takumi_RyoutaTakahashi_L31",
+   "model": "typecast-direct",
+   "voice": "tc_62baac31e1c614d37b9160e3",
+   "language": "jpn",
+   "text": "僕は、ずっと知っていました。知っていて、甘えていました。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.7,
+   "tempo": 0.88
+  },
+  {
+   "id": "takumi_RyoutaTakahashi_L35",
+   "model": "typecast-direct",
+   "voice": "tc_62baac31e1c614d37b9160e3",
+   "language": "jpn",
+   "text": "……はんがくの弁当、まだ、ありますか",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.5,
+   "tempo": 0.85
+  },
+  {
+   "id": "takumi_DaichiInoue_L31",
+   "model": "typecast-direct",
+   "voice": "tc_63622a97ee3708cc70012f94",
+   "language": "jpn",
+   "text": "僕は、ずっと知っていました。知っていて、甘えていました。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.7,
+   "tempo": 0.88
+  },
+  {
+   "id": "takumi_DaichiInoue_L35",
+   "model": "typecast-direct",
+   "voice": "tc_63622a97ee3708cc70012f94",
+   "language": "jpn",
+   "text": "……はんがくの弁当、まだ、ありますか",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.5,
+   "tempo": 0.85
+  },
+  {
+   "id": "takumi_ToumaMurata_L31",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "僕は、ずっと知っていました。知っていて、甘えていました。",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.7,
+   "tempo": 0.88
+  },
+  {
+   "id": "takumi_ToumaMurata_L35",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "……はんがくの弁当、まだ、ありますか",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.5,
+   "tempo": 0.85
+  },
+  {
+   "id": "nar_Lloyd_NA0",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "三十年間、彼は、そのことを誰にも言いませんでした。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  }
+ ]
+}
