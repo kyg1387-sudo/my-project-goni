@@ -196,9 +196,27 @@ def remap(q, sid):
     return [[(x - l) * W0 / cw, (y - t) * H0 / ch] for x, y in q]
 
 
+# 노렌 가문(家紋) 지우기(제2장 1): 원형 문양의 고리 영역에서 회색 선 픽셀만(머리·피부 제외) 인페인트 — S10b 3회 재생성에도 가문이 남음
+PATCH = {"S10b": [(675, 220, 58, 0)]}   # (cx, cy, R, 두께=0이면 원판 전체) 키프레임 좌표(크롭 후)
+
+
+def patch_crest(a, rings):
+    out = a.copy(); H, W = a.shape[:2]
+    for cx, cy, R, th in rings:
+        yy, xx = np.mgrid[0:H, 0:W]; r = np.sqrt((xx - cx) ** 2 + (yy - cy) ** 2)
+        ann = (r < R + th) if th == 0 else ((r > R - th) & (r < R + th))
+        hsv = cv2.cvtColor(a, cv2.COLOR_RGB2HSV); lum = a.mean(2)
+        grey = (hsv[..., 1] < 110) & (lum > 52)                      # 회색 문양 선(노렌 남색·검은 머리 제외)
+        skin = (hsv[..., 0] < 25) & (hsv[..., 1] > 35) & (lum > 80)   # 피부
+        m = (ann & grey & ~skin).astype(np.uint8)
+        m = cv2.dilate(m, np.ones((5, 5), np.uint8)) * 255
+        out = cv2.inpaint(out, m, 5, cv2.INPAINT_TELEA)
+    return out
+
+
 def main(only=None):
     os.makedirs(RAW, exist_ok=True)
-    ids = list(JOBS) + list(STATES)
+    ids = list(JOBS) + list(STATES) + [k for k in PATCH if k not in JOBS and k not in STATES]
     for sid in ids:
         if not os.path.exists(os.path.join(RAW, f"{sid}-1.png")):
             shutil.copy(os.path.join(OUT, f"{sid}-1.png"), RAW)
@@ -211,6 +229,8 @@ def main(only=None):
             continue
         a = np.asarray(Image.open(os.path.join(RAW, f"{sid}-1.png")).convert("RGB")).copy()
         qs = []
+        if sid in PATCH:
+            a = patch_crest(a, PATCH[sid]); qs += [[[cx - R - th, cy - R - th], [cx + R + th, cy - R - th], [cx + R + th, cy + R + th], [cx - R - th, cy + R + th]] for cx, cy, R, th in PATCH[sid]]
         if sid in JOBS:
             for mode, q, fn in JOBS[sid]:
                 q = remap(q, sid); a = apply(a, mode, q, fn, SIGMA.get(sid)); qs.append(q)
