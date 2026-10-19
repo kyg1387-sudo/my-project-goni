@@ -120,17 +120,21 @@ EXPR_REAL = {
                "but the eyes cool and appraising, brows perfectly still; courtesy as a mask."),
     "tease": ("Expression — MISCHIEVOUS TEASING: one brow arched higher, eyes narrowed with a knowing glint, a lopsided closed-lip smile, "
               "head tilted a few degrees; playful intelligence, lips together."),
+    "shock": ("Expression — SHOCK: eyes suddenly wide and fixed, brows shot up, the mouth slightly open and frozen mid-word, the face gone still "
+              "and pale, the hand with the handset tightening; the instant the ground drops away."),
     "liberated": ("Expression — RELEASE: the tension draining from the face — brows lifting and smoothing, the eyes clearing and opening a "
                   "little wider, the lips just beginning to curve at one corner; the first instant of freedom, not yet a full smile."),
 }
 # 톤 연출표의 ElevenLabs 감정 태그/메모 → EXPR_REAL 키 (앞에서부터 첫 일치)
-MEMO_MAP = [("해방", "liberated"), ("결정타", "firm"), ("애원", "plead"), ("비웃음", "sneer"), ("패닉", "panic"), ("붕괴", "broken"), ("오열", "broken"),
+STRONG_MAP = [("sob", "broken"), ("broken", "broken"), ("crumbl", "broken"), ("panic", "panic"), ("shock", "shock"), ("stammer", "shock"),
+              ("plead", "plead"), ("sneer", "sneer"), ("mock", "sneer")]
+MEMO_MAP = [("해방", "liberated"), ("통보", "stern"), ("절제", "hurt"), ("농담", "tease"), ("놀림", "tease"), ("결정타", "firm"), ("애원", "plead"), ("비웃음", "sneer"), ("패닉", "panic"), ("붕괴", "broken"), ("오열", "broken"),
             ("귀찮", "bored"), ("죄책", "guilt"), ("감격", "moved"), ("따뜻", "warm"), ("엄격", "stern"), ("득의", "smug"), ("장난", "tease")]
 TONE_MAP = [("plead", "plead"), ("tearful", "sad"), ("sob", "broken"), ("crumbl", "broken"), ("broken", "broken"), ("panic", "panic"), ("fear", "panic"),
             ("sneer", "sneer"), ("contempt", "sneer"), ("mock", "sneer"), ("scorn", "sneer"), ("cold", "stern"), ("stern", "stern"), ("harsh", "stern"),
             ("angry", "stern"), ("sharp", "stern"), ("smug", "smug"), ("gloat", "smug"), ("tease", "tease"), ("playful", "tease"), ("laugh", "laugh"),
             ("amused", "laugh"), ("firm", "firm"), ("resolute", "firm"), ("steady", "firm"), ("moved", "moved"), ("grateful", "moved"), ("warm", "warm"),
-            ("gentle", "warm"), ("soft", "warm"), ("relieved", "liberated"), ("sad", "sad"), ("hurt", "hurt"), ("bored", "bored"), ("flat", "bored"),
+            ("gentle", "warm"), ("soft", "warm"), ("relieved", "liberated"), ("sad", "sad"), ("hurt", "hurt"), ("uncertain", "hurt"), ("hesitant", "hurt"), ("ominous", "stern"), ("decisive", "stern"), ("formal", "stern"), ("bored", "bored"), ("flat", "bored"),
             ("guilt", "guilt"), ("ashamed", "guilt"), ("polite", "polite"), ("hostess", "polite"), ("calm", "calm"), ("neutral", "calm")]
 SUBJECT_MAP = [("sneer", "sneer"), ("scorn", "sneer"), ("contempt", "sneer"), ("smug", "smug"), ("hostess smile", "polite"), ("professional smile", "polite"),
                ("teasing", "tease"), ("mischiev", "tease"), ("holding back a laugh", "laugh"), ("laugh", "laugh"), ("panic", "panic"), ("wide wet eyes", "panic"),
@@ -146,13 +150,17 @@ def expr_key(sc):
     if sc.get("line"):
         n = int(sc["line"][4:])
         tag, memo = (TONE.get(n) or ("", ""))[:2]
+        tag = tag.lower()
+        for k, v in STRONG_MAP:          # 강한 감정 태그는 메모보다 우선(sobbing > 애원)
+            if k in tag:
+                return v
         for k, v in MEMO_MAP:
             if k in memo:
                 return v
-        tag = tag.lower()
-        for k, v in TONE_MAP:
-            if k in tag:
-                return v
+        for word in re.findall(r"[a-z]+", tag):   # 태그의 단어 순서대로(첫 단어가 주 감정)
+            for k, v in TONE_MAP:
+                if word.startswith(k):
+                    return v
     subj = sc["subject"].lower()
     for k, v in SUBJECT_MAP:
         if k in subj:
