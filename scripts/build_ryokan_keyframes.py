@@ -38,7 +38,7 @@ PEOPLE = {
     "tomiko": "Tomiko (68, thin, lined face, silver hair in a tight bun, thin gold-rimmed glasses, plum-coloured kimono)",
     "mai": "Mai (38, slightly full round face, long loosely waved chestnut-brown hair, arched drawn eyebrows, glossy deep-red lipstick, heavy mascara, NO glasses, bright pink cherry-blossom kimono)",
     "takayuki": "Takayuki (36, soft doughy face, unkempt black hair, faint stubble, NO glasses, wrinkled grey cardigan over a white shirt)",
-    "sakurai": "Sakurai (55, elegant, sleek black bob with a grey streak, dark brows, NO glasses, forest-green kimono)",
+    "sakurai": "Sakurai (late 50s, elegant, sleek silver-grey chin-length bob, pearl earrings, NO glasses, forest-green kimono)",
     "regular": "the regular guest (late 60s, Japanese man, salt-and-pepper short hair, kind lined face, NO glasses, brown knit vest over a checked shirt)",
     "cameo": "the regular guest (late 60s, Japanese man, salt-and-pepper short hair, kind lined face, NO glasses)",
 }
@@ -121,6 +121,8 @@ EXPR_REAL = {
                "but the eyes cool and appraising, brows perfectly still; courtesy as a mask."),
     "tease": ("Expression — MISCHIEVOUS TEASING: one brow arched higher, eyes narrowed with a knowing glint, a lopsided closed-lip smile, "
               "head tilted a few degrees; playful intelligence, lips together."),
+    "cool": ("Expression — QUIET, FAINTLY COLD COMPOSURE: a still face with NO smile — the mouth closed in a level line, eyes steady and a little "
+             "narrowed, brows relaxed, chin level; calm satisfaction kept entirely inside, read only in the steadiness of the gaze."),
     "shock": ("Expression — SHOCK: eyes suddenly wide and fixed, brows shot up, the mouth slightly open and frozen mid-word, the face gone still "
               "and pale, the hand with the handset tightening; the instant the ground drops away."),
     "liberated": ("Expression — RELEASE: the tension draining from the face — brows lifting and smoothing, the eyes clearing and opening a "
@@ -129,7 +131,7 @@ EXPR_REAL = {
 # 톤 연출표의 ElevenLabs 감정 태그/메모 → EXPR_REAL 키 (앞에서부터 첫 일치)
 STRONG_MAP = [("sob", "broken"), ("broken", "broken"), ("crumbl", "broken"), ("panic", "panic"), ("shock", "shock"), ("stammer", "shock"),
               ("plead", "plead"), ("sneer", "sneer"), ("mock", "sneer")]
-MEMO_MAP = [("해방", "liberated"), ("통보", "stern"), ("절제", "hurt"), ("농담", "tease"), ("놀림", "tease"), ("결정타", "firm"), ("애원", "plead"), ("비웃음", "sneer"), ("패닉", "panic"), ("붕괴", "broken"), ("오열", "broken"),
+MEMO_MAP = [("해방", "liberated"), ("통쾌", "cool"), ("통보", "stern"), ("절제", "hurt"), ("농담", "tease"), ("놀림", "tease"), ("결정타", "firm"), ("애원", "plead"), ("비웃음", "sneer"), ("패닉", "panic"), ("붕괴", "broken"), ("오열", "broken"),
             ("귀찮", "bored"), ("죄책", "guilt"), ("감격", "moved"), ("따뜻", "warm"), ("엄격", "stern"), ("득의", "smug"), ("장난", "tease")]
 TONE_MAP = [("plead", "plead"), ("tearful", "sad"), ("sob", "broken"), ("crumbl", "broken"), ("broken", "broken"), ("panic", "panic"), ("fear", "panic"),
             ("sneer", "sneer"), ("contempt", "sneer"), ("mock", "sneer"), ("scorn", "sneer"), ("cold", "stern"), ("stern", "stern"), ("harsh", "stern"),
@@ -195,6 +197,15 @@ FIX = {
              "The ONLY light on his face is the cold blue-white glow of the smartphone held below the frame, lighting him from beneath the chin; "
              "the paper lamp is a faint warm dot far behind; the rest of the room is near black."),
 }
+# A단계 1차 검수(2026-10-19): S09a 벽 공지 종이, S11e 입 벌림·치아·굵은 눈물 2줄, S16c 통쾌 → 따뜻한 미소, S18d 눈 감음·젤 눈물
+FIX.update({
+    "S09a": "The wall behind her is completely BARE — NO whiteboard, NO pinned papers, NO notices, NO calendar; only plain wall and the dark window.",
+    "S11e": ("Mouth CLOSED — the lips pressed together and trembling, NO open mouth, NO teeth; the panic is in the wide eyes and raised brows only. "
+             "Eyes wet along the lower rim but NO tear trail on the cheeks."),
+    "S16c": "NO smile at all — the mouth is a closed level line; the face is still and faintly cold.",
+    "S18d": ("Her eyes are OPEN — red-rimmed, swimming with water, looking just below the lens; NOT closed. The face is crumpling: brows pulled up "
+             "and wrinkled in the middle, mouth closed and pulled down, chin trembling. One thin wet trail at most on one cheek, no shiny drops."),
+})
 NOFACE = set()
 NO_LOC_REF = set()
 
