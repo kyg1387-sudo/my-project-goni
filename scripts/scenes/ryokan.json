@@ -1,0 +1,822 @@
+{
+ "_설명": "ryokan 장면 설정(build_ryokan_phase3.py 생성). override_required 장면(정지 푸시인·OMNI 정지 프레임·그래픽·재사용·카드)은 video-overrides로 먼저 넣는다. hero_takes 컷은 B안 상위 모델 3테이크.",
+ "ratio": "16:9",
+ "budget_usd": 66.6,
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "durations": [
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  10,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10
+ ],
+ "scenes": [
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] The hands tremble slightly and tighten on the handset; nothing else moves. No face appears. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S01a-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Wakana in a navy kimono holding a smartphone to her ear jus",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S01b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] The hand lowers the phone gently until it rests face down, then withdraws out of frame. No face. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/ryokan-keyframes/S01c-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) still: Chest-up close-up of Wakana looking down after the call, a quiet unreadable face",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S01d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] The noren curtain sways slowly in the wind; the lantern flame flickers. No people appear. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/ryokan-keyframes/S01e-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) card: Title card over the blurred night entrance.",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) card: Caption card: 三か月前 (small corner caption over the first kitchen frame).",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Steam rises slowly from the pot into the fluorescent light; the tube flickers once. No people. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S02a-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: the iron lid of the rice pot with steam escaping ar",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S02b-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead extreme close-up: a wooden cutting board with a plain kitchen knife, fr",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S02c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] She writes slowly on the notepad and nods once while listening; no turning toward the camera. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S02d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Wakana completes a slow polite bow and straightens; the family stays still with their backs to the camera. No one walks toward the camera. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S03a-1.png"
+  },
+  {
+   "prompt": "(override) still: Chest-up close-up of Wakana behind the dark wooden counter, a composed professio",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S03b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] They walk slowly away toward the entrance light; no one turns around. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S03b2-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] The husband finishes slipping off a shoe and looks up with a smile; the wife nods. No walking toward the camera. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S03c-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Wakana at the edge of the corridor, a warm genuine smile of",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S03d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Tomiko at the kitchen back door, gold-rimmed glasses, a col",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S04a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] She takes one slow step out through the door and does not look back. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S04b-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a woman's hand setting a kitchen knife down gently ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S04c-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle chest-up of Wakana with her head bowed, eyes down, lips pressed toget",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S04d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] His thumb taps the phone screen; the glow flickers on his face. No turning toward the camera. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/ryokan-keyframes/S05a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Wakana kneeling beside the futon, lit faintly by the phone ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S05b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Takayuki, his face lit cold blue-white from below by the p",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S05c-1.png"
+  },
+  {
+   "prompt": "(override) gfx: High angle extreme close-up: a man's thumb on a smartphone whose screen glows pl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S05d-1.png"
+  },
+  {
+   "prompt": "(override) still: Profile close-up of Wakana in the dark room, only her eyes trembling, the faint ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S05e-1.png"
+  },
+  {
+   "prompt": "(override) still: Extreme close-up at night: a hand closing a thick ledger book on the small offic",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S05f-1.png"
+  },
+  {
+   "prompt": "(override) still: Extreme close-up of the paper floor lamp glowing faintly in the dark room, its l",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S05f2-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Mai completes a slow graceful bow; the guests stay with their backs to the camera; the tiny figure at the far end keeps wiping. Nobody walks toward the camera. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/ryokan-keyframes/S06a-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Tomiko with a polished hostess smile, gold-rimmed glasses, ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S06b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Tomiko's head turns a few degrees toward the corridor and back; the far figure keeps wiping. No one walks. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S06c-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a woman's hand holding a wet white cloth on the pol",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S06d-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle chest-up of Wakana kneeling in the corridor, head bowed, eyes on the ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S06e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Almost still; Tomiko lifts a tea cup a few centimetres and sets it down. Nobody stands or turns. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/ryokan-keyframes/S07a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Tomiko at the head seat, hard top light on her gold-rimmed",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S07b-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: an aged woman's hand setting a celadon tea cup down",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S07c-1.png"
+  },
+  {
+   "prompt": "(override) still: Chest-up of Mai glancing sideways with a small smug smile, red lipstick, hard to",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S07c2-1.png"
+  },
+  {
+   "prompt": "(override) omni: High angle chest-up of Wakana at the lowest seat, brows drawn together, careful ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S07d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Mai in the pink cherry-blossom kimono, red lips in a scorn",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S07e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Mai looking down at the camera with a lazy condescending s",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S07f-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a woman's hand with a thin gold bangle snapping a p",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S07g-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle chest-up of Takayuki in the corner, head lowered, eyes fixed on a tea",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S07h-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Tomiko, chin lifted, eyes hard behind the gold-rimmed glas",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S07i-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Tomiko's shoulders stay rigid; her head lifts a few degrees. Nobody moves otherwise. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S07j-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] She lifts her head a few degrees and a faint calm smile forms slowly; one slow blink. No other movement (the slow zoom is added in editing). [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S07k-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Wakana, composed and clear-eyed, a calm faint smile, the sl",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S07l-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle medium shot of Wakana bowing deeply on the tatami at the low seat, bo",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S07m-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Slow push forward through the doorway toward the desk; light shifts gently. No people. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S08a-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a thick plain navy-blue binder about fifty pages th",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S08b-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead extreme close-up: a plain white envelope lying beside the blank navy bi",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S08b2-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead extreme close-up: a woman's hand lifting away from the blank navy binde",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S08c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Light shifts gently; a curtain edge stirs. No people. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/ryokan-keyframes/S08c2-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Mai in the small inn office, flicking her chestnut hair ba",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S09a-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a thick plain navy binder lying crumpled at the bot",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S09b-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead extreme close-up into the steel wastebasket: the blank navy binder rest",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S09c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Mai lifts the phone a little higher and tilts it toward the guests; the guests lean in slightly. Nobody walks. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S10a-1.png"
+  },
+  {
+   "prompt": "(override) gfx: High angle extreme close-up: a smartphone held over the dark counter, its screen",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S10a2-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] The two groups gesture at each other with small movements; Mai raises her hands a little. Faces stay unrecognizable. No one approaches the camera. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S10b-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) still: Overhead extreme close-up: two different hands reaching for the same old-fashion",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S10b2-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Mai bows her head a few degrees lower and lifts it; the shoulder in the foreground stays still. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/ryokan-keyframes/S10c-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Extreme close-up of an open laptop screen on the small office desk glowing plain",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S10d-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a woman's hand with a gold bangle hovering uncertai",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S10d2-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: a steaming cup of brown tea placed on a lacquered m",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S11a-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead extreme close-up: a lacquered meal tray with small ceramic dishes, chop",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S11a2-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: an elderly woman's wrinkled hand stopped just above",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S11b-1.png"
+  },
+  {
+   "prompt": "(override) gfx: Extreme close-up of a laptop screen glowing plain blank white, slightly off-axis",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S11c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle chest-up of Tomiko in the small office, brows down hard, eyes wide beh",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S11d-1.png"
+  },
+  {
+   "prompt": "(override) omni: High angle chest-up of Mai, wide wet eyes, brows raised in panic, red lips parte",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S11e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Tomiko's hand pushes the glasses up and drops out of frame; her shoulders stay rigid. No turning. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/ryokan-keyframes/S11f-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Rain falls steadily; drops run off the tiles; the noren barely moves. No people. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/ryokan-keyframes/S11g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Daylight shifts gently; steam rises from the tea cups. No people. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S12a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Sakurai in a forest-green kimono, sleek silver bob, large p",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S12b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Sakurai with a mischievous teasing half-smile, one eyebrow ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S12c-1.png"
+  },
+  {
+   "prompt": "(override) still: Chest-up close-up of Wakana in the navy kimono, lips pressed as if holding back ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S12d-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: two celadon tea cups on a dark lacquered tray, stea",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S12d2-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] She lifts the handset to her ear and straightens; the small light on the phone keeps blinking. No turning to the camera. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/ryokan-keyframes/S13a-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: an old cream desk telephone on the dark counter, a ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S13a2-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Light shifts gently along the polished floor. No people. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/ryokan-keyframes/S13a3-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] His shoulders rise slightly; he does not turn around at all. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/ryokan-keyframes/S13b-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] The fingers tighten slightly on the phone base; nothing else moves. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S13c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Tomiko with the handset held to her ear just below the fram",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S13d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] He turns his head a few degrees further toward the window; the blinds stay still. His face never shows. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S13e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] He lowers the handset a few centimetres at the end; otherwise still. No turning. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/ryokan-keyframes/S13f-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Slow motion: the handset slips from the fingers, drops and swings on its coiled cord against the counter front. The hand stays open and still. No face. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/ryokan-keyframes/S13g-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) gfx: Overhead extreme close-up: an open ledger book on the small office desk with pla",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S13h-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: an aged woman's hand pressing a red pen hard onto a",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S13i-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead extreme close-up: the open ledger on the desk with a red pen resting ac",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S13i2-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] The hand lifts the binder slowly out of the bin and holds it open; a page settles. No face appears. No readable letters. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/ryokan-keyframes/S13j-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) still: High angle extreme close-up: the navy binder lying open on the desk at a page of",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S13j2-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead extreme close-up: the empty steel wastebasket beside the desk leg, crum",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S13j3-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] The noren sways slowly in the wind; the hall stays empty. No people. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/ryokan-keyframes/S13k-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Guests step down from the bus one at a time; Wakana holds a deep bow then straightens. Faces stay unrecognizable. No one walks toward the camera. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S14a-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Wakana bows and straightens with a warm expression; the guests stay turned away from the camera. No walking. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S14b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] The husband's smile deepens and he gives a small nod; the wife tilts her head toward him. Nobody stands. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S15a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] He leans a few centimetres forward and settles back; the wife nods slowly. No standing. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/ryokan-keyframes/S15b-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle chest-up of Wakana in the navy kimono bowing her head deeply, eyes cl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S15c-1.png"
+  },
+  {
+   "prompt": "(override) gfx: High angle extreme close-up: a smartphone lying on the dark office desk, its scr",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S16a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Wakana in the navy kimono at the night office, the phone at",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S16b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Wakana, a still composed face, eyes steady and faintly cold",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S16c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Wakana with the faintest gentle smile, calm eyes, the lamp ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S16d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] The hand lowers the phone, the screen fades to black, the hand rests a moment and withdraws. No face. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/ryokan-keyframes/S16e-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Mai climbs into the taxi; its door closes; Takayuki stops a few steps out of the gate and stands still. Faces stay unrecognizable. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S17a-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] The taxi drives slowly away down the alley until its tail lights shrink; nothing else moves. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S17b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] His shoulders sag; the phone glow flickers in his hand. He does not turn around. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S17c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Almost still; her head lowers very slowly. No one else appears. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S17d-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) gfx: High angle extreme close-up: a smartphone face up on the dark office desk, its s",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S18a-1.png"
+  },
+  {
+   "prompt": "(override) still: Chest-up close-up of Wakana looking down at the phone below the frame, taking a ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S18b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Tomiko in the small dim office at night, the handset held t",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S18c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Tomiko without her glasses, face crumpling, eyes wet, a sin",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S18d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Takayuki's hand closes on the handset and pulls it toward himself; Tomiko's shoulders flinch. His face never turns to the camera. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S18e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Wakana in the navy kimono with the phone at her ear below t",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S18f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Wakana, eyes lifting slightly, the faintest peaceful smile,",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S18g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] The hand turns the phone over and lays it face down, then rests flat on the desk beside it. No face. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/ryokan-keyframes/S18h-1.png",
+   "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 3
+  },
+  {
+   "prompt": "(override) still: Chest-up close-up of Wakana in the navy kimono looking toward the window with a ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/ryokan-keyframes/S18i-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] She walks slowly away down the corridor toward the light, never turning back; the camera stays still. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S18j-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Wakana holds a deep bow, then slowly straightens with a warm smile; the guests stay turned away. No one walks toward the camera. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/ryokan-keyframes/S18k-1.png"
+  }
+ ]
+}
