@@ -1,0 +1,7 @@
+{
+ "_설명": "#03 아웃트로 진행자 OmniHuman 2컷(신규 080 「皆様が若菜さんなら…」·081 「次回は…」, 채널 공통 진행자 시트 yanagi-host 허리 위, 음성 = 확정 TTS 앞뒤 0.15초 패드). 약 (6+7)초 x 0.16 ≈ 2.1달러. 나머지 3컷(062·063·065)은 #01 클립 재사용(무료).",
+ "tests": [
+  {"id": "omni-080", "model": "omnihuman", "image": "assets/portraits/yanagi-host/host-wu-1.png", "audio_id": "pad080"},
+  {"id": "omni-081", "model": "omnihuman", "image": "assets/portraits/yanagi-host/host-wu-1.png", "audio_id": "pad081"}
+ ]
+}
