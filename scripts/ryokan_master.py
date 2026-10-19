@@ -23,6 +23,13 @@ KIND = {k: (k, db) for k, db in {"handset_creak": -20, "phone_set_down": -18, "f
         "taxi_door": -17, "phone_face_down": -18, "distant_laughter_no_words": -22}.items()}
 # 환경 보강 큐(사운드 설계서): 의자 삐걱·발소리·장지문·빗소리
 EXTRA = [(78.0, "chair_creak", -24), (147.0, "footsteps_tatami", -24), (160.5, "shoji_slide", -22), (352.0, "rain_roof", -20), (387.0, "chair_creak", -24)]
+# 시청자 검증 수정(2026-10-19): 조립 후 로컬 트림 구간(원본 타임코드) — 효과음 큐를 같은 만큼 당긴다
+TRIMS = [tuple(float(v) for v in t.split("-")) for t in os.environ.get("TRIMS", "").split(",") if t]
+def shift(t):
+    for a, b in TRIMS:
+        if a <= t < b:
+            return None
+    return t - sum(b - a for a, b in TRIMS if b <= t)
 cues = []
 try:
     cfg = json.load(open(os.path.join(ROOT, "scripts", "audio", "ryokan.json"), encoding="utf-8"))
@@ -33,13 +40,22 @@ try:
 except FileNotFoundError:
     pass
 cues += EXTRA
+cues = [(shift(t), f, db) for t, f, db in cues]; cues = [(t, f, db) for t, f, db in cues if t is not None]
 cues = [(t, f, db) for t, f, db in cues if os.path.exists(os.path.join(SFX_DIR, f + ".mp3"))]
+DRONE = [(shift(394.3), 5.2)]   # (시작, 길이) — S13g 수화기 낙하 뒤 BGM 공백: 저역 드론이 0.8초에 차올라 끝에서 빠진다
+DRONE = [(t, d) for t, d in DRONE if t is not None]
 inputs = ["-i", src, "-f", "lavfi", "-i", "anoisesrc=color=brown:sample_rate=48000:amplitude=0.5:seed=7"]
 parts = [f"[1:a]lowpass=f=900,highpass=f=60,volume={ROOM_TONE_DB}dB[rt]"]
 labels = ["[0:a]", "[rt]"]
+for j, (t, d) in enumerate(DRONE):
+    inputs += ["-f", "lavfi", "-t", f"{d:.2f}", "-i", "sine=frequency=46:sample_rate=48000"]
+    k = sum(1 for x in inputs if x == "-i") - 1
+    parts.append(f"[{k}:a]aformat=channel_layouts=stereo,tremolo=f=0.6:d=0.4,lowpass=f=120,afade=t=in:d=0.8,afade=t=out:st={d - 1.2:.2f}:d=1.2,volume=-27dB,adelay={int(t * 1000)}:all=1[dr{j}]")
+    labels.append(f"[dr{j}]")
 for k, (t, f, db) in enumerate(cues):
     inputs += ["-i", os.path.join(SFX_DIR, f + ".mp3")]
-    parts.append(f"[{k + 2}:a]aformat=sample_rates=48000:channel_layouts=stereo,volume={db}dB,adelay={int(t * 1000)}:all=1[s{k}]")
+    idx = sum(1 for x in inputs if x == "-i") - 1
+    parts.append(f"[{idx}:a]aformat=sample_rates=48000:channel_layouts=stereo,volume={db}dB,adelay={int(t * 1000)}:all=1[s{k}]")
     labels.append(f"[s{k}]")
 fc = ";".join(parts) + f";{''.join(labels)}amix=inputs={len(labels)}:duration=first:dropout_transition=0:normalize=0[mixed];[mixed]{af}[a]"
 print(f"효과음 {len(cues)}개 믹스: " + ", ".join(f"{t:.1f}s {f}" for t, f, _ in sorted(cues)))
