@@ -1,0 +1,127 @@
+{
+ "_설명": "『閉店間際の弁当屋』 오디션 2차 — 아역(拓海 소년 12세 후보 3명, 美緒 6세·陽菜 8세 겸용 여아 후보 3명) × 2줄 = 12샘플. 후보는 bento-tclist(age=child/teenager)에서 선정. Typecast 구독 크레딧만(fal 0).",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "boy_Leo_L10",
+   "model": "typecast-direct",
+   "voice": "tc_62fb678f9b93d9207fa8c032",
+   "language": "jpn",
+   "text": "ありがとうございます！",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "boy_Leo_L18",
+   "model": "typecast-direct",
+   "voice": "tc_62fb678f9b93d9207fa8c032",
+   "language": "jpn",
+   "text": "母が……入院して。……今日は、二人分、買えなくて",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 0.88
+  },
+  {
+   "id": "boy_Hajun_L10",
+   "model": "typecast-direct",
+   "voice": "tc_60db308484130840f23e6ca0",
+   "language": "jpn",
+   "text": "ありがとうございます！",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "boy_Hajun_L18",
+   "model": "typecast-direct",
+   "voice": "tc_60db308484130840f23e6ca0",
+   "language": "jpn",
+   "text": "母が……入院して。……今日は、二人分、買えなくて",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 0.88
+  },
+  {
+   "id": "boy_Juwan_L10",
+   "model": "typecast-direct",
+   "voice": "tc_69e0462f3e5413d26878521e",
+   "language": "jpn",
+   "text": "ありがとうございます！",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "boy_Juwan_L18",
+   "model": "typecast-direct",
+   "voice": "tc_69e0462f3e5413d26878521e",
+   "language": "jpn",
+   "text": "母が……入院して。……今日は、二人分、買えなくて",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 0.88
+  },
+  {
+   "id": "girl_MireiKato_L17",
+   "model": "typecast-direct",
+   "voice": "tc_63edf3ccd8e2eb7338999376",
+   "language": "jpn",
+   "text": "お兄ちゃん、おなかすいた……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.9
+  },
+  {
+   "id": "girl_MireiKato_L37",
+   "model": "typecast-direct",
+   "voice": "tc_63edf3ccd8e2eb7338999376",
+   "language": "jpn",
+   "text": "この人が、お父さんの、せかいいちのおじさん？",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "girl_Daidai_L17",
+   "model": "typecast-direct",
+   "voice": "tc_63a3d9eb4b235ddd6541a79e",
+   "language": "jpn",
+   "text": "お兄ちゃん、おなかすいた……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.9
+  },
+  {
+   "id": "girl_Daidai_L37",
+   "model": "typecast-direct",
+   "voice": "tc_63a3d9eb4b235ddd6541a79e",
+   "language": "jpn",
+   "text": "この人が、お父さんの、せかいいちのおじさん？",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "girl_Ella_L17",
+   "model": "typecast-direct",
+   "voice": "tc_62fb679683a541c351dc7c3a",
+   "language": "jpn",
+   "text": "お兄ちゃん、おなかすいた……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.9
+  },
+  {
+   "id": "girl_Ella_L37",
+   "model": "typecast-direct",
+   "voice": "tc_62fb679683a541c351dc7c3a",
+   "language": "jpn",
+   "text": "この人が、お父さんの、せかいいちのおじさん？",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  }
+ ]
+}
