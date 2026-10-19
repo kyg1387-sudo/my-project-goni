@@ -210,8 +210,22 @@ FIX.update({
 HEAD = {"S16c": "NO SMILE: the mouth is closed in a straight level line, corners NOT lifted.",
         "S18d": "EYES OPEN (wet, red-rimmed), NO glasses on the face.",
         "S09a": "SETTING: a small cramped inn back office at night, NOT a tatami room."}
-NOFACE = set()
-NO_LOC_REF = set()
+# B단계 1차 검수(2026-10-19, 88장 중 8장 재생성)
+HEAD.update({
+    "S03c": "EXACTLY TWO people: ONE elderly man (the regular guest) and ONE elderly WOMAN, his wife, in a beige shawl — a husband and wife, NOT two men.",
+    "S07a": ("FOUR people in the room: an elderly woman in a plum kimono at the head seat, a woman in a pink kimono beside her, a man in grey samue in "
+             "a corner with his head down, AND a young woman in a navy samue with a white apron kneeling at the lowest seat nearest the sliding door."),
+    "S07k": "CHOKER FRAMING: the face fills the whole frame from eyebrows to lower lip, the top of the head and the chin cut off by the frame edges — NOT a chest-up portrait.",
+    "S07m": ("DEEP BOW: she is bent forward from the waist in a formal seated bow (dogeza-like), forehead low over the tatami, both palms flat on the mat, "
+             "her face NOT visible to the camera — only the top of her head, her back and her hands."),
+    "S08c2": "A traditional tatami room with a folded FUTON on the mats — NO Western bed, NO mattress frame.",
+    "S10b": "Mai stands behind the counter with both palms open at chest height in a small apologetic gesture — NOT waving, arms NOT raised above the shoulders.",
+    "S13j": "The pages are PLAIN: one thick red marker band and soft out-of-focus grey lines only — NO handwriting, NO characters, NO readable marks.",
+    "S17d": ("TRUE BIRD'S-EYE: camera straight down from the ceiling, the floor fills the frame, the elderly woman in a PLUM kimono is a tiny figure seen "
+             "from directly above at the counter under one paper lantern; no walls, no horizon."),
+})
+NOFACE = {"S13j"}
+NO_LOC_REF = {"S17d"}   # 장소 셀이 원근을 강제해 수직 부감이 안 나옴(#02 S16d 실증)
 
 
 def person_key(path):
