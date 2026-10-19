@@ -25,5 +25,9 @@ QA(`qa_overrides_ryokan.py`): 70개 문제 0건(1차 S10d 손상 → 재생성).
 - **S10b는 재생성되지 않음**: `regen_scenes`가 `scene57.mp4`만 지우고 `scene57_take1/2.mp4`는 Artifact에서 복원돼 「기존 파일 재사용」. → S10b를 1테이크(SINGLE_TAKE)로 바꿔 3차 실행(regen 57 102, ≈1.5달러). 교훈 14로 저장.
 - 히어로 테이크 확정(TAKE): S13g 2 · S07k 2 · S06a 2 · S13j 2 · 나머지 take1.
 
+### 3차(run 39203842279) + 후처리 반영(run 39205707879, 무과금)
+- S10b(1테이크)·S17b 재생성 합격(S17b 후미등 멀어짐 ✓). 후처리 12컷 → `regen_scenes`로 소스 Artifact 갱신(제11장 25).
+- burn 실행: run `burn-subtitles` source_run_id=39205707879, add_audio·lipsync=true (OmniHuman 25컷 130초 ≈ 20.8달러 + BGM 4구간·현장음 7컷 소액).
+
 ## 3. 다음
 생성 완료 → export_files=QA 검수 시트 → 히어로 테이크 선택(TAKE) → post → burn-subtitles(OmniHuman·BGM·현장음) → 그레이딩·마스터링(효과음 25종 자동 믹스) → 한글 검수본.
