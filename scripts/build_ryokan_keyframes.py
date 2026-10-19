@@ -19,6 +19,7 @@ import os
 import re
 import shutil
 import sys
+from kf_letterbox_fix import fix as kf_fix
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 SB_PATH = os.path.join(ROOT, "scripts", "storyboard", "ryokan.json")
@@ -188,8 +189,10 @@ LOC_NOTE = {
 FIX = {
     "S07e": ("LIGHTING AND FRAMING NEXT. The banquet room is dim at the edges: the only strong light is a hard cold overhead source pressing straight "
              "down on Mai — bright forehead and cheekbones, dark eye sockets, a hard shadow under the chin; NO soft daylight, NO flat lighting. "
-             "Camera BELOW her eye line looking up at her; tight chest-up close-up, NO hands, NO table in the frame."),
-    "S05c": ("The ONLY light on his face is the cold blue-white glow of the smartphone held below the frame, lighting him from beneath the chin; "
+             "Camera BELOW her eye line looking up at her; tight chest-up close-up, NO hands, NO table in the frame. Her eyes look DOWN at the lens "
+             "with the eyelids half lowered and the chin raised; the sneer is unmistakable."),
+    "S05c": ("NO smartphone and NO hands anywhere in the frame — the phone is BELOW the bottom edge, out of shot; the frame is cut at mid-chest. "
+             "The ONLY light on his face is the cold blue-white glow of the smartphone held below the frame, lighting him from beneath the chin; "
              "the paper lamp is a faint warm dot far behind; the rest of the room is near black."),
 }
 NOFACE = set()
@@ -284,8 +287,11 @@ def build(sc, face_refs, drop_expr=False):
         character.append("IDENTITY FIRST: the person is EXACTLY the one in reference image 1 — same face shape, jaw, cheekbones, nose, eyes, eyebrows, "
                          "skin tone, age, hairstyle and eyewear; only the expression, lighting and framing described below change.")
     ek = None if noface or sc["kind"] in ("sil", "empty", "estill", "gfx", "card") else expr_key(sc)
-    if ek:
-        action.append(EXPR_REAL[ek] + " " + ACTING)
+    if ek:   # 파일럿 1차(2026-10-19): [ACTION] 안에 두면 참조 셀의 중립 얼굴이 이김 → 스타일 바로 뒤, 카메라 앞에 선두 배치 + 강도 명시
+        strong = ek in ("sneer", "stern", "smug", "panic", "broken", "shock", "plead", "laugh")
+        style += (" EXPRESSION FIRST — the face must read clearly at a glance on a phone screen, at about "
+                  + ("75" if strong else "60") + " percent intensity, overriding the neutral expression of any reference image: "
+                  + EXPR_REAL[ek] + " " + ACTING)
     if sc["id"] in FIX:
         action.append(FIX[sc["id"]])
     secs = split_sections(kp)
@@ -361,6 +367,8 @@ def collect(shots):
         if not os.path.exists(dst) or os.path.getmtime(src) > os.path.getmtime(dst):
             shutil.copy2(src, dst)
             n += 1
+            if kf_fix(dst):
+                print(f"  {s['id']}: 레터박스 크롭")
     print(f"{KF_DIR}: {n}장 복사, 누락 {len(missing)}장" + (f" → {', '.join(missing)}" if missing else ""))
 
 
