@@ -1,7 +1,7 @@
 {
  "_설명": "ryokan 장면 설정(build_ryokan_phase3.py 생성). override_required 장면(정지 푸시인·OMNI 정지 프레임·그래픽·재사용·카드)은 video-overrides로 먼저 넣는다. hero_takes 컷은 B안 상위 모델 3테이크.",
  "ratio": "16:9",
- "budget_usd": 66.6,
+ "budget_usd": 47.7,
  "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
  "durations": [
   10,
@@ -127,7 +127,7 @@
    "image": "assets/portraits/ryokan-keyframes/S01a-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
    "i2v_resolution": "1080p",
-   "hero_takes": 3
+   "hero_takes": 2
   },
   {
    "prompt": "(override) omni: Chest-up close-up of Wakana in a navy kimono holding a smartphone to her ear jus",
@@ -141,7 +141,7 @@
    "image": "assets/portraits/ryokan-keyframes/S01c-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
    "i2v_resolution": "1080p",
-   "hero_takes": 3
+   "hero_takes": 2
   },
   {
    "prompt": "(override) still: Chest-up close-up of Wakana looking down after the call, a quiet unreadable face",
@@ -155,7 +155,7 @@
    "image": "assets/portraits/ryokan-keyframes/S01e-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
    "i2v_resolution": "1080p",
-   "hero_takes": 3
+   "hero_takes": 2
   },
   {
    "prompt": "(override) card: Title card over the blurred night entrance.",
@@ -173,7 +173,7 @@
    "image": "assets/portraits/ryokan-keyframes/S02a-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
    "i2v_resolution": "1080p",
-   "hero_takes": 3
+   "hero_takes": 2
   },
   {
    "prompt": "(override) still: High angle extreme close-up: the iron lid of the rice pot with steam escaping ar",
@@ -214,7 +214,7 @@
    "image": "assets/portraits/ryokan-keyframes/S03c-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
    "i2v_resolution": "1080p",
-   "hero_takes": 3
+   "hero_takes": 2
   },
   {
    "prompt": "(override) omni: Chest-up close-up of Wakana at the edge of the corridor, a warm genuine smile of",
@@ -292,7 +292,7 @@
    "image": "assets/portraits/ryokan-keyframes/S06a-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
    "i2v_resolution": "1080p",
-   "hero_takes": 3
+   "hero_takes": 2
   },
   {
    "prompt": "(override) omni: Chest-up close-up of Tomiko with a polished hostess smile, gold-rimmed glasses, ",
@@ -387,7 +387,7 @@
    "image": "assets/portraits/ryokan-keyframes/S07k-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
    "i2v_resolution": "1080p",
-   "hero_takes": 3
+   "hero_takes": 2
   },
   {
    "prompt": "(override) omni: Chest-up close-up of Wakana, composed and clear-eyed, a calm faint smile, the sl",
@@ -407,7 +407,7 @@
    "image": "assets/portraits/ryokan-keyframes/S08a-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
    "i2v_resolution": "1080p",
-   "hero_takes": 3
+   "hero_takes": 2
   },
   {
    "prompt": "(override) still: High angle extreme close-up: a thick plain navy-blue binder about fifty pages th",
@@ -467,7 +467,7 @@
    "image": "assets/portraits/ryokan-keyframes/S10b-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
    "i2v_resolution": "1080p",
-   "hero_takes": 3
+   "hero_takes": 2
   },
   {
    "prompt": "(override) still: Overhead extreme close-up: two different hands reaching for the same old-fashion",
@@ -589,7 +589,7 @@
    "image": "assets/portraits/ryokan-keyframes/S13b-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
    "i2v_resolution": "1080p",
-   "hero_takes": 3
+   "hero_takes": 2
   },
   {
    "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] The fingers tighten slightly on the phone base; nothing else moves. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
@@ -618,7 +618,7 @@
    "image": "assets/portraits/ryokan-keyframes/S13g-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
    "i2v_resolution": "1080p",
-   "hero_takes": 3
+   "hero_takes": 2
   },
   {
    "prompt": "(override) gfx: Overhead extreme close-up: an open ledger book on the small office desk with pla",
@@ -644,7 +644,7 @@
    "image": "assets/portraits/ryokan-keyframes/S13j-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
    "i2v_resolution": "1080p",
-   "hero_takes": 3
+   "hero_takes": 2
   },
   {
    "prompt": "(override) still: High angle extreme close-up: the navy binder lying open on the desk at a page of",
@@ -664,7 +664,7 @@
    "image": "assets/portraits/ryokan-keyframes/S13k-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
    "i2v_resolution": "1080p",
-   "hero_takes": 3
+   "hero_takes": 2
   },
   {
    "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Guests step down from the bus one at a time; Wakana holds a deep bow then straightens. Faces stay unrecognizable. No one walks toward the camera. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
@@ -672,7 +672,7 @@
    "image": "assets/portraits/ryokan-keyframes/S14a-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
    "i2v_resolution": "1080p",
-   "hero_takes": 3
+   "hero_takes": 2
   },
   {
    "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Wakana bows and straightens with a warm expression; the guests stay turned away from the camera. No walking. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
@@ -725,7 +725,7 @@
    "image": "assets/portraits/ryokan-keyframes/S16e-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
    "i2v_resolution": "1080p",
-   "hero_takes": 3
+   "hero_takes": 2
   },
   {
    "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Mai climbs into the taxi; its door closes; Takayuki stops a few steps out of the gate and stands still. Faces stay unrecognizable. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
@@ -733,7 +733,7 @@
    "image": "assets/portraits/ryokan-keyframes/S17a-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
    "i2v_resolution": "1080p",
-   "hero_takes": 3
+   "hero_takes": 2
   },
   {
    "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] The taxi drives slowly away down the alley until its tail lights shrink; nothing else moves. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
@@ -751,7 +751,7 @@
    "image": "assets/portraits/ryokan-keyframes/S17d-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
    "i2v_resolution": "1080p",
-   "hero_takes": 3
+   "hero_takes": 2
   },
   {
    "prompt": "(override) gfx: High angle extreme close-up: a smartphone face up on the dark office desk, its s",
@@ -800,7 +800,7 @@
    "image": "assets/portraits/ryokan-keyframes/S18h-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
    "i2v_resolution": "1080p",
-   "hero_takes": 3
+   "hero_takes": 2
   },
   {
    "prompt": "(override) still: Chest-up close-up of Wakana in the navy kimono looking toward the window with a ",

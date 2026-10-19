@@ -496,7 +496,7 @@ STYLE_JA = {"Naration": "若菜(語り)", "Wakana": "若菜", "Tomiko": "富子"
 STYLE_COLOR = {"Naration": "&H00FFFFFF", "Wakana": "&H00F0E6C8", "Tomiko": "&H00C8B4E6", "Mai": "&H00B4B4FF", "Takayuki": "&H00DCDCDC", "Sakurai": "&H00C8E6DC", "Chen": "&H00E6DCC8", "Regular": "&H00DCE6F0"}
 PRO_MODEL = "fal-ai/bytedance/seedance/v1/pro/image-to-video"
 HERO_MODEL = "fal-ai/kling-video/v3/pro/image-to-video"  # 히어로 컷(3테이크) — PHASE 5 실행 전 fal 모델 ID·응답 형식 확인
-HERO_TAKES = 3
+HERO_TAKES = 2
 RATE = {"pro": 0.108, "lite": 0.036, "omni": 0.16, "kf": 0.04, "hero": 0.112}
 
 def tc(sec):
