@@ -44,12 +44,12 @@ PEOPLE = {
 }
 PERSON_KEYS = ("wakanab", "wakana", "tomiko", "mai", "takayuki", "sakurai", "regular", "cameo")
 # 인물별 기준 얼굴 = A단계 승인 OMNI 컷(제7장 7, 제11장 2: 표정별). 타카유키·레귤러(카메오)는 대사 컷이 하나/없음.
-FACE_KF = {"wakana": "S07l", "wakanab": "S16b", "tomiko": "S07b", "mai": "S07e", "takayuki": "S05c", "sakurai": "S12b", "regular": "S15b"}
+FACE_KF = {"wakana": "S07l", "wakanab": "S16b", "tomiko": "S07b", "mai": "S07e", "takayuki": "S05c", "sakurai": "S12b"}   # regular(카메오)은 대사 컷이 없어 셀(cameo-front) 참조 유지
 FACE_KINDS = ("face", "react", "d", "sil")
 ANCHOR_FALLBACK = {"wakana": "S03d", "wakanab": "S16c", "tomiko": "S07i", "mai": "S07f"}
 FACE_KF_BY_EXPR = {"wakana-expr-hurt": "S05b", "wakana-expr-resolve": "S07l", "wakana-front": "S03d",
                    "wakanab-expr-faint": "S16d", "wakanab-expr-neutral": "S16b", "wakanab-front": "S16b",
-                   "tomiko-expr-smile": "S06b", "tomiko-front": "S07b",
+                   "tomiko-expr-smile": "S06b", "tomiko-front": "S07b", "tomiko-office": "S11d",
                    "mai-expr-panic": "S11e", "mai-front": "S07e", "mai-expr-sulk": "S07e", "mai-expr-laugh": "S07e",
                    "sakurai-expr-laugh": "S12b", "sakurai-expr-wink": "S12c", "sakurai-expr-calm": "S12c",
                    "takayuki-expr-bored": "S05c", "takayuki-expr-down": "S05c", "takayuki-expr-panic": "S05c"}
@@ -203,9 +203,13 @@ FIX.update({
     "S11e": ("Mouth CLOSED — the lips pressed together and trembling, NO open mouth, NO teeth; the panic is in the wide eyes and raised brows only. "
              "Eyes wet along the lower rim but NO tear trail on the cheeks."),
     "S16c": "NO smile at all — the mouth is a closed level line; the face is still and faintly cold.",
-    "S18d": ("Her eyes are OPEN — red-rimmed, swimming with water, looking just below the lens; NOT closed. The face is crumpling: brows pulled up "
+    "S09a": "The scene is the small inn back office at NIGHT (desk, laptop, dark window) — NOT the tatami banquet room. The wall is completely bare.",
+    "S18d": ("She wears NO glasses (they have been taken off). The scene is the small dim back office at night — NOT the tatami room. Her eyes are OPEN — red-rimmed, swimming with water, looking just below the lens; NOT closed. The face is crumpling: brows pulled up "
              "and wrinkled in the middle, mouth closed and pulled down, chin trembling. One thin wet trail at most on one cheek, no shiny drops."),
 })
+HEAD = {"S16c": "NO SMILE: the mouth is closed in a straight level line, corners NOT lifted.",
+        "S18d": "EYES OPEN (wet, red-rimmed), NO glasses on the face.",
+        "S09a": "SETTING: a small cramped inn back office at night, NOT a tatami room."}
 NOFACE = set()
 NO_LOC_REF = set()
 
@@ -266,6 +270,10 @@ def build(sc, face_refs, drop_expr=False):
     refs = list(face_refs) + [r for r in sc["refs"] if r not in face_refs]
     if drop_expr and face_refs:
         refs = [r for r in refs if "-expr" not in os.path.basename(r)]
+        kf_ids = {os.path.basename(f).split("-")[0] for f in face_refs}
+        kf_people = {k for k, v in FACE_KF.items() if v in kf_ids} | {person_key(c) for c, v in FACE_KF_BY_EXPR.items() if v in kf_ids}
+        kf_people.discard(None)
+        refs = [r for r in refs if not (person_key(r) in kf_people and "-full" not in os.path.basename(r) and not r.startswith(KF_DIR))]   # 기준 얼굴이 있는 인물의 정면 셀은 중복 → 제외(참조 9장 실증)
     if sc["id"] in NO_LOC_REF:
         refs = [r for r in refs if not os.path.basename(r).startswith(("loc-", "angle-"))]
     noface = sc["kind"] == "ins" or sc["id"] in NOFACE or (sc["kind"] == "face" and sc["size"] == "ecu" and not any(person_key(r) for r in sc["refs"]))
@@ -298,6 +306,8 @@ def build(sc, face_refs, drop_expr=False):
         character.append("IDENTITY FIRST: the person is EXACTLY the one in reference image 1 — same face shape, jaw, cheekbones, nose, eyes, eyebrows, "
                          "skin tone, age, hairstyle and eyewear; only the expression, lighting and framing described below change.")
     ek = None if noface or sc["kind"] in ("sil", "empty", "estill", "gfx", "card") else expr_key(sc)
+    if sc["id"] in HEAD:
+        style += " " + HEAD[sc["id"]]
     if ek:   # 파일럿 1차(2026-10-19): [ACTION] 안에 두면 참조 셀의 중립 얼굴이 이김 → 스타일 바로 뒤, 카메라 앞에 선두 배치 + 강도 명시
         strong = ek in ("sneer", "stern", "smug", "panic", "broken", "shock", "plead", "laugh")
         style += (" EXPRESSION FIRST — the face must read clearly at a glance on a phone screen, at about "
@@ -320,7 +330,9 @@ def build(sc, face_refs, drop_expr=False):
         action.append("The figure is a true backlit silhouette: no facial features readable, only outline, hair shape and body mass.")
     if drop_expr and face_refs:
         loc_i = next((i + 1 for i, r in enumerate(refs) if os.path.basename(r).startswith(("loc-", "angle-"))), None)
-        if loc_i:   # #02 실증(S15j): 기준 얼굴 컷의 배경이 다른 장소 컷으로 새어 들어옴
+        if loc_i:   # #02 실증(S15j)·#03 a-r(S09a·S18d): 기준 얼굴 컷의 배경이 다른 장소 컷으로 새어 들어옴 → 선두에도 명시
+            style += (f" LOCATION FIRST: the scene takes place in the location of reference image {loc_i}; the room, furniture and background "
+                      f"of reference image 1 must NOT appear — only its face is used.")
             setting.append(f"SETTING: the place is reference image {loc_i} ONLY; the background, furniture, lamps and lighting of reference image 1 "
                            "must NOT appear.")
     setting.append(WALL)
@@ -338,8 +350,15 @@ def build(sc, face_refs, drop_expr=False):
     return {"id": sc["id"], "count": 1, "aspect_ratio": "16:9", "refs": refs, "prompt": prompt, "_expr": ek or ""}
 
 
+OFFICE_ANCHOR = {"S18c": "S11d", "S18d": "S11d", "S09a": "S07e"}   # 같은 장소의 승인 컷을 기준으로(배경 유출 완화)
+
+
 def face_refs_for(sc):
     out = []
+    if sc["id"] in OFFICE_ANCHOR:
+        p = f"{KF_DIR}/{OFFICE_ANCHOR[sc['id']]}-1.png"
+        if os.path.exists(os.path.join(ROOT, p)):
+            return [p]
     if sc["kind"] not in FACE_KINDS:
         return out
     for r in sc["refs"]:
