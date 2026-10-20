@@ -99,6 +99,9 @@ def fal_image(key, prompt, num_images, ref_urls=None, model=None, aspect_ratio=N
             {"prompt": prompt, "image_size": size, "num_images": num_images},
             {"prompt": prompt, "num_images": num_images},
         ]
+        if extra:
+            # t2i에도 extra 적용(예: seedream v4 text-to-image의 image_size 2560x1440 — bento 장소·소품 고해상도) — 거부되면 아래로 폴백
+            payloads.insert(0, {"prompt": prompt, "num_images": num_images, **extra})
     for payload in payloads:
         status, task = http_json(f"https://queue.fal.run/{model}", payload, headers)
         if status != 200:

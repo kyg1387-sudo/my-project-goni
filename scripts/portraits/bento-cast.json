@@ -1,5 +1,5 @@
 {
- "_설명": "『閉店間際の弁当屋』 PHASE 2 기준 마스터 에셋 1차(generate-video.yml portraits_spec=bento-cast). 인물 8(3x3: 修三 1996·2026, 澄江, 拓海 12·42, 美緒 6·36, 陽菜 8) + 장소 6(2x2, 16:9, 라벨 없음 — 제18장 5 ①·8 ⑦) + 소품 1 = 15장, 약 0.60달러(0.04달러/장). 고정 문장: 안경 아무도 없음, 귀걸이 없음, 修三 오른쪽 눈썹 끝 흉터, 澄江 왼쪽 입가 점 1개, 拓海 왼쪽 귓불 점 1개(소년·어른 동일인), 눈물은 젖은 막·한 줄기만(제7장 5-1·제18장 1). 글자는 모두 무지 생성 후 합성. 실행은 고니감독님 승인 후.",
+ "_설명": "『閉店間際の弁当屋』 PHASE 2 기준 마스터 에셋 1차 — 고니감독님 C안(2026-10-20): 인물 시트 8장(3x3, seedream v3 기본, 약 0.04달러/장) + 장소 구도별 단독 판 22장 + 소품 단독 판 9장(seedream v4 text-to-image 2560x1440, 16:9, 약 0.03달러/장) = 39장, 약 1.25달러. 고정 문장: 안경·귀걸이 없음, 修三 오른쪽 눈썹 끝 흉터, 澄江 왼쪽 입가 점 1개, 拓海 왼쪽 귓불 점 1개(소년·어른 동일인), 눈물은 젖은 막·한 줄기만. 장소·소품에 라벨·글자 없음(합성은 PHASE 4).",
  "_style_preset": "Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting.",
  "characters": [
   {
@@ -43,45 +43,407 @@
    "prompt": "Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (three head-and-shoulders portraits of the SAME person): left = straight frontal view, middle = 45-degree three-quarter view, right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (three head-and-shoulders portraits): left = warm kind neutral, middle = a gentle smile, right = laughing softly. Subject: a Japanese woman aged 36, round face, black bob haircut with straight blunt bangs (the grown-up version of a little girl with the same haircut), no glasses, no earrings. Wardrobe locked in every panel: a plain light-grey sweater under a plain navy apron with no print, dark trousers. Identical face, hair and clothing in all nine panels, photorealistic, soft even studio lighting. contemporary Japan (Reiwa era). Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, text on badge, text on name tag, logo on shirt, signage lettering, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, cartoon."
   },
   {
-   "id": "loc-shop1996",
+   "id": "shop96-wide",
    "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: WIDE from just inside the front door toward the counter and showcase, 24mm, eye level. Setting: a tiny family-run bento shop by a small Japanese train station: a waist-high glass refrigerated showcase holding a few plastic-lidded bento boxes, a wooden counter with an old cash register, a small kitchen visible behind a half curtain, a glass sliding front door with a small brass bell, a plain round wall clock with a BLANK face (no numerals), cream walls, worn linoleum floor; Heisei 1996 details: a small boxy CRT television on a high shelf, blank paper price cards. Night: the showcase's own warm 3200K light is the key light on the counter, a warm ceiling lamp, deep shadows in the corners, wet dark street outside the glass door. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
    "aspect_ratio": "16:9",
-   "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four cells separated by clean white gutters, NO captions and NO labels anywhere. Photorealistic, 35mm standard lens, NO people in any cell, no posters, signs, notices, menus, price tags or printed text anywhere (all paper surfaces, price cards and signboards are completely blank). Lighting locked: night, the showcase's own warm 3200K light is the key light on the counter, a warm ceiling lamp, deep shadows in the corners, wet dark street outside the glass door. Setting: a tiny family-run bento shop by a small Japanese train station: a waist-high glass refrigerated showcase holding a few plastic-lidded bento boxes, a wooden counter with an old cash register, a small kitchen visible behind a half curtain, a glass sliding front door with a small brass bell, a plain round wall clock with a BLANK face (no numerals), cream walls, worn linoleum floor. Heisei 1996 details: a small boxy CRT television on a high shelf, blank paper price cards. Cell 1 (top-left): WIDE from just inside the front door toward the counter and showcase, 24mm. Cell 2 (top-right): OVER THE COUNTER from the customer side: the showcase in the foreground, the space behind the counter where the owner stands, 35mm. Cell 3 (bottom-left): REVERSE from behind the counter toward the glass front door and the dark street, 35mm. Cell 4 (bottom-right): DETAIL: three plastic-lidded bento boxes inside the lit showcase, blank price cards, 100mm macro. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers or logos anywhere."
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
   },
   {
-   "id": "loc-shop1996-angles",
+   "id": "shop96-ots",
    "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: OVER THE COUNTER from the customer side: the lit showcase in the foreground, the empty space behind the counter where the owner stands, 35mm. Setting: a tiny family-run bento shop by a small Japanese train station: a waist-high glass refrigerated showcase holding a few plastic-lidded bento boxes, a wooden counter with an old cash register, a small kitchen visible behind a half curtain, a glass sliding front door with a small brass bell, a plain round wall clock with a BLANK face (no numerals), cream walls, worn linoleum floor; Heisei 1996 details: a small boxy CRT television on a high shelf, blank paper price cards. Night: the showcase's own warm 3200K light is the key light on the counter, a warm ceiling lamp, deep shadows in the corners, wet dark street outside the glass door. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
    "aspect_ratio": "16:9",
-   "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four cells separated by clean white gutters, NO captions and NO labels anywhere. Photorealistic, 35mm standard lens, NO people in any cell, no posters, signs, notices, menus, price tags or printed text anywhere (all paper surfaces, price cards and signboards are completely blank). Lighting locked: same as the 1996 shop at night: warm showcase key light, warm ceiling lamp. Setting: the exact same tiny Heisei-1996 bento shop. Cell 1 (top-left): HIGH ANGLE from the ceiling corner down onto the counter and showcase, 24mm. Cell 2 (top-right): LOW ANGLE from just above the floor toward the counter, 24mm. Cell 3 (bottom-left): THROUGH THE GLASS FRONT DOOR from the dark street outside: the warm lit shop interior seen past the door frame, 50mm. Cell 4 (bottom-right): EYE LEVEL past a blurred foreground edge of the kitchen half curtain toward the counter, 85mm f/1.8. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers or logos anywhere."
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
   },
   {
-   "id": "loc-shop2026",
+   "id": "shop96-reverse",
    "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: REVERSE from behind the counter toward the glass front door and the dark wet street, 35mm. Setting: a tiny family-run bento shop by a small Japanese train station: a waist-high glass refrigerated showcase holding a few plastic-lidded bento boxes, a wooden counter with an old cash register, a small kitchen visible behind a half curtain, a glass sliding front door with a small brass bell, a plain round wall clock with a BLANK face (no numerals), cream walls, worn linoleum floor; Heisei 1996 details: a small boxy CRT television on a high shelf, blank paper price cards. Night: the showcase's own warm 3200K light is the key light on the counter, a warm ceiling lamp, deep shadows in the corners, wet dark street outside the glass door. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
    "aspect_ratio": "16:9",
-   "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four cells separated by clean white gutters, NO captions and NO labels anywhere. Photorealistic, 35mm standard lens, NO people in any cell, no posters, signs, notices, menus, price tags or printed text anywhere (all paper surfaces, price cards and signboards are completely blank). Lighting locked: night, cool 5600K fluorescent ceiling light plus the showcase glow, slightly faded and older, the street outside dark. Setting: a tiny family-run bento shop by a small Japanese train station: a waist-high glass refrigerated showcase holding a few plastic-lidded bento boxes, a wooden counter with an old cash register, a small kitchen visible behind a half curtain, a glass sliding front door with a small brass bell, a plain round wall clock with a BLANK face (no numerals), cream walls, worn linoleum floor. Thirty years later: faded walls, a slim flat-screen TV instead of the CRT, a blank white paper notice taped on the inside of the glass door, the counter edge worn smooth. Cell 1 (top-left): WIDE from the front door toward the counter, 24mm. Cell 2 (top-right): OVER THE COUNTER from the customer side, a single bento left in the showcase, 35mm. Cell 3 (bottom-left): REVERSE from behind the counter toward the glass door and the blank notice, 35mm. Cell 4 (bottom-right): DETAIL: a faded small round sticker stuck on the corner of the worn counter, 100mm macro. contemporary Japan (Reiwa era). Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers or logos anywhere."
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
   },
   {
-   "id": "loc-street",
+   "id": "shop96-high",
    "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: HIGH ANGLE from the ceiling corner down onto the counter and showcase, 24mm. Setting: a tiny family-run bento shop by a small Japanese train station: a waist-high glass refrigerated showcase holding a few plastic-lidded bento boxes, a wooden counter with an old cash register, a small kitchen visible behind a half curtain, a glass sliding front door with a small brass bell, a plain round wall clock with a BLANK face (no numerals), cream walls, worn linoleum floor; Heisei 1996 details: a small boxy CRT television on a high shelf, blank paper price cards. Night: the showcase's own warm 3200K light is the key light on the counter, a warm ceiling lamp, deep shadows in the corners, wet dark street outside the glass door. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
    "aspect_ratio": "16:9",
-   "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four cells separated by clean white gutters, NO captions and NO labels anywhere. Photorealistic, 35mm standard lens, NO people in any cell, no posters, signs, notices, menus, price tags or printed text anywhere (all paper surfaces, price cards and signboards are completely blank). Lighting locked: night, warm shop light spilling onto a wet street, cool blue streetlights, no cars, no headlights. Setting: the small street in front of the bento shop by a local train station, and an old two-storey apartment building across the tracks. Cell 1 (top-left): the shop front at night, warm light through the glass door, a blank signboard above. Cell 2 (top-right): the shop's metal shutter pulled halfway down, warm light leaking underneath onto wet asphalt. Cell 3 (bottom-left): the empty rainy street seen from under the half-closed shutter, puddles reflecting streetlights. Cell 4 (bottom-right): an old two-storey wooden apartment building at night, one corner window on the second floor completely dark. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers or logos anywhere."
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
   },
   {
-   "id": "loc-backroom",
+   "id": "shop96-low",
    "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: LOW ANGLE from just above the floor toward the counter, 24mm. Setting: a tiny family-run bento shop by a small Japanese train station: a waist-high glass refrigerated showcase holding a few plastic-lidded bento boxes, a wooden counter with an old cash register, a small kitchen visible behind a half curtain, a glass sliding front door with a small brass bell, a plain round wall clock with a BLANK face (no numerals), cream walls, worn linoleum floor; Heisei 1996 details: a small boxy CRT television on a high shelf, blank paper price cards. Night: the showcase's own warm 3200K light is the key light on the counter, a warm ceiling lamp, deep shadows in the corners, wet dark street outside the glass door. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
    "aspect_ratio": "16:9",
-   "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four cells separated by clean white gutters, NO captions and NO labels anywhere. Photorealistic, 35mm standard lens, NO people in any cell, no posters, signs, notices, menus, price tags or printed text anywhere (all paper surfaces, price cards and signboards are completely blank). Lighting locked: kitchen: warm 3200K bulb and steam; mailbox: soft cool morning daylight (present day). Setting: LEFT cells: the small back kitchen of the bento shop: a deep fryer, a rice cooker, a sink with a bowl of rice being washed, a wooden cutting board, a nail on the wall. RIGHT cells: an old metal mailbox beside the shop door in the morning. Cell 1 (top-left): the back kitchen wide, steam over the fryer. Cell 2 (top-right): the old metal mailbox beside the shop door, morning light, flyers sticking out, a plain white envelope among them. Cell 3 (bottom-left): a nail on the kitchen wall with a plain pale-pink triangle headscarf hanging from it, nobody around. Cell 4 (bottom-right): close-up of the open mailbox slot, a plain white envelope with no writing, 100mm macro. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers or logos anywhere."
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
   },
   {
-   "id": "loc-hospital-shokudo",
+   "id": "shop96-outside",
    "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: THROUGH THE GLASS FRONT DOOR from the dark street outside: the warm lit interior seen past the door frame, 50mm. Setting: a tiny family-run bento shop by a small Japanese train station: a waist-high glass refrigerated showcase holding a few plastic-lidded bento boxes, a wooden counter with an old cash register, a small kitchen visible behind a half curtain, a glass sliding front door with a small brass bell, a plain round wall clock with a BLANK face (no numerals), cream walls, worn linoleum floor; Heisei 1996 details: a small boxy CRT television on a high shelf, blank paper price cards. Night: the showcase's own warm 3200K light is the key light on the counter, a warm ceiling lamp, deep shadows in the corners, wet dark street outside the glass door. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
    "aspect_ratio": "16:9",
-   "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four cells separated by clean white gutters, NO captions and NO labels anywhere. Photorealistic, 35mm standard lens, NO people in any cell, no posters, signs, notices, menus, price tags or printed text anywhere (all paper surfaces, price cards and signboards are completely blank). Lighting locked: hospital: soft diffused afternoon window backlight; shokudo: bright warm daytime. Setting: LEFT cells: a quiet Japanese hospital room (about ten years ago). RIGHT cells: a small cheerful community children's cafeteria in Tokyo with long tables and a serving counter. Cell 1 (top-left): the hospital bed by a window with sheer curtains, afternoon backlight, a chair beside the bed. Cell 2 (top-right): the children's cafeteria wide: long tables, small chairs, a serving counter with trays, a blank signboard outside the window. Cell 3 (bottom-left): the bedside table with a plate and a half-peeled apple and a small knife. Cell 4 (bottom-right): the cafeteria serving counter close: a tray of fried chicken (karaage) and bowls of rice, steam. contemporary Japan (Reiwa era). Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers or logos anywhere."
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
   },
   {
-   "id": "props-sheet",
+   "id": "shop96-curtain",
    "count": 1,
-   "prompt": "Prop master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white studio background, no header, no captions, no text anywhere. Panels: 1) a plain nori bento in a black plastic tray with a clear lid (rice covered with seaweed, a piece of white fish, pickles). 2) a fried-chicken (karaage) bento in a black plastic tray with a clear lid, the lid barely closing over extra karaage. 3) a plain bright RED round sticker about 3 cm across, completely BLANK with no print, on a plastic lid. 4) a small worn brown coin purse open beside five Japanese coins on a child's palm. 5) a plain white envelope and a folded sheet of plain white letter paper with no writing. 6) a small origami robin bird folded from plain red paper. 7) a plain white cotton hand towel folded. 8) a small plain wooden photo frame holding a faded blank red round sticker. 9) a plain white plastic shopping bag with two bento boxes inside. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, text on badge, text on name tag, logo on shirt, signage lettering, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, cartoon."
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: EYE LEVEL past a blurred foreground edge of the kitchen half curtain toward the counter, 85mm f/1.8. Setting: a tiny family-run bento shop by a small Japanese train station: a waist-high glass refrigerated showcase holding a few plastic-lidded bento boxes, a wooden counter with an old cash register, a small kitchen visible behind a half curtain, a glass sliding front door with a small brass bell, a plain round wall clock with a BLANK face (no numerals), cream walls, worn linoleum floor; Heisei 1996 details: a small boxy CRT television on a high shelf, blank paper price cards. Night: the showcase's own warm 3200K light is the key light on the counter, a warm ceiling lamp, deep shadows in the corners, wet dark street outside the glass door. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "shop96-showcase",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: DETAIL: three plastic-lidded bento boxes inside the lit showcase, blank price cards, 100mm macro. Setting: a tiny family-run bento shop by a small Japanese train station: a waist-high glass refrigerated showcase holding a few plastic-lidded bento boxes, a wooden counter with an old cash register, a small kitchen visible behind a half curtain, a glass sliding front door with a small brass bell, a plain round wall clock with a BLANK face (no numerals), cream walls, worn linoleum floor; Heisei 1996 details: a small boxy CRT television on a high shelf, blank paper price cards. Night: the showcase's own warm 3200K light is the key light on the counter, a warm ceiling lamp, deep shadows in the corners, wet dark street outside the glass door. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "shop26-wide",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: WIDE from the front door toward the counter, 24mm. Setting: a tiny family-run bento shop by a small Japanese train station: a waist-high glass refrigerated showcase holding a few plastic-lidded bento boxes, a wooden counter with an old cash register, a small kitchen visible behind a half curtain, a glass sliding front door with a small brass bell, a plain round wall clock with a BLANK face (no numerals), cream walls, worn linoleum floor; thirty years later: faded walls, a slim flat-screen TV instead of a CRT, a blank white paper notice taped inside the glass door, the counter edge worn smooth. Night: cool 5600K fluorescent ceiling light plus the showcase glow. contemporary Japan (Reiwa era). Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "shop26-ots",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: OVER THE COUNTER from the customer side, a single bento left in the showcase, 35mm. Setting: a tiny family-run bento shop by a small Japanese train station: a waist-high glass refrigerated showcase holding a few plastic-lidded bento boxes, a wooden counter with an old cash register, a small kitchen visible behind a half curtain, a glass sliding front door with a small brass bell, a plain round wall clock with a BLANK face (no numerals), cream walls, worn linoleum floor; thirty years later: faded walls, a slim flat-screen TV instead of a CRT, a blank white paper notice taped inside the glass door, the counter edge worn smooth. Night: cool 5600K fluorescent ceiling light plus the showcase glow. contemporary Japan (Reiwa era). Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "shop26-reverse",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: REVERSE from behind the counter toward the glass door and the blank notice, 35mm. Setting: a tiny family-run bento shop by a small Japanese train station: a waist-high glass refrigerated showcase holding a few plastic-lidded bento boxes, a wooden counter with an old cash register, a small kitchen visible behind a half curtain, a glass sliding front door with a small brass bell, a plain round wall clock with a BLANK face (no numerals), cream walls, worn linoleum floor; thirty years later: faded walls, a slim flat-screen TV instead of a CRT, a blank white paper notice taped inside the glass door, the counter edge worn smooth. Night: cool 5600K fluorescent ceiling light plus the showcase glow. contemporary Japan (Reiwa era). Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "shop26-sticker",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: DETAIL: one faded small round red sticker stuck on the corner of the worn counter, 100mm macro. Setting: a tiny family-run bento shop by a small Japanese train station: a waist-high glass refrigerated showcase holding a few plastic-lidded bento boxes, a wooden counter with an old cash register, a small kitchen visible behind a half curtain, a glass sliding front door with a small brass bell, a plain round wall clock with a BLANK face (no numerals), cream walls, worn linoleum floor; thirty years later: faded walls, a slim flat-screen TV instead of a CRT, a blank white paper notice taped inside the glass door, the counter edge worn smooth. Night: cool 5600K fluorescent ceiling light plus the showcase glow. contemporary Japan (Reiwa era). Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "street-front",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: eye level from across the street, 35mm. Setting: the bento shop front on a small street by a local train station at night, warm light through the glass door, a completely blank signboard above, wet asphalt, cool blue streetlights, no cars, no headlights. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "street-shutter",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: low angle at the shutter, 35mm. Setting: the same bento shop at night with its metal shutter pulled halfway down, warm light leaking underneath onto wet asphalt, no cars. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "street-rain",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: from under the shutter looking out, 24mm. Setting: the empty rainy street in front of the shop seen from under the half-closed shutter, puddles reflecting streetlights, no cars, no headlights. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "street-apartment",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: from the street, slightly low angle, 35mm. Setting: an old two-storey wooden apartment building across the railway tracks at night, one corner window on the second floor completely dark, no cars. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "kitchen-wide",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: wide, 24mm. Setting: the small back kitchen of the bento shop: a deep fryer, a rice cooker, a sink with a bowl of rice being washed, a wooden cutting board, warm 3200K bulb and steam. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "kitchen-nail",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: medium close, 50mm f/2. Setting: the same back kitchen thirty years later, quiet and dim: a nail on the wall with a plain pale-pink triangle headscarf hanging from it. contemporary Japan (Reiwa era). Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "mailbox",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: close, 85mm. Setting: an old metal mailbox beside the shop door in soft cool morning daylight, flyers sticking out and one plain white envelope with no writing. contemporary Japan (Reiwa era). Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "hospital",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: medium wide, 35mm. Setting: a quiet Japanese hospital room about ten years ago: a bed by a window with sheer curtains, soft diffused afternoon backlight, a chair beside the bed, a bedside table with a plate and a half-peeled apple. contemporary Japan (Reiwa era). Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "shokudo-wide",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: wide, 24mm. Setting: a small cheerful community children's cafeteria in Tokyo: long tables, small chairs, a serving counter with trays, a completely blank signboard outside the window, bright warm daytime. contemporary Japan (Reiwa era). Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "shokudo-counter",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: close, 50mm f/2. Setting: the children's cafeteria serving counter: a tray of fried chicken (karaage) and bowls of rice, steam, bright warm daytime. contemporary Japan (Reiwa era). Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "prop-noribento",
+   "count": 1,
+   "prompt": "Prop master photograph, one single image, 16:9, the object alone on a plain dark wooden counter with soft warm light and shallow depth of field, NO people, NO hands unless stated. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, fake alphabets, anime style, 3D render, cartoon. Object: a plain nori bento in a black plastic tray with a clear lid: rice covered with seaweed, a piece of white fish, pickles, 100mm macro. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "prop-karaage",
+   "count": 1,
+   "prompt": "Prop master photograph, one single image, 16:9, the object alone on a plain dark wooden counter with soft warm light and shallow depth of field, NO people, NO hands unless stated. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, fake alphabets, anime style, 3D render, cartoon. Object: a fried-chicken (karaage) bento in a black plastic tray, the clear lid barely closing over extra pieces of karaage, 100mm macro. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "prop-sticker",
+   "count": 1,
+   "prompt": "Prop master photograph, one single image, 16:9, the object alone on a plain dark wooden counter with soft warm light and shallow depth of field, NO people, NO hands unless stated. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, fake alphabets, anime style, 3D render, cartoon. Object: a plain bright RED round sticker about 3 cm across, completely BLANK with no print, stuck on a clear plastic bento lid, 100mm macro. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "prop-coins",
+   "count": 1,
+   "prompt": "Prop master photograph, one single image, 16:9, the object alone on a plain dark wooden counter with soft warm light and shallow depth of field, NO people, NO hands unless stated. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, fake alphabets, anime style, 3D render, cartoon. Object: a child's open palm holding five Japanese coins next to a small worn brown coin purse (one small hand allowed, no face). Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "prop-letter",
+   "count": 1,
+   "prompt": "Prop master photograph, one single image, 16:9, the object alone on a plain dark wooden counter with soft warm light and shallow depth of field, NO people, NO hands unless stated. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, fake alphabets, anime style, 3D render, cartoon. Object: a plain white envelope and an unfolded sheet of plain white letter paper with no writing at all. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "prop-origami",
+   "count": 1,
+   "prompt": "Prop master photograph, one single image, 16:9, the object alone on a plain dark wooden counter with soft warm light and shallow depth of field, NO people, NO hands unless stated. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, fake alphabets, anime style, 3D render, cartoon. Object: a small origami robin bird folded from plain red paper, sitting on the counter. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "prop-towel",
+   "count": 1,
+   "prompt": "Prop master photograph, one single image, 16:9, the object alone on a plain dark wooden counter with soft warm light and shallow depth of field, NO people, NO hands unless stated. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, fake alphabets, anime style, 3D render, cartoon. Object: a plain white cotton hand towel folded on the counter. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "prop-frame",
+   "count": 1,
+   "prompt": "Prop master photograph, one single image, 16:9, the object alone on a plain dark wooden counter with soft warm light and shallow depth of field, NO people, NO hands unless stated. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, fake alphabets, anime style, 3D render, cartoon. Object: a small plain wooden photo frame on a wall holding one faded blank red round sticker. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "prop-bag",
+   "count": 1,
+   "prompt": "Prop master photograph, one single image, 16:9, the object alone on a plain dark wooden counter with soft warm light and shallow depth of field, NO people, NO hands unless stated. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, fake alphabets, anime style, 3D render, cartoon. Object: a plain white plastic shopping bag with two bento boxes inside, on the counter. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
   }
  ]
 }
