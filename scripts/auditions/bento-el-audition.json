@@ -1,5 +1,5 @@
 {
- "_설명": "『閉店間際の弁当屋』 ElevenLabs 오디션(고니감독님 지시 2026-10-20) — bento-el-search 56개 중 배역별 3명 × 대사 2줄 = 30샘플, eleven_v3 + 짧은 연기 태그(『老舗旅館の嫁』 방식). 『老舗旅館の嫁』 확정 목소리는 제외. 비용: EL 약 1320자 크레딧(fal 0).",
+ "_설명": "『閉店間際の弁当屋』 ElevenLabs 오디션(고니감독님 지시 2026-10-20) — bento-el-search 56개 중 배역별 3명 × 대사 2줄 = 30샘플, eleven_v3 + 짧은 연기 태그(『老舗旅館の嫁』 방식). 『老舗旅館の嫁』 확정 목소리는 제외. 비용: EL 약 1320자 크레딧(fal 0). 재생성: 소년 L18 「母が」 오독(3명 모두) → 「ははが」, Jun L39 「出世」가 「しっせい」로 들림 → 같은 입력 재생성.",
  "tests": [
   {
    "id": "shuzo_el_Jun_L21",
@@ -178,7 +178,7 @@
    "voice": "vY4PC2kSleyw73YRUOI6",
    "voice_name": "Haru",
    "el_model": "eleven_v3",
-   "text": "[young boy, fighting tears] 母が……入院して。……今日は、ふたりぶん、買えなくて",
+   "text": "[young boy, fighting tears] ははが……入院して。……今日は、ふたりぶん、買えなくて",
    "subtitle": "母が……入院して。……今日は、二人分、買えなくて"
   },
   {
@@ -196,7 +196,7 @@
    "voice": "wGSNAQwhUbFf1J43d5Tw",
    "voice_name": "Toru",
    "el_model": "eleven_v3",
-   "text": "[young boy, fighting tears] 母が……入院して。……今日は、ふたりぶん、買えなくて",
+   "text": "[young boy, fighting tears] ははが……入院して。……今日は、ふたりぶん、買えなくて",
    "subtitle": "母が……入院して。……今日は、二人分、買えなくて"
   },
   {
@@ -214,7 +214,7 @@
    "voice": "nvAEN8lxUT4UJcAyxcCQ",
    "voice_name": "Koume",
    "el_model": "eleven_v3",
-   "text": "[young boy, fighting tears] 母が……入院して。……今日は、ふたりぶん、買えなくて",
+   "text": "[young boy, fighting tears] ははが……入院して。……今日は、ふたりぶん、買えなくて",
    "subtitle": "母が……入院して。……今日は、二人分、買えなくて"
   },
   {

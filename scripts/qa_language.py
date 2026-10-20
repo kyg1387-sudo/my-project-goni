@@ -85,7 +85,8 @@ def main():
     if not files and os.path.exists(spec_path):
         import json
         spec = json.load(open(spec_path, encoding="utf-8"))
-        spec_text = {t["id"]: t.get("text", "") for t in spec.get("tests", [])}
+        # 자막 원문(subtitle)을 우선 대조하고, 없으면 text에서 eleven_v3 연기 태그([..])를 빼고 대조(bento EL 오디션 오탐 10건 실증)
+        spec_text = {t["id"]: t.get("subtitle") or re.sub(r"\[[^\]]*\]\s*", "", t.get("text", "")) for t in spec.get("tests", [])}
         files = sorted(glob.glob(os.path.join(args.audio_dir, "*.mp3")))
     log(f"=== TTS 대사 파일 검사 ({'line*.mp3' if not spec_text else '오디션 ' + os.path.basename(spec_path)}) ===")
     for p in files:
