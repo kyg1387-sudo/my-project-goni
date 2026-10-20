@@ -867,7 +867,7 @@ def main():
     t_ad1, t_ad2 = ad_times
     BGM = [
         (0.0, t_ad1 - 0.2, 0.38, "slow Japanese ryokan drama score, solo shamisen single plucks over a soft koto drone, sparse, melancholic, restrained, cinematic, instrumental, no vocals"),
-        (t_ad1 + 1.6, starts["S13h"] + 0.3, 0.48, "driving suspense score, pulsing low strings, ticking percussion, taiko accent hits, building to a dramatic reveal, Japanese drama, instrumental, no vocals"),
+        (t_ad1 + 1.6, starts["S13h"] - 0.75, 0.48, "driving suspense score, pulsing low strings, ticking percussion, taiko accent hits, building to a dramatic reveal, Japanese drama, instrumental, no vocals"),
         (starts["S13h"] + 0.3, t_ad2 - 0.2, 0.45, "low ominous drone with sparse piano, a heavy loss sinking in, cold and hollow, Japanese drama score, instrumental, no vocals"),
         (t_ad2 + 1.6, round(main_end, 2), 0.42, "warm uplifting cinematic piano and strings, gentle hopeful progression, koto accent, resolution and relief, emotional Japanese drama ending, instrumental, no vocals"),
     ]
