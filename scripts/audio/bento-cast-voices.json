@@ -25,23 +25,21 @@
   },
   "takumi_boy": {
    "engine": "typecast-direct",
-   "pending": [
-    "Leo tc_62fb678f9b93d9207fa8c032",
-    "Hajun tc_60db308484130840f23e6ca0",
-    "Juwan tc_69e0462f3e5413d26878521e"
-   ]
+   "name": "Hajun",
+   "voice_id": "tc_60db308484130840f23e6ca0",
+   "note": "2026-10-20 확정(Typecast 아역 2번)"
   },
   "mio": {
    "engine": "typecast-direct",
-   "pending": [
-    "Mirei Kato tc_63edf3ccd8e2eb7338999376",
-    "Daidai tc_63a3d9eb4b235ddd6541a79e",
-    "Ella tc_62fb679683a541c351dc7c3a"
-   ]
+   "name": "Mirei Kato",
+   "voice_id": "tc_63edf3ccd8e2eb7338999376",
+   "note": "2026-10-20 확정(Typecast 1번). 6세, 작고 느리게"
   },
   "hina": {
    "engine": "typecast-direct",
-   "pending": "mio와 다른 1명"
+   "name": "Mirei Kato",
+   "voice_id": "tc_63edf3ccd8e2eb7338999376",
+   "note": "美緒와 같은 목소리(고니감독님 선택) — 30년 차이 다른 시대에만 등장, 8세는 템포 빠르고 밝게"
   },
   "host": {
    "engine": "typecast-direct",
