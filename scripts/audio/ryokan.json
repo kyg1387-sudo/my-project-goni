@@ -37,7 +37,7 @@
  "fit": "crop",
  "letterbox": "2:1",
  "scene_durations": [
-  8.5365,
+  9.3162,
   4.3047,
   4.3047,
   6.0016,
@@ -143,7 +143,7 @@
   5.6078,
   1.6417,
   1.6417,
-  6.1365,
+  6.9162,
   7.9417,
   6.7882,
   6.6494,
@@ -576,25 +576,25 @@
  "bgm_segments": [
   {
    "start": 0.0,
-   "end": 218.34,
+   "end": 219.12,
    "volume": 0.38,
    "prompt": "slow Japanese ryokan drama score, solo shamisen single plucks over a soft koto drone, sparse, melancholic, restrained, cinematic, instrumental, no vocals"
   },
   {
-   "start": 220.14,
-   "end": 399.38,
+   "start": 220.92,
+   "end": 400.16,
    "volume": 0.48,
    "prompt": "driving suspense score, pulsing low strings, ticking percussion, taiko accent hits, building to a dramatic reveal, Japanese drama, instrumental, no vocals"
   },
   {
-   "start": 399.38,
-   "end": 429.54,
+   "start": 400.16,
+   "end": 430.32,
    "volume": 0.45,
    "prompt": "low ominous drone with sparse piano, a heavy loss sinking in, cold and hollow, Japanese drama score, instrumental, no vocals"
   },
   {
-   "start": 431.34,
-   "end": 571.04,
+   "start": 432.12,
+   "end": 572.59,
    "volume": 0.42,
    "prompt": "warm uplifting cinematic piano and strings, gentle hopeful progression, koto accent, resolution and relief, emotional Japanese drama ending, instrumental, no vocals"
   }
@@ -605,99 +605,99 @@
    "kind": "handset_creak"
   },
   {
-   "at": 13.56,
+   "at": 14.34,
    "kind": "phone_set_down"
   },
   {
-   "at": 36.54,
+   "at": 37.32,
    "kind": "fluorescent_on"
   },
   {
-   "at": 101.31,
+   "at": 102.09,
    "kind": "knife_on_board"
   },
   {
-   "at": 125.36,
+   "at": 126.14,
    "kind": "lamp_switch"
   },
   {
-   "at": 148.99,
+   "at": 149.77,
    "kind": "wiping_stop"
   },
   {
-   "at": 161.57,
+   "at": 162.35,
    "kind": "teacup_click"
   },
   {
-   "at": 182.62,
+   "at": 183.4,
    "kind": "fan_snap"
   },
   {
-   "at": 246.86,
+   "at": 247.64,
    "kind": "binder_drop"
   },
   {
-   "at": 254.87,
+   "at": 255.65,
    "kind": "phone_notify"
   },
   {
-   "at": 304.77,
+   "at": 305.55,
    "kind": "notify_triple"
   },
   {
-   "at": 305.07,
+   "at": 305.85,
    "kind": "bass_hit"
   },
   {
-   "at": 357.91,
+   "at": 358.69,
    "kind": "phone_ring"
   },
   {
-   "at": 392.43,
+   "at": 393.21,
    "kind": "riser"
   },
   {
-   "at": 394.83,
+   "at": 395.61,
    "kind": "handset_drop"
   },
   {
-   "at": 394.85,
+   "at": 395.63,
    "kind": "bass_hit"
   },
   {
-   "at": 403.79,
+   "at": 404.57,
    "kind": "pen_scratch"
   },
   {
-   "at": 429.84,
+   "at": 430.62,
    "kind": "bus_airbrake"
   },
   {
-   "at": 462.83,
+   "at": 463.61,
    "kind": "phone_vibrate2"
   },
   {
-   "at": 478.73,
+   "at": 479.51,
    "kind": "phone_set_down"
   },
   {
-   "at": 482.95,
+   "at": 483.73,
    "kind": "taxi_door"
   },
   {
-   "at": 511.82,
+   "at": 512.6,
    "kind": "phone_vibrate3"
   },
   {
-   "at": 546.18,
+   "at": 547.74,
    "kind": "phone_face_down"
   },
   {
-   "at": 549.79,
+   "at": 551.35,
    "kind": "distant_laughter_no_words"
   },
   {
-   "at": 399.98,
+   "at": 400.76,
    "kind": "bass_hit"
   }
  ],
