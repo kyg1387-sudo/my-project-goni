@@ -23,6 +23,11 @@ HOOK_AT = {"L01": 4.3, "NA0": 9.3}
 SAME_AS = {"L01": "L29"}
 CLUE_SCENE = "S06"  # 단서(소년이 오지 않은 밤) + BGM 전환(제15장 24)
 MIN_TOTAL, MAX_TOTAL = 9 * 60 + 40, 11 * 60
+# 길이 보정(무료, 2026-10-20 실측 13:11 → 보정): ① 느린 목소리 배속(≤1.15, 제11장 4 상한, 피치 유지 atempo — 후처리에서 실제 적용)
+# ② 내레이션 앞 지문 컷은 내레이션 아래에 깐다(B롤 위 VO — 컷이 첫마디보다 VO_LEAD초만 먼저 시작)
+STRETCH = {"Shino": 1.15, "Chiemi": 1.12}
+VO_UNDER, VO_LEAD = True, 0.8
+VOICE_OF = {}
 SKIP_ACTION = re.compile(r"^\s*(시점 자막|질문 카드|【|\(사운드|\(BGM|\(편지 낭독)")
 
 
@@ -76,24 +81,28 @@ def tc(x):
 
 def build():
     scenes, lines = load()
+    spec = json.load(open(os.path.join(REPO, "scripts", "auditions", "bento-tts.json"), encoding="utf-8"))
+    VOICE_OF.update({t["id"]: t.get("voice_name", "") for t in spec["tests"]})
     tags = {x["tag"]: x for x in lines}
     for n, x in enumerate(lines, 1):
         x["id"] = f"line{n:03d}"
     for x in lines:
         src = tags[SAME_AS[x["tag"]]]["id"] if x["tag"] in SAME_AS else x["id"]
         a, b = speech_span(os.path.join(AUDIO, src + ".mp3"))
-        x["lead"], x["dur"], x["audio"] = round(a, 3), round(b - a, 3), src
+        f = STRETCH.get(VOICE_OF.get(src, ""), 1.0)
+        x["lead"], x["dur"], x["audio"], x["stretch"] = round(a / f, 3), round((b - a) / f, 3), src, f
     t, srows, ads = HOOK, [], []
     for sc in scenes:
         start = t
-        t += sc["lead"] * INSERT
+        first_na = sc["lines"] and sc["lines"][0]["spk"] == "NA"
+        t += (VO_LEAD if (VO_UNDER and first_na and sc["lead"]) else sc["lead"] * INSERT)
         prev = None
         for x in sc["lines"]:
             if prev:
                 t += PAUSE.get(x["tag"], GAP_SAME if prev["spk"] == x["spk"] else GAP_CHANGE)
             elif x["tag"] in PAUSE:
                 t += PAUSE[x["tag"]]
-            t += x["mid"] * INSERT
+            t += (VO_LEAD if x["mid"] else 0) if (VO_UNDER and x["spk"] == "NA") else x["mid"] * INSERT
             x["start"], x["end"] = round(t, 3), round(t + x["dur"], 3)
             t = x["end"]
             if x["tag"] in AD_AFTER:
