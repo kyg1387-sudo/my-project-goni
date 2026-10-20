@@ -1,0 +1,53 @@
+{
+ "_설명": "bento 효과음 8종 — ElevenLabs sound-generation(EL 구독 크레딧, fal 0). 고니감독님 「긴박한 장면에 환경음과 BGM이 어우러지게」(2026-10-20)",
+ "tests": [
+  {
+   "id": "drone",
+   "model": "elevenlabs-sfx",
+   "text": "low cinematic drone, deep and soft, slowly swelling, emotional film score texture, no melody",
+   "duration": 5
+  },
+  {
+   "id": "heartbeat",
+   "model": "elevenlabs-sfx",
+   "text": "slow soft heartbeat, muffled, cinematic, three beats",
+   "duration": 4
+  },
+  {
+   "id": "clock",
+   "model": "elevenlabs-sfx",
+   "text": "an old wall clock ticking slowly and steadily in a silent room, close",
+   "duration": 8
+  },
+  {
+   "id": "train",
+   "model": "elevenlabs-sfx",
+   "text": "a local train passing a small rural station at night in the distance, rumble fading away",
+   "duration": 7
+  },
+  {
+   "id": "thunder",
+   "model": "elevenlabs-sfx",
+   "text": "distant low thunder rumble during heavy rain at night",
+   "duration": 5
+  },
+  {
+   "id": "impact",
+   "model": "elevenlabs-sfx",
+   "text": "deep soft cinematic low boom, a single emotional reveal hit with a long tail, no music",
+   "duration": 4
+  },
+  {
+   "id": "bell",
+   "model": "elevenlabs-sfx",
+   "text": "a small brass bell above a shop door rings once as a glass door slides open, clear and close",
+   "duration": 3
+  },
+  {
+   "id": "roomtone",
+   "model": "elevenlabs-sfx",
+   "text": "quiet room tone of a small empty shop at night, faint refrigerator hum, no voices",
+   "duration": 12
+  }
+ ]
+}

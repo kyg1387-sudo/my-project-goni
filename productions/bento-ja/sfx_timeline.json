@@ -1,0 +1,59 @@
+{
+ "_설명": "bento 효과음 타임라인(PHASE 6 finalize에서 믹스, −dBFS는 대사 없는 구간 기준, 대사 구간 −6dB). 소스 = assets/auditions/bento-sfx/<name>.mp3",
+ "events": [
+  {
+   "name": "drone",
+   "at": 0.0,
+   "note": "후크 0~3.5초 BGM 없음 — 저음 드론(제11장 6)",
+   "dbfs": -20
+  },
+  {
+   "name": "heartbeat",
+   "at": 0.3,
+   "note": "후크 심장 박동(느리게, 3박)",
+   "dbfs": -22
+  },
+  {
+   "name": "clock",
+   "at": 200.85,
+   "note": "S06 기다림 — 벽시계 초침 점증(단서 지점)",
+   "dbfs": -24
+  },
+  {
+   "name": "train",
+   "at": 206.35,
+   "note": "S06 9시 지남 — 먼 열차 통과(문은 열리지 않음)",
+   "dbfs": -26
+  },
+  {
+   "name": "thunder",
+   "at": 135.39,
+   "note": "S04 폭우 — 먼 천둥",
+   "dbfs": -24
+  },
+  {
+   "name": "heartbeat",
+   "at": 423.75,
+   "note": "NA24 「手が、止まりました」 — 심장 박동 2박 → 2차 광고 정적",
+   "dbfs": -20
+  },
+  {
+   "name": "impact",
+   "at": 453.7,
+   "note": "반전 ② L31 「僕は、ずっと知っていました」 — 낮은 임팩트(직전 0.8초 비움)",
+   "dbfs": -18
+  },
+  {
+   "name": "clock",
+   "at": 514.65,
+   "note": "S13 9시 직전 — 초침",
+   "dbfs": -24
+  },
+  {
+   "name": "bell",
+   "at": 522.16,
+   "note": "9시 정각 문 종(작품 모티프 회수) → 정적 1초",
+   "dbfs": -14
+  }
+ ]
+}

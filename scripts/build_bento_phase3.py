@@ -462,16 +462,19 @@ JA_OVERLAY = {"H1": "편지 세로쓰기 한 줄(실글꼴)", "H2": "중앙 질�
               "S07f": "스티커 「半額」", "S11b": "봉투 앞 「こまどり弁当　野口修三様」", "S12q": "중앙 질문 카드", "S12a": "봉투 뒤 「朝倉拓海」",
               "S12o": "사진 속 식당 간판 「子ども食堂こまどり」", "S12p": "빛바랜 스티커 「半額」", "S13a": "스티커 「半額」", "S15a": "액자 속 「半額」"}
 G = {
+    "wait": "a wall clock ticking loudly and slowly in an empty small shop at night, a refrigerator hum, a distant train passing, no voices",
+    "storm": "heavy steady rain drumming on a tin awning, water pouring from a gutter, a distant low rumble of thunder, no voices",
+    "night": "a wet empty street at night, a distant railroad crossing bell, light cold wind, no voices",
     "shop": "a refrigerated showcase humming softly, a wall clock ticking, a quiet small shop at night", "rain": "steady rain outside a glass door, drips on a shop awning",
     "kitchen": "rice being washed in a bowl, water running, a pot lid clinking, a small kitchen at night", "alley": "a vending machine humming, distant crickets, a quiet back alley at night",
     "street": "a quiet street at night, a distant train passing, light wind", "spring": "a soft spring night breeze, leaves rustling, distant crickets",
     "hosp": "a quiet hospital room, an air conditioner hum, distant birds outside", "morning": "early morning birdsong, a quiet street, a distant train",
     "letter": "a quiet shop at night, a wall clock ticking, paper rustling", "shokudo": "a cheerful cafeteria kitchen, frying oil sizzling, dishes clinking, no voices",
 }
-AMB_BY_SCENE = {"S01": "shop", "S02": "shop", "S03": "kitchen", "S03b": "alley", "S04": "rain", "S05": "shop", "S06": "shop", "S07": "street",
+AMB_BY_SCENE = {"S01": "shop", "S02": "shop", "S03": "kitchen", "S03b": "alley", "S04": "storm", "S05": "shop", "S06": "wait", "S07": "night",
                 "S08": "shop", "S09": "spring", "S10": "street", "S10b": "hosp", "S11": "morning", "S12": "letter", "S13": "letter", "S14": "shokudo", "S15": "shokudo"}
 AMB_BY_SHOT = {"H0": "letter", "H1": "letter", "H2": "letter", "H3": "street", "S03bf": "kitchen", "S03bg": "kitchen", "S04j": "rain", "S05d": "kitchen",
-               "S07d": "shop", "S07e": "shop", "S07f": "shop", "S08o": "street", "S10b": "kitchen", "S10bf": "shop", "S10bg": "kitchen",
+               "S07d": "wait", "S07e": "wait", "S07f": "wait", "S08o": "street", "S10b": "kitchen", "S10bf": "shop", "S10bg": "kitchen",
                "S12c": "shop", "S12e": "shop", "S12f": "street", "S12h": "kitchen", "S12m": "street", "S12n": "street", "S14a": "street"}
 BGM = []  # main()에서 lock.json 장면 시각으로 계산(03_템포-오디오가이드.md 2절)
 
@@ -597,6 +600,31 @@ def check_rules(shots, rows):
     return errs
 
 
+# 컷별 폴리 — 그 컷 영상의 동작에 맞춰 mmaudio가 소리를 만든다(제12장 10 ★42). 03_템포-오디오가이드 3절 효과음표를 실제 생성으로(제15장 22)
+FOLEY = {
+    "H0": "paper being unfolded slowly by trembling hands, soft paper rustle", "S01a": "a cloth wiping a wooden counter slowly",
+    "S01c": "a fingertip rubbing an old paper sticker", "S01d": "a thumb pressing a sticker onto a plastic lid, a soft crinkle",
+    "S02a": "a sticker being pressed onto a paper card", "S02b": "a small brass shop bell ringing as a glass sliding door opens",
+    "S02c": "a few coins clinking softly in a small palm", "S02f": "a plastic shopping bag rustling as it is handed over",
+    "S03a": "rice being washed in a metal bowl, running water", "S03e": "rice water sloshing, then stillness",
+    "S03bb": "chopsticks scraping a plastic bento lid, a quiet night", "S04a": "a glass door sliding open, rain pouring outside, a small bell",
+    "S04d": "metal tongs setting fried chicken into a plastic bento box, a light crunch", "S04g": "a towel wiping a wet counter",
+    "S04j": "footsteps splashing on a wet pavement in heavy rain, walking away", "S05b": "coins dropping one by one into a cash register drawer, the drawer sliding shut",
+    "S07a": "a metal shop shutter being pulled halfway down, a heavy rattling clank, then stops", "S08a": "a small brass shop bell ringing as a glass door opens",
+    "S08g": "plastic bento boxes being placed into a plastic bag, rustling", "S08k": "small hands gripping plastic bag handles, rustling",
+    "S08l": "a metal thermos sliding into a plastic bag", "S08o": "two children's footsteps on a wet street at night, a plastic bag rustling",
+    "S09d": "tongs placing fried chicken into a bento box", "S09h": "a small paper object set down softly on a wooden counter",
+    "S09l": "a small brass shop bell ringing as a glass door slides shut", "S10b": "an apron string being tied, cloth rustle",
+    "S10ba": "a small knife peeling an apple slowly", "S10bf": "a light switch click, a refrigerated showcase starting to hum",
+    "S11b": "an envelope sliding out of a metal mailbox, paper rustle", "S11c": "an envelope being turned over in the hands",
+    "S12i": "a single tear drop falling onto paper, paper trembling", "S12p": "a small photograph set down on a wooden counter",
+    "S13a": "a sticker pressed onto a plastic lid", "S13c": "a small brass shop bell ringing once as a glass door opens at night",
+    "S13k": "an envelope laid flat on a wooden counter", "S13m": "an envelope sliding across a wooden counter",
+    "S13o": "a bento box lowered into a plastic bag, rustling", "S14a": "a metal shop shutter rolling all the way down, a final clank",
+    "S14b": "a busy cafeteria kitchen, frying oil sizzling, dishes clinking, no voices", "S14d": "a small paper bird placed into a child's palm",
+}
+
+
 def build_bgm(lock):
     """03_템포-오디오가이드.md 2절 감정 곡선 — 장면 경계에 맞춰 8구간, 구간 간격 1.0초 이상(제11장 5)."""
     sc = {s["id"]: s["start"] for s in lock["scenes"]}; ad1, ad2 = (a["at"] for a in lock["ads"]); end = lock["body_end"]
@@ -605,7 +633,8 @@ def build_bgm(lock):
         (20.0, sc["S02"] - 0.6, 0.36, "cool lonely solo piano, an old man alone in a closing shop at night, quiet melancholy, instrumental, no vocals"),
         (sc["S02"] + 0.5, sc["S06"] - 0.6, 0.38, "warm nostalgic acoustic guitar and soft piano, a small kind shop in the 1990s, gentle strings rising softly, Japanese human drama, instrumental, no vocals"),
         (sc["S06"] + 0.5, ad1 - 0.6, 0.34, "a single low sustained cello note with a ticking clock feel, worry, quiet, instrumental, no vocals"),
-        (ad1 + 1.0, sc["S09"] - 0.6, 0.38, "melancholic solo piano in the rain turning into warm hopeful strings, kindness to a poor child, Japanese drama, instrumental, no vocals"),
+        (ad1 + 1.0, sc["S08"] - 0.6, 0.30, "tense low string tremolo with a slow heartbeat-like pulse and sparse piano, an anxious wait night after night, quiet dread, Japanese drama, instrumental, no vocals"),
+        (sc["S08"] + 0.5, sc["S09"] - 0.6, 0.38, "melancholic solo piano in the rain turning into warm hopeful strings, kindness to a poor child, Japanese drama, instrumental, no vocals"),
         (sc["S09"] + 0.5, sc["S11"] - 0.6, 0.38, "bittersweet farewell theme with celesta and strings, spring night, then sparse sad piano, loss, instrumental, no vocals"),
         (sc["S11"] + 0.5, ad2 - 0.6, 0.34, "soft mysterious pulse with light piano, morning, an unexpected letter, suspense, instrumental, no vocals"),
         (ad2 + 1.0, sc["S13"] - 0.6, 0.40, "the letter theme: tender piano slowly joined by building strings, a long-held secret revealed, deeply moving, Japanese human drama, instrumental, no vocals"),
@@ -620,6 +649,9 @@ def main():
     global BGM
     lock = json.load(open(os.path.join(PROD, "lock.json"), encoding="utf-8"))
     BGM = build_bgm(lock)
+    # 같은 오류 2회(#02 효과음 13개 설계·0개 믹스, bento 효과음표만 있고 생성 없음) → 자동 검사(지속 개선 원칙 4)
+    assert len(FOLEY) >= 20, "컷별 폴리(FOLEY)가 비었다 — 효과음표를 생성 설정으로 옮길 것(제15장 22)"
+    assert os.path.exists(os.path.join(PROD, "sfx_timeline.json")), "효과음 타임라인(sfx_timeline.json) 없음 — PHASE 6 믹스 소스(제15장 22)"
     rows = {x["tag"]: x for x in lock["lines"]}
     texts = script_texts()
     scenes = {s["id"]: (s["start"], s["end"]) for s in lock["scenes"]}
@@ -809,6 +841,7 @@ def main():
         "omnihuman_prompts": {str(idx[k]): v for k, v in omni_prompts.items()},
         "omnihuman_models": ["fal-ai/bytedance/omnihuman/v1.5", "fal-ai/bytedance/omnihuman"], "omnihuman_max_s": 8.0, "legacy_lipsync": False,
         "ambience_model": "fal-ai/mmaudio-v2", "ambience_volume": 0.35, "duck_db": 8, "ambience_prompts": [x["ambience"] for x in sb],
+        "foley_prompts": {str(idx[k]): v for k, v in FOLEY.items() if k in idx}, "foley_model": "fal-ai/mmaudio-v2", "foley_volume": 0.6,
         "bgm_model": "fal-ai/lyria2", "bgm_volume": 0.40, "bgm_prompt": BGM[1][3],
         "bgm_segments": [{"start": s, "end": round(main_end, 2) if e is None else e, "volume": v, "prompt": p} for s, e, v, p in BGM],
         "_후크": "0~3.5초 BGM 없음: 저음 드론 + 종이 펴는 소리를 PHASE 6 로컬 믹스. H1 음성 L01 = 편지 낭독 L29 녹음 재사용(build_tts SAME_AS). 음성은 ElevenLabs·Typecast 확정본(Shino 1.15·Chiemi 1.12 배속 적용본).",
