@@ -19,13 +19,9 @@
    "note": "2026-10-20 확정(EL 1번). 편지 낭독 15줄"
   },
   "narr": {
-   "pending": [
-    "Hama UNA3oLeLObeH4rJVF6dw",
-    "Tomoki xbp9DJTY7EwveeixvGFW",
-    "Asu ronK01G13l5Jag13vEpH",
-    "Shino Kohz4YYGbPgnEUrf8CZl",
-    "Lloyd(Typecast) tc_65681f21097fc4326ceb5e21"
-   ]
+   "name": "Shino",
+   "voice_id": "Kohz4YYGbPgnEUrf8CZl",
+   "note": "2026-10-20 확정(EL 내레이터 4번, 차분하고 따뜻한 여성). 3인칭 です・ます"
   },
   "takumi_boy": {
    "engine": "typecast-direct",
