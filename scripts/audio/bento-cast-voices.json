@@ -1,0 +1,86 @@
+{
+ "_설명": "『閉店間際の弁当屋』(bento) 배역 목소리 대장 — 고니감독님 청취 확정(제19장 2 ④). 본녹음 생성기는 이 표만 쓴다. pending = 선택 대기.",
+ "engine": "elevenlabs-direct",
+ "el_model": "eleven_v3",
+ "roles": {
+  "shuzo": {
+   "name": "Tonatsu",
+   "voice_id": "ft4S7uJtotXoBiXBLkzh",
+   "note": "2026-10-20 확정(EL 3번). 43세·73세 한 목소리, 73세는 연기 태그로 나이 표현"
+  },
+  "sumie": {
+   "name": "Chiemi",
+   "voice_id": "CAz2VQzFEVyGujit7Iof",
+   "note": "2026-10-20 확정(EL 2번)"
+  },
+  "takumi_adult": {
+   "name": "Masa",
+   "voice_id": "MvMFbhzZT2zcr5QsG1xY",
+   "note": "2026-10-20 확정(EL 1번). 편지 낭독 15줄"
+  },
+  "narr": {
+   "pending": [
+    "Hama UNA3oLeLObeH4rJVF6dw",
+    "Tomoki xbp9DJTY7EwveeixvGFW",
+    "Asu ronK01G13l5Jag13vEpH",
+    "Shino Kohz4YYGbPgnEUrf8CZl",
+    "Lloyd(Typecast) tc_65681f21097fc4326ceb5e21"
+   ]
+  },
+  "takumi_boy": {
+   "engine": "typecast-direct",
+   "pending": [
+    "Leo tc_62fb678f9b93d9207fa8c032",
+    "Hajun tc_60db308484130840f23e6ca0",
+    "Juwan tc_69e0462f3e5413d26878521e"
+   ]
+  },
+  "mio": {
+   "engine": "typecast-direct",
+   "pending": [
+    "Mirei Kato tc_63edf3ccd8e2eb7338999376",
+    "Daidai tc_63a3d9eb4b235ddd6541a79e",
+    "Ella tc_62fb679683a541c351dc7c3a"
+   ]
+  },
+  "hina": {
+   "engine": "typecast-direct",
+   "pending": "mio와 다른 1명"
+  },
+  "host": {
+   "engine": "typecast-direct",
+   "name": "Yui Sato",
+   "voice_id": "tc_629fe972013e90b4db213fd8",
+   "note": "채널 고정 아웃트로 진행자"
+  }
+ },
+ "kana": {
+  "野口修三": "のぐちしゅうぞう",
+  "修三": "しゅうぞう",
+  "澄江": "すみえ",
+  "朝倉拓海": "あさくらたくみ",
+  "拓海": "たくみ",
+  "美緒": "みお",
+  "陽菜": "ひな",
+  "平成八年": "へいせいはちねん",
+  "令和八年": "れいわはちねん",
+  "三十八年": "さんじゅうはちねん",
+  "三十年": "さんじゅうねん",
+  "七十三歳": "ななじゅうさんさい",
+  "二百五十円": "にひゃくごじゅうえん",
+  "二百四十円": "にひゃくよんじゅうえん",
+  "五百円": "ごひゃくえん",
+  "十円": "じゅうえん",
+  "半額": "はんがく",
+  "一通": "いっつう",
+  "一行": "いちぎょう",
+  "出世払い": "しゅっせばらい",
+  "唐揚げ": "からあげ",
+  "世界一": "せかいいち",
+  "九時": "くじ",
+  "伺います": "うかがいます",
+  "母": "はは",
+  "二人分": "ふたりぶん",
+  "実家": "じっか"
+ }
+}
