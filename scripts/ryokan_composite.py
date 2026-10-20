@@ -53,51 +53,170 @@ def art_game(w, h):
     return im.filter(ImageFilter.GaussianBlur(float(max(1.5, w * 0.006))))
 
 
-MAILS = [("Booking request for October 12 – family of four", True), ("Re: Room availability in autumn season", True),
-         ("Question about vegetarian dinner options", True), ("Airport shuttle timetable?", True), ("Cancellation – no reply received", True),
-         ("Group tour inquiry (18 guests)", True), ("Thank you for your reply", False), ("Reservation confirmed – 2 nights", False),
-         ("Late check-in possible?", True), ("Inquiry from travel agency Taipei", True), ("Is the onsen tattoo friendly?", True)]
+# 감독님 지적(2026-10-20, 4:19 휴대폰 메일): 흰 바탕에 영어 제목만 나열 → 실제 메일 앱 받은편지함처럼
+# (상태바·「受信トレイ」·미읽음 수·발신자·제목·미리보기·시각·파란 점·예약사이트 취소 알림). 내용은 대본 S10「最初に崩れたのは、予約だった」에 맞춘다.
+MAILS = [  # (발신자, 제목, 미리보기, 시각, 미읽음)
+    ("Emily Carter", "Re: Re: Booking request – still waiting", "Hello again, this is my third email. Could you please confirm…", "10:12", True),
+    ("予約サイト通知", "キャンセル：10月14日 2名 1泊", "ゲストが予約をキャンセルしました。理由：施設から返信がない", "9:48", True),
+    ("Chen Wei-Lin (Taipei)", "Group tour inquiry (18 guests) – URGENT", "We have not received any reply. Please respond by Friday or…", "8:30", True),
+    ("Sophie Martin", "Cancellation – no reply received", "Since we didn't hear back from you, we have booked another…", "昨日", True),
+    ("予約サイト通知", "キャンセル：10月12日 4名 2泊", "ゲストが予約をキャンセルしました。理由：施設から返信がない", "昨日", True),
+    ("Thomas Müller", "Airport shuttle timetable?", "Is there a shuttle from the airport to the ryokan? We arrive…", "昨日", True),
+    ("Anna Rossi", "Question about vegetarian dinner", "My husband is vegetarian. Is it possible to change the kaiseki…", "10/7", True),
+    ("予約サイト通知", "【重要】返信率低下のお知らせ", "過去7日間の返信率が40%を下回りました。掲載順位に影響する…", "10/7", True),
+    ("James Park", "Late check-in possible?", "Our train arrives at 21:30. Would a late check-in be…", "10/6", True),
+    ("佐藤 美咲", "予約確認のお礼", "丁寧なご返信ありがとうございました。当日を楽しみに…", "10/5", False),
+    ("Laura Bennett", "Thank you for your reply", "Thank you so much for the quick answer. See you in…", "10/5", False),
+    ("Hiro Travel", "Is the onsen tattoo friendly?", "One of our guests has a small tattoo. Is the onsen…", "10/4", True),
+]
+BLUE, DARK, MID, LIGHT = (0, 106, 255, 255), (28, 28, 32, 255), (112, 112, 118, 255), (228, 229, 234, 255)
+AV = [(230, 120, 60), (70, 140, 230), (90, 170, 110), (200, 90, 150), (120, 110, 220), (220, 170, 50)]
+
+
+def _avatar(d, cx, cy, r, name, k, px):
+    if name.startswith("予約"):
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(0, 94, 184, 255)); d.rectangle([cx - r * 0.5, cy - r * 0.32, cx + r * 0.5, cy + r * 0.32], fill=(255, 255, 255, 255))
+        d.rectangle([cx - r * 0.5, cy - r * 0.32, cx + r * 0.5, cy - r * 0.1], fill=(255, 210, 60, 255)); return
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=AV[k % len(AV)] + (255,))
+    ini = name[0]; f = font(GOTH if ord(ini) > 0x2000 else MONT, px)
+    ctext(d, cx, cy - px * 0.62, ini, f, (255, 255, 255, 255))
+
+
+def _row_text(d, x, y, maxw, name, subj, prev, when, unread, fs):
+    fn = font(GOTH if any(ord(c) > 0x2000 for c in name) else MONT, fs)
+    fsub = font(GOTH if any(ord(c) > 0x2000 for c in subj) else MONT, fs * 0.92)
+    fpre = font(GOTH if any(ord(c) > 0x2000 for c in prev) else MONT, fs * 0.84)
+    ft = font(GOTH if any(ord(c) > 0x2000 for c in when) else MONT, fs * 0.8)
+    tw = d.textlength(when, font=ft); d.text((x + maxw - tw, y), when, font=ft, fill=BLUE if unread else MID)
+    d.text((x, y), name, font=fn, fill=DARK, stroke_width=1 if unread else 0, stroke_fill=DARK)
+    def clip(t, f, w):
+        while d.textlength(t, font=f) > w and len(t) > 2:
+            t = t[:-2] + "…"
+        return t
+    d.text((x, y + fs * 1.3), clip(subj, fsub, maxw - tw - fs * 0.5), font=fsub, fill=DARK if unread else MID, stroke_width=1 if unread else 0, stroke_fill=DARK)
+    d.text((x, y + fs * 2.5), clip(prev, fpre, maxw), font=fpre, fill=MID)
+
+
+def art_mail_phone(w, h):
+    """휴대폰 메일 앱 받은편지함(세로)."""
+    im = canvas(w, h, (255, 255, 255, 255)); d = ImageDraw.Draw(im)
+    fs = h * 0.026
+    d.text((w * 0.07, h * 0.012), "9:41", font=font(MONT, fs * 1.1), fill=DARK, stroke_width=1, stroke_fill=DARK)
+    bx, by = w * 0.93, h * 0.016 + fs * 0.55
+    d.rounded_rectangle([bx - fs * 1.5, by - fs * 0.38, bx, by + fs * 0.38], radius=fs * 0.15, outline=DARK, width=max(1, int(fs * 0.08)))
+    d.rectangle([bx - fs * 1.42, by - fs * 0.3, bx - fs * 0.5, by + fs * 0.3], fill=(52, 199, 89, 255))
+    for i in range(4):
+        d.rectangle([bx - fs * 3.6 + i * fs * 0.33, by + fs * 0.35 - fs * (0.25 + 0.15 * i), bx - fs * 3.6 + i * fs * 0.33 + fs * 0.2, by + fs * 0.35], fill=DARK)
+    d.text((w * 0.07, h * 0.055), "＜ メールボックス", font=font(GOTH, fs * 0.95), fill=BLUE)
+    d.text((w * 0.07, h * 0.085), "受信トレイ", font=font(GOTH, fs * 2.0), fill=DARK, stroke_width=1, stroke_fill=DARK)
+    d.rounded_rectangle([w * 0.07, h * 0.135, w * 0.93, h * 0.165], radius=h * 0.012, fill=(239, 239, 243, 255))
+    d.text((w * 0.11, h * 0.139), "検索", font=font(GOTH, fs * 0.9), fill=MID)
+    cnt = sum(1 for m in MAILS if m[4])
+    y = h * 0.18; row = h * 0.086
+    for k, (name, subj, prev, when, unread) in enumerate(MAILS):
+        if y + row > h * 0.93:
+            break
+        if unread:
+            d.ellipse([w * 0.045, y + fs * 0.55, w * 0.045 + fs * 0.6, y + fs * 1.15], fill=BLUE)
+        _avatar(d, w * 0.135, y + row * 0.42, w * 0.055, name, k, fs * 1.2)
+        _row_text(d, w * 0.22, y + fs * 0.25, w * 0.71, name, subj, prev, when, unread, fs)
+        d.line([w * 0.22, y + row, w, y + row], fill=LIGHT, width=1); y += row
+    d.rectangle([0, h * 0.93, w, h], fill=(249, 249, 251, 255)); d.line([0, h * 0.93, w, h * 0.93], fill=LIGHT, width=1)
+    ctext(d, w * 0.5, h * 0.945, f"未読 {cnt + 25} 件", font(GOTH, fs * 0.9), MID)
+    return im.filter(ImageFilter.GaussianBlur(float(max(0.8, w * 0.0015))))
+
+
+def art_mail_desk(w, h):
+    """노트북 메일 클라이언트(가로): 왼쪽 폴더 사이드바 + 목록."""
+    im = canvas(w, h, (255, 255, 255, 255)); d = ImageDraw.Draw(im)
+    fs = h * 0.036; sw = w * 0.2
+    d.rectangle([0, 0, sw, h], fill=(242, 242, 246, 255)); d.rectangle([0, 0, w, h * 0.09], fill=(236, 236, 240, 255))
+    for i, c in enumerate([(255, 95, 86), (255, 189, 46), (39, 201, 63)]):
+        d.ellipse([w * 0.012 + i * fs * 0.8, h * 0.03, w * 0.012 + i * fs * 0.8 + fs * 0.55, h * 0.03 + fs * 0.55], fill=c + (255,))
+    d.rounded_rectangle([sw + w * 0.02, h * 0.02, w * 0.98, h * 0.07], radius=h * 0.015, fill=(255, 255, 255, 255), outline=LIGHT)
+    d.text((sw + w * 0.035, h * 0.028), "検索", font=font(GOTH, fs * 0.85), fill=MID)
+    cnt = sum(1 for m in MAILS if m[4]) + 25
+    folders = [("受信トレイ", str(cnt), True), ("VIP", "", False), ("送信済み", "", False), ("下書き", "3", False), ("ゴミ箱", "", False)]
+    fy = h * 0.14
+    for nm, n, sel in folders:
+        if sel:
+            d.rounded_rectangle([w * 0.012, fy - fs * 0.25, sw - w * 0.012, fy + fs * 1.05], radius=fs * 0.3, fill=(214, 226, 250, 255))
+        d.text((w * 0.03, fy), nm, font=font(GOTH, fs * 0.9), fill=DARK if sel else MID)
+        if n:
+            tw = d.textlength(n, font=font(MONT, fs * 0.8)); d.text((sw - w * 0.025 - tw, fy + fs * 0.05), n, font=font(MONT, fs * 0.8), fill=BLUE if sel else MID)
+        fy += fs * 1.7
+    y = h * 0.11; row = h * 0.112; x = sw + w * 0.035
+    for k, (name, subj, prev, when, unread) in enumerate(MAILS):
+        if y + row > h:
+            break
+        if unread:
+            d.ellipse([sw + w * 0.012, y + fs * 0.45, sw + w * 0.012 + fs * 0.5, y + fs * 0.95], fill=BLUE)
+        _row_text(d, x, y + fs * 0.2, w * 0.98 - x, name, subj, prev, when, unread, fs * 0.95)
+        d.line([x, y + row, w, y + row], fill=LIGHT, width=1); y += row
+    return im.filter(ImageFilter.GaussianBlur(float(max(0.8, w * 0.0015))))
 
 
 def art_mail(w, h):
-    """노트북 메일함: 영어 제목이 쌓인 목록, 미답장은 굵게·파란 점. 글자는 살짝 흐림."""
-    im = canvas(w, h, (246, 247, 250, 255)); d = ImageDraw.Draw(im)
-    d.rectangle([0, 0, w, h * 0.09], fill=(232, 234, 240, 255)); d.rectangle([0, 0, w * 0.2, h], fill=(238, 239, 244, 255))
-    fb, fr = font(MONT, int(h * 0.052)), font(MONT, int(h * 0.05))
-    y = h * 0.12; row = h * 0.08
-    for subj, unread in MAILS:
-        if y > h - row:
-            break
-        if unread:
-            d.ellipse([w * 0.215, y + row * 0.3, w * 0.215 + h * 0.02, y + row * 0.3 + h * 0.02], fill=(40, 110, 230, 255))
-        d.text((w * 0.25, y + row * 0.15), subj, font=fb if unread else fr, fill=(30, 30, 36, 255) if unread else (120, 120, 128, 255))
-        d.line([w * 0.2, y + row, w, y + row], fill=(224, 226, 232, 255), width=1)
-        y += row
-    return im.filter(ImageFilter.GaussianBlur(float(max(1.0, w * 0.0025))))
+    return art_mail_phone(w, h) if w < h else art_mail_desk(w, h)
+
+
+def _star_row(d, x, y, r, n, color, gap=None):
+    gap = gap or r * 2.5
+    for i in range(5):
+        cx = x + i * gap
+        pts = [(cx + r * (1 if k % 2 == 0 else 0.45) * np.cos(np.pi / 2 + k * np.pi / 5), y - r * (1 if k % 2 == 0 else 0.45) * np.sin(np.pi / 2 + k * np.pi / 5)) for k in range(10)]
+        d.polygon(pts, fill=color if i < n else (214, 214, 220, 255))
+
+
+# 감독님 지적(2026-10-20, 5:02 노트북 리뷰): 점수·별·문장만 → 실제 예약사이트 리뷰 페이지처럼(사이트 머리띠·숙소명·口コミ 수·
+# 평점 타일+평가어·항목별 막대·리뷰 카드: 이름·국가·날짜·별·제목·본문). 점수가 내려가면 평가어·막대·최신 리뷰가 함께 바뀐다.
+GOOD_REVIEWS = [("Emily C.", "オーストラリア", "2025年9月", 5, "Perfect stay, perfect English", "The young okami answered every email the same day and spoke perfect English."),
+                ("田中 和子", "日本", "2025年9月", 5, "心のこもったおもてなし", "若女将さんの気配りが素晴らしく、母も大満足でした。")]
+BAD_REVIEWS = [("Michael R.", "アメリカ", "2025年10月", 1, "Staff couldn't speak English at all", "Nobody answered our emails. The shuttle never came and no one at the desk understood us."),
+               ("鈴木 恵", "日本", "2025年10月", 1, "最悪の対応。二度と泊まらない。", "予約したはずの部屋が用意されておらず、謝罪もありませんでした。")]
 
 
 def art_review(w, h, score):
-    """예약사이트 리뷰 화면: 큰 점수 + 별 + 리뷰 2건(영어·일본어)."""
-    im = canvas(w, h, (250, 250, 252, 255)); d = ImageDraw.Draw(im)
-    d.rectangle([0, 0, w, h * 0.1], fill=(0, 56, 110, 255))
-    d.rounded_rectangle([w * 0.05, h * 0.15, w * 0.95, h * 0.44], radius=h * 0.03, fill=(255, 255, 255, 255), outline=(220, 222, 228, 255))
-    fs = font(MONT, int(h * 0.19)); d.text((w * 0.08, h * 0.17), f"{score:.1f}", font=fs, fill=(20, 20, 24, 255))
-    bad = score < 4.0
-    sx = w * 0.36
-    for i in range(5):
-        cx = sx + i * w * 0.075; r = h * 0.05
-        filled = (score / 5 * 5) >= i + 0.5
-        d.polygon([(cx + r * np.cos(np.pi / 2 + k * 2 * np.pi / 5 * (1 if k % 2 == 0 else 1)) * (1 if k % 2 == 0 else 0.45),
-                    h * 0.27 - r * np.sin(np.pi / 2 + k * 2 * np.pi / 10) * (1 if k % 2 == 0 else 0.45)) for k in range(10)],
-                  fill=((230, 60, 40, 255) if bad else (255, 170, 0, 255)) if filled else (210, 210, 214, 255))
-    d.text((w * 0.36, h * 0.33), "Guest rating", font=font(MONT, int(h * 0.055)), fill=(120, 120, 128, 255))
-    y = h * 0.5
-    for txt, path, stars in (("Staff couldn't speak English at all.", MONT, 1), ("最悪の対応。二度と泊まらない。", GOTH, 1)):
-        d.rounded_rectangle([w * 0.05, y, w * 0.95, y + h * 0.2], radius=h * 0.02, fill=(255, 255, 255, 255), outline=(220, 222, 228, 255))
-        d.text((w * 0.08, y + h * 0.03), "★" * stars + "☆" * (5 - stars), font=font(GOTH, int(h * 0.06)), fill=(230, 60, 40, 255))
-        d.text((w * 0.08, y + h * 0.1), txt, font=fit(d, txt, path, w * 0.84, h * 0.065), fill=(30, 30, 36, 255))
-        y += h * 0.24
-    return im
+    """예약사이트 리뷰 페이지(노트북). score 4.8→3.1 상태 전환."""
+    im = canvas(w, h, (244, 245, 248, 255)); d = ImageDraw.Draw(im)
+    fs = h * 0.045; bad = score < 4.0
+    d.rectangle([0, 0, w, h * 0.095], fill=(0, 56, 110, 255))
+    d.rounded_rectangle([w * 0.03, h * 0.02, w * 0.17, h * 0.075], radius=h * 0.01, fill=(255, 255, 255, 255))
+    d.text((w * 0.045, h * 0.03), "Yado Reserve", font=font(MONT, fs * 0.8), fill=(0, 56, 110, 255))
+    d.rounded_rectangle([w * 0.22, h * 0.022, w * 0.7, h * 0.073], radius=h * 0.025, fill=(255, 255, 255, 255))
+    d.text((w * 0.235, h * 0.03), "月見荘  10月14日〜15日  大人2名", font=font(GOTH, fs * 0.75), fill=MID)
+    d.text((w * 0.03, h * 0.12), "月見荘（つきみそう）", font=font(GOTH, fs * 1.25), fill=DARK, stroke_width=1, stroke_fill=DARK)
+    d.text((w * 0.03, h * 0.19), "温泉旅館 · 創業大正十二年 · 口コミ 1,284件", font=font(GOTH, fs * 0.72), fill=MID)
+    # 평점 타일
+    col = (196, 40, 32, 255) if bad else (0, 112, 72, 255)
+    d.rounded_rectangle([w * 0.03, h * 0.27, w * 0.2, h * 0.52], radius=h * 0.02, fill=col)
+    ctext(d, w * 0.115, h * 0.285, f"{score:.1f}", font(MONT, fs * 2.6), (255, 255, 255, 255))
+    word = "とても良い" if score >= 4.5 else "良い" if score >= 4.0 else "普通" if score >= 3.5 else "やや不満"
+    ctext(d, w * 0.115, h * 0.425, word, font(GOTH, fs * 0.8), (255, 255, 255, 255))
+    ctext(d, w * 0.115, h * 0.47, "総合評価", font(GOTH, fs * 0.6), (230, 235, 240, 255))
+    # 항목별 막대
+    cats = [("スタッフ", score - 0.1), ("清潔さ", min(5, score + 0.3)), ("設備", min(5, score + 0.1)), ("立地", 4.6), ("コスパ", score - 0.2)]
+    by = h * 0.28
+    for nm, v in cats:
+        d.text((w * 0.24, by), nm, font=font(GOTH, fs * 0.68), fill=DARK)
+        d.rounded_rectangle([w * 0.33, by + fs * 0.25, w * 0.6, by + fs * 0.55], radius=fs * 0.15, fill=(224, 226, 232, 255))
+        d.rounded_rectangle([w * 0.33, by + fs * 0.25, w * 0.33 + w * 0.27 * max(0.05, v / 5), by + fs * 0.55], radius=fs * 0.15, fill=col)
+        d.text((w * 0.615, by), f"{max(1.0, v):.1f}", font=font(MONT, fs * 0.68), fill=DARK); by += h * 0.05
+    # 최신 리뷰 카드
+    d.text((w * 0.03, h * 0.56), "最新の口コミ", font=font(GOTH, fs * 0.85), fill=DARK, stroke_width=1, stroke_fill=DARK)
+    rv = BAD_REVIEWS if bad else GOOD_REVIEWS
+    cy = h * 0.63
+    for k, (name, ctry, date, stars, title, body) in enumerate(rv):
+        d.rounded_rectangle([w * 0.03, cy, w * 0.97, cy + h * 0.17], radius=h * 0.015, fill=(255, 255, 255, 255), outline=(222, 224, 230, 255))
+        d.ellipse([w * 0.05, cy + h * 0.03, w * 0.05 + fs * 1.4, cy + h * 0.03 + fs * 1.4], fill=AV[(k + 2) % len(AV)] + (255,))
+        ctext(d, w * 0.05 + fs * 0.7, cy + h * 0.03 + fs * 0.25, name[0], font(GOTH if ord(name[0]) > 0x2000 else MONT, fs * 0.8), (255, 255, 255, 255))
+        d.text((w * 0.1, cy + h * 0.025), name, font=font(GOTH if any(ord(c) > 0x2000 for c in name) else MONT, fs * 0.7), fill=DARK)
+        d.text((w * 0.1, cy + h * 0.065), f"{ctry} · {date}", font=font(GOTH, fs * 0.55), fill=MID)
+        _star_row(d, w * 0.84, cy + h * 0.05, fs * 0.32, stars, (196, 40, 32, 255) if stars <= 2 else (255, 170, 0, 255))
+        d.text((w * 0.1, cy + h * 0.1), title, font=fit(d, title, GOTH if any(ord(c) > 0x2000 for c in title) else MONT, w * 0.84, fs * 0.72), fill=DARK, stroke_width=1, stroke_fill=DARK)
+        d.text((w * 0.1, cy + h * 0.135), body, font=fit(d, body, GOTH if any(ord(c) > 0x2000 for c in body) else MONT, w * 0.84, fs * 0.55), fill=MID)
+        cy += h * 0.19
+    return im.filter(ImageFilter.GaussianBlur(float(max(0.8, w * 0.0012))))
 
 
 def art_ledger(w, h, text):
