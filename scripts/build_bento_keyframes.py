@@ -75,6 +75,7 @@ SHOT_FIX = {
     "S06b": "FRAMING FIRST — CLOSE-UP: head and shoulders fill the frame, the face one third of the frame height or larger; NOT a medium or wide shot.",
     "S08n": "FRAMING FIRST — eye-level CLOSE-UP with a normal 50mm perspective, head and shoulders; NOT fisheye, NOT looking down from above, NOT distorted.",
     "S10bb": "Sumie has bare hair streaked with grey in a low bun — ignore any headscarf in the reference; she wears only the pale-blue hospital gown.",
+    "S13n": "He holds the photograph up with its plain white BACK facing the camera; the picture side faces Takumi and is NOT visible.",
     "S10bd": "Shuzo wears only a grey cardigan over a white shirt — ignore any apron in the reference.",
 }
 ANGER_CLOSED = ("Fury shown only in the wide-open glaring eyes, furrowed brow, flared nostrils and clenched jaw: eyes OPEN and fixed on the listener, "
@@ -104,6 +105,7 @@ def describe(path, i):
 
 
 NO_FACE = {}
+ONE_TAKE = {"S06a", "S10a", "S13b", "S06b", "S10bd", "S13n", "S12d", "S09i"}  # 재생성 중 단순 결함 컷은 1장(승인 예산 안, 2026-10-20)
 NO_BACKCELL = set()  # 뒷모습 전신 셀이 원경 전신 구도를 끌어옴 — 앞 인물은 글로만
 NO_LOC = set()  # 장소 참조가 원경·후광(오려 붙인 테두리)을 만든 컷 — 장소는 글로만
 # 시범 1차(2026-10-20): 립싱크 3컷 6장 모두 장소 참조를 따라 원경(얼굴 1/6)으로 나옴 → 립싱크 컷은 장소 참조를 기본으로 뺀다(제18장 4)
@@ -184,7 +186,9 @@ def build(sc, stage):
         prompt = prompt.replace(a, b)
     if re.search(r"\btears?\b", re.sub(r"Negative:.*?\.(?= [A-Z])", "", prompt).replace("gel tears", "")):  # 네거티브의 「gel tears」는 제외
         prompt = prompt.replace("Absolutely no text, letters", TEAR_LINE + " " + EYE_SAFE + " Absolutely no text, letters")
-    return {"id": sc["id"], "count": 1, "aspect_ratio": "16:9", "refs": refs, "prompt": prompt, "model": "fal-ai/bytedance/seedream/v4/edit", "extra": {"image_size": {"width": 2560, "height": 1440}}}
+    # 참조가 없는 컷(무인 시계·광장)은 edit 모델이 거부해 2회 연속 실패(S06a·S10a·S13b) → text-to-image
+    model = "fal-ai/bytedance/seedream/v4/edit" if refs else "fal-ai/bytedance/seedream/v4/text-to-image"
+    return {"id": sc["id"], "count": 1, "aspect_ratio": "16:9", "refs": refs, "prompt": prompt, "model": model, "extra": {"image_size": {"width": 2560, "height": 1440}}}
 
 
 def main():
@@ -207,7 +211,7 @@ def main():
         c = build(sc, stage)
         missing += [f for f in c["refs"] if not os.path.exists(os.path.join(ROOT, f))]
         if only:
-            c["count"] = 2
+            c["count"] = 1 if sc["id"] in ONE_TAKE else 2
         chars.append(c)
     if (stage == "p" or stage.startswith("r")) and len(chars) != len(only):
         raise SystemExit(f"컷 일부 없음: {sorted(only - {c['id'] for c in chars})}")
