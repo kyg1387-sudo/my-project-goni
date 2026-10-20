@@ -86,6 +86,21 @@ def who_of(name):
     return next(((k, v) for k, v in PEOPLE if name.startswith(k + "-")), (None, None))
 
 
+def short(path):
+    k, v = who_of(os.path.basename(path))
+    return v.split(" (")[0] if v else "the other person"
+
+
+def speaker_close(sc, people):
+    """키프레임 1차 실증: FRAME_FIRST만으로는 립싱크 컷 26개 중 16개가 원경(얼굴 1/10~1/7). 시범 r2에서 통한 화자·앞 인물 배치 문장을 자동으로."""
+    side = "RIGHT" if "right foreground" in sc["subject"].lower() else "LEFT"
+    other = "LEFT" if side == "RIGHT" else "RIGHT"
+    return (f"SPEAKER CLOSE: {short(people[0])} is about one metre from the camera on the {other} side of the frame, head and shoulders filling "
+            f"about half of the frame width, the face one third of the frame height or larger, at three-quarter angle toward {short(people[1])}. "
+            f"{short(people[1])} appears ONLY as a soft out-of-focus back of the head and one shoulder at the near {side} edge, cut by the frame "
+            "(face NOT visible). Any counter or showcase is only a thin sliver at the bottom of the frame; the room behind is a soft blur.")
+
+
 def describe(path, i):
     name = os.path.basename(path)
     if path.startswith(FACE_DIR):
@@ -146,6 +161,8 @@ def build(sc, stage):
         parts.append(FRAME_FIRST)
     if sc["id"] in SHOT_FIX:
         parts.append(SHOT_FIX[sc["id"]])
+    if sc["kind"] == "d" and sc["id"] not in EMO_OVERRIDE and len(people) >= 2:
+        parts.append(speaker_close(sc, people))
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
     if sc["id"] in EMO_OVERRIDE:
         parts.append(EMO_OVERRIDE[sc["id"]])
