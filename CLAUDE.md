@@ -573,3 +573,10 @@ deformed eyes, extra fingers.
 상세는 `docs/제작규격-보강-bento실증.md`. 반드시 지키는 요약:
 
 1. **결과를 커밋하는 실행(오디션·목록 조회·언어 검사·키프레임·burn) 중에는 세션에서 브랜치에 푸시하지 않는다**: 무료 목록 조회(bento-tclist) 실행 중 문서를 푸시해 결과 커밋이 「cannot lock ref」로 거절됐다(재실행 1회, 지출 0). 제7장 9·제18장 9 ⑨를 모든 실행 종류로 넓힌다. 결과를 저장소에 커밋하는 실행은 한 번에 하나씩 돌리고, 결과 커밋을 받은 뒤 다음을 실행한다.
+2. **배역 목소리는 ElevenLabs에서 선정한다(2026-10-20 고니감독님 지시 「앞으로 목소리 선정은 일레븐랩스에서 가져올 수 있도록」)**: 『老舗旅館の嫁』(ryokan) 방식이 표준이다.
+   ① 도서관 검색(무과금): `scripts/auditions/<작품>-el-search.json`의 `el_shared_search`(language=ja, 배역별 gender·age·use_case, per_query 8) → `assets/auditions/<작품>-el-search/el_voices.jsonl` + 미리듣기 mp3. 아역은 `search`(boy·girl·child·子供)로 찾는다(도서관에 진짜 어린이 목소리가 적어 young·characters_animation 목소리가 섞인다 — 청취로 거른다).
+   ② 후보 선정: 배역별 3명. 일본어 억양(accent standard·kanto 우선, 관서·외국 억양 제외), 직전 작품·편성이 가까운 작품의 확정 목소리는 빼서 같은 사람처럼 들리지 않게 한다(배역 대장 `scripts/audio/<작품>-cast-voices.json`을 대조).
+   ③ 오디션: `elevenlabs-direct` + `el_model: eleven_v3`, 대사 앞에 영어 연기 태그 2~4단어(`[gruff, warm underneath]`), 음성 입력은 가나 치환본·`subtitle`은 대본 원문. 대비 감정 대사 2줄 × 3명. 비용은 EL 구독 크레딧(1회 약 1,300자, fal 0).
+   ④ 언어 검사(ja/large-v3) → 배역별 청취 묶음 → 고니감독님 청취 확정 → `scripts/audio/<작품>-cast-voices.json`(engine·el_model·roles·kana)에 기록하고 본녹음 생성기는 이 표만 쓴다.
+   ⑤ 예외: 아웃트로 진행자는 채널 고정(Typecast Yui Sato). 내레이터는 고니감독님이 정한 채널 목소리를 따르되, 작품별로 ElevenLabs 후보와 함께 청취해 정할 수 있다. ElevenLabs에서 맞는 목소리를 못 찾은 배역만 Typecast로 보충한다.
+
