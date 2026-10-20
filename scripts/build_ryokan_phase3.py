@@ -434,7 +434,7 @@ SHOTS = [
     S("S18b", "S18", "react", "cu", "hoff_night", "EL", ["WAKANA_B"], "HOFF_WINDOW",
       "Chest-up close-up of Wakana looking down at the phone below the frame, taking a slow breath, composed, the town lights soft behind.", expr="neutral"),
     S("S18c", "S18", "d", "cu", "office_night", "EL", ["TOMIKO"], "TSK_OFFICE",
-      "Chest-up close-up of Tomiko in the small dim office at night, NO glasses on her face now, leaning forward toward the handset held to her ear just below the frame, brows drawn up and pulled together, eyes brimming and red-rimmed but cheeks dry, lower lip trembling, chin crumpling, one thin hand clutching the collar of her plum kimono, lamp light raking one side of her face.", line="line071", expr="plead"),
+      "Chest-up close-up of Tomiko in the small dim office at night, NO glasses on her face now, leaning forward toward the handset held to her ear just below the frame, the inner corners of her brows raised high and pinched together, eyes glossy and brimming with unshed tears that catch the lamp light, red-rimmed lids, mouth open mid-plea with the lower lip trembling, chin crumpling, one thin hand clutching the collar of her plum kimono, lamp light raking one side of her face, a proud old woman begging.", line="line071", expr="plead"),
     S("S18d", "S18", "d", "cu", "office_night", "HA", ["TOMIKO"], "TSK_OFFICE",
       "Chest-up close-up of Tomiko without her glasses, face crumpling, eyes wet, a single thin tear track on one cheek at most, lips trembling, the lamp warm.", line="line072", expr="plead"),
     S("S18e", "S18", "sil", "ms", "office_night", "SIDE", ["TAKAYUKI", "TOMIKO"], "TSK_OFFICE",
