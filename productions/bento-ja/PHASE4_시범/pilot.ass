@@ -1,0 +1,19 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: JA,IPAGothic,70,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,1,0,0,0,100,100,0,0,1,6,1,2,120,120,60,1
+Style: KO,WenQuanYi Zen Hei,54,&H0000E6FF,&H0000E6FF,&H00000000,&H64000000,1,0,0,0,100,100,0,0,1,5,1,2,120,120,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.10,0:00:05.06,JA,,0,0,0,,じゃあ、出世払いだ。\N大きくなったら、返しに来い
+Dialogue: 0,0:00:00.10,0:00:05.06,KO,,0,0,236,,[슈조] 그럼, 출세하면 갚아. 크면, 갚으러 와.
+Dialogue: 0,0:00:05.26,0:00:08.14,JA,,0,0,0,,……半額の弁当、まだ、ありますか
+Dialogue: 0,0:00:05.26,0:00:08.14,KO,,0,0,150,,[타쿠미] ……반값 도시락, 아직, 있나요.
+Dialogue: 0,0:00:08.34,0:00:10.90,JA,,0,0,0,,……売れ残りなら、な
+Dialogue: 0,0:00:08.34,0:00:10.90,KO,,0,0,150,,[슈조] ……팔다 남은 거라면, 있지.
