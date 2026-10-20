@@ -107,7 +107,7 @@ def build(sc, stage):
         for r in people:
             k, _ = who_of(os.path.basename(r))
             f = f"{FACE_DIR}/{k}.png"
-            if k in NO_FACE.get(sc["id"], ()) or (sc.get("ots") and r == people[-1]):  # 뒷모습 화자(비립싱크 VO)는 얼굴 크롭 제외 — 정면을 끌어온다
+            if k in NO_FACE.get(sc["id"], ()) or (sc.get("ots") and r == people[-1]) or (sc["kind"] == "d" and r != people[0]):  # 전경 뒷모습 인물은 얼굴 크롭 제외  # 뒷모습 화자(비립싱크 VO)는 얼굴 크롭 제외 — 정면을 끌어온다
                 continue
             if os.path.exists(os.path.join(ROOT, f)) and f not in face and not os.path.basename(r).endswith("-back.png"):
                 face.append(f)
