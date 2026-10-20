@@ -1,0 +1,26 @@
+{
+ "_설명": "bento 대사 3컷 시범 립싱크(build_pilot_omni.py 생성). 약 10.9초 × 0.16 = 1.75달러",
+ "tests": [
+  {
+   "id": "omni_S08j",
+   "model": "omnihuman",
+   "image": "assets/portraits/bento-kf-pilot-ok/S08j.png",
+   "audio_id": "a_S08j",
+   "prompt": "Shuzo leans on the counter with both hands to meet the boy's eye level and tells him, gruff but warm, then pay me back when you've made it, come back when you grow up. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout."
+  },
+  {
+   "id": "omni_S13d",
+   "model": "omnihuman",
+   "image": "assets/portraits/bento-kf-pilot-ok/S13d.png",
+   "audio_id": "a_S13d",
+   "prompt": "Takumi, standing in the doorway, smiling with wet eyes, asks whether there is still a half-price bento, looking straight at the old man. wet eyes and a small closed-mouth smile (lips together, no teeth), natural skin, NO makeup. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout."
+  },
+  {
+   "id": "omni_S13f",
+   "model": "omnihuman",
+   "image": "assets/portraits/bento-kf-pilot-ok/S13f.png",
+   "audio_id": "a_S13f",
+   "prompt": "NOT smiling at any moment. Shuzo rests his hand on the last bento and answers, choked up and short, only if it is a leftover. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. NOT smiling at any moment. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout."
+  }
+ ]
+}
