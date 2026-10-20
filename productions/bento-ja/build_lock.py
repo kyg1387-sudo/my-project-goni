@@ -24,8 +24,8 @@ SAME_AS = {"L01": "L29"}
 CLUE_SCENE = "S06"  # 단서(소년이 오지 않은 밤) + BGM 전환(제15장 24)
 MIN_TOTAL, MAX_TOTAL = 9 * 60 + 40, 11 * 60
 # 길이 보정(무료, 2026-10-20 실측 13:11 → 보정): ① 느린 목소리 배속(≤1.15, 제11장 4 상한, 피치 유지 atempo — 후처리에서 실제 적용)
-# ② 내레이션 앞 지문 컷은 내레이션 아래에 깐다(B롤 위 VO — 컷이 첫마디보다 VO_LEAD초만 먼저 시작)
-STRETCH = {"Chiemi": 1.12}  # Shino는 v1.1에서 보통 속도로 재녹음 — 재측정 후 필요하면 추가
+# ② 내레이션·VO 줄(편지 낭독·짧은 대사) 앞 지문 컷은 그 목소리 아래에 깐다(B롤 위 VO — 컷이 첫마디보다 VO_LEAD초만 먼저 시작)
+STRETCH = {}  # Shino 1.15·Chiemi 1.12 배속을 파일에 적용함(원본 assets/auditions/bento-tts-orig/, 제11장 4) — 이중 적용 금지
 VO_UNDER, VO_LEAD = True, 0.8
 VOICE_OF = {}
 SKIP_ACTION = re.compile(r"^\s*(시점 자막|질문 카드|【|\(사운드|\(BGM|\(편지 낭독)")
@@ -57,7 +57,8 @@ def load():
             tag = m.group(1)
             if tag == "OUT0":
                 continue
-            x = {"tag": tag, "spk": "NA" if tag.startswith("NA") else m.group(2), "scene": scene, "mid": 0}
+            x = {"tag": tag, "spk": "NA" if tag.startswith("NA") else m.group(2), "scene": scene, "mid": 0,
+                 "vo": tag.startswith("NA") or "[VO]" in l}
             lines.append(x)
             if scene.startswith("S"):
                 sc = scenes[-1]
@@ -94,7 +95,7 @@ def build():
     t, srows, ads = HOOK, [], []
     for sc in scenes:
         start = t
-        first_na = sc["lines"] and sc["lines"][0]["spk"] == "NA"
+        first_na = sc["lines"] and sc["lines"][0]["vo"]
         t += (VO_LEAD if (VO_UNDER and first_na and sc["lead"]) else sc["lead"] * INSERT)
         prev = None
         for x in sc["lines"]:
@@ -102,7 +103,7 @@ def build():
                 t += PAUSE.get(x["tag"], GAP_SAME if prev["spk"] == x["spk"] else GAP_CHANGE)
             elif x["tag"] in PAUSE:
                 t += PAUSE[x["tag"]]
-            t += (VO_LEAD if x["mid"] else 0) if (VO_UNDER and x["spk"] == "NA") else x["mid"] * INSERT
+            t += (VO_LEAD if x["mid"] else 0) if (VO_UNDER and x["vo"]) else x["mid"] * INSERT
             x["start"], x["end"] = round(t, 3), round(t + x["dur"], 3)
             t = x["end"]
             if x["tag"] in AD_AFTER:
