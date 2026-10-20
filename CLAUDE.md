@@ -565,3 +565,11 @@ deformed eyes, extra fingers.
   `finalize_tsuki.py`(MANUAL 인서트)·`splice_tsuki_cut.py`·`build_tsuki_outro.py`·`make_ko_review_tsuki.py`·`make_ko_review_shorts_tsuki.py`·`make_thumbnails_tsuki.py`·`ass_to_srt.py`.
   배역 목소리(Typecast): 내레이터 Lloyd, 光 Kenta Yoshida `tc_62a8974c6fe31dc29ac53b0d`, 鷲尾 Robert `tc_66bc600762cab997910b107b`, 日野 Simon `tc_65b34b05b3fb844f3d6b7aab`,
   さくら Haruna Suzuki `tc_62b17ef6695ad26f7fb8e7f3`, 篠田 Poseidon, ハル Juha `tc_5d01a52563338e00072b8c9c`. 실증 기록 `docs/제작규격-보강-tsuki실증.md`.
+
+---
+
+## 제19장. 『閉店間際の弁当屋』(bento) 실증 보강 (2026-10-19 착수) — 수정에서 나온 규칙은 반드시 여기에 저장한다
+
+상세는 `docs/제작규격-보강-bento실증.md`. 반드시 지키는 요약:
+
+1. **결과를 커밋하는 실행(오디션·목록 조회·언어 검사·키프레임·burn) 중에는 세션에서 브랜치에 푸시하지 않는다**: 무료 목록 조회(bento-tclist) 실행 중 문서를 푸시해 결과 커밋이 「cannot lock ref」로 거절됐다(재실행 1회, 지출 0). 제7장 9·제18장 9 ⑨를 모든 실행 종류로 넓힌다. 결과를 저장소에 커밋하는 실행은 한 번에 하나씩 돌리고, 결과 커밋을 받은 뒤 다음을 실행한다.
