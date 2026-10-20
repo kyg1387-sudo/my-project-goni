@@ -1,0 +1,929 @@
+{
+ "_설명": "bento 장면 설정(build_bento_phase3.py 생성). override_required 장면은 정지 푸시인·OMNI 정지 프레임·재사용·카드를 video-overrides로 먼저 넣는다.",
+ "ratio": "16:9",
+ "budget_usd": 27.67,
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "durations": [
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  10,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  10,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  10,
+  10,
+  10,
+  10,
+  10,
+  5
+ ],
+ "scenes": [
+  {
+   "prompt": "Static, locked off camera. Motion: The hands unfold the paper slowly, a slight tremble; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/H0-1.png"
+  },
+  {
+   "prompt": "(override) still: Close-up of the plain white letter paper on the counter under a warm lamp, blank",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/H1-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He looks down at the letter. NOT smiling at any moment, mouth corners turned down, chin trembling slightly. One clear tear slowly spills over the lower lid and runs down the cheek along its natural curve, catching the light; a slow blink, a trembling breath; only one tear line, thin and translucent. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/H2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The warm light flickers faintly, a light drizzle; the building stays perfectly still; no cars, no headlights. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/H3-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He wipes the counter slowly in small circles; the notice stays still. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S01a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He wipes the counter slowly, a tired breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S01b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The fingertip traces the faded sticker once, slowly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S01c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The thumb presses the sticker flat onto the lid, slowly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S01d-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a small faded origami robin folded from red paper sitting alone in the c",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S01e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He looks toward the door, a slow blink, a long breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S01f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hands press the red sticker onto the card. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S02a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The boy steps in and stops just inside the door, glancing at the showcase; the bell sways. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S02b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The small fingers count the coins one by one, slowly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S02c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Shuzo's blurred shoulder (right foreground), slightly high: the boy at thre",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S02d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the boy's blurred shoulder (left foreground), slightly low: Shuzo at three-",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S02e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The boy takes the bag carefully with both hands; Shuzo turns back to his work. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S02f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sumie washes the pot and glances toward the shop; Shuzo's hands wash rice steadily. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S03a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Shuzo's blurred shoulder (right foreground): Sumie at three-quarter angle d",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S03b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: She looks at him, waiting, a small breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S03c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Shuzo's blurred shoulder: Sumie lowering her voice, worried.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S03d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hands stop moving in the rice water; ripples settle. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S03e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He stares down, a slow breath, jaw set. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S03f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: She stops and looks toward the bench, the garbage bag in her hand. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S03ba-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He scoops rice onto the lid and pushes it toward her, leaning over; his face stays turned down toward the food. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S03bb-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He pats his stomach lightly and smiles, lips together. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S03bd-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Her hand rises to her mouth. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S03be-1.png"
+  },
+  {
+   "prompt": "(override) omni: Back in the kitchen, over Shuzo's blurred shoulder: Sumie with wet eyes, speakin",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S03bf-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Her face softens into a small relieved smile, lips together. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S03bg-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He steps in, drips of rain falling from his hair, shoulders hunched. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S04a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the wet boy's blurred shoulder, slightly low: Shuzo holding out a plain whi",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S04b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He takes the towel and bows his head; his face stays hidden. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S04c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The tongs set the karaage down, one then the other. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S04d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the boy's blurred shoulder: Shuzo holding out the bag, eyes averted.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S04e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Shuzo's blurred shoulder: the boy hugging the bag to his chest with both ha",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S04f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the boy's blurred shoulder: Shuzo wiping the counter, eyes on the cloth, pr",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S04g-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Shuzo's blurred shoulder: the boy with the towel around his neck, a little ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S04h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He smiles shyly, lips together, the towel around his neck. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S04i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He walks out into the rain away from the camera, the bag held close. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S04j-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: inside the lit showcase, the empty slot where a karaage bento was, its b",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S05a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The coins drop one by one into the drawer. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S05b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He counts quietly, a small breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S05c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: She folds her arms and smiles a little, shaking her head once. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S05d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Shuzo's blurred shoulder: Sumie in the doorway, arms folded, teasing.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S05e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Sumie's blurred shoulder: Shuzo closing the drawer, half-turned away at thr",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S05f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Sumie smiles and goes back into the kitchen; Shuzo wipes the counter. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S05g-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a plain round wall clock with a BLANK face (no numerals) in the shop at ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S06a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He glances toward the door on the left, then back, then toward the door again. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S06b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Nothing moves except a faint flicker of the street light; the bell stays still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S06c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He holds the shutter and looks out, a slow breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S07a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He stands still looking up, the bag hanging from his hand. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S07b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Nothing moves; a faint breeze stirs a curtain edge behind the dark glass. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S07c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Back in the shop, over Shuzo's blurred shoulder at the shutter: Sumie beside him",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S07d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Sumie's blurred shoulder: Shuzo still holding the shutter, looking out at t",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S07e-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: inside the showcase one karaage bento with a red round blank sticker on ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S07f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: They stand at the door; the boy grips his sister's hand; the bell sways. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S08a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Shuzo's blurred shoulder, slightly high: the boy holding his sister's hand,",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S08b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the boy's blurred shoulder, low: Shuzo raising the half-lowered shutter bac",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S08c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: She presses her hands on the glass and stares at the bento. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S08d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He keeps his head bowed; his shoulders shake slightly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S08e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The small hand trembles slightly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S08f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hands place the bento into the bag, one then the other. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S08g-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the boy's blurred shoulder: Shuzo holding out two bags, looking him in the ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S08h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes soften, a slow breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S08i-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the boy's blurred shoulder, eye level: Shuzo leaning over the counter on bo",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S08j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The small hands close around the bag handles and hold on tight. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S08k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hands slip the thermos into the bag gently. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S08l-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the boy's blurred shoulder: Sumie crouching in front of him at eye level, g",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S08m-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He bites his lips and nods once. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. NOT smiling at any moment. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S08n-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: They walk away slowly along the street; their breath fogs. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S08o-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Petals fall slowly; nothing else moves; no cars, no headlights. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S09a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Shuzo's blurred shoulder: the boy at the counter holding a neat stack of fo",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S09b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hands stop on the lid and stay still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S09c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The tongs add one karaage, then another; the lid lifts. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S09d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Shuzo's blurred shoulder: Sumie coming out of the kitchen laughing, wiping ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S09e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He steps back and bows deeply, holding the bag. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S09f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Shuzo's blurred shoulder: the boy raising his head, wet eyes, smiling.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S09g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The small hand sets the paper bird on the counter and withdraws. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S09h-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the boy's blurred shoulder: Shuzo holding the small red paper bird in his p",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S09i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He grips the bag tighter, eyes wet. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. NOT smiling at any moment. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S09j-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Shuzo's blurred shoulder: the boy gripping the bag, smiling through held-ba",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S09k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: They walk out the door away from the camera; the bell sways. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S09l-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He stands still looking at the door, a slow breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S09m-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Shuzo's blurred shoulder: Sumie beside him looking at the door too, soft.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S09n-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A knowing smile begins, lips together. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S09o-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Shuzo's blurred shoulder: Sumie laughing softly, wiping her eye.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S09p-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Petals drift past; the building stays perfectly still; no cars. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S09q-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Lights shimmer faintly; nothing else moves; no cars. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S10a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hands tie the apron string slowly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S10b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He peels the apple slowly; she watches the window. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S10ba-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Shuzo's blurred shoulder: Sumie in the hospital bed turning from the window",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S10bb-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Sumie's blurred shoulder: Shuzo stopping the knife on the apple.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S10bc-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes glisten, he swallows. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. NOT smiling at any moment. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S10bd-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hands stay still; a faint tremble. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S10be-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He reaches and switches on the light; the showcase glows. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S10bf-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Soft light shifts very slowly across the wall; the headscarf stays still; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S10bg-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Soft morning light shifts slightly; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S11a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand slides the envelope out slowly. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S11b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand turns the envelope over and stops still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S11c-1.png"
+  },
+  {
+   "prompt": "(override) card: Question card over a blurred still of the old hands holding the envelope (compos",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) still: Insert: the back of the plain white envelope on the counter under a warm lamp, b",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S12a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes widen slowly, he stops breathing for a moment. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S12b-1.png"
+  },
+  {
+   "prompt": "(override) reuse: Flashback reuse of S02c (the boy counting five coins).",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He reads, his hands trembling slightly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S12d-1.png"
+  },
+  {
+   "prompt": "(override) reuse: Flashback reuse of S05b (coins into the register).",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He watches through the glass, eyes wet, breath fogging the glass faintly. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. NOT smiling at any moment. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S12f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He reads. NOT smiling at any moment, mouth corners turned down, chin trembling slightly. One clear tear slowly spills over the lower lid and runs down the cheek along its natural curve, catching the light; a slow blink, a trembling breath; only one tear line, thin and translucent. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S12g-1.png"
+  },
+  {
+   "prompt": "(override) reuse: Flashback reuse of S08l (the thermos into the bag).",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A single clear drop falls onto the paper; the hands tremble. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S12i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His head bows lower, shoulders shaking slightly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S12j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He cries silently, a trembling breath. NOT smiling at any moment, mouth corners turned down, chin trembling slightly. One clear tear slowly spills over the lower lid and runs down the cheek along its natural curve, catching the light; a slow blink, a trembling breath; only one tear line, thin and translucent. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S12k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His shoulders shake as if laughing and crying at once; his head stays turned away. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S12l-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He stands looking at the shop, then lowers his head. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S12m-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He turns slowly and walks away from the camera. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S12n-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a small photograph lying on the counter beside the letter, its image are",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S12o-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand sets the photo down beside the sticker and rests there. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S12p-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He looks at the letter, a slow blink. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. NOT smiling at any moment. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S12r-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He raises his eyes slowly toward the door. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. NOT smiling at any moment. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S12s-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: the faded red origami robin on the shelf corner, lit by the warm lamp.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S12t-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hands hesitate a moment, then press the sticker onto the lid. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S13a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: the plain round wall clock with a BLANK face, both hands pointing straig",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S13b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: They stand in the doorway; the bell sways; the man's eyes are wet. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S13c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over old Shuzo's blurred shoulder: Takumi in the doorway at three-quarter angle,",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S13d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His lips tremble; he swallows once. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. NOT smiling at any moment. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S13e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Takumi's blurred shoulder: old Shuzo with one hand resting on the last bent",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S13f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Both let out a breath, half laugh and half tears; they look at each other. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S13g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His gaze settles on the kitchen wall on the right; his eyes soften. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S13h-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over old Shuzo's blurred shoulder: Takumi turning from the kitchen wall back to ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S13i-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Takumi's blurred shoulder: old Shuzo glancing toward the headscarf then bac",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S13j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand lays the envelope flat on the counter and withdraws. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S13k-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over old Shuzo's blurred shoulder: Takumi pushing the envelope forward with both",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S13l-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hands slide the envelope back, then pick up the photograph. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S13m-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Takumi's blurred shoulder: old Shuzo holding up the photograph, wet eyes.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S13n-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hands add one more karaage and place the bento in the bag. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S13o-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the little girl's blurred head: old Shuzo leaning down to her, holding out ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S13p-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Takumi's shoulders shake; the old hand rests on his shoulder. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 5,
+   "image": "assets/portraits/bento-keyframes/S13q-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over old Shuzo's blurred shoulder: Takumi wiping his eyes, glancing toward the h",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S13r-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Takumi's blurred shoulder: old Shuzo looking back at the empty kitchen, cal",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S13s-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over old Shuzo's blurred shoulder: Takumi leaning on the counter with both hands",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S13t-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Takumi's blurred shoulder: old Shuzo staring for a moment, then a wry snort",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S13u-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The building stays perfectly still; a faint breeze; no cars, no headlights. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S14a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: They serve food with small smiles; the children's backs move slightly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S14b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: She hands a tray forward with a warm smile. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S14c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The old hand sets the paper bird into the small palm. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S14d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He watches the children with a warm small smile, a slow blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "duration": 10,
+   "image": "assets/portraits/bento-keyframes/S14e-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a small plain wooden frame on the cafeteria wall holding one faded round",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/bento-keyframes/S15a-1.png"
+  }
+ ]
+}
