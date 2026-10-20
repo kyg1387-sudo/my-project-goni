@@ -1,0 +1,275 @@
+{
+ "_설명": "『閉店間際の弁当屋』 ElevenLabs 오디션(고니감독님 지시 2026-10-20) — bento-el-search 56개 중 배역별 3명 × 대사 2줄 = 30샘플, eleven_v3 + 짧은 연기 태그(『老舗旅館の嫁』 방식). 『老舗旅館の嫁』 확정 목소리는 제외. 비용: EL 약 1320자 크레딧(fal 0).",
+ "tests": [
+  {
+   "id": "shuzo_el_Jun_L21",
+   "model": "elevenlabs-direct",
+   "voice": "JOcmGzB8OFjY8MhjHHEf",
+   "voice_name": "Jun",
+   "el_model": "eleven_v3",
+   "text": "[gruff, warm underneath] じゃあ、しゅっせばらいだ。大きくなったら、返しに来い",
+   "subtitle": "じゃあ、出世払いだ。大きくなったら、返しに来い"
+  },
+  {
+   "id": "shuzo_el_Jun_L39",
+   "model": "elevenlabs-direct",
+   "voice": "JOcmGzB8OFjY8MhjHHEf",
+   "voice_name": "Jun",
+   "el_model": "eleven_v3",
+   "text": "[old man, voice breaking] しゅっせばらいは、もう、払ってもらった。……これで、十分だ",
+   "subtitle": "出世払いは、もう、払ってもらった。……これで、十分だ"
+  },
+  {
+   "id": "shuzo_el_Akio_L21",
+   "model": "elevenlabs-direct",
+   "voice": "eRD4wLHoHH7P30TZIexm",
+   "voice_name": "Akio",
+   "el_model": "eleven_v3",
+   "text": "[gruff, warm underneath] じゃあ、しゅっせばらいだ。大きくなったら、返しに来い",
+   "subtitle": "じゃあ、出世払いだ。大きくなったら、返しに来い"
+  },
+  {
+   "id": "shuzo_el_Akio_L39",
+   "model": "elevenlabs-direct",
+   "voice": "eRD4wLHoHH7P30TZIexm",
+   "voice_name": "Akio",
+   "el_model": "eleven_v3",
+   "text": "[old man, voice breaking] しゅっせばらいは、もう、払ってもらった。……これで、十分だ",
+   "subtitle": "出世払いは、もう、払ってもらった。……これで、十分だ"
+  },
+  {
+   "id": "shuzo_el_Tonatsu_L21",
+   "model": "elevenlabs-direct",
+   "voice": "ft4S7uJtotXoBiXBLkzh",
+   "voice_name": "Tonatsu",
+   "el_model": "eleven_v3",
+   "text": "[gruff, warm underneath] じゃあ、しゅっせばらいだ。大きくなったら、返しに来い",
+   "subtitle": "じゃあ、出世払いだ。大きくなったら、返しに来い"
+  },
+  {
+   "id": "shuzo_el_Tonatsu_L39",
+   "model": "elevenlabs-direct",
+   "voice": "ft4S7uJtotXoBiXBLkzh",
+   "voice_name": "Tonatsu",
+   "el_model": "eleven_v3",
+   "text": "[old man, voice breaking] しゅっせばらいは、もう、払ってもらった。……これで、十分だ",
+   "subtitle": "出世払いは、もう、払ってもらった。……これで、十分だ"
+  },
+  {
+   "id": "sumie_el_Hiyori_L11",
+   "model": "elevenlabs-direct",
+   "voice": "AP6mVmGgRkbG5mCR7fCS",
+   "voice_name": "Hiyori",
+   "el_model": "eleven_v3",
+   "text": "[teasing, fond] ……あんた、また。お店、潰れちゃうよ",
+   "subtitle": "……あんた、また。お店、潰れちゃうよ"
+  },
+  {
+   "id": "sumie_el_Hiyori_L26k",
+   "model": "elevenlabs-direct",
+   "voice": "AP6mVmGgRkbG5mCR7fCS",
+   "voice_name": "Hiyori",
+   "el_model": "eleven_v3",
+   "text": "[weak, tender] あんたのからあげ、もう一度、食べさせてあげたかったね",
+   "subtitle": "あんたの唐揚げ、もう一度、食べさせてあげたかったね"
+  },
+  {
+   "id": "sumie_el_Chiemi_L11",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "text": "[teasing, fond] ……あんた、また。お店、潰れちゃうよ",
+   "subtitle": "……あんた、また。お店、潰れちゃうよ"
+  },
+  {
+   "id": "sumie_el_Chiemi_L26k",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "text": "[weak, tender] あんたのからあげ、もう一度、食べさせてあげたかったね",
+   "subtitle": "あんたの唐揚げ、もう一度、食べさせてあげたかったね"
+  },
+  {
+   "id": "sumie_el_Hanano_L11",
+   "model": "elevenlabs-direct",
+   "voice": "ITF8fTyktGfOvtmgRv8y",
+   "voice_name": "Hanano",
+   "el_model": "eleven_v3",
+   "text": "[teasing, fond] ……あんた、また。お店、潰れちゃうよ",
+   "subtitle": "……あんた、また。お店、潰れちゃうよ"
+  },
+  {
+   "id": "sumie_el_Hanano_L26k",
+   "model": "elevenlabs-direct",
+   "voice": "ITF8fTyktGfOvtmgRv8y",
+   "voice_name": "Hanano",
+   "el_model": "eleven_v3",
+   "text": "[weak, tender] あんたのからあげ、もう一度、食べさせてあげたかったね",
+   "subtitle": "あんたの唐揚げ、もう一度、食べさせてあげたかったね"
+  },
+  {
+   "id": "takumi_el_Masa_L31",
+   "model": "elevenlabs-direct",
+   "voice": "MvMFbhzZT2zcr5QsG1xY",
+   "voice_name": "Masa",
+   "el_model": "eleven_v3",
+   "text": "[quiet, holding back tears] 僕は、ずっと知っていました。知っていて、甘えていました。",
+   "subtitle": "僕は、ずっと知っていました。知っていて、甘えていました。"
+  },
+  {
+   "id": "takumi_el_Masa_L35",
+   "model": "elevenlabs-direct",
+   "voice": "MvMFbhzZT2zcr5QsG1xY",
+   "voice_name": "Masa",
+   "el_model": "eleven_v3",
+   "text": "[tearful smile] ……はんがくの弁当、まだ、ありますか",
+   "subtitle": "……半額の弁当、まだ、ありますか"
+  },
+  {
+   "id": "takumi_el_Amatera_L31",
+   "model": "elevenlabs-direct",
+   "voice": "NZoZfn46w5tlIPQoJh96",
+   "voice_name": "Amatera",
+   "el_model": "eleven_v3",
+   "text": "[quiet, holding back tears] 僕は、ずっと知っていました。知っていて、甘えていました。",
+   "subtitle": "僕は、ずっと知っていました。知っていて、甘えていました。"
+  },
+  {
+   "id": "takumi_el_Amatera_L35",
+   "model": "elevenlabs-direct",
+   "voice": "NZoZfn46w5tlIPQoJh96",
+   "voice_name": "Amatera",
+   "el_model": "eleven_v3",
+   "text": "[tearful smile] ……はんがくの弁当、まだ、ありますか",
+   "subtitle": "……半額の弁当、まだ、ありますか"
+  },
+  {
+   "id": "takumi_el_Shintarou_L31",
+   "model": "elevenlabs-direct",
+   "voice": "Z9CocQcpiyoQFqRiRwRE",
+   "voice_name": "Shintarou",
+   "el_model": "eleven_v3",
+   "text": "[quiet, holding back tears] 僕は、ずっと知っていました。知っていて、甘えていました。",
+   "subtitle": "僕は、ずっと知っていました。知っていて、甘えていました。"
+  },
+  {
+   "id": "takumi_el_Shintarou_L35",
+   "model": "elevenlabs-direct",
+   "voice": "Z9CocQcpiyoQFqRiRwRE",
+   "voice_name": "Shintarou",
+   "el_model": "eleven_v3",
+   "text": "[tearful smile] ……はんがくの弁当、まだ、ありますか",
+   "subtitle": "……半額の弁当、まだ、ありますか"
+  },
+  {
+   "id": "boy_el_Haru_L10",
+   "model": "elevenlabs-direct",
+   "voice": "vY4PC2kSleyw73YRUOI6",
+   "voice_name": "Haru",
+   "el_model": "eleven_v3",
+   "text": "[young boy, delighted] ありがとうございます！",
+   "subtitle": "ありがとうございます！"
+  },
+  {
+   "id": "boy_el_Haru_L18",
+   "model": "elevenlabs-direct",
+   "voice": "vY4PC2kSleyw73YRUOI6",
+   "voice_name": "Haru",
+   "el_model": "eleven_v3",
+   "text": "[young boy, fighting tears] 母が……入院して。……今日は、ふたりぶん、買えなくて",
+   "subtitle": "母が……入院して。……今日は、二人分、買えなくて"
+  },
+  {
+   "id": "boy_el_Toru_L10",
+   "model": "elevenlabs-direct",
+   "voice": "wGSNAQwhUbFf1J43d5Tw",
+   "voice_name": "Toru",
+   "el_model": "eleven_v3",
+   "text": "[young boy, delighted] ありがとうございます！",
+   "subtitle": "ありがとうございます！"
+  },
+  {
+   "id": "boy_el_Toru_L18",
+   "model": "elevenlabs-direct",
+   "voice": "wGSNAQwhUbFf1J43d5Tw",
+   "voice_name": "Toru",
+   "el_model": "eleven_v3",
+   "text": "[young boy, fighting tears] 母が……入院して。……今日は、ふたりぶん、買えなくて",
+   "subtitle": "母が……入院して。……今日は、二人分、買えなくて"
+  },
+  {
+   "id": "boy_el_Koume_L10",
+   "model": "elevenlabs-direct",
+   "voice": "nvAEN8lxUT4UJcAyxcCQ",
+   "voice_name": "Koume",
+   "el_model": "eleven_v3",
+   "text": "[young boy, delighted] ありがとうございます！",
+   "subtitle": "ありがとうございます！"
+  },
+  {
+   "id": "boy_el_Koume_L18",
+   "model": "elevenlabs-direct",
+   "voice": "nvAEN8lxUT4UJcAyxcCQ",
+   "voice_name": "Koume",
+   "el_model": "eleven_v3",
+   "text": "[young boy, fighting tears] 母が……入院して。……今日は、ふたりぶん、買えなくて",
+   "subtitle": "母が……入院して。……今日は、二人分、買えなくて"
+  },
+  {
+   "id": "girl_el_itsuki_L17",
+   "model": "elevenlabs-direct",
+   "voice": "oAlEJuW30knHWhA6cF0e",
+   "voice_name": "itsuki",
+   "el_model": "eleven_v3",
+   "text": "[little girl, sleepy] お兄ちゃん、おなかすいた……",
+   "subtitle": "お兄ちゃん、おなかすいた……"
+  },
+  {
+   "id": "girl_el_itsuki_L37",
+   "model": "elevenlabs-direct",
+   "voice": "oAlEJuW30knHWhA6cF0e",
+   "voice_name": "itsuki",
+   "el_model": "eleven_v3",
+   "text": "[little girl, curious] この人が、お父さんの、せかいいちのおじさん？",
+   "subtitle": "この人が、お父さんの、世界一のおじさん？"
+  },
+  {
+   "id": "girl_el_Sameno_L17",
+   "model": "elevenlabs-direct",
+   "voice": "hMK7c1GPJmptCzI4bQIu",
+   "voice_name": "Sameno",
+   "el_model": "eleven_v3",
+   "text": "[little girl, sleepy] お兄ちゃん、おなかすいた……",
+   "subtitle": "お兄ちゃん、おなかすいた……"
+  },
+  {
+   "id": "girl_el_Sameno_L37",
+   "model": "elevenlabs-direct",
+   "voice": "hMK7c1GPJmptCzI4bQIu",
+   "voice_name": "Sameno",
+   "el_model": "eleven_v3",
+   "text": "[little girl, curious] この人が、お父さんの、せかいいちのおじさん？",
+   "subtitle": "この人が、お父さんの、世界一のおじさん？"
+  },
+  {
+   "id": "girl_el_Koume_L17",
+   "model": "elevenlabs-direct",
+   "voice": "nvAEN8lxUT4UJcAyxcCQ",
+   "voice_name": "Koume",
+   "el_model": "eleven_v3",
+   "text": "[little girl, sleepy] お兄ちゃん、おなかすいた……",
+   "subtitle": "お兄ちゃん、おなかすいた……"
+  },
+  {
+   "id": "girl_el_Koume_L37",
+   "model": "elevenlabs-direct",
+   "voice": "nvAEN8lxUT4UJcAyxcCQ",
+   "voice_name": "Koume",
+   "el_model": "eleven_v3",
+   "text": "[little girl, curious] この人が、お父さんの、せかいいちのおじさん？",
+   "subtitle": "この人が、お父さんの、世界一のおじさん？"
+  }
+ ]
+}
