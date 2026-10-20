@@ -126,7 +126,7 @@ def main():
     lines, srows, ads, main_end, total, ratio, clue = build()
     ok = MIN_TOTAL <= total <= MAX_TOTAL
     spoken = sum(x["dur"] for x in lines if x["scene"].startswith("S"))
-    md = ["# 『閉店間際の弁当屋』 PHASE 1 Lock 타임라인 (실측)", "",
+    md = ["# 『閉店間際の弁当屋』 PHASE 1 Lock 타임라인 (실측) — 🔒 2026-10-20 고니감독님 확정", "",
           f"> 본녹음 실측(무음 제외 발화 길이) 기준. 후크 {HOOK:.0f}초 + 본편 + 아웃트로 {OUTRO:.0f}초. 지문 동작 컷 {INSERT}초씩 포함(제18장 2). 생성기 `build_lock.py`.", "",
           f"- **전체 길이: {tc(total)}** ({'✅ 9:40~11:00 안' if ok else '❌ 기준 밖'}) · 본편 끝 {tc(main_end)} · 본편 발화 합계 {spoken:.0f}초",
           f"- 단서 지점(소년이 오지 않은 밤 + BGM 전환): {CLUE_SCENE} {tc(clue)} = 본편의 {ratio * 100:.0f}% ({'✅ 40% 전' if ratio < 0.40 else '❌'})"]
