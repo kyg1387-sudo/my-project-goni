@@ -596,4 +596,5 @@ deformed eyes, extra fingers.
    ③ **표정 = 상황**: 톤연출표 → 감정 일치표 경고 0(제10장 7), 키프레임 표정 50% 선반영, 울먹임·외침은 NOT smiling + 필요 시 VO(제18장 4·7). 「tearful smile」 금지(제19장 5).
    ④ **장면 전환**: 연속 같은 구도 금지·180° 축·J컷 0.5초·시간/장소 전환 디졸브 0.5~1.0초·매치 컷(회상↔현재 같은 카운터 구도), 암전 2초 이내. 1초 시트로 「툭 튀는 컷」 전수 검수.
    ⑤ **AI 티 검수 항목**: 손가락·관절, 가짜 글자, 소품 고증(제19장 6), 피부 질감(플라스틱 피부·과한 보정 금지), 시선 불일치, 배경 변형, 립싱크 웃음 변환 — 하나라도 걸리면 그 컷은 조립에 넣지 않는다(제4장).
+8. **립싱크 키프레임 시범 1차 실증(2026-10-20, 3컷 6장 전부 불합격)**: ① 장소 참조(로케이션 셀)를 넣으면 「얼굴 1/3」 문장이 프롬프트 끝에 있어도 6장 모두 원경(얼굴 화면 높이 1/6)이 나왔다 → **립싱크 컷은 장소 참조를 기본으로 빼고 배경은 글로**(제18장 4를 기본값으로 승격), 구도 문장(「FRAMING FIRST — TIGHT MEDIUM CLOSE-UP」)을 **참조 설명보다 앞, 프롬프트 맨 앞**에 둔다(제15장 3). ② 눈물 문장의 「eyes red-rimmed / reddened eye rims」가 홍채·흰자위까지 빨갛게 빛나게 했다(어른 拓海와 화면에 없어야 할 딸까지) → 「eyes wet, only the eyelid edges faintly pink」 + 「natural dark brown irises, clear white sclera, NO red irises」로 생성기가 자동 치환(`build_bento_keyframes.py` EYE_FIX·EYE_SAFE). ③ 화면 밖 인물 동작(「딸의 손을 잡고」)을 화자 문장에 쓰면 그 인물이 화면에 들어와 구도가 넓어진다 → 「below the frame edge, NOT visible」. ④ 「마지막 도시락」은 쇼케이스 가득 도시락으로 그려졌다 → 「ONE single remaining bento… no other bentos」.
 
