@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """『閉店間際の弁当屋』(bento-ja) PHASE 1 — 줄별 톤 연출표(05) + 본녹음 TTS 스펙(scripts/auditions/bento-tts.json) 생성기 (무료).
 
-입력: 00_script_ja.md(대본 v1.0 🔒), 배역 대장 scripts/audio/bento-cast-voices.json(고니감독님 청취 확정 2026-10-20)
+입력: 00_script_ja.md(대본 v1.1 🔒), 배역 대장 scripts/audio/bento-cast-voices.json(고니감독님 청취 확정 2026-10-20)
 출력: 05_톤연출표.md, scripts/auditions/bento-tts.json (line### = 대본 순서)
 엔진: 어른 배역·내레이터 = ElevenLabs eleven_v3(영어 연기 태그 2~4단어, 대사 앞) · 아역·진행자 = Typecast ssfm-v30 jpn(제19장 2 ⑤)
 규칙: 톤 지정 없는 줄 0개 · 한 문장 ≤30자 · 한 줄 ≤2문장(제14장 8) · 음성 입력은 가나 치환본, subtitle은 대본 원문
@@ -19,7 +19,9 @@ CAST = {
     "拓海(少年)": ("拓海 소년", "takumi_boy"), "拓海(大人)": ("拓海 어른", "takumi_adult"),
     "美緒": ("美緒", "mio"), "陽菜": ("陽菜", "hina"), "진행자": ("진행자", "host"),
 }
-SAME_AS = {"L01": "L29"}  # 후크 H1 = 편지 낭독 L29와 같은 문장 → 한 번만 녹음해 재사용
+SAME_AS = {"L01": "L29"}
+# 내레이션 속도(2026-10-20 실측 3.5자/초로 느림 → 제19장 4 ③). 모든 NA 줄 앞에 붙인다
+NA_PACE = "[steady, natural pace]"  # 후크 H1 = 편지 낭독 L29와 같은 문장 → 한 번만 녹음해 재사용
 
 # 태그: (EL 연기 태그 또는 Typecast (감정, 강도, 템포), 연기 메모 = 표정·동작의 단일 출처, 제10장 7)
 T = {
@@ -191,8 +193,9 @@ def main():
                           "emotion_intensity": inten, "tempo": tempo})
             chars_tc += len(text); src = f"Typecast {r['name']}"
         else:
+            pace = NA_PACE + " " if role == "narr" else ""
             tests.append({"id": lid, "model": "elevenlabs-direct", "voice": r["voice_id"], "voice_name": r["name"],
-                          "el_model": "eleven_v3", "text": f"{tone} {kana(text)}", "subtitle": text})
+                          "el_model": "eleven_v3", "text": f"{pace}{tone} {kana(text)}", "subtitle": text})
             chars_el += len(text) + len(tone) + 1; src = f"EL {r['name']}"
         tone_s = tone if isinstance(tone, str) else f"{tone[0]} {tone[1]} · tempo {tone[2]}"
         rows.append(f"| {n} | {tag} | {name} | {'Omni' if omni else '-'} | {text} | {tone_s} | {note} | {src} |")

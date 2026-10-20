@@ -25,7 +25,7 @@ CLUE_SCENE = "S06"  # 단서(소년이 오지 않은 밤) + BGM 전환(제15장 
 MIN_TOTAL, MAX_TOTAL = 9 * 60 + 40, 11 * 60
 # 길이 보정(무료, 2026-10-20 실측 13:11 → 보정): ① 느린 목소리 배속(≤1.15, 제11장 4 상한, 피치 유지 atempo — 후처리에서 실제 적용)
 # ② 내레이션 앞 지문 컷은 내레이션 아래에 깐다(B롤 위 VO — 컷이 첫마디보다 VO_LEAD초만 먼저 시작)
-STRETCH = {"Shino": 1.15, "Chiemi": 1.12}
+STRETCH = {"Chiemi": 1.12}  # Shino는 v1.1에서 보통 속도로 재녹음 — 재측정 후 필요하면 추가
 VO_UNDER, VO_LEAD = True, 0.8
 VOICE_OF = {}
 SKIP_ACTION = re.compile(r"^\s*(시점 자막|질문 카드|【|\(사운드|\(BGM|\(편지 낭독)")
