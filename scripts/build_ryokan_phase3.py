@@ -156,7 +156,7 @@ OMNI_PROMPTS = {
     "S16b": "Calm composure: level eyes, no smile, a measured slow blink.",
     "S16c": "Quiet firmness: still face, eyes steady and slightly cold, no anger.",
     "S16d": "Gentle finality: the faintest smile, a slow blink, a small nod at the end.",
-    "S18c": "Desperate pleading on the phone: brows drawn up and together, eyes brimming, lips trembling with the words, a quick shaky inhale before the plea, the head dips forward on the last phrase.",
+    "S18c": "Desperate pleading on the phone: brows drawn up and together, eyes brimming, lips trembling with the words, a quick shaky inhale before the plea, the head dips forward on the last phrase. The handset stays below the frame: NO phone, NO smartphone and NO hands appear in the frame.",
     "S10c": "Flustered stammering excuse: eyes darting, brows up, quick shallow breaths, the raised hand makes small open-palm gestures with the words, a nervous swallow at the end.",
     "S15b": "Warm heartfelt words to someone standing up to the right: eyes crinkle, a slow fond nod in the middle, a soft chuckle at the end.",
     "S18d": "Broken sobbing plea: eyes squeezed then opened, wet and shining, one thin tear at most, the voice breaking.",
