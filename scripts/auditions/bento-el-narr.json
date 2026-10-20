@@ -1,0 +1,113 @@
+{
+ "_설명": "『閉店間際の弁当屋』 내레이터 ElevenLabs 오디션(고니감독님 지시 2026-10-20 「내레이션도 일레븐랩스에서」) — bento-el-search에서 배역 후보로 쓰지 않은 일본어 내레이션 목소리 4명 × 3줄(후크·1차 광고 클리프행어·결말) = 12샘플. 3인칭 です・ます 담담한 톤. 비교 기준: 채널 내레이터 Typecast Lloyd(assets/auditions/bento-voices/nar_Lloyd_NA0.mp3).",
+ "tests": [
+  {
+   "id": "nar_el_Hama_NA0",
+   "model": "elevenlabs-direct",
+   "voice": "UNA3oLeLObeH4rJVF6dw",
+   "voice_name": "Hama",
+   "el_model": "eleven_v3",
+   "text": "[calm storyteller, hushed] さんじゅうねんかん、彼は、そのことを誰にも言いませんでした。",
+   "subtitle": "三十年間、彼は、そのことを誰にも言いませんでした。"
+  },
+  {
+   "id": "nar_el_Hama_NA14",
+   "model": "elevenlabs-direct",
+   "voice": "UNA3oLeLObeH4rJVF6dw",
+   "voice_name": "Hama",
+   "el_model": "eleven_v3",
+   "text": "[storyteller, slowing down, suspense] その夜、少年は、来ませんでした……。",
+   "subtitle": "その夜、少年は、来ませんでした……。"
+  },
+  {
+   "id": "nar_el_Hama_NA30",
+   "model": "elevenlabs-direct",
+   "voice": "UNA3oLeLObeH4rJVF6dw",
+   "voice_name": "Hama",
+   "el_model": "eleven_v3",
+   "text": "[warm, gentle ending] それはさんじゅうねんかけて、たくさんの子どもの夕ごはんになりました。",
+   "subtitle": "それは三十年かけて、たくさんの子どもの夕ごはんになりました。"
+  },
+  {
+   "id": "nar_el_Tomoki_NA0",
+   "model": "elevenlabs-direct",
+   "voice": "xbp9DJTY7EwveeixvGFW",
+   "voice_name": "Tomoki",
+   "el_model": "eleven_v3",
+   "text": "[calm storyteller, hushed] さんじゅうねんかん、彼は、そのことを誰にも言いませんでした。",
+   "subtitle": "三十年間、彼は、そのことを誰にも言いませんでした。"
+  },
+  {
+   "id": "nar_el_Tomoki_NA14",
+   "model": "elevenlabs-direct",
+   "voice": "xbp9DJTY7EwveeixvGFW",
+   "voice_name": "Tomoki",
+   "el_model": "eleven_v3",
+   "text": "[storyteller, slowing down, suspense] その夜、少年は、来ませんでした……。",
+   "subtitle": "その夜、少年は、来ませんでした……。"
+  },
+  {
+   "id": "nar_el_Tomoki_NA30",
+   "model": "elevenlabs-direct",
+   "voice": "xbp9DJTY7EwveeixvGFW",
+   "voice_name": "Tomoki",
+   "el_model": "eleven_v3",
+   "text": "[warm, gentle ending] それはさんじゅうねんかけて、たくさんの子どもの夕ごはんになりました。",
+   "subtitle": "それは三十年かけて、たくさんの子どもの夕ごはんになりました。"
+  },
+  {
+   "id": "nar_el_Asu_NA0",
+   "model": "elevenlabs-direct",
+   "voice": "ronK01G13l5Jag13vEpH",
+   "voice_name": "Asu",
+   "el_model": "eleven_v3",
+   "text": "[calm storyteller, hushed] さんじゅうねんかん、彼は、そのことを誰にも言いませんでした。",
+   "subtitle": "三十年間、彼は、そのことを誰にも言いませんでした。"
+  },
+  {
+   "id": "nar_el_Asu_NA14",
+   "model": "elevenlabs-direct",
+   "voice": "ronK01G13l5Jag13vEpH",
+   "voice_name": "Asu",
+   "el_model": "eleven_v3",
+   "text": "[storyteller, slowing down, suspense] その夜、少年は、来ませんでした……。",
+   "subtitle": "その夜、少年は、来ませんでした……。"
+  },
+  {
+   "id": "nar_el_Asu_NA30",
+   "model": "elevenlabs-direct",
+   "voice": "ronK01G13l5Jag13vEpH",
+   "voice_name": "Asu",
+   "el_model": "eleven_v3",
+   "text": "[warm, gentle ending] それはさんじゅうねんかけて、たくさんの子どもの夕ごはんになりました。",
+   "subtitle": "それは三十年かけて、たくさんの子どもの夕ごはんになりました。"
+  },
+  {
+   "id": "nar_el_Shino_NA0",
+   "model": "elevenlabs-direct",
+   "voice": "Kohz4YYGbPgnEUrf8CZl",
+   "voice_name": "Shino",
+   "el_model": "eleven_v3",
+   "text": "[calm storyteller, hushed] さんじゅうねんかん、彼は、そのことを誰にも言いませんでした。",
+   "subtitle": "三十年間、彼は、そのことを誰にも言いませんでした。"
+  },
+  {
+   "id": "nar_el_Shino_NA14",
+   "model": "elevenlabs-direct",
+   "voice": "Kohz4YYGbPgnEUrf8CZl",
+   "voice_name": "Shino",
+   "el_model": "eleven_v3",
+   "text": "[storyteller, slowing down, suspense] その夜、少年は、来ませんでした……。",
+   "subtitle": "その夜、少年は、来ませんでした……。"
+  },
+  {
+   "id": "nar_el_Shino_NA30",
+   "model": "elevenlabs-direct",
+   "voice": "Kohz4YYGbPgnEUrf8CZl",
+   "voice_name": "Shino",
+   "el_model": "eleven_v3",
+   "text": "[warm, gentle ending] それはさんじゅうねんかけて、たくさんの子どもの夕ごはんになりました。",
+   "subtitle": "それは三十年かけて、たくさんの子どもの夕ごはんになりました。"
+  }
+ ]
+}
