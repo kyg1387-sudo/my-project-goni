@@ -392,7 +392,7 @@
    "image": "assets/portraits/bento-keyframes/S05g-1.png"
   },
   {
-   "prompt": "(override) still: Insert: a plain round wall clock with a BLANK face (no numerals) in the shop at ",
+   "prompt": "(override) still: Insert, ABSOLUTELY NO PEOPLE: a plain round wall clock with a BLANK white face (",
    "duration": 5,
    "override_required": true,
    "image": "assets/portraits/bento-keyframes/S06a-1.png"
@@ -783,7 +783,7 @@
    "image": "assets/portraits/bento-keyframes/S13a-1.png"
   },
   {
-   "prompt": "(override) still: Insert: the plain round wall clock with a BLANK face, both hands pointing straig",
+   "prompt": "(override) still: Insert, ABSOLUTELY NO PEOPLE: the plain round wall clock with a BLANK white face",
    "duration": 5,
    "override_required": true,
    "image": "assets/portraits/bento-keyframes/S13b-1.png"

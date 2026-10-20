@@ -246,8 +246,8 @@ SHOTS = [
       line="NA12", motion="Sumie smiles and goes back into the kitchen; Shuzo wipes the counter." + HOLD),
 
     # S06 단서 — 오지 않은 밤
-    S("S06a", "S06", "estill", "ecu", "s96", "EL", [], None, "Insert: a plain round wall clock with a BLANK face (no numerals) in the shop at night, the hands just past the top.", line="NA13"),
-    S("S06b", "S06", "face", "cu", "s96", "EL", [H96], "S96C", "Close-up of Shuzo behind the counter glancing toward the glass door on screen left, waiting.",
+    S("S06a", "S06", "estill", "ecu", "s96", "EL", [], None, "Insert, ABSOLUTELY NO PEOPLE: a plain round wall clock with a BLANK white face (no numerals) filling the frame on a dim shop wall at night, the hands just past the top.", line="NA13"),
+    S("S06b", "S06", "face", "cu", "s96", "EL", [H96], "S96C", "Close-up of Shuzo behind the counter, his head and eyes turned toward the glass door on screen LEFT (NOT looking at the camera), waiting.",
       line="NA14", motion="He glances toward the door on the left, then back, then toward the door again." + HOLD, expr="gruff"),
     S("S06c", "S06", "empty", "ws", "s96", "LA", [], "S96R", "Wide: the glass sliding door from inside, the bell still, the dark street empty.",
       motion="Nothing moves except a faint flicker of the street light; the bell stays still."),
@@ -266,7 +266,7 @@ SHOTS = [
     S("S07f", "S07", "estill", "ecu", "s96", "EL", [], "P_KARA", "Insert: inside the showcase one karaage bento with a red round blank sticker on its lid, slowly going cold.", line="NA16"),
 
     # S08 재회 — 출세하면 갚아
-    S("S08a", "S08", "face", "ws", "s96", "EL", [TB_, MI], "S96R", "Wide, night: the boy at the glass door holding his little sister's hand, his eyes red.",
+    S("S08a", "S08", "face", "ws", "s96", "EL", [TB_, MI], "S96R", "Wide, night: the boy at the glass door holding his little sister's hand, his eyes wet, holding back tears.",
       motion="They stand at the door; the boy grips his sister's hand; the bell sways." + HOLD, expr="tears"),
     S("S08b", "S08", "d", "ots", "s96", "HA", [TB_, H96], "S96O", "Over Shuzo's blurred shoulder, slightly high: the boy holding his sister's hand, holding back a trembling voice.", line="L15",
       act="The boy asks, holding back a trembling voice, whether the shop is already closed, gripping his little sister's hand." + WET_HOLD + NS + OB, expr="tears"),
@@ -369,7 +369,7 @@ SHOTS = [
     S("S12b", "S12", "face", "cu", "letter", "EL", [H26], "S26O", "Close-up of old Shuzo realizing who sent the letter, eyes widening, frozen.", line="L27a", vo=True, fx="dollyzoom",
       motion="His eyes widen slowly, he stops breathing for a moment." + HOLD, expr="calm"),
     S("S12c", "S12", "reuse:S02c", "ecu", "s96", "HA", [], None, "Flashback reuse of S02c (the boy counting five coins).", line="L28", vo=True),
-    S("S12d", "S12", "face", "ms", "letter", "HA", [H26], "S26O", "Medium, slightly high: old Shuzo reading the letter at the counter under the warm lamp, the shutter half down behind him.",
+    S("S12d", "S12", "face", "ms", "letter", "HA", [H26], "S26O", "Medium, slightly high: old Shuzo at the counter under the warm lamp holding the letter up toward the light with both hands, his bare eyes on it, the shutter half down behind him.",
       line="L29", vo=True, motion="He reads, his hands trembling slightly." + HOLD, expr="calm"),
     S("S12e", "S12", "reuse:S05b", "ecu", "s96", "HA", [], None, "Flashback reuse of S05b (coins into the register).", line="L30", vo=True),
     S("S12f", "S12", "face", "cu", "s96", "EL", [TB_], "S96X", "Flashback 1996: the boy outside the shop at night, seen through the glass door, watching something inside, eyes wet.",
@@ -401,7 +401,7 @@ SHOTS = [
     # S13 재회 — 半額の弁当、まだありますか
     S("S13a", "S13", "ins", "ecu", "s26warm", "EL", [H26], "P_KARA", "Insert: old hands holding a red round blank sticker, hesitating, then pressing it onto a fresh karaage bento lid.",
       motion="The hands hesitate a moment, then press the sticker onto the lid."),
-    S("S13b", "S13", "estill", "ecu", "s26warm", "LA", [], None, "Insert: the plain round wall clock with a BLANK face, both hands pointing straight up."),
+    S("S13b", "S13", "estill", "ecu", "s26warm", "LA", [], None, "Insert, ABSOLUTELY NO PEOPLE: the plain round wall clock with a BLANK white face filling the frame on the shop wall, both hands pointing straight up."),
     S("S13c", "S13", "face", "ms", "s26warm", "EL", [TA_, HI], "S26R", "Over old Shuzo's blurred shoulder (left foreground): the man in the charcoal overcoat standing in the doorway holding a little girl's hand, the bell swaying.",
       motion="They stand in the doorway; the bell sways; the man's eyes are wet." + WET_HOLD + HOLD, expr="calm"),
     S("S13d", "S13", "d", "ots", "s26warm", "EL", [TA_, H26], "S26R", "Over old Shuzo's blurred shoulder: Takumi in the doorway at three-quarter angle, wet eyes, smiling, looking straight at him.", line="L35",

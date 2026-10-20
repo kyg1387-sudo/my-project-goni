@@ -120,7 +120,8 @@ def describe(path, i):
 
 
 NO_FACE = {}
-ONE_TAKE = {"S06a", "S10a", "S13b", "S06b", "S10bd", "S13n", "S12d", "S09i"}  # 재생성 중 단순 결함 컷은 1장(승인 예산 안, 2026-10-20)
+PROP_ADD = {"S09i": CELLS + "/prop-origami.png"}  # 소품 참조 없는 「paper bird」가 2회 연속 종이학 → 울새 소품 셀 참조
+ONE_TAKE = {"S06a", "S10a", "S13b", "S06b", "S10bd", "S13n", "S12d", "S09i", "S08a"}  # 재생성 중 단순 결함 컷은 1장(승인 예산 안, 2026-10-20)
 NO_BACKCELL = set()  # 뒷모습 전신 셀이 원경 전신 구도를 끌어옴 — 앞 인물은 글로만
 NO_LOC = set()  # 장소 참조가 원경·후광(오려 붙인 테두리)을 만든 컷 — 장소는 글로만
 # 시범 1차(2026-10-20): 립싱크 3컷 6장 모두 장소 참조를 따라 원경(얼굴 1/6)으로 나옴 → 립싱크 컷은 장소 참조를 기본으로 뺀다(제18장 4)
@@ -128,7 +129,7 @@ FRAME_FIRST = ("FRAMING FIRST — TIGHT MEDIUM CLOSE-UP, chest-up portrait frami
                "the face is one third of the frame height or larger; the room is only a soft out-of-focus background. NOT a wide shot, NOT a medium "
                "shot, NOT full body, no floor visible.")
 # 「red eyes / reddened eye rims」는 홍채까지 빨갛게 만든다(시범 1차 S13d, 제18장 12 ②) — 눈물 문장을 치환
-EYE_FIX = [("eyes red-rimmed and wet", "eyes wet"), ("eyes red and wet", "eyes wet"),
+EYE_FIX = [("eyes red-rimmed and wet", "eyes wet"), ("eyes red-rimmed", "eyes wet"), ("his eyes red", "his eyes wet"), ("eyes red and wet", "eyes wet"),
            ("reddened eye rims", "natural skin tone around the eyes"), ("only the eyelid edges faintly pink", "natural skin tone around the eyes")]
 # 시범 립싱크 S13f: 눈물이 가는 줄이 아니라 물방울 2~3개 줄로 보임(AI 티) → 눈물 컷에 한 줄·연속 문장
 TEAR_LINE = "Any tear is ONE thin continuous transparent line on ONE cheek only, never a chain of separate droplets or beads, never on both cheeks."
@@ -137,6 +138,8 @@ EYE_SAFE = "EYES: natural dark brown irises and clear white sclera; NO red irise
 
 def build(sc, stage):
     refs = list(sc["refs"])
+    if sc["id"] in PROP_ADD:
+        refs = refs + [PROP_ADD[sc["id"]]]
     if sc["id"] in NO_LOC or sc["kind"] == "d":
         refs = [r for r in refs if not os.path.basename(r).startswith("loc-")]
     people = [r for r in refs if who_of(os.path.basename(r))[0]]
