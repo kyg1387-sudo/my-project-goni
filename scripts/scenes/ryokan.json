@@ -1,7 +1,7 @@
 {
  "_설명": "ryokan 장면 설정(build_ryokan_phase3.py 생성). override_required 장면(정지 푸시인·OMNI 정지 프레임·그래픽·재사용·카드)은 video-overrides로 먼저 넣는다. hero_takes 컷은 B안 상위 모델 3테이크.",
  "ratio": "16:9",
- "budget_usd": 46.3,
+ "budget_usd": 45.85,
  "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
  "durations": [
   10,
@@ -144,7 +144,7 @@
    "hero_takes": 2
   },
   {
-   "prompt": "(override) still: Chest-up close-up of Wakana looking down after the call, a quiet unreadable face",
+   "prompt": "(override) still: Chest-up close-up of Wakana looking down after the call, NOT smiling, lips close",
    "duration": 10,
    "override_required": true,
    "image": "assets/portraits/ryokan-keyframes/S01d-1.png"
@@ -462,7 +462,7 @@
    "image": "assets/portraits/ryokan-keyframes/S10a2-1.png"
   },
   {
-   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] The two groups gesture at each other with small movements; Mai raises her hands a little. Faces stay unrecognizable. No one approaches the camera. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] The two groups gesture at each other with small movements; Mai dips her head slightly and keeps her hand at her chest. Faces stay unrecognizable. No one approaches the camera. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
    "duration": 10,
    "image": "assets/portraits/ryokan-keyframes/S10b-1.png",
    "i2v_model": "fal-ai/kling-video/v3/pro/image-to-video",
@@ -476,8 +476,9 @@
    "image": "assets/portraits/ryokan-keyframes/S10b2-1.png"
   },
   {
-   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] Mai bows her head a few degrees lower and lifts it; the shoulder in the foreground stays still. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "prompt": "(override) omni: Chest-up close-up of Mai behind the reception counter facing the guest, three-qu",
    "duration": 5,
+   "override_required": true,
    "image": "assets/portraits/ryokan-keyframes/S10c-1.png"
   },
   {
@@ -685,8 +686,9 @@
    "image": "assets/portraits/ryokan-keyframes/S15a-1.png"
   },
   {
-   "prompt": "[CAMERA] Static, locked-off camera. [CHARACTER] Keep the exact faces, wardrobe, props and lighting of the first frame. [ACTION] He leans a few centimetres forward and settles back; the wife nods slowly. No standing. [LOCK] Head turns under 20 degrees. No walking toward the camera unless described, no new people, no text.",
+   "prompt": "(override) omni: Chest-up close-up of the elderly husband on the lobby sofa, three-quarter toward",
    "duration": 5,
+   "override_required": true,
    "image": "assets/portraits/ryokan-keyframes/S15b-1.png"
   },
   {
@@ -766,7 +768,7 @@
    "image": "assets/portraits/ryokan-keyframes/S18b-1.png"
   },
   {
-   "prompt": "(override) omni: Chest-up close-up of Tomiko in the small dim office at night, the handset held t",
+   "prompt": "(override) omni: Chest-up close-up of Tomiko in the small dim office at night, NO glasses on her ",
    "duration": 10,
    "override_required": true,
    "image": "assets/portraits/ryokan-keyframes/S18c-1.png"

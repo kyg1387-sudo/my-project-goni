@@ -401,11 +401,13 @@
   42,
   45,
   52,
+  59,
   66,
   67,
   71,
   72,
   80,
+  94,
   97,
   98,
   99,
@@ -435,7 +437,9 @@
   "97": "Static camera. Keep the exact face, hair, wardrobe and background. Natural lip movement matching the Japanese speech, subtle breathing, natural blinks. Head turns stay under 15 degrees, hands stay out of frame. Calm composure: level eyes, no smile, a measured slow blink.",
   "98": "Static camera. Keep the exact face, hair, wardrobe and background. Natural lip movement matching the Japanese speech, subtle breathing, natural blinks. Head turns stay under 15 degrees, hands stay out of frame. Quiet firmness: still face, eyes steady and slightly cold, no anger.",
   "99": "Static camera. Keep the exact face, hair, wardrobe and background. Natural lip movement matching the Japanese speech, subtle breathing, natural blinks. Head turns stay under 15 degrees, hands stay out of frame. Gentle finality: the faintest smile, a slow blink, a small nod at the end.",
-  "107": "Static camera. Keep the exact face, hair, wardrobe and background. Natural lip movement matching the Japanese speech, subtle breathing, natural blinks. Head turns stay under 15 degrees, hands stay out of frame. Tearful pleading: brows drawn up, eyes wet and shining but cheeks dry, lips trembling, a swallow between phrases.",
+  "107": "Static camera. Keep the exact face, hair, wardrobe and background. Natural lip movement matching the Japanese speech, subtle breathing, natural blinks. Head turns stay under 15 degrees, hands stay out of frame. Desperate pleading on the phone: brows drawn up and together, eyes brimming, lips trembling with the words, a quick shaky inhale before the plea, the head dips forward on the last phrase.",
+  "59": "Static camera. Keep the exact face, hair, wardrobe and background. Natural lip movement matching the Japanese speech, subtle breathing, natural blinks. Head turns stay under 15 degrees, hands stay out of frame. Flustered stammering excuse: eyes darting, brows up, quick shallow breaths, the raised hand makes small open-palm gestures with the words, a nervous swallow at the end.",
+  "94": "Static camera. Keep the exact face, hair, wardrobe and background. Natural lip movement matching the Japanese speech, subtle breathing, natural blinks. Head turns stay under 15 degrees, hands stay out of frame. Warm heartfelt words to someone standing up to the right: eyes crinkle, a slow fond nod in the middle, a soft chuckle at the end.",
   "108": "Static camera. Keep the exact face, hair, wardrobe and background. Natural lip movement matching the Japanese speech, subtle breathing, natural blinks. Head turns stay under 15 degrees, hands stay out of frame. Broken sobbing plea: eyes squeezed then opened, wet and shining, one thin tear at most, the voice breaking.",
   "110": "Static camera. Keep the exact face, hair, wardrobe and background. Natural lip movement matching the Japanese speech, subtle breathing, natural blinks. Head turns stay under 15 degrees, hands stay out of frame. Gentle steadiness: calm warm eyes, no anger, a soft measured delivery, the faintest smile at the end.",
   "111": "Static camera. Keep the exact face, hair, wardrobe and background. Natural lip movement matching the Japanese speech, subtle breathing, natural blinks. Head turns stay under 15 degrees, hands stay out of frame. Quiet closing line: the eyes lift slightly on the final question, a faint peaceful smile, a slow blink.",
@@ -505,16 +509,16 @@
   "",
   "quiet room tone with a faint lamp hum",
   "",
+  "a smartphone buzzing twice on a wooden counter, distant luggage wheels on a wooden floor",
   "",
   "",
   "",
+  "a laptop fan hum, a wall clock ticking, night insects outside",
+  "",
+  "kitchen pots simmering, a ladle on ceramic, a kettle hiss",
   "",
   "",
-  "",
-  "",
-  "",
-  "",
-  "",
+  "a laptop fan hum, a wall clock ticking, a distant car passing",
   "",
   "",
   "",
@@ -525,6 +529,7 @@
   "",
   "",
   "",
+  "an old desk telephone bell ringing, a wooden counter resonance, morning birds outside",
   "",
   "",
   "",
@@ -532,8 +537,7 @@
   "",
   "",
   "",
-  "",
-  "",
+  "a desk lamp hum, night insects, a pen tapping on paper",
   "",
   "",
   "",
@@ -578,14 +582,14 @@
   },
   {
    "start": 220.14,
-   "end": 394.28,
-   "volume": 0.4,
+   "end": 399.38,
+   "volume": 0.48,
    "prompt": "driving suspense score, pulsing low strings, ticking percussion, taiko accent hits, building to a dramatic reveal, Japanese drama, instrumental, no vocals"
   },
   {
    "start": 399.38,
    "end": 429.54,
-   "volume": 0.4,
+   "volume": 0.45,
    "prompt": "low ominous drone with sparse piano, a heavy loss sinking in, cold and hollow, Japanese drama score, instrumental, no vocals"
   },
   {
@@ -649,8 +653,16 @@
    "kind": "phone_ring"
   },
   {
+   "at": 392.43,
+   "kind": "riser"
+  },
+  {
    "at": 394.83,
    "kind": "handset_drop"
+  },
+  {
+   "at": 394.85,
+   "kind": "bass_hit"
   },
   {
    "at": 403.79,

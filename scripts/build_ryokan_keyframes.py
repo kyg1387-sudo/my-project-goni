@@ -148,8 +148,13 @@ SUBJECT_MAP = [("sneer", "sneer"), ("scorn", "sneer"), ("contempt", "sneer"), ("
                ("clear-eyed", "firm"), ("calm", "calm")]
 
 
+EXPR_OVERRIDE = {"S01d": "hurt", "S10c": "panic"}
+
+
 def expr_key(sc):
     """대사 컷은 톤 연출표(감정 태그+메모), 그 외는 샷 설명에서 감정을 고른다."""
+    if sc["id"] in EXPR_OVERRIDE:   # 검수 보정(2026-10-20): S01d 「下働き」 회상 컷이 톤표 soft→warm 미소로 잡혀 내레이션과 어긋남
+        return EXPR_OVERRIDE[sc["id"]]
     if sc.get("line"):
         n = int(sc["line"][4:])
         tag, memo = (TONE.get(n) or ("", ""))[:2]

@@ -156,7 +156,9 @@ OMNI_PROMPTS = {
     "S16b": "Calm composure: level eyes, no smile, a measured slow blink.",
     "S16c": "Quiet firmness: still face, eyes steady and slightly cold, no anger.",
     "S16d": "Gentle finality: the faintest smile, a slow blink, a small nod at the end.",
-    "S18c": "Tearful pleading: brows drawn up, eyes wet and shining but cheeks dry, lips trembling, a swallow between phrases.",
+    "S18c": "Desperate pleading on the phone: brows drawn up and together, eyes brimming, lips trembling with the words, a quick shaky inhale before the plea, the head dips forward on the last phrase.",
+    "S10c": "Flustered stammering excuse: eyes darting, brows up, quick shallow breaths, the raised hand makes small open-palm gestures with the words, a nervous swallow at the end.",
+    "S15b": "Warm heartfelt words to someone standing up to the right: eyes crinkle, a slow fond nod in the middle, a soft chuckle at the end.",
     "S18d": "Broken sobbing plea: eyes squeezed then opened, wet and shining, one thin tear at most, the voice breaking.",
     "S18f": "Gentle steadiness: calm warm eyes, no anger, a soft measured delivery, the faintest smile at the end.",
     "S18g": "Quiet closing line: the eyes lift slightly on the final question, a faint peaceful smile, a slow blink.",
@@ -174,7 +176,7 @@ SHOTS = [
       "High angle extreme close-up: a woman's hand in a navy kimono sleeve slowly placing a smartphone face down on a dark wooden desk beside a warm lamp. Only the hand and phone are visible.",
       motion="The hand lowers the phone gently until it rests face down, then withdraws out of frame. No face.", hero=True),
     S("S01d", "S01", "react", "cu", "hoff_night", "EL", ["WAKANA_B"], "HOFF_WINDOW",
-      "Chest-up close-up of Wakana looking down after the call, a quiet unreadable face, the warm lamp on one side, town lights blurred behind.", line="line003", expr="neutral"),
+      "Chest-up close-up of Wakana looking down after the call, NOT smiling, lips closed, eyes lowered, a quiet unreadable face with a trace of old hurt, the desk lamp glowing on one side, town lights blurred behind.", line="line003", expr="hurt"),
     S("S01e", "S01", "empty", "ews", "genkan_night", "EL", [], "TSK_GENKAN",
       "Wide view of the old inn's entrance at night: a plain indigo noren curtain stirring in the wind under a paper lantern, the polished wooden floor empty, the long corridor dark beyond. Completely unpopulated.", line="line004",
       motion="The noren curtain sways slowly in the wind; the lantern flame flickers. No people appear.", hero=True),
@@ -303,13 +305,12 @@ SHOTS = [
     S("S10a2", "S10", "gfx", "ecu", "day", "HA", [], "TSK_COUNTER",
       "High angle extreme close-up: a smartphone held over the dark counter, its screen glowing plain blank white, a woman's hand with a gold bangle holding it. No face."),
     S("S10b", "S10", "sil", "ws", "day", "EL", ["FAMILY", "MAI"], "TSK_GENKAN",
-      "Wide view of the entrance hall: a Western family and a Japanese couple seen from behind and in soft focus facing each other across the raised step, one hand holding up a room key, Mai small behind the counter with her hands raised helplessly.", line="line038", fx="handheld",
-      motion="The two groups gesture at each other with small movements; Mai raises her hands a little. Faces stay unrecognizable. No one approaches the camera.", hero=True),
+      "Wide view of the entrance hall: a Western family and a Japanese couple seen from behind and in soft focus facing each other across the raised step, one hand holding up a room key, Mai small behind the counter, her head dipped in a small apologetic bow, one hand pressed flat to her chest.", line="line038", fx="handheld",
+      motion="The two groups gesture at each other with small movements; Mai dips her head slightly and keeps her hand at her chest. Faces stay unrecognizable. No one approaches the camera.", hero=True),
     S("S10b2", "S10", "ins", "ecu", "day", "OH", [], "TSK_COUNTER",
       "Overhead extreme close-up: two different hands reaching for the same old-fashioned room key with a plain blank wooden tag on the dark counter. No faces."),
-    S("S10c", "S10", "sil", "ms", "day", "SIDE", ["MAI", "FAMILY"], "TSK_COUNTER",
-      "Over-the-shoulder medium shot from behind a guest's shoulder toward Mai behind the counter, her head bowed in a flustered apology, hair falling forward, her mouth hidden by the angle.", line="line039",
-      motion="Mai bows her head a few degrees lower and lifts it; the shoulder in the foreground stays still."),
+    S("S10c", "S10", "d", "cu", "day", "EL", ["MAI"], "TSK_COUNTER",
+      "Chest-up close-up of Mai behind the reception counter facing the guest, three-quarter toward camera, cheeks flushed pink, a faint sheen of sweat at her temples and hairline, brows raised and pulled together, eyes darting, lips parted mid-stammer, one open hand raised to chest height in a flustered explaining gesture, the foreign family a soft blur beyond the counter.", line="line039", expr="panic"),
     S("S10d", "S10", "gfx", "ecu", "office_night", "EL", [], "TSK_OFFICE",
       "Extreme close-up of an open laptop screen on the small office desk glowing plain blank white-blue, the desk lamp beside it, the room dim. No people.", line="line040"),
     S("S10d2", "S10", "estill", "ecu", "office_night", "HA", [], "TSK_OFFICE",
@@ -327,8 +328,8 @@ SHOTS = [
       "Low angle chest-up of Tomiko in the small office, brows down hard, eyes wide behind the gold-rimmed glasses, furious, hard top light.", line="line043", expr="stern"),
     S("S11e", "S11", "d", "cu", "press", "HA", ["MAI"], "TSK_OFFICE",
       "High angle chest-up of Mai, wide wet eyes, brows raised in panic, red lips parted, hair disheveled, the desk lamp soft behind.", line="line044", expr="panic"),
-    S("S11f", "S11", "sil", "ms", "press", "SIDE", ["TOMIKO"], "TSK_OFFICE",
-      "Over-the-shoulder medium shot from behind Tomiko's silver bun, one aged hand pushing the gold-rimmed glasses up at the frame edge, Mai a soft blurred shape beyond.", line="line045", fx="dutch7 handheld",
+    S("S11f", "S11", "sil", "ms", "press", "SIDE", ["TOMIKO", "MAI"], "TSK_OFFICE",
+      "Over-the-shoulder medium shot from behind Tomiko's silver bun, one aged hand pushing the gold-rimmed glasses up at the frame edge; beyond her, in soft focus, Mai flinches with her head down, her long chestnut waves and bright pink cherry-blossom kimono unmistakable even blurred.", line="line045", fx="dutch7 handheld",
       motion="Tomiko's hand pushes the glasses up and drops out of frame; her shoulders stay rigid. No turning."),
     S("S11g", "S11", "empty", "ws", "rain", "EL", [], "TSK_GENKAN",
       "Wide view of the old inn entrance in the rain: water dripping from the roof tiles, the plain indigo noren hanging wet and still, puddles on the stone step. Completely unpopulated.",
@@ -398,9 +399,8 @@ SHOTS = [
     S("S15a", "S15", "sil", "ms", "hgen_day", "EL", ["REGULAR", "WIFE", "WAKANA_B"], "HGEN_SOFAS",
       "Medium two-shot over Wakana's kimono shoulder in the foreground: the elderly regular couple seated on a lobby sofa by the tall windows, the silver-haired husband in a brown knitted vest looking up with a warm fond smile, his wife beside him in a beige shawl, afternoon sun behind them; the husband's mouth is relaxed and closed.", line="line062",
       motion="The husband's smile deepens and he gives a small nod; the wife tilts her head toward him. Nobody stands."),
-    S("S15b", "S15", "sil", "ms", "hgen_day", "SIDE", ["REGULAR", "WIFE"], "HGEN_SOFAS",
-      "Medium shot from the side: the elderly husband on the sofa leaning slightly forward, seen in three-quarter profile from behind his wife's shoulder, his hand resting on his knee, warm sun on his silver hair; his mouth not clearly visible.", line="line063",
-      motion="He leans a few centimetres forward and settles back; the wife nods slowly. No standing."),
+    S("S15b", "S15", "d", "cu", "hgen_day", "EL", ["REGULAR"], "HGEN_SOFAS",
+      "Chest-up close-up of the elderly husband on the lobby sofa, three-quarter toward camera, looking slightly up and to the right at Wakana standing just off-frame, a warm fond smile with crinkled eyes, silver hair lit by the afternoon sun, his wife's beige shawl soft at the frame edge.", line="line063", expr="fond"),
     S("S15c", "S15", "react", "cu", "hgen_day", "HA", ["WAKANA_B"], "HGEN_SOFAS",
       "High angle chest-up of Wakana in the navy kimono bowing her head deeply, eyes closed, a grateful moved expression, sunlight on her hair, the sofa soft behind.", expr="smile"),
     # ── S16 마이의 구직 전화 → 「では、どうぞ、代わりの方と」
@@ -434,7 +434,7 @@ SHOTS = [
     S("S18b", "S18", "react", "cu", "hoff_night", "EL", ["WAKANA_B"], "HOFF_WINDOW",
       "Chest-up close-up of Wakana looking down at the phone below the frame, taking a slow breath, composed, the town lights soft behind.", expr="neutral"),
     S("S18c", "S18", "d", "cu", "office_night", "EL", ["TOMIKO"], "TSK_OFFICE",
-      "Chest-up close-up of Tomiko in the small dim office at night, the handset held to her ear below the frame, NO glasses on her face now, eyes wet and shining but cheeks dry, brows drawn up in pleading, lamp light on one side.", line="line071", expr="plead"),
+      "Chest-up close-up of Tomiko in the small dim office at night, NO glasses on her face now, leaning forward toward the handset held to her ear just below the frame, brows drawn up and pulled together, eyes brimming and red-rimmed but cheeks dry, lower lip trembling, chin crumpling, one thin hand clutching the collar of her plum kimono, lamp light raking one side of her face.", line="line071", expr="plead"),
     S("S18d", "S18", "d", "cu", "office_night", "HA", ["TOMIKO"], "TSK_OFFICE",
       "Chest-up close-up of Tomiko without her glasses, face crumpling, eyes wet, a single thin tear track on one cheek at most, lips trembling, the lamp warm.", line="line072", expr="plead"),
     S("S18e", "S18", "sil", "ms", "office_night", "SIDE", ["TAKAYUKI", "TOMIKO"], "TSK_OFFICE",
@@ -467,11 +467,7 @@ GFX = {
     "S18a": "휴대폰 착신 화면 「義母」 lcd",
 }
 GFX_PLATE = {}
-EMPH = [  # (기준 줄, 줄 시작 후 초, 길이, 스타일, 문구)
-    ("line056", 0.6, 0.4, "Emph", "−５００万円"),
-    ("line056", 1.0, 0.4, "Emph", "−１，２００万円"),
-    ("line056", 1.4, 2.2, "Emph", "−２，０００万円"),
-]
+EMPH = []  # 2026-10-20 감독님 지적: 장부 그래픽(S13h)에 숫자가 이미 있어 강조 자막이 이중 표시 → 제거(제11장 12)
 SIGN_BY_LOC = {
     "TSK_GENKAN": ("A small plain blank wooden plate hangs beside the entrance; the noren is plain solid indigo.", "현관 목판 「月見荘」(와이드 1컷만)"),
     "HGEN_WIDE": ("A small plain blank wooden plate stands on the front desk.", "데스크 명판 「花筏」"),
@@ -490,7 +486,10 @@ AD_MAX_DISSOLVE = 0.5
 AMBIENCE = {"S01e": "night wind through a cloth curtain, a paper lantern creaking, distant hot-spring water flowing", "S02a": "gas burner hiss and a rice pot simmering, steam, a fluorescent tube buzzing",
             "S08a": "morning sparrows outside, a soft breeze through paper screens", "S11g": "steady rain on roof tiles, water dripping, cloth flapping wet",
             "S13k": "wind through an empty wooden hall, a cloth curtain flapping, a distant wind chime", "S17b": "a taxi engine receding down a wet alley, crickets, dripping water",
-            "S09c": "quiet room tone with a faint lamp hum"}
+            "S09c": "quiet room tone with a faint lamp hum",
+            "S10a2": "a smartphone buzzing twice on a wooden counter, distant luggage wheels on a wooden floor", "S10d": "a laptop fan hum, a wall clock ticking, night insects outside",
+            "S11a": "kitchen pots simmering, a ladle on ceramic, a kettle hiss", "S11c": "a laptop fan hum, a wall clock ticking, a distant car passing",
+            "S13a2": "an old desk telephone bell ringing, a wooden counter resonance, morning birds outside", "S13h": "a desk lamp hum, night insects, a pen tapping on paper"}
 STYLE = {"NA": "Naration", "若菜": "Wakana", "富子": "Tomiko", "麻衣": "Mai", "隆之": "Takayuki", "桜井": "Sakurai", "陳": "Chen", "常連客": "Regular"}
 STYLE_JA = {"Naration": "若菜(語り)", "Wakana": "若菜", "Tomiko": "富子", "Mai": "麻衣", "Takayuki": "隆之", "Sakurai": "桜井", "Chen": "陳", "Regular": "常連客"}
 STYLE_COLOR = {"Naration": "&H00FFFFFF", "Wakana": "&H00F0E6C8", "Tomiko": "&H00C8B4E6", "Mai": "&H00B4B4FF", "Takayuki": "&H00DCDCDC", "Sakurai": "&H00C8E6DC", "Chen": "&H00E6DCC8", "Regular": "&H00DCE6F0"}
@@ -868,14 +867,14 @@ def main():
     t_ad1, t_ad2 = ad_times
     BGM = [
         (0.0, t_ad1 - 0.2, 0.38, "slow Japanese ryokan drama score, solo shamisen single plucks over a soft koto drone, sparse, melancholic, restrained, cinematic, instrumental, no vocals"),
-        (t_ad1 + 1.6, starts["S13g"] - 0.05, 0.40, "driving suspense score, pulsing low strings, ticking percussion, taiko accent hits, building to a dramatic reveal, Japanese drama, instrumental, no vocals"),
-        (starts["S13h"] + 0.3, t_ad2 - 0.2, 0.40, "low ominous drone with sparse piano, a heavy loss sinking in, cold and hollow, Japanese drama score, instrumental, no vocals"),
+        (t_ad1 + 1.6, starts["S13h"] + 0.3, 0.48, "driving suspense score, pulsing low strings, ticking percussion, taiko accent hits, building to a dramatic reveal, Japanese drama, instrumental, no vocals"),
+        (starts["S13h"] + 0.3, t_ad2 - 0.2, 0.45, "low ominous drone with sparse piano, a heavy loss sinking in, cold and hollow, Japanese drama score, instrumental, no vocals"),
         (t_ad2 + 1.6, round(main_end, 2), 0.42, "warm uplifting cinematic piano and strings, gentle hopeful progression, koto accent, resolution and relief, emotional Japanese drama ending, instrumental, no vocals"),
     ]
     SFX = [{"at": round(starts[s] + o, 2), "kind": k} for s, o, k in
            (("S01a", 0.3, "handset_creak"), ("S01c", 0.8, "phone_set_down"), ("S02a", 0.2, "fluorescent_on"), ("S04c", 0.4, "knife_on_board"), ("S05f", 0.9, "lamp_switch"),
             ("S06d", 0.2, "wiping_stop"), ("S07c", 0.3, "teacup_click"), ("S07g", 0.2, "fan_snap"), ("S09b", 0.1, "binder_drop"), ("S10a", 0.5, "phone_notify"),
-            ("S11c", 0.1, "notify_triple"), ("S11c", 0.4, "bass_hit"), ("S13a", 0.0, "phone_ring"), ("S13g", 0.5, "handset_drop"), ("S13i", 0.3, "pen_scratch"),
+            ("S11c", 0.1, "notify_triple"), ("S11c", 0.4, "bass_hit"), ("S13a", 0.0, "phone_ring"), ("S13g", -1.9, "riser"), ("S13g", 0.5, "handset_drop"), ("S13g", 0.52, "bass_hit"), ("S13i", 0.3, "pen_scratch"),
             ("S14a", 0.1, "bus_airbrake"), ("S16a", 0.2, "phone_vibrate2"), ("S16e", 0.6, "phone_set_down"), ("S17a", 1.5, "taxi_door"), ("S18a", 0.2, "phone_vibrate3"),
             ("S18h", 0.5, "phone_face_down"), ("S18i", 0.6, "distant_laughter_no_words"))]
     SFX.append({"at": round(rows["line056"]["start"] + 0.6, 2), "kind": "bass_hit"})

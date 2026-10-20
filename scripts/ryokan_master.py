@@ -19,7 +19,7 @@ SFX_DIR = os.path.join(ROOT, "assets", "auditions", "ryokan-sfx")
 # #03: 효과음 소스 id = 설계 kind 이름 그대로(scripts/auditions/ryokan-sfx.json). 레벨(dBFS 상대) — 대사 구간은 −6dB 추가(제11장 22)
 KIND = {k: (k, db) for k, db in {"handset_creak": -20, "phone_set_down": -18, "fluorescent_on": -20, "knife_on_board": -20, "lamp_switch": -22,
         "wiping_stop": -20, "teacup_click": -16, "fan_snap": -15, "binder_drop": -14, "phone_notify": -18, "notify_triple": -16, "bass_hit": -12,
-        "phone_ring": -16, "handset_drop": -14, "pen_scratch": -20, "bus_airbrake": -18, "phone_vibrate2": -18, "phone_vibrate3": -18,
+        "phone_ring": -16, "handset_drop": -8, "riser": -10, "pen_scratch": -20, "bus_airbrake": -18, "phone_vibrate2": -18, "phone_vibrate3": -18,
         "taxi_door": -17, "phone_face_down": -18, "distant_laughter_no_words": -22}.items()}
 # 환경 보강 큐(사운드 설계서): 의자 삐걱·발소리·장지문·빗소리
 EXTRA = [(78.0, "chair_creak", -24), (147.0, "footsteps_tatami", -24), (160.5, "shoji_slide", -22), (352.0, "rain_roof", -20), (387.0, "chair_creak", -24)]
