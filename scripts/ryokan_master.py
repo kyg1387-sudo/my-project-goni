@@ -22,7 +22,8 @@ KIND = {k: (k, db) for k, db in {"handset_creak": -20, "phone_set_down": -18, "f
         "phone_ring": -16, "handset_drop": -8, "riser": -10, "pen_scratch": -20, "bus_airbrake": -18, "phone_vibrate2": -18, "phone_vibrate3": -18,
         "taxi_door": -17, "phone_face_down": -18, "distant_laughter_no_words": -22}.items()}
 # 환경 보강 큐(사운드 설계서): 의자 삐걱·발소리·장지문·빗소리
-EXTRA = [(78.0, "chair_creak", -24), (147.0, "footsteps_tatami", -24), (160.5, "shoji_slide", -22), (352.0, "rain_roof", -20), (387.0, "chair_creak", -24)]
+LOCK_SHIFT = float(os.environ.get("LOCK_SHIFT", "0"))   # 2026-10-20 line071 재녹음으로 Lock이 +1.13초 밀림(line001 이후) → 손큐 보정
+EXTRA = [(t + LOCK_SHIFT, k, db) for t, k, db in [(78.0, "chair_creak", -24), (147.0, "footsteps_tatami", -24), (160.5, "shoji_slide", -22), (352.0, "rain_roof", -20), (387.0, "chair_creak", -24)]]
 # 시청자 검증 수정(2026-10-19): 조립 후 로컬 트림 구간(원본 타임코드) — 효과음 큐를 같은 만큼 당긴다
 TRIMS = [tuple(float(v) for v in t.split("-")) for t in os.environ.get("TRIMS", "").split(",") if t]
 def shift(t):
