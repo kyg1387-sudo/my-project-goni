@@ -65,6 +65,18 @@ EMO_OVERRIDE = {
     "S13d": "SPEAKER LOCKED: grown-up Takumi (42, LARGE round dark eyes, slightly protruding ears, short neat black hair, charcoal overcoat) stands just inside the shop doorway (his daughter's small hand in his, below the frame edge, NOT visible), the face at three-quarter angle toward the old man, eyes red-rimmed and wet with tears pooled but NOT running, a small closed-mouth smile with lips together; at most ONE thin clear tear track on ONE cheek only, the other cheek completely dry, no droplet chains; the old man appears ONLY as a blurred back of short WHITE hair and grey cardigan shoulder at the near RIGHT edge. Behind Takumi: the glass sliding door and the dark night street.",
     "S13f": "SPEAKER LOCKED: old Shuzo (73, short WHITE hair, white eyebrows, deep wrinkles, grey cardigan under a faded navy apron) behind the counter with one hand resting on the ONE single remaining bento box on the counter top (no other bentos on the counter), the face at three-quarter angle toward Takumi, choked up: eyes red and wet with tears pooled but NOT running, mouth corners pulled down, chin trembling, NOT smiling; grown-up Takumi appears ONLY as a blurred back of short black hair and charcoal coat shoulder at the near LEFT edge.",
 }
+# 키프레임 1차 Kill Gate(2026-10-20) 컷별 고정 문장 — 맨 앞(구도 다음)에 넣는다
+_PINK = "WARDROBE LOCKED: Sumie wears a PALE PINK triangle headscarf (NOT white), exactly the colour in the reference."
+SHOT_FIX = {
+    "S03a": _PINK, "S03b": _PINK, "S03c": _PINK, "S03d": _PINK,
+    "S04b": "PEOPLE LOCKED: exactly TWO people — Shuzo behind the counter, and the boy ONLY as the blurred back of the head and shoulder at the near LEFT edge; the boy appears nowhere else in the frame.",
+    "S08c": "The foreground boy's ear is covered by his messy hair. Every sign and board in the background is blank and out of focus.",
+    "S12d": "He reads the letter with bare eyes, holding it at arm's length — no eyewear on his face at all.",
+    "S06b": "FRAMING FIRST — CLOSE-UP: head and shoulders fill the frame, the face one third of the frame height or larger; NOT a medium or wide shot.",
+    "S08n": "FRAMING FIRST — eye-level CLOSE-UP with a normal 50mm perspective, head and shoulders; NOT fisheye, NOT looking down from above, NOT distorted.",
+    "S10bb": "Sumie has bare hair streaked with grey in a low bun — ignore any headscarf in the reference; she wears only the pale-blue hospital gown.",
+    "S10bd": "Shuzo wears only a grey cardigan over a white shirt — ignore any apron in the reference.",
+}
 ANGER_CLOSED = ("Fury shown only in the wide-open glaring eyes, furrowed brow, flared nostrils and clenched jaw: eyes OPEN and fixed on the listener, "
                 "lips pressed together, mouth CLOSED, NOT shouting (speech is added later).")
 
@@ -100,10 +112,10 @@ FRAME_FIRST = ("FRAMING FIRST — TIGHT MEDIUM CLOSE-UP, chest-up portrait frami
                "shot, NOT full body, no floor visible.")
 # 「red eyes / reddened eye rims」는 홍채까지 빨갛게 만든다(시범 1차 S13d, 제18장 12 ②) — 눈물 문장을 치환
 EYE_FIX = [("eyes red-rimmed and wet", "eyes wet"), ("eyes red and wet", "eyes wet"),
-           ("reddened eye rims", "only the eyelid edges faintly pink")]
+           ("reddened eye rims", "natural skin tone around the eyes"), ("only the eyelid edges faintly pink", "natural skin tone around the eyes")]
 # 시범 립싱크 S13f: 눈물이 가는 줄이 아니라 물방울 2~3개 줄로 보임(AI 티) → 눈물 컷에 한 줄·연속 문장
 TEAR_LINE = "Any tear is ONE thin continuous transparent line on ONE cheek only, never a chain of separate droplets or beads, never on both cheeks."
-EYE_SAFE = "EYES: natural dark brown irises and clear white sclera; NO red irises, NO glowing eyes, NO red eye whites."
+EYE_SAFE = "EYES: natural dark brown irises and clear white sclera; NO red irises, NO glowing eyes, NO red eye whites, NO pink or red eyelids, NO eyeshadow, NO red nose, NO makeup."
 
 
 def build(sc, stage):
@@ -130,6 +142,8 @@ def build(sc, stage):
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
     if sc["kind"] == "d":
         parts.append(FRAME_FIRST)
+    if sc["id"] in SHOT_FIX:
+        parts.append(SHOT_FIX[sc["id"]])
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
     if sc["id"] in EMO_OVERRIDE:
         parts.append(EMO_OVERRIDE[sc["id"]])

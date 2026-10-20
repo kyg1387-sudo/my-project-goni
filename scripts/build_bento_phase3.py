@@ -45,9 +45,9 @@ WHO = {
 WARD = {
     "SH96": "a plain white cook's jacket, a plain navy-blue full apron with no print, a plain white cotton towel tied around the forehead as a headband",
     "SH26": "a faded plain navy-blue full apron with no print over a plain grey knitted cardigan and a plain white shirt",
-    "SH60": "a plain grey knitted cardigan over a plain white shirt",
+    "SH60": "a plain grey knitted cardigan over a plain white shirt, NO apron, NO headband (visiting a hospital)",
     "SUM": "a plain pale-pink triangle headscarf, a plain white full apron with no print over a plain beige long-sleeve top",
-    "SUM50": "a plain pale-blue hospital gown",
+    "SUM50": "a plain pale-blue hospital gown, NO headscarf, NO apron, black hair streaked with grey tied in a low bun",
     "TB": "a plain navy-blue zip jumper with sleeves a little too short for his wrists, a plain grey T-shirt, plain grey trousers",
     "TBW": "a plain navy-blue zip jumper soaked dark with rain, a plain white hand towel around his neck, wet hair",
     "TA": "a plain charcoal wool overcoat with no logo, a plain white shirt",
@@ -86,10 +86,14 @@ NEGATIVE = ("gibberish, foreign text, incomprehensible letters, fake alphabets, 
             "watermarks, stamps, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, anime, 3d render, cartoon, "
             "thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks, glasses, earrings, piercings, pink eyeshadow, lipstick on men")
 PLAIN = "All papers, price cards, notices, signs, envelopes and labels are completely blank; no letters, numbers or symbols anywhere in the frame."
-COINS = ("EXACTLY FIVE Japanese 50-yen coins: silver cupronickel, each with a small ROUND hole in the center, engravings soft and out of focus; "
-         "NOT square holes, NOT Chinese coins, NOT gold.")
-TEARS = ("Realistic tears as in a live-action film: reddened eye rims, glossy wet eyes catching the light, a small clear tear bead on the lower lashes, "
-         "at most one thin translucent tear track on one cheek, a slightly reddened nose tip, matte natural skin; no glossy gel streams, no cartoon droplets.")
+COINS = ("EXACTLY FIVE real Japanese 50-yen coins: silver cupronickel, each with a small ROUND hole in the centre through which the palm skin is visible, "
+         "the real 50-yen design (a tiny numeral 50 below the hole, small chrysanthemum flowers around it, the face mostly plain silver), "
+         "shallow depth of field so the engravings are soft and out of focus; NOT a large 50 numeral filling the coin, NOT coins without holes, "
+         "NOT square holes, NOT Chinese coins, NOT gold or brass.")
+# 키프레임 1차(2026-10-20): 「reddened eye rims·reddened nose tip」이 분홍 아이섀도·분홍 코로 그려짐(H2·S03be·S12k 등 10컷) → 붉은 기 표현 삭제
+TEARS = ("Realistic tears as in a live-action film: glossy wet eyes catching the light, a small clear tear bead on the lower lashes, "
+         "at most one thin translucent tear track on one cheek, natural skin tone around the eyes and nose, matte natural skin, NO makeup; "
+         "no pink or red eyelids, no eyeshadow, no red nose, no glossy gel streams, no cartoon droplets.")
 SWEAT = ("Realistic sweat as in a live-action film: fine tiny beads of perspiration on the forehead and temples, a faint natural sheen; "
          "no large cartoon drops, no face-wide shine.")
 GLASSES = {k: ("She wears no glasses." if k in ("SUM", "SUM50", "MIO", "HINA", "MIO36") else "He wears no glasses.") for k in
@@ -310,7 +314,7 @@ SHOTS = [
       act="The boy raises his head and tells him, with wet eyes and a smile, that his bento is the best in the world." + WET_HOLD + OB, expr="smile"),
     S("S09h", "S09", "ins", "ecu", "s96", "EL", [MI], "P_BIRD", "Insert: a little girl's small hand placing a small origami robin folded from red paper onto the wooden counter, no face.",
       line="L26a", vo=True, motion="The small hand sets the paper bird on the counter and withdraws."),
-    S("S09i", "S09", "d", "ots", "s96", "LA", [H96, TB_], "S96C", "Over the boy's blurred shoulder: Shuzo holding the small red paper bird in his palm, choked up.", line="L26b",
+    S("S09i", "S09", "d", "ots", "s96", "LA", [H96, TB_], "S96C", "Over the boy's blurred shoulder: Shuzo holding the small faded red origami robin (a round-bodied little songbird with a short tail, NOT a crane, NOT pointed wings) in his palm, choked up.", line="L26b",
       act="Shuzo holds the paper bird in his palm and thanks her shortly, his voice catching." + WET_HOLD + OB, expr="choke"),
     S("S09j", "S09", "face", "cu", "s96", "HA", [TB_], "S96O", "Close-up of the boy listening, gripping the bag.", line="L26c", vo=True,
       motion="He grips the bag tighter, eyes wet." + WET_HOLD + NS + HOLD, expr="tears"),
