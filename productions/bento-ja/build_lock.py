@@ -21,6 +21,7 @@ AD_AFTER = {"NA14": ("1차 광고", 210.0), "NA24": ("2차 광고", 420.0)}
 PAUSE = {"L35": 1.0 + 0.8}  # 9시 정각 문 종소리 → 정적 1초(룸톤) 뒤 첫마디
 HOOK_AT = {"L01": 4.3, "NA0": 9.3}
 SAME_AS = {"L01": "L29"}
+CARDS = {"S12": 2.0}  # 무언 질문 카드(장면 머리, 2026-10-20 승인) — 2차 광고 지점 뒤라 광고 시각은 그대로
 CLUE_SCENE = "S06"  # 단서(소년이 오지 않은 밤) + BGM 전환(제15장 24)
 MIN_TOTAL, MAX_TOTAL = 9 * 60 + 40, 11 * 60
 # 길이 보정(무료, 2026-10-20 실측 13:11 → 보정): ① 느린 목소리 배속(≤1.15, 제11장 4 상한, 피치 유지 atempo — 후처리에서 실제 적용)
@@ -95,6 +96,7 @@ def build():
     t, srows, ads = HOOK, [], []
     for sc in scenes:
         start = t
+        t += CARDS.get(sc["id"], 0.0)
         first_na = sc["lines"] and sc["lines"][0]["vo"]
         t += (VO_LEAD if (VO_UNDER and first_na and sc["lead"]) else sc["lead"] * INSERT)
         prev = None
