@@ -579,4 +579,5 @@ deformed eyes, extra fingers.
    ③ 오디션: `elevenlabs-direct` + `el_model: eleven_v3`, 대사 앞에 영어 연기 태그 2~4단어(`[gruff, warm underneath]`), 음성 입력은 가나 치환본·`subtitle`은 대본 원문. 대비 감정 대사 2줄 × 3명. 비용은 EL 구독 크레딧(1회 약 1,300자, fal 0).
    ④ 언어 검사(ja/large-v3) → 배역별 청취 묶음 → 고니감독님 청취 확정 → `scripts/audio/<작품>-cast-voices.json`(engine·el_model·roles·kana)에 기록하고 본녹음 생성기는 이 표만 쓴다.
    ⑤ 예외: 아웃트로 진행자는 채널 고정(Typecast Yui Sato). 내레이터는 고니감독님이 정한 채널 목소리를 따르되, 작품별로 ElevenLabs 후보와 함께 청취해 정할 수 있다. ElevenLabs에서 맞는 목소리를 못 찾은 배역만 Typecast로 보충한다.
+3. **ElevenLabs 읽기·검사 실증(2026-10-20)**: ① eleven_v3는 「母が」를 3명 모두 「アヘ/マヘ/ムハ」로 읽었다 → 가나 치환표에 「母→はは」를 넣는다(재생성 뒤에도 Haru·Toru는 「はは」가 약하게 들려 전사에서 빠짐 — 청취 확인). ② 언어 검사가 영어 연기 태그까지 대본으로 대조해 정상 샘플 8건을 「불일치」로 오탐했다 → `qa_language.py`는 `subtitle`(없으면 태그를 뺀 text)과 대조한다(코드 반영).
 
