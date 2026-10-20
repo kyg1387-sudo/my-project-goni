@@ -6,7 +6,7 @@ scripts/storyboard/bento.json(PHASE 3)을 읽어 generate-video.yml portraits_sp
 이 작품 차이: 모델 seedream v4 edit 2560x1440(PHASE 2 시트에서 실사·일관성 검증), 귀걸이·안경 없음, 같은 인물 두 나이
 (修三 43·73, 拓海 12·42)는 나이별 셀·얼굴 크롭을 따로 쓴다. 「AI 제작이 아닌 것처럼」(제19장 7): 실사 피부·실제 눈물·상황 표정.
 """
-import json, os, sys
+import json, os, re, sys
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 SB_PATH = os.path.join(ROOT, "scripts", "storyboard", "bento.json")
@@ -24,7 +24,7 @@ PEOPLE = [
     ("mio36", "Asakura Mio grown up (36, round face, black bob with straight blunt bangs, NO glasses, NO earrings)"),
 ]
 FACE_KINDS = ("face", "d")
-PILOT_DONE = set()  # 시범 승인 후 채움 — 시범 키프레임 합격: S13f(r2-1)
+PILOT_DONE = {"S08j", "S13d", "S13f"}  # 시범 승인(2026-10-20): S08j=r3-1·S13d=r2-1·S13f=r2-1 + 로컬 보정 → assets/portraits/bento-kf-pilot-ok/
 LOC_NOTE = {
     "loc-shop96": "The 1996 shop: a small boxy CRT television, blank paper price cards, a plain round wall clock with a BLANK face, NO signs, NO posters with writing.",
     "loc-shop26": "The shop now, thirty years older: faded walls, a slim flat TV, a blank white paper notice, NO signs, NO posters with writing.",
@@ -101,6 +101,8 @@ FRAME_FIRST = ("FRAMING FIRST — TIGHT MEDIUM CLOSE-UP, chest-up portrait frami
 # 「red eyes / reddened eye rims」는 홍채까지 빨갛게 만든다(시범 1차 S13d, 제18장 12 ②) — 눈물 문장을 치환
 EYE_FIX = [("eyes red-rimmed and wet", "eyes wet"), ("eyes red and wet", "eyes wet"),
            ("reddened eye rims", "only the eyelid edges faintly pink")]
+# 시범 립싱크 S13f: 눈물이 가는 줄이 아니라 물방울 2~3개 줄로 보임(AI 티) → 눈물 컷에 한 줄·연속 문장
+TEAR_LINE = "Any tear is ONE thin continuous transparent line on ONE cheek only, never a chain of separate droplets or beads, never on both cheeks."
 EYE_SAFE = "EYES: natural dark brown irises and clear white sclera; NO red irises, NO glowing eyes, NO red eye whites."
 
 
@@ -166,8 +168,8 @@ def build(sc, stage):
     prompt = " ".join(parts)
     for a, b in EYE_FIX:
         prompt = prompt.replace(a, b)
-    if "tear" in prompt.lower():
-        prompt = prompt.replace("Absolutely no text, letters", EYE_SAFE + " Absolutely no text, letters")
+    if re.search(r"\btears?\b", re.sub(r"Negative:.*?\.(?= [A-Z])", "", prompt).replace("gel tears", "")):  # 네거티브의 「gel tears」는 제외
+        prompt = prompt.replace("Absolutely no text, letters", TEAR_LINE + " " + EYE_SAFE + " Absolutely no text, letters")
     return {"id": sc["id"], "count": 1, "aspect_ratio": "16:9", "refs": refs, "prompt": prompt, "model": "fal-ai/bytedance/seedream/v4/edit", "extra": {"image_size": {"width": 2560, "height": 1440}}}
 
 
@@ -184,7 +186,7 @@ def main():
             if sc["id"] not in only:
                 continue
         else:
-            if (stage == "a") != (sc["kind"] == "d" and bool(sc.get("line"))) or (only and sc["id"] not in only):
+            if (stage != "ab" and (stage == "a") != (sc["kind"] == "d" and bool(sc.get("line")))) or (only and sc["id"] not in only):
                 continue
             if not only and sc["id"] in PILOT_DONE:
                 continue

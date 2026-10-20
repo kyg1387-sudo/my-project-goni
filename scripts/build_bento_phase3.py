@@ -709,8 +709,8 @@ def main():
         keyframe = None if s["kind"].startswith("reuse") or s["kind"] == "card" else f"assets/portraits/{SKIT}-keyframes/{sid}-1.png"
         kf_prompt = None
         if keyframe:
-            low = (s["subject"] + " " + (s["act"] or "")).lower()
-            real = " ".join(x for x, keys in ((TEARS, ("tear", "sob", "cry", "wet")), (SWEAT, ("sweat",))) if any(k in low for k in keys)
+            low = (s["subject"] + " " + (s["act"] or "")).lower()  # 「wet」 단독은 비·젖은 거리(S04c·S07a·S14a)라 눈물 신호에서 제외(키프레임 1차 사전 점검 실증)
+            real = " ".join(x for x, keys in ((TEARS, ("tear", "sob", "cry", "wet eyes", "eyes wet", "eyes red", "wiping her eye", "wiping his eye", "wiping the corner", "choked")), (SWEAT, ("sweat",))) if any(k in low for k in keys)
                             or (s["expr"] in ("tears",) and x == TEARS) or (s["expr"] in ("fear",) and x == SWEAT))
             glasses = " ".join(GLASSES[w.split(":")[0]] for w in s["who"] if w.split(":")[0] in GLASSES)
             kf_prompt = " ".join([PRESET + ".", s["subject"], ("Characters: " + " | ".join(ids) + ".") if ids else "", glasses, real,
