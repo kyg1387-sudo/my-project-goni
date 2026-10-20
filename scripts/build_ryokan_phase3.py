@@ -871,6 +871,9 @@ def main():
         (starts["S13h"] + 0.3, t_ad2 - 0.2, 0.45, "low ominous drone with sparse piano, a heavy loss sinking in, cold and hollow, Japanese drama score, instrumental, no vocals"),
         (t_ad2 + 1.6, round(main_end, 2), 0.42, "warm uplifting cinematic piano and strings, gentle hopeful progression, koto accent, resolution and relief, emotional Japanese drama ending, instrumental, no vocals"),
     ]
+    # 자동 검사(2026-10-20 burn 실패 실증): BGM 구간 간격은 generate_audio.MIN_BGM_GAP(1.0초) 이상, 시간순·겹침 없음
+    for (s0, e0, _, _), (s1, e1, _, _) in zip(BGM, BGM[1:]):
+        assert e0 > s0 and e1 > s1 and s1 - e0 >= 1.0 + 1e-6, f"BGM 구간 간격 위반: {e0:.2f}→{s1:.2f} ({s1 - e0:.2f}s < 1.0s)"
     SFX = [{"at": round(starts[s] + o, 2), "kind": k} for s, o, k in
            (("S01a", 0.3, "handset_creak"), ("S01c", 0.8, "phone_set_down"), ("S02a", 0.2, "fluorescent_on"), ("S04c", 0.4, "knife_on_board"), ("S05f", 0.9, "lamp_switch"),
             ("S06d", 0.2, "wiping_stop"), ("S07c", 0.3, "teacup_click"), ("S07g", 0.2, "fan_snap"), ("S09b", 0.1, "binder_drop"), ("S10a", 0.5, "phone_notify"),
