@@ -23,9 +23,10 @@ PICK = {  # 컷: 원본 파일
     "S08h": P + "bento-kf-r6/S08h-2.png", "S09b": P + "bento-kf-r6/S09b-1.png", "S09e": P + "bento-kf-r6/S09e-1.png",
     "S09g": P + "bento-kf-r6/S09g-2.png", "S09i": P + "bento-kf-r6/S09i-1.png", "S09n": P + "bento-kf-r6/S09n-1.png",
     "S12d": P + "bento-kf-r6/S12d-1.png", "S13l": P + "bento-kf-r6/S13l-1.png",
+    "S06a": P + "bento-kf-r7/S06a-1.png", "S13b": P + "bento-kf-r7/S13b-1.png",
     "S05e": P + "bento-kf-r5/S05e-1.png", "S09p": P + "bento-kf-r5/S09p-1.png", "S13t": P + "bento-kf-r5/S13t-1.png",
 }
-PENDING = {"S06a", "S13b"}
+PENDING = set()
 
 
 def main():
