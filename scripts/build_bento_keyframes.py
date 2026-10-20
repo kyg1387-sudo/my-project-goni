@@ -120,7 +120,8 @@ def describe(path, i):
 
 
 NO_FACE = {}
-PROP_ADD = {"S09i": CELLS + "/prop-origami.png"}  # 소품 참조 없는 「paper bird」가 2회 연속 종이학 → 울새 소품 셀 참조
+PROP_ADD = {"S09i": CELLS + "/prop-origami.png",  # 소품 참조 없는 「paper bird」가 2회 연속 종이학 → 울새 소품 셀 참조
+            "S06a": CELLS + "/loc-shop96-curtain.png", "S13b": CELLS + "/loc-shop26-ots.png"}  # 참조 없는 t2i 시계 인서트에 사람 얼굴 2회 → 무인 장소 판 참조(edit)  # 소품 참조 없는 「paper bird」가 2회 연속 종이학 → 울새 소품 셀 참조
 ONE_TAKE = {"S06a", "S10a", "S13b", "S06b", "S10bd", "S13n", "S12d", "S09i", "S08a"}  # 재생성 중 단순 결함 컷은 1장(승인 예산 안, 2026-10-20)
 NO_BACKCELL = set()  # 뒷모습 전신 셀이 원경 전신 구도를 끌어옴 — 앞 인물은 글로만
 NO_LOC = set()  # 장소 참조가 원경·후광(오려 붙인 테두리)을 만든 컷 — 장소는 글로만

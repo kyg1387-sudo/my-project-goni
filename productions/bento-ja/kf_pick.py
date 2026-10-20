@@ -17,10 +17,15 @@ PICK = {  # 컷: 원본 파일
     "S10bd": P + "bento-kf-r4/S10bd-1.png", "S12f": P + "bento-kf-r4/S12f-1.png", "S12g": P + "bento-kf-r4/S12g-2.png",
     "S12k": P + "bento-kf-r4/S12k-2.png", "S12r": P + "bento-kf-r4/S12r-1.png", "S13j": P + "bento-kf-r4/S13j-1.png",
     "S13n": P + "bento-kf-r4/S13n-1.png", "S13u": P + "bento-kf-r4/S13u-2.png", "S14e": P + "bento-kf-r4/S14e-2.png",
+    "S02d": P + "bento-kf-r6/S02d-1.png", "S02e": P + "bento-kf-r6/S02e-1.png", "S04e": P + "bento-kf-r6/S04e-2.png",
+    "S04g": P + "bento-kf-r6/S04g-2.png", "S05f": P + "bento-kf-r6/S05f-1.png", "S06b": P + "bento-kf-r6/S06b-1.png",
+    "S07d": P + "bento-kf-r6/S07d-2.png", "S08a": P + "bento-kf-r6/S08a-1.png", "S08b": P + "bento-kf-r6/S08b-1.png",
+    "S08h": P + "bento-kf-r6/S08h-2.png", "S09b": P + "bento-kf-r6/S09b-1.png", "S09e": P + "bento-kf-r6/S09e-1.png",
+    "S09g": P + "bento-kf-r6/S09g-2.png", "S09i": P + "bento-kf-r6/S09i-1.png", "S09n": P + "bento-kf-r6/S09n-1.png",
+    "S12d": P + "bento-kf-r6/S12d-1.png", "S13l": P + "bento-kf-r6/S13l-1.png",
     "S05e": P + "bento-kf-r5/S05e-1.png", "S09p": P + "bento-kf-r5/S09p-1.png", "S13t": P + "bento-kf-r5/S13t-1.png",
 }
-PENDING = {"S02d", "S02e", "S04e", "S04g", "S05f", "S07d", "S08b", "S08h", "S09b", "S09e", "S09g", "S09n", "S13l",
-           "S06a", "S13b", "S06b", "S09i", "S12d", "S08a"}
+PENDING = {"S06a", "S13b"}
 
 
 def main():
