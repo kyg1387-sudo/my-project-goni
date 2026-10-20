@@ -62,8 +62,8 @@ REAL = ("REAL PHOTOGRAPH, live-action Japanese film still: natural skin texture 
         "no beauty filter, natural colour, real fabric texture; NOT an illustration, NOT 3D, NOT CGI.")
 EMO_OVERRIDE = {
     "S08j": "SPEAKER LOCKED: Shuzo in 1996 (black hair greying at the temples, white headband towel, white cook's jacket, navy apron) leans on the counter with both hands, the face at three-quarter angle toward the boy, gruff but warm, a faint softening around the eyes; the boy appears ONLY as a blurred back of messy black hair and navy jumper shoulder at the near LEFT edge, shorter than the counter edge. The lit glass showcase between them.",
-    "S13d": "SPEAKER LOCKED: grown-up Takumi (42, LARGE round dark eyes, slightly protruding ears, short neat black hair, charcoal overcoat) stands in the shop doorway holding a little girl's hand, the face at three-quarter angle toward the old man, eyes red-rimmed and wet with tears pooled but NOT running, a small closed-mouth smile with lips together; the old man appears ONLY as a blurred back of short WHITE hair and grey cardigan shoulder at the near RIGHT edge. Behind Takumi: the glass sliding door and the dark night street.",
-    "S13f": "SPEAKER LOCKED: old Shuzo (73, short WHITE hair, white eyebrows, deep wrinkles, grey cardigan under a faded navy apron) behind the counter with one hand resting on the last bento on the showcase, the face at three-quarter angle toward Takumi, choked up: eyes red and wet with tears pooled but NOT running, mouth corners pulled down, chin trembling, NOT smiling; grown-up Takumi appears ONLY as a blurred back of short black hair and charcoal coat shoulder at the near LEFT edge.",
+    "S13d": "SPEAKER LOCKED: grown-up Takumi (42, LARGE round dark eyes, slightly protruding ears, short neat black hair, charcoal overcoat) stands just inside the shop doorway (his daughter's small hand in his, below the frame edge, NOT visible), the face at three-quarter angle toward the old man, eyes red-rimmed and wet with tears pooled but NOT running, a small closed-mouth smile with lips together; the old man appears ONLY as a blurred back of short WHITE hair and grey cardigan shoulder at the near RIGHT edge. Behind Takumi: the glass sliding door and the dark night street.",
+    "S13f": "SPEAKER LOCKED: old Shuzo (73, short WHITE hair, white eyebrows, deep wrinkles, grey cardigan under a faded navy apron) behind the counter with one hand resting on the ONE single remaining bento box on the counter top (no other bentos on the counter), the face at three-quarter angle toward Takumi, choked up: eyes red and wet with tears pooled but NOT running, mouth corners pulled down, chin trembling, NOT smiling; grown-up Takumi appears ONLY as a blurred back of short black hair and charcoal coat shoulder at the near LEFT edge.",
 }
 ANGER_CLOSED = ("Fury shown only in the wide-open glaring eyes, furrowed brow, flared nostrils and clenched jaw: eyes OPEN and fixed on the listener, "
                 "lips pressed together, mouth CLOSED, NOT shouting (speech is added later).")
@@ -93,12 +93,20 @@ def describe(path, i):
 
 NO_FACE = {}
 NO_BACKCELL = set()  # 뒷모습 전신 셀이 원경 전신 구도를 끌어옴 — 앞 인물은 글로만
-NO_LOC = set()  # 장소 참조가 원경·후광(오려 붙인 테두리)을 만든 립싱크 컷 — 장소는 글로만
+NO_LOC = set()  # 장소 참조가 원경·후광(오려 붙인 테두리)을 만든 컷 — 장소는 글로만
+# 시범 1차(2026-10-20): 립싱크 3컷 6장 모두 장소 참조를 따라 원경(얼굴 1/6)으로 나옴 → 립싱크 컷은 장소 참조를 기본으로 뺀다(제18장 4)
+FRAME_FIRST = ("FRAMING FIRST — TIGHT MEDIUM CLOSE-UP, chest-up portrait framing: the speaker's head and shoulders fill about half of the frame width, "
+               "the face is one third of the frame height or larger; the room is only a soft out-of-focus background. NOT a wide shot, NOT a medium "
+               "shot, NOT full body, no floor visible.")
+# 「red eyes / reddened eye rims」는 홍채까지 빨갛게 만든다(시범 1차 S13d, 제18장 12 ②) — 눈물 문장을 치환
+EYE_FIX = [("eyes red-rimmed and wet", "eyes wet"), ("eyes red and wet", "eyes wet"),
+           ("reddened eye rims", "only the eyelid edges faintly pink")]
+EYE_SAFE = "EYES: natural dark brown irises and clear white sclera; NO red irises, NO glowing eyes, NO red eye whites."
 
 
 def build(sc, stage):
     refs = list(sc["refs"])
-    if sc["id"] in NO_LOC:
+    if sc["id"] in NO_LOC or sc["kind"] == "d":
         refs = [r for r in refs if not os.path.basename(r).startswith("loc-")]
     people = [r for r in refs if who_of(os.path.basename(r))[0]]
     is_back = any(os.path.basename(r).endswith("-back.png") for r in refs) and sc["kind"] != "d"
@@ -118,6 +126,8 @@ def build(sc, stage):
             back = f"{CELLS}/{k2}-back.png"
             refs = [r for r in refs if r != people[1]] + ([] if sc["id"] in NO_BACKCELL else [back])
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
+    if sc["kind"] == "d":
+        parts.append(FRAME_FIRST)
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
     if sc["id"] in EMO_OVERRIDE:
         parts.append(EMO_OVERRIDE[sc["id"]])
@@ -153,7 +163,12 @@ def build(sc, stage):
     parts.append(REAL)
     parts.append(FULL)
     parts.append("Absolutely no text, letters, numbers, logos or symbols anywhere in the image.")
-    return {"id": sc["id"], "count": 1, "aspect_ratio": "16:9", "refs": refs, "prompt": " ".join(parts), "model": "fal-ai/bytedance/seedream/v4/edit", "extra": {"image_size": {"width": 2560, "height": 1440}}}
+    prompt = " ".join(parts)
+    for a, b in EYE_FIX:
+        prompt = prompt.replace(a, b)
+    if "tear" in prompt.lower():
+        prompt = prompt.replace("Absolutely no text, letters", EYE_SAFE + " Absolutely no text, letters")
+    return {"id": sc["id"], "count": 1, "aspect_ratio": "16:9", "refs": refs, "prompt": prompt, "model": "fal-ai/bytedance/seedream/v4/edit", "extra": {"image_size": {"width": 2560, "height": 1440}}}
 
 
 def main():
