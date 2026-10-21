@@ -165,9 +165,7 @@
   {
    "prompt": "Static, locked off camera. Motion: He looks down at the letter. The key action of this shot: ONE clear tear wells up, slowly spills over the lower lid and visibly rolls down the cheek during the shot. NOT smiling at any moment, mouth corners turned down, chin trembling slightly. One clear tear slowly spills over the lower lid and runs down the cheek along its natural curve, catching the light; a slow blink, a trembling breath; only one tear line, thin and translucent. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 10,
-   "image": "assets/portraits/bento-keyframes/H2-1.png",
-   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
-   "i2v_resolution": "1080p"
+   "image": "assets/portraits/bento-keyframes/H2-1.png"
   },
   {
    "prompt": "Static, locked off camera. Motion: The warm light flickers faintly, a light drizzle; the building stays perfectly still; no cars, no headlights. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
@@ -737,9 +735,7 @@
   {
    "prompt": "Static, locked off camera. Motion: NOT smiling at any moment: mouth corners stay pulled down, lips pressed together, chin trembling; he cries silently, a trembling breath. The key action of this shot: ONE clear tear wells up, slowly spills over the lower lid and visibly rolls down the cheek during the shot. NOT smiling at any moment, mouth corners turned down, chin trembling slightly. One clear tear slowly spills over the lower lid and runs down the cheek along its natural curve, catching the light; a slow blink, a trembling breath; only one tear line, thin and translucent. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
-   "image": "assets/portraits/bento-keyframes/S12k-1.png",
-   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
-   "i2v_resolution": "1080p"
+   "image": "assets/portraits/bento-keyframes/S12k-1.png"
   },
   {
    "prompt": "Static, locked off camera. Motion: His shoulders shake as if laughing and crying at once; his head stays turned away. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",

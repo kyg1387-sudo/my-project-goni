@@ -99,7 +99,7 @@ SWEAT = ("Realistic sweat as in a live-action film: fine tiny beads of perspirat
          "no large cartoon drops, no face-wide shine.")
 GLASSES = {k: ("She wears no glasses." if k in ("SUM", "SUM50", "MIO", "HINA", "MIO36") else "He wears no glasses.") for k in
            ("SH96", "SH26", "SH60", "SUM", "SUM50", "TB", "TA", "MIO", "HINA", "MIO36")}
-PRO_TEARS = {"H2", "S12f", "S12k"}
+PRO_TEARS = {"S12f"}  # pro 실측(2026-10-21): S12f 합격, S12k 눈물이 꿀색·굵게(젤) → lite 판 유지, H2 고개를 깊이 숙여 얼굴 사라짐 → lite 판 유지(교체 클립)
 TEARS_POOL = ("Realistic tears as in a live-action film: glossy wet eyes brimming with tears pooled along the lower lids and lashes, catching the light, "
               "about to spill but NOT yet running — both cheeks still completely DRY, no tear track; natural skin tone, matte skin, NO makeup, no pink eyelids.")
 WET_HOLD = " Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled."
