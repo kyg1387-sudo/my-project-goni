@@ -99,6 +99,8 @@ SWEAT = ("Realistic sweat as in a live-action film: fine tiny beads of perspirat
          "no large cartoon drops, no face-wide shine.")
 GLASSES = {k: ("She wears no glasses." if k in ("SUM", "SUM50", "MIO", "HINA", "MIO36") else "He wears no glasses.") for k in
            ("SH96", "SH26", "SH60", "SUM", "SUM50", "TB", "TA", "MIO", "HINA", "MIO36")}
+TEARS_POOL = ("Realistic tears as in a live-action film: glossy wet eyes brimming with tears pooled along the lower lids and lashes, catching the light, "
+              "about to spill but NOT yet running — both cheeks still completely DRY, no tear track; natural skin tone, matte skin, NO makeup, no pink eyelids.")
 WET_HOLD = " Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled."
 TEARS_FLOW = (" NOT smiling at any moment, mouth corners turned down, chin trembling slightly. One clear tear slowly spills over the lower lid and "
               "runs down the cheek along its natural curve, catching the light; a slow blink, a trembling breath; only one tear line, thin and translucent.")
@@ -373,8 +375,8 @@ SHOTS = [
     S("S12d", "S12", "face", "ms", "letter", "HA", [H26], "S26O", "Medium, slightly high: old Shuzo at the counter under the warm lamp holding the letter up toward the light with both hands, his bare eyes on it, the shutter half down behind him.",
       line="L29", vo=True, motion="He reads, his hands trembling slightly." + HOLD, expr="calm"),
     S("S12e", "S12", "reuse:S05b", "ecu", "s96", "HA", [], None, "Flashback reuse of S05b (coins into the register).", line="L30", vo=True),
-    S("S12f", "S12", "face", "cu", "s96", "EL", [TB_], "S96X", "Flashback 1996: the boy outside the shop at night, seen through the glass door, watching something inside, eyes wet.",
-      line="L30a", vo=True, motion="He watches through the glass, eyes wet, breath fogging the glass faintly." + WET_HOLD + NS + HOLD, expr="tears"),
+    S("S12f", "S12", "face", "cu", "s96", "EL", [TB_], "S96X", "Flashback 1996, close-up from inside the shop through the glass door: the boy standing outside in the dark, his face at three-quarter angle turned toward screen LEFT, looking into the shop at something (NOT at the camera), eyes brimming with tears, lips pressed together, faint reflections of the warm shop light on the glass in front of his face.",
+      line="L30a", vo=True, motion="He keeps watching through the glass toward the left, never looking at the camera." + TEARS_FLOW + NS + HOLD, expr="tears"),
     S("S12g", "S12", "face", "cu", "letter", "EL", [H26], "S26O", "Close-up of old Shuzo, the letter trembling in his hands, tears welling.", line="L31", vo=True,
       motion="He reads." + TEARS_FLOW + HOLD, expr="grief"),
     S("S12h", "S12", "reuse:S08l", "ecu", "kit96", "HA", [], None, "Flashback reuse of S08l (the thermos into the bag).", line="L31a", vo=True),
@@ -765,6 +767,8 @@ def main():
             low = (s["subject"] + " " + (s["act"] or "")).lower()  # 「wet」 단독은 비·젖은 거리(S04c·S07a·S14a)라 눈물 신호에서 제외(키프레임 1차 사전 점검 실증)
             real = " ".join(x for x, keys in ((TEARS, ("tear", "sob", "cry", "wet eyes", "eyes wet", "eyes red", "wiping her eye", "wiping his eye", "wiping the corner", "choked")), (SWEAT, ("sweat",))) if any(k in low for k in keys)
                             or (s["expr"] in ("tears",) and x == TEARS) or (s["expr"] in ("fear",) and x == SWEAT))
+            if TEARS in real and "spills over" in (s.get("motion") or ""):  # 흐름은 i2v가 만든다 — 키프레임은 고인 눈물·마른 뺨(2차 검수 S12f: 이미 붙은 줄기 + 정면 응시)
+                real = real.replace(TEARS, TEARS_POOL)
             glasses = " ".join(GLASSES[w.split(":")[0]] for w in s["who"] if w.split(":")[0] in GLASSES)
             kf_prompt = " ".join([PRESET + ".", s["subject"], ("Characters: " + " | ".join(ids) + ".") if ids else "", glasses, real,
                                   f"Camera: {ANGLE[s['angle']]}, {LENS[s['lens']]}.", f"Lighting: {LIGHT[s['light']]}.", comp, PLAIN,
