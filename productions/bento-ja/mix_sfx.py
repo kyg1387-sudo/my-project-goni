@@ -39,8 +39,12 @@ def main(src, out):
         ms = int(e["at"] * 1000)
         fl.append(f"[{n}:a]afade=t=in:d=0.05,afade=t=out:st={max(0.0, d - 0.6):.2f}:d=0.6,volume={db:.1f}dB,adelay={ms}|{ms}[s{k}]")
         mix.append(f"[s{k}]")
+    # 본편 끝 무음 방지(2차 검수 실측: 마지막 내레이션 뒤 BGM이 끝나 619~626s 6.9초 −60dB) — 아웃트로 배경음을 마지막 8초에 깔아 아웃트로로 이어지게
+    bed = os.path.join(REPO, "assets", "auditions", "yanagi-outro", "outro-bed.mp3")
+    n = ins.count("-i"); ins += ["-i", bed]; st = max(0.0, total - 8.0); ms = int(st * 1000)
+    fl.append(f"[{n}:a]atrim=0:{total - st:.3f},volume=0.16,afade=t=in:d=2.5,adelay={ms}|{ms}[tail]"); mix.append("[tail]")
     fl.append("".join(mix) + f"amix=inputs={len(mix)}:duration=first:normalize=0,"
-              "loudnorm=I=-14:TP=-1.0:LRA=11,aresample=48000[a]")
+              "loudnorm=I=-14:TP=-1.0:LRA=11,alimiter=limit=0.89,aresample=48000[a]")
     subprocess.run(["ffmpeg", "-y", "-v", "error", *ins, "-filter_complex", ";".join(fl), "-map", "0:v", "-map", "[a]",
                     "-c:v", "copy", "-c:a", "aac", "-b:a", "256k", out], check=True)
     r = subprocess.run(["ffmpeg", "-i", out, "-af", "silencedetect=n=-60dB:d=2", "-f", "null", "-"], capture_output=True, text=True).stderr
