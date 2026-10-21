@@ -101,6 +101,39 @@ def card(sid, text, out, sec):
     cam(tmp, out, sec, "push")
 
 
+TEAR_SPOT = {"S12i": (1560, 680, 15, 1.4)}  # 2차 검수(2026-10-21): i2v가 종이에 젤 같은 큰 물 덩어리를 흘림 → 정지 푸시인 + 작은 눈물 자국 한 방울(키프레임 2560 좌표·반지름·시각)
+
+
+def tear_spot(src, out, sec, spec):
+    """편지 종이에 눈물 한 방울이 떨어져 번지는 자국(실감: 지름 1cm 남짓, 젖은 종이가 살짝 어둡고 가장자리가 조금 더 진함)."""
+    import numpy as np
+    from PIL import Image
+    cx, cy, r, t0 = spec
+    base = np.asarray(Image.open(src).convert("RGB").resize((2560, 1440), Image.LANCZOS)).astype(np.float32)
+    yy, xx = np.mgrid[0:1440, 0:2560]
+    dist = np.hypot((xx - cx) * 1.0, (yy - cy) * 1.15)  # 기울어진 종이 → 살짝 타원
+    n = int(round(sec * FPS))
+    p = subprocess.Popen(["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
+                          "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p", out], stdin=subprocess.PIPE)
+    for k in range(n):
+        t = k / FPS
+        img = base
+        g = min(max((t - t0) / 0.35, 0.0), 1.0)
+        if g > 0:
+            rr = r * (0.35 + 0.65 * g)
+            inside = np.clip((rr - dist) / 2.5, 0, 1)
+            rim = np.exp(-((dist - rr) / 2.2) ** 2) * (dist < rr + 4)
+            dark = 1 - (0.09 * inside + 0.08 * rim) * g
+            img = base * dark[..., None]
+            img[..., 2] *= 1 + 0.015 * inside * g  # 젖은 종이의 아주 옅은 회청색
+        z = 1 + 0.06 * t / sec  # 느린 푸시인(편집 카메라)
+        cw, ch = 2560 / z, 1440 / z
+        x0, y0 = cx - cw * (cx / 2560), cy - ch * (cy / 1440)
+        fr = Image.fromarray(np.clip(img, 0, 255).astype(np.uint8)).crop((int(x0), int(y0), int(x0 + cw), int(y0 + ch))).resize((W, H), Image.LANCZOS)
+        p.stdin.write(fr.tobytes())
+    p.stdin.close(); p.wait()
+
+
 def main(only=None):
     sb = json.load(open(SB, encoding="utf-8"))["scenes"]
     ids = {s["id"]: i + 1 for i, s in enumerate(sb)}
@@ -110,8 +143,10 @@ def main(only=None):
         out = os.path.join(OUT, f"scene{i:02d}.mp4")
         sec = s["assembled_s"] + 0.5
         tier = s["tier"]
-        if (tier in ("pro", "lite") and s["id"] not in I2V_FALLBACK) or (only and s["id"] not in only):
+        if (tier in ("pro", "lite") and s["id"] not in I2V_FALLBACK and s["id"] not in TEAR_SPOT) or (only and s["id"] not in only):
             continue
+        if s["id"] in TEAR_SPOT:
+            tear_spot(os.path.join(KF, f"{s['id']}-1.png"), out, sec, TEAR_SPOT[s["id"]]); made += 1; continue
         if s["id"] in I2V_FALLBACK:
             cam(os.path.join(KF, f"{s['id']}-1.png"), out, sec, "push"); made += 1; continue
         if tier == "card":
