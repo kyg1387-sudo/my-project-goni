@@ -1,0 +1,33 @@
+{
+ "_설명": "『閉店間際の弁当屋』 아웃트로 진행자 새 스타일(규격 제18장 9 ⑧ 작품마다 의상·헤어 변경) — 얼굴은 승인 진행자(host-cu-4) 유지. 직전 작품(beggar: 시뇽·더스티로즈 카디건)과 다르게: 어깨 웨이브 반묶음·세이지그린 카디건. OmniHuman 입력(정면).",
+ "_style_preset": "Photorealistic live-action, Arri Alexa cinematic color grade, soft Kodak 35mm film grain, 16:9",
+ "characters": [
+  {
+   "id": "host-cu",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). NEW LOOK for this episode (do NOT copy her old hair or top): her dark-brown hair now falls in soft shoulder-length loose waves, the front half tied back with a small pearl hair clip, light see-through bangs; she wears a soft sage-green fine-knit cardigan over a cream blouse with a small ribbon tie at the collar, tiny pearl stud earrings; natural fresh makeup, warm and graceful. The same bright living-room studio with the beige sofa, wooden shelf and green plant, warm morning window light, softly out of focus. Chest-up close-up, she faces the camera directly with a warm gentle smile, mouth gently closed (speech is added later), 85mm lens f/2. Both eyes sharp and symmetrical, natural five-fingered hands. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  },
+  {
+   "id": "host-wu",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). NEW LOOK for this episode (do NOT copy her old hair or top): her dark-brown hair now falls in soft shoulder-length loose waves, the front half tied back with a small pearl hair clip, light see-through bangs; she wears a soft sage-green fine-knit cardigan over a cream blouse with a small ribbon tie at the collar, tiny pearl stud earrings; natural fresh makeup, warm and graceful. The same bright living-room studio with the beige sofa, wooden shelf and green plant, warm morning window light, softly out of focus. Waist-up medium shot: she sits on the beige sofa facing the camera directly, hands resting lightly together on her lap, relaxed friendly posture, 35mm lens f/2.8, mouth gently closed in a soft smile (speech is added later). Both eyes sharp and symmetrical, natural five-fingered hands. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  },
+  {
+   "id": "host-wave",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). NEW LOOK for this episode (do NOT copy her old hair or top): her dark-brown hair now falls in soft shoulder-length loose waves, the front half tied back with a small pearl hair clip, light see-through bangs; she wears a soft sage-green fine-knit cardigan over a cream blouse with a small ribbon tie at the collar, tiny pearl stud earrings; natural fresh makeup, warm and graceful. The same bright living-room studio with the beige sofa, wooden shelf and green plant, warm morning window light, softly out of focus. Chest-up medium close shot: she raises her right hand beside her face and waves goodbye to the camera with a bright warm smile, palm open, all five fingers clearly separate. Both eyes sharp and symmetrical, natural five-fingered hands. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  }
+ ]
+}

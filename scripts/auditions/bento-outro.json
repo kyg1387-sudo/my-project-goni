@@ -1,0 +1,45 @@
+{
+ "_설명": "『閉店間際の弁当屋』 아웃트로 진행자 음성(대본 OUT1~OUT4 동결본) — Yui Sato, Typecast ssfm-v30 jpn(채널 고정, 제19장 2 ⑤).",
+ "tests": [
+  {
+   "id": "pad1",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "最後までご覧いただき、ありがとうございました。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "pad2",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "皆様にも、名も知らぬ誰かに助けられた思い出はありますか。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "pad3",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "よろしければ、コメントで教えてください。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "pad4",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "チャンネル登録と高評価で、次のお話でお会いしましょう。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  }
+ ]
+}

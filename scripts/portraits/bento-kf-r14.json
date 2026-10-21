@@ -1,0 +1,261 @@
+{
+ "_설명": "bento r14 — 뺨에 그려진 젤 눈물 줄기 제거(2026-10-21 고니감독님 「눈물인지 뭐가 묻은 건지 어색」). 기존 합격 키프레임을 단일 참조로 편집, 눈가의 고인 눈물만 유지. seedream v4 edit 2560x1440 약 0.03달러/장.",
+ "characters": [
+  {
+   "id": "S03be",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-keyframes/S03be-1.png"
+   ],
+   "prompt": "Edit this exact photograph and keep EVERYTHING identical — the same person, face, identity, age, expression, mouth shape, pose, wardrobe, framing, background and lighting. Change ONLY this: remove every tear streak, tear track, droplet and wet shine from both cheeks, the nose side and the chin, so the cheek skin is completely dry with natural matte skin texture and pores. Keep the eyes glossy and wet with a thin film of tears pooled along the lower lids only (not running), natural skin tone around the eyes, NO makeup, NO pink or red eyelids. Real photograph, NOT illustration, NOT 3D.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "S03bf",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-keyframes/S03bf-1.png"
+   ],
+   "prompt": "Edit this exact photograph and keep EVERYTHING identical — the same person, face, identity, age, expression, mouth shape, pose, wardrobe, framing, background and lighting. Change ONLY this: remove every tear streak, tear track, droplet and wet shine from both cheeks, the nose side and the chin, so the cheek skin is completely dry with natural matte skin texture and pores. Keep the eyes glossy and wet with a thin film of tears pooled along the lower lids only (not running), natural skin tone around the eyes, NO makeup, NO pink or red eyelids. Real photograph, NOT illustration, NOT 3D.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "S03bg",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-keyframes/S03bg-1.png"
+   ],
+   "prompt": "Edit this exact photograph and keep EVERYTHING identical — the same person, face, identity, age, expression, mouth shape, pose, wardrobe, framing, background and lighting. Change ONLY this: remove every tear streak, tear track, droplet and wet shine from both cheeks, the nose side and the chin, so the cheek skin is completely dry with natural matte skin texture and pores. Keep the eyes glossy and wet with a thin film of tears pooled along the lower lids only (not running), natural skin tone around the eyes, NO makeup, NO pink or red eyelids. Real photograph, NOT illustration, NOT 3D.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "S08b",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-keyframes/S08b-1.png"
+   ],
+   "prompt": "Edit this exact photograph and keep EVERYTHING identical — the same person, face, identity, age, expression, mouth shape, pose, wardrobe, framing, background and lighting. Change ONLY this: remove every tear streak, tear track, droplet and wet shine from both cheeks, the nose side and the chin, so the cheek skin is completely dry with natural matte skin texture and pores. Keep the eyes glossy and wet with a thin film of tears pooled along the lower lids only (not running), natural skin tone around the eyes, NO makeup, NO pink or red eyelids. Real photograph, NOT illustration, NOT 3D.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "S08n",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-keyframes/S08n-1.png"
+   ],
+   "prompt": "Edit this exact photograph and keep EVERYTHING identical — the same person, face, identity, age, expression, mouth shape, pose, wardrobe, framing, background and lighting. Change ONLY this: remove every tear streak, tear track, droplet and wet shine from both cheeks, the nose side and the chin, so the cheek skin is completely dry with natural matte skin texture and pores. Keep the eyes glossy and wet with a thin film of tears pooled along the lower lids only (not running), natural skin tone around the eyes, NO makeup, NO pink or red eyelids. Real photograph, NOT illustration, NOT 3D.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "S09e",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-keyframes/S09e-1.png"
+   ],
+   "prompt": "Edit this exact photograph and keep EVERYTHING identical — the same person, face, identity, age, expression, mouth shape, pose, wardrobe, framing, background and lighting. Change ONLY this: remove every tear streak, tear track, droplet and wet shine from both cheeks, the nose side and the chin, so the cheek skin is completely dry with natural matte skin texture and pores. Keep the eyes glossy and wet with a thin film of tears pooled along the lower lids only (not running), natural skin tone around the eyes, NO makeup, NO pink or red eyelids. Real photograph, NOT illustration, NOT 3D.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "S09g",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-keyframes/S09g-1.png"
+   ],
+   "prompt": "Edit this exact photograph and keep EVERYTHING identical — the same person, face, identity, age, expression, mouth shape, pose, wardrobe, framing, background and lighting. Change ONLY this: remove every tear streak, tear track, droplet and wet shine from both cheeks, the nose side and the chin, so the cheek skin is completely dry with natural matte skin texture and pores. Keep the eyes glossy and wet with a thin film of tears pooled along the lower lids only (not running), natural skin tone around the eyes, NO makeup, NO pink or red eyelids. Real photograph, NOT illustration, NOT 3D.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "S09i",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-keyframes/S09i-1.png"
+   ],
+   "prompt": "Edit this exact photograph and keep EVERYTHING identical — the same person, face, identity, age, expression, mouth shape, pose, wardrobe, framing, background and lighting. Change ONLY this: remove every tear streak, tear track, droplet and wet shine from both cheeks, the nose side and the chin, so the cheek skin is completely dry with natural matte skin texture and pores. Keep the eyes glossy and wet with a thin film of tears pooled along the lower lids only (not running), natural skin tone around the eyes, NO makeup, NO pink or red eyelids. Real photograph, NOT illustration, NOT 3D.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "S09p",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-keyframes/S09p-1.png"
+   ],
+   "prompt": "Edit this exact photograph and keep EVERYTHING identical — the same person, face, identity, age, expression, mouth shape, pose, wardrobe, framing, background and lighting. Change ONLY this: remove every tear streak, tear track, droplet and wet shine from both cheeks, the nose side and the chin, so the cheek skin is completely dry with natural matte skin texture and pores. Keep the eyes glossy and wet with a thin film of tears pooled along the lower lids only (not running), natural skin tone around the eyes, NO makeup, NO pink or red eyelids. Real photograph, NOT illustration, NOT 3D.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "S12g",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-keyframes/S12g-1.png"
+   ],
+   "prompt": "Edit this exact photograph and keep EVERYTHING identical — the same person, face, identity, age, expression, mouth shape, pose, wardrobe, framing, background and lighting. Change ONLY this: remove every tear streak, tear track, droplet and wet shine from both cheeks, the nose side and the chin, so the cheek skin is completely dry with natural matte skin texture and pores. Keep the eyes glossy and wet with a thin film of tears pooled along the lower lids only (not running), natural skin tone around the eyes, NO makeup, NO pink or red eyelids. Real photograph, NOT illustration, NOT 3D.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "S12r",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-keyframes/S12r-1.png"
+   ],
+   "prompt": "Edit this exact photograph and keep EVERYTHING identical — the same person, face, identity, age, expression, mouth shape, pose, wardrobe, framing, background and lighting. Change ONLY this: remove every tear streak, tear track, droplet and wet shine from both cheeks, the nose side and the chin, so the cheek skin is completely dry with natural matte skin texture and pores. Keep the eyes glossy and wet with a thin film of tears pooled along the lower lids only (not running), natural skin tone around the eyes, NO makeup, NO pink or red eyelids. Real photograph, NOT illustration, NOT 3D.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "S13d",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-keyframes/S13d-1.png"
+   ],
+   "prompt": "Edit this exact photograph and keep EVERYTHING identical — the same person, face, identity, age, expression, mouth shape, pose, wardrobe, framing, background and lighting. Change ONLY this: remove every tear streak, tear track, droplet and wet shine from both cheeks, the nose side and the chin, so the cheek skin is completely dry with natural matte skin texture and pores. Keep the eyes glossy and wet with a thin film of tears pooled along the lower lids only (not running), natural skin tone around the eyes, NO makeup, NO pink or red eyelids. Real photograph, NOT illustration, NOT 3D.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "S13j",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-keyframes/S13j-1.png"
+   ],
+   "prompt": "Edit this exact photograph and keep EVERYTHING identical — the same person, face, identity, age, expression, mouth shape, pose, wardrobe, framing, background and lighting. Change ONLY this: remove every tear streak, tear track, droplet and wet shine from both cheeks, the nose side and the chin, so the cheek skin is completely dry with natural matte skin texture and pores. Keep the eyes glossy and wet with a thin film of tears pooled along the lower lids only (not running), natural skin tone around the eyes, NO makeup, NO pink or red eyelids. Real photograph, NOT illustration, NOT 3D.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "S13n",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-keyframes/S13n-1.png"
+   ],
+   "prompt": "Edit this exact photograph and keep EVERYTHING identical — the same person, face, identity, age, expression, mouth shape, pose, wardrobe, framing, background and lighting. Change ONLY this: remove every tear streak, tear track, droplet and wet shine from both cheeks, the nose side and the chin, so the cheek skin is completely dry with natural matte skin texture and pores. Keep the eyes glossy and wet with a thin film of tears pooled along the lower lids only (not running), natural skin tone around the eyes, NO makeup, NO pink or red eyelids. Real photograph, NOT illustration, NOT 3D.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "S13u",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-keyframes/S13u-1.png"
+   ],
+   "prompt": "Edit this exact photograph and keep EVERYTHING identical — the same person, face, identity, age, expression, mouth shape, pose, wardrobe, framing, background and lighting. Change ONLY this: remove every tear streak, tear track, droplet and wet shine from both cheeks, the nose side and the chin, so the cheek skin is completely dry with natural matte skin texture and pores. Keep the eyes glossy and wet with a thin film of tears pooled along the lower lids only (not running), natural skin tone around the eyes, NO makeup, NO pink or red eyelids. Real photograph, NOT illustration, NOT 3D.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "S14e",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-keyframes/S14e-1.png"
+   ],
+   "prompt": "Edit this exact photograph and keep EVERYTHING identical — the same person, face, identity, age, expression, mouth shape, pose, wardrobe, framing, background and lighting. Change ONLY this: remove every tear streak, tear track, droplet and wet shine from both cheeks, the nose side and the chin, so the cheek skin is completely dry with natural matte skin texture and pores. Keep the eyes glossy and wet with a thin film of tears pooled along the lower lids only (not running), natural skin tone around the eyes, NO makeup, NO pink or red eyelids. Real photograph, NOT illustration, NOT 3D.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  }
+ ]
+}
