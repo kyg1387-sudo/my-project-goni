@@ -24,7 +24,7 @@ JUMPS = [
     ("S10bf", 1.0, "三十年後"),             # 병실 → 2026 가게(NA21a 「三十年、守り続けた」와 맞물림, 2차 검수 지적)
 ]
 FLASHBACK = [("S12c", "S12c"), ("S12e", "S12f"), ("S12h", "S12h"), ("S12m", "S12n")]  # 편지 속 회상(처음 컷, 끝 컷)
-FB_DISSOLVE = 0.4
+FB_DISSOLVE = 0.6
 CAP_AT, CAP_LEN = 0.35, 3.0
 
 
@@ -40,7 +40,7 @@ def shot_times():
 
 def caption_png(text, path, w):
     s = w / 1920
-    f = ImageFont.truetype(FONT, int(54 * s))
+    f = ImageFont.truetype(FONT, int(76 * s))  # 휴대폰 기준(1차 시험 54px는 작음)
     pad = int(40 * s)
     box = f.getbbox(text)
     W, H = box[2] + pad * 2, box[3] + pad * 2
@@ -56,6 +56,22 @@ def caption_png(text, path, w):
     return int(90 * s), int(70 * s)
 
 
+def real_cut(src, T, win=0.6):
+    """샷리스트 시각은 조립 실측과 수 프레임 어긋난다(1차 시험: 회상 진입 디졸브가 같은 컷 프레임을 정지해 안 보임) → 창 안에서 장면 변화 최대 프레임."""
+    r = subprocess.run(["ffmpeg", "-v", "info", "-ss", f"{T - win:.3f}", "-t", f"{2 * win:.3f}", "-i", src, "-an",
+                        "-vf", "scale=320:-1,select='gte(scene,0)',metadata=print", "-f", "null", "-"], capture_output=True, text=True).stderr
+    best, bt = -1, T
+    pts = None
+    for ln in r.splitlines():
+        if "pts_time:" in ln:
+            pts = float(ln.split("pts_time:")[1].split()[0])
+        elif "lavfi.scene_score=" in ln and pts is not None:
+            sc = float(ln.split("=")[1])
+            if sc > best:
+                best, bt = sc, T - win + pts
+    return bt
+
+
 def probe(p, key):
     return subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", f"stream={key}", "-of", "csv=p=0", p],
                           capture_output=True, text=True).stdout.strip()
@@ -69,15 +85,15 @@ def main(src, out):
     fb = [(t[a][0], t[b][1]) for a, b in FLASHBACK]
     en = "+".join(f"between(t,{a:.3f},{b:.3f})" for a, b in fb)
     graded = os.path.join(tmp, "graded.mp4")
-    vf = (f"eq=saturation=0.62:contrast=0.94:brightness=0.02:enable='{en}',"
+    vf = (f"eq=saturation=0.5:contrast=0.92:brightness=0.02:enable='{en}',"
           f"colorbalance=rs=0.08:gs=0.03:bs=-0.08:rm=0.06:bm=-0.06:enable='{en}',"
           f"vignette=angle=0.55:enable='{en}'")
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", src, "-vf", vf, "-c:v", "libx264", "-crf", "15", "-preset", "medium",
                     "-pix_fmt", "yuv420p", "-c:a", "copy", graded], check=True)
     # 2패스: 디졸브(앞 장면 마지막 프레임 정지 → 페이드아웃) + 시점 자막
-    bounds = [(t[sid][0], d, cap) for sid, d, cap in JUMPS]
+    bounds = [(real_cut(src, t[sid][0]), d, cap) for sid, d, cap in JUMPS]
     for a, b in fb:
-        bounds += [(a, FB_DISSOLVE, None), (b, FB_DISSOLVE, None)]
+        bounds += [(real_cut(src, a), FB_DISSOLVE, None), (real_cut(src, b), FB_DISSOLVE, None)]
     ins, fl, cur = ["-i", graded], [], "[0:v]"
     for k, (T, d, cap) in enumerate(sorted(bounds)):
         png = os.path.join(tmp, f"last{k}.png")
