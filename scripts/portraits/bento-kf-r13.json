@@ -35,6 +35,26 @@
      "height": 1440
     }
    }
+  },
+  {
+   "id": "S13c",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-faces/takumi42.png",
+    "assets/portraits/bento-faces/hina8.png",
+    "assets/portraits/bento-cast/cells/takumi42-expr1.png",
+    "assets/portraits/bento-cast/cells/hina8-front.png",
+    "assets/portraits/bento-cast/cells/loc-shop26-reverse.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. PEOPLE LOCKED: exactly THREE people — old Shuzo ONLY as a blurred back at the near left edge, Takumi entering through the half-open glass door, and his little daughter holding his hand; they are ENTERING (mid-step at the threshold), NOT standing still in the middle of the shop; the girl looks at the counter, NOT at the camera. Reference image 1 is a tight face crop of Asakura Takumi grown up (42, the same LARGE round dark eyes with double eyelids and slightly protruding ears, short neat black hair, slim face, NO glasses, NO earrings): reproduce exactly this face, age, hairstyle and eyewear; identity ONLY — do NOT copy its camera angle, background or lighting. Reference image 2 is a tight face crop of Asakura Hina (8, oval face, black hair in two low pigtails, NO glasses): reproduce exactly this face, age, hairstyle and eyewear; identity ONLY — do NOT copy its camera angle, background or lighting. Reference image 3 is the character sheet cell of Asakura Takumi grown up (42, the same LARGE round dark eyes with double eyelids and slightly protruding ears, short neat black hair, slim face, NO glasses, NO earrings): copy this exact face, hairstyle, eyewear, wardrobe and age; ignore its background, framing and any sheet layout. Reference image 4 is the character sheet cell of Asakura Hina (8, oval face, black hair in two low pigtails, NO glasses): copy this exact face, hairstyle, eyewear, wardrobe and age; ignore its background, framing and any sheet layout. Reference image 5 is the location reference: match its architecture, colours, set dressing and light direction; ignore any borders, labels or wall papers. Photorealistic live-action Japanese human drama, a tiny bento shop by a local train station, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. From inside the shop behind the counter, past old Shuzo's blurred white hair and grey cardigan shoulder at the near LEFT edge (seen from behind, face NOT visible): the glass sliding door half open onto the dark night street, the brass bell above it swinging; Takumi in the charcoal overcoat stepping over the threshold, his right hand on the door edge sliding it open, his left hand holding his little daughter's hand, the girl in a cream coat with pigtails half a step behind him; both look toward the counter, NOT at the camera. Characters: Asakura Takumi grown up, a slim Japanese man aged 42, the same LARGE round dark eyes with double eyelids, ears that stick out slightly, thin straight eyebrows, short neat black hair, clean-shaven, no glasses, no earrings, wearing a plain charcoal wool overcoat with no logo, a plain white shirt | Asakura Hina, a Japanese girl aged 8, oval face, black hair in two low pigtails, round eyes, no glasses, wearing a plain cream wool coat with round buttons and no logo. He wears no glasses. She wears no glasses.  Camera: eye-level, 50mm lens, f/2.8, natural perspective, rule of thirds, the person's face at least one quarter of the frame height. Lighting: night now: the showcase's warm glow and one warm lamp, cool fluorescent turned low, intimate, faces readable. Exactly 2 people (or their hands) as described, no extra people. All papers, price cards, notices, signs, envelopes and labels are completely blank; no letters, numbers or symbols anywhere in the frame. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, menus with writing, price tags with writing, documents with writing, screens with text, printed labels, brand logos, watermarks, stamps, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, anime, 3d render, cartoon, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks, glasses, earrings, piercings, pink eyeshadow, lipstick on men. The shop now, thirty years older: faded walls, a slim flat TV, a blank white paper notice, NO signs, NO posters with writing. LIGHTING: night now, the showcase's warm glow and one warm lamp, cool fluorescent low, intimate, faces clearly readable. REAL PHOTOGRAPH, live-action Japanese film still: natural skin texture with visible pores and fine lines, no airbrushed or plastic skin, no beauty filter, natural colour, real fabric texture; NOT an illustration, NOT 3D, NOT CGI. Full-frame 16:9 image filling the whole canvas: NO black bars, NO white borders, NO letterbox or pillarbox. Absolutely no text, letters, numbers, logos or symbols anywhere in the image.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
   }
  ]
 }
