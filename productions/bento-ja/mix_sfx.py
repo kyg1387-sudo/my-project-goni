@@ -28,7 +28,8 @@ def main(src, out):
     ins, fl = ["-i", src, "-stream_loop", "-1", "-i", os.path.join(SFX, "roomtone.mp3")], []
     room_gain = -52 - vol(os.path.join(SFX, "roomtone.mp3"), "mean_volume")  # 소스 평균을 −52 dBFS로
     fl.append(f"[1:a]atrim=0:{total:.3f},highpass=f=60,lowpass=f=3000,volume={room_gain:.1f}dB[room]")
-    mix = ["[0:a]", "[room]"]
+    fl.append(f"[0:a]apad,atrim=0:{total:.3f}[main]")  # burn 오디오가 영상보다 6초 짧음(실측 619.2 vs 625.2s) → 영상 길이까지 채운 뒤 믹스(제18장 10 ②)
+    mix = ["[main]", "[room]"]
     for k, e in enumerate(tl):
         p = os.path.join(SFX, e["name"] + ".mp3")
         n = ins.count("-i")  # 입력 번호(-stream_loop 인자 때문에 길이/2는 틀림)
@@ -44,7 +45,7 @@ def main(src, out):
     n = ins.count("-i"); ins += ["-i", bed]; st = max(0.0, total - 8.0); ms = int(st * 1000)
     fl.append(f"[{n}:a]atrim=0:{total - st:.3f},volume=0.16,afade=t=in:d=2.5,adelay={ms}|{ms}[tail]"); mix.append("[tail]")
     fl.append("".join(mix) + f"amix=inputs={len(mix)}:duration=first:normalize=0,"
-              "loudnorm=I=-14:TP=-1.0:LRA=11,alimiter=limit=0.89,aresample=48000[a]")
+              "loudnorm=I=-14:TP=-1.0:LRA=11,alimiter=limit=0.79,aresample=48000[a]")
     subprocess.run(["ffmpeg", "-y", "-v", "error", *ins, "-filter_complex", ";".join(fl), "-map", "0:v", "-map", "[a]",
                     "-c:v", "copy", "-c:a", "aac", "-b:a", "256k", out], check=True)
     r = subprocess.run(["ffmpeg", "-i", out, "-af", "silencedetect=n=-60dB:d=2", "-f", "null", "-"], capture_output=True, text=True).stderr

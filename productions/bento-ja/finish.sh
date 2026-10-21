@@ -11,7 +11,7 @@ fi
 python3 productions/bento-ja/mix_sfx.py "$W/tt.mp4" "$W/mix.mp4"
 OUTRO=out/bento-outro.mp4 ENDCARD=assets/brand/endcard-midam-ja.mp4 OUT_SIZE=1920x1080 \
   python3 scripts/append_outro.py "$W/mix.mp4" "$W/full.mp4"
-ffmpeg -v error -y -i "$W/full.mp4" -c:v copy -af "loudnorm=I=-14:TP=-1.5:LRA=11,alimiter=limit=0.89" -c:a aac -b:a 256k "$W/bento-final.mp4"
+ffmpeg -v error -y -i "$W/full.mp4" -c:v copy -af "loudnorm=I=-14:TP=-2:LRA=11,alimiter=limit=0.79" -c:a aac -b:a 256k "$W/bento-final.mp4"
 ffmpeg -i "$W/bento-final.mp4" -af ebur128=peak=true -f null - 2>&1 | grep -E "I:|Peak" | tail -3
 ffmpeg -i "$W/bento-final.mp4" -af silencedetect=n=-60dB:d=2 -f null - 2>&1 | grep -c silence_start || true
 ffprobe -v error -show_entries format=duration -of csv=p=0 "$W/bento-final.mp4"
