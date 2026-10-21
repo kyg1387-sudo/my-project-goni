@@ -12,6 +12,7 @@
       assets/audio-overrides/bento/lineNNN.mp3 · productions/bento-ja/07_샷리스트.md · 16_감정일치표.md
 사용법: python3 scripts/build_bento_phase3.py
 """
+import re
 import collections, json, os, re, shutil
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -160,7 +161,7 @@ SHOTS = [
       line="NA2", motion="He wipes the counter slowly, a tired breath." + HOLD, expr="calm"),
     S("S01c", "S01", "ins", "ecu", "s26", "HA", [H26], "S26K", "Insert: an old fingertip slowly tracing one faded small round red sticker stuck on the corner of the worn counter, no face.",
       line="NA3", motion="The fingertip traces the faded sticker once, slowly."),
-    S("S01d", "S01", "ins", "ecu", "s26", "EL", [H26], "P_KARA", "Insert: old hands pressing one bright red round blank sticker onto the clear lid of a fresh karaage bento, no face.",
+    S("S01d", "S01", "ins", "ecu", "s26", "EL", [], "P_KARA", "Insert, high angle looking down at the steel counter top: a fresh karaage bento with a clear lid lying flat ON THE COUNTER, its base touching the steel; an old man's wrinkled hand in a grey cardigan sleeve from the top edge pressing one bright red round blank sticker onto the lid; no face, no body behind the box.",
       line="NA3a", motion="The thumb presses the sticker flat onto the lid, slowly."),
     S("S01e", "S01", "estill", "ecu", "s26", "EL", [], "P_BIRD", "Insert: a small faded origami robin folded from red paper sitting alone in the corner of a dusty shelf."),
     S("S01f", "S01", "face", "cu", "s26", "SIDE", [H26], "S26W", "Close-up profile of old Shuzo looking toward the glass door, lost in memory.",
@@ -304,8 +305,8 @@ SHOTS = [
       act="The boy sets the folded bags on the counter and tells him they are moving to his mother's hometown, today is the last time, sad." + OB, expr="shy"),
     S("S09c", "S09", "ins", "ecu", "s96", "HA", [H96], "P_KARA", "Insert: a man's hands stopping on the lid of a karaage bento, no face.",
       line="L24", vo=True, motion="The hands stop on the lid and stay still."),
-    S("S09d", "S09", "ins", "ecu", "s96", "EL", [H96], "P_KARA", "Insert: tongs adding one more karaage and then another onto a bento already full, the clear lid unable to close.",
-      motion="The tongs place one more karaage into the open bento, slowly; the lid stays open."),
+    S("S09d", "S09", "ins", "ecu", "s96", "HA", [], "P_KARA", "Insert, high angle looking down at the steel counter top: an open karaage bento lying flat ON THE COUNTER, already heaped with karaage, its clear lid propped open beside it; a man's hand in a white cook's jacket sleeve from the top edge with metal tongs adding one more karaage on top of the pile; no face, no body behind the box.",
+      motion="The bento stays flat on the counter and never moves; the tongs place one more karaage on top of the pile, slowly; the lid stays open."),
     S("S09e", "S09", "d", "ots", "s96", "EL", [SU, H96], "S96C", "Over Shuzo's blurred shoulder: Sumie coming out of the kitchen laughing, wiping the corner of her eye.", line="L25",
       act="Sumie laughs, wiping the corner of one eye, scolding him that he put in too much again and the lid won't close." + WET_SMILE + OB, expr="teary"),
     S("S09f", "S09", "face", "ms", "s96", "EL", [TB_], "S96W", "Medium: the boy holding the bag, stepping back from the counter and bowing deeply.",
@@ -320,8 +321,8 @@ SHOTS = [
       motion="He grips the bag tighter, eyes wet." + WET_HOLD + NS + HOLD, expr="tears"),
     S("S09k", "S09", "d", "ots", "s96", "HA", [TB_, H96], "S96O", "Over Shuzo's blurred shoulder: the boy gripping the bag, smiling through held-back tears.", line="L26d",
       act="The boy grips the bag and, holding back tears with a smile, asks him to keep the shop going forever." + WET_HOLD + OB, expr="smile"),
-    S("S09l", "S09", "face", "ms", "s96", "EL", [TB_, MI], "S96R", "Medium from behind: the boy and his sister walking out through the glass door into the spring night, the bell swaying.",
-      line="L26e", vo=True, motion="They walk out the door away from the camera, backs to the camera, never looking back; the bell above the door sways." + HOLD),
+    S("S09l", "S09", "face", "ms", "s96", "EL", [TB_, MI, H96], "S96R", "Medium from inside the shop, eye level: Shuzo seen strictly from behind at the near RIGHT edge (white headband towel, white cook's jacket, navy apron; face NOT visible), his hand lightly on the boy's back; beyond him at the open glass door the boy (navy zip jacket, holding a white plastic bag) and his little sister (red knit hat, yellow padded jacket) stand on the threshold with their BACKS TO THE CAMERA, already facing out into the spring night, one foot over the threshold.",
+      line="L26e", vo=True, motion="Shuzo's hand slips off the boy's back; the two children step forward out of the door away from the camera, backs to the camera the whole time, never turning around; Shuzo stays still; the bell above the door sways." + HOLD, expr="back"),
     S("S09m", "S09", "face", "ms", "s96", "SIDE", [H96], "S96R", "Medium from behind: Shuzo standing still behind the counter, looking at the closed door for a long time.",
       motion="He stands still looking at the door, a slow breath." + HOLD, expr="back"),
     S("S09n", "S09", "d", "ots", "s96", "EL", [SU, H96], "S96R", "Over Shuzo's blurred shoulder: Sumie beside him looking at the door too, soft.", line="L26f",
@@ -410,8 +411,8 @@ SHOTS = [
       motion="His lips tremble; he swallows once." + WET_HOLD + NS + HOLD, expr="grief"),
     S("S13f", "S13", "d", "ots", "s26warm", "EL", [H26, TA_], "S26O", "Over Takumi's blurred shoulder: old Shuzo with one hand resting on the last bento on the showcase, choked up.", line="L36",
       act="Shuzo rests his hand on the last bento and answers, choked up and short, only if it is a leftover." + WET_HOLD + NS + OB, expr="grief"),
-    S("S13g", "S13", "face", "ms", "s26warm", "SIDE", [TA_, H26], "S26W", "Medium side two-shot across the counter: Takumi and old Shuzo breathing out a laugh mixed with tears, not speaking.",
-      line="L37", vo=True, motion="Both let out one soft breath, half laugh and half tears, mouths nearly closed, no wide smile, eyes wet; they keep looking at each other." + HOLD),
+    S("S13g", "S13", "face", "ms", "s26warm", "LA", [H26], "S26W", "Low angle from behind a little girl at the counter (near LEFT foreground, seen strictly from behind: short black hair with a hair clip, cream coat, her small hand holding the hem of her father's charcoal coat; face NOT visible) looking up at old Shuzo behind the counter, who looks down at her with wet eyes and a small closed-mouth smile.",
+      line="L37", vo=True, motion="The little girl tilts her head up toward him, still holding the coat hem; old Shuzo looks down at her, a slow blink, lips together." + HOLD),
     S("S13h", "S13", "face", "cu", "s26warm", "EL", [TA_], "S26O", "Close-up of Takumi looking past the old man toward the kitchen on screen right, at something on the wall.",
       motion="His gaze settles on the kitchen wall on the right; his eyes soften." + HOLD, expr="calm"),
     S("S13i", "S13", "d", "ots", "s26warm", "EL", [TA_, H26], "S26R", "Over old Shuzo's blurred shoulder: Takumi turning from the kitchen wall back to him, careful.", line="L37a",
@@ -666,6 +667,18 @@ def main():
         if s["ots"]:
             s["who"] = s["who"] + [sp]
     errs = check_rules(SHOTS, rows)
+    # 2차 검수(2026-10-21) 반복 오류 자동 검사: ① VO 대사의 화자가 화면에 없음(아이 대사 위 어른 컷 1:42, 陽菜 대사 위 투샷)
+    # ② 사람 참조가 붙은 그릇·도시락 인서트 = 몸 앞 허공에 뜬 소품(1:32 쌀 그릇·2:2x 도시락·S01d) ③ 나가는 컷 정면 키프레임(들어왔다 돌아 나감 5:41)
+    for s in SHOTS:
+        t = s["subject"].lower()
+        if s.get("vo") and s["line"] in rows and s["id"] not in VO_OFFSCREEN_OK:
+            sp = spk_who(rows[s["line"]]["spk"], s)
+            if sp and sp.split(":")[0] not in {w.split(":")[0] for w in s["who"]}:
+                errs.append(f"{s['id']}: VO 화자 {rows[s['line']]['spk']}가 화면에 없음 — 화자(입 가림)·화자 어깨 너머 컷으로")
+        if s["kind"] == "ins" and s["who"] and s["id"] not in PROP_HELD_OK and re.search(r"\b(bowl|bento|box|tray|plate)\b", t) and not re.search(r"\b(on the|lying|rests|sits on)\b", t):
+            errs.append(f"{s['id']}: 사람 참조 + 받침면 없는 소품 인서트 — 공중 부양 위험(인물 참조 빼고 받침면 부감)")
+        if re.search(r"walk(s|ing)? out|out through the", t) and s.get("expr") != "back":
+            errs.append(f"{s['id']}: 나가는 컷은 expr='back'(등이 카메라 쪽 키프레임)")
     body_tags = {t for t, x in rows.items() if x["scene"].startswith("S") and x.get("start") is not None}
     used = [s["line"] for s in SHOTS if s["line"] and s["scene"] != "H"]  # 후크 줄(L01·NA0)은 HOOK_AT 고정 시각
     if sorted(used) != sorted(body_tags):
@@ -885,7 +898,9 @@ def spk_who(spk, s):
             "拓海(少年)": TBW if s["light"] == "s96rain" else TB_, "拓海(大人)": TA_, "美緒": MI, "陽菜": HI}.get(spk)
 
 
-VO_OTS_SKIP = {"S03ba", "S03bb", "S08d", "S08e", "S12b", "S12d", "S12f", "S12g", "S12j", "S12l", "S12m", "S12n", "S12r", "S12s", "S13g", "S04c", "S09l"}
+VO_OFFSCREEN_OK = {"H1"} | {s["id"] for s in SHOTS if s["scene"] == "S12"}  # 편지 낭독 VO(어른 拓海 화면 밖) — 의도된 예외
+PROP_HELD_OK = {"S08g", "S13a", "S13o"}  # 손·봉지가 받치고 있음(2026-10-21 키프레임 육안 확인)
+VO_OTS_SKIP = {"S03ba", "S03bb", "S09l", "S08d", "S08e", "S12b", "S12d", "S12f", "S12g", "S12j", "S12l", "S12m", "S12n", "S12r", "S12s", "S04c"}
 # 편지 낭독 VO(拓海 화면 밖)·화자가 화면 안에서 입을 가린 컷·뒷모습 컷은 어깨 너머 리버스숏을 만들지 않는다
 
 EMO_WORDS = {"sad": ("tear", "cry", "sad", "weak", "chok", "break", "holding back", "trembl", "grief", "apolog", "regret", "sorrow", "wet"),

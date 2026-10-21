@@ -85,6 +85,8 @@ SHOT_FIX = {
     # 아이들 대사(L06a·L06b)가 어른 컷에 깔림(1:42) → 아이들이 보이는 컷으로, 화자 입은 가림
     "S03ba": "PEOPLE LOCKED: exactly THREE people — Sumie ONLY as a blurred back and shoulder at the near LEFT edge (face NOT visible), and the two children small in the middle distance on the bench; the boy's face is turned down toward the food (mouth NOT visible).",
     "S03bb": "PEOPLE LOCKED: exactly TWO children — the little sister ONLY as the blurred back of her red knit hat and yellow jacket shoulder at the near LEFT edge (face NOT visible, she faces away from the camera), and the boy at three-quarter angle toward her, lips together.",
+    # 2차 검수(2026-10-21): 나가는 컷 키프레임이 정면(들어오는 자세) → i2v가 들어오다 돌아 나감. 나가는 컷은 처음부터 등이 카메라 쪽
+    "S09l": "POSE LOCKED: both children are seen strictly from BEHIND (backs of heads, NO faces visible), already facing OUT toward the dark doorway, NOT walking in; PEOPLE LOCKED: exactly THREE people — Shuzo only as a back at the near right edge.",
     "S03bd": "WARDROBE LOCKED: the boy wears the SAME navy zip jacket over a grey shirt as the reference, long sleeves; he is SEATED on the bench, NOT standing; the little sister in a red knit hat and yellow padded jacket sits beside him.",
 }
 ANGER_CLOSED = ("Fury shown only in the wide-open glaring eyes, furrowed brow, flared nostrils and clenched jaw: eyes OPEN and fixed on the listener, "
