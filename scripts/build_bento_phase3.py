@@ -403,8 +403,8 @@ SHOTS = [
     S("S12t", "S12", "estill", "ecu", "letter", "EL", [], "P_BIRD", "Insert: the faded red origami robin on the shelf corner, lit by the warm lamp."),
 
     # S13 재회 — 半額の弁当、まだありますか
-    S("S13a", "S13", "ins", "ecu", "s26warm", "EL", [H26], "P_KARA", "Insert: old hands holding a red round blank sticker, hesitating, then pressing it onto a fresh karaage bento lid.",
-      motion="The hands hesitate a moment, then press the sticker onto the lid."),
+    S("S13a", "S13", "ins", "ecu", "s26warm", "HA", [], "P_KARA", "Insert, high angle looking down at the worn wooden counter top inside the small shop at night: a fresh karaage bento with a clear lid lying flat ON THE COUNTER, its base touching the wood; ONE old man's wrinkled right hand in a grey cardigan sleeve coming in from the top edge holds a bright red round blank sticker just above the lid, his other hand resting flat on the counter beside the box, both sleeves from the same person at the top of the frame; warm shop light, no platform, no train; no face.",
+      motion="The bento stays flat on the counter and never moves; the right hand hesitates a moment above the lid, then presses the sticker flat onto it; the other hand stays resting on the counter."),
     S("S13b", "S13", "estill", "ecu", "s26warm", "LA", [], None, "Insert, ABSOLUTELY NO PEOPLE: the plain round wall clock with a BLANK white face filling the frame on the shop wall, both hands pointing straight up."),
     S("S13c", "S13", "face", "ms", "s26warm", "EL", [TA_, HI], "S26R", "Over old Shuzo's blurred shoulder (left foreground): the man in the charcoal overcoat standing in the doorway holding a little girl's hand, the bell swaying.",
       motion="They stand in the doorway; the bell sways; the man's eyes are wet." + WET_HOLD + HOLD, expr="calm"),
@@ -908,7 +908,7 @@ def spk_who(spk, s):
 
 
 VO_OFFSCREEN_OK = {"H1"} | {s["id"] for s in SHOTS if s["scene"] == "S12"}  # 편지 낭독 VO(어른 拓海 화면 밖) — 의도된 예외
-PROP_HELD_OK = {"S08g", "S13a", "S13o"}  # 손·봉지가 받치고 있음(2026-10-21 키프레임 육안 확인)
+PROP_HELD_OK = {"S08g", "S13o"}  # S13a는 예외 아님(2026-10-21 지적: 양쪽 끝에서 따로 들어온 손이 허공에 든 도시락)  # 손·봉지가 받치고 있음(2026-10-21 키프레임 육안 확인)
 VO_OTS_SKIP = {"S03ba", "S03bb", "S09l", "S08d", "S08e", "S12b", "S12d", "S12f", "S12g", "S12j", "S12l", "S12m", "S12n", "S12r", "S12s", "S04c"}
 # 편지 낭독 VO(拓海 화면 밖)·화자가 화면 안에서 입을 가린 컷·뒷모습 컷은 어깨 너머 리버스숏을 만들지 않는다
 
