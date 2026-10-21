@@ -473,7 +473,7 @@
    "image": "assets/portraits/bento-keyframes/S08f-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: The hands place the bento into the bag, one then the other. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: The hands lower the closed bento slowly down into the bag and let go; the bag stays on the counter. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 5,
    "image": "assets/portraits/bento-keyframes/S08g-1.png"
   },
@@ -645,12 +645,12 @@
    "image": "assets/portraits/bento-keyframes/S10bd-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: The hands stay still; a faint tremble. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: The hands stay completely still; only a faint tremble in the fingers; the peel hangs still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 10,
    "image": "assets/portraits/bento-keyframes/S10be-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: He reaches and switches on the light; the showcase glows. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: He reaches his right hand to the switch on the showcase side and switches on the light; the showcase glows; his head and eyes stay turned toward the showcase the whole time, never turning toward the camera. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 10,
    "image": "assets/portraits/bento-keyframes/S10bf-1.png"
   },

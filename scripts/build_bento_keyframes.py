@@ -80,13 +80,15 @@ SHOT_FIX = {
     "S14b": "AGE LOCKED: the younger man beside the old man is 42 years old (crow's feet, mature face, the same face as reference), NOT a teenager.",
     "S10bd": "Shuzo wears only a grey cardigan over a white shirt — ignore any apron in the reference.",
     # 2차 검수(2026-10-21): 손에 든 그릇·도시락이 몸 앞 허공에 뜸(1:32·2:2x) → 받침면에 닿은 부감 인서트
-    "S03e": "GRAVITY LOCKED: the bowl sits on the bottom of the steel sink, its base touching the steel with a soft contact shadow; the hands only rest in the rice, they do NOT hold or lift the bowl; NO person standing behind the bowl.",
+    "S03e": "Keep the exact kitchen, sink and bowl of the last reference image; ADD two man's hands resting in the rice water inside the bowl. GRAVITY LOCKED: the bowl sits on the bottom of the steel sink, its base touching the steel with a soft contact shadow; the hands only rest in the rice, they do NOT hold or lift the bowl; NO person standing behind the bowl.",
     "S04d": "GRAVITY LOCKED: the bento box lies flat on the steel counter top with a soft contact shadow under it, nobody holds or lifts it; ONE hand with metal tongs only; normal bento size (about 20 cm wide); NO person standing behind the box.",
     # 아이들 대사(L06a·L06b)가 어른 컷에 깔림(1:42) → 아이들이 보이는 컷으로, 화자 입은 가림
     "S03ba": "PEOPLE LOCKED: exactly THREE people — Sumie ONLY as a blurred back and shoulder at the near LEFT edge (face NOT visible), and the two children small in the middle distance on the bench; the boy's face is turned down toward the food (mouth NOT visible).",
     "S03bb": "PEOPLE LOCKED: exactly TWO children — the little sister ONLY as the blurred back of her red knit hat and yellow jacket shoulder at the near LEFT edge (face NOT visible, she faces away from the camera), and the boy at three-quarter angle toward her, lips together.",
     # 2차 검수(2026-10-21): 나가는 컷 키프레임이 정면(들어오는 자세) → i2v가 들어오다 돌아 나감. 나가는 컷은 처음부터 등이 카메라 쪽
     "S09l": "POSE LOCKED: both children are seen strictly from BEHIND (backs of heads, NO faces visible), already facing OUT toward the dark doorway, NOT walking in; PEOPLE LOCKED: exactly THREE people — Shuzo only as a back at the near right edge.",
+    "S08g": "GRAVITY LOCKED: the plastic bag stands on the counter top; the bento boxes are closed with their clear lids shut; the hands hold only the box edges.",
+    "S10be": "The apple is a WHOLE round apple (NOT cut in half, NOT sliced), its peel removed in one continuous strip only partway round; the knife blade rests flat, not cutting.",
     "S03bd": "WARDROBE LOCKED: the boy wears the SAME navy zip jacket over a grey shirt as the reference, long sleeves; he is SEATED on the bench, NOT standing; the little sister in a red knit hat and yellow padded jacket sits beside him.",
 }
 ANGER_CLOSED = ("Fury shown only in the wide-open glaring eyes, furrowed brow, flared nostrils and clenched jaw: eyes OPEN and fixed on the listener, "
@@ -131,7 +133,8 @@ def describe(path, i):
 
 
 NO_FACE = {}
-PROP_ADD = {"S09i": CELLS + "/prop-origami.png",  # 소품 참조 없는 「paper bird」가 2회 연속 종이학 → 울새 소품 셀 참조
+PROP_ADD = {"S03e": "assets/portraits/bento-kf-r9/S03e-1.png",  # r9 싱크·그릇 구도는 합격, 손만 빠짐 → 그 판에 손을 넣는 편집
+            "S09i": CELLS + "/prop-origami.png",  # 소품 참조 없는 「paper bird」가 2회 연속 종이학 → 울새 소품 셀 참조
             "S06a": CELLS + "/loc-shop96-curtain.png", "S13b": CELLS + "/loc-shop26-ots.png"}  # 참조 없는 t2i 시계 인서트에 사람 얼굴 2회 → 무인 장소 판 참조(edit)  # 소품 참조 없는 「paper bird」가 2회 연속 종이학 → 울새 소품 셀 참조
 ONE_TAKE = {"S06a", "S10a", "S13b", "S06b", "S10bd", "S13n", "S12d", "S09i", "S08a"}  # 재생성 중 단순 결함 컷은 1장(승인 예산 안, 2026-10-20)
 NO_BACKCELL = set()  # 뒷모습 전신 셀이 원경 전신 구도를 끌어옴 — 앞 인물은 글로만
