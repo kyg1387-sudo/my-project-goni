@@ -233,8 +233,8 @@ SHOTS = [
 
     # S05 반전 ①
     S("S05a", "S05", "estill", "ecu", "s96", "EL", [], "S96S", "Insert: inside the lit showcase, the empty slot where a karaage bento was, its blank paper price card with a red round sticker on it.", line="NA10"),
-    S("S05b", "S05", "ins", "ecu", "s96", "HA", [H96], "S96S", "Insert: a man's hands taking coins from a small worn brown coin purse and placing them into the open cash register drawer, no face.",
-      line="NA11", motion="The coins drop one by one into the drawer."),
+    S("S05b", "S05", "ins", "ecu", "s96", "HA", [], "S96S", "Insert, high angle at the back of the counter: the open drawer of an old beige cash register pulled out toward the camera, its grey metal tray divided into round coin cups holding silver yen coins and a row of bill slots with a few folded notes — NO food, NO bento anywhere in the frame; a man's left hand in a white cook's jacket sleeve holds a small worn brown coin purse open just above the drawer, his right fingers holding ONE silver coin over a coin cup; no face, no body in front.",
+      line="NA11", motion="The fingers let go and the one coin drops into the coin cup of the register drawer; the purse stays open in the other hand; nothing else moves."),
     S("S05c", "S05", "face", "cu", "s96", "EL", [H96], "S96C", "Close-up of Shuzo at the register, quietly counting, the half-shutter behind him.",
       line="NA11a", motion="He counts quietly, a small breath." + HOLD, expr="gruff"),
     S("S05d", "S05", "face", "ms", "kit96", "EL", [SU], "S96C", "Medium through the kitchen doorway frame: Sumie with folded arms watching him, a small knowing smile.",
