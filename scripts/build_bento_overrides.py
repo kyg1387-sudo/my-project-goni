@@ -134,6 +134,67 @@ def tear_spot(src, out, sec, spec):
     p.stdin.close(); p.wait()
 
 
+# 2차 검수(2026-10-21 「시간도 정확하게」): 생성 시계는 바늘이 12시(두 바늘 위) — 대본은 「9시를 지난다(S06a)·9시를 가리킨다(S13b)」.
+# 같은 시계 판(S13b 키프레임, 바늘 지움)에 바늘을 직접 그리고 초침을 1초마다 째깍(8:59:57 → 9:00 정각 통과). 2026 평면 TV가 보이는 왼쪽은 잘라 1996 장면에도 쓴다.
+CLOCK = {"S06a": 8 * 3600 + 59 * 60 + 57.0, "S13b": 8 * 3600 + 59 * 60 + 58.0}
+CLOCK_PLATE, CLOCK_C, CLOCK_R, CLOCK_SX, CLOCK_CROP = "S13b-1.png", (1696, 620), 500, 0.93, (427, 0, 2560, 1200)
+
+
+def clock_clip(out, sec, t_start):
+    import numpy as np
+    from PIL import Image, ImageDraw, ImageFilter
+    cx, cy = CLOCK_C
+    src = os.path.join(KF, "_v1", CLOCK_PLATE) if os.path.exists(os.path.join(KF, "_v1", CLOCK_PLATE)) else os.path.join(KF, CLOCK_PLATE)
+    a = cv2_imread(src)
+    g = a.mean(axis=2)
+    yy, xx = np.mgrid[0:a.shape[0], 0:a.shape[1]]
+    inner = np.hypot((xx - cx) / CLOCK_SX, yy - cy) < CLOCK_R * 0.86
+    m = ((g < 150) & inner).astype(np.uint8) * 255
+    import cv2
+    m = cv2.dilate(m, np.ones((9, 9), np.uint8))
+    plate = Image.fromarray(cv2.cvtColor(cv2.inpaint(a, m, 7, cv2.INPAINT_TELEA), cv2.COLOR_BGR2RGB))
+    SS = 2  # 안티에일리어스용 확대
+    def hands(t):
+        h, mi, se = (t / 3600) % 12, (t / 60) % 60, int(t) % 60
+        lay = Image.new("RGBA", (plate.width * SS, plate.height * SS))
+        d = ImageDraw.Draw(lay)
+        def hand(frac, length, width, color, tail=0):
+            th = 2 * np.pi * frac
+            dx, dy = np.sin(th) * CLOCK_SX, -np.cos(th)
+            p0 = ((cx - dx * tail) * SS, (cy - dy * tail) * SS)
+            p1 = ((cx + dx * length) * SS, (cy + dy * length) * SS)
+            d.line([p0, p1], fill=color, width=int(width * SS))
+        hand(h / 12, CLOCK_R * 0.52, 15, (22, 30, 52, 255), 40)
+        hand(mi / 60, CLOCK_R * 0.86, 10, (22, 30, 52, 255), 50)
+        hand(se / 60, CLOCK_R * 0.90, 4, (170, 30, 30, 255), 90)
+        d.ellipse([(cx - 18) * SS, (cy - 18) * SS, (cx + 18) * SS, (cy + 18) * SS], fill=(40, 40, 46, 255))
+        lay = lay.resize(plate.size, Image.LANCZOS)
+        sh = Image.new("RGBA", plate.size); sh.paste((0, 0, 0, 90), (0, 0), lay.split()[3]); sh = sh.filter(ImageFilter.GaussianBlur(5))
+        img = plate.convert("RGBA"); img.alpha_composite(sh, (8, 10)); img.alpha_composite(lay)
+        return img.convert("RGB")
+    x0, y0, x1, y1 = CLOCK_CROP
+    n = int(round(sec * FPS))
+    p = subprocess.Popen(["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
+                          "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p", out], stdin=subprocess.PIPE)
+    cache = {}
+    for k in range(n):
+        t = t_start + k / FPS
+        key = int(t)
+        if key not in cache:
+            cache = {key: hands(key + 0.0)}  # 초침은 1초마다 째깍(분·시침도 그 초 기준)
+        z = 1 + 0.05 * k / n
+        w, h = (x1 - x0) / z, (y1 - y0) / z
+        ccx, ccy = (x0 + x1) / 2 + (cx - (x0 + x1) / 2) * (1 - 1 / z), (y0 + y1) / 2 + (cy - (y0 + y1) / 2) * (1 - 1 / z)
+        fr = cache[key].crop((int(ccx - w / 2), int(ccy - h / 2), int(ccx + w / 2), int(ccy + h / 2))).resize((W, H), Image.LANCZOS)
+        p.stdin.write(fr.tobytes())
+    p.stdin.close(); p.wait()
+
+
+def cv2_imread(path):
+    import cv2
+    return cv2.imread(path)
+
+
 def main(only=None):
     sb = json.load(open(SB, encoding="utf-8"))["scenes"]
     ids = {s["id"]: i + 1 for i, s in enumerate(sb)}
@@ -145,6 +206,8 @@ def main(only=None):
         tier = s["tier"]
         if (tier in ("pro", "lite") and s["id"] not in I2V_FALLBACK and s["id"] not in TEAR_SPOT) or (only and s["id"] not in only):
             continue
+        if s["id"] in CLOCK:
+            clock_clip(out, sec, CLOCK[s["id"]]); made += 1; continue
         if s["id"] in TEAR_SPOT:
             tear_spot(os.path.join(KF, f"{s['id']}-1.png"), out, sec, TEAR_SPOT[s["id"]]); made += 1; continue
         if s["id"] in I2V_FALLBACK:
