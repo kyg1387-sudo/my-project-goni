@@ -1,0 +1,33 @@
+{
+ "_설명": "『閉店間際の弁当屋』 아웃트로 진행자(새 스타일) OmniHuman 4컷 — 음성은 bento-outro(무음 정리+0.15초 여백, 이 폴더 pad1~4), 8초 이하. 약 18초 x 0.16 ≈ 3달러.",
+ "tests": [
+  {
+   "id": "omni-out1",
+   "model": "omnihuman",
+   "image": "assets/portraits/bento-host/host-cu-2.png",
+   "audio_id": "pad1",
+   "prompt": "A friendly young Japanese TV host thanks the viewers warmly with a gentle smile and a small bow of the head, hands still."
+  },
+  {
+   "id": "omni-out2",
+   "model": "omnihuman",
+   "image": "assets/portraits/bento-host/host-cu-2.png",
+   "audio_id": "pad2",
+   "prompt": "The host asks the viewers a warm heartfelt question in a soft voice, slight head tilt, gentle moved expression, hands still."
+  },
+  {
+   "id": "omni-out3",
+   "model": "omnihuman",
+   "image": "assets/portraits/bento-host/host-wu-2.png",
+   "audio_id": "pad3",
+   "prompt": "The host kindly invites comments with a gentle smile and a small nod, hands relaxed and still on her lap."
+  },
+  {
+   "id": "omni-out4",
+   "model": "omnihuman",
+   "image": "assets/portraits/bento-host/host-wave-2.png",
+   "audio_id": "pad4",
+   "prompt": "The host asks to subscribe and says goodbye with a warm smile, keeps the raised waving hand still and open."
+  }
+ ]
+}

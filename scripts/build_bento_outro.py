@@ -5,7 +5,7 @@
       ② 진행자 가슴 위 립싱크 omni-out1(감사·구독·좋아요) — 버튼 합성은 finalize 단계(outro_cta_overlay.py)
       ③ 허리 위 omni-out2(댓글 유도)  ④ 가슴 위 omni-out3(다음 화 예고)  ⑤ 손 흔들기 omni-out4(마무리)
       ⑥ 손 흔드는 키프레임 2.6초 슬로 푸시인(OmniHuman은 손을 내려 버림 — 버들잎 교훈) → 엔드카드는 append_outro.py
-진행자: 공식 진행자 얼굴 + 새 스타일(고니감독님 지시 2026-10-17 「같은 아가씨가 계속 나오면 지루하니 옷과 헤어스타일을 바꿔 예쁘게」) — bento-host/host-cu-2·host-wu-2·host-wave-1.
+진행자: 공식 진행자 얼굴 + 새 스타일(고니감독님 지시 2026-10-17 「같은 아가씨가 계속 나오면 지루하니 옷과 헤어스타일을 바꿔 예쁘게」) — bento-host/host-cu-2·host-wu-2·host-wave-2.
 음악: outro-bed(채널 공통, 보컬 없음)를 전 구간 낮게, 끝 1.5초 페이드아웃. 컷 사이 0.6초 디졸브. 진행자 컷 끝 0.8초 정지(입 다문 채).
 입력: assets/auditions/bento-outro-omni/{omni-out1..4.mp4, pad1..pad4}.mp3
 출력: out/bento-outro.mp4 (1920x1080 24fps, 44.1kHz 스테레오) + out/bento-outro.json(진행자 시작 시각)
@@ -23,7 +23,7 @@ FF = shutil.which("ffmpeg")
 A = os.path.join(ROOT, "assets", "auditions", "bento-outro-omni")
 BED = os.path.join(ROOT, "assets", "auditions", "yanagi-outro", "outro-bed.mp3")
 KF = os.path.join(ROOT, "assets", "portraits", "bento-keyframes")
-WAVE_KF = os.path.join(ROOT, "assets", "portraits", "bento-host", "host-wave-1.png")
+WAVE_KF = os.path.join(ROOT, "assets", "portraits", "bento-host", "host-wave-2.png")
 OUT = os.path.join(ROOT, "out", "bento-outro.mp4")
 W, H, FPS = 1920, 1080, 24
 HOLD = 0.8
