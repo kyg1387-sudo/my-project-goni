@@ -31,7 +31,7 @@ def main(src, out):
     mix = ["[0:a]", "[room]"]
     for k, e in enumerate(tl):
         p = os.path.join(SFX, e["name"] + ".mp3")
-        n = len(ins) // 2
+        n = ins.count("-i")  # 입력 번호(-stream_loop 인자 때문에 길이/2는 틀림)
         ins += ["-i", p]
         d = dur(p)
         talk = any(a < e["at"] + d and b > e["at"] for a, b in lines)
