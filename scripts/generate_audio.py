@@ -396,9 +396,21 @@ def omnihuman_scene(cfg, key, scene_path, audio_path, index):
     """오디오 구동 생성(OmniHuman류): 장면 첫 프레임 + 대사 오디오로 입 모양이
     정확히 맞는 클립을 새로 생성한다. 실패 시 None(기존 립싱크로 폴백)."""
     path = os.path.join(WORK_DIR, f"omni{index:02d}.mp4")
+    # 제11장 27(2026-10-10, #02 S15h 실증 2차): 구동 오디오(화자 무음 처리 등)가 바뀌어도 캐시를 재사용해
+    # 수정이 영상에 반영되지 않았다. 구동 오디오의 해시를 사이드카(.src)에 기록하고, 다르면 다시 생성한다.
+    import hashlib
+    with open(audio_path, "rb") as fh:
+        a_hash = hashlib.md5(fh.read()).hexdigest()
+    side = path + ".src"
     if cached(path):
-        print(f"  [omnihuman {index:02d}] 기존 파일 재사용")
-        return path
+        old = open(side).read().strip() if os.path.exists(side) else None
+        if old is None or old == a_hash:
+            print(f"  [omnihuman {index:02d}] 기존 파일 재사용" + ("" if old else " (구동 오디오 해시 기록 없음 — 구버전 캐시)"))
+            if old is None:
+                open(side, "w").write(a_hash)
+            return path
+        print(f"  [omnihuman {index:02d}] 구동 오디오가 바뀜({old[:8]}→{a_hash[:8]}) — 캐시 폐기 후 재생성")
+        os.remove(path)
     frame = os.path.join(WORK_DIR, f"omniframe{index:02d}.png")
     subprocess.run(["ffmpeg", "-y", "-ss", "0.2", "-i", scene_path,
                     "-frames:v", "1", frame], check=True, capture_output=True)
@@ -417,6 +429,7 @@ def omnihuman_scene(cfg, key, scene_path, audio_path, index):
             if result:
                 url = find_video_url(result)
                 if url and download_retry(url, path):
+                    open(side, "w").write(a_hash)
                     return path
     return None
 
@@ -611,6 +624,23 @@ def rebuild_with_lipsync(cfg, key, scenes_dir, ass_path, placed_dialogue, work_v
                         "-af", f"atrim={t0:.3f}:{t1:.3f},asetpts=PTS-STARTPTS", seg],
                        check=True, capture_output=True)
         if i in omni_set:
+            # 제11장 19(2026-10-09, #02 S15h 실증): 구동 오디오는 이 컷의 화자 대사만. 창 안에 다른 화자의 꼬리가 섞이면
+            # (미야모토 11초 대사가 8초 컷을 넘어 사오리 CU까지 이어짐) 사오리 입이 미야모토 목소리에 맞춰 움직였다.
+            # 화자 = 창 안에서 시작하는 대사의 스타일(없으면 겹침이 가장 긴 대사). 다른 화자 구간은 무음 처리.
+            win = [(st, st + probe_duration(pp) / tp, sty) for st, tp, sty, pp in placed_dialogue
+                   if st < t1 and (st + probe_duration(pp) / tp) > t0]
+            owner = cfg.get("omnihuman_speakers", {}).get(str(i))
+            if not owner:
+                inside = [w for w in win if w[0] >= t0 - 1e-3]
+                owner = (inside or sorted(win, key=lambda w: -(min(w[1], t1) - max(w[0], t0))))[0][2] if win else None
+            others = [w for w in win if w[2] != owner]
+            if others:
+                keep = [w for w in win if w[2] == owner]
+                cond = "+".join(f"between(t,{max(w[0], t0) - t0:.3f},{min(w[1], t1) - t0:.3f})" for w in keep) or "0"
+                seg2 = os.path.join(WORK_DIR, f"seg{i:02d}_own.wav")
+                subprocess.run(["ffmpeg", "-y", "-i", seg, "-af", f"volume=0:enable='not({cond})'", seg2], check=True, capture_output=True)
+                print(f"[scene {i:02d}] 화자 {owner} 외 대사 {len(others)}줄({', '.join(w[2] for w in others)}) 무음 처리 → 구동 오디오")
+                seg = seg2
             print(f"[scene {i:02d}] 오디오 구동 생성(omnihuman) 중... ({t0:.1f}~{t1:.1f}s)")
             omni = omnihuman_scene(cfg, key, scene, seg, i)
             if omni:
