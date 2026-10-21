@@ -91,7 +91,7 @@ SHOT_FIX = {
     "S10be": "The apple is a WHOLE round apple (NOT cut in half, NOT sliced), its peel removed in one continuous strip only partway round; the knife blade rests flat, not cutting.",
     # 2차 검수(2026-10-21): 등록기 서랍이 도시락처럼 그려져 「도시락에서 동전을 집어 지갑에 넣는」 장면이 됨(7:26 회상 재사용)
     "S05b": "The drawer is clearly a CASH REGISTER drawer (grey metal coin cups and bill slots), attached to the register body above it; the coin moves FROM the purse INTO the drawer.",
-    "S12f": "GAZE LOCKED: the boy looks toward screen LEFT into the shop, eyes NOT on the camera; tears pooled on the lower lids only, both cheeks completely dry.",
+    "S12f": "FRAMING FIRST — TIGHT CLOSE-UP: the boy's head and shoulders fill the frame, the face one third of the frame height or larger; NOT a medium or full-body shot, NOT inside the shop; he stands OUTSIDE in the dark night, the camera is inside behind the glass. GAZE LOCKED: the boy looks toward screen LEFT into the shop, eyes NOT on the camera; tears pooled on the lower lids only, both cheeks completely dry.",
     "S03bd": "WARDROBE LOCKED: the boy wears the SAME navy zip jacket over a grey shirt as the reference, long sleeves; he is SEATED on the bench, NOT standing; the little sister in a red knit hat and yellow padded jacket sits beside him.",
 }
 ANGER_CLOSED = ("Fury shown only in the wide-open glaring eyes, furrowed brow, flared nostrils and clenched jaw: eyes OPEN and fixed on the listener, "
@@ -141,7 +141,7 @@ PROP_ADD = {"S03e": "assets/portraits/bento-kf-r9/S03e-1.png",  # r9 싱크·그
             "S06a": CELLS + "/loc-shop96-curtain.png", "S13b": CELLS + "/loc-shop26-ots.png"}  # 참조 없는 t2i 시계 인서트에 사람 얼굴 2회 → 무인 장소 판 참조(edit)  # 소품 참조 없는 「paper bird」가 2회 연속 종이학 → 울새 소품 셀 참조
 ONE_TAKE = {"S06a", "S10a", "S13b", "S06b", "S10bd", "S13n", "S12d", "S09i", "S08a"}  # 재생성 중 단순 결함 컷은 1장(승인 예산 안, 2026-10-20)
 NO_BACKCELL = set()  # 뒷모습 전신 셀이 원경 전신 구도를 끌어옴 — 앞 인물은 글로만
-NO_LOC = set()  # 장소 참조가 원경·후광(오려 붙인 테두리)을 만든 컷 — 장소는 글로만
+NO_LOC = {"S12f"}  # 장소 참조가 원경·후광(오려 붙인 테두리)을 만든 컷 — 장소는 글로만
 # 시범 1차(2026-10-20): 립싱크 3컷 6장 모두 장소 참조를 따라 원경(얼굴 1/6)으로 나옴 → 립싱크 컷은 장소 참조를 기본으로 뺀다(제18장 4)
 FRAME_FIRST = ("FRAMING FIRST — TIGHT MEDIUM CLOSE-UP, chest-up portrait framing: the speaker's head and shoulders fill about half of the frame width, "
                "the face is one third of the frame height or larger; the room is only a soft out-of-focus background. NOT a wide shot, NOT a medium "
