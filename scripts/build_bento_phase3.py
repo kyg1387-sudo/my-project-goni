@@ -99,10 +99,11 @@ SWEAT = ("Realistic sweat as in a live-action film: fine tiny beads of perspirat
          "no large cartoon drops, no face-wide shine.")
 GLASSES = {k: ("She wears no glasses." if k in ("SUM", "SUM50", "MIO", "HINA", "MIO36") else "He wears no glasses.") for k in
            ("SH96", "SH26", "SH60", "SUM", "SUM50", "TB", "TA", "MIO", "HINA", "MIO36")}
+PRO_TEARS = {"H2", "S12f", "S12k"}
 TEARS_POOL = ("Realistic tears as in a live-action film: glossy wet eyes brimming with tears pooled along the lower lids and lashes, catching the light, "
               "about to spill but NOT yet running — both cheeks still completely DRY, no tear track; natural skin tone, matte skin, NO makeup, no pink eyelids.")
 WET_HOLD = " Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled."
-TEARS_FLOW = (" NOT smiling at any moment, mouth corners turned down, chin trembling slightly. One clear tear slowly spills over the lower lid and "
+TEARS_FLOW = (" The key action of this shot: ONE clear tear wells up, slowly spills over the lower lid and visibly rolls down the cheek during the shot. NOT smiling at any moment, mouth corners turned down, chin trembling slightly. One clear tear slowly spills over the lower lid and "
               "runs down the cheek along its natural curve, catching the light; a slow blink, a trembling breath; only one tear line, thin and translucent.")
 WET_SMILE = " wet eyes and a small closed-mouth smile (lips together, no teeth), natural skin, NO makeup."
 LENS = {
@@ -786,6 +787,8 @@ def main():
                               " Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. "
                               "No walking toward the camera, no new people, no text.")
             item["image"] = keyframe; cost["lite"] += gen; live[sid] = s["motion"]
+            if sid in PRO_TEARS:  # 2차 검수(2026-10-21): lite는 눈물이 흐르는 모습을 못 만듦(H2·S12f·S12k 젖은 눈만) → 흐르는 눈물 컷만 pro 1080p
+                item["i2v_model"] = "fal-ai/bytedance/seedance/v1/pro/image-to-video"; item["i2v_resolution"] = "1080p"
         else:
             item["prompt"] = f"(override) {tier}: {s['subject'][:80]}"; item["override_required"] = True
             if keyframe:
