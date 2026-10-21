@@ -47,6 +47,11 @@ on:
         description: 자막에 삽입된 TTS 줄의 새 번호 목록 — 캐시 번호를 밀어 재사용 (공백 구분, 예 "1 13 41")
         required: false
         default: ""
+      first_burn:
+        description: 이 작품의 첫 burn임을 확인 (resume_run_id 없이 유료 실행 허용). 재실행은 반드시 resume_run_id를 지정
+        type: boolean
+        required: false
+        default: false
       qa_language_only:
         description: 제작 대신 오디오 캐시 언어 검사만 실행 (resume_run_id의 Artifact 대상, 무료)
         required: false
@@ -147,6 +152,13 @@ jobs:
         if: ${{ inputs.deliver_from_run_id == '' && inputs.source_run_id == '' }}
         run: |
           echo "source_run_id가 비어 있습니다 — 이 작품의 영상 생성 run ID를 지정하세요." >&2
+          exit 1
+
+      - name: 재과금 차단 (resume_run_id 없는 재실행 금지)
+        if: ${{ inputs.deliver_from_run_id == '' && inputs.resume_run_id == '' && !inputs.first_burn && !inputs.qa_language_only }}
+        run: |
+          echo "resume_run_id가 비어 있습니다. 재실행이면 직전 burn run ID를 resume_run_id에, 바뀐 컷만 invalidate에 지정하세요." >&2
+          echo "정말 이 작품의 첫 burn이면 first_burn=true로 다시 실행하세요. (제12장 6-1: 누락 시 OmniHuman 전부 재생성 ≈21달러 재과금 실증)" >&2
           exit 1
 
       - name: 생성된 클립 내려받기
