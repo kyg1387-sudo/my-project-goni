@@ -76,6 +76,8 @@ SHOT_FIX = {
     "S08n": "FRAMING FIRST — eye-level CLOSE-UP with a normal 50mm perspective, head and shoulders; NOT fisheye, NOT looking down from above, NOT distorted.",
     "S10bb": "Sumie has bare hair streaked with grey in a low bun — ignore any headscarf in the reference; she wears only the pale-blue hospital gown.",
     "S13n": "He holds the photograph up with its plain white BACK facing the camera; the picture side faces Takumi and is NOT visible.",
+    "S13s": "PEOPLE LOCKED: exactly TWO people; behind old Shuzo only the shop's back wall and kitchen curtain — NO window, NO platform, NO street, NO passers-by.",
+    "S14b": "AGE LOCKED: the younger man beside the old man is 42 years old (crow's feet, mature face, the same face as reference), NOT a teenager.",
     "S10bd": "Shuzo wears only a grey cardigan over a white shirt — ignore any apron in the reference.",
 }
 ANGER_CLOSED = ("Fury shown only in the wide-open glaring eyes, furrowed brow, flared nostrils and clenched jaw: eyes OPEN and fixed on the listener, "

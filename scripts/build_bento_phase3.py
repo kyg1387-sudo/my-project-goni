@@ -253,8 +253,8 @@ SHOTS = [
       motion="Nothing moves except a faint flicker of the street light; the bell stays still."),
 
     # S07 기다림
-    S("S07a", "S07", "face", "ms", "street_n", "LA", [H96], "SHUT", "Medium from outside, night: Shuzo holding the half-lowered shutter, stopped, looking out at the wet empty street.",
-      line="NA15", motion="He holds the shutter and looks out, a slow breath." + HOLD, expr="gruff"),
+    S("S07a", "S07", "face", "ms", "street_n", "LA", [H96], "SHUT", "Medium from outside, night: Shuzo standing under the shop front with both hands on the bottom edge bar of a Japanese corrugated metal roll-up shutter that comes DOWN FROM A ROLLER BOX ABOVE THE DOORWAY and covers the upper half of the glass storefront; the shutter is a wide vertical curtain of horizontal metal slats spanning the full width of the shop front, its bottom bar at his chest height; he has stopped pulling and looks out at the wet empty street. NOT a horizontal pole, NOT a bar sticking out toward the camera.",
+      line="NA15", motion="His hands stay on the bottom bar of the shutter; the shutter stays completely still and keeps its exact shape; he looks out at the street, a slow breath, a slow blink." + HOLD, expr="gruff"),
     S("S07b", "S07", "face", "ws", "street_n", "EL", [H96], "APT", "Wide from behind: Shuzo standing in front of an old two-storey wooden apartment at night, holding a small plastic bag, looking up.",
       line="NA15a", motion="He stands still looking up, the bag hanging from his hand." + HOLD, expr="back"),
     S("S07c", "S07", "empty", "ms", "street_n", "LA", [], "APT", "Medium low angle: the dark corner window on the second floor of the old apartment, no light inside.",
@@ -434,7 +434,7 @@ SHOTS = [
       motion="Takumi's shoulders shake; the old hand rests on his shoulder." + HOLD, expr="cry"),
     S("S13r", "S13", "d", "ots", "s26warm", "EL", [TA_, H26], "S26R", "Over old Shuzo's blurred shoulder: Takumi wiping his eyes, glancing toward the half-lowered shutter.", line="L41",
       act="Takumi wipes his wet eyes and asks softly whether he is really closing the shop." + OB, expr="calm"),
-    S("S13s", "S13", "d", "ots", "s26warm", "EL", [H26, TA_], "S26O", "Over Takumi's blurred shoulder: old Shuzo looking back at the empty kitchen, calm.", line="L42",
+    S("S13s", "S13", "d", "ots", "s26warm", "EL", [H26, TA_], "S26O", "Over Takumi's blurred shoulder: old Shuzo behind the counter inside the shop, the background only the shop's back wall, kitchen curtain and shelves (NO window, NO station platform, NO street, NO other people), looking back toward the empty kitchen, calm.", line="L42",
       act="Shuzo looks back at the empty kitchen and answers calmly, yes, alone it's too much now." + OB, expr="calm"),
     S("S13t", "S13", "d", "ots", "s26warm", "EL", [TA_, H26], "S26R", "Over old Shuzo's blurred shoulder: Takumi leaning on the counter with both hands, earnest.", line="L43",
       act="Takumi leans on the counter with both hands and asks earnestly whether he would fry karaage at his place, the best karaage in the world, for the children." + OB, expr="calm"),
@@ -444,7 +444,7 @@ SHOTS = [
     # S14 에필로그
     S("S14a", "S14", "empty", "ws", "street_n", "LA", [], "SHUT", "Wide: the bento shop at night with its metal shutter pulled all the way down, warm light gone, wet asphalt.",
       line="NA27", motion="The building stays perfectly still; a faint breeze; no cars, no headlights."),
-    S("S14b", "S14", "face", "ws", "shokudo", "HA", [H26 + "A", TA_ + "A", "KIDS"], "SHOKW", "Wide, daytime: a small children's cafeteria, old Shuzo in an apron serving karaage at the counter and Takumi beside him scooping rice, children's backs in the foreground out of focus.",
+    S("S14b", "S14", "face", "ws", "shokudo", "HA", [H26 + "A", TA_ + "A", "KIDS"], "SHOKW", "Wide, daytime: a small children's cafeteria, old Shuzo in an apron serving karaage at the counter and grown-up Takumi (a 42-year-old man with faint lines at the eyes, short neat black hair, clearly middle-aged, NOT a teenager, NOT a young man) beside him scooping rice, children's backs in the foreground out of focus.",
       line="NA28", motion="They serve food with small smiles; the children's backs move slightly." + HOLD),
     S("S14c", "S14", "face", "ms", "shokudo", "EL", [MI36], "SHOKC", "Medium: grown-up Mio in a plain apron at the end of the serving counter, handing out trays with a warm smile.",
       line="NA28a", motion="She hands a tray forward with a warm smile." + HOLD, expr="smile"),

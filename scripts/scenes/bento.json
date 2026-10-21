@@ -408,7 +408,7 @@
    "image": "assets/portraits/bento-keyframes/S06c-1.png"
   },
   {
-   "prompt": "Static, locked off camera. Motion: He holds the shutter and looks out, a slow breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
+   "prompt": "Static, locked off camera. Motion: His hands stay on the bottom bar of the shutter; the shutter stays completely still and keeps its exact shape; he looks out at the street, a slow breath, a slow blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text.",
    "duration": 10,
    "image": "assets/portraits/bento-keyframes/S07a-1.png"
   },
@@ -877,7 +877,7 @@
    "image": "assets/portraits/bento-keyframes/S13r-1.png"
   },
   {
-   "prompt": "(override) omni: Over Takumi's blurred shoulder: old Shuzo looking back at the empty kitchen, cal",
+   "prompt": "(override) omni: Over Takumi's blurred shoulder: old Shuzo behind the counter inside the shop, th",
    "duration": 5,
    "override_required": true,
    "image": "assets/portraits/bento-keyframes/S13s-1.png"
