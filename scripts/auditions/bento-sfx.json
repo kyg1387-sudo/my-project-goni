@@ -48,6 +48,12 @@
    "model": "elevenlabs-sfx",
    "text": "quiet room tone of a small empty shop at night, faint refrigerator hum, no voices",
    "duration": 12
+  },
+  {
+   "id": "wind",
+   "model": "elevenlabs-sfx",
+   "text": "cold winter night wind gently blowing through an empty small-town street by a railway, faint distant rail hum, lonely, no voices, no music",
+   "duration": 22
   }
  ]
 }

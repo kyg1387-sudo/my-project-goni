@@ -625,6 +625,10 @@ FOLEY = {
 }
 
 
+# 1차 검수(2026-10-21 고니감독님 「BGM이 거의 들리지 않는다·배경이 건조하다」): 대사 없는 틈의 배경 평균 −32 dB(대사 −16 dB) → BGM ×2.3, 덕킹 8→5 dB, 현장음 0.35→0.6
+BGM_GAIN = 2.3
+
+
 def build_bgm(lock):
     """03_템포-오디오가이드.md 2절 감정 곡선 — 장면 경계에 맞춰 8구간, 구간 간격 1.0초 이상(제11장 5)."""
     sc = {s["id"]: s["start"] for s in lock["scenes"]}; ad1, ad2 = (a["at"] for a in lock["ads"]); end = lock["body_end"]
@@ -840,10 +844,10 @@ def main():
         "omnihuman_scenes": [idx[s["id"]] for s in SHOTS if s["kind"] == "d" and s["line"]],
         "omnihuman_prompts": {str(idx[k]): v for k, v in omni_prompts.items()},
         "omnihuman_models": ["fal-ai/bytedance/omnihuman/v1.5", "fal-ai/bytedance/omnihuman"], "omnihuman_max_s": 8.0, "legacy_lipsync": False,
-        "ambience_model": "fal-ai/mmaudio-v2", "ambience_volume": 0.35, "duck_db": 8, "ambience_prompts": [x["ambience"] for x in sb],
+        "ambience_model": "fal-ai/mmaudio-v2", "ambience_volume": 0.6, "duck_db": 5, "voice_reverb": 0.10, "ambience_prompts": [x["ambience"] for x in sb],
         "foley_prompts": {str(idx[k]): v for k, v in FOLEY.items() if k in idx}, "foley_model": "fal-ai/mmaudio-v2", "foley_volume": 0.6,
         "bgm_model": "fal-ai/lyria2", "bgm_volume": 0.40, "bgm_prompt": BGM[1][3],
-        "bgm_segments": [{"start": s, "end": round(main_end, 2) if e is None else e, "volume": v, "prompt": p} for s, e, v, p in BGM],
+        "bgm_segments": [{"start": s, "end": round(main_end, 2) if e is None else e, "volume": round(v * BGM_GAIN, 3), "prompt": p} for s, e, v, p in BGM],
         "_후크": "0~3.5초 BGM 없음: 저음 드론 + 종이 펴는 소리를 PHASE 6 로컬 믹스. H1 음성 L01 = 편지 낭독 L29 녹음 재사용(build_tts SAME_AS). 음성은 ElevenLabs·Typecast 확정본(Shino 1.15·Chiemi 1.12 배속 적용본).",
     }
     json.dump(audio, open(os.path.join(ROOT, "scripts", "audio", f"{SKIT}.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)

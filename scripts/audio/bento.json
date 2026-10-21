@@ -416,8 +416,9 @@
  "omnihuman_max_s": 8.0,
  "legacy_lipsync": false,
  "ambience_model": "fal-ai/mmaudio-v2",
- "ambience_volume": 0.35,
- "duck_db": 8,
+ "ambience_volume": 0.6,
+ "duck_db": 5,
+ "voice_reverb": 0.1,
  "ambience_prompts": [
   "a quiet shop at night, a wall clock ticking, paper rustling",
   "a quiet shop at night, a wall clock ticking, paper rustling",
@@ -616,61 +617,61 @@
   {
    "start": 3.5,
    "end": 19.0,
-   "volume": 0.34,
+   "volume": 0.782,
    "prompt": "a single soft solo piano motif, intimate, tender, a letter being read, Japanese human drama, instrumental, no vocals"
   },
   {
    "start": 20.0,
    "end": 49.916,
-   "volume": 0.36,
+   "volume": 0.828,
    "prompt": "cool lonely solo piano, an old man alone in a closing shop at night, quiet melancholy, instrumental, no vocals"
   },
   {
    "start": 51.016,
    "end": 199.749,
-   "volume": 0.38,
+   "volume": 0.874,
    "prompt": "warm nostalgic acoustic guitar and soft piano, a small kind shop in the 1990s, gentle strings rising softly, Japanese human drama, instrumental, no vocals"
   },
   {
    "start": 200.849,
    "end": 208.982,
-   "volume": 0.34,
+   "volume": 0.782,
    "prompt": "a single low sustained cello note with a ticking clock feel, worry, quiet, instrumental, no vocals"
   },
   {
    "start": 210.582,
    "end": 244.339,
-   "volume": 0.3,
+   "volume": 0.69,
    "prompt": "tense low string tremolo with a slow heartbeat-like pulse and sparse piano, an anxious wait night after night, quiet dread, Japanese drama, instrumental, no vocals"
   },
   {
    "start": 245.439,
    "end": 303.96099999999996,
-   "volume": 0.38,
+   "volume": 0.874,
    "prompt": "melancholic solo piano in the rain turning into warm hopeful strings, kindness to a poor child, Japanese drama, instrumental, no vocals"
   },
   {
    "start": 305.061,
    "end": 404.993,
-   "volume": 0.38,
+   "volume": 0.874,
    "prompt": "bittersweet farewell theme with celesta and strings, spring night, then sparse sad piano, loss, instrumental, no vocals"
   },
   {
    "start": 406.093,
    "end": 425.35299999999995,
-   "volume": 0.34,
+   "volume": 0.782,
    "prompt": "soft mysterious pulse with light piano, morning, an unexpected letter, suspense, instrumental, no vocals"
   },
   {
    "start": 426.953,
    "end": 514.055,
-   "volume": 0.4,
+   "volume": 0.92,
    "prompt": "the letter theme: tender piano slowly joined by building strings, a long-held secret revealed, deeply moving, Japanese human drama, instrumental, no vocals"
   },
   {
    "start": 517.655,
    "end": 625.13,
-   "volume": 0.42,
+   "volume": 0.966,
    "prompt": "the main theme on piano blooming into a full warm orchestra, a tearful reunion after thirty years, gratitude, hopeful resolution, instrumental, no vocals"
   }
  ],

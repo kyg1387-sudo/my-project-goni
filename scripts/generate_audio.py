@@ -295,6 +295,7 @@ def render_track(placed, total, out_wav):
     return out_wav
 
 
+VOICE_REVERB = 0.0  # 오디오 설정 voice_reverb(목소리 잔향 비율, 0.08~0.15 권장)
 DUCK_DB = 0.0  # 오디오 설정 duck_db(대사 중 환경음·BGM 감쇠 dB) — generate_audio main에서 설정
 
 
@@ -343,7 +344,10 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
         # 대사 우선 덕킹(tsuki 7-3절): 대사 트랙을 사이드체인으로 환경음·BGM을 눌렀다가 말이 끝나면 복귀. BGM·현장음 1~3kHz −3dB EQ
         voice_in = "".join(mix_inputs[:len(placed)]); bed_in = "".join(mix_inputs[len(placed):])
         ratio = 1 + DUCK_DB / 3.0
-        parts.append(f"{voice_in}amix=inputs={len(placed)}:duration=longest:normalize=0,asplit=2[voice][sc]")
+        # 목소리 공간감(bento 1차 검수 「스튜디오처럼 드라이」): voice_reverb = 짧은 방 잔향(aecho, 소량) — 0이면 끔
+        rv = VOICE_REVERB
+        rv_chain = f",aecho=0.9:0.85:28|47:{rv:.2f}|{rv * 0.6:.2f}" if rv else ""
+        parts.append(f"{voice_in}amix=inputs={len(placed)}:duration=longest:normalize=0{rv_chain},asplit=2[voice][sc]")
         parts.append(f"{bed_in}amix=inputs={len(mix_inputs) - len(placed)}:duration=longest:normalize=0,"
                      f"equalizer=f=2000:t=q:w=1.2:g=-3[bed0]")
         parts.append(f"[bed0][sc]sidechaincompress=threshold=0.03:ratio={ratio:.2f}:attack=20:release=800:makeup=1:level_sc=1[bed]")
@@ -719,6 +723,8 @@ def main():
         cfg = json.load(f)
     global DUCK_DB
     DUCK_DB = float(cfg.get("duck_db", 0) or 0)
+    global VOICE_REVERB
+    VOICE_REVERB = float(cfg.get("voice_reverb", 0) or 0)
 
     WORK_DIR = os.path.join(os.path.dirname(args.out) or ".", "audio")
     os.makedirs(WORK_DIR, exist_ok=True)
