@@ -1,0 +1,21 @@
+{
+ "_설명": "bento r16 — S05b 지갑이 손가락 하나에 매달리고 동전이 저절로 떨어짐(2026-10-21 고니감독님 지적) → 손만 편집: 지갑은 손바닥에 감싸 쥠, 동전 한 개를 칸에 넣는 순간(정지 푸시인용). seedream v4 edit 2560x1440 약 0.03달러/장.",
+ "characters": [
+  {
+   "id": "S05b",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-keyframes/S05b-1.png"
+   ],
+   "prompt": "Edit this exact photograph: keep the same old beige cash register, the open grey metal drawer with its round coin cups and bill slots, the shop background, lighting, colours and camera angle exactly. Change ONLY the two hands: the man's LEFT hand (white cook's jacket sleeve) now holds the small worn brown leather coin purse naturally CRADLED IN HIS PALM, all four fingers wrapped around the purse and the thumb on top, the purse open, resting just above the drawer edge; his RIGHT hand's thumb and index finger hold ONE silver coin at the rim of a coin cup, the coin just touching the cup's edge, the other fingers relaxed. Natural five-fingered hands, realistic skin, no coins in the air, nothing falling. No face, no text. Real photograph, NOT illustration.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  }
+ ]
+}
