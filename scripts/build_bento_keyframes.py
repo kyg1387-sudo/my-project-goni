@@ -91,6 +91,7 @@ SHOT_FIX = {
     "S10be": "The apple is a WHOLE round apple (NOT cut in half, NOT sliced), its peel removed in one continuous strip only partway round; the knife blade rests flat, not cutting.",
     # 2차 검수(2026-10-21): 등록기 서랍이 도시락처럼 그려져 「도시락에서 동전을 집어 지갑에 넣는」 장면이 됨(7:26 회상 재사용)
     "S05b": "The drawer is clearly a CASH REGISTER drawer (grey metal coin cups and bill slots), attached to the register body above it; the coin moves FROM the purse INTO the drawer.",
+    "S12k": "GAZE LOCKED: his eyes look DOWN toward the letter below the frame edge, NOT at the camera; tears pooled along the lower lids only, both cheeks completely DRY, natural skin around the eyes (no pink, no red).",
     "S12f": "FRAMING FIRST — TIGHT CLOSE-UP: the boy's head and shoulders fill the frame, the face one third of the frame height or larger; NOT a medium or full-body shot, NOT inside the shop; he stands OUTSIDE in the dark night, the camera is inside behind the glass. GAZE LOCKED: the boy looks toward screen LEFT into the shop, eyes NOT on the camera; tears pooled on the lower lids only, both cheeks completely dry.",
     "S03bd": "WARDROBE LOCKED: the boy wears the SAME navy zip jacket over a grey shirt as the reference, long sleeves; he is SEATED on the bench, NOT standing; the little sister in a red knit hat and yellow padded jacket sits beside him.",
 }
