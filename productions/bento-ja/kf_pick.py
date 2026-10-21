@@ -26,6 +26,8 @@ PICK = {  # 컷: 원본 파일
     "S06a": P + "bento-kf-r7/S06a-1.png", "S13b": P + "bento-kf-r7/S13b-1.png",
     "S07a": P + "bento-kf-r8/S07a-1c.png", "S13s": P + "bento-kf-r8/S13s-1.png", "S14b": P + "bento-kf-r8/S14b-1.png",  # r8(2026-10-21), S07a 메뉴 종이 가짜 글자 로컬 흐림
     "S04d": P + "bento-kf-r9/S04d-1.png", "S03ba": P + "bento-kf-r9/S03ba-2.png", "S03bb": P + "bento-kf-r9/S03bb-1.png", "S03bd": P + "bento-kf-r9/S03bd-1.png",  # r9
+    "S09l": P + "bento-kf-r10/S09l-1.png", "S01d": P + "bento-kf-r10/S01d-2.png", "S09d": P + "bento-kf-r10/S09d-1.png", "S13g": P + "bento-kf-r10/S13g-1.png",
+    "S03e": P + "bento-kf-r10/S03e-1.png", "S08g": P + "bento-kf-r10/S08g-1.png", "S10be": P + "bento-kf-r10/S10be-2.png",  # r10
     "S05e": P + "bento-kf-r5/S05e-1.png", "S09p": P + "bento-kf-r5/S09p-1.png", "S13t": P + "bento-kf-r5/S13t-1.png",
 }
 PENDING = set()
