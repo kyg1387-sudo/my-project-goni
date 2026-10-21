@@ -28,8 +28,9 @@ PICK = {  # 컷: 원본 파일
     "S04d": P + "bento-kf-r9/S04d-1.png", "S03ba": P + "bento-kf-r9/S03ba-2.png", "S03bb": P + "bento-kf-r9/S03bb-1.png", "S03bd": P + "bento-kf-r9/S03bd-1.png",  # r9
     "S09l": P + "bento-kf-r10/S09l-1.png", "S01d": P + "bento-kf-r10/S01d-2.png", "S09d": P + "bento-kf-r10/S09d-1.png", "S13g": P + "bento-kf-r10/S13g-1.png",
     "S03e": P + "bento-kf-r10/S03e-1.png", "S08g": P + "bento-kf-r10/S08g-1.png", "S10be": P + "bento-kf-r10/S10be-2.png",  # r10
-    "S05b": P + "bento-kf-r11/S05b-1c.png", "S12k": P + "bento-kf-r11/S12k-2c.png", "H2": P + "bento-kf-r11/H2-1c.png",  # r11(가장자리 얼굴 크롭·뺨 눈물 줄기 인페인트)
+    "S05b": P + "bento-kf-r11/S05b-1c.png", "H2": P + "bento-kf-r11/H2-1c.png",  # r11(가장자리 얼굴 크롭·뺨 눈물 줄기 인페인트)
     "S12f": P + "bento-kf-r12/S12f-1c.png",  # r12(뺨 눈물 줄기 인페인트·가게 안 촬영 장비 흐림)
+    "S12k": P + "bento-kf-r13/S12k-2c.png", "S13a": P + "bento-kf-r13/S13a-2.png", "S13c": P + "bento-kf-r13/S13c-2.png",  # r13(S12k 뺨 줄기 인페인트)
     "S05e": P + "bento-kf-r5/S05e-1.png", "S09p": P + "bento-kf-r5/S09p-1.png", "S13t": P + "bento-kf-r5/S13t-1.png",
 }
 PENDING = set()
