@@ -45,7 +45,7 @@ def main(src, out):
     n = ins.count("-i"); ins += ["-i", bed]; st = max(0.0, total - 8.0); ms = int(st * 1000)
     fl.append(f"[{n}:a]atrim=0:{total - st:.3f},volume=0.16,afade=t=in:d=2.5,adelay={ms}|{ms}[tail]"); mix.append("[tail]")
     fl.append("".join(mix) + f"amix=inputs={len(mix)}:duration=first:normalize=0,"
-              "loudnorm=I=-14:TP=-1.0:LRA=11,alimiter=limit=0.79,aresample=48000[a]")
+              "loudnorm=I=-14:TP=-1.0:LRA=11,alimiter=limit=0.79:level=0,aresample=48000[a]")
     subprocess.run(["ffmpeg", "-y", "-v", "error", *ins, "-filter_complex", ";".join(fl), "-map", "0:v", "-map", "[a]",
                     "-c:v", "copy", "-c:a", "aac", "-b:a", "256k", out], check=True)
     r = subprocess.run(["ffmpeg", "-i", out, "-af", "silencedetect=n=-60dB:d=2", "-f", "null", "-"], capture_output=True, text=True).stderr
