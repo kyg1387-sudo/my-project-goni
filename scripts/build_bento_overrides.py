@@ -25,7 +25,10 @@ OUT = os.path.join(ROOT, "assets", "video-overrides", "bento")
 FF = shutil.which("ffmpeg") or __import__("imageio_ffmpeg").get_ffmpeg_exe()
 W, H, FPS = 1280, 720, 24
 # i2v 검수 불합격 → 무료 정지 푸시인 폴백(비립싱크 화자 등). 이 작품은 비립싱크 화자 컷 0 — 검수 후 필요 시 추가
-I2V_FALLBACK = set()
+# i2v 1초 시트 검수(2026-10-21) 불합격 → 무료 정지 푸시인 폴백(제11장 9·제18장 6):
+# S07b 지붕 연기, S07c 열차가 화면을 가로지름, S08f 화면 밖 어른 얼굴 등장, S10bd 듣는 사람 입이 계속 움직임, S11a 정장 남자 등장,
+# S11b 봉투가 늘어남, S12g 편지가 두꺼운 책으로 변함, S12k 우는 얼굴이 미소로(눈물 장면 반전), S12r 편지 가짜 글자 선명, S14a 문 안 인물, S14e 뒤돌아 뒤통수
+I2V_FALLBACK = {"S07b", "S07c", "S08f", "S10bd", "S11a", "S11b", "S12g", "S12k", "S12r", "S14a", "S14e"}
 
 
 def run(args):
