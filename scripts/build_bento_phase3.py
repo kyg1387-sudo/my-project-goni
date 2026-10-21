@@ -189,17 +189,17 @@ SHOTS = [
       motion="She looks at him, waiting, a small breath." + HOLD, expr="worry"),
     S("S03d", "S03", "d", "ots", "kit96", "EL", [SU, H96], "KIT", "Over Shuzo's blurred shoulder: Sumie lowering her voice, worried.", line="L06",
       act="Sumie lowers her voice, quiet and worried, wondering whether the boy is eating properly, always buying the cheapest one." + OB, expr="worry"),
-    S("S03e", "S03", "ins", "ecu", "kit96", "HA", [H96], "KIT", "Insert: a man's hands in a bowl of rice and water, stopping still, no face.",
-      line="NA7", motion="The hands stop moving in the rice water; ripples settle."),
+    S("S03e", "S03", "ins", "ecu", "kit96", "HA", [], "KIT", "Insert, high angle looking down into a deep stainless-steel kitchen sink: a blue-rimmed ceramic bowl of rice and water sits on the BOTTOM OF THE SINK, its base firmly touching the steel, a man's two hands resting in the rice water, wrists and forearms in rolled-up white cook's jacket sleeves coming in from the top edge of the frame, no face, no body in front of the bowl.",
+      line="NA7", motion="The bowl stays resting on the bottom of the sink and never moves; the hands stop moving in the rice water; ripples settle."),
     S("S03f", "S03", "face", "cu", "kit96", "SIDE", [H96], "KIT", "Close-up side view of Shuzo staring down at his still hands, thinking, jaw set.",
       line="NA8", motion="He stares down, a slow breath, jaw set." + HOLD, expr="gruff"),
 
     # S03b 골목 — 반씩
-    S("S03ba", "S03b", "face", "ws", "alley", "EL", [SU], None, "Wide from behind a dark tree in a back alley at night: Sumie holding a garbage bag, stopping to look toward a small park bench under a vending machine's glow.",
-      line="L06a", vo=True, motion="She stops and looks toward the bench, the garbage bag in her hand." + HOLD, expr="worry"),
-    S("S03bb", "S03b", "face", "ms", "alley", "EL", [TB_, MI], None, "Medium three-quarter from the side, night: on a park bench under a vending machine glow, the boy scooping rice from a nori bento onto the plastic lid for his little sister beside him, his mouth hidden as he leans over.",
-      line="L06b", vo=True, motion="He scoops rice onto the lid and pushes it toward her, leaning over; his face stays turned down toward the food." + HOLD),
-    S("S03bd", "S03b", "face", "ms", "alley", "EL", [TB_], None, "Medium: the boy pressing a hand to his stomach and smiling at his sister, pretending to be full.",
+    S("S03ba", "S03b", "face", "ws", "alley", "EL", [TB_, MI], None, "Wide from behind a dark tree at night, past Sumie's blurred back and shoulder at the near LEFT edge (pale pink headscarf, a garbage bag in her hand, face NOT visible): in the middle distance a small bench under a vending machine's glow where the boy in a navy zip jacket sits beside his little sister in a red knit hat and yellow padded jacket, scooping rice from a nori bento onto its plastic lid for her, his face turned down toward the food.",
+      line="L06a", vo=True, motion="In the distance the boy scoops rice onto the lid, his face turned down to the food; Sumie in the foreground stays still, only a slow breath." + HOLD),
+    S("S03bb", "S03b", "face", "cu", "alley", "EL", [TB_, MI], None, "Close-up over the little sister's shoulder, night: her red knit hat and yellow padded jacket blurred at the near LEFT edge, seen strictly from behind (face NOT visible); the boy in a navy zip jacket sitting beside her on the park bench under a vending machine glow holds out the plastic lid with rice toward her, smiling gently with lips together, looking at her.",
+      line="L06b", vo=True, motion="He holds the lid with rice out toward her and gives a small nod, lips together; her head in the foreground tilts slightly." + HOLD, expr="smile"),
+    S("S03bd", "S03b", "face", "ms", "alley", "EL", [TB_, MI], None, "Medium, night: the boy in the same navy zip jacket over a grey shirt, SEATED on the park bench under the vending machine glow beside his little sister (red knit hat, yellow padded jacket, eating rice from the plastic lid), pressing a hand to his stomach and smiling at her, pretending to be full.",
       line="NA8a", motion="He pats his stomach lightly and smiles, lips together." + HOLD, expr="smile"),
     S("S03be", "S03b", "face", "cu", "alley", "SIDE", [SU], None, "Close-up of Sumie behind the tree, a hand rising to her mouth, eyes wet.",
       line="NA8b", motion="Her hand rises to her mouth." + WET_HOLD + HOLD, expr="teary"),
@@ -215,8 +215,8 @@ SHOTS = [
       act="Shuzo holds out a towel across the counter and tells the boy curtly to wipe himself, the floor is getting wet, gruff but caring. Speaking to the soaked boy." + OB, expr="gruff"),
     S("S04c", "S04", "face", "ms", "s96rain", "HA", [TBW], "S96O", "Medium, slightly high: the boy taking the towel and bowing his head deeply, face hidden by his wet hair.", line="L08", vo=True,
       motion="He takes the towel and bows his head; his face stays hidden." + HOLD),
-    S("S04d", "S04", "ins", "ecu", "s96rain", "HA", [H96], "P_NORI", "Insert: tongs quietly placing two pieces of fried karaage onto an open nori bento, no face.",
-      motion="The tongs set the karaage down, one then the other."),
+    S("S04d", "S04", "ins", "ecu", "s96rain", "HA", [], "P_NORI", "Insert, high angle looking down at the steel counter top: an open black nori bento box lying flat ON THE COUNTER, its base firmly touching the steel, a man's hand in a white cook's jacket sleeve from the top edge holding metal kitchen tongs that place a piece of fried karaage onto the nori, one karaage already on it; the clear lid lies beside the box on the counter; no face, no body behind the box.",
+      motion="The bento box stays flat on the counter and never moves; the tongs set the second karaage down gently beside the first."),
     S("S04e", "S04", "d", "ots", "s96rain", "LA", [H96, TBW], "S96C", "Over the boy's blurred shoulder: Shuzo holding out the bag, eyes averted.", line="L09",
       act="Shuzo holds out the bag, avoiding the boy's eyes, telling him the karaage was left over, just leftovers. Gruff, embarrassed." + OB, expr="gruff"),
     S("S04f", "S04", "d", "ots", "s96rain", "HA", [TBW, H96], "S96O", "Over Shuzo's blurred shoulder: the boy hugging the bag to his chest with both hands, eyes shining, the towel around his neck.", line="L10",
@@ -382,7 +382,7 @@ SHOTS = [
     S("S12j", "S12", "face", "ms", "letter", "SIDE", [H26], "S26W", "Medium side view: old Shuzo alone at the counter in the dim shop, the letter in his hands, head bowed.",
       line="L31c", vo=True, motion="His head bows lower, shoulders shaking slightly." + HOLD, expr="grief"),
     S("S12k", "S12", "face", "cu", "letter", "EL", [H26], "S26O", "Close-up of old Shuzo crying silently, NOT smiling, one thin tear on his cheek.",
-      line="NA25", motion="He cries silently, a trembling breath." + TEARS_FLOW + HOLD, expr="grief"),
+      line="NA25", motion="NOT smiling at any moment: mouth corners stay pulled down, lips pressed together, chin trembling; he cries silently, a trembling breath." + TEARS_FLOW + HOLD, expr="grief"),
     S("S12l", "S12", "face", "ws", "letter", "SIDE", [H26], "S26R", "Wide from behind the counter: old Shuzo's back as he sits with the letter, his shoulders shaking, his face not visible.",
       line="L31d", vo=True, motion="His shoulders shake as if laughing and crying at once; his head stays turned away." + HOLD, expr="back"),
     S("S12m", "S12", "face", "ws", "street_n", "EL", [TA_], "FRONT", "Wide, night a few years ago: a man in a charcoal overcoat seen from behind across the street, looking at the lit bento shop, face not visible.",
@@ -885,7 +885,7 @@ def spk_who(spk, s):
             "拓海(少年)": TBW if s["light"] == "s96rain" else TB_, "拓海(大人)": TA_, "美緒": MI, "陽菜": HI}.get(spk)
 
 
-VO_OTS_SKIP = {"S03bb", "S08d", "S08e", "S12b", "S12d", "S12f", "S12g", "S12j", "S12l", "S12m", "S12n", "S12r", "S12s", "S13g", "S04c", "S09l"}
+VO_OTS_SKIP = {"S03ba", "S03bb", "S08d", "S08e", "S12b", "S12d", "S12f", "S12g", "S12j", "S12l", "S12m", "S12n", "S12r", "S12s", "S13g", "S04c", "S09l"}
 # 편지 낭독 VO(拓海 화면 밖)·화자가 화면 안에서 입을 가린 컷·뒷모습 컷은 어깨 너머 리버스숏을 만들지 않는다
 
 EMO_WORDS = {"sad": ("tear", "cry", "sad", "weak", "chok", "break", "holding back", "trembl", "grief", "apolog", "regret", "sorrow", "wet"),

@@ -79,6 +79,13 @@ SHOT_FIX = {
     "S13s": "PEOPLE LOCKED: exactly TWO people; behind old Shuzo only the shop's back wall and kitchen curtain — NO window, NO platform, NO street, NO passers-by.",
     "S14b": "AGE LOCKED: the younger man beside the old man is 42 years old (crow's feet, mature face, the same face as reference), NOT a teenager.",
     "S10bd": "Shuzo wears only a grey cardigan over a white shirt — ignore any apron in the reference.",
+    # 2차 검수(2026-10-21): 손에 든 그릇·도시락이 몸 앞 허공에 뜸(1:32·2:2x) → 받침면에 닿은 부감 인서트
+    "S03e": "GRAVITY LOCKED: the bowl sits on the bottom of the steel sink, its base touching the steel with a soft contact shadow; the hands only rest in the rice, they do NOT hold or lift the bowl; NO person standing behind the bowl.",
+    "S04d": "GRAVITY LOCKED: the bento box lies flat on the steel counter top with a soft contact shadow under it, nobody holds or lifts it; ONE hand with metal tongs only; normal bento size (about 20 cm wide); NO person standing behind the box.",
+    # 아이들 대사(L06a·L06b)가 어른 컷에 깔림(1:42) → 아이들이 보이는 컷으로, 화자 입은 가림
+    "S03ba": "PEOPLE LOCKED: exactly THREE people — Sumie ONLY as a blurred back and shoulder at the near LEFT edge (face NOT visible), and the two children small in the middle distance on the bench; the boy's face is turned down toward the food (mouth NOT visible).",
+    "S03bb": "PEOPLE LOCKED: exactly TWO children — the little sister ONLY as the blurred back of her red knit hat and yellow jacket shoulder at the near LEFT edge (face NOT visible, she faces away from the camera), and the boy at three-quarter angle toward her, lips together.",
+    "S03bd": "WARDROBE LOCKED: the boy wears the SAME navy zip jacket over a grey shirt as the reference, long sleeves; he is SEATED on the bench, NOT standing; the little sister in a red knit hat and yellow padded jacket sits beside him.",
 }
 ANGER_CLOSED = ("Fury shown only in the wide-open glaring eyes, furrowed brow, flared nostrils and clenched jaw: eyes OPEN and fixed on the listener, "
                 "lips pressed together, mouth CLOSED, NOT shouting (speech is added later).")
