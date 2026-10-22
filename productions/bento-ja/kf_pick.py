@@ -34,7 +34,7 @@ PICK = {  # 컷: 원본 파일
     "S03be": P + "bento-kf-r14/S03be-1.png", "S03bf": P + "bento-kf-r14/S03bf-1.png", "S03bg": P + "bento-kf-r14/S03bg-1.png", "S08b": P + "bento-kf-r14/S08b-1.png", "S08n": P + "bento-kf-r14/S08n-1.png", "S09e": P + "bento-kf-r14/S09e-1.png", "S09g": P + "bento-kf-r14/S09g-1.png", "S09i": P + "bento-kf-r14/S09i-1.png", "S09p": P + "bento-kf-r14/S09p-1.png", "S12g": P + "bento-kf-r14/S12g-1.png", "S12r": P + "bento-kf-r14/S12r-1.png", "S13d": P + "bento-kf-r14/S13d-1.png", "S13j": P + "bento-kf-r14/S13j-1c.png", "S13n": P + "bento-kf-r14/S13n-1.png", "S13u": P + "bento-kf-r14/S13u-1.png", "S14e": P + "bento-kf-r14/S14e-1.png",  # r14 뺨 젤 눈물 줄기 제거(S13j 배경 인물 흐림)
     "S13r": P + "bento-kf-r15/S13r-2.png",  # r15 마주 보는 대화
     "S05b": P + "bento-kf-r16/S05b-1.png", "S05c": P + "bento-kf-r16/S05c-2c.png",  # r16 지갑을 손바닥에(S05c 귀걸이 인페인트)
-    "S04j": P + "bento-kf-r17/S04j-1.png",  # r17 빗속으로 나가는 뒷모습
+    "S04j": P + "bento-kf-r18b/S04j-2.png",  # r18b 한 손으로 봉투를 들고 빗속으로
     "S05e": P + "bento-kf-r5/S05e-1.png", "S09p": P + "bento-kf-r5/S09p-1.png", "S13t": P + "bento-kf-r5/S13t-1.png",
 }
 PENDING = set()
