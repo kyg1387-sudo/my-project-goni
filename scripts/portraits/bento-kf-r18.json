@@ -1,0 +1,21 @@
+{
+ "_설명": "bento r18 — S04j 팔·봉투 자세 어색(2026-10-22 고니감독님 지적) → 두 팔로 봉투를 가슴에 끌어안은 뒷모습으로 팔·봉투만 편집. seedream v4 edit 2560x1440 약 0.03달러/장.",
+ "characters": [
+  {
+   "id": "S04j",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-keyframes/S04j-1.png"
+   ],
+   "prompt": "Edit this exact photograph: keep the same shop interior, open glass door, rainy night platform, lighting, colours, camera angle and the same boy seen from behind (wet hair, white towel around his neck, navy zip jacket, grey trousers, sneakers). Change ONLY his arms and the bag: he now HUGS the white plastic bag tightly against his CHEST with BOTH arms wrapped around it in front of him, both elbows bent and slightly out to the sides, only the edges of the white bag peeking out beside his ribs; his shoulders a little hunched against the rain. Nothing hanging at his side, no hand on his back or chest visible from behind. Natural anatomy, real photograph, NOT illustration.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  }
+ ]
+}
