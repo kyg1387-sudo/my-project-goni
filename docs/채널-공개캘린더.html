@@ -1,0 +1,89 @@
+<title>美談ものがたり 공개 캘린더</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* 레이아웃: 월간 7열 격자. 하루 칸에 본편(굵은 띠)·쇼츠(작은 칩)를 쌓는다. */
+:root{
+  --bg:#f6f3ec; --fg:#1f1b16; --muted:#6f6659; --line:#d9d2c4; --cell:#fffdf8;
+  --main-pub:#2b6e4f; --main-res:#b8641d; --main-prop:#8a1f2e;
+  --short:#5a6b8c; --short-bg:#e8edf6; --today:#fff2c2;
+  --display:"Shippori Mincho","Noto Serif CJK JP",serif; --body:"Noto Sans KR","Noto Sans CJK JP",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#17150f;--fg:#efe9dd;--muted:#a79d8b;--line:#3a352c;--cell:#211e17;--main-pub:#6fcf9a;--main-res:#f0a35a;--main-prop:#ff8a9a;--short:#b7c5e6;--short-bg:#2a3242;--today:#4a3f12;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#17150f;--fg:#efe9dd;--muted:#a79d8b;--line:#3a352c;--cell:#211e17;--main-pub:#6fcf9a;--main-res:#f0a35a;--main-prop:#ff8a9a;--short:#b7c5e6;--short-bg:#2a3242;--today:#4a3f12;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);padding-block:24px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:20px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(22px,3vw,32px);margin:0;text-wrap:balance}
+.sub{color:var(--muted);font-size:14px;margin:4px 0 0}
+.legend{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:13px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:14px;height:14px;border-radius:3px;display:inline-block}
+.month h2{font-family:var(--display);font-size:20px;margin:0 0 8px}
+.grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.dow{text-align:center;font-size:12px;color:var(--muted);letter-spacing:.08em;padding:4px 0}
+.day{background:var(--cell);border:1px solid var(--line);border-radius:6px;min-height:92px;padding:6px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.day.empty{background:transparent;border-color:transparent}
+.day.today{background:var(--today)}
+.num{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;display:flex;justify-content:space-between}
+.num b{color:var(--fg)}
+.main{font-size:12px;line-height:1.3;padding:4px 6px;border-radius:4px;color:#fff;font-weight:500;overflow-wrap:anywhere}
+.main.pub{background:var(--main-pub)} .main.res{background:var(--main-res)} .main.prop{background:var(--main-prop);outline:2px dashed var(--main-prop);outline-offset:1px}
+:root[data-theme="dark"] .main,:root:not([data-theme="light"]) .main{color:#111}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]) .main{color:#fff}}
+:root[data-theme="light"] .main{color:#fff}
+.short{font-size:11px;line-height:1.3;padding:2px 5px;border-radius:3px;background:var(--short-bg);color:var(--short);overflow-wrap:anywhere}
+.short.prop{outline:1.5px dashed var(--main-prop);color:var(--main-prop)}
+.short .v{opacity:.75}
+.note{font-size:13px;color:var(--muted);line-height:1.6}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;font-size:13px;min-width:520px;width:100%}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:500;font-size:12px;letter-spacing:.06em}
+td.n{font-variant-numeric:tabular-nums;text-align:right}
+@media (max-width:640px){.grid{gap:3px}.day{min-height:70px;padding:4px}.main{font-size:10px;padding:3px 4px}.short{font-size:9.5px;padding:2px 3px}.num{font-size:10px}}
+</style>
+<div class="wrap">
+  <header>
+    <h1>美談ものがたり 공개 캘린더</h1>
+    <p class="sub">업로드 로그 기준 2026-10-22 · 본편 11편 · 쇼츠 40편 · 주 2편(금·화) 리듬</p>
+  </header>
+  <div class="legend">
+    <span><i class="sw" style="background:var(--main-pub)"></i>본편 공개됨</span>
+    <span><i class="sw" style="background:var(--main-res)"></i>본편 예약됨</span>
+    <span><i class="sw" style="background:var(--main-prop)"></i>#03 제안(미등록)</span>
+    <span><i class="sw" style="background:var(--short-bg);border:1px solid var(--short)"></i>쇼츠(숫자는 조회수)</span>
+    <span><i class="sw" style="background:var(--today)"></i>오늘</span>
+  </div>
+  <div id="cal"></div>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>본편</th><th>날짜</th><th>상태</th><th>길이</th><th class="n">조회수</th></tr></thead>
+      <tbody id="list"></tbody>
+    </table>
+  </div>
+  <p class="note">본편 리듬은 금·화, 쇼츠는 거의 매일 1~2편. #03은 기예약 4편 뒤 첫 빈 금요일(11/6)에 두고, 쇼츠 5편은 기예약이 2편인 날(11/7)을 피해 11/8~11/12에 하루 1편씩 배치했습니다. 공개 시각은 전부 20:00 JST(쇼츠 평일 19:00·주말 12:00)로 가정했습니다.</p>
+</div>
+<script>
+const MAIN=[["2026-10-03", "pub", "「金はいりません」廃品回収の社長がリヤカーを返した理由", "5:10", null], ["2026-10-09", "pub", "「水を一口だけ…」倒れた老人を追い出した店長代理", "10:21", null], ["2026-10-16", "pub", "【スカッと】タワマン最上階の女王を堕とした1冊の通帳", "10:20", null], ["2026-10-17", "pub", "【スカッと】倉庫番に左遷された女性社員、部長の就任祝賀会", "12:02", null], ["2026-10-20", "pub", "【スカッと】「明日から会社に来るな！」30年支えた技術者", "10:20", null], ["2026-10-23", "res", "停電予告の赤い紙が貼られた1801号室", "5:36", null], ["2026-10-27", "res", "【スカッと】怒鳴ったタクシー運転手は、取引先の会長だった", "10:26", null], ["2026-10-30", "res", "【スカッと】捨てた契約社員が二百億円の鍵だった", "10:52", null], ["2026-11-03", "res", "【スカッと】追い出した老人は財閥会長だった", "10:43", null], ["2026-11-06", "res", "#03 【スカッと】「代わりはいくらでもいる」嫁を追い出", "10:22", null], ["2026-11-10", "prop", "#04 時給5万円の罠(オフィス) — 고니감독님 지시", "10~11분", null]];
+const SHORTS={"2026-10-17": [["「主人が買ってくれた」新作バッグ", 650, false]], "2026-10-18": [["「私は42階のオーナーよ！」", 1215, false]], "2026-10-19": [["家賃3か月滞納", 934, false], ["地下倉庫で見つけた一枚の伝票", 280, false]], "2026-10-21": [["30年支えた技術者に", 1264, false], ["【修羅場】「土下座しろ」", 182, false]], "2026-10-22": [["命がけの警告を「ヒラなんだから」", 507, false]], "2026-10-23": [["クビにした翌朝、会社のシステムが動かない", null, false]], "2026-10-24": [["【スカッと】「証拠でもあるのか」→「ここに120枚」", null, false], ["7歳の男の子が警備室に置いていった手紙", null, false]], "2026-10-25": [["「わたしが払ったことは…」", null, false], ["追い出したのは、百億円の鍵", null, false]], "2026-10-26": [["亡き妻の家計簿", null, false], ["【スカッと】社長の質問に答えられない部長", null, false]], "2026-10-27": [["午前4時、チャイムは鳴らさなかった", null, false]], "2026-10-28": [["無口な警備員のたったひと言", null, false], ["「運転手のくせに！」", null, false]], "2026-10-29": [["「助けてくれ」土下座した上司に", null, false]], "2026-10-31": [["亡き妻の写真を拾った部下", null, false], ["契約社員に「月から来たゴミ」", null, false]], "2026-11-01": [["クビにした三十日後、会社の灯りが消えた", null, false]], "2026-11-03": [["偽造の判子…違約金は二百億円", null, false]], "2026-11-04": [["昨夜の運転手が、商談相手の会長だった", null, false], ["追い出した老人は財閥の会長だった", null, false]], "2026-11-05": [["「人の命に関わる所だけは」", null, false], ["老人の正体は財閥会長", null, false]], "2026-11-07": [["正社員の誘いを断った契約社員", null, false], ["土下座する部長に会長が放ったひと言", null, false]], "2026-11-08": [["みすぼらしい老人にお茶を出した店員", null, false], ["#03 쇼츠1 代わりはいくらでもいる", null, true]], "2026-11-09": [["七十年ぶりのかけうどん", null, false], ["#03 쇼츠2 初日の電話", null, true]], "2026-11-10": [["#03 쇼츠3 あなたが決めて", null, true]], "2026-11-11": [["#03 쇼츠4 あなたの代わりなら", null, true]], "2026-11-12": [["#03 쇼츠5 お願い、戻ってきて", null, true]], "2026-11-14": [["#04 쇼츠1", null, true]], "2026-11-15": [["#04 쇼츠2", null, true]], "2026-11-16": [["#04 쇼츠3", null, true]], "2026-11-17": [["#04 쇼츠4", null, true]], "2026-11-18": [["#04 쇼츠5", null, true]]};
+const TODAY="2026-10-22", DOW=["월","화","수","목","금","토","일"];
+const mainBy={}; MAIN.forEach(m=>mainBy[m[0]]=m);
+function month(y,m){
+  const first=new Date(y,m-1,1), days=new Date(y,m,0).getDate();
+  let lead=(first.getDay()+6)%7, h=`<section class="month"><h2>${y}년 ${m}월</h2><div class="grid">`;
+  h+=DOW.map(d=>`<div class="dow">${d}</div>`).join("");
+  for(let i=0;i<lead;i++)h+=`<div class="day empty"></div>`;
+  for(let d=1;d<=days;d++){
+    const k=`${y}-${String(m).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+    const mm=mainBy[k], ss=SHORTS[k]||[];
+    h+=`<div class="day${k===TODAY?" today":""}"><div class="num"><b>${d}</b>${mm?`<span>${mm[3]}</span>`:""}</div>`;
+    if(mm)h+=`<div class="main ${mm[1]}">${mm[2]}</div>`;
+    ss.forEach(s=>h+=`<div class="short${s[2]?" prop":""}">${s[0]}${s[1]!=null?` <span class="v">${s[1].toLocaleString()}</span>`:""}</div>`);
+    h+=`</div>`;
+  }
+  return h+`</div></section>`;
+}
+document.getElementById("cal").innerHTML=month(2026,10)+month(2026,11);
+const st={pub:"공개",res:"예약",prop:"제안"};
+document.getElementById("list").innerHTML=MAIN.map(m=>{const d=new Date(m[0]);return `<tr><td>${m[2]}</td><td>${m[0].slice(5).replace("-","/")}(${DOW[(d.getDay()+6)%7]})</td><td>${st[m[1]]}</td><td>${m[3]}</td><td class="n">${m[4]==null?"–":m[4]}</td></tr>`}).join("");
+</script>
