@@ -32,6 +32,7 @@ open(OUT,"w",encoding="utf-8").write(html)
 full=OUT+".full.html"; open(full,"w",encoding="utf-8").write('<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0">'+html+"</body></html>")
 try:
     subprocess.run(["/opt/pw-browsers/chromium","--headless=new","--no-sandbox","--disable-gpu","--hide-scrollbars","--force-device-scale-factor=2","--window-size=1280,2400","--virtual-time-budget=4000",f"--screenshot={PNG}",f"file://{full}"],check=True,capture_output=True,timeout=120)
+    from PIL import Image; im=Image.open(PNG); im.crop((0,0,im.width,min(im.height,2560))).save(PNG)
     print("PNG:",PNG)
 except Exception as e: print("PNG 생략:",e)
 finally: os.remove(full)
