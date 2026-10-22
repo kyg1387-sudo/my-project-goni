@@ -4,3 +4,4 @@
 .env.*.local
 out/
 __pycache__/
+deliveries/*_final_1080p.mp4
