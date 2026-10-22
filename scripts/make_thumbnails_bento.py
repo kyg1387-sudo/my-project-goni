@@ -3,7 +3,7 @@
 위쪽 1/3에 초대형 굵은 글자 1~2줄(노랑 그라데이션 + 검은 테 / 빨강 그라데이션 + 흰 테 + 검은 바깥 테 / 흰 글자 + 검은 테),
 아래는 본편 인물 실사의 감정 정점(제13장 5 — 썸네일 인물 = 본편 인물). 오른쪽 아래(재생 시간)는 비운다.
 그림: assets/portraits/bento-thumb2/<id>-N.png (2560x1440). 산출: 1280x720 JPG(2MB 이하) + 휴대폰 확인용 360px·168px.
-사용법: python3 scripts/make_thumbnails_bento.py
+사용법: python3 scripts/make_thumbnails_bento.py [A B C A2 B2]
 """
 import os
 import sys
@@ -27,6 +27,10 @@ VARIANTS = {
     # A 「250円の優しい嘘」(고니감독님 2026-10-22: 더 자극적이라 A로): 비 맞는 소년(50엔 동전 구멍 로컬 보정 — 제19장 6), 위 1줄
     "A": dict(src="T1rain-1fix", x=None, max_w=1850, lines=[(24, 270, [("250円", "yel"), ("の", "white"), ("優しい嘘", "red")])]),
     # C 「30年後の出世払い」: 재회 포옹, 위 1줄
+    # 2차(2026-10-22 A/B 도구 점수 A 69·B 70·C 90): 얼굴이 작고 어두운 A·B를 확대·밝게 한 판
+    "A2": dict(src="T1rain-1fix", x=None, max_w=1850, lift=1.28,  # 확대(crop)는 눈이 글자에 가려져 불채택
+               lines=[(24, 270, [("250円", "yel"), ("の", "white"), ("優しい嘘", "red")])]),
+    "B2": dict(src="T2sticker-1fix", x=40, max_w=1110, lift=1.22, lines=[(50, 250, [("半額の秘密", "red")]), (330, 250, [("30年目の涙", "yel")])]),
     "C": dict(src="T3hug-2", x=None, max_w=1850, lines=[(24, 270, [("30年後の", "white"), ("出世払い", "yel")])]),
 }
 
@@ -60,7 +64,12 @@ def line_layer(parts, size, max_w=W - 70):
 
 def thumb(tag):
     v = VARIANTS[tag]
-    img = Image.open(os.path.join(SRC, f"{v['src']}.png")).convert("RGB").resize((W, H), Image.LANCZOS).convert("RGBA")
+    img = Image.open(os.path.join(SRC, f"{v['src']}.png")).convert("RGB")
+    if v.get("crop"):                                                 # 얼굴을 크게(휴대폰 목록에서 표정이 보이게)
+        img = img.crop(v["crop"])
+    if v.get("lift"):                                                 # 어두운 중간 톤만 들어 올림(검정 유지, 제11장 11)
+        g = v["lift"]; img = img.point(lambda c: int(255 * (c / 255) ** (1 / g)))
+    img = img.resize((W, H), Image.LANCZOS).convert("RGBA")
     shade = Image.new("L", (W, H), 0)
     ImageDraw.Draw(shade).rectangle([0, 0, W if v["x"] is None else 1150, 420 if v["x"] is None else 680], fill=120)        # 글자 자리만 살짝 어둡게(대비)
     shade = shade.filter(ImageFilter.GaussianBlur(90))
@@ -74,7 +83,7 @@ def thumb(tag):
 
 def main():
     os.makedirs(OUT, exist_ok=True)
-    for tag in "ABC":
+    for tag in sys.argv[1:] or ["A", "B", "C"]:
         im = thumb(tag)
         p = os.path.join(OUT, f"bento-thumb-{tag}-JP.jpg")
         im.resize((1280, 720), Image.LANCZOS).save(p, quality=92)
