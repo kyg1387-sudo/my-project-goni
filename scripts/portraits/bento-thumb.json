@@ -1,0 +1,59 @@
+{
+ "_설명": "『閉店間際の弁当屋』 썸네일 A·B·C(16:9, 2560x1440, 고니감독님 2026-10-22 「A/B 테스트용·휴대폰 시청·최고의 클릭」). beggar-thumb-abc2 5단 형식을 인물·장소만 바꿈. 각 3장, 약 0.81달러.",
+ "_style_preset": "Japanese human drama thumbnail, 16:9",
+ "characters": [
+  {
+   "id": "thumbA",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/bento-faces/shuzo2026.png",
+    "assets/portraits/bento-keyframes/S12k-1.png"
+   ],
+   "prompt": "[CAMERA] Tight close-up portrait, 85mm, f/1.8, eye level, his face on the RIGHT third of the frame filling two thirds of the frame height, the LEFT HALF kept dark and empty for text. 16:9 widescreen, one single photorealistic film still. [CHARACTER] The Japanese man from reference image 1 — Noguchi Shuzo, aged 73, kind weathered face with deep wrinkles, thick swept-back white hair, bare eyes, ears uncovered with nothing on them, grey cardigan over a white shirt and a navy apron. Reproduce exactly this face. [ACTION] He holds an opened white handwritten letter up near his chin with both hands (paper edge only, its writing out of focus), looking just past the lens, lips pressed together and trembling, eyes glistening wet with a thin film of tears on the lower lids, ONE thin clear tear just leaving the corner of his left eye, natural dark brown irises, clear white sclera, natural skin tone around the eyes and nose, NO makeup, matte real skin. [SETTING] His small old bento shop at night after closing: a warm tungsten desk lamp from the left lighting his face, the rest of the shop dark teal and out of focus, faint glass showcase glow, low key, cinematic film grain. Reference image 2 is only for the shop look. [NEGATIVE] text, letters, logo, watermark, extra fingers, anime, smile, glasses, earrings, grid, split panels."
+  },
+  {
+   "id": "thumbB",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/bento-faces/takumi12.png",
+    "assets/portraits/bento-faces/mio6.png",
+    "assets/portraits/bento-faces/shuzo1996.png"
+   ],
+   "prompt": "[CAMERA] Medium wide shot, eye level, 35mm, 16:9, ONE continuous scene illustration. The upper-left quarter left open for text. [CHARACTER] Japanese drama manga-style digital illustration, clean bold linework, cel shading with soft gradients and strong lighting (NOT photorealistic, NOT 3D). Boy = Takumi from reference image 1: Japanese boy aged 12, messy black hair, thin, navy zip-up jacket over a grey T-shirt, a white towel around his neck. Little sister = Mio from reference image 2: girl aged 6, black bob with bangs, red knit beanie, yellow sweater. Shopkeeper = Shuzo from reference image 3: Japanese man aged 43, short dark hair with grey, white towel headband, white cook's coat and navy apron. [ACTION] On the right, the boy and his little sister sit side by side on a bench under the shop eaves sharing ONE small bento box between them, the boy pushing the only fried chicken piece toward his sister with a gentle brave smile while his own stomach is empty; the sister eats happily. On the left behind the lit shop window, the shopkeeper watches them silently, eyes wet, holding a pair of tongs. [SETTING] A small Japanese station-front bento shop on a cold rainy winter night in the 1990s, warm orange light spilling from the shop window onto wet pavement, blue night, gentle rain streaks, steam rising from the bento. [NEGATIVE] text, letters, logo, watermark, photorealistic, extra limbs, blurry faces on main characters, grid, split panels."
+  },
+  {
+   "id": "thumbC",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/bento-faces/takumi42.png",
+    "assets/portraits/bento-faces/shuzo2026.png",
+    "assets/portraits/bento-keyframes/S13r-1.png"
+   ],
+   "prompt": "[CAMERA] Medium two-shot, 50mm, f/2.0, eye level, 16:9, one single photorealistic film still. The old man large on the LEFT half facing the camera, the younger man on the right half seen in three-quarter view; the upper-right corner kept clear for text. [CHARACTER] Old man = Noguchi Shuzo from reference image 2: aged 73, thick swept-back white hair, bare eyes, grey cardigan, white shirt, navy apron. Reproduce exactly this face. Younger man = Asakura Takumi from reference image 1: Japanese man aged 42, short neat black hair, charcoal coat over a white shirt. Reproduce exactly this face. [ACTION] Across the shop counter the old man holds out ONE closed bento box with both hands toward the younger man, looking into the lens with a small warm closed-mouth smile and wet eyes; the younger man's hands reach for it, his eyes wet, natural dark brown irises, clear white sclera, natural skin tone around the eyes and nose, NO makeup. [SETTING] Inside a small old Japanese bento shop at night, warm golden pendant light, a glass showcase with a few bentos glowing, a wall clock showing nine o'clock blurred behind, cozy amber color grade, cinematic film grain. Reference image 3 is only for the shop look. [NEGATIVE] text, letters, logo, watermark, extra fingers, anime, glasses, earrings, grid, split panels."
+  }
+ ]
+}
