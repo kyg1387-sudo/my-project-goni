@@ -1,0 +1,21 @@
+{
+ "_설명": "bento r18b — r18(끌어안기)은 손이 등에서 엇갈리는 불가능한 자세 → 한 손으로 봉투 손잡이를 들고 다른 팔은 내림(가장 자연스러운 자세).",
+ "characters": [
+  {
+   "id": "S04j",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/bento-keyframes/S04j-1.png"
+   ],
+   "prompt": "Edit this exact photograph: keep the same shop interior, open glass door, rainy night platform, lighting, colours, camera angle and the same boy seen strictly from behind (wet hair, white towel around his neck, navy zip jacket, grey trousers, sneakers), mid-step out of the door. Change ONLY his arms: his LEFT arm hangs down naturally and relaxed at his left side; his RIGHT hand holds the white plastic bag by its handles, the bag hanging down beside his right leg; NO arm across his chest or back, NO hands visible on his back. Natural anatomy, five fingers, real photograph, NOT illustration.",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  }
+ ]
+}
