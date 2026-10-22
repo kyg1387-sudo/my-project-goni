@@ -231,8 +231,8 @@ SHOTS = [
       act="The boy answers a little proudly that he is the best in his class at arithmetic. Answering the shop owner's question." + OB, expr="smile"),
     S("S04i", "S04", "face", "cu", "s96rain", "HA", [TBW], "S96O", "Close-up of the boy smiling shyly after the answer.", line="L10c", vo=True,
       motion="He smiles shyly, lips together, the towel around his neck." + HOLD, expr="smile"),
-    S("S04j", "S04", "face", "ws", "s96rain", "EL", [TBW], "S96X", "Wide from outside in the rain: the boy leaving with the bag held to his chest, the warm shop glowing behind him.",
-      line="NA9", motion="He walks slowly out into the rain away from the camera, the bag held close to his chest, his back to the camera the whole time, never looking back." + HOLD, expr="back"),
+    S("S04j", "S04", "face", "ms", "s96rain", "EL", [TBW], "S96X", "Medium from INSIDE the warm shop, behind the boy: the boy seen strictly from behind (wet hair, white towel around his neck, navy jacket), holding the plastic bag to his chest, standing on the threshold of the open glass door with one foot already outside on the wet platform, about to step out into the heavy night rain; warm shop light spills onto the wet ground ahead of him.",
+      line="NA9", motion="He steps out through the door into the rain and walks slowly away from the camera along the wet platform, the bag held close to his chest, his back to the camera the whole time, never turning around; rain keeps falling." + HOLD, expr="back"),
 
     # S05 반전 ①
     S("S05a", "S05", "estill", "ecu", "s96", "EL", [], "S96S", "Insert: inside the lit showcase, the empty slot where a karaage bento was, its blank paper price card with a red round sticker on it.", line="NA10"),

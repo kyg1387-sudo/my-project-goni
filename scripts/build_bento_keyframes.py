@@ -92,6 +92,7 @@ SHOT_FIX = {
     # 2차 검수(2026-10-21): 등록기 서랍이 도시락처럼 그려져 「도시락에서 동전을 집어 지갑에 넣는」 장면이 됨(7:26 회상 재사용)
     "S05b": "The drawer is clearly a CASH REGISTER drawer (grey metal coin cups and bill slots), attached to the register body above it; the coin moves FROM the purse INTO the drawer.",
     "S13c": "PEOPLE LOCKED: exactly THREE people — old Shuzo ONLY as a blurred back at the near left edge, Takumi entering through the half-open glass door, and his little daughter holding his hand; they are ENTERING (mid-step at the threshold), NOT standing still in the middle of the shop; the girl looks at the counter, NOT at the camera.",
+    "S04j": "POSE LOCKED: the boy is LEAVING — seen strictly from behind (back of head, NO face), facing OUT toward the rainy darkness beyond the door, NOT walking into the shop; exactly ONE person.",
     "S05c": "The small worn brown coin purse is clearly visible, held open in his left palm with fingers wrapped around it; his ears are bare with nothing on the earlobes (plain natural earlobes); the register drawer is open and close in front of him.",
     "S13r": "PEOPLE LOCKED: exactly TWO people facing each other across the counter INSIDE the shop at night — old Shuzo ONLY as the blurred back of white hair and grey cardigan shoulder at the near RIGHT edge, close to the camera and NOT walking away; Takumi looks at him, NOT at the camera. NO train, NO platform, NO one in the background. Cheeks dry, eyes wet only.",
     "S13a": "GRAVITY LOCKED: the bento lies flat on the wooden counter inside the shop; both hands belong to ONE old man standing behind the counter at the top of the frame (sleeves enter from the top edge only, NOT from the left and right sides); NO train, NO platform.",
@@ -146,7 +147,7 @@ PROP_ADD = {"S03e": "assets/portraits/bento-kf-r9/S03e-1.png",  # r9 싱크·그
             "S06a": CELLS + "/loc-shop96-curtain.png", "S13b": CELLS + "/loc-shop26-ots.png"}  # 참조 없는 t2i 시계 인서트에 사람 얼굴 2회 → 무인 장소 판 참조(edit)  # 소품 참조 없는 「paper bird」가 2회 연속 종이학 → 울새 소품 셀 참조
 ONE_TAKE = {"S06a", "S10a", "S13b", "S06b", "S10bd", "S13n", "S12d", "S09i", "S08a"}  # 재생성 중 단순 결함 컷은 1장(승인 예산 안, 2026-10-20)
 NO_BACKCELL = set()  # 뒷모습 전신 셀이 원경 전신 구도를 끌어옴 — 앞 인물은 글로만
-NO_LOC = {"S12f"}  # 장소 참조가 원경·후광(오려 붙인 테두리)을 만든 컷 — 장소는 글로만
+NO_LOC = {"S12f", "S04j"}  # 장소 참조가 원경·후광(오려 붙인 테두리)을 만든 컷 — 장소는 글로만
 # 시범 1차(2026-10-20): 립싱크 3컷 6장 모두 장소 참조를 따라 원경(얼굴 1/6)으로 나옴 → 립싱크 컷은 장소 참조를 기본으로 뺀다(제18장 4)
 FRAME_FIRST = ("FRAMING FIRST — TIGHT MEDIUM CLOSE-UP, chest-up portrait framing: the speaker's head and shoulders fill about half of the frame width, "
                "the face is one third of the frame height or larger; the room is only a soft out-of-focus background. NOT a wide shot, NOT a medium "
