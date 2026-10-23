@@ -1,0 +1,11 @@
+=== TTS 대사 파일 검사 (오디션 yamibaito-el-audition-r2.json) ===
+[haha_el_Koharu_L21.mp3] lang=ja | 대본: 健太？　……ごはん、食べた？ | 들림: ケンタ、ご飯食べた? | 대본과 불일치(유사도 0.12)  <<< 문제
+[tencho_el_Daisaku_L17b.mp3] lang=ja | 대본: 煙突……この先の、閉鎖された工場か | 들림: 煙突、この先の閉鎖された工場か。 | 
+[tencho_el_PapaJi_L17b.mp3] lang=ja | 대본: 煙突……この先の、閉鎖された工場か | 들림: 煙突、この先の閉鎖された工場か。 | 
+[tencho_el_Takumi_L17b.mp3] lang=ja | 대본: 煙突……この先の、閉鎖された工場か | 들림: 煙突。この先の閉鎖された工場か。 | 
+
+=== 현장음 파일 검사 (amb*.wav) — 말소리가 들리면 안 됨 ===
+
+=== 요약 ===
+문제 파일 1개:
+  haha_el_Koharu_L21.mp3: 대본과 불일치(유사도 0.12)
