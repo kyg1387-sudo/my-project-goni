@@ -1,0 +1,118 @@
+{
+ "_설명": "yamibaito PHASE 2 Kill Gate 2차(8장 약 0.4달러). 1차 불합격: kenta-conv/hoodie 얼굴 불일치·귀걸이·명찰·눈물 줄기(기준 얼굴 = kenta-work 정면 셀), otoko 하단 표정 행 애니 화풍(제19장 5), yuto 눈썹 표식이 검은 선으로 그려짐(제19장 5 ②)·작업복 명도 kenta와 동일, 장소 3장 가짜 글자(편의점 상품·게시판·간판), 통장 로고. 합격 유지: kenta-work·tencho-2(카메오 기준)·host 6·loc 7·prop-phones.",
+ "_style_preset": "Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light, subtle warm rim light, no flat lighting.",
+ "characters": [
+  {
+   "id": "kenta-conv-v2",
+   "count": 1,
+   "prompt": "Reference image 1 is the APPROVED frontal face of this character: reproduce exactly this face, bone structure, eyes, ears and hairline in all nine panels (IDENTITY FIRST). REAL PHOTOGRAPH of a real human actor, live-action film still, natural skin texture with visible pores, NOT an illustration, NOT anime, NOT manga, NOT 3D render, NOT CGI, NOT a doll. Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (three head-and-shoulders portraits of the SAME person): left = straight frontal view, middle = 45-degree three-quarter view, right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (three head-and-shoulders portraits): left = tired neutral, lips closed; middle = anxious, brows drawn together, lips pressed; right = frightened, eyes wet with a thin film of tears along the lower lids, natural skin tone around the eyes and nose, NO makeup, NO pink or red eyelids, NO tear drops on the cheeks, NOT smiling. Subject: a Japanese man aged 24, slim face, large slightly downturned eyes with natural dark brown irises, the LEFT ear sticking out a little more than the right, thick black hair with a soft fringe covering half the forehead, clean-shaven, bare eyes with NO glasses, bare ears with NO earrings, NO ear studs, NO piercings, NO jewellery, NO moles or spots on the face, NO scars. Wardrobe locked in every panel: a plain teal-green convenience-store staff vest with NO logo and NO name tag over a plain white long-sleeve shirt, black trousers, plain white sneakers. Reiwa era present-day Japan. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft even studio lighting, subtle warm rim light. Identical face, hair and clothing in all nine panels. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: anime, cartoon, illustration, 3D render, CGI, doll, earrings, piercings, moles, gel tears, thick tear streaks, gibberish, fake alphabets, logo on clothing, bad anatomy, deformed eyes, extra fingers. The vest is completely plain: no badge, no name tag, no patch. Bare ears, NO earrings. Bottom-right panel: eyes wet only, NO tear streaks on the cheeks.",
+   "aspect_ratio": "3:4",
+   "extra": {
+    "image_size": {
+     "width": 1728,
+     "height": 2304
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-faces/kenta-face.png"
+   ]
+  },
+  {
+   "id": "kenta-hoodie-v2",
+   "count": 1,
+   "prompt": "Reference image 1 is the APPROVED frontal face of this character: reproduce exactly this face, bone structure, eyes, ears and hairline in all nine panels (IDENTITY FIRST). REAL PHOTOGRAPH of a real human actor, live-action film still, natural skin texture with visible pores, NOT an illustration, NOT anime, NOT manga, NOT 3D render, NOT CGI, NOT a doll. Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (three head-and-shoulders portraits of the SAME person): left = straight frontal view, middle = 45-degree three-quarter view, right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (three head-and-shoulders portraits): left = tired neutral, lips closed; middle = anxious, brows drawn together, lips pressed; right = frightened, eyes wet with a thin film of tears along the lower lids, natural skin tone around the eyes and nose, NO makeup, NO pink or red eyelids, NO tear drops on the cheeks, NOT smiling. Subject: a Japanese man aged 24, slim face, large slightly downturned eyes with natural dark brown irises, the LEFT ear sticking out a little more than the right, thick black hair with a soft fringe covering half the forehead, clean-shaven, bare eyes with NO glasses, bare ears with NO earrings, NO ear studs, NO piercings, NO jewellery, NO moles or spots on the face, NO scars. Wardrobe locked in every panel: a plain heather-grey pullover hoodie with NO print, black slim trousers, worn plain white sneakers, a small plain black backpack on one shoulder (frontal panels only). Reiwa era present-day Japan. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft even studio lighting, subtle warm rim light. Identical face, hair and clothing in all nine panels. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: anime, cartoon, illustration, 3D render, CGI, doll, earrings, piercings, moles, gel tears, thick tear streaks, gibberish, fake alphabets, logo on clothing, bad anatomy, deformed eyes, extra fingers. Bare ears with NO earrings, NO hoop, NO nose stud. Bottom-right panel: eyes wet only, NO tear streaks on the cheeks.",
+   "aspect_ratio": "3:4",
+   "extra": {
+    "image_size": {
+     "width": 1728,
+     "height": 2304
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-faces/kenta-face.png"
+   ]
+  },
+  {
+   "id": "otoko-v2",
+   "count": 1,
+   "prompt": "Reference image 1 is the APPROVED frontal face of this character: reproduce exactly this face, bone structure, eyes, ears and hairline in all nine panels (IDENTITY FIRST). REAL PHOTOGRAPH of a real human actor, live-action film still, natural skin texture with visible pores, NOT an illustration, NOT anime, NOT manga, NOT 3D render, NOT CGI, NOT a doll. Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (three head-and-shoulders portraits of the SAME person): left = straight frontal view, middle = 45-degree three-quarter view, right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (three head-and-shoulders portraits): left = cold flat neutral, lips closed, empty stare; middle = the same cold neutral with the chin slightly lowered, eyes narrowed; right = faint contemptuous tightening at one corner of the mouth, NOT a smile. Subject: a Japanese man aged 45, square jaw, thick neck, very short buzz-cut black hair, small cold eyes with natural dark brown irises, heavy brow, clean-shaven, bare eyes with NO glasses, bare ears with NO earrings, NO ear studs, NO piercings, NO jewellery, NO moles or spots on the face, NO scars. Wardrobe locked in every panel: a plain black nylon work jacket zipped to the chest with NO logo, plain black trousers, black boots, thin black work gloves. Reiwa era present-day Japan. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft even studio lighting, subtle warm rim light. Identical face, hair and clothing in all nine panels. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: anime, cartoon, illustration, 3D render, CGI, doll, earrings, piercings, moles, gel tears, thick tear streaks, gibberish, fake alphabets, logo on clothing, bad anatomy, deformed eyes, extra fingers. EVERY panel including the bottom row is a REAL PHOTOGRAPH of the same real man — the bottom row must NOT be anime or illustration. The jacket chest is plain: no badge, no patch.",
+   "aspect_ratio": "3:4",
+   "extra": {
+    "image_size": {
+     "width": 1728,
+     "height": 2304
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-faces/otoko-face.png"
+   ]
+  },
+  {
+   "id": "yuto-v2",
+   "count": 1,
+   "prompt": "Reference image 1 is the APPROVED frontal face of this character: reproduce exactly this face, bone structure, eyes, ears and hairline in all nine panels (IDENTITY FIRST). REAL PHOTOGRAPH of a real human actor, live-action film still, natural skin texture with visible pores, NOT an illustration, NOT anime, NOT manga, NOT 3D render, NOT CGI, NOT a doll. Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (three head-and-shoulders portraits of the SAME person): left = straight frontal view, middle = 45-degree three-quarter view, right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (three head-and-shoulders portraits): left = hollow exhausted neutral, lips closed; middle = wary, eyes darting to the side, lips pressed; right = choked up, jaw tight, mouth corners down, eyes wet with a thin film of tears along the lower lids, natural skin tone around the eyes, NO makeup, NO pink eyelids, NO tear drops on the cheeks, NOT smiling. Subject: a Japanese man aged 22, round face, short dark-brown hair, both eyebrows natural and complete, thin build, dark circles under the eyes, bare eyes with NO glasses, bare ears with NO earrings, NO ear studs, NO piercings, NO jewellery, NO moles or spots on the face, NO scars. Wardrobe locked in every panel: a plain DARK CHARCOAL work jumpsuit (clearly darker than light grey) with NO logo and NO patches, worn black sneakers. Reiwa era present-day Japan. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft even studio lighting, subtle warm rim light. Identical face, hair and clothing in all nine panels. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: anime, cartoon, illustration, 3D render, CGI, doll, earrings, piercings, moles, gel tears, thick tear streaks, gibberish, fake alphabets, logo on clothing, bad anatomy, deformed eyes, extra fingers. Bottom-right panel: eyes wet only, NO tear streaks on the cheeks. No marks drawn on the forehead.",
+   "aspect_ratio": "3:4",
+   "extra": {
+    "image_size": {
+     "width": 1728,
+     "height": 2304
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-faces/yuto-face.png"
+   ]
+  },
+  {
+   "id": "loc-conbini-v2",
+   "count": 1,
+   "prompt": "Interior of a small Japanese convenience store at 1 a.m., seen from behind the checkout counter toward the empty aisles: cold white fluorescent lighting 5600K, shelves of blank-packaged goods, a blank-screen register, glass door at the far end showing dark street. Practical fluorescent tubes visible in the ceiling. REAL PHOTOGRAPH, live-action film still, NOT an illustration, NOT anime, NOT 3D render. Location master plate, one single 16:9 frame, 35mm lens, eye level unless stated. ABSOLUTELY NO PEOPLE, no hands, no faces, no silhouettes. Every sign, paper, screen, label and package completely blank — no text, no letters, no numbers, no logos anywhere. Reiwa era present-day Japan, authentic Japanese details. Photorealistic Japanese drama, Arri Alexa color grade, Kodak 35mm film grain. Negative: people, text, letters, signage lettering, watermark, anime, illustration, 3D. IMPORTANT: shelves hold only plain, unlabeled, single-color packages and boxes (no printed labels, no posters, no notices on walls), register screens dark and blank.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "loc-corridor-v2",
+   "count": 1,
+   "prompt": "A long dim concrete corridor inside the factory at night: one fluorescent tube lit, others dead, at the far end a rusted steel door under a plain green emergency-exit sign with NO pictogram and NO text, peeling paint, no people. REAL PHOTOGRAPH, live-action film still, NOT an illustration, NOT anime, NOT 3D render. Location master plate, one single 16:9 frame, 35mm lens, eye level unless stated. ABSOLUTELY NO PEOPLE, no hands, no faces, no silhouettes. Every sign, paper, screen, label and package completely blank — no text, no letters, no numbers, no logos anywhere. Reiwa era present-day Japan, authentic Japanese details. Photorealistic Japanese drama, Arri Alexa color grade, Kodak 35mm film grain. Negative: people, text, letters, signage lettering, watermark, anime, illustration, 3D. IMPORTANT: bare concrete walls with NO notice boards, NO posters, NO papers; the emergency-exit sign is a plain glowing green rectangle with nothing drawn on it.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "loc-payphone-v2",
+   "count": 1,
+   "prompt": "Front of a Japanese roadside convenience store at night on a national road: bright white store light spilling out, a green Japanese public telephone (公衆電話) on a stand near the entrance with its blank keypad and handset, store sign a plain blank glowing panel, wet asphalt, no people, no cars. REAL PHOTOGRAPH, live-action film still, NOT an illustration, NOT anime, NOT 3D render. Location master plate, one single 16:9 frame, 35mm lens, eye level unless stated. ABSOLUTELY NO PEOPLE, no hands, no faces, no silhouettes. Every sign, paper, screen, label and package completely blank — no text, no letters, no numbers, no logos anywhere. Reiwa era present-day Japan, authentic Japanese details. Photorealistic Japanese drama, Arri Alexa color grade, Kodak 35mm film grain. Negative: people, text, letters, signage lettering, watermark, anime, illustration, 3D. IMPORTANT: the store facade signboard is a plain glowing white panel with nothing on it, the shop windows are frosted/blank with no products or posters visible, no stickers on the phone stand.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "prop-bankbooks-v2",
+   "count": 1,
+   "prompt": "REAL PHOTOGRAPH, close-up on a folding table: a stack of about twenty vertical Japanese bankbooks (通帳) with plain blank matte covers in muted green, navy and grey, a few cash cards with blank faces beside them, cold fluorescent light, shallow depth of field. No hands, no people, no text, no logos. Photorealistic, Kodak 35mm grain. Negative: text, logos, people, anime, 3D. IMPORTANT: every bankbook cover is a plain matte single color with absolutely no printing, no logo, no emblem; the cash cards are plain blank plastic with no text, no chip graphics.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  }
+ ]
+}
