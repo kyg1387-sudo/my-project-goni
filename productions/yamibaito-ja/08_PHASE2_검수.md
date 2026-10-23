@@ -19,3 +19,18 @@
 | loc-room / loc-park / loc-stairs / loc-street-van(검은 HiAce, 헤드라이트 OFF) / loc-van-inside(우핸들 확인) / loc-workroom(통장 더미·CCTV) / prop-phones | ✅ | 고증 항목 통과(차 내부 스티커 글자는 키프레임 흐림) | |
 
 규격 반영: 제20장 8(인물 표식은 눈썹 결손도 금지 — 머리·귀·얼굴형만), 제19장 5 재확인(seedream v4라도 「표정 행」은 애니로 빠질 수 있다 → refs + 「EVERY panel REAL PHOTOGRAPH」).
+
+## 2차(r2, 8장 약 0.4달러) — 2026-10-24 → PHASE 2 🔒 Lock
+
+| 항목 | 판정 | 비고 |
+|---|---|---|
+| kenta-conv-v2 | ✅ | 기준 얼굴과 동일인, 귀걸이 0. 조끼 가슴의 작은 흰 패치는 키프레임에서 「plain vest, no badge」 + 필요 시 인페인트 |
+| kenta-hoodie-v2 | ✅ | 동일인, 장신구 0 |
+| otoko-v2 | ✅ | 9칸 전부 실사, 동일인 |
+| yuto-v2 | ✅ | 차콜 작업복(健太 라이트그레이와 변별), 눈썹 정상. 우하단 눈물 줄기 칸은 사용 금지 |
+| loc-conbini-v2 | ✅(조건) | 중앙 선반 무지 상자, 좌측 상품·포스터 잔존 → 키프레임은 카운터 뒤 보케 + `kf_glyph_blur` |
+| loc-corridor-v2 | ✅ | 비상구 무지 녹색 판, 좌측 작은 게시판 1개는 흐림 |
+| loc-payphone-v2 | ✅(조건) | 간판 무지 발광 ✓, 녹색 공중전화 ✓. 키패드 판·기둥 스티커 작은 글자 → 흐림, 창 너머 상품은 보케 |
+| prop-bankbooks-v2 | ✅ | 무지 표지·무지 카드 |
+
+**최종 채택 시트**: kenta-work-1(기준 얼굴)·kenta-conv-v2-1·kenta-hoodie-v2-1·otoko-v2-1·yuto-v2-1·tencho-2 / host 6장 / loc: conbini-v2·room·street-van·van-inside·factory-ext·workroom·corridor-v2·stairs·payphone-v2·park / prop: phones·bankbooks-v2. PHASE 2 지출 약 1.5달러(1차 1.1 + r2 0.4).
