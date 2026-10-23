@@ -100,6 +100,13 @@ def main():
     rep.append(f"1초 창 평균 음량: 최저 {sec.min():.1f}dB({sec.argmin()}s) / 최고 {sec.max():.1f}dB({sec.argmax()}s) / 전체 평균 {sec.mean():.1f}dB")
     low = [f"{i}s({v:.0f})" for i, v in enumerate(sec) if v < -45]
     rep.append("−45dB 미만 1초 창: " + (", ".join(low) or "없음"))
+    # 도입부(첫 10초): 0프레임부터 소리, −45dB 미만 0.5초 이상 구간 금지(EP4 vidIQ 「첫 몇 초 거의 무음」 지적, 1.1~2.4s −55dB)
+    head, run, bad = db[:100], 0, []
+    for i, v in enumerate(head):
+        run = run + 1 if v < -45 else 0
+        if run == 5: bad.append(f"{(i - 4) * 0.1:.1f}s~")
+    if head[:3].mean() < -45: bad.insert(0, "0프레임 무음")
+    rep.append("도입부 10초 −45dB 미만 0.5초 이상(불합격): " + (", ".join(bad) or "없음"))
     rep.append("")
     rep += [f"{ids[k]}: {b0:7.2f} ~ {b1:7.2f}s" for k, (b0, b1) in enumerate(bounds)]
     open(os.path.join(out, "report.txt"), "w", encoding="utf-8").write("\n".join(rep) + "\n")
