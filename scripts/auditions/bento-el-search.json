@@ -1,0 +1,18 @@
+{
+ "_설명": "『閉店間際の弁当屋』 ElevenLabs 일본어 목소리 도서관 검색(무과금, 미리듣기만) — 고니감독님 지시 2026-10-20 「일레븐랩스에서 가져오면 될 것 같아」(『老舗旅館の嫁』 ryokan-el-search 방식). 태그 = 배역. 결과에서 『老舗旅館の嫁』 확정 목소리(Chihiro·Chieko·Kaori·Riku·Akari·Kujira)는 후보에서 뺀다.",
+ "el_shared_search": {
+  "per_query": 8,
+  "queries": [
+   {"tag": "shuzo_mid", "language": "ja", "gender": "male", "age": "middle_aged"},
+   {"tag": "shuzo_old", "language": "ja", "gender": "male", "age": "old"},
+   {"tag": "sumie", "language": "ja", "gender": "female", "age": "middle_aged"},
+   {"tag": "takumi", "language": "ja", "gender": "male", "age": "middle_aged", "use_case": "conversational"},
+   {"tag": "takumi_y", "language": "ja", "gender": "male", "age": "young", "use_case": "narrative_story"},
+   {"tag": "boy", "language": "ja", "search": "boy"},
+   {"tag": "boy_child", "language": "ja", "gender": "male", "search": "child"},
+   {"tag": "girl", "language": "ja", "search": "girl"},
+   {"tag": "girl_child", "language": "ja", "gender": "female", "search": "child"},
+   {"tag": "kid_ja", "language": "ja", "search": "子供"}
+  ]
+ }
+}

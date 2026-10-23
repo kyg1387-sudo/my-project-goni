@@ -1,0 +1,13 @@
+{"_설명": "『時給5万円の罠』(yamibaito) ElevenLabs 일본어 목소리 도서관 검색(무과금, 미리듣기만) — 제19장 2 ①. 태그 = 배역. 직전·인접 작품 확정 목소리(ryokan: Chihiro·Chieko·Kaori·Riku·Akari·Kujira / bento: Shino·Chiemi·Tonatsu·Masa·Jun·Akio)는 후보에서 뺀다. 내레이터는 채널 목소리(Lloyd/Shino)와 별도로 차갑고 낮은 남성 후보를 찾는다(02_기획 §5 경고).",
+ "el_shared_search": {"per_query": 8, "queries": [
+   {"tag": "narrator_cold", "language": "ja", "gender": "male", "age": "middle_aged", "use_case": "narrative_story"},
+   {"tag": "narrator_deep", "language": "ja", "gender": "male", "age": "old", "use_case": "narrative_story"},
+   {"tag": "kenta", "language": "ja", "gender": "male", "age": "young", "use_case": "conversational"},
+   {"tag": "kenta_b", "language": "ja", "gender": "male", "age": "young", "use_case": "narrative_story"},
+   {"tag": "yuto", "language": "ja", "gender": "male", "age": "young", "search": "young man"},
+   {"tag": "otoko", "language": "ja", "gender": "male", "age": "middle_aged", "use_case": "characters_animation"},
+   {"tag": "otoko_b", "language": "ja", "gender": "male", "age": "middle_aged", "search": "deep"},
+   {"tag": "tencho", "language": "ja", "gender": "male", "age": "middle_aged", "use_case": "conversational"},
+   {"tag": "haha", "language": "ja", "gender": "female", "age": "middle_aged", "use_case": "conversational"},
+   {"tag": "keisatsu", "language": "ja", "gender": "male", "age": "middle_aged", "search": "strong"}
+ ]}}
