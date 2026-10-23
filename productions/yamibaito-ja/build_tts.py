@@ -17,6 +17,7 @@ CAST = {"NA": ("내레이터", "narr"), "健太": ("健太", "kenta"), "悠斗":
         "店長": ("店長", "tencho"), "母": ("母", "haha"), "警察官": ("警察官", "keisatsu"), "진행자": ("진행자", "host")}
 SAME_AS = {"L00": "L08"}  # 후크의 「ここに、出口はない」 = S05 L08 녹음 재사용
 SKIP = {"OUT0", "OUT5"}   # 무언 몽타주·예고 카드
+EXTRA_ID = {"NA39c": "line201", "NA39d": "line202"}  # Lock 보강 추가 줄 — 기존 line### 번호를 밀지 않는다
 
 # 태그: (EL 연기 태그 또는 Typecast (감정, 강도, 템포), 연기 메모 = 표정·동작의 단일 출처, 제10장 7)
 N = lambda tag, note: (tag, note)
@@ -51,7 +52,8 @@ T = {
     "NA35": N("[low, cold]", "「アルバイト先では」 차갑게"), "NA36": N("[low, grave]", "「収容所」 무겁게"),
     "NA37": N("[flat, reading out]", "통장 정리"), "NA38": N("[flat, reading out]", "짐 분류"),
     "NA39": N("[low, heavy]", "16시간, 「ほとんど」 무겁게"), "NA39a": N("[flat, clipped]", "식사·바닥, 끊어 읽기"),
-    "NA39b": N("[low, slow]", "카메라, 「一瞬も」 느리게"), "NA40": N("[low, slow, grave]", "주제문 ③ — 「命の値段」 가장 느리게"),
+    "NA39b": N("[low, slow]", "카메라, 「一瞬も」 느리게"),
+    "NA39c": N("[quiet, heavy]", "작업대 밑 — 무겁게"), "NA39d": N("[low, slow, sorrowful]", "이름을 몰랐다 — 실종 복선, 느리게"), "NA40": N("[low, slow, grave]", "주제문 ③ — 「命の値段」 가장 느리게"),
     "NA41": N("[hushed, chilling]", "실종, 속삭이듯 차갑게"), "NA42": N("[hushed, chilling]", "「口にしません」 여운"),
     "NA43a": N("[low, sorrowful]", "무너지는 마음"), "NA43b": N("[quiet, turning]", "「気づいていました」 — 전환, 톤 살짝 올림"),
     "NA43c": N("[quiet, precise]", "3시·5분 또렷이"), "NA43d": N("[quiet, precise]", "비상계단, 복선"),
@@ -151,11 +153,15 @@ def main():
         sys.exit("\n".join(warns))
     roles = CAST_JSON["roles"]
     tests, rows, chars_el, chars_tc, idmap = [], [], 0, 0, {}
-    for n, (tag, spk, omni, text) in enumerate(lines, 1):
+    n = 0
+    for (tag, spk, omni, text) in lines:
         warns += check_length(tag, text)
         tone, note = T[tag]
         name, role = CAST[spk]
-        lid = f"line{n:03d}"
+        if tag in EXTRA_ID:
+            lid = EXTRA_ID[tag]
+        else:
+            n += 1; lid = f"line{n:03d}"
         idmap[tag] = lid
         r = roles[role]
         if tag in SAME_AS:
@@ -171,7 +177,7 @@ def main():
                           "el_model": "eleven_v3", "text": f"{tone} {kana(text)}", "subtitle": text})
             chars_el += len(text) + len(tone) + 1; src = f"EL {r['name']}"
         tone_s = tone if isinstance(tone, str) else f"{tone[0]} {tone[1]} · tempo {tone[2]}"
-        rows.append(f"| {n} | {tag} | {name} | {'Omni' if omni else '-'} | {text} | {tone_s} | {note} | {src} |")
+        rows.append(f"| {lid[4:]} | {tag} | {name} | {'Omni' if omni else '-'} | {text} | {tone_s} | {note} | {src} |")
     for tag, src_tag in SAME_AS.items():
         rows.append(f"| — | {tag} | 재사용 | | | | {src_tag}({idmap[src_tag]}) 음성을 후크 H2에 배치 | |")
     spec = {"_설명": f"『時給5万円の罠』 본녹음(PHASE 1). build_tts.py 생성물 — 직접 고치지 말 것. EL {chars_el}자 · Typecast {chars_tc}자, fal 0.",

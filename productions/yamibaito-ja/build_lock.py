@@ -19,6 +19,7 @@ GAP_SAME, GAP_CHANGE, TAIL_D, TAIL_N, INSERT, AD_TAIL = 0.6, 0.8, 1.8, 1.0, 2.5,
 HOOK, OUTRO = 20.0, 30.0
 AD_AFTER = {"NA25": ("1차 광고", 210.0), "NA43": ("2차 광고", 420.0)}
 SKIP = {"OUT0", "OUT5"}
+EXTRA_ID = {"NA39c": "line201", "NA39d": "line202"}
 PAUSE = {"NA15": 0.8, "L14": 1.0 + 0.8, "L18": 0.8}  # あなたなら 앞 숨 / 「消されるのか」 앞 정적 1초(룸톤) / 「警察だ」 앞 무전 0.8
 HOOK_AT = {"NA0": 2.2, "NA1": 6.3, "L00": 9.6}
 SAME_AS = {"L00": "L08"}
@@ -27,6 +28,7 @@ CLUE_SCENE = "S03"  # 단서(걸지 못한 번호) + BGM 전환(제15장 24)
 MIN_TOTAL, MAX_TOTAL = 9 * 60 + 40, 11 * 60
 # 길이 보정(무료, 2026-10-20 실측 13:11 → 보정): ① 느린 목소리 배속(≤1.15, 제11장 4 상한, 피치 유지 atempo — 후처리에서 실제 적용)
 # ② 내레이션·VO 줄(편지 낭독·짧은 대사) 앞 지문 컷은 그 목소리 아래에 깐다(B롤 위 VO — 컷이 첫마디보다 VO_LEAD초만 먼저 시작)
+STRETCH_SCENES = {"S08", "S09", "S10", "S11"}; STRETCH_NARR = 1.05  # 2차 광고 뒤 내레이션만 배속(≤1.15, 후처리 atempo·원본 보관) — 광고 지점은 그대로, 총길이 11:00 안
 STRETCH = {}  # Shino 1.15·Chiemi 1.12 배속을 파일에 적용함(원본 assets/auditions/bento-tts-orig/, 제11장 4) — 이중 적용 금지
 VO_UNDER, VO_LEAD = True, 0.8
 VOICE_OF = {}
@@ -88,8 +90,12 @@ def build():
     SUB = {t["id"]: t["subtitle"] for t in spec["tests"]}
     VOICE_OF.update({t["id"]: t.get("voice_name", "") for t in spec["tests"]})
     tags = {x["tag"]: x for x in lines}
-    for n, x in enumerate(lines, 1):
-        x["id"] = f"line{n:03d}"
+    n = 0
+    for x in lines:
+        if x["tag"] in EXTRA_ID:
+            x["id"] = EXTRA_ID[x["tag"]]
+        else:
+            n += 1; x["id"] = f"line{n:03d}"
     for x in lines:
         src = tags[SAME_AS[x["tag"]]]["id"] if x["tag"] in SAME_AS else x["id"]
         p = os.path.join(AUDIO, src + ".mp3")
@@ -99,6 +105,8 @@ def build():
             rate = {"Hatake": 3.82, "Hadou": 3.42, "Mizu": 3.51, "Henry": 2.52, "Takumi": 3.62, "Koharu": 3.54, "Anton": 4.64}.get(VOICE_OF.get(src, ""), 4.5)
             a, b = 0.0, len(re.sub(r"[\s、。！？…「」　]", "", SUB.get(src, ""))) / rate
         f = STRETCH.get(VOICE_OF.get(src, ""), 1.0)
+        if x["spk"] == "NA" and x["scene"] in STRETCH_SCENES:
+            f *= STRETCH_NARR
         x["lead"], x["dur"], x["audio"], x["stretch"] = round(a / f, 3), round((b - a) / f, 3), src, f
     t, srows, ads = HOOK, [], []
     for sc in scenes:

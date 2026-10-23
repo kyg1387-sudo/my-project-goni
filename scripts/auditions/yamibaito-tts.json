@@ -1,5 +1,5 @@
 {
- "_설명": "『時給5万円の罠』 본녹음(PHASE 1). build_tts.py 생성물 — 직접 고치지 말 것. EL 4467자 · Typecast 104자, fal 0.",
+ "_설명": "『時給5万円の罠』 본녹음(PHASE 1). build_tts.py 생성물 — 직접 고치지 말 것. EL 4547자 · Typecast 104자, fal 0.",
  "tts_model": "ssfm-v30",
  "language": "jpn",
  "tests": [
@@ -578,6 +578,24 @@
    "el_model": "eleven_v3",
    "text": "[low, slow] 天井のカメラは、一瞬も、止まりませんでした。",
    "subtitle": "天井のカメラは、一瞬も、止まりませんでした。"
+  },
+  {
+   "id": "line201",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, heavy] 夜は、作業台の下で、眠りました。",
+   "subtitle": "夜は、作業台の下で、眠りました。"
+  },
+  {
+   "id": "line202",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, sorrowful] 隣の青年の名前を、けんたは、最後まで知りませんでした。",
+   "subtitle": "隣の青年の名前を、健太は、最後まで知りませんでした。"
   },
   {
    "id": "line066",
