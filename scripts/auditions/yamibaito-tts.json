@@ -1,0 +1,1167 @@
+{
+ "_설명": "『時給5万円の罠』 본녹음(PHASE 1). build_tts.py 생성물 — 직접 고치지 말 것. EL 4467자 · Typecast 104자, fal 0.",
+ "tts_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "line001",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, cold, slow] 時給、ごまんえん。",
+   "subtitle": "時給、五万円。"
+  },
+  {
+   "id": "line002",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, ominous, trailing off] このきゅうじんに応募した青年は、いっしゅうかん後……",
+   "subtitle": "この求人に応募した青年は、一週間後……"
+  },
+  {
+   "id": "line004",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[calm, detached] 東京、しんやのコンビニ。",
+   "subtitle": "東京、深夜のコンビニ。"
+  },
+  {
+   "id": "line005",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[calm, detached] さいとうけんた、にじゅうよんさい。",
+   "subtitle": "斉藤健太、二十四歳。"
+  },
+  {
+   "id": "line006",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[calm, matter-of-fact] 昼は大学、夜はレジに立つ毎日でした。",
+   "subtitle": "昼は大学、夜はレジに立つ毎日でした。"
+  },
+  {
+   "id": "line007",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, foreboding] その夜まで、彼は、どこにでもいる普通の青年でした。",
+   "subtitle": "その夜まで、彼は、どこにでもいる普通の青年でした。"
+  },
+  {
+   "id": "line008",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, suspenseful] その夜、いっつうのメッセージが届きます。",
+   "subtitle": "その夜、一通のメッセージが届きます。"
+  },
+  {
+   "id": "line009",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[measured, reading out] 簡単な倉庫作業。夜間ごじかんで、じきゅうごまんえん。",
+   "subtitle": "簡単な倉庫作業。夜間五時間で、時給五万円。"
+  },
+  {
+   "id": "line010",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[measured, reading out] 履歴書も、面接も、なし。その日に、現金。",
+   "subtitle": "履歴書も、面接も、なし。その日に、現金。"
+  },
+  {
+   "id": "line011",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[flat, skeptical] どう考えても、おかしな話でした。",
+   "subtitle": "どう考えても、おかしな話でした。"
+  },
+  {
+   "id": "line012",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[calm, matter-of-fact] けんたも、最初は詐欺だと思いました。",
+   "subtitle": "健太も、最初は詐欺だと思いました。"
+  },
+  {
+   "id": "line013",
+   "model": "elevenlabs-direct",
+   "voice": "3VouIDzZzPEjDgmtbXBJ",
+   "voice_name": "Hadou",
+   "el_model": "eleven_v3",
+   "text": "[whispering, stunned] ……嘘だろ。ひとばんで、にじゅうごまん",
+   "subtitle": "……嘘だろ。一晩で、二十五万"
+  },
+  {
+   "id": "line014",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[flat, cold] 口座のざんだかは、さんぜんにひゃくじゅうななえん。",
+   "subtitle": "口座の残高は、三千二百十七円。"
+  },
+  {
+   "id": "line015",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, heavy] やちんは、にかげつ、遅れていました。",
+   "subtitle": "家賃は、二か月、遅れていました。"
+  },
+  {
+   "id": "line016",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, heavy] 大学の学費は、しょうがくきんという名の、借金でした。",
+   "subtitle": "大学の学費は、奨学金という名の、借金でした。"
+  },
+  {
+   "id": "line017",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[flat, cold] 卒業しても、へんさいは、じゅうごねん続きます。",
+   "subtitle": "卒業しても、返済は、十五年続きます。"
+  },
+  {
+   "id": "line018",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, bitter] スマホの中では、友人たちが、海外で笑っていました。",
+   "subtitle": "スマホの中では、友人たちが、海外で笑っていました。"
+  },
+  {
+   "id": "line019",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, knowing] 積み重なった生活の苦しさは、人の判断を鈍らせます。",
+   "subtitle": "積み重なった生活の苦しさは、人の判断を鈍らせます。"
+  },
+  {
+   "id": "line020",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, suspicious] ただ、条件だけが、妙に厳しかった。",
+   "subtitle": "ただ、条件だけが、妙に厳しかった。"
+  },
+  {
+   "id": "line021",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[clipped, counting] ひとつ。スマホは、持ち込み禁止。",
+   "subtitle": "ひとつ。スマホは、持ち込み禁止。"
+  },
+  {
+   "id": "line022",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[clipped, counting] ふたつ。移動中は、必ずアイマスク。",
+   "subtitle": "ふたつ。移動中は、必ずアイマスク。"
+  },
+  {
+   "id": "line023",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[clipped, colder] みっつ。こうがいすれば、家族にも、責任。",
+   "subtitle": "みっつ。口外すれば、家族にも、責任。"
+  },
+  {
+   "id": "line024",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[hushed, uneasy] ……おかしい。誰が見ても、おかしい。",
+   "subtitle": "……おかしい。誰が見ても、おかしい。"
+  },
+  {
+   "id": "line025",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, knowing] でも、ごまんえんは、人の疑う力を鈍らせます。",
+   "subtitle": "でも、五万円は、人の疑う力を鈍らせます。"
+  },
+  {
+   "id": "line026",
+   "model": "elevenlabs-direct",
+   "voice": "3VouIDzZzPEjDgmtbXBJ",
+   "voice_name": "Hadou",
+   "el_model": "eleven_v3",
+   "text": "[low, convincing himself] ……死ぬわけじゃない。いっしゅうかんだけだ",
+   "subtitle": "……死ぬわけじゃない。一週間だけだ"
+  },
+  {
+   "id": "line027",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[flat, final] けんたは、応募ボタンを押しました。",
+   "subtitle": "健太は、応募ボタンを押しました。"
+  },
+  {
+   "id": "line028",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, direct, slow] ……あなたなら、断れますか？",
+   "subtitle": "……あなたなら、断れますか？"
+  },
+  {
+   "id": "line029",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, uneasy] 出発の前の晩。胸騒ぎが、消えませんでした。",
+   "subtitle": "出発の前の晩。胸騒ぎが、消えませんでした。"
+  },
+  {
+   "id": "line030",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, curious] けんたは、ある番号を検索しました。",
+   "subtitle": "健太は、ある番号を検索しました。"
+  },
+  {
+   "id": "line031",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet] けいさつの、そうだんまどぐち。",
+   "subtitle": "警察の、相談窓口。"
+  },
+  {
+   "id": "line032",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, regretful, slow] ……でも、彼は、かけませんでした。",
+   "subtitle": "……でも、彼は、かけませんでした。"
+  },
+  {
+   "id": "line033",
+   "model": "elevenlabs-direct",
+   "voice": "7yHoNSfldb5Ih1SQ8son",
+   "voice_name": "Koharu",
+   "el_model": "eleven_v3",
+   "text": "[warm, motherly] けんた？　ごはん、ちゃんと食べてる？",
+   "subtitle": "健太？　ごはん、ちゃんと食べてる？"
+  },
+  {
+   "id": "line034",
+   "model": "elevenlabs-direct",
+   "voice": "3VouIDzZzPEjDgmtbXBJ",
+   "voice_name": "Hadou",
+   "el_model": "eleven_v3",
+   "text": "[forced cheerful, strained] ……うん、大丈夫。バイト、見つかったから",
+   "subtitle": "……うん、大丈夫。バイト、見つかったから"
+  },
+  {
+   "id": "line035",
+   "model": "elevenlabs-direct",
+   "voice": "7yHoNSfldb5Ih1SQ8son",
+   "voice_name": "Koharu",
+   "el_model": "eleven_v3",
+   "text": "[gentle, a little worried] そう。……無理しないでね",
+   "subtitle": "そう。……無理しないでね"
+  },
+  {
+   "id": "line036",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, heavy] それが、ははと交わした、最後の普通の会話でした。",
+   "subtitle": "それが、母と交わした、最後の普通の会話でした。"
+  },
+  {
+   "id": "line037",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[calm, matter-of-fact] 荷物は、着替えみっかぶんだけ。",
+   "subtitle": "荷物は、着替え三日分だけ。"
+  },
+  {
+   "id": "line038",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, foreboding] いっしゅうかんで、戻るつもりでした。",
+   "subtitle": "一週間で、戻るつもりでした。"
+  },
+  {
+   "id": "line039",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, ominous] そして、約束の夜。",
+   "subtitle": "そして、約束の夜。"
+  },
+  {
+   "id": "line040",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, ominous] 黒いワンボックスカーが、音もなく、止まっていました。",
+   "subtitle": "黒いワンボックスカーが、音もなく、止まっていました。"
+  },
+  {
+   "id": "line041",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, suspenseful] ここからが、くものすの入り口でした……。",
+   "subtitle": "ここからが、蜘蛛の巣の入り口でした……。"
+  },
+  {
+   "id": "line042",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[hushed, tense] 車の中には、すでに、さんにんの若者がいました。",
+   "subtitle": "車の中には、すでに、三人の若者がいました。"
+  },
+  {
+   "id": "line043",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[hushed, tense] 誰も、ひとことも、話しません。",
+   "subtitle": "誰も、一言も、話しません。"
+  },
+  {
+   "id": "line044",
+   "model": "elevenlabs-direct",
+   "voice": "2UGDsJpBJAiAlF0jQQ7x",
+   "voice_name": "Henry",
+   "el_model": "eleven_v3",
+   "text": "[cold, flat, low] スマホとみぶんしょう、前に回せ。",
+   "subtitle": "スマホと身分証、前に回せ。"
+  },
+  {
+   "id": "line045",
+   "model": "elevenlabs-direct",
+   "voice": "2UGDsJpBJAiAlF0jQQ7x",
+   "voice_name": "Henry",
+   "el_model": "eleven_v3",
+   "text": "[cold, clipped] アイマスク、つけろ",
+   "subtitle": "アイマスク、つけろ"
+  },
+  {
+   "id": "line046",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[hushed, observing] 隣の青年の手が、小さく、震えていました。",
+   "subtitle": "隣の青年の手が、小さく、震えていました。"
+  },
+  {
+   "id": "line047",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet] けんたは、何も聞きませんでした。",
+   "subtitle": "健太は、何も聞きませんでした。"
+  },
+  {
+   "id": "line048",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, uneasy] 聞いては、いけない気がしたのです。",
+   "subtitle": "聞いては、いけない気がしたのです。"
+  },
+  {
+   "id": "line049",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, slow] 窓の外の光は、少しずつ、消えていきました。",
+   "subtitle": "窓の外の光は、少しずつ、消えていきました。"
+  },
+  {
+   "id": "line050",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[flat, clipped] 高速道路を、いちじかん。",
+   "subtitle": "高速道路を、一時間。"
+  },
+  {
+   "id": "line051",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, cold, slow] 車が止まった時、あたりは、完全な闇でした。",
+   "subtitle": "車が止まった時、あたりは、完全な闇でした。"
+  },
+  {
+   "id": "line052",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, observing] 着いたのは、郊外の、古いこうじょうでした。",
+   "subtitle": "着いたのは、郊外の、古い工場でした。"
+  },
+  {
+   "id": "line053",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[flat, clipped] 看板は、ありません。窓は、すべててつごうし。",
+   "subtitle": "看板は、ありません。窓は、すべて鉄格子。"
+  },
+  {
+   "id": "line054",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[hushed, sensory] 中に入った瞬間、冷たい鉄の匂いがしました。",
+   "subtitle": "中に入った瞬間、冷たい鉄の匂いがしました。"
+  },
+  {
+   "id": "line055",
+   "model": "elevenlabs-direct",
+   "voice": "2UGDsJpBJAiAlF0jQQ7x",
+   "voice_name": "Henry",
+   "el_model": "eleven_v3",
+   "text": "[cold, flat, slow] 今から、外との連絡は、全部切る。",
+   "subtitle": "今から、外との連絡は、全部切る。"
+  },
+  {
+   "id": "line056",
+   "model": "elevenlabs-direct",
+   "voice": "2UGDsJpBJAiAlF0jQQ7x",
+   "voice_name": "Henry",
+   "el_model": "eleven_v3",
+   "text": "[quiet menace, slow] ここに、出口はない。……働け",
+   "subtitle": "ここに、出口はない。……働け"
+  },
+  {
+   "id": "line057",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, final] 振り返った時、鉄の扉は、もう、閉まっていました。",
+   "subtitle": "振り返った時、鉄の扉は、もう、閉まっていました。"
+  },
+  {
+   "id": "line058",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, cold] そこは、アルバイト先では、ありませんでした。",
+   "subtitle": "そこは、アルバイト先では、ありませんでした。"
+  },
+  {
+   "id": "line059",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, grave] 閉じ込められた、現代のしゅうようじょでした。",
+   "subtitle": "閉じ込められた、現代の収容所でした。"
+  },
+  {
+   "id": "line060",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[flat, reading out] 仕事は、たにんめいぎのつうちょうの整理。",
+   "subtitle": "仕事は、他人名義の通帳の整理。"
+  },
+  {
+   "id": "line061",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[flat, reading out] そして、中身の分からない荷物の、仕分け。",
+   "subtitle": "そして、中身の分からない荷物の、仕分け。"
+  },
+  {
+   "id": "line062",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, heavy] いちにち、じゅうろくじかん。眠る時間は、ほとんどありません。",
+   "subtitle": "一日、十六時間。眠る時間は、ほとんどありません。"
+  },
+  {
+   "id": "line063",
+   "model": "elevenlabs-direct",
+   "voice": "2UGDsJpBJAiAlF0jQQ7x",
+   "voice_name": "Henry",
+   "el_model": "eleven_v3",
+   "text": "[cold, bored] 質問は、なしだ。手を動かせ",
+   "subtitle": "質問は、なしだ。手を動かせ"
+  },
+  {
+   "id": "line064",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[flat, clipped] 食事は、いちにちにかい。眠るのは、床の上。",
+   "subtitle": "食事は、一日二回。眠るのは、床の上。"
+  },
+  {
+   "id": "line065",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, slow] 天井のカメラは、一瞬も、止まりませんでした。",
+   "subtitle": "天井のカメラは、一瞬も、止まりませんでした。"
+  },
+  {
+   "id": "line066",
+   "model": "elevenlabs-direct",
+   "voice": "50nu5hjcGY5tiFgwp4JO",
+   "voice_name": "Mizu",
+   "el_model": "eleven_v3",
+   "text": "[whispering, dry] お前も、金か",
+   "subtitle": "お前も、金か"
+  },
+  {
+   "id": "line067",
+   "model": "elevenlabs-direct",
+   "voice": "3VouIDzZzPEjDgmtbXBJ",
+   "voice_name": "Hadou",
+   "el_model": "eleven_v3",
+   "text": "[muttering, hollow] ……いっしゅうかんだけって",
+   "subtitle": "……一週間だけって"
+  },
+  {
+   "id": "line068",
+   "model": "elevenlabs-direct",
+   "voice": "50nu5hjcGY5tiFgwp4JO",
+   "voice_name": "Mizu",
+   "el_model": "eleven_v3",
+   "text": "[low, hollow, bitter] 俺も、そう言われた。……さんしゅうかん前に",
+   "subtitle": "俺も、そう言われた。……三週間前に"
+  },
+  {
+   "id": "line069",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, grave] じきゅうごまんえんの正体は、若さと、自由と、命の値段でした。",
+   "subtitle": "時給五万円の正体は、若さと、自由と、命の値段でした。"
+  },
+  {
+   "id": "line070",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[hushed, chilling] みっかめ。隣の席の男が、いなくなりました。",
+   "subtitle": "三日目。隣の席の男が、いなくなりました。"
+  },
+  {
+   "id": "line071",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[hushed, chilling] 誰も、その名前を、口にしません。",
+   "subtitle": "誰も、その名前を、口にしません。"
+  },
+  {
+   "id": "line072",
+   "model": "elevenlabs-direct",
+   "voice": "50nu5hjcGY5tiFgwp4JO",
+   "voice_name": "Mizu",
+   "el_model": "eleven_v3",
+   "text": "[whispering, quick, nervous] 昨日来たやつ、いないだろ",
+   "subtitle": "昨日来たやつ、いないだろ"
+  },
+  {
+   "id": "line073",
+   "model": "elevenlabs-direct",
+   "voice": "50nu5hjcGY5tiFgwp4JO",
+   "voice_name": "Mizu",
+   "el_model": "eleven_v3",
+   "text": "[whispering, lower] ……逃げようとしたんだ",
+   "subtitle": "……逃げようとしたんだ"
+  },
+  {
+   "id": "line074",
+   "model": "elevenlabs-direct",
+   "voice": "50nu5hjcGY5tiFgwp4JO",
+   "voice_name": "Mizu",
+   "el_model": "eleven_v3",
+   "text": "[whispering, defeated] 家族の住所、握られてる。……逃げられない",
+   "subtitle": "家族の住所、握られてる。……逃げられない"
+  },
+  {
+   "id": "line075",
+   "model": "elevenlabs-direct",
+   "voice": "3VouIDzZzPEjDgmtbXBJ",
+   "voice_name": "Hadou",
+   "el_model": "eleven_v3",
+   "text": "[trembling whisper, afraid] 俺も……ここで、消されるのか",
+   "subtitle": "俺も……ここで、消されるのか"
+  },
+  {
+   "id": "line076",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, sorrowful] けんたの手は荒れ、心は、少しずつ、壊れていきました。",
+   "subtitle": "健太の手は荒れ、心は、少しずつ、壊れていきました。"
+  },
+  {
+   "id": "line077",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, turning] ただ、彼は、気づいていました。",
+   "subtitle": "ただ、彼は、気づいていました。"
+  },
+  {
+   "id": "line078",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, precise] ごぜんさんじ。みはりが、ごふんだけ、席を外すことを。",
+   "subtitle": "午前三時。見張りが、五分だけ、席を外すことを。"
+  },
+  {
+   "id": "line079",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, precise] そして、ふつかめに見つけた、ひじょうかいだんの古い扉を。",
+   "subtitle": "そして、二日目に見つけた、非常階段の古い扉を。"
+  },
+  {
+   "id": "line080",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, suspenseful] ……でも、ここで終わりでは、ありませんでした。",
+   "subtitle": "……でも、ここで終わりでは、ありませんでした。"
+  },
+  {
+   "id": "line081",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[hushed, tense, precise] むいかめの夜。ごぜんにじごじゅうはっぷん。",
+   "subtitle": "六日目の夜。午前二時五十八分。"
+  },
+  {
+   "id": "line082",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, firm] けんたは、決めました。",
+   "subtitle": "健太は、決めました。"
+  },
+  {
+   "id": "line083",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[hushed, tense] みはりの男は、煙草を吸いに、外へ。",
+   "subtitle": "見張りの男は、煙草を吸いに、外へ。"
+  },
+  {
+   "id": "line084",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[hushed, tense] 廊下の鍵は、かかっていませんでした。",
+   "subtitle": "廊下の鍵は、かかっていませんでした。"
+  },
+  {
+   "id": "line085",
+   "model": "elevenlabs-direct",
+   "voice": "2UGDsJpBJAiAlF0jQQ7x",
+   "voice_name": "Henry",
+   "el_model": "eleven_v3",
+   "text": "[shouting, distant] おい！　誰だ！",
+   "subtitle": "おい！　誰だ！"
+  },
+  {
+   "id": "line086",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[tense, faster] 背後から、怒鳴り声と足音が、追ってきます。",
+   "subtitle": "背後から、怒鳴り声と足音が、追ってきます。"
+  },
+  {
+   "id": "line087",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[firm, breathless] 彼は、振り返りませんでした。",
+   "subtitle": "彼は、振り返りませんでした。"
+  },
+  {
+   "id": "line088",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[driving, breathless] 走って、走って、走り続けました。",
+   "subtitle": "走って、走って、走り続けました。"
+  },
+  {
+   "id": "line089",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[breathless, fading] どこを、どう走ったのか、覚えていません。",
+   "subtitle": "どこを、どう走ったのか、覚えていません。"
+  },
+  {
+   "id": "line090",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, relief] 気がつくと、こくどうぞいの、コンビニの光。",
+   "subtitle": "気がつくと、国道沿いの、コンビニの光。"
+  },
+  {
+   "id": "line091",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, meaningful] あの夜、迷って押せなかった、けいさつの番号。",
+   "subtitle": "あの夜、迷って押せなかった、警察の番号。"
+  },
+  {
+   "id": "line092",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[firm, quiet] 今度は、迷いませんでした。",
+   "subtitle": "今度は、迷いませんでした。"
+  },
+  {
+   "id": "line093",
+   "model": "elevenlabs-direct",
+   "voice": "3VouIDzZzPEjDgmtbXBJ",
+   "voice_name": "Hadou",
+   "el_model": "eleven_v3",
+   "text": "[breathless, pleading] ……助けて、ください。なかまが、まだ、中に",
+   "subtitle": "……助けて、ください。仲間が、まだ、中に"
+  },
+  {
+   "id": "line094",
+   "model": "elevenlabs-direct",
+   "voice": "3VouIDzZzPEjDgmtbXBJ",
+   "voice_name": "Hadou",
+   "el_model": "eleven_v3",
+   "text": "[breathless, urgent] こうじょうです。……えんとつのある、古いこうじょう",
+   "subtitle": "工場です。……煙突のある、古い工場"
+  },
+  {
+   "id": "line095",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[hushed, trembling] じゅわきを握る手が、震えて、止まりません。",
+   "subtitle": "受話器を握る手が、震えて、止まりません。"
+  },
+  {
+   "id": "line096",
+   "model": "elevenlabs-direct",
+   "voice": "yXZ07Dvjx4c0c7ZtjRHv",
+   "voice_name": "Takumi",
+   "el_model": "eleven_v3",
+   "text": "[calm, warm, low] ……大丈夫。ゆっくり、話して",
+   "subtitle": "……大丈夫。ゆっくり、話して"
+  },
+  {
+   "id": "line097",
+   "model": "elevenlabs-direct",
+   "voice": "yXZ07Dvjx4c0c7ZtjRHv",
+   "voice_name": "Takumi",
+   "el_model": "eleven_v3",
+   "text": "[steady, protective] ここにいなさい。誰も、入れないから",
+   "subtitle": "ここにいなさい。誰も、入れないから"
+  },
+  {
+   "id": "line098",
+   "model": "elevenlabs-direct",
+   "voice": "yXZ07Dvjx4c0c7ZtjRHv",
+   "voice_name": "Takumi",
+   "el_model": "eleven_v3",
+   "text": "[grave, realizing] えんとつ……この先の、へいさされたこうじょうか",
+   "subtitle": "煙突……この先の、閉鎖された工場か"
+  },
+  {
+   "id": "line099",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, relief] 店長のひと言で、場所が、分かりました。",
+   "subtitle": "店長のひと言で、場所が、分かりました。"
+  },
+  {
+   "id": "line100",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, building] 通報から、わずか、いちじかん後。",
+   "subtitle": "通報から、わずか、一時間後。"
+  },
+  {
+   "id": "line101",
+   "model": "elevenlabs-direct",
+   "voice": "Ay1WwRHxUsu3hEeAp8JZ",
+   "voice_name": "Anton",
+   "el_model": "eleven_v3",
+   "text": "[commanding shout] けいさつだ！　全員、その場を動くな！",
+   "subtitle": "警察だ！　全員、その場を動くな！"
+  },
+  {
+   "id": "line102",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[firm, driving] そうさいんが、こうじょうに、なだれ込みました。",
+   "subtitle": "捜査員が、工場に、なだれ込みました。"
+  },
+  {
+   "id": "line103",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[firm, cold justice] 若者を使い捨ててきた男たちは、その場で、全員たいほ。",
+   "subtitle": "若者を使い捨ててきた男たちは、その場で、全員逮捕。"
+  },
+  {
+   "id": "line104",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[measured] 中にいた若者は、にじゅうななにん。",
+   "subtitle": "中にいた若者は、二十七人。"
+  },
+  {
+   "id": "line105",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[firm, warm] 全員、ひがいしゃとして、ほごされました。",
+   "subtitle": "全員、被害者として、保護されました。"
+  },
+  {
+   "id": "line106",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, heavy] その中には、じゅうはっさいの少年もいました。",
+   "subtitle": "その中には、十八歳の少年もいました。"
+  },
+  {
+   "id": "line107",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, warm] その中に、ゆうとの姿も、ありました。",
+   "subtitle": "その中に、悠斗の姿も、ありました。"
+  },
+  {
+   "id": "line108",
+   "model": "elevenlabs-direct",
+   "voice": "50nu5hjcGY5tiFgwp4JO",
+   "voice_name": "Mizu",
+   "el_model": "eleven_v3",
+   "text": "[choked up, tearful] ……お前、本当に、来たんだな",
+   "subtitle": "……お前、本当に、来たんだな"
+  },
+  {
+   "id": "line109",
+   "model": "elevenlabs-direct",
+   "voice": "3VouIDzZzPEjDgmtbXBJ",
+   "voice_name": "Hadou",
+   "el_model": "eleven_v3",
+   "text": "[quiet, choked, half laugh] ……いっしゅうかんだけって、言っただろ",
+   "subtitle": "……一週間だけって、言っただろ"
+  },
+  {
+   "id": "line110",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[measured, resolving] 翌朝、このニュースは、全国を駆けめぐりました。",
+   "subtitle": "翌朝、このニュースは、全国を駆けめぐりました。"
+  },
+  {
+   "id": "line111",
+   "model": "elevenlabs-direct",
+   "voice": "7yHoNSfldb5Ih1SQ8son",
+   "voice_name": "Koharu",
+   "el_model": "eleven_v3",
+   "text": "[gentle, worried, soft] けんた？　……ごはん、食べた？",
+   "subtitle": "健太？　……ごはん、食べた？"
+  },
+  {
+   "id": "line112",
+   "model": "elevenlabs-direct",
+   "voice": "3VouIDzZzPEjDgmtbXBJ",
+   "voice_name": "Hadou",
+   "el_model": "eleven_v3",
+   "text": "[quiet, tender, holding back] ……うん。今から、帰るよ",
+   "subtitle": "……うん。今から、帰るよ"
+  },
+  {
+   "id": "line113",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, warm] けんたは、命を取り戻しました。",
+   "subtitle": "健太は、命を取り戻しました。"
+  },
+  {
+   "id": "line114",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, heavy] でも、あのいっしゅうかんの傷は、今も、消えていません。",
+   "subtitle": "でも、あの一週間の傷は、今も、消えていません。"
+  },
+  {
+   "id": "line115",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[calm, gentle] 今、彼は大学に戻り、同じコンビニで働いています。",
+   "subtitle": "今、彼は大学に戻り、同じコンビニで働いています。"
+  },
+  {
+   "id": "line116",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, tender] あの夜のことは、まだ、ははに話していません。",
+   "subtitle": "あの夜のことは、まだ、母に話していません。"
+  },
+  {
+   "id": "line117",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, slow] じきゅうごまんえんという、あまい言葉。",
+   "subtitle": "時給五万円という、甘い言葉。"
+  },
+  {
+   "id": "line118",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, grave] その裏には、じんせいごと奪う、大きなあくいが隠れています。",
+   "subtitle": "その裏には、人生ごと奪う、大きな悪意が隠れています。"
+  },
+  {
+   "id": "line119",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[firm, plain] らくに稼げる話なんて、ありません。",
+   "subtitle": "楽に稼げる話なんて、ありません。"
+  },
+  {
+   "id": "line120",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, warning] 今、この瞬間も、次のじきゅうごまんえんが、誰かを待っています。",
+   "subtitle": "今、この瞬間も、次の「時給五万円」が、誰かを待っています。"
+  },
+  {
+   "id": "line121",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[gentle, direct] 身近な人が、そんなきゅうじんを見ていたら。",
+   "subtitle": "身近な人が、そんな求人を見ていたら。"
+  },
+  {
+   "id": "line122",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[gentle, sincere] どうか、ひとこと、声をかけてあげてください。",
+   "subtitle": "どうか、一言、声をかけてあげてください。"
+  },
+  {
+   "id": "line123",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[clear, measured] 迷ったときは、けいさつそうだんせんようでんわ、シャープ、きゅういちいちまる、へ。",
+   "subtitle": "迷ったときは、警察相談専用電話、シャープ、きゅういちいちまる、へ。"
+  },
+  {
+   "id": "line124",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[warm, slow] へいぼんで、安全な、いつもの日常。",
+   "subtitle": "平凡で、安全な、いつもの日常。"
+  },
+  {
+   "id": "line125",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[warm, gentle ending] それこそが、何より大切なざいさんなのかもしれません。",
+   "subtitle": "それこそが、何より大切な財産なのかもしれません。"
+  },
+  {
+   "id": "line126",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "最後までご覧いただき、ありがとうございました。",
+   "subtitle": "最後までご覧いただき、ありがとうございました。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line127",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "皆様の周りに、うますぎるきゅうじんを見ている方は、いませんか。",
+   "subtitle": "皆様の周りに、「うますぎる求人」を見ている方は、いませんか。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "line128",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "気づいたことがあれば、コメントで教えてください。",
+   "subtitle": "気づいたことがあれば、コメントで教えてください。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 0.9,
+   "tempo": 0.95
+  },
+  {
+   "id": "line129",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "チャンネル登録と高評価で、次のお話でお会いしましょう。",
+   "subtitle": "チャンネル登録と高評価で、次のお話でお会いしましょう。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.9,
+   "tempo": 1.0
+  }
+ ]
+}
