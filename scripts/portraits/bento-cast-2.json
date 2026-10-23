@@ -1,0 +1,227 @@
+{
+ "_설명": "『閉店間際の弁当屋』 PHASE 2 Kill Gate 2차(C안 예산 안 재생성, 17장 약 0.51달러). 1차 불합격: 인물 8장 전부(seedream v3 애니·3D 화풍 혼입, 안경·귀걸이 유입, 점 번식, 귓불 점이 귀걸이로, 젤 눈물) → seedream v4 1728x2304 + 실사 강제 문장 + 점 표식 폐기(동일인은 눈매·귀·머리로). 장소 7장(사람 등장 kitchen-wide, 가짜 글자 메뉴판·안내문·간판) · 소품 2장(종이학 → こまどり, 동전 4개 → 5개).",
+ "_style_preset": "Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting.",
+ "characters": [
+  {
+   "id": "shuzo1996-v2",
+   "count": 1,
+   "prompt": "REAL PHOTOGRAPH of a real human actor, live-action film still, natural skin texture with pores, NOT an illustration, NOT anime, NOT manga, NOT 3D render, NOT CGI, NOT a doll. Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (three head-and-shoulders portraits of the SAME person): left = straight frontal view, middle = 45-degree three-quarter view, right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (three head-and-shoulders portraits): left = gruff stern neutral, lips closed, middle = a faint reluctant half-smile at one corner of the mouth, right = choked up, jaw tight, mouth corners down, NOT smiling, eyes glistening with a thin film of tears along the lower lids, rims slightly pink, natural dark brown irises, NO tear drops on the cheeks. Subject: a Japanese man aged 43, square angular face with a strong jaw, thick straight black eyebrows, short cropped black hair with a little grey at the temples, clean-shaven, deep-set eyes, a thin faint old pale scar line crossing the outer end of the RIGHT eyebrow (subtle, healed, not red). NO glasses, NO sunglasses, NO earrings, NO ear studs, NO piercings, NO jewellery, NO moles or spots on the face, NO scars except where stated.  Wardrobe locked in every panel: a plain white cook's jacket, a plain navy-blue full apron with no print, a plain white cotton towel tied around the forehead as a headband, dark trousers, black rubber kitchen shoes. Identical face, hair and clothing in all nine panels, soft even studio lighting. Heisei era 1996 Japan. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: anime, cartoon, illustration, 3D render, CGI, doll, glasses, earrings, piercings, multiple moles, gel tears, thick tear streaks, gibberish, fake alphabets, logo on clothing, bad anatomy, deformed eyes, extra fingers.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "3:4",
+   "extra": {
+    "image_size": {
+     "width": 1728,
+     "height": 2304
+    }
+   }
+  },
+  {
+   "id": "shuzo2026-v2",
+   "count": 1,
+   "prompt": "REAL PHOTOGRAPH of a real human actor, live-action film still, natural skin texture with pores, NOT an illustration, NOT anime, NOT manga, NOT 3D render, NOT CGI, NOT a doll. Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (three head-and-shoulders portraits of the SAME person): left = straight frontal view, middle = 45-degree three-quarter view, right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (three head-and-shoulders portraits): left = tired quiet neutral, lips closed, middle = a tearful warm smile, eyes glistening with a thin film of tears along the lower lids, rims slightly pink, natural dark brown irises, NO tear drops on the cheeks, right = quiet grief, mouth corners down, NOT smiling, eyes glistening with a thin film of tears along the lower lids, rims slightly pink, natural dark brown irises, NO tear drops on the cheeks. Subject: a Japanese man aged 73 (the same man 30 years older), square angular face with a strong jaw, thick straight WHITE eyebrows, short cropped WHITE hair, deep wrinkles on the forehead and around the deep-set eyes, clean-shaven, a thin faint old pale scar line crossing the outer end of the RIGHT eyebrow (subtle, healed, not red). NO glasses, NO sunglasses, NO earrings, NO ear studs, NO piercings, NO jewellery, NO moles or spots on the face, NO scars except where stated.  Wardrobe locked in every panel: a faded plain navy-blue full apron with no print over a plain grey knitted cardigan, a plain white shirt, dark trousers, black rubber kitchen shoes. Identical face, hair and clothing in all nine panels, soft even studio lighting. contemporary Japan (Reiwa era). Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: anime, cartoon, illustration, 3D render, CGI, doll, glasses, earrings, piercings, multiple moles, gel tears, thick tear streaks, gibberish, fake alphabets, logo on clothing, bad anatomy, deformed eyes, extra fingers.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "3:4",
+   "extra": {
+    "image_size": {
+     "width": 1728,
+     "height": 2304
+    }
+   }
+  },
+  {
+   "id": "sumie-v2",
+   "count": 1,
+   "prompt": "REAL PHOTOGRAPH of a real human actor, live-action film still, natural skin texture with pores, NOT an illustration, NOT anime, NOT manga, NOT 3D render, NOT CGI, NOT a doll. Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (three head-and-shoulders portraits of the SAME person): left = straight frontal view, middle = 45-degree three-quarter view, right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (three head-and-shoulders portraits): left = bright cheerful teasing smile, middle = worried, brows drawn together, lips pressed, right = a teary laughing smile, eyes glistening with a thin film of tears along the lower lids, rims slightly pink, natural dark brown irises, NO tear drops on the cheeks. Subject: a Japanese woman aged 40, round soft face with full cheeks, gentle down-turned eyes, black hair tied in a low bun at the nape, natural light makeup. NO glasses, NO sunglasses, NO earrings, NO ear studs, NO piercings, NO jewellery, NO moles or spots on the face, NO scars except where stated.  Wardrobe locked in every panel: a plain pale-pink triangle headscarf tied at the back, a plain white full apron with no print over a plain beige long-sleeve top, dark slacks, white kitchen shoes. Identical face, hair and clothing in all nine panels, soft even studio lighting. Heisei era 1996 Japan. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: anime, cartoon, illustration, 3D render, CGI, doll, glasses, earrings, piercings, multiple moles, gel tears, thick tear streaks, gibberish, fake alphabets, logo on clothing, bad anatomy, deformed eyes, extra fingers.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "3:4",
+   "extra": {
+    "image_size": {
+     "width": 1728,
+     "height": 2304
+    }
+   }
+  },
+  {
+   "id": "takumi12-v2",
+   "count": 1,
+   "prompt": "REAL PHOTOGRAPH of a real human actor, live-action film still, natural skin texture with pores, NOT an illustration, NOT anime, NOT manga, NOT 3D render, NOT CGI, NOT a doll. Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (three head-and-shoulders portraits of the SAME person): left = straight frontal view, middle = 45-degree three-quarter view, right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (three head-and-shoulders portraits): left = shy polite neutral, looking up slightly, middle = a bright grateful smile, eyes sparkling, right = holding back tears, lips pressed, chin trembling, NOT smiling, eyes glistening with a thin film of tears along the lower lids, rims slightly pink, natural dark brown irises, NO tear drops on the cheeks. Subject: a Japanese boy aged 12, thin face, messy straight black hair with a fringe, LARGE round dark eyes with double eyelids, ears that stick out slightly, thin straight eyebrows. NO glasses, NO sunglasses, NO earrings, NO ear studs, NO piercings, NO jewellery, NO moles or spots on the face, NO scars except where stated.  Wardrobe locked in every panel: a plain navy-blue zip jumper with sleeves a little too short for his wrists, a plain grey T-shirt, plain grey trousers, worn white sneakers, no logos. Identical face, hair and clothing in all nine panels, soft even studio lighting. Heisei era 1996 Japan. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: anime, cartoon, illustration, 3D render, CGI, doll, glasses, earrings, piercings, multiple moles, gel tears, thick tear streaks, gibberish, fake alphabets, logo on clothing, bad anatomy, deformed eyes, extra fingers.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "3:4",
+   "extra": {
+    "image_size": {
+     "width": 1728,
+     "height": 2304
+    }
+   }
+  },
+  {
+   "id": "takumi42-v2",
+   "count": 1,
+   "prompt": "REAL PHOTOGRAPH of a real human actor, live-action film still, natural skin texture with pores, NOT an illustration, NOT anime, NOT manga, NOT 3D render, NOT CGI, NOT a doll. Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (three head-and-shoulders portraits of the SAME person): left = straight frontal view, middle = 45-degree three-quarter view, right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (three head-and-shoulders portraits): left = calm sincere neutral, middle = a tearful smile, eyes glistening with a thin film of tears along the lower lids, rims slightly pink, natural dark brown irises, NO tear drops on the cheeks, right = head slightly lowered, crying quietly, NOT smiling, eyes glistening with a thin film of tears along the lower lids, rims slightly pink, natural dark brown irises, NO tear drops on the cheeks. Subject: a Japanese man aged 42 (the same boy grown up), LARGE round dark eyes with double eyelids, ears that stick out slightly, thin straight eyebrows, short neat black hair, clean-shaven, slim face. NO glasses, NO sunglasses, NO earrings, NO ear studs, NO piercings, NO jewellery, NO moles or spots on the face, NO scars except where stated.  Wardrobe locked in every panel: a plain charcoal wool overcoat with no logo, a plain white shirt, dark trousers, black leather shoes. Identical face, hair and clothing in all nine panels, soft even studio lighting. contemporary Japan (Reiwa era). Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: anime, cartoon, illustration, 3D render, CGI, doll, glasses, earrings, piercings, multiple moles, gel tears, thick tear streaks, gibberish, fake alphabets, logo on clothing, bad anatomy, deformed eyes, extra fingers.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "3:4",
+   "extra": {
+    "image_size": {
+     "width": 1728,
+     "height": 2304
+    }
+   }
+  },
+  {
+   "id": "mio6-v2",
+   "count": 1,
+   "prompt": "REAL PHOTOGRAPH of a real human actor, live-action film still, natural skin texture with pores, NOT an illustration, NOT anime, NOT manga, NOT 3D render, NOT CGI, NOT a doll. Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (three head-and-shoulders portraits of the SAME person): left = straight frontal view, middle = 45-degree three-quarter view, right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (three head-and-shoulders portraits): left = shy neutral, looking up, middle = a small sweet smile, right = sleepy and hungry, small pout. Subject: a Japanese girl aged 6, round face, a black bob haircut with straight blunt bangs, round eyes. NO glasses, NO sunglasses, NO earrings, NO ear studs, NO piercings, NO jewellery, NO moles or spots on the face, NO scars except where stated.  Wardrobe locked in every panel: a plain red knitted beanie, a plain yellow puffy jumper, plain grey leggings, small red sneakers, no logos. Identical face, hair and clothing in all nine panels, soft even studio lighting. Heisei era 1996 Japan. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: anime, cartoon, illustration, 3D render, CGI, doll, glasses, earrings, piercings, multiple moles, gel tears, thick tear streaks, gibberish, fake alphabets, logo on clothing, bad anatomy, deformed eyes, extra fingers.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "3:4",
+   "extra": {
+    "image_size": {
+     "width": 1728,
+     "height": 2304
+    }
+   }
+  },
+  {
+   "id": "hina8-v2",
+   "count": 1,
+   "prompt": "REAL PHOTOGRAPH of a real human actor, live-action film still, natural skin texture with pores, NOT an illustration, NOT anime, NOT manga, NOT 3D render, NOT CGI, NOT a doll. Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (three head-and-shoulders portraits of the SAME person): left = straight frontal view, middle = 45-degree three-quarter view, right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (three head-and-shoulders portraits): left = curious neutral, looking up, middle = a bright happy smile, right = shy, holding the edge of her coat. Subject: a Japanese girl aged 8, oval face, black hair in two low pigtails, round eyes. NO glasses, NO sunglasses, NO earrings, NO ear studs, NO piercings, NO jewellery, NO moles or spots on the face, NO scars except where stated.  Wardrobe locked in every panel: a plain cream wool coat with round buttons and no logo, a plain white collar, plain navy tights, brown shoes. Identical face, hair and clothing in all nine panels, soft even studio lighting. contemporary Japan (Reiwa era). Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: anime, cartoon, illustration, 3D render, CGI, doll, glasses, earrings, piercings, multiple moles, gel tears, thick tear streaks, gibberish, fake alphabets, logo on clothing, bad anatomy, deformed eyes, extra fingers.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "3:4",
+   "extra": {
+    "image_size": {
+     "width": 1728,
+     "height": 2304
+    }
+   }
+  },
+  {
+   "id": "mio36-v2",
+   "count": 1,
+   "prompt": "REAL PHOTOGRAPH of a real human actor, live-action film still, natural skin texture with pores, NOT an illustration, NOT anime, NOT manga, NOT 3D render, NOT CGI, NOT a doll. Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (three head-and-shoulders portraits of the SAME person): left = straight frontal view, middle = 45-degree three-quarter view, right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (three head-and-shoulders portraits): left = warm kind neutral, middle = a gentle smile, right = laughing softly. Subject: a Japanese woman aged 36, round face, black bob haircut with straight blunt bangs, round eyes (the grown-up version of a little girl with the same haircut). NO glasses, NO sunglasses, NO earrings, NO ear studs, NO piercings, NO jewellery, NO moles or spots on the face, NO scars except where stated.  Wardrobe locked in every panel: a plain light-grey sweater under a plain navy apron with no print, dark trousers. Identical face, hair and clothing in all nine panels, soft even studio lighting. contemporary Japan (Reiwa era). Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: anime, cartoon, illustration, 3D render, CGI, doll, glasses, earrings, piercings, multiple moles, gel tears, thick tear streaks, gibberish, fake alphabets, logo on clothing, bad anatomy, deformed eyes, extra fingers.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "3:4",
+   "extra": {
+    "image_size": {
+     "width": 1728,
+     "height": 2304
+    }
+   }
+  },
+  {
+   "id": "kitchen-wide-v2",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: wide, 24mm. Setting: the small back kitchen of the bento shop: a deep fryer, a rice cooker, a sink with a bowl of rice being washed, a wooden cutting board, warm 3200K bulb and steam. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon. ABSOLUTELY NO PEOPLE, no person, no human figure anywhere. No menus, notices, posters, signboards with writing, labels or paper with writing — every sign and paper is completely blank and plain.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "kitchen-nail-v2",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: medium close, 50mm f/2. Setting: the same back kitchen thirty years later, quiet and dim: a nail on the wall with a plain pale-pink triangle headscarf hanging from it. contemporary Japan (Reiwa era). Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon. ABSOLUTELY NO PEOPLE, no person, no human figure anywhere. No menus, notices, posters, signboards with writing, labels or paper with writing — every sign and paper is completely blank and plain.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "mailbox-v2",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: close, 85mm. Setting: an old metal mailbox beside the shop door in soft cool morning daylight, flyers sticking out and one plain white envelope with no writing. contemporary Japan (Reiwa era). Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon. ABSOLUTELY NO PEOPLE, no person, no human figure anywhere. No menus, notices, posters, signboards with writing, labels or paper with writing — every sign and paper is completely blank and plain.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "street-rain-v2",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: from under the shutter looking out, 24mm. Setting: the empty rainy street in front of the shop seen from under the half-closed shutter, puddles reflecting streetlights, no cars, no headlights. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon. ABSOLUTELY NO PEOPLE, no person, no human figure anywhere. No menus, notices, posters, signboards with writing, labels or paper with writing — every sign and paper is completely blank and plain.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "street-shutter-v2",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: low angle at the shutter, 35mm. Setting: the same bento shop at night with its metal shutter pulled halfway down, warm light leaking underneath onto wet asphalt, no cars. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon. ABSOLUTELY NO PEOPLE, no person, no human figure anywhere. No menus, notices, posters, signboards with writing, labels or paper with writing — every sign and paper is completely blank and plain.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "street-apartment-v2",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: from the street, slightly low angle, 35mm. Setting: an old two-storey wooden apartment building across the railway tracks at night, one corner window on the second floor completely dark, no cars. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon. ABSOLUTELY NO PEOPLE, no person, no human figure anywhere. No menus, notices, posters, signboards with writing, labels or paper with writing — every sign and paper is completely blank and plain.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "shop96-outside-v2",
+   "count": 1,
+   "prompt": "Location master plate, one single photograph, 16:9. Shot: THROUGH THE GLASS FRONT DOOR from the dark street outside: the warm lit interior seen past the door frame, 50mm. Setting: a tiny family-run bento shop by a small Japanese train station: a waist-high glass refrigerated showcase holding a few plastic-lidded bento boxes, a wooden counter with an old cash register, a small kitchen visible behind a half curtain, a glass sliding front door with a small brass bell, a plain round wall clock with a BLANK face (no numerals), cream walls, worn linoleum floor; Heisei 1996 details: a small boxy CRT television on a high shelf, blank paper price cards. Night: the showcase's own warm 3200K light is the key light on the counter, a warm ceiling lamp, deep shadows in the corners, wet dark street outside the glass door. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. NO people. No posters, signs, notices, menus, price tags or printed text anywhere — every paper surface, price card and signboard is completely blank. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, anime style, 3D render, cartoon. ABSOLUTELY NO PEOPLE, no person, no human figure anywhere. No menus, notices, posters, signboards with writing, labels or paper with writing — every sign and paper is completely blank and plain.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "prop-origami-v2",
+   "count": 1,
+   "prompt": "Prop master photograph, one single image, 16:9, the object alone on a plain dark wooden counter with soft warm light and shallow depth of field, NO people, NO hands unless stated. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, fake alphabets, anime style, 3D render, cartoon. Object: a small origami ROBIN (a small round-bodied songbird with a short tail and short beak, NOT a crane, NO long neck, NO pointed wings) folded from plain red paper, sitting on the counter. Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  },
+  {
+   "id": "prop-coins-v2",
+   "count": 1,
+   "prompt": "Prop master photograph, one single image, 16:9, the object alone on a plain dark wooden counter with soft warm light and shallow depth of field, NO people, NO hands unless stated. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, fake alphabets, anime style, 3D render, cartoon. Object: a child's open palm holding EXACTLY FIVE Japanese coins (count: 5 coins, clearly separated) next to a small worn brown coin purse (one small hand allowed, no face). Heisei era 1996 Japan, warm 3200K nostalgic tone. Photorealistic live-action Japanese drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting.",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "aspect_ratio": "16:9",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  }
+ ]
+}
