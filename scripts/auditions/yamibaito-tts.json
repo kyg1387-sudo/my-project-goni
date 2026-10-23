@@ -117,7 +117,7 @@
    "voice": "VT0wVMJ0AQzXrETjweon",
    "voice_name": "Hatake",
    "el_model": "eleven_v3",
-   "text": "[flat, cold] 口座のざんだかは、さんぜんにひゃくじゅうななえん。",
+   "text": "[flat, cold] こうざのざんだかは、さんぜんにひゃくじゅうななえん。",
    "subtitle": "口座の残高は、三千二百十七円。"
   },
   {
@@ -288,7 +288,7 @@
    "voice": "7yHoNSfldb5Ih1SQ8son",
    "voice_name": "Koharu",
    "el_model": "eleven_v3",
-   "text": "[warm, motherly] けんた？　ごはん、ちゃんと食べてる？",
+   "text": "[warm, motherly] 健太？　ごはん、ちゃんと食べてる？",
    "subtitle": "健太？　ごはん、ちゃんと食べてる？"
   },
   {
@@ -1008,7 +1008,7 @@
    "voice": "7yHoNSfldb5Ih1SQ8son",
    "voice_name": "Koharu",
    "el_model": "eleven_v3",
-   "text": "[gentle, worried, soft] けんた？　……ごはん、食べた？",
+   "text": "[gentle, worried, soft] 健太？　……ごはん、食べた？",
    "subtitle": "健太？　……ごはん、食べた？"
   },
   {
@@ -1116,7 +1116,7 @@
    "voice": "VT0wVMJ0AQzXrETjweon",
    "voice_name": "Hatake",
    "el_model": "eleven_v3",
-   "text": "[clear, measured] 迷ったときは、けいさつそうだんせんようでんわ、シャープ、きゅういちいちまる、へ。",
+   "text": "[clear, measured] まよったときは、けいさつそうだんせんようでんわ、シャープ、きゅういちいちまる、へ。",
    "subtitle": "迷ったときは、警察相談専用電話、シャープ、きゅういちいちまる、へ。"
   },
   {

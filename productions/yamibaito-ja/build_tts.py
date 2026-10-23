@@ -173,8 +173,11 @@ def main():
                           "emotion_intensity": inten, "tempo": tempo})
             chars_tc += len(text); src = f"Typecast {r['name']}"
         else:
+            kt = kana(text)
+            if role == "haha":
+                kt = kt.replace("けんた", "健太")  # Koharu는 가나 けんた를 「ケント」로 읽음(2회 실증) → 한자 표기
             tests.append({"id": lid, "model": "elevenlabs-direct", "voice": r["voice_id"], "voice_name": r["name"],
-                          "el_model": "eleven_v3", "text": f"{tone} {kana(text)}", "subtitle": text})
+                          "el_model": "eleven_v3", "text": f"{tone} {kt}", "subtitle": text})
             chars_el += len(text) + len(tone) + 1; src = f"EL {r['name']}"
         tone_s = tone if isinstance(tone, str) else f"{tone[0]} {tone[1]} · tempo {tone[2]}"
         rows.append(f"| {lid[4:]} | {tag} | {name} | {'Omni' if omni else '-'} | {text} | {tone_s} | {note} | {src} |")
