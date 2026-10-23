@@ -10,6 +10,7 @@
 | 미리보기 480p | `deliveries/kim-christmas-ja-final-480p.mp4` |
 | 썸네일 3종(테스트 및 비교) | `assets/thumbnails/ep4/EP4-thumb-A-ienaide-JP.jpg`(A), `EP4-thumb-B-darega-JP.jpg`(B), `EP4-thumb-C-chaimu-JP.jpg`(C) |
 | 썸네일 포스터 그래픽 테스트판(2026-10-09) | `assets/thumbnails/ep4/EP4-thumb-A-ienaide-poster-JP.jpg`(A′), `EP4-thumb-B-darega-poster-JP.jpg`(B′) — `scripts/make_thumbnails_ep4_poster.py` |
+| **썸네일 A/B/C 테스트 세트(2026-10-23, 채널 썸네일 지침판)** | `assets/thumbnails/ep4/EP4-abc-A-gomennasai-JP.jpg` · `EP4-abc-B-iwanaide-JP.jpg` · `EP4-abc-C-negai-JP.jpg` (+ `-phone360.jpg`·`-phone168.png`, 확인 시트 `EP4-abc-phone-check.jpg`) — `scripts/make_thumbnails_ep4_abc.py` |
 | 쇼츠 5편(9:16) | `assets/shorts/ep4/EP4-short-1-letter-JP.mp4` ~ `EP4-short-5-merry-JP.mp4` |
 | 일본어 자막(검색 색인용, 화면 자막은 이미 들어 있음) | `subs/kim-christmas.ja.srt` |
 
@@ -30,6 +31,19 @@
 
 ### 중간광고 타임코드(수익화 후 삽입용 — CLAUDE.md 제0장)
 EP4는 5분 35초(8분 미만)라 **유튜브 중간광고 대상이 아니다.** 수익화 후에도 EP4는 중간광고 없음. EP5부터 3:30·7:00 지점을 적는다.
+
+## 2-0. 썸네일 A/B/C 테스트 세트 (2026-10-23, 「テストと比較」 등록용 — 이 3장을 우선 사용)
+
+弁当屋(제19장 16)·老舗旅館(썸네일 템플릿 A/B/C) 지침 적용: 본편 인물·본편 대사만, 초대형 글자 2~3덩어리, 얼굴 비움, 오른쪽 아래(재생 시간) 비움, 168px 판독 확인 완료. 제목은 1순위 제목 B 그대로(세 장 모두 「ドアの前に置かれていたもの」의 답을 숨김).
+
+| 안 | 파일 | 유형 | 문구(본편 대사 출처) |
+|---|---|---|---|
+| **A (기본, 가장 자극적)** | `EP4-abc-A-gomennasai-JP.jpg` | 泣ける · 엄마 눈물 CU | 「構わないで」と突き放した母が… / 「ごめんなさい」 (S11 「うちのことは、構わないでください」, S47 「ごめんなさい…」) |
+| B | `EP4-abc-B-iwanaide-JP.jpg` | 어두운 실사 CU + 초대형 인용구 | 給料日の夜、無口な警備員は窓口でこう言った / 「決して、言わないで」 (S28) |
+| C | `EP4-abc-C-negai-JP.jpg` | 따뜻한 실사 + 소품(털실 별) | 泣ける話 / 亡き妻の最後の願い / 七年ぶりに、毛糸の星を小さなツリーのてっぺんへ (S22·S33·S34 내레이션) |
+
+- 운용: 세 장을 「テストと比較」에 등록 → 시청 시간 기준 승자 채택. **본편 공개(10/23 20:00) 전에 등록**하거나, 이미 공개됐다면 공개 24시간 뒤에 등록(초기 판정 데이터 보호).
+- 이전 시안(B 「誰が払ったの？」, 포스터판 A′·B′)은 보관용.
 
 ## 2. タイトル × 썸네일 조합 (사용자 반영 2026-10-04)
 
