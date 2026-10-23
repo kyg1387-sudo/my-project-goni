@@ -1,0 +1,347 @@
+{
+ "_설명": "『時給5万円の罠』(yamibaito) ElevenLabs 오디션 — yamibaito-el-search 54개 중 배역별 3명(警察官 2명) × 대비 감정 2줄 = 38샘플, eleven_v3 + 영어 연기 태그 2~4단어(제19장 2 ③). 직전 작품 확정 목소리(Shino·Chiemi·Tonatsu·Masa·Jun·Akio·Chihiro·Chieko·Kaori·Riku·Akari·Kujira)·외국 억양 제외. 음성 입력은 가나 치환본(健太→けんた, 五万円→ごまんえん, 一週間→いっしゅうかん, 二十五万→にじゅうごまん, 三週間→さんしゅうかん), subtitle은 대본 원문. 비용: EL 약 632자 크레딧(fal 0).",
+ "tests": [
+  {
+   "id": "narr_el_Enishi_NA0",
+   "model": "elevenlabs-direct",
+   "voice": "7arouBAZXrSnH9IwDlWQ",
+   "voice_name": "Enishi",
+   "el_model": "eleven_v3",
+   "text": "[low, cold, slow] じきゅう、ごまんえん。この求人に応募した青年は、いっしゅうかん後……",
+   "subtitle": "時給、五万円。この求人に応募した青年は、一週間後……"
+  },
+  {
+   "id": "narr_el_Enishi_NA43",
+   "model": "elevenlabs-direct",
+   "voice": "7arouBAZXrSnH9IwDlWQ",
+   "voice_name": "Enishi",
+   "el_model": "eleven_v3",
+   "text": "[quiet, suspenseful] ……でも、ここで終わりでは、ありませんでした。",
+   "subtitle": "……でも、ここで終わりでは、ありませんでした。"
+  },
+  {
+   "id": "narr_el_Makoto_NA0",
+   "model": "elevenlabs-direct",
+   "voice": "C6EwdDpfpjUWhKn1xeaG",
+   "voice_name": "Makoto",
+   "el_model": "eleven_v3",
+   "text": "[low, cold, slow] じきゅう、ごまんえん。この求人に応募した青年は、いっしゅうかん後……",
+   "subtitle": "時給、五万円。この求人に応募した青年は、一週間後……"
+  },
+  {
+   "id": "narr_el_Makoto_NA43",
+   "model": "elevenlabs-direct",
+   "voice": "C6EwdDpfpjUWhKn1xeaG",
+   "voice_name": "Makoto",
+   "el_model": "eleven_v3",
+   "text": "[quiet, suspenseful] ……でも、ここで終わりでは、ありませんでした。",
+   "subtitle": "……でも、ここで終わりでは、ありませんでした。"
+  },
+  {
+   "id": "narr_el_Hatake_NA0",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[low, cold, slow] じきゅう、ごまんえん。この求人に応募した青年は、いっしゅうかん後……",
+   "subtitle": "時給、五万円。この求人に応募した青年は、一週間後……"
+  },
+  {
+   "id": "narr_el_Hatake_NA43",
+   "model": "elevenlabs-direct",
+   "voice": "VT0wVMJ0AQzXrETjweon",
+   "voice_name": "Hatake",
+   "el_model": "eleven_v3",
+   "text": "[quiet, suspenseful] ……でも、ここで終わりでは、ありませんでした。",
+   "subtitle": "……でも、ここで終わりでは、ありませんでした。"
+  },
+  {
+   "id": "kenta_el_Hadou_L01",
+   "model": "elevenlabs-direct",
+   "voice": "3VouIDzZzPEjDgmtbXBJ",
+   "voice_name": "Hadou",
+   "el_model": "eleven_v3",
+   "text": "[whispering, stunned] ……嘘だろ。一晩で、にじゅうごまん",
+   "subtitle": "……嘘だろ。一晩で、二十五万"
+  },
+  {
+   "id": "kenta_el_Hadou_L14",
+   "model": "elevenlabs-direct",
+   "voice": "3VouIDzZzPEjDgmtbXBJ",
+   "voice_name": "Hadou",
+   "el_model": "eleven_v3",
+   "text": "[trembling whisper, afraid] 俺も……ここで、消されるのか",
+   "subtitle": "俺も……ここで、消されるのか"
+  },
+  {
+   "id": "kenta_el_Komi_L01",
+   "model": "elevenlabs-direct",
+   "voice": "G4sNoJjgWjyp9nhj1Bhj",
+   "voice_name": "Komi",
+   "el_model": "eleven_v3",
+   "text": "[whispering, stunned] ……嘘だろ。一晩で、にじゅうごまん",
+   "subtitle": "……嘘だろ。一晩で、二十五万"
+  },
+  {
+   "id": "kenta_el_Komi_L14",
+   "model": "elevenlabs-direct",
+   "voice": "G4sNoJjgWjyp9nhj1Bhj",
+   "voice_name": "Komi",
+   "el_model": "eleven_v3",
+   "text": "[trembling whisper, afraid] 俺も……ここで、消されるのか",
+   "subtitle": "俺も……ここで、消されるのか"
+  },
+  {
+   "id": "kenta_el_Ryou_L01",
+   "model": "elevenlabs-direct",
+   "voice": "F8ocrZHRdjmRh0HR6mJL",
+   "voice_name": "Ryou",
+   "el_model": "eleven_v3",
+   "text": "[whispering, stunned] ……嘘だろ。一晩で、にじゅうごまん",
+   "subtitle": "……嘘だろ。一晩で、二十五万"
+  },
+  {
+   "id": "kenta_el_Ryou_L14",
+   "model": "elevenlabs-direct",
+   "voice": "F8ocrZHRdjmRh0HR6mJL",
+   "voice_name": "Ryou",
+   "el_model": "eleven_v3",
+   "text": "[trembling whisper, afraid] 俺も……ここで、消されるのか",
+   "subtitle": "俺も……ここで、消されるのか"
+  },
+  {
+   "id": "yuto_el_Tao_L11",
+   "model": "elevenlabs-direct",
+   "voice": "6RtS0oJJqV30X8ghQcMH",
+   "voice_name": "Tao",
+   "el_model": "eleven_v3",
+   "text": "[low, hollow, bitter] 俺も、そう言われた。……さんしゅうかん前に",
+   "subtitle": "俺も、そう言われた。……三週間前に"
+  },
+  {
+   "id": "yuto_el_Tao_L19",
+   "model": "elevenlabs-direct",
+   "voice": "6RtS0oJJqV30X8ghQcMH",
+   "voice_name": "Tao",
+   "el_model": "eleven_v3",
+   "text": "[choked up, tearful] ……お前、本当に、来たんだな",
+   "subtitle": "……お前、本当に、来たんだな"
+  },
+  {
+   "id": "yuto_el_Mizu_L11",
+   "model": "elevenlabs-direct",
+   "voice": "50nu5hjcGY5tiFgwp4JO",
+   "voice_name": "Mizu",
+   "el_model": "eleven_v3",
+   "text": "[low, hollow, bitter] 俺も、そう言われた。……さんしゅうかん前に",
+   "subtitle": "俺も、そう言われた。……三週間前に"
+  },
+  {
+   "id": "yuto_el_Mizu_L19",
+   "model": "elevenlabs-direct",
+   "voice": "50nu5hjcGY5tiFgwp4JO",
+   "voice_name": "Mizu",
+   "el_model": "eleven_v3",
+   "text": "[choked up, tearful] ……お前、本当に、来たんだな",
+   "subtitle": "……お前、本当に、来たんだな"
+  },
+  {
+   "id": "yuto_el_Yoshiki_L11",
+   "model": "elevenlabs-direct",
+   "voice": "5FNeYl6NmyAXYQWW7CEV",
+   "voice_name": "Yoshiki",
+   "el_model": "eleven_v3",
+   "text": "[low, hollow, bitter] 俺も、そう言われた。……さんしゅうかん前に",
+   "subtitle": "俺も、そう言われた。……三週間前に"
+  },
+  {
+   "id": "yuto_el_Yoshiki_L19",
+   "model": "elevenlabs-direct",
+   "voice": "5FNeYl6NmyAXYQWW7CEV",
+   "voice_name": "Yoshiki",
+   "el_model": "eleven_v3",
+   "text": "[choked up, tearful] ……お前、本当に、来たんだな",
+   "subtitle": "……お前、本当に、来たんだな"
+  },
+  {
+   "id": "otoko_el_Henry_L07",
+   "model": "elevenlabs-direct",
+   "voice": "2UGDsJpBJAiAlF0jQQ7x",
+   "voice_name": "Henry",
+   "el_model": "eleven_v3",
+   "text": "[cold, flat, low] 今から、外との連絡は、全部切る。",
+   "subtitle": "今から、外との連絡は、全部切る。"
+  },
+  {
+   "id": "otoko_el_Henry_L08",
+   "model": "elevenlabs-direct",
+   "voice": "2UGDsJpBJAiAlF0jQQ7x",
+   "voice_name": "Henry",
+   "el_model": "eleven_v3",
+   "text": "[quiet menace, slow] ここに、出口はない。……働け",
+   "subtitle": "ここに、出口はない。……働け"
+  },
+  {
+   "id": "otoko_el_Akira_L07",
+   "model": "elevenlabs-direct",
+   "voice": "JKne0OHHjFFwcwWzlGj0",
+   "voice_name": "Akira",
+   "el_model": "eleven_v3",
+   "text": "[cold, flat, low] 今から、外との連絡は、全部切る。",
+   "subtitle": "今から、外との連絡は、全部切る。"
+  },
+  {
+   "id": "otoko_el_Akira_L08",
+   "model": "elevenlabs-direct",
+   "voice": "JKne0OHHjFFwcwWzlGj0",
+   "voice_name": "Akira",
+   "el_model": "eleven_v3",
+   "text": "[quiet menace, slow] ここに、出口はない。……働け",
+   "subtitle": "ここに、出口はない。……働け"
+  },
+  {
+   "id": "otoko_el_Takuya_L07",
+   "model": "elevenlabs-direct",
+   "voice": "DSIHzHE2ucsnmhkE5GKo",
+   "voice_name": "Takuya",
+   "el_model": "eleven_v3",
+   "text": "[cold, flat, low] 今から、外との連絡は、全部切る。",
+   "subtitle": "今から、外との連絡は、全部切る。"
+  },
+  {
+   "id": "otoko_el_Takuya_L08",
+   "model": "elevenlabs-direct",
+   "voice": "DSIHzHE2ucsnmhkE5GKo",
+   "voice_name": "Takuya",
+   "el_model": "eleven_v3",
+   "text": "[quiet menace, slow] ここに、出口はない。……働け",
+   "subtitle": "ここに、出口はない。……働け"
+  },
+  {
+   "id": "tencho_el_Takumi_L17",
+   "model": "elevenlabs-direct",
+   "voice": "yXZ07Dvjx4c0c7ZtjRHv",
+   "voice_name": "Takumi",
+   "el_model": "eleven_v3",
+   "text": "[calm, warm, low] ……大丈夫。ゆっくり、話して",
+   "subtitle": "……大丈夫。ゆっくり、話して"
+  },
+  {
+   "id": "tencho_el_Takumi_L17b",
+   "model": "elevenlabs-direct",
+   "voice": "yXZ07Dvjx4c0c7ZtjRHv",
+   "voice_name": "Takumi",
+   "el_model": "eleven_v3",
+   "text": "[grave, realizing] 煙突……この先の、閉鎖された工場か",
+   "subtitle": "煙突……この先の、閉鎖された工場か"
+  },
+  {
+   "id": "tencho_el_Daisaku_L17",
+   "model": "elevenlabs-direct",
+   "voice": "rjHMioMSP8BHr6XxrcF8",
+   "voice_name": "Daisaku",
+   "el_model": "eleven_v3",
+   "text": "[calm, warm, low] ……大丈夫。ゆっくり、話して",
+   "subtitle": "……大丈夫。ゆっくり、話して"
+  },
+  {
+   "id": "tencho_el_Daisaku_L17b",
+   "model": "elevenlabs-direct",
+   "voice": "rjHMioMSP8BHr6XxrcF8",
+   "voice_name": "Daisaku",
+   "el_model": "eleven_v3",
+   "text": "[grave, realizing] 煙突……この先の、閉鎖された工場か",
+   "subtitle": "煙突……この先の、閉鎖された工場か"
+  },
+  {
+   "id": "tencho_el_PapaJi_L17",
+   "model": "elevenlabs-direct",
+   "voice": "rDiGqdvxRVKhplqZE31x",
+   "voice_name": "PapaJi",
+   "el_model": "eleven_v3",
+   "text": "[calm, warm, low] ……大丈夫。ゆっくり、話して",
+   "subtitle": "……大丈夫。ゆっくり、話して"
+  },
+  {
+   "id": "tencho_el_PapaJi_L17b",
+   "model": "elevenlabs-direct",
+   "voice": "rDiGqdvxRVKhplqZE31x",
+   "voice_name": "PapaJi",
+   "el_model": "eleven_v3",
+   "text": "[grave, realizing] 煙突……この先の、閉鎖された工場か",
+   "subtitle": "煙突……この先の、閉鎖された工場か"
+  },
+  {
+   "id": "haha_el_Koharu_L03",
+   "model": "elevenlabs-direct",
+   "voice": "7yHoNSfldb5Ih1SQ8son",
+   "voice_name": "Koharu",
+   "el_model": "eleven_v3",
+   "text": "[warm, motherly] けんた？　ごはん、ちゃんと食べてる？",
+   "subtitle": "健太？　ごはん、ちゃんと食べてる？"
+  },
+  {
+   "id": "haha_el_Koharu_L21",
+   "model": "elevenlabs-direct",
+   "voice": "7yHoNSfldb5Ih1SQ8son",
+   "voice_name": "Koharu",
+   "el_model": "eleven_v3",
+   "text": "[gentle, worried] けんた？　……ごはん、食べた？",
+   "subtitle": "健太？　……ごはん、食べた？"
+  },
+  {
+   "id": "haha_el_Hanano_L03",
+   "model": "elevenlabs-direct",
+   "voice": "ITF8fTyktGfOvtmgRv8y",
+   "voice_name": "Hanano",
+   "el_model": "eleven_v3",
+   "text": "[warm, motherly] けんた？　ごはん、ちゃんと食べてる？",
+   "subtitle": "健太？　ごはん、ちゃんと食べてる？"
+  },
+  {
+   "id": "haha_el_Hanano_L21",
+   "model": "elevenlabs-direct",
+   "voice": "ITF8fTyktGfOvtmgRv8y",
+   "voice_name": "Hanano",
+   "el_model": "eleven_v3",
+   "text": "[gentle, worried] けんた？　……ごはん、食べた？",
+   "subtitle": "健太？　……ごはん、食べた？"
+  },
+  {
+   "id": "haha_el_Chidori_L03",
+   "model": "elevenlabs-direct",
+   "voice": "RG23A8s6ehr3kui0iBz6",
+   "voice_name": "Chidori",
+   "el_model": "eleven_v3",
+   "text": "[warm, motherly] けんた？　ごはん、ちゃんと食べてる？",
+   "subtitle": "健太？　ごはん、ちゃんと食べてる？"
+  },
+  {
+   "id": "haha_el_Chidori_L21",
+   "model": "elevenlabs-direct",
+   "voice": "RG23A8s6ehr3kui0iBz6",
+   "voice_name": "Chidori",
+   "el_model": "eleven_v3",
+   "text": "[gentle, worried] けんた？　……ごはん、食べた？",
+   "subtitle": "健太？　……ごはん、食べた？"
+  },
+  {
+   "id": "keisatsu_el_Anton_L18",
+   "model": "elevenlabs-direct",
+   "voice": "Ay1WwRHxUsu3hEeAp8JZ",
+   "voice_name": "Anton",
+   "el_model": "eleven_v3",
+   "text": "[commanding shout] 警察だ！　全員、その場を動くな！",
+   "subtitle": "警察だ！　全員、その場を動くな！"
+  },
+  {
+   "id": "keisatsu_el_Ryusei_L18",
+   "model": "elevenlabs-direct",
+   "voice": "rRab5jkpRHptfg9j6YQ6",
+   "voice_name": "Ryusei",
+   "el_model": "eleven_v3",
+   "text": "[commanding shout] 警察だ！　全員、その場を動くな！",
+   "subtitle": "警察だ！　全員、その場を動くな！"
+  }
+ ]
+}
