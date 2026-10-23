@@ -1,0 +1,245 @@
+{
+ "_설명": "yamibaito 효과음 타임라인(PHASE 6 finalize에서 믹스, dBFS는 대사 없는 구간 기준·대사 구간 −6dB). 소스 = assets/auditions/yamibaito-sfx/<name>.mp3 (ElevenLabs sound-generation). Lock 10:58.6 기준 — Lock이 바뀌면 build 시 재계산.",
+ "events": [
+  {
+   "name": "notify3",
+   "at": 0.0,
+   "dbfs": -18,
+   "note": "후크 알림음 3연타"
+  },
+  {
+   "name": "heartbeat",
+   "at": 2.4,
+   "dbfs": -20,
+   "note": "NA0 뒤 심장 박동 1박"
+  },
+  {
+   "name": "breath_run",
+   "at": 6.2,
+   "dbfs": -22,
+   "note": "H2 거친 숨·발소리"
+  },
+  {
+   "name": "iron_door",
+   "at": 10.8,
+   "dbfs": -14,
+   "note": "H2 철문 굉음 → 저음 임팩트"
+  },
+  {
+   "name": "impact_low",
+   "at": 11.3,
+   "dbfs": -16,
+   "note": "철문 뒤 저음 임팩트"
+  },
+  {
+   "name": "notify1",
+   "at": 38.14,
+   "dbfs": -22,
+   "note": "S02 DM 알림"
+  },
+  {
+   "name": "ui_tap",
+   "at": 104.25,
+   "dbfs": -26,
+   "note": "조건 ① UI음"
+  },
+  {
+   "name": "ui_tap",
+   "at": 108.69,
+   "dbfs": -26,
+   "note": "조건 ②"
+  },
+  {
+   "name": "ui_tap",
+   "at": 113.52,
+   "dbfs": -26,
+   "note": "조건 ③"
+  },
+  {
+   "name": "button",
+   "at": 139.67,
+   "dbfs": -22,
+   "note": "応募する 버튼음"
+  },
+  {
+   "name": "heartbeat",
+   "at": 140.27,
+   "dbfs": -20,
+   "note": "버튼 뒤 심장 박동 1박"
+  },
+  {
+   "name": "phone_vibe",
+   "at": 164.52,
+   "dbfs": -20,
+   "note": "母 전화 진동(화면 지터 동기)"
+  },
+  {
+   "name": "van_door",
+   "at": 198.1,
+   "dbfs": -16,
+   "note": "슬라이드 도어 「쿵」"
+  },
+  {
+   "name": "van_interior",
+   "at": 204.07,
+   "dbfs": -28,
+   "note": "S04 승합차 주행 저음(장소 현장음 그룹)"
+  },
+  {
+   "name": "basket",
+   "at": 219.31,
+   "dbfs": -24,
+   "note": "폰을 바구니에 놓는 소리"
+  },
+  {
+   "name": "riser",
+   "at": 268.66,
+   "dbfs": -18,
+   "note": "철문 닫힘 라이저"
+  },
+  {
+   "name": "iron_door",
+   "at": 270.06,
+   "dbfs": -12,
+   "note": "S05 철문 굉음(작품 최대)"
+  },
+  {
+   "name": "drone_low",
+   "at": 270.66,
+   "dbfs": -22,
+   "note": "저역 드론 지속(정적 금지)"
+  },
+  {
+   "name": "fluorescent",
+   "at": 277.58,
+   "dbfs": -26,
+   "note": "S06 형광등 지직(현장음 그룹)"
+  },
+  {
+   "name": "cctv_beep",
+   "at": 314.33,
+   "dbfs": -28,
+   "note": "CCTV 미세 전자음"
+  },
+  {
+   "name": "flashlight",
+   "at": 359.77,
+   "dbfs": -26,
+   "note": "S07 복도 손전등 스위프"
+  },
+  {
+   "name": "silence_room",
+   "at": 379.19,
+   "dbfs": -52,
+   "note": "「消されるのか」 앞 정적 1초 = 룸톤만"
+  },
+  {
+   "name": "clock_tick",
+   "at": 391.87,
+   "dbfs": -26,
+   "note": "벽시계 3:00 초침"
+  },
+  {
+   "name": "heartbeat_fast",
+   "at": 412.3,
+   "dbfs": -20,
+   "note": "S08 02:58 심장 박동 가속"
+  },
+  {
+   "name": "door_handle",
+   "at": 425.72,
+   "dbfs": -20,
+   "note": "복도 문손잡이"
+  },
+  {
+   "name": "footsteps_stairs",
+   "at": 435.44,
+   "dbfs": -16,
+   "note": "비상계단 발소리"
+  },
+  {
+   "name": "shout_far",
+   "at": 436.94,
+   "dbfs": -18,
+   "note": "고함 원경(VO 위 울림)"
+  },
+  {
+   "name": "exit_door",
+   "at": 443.1,
+   "dbfs": -14,
+   "note": "비상구 철문 열림 + 밤 공기"
+  },
+  {
+   "name": "payphone_pick",
+   "at": 459.1,
+   "dbfs": -18,
+   "note": "수화기 들기"
+  },
+  {
+   "name": "dial_110",
+   "at": 466.14,
+   "dbfs": -18,
+   "note": "110 버튼음 3회"
+  },
+  {
+   "name": "store_chime",
+   "at": 483.29,
+   "dbfs": -22,
+   "note": "편의점 문 종"
+  },
+  {
+   "name": "siren_far",
+   "at": 507.1,
+   "dbfs": -24,
+   "note": "赤色灯 사이렌 원경"
+  },
+  {
+   "name": "radio_noise",
+   "at": 509.59,
+   "dbfs": -20,
+   "note": "무전 노이즈"
+  },
+  {
+   "name": "door_break",
+   "at": 513.39,
+   "dbfs": -12,
+   "note": "철문 열림 충격"
+  },
+  {
+   "name": "flash",
+   "at": 513.49,
+   "dbfs": -16,
+   "note": "화이트 플래시 임팩트"
+  },
+  {
+   "name": "handcuff",
+   "at": 519.32,
+   "dbfs": -20,
+   "note": "수갑 「철컥」"
+  },
+  {
+   "name": "hit_orch",
+   "at": 542.78,
+   "dbfs": -18,
+   "note": "재회 직전 저음 임팩트 → 현악"
+  },
+  {
+   "name": "phone_vibe",
+   "at": 557.19,
+   "dbfs": -22,
+   "note": "S11 母 전화 진동"
+  },
+  {
+   "name": "birds",
+   "at": 555.89,
+   "dbfs": -30,
+   "note": "공원 새소리(현장음 그룹)"
+  },
+  {
+   "name": "card_ping",
+   "at": 612.04,
+   "dbfs": -24,
+   "note": "#9110 카드 등장음"
+  }
+ ]
+}
