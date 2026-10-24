@@ -25,7 +25,7 @@ PEOPLE = [
 FACE_OF = {"kenta-work": "kenta-face", "kenta-conv": "kenta-face", "kenta-hoodie": "kenta-face", "otoko": "otoko-face", "yuto": "yuto-face", "tencho": "tencho-face"}
 CAMEO = "assets/portraits/yamibaito-cameo/goni-front-1.jpg"
 FACE_KINDS = ("face", "d")
-PILOT_DONE = set()
+PILOT_DONE = {"S02f", "S05h", "S09g"}  # 시범 승인(2026-10-24, 고니감독님 「진행해줘」) → assets/portraits/yamibaito-kf-pilot-ok/
 LOC_NOTE = {
     "loc-conbini": "Japanese convenience store interior: every shelf label, poster, price tag and sign is completely BLANK; no brand logos.",
     "loc-street-van": "The black van is a Japanese right-hand-drive one-box van with a sliding door; headlights OFF; number plate blank; NO readable signs.",
@@ -133,6 +133,9 @@ def speaker_close(sc, people):
 
 def describe(path, i):
     name = os.path.basename(path)
+    if path.startswith("assets/portraits/yamibaito-kf-pilot-ok/S09g"):
+        return (f"Reference image {i} is the APPROVED keyframe of the same night shop manager in this same store: reproduce exactly this face, hair, "
+                "glasses and vest; identity and wardrobe ONLY — the framing and gaze follow the description below.")
     if path == CAMEO:
         return (f"Reference image {i} is a REAL PHOTOGRAPH of the night shop manager: reproduce exactly this man's face, bone structure, hairline, "
                 "his thick slightly wavy BLACK hair, his thin round silver-rimmed glasses and his age; identity ONLY — do NOT copy its background, T-shirt, camera angle or lighting.")
@@ -153,7 +156,7 @@ def describe(path, i):
 
 
 NO_FACE = {}
-PROP_ADD = {}
+PROP_ADD = {"S09i": "assets/portraits/yamibaito-kf-pilot-ok/S09g-1.png", "S09k": "assets/portraits/yamibaito-kf-pilot-ok/S09g-1.png"}  # 店長 나머지 립싱크 컷은 합격판 S09g를 기준 얼굴로 추가 참조
 _PROP_ADD_BENTO = {"S03e": "assets/portraits/bento-kf-r9/S03e-1.png",  # r9 싱크·그릇 구도는 합격, 손만 빠짐 → 그 판에 손을 넣는 편집
             "S09i": CELLS + "/prop-origami.png",  # 소품 참조 없는 「paper bird」가 2회 연속 종이학 → 울새 소품 셀 참조
             "S06a": CELLS + "/loc-shop96-curtain.png", "S13b": CELLS + "/loc-shop26-ots.png"}  # 참조 없는 t2i 시계 인서트에 사람 얼굴 2회 → 무인 장소 판 참조(edit)  # 소품 참조 없는 「paper bird」가 2회 연속 종이학 → 울새 소품 셀 참조
@@ -266,8 +269,18 @@ def main():
             if sc["id"] not in only:
                 continue
         else:
-            if (stage != "ab" and (stage == "a") != (sc["kind"] == "d" and bool(sc.get("line")))) or (only and sc["id"] not in only):
+            is_d = sc["kind"] == "d" and bool(sc.get("line"))
+            if stage.startswith("b") and is_d:
                 continue
+            if stage == "a" and not is_d:
+                continue
+            if only and sc["id"] not in only:
+                continue
+            if stage in ("b1", "b2"):  # 90분 상한(제19장 9 ⑧) → 비립싱크 컷을 앞·뒤 절반으로
+                rest = [x["id"] for x in sb["scenes"] if x.get("keyframe") and not (x["kind"] == "d" and x.get("line"))]
+                half = len(rest) // 2
+                if (stage == "b1") != (rest.index(sc["id"]) < half):
+                    continue
             if not only and sc["id"] in PILOT_DONE:
                 continue
         c = build(sc, stage)
