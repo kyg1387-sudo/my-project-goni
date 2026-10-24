@@ -1,0 +1,60 @@
+{
+ "_설명": "『時給5万円の罠』 아웃트로 진행자 새 스타일 v2 — 고니감독님 지시 2026-10-25 「아웃트로 헤어스타일과 옷을 교체해서 예쁘게」. 얼굴은 승인 진행자(host-cu-4) 유지(제18장 9 ⑧). A안 = 웨이브 롱헤어·와인레드 니트 원피스·진주 귀걸이, B안 = 쇄골 보브·크림 실크 블라우스+카멜 베스트. 각 안 CU 2·허리 위 1·손 흔들기 1 = 8장(seedream v4 edit 약 0.3달러). 승인 안의 판을 yamibaito-cast/host-*.png로 교체.",
+ "_style_preset": "REAL PHOTOGRAPH ONLY, photorealistic live-action, NOT an illustration, NOT anime, NOT 3D render. Arri Alexa cinematic color grade, soft Kodak 35mm film grain, 16:9",
+ "characters": [
+  {
+   "id": "hostA-cu",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. REAL PHOTOGRAPH of a real Japanese woman, NOT anime, NOT 3D. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). NEW LOOK for this episode (do NOT copy her old hair, clip or top; different from previous episodes' chignon/cardigan, half-up/sage-green and long-straight/navy-blazer): her dark-brown hair is styled in soft, glossy loose waves falling over one shoulder with a gentle side part and a few face-framing strands; she wears an elegant deep wine-red fine-knit dress with a modest round neckline and a slim cream-colored ribbon belt, small pearl drop earrings, a delicate thin gold bracelet; polished natural makeup with a soft coral lip, poised, graceful and radiant — the most beautiful she has looked on this channel. The same bright living-room studio with the beige sofa, wooden shelf and green plant, warm evening window light with a soft golden rim light on her hair, softly out of focus. Chest-up close-up, she faces the camera directly with a calm, warm, composed expression and a small closed-mouth smile (speech is added later), 85mm lens f/2. Both eyes sharp and symmetrical, natural five-fingered hands, no glasses. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  },
+  {
+   "id": "hostA-wu",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. REAL PHOTOGRAPH of a real Japanese woman, NOT anime, NOT 3D. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). NEW LOOK for this episode (do NOT copy her old hair, clip or top; different from previous episodes' chignon/cardigan, half-up/sage-green and long-straight/navy-blazer): her dark-brown hair is styled in soft, glossy loose waves falling over one shoulder with a gentle side part and a few face-framing strands; she wears an elegant deep wine-red fine-knit dress with a modest round neckline and a slim cream-colored ribbon belt, small pearl drop earrings, a delicate thin gold bracelet; polished natural makeup with a soft coral lip, poised, graceful and radiant — the most beautiful she has looked on this channel. The same bright living-room studio with the beige sofa, wooden shelf and green plant, warm evening window light with a soft golden rim light on her hair, softly out of focus. Waist-up medium shot: she sits on the beige sofa facing the camera directly, hands resting lightly together on her lap, calm composed expression, mouth gently closed, 50mm lens f/2.8. Both eyes sharp and symmetrical, natural five-fingered hands, no glasses. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  },
+  {
+   "id": "hostA-wave",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. REAL PHOTOGRAPH of a real Japanese woman, NOT anime, NOT 3D. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). NEW LOOK for this episode (do NOT copy her old hair, clip or top; different from previous episodes' chignon/cardigan, half-up/sage-green and long-straight/navy-blazer): her dark-brown hair is styled in soft, glossy loose waves falling over one shoulder with a gentle side part and a few face-framing strands; she wears an elegant deep wine-red fine-knit dress with a modest round neckline and a slim cream-colored ribbon belt, small pearl drop earrings, a delicate thin gold bracelet; polished natural makeup with a soft coral lip, poised, graceful and radiant — the most beautiful she has looked on this channel. The same bright living-room studio with the beige sofa, wooden shelf and green plant, warm evening window light with a soft golden rim light on her hair, softly out of focus. Waist-up medium shot: she sits on the beige sofa, one hand raised beside her face in a gentle small wave, warm smile with mouth closed, 50mm lens f/2.8. Both eyes sharp and symmetrical, natural five-fingered hands, no glasses. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  },
+  {
+   "id": "hostB-cu",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. REAL PHOTOGRAPH of a real Japanese woman, NOT anime, NOT 3D. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). NEW LOOK for this episode (do NOT copy her old hair, clip or top; different from previous episodes' chignon/cardigan, half-up/sage-green and long-straight/navy-blazer): her dark-brown hair is a chic, glossy collarbone-length bob with soft inward curls and airy see-through bangs; she wears a refined cream silk blouse with a soft bow at the neck under a camel-beige tailored vest, tiny pearl stud earrings; polished natural makeup with a soft rose-pink lip, bright, elegant and warm — the most beautiful she has looked on this channel. The same bright living-room studio with the beige sofa, wooden shelf and green plant, warm evening window light with a soft golden rim light on her hair, softly out of focus. Chest-up close-up, she faces the camera directly with a calm, warm, composed expression and a small closed-mouth smile (speech is added later), 85mm lens f/2. Both eyes sharp and symmetrical, natural five-fingered hands, no glasses. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  },
+  {
+   "id": "hostB-wu",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. REAL PHOTOGRAPH of a real Japanese woman, NOT anime, NOT 3D. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). NEW LOOK for this episode (do NOT copy her old hair, clip or top; different from previous episodes' chignon/cardigan, half-up/sage-green and long-straight/navy-blazer): her dark-brown hair is a chic, glossy collarbone-length bob with soft inward curls and airy see-through bangs; she wears a refined cream silk blouse with a soft bow at the neck under a camel-beige tailored vest, tiny pearl stud earrings; polished natural makeup with a soft rose-pink lip, bright, elegant and warm — the most beautiful she has looked on this channel. The same bright living-room studio with the beige sofa, wooden shelf and green plant, warm evening window light with a soft golden rim light on her hair, softly out of focus. Waist-up medium shot: she sits on the beige sofa facing the camera directly, hands resting lightly together on her lap, calm composed expression, mouth gently closed, 50mm lens f/2.8. Both eyes sharp and symmetrical, natural five-fingered hands, no glasses. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  },
+  {
+   "id": "hostB-wave",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. REAL PHOTOGRAPH of a real Japanese woman, NOT anime, NOT 3D. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). NEW LOOK for this episode (do NOT copy her old hair, clip or top; different from previous episodes' chignon/cardigan, half-up/sage-green and long-straight/navy-blazer): her dark-brown hair is a chic, glossy collarbone-length bob with soft inward curls and airy see-through bangs; she wears a refined cream silk blouse with a soft bow at the neck under a camel-beige tailored vest, tiny pearl stud earrings; polished natural makeup with a soft rose-pink lip, bright, elegant and warm — the most beautiful she has looked on this channel. The same bright living-room studio with the beige sofa, wooden shelf and green plant, warm evening window light with a soft golden rim light on her hair, softly out of focus. Waist-up medium shot: she sits on the beige sofa, one hand raised beside her face in a gentle small wave, warm smile with mouth closed, 50mm lens f/2.8. Both eyes sharp and symmetrical, natural five-fingered hands, no glasses. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  }
+ ]
+}

@@ -1,0 +1,271 @@
+{
+ "_설명": "時給5万円の罠 효과음 소스 38종(ElevenLabs sound-generation, 제19장 10·제15장 22). 타임라인 productions/yamibaito-ja/sfx_timeline.json 44개 이벤트의 이름 전부. 비용: EL 구독 크레딧(fal 0). finalize_yamibaito.py가 타임코드에 믹스(−26~−14 dBFS, 대사 구간 −6 dB).",
+ "tests": [
+  {
+   "id": "notify3",
+   "model": "elevenlabs-sfx",
+   "text": "smartphone message notification chime, three rapid pings in a row, clean digital tone, close, dry",
+   "duration": 3,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "notify1",
+   "model": "elevenlabs-sfx",
+   "text": "single smartphone DM notification ping, soft digital chime, close, dry",
+   "duration": 2,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "heartbeat",
+   "model": "elevenlabs-sfx",
+   "text": "single slow human heartbeat thump, deep low frequency, cinematic, dry, one beat only",
+   "duration": 2,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "heartbeat_fast",
+   "model": "elevenlabs-sfx",
+   "text": "fast accelerating human heartbeat, tense cinematic, low thumps getting quicker over 12 seconds",
+   "duration": 12,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "breath_run",
+   "model": "elevenlabs-sfx",
+   "text": "young man breathing hard while running, ragged panicked breaths, footsteps on concrete at night, close perspective",
+   "duration": 10,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "breath_phone",
+   "model": "elevenlabs-sfx",
+   "text": "young man's shaky out-of-breath whisper breathing held close to a payphone handset, trembling, no words",
+   "duration": 8,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "iron_door",
+   "model": "elevenlabs-sfx",
+   "text": "heavy iron door slams shut with a huge metallic boom and echo in a concrete room, cinematic impact",
+   "duration": 4,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "impact_low",
+   "model": "elevenlabs-sfx",
+   "text": "deep cinematic sub-bass impact hit with long low tail, trailer style, no music",
+   "duration": 4,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "ui_tap",
+   "model": "elevenlabs-sfx",
+   "text": "single soft smartphone UI tap click, subtle, dry",
+   "duration": 1,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "button",
+   "model": "elevenlabs-sfx",
+   "text": "smartphone app button confirm tap with a short soft tone, dry, close",
+   "duration": 2,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "phone_vibe",
+   "model": "elevenlabs-sfx",
+   "text": "smartphone vibrating on a wooden table, buzzing rattling pulses repeating, close",
+   "duration": 6,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "van_door",
+   "model": "elevenlabs-sfx",
+   "text": "van sliding door slammed shut with a heavy metallic thud, night exterior",
+   "duration": 3,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "van_interior",
+   "model": "elevenlabs-sfx",
+   "text": "interior of a moving van at night, steady low engine drone and road rumble, muffled, no voices",
+   "duration": 20,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "basket",
+   "model": "elevenlabs-sfx",
+   "text": "a smartphone placed into a plastic basket with other phones, light plastic clatter, indoor",
+   "duration": 2,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "riser",
+   "model": "elevenlabs-sfx",
+   "text": "tense cinematic riser, rising suspense sweep building for 2 seconds into a hit, no music melody",
+   "duration": 3,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "drone_low",
+   "model": "elevenlabs-sfx",
+   "text": "ominous low frequency drone, sustained dark sub rumble, unsettling, cinematic bed, no melody",
+   "duration": 20,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "fluorescent",
+   "model": "elevenlabs-sfx",
+   "text": "fluorescent light tube buzzing and flickering, electrical hum with occasional crackles, empty room",
+   "duration": 15,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "cctv_beep",
+   "model": "elevenlabs-sfx",
+   "text": "tiny faint electronic beep of a security camera with a subtle motor whir, dry",
+   "duration": 3,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "flashlight",
+   "model": "elevenlabs-sfx",
+   "text": "flashlight beam sweeping, a soft click and faint hum, concrete corridor ambience at night",
+   "duration": 4,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "silence_room",
+   "model": "elevenlabs-sfx",
+   "text": "almost silent room tone of a concrete basement, very low hum, no events",
+   "duration": 6,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "clock_tick",
+   "model": "elevenlabs-sfx",
+   "text": "wall clock ticking loudly in a silent room, steady seconds ticking, close, slightly reverberant",
+   "duration": 12,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "door_handle",
+   "model": "elevenlabs-sfx",
+   "text": "slowly turning an old metal door handle, careful quiet click of a latch, tense",
+   "duration": 3,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "footsteps_stairs",
+   "model": "elevenlabs-sfx",
+   "text": "fast running footsteps down a metal emergency staircase, clanging echo, panicked",
+   "duration": 8,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "shout_far",
+   "model": "elevenlabs-sfx",
+   "text": "men shouting angrily from far away inside a building, distant muffled echo, no clear words",
+   "duration": 4,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "exit_door",
+   "model": "elevenlabs-sfx",
+   "text": "heavy emergency exit steel door pushed open with a push bar, metallic clank, then cold night wind rushing in",
+   "duration": 4,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "payphone_pick",
+   "model": "elevenlabs-sfx",
+   "text": "picking up a public payphone handset, plastic clunk, coin slot, dial tone starts",
+   "duration": 3,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "dial_110",
+   "model": "elevenlabs-sfx",
+   "text": "three slow button presses on a payphone keypad, DTMF tones, then ringing tone begins",
+   "duration": 4,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "store_chime",
+   "model": "elevenlabs-sfx",
+   "text": "Japanese convenience store entrance door chime melody as the automatic door slides open, with faint store interior ambience",
+   "duration": 4,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "siren_far",
+   "model": "elevenlabs-sfx",
+   "text": "Japanese police car siren approaching from a distance at night, then stopping, city street",
+   "duration": 10,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "radio_noise",
+   "model": "elevenlabs-sfx",
+   "text": "police walkie-talkie static burst and short squelch, no words, close",
+   "duration": 3,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "door_break",
+   "model": "elevenlabs-sfx",
+   "text": "steel door kicked open violently, loud crash with metallic ring and debris, indoor",
+   "duration": 3,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "flash",
+   "model": "elevenlabs-sfx",
+   "text": "camera flash whoosh with a sharp bright electric snap, cinematic transition hit",
+   "duration": 2,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "handcuff",
+   "model": "elevenlabs-sfx",
+   "text": "handcuffs clicking and ratcheting shut on a wrist, close metallic clicks",
+   "duration": 2,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "hit_orch",
+   "model": "elevenlabs-sfx",
+   "text": "deep cinematic orchestral impact hit with low brass and strings swell, emotional, short",
+   "duration": 5,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "birds",
+   "model": "elevenlabs-sfx",
+   "text": "small park in Japan on a quiet morning, sparrows chirping, distant traffic, gentle",
+   "duration": 20,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "card_ping",
+   "model": "elevenlabs-sfx",
+   "text": "soft gentle notification tone for an on-screen information card, warm, clean, dry",
+   "duration": 2,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "wind_night",
+   "model": "elevenlabs-sfx",
+   "text": "cold night wind outside a building, steady wind bed with distant city hum, no music",
+   "duration": 20,
+   "prompt_influence": 0.65
+  },
+  {
+   "id": "wind_road",
+   "model": "elevenlabs-sfx",
+   "text": "roadside at night in Japan, wind, occasional distant passing cars, lonely national highway ambience",
+   "duration": 20,
+   "prompt_influence": 0.65
+  }
+ ]
+}
