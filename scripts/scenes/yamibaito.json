@@ -1,0 +1,985 @@
+{
+ "_설명": "yamibaito 장면 설정(build_yamibaito_phase3.py 생성). override_required 장면은 정지 푸시인·OMNI 정지 프레임·재사용·카드를 video-overrides로 먼저 넣는다.",
+ "ratio": "16:9",
+ "budget_usd": 33.3,
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "durations": [
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  10,
+  10,
+  5,
+  5,
+  10,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  10,
+  5,
+  10,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  10
+ ],
+ "scenes": [
+  {
+   "prompt": "(override) still: Insert, ABSOLUTELY NO PEOPLE: a smartphone lying flat on a dark bedsheet, its lo",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/H0-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The thumb hovers and trembles very slightly above the screen, never touching it; the screen glow flickers once; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/H1-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The sneakers take one fast step down two stairs; the hand slides along the railing; the camera shakes handheld; nothing else. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/H2a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The iron gate swings slowly shut, the slit of backlight narrowing to nothing; dust in the light; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/H2b-1.png"
+  },
+  {
+   "prompt": "(override) card: Question card over a blurred dark still of the half-closed iron gate (composited",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The bokeh lights shimmer very slightly; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/H4-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He straightens the goods with one slow hand movement; the fluorescent light hums steady; nothing else moves. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S01a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A slow tired breath, one slow blink; his eyes stay on the empty aisle. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S01b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hands slide one rice ball into line and stop; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S01c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He presses his lips together to swallow a yawn, a slow heavy blink; head stays in profile. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S01d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The phone buzzes once, a tiny vibration; the hand picks it up slowly and lifts it a few centimetres; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S02a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, ABSOLUTELY NO PEOPLE: a smartphone screen filling 70 percent of the fram",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S02b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes track across the screen line by line; one slow blink; a small frown. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S02c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The thumb hovers and twitches slightly, never touching the screen; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S02d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He shifts his weight slightly and gives a tiny shake of his head at the phone; the light hums. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S02e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up chest-up: Kenta in the teal vest leaning on the lockers at three-quarte",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S02f-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, ABSOLUTELY NO PEOPLE: the same smartphone screen upright filling the fra",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S02g-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, high angle, ABSOLUTELY NO PEOPLE: a plain white envelope lying on the fl",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S02h-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, ABSOLUTELY NO PEOPLE: a plain white envelope and a blank folded document",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S02i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He stares at the paper, a slow breath, his shoulders sag a little. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S02j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The thumb swipes up once, slowly; the screen glow shifts; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S02k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes lose focus, a slow swallow, jaw tightens; head stays still. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S02l-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, ABSOLUTELY NO PEOPLE: a smartphone screen upright filling the frame, bla",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S02ba-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, ABSOLUTELY NO PEOPLE: a grey plastic crate on a steel table holding a do",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S02bb-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, ABSOLUTELY NO PEOPLE: a plain black sleep eye mask lying flat on a dark ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S02bc-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, high angle: a completely blank sheet of white paper lying flat on a desk",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S02bd-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His frown deepens, he bites the inside of his lip, one slow blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S02be-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: One slow blink; the reflected glow brightens slightly; nothing else moves. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S02bf-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The phone screen on his chest lights up again by itself, casting glow on the ceiling; he does not move except breathing. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S02bg-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up chest-up, slightly low: Kenta in the grey hoodie sitting up on the bed ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S02bh-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The thumb comes down and presses the screen once, then lifts a little; the screen flashes brighter; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S02bi-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He swallows once; his eyes stay fixed on the screen; a long held breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S02bj-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He glances at the window and back to the phone; a restless breath; one knee bounces slightly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S03a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, ABSOLUTELY NO PEOPLE: a smartphone screen upright filling the frame, bla",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S03b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The thumb hovers, trembles, lowers a millimetre and stops without touching; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S03c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand turns the phone over and lays it face down on the sheet, then withdraws; the phone stays on the bed. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S03d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The phone vibrates, shivering against the sheet; the hand picks it up and turns it over, its blank screen glowing; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S03e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up chest-up: Kenta in the grey hoodie at three-quarter angle holding the p",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S03f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes close slowly, a swallow, a small nod; head stays in profile. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S03g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A slow breath lifts the phone on his chest; one slow blink; nothing else moves. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S03h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hands lower the folded shirt into the backpack and let go; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S03i-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, ABSOLUTELY NO PEOPLE: a small black backpack standing on the floor by th",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S03j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He walks slowly away from the camera toward the van, back to the camera the whole time, never turning around; the van does not move. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S03k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Nothing moves; the streetlight flickers faintly once. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S03l-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The sliding door slides shut slowly in one motion and closes with a soft thud; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S03m-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Streetlights slide slowly across the faces and seats; nobody moves except breathing. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S04a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A passing light crosses his face from left to right; one slow blink; head stays in profile. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S04b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His head stays perfectly still facing forward; passing light slides over the headrest; nothing else moves. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S04c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hands set the phone and the card down on the bottom of the basket and withdraw; the gloved hand holds the basket still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S04d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Only the fingers tremble finely; a passing light slides over the hand; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S04e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He pulls the black eye mask down over his eyes in one slow movement and lowers his hand; his head stays still. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S04f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His lips press tighter; a slow controlled breath; a passing light crosses. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S04g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The blurred lights outside slide past slower and slower and fade into darkness. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S04h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A single passing light slides over the bowed heads; nobody moves except breathing. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S04i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His head lifts slightly as the motion stops; a held breath; nothing else moves. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S04j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The sodium lamp flickers faintly; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S05a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The mask is lifted away upward; his eyes open and blink twice, adjusting to the dark; head stays still. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S05b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: They walk slowly away from the camera into the gate, backs to the camera the whole time, never turning around. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S05c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The fingertips slide a few centimetres along the rusted steel and stop; the light grazes; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S05e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up chest-up: the watchman in the black jacket, shaved head, standing in th",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S05f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He swallows; his eyes stay on the man to the left; a shallow breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S05g-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up chest-up, slightly low: the watchman in the black jacket, only his eyes",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S05h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He turns his head slowly about 20 degrees to look back over his shoulder, eyes widening; nothing else moves. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S05i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The two halves of the iron gate close the last gap in one slow motion and shut; dust falls; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S05j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He stands completely still looking at the gate; the fluorescent tube flickers once. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S05k-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert from inside, ABSOLUTELY NO PEOPLE: a thick rusted chain and a heavy padlo",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S05k2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The fluorescent tubes flicker irregularly; the red CCTV dot blinks; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S06a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Hands move slowly over the bankbooks; heads stay bowed; the light flickers. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S06b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hands lift one bankbook and set it flat on the next pile; everything stays resting on the table. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S06c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hands press the tape flat along the parcel in one slow movement; the parcel stays on the table. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S06d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyelids droop and lift, a slow exhausted breath; the light flickers over his face. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S06e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Hands move slowly over the tables; the fluorescent light flickers; nobody lifts a head. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S06e2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He walks slowly away from the camera between the tables, back to the camera the whole time, never turning around. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S06f-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, high angle, ABSOLUTELY NO PEOPLE: a dented aluminium tray lying flat on ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S06g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The red indicator blinks steadily; the fluorescent tube flickers; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S06h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: One pair of hands slides the carton along the table to the other pair, which takes hold of it; the carton stays on the table. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S06i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Only his back rises and falls with slow breathing; nothing else moves. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S06j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His hands keep sorting slowly; his head stays bowed; one blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S06k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes slide slowly to the left and back down; his head does not turn; a quiet breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S06k2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes glance sideways once toward the right; his head stays bowed; his hands keep moving slowly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S06l-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His jaw moves very slightly as he murmurs; his head stays bowed; the hands stop. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S06m-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kenta's blurred grey shoulder (right foreground, from behind): Yuto at thre",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S06n-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Only the fingers tremble finely on the bankbooks; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S06o-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The light flickers over his face; a slow swallow; his eyes stay fixed down. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S06o2-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, high angle, ABSOLUTELY NO PEOPLE: a grey plastic basket on the steel tab",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S07a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, ABSOLUTELY NO PEOPLE: dozens of smartphones heaped in the corner of a st",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S07b-1.png"
+  },
+  {
+   "prompt": "(override) still: High angle, ABSOLUTELY NO PEOPLE, grainy security-camera look: hundreds of smart",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S07c-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, ABSOLUTELY NO PEOPLE: an empty steel chair at the long table under the f",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S07d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A flashlight beam sweeps slowly across the iron door from left to right and passes; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S07e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes shift slowly to the left toward the whisper and stop; his hands stay still. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S07f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His eyes flick up toward the camera in the corner and back down; head stays bowed. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S07g-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kenta's blurred shoulder (left foreground, from behind), slightly high: Yut",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S07h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand tightens its grip on the sleeve, the knuckles whitening; a fine tremor; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S07i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His lips press tighter; the light flickers; a sweat bead slides slowly down his temple; his eyes stay down. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S07i2-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up chest-up (5-degree dutch tilt in editing): Kenta in the grey jumpsuit a",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S07j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The fingers flex slightly once and go still; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S07k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: One slow blink; the light flickers across his profile; nothing else moves. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S07k2-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He walks out through the door away from the camera, back to the camera the whole time, and is gone; the clock stays still. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S07l-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The fluorescent light flickers faintly over the clock face; the hands stay perfectly still; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S07m-1.png"
+  },
+  {
+   "prompt": "(override) still: ABSOLUTELY NO PEOPLE: the end of the dark corridor, a rusted iron door with a pl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S07n-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A slow blink, his jaw sets, his eyes stay fixed on the far right; a long steady breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S07o-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, ABSOLUTELY NO PEOPLE: the plain round wall clock with a BLANK white face",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S08a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: One slow blink; his eyes stay fixed; he holds his breath, then a tiny controlled exhale. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S08b-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert through dusty office glass, ABSOLUTELY NO PEOPLE: an empty steel chair an",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S08c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand presses the lever down slowly in one motion and holds; the door cracks open a few centimetres; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S08d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The camera moves slowly forward down the corridor like a person creeping, handheld sway; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S08e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The sneaker steps down onto the step and shifts weight; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S08f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand tightens on the railing and slides down it a little; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S08g-1.png"
+  },
+  {
+   "prompt": "(override) reuse: Reuse of H2a (sneakers taking the stairs two at a time, hand on the railing, han",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A flashlight beam sweeps fast across the wall from top to bottom and away; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S08i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The steel door swings open outward in one motion, night air and faint light coming in; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S08j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: One running stride: the near foot lands and pushes off, splashing a little; motion blur; nothing else. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S08k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The camera races forward along the road, handheld shaking hard, lamps streaking past. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S08l-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His shoulders heave with gasping breaths; sweat drips from his hair; head stays in profile. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S08m-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The store light flickers faintly; nothing else moves; no cars. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S08n-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand lifts the handset off the cradle in one motion and brings it up out of frame; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S09a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, high angle, ABSOLUTELY NO PEOPLE: the keypad of a green Japanese public ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S09b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His shoulders heave; his eyes squeeze shut once and open; the handset stays over his mouth. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S09c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His bowed head and shoulders tremble; his braced hand grips the box; he does not turn. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S09d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand holds the bottle out and sets it down on the counter edge gently; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S09e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hand trembles visibly around the handset and cannot stop; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S09f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kenta's blurred grey shoulder (left foreground, from behind): the night sho",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S09g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His bowed head nods very slightly; the bottle trembles in his hands; a shaky breath. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S09h-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up chest-up: the shop manager behind the counter at three-quarter angle, g",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S09i-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The hands tighten around the bottle and tremble; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S09j-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kenta's blurred shoulder (right foreground, from behind), slightly low: the",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S09k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His shoulders shake with silent sobs; his head stays bowed; the bottle trembles. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S09l-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The store light flickers faintly; the sky brightens almost imperceptibly; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S09m-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The red light pulses rhythmically across the wall and gate; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S10a-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The flashlight beams sweep onto the gate; the silhouettes stay in place; the red light pulses. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S10b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The iron gate swings open inward in one motion; flashlight beams and red light pour in; dust; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S10c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The handcuffs close on the wrists in one motion with a click; the hands go still. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S10d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Flashlight beams sweep slowly across the bowed heads; nobody moves except breathing. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S10e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: They walk slowly away from the camera out through the gate, backs to the camera the whole time; the red light pulses. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S10f-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The thin shoulders tremble under the blanket; the red light pulses; he does not look up. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S10g-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He raises his eyes slowly toward the right; they widen; a breath catches. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S10h-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: They stand facing each other; their chests rise and fall; the red light pulses; neither moves closer. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S10i-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up chest-up: Yuto with the silver blanket on his shoulders at three-quarte",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S10j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His lips press tighter; a breath shudders; his eyes stay on Kenta. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S10k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: NOT smiling at any moment. The key action of this shot: ONE clear tear wells up, slowly spills over the lower lid and visibly rolls down the cheek during the shot. The tear is crystal-clear and colorless like water, thin as a thread, catching only a tiny highlight — NOT yellow, NOT amber, NOT thick, NOT gel. NOT smiling at any moment, mouth corners turned down, chin trembling slightly; a slow blink, a trembling breath; only one tear line, thin and translucent. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S10l-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p",
+   "hero_takes": 2
+  },
+  {
+   "prompt": "(override) still: ABSOLUTELY NO PEOPLE: a bright plain TV news studio desk with an empty chair and",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S10m-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: The phone on the bench buzzes; he picks it up in one slow motion and brings it to his far ear; his back stays to the camera. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S11a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up chest-up: Kenta in the grey hoodie on the bench at three-quarter angle ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S11b-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He lowers the phone slowly and lifts his eyes to the sky; a long breath; one blink. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S11c-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: His head stays bowed; a slow breath; a leaf shadow moves across his shoulder. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S11d-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He wipes the counter slowly in small circles; a calm breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S11e-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: One slow blink; his eyes stay on the street outside; head stays in profile. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S11f-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert, high angle: a young man's rough hands with healing cuts holding a plain ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/yamibaito-keyframes/S11g-1.png"
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S07c (hundreds of phones on the warehouse floor in a flashlight circle)",
+   "duration": 10,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S02b (the DM on the phone screen).",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: One slow blink; his gaze stays far away; a slow breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S11j-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: Leaves sway gently in a breeze; light flickers through them; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S11k-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He looks down at the phone, closes his eyes slowly for a moment and opens them; nothing else moves. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S11l-1.png"
+  },
+  {
+   "prompt": "(override) card: Information card over a blurred warm still of the park (composited: 「警察相談専用電話　#9",
+   "duration": 10,
+   "override_required": true
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: A gentle breeze moves the leaves; light shifts slowly; nothing else moves. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 5,
+   "image": "assets/portraits/yamibaito-keyframes/S11n-1.png"
+  },
+  {
+   "prompt": "Static, locked off camera. Motion: He walks slowly away from the camera into the sunlight, back to the camera the whole time, never turning around. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Keep the exact faces, wardrobe, props and lighting of the first frame. Head turns under 20 degrees. No walking toward the camera, no new people, no text, no readable signs.",
+   "duration": 10,
+   "image": "assets/portraits/yamibaito-keyframes/S11o-1.png"
+  }
+ ]
+}
