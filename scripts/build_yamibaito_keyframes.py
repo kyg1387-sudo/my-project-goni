@@ -78,6 +78,27 @@ SHOT_FIX = {  # 시범 1차(2026-10-24): 전 컷 눈물(네거티브 오검출)�
     "S09i": "HAIR LOCKED: JET-BLACK hair exactly as in the photograph and the approved keyframe, thick and slightly wavy, with NO grey and NO white hair at all; thin round silver-rimmed glasses. GAZE LOCKED: he glances toward the store door on the RIGHT, NOT at the camera.",
     "S10j": "GAZE LOCKED: he looks slightly to the LEFT at Kenta off frame, NOT into the lens; his earlobes are plain and bare. " + _DRY + " The red light is a reflected rotating police light, red ONLY (never blue).",
     "S11b": "GAZE LOCKED: his eyes are lowered toward the ground to the LEFT, listening to the phone at his far ear, NOT at the camera. " + _DRY,
+    # b1 Kill Gate(2026-10-24, 69장 중 20 재생성): 폰 화면 단독 컷에 사람이 생김 / 단독 CU가 원경·어안·전신 / 같은 인물 2명 / 군중 수 부족 / 통장 가짜 글자
+    "H4": "ABSOLUTELY NO PEOPLE, NO FACES: only out-of-focus bokeh circles of city lights filling the whole frame, no readable signs.",
+    "S02b": "ABSOLUTELY NO PEOPLE, NO HANDS: a smartphone lying FLAT on a dark steel table, shot straight down from above (top-down macro), its lit screen a completely blank pale panel filling about 70 percent of the frame.",
+    "S02ba": "ABSOLUTELY NO PEOPLE, NO HANDS: a smartphone lying FLAT on a rumpled bedsheet, shot straight down from above (top-down macro), its lit screen a completely blank pale panel filling about 70 percent of the frame.",
+    "S02g": "ABSOLUTELY NO PEOPLE, NO HANDS: a smartphone lying FLAT on a dark steel table, shot straight down from above (top-down macro), its lit screen a completely blank pale panel filling about 70 percent of the frame.",
+    "S03b": "ABSOLUTELY NO PEOPLE, NO HANDS: a smartphone lying FLAT on a rumpled bedsheet, shot straight down from above (top-down macro), its LIT screen a completely blank pale panel filling about 70 percent of the frame; nothing else in the frame, NO signs, NO cards, NO clocks.",
+    "S02d": "INSERT: only a hand holding a phone and a thumb hovering above its blank lit screen, seen from above the shoulder; NO face, NO head in the frame; the thumb is NOT pointing at the camera.",
+    "S02be": "FRAMING FIRST — CLOSE-UP, head and shoulders only, the face one third of the frame height or larger, the phone glow on his face from below the frame; NOT a wide shot of the room.",
+    "S02bf": "EXTREME CLOSE-UP of the two eyes only, the frame cut at the eyebrows and the bridge of the nose; NO second person, NO figure in the background, NO body — only the eyes and the phone's glow.",
+    "S04a": "PEOPLE LOCKED: Kenta appears exactly ONCE, by the window on the RIGHT; the three other young men are seen ONLY as bowed heads and backs (different hair, dark jackets), their faces never visible; nobody looks at the camera.",
+    "S04h": "ABSOLUTELY NO PEOPLE, NO OBJECTS inside: only the dark tinted van window glass from inside, blurred orange lights outside fading to black; NO camera, NO lens, NO equipment.",
+    "S04i": "PEOPLE LOCKED: exactly FOUR young men seen from above and behind, all wearing black eye masks, heads bowed, Kenta's grey hood among them; the backs of the two front seats ahead; faces never visible.",
+    "S04j": "WARDROBE LOCKED: Kenta WEARS a plain black sleep eye mask covering both eyes (he cannot see); his head tilts slightly up; his mouth closed; NOT looking at the camera (eyes are covered).",
+    "S05b": "The black sleep eye mask is a plain solid cloth band with NO eye holes, being lifted UP and away from his face by a hand from above, so his bare eyes are just uncovered and blinking; PEOPLE LOCKED: exactly ONE person, Kenta, no second figure in the background.",
+    "S05c": "PEOPLE LOCKED: exactly FOUR young men seen strictly from BEHIND walking through the open iron gate, Kenta's grey hood and small backpack nearest the camera, the others in dark jackets; NO faces visible; backlit by cold light from inside.",
+    "S05g": "FRAMING FIRST — CLOSE-UP from slightly above: head and shoulders only, the face one third of the frame height or larger; NOT full body, NOT a high wide shot; his eyes turned to the LEFT toward the man off frame.",
+    "S05i": "FRAMING FIRST — CLOSE-UP: head and shoulders only, the face one third of the frame height or larger, his head turned about 20 degrees to look back over his RIGHT shoulder toward the gate behind him; NOT full body.",
+    "S06b": "POSE LOCKED: a ROW of four young men in grey jumpsuits SEATED on steel chairs at the long table, seen from BEHIND, heads bowed over the table, hands on blank booklets; Kenta nearest the camera; NO faces visible; nobody sits ON the table.",
+    "S06c": "The booklets are plain pastel-coloured paper booklets with completely BLANK covers — NO printing, NO characters, NO lines, NO stamps on any of them; hands and grey sleeves only from the top edge.",
+    "S06e": "FRAMING FIRST — CLOSE-UP with a normal 85mm perspective, head and shoulders only, the face one third of the frame height or larger, his eyes half closed looking DOWN at the table, NOT at the camera; NOT fisheye, NOT full body.",
+    "S06e2": "PEOPLE LOCKED: about a DOZEN young men in grey jumpsuits SEATED at the long tables with heads bowed, seen from the ceiling corner above and behind; NO faces visible; nobody standing.",
     "S02f": "The vest chest is completely plain: NO name tag, NO badge, NO card, NO pin. His earlobes are plain and bare. His eyes are DRY — no tears at all; he looks down at the phone, NOT at the camera.",
     "S05h": "His face is completely DRY — no tears, no sweat; dead-still expressionless face, only the eyes aimed at the young man off frame to the LEFT, NOT at the camera. Light: a single flashlight from below and the side, the corridor behind dark.",
     "S09g": "HAIR LOCKED: the manager's hair is exactly as in the photograph — thick, slightly wavy, BLACK hair with a natural side part, same length and volume. His glasses are the same thin round silver-rimmed glasses as in the photograph. His face is DRY, no tears. GAZE LOCKED: he looks at the young man in the foreground on the LEFT, NOT into the camera.",
@@ -169,10 +190,13 @@ PROP_ADD = {"S09i": "assets/portraits/yamibaito-kf-pilot-ok/S09g-1.png", "S09k":
 _PROP_ADD_BENTO = {"S03e": "assets/portraits/bento-kf-r9/S03e-1.png",  # r9 싱크·그릇 구도는 합격, 손만 빠짐 → 그 판에 손을 넣는 편집
             "S09i": CELLS + "/prop-origami.png",  # 소품 참조 없는 「paper bird」가 2회 연속 종이학 → 울새 소품 셀 참조
             "S06a": CELLS + "/loc-shop96-curtain.png", "S13b": CELLS + "/loc-shop26-ots.png"}  # 참조 없는 t2i 시계 인서트에 사람 얼굴 2회 → 무인 장소 판 참조(edit)  # 소품 참조 없는 「paper bird」가 2회 연속 종이학 → 울새 소품 셀 참조
-ONE_TAKE = set()  # 재생성 중 단순 결함 컷은 1장(승인 예산 안, 2026-10-20)
+ONE_TAKE = {"H4", "S02b", "S02ba", "S02g", "S03b", "S04h", "S06c"}  # 무인·소품 단순 컷은 1장  # 재생성 중 단순 결함 컷은 1장(승인 예산 안, 2026-10-20)
 NO_BACKCELL = set()  # 뒷모습 전신 셀이 원경 전신 구도를 끌어옴 — 앞 인물은 글로만
 NO_LOC = set()  # 장소 참조가 원경·후광(오려 붙인 테두리)을 만든 컷 — 장소는 글로만
 # 시범 1차(2026-10-20): 립싱크 3컷 6장 모두 장소 참조를 따라 원경(얼굴 1/6)으로 나옴 → 립싱크 컷은 장소 참조를 기본으로 뺀다(제18장 4)
+KEEP_LOC = set()
+FACE_CU = ("FRAMING FIRST — CLOSE-UP with a normal 85mm perspective: the head and shoulders fill the frame, the face one third of the frame height or larger, "
+           "cut at the chest; NOT a wide shot, NOT full body, NOT fisheye, NOT distorted, no floor or feet visible; the place is only a soft blurred background.")
 FRAME_FIRST = ("FRAMING FIRST — TIGHT MEDIUM CLOSE-UP, chest-up portrait framing: the speaker's head and shoulders fill about half of the frame width, "
                "the face is one third of the frame height or larger; the room is only a soft out-of-focus background. NOT a wide shot, NOT a medium "
                "shot, NOT full body, no floor visible.")
@@ -188,7 +212,7 @@ def build(sc, stage):
     refs = list(sc["refs"])
     if sc["id"] in PROP_ADD:
         refs = refs + [PROP_ADD[sc["id"]]]
-    if sc["id"] in NO_LOC or sc["kind"] == "d":
+    if sc["id"] in NO_LOC or sc["kind"] == "d" or (sc["kind"] == "face" and sc.get("size") in ("cu", "ecu") and sc["id"] not in KEEP_LOC):
         refs = [r for r in refs if not os.path.basename(r).startswith("loc-")]
     people = [r for r in refs if who_of(os.path.basename(r))[0]]
     if any(os.path.basename(r).startswith("tencho-") and not os.path.basename(r).endswith("-back.png") for r in people) and sc["kind"] in FACE_KINDS:
@@ -216,6 +240,10 @@ def build(sc, stage):
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
     if sc["kind"] == "d":
         parts.append(FRAME_FIRST)
+    elif sc["kind"] == "face" and sc.get("size") == "cu":
+        parts.append(FACE_CU)
+    if sc["kind"] in ("face", "d") and len([r for r in refs if who_of(os.path.basename(r))[0] and not os.path.basename(r).endswith("-back.png")]) == 1 and not sc.get("ots"):
+        parts.append("PEOPLE LOCKED: exactly ONE person in the whole frame — this person appears only ONCE, no second copy of him in the background, no reflection, no other people.")
     if sc["id"] in SHOT_FIX:
         parts.append(SHOT_FIX[sc["id"]])
     if sc["kind"] == "d" and sc["id"] not in EMO_OVERRIDE and len(people) >= 2:
