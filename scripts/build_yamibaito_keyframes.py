@@ -19,7 +19,7 @@ PEOPLE = [
     ("kenta-conv", KENTA + " in a teal convenience-store vest over a white shirt"),
     ("kenta-hoodie", KENTA + " in a plain light-grey hoodie"),
     ("otoko", "the watchman (40s, heavy-set, square jaw, closely shaved head, thick neck, small cold eyes, black zip jacket, black gloves, NO glasses)"),
-    ("yuto", "Yuto (22, round face, short brown hair, quick restless eyes, charcoal work jumpsuit, NO glasses, NO earrings)"),
+    ("yuto", "Yuto (22, round face, short brown hair, quick restless eyes, charcoal work jumpsuit, NO glasses, plain bare earlobes)"),
     ("tencho", "the night shop manager (50s, slim oval face, thick slightly wavy BLACK hair with a side part, thin round silver-rimmed glasses, kind calm eyes, navy store vest over a white shirt)"),
 ]
 FACE_OF = {"kenta-work": "kenta-face", "kenta-conv": "kenta-face", "kenta-hoodie": "kenta-face", "otoko": "otoko-face", "yuto": "yuto-face", "tencho": "tencho-face"}
@@ -68,7 +68,16 @@ _EMO_BENTO = {
 }
 # 키프레임 1차 Kill Gate(2026-10-20) 컷별 고정 문장 — 맨 앞(구도 다음)에 넣는다
 _PINK = ""
-SHOT_FIX = {  # 시범 1차(2026-10-24): 전 컷 눈물(네거티브 오검출)·健太 귀걸이·명찰·店長 백발·정면 응시
+_DRY = "Both cheeks are completely DRY: tears only pooled along the lower lids, NO tear track, NO streak running down either cheek."
+SHOT_FIX = {  # 시범 1차(2026-10-24): 전 컷 눈물(네거티브 오검출)·健太 귀걸이·명찰·店長 백발·정면 응시 / 1차 a(10컷 중 8 재생성): 원경·정면 응시·귀걸이·흐르는 눈물·백발
+    "S02bh": "GAZE LOCKED: he looks DOWN at the phone held below the frame edge, eyes lowered, NOT at the camera. Framing cut at mid-chest, sitting up on the edge of the bed, the dim lamp a blur behind.",
+    "S05f": "GAZE LOCKED: he looks slightly to the RIGHT of the camera at the young men off frame, dead eyes, NOT into the lens. Framing cut at mid-chest; the flashlight is held low out of frame, lighting his face from below.",
+    "S06n": "GAZE LOCKED: Yuto's eyes are turned sideways to the RIGHT toward Kenta's blurred shoulder, NOT at the camera; his head stays low over the table. His earlobes are plain and bare.",
+    "S07h": "GAZE LOCKED: Yuto's eyes are lowered to the table, NOT at the camera; Kenta's foreground jumpsuit sleeve is completely plain with NO patch, NO badge. Yuto's earlobes are plain and bare.",
+    "S07j": "GAZE LOCKED: his eyes are lowered, looking at nothing, slightly to the LEFT, NOT at the camera. " + _DRY,
+    "S09i": "HAIR LOCKED: JET-BLACK hair exactly as in the photograph and the approved keyframe, thick and slightly wavy, with NO grey and NO white hair at all; thin round silver-rimmed glasses. GAZE LOCKED: he glances toward the store door on the RIGHT, NOT at the camera.",
+    "S10j": "GAZE LOCKED: he looks slightly to the LEFT at Kenta off frame, NOT into the lens; his earlobes are plain and bare. " + _DRY + " The red light is a reflected rotating police light, red ONLY (never blue).",
+    "S11b": "GAZE LOCKED: his eyes are lowered toward the ground to the LEFT, listening to the phone at his far ear, NOT at the camera. " + _DRY,
     "S02f": "The vest chest is completely plain: NO name tag, NO badge, NO card, NO pin. His earlobes are plain and bare. His eyes are DRY — no tears at all; he looks down at the phone, NOT at the camera.",
     "S05h": "His face is completely DRY — no tears, no sweat; dead-still expressionless face, only the eyes aimed at the young man off frame to the LEFT, NOT at the camera. Light: a single flashlight from below and the side, the corridor behind dark.",
     "S09g": "HAIR LOCKED: the manager's hair is exactly as in the photograph — thick, slightly wavy, BLACK hair with a natural side part, same length and volume. His glasses are the same thin round silver-rimmed glasses as in the photograph. His face is DRY, no tears. GAZE LOCKED: he looks at the young man in the foreground on the LEFT, NOT into the camera.",
@@ -211,6 +220,9 @@ def build(sc, stage):
         parts.append(SHOT_FIX[sc["id"]])
     if sc["kind"] == "d" and sc["id"] not in EMO_OVERRIDE and len(people) >= 2:
         parts.append(speaker_close(sc, people))
+    elif sc["kind"] == "d" and sc["id"] not in EMO_OVERRIDE:
+        parts.append(f"SPEAKER CLOSE: {short(people[0]) if people else 'the speaker'} is about one metre from the camera, head and shoulders filling about half of the frame width, "
+                     "the face one third of the frame height or larger, cut at mid-chest; NO legs, NO feet, NO floor, NO bed visible; the room is only a soft blur behind the head.")
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
     if sc["id"] in EMO_OVERRIDE:
         parts.append(EMO_OVERRIDE[sc["id"]])

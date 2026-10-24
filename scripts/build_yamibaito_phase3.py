@@ -31,7 +31,7 @@ WHO = {
     "KEW": (KENTA, C + "kenta-work-front.png"),
     "OT": ("the watchman, a heavy-set Japanese man in his forties, square jaw, closely shaved head, thick neck, small cold eyes, expressionless, "
            "no glasses, no earrings", C + "otoko-front.png"),
-    "YU": ("Yuto, a thin Japanese man aged 22, round face, short brown hair, quick restless eyes, a thin gap in his RIGHT eyebrow, no glasses, no earrings",
+    "YU": ("Yuto, a thin Japanese man aged 22, round face, short brown hair, quick restless eyes, no glasses, plain bare earlobes with nothing on them",
            C + "yuto-front.png"),
     "TE": ("the night shop manager, a gentle Japanese man in his fifties, slim oval face, thick BLACK hair with only a few grey strands at the temples (NOT grey hair, NOT silver hair), silver half-rim glasses, "
            "kind calm eyes, no earrings", C + "tencho-front.png"),
@@ -803,7 +803,7 @@ def main():
             low = (s["subject"] + " " + (s["act"] or "")).lower()
             real = " ".join(x for x, keys in ((TEARS, ("tear", "sob", "cry", "wet eyes", "eyes wet", "wet face", "brimming", "wet and", "desperate")), (SWEAT, ("sweat", "gasping")))
                             if any(k in low for k in keys) or (s["expr"] == "wet" and x == TEARS))
-            if TEARS in real and "spills over" in (s.get("motion") or ""):
+            if TEARS in real and ("spills over" in (s.get("motion") or "") or "NOT running" in (s.get("act") or "") + (s.get("motion") or "")):  # 립싱크·고인 눈물 컷은 흐르는 줄기 없이(1차 a: S07j·S10j·S11b 양 뺨 줄기)
                 real = real.replace(TEARS, TEARS_POOL)
             glasses = " ".join(GLASSES[w.split(":")[0]] for w in s["who"] if w.split(":")[0] in GLASSES)
             kf_prompt = " ".join([PRESET + ".", s["subject"], ("Characters (IDENTITY FIRST): " + " | ".join(ids) + ".") if ids else "", glasses, real,
