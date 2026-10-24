@@ -77,7 +77,7 @@ SHOT_FIX = {  # 시범 1차(2026-10-24): 전 컷 눈물(네거티브 오검출)�
     "S07j": "GAZE LOCKED: his eyes are lowered, looking at nothing, slightly to the LEFT, NOT at the camera. " + _DRY,
     "S09i": "HAIR LOCKED: JET-BLACK hair exactly as in the photograph and the approved keyframe, thick and slightly wavy, with NO grey and NO white hair at all; thin round silver-rimmed glasses. GAZE LOCKED: he glances toward the store door on the RIGHT, NOT at the camera.",
     "S10j": "GAZE LOCKED: he looks slightly to the LEFT at Kenta off frame, NOT into the lens; his earlobes are plain and bare. " + _DRY + " The red light is a reflected rotating police light, red ONLY (never blue).",
-    "S11b": "GAZE LOCKED: his eyes are lowered toward the ground to the LEFT, listening to the phone at his far ear, NOT at the camera. " + _DRY,
+    "S11b": "PEOPLE LOCKED: exactly ONE person, Kenta, seated on the bench; NO second figure anywhere in the park behind him. GAZE LOCKED: his eyes are lowered toward the ground to the LEFT, listening to the phone at his far ear, NOT at the camera. " + _DRY,
     # b1 Kill Gate(2026-10-24, 69장 중 20 재생성): 폰 화면 단독 컷에 사람이 생김 / 단독 CU가 원경·어안·전신 / 같은 인물 2명 / 군중 수 부족 / 통장 가짜 글자
     "H4": "ABSOLUTELY NO PEOPLE, NO FACES: only out-of-focus bokeh circles of city lights filling the whole frame, no readable signs.",
     "S02b": "ABSOLUTELY NO PEOPLE, NO HANDS: a smartphone lying FLAT on a dark steel table, shot straight down from above (top-down macro), its lit screen a completely blank pale panel filling about 70 percent of the frame.",
@@ -195,6 +195,10 @@ NO_BACKCELL = set()  # 뒷모습 전신 셀이 원경 전신 구도를 끌어옴
 NO_LOC = set()  # 장소 참조가 원경·후광(오려 붙인 테두리)을 만든 컷 — 장소는 글로만
 # 시범 1차(2026-10-20): 립싱크 3컷 6장 모두 장소 참조를 따라 원경(얼굴 1/6)으로 나옴 → 립싱크 컷은 장소 참조를 기본으로 뺀다(제18장 4)
 KEEP_LOC = set()
+DRY_ONLY = {"S10j", "S11b"}
+TEARS_POOL_TXT = ("Realistic tears as in a live-action film: glossy wet eyes brimming with tears pooled along the lower lids and lashes, catching the light, "
+                  "about to spill but NOT yet running — both cheeks still completely DRY, no tear track; natural skin tone, matte skin, NO makeup, no pink eyelids, "
+                  "natural dark brown irises, clear white sclera.")
 FACE_CU = ("FRAMING FIRST — CLOSE-UP with a normal 85mm perspective: the head and shoulders fill the frame, the face one third of the frame height or larger, "
            "cut at the chest; NOT a wide shot, NOT full body, NOT fisheye, NOT distorted, no floor or feet visible; the place is only a soft blurred background.")
 FRAME_FIRST = ("FRAMING FIRST — TIGHT MEDIUM CLOSE-UP, chest-up portrait framing: the speaker's head and shoulders fill about half of the frame width, "
@@ -286,10 +290,14 @@ def build(sc, stage):
     parts.append(REAL)
     parts.append(FULL)
     parts.append("Absolutely no text, letters, numbers, logos or symbols anywhere in the image.")
+    if sc["id"] in DRY_ONLY:  # r4 실증: 「고인 눈물」 문장이 있으면 2회 연속 뺨에 줄기 → 눈물 문장 자체를 뺀다(젖은 눈은 i2v·립싱크 앞뒤 컷으로)
+        parts = [x for x in parts if not x.startswith("Realistic tears")]
+        parts = [x.replace(TEARS_POOL_TXT, "").replace("eyes brimming with pooled tears, ", "").replace("eyes wet but not running, ", "").replace("eyes brimming", "eyes glistening") for x in parts]
+        parts.insert(2, "EYES: slightly glossy from exhaustion, otherwise normal; both cheeks completely DRY and clean — NO tear, NO tear track, NO drop anywhere on the face.")
     prompt = " ".join(parts)
     for a, b in EYE_FIX:
         prompt = prompt.replace(a, b)
-    if re.search(r"\btears?\b|wet eyes|eyes wet|brimming", " ".join([sc["subject"], sc.get("act") or "", sc.get("motion") or ""]).lower()) or sc.get("expr") == "wet":  # 시범 1차: 네거티브 「tear streams」가 검출돼 6장 전부 눈물 → 컷 문장만 본다
+    if sc["id"] not in DRY_ONLY and (re.search(r"\btears?\b|wet eyes|eyes wet|brimming", " ".join([sc["subject"], sc.get("act") or "", sc.get("motion") or ""]).lower()) or sc.get("expr") == "wet"):  # 시범 1차: 네거티브 「tear streams」가 검출돼 6장 전부 눈물 → 컷 문장만 본다
         prompt = prompt.replace("Absolutely no text, letters", TEAR_LINE + " " + EYE_SAFE + " Absolutely no text, letters")
     # 참조가 없는 컷(무인 시계·광장)은 edit 모델이 거부해 2회 연속 실패(S06a·S10a·S13b) → text-to-image
     model = "fal-ai/bytedance/seedream/v4/edit" if refs else "fal-ai/bytedance/seedream/v4/text-to-image"
