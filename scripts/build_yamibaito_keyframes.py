@@ -293,6 +293,7 @@ def build(sc, stage):
     if sc["id"] in DRY_ONLY:  # r4 실증: 「고인 눈물」 문장이 있으면 2회 연속 뺨에 줄기 → 눈물 문장 자체를 뺀다(젖은 눈은 i2v·립싱크 앞뒤 컷으로)
         parts = [x for x in parts if not x.startswith("Realistic tears")]
         parts = [x.replace(TEARS_POOL_TXT, "").replace("eyes brimming with pooled tears, ", "").replace("eyes wet but not running, ", "").replace("eyes brimming", "eyes glistening") for x in parts]
+        parts = [" ".join(seg for seg in re.split(r"(?<=[.;])\s+", x) if not re.search(r"\btears?\b|welling|pooled", seg, re.I) or seg.startswith("Negative:")) for x in parts]
         parts.insert(2, "EYES: slightly glossy from exhaustion, otherwise normal; both cheeks completely DRY and clean — NO tear, NO tear track, NO drop anywhere on the face.")
     prompt = " ".join(parts)
     for a, b in EYE_FIX:
