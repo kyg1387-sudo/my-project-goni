@@ -24,7 +24,7 @@ FPS = 24; HARD = 1 / FPS; OMNI_MAX = 7.9; LEAD = 0.3; MIN_SHOT = 1.1; STILL_MAX 
 
 C = "assets/portraits/yamibaito-cast/cells/"
 KENTA = ("Saito Kenta, a slim Japanese man aged 24, thin tired face, large eyes with slightly drooping outer corners, LEFT ear sticking out a little, "
-         "thick black hair with a fringe covering half the forehead, clean-shaven, bare eyes with no glasses, no earrings, no moles")
+         "thick black hair with a fringe covering half the forehead, clean-shaven, bare eyes with no glasses, plain bare earlobes with nothing on them, no moles")
 WHO = {
     "KEV": (KENTA, C + "kenta-conv-front.png"),
     "KEH": (KENTA, C + "kenta-hoodie-front.png"),
@@ -33,11 +33,11 @@ WHO = {
            "no glasses, no earrings", C + "otoko-front.png"),
     "YU": ("Yuto, a thin Japanese man aged 22, round face, short brown hair, quick restless eyes, a thin gap in his RIGHT eyebrow, no glasses, no earrings",
            C + "yuto-front.png"),
-    "TE": ("the night shop manager, a gentle Japanese man in his fifties, slim oval face, thick black hair with a little grey, silver half-rim glasses, "
+    "TE": ("the night shop manager, a gentle Japanese man in his fifties, slim oval face, thick BLACK hair with only a few grey strands at the temples (NOT grey hair, NOT silver hair), silver half-rim glasses, "
            "kind calm eyes, no earrings", C + "tencho-front.png"),
 }
 WARD = {
-    "KEV": "a plain teal convenience-store staff vest over a plain white long-sleeve shirt, black trousers, no badge, no name tag",
+    "KEV": "a plain teal convenience-store staff vest with a completely plain chest (NO name tag, NO badge, NO pin, NO label) over a plain white long-sleeve shirt, black trousers",
     "KEH": "a plain light-grey hooded sweatshirt with no print, black trousers, worn white sneakers",
     "KEW": "a plain grey work jumpsuit with no logo and no badge, worn white sneakers",
     "OT": "a plain black zip-up jacket with no logo, black trousers, black gloves",

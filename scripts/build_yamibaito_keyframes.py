@@ -13,14 +13,14 @@ SB_PATH = os.path.join(ROOT, "scripts", "storyboard", "yamibaito.json")
 OUT = os.path.join(ROOT, "scripts", "portraits", "yamibaito-kf-{}.json")
 FACE_DIR = "assets/portraits/yamibaito-faces"
 CELLS = "assets/portraits/yamibaito-cast/cells"
-KENTA = "Saito Kenta (24, slim tired face, large eyes with slightly drooping outer corners, LEFT ear sticking out a little, thick black hair with a fringe over half the forehead, clean-shaven, bare eyes with NO glasses, NO earrings, NO moles)"
+KENTA = "Saito Kenta (24, slim tired face, large eyes with slightly drooping outer corners, LEFT ear sticking out a little, thick black hair with a fringe over half the forehead, clean-shaven, bare eyes with NO glasses, plain bare earlobes with nothing on them, NO moles)"
 PEOPLE = [
     ("kenta-work", KENTA + " in a plain light-grey work jumpsuit"),
     ("kenta-conv", KENTA + " in a teal convenience-store vest over a white shirt"),
     ("kenta-hoodie", KENTA + " in a plain light-grey hoodie"),
     ("otoko", "the watchman (40s, heavy-set, square jaw, closely shaved head, thick neck, small cold eyes, black zip jacket, black gloves, NO glasses)"),
     ("yuto", "Yuto (22, round face, short brown hair, quick restless eyes, charcoal work jumpsuit, NO glasses, NO earrings)"),
-    ("tencho", "the night shop manager (50s, slim oval face, thick black hair with a little grey, silver half-rim glasses, kind calm eyes, navy store vest over a white shirt)"),
+    ("tencho", "the night shop manager (50s, slim oval face, thick BLACK hair with only a few grey strands at the temples — NOT grey hair, NOT silver hair — silver half-rim glasses, kind calm eyes, navy store vest over a white shirt)"),
 ]
 FACE_OF = {"kenta-work": "kenta-face", "kenta-conv": "kenta-face", "kenta-hoodie": "kenta-face", "otoko": "otoko-face", "yuto": "yuto-face", "tencho": "tencho-face"}
 CAMEO = "assets/portraits/yamibaito-cameo/goni-front-1.jpg"
@@ -68,7 +68,11 @@ _EMO_BENTO = {
 }
 # 키프레임 1차 Kill Gate(2026-10-20) 컷별 고정 문장 — 맨 앞(구도 다음)에 넣는다
 _PINK = ""
-SHOT_FIX = {}
+SHOT_FIX = {  # 시범 1차(2026-10-24): 전 컷 눈물(네거티브 오검출)·健太 귀걸이·명찰·店長 백발·정면 응시
+    "S02f": "The vest chest is completely plain: NO name tag, NO badge, NO card, NO pin. His earlobes are plain and bare. His eyes are DRY — no tears at all; he looks down at the phone, NOT at the camera.",
+    "S05h": "His face is completely DRY — no tears, no sweat; dead-still expressionless face, only the eyes aimed at the young man off frame to the LEFT, NOT at the camera. Light: a single flashlight from below and the side, the corridor behind dark.",
+    "S09g": "HAIR LOCKED: thick BLACK hair, only a few grey strands at the temples (NOT grey, NOT silver, NOT white hair). His face is DRY, no tears. GAZE LOCKED: he looks at the young man in the foreground on the LEFT, NOT into the camera.",
+}
 _SHOT_FIX_BENTO = {
     "S03a": _PINK, "S03b": _PINK, "S03c": _PINK, "S03d": _PINK,
     "S04b": "PEOPLE LOCKED: exactly TWO people — Shuzo behind the counter, and the boy ONLY as the blurred back of the head and shoulder at the near LEFT edge; the boy appears nowhere else in the frame.",
@@ -229,14 +233,14 @@ def build(sc, stage):
             parts.append("EXPRESSION AT 70 PERCENT: brows knotted, the corners of the mouth pulled down, eyes red and wet with pooled tears, jaw tight; absolutely NO smile.")
         if any(k in (sc.get("act") or "").lower() for k in ("fury", "shout", "scream", "explode")):
             parts.append(ANGER_CLOSED)
-        parts.append("Mouth gently closed or barely parted (speech is added later); natural skin texture, both eyes sharp and symmetrical; earrings exactly as in the reference (none if the reference has none).")
+        parts.append("Mouth gently closed or barely parted (speech is added later); natural skin texture, both eyes sharp and symmetrical; plain bare earlobes. GAZE LOCKED: the eyes look toward the other person at the three-quarter angle, NEVER into the camera lens.")
     parts.append(REAL)
     parts.append(FULL)
     parts.append("Absolutely no text, letters, numbers, logos or symbols anywhere in the image.")
     prompt = " ".join(parts)
     for a, b in EYE_FIX:
         prompt = prompt.replace(a, b)
-    if re.search(r"\btears?\b", re.sub(r"Negative:.*?\.(?= [A-Z])", "", prompt).replace("gel tears", "")):  # 네거티브의 「gel tears」는 제외
+    if re.search(r"\btears?\b|wet eyes|eyes wet|brimming", " ".join([sc["subject"], sc.get("act") or "", sc.get("motion") or ""]).lower()) or sc.get("expr") == "wet":  # 시범 1차: 네거티브 「tear streams」가 검출돼 6장 전부 눈물 → 컷 문장만 본다
         prompt = prompt.replace("Absolutely no text, letters", TEAR_LINE + " " + EYE_SAFE + " Absolutely no text, letters")
     # 참조가 없는 컷(무인 시계·광장)은 edit 모델이 거부해 2회 연속 실패(S06a·S10a·S13b) → text-to-image
     model = "fal-ai/bytedance/seedream/v4/edit" if refs else "fal-ai/bytedance/seedream/v4/text-to-image"
