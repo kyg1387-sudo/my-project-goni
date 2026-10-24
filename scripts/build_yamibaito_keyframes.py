@@ -20,7 +20,7 @@ PEOPLE = [
     ("kenta-hoodie", KENTA + " in a plain light-grey hoodie"),
     ("otoko", "the watchman (40s, heavy-set, square jaw, closely shaved head, thick neck, small cold eyes, black zip jacket, black gloves, NO glasses)"),
     ("yuto", "Yuto (22, round face, short brown hair, quick restless eyes, charcoal work jumpsuit, NO glasses, NO earrings)"),
-    ("tencho", "the night shop manager (50s, slim oval face, thick BLACK hair with only a few grey strands at the temples — NOT grey hair, NOT silver hair — silver half-rim glasses, kind calm eyes, navy store vest over a white shirt)"),
+    ("tencho", "the night shop manager (50s, slim oval face, thick slightly wavy BLACK hair with a side part, thin round silver-rimmed glasses, kind calm eyes, navy store vest over a white shirt)"),
 ]
 FACE_OF = {"kenta-work": "kenta-face", "kenta-conv": "kenta-face", "kenta-hoodie": "kenta-face", "otoko": "otoko-face", "yuto": "yuto-face", "tencho": "tencho-face"}
 CAMEO = "assets/portraits/yamibaito-cameo/goni-front-1.jpg"
@@ -71,7 +71,7 @@ _PINK = ""
 SHOT_FIX = {  # 시범 1차(2026-10-24): 전 컷 눈물(네거티브 오검출)·健太 귀걸이·명찰·店長 백발·정면 응시
     "S02f": "The vest chest is completely plain: NO name tag, NO badge, NO card, NO pin. His earlobes are plain and bare. His eyes are DRY — no tears at all; he looks down at the phone, NOT at the camera.",
     "S05h": "His face is completely DRY — no tears, no sweat; dead-still expressionless face, only the eyes aimed at the young man off frame to the LEFT, NOT at the camera. Light: a single flashlight from below and the side, the corridor behind dark.",
-    "S09g": "HAIR LOCKED: thick BLACK hair, only a few grey strands at the temples (NOT grey, NOT silver, NOT white hair). His face is DRY, no tears. GAZE LOCKED: he looks at the young man in the foreground on the LEFT, NOT into the camera.",
+    "S09g": "HAIR LOCKED: the manager's hair is exactly as in the photograph — thick, slightly wavy, BLACK hair with a natural side part, same length and volume. His glasses are the same thin round silver-rimmed glasses as in the photograph. His face is DRY, no tears. GAZE LOCKED: he looks at the young man in the foreground on the LEFT, NOT into the camera.",
 }
 _SHOT_FIX_BENTO = {
     "S03a": _PINK, "S03b": _PINK, "S03c": _PINK, "S03d": _PINK,
@@ -111,6 +111,8 @@ ANGER_CLOSED = ("Fury shown only in the wide-open glaring eyes, furrowed brow, f
 
 
 def who_of(name):
+    if name == os.path.basename(CAMEO):
+        return ("tencho", dict(PEOPLE)["tencho"])
     return next(((k, v) for k, v in PEOPLE if name.startswith(k + "-")), (None, None))
 
 
@@ -133,7 +135,7 @@ def describe(path, i):
     name = os.path.basename(path)
     if path == CAMEO:
         return (f"Reference image {i} is a REAL PHOTOGRAPH of the night shop manager: reproduce exactly this man's face, bone structure, hairline, "
-                "silver half-rim glasses and age; identity ONLY — do NOT copy its background, clothing, camera angle or lighting.")
+                "his thick slightly wavy BLACK hair, his thin round silver-rimmed glasses and his age; identity ONLY — do NOT copy its background, T-shirt, camera angle or lighting.")
     if path.startswith(FACE_DIR):
         who = next((v for k, v in PEOPLE if FACE_OF[k] == name[:-4]), "the character").split(" in a ")[0]
         return (f"Reference image {i} is a tight face crop of {who}: reproduce exactly this face, age, hairstyle and eyewear; identity ONLY — "
@@ -178,12 +180,16 @@ def build(sc, stage):
         refs = [r for r in refs if not os.path.basename(r).startswith("loc-")]
     people = [r for r in refs if who_of(os.path.basename(r))[0]]
     if any(os.path.basename(r).startswith("tencho-") and not os.path.basename(r).endswith("-back.png") for r in people) and sc["kind"] in FACE_KINDS:
-        refs = [CAMEO] + refs  # 店長 = 고니감독님 카메오: 실제 사진을 1번 참조
+        # 店長 = 고니감독님 카메오: 실제 사진을 1번 참조. 시범 r2 실증: 시트 셀·얼굴 크롭(흰머리 섞임)이 백발을 끌어옴 → 정체 참조는 사진만
+        refs = [CAMEO] + [r for r in refs if not (os.path.basename(r).startswith("tencho-") and not os.path.basename(r).endswith("-back.png"))]
+        people = [CAMEO] + [r for r in people if not os.path.basename(r).startswith("tencho-")]
     is_back = any(os.path.basename(r).endswith("-back.png") for r in refs) and sc["kind"] != "d"
     if sc["kind"] in FACE_KINDS and not is_back:  # 시범에도 얼굴 크롭(동일 인물 — 제19장 7 ①)  # 배경 없는 얼굴 크롭을 1번 참조로(동일 인물)
         face = []
         for r in people:
             k, _ = who_of(os.path.basename(r))
+            if r == CAMEO:
+                continue
             f = f"{FACE_DIR}/{FACE_OF[k]}.png"
             if k in NO_FACE.get(sc["id"], ()) or (sc.get("ots") and r == people[-1]) or (sc["kind"] == "d" and r != people[0]):  # 전경 뒷모습 인물은 얼굴 크롭 제외  # 뒷모습 화자(비립싱크 VO)는 얼굴 크롭 제외 — 정면을 끌어온다
                 continue
