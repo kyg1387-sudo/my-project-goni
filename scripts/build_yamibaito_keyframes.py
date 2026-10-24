@@ -99,6 +99,20 @@ SHOT_FIX = {  # 시범 1차(2026-10-24): 전 컷 눈물(네거티브 오검출)�
     "S06c": "The booklets are plain pastel-coloured paper booklets with completely BLANK covers — NO printing, NO characters, NO lines, NO stamps on any of them; hands and grey sleeves only from the top edge.",
     "S06e": "FRAMING FIRST — CLOSE-UP with a normal 85mm perspective, head and shoulders only, the face one third of the frame height or larger, his eyes half closed looking DOWN at the table, NOT at the camera; NOT fisheye, NOT full body.",
     "S06e2": "PEOPLE LOCKED: about a DOZEN young men in grey jumpsuits SEATED at the long tables with heads bowed, seen from the ceiling corner above and behind; NO faces visible; nobody standing.",
+    # b2 Kill Gate(2026-10-24, 69장 중 13 재생성): 인서트에 얼굴 / 정면 응시 / 통장 가짜 글자 / 애니 손 / 전신 / 무인 컷에 사람
+    "S06i": "Two pairs of hands only, in grey jumpsuit sleeves, sliding a plain brown cardboard carton that RESTS ON the steel table; the carton is on the table surface, not lifted.",
+    "S06k": "The booklets on the table are plain pastel paper booklets with completely BLANK covers, NO printing, NO characters. Yuto's head is bowed LOW over them so his face is seen only from the side and partly hidden; his mouth is NOT visible.",
+    "S06l": "PEOPLE LOCKED: exactly ONE person, Yuto, alone at the table, head bowed LOW over blank pastel booklets, face half hidden by his fringe and the angle, mouth NOT visible, eyes glancing sideways to the RIGHT; NO book, NO text, NO second person.",
+    "S06o2": "GAZE LOCKED: his eyes are fixed DOWN on the table below the frame, lids heavy, NEVER at the camera; a slight three-quarter angle to the LEFT.",
+    "S07i": "REAL PHOTOGRAPH, NOT anime, NOT illustration: a close-up of a real human hand in a grey jumpsuit sleeve gripping its own other forearm sleeve, knuckles white, real skin texture; nothing else; NO face.",
+    "S07i2": "GAZE LOCKED: eyes DOWN at the table, never at the camera; the face is DRY except one tiny bead of sweat at the temple; NO tears, NO streaks on the cheeks.",
+    "S07k": "Hands only: two rough chapped hands with cracked knuckles resting flat on the steel table, grey sleeves, cut at the forearms; NO face, NO head, NO body in the frame.",
+    "S07k2": "PEOPLE LOCKED: exactly ONE person — Kenta in profile close-up; NO second figure standing in the background, NO reflection, NO one else in the room.",
+    "S07o": "FRAMING FIRST — CLOSE-UP from slightly below: head and shoulders only, the face one third of the frame height or larger, his eyes fixed far to the RIGHT down the corridor, NOT at the camera; NOT full body, NOT standing wide.",
+    "S08l": "ABSOLUTELY NO PEOPLE, NO FACES: an empty industrial road at night seen from a running person's eye level, motion-blurred sodium lamps and corrugated walls streaking past; nobody in the frame.",
+    "S09b": "MACRO INSERT, ABSOLUTELY NO PEOPLE: the square keypad of a green Japanese public telephone fills more than 70 percent of the frame, twelve blank square keys in a grid, NO numerals, NO letters; the handset cord at the edge.",
+    "S11k": "ABSOLUTELY NO PEOPLE, NO LEGS, NO BODY PARTS: only trees, sunlight and an empty bench; nobody in the park.",
+    "S11l": "FRAMING FIRST — CLOSE-UP with a normal 85mm perspective from slightly above: head and shoulders only, NOT fisheye, NOT full body; his eyes look DOWN at the dark phone in his hand below the frame, NEVER at the camera.",
     "S02f": "The vest chest is completely plain: NO name tag, NO badge, NO card, NO pin. His earlobes are plain and bare. His eyes are DRY — no tears at all; he looks down at the phone, NOT at the camera.",
     "S05h": "His face is completely DRY — no tears, no sweat; dead-still expressionless face, only the eyes aimed at the young man off frame to the LEFT, NOT at the camera. Light: a single flashlight from below and the side, the corridor behind dark.",
     "S09g": "HAIR LOCKED: the manager's hair is exactly as in the photograph — thick, slightly wavy, BLACK hair with a natural side part, same length and volume. His glasses are the same thin round silver-rimmed glasses as in the photograph. His face is DRY, no tears. GAZE LOCKED: he looks at the young man in the foreground on the LEFT, NOT into the camera.",
@@ -190,7 +204,7 @@ PROP_ADD = {"S09i": "assets/portraits/yamibaito-kf-pilot-ok/S09g-1.png", "S09k":
 _PROP_ADD_BENTO = {"S03e": "assets/portraits/bento-kf-r9/S03e-1.png",  # r9 싱크·그릇 구도는 합격, 손만 빠짐 → 그 판에 손을 넣는 편집
             "S09i": CELLS + "/prop-origami.png",  # 소품 참조 없는 「paper bird」가 2회 연속 종이학 → 울새 소품 셀 참조
             "S06a": CELLS + "/loc-shop96-curtain.png", "S13b": CELLS + "/loc-shop26-ots.png"}  # 참조 없는 t2i 시계 인서트에 사람 얼굴 2회 → 무인 장소 판 참조(edit)  # 소품 참조 없는 「paper bird」가 2회 연속 종이학 → 울새 소품 셀 참조
-ONE_TAKE = {"H4", "S02b", "S02ba", "S02g", "S03b", "S04h", "S06c"}  # 무인·소품 단순 컷은 1장  # 재생성 중 단순 결함 컷은 1장(승인 예산 안, 2026-10-20)
+ONE_TAKE = {"H4", "S02b", "S02ba", "S02g", "S03b", "S04h", "S06c", "S06i", "S07i", "S07k", "S08l", "S09b", "S11k"}  # 무인·소품 단순 컷은 1장  # 재생성 중 단순 결함 컷은 1장(승인 예산 안, 2026-10-20)
 NO_BACKCELL = set()  # 뒷모습 전신 셀이 원경 전신 구도를 끌어옴 — 앞 인물은 글로만
 NO_LOC = set()  # 장소 참조가 원경·후광(오려 붙인 테두리)을 만든 컷 — 장소는 글로만
 # 시범 1차(2026-10-20): 립싱크 3컷 6장 모두 장소 참조를 따라 원경(얼굴 1/6)으로 나옴 → 립싱크 컷은 장소 참조를 기본으로 뺀다(제18장 4)
@@ -200,7 +214,10 @@ TEARS_POOL_TXT = ("Realistic tears as in a live-action film: glossy wet eyes bri
                   "about to spill but NOT yet running — both cheeks still completely DRY, no tear track; natural skin tone, matte skin, NO makeup, no pink eyelids, "
                   "natural dark brown irises, clear white sclera.")
 FACE_CU = ("FRAMING FIRST — CLOSE-UP with a normal 85mm perspective: the head and shoulders fill the frame, the face one third of the frame height or larger, "
-           "cut at the chest; NOT a wide shot, NOT full body, NOT fisheye, NOT distorted, no floor or feet visible; the place is only a soft blurred background.")
+           "cut at the chest; NOT a wide shot, NOT full body, NOT fisheye, NOT distorted, no floor or feet visible; the place is only a soft blurred background. "
+           "GAZE: the eyes look where the description says, NEVER straight into the camera lens.")
+INSERT_HARD = ("HANDS-ONLY INSERT: the camera looks down at the hands and the object; the frame is cut at the forearms — NO head, NO face, NO shoulders, "
+               "NO torso anywhere in the picture; the person is entirely out of frame except hands and sleeves.")
 FRAME_FIRST = ("FRAMING FIRST — TIGHT MEDIUM CLOSE-UP, chest-up portrait framing: the speaker's head and shoulders fill about half of the frame width, "
                "the face is one third of the frame height or larger; the room is only a soft out-of-focus background. NOT a wide shot, NOT a medium "
                "shot, NOT full body, no floor visible.")
@@ -267,6 +284,7 @@ def build(sc, stage):
     if sc.get("lighting") in LIGHT_NOTE:
         parts.append(LIGHT_NOTE[sc["lighting"]])
     if sc["kind"] == "ins" and people:
+        parts.insert(1, INSERT_HARD)  # b2 실증: S06i·S07k 인서트에 얼굴이 들어옴 → 구도 문장을 맨 앞에
         parts.append(INSERT)
     if is_back:
         parts.append(BACK)
