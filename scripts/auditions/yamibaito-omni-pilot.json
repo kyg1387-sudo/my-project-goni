@@ -1,0 +1,26 @@
+{
+ "_설명": "時給5万円の罠 립싱크 3컷 시범(OmniHuman v1.5, 제10장 4). 오디오는 본녹음 확정본(L01 健太·L08 男·L17 店長), 이미지는 Kill Gate 합격 키프레임. 약 0.16달러/초 × 약 12초 ≈ 2달러",
+ "tests": [
+  {
+   "id": "omni-S02f",
+   "model": "omnihuman",
+   "audio_id": "L01",
+   "image": "assets/portraits/yamibaito-omni-pilot/S02f.png",
+   "prompt": "Kenta whispers to himself in disbelief, almost without voice, looking down at the phone out of frame, that it can't be true, 250,000 yen in one night. Speaking to nobody, barely moving his lips. NOT smiling at any moment. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle; no exaggerated motion, the same person throughout."
+  },
+  {
+   "id": "omni-S05h",
+   "model": "omnihuman",
+   "audio_id": "L08",
+   "image": "assets/portraits/yamibaito-omni-pilot/S05h.png",
+   "prompt": "The watchman says in a quiet low voice, slower, that there is no exit here, then after a pause tells them to work; only his eyes move to Kenta, no smile, no gesture. NOT smiling at any moment. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle; no exaggerated motion, the same person throughout."
+  },
+  {
+   "id": "omni-S09g",
+   "model": "omnihuman",
+   "audio_id": "L17",
+   "image": "assets/portraits/yamibaito-omni-pilot/S09g.png",
+   "prompt": "The shop manager tells the trembling young man quietly and warmly, in a low steady voice, that it's all right, speak slowly. Looking at him kindly across the counter, a small nod, no big gestures. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle; no exaggerated motion, the same person throughout."
+  }
+ ]
+}
