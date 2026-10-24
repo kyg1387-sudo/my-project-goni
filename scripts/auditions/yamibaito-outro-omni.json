@@ -5,7 +5,7 @@
    "id": "omni-out1",
    "model": "omnihuman",
    "audio_id": "pad1",
-   "image": "assets/portraits/yamibaito-host-v2/hostA-cu2-1.png",
+   "image": "assets/portraits/yamibaito-host-v2a/hostA-cu2-1-tight.png",
    "prompt": "The host thanks the viewers warmly and sincerely for watching to the end, a small gentle nod at the end, soft closed-mouth smile between phrases. Natural, realistic acting like a real TV presenter: subtle breathing, natural blinks, small head movements under 10 degrees, keeps facing the camera, warm composed expression, hands stay still; no exaggerated motion, the same person throughout. Absolutely NO text, letters or subtitles rendered in the video."
   },
   {
@@ -26,7 +26,7 @@
    "id": "omni-out4",
    "model": "omnihuman",
    "audio_id": "pad4",
-   "image": "assets/portraits/yamibaito-host-v2/hostA-cu2-2.png",
+   "image": "assets/portraits/yamibaito-host-v2a/hostA-cu2-2-tight.png",
    "prompt": "The host brightly asks viewers to subscribe and like, and says see you in the next story, warm smile, a small nod at the end. Natural, realistic acting like a real TV presenter: subtle breathing, natural blinks, small head movements under 10 degrees, keeps facing the camera, warm composed expression, hands stay still; no exaggerated motion, the same person throughout. Absolutely NO text, letters or subtitles rendered in the video."
   }
  ]
