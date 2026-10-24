@@ -38,3 +38,23 @@
 | 작은 명찰·로고 | S01d·S02c·S02e·S02l·S03l(TOYOTA) | cv2 인페인트(무료) |
 
 합격(49): H0·H1·H2a·H2b·S01a·S01b·S01c·S01d·S02a·S02bb·S02bc·S02bd·S02bg·S02bi·S02bj·S02c·S02e·S02h·S02i·S02j·S02k·S02l·S03a·S03c·S03d·S03e·S03g·S03h·S03i·S03j·S03k·S03l·S03m·S04b·S04c·S04d·S04e·S04f·S04g·S05a·S05e·S05j·S05k·S05k2·S06a·S06d·S06f·S06g·S06h
+
+## 4. 립싱크 r4 (16장 0.48달러) — 합격 6 · 재생성 2(S10j·S11b → r7, 눈물 문장 전부 제거 DRY_ONLY)
+
+합격: S02bh-1·S05f-1·S06n-2·S07h-2·S07j-1·S09i-1(흑발 성공). 불합격: S10j(두 테이크 모두 뺨 줄기)·S11b(-1 배경에 健太 2명, -2 줄기).
+
+## 5. b2 (69장 2.07달러) — 합격 56 · 재생성 13(r7) · 인페인트 6
+
+| 결함 패턴 | 컷 | 조치 |
+|---|---|---|
+| 인서트에 얼굴·몸이 들어옴 | S06i·S07k | INSERT_HARD(「cut at the forearms」)를 프롬프트 맨 앞(생성기 기본) |
+| 정면 응시 | S06o2·S07i2·S11l | FACE_CU에 「NEVER into the lens」 기본 추가 |
+| 같은 인물 2명 | S07k2 | PEOPLE LOCKED |
+| 통장·책 가짜 글자 | S06k·S06l | 「plain pastel booklets, BLANK」 |
+| 애니 화풍 손 | S07i | REAL PHOTOGRAPH 문장 맨 앞 |
+| 전신·어안 | S07o·S11l | FACE_CU |
+| 무인 컷에 사람 | S08l(외국인 남성)·S11k(다리) | NO PEOPLE 강조 |
+| 키패드가 작음 | S09b | MACRO 70% |
+| 작은 명찰·귀걸이·배경 포스터 | S06k2·S06m·S08m·S10h·S10k·S11e | cv2 인페인트·흐림 |
+
+합격판 116장 → `assets/portraits/yamibaito-kf-ok/`. 남은 재생성: r5 20컷(33장) 실행 중, r7 15컷(24장) 대기.
