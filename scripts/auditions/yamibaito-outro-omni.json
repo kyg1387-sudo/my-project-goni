@@ -1,32 +1,32 @@
 {
- "_설명": "時給5万円の罠 아웃트로 진행자 립싱크 4컷(OmniHuman v1.5, 제7장 10·제18장 9 ⑧ 새 의상·헤어). 오디오 pad1~4 = yamibaito-tts line126~129(Typecast Yui Sato, 합계 16.0초) → 약 0.16달러/초 ≈ 2.6달러. 이미지 = 승인 진행자 판 yamibaito-cast/host-*.png. 진행자 판 = 새 스타일 B안(쇄골 보브·크림 실크 블라우스+카멜 베스트, yamibaito-host-v2/hostB-*).",
+ "_설명": "時給5万円の罠 아웃트로 진행자 립싱크 4컷(OmniHuman v1.5, 제7장 10·제18장 9 ⑧ 새 의상·헤어). 오디오 pad1~4 = yamibaito-tts line126~129(Typecast Yui Sato, 합계 16.0초) → 약 0.16달러/초 ≈ 2.6달러. 이미지 = 승인 진행자 판 yamibaito-cast/host-*.png. 진행자 판 = 새 스타일 A안(웨이브 롱헤어·와인레드 니트 원피스·진주 귀걸이, 고니감독님 확정 2026-10-25; CU는 hostA-cu2 타이트 재생성).",
  "tests": [
   {
    "id": "omni-out1",
    "model": "omnihuman",
    "audio_id": "pad1",
-   "image": "assets/portraits/yamibaito-host-v2/hostB-cu-1.png",
+   "image": "assets/portraits/yamibaito-host-v2/hostA-cu2-1.png",
    "prompt": "The host thanks the viewers warmly and sincerely for watching to the end, a small gentle nod at the end, soft closed-mouth smile between phrases. Natural, realistic acting like a real TV presenter: subtle breathing, natural blinks, small head movements under 10 degrees, keeps facing the camera, warm composed expression, hands stay still; no exaggerated motion, the same person throughout. Absolutely NO text, letters or subtitles rendered in the video."
   },
   {
    "id": "omni-out2",
    "model": "omnihuman",
    "audio_id": "pad2",
-   "image": "assets/portraits/yamibaito-host-v2/hostB-cu-2.png",
+   "image": "assets/portraits/yamibaito-host-v2/hostA-cu-2.png",
    "prompt": "The host asks the viewers a sincere, slightly concerned question about whether anyone around them is looking at a job offer that is too good to be true; calm, caring, serious eyes, a tiny tilt of the head. Natural, realistic acting like a real TV presenter: subtle breathing, natural blinks, small head movements under 10 degrees, keeps facing the camera, warm composed expression, hands stay still; no exaggerated motion, the same person throughout. Absolutely NO text, letters or subtitles rendered in the video."
   },
   {
    "id": "omni-out3",
    "model": "omnihuman",
    "audio_id": "pad3",
-   "image": "assets/portraits/yamibaito-host-v2/hostB-wu-1.png",
+   "image": "assets/portraits/yamibaito-host-v2/hostA-wu-1.png",
    "prompt": "The host gently invites the viewers to share in the comments what they noticed, friendly and encouraging, a small open hand gesture kept low near the lap. Natural, realistic acting like a real TV presenter: subtle breathing, natural blinks, small head movements under 10 degrees, keeps facing the camera, warm composed expression, hands stay still; no exaggerated motion, the same person throughout. Absolutely NO text, letters or subtitles rendered in the video."
   },
   {
    "id": "omni-out4",
    "model": "omnihuman",
    "audio_id": "pad4",
-   "image": "assets/portraits/yamibaito-host-v2/hostB-cu-1.png",
+   "image": "assets/portraits/yamibaito-host-v2/hostA-cu2-2.png",
    "prompt": "The host brightly asks viewers to subscribe and like, and says see you in the next story, warm smile, a small nod at the end. Natural, realistic acting like a real TV presenter: subtle breathing, natural blinks, small head movements under 10 degrees, keeps facing the camera, warm composed expression, hands stay still; no exaggerated motion, the same person throughout. Absolutely NO text, letters or subtitles rendered in the video."
   }
  ]

@@ -1,0 +1,16 @@
+{
+ "_설명": "진행자 A안(고니감독님 확정 2026-10-25 「A로 진행해줘」) 가슴 위 타이트 CU 재생성 — v2의 hostA-cu가 허리 위(얼굴 약 1/4)로 나와 립싱크 입력용 1/3 이상(제12장 3)으로 다시. refs = 공식 얼굴 + hostA-cu-2(의상·헤어 고정). 2장 약 0.08달러.",
+ "_style_preset": "REAL PHOTOGRAPH ONLY, photorealistic live-action, NOT an illustration, NOT anime, NOT 3D render. Arri Alexa cinematic color grade, soft Kodak 35mm film grain, 16:9",
+ "characters": [
+  {
+   "id": "hostA-cu2",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png",
+    "assets/portraits/yamibaito-host-v2/hostA-cu-2.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. REAL PHOTOGRAPH of a real Japanese woman, NOT anime, NOT 3D. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin (identity). Reference image 2 shows the exact hair, dress, earrings and studio of THIS episode: keep them identical. NEW LOOK for this episode (do NOT copy her old hair, clip or top; different from previous episodes' chignon/cardigan, half-up/sage-green and long-straight/navy-blazer): her dark-brown hair is styled in soft, glossy loose waves falling over one shoulder with a gentle side part and a few face-framing strands; she wears an elegant deep wine-red fine-knit dress with a modest round neckline and a slim cream-colored ribbon belt, small pearl drop earrings, a delicate thin gold bracelet; polished natural makeup with a soft coral lip, poised, graceful and radiant — the most beautiful she has looked on this channel. The same bright living-room studio with the beige sofa, wooden shelf and green plant, warm evening window light with a soft golden rim light on her hair, softly out of focus. FRAMING FIRST — TIGHT chest-up close-up: her face fills about ONE THIRD of the frame height, head near the top of the frame, shoulders cut at the bottom edge, NOT a waist-up shot. She faces the camera directly with a calm, warm, composed expression and a small closed-mouth smile (speech is added later), 85mm lens f/2. Both eyes sharp and symmetrical, natural five-fingered hands, no glasses. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  }
+ ]
+}
