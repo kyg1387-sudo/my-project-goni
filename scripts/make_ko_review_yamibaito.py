@@ -18,6 +18,7 @@ src, out = sys.argv[1], sys.argv[2]
 body = open(os.path.join(ROOT, "productions/yamibaito-ja/00_script_ja.md"), encoding="utf-8").read()
 pairs = [(m.group(1), m.group(2).strip()) for m in re.finditer(r"「(.+?)」[^\n]*\n\s*→\s*(.+)", body)]
 assert pairs, "대본에서 번역 줄을 찾지 못함"
+pairs.append(("迷ったときは、警察相談専用電話、#9110へ。", "망설여질 때는, 경찰 상담 전용 전화 #9110으로."))  # NA65 자막은 가나 읽기 대신 「#9110へ」로 표기(음성은 가나)
 
 
 def sec(t):
