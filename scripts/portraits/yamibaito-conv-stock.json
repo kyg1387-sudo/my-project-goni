@@ -1,0 +1,150 @@
+{
+ "_설명": "고니감독님 지적 2026-10-25 「편의점에 물건이 하나도 없어」 — 편의점 키프레임 9컷의 선반·냉장고를 상품으로 채우는 편집 생성(인물·구도·조명 불변, 글자 없는 포장). 승인 키프레임을 그대로 참조(seedream v4 edit 2560x1440, 2장씩 약 0.7달러). 합격 판을 yamibaito-keyframes/<id>-1.png로 교체 후 i2v 6컷 재생성 + 립싱크 3컷 재생성.",
+ "_style_preset": "REAL PHOTOGRAPH, photorealistic Japanese drama film still, 16:9",
+ "characters": [
+  {
+   "id": "S01a-stock",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S01a-1.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING exactly as it is — the same people, faces, poses, clothing, counter, register, camera angle, framing, lighting, colors and film grain. Change ONLY the store shelves and the glass drink coolers: fill every shelf and cooler densely with Japanese convenience-store merchandise — rows of PET-bottle drinks and canned coffee, snack bags, cup noodles, bento boxes, onigiri in wrappers, sandwiches, magazines by the window — in realistic colorful generic packaging with NO readable text, logos or brand names (labels are tiny and out of focus). Shelves must look fully stocked like a real 24-hour Japanese convenience store at night, with price-tag strips left blank. Do not add or remove any person, do not change the depth of field, do not change the white-and-green color scheme. REAL PHOTOGRAPH, photorealistic, 16:9, one frame, no panels. [NEGATIVE] readable text, letters, brand logos, numbers, signage lettering, empty shelves, new people, changed faces, anime, 3d render, watermark."
+  },
+  {
+   "id": "S01b-stock",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S01b-1.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING exactly as it is — the same people, faces, poses, clothing, counter, register, camera angle, framing, lighting, colors and film grain. Change ONLY the store shelves and the glass drink coolers: fill every shelf and cooler densely with Japanese convenience-store merchandise — rows of PET-bottle drinks and canned coffee, snack bags, cup noodles, bento boxes, onigiri in wrappers, sandwiches, magazines by the window — in realistic colorful generic packaging with NO readable text, logos or brand names (labels are tiny and out of focus). Shelves must look fully stocked like a real 24-hour Japanese convenience store at night, with price-tag strips left blank. Do not add or remove any person, do not change the depth of field, do not change the white-and-green color scheme. REAL PHOTOGRAPH, photorealistic, 16:9, one frame, no panels. [NEGATIVE] readable text, letters, brand logos, numbers, signage lettering, empty shelves, new people, changed faces, anime, 3d render, watermark."
+  },
+  {
+   "id": "S01d-stock",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S01d-1.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING exactly as it is — the same people, faces, poses, clothing, counter, register, camera angle, framing, lighting, colors and film grain. Change ONLY the store shelves and the glass drink coolers: fill every shelf and cooler densely with Japanese convenience-store merchandise — rows of PET-bottle drinks and canned coffee, snack bags, cup noodles, bento boxes, onigiri in wrappers, sandwiches, magazines by the window — in realistic colorful generic packaging with NO readable text, logos or brand names (labels are tiny and out of focus). Shelves must look fully stocked like a real 24-hour Japanese convenience store at night, with price-tag strips left blank. Do not add or remove any person, do not change the depth of field, do not change the white-and-green color scheme. REAL PHOTOGRAPH, photorealistic, 16:9, one frame, no panels. [NEGATIVE] readable text, letters, brand logos, numbers, signage lettering, empty shelves, new people, changed faces, anime, 3d render, watermark."
+  },
+  {
+   "id": "S09e-stock",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S09e-1.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING exactly as it is — the same people, faces, poses, clothing, counter, register, camera angle, framing, lighting, colors and film grain. Change ONLY the store shelves and the glass drink coolers: fill every shelf and cooler densely with Japanese convenience-store merchandise — rows of PET-bottle drinks and canned coffee, snack bags, cup noodles, bento boxes, onigiri in wrappers, sandwiches, magazines by the window — in realistic colorful generic packaging with NO readable text, logos or brand names (labels are tiny and out of focus). Shelves must look fully stocked like a real 24-hour Japanese convenience store at night, with price-tag strips left blank. Do not add or remove any person, do not change the depth of field, do not change the white-and-green color scheme. REAL PHOTOGRAPH, photorealistic, 16:9, one frame, no panels. [NEGATIVE] readable text, letters, brand logos, numbers, signage lettering, empty shelves, new people, changed faces, anime, 3d render, watermark."
+  },
+  {
+   "id": "S09l-stock",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S09l-1.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING exactly as it is — the same people, faces, poses, clothing, counter, register, camera angle, framing, lighting, colors and film grain. Change ONLY the store shelves and the glass drink coolers: fill every shelf and cooler densely with Japanese convenience-store merchandise — rows of PET-bottle drinks and canned coffee, snack bags, cup noodles, bento boxes, onigiri in wrappers, sandwiches, magazines by the window — in realistic colorful generic packaging with NO readable text, logos or brand names (labels are tiny and out of focus). Shelves must look fully stocked like a real 24-hour Japanese convenience store at night, with price-tag strips left blank. Do not add or remove any person, do not change the depth of field, do not change the white-and-green color scheme. REAL PHOTOGRAPH, photorealistic, 16:9, one frame, no panels. [NEGATIVE] readable text, letters, brand logos, numbers, signage lettering, empty shelves, new people, changed faces, anime, 3d render, watermark."
+  },
+  {
+   "id": "S11e-stock",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S11e-1.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING exactly as it is — the same people, faces, poses, clothing, counter, register, camera angle, framing, lighting, colors and film grain. Change ONLY the store shelves and the glass drink coolers: fill every shelf and cooler densely with Japanese convenience-store merchandise — rows of PET-bottle drinks and canned coffee, snack bags, cup noodles, bento boxes, onigiri in wrappers, sandwiches, magazines by the window — in realistic colorful generic packaging with NO readable text, logos or brand names (labels are tiny and out of focus). Shelves must look fully stocked like a real 24-hour Japanese convenience store at night, with price-tag strips left blank. Do not add or remove any person, do not change the depth of field, do not change the white-and-green color scheme. REAL PHOTOGRAPH, photorealistic, 16:9, one frame, no panels. [NEGATIVE] readable text, letters, brand logos, numbers, signage lettering, empty shelves, new people, changed faces, anime, 3d render, watermark."
+  },
+  {
+   "id": "S09g-stock",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S09g-1.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING exactly as it is — the same people, faces, poses, clothing, counter, register, camera angle, framing, lighting, colors and film grain. Change ONLY the store shelves and the glass drink coolers: fill every shelf and cooler densely with Japanese convenience-store merchandise — rows of PET-bottle drinks and canned coffee, snack bags, cup noodles, bento boxes, onigiri in wrappers, sandwiches, magazines by the window — in realistic colorful generic packaging with NO readable text, logos or brand names (labels are tiny and out of focus). Shelves must look fully stocked like a real 24-hour Japanese convenience store at night, with price-tag strips left blank. Do not add or remove any person, do not change the depth of field, do not change the white-and-green color scheme. REAL PHOTOGRAPH, photorealistic, 16:9, one frame, no panels. [NEGATIVE] readable text, letters, brand logos, numbers, signage lettering, empty shelves, new people, changed faces, anime, 3d render, watermark."
+  },
+  {
+   "id": "S09i-stock",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S09i-1.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING exactly as it is — the same people, faces, poses, clothing, counter, register, camera angle, framing, lighting, colors and film grain. Change ONLY the store shelves and the glass drink coolers: fill every shelf and cooler densely with Japanese convenience-store merchandise — rows of PET-bottle drinks and canned coffee, snack bags, cup noodles, bento boxes, onigiri in wrappers, sandwiches, magazines by the window — in realistic colorful generic packaging with NO readable text, logos or brand names (labels are tiny and out of focus). Shelves must look fully stocked like a real 24-hour Japanese convenience store at night, with price-tag strips left blank. Do not add or remove any person, do not change the depth of field, do not change the white-and-green color scheme. REAL PHOTOGRAPH, photorealistic, 16:9, one frame, no panels. [NEGATIVE] readable text, letters, brand logos, numbers, signage lettering, empty shelves, new people, changed faces, anime, 3d render, watermark."
+  },
+  {
+   "id": "S09k-stock",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S09k-1.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING exactly as it is — the same people, faces, poses, clothing, counter, register, camera angle, framing, lighting, colors and film grain. Change ONLY the store shelves and the glass drink coolers: fill every shelf and cooler densely with Japanese convenience-store merchandise — rows of PET-bottle drinks and canned coffee, snack bags, cup noodles, bento boxes, onigiri in wrappers, sandwiches, magazines by the window — in realistic colorful generic packaging with NO readable text, logos or brand names (labels are tiny and out of focus). Shelves must look fully stocked like a real 24-hour Japanese convenience store at night, with price-tag strips left blank. Do not add or remove any person, do not change the depth of field, do not change the white-and-green color scheme. REAL PHOTOGRAPH, photorealistic, 16:9, one frame, no panels. [NEGATIVE] readable text, letters, brand logos, numbers, signage lettering, empty shelves, new people, changed faces, anime, 3d render, watermark."
+  }
+ ]
+}
