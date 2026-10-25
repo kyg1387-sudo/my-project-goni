@@ -1,0 +1,58 @@
+{
+ "_설명": "고니감독님 지적 2026-10-25 차 안 3컷 — 우핸들 내부 시트(loc-van-rhd-front/high)로 재생성. S04a 켄타가 차창 밖 → 차 안 뒷좌석, S04c 인솔자 뒷모습(좌측 조수석)+우측 운전석 기사 손, S04i 부감: 안대 쓴 청년 4명은 뒷줄, 운전기사·인솔자는 안대 없음. edit 2장씩 ≈ 0.2달러.",
+ "_style_preset": "REAL PHOTOGRAPH, photorealistic Japanese drama film still, cinematic, cold blue night, 16:9, one continuous frame.",
+ "characters": [
+  {
+   "id": "S04a-v2",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-cast/cells/loc-van-rhd-front.png",
+    "assets/portraits/yamibaito-cast/cells/kenta-hoodie-expr1.png"
+   ],
+   "prompt": "[CAMERA] Use the FIRST reference as the exact van interior and camera: inside a RIGHT-hand-drive Japanese van at night seen from the rear bench looking forward, steering wheel on the RIGHT. Medium shot, 35mm. [CHARACTER] IDENTITY FIRST — the SAME young Japanese man as the second reference (Kenta, 24, short dark hair, grey hoodie, hood down) is SEATED INSIDE on the rear bench at the RIGHT end by the window, seat belt across his chest, shoulders against the seat back, the tinted window with streaking lights behind his head. On the middle bench ahead of him, the backs of three young men's bowed heads in dark jackets, faces not visible. The driver's silhouette in the right front seat with hands on the wheel, no mask. [ACTION] Kenta looks down at his knees, lips pressed, uneasy, hands clasped. [SETTING] The van interior exactly as the reference: grey cloth seats, dark cabin, passing cold street lights. REAL PHOTOGRAPH, photorealistic Japanese drama film still, cinematic, cold blue night, 16:9, one continuous frame. [NEGATIVE] left-hand drive, steering wheel on the left, eye mask on the driver, eye mask on the escort, readable text, letters, logos, anime, 3d render, cartoon, extra people, extra hands, watermark, split panels."
+  },
+  {
+   "id": "S04c-v2",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-cast/cells/loc-van-rhd-front.png",
+    "assets/portraits/yamibaito-cast/cells/otoko-back.png"
+   ],
+   "prompt": "[CAMERA] Use the FIRST reference as the exact van interior and camera: inside a RIGHT-hand-drive Japanese van at night seen from the rear bench looking forward, steering wheel on the RIGHT. Medium shot, 35mm. [CHARACTER] The escort from the second reference — a heavy-set man with a shaved head and a black nylon jacket — sits in the LEFT front passenger seat, seen from behind, his head turned slightly to the right so only the back and side of his shaved head and his thick neck show, NO face visible, NO eye mask. The driver in the RIGHT front seat: only a dark shoulder and two hands on the steering wheel, no mask. The middle bench seat back in the foreground, empty. [ACTION] The escort is barking an order over his shoulder without turning fully. [SETTING] The van interior exactly as the reference, dark cabin, passing cold street lights. REAL PHOTOGRAPH, photorealistic Japanese drama film still, cinematic, cold blue night, 16:9, one continuous frame. [NEGATIVE] left-hand drive, steering wheel on the left, eye mask on the driver, eye mask on the escort, readable text, letters, logos, anime, 3d render, cartoon, extra people, extra hands, watermark, split panels."
+  },
+  {
+   "id": "S04i-v2",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-cast/cells/loc-van-rhd-high.png",
+    "assets/portraits/yamibaito-cast/cells/kenta-hoodie-back.png",
+    "assets/portraits/yamibaito-cast/cells/otoko-back.png"
+   ],
+   "prompt": "[CAMERA] Use the FIRST reference as the exact van interior and camera: high angle from the rear of a RIGHT-hand-drive Japanese van at night looking forward and down over the bench seats, steering wheel on the RIGHT. [CHARACTER] On the two rear bench rows, FOUR young men seated with bowed heads and plain black eye masks over their eyes, seen from above and behind; one of them is Kenta in the grey hoodie (second reference, hood down, back of his dark hair), the other three in dark jackets. In the front: the heavy-set escort with a shaved head and black jacket (third reference) in the LEFT front passenger seat, NO mask, and the driver in the RIGHT front seat with both hands on the wheel, NO mask, only the back of his head visible. [ACTION] Everyone still; the young men's heads hang. [SETTING] The van interior exactly as the reference: grey cloth seats, seat belts, dark cabin, cold passing street lights through the windows, the night road through the windscreen. REAL PHOTOGRAPH, photorealistic Japanese drama film still, cinematic, cold blue night, 16:9, one continuous frame. [NEGATIVE] left-hand drive, steering wheel on the left, eye mask on the driver, eye mask on the escort, readable text, letters, logos, anime, 3d render, cartoon, extra people, extra hands, watermark, split panels."
+  }
+ ]
+}
