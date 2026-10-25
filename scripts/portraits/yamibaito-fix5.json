@@ -1,5 +1,5 @@
 {
- "_설명": "고니감독님 지적 2026-10-25 「27명이라는데 몇 명 되지 않아」 — S10e 구조 와이드를 청년 약 27명으로 채움(edit 2장 ≈ 0.07달러).",
+ "_설명": "고니감독님 지적 2026-10-25 「27명이라는데 몇 명 되지 않아」 — S10e 구조 와이드를 청년 약 27명으로 채움(edit 2장 ≈ 0.07달러). + S10m 아침 뉴스 스튜디오(앵커 착석, 무지 파란 화면) t2i.",
  "_style_preset": "REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render.",
  "characters": [
   {
@@ -17,6 +17,19 @@
     "assets/portraits/yamibaito-keyframes/S10e-1.png"
    ],
    "prompt": "Edit this photograph. Keep the workroom, the long steel tables, the greenish fluorescent light, the sweeping flashlight beams, the camera angle and framing exactly as they are. Change ONLY the number of people: fill the room with about TWENTY-SEVEN young Japanese men in the same grey work jumpsuits, standing and seated along ALL the tables in several rows reaching to the back of the room, every one seen from behind or above with head bowed, faces never visible, packed tightly like a real raid scene with many detainees. REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render. [NEGATIVE] faces, anime, 3d render, readable text, letters, logos, watermark, split panels."
+  },
+  {
+   "id": "S10m-fix",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "prompt": "[CAMERA] Wide, eye level, 35mm: a real Japanese morning television news studio. [CHARACTER] A Japanese female news anchor in her thirties, neat shoulder-length black hair, navy blazer over a white blouse, seated at a glossy white curved news desk, hands folded on the desk, looking at the camera with a calm serious expression, mouth closed. [ACTION] Still, delivering a breaking-news item. [SETTING] Behind her a very large flat studio screen filled with a completely BLANK plain blue gradient (no text, no images, no logos), bright even studio lighting, a small desk microphone, modern clean studio set, the lower 20 percent of the frame left clear for a composited headline band. REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render. [NEGATIVE] readable text, letters, numbers, logos, captions, tickers, anime, 3d render, watermark, split panels, extra people."
   }
  ]
 }
