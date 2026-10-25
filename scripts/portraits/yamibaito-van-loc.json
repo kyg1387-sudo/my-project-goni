@@ -1,0 +1,32 @@
+{
+ "_설명": "고니감독님 지적 2026-10-25 「운전대가 왼쪽에서 오른쪽으로 바뀌고 내부 모습이 일관성이 없어」 — 기존 장소 시트 loc-van-inside가 좌핸들. 우핸들 일본 승합차(ハイエース형) 내부를 두 구도(뒷좌석에서 전방 / 위·뒤에서 부감)로 잠근다(제18장 8 ⑥). seedream v4 t2i 2560x1440 2장씩 ≈ 0.12달러.",
+ "_style_preset": "REAL PHOTOGRAPH, photorealistic, 16:9, one continuous frame, NO people.",
+ "characters": [
+  {
+   "id": "loc-van-rhd-front",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "prompt": "[CAMERA] Interior of a Japanese Toyota HiAce-type passenger van at night, photographed from the rear bench seat looking FORWARD, 24mm, eye level. [SETTING] RIGHT-HAND DRIVE: the steering wheel is on the RIGHT side of the dashboard in front of the right front seat (driver's seat), the left front seat is the passenger seat with no wheel; a centre console with a small dark navigation screen between the two front seats; two front seats with grey cloth headrests; the middle row bench seat backs in the foreground, grey cloth; sliding-door windows on both sides, dark tinted, streaks of cold blue-white street lights passing outside; dark cabin lit only by the faint dashboard glow and passing lights; the empty night road through the windscreen. EMPTY van, ABSOLUTELY NO PEOPLE, no hands. Every sticker and label completely blank. REAL PHOTOGRAPH, photorealistic, 16:9, one continuous frame, NO people. [NEGATIVE] left-hand drive, steering wheel on the left, people, hands, readable text, letters, logos, anime, 3d render, watermark."
+  },
+  {
+   "id": "loc-van-rhd-high",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "prompt": "[CAMERA] Interior of the SAME Japanese HiAce-type passenger van at night, photographed from high up at the rear of the cabin looking forward and DOWN over the rear and middle bench seats, 24mm. [SETTING] RIGHT-HAND DRIVE: steering wheel on the RIGHT in front of the right front seat, left front seat empty passenger seat, centre console with a small dark navigation screen; two rows of grey cloth bench seats below the camera, seat belts hanging; dark tinted windows with cold passing street-light streaks; the night road through the windscreen. EMPTY van, ABSOLUTELY NO PEOPLE. Every sticker blank. REAL PHOTOGRAPH, photorealistic, 16:9, one continuous frame, NO people. [NEGATIVE] left-hand drive, steering wheel on the left, people, hands, readable text, letters, logos, anime, 3d render, watermark."
+  }
+ ]
+}
