@@ -37,6 +37,8 @@ CLIPS = []
 CAPTIONS = {"S01a": "東京　深夜一時", "S06a": "一日目", "S07a": "三日目", "S07f": "六日目"}
 # 시간 점프 경계(이 컷의 시작에서 앞 컷 마지막 프레임을 0.6초 디졸브)
 JUMPS = ["S06a", "S07a", "S07f"]
+# 타이틀 카드: H4(보케 정지 판) 위 가운데 큰 명조 「時給5万円の罠」 + 작은 「闇バイト　再現ドラマ」(조립본 검수에서 타이틀 글자 누락 확인, 2026-10-25)
+TITLE = ("H4", "時給5万円の罠", "闇バイト　再現ドラマ")
 XF = 0.6
 # 효과음 베드 길이(초) — 타임라인에 dur가 없는 지속음
 SFX_DUR = {"van_interior": 40, "drone_low": 9, "fluorescent": 36, "clock_tick": 19, "heartbeat_fast": 13, "breath_run": 10, "wind_night": 15,
@@ -64,6 +66,18 @@ def caption_png(text, path):
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
     x, y = 110, 92
     d.text((x + 2, y + 2), text, font=f, fill=(0, 0, 0, 170)); d.text((x, y), text, font=f, fill=(238, 234, 224, 235))
+    im.save(path)
+
+
+def title_png(main, sub, path):
+    f = ImageFont.truetype(os.path.join(ROOT, "scripts", "fonts", "ZenOldMincho-Bold.ttf"), 176)
+    fs = ImageFont.truetype(os.path.join(ROOT, "scripts", "fonts", "ZenKakuGothicNew-Regular.ttf"), 52)
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    w = d.textlength(main, font=f); x, y = (W - w) / 2, H / 2 - 150
+    for dx, dy, col in ((6, 6, (0, 0, 0, 200)), (0, 0, (248, 244, 232, 255))):
+        d.text((x + dx, y + dy), main, font=f, fill=col)
+    ws = d.textlength(sub, font=fs); xs = (W - ws) / 2; ys = y + 230
+    d.text((xs + 2, ys + 2), sub, font=fs, fill=(0, 0, 0, 180)); d.text((xs, ys), sub, font=fs, fill=(220, 215, 205, 235))
     im.save(path)
 
 
@@ -113,6 +127,12 @@ def patch(src, out, tmp):
         k += 1; inputs += ["-loop", "1", "-framerate", str(FPS), "-t", f"{b - a + 0.1:.2f}", "-i", png]
         fc.append(f"[{k}:v]format=rgba,fade=t=in:st=0:d=0.4:alpha=1,fade=t=out:st={b - a - 0.4:.2f}:d=0.4:alpha=1,setpts=PTS+{a:.3f}/TB[c{k}]")
         fc.append(f"{last}[c{k}]overlay=enable='between(t,{a:.3f},{b:.3f})':eof_action=pass[o{k}]"); last = f"[o{k}]"
+    tid, tmain, tsub = TITLE
+    a = B[tid][0] + 0.15; b = B[tid][1] - 0.02
+    png = os.path.join(tmp, "title.png"); title_png(tmain, tsub, png)
+    k += 1; inputs += ["-loop", "1", "-framerate", str(FPS), "-t", f"{b - a + 0.1:.2f}", "-i", png]
+    fc.append(f"[{k}:v]format=rgba,fade=t=in:st=0:d=0.5:alpha=1,setpts=PTS+{a:.3f}/TB[t{k}]")
+    fc.append(f"{last}[t{k}]overlay=enable='between(t,{a:.3f},{b:.3f})':eof_action=pass[o{k}]"); last = f"[o{k}]"
     dark = scene_luma(src, B)
     lift = "".join(f"+between(t,{B[s][0]:.2f},{B[s][1]:.2f})" for s, _ in dark)
     print("밝기 보정 장면(<40/255):", dark)
