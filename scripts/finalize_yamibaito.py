@@ -39,6 +39,7 @@ CAPTIONS = {"S01a": "東京　深夜一時", "S06a": "一日目", "S07a": "三�
 JUMPS = ["S06a", "S07a", "S07f"]
 # 타이틀 카드: H4(보케 정지 판) 위 가운데 큰 명조 「時給5万円の罠」 + 작은 「闇バイト　再現ドラマ」(조립본 검수에서 타이틀 글자 누락 확인, 2026-10-25)
 TITLE = ("H4", "時給5万円の罠", "闇バイト　再現ドラマ")
+BLUR = [("S09l", 1400, 190, 380, 510, 0.0, 5.1), ("S01a", 1560, 210, 340, 470, 0.0, 3.9)]  # 잡지 선반 가짜 글자 흐림(1920x1080 좌표, 컷 시작 기준 초)
 XF = 0.6
 # 효과음 베드 길이(초) — 타임라인에 dur가 없는 지속음
 SFX_DUR = {"van_interior": 40, "drone_low": 9, "fluorescent": 36, "clock_tick": 19, "heartbeat_fast": 13, "breath_run": 10, "wind_night": 15,
@@ -134,6 +135,11 @@ def patch(src, out, tmp):
     k += 1; inputs += ["-loop", "1", "-framerate", str(FPS), "-t", f"{b - a + 0.1:.2f}", "-i", png]
     fc.append(f"[{k}:v]format=rgba,fade=t=in:st=0:d=0.5:alpha=1,setpts=PTS+{a:.3f}/TB[t{k}]")
     fc.append(f"{last}[t{k}]overlay=enable='between(t,{a:.3f},{b:.3f})':eof_action=pass[o{k}]"); last = f"[o{k}]"
+    for sid, x, y, w, h, o0, o1 in BLUR:  # 작은 배경 글자 흐림(제11장 10: 중심 소품은 금지, 배경만)
+        a = B[sid][0] + o0; b = min(B[sid][1], B[sid][0] + o1)
+        k += 1
+        fc.append(f"{last}split[bs{k}][bb{k}]"); fc.append(f"[bb{k}]crop={w}:{h}:{x}:{y},boxblur=10:2[bl{k}]")
+        fc.append(f"[bs{k}][bl{k}]overlay={x}:{y}:enable='between(t,{a:.3f},{b:.3f})'[o{k}]"); last = f"[o{k}]"
     dark = scene_luma(src, B)
     lift = "".join(f"+between(t,{B[s][0]:.2f},{B[s][1]:.2f})" for s, _ in dark)
     print("밝기 보정 장면(<40/255):", dark)
