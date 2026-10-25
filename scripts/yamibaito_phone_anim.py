@@ -338,18 +338,18 @@ def detect_quad(path, roi=None):
 def cut_defs():
     photos = load_photos()
     D = {}
-    D["H0"] = dict(top="up", frame=lambda t, s: lock_canvas(t, [0.15, 0.8, 1.45]), cam="push")
-    D["S02a"] = dict(top="up", frame=lambda t, s: lock_canvas(t, [0.4, 1.5, 2.7]), cam="push")
+    D["H0"] = dict(top="up", frame=lambda t, s: lock_canvas(t, [0.15, 0.8, 1.45]), cam="pushto:1.25")
+    D["S02a"] = dict(top="up", frame=lambda t, s: lock_canvas(t, [0.4, 1.5, 2.7]), cam="pushto:1.45")
     def s02b(t, s):
         times = [0.2, 1.3, 2.5, 3.4]
         n = sum(1 for x in times if t >= x); arr = None
         if n and t - times[n - 1] < 0.9: arr = (n - 1, (t - times[n - 1]) / 0.9)
         return chat_canvas(t, show=max(n, 1), arrive=arr)
-    D["S02b"] = dict(top="up", frame=s02b, cam="push")
+    D["S02b"] = dict(top="up", frame=s02b, cam="pushto:1.6")
     D["S02d"] = dict(top="up", frame=lambda t, s: chat_canvas(t, show=4, scroll=int(420 * ease((t - 0.7) / 1.6))), cam="push", sway=True)
-    D["S02g"] = dict(top="up", frame=lambda t, s: bank_canvas(t), cam="push")
+    D["S02g"] = dict(top="up", frame=lambda t, s: bank_canvas(t), cam="pushto:1.6")
     D["S02k"] = dict(top="up", frame=lambda t, s: sns_canvas(t, photos, int(60 + 900 * ease((t - 0.3) / (s - 0.5)))), cam="push", roi=(300, 0, 1900, 1440))
-    D["S02ba"] = dict(top="up", frame=lambda t, s: chat_canvas(t, show=min(7, 3 + int(t / 1.1)), conds=True, scroll=820), cam="push")
+    D["S02ba"] = dict(top="up", frame=lambda t, s: chat_canvas(t, show=min(7, 3 + int(t / 1.1)), conds=True, scroll=60), cam="pushto:1.3")
     def s02bi(t, s):
         pr = 0.0; sent = False; conf = 0.0
         if 1.0 <= t < 1.3: pr = min(1, (t - 1.0) / 0.1)
@@ -357,7 +357,7 @@ def cut_defs():
         if t >= 2.0: conf = (t - 2.0) / 0.45
         return chat_canvas(t, show=4, scroll=640, pressed=pr, sent=sent, confirm=conf)
     D["S02bi"] = dict(top="right", frame=s02bi, cam="static")
-    D["S03b"] = dict(top="up", frame=lambda t, s: search_canvas(t), cam="push")
+    D["S03b"] = dict(top="up", frame=lambda t, s: search_canvas(t), cam="pushto:1.4")
     D["S03c"] = dict(top="up", frame=lambda t, s: call_canvas(t), cam="push", sway=True)
     D["S03e"] = dict(top="up", frame=lambda t, s: incoming_canvas(t), cam="push")
     return D
@@ -385,10 +385,15 @@ def render(sid, spec, sec, base_path, quad, extra=None):
         t = i / FPS
         canvas = spec["frame"](t, sec)
         fr = warp_canvas(base, canvas, q, "lcd")
-        z = 1.0 + 0.05 * (i / n) if spec["cam"] == "push" else 1.0
+        k = i / n
+        if spec["cam"] == "push": z, cx, cy = 1.0 + 0.05 * k, 0.5, 0.5
+        elif spec["cam"].startswith("pushto"):  # 폰 중심으로 다가가 화면을 크게(제8장 4-2·휴대폰 가독성)
+            zm = float(spec["cam"].split(":")[1]); qc = np.mean(q, axis=0)
+            z = 1.0 + (zm - 1.0) * ease(k / 0.85); cx, cy = qc[0] / base.shape[1], qc[1] / base.shape[0]
+        else: z, cx, cy = 1.0, 0.5, 0.5
         if spec.get("sway"):  # 손에 든 폰: 미세 핸드헬드
             sx = 0.9 * sx + rng.normal(0, 1.2); sy = 0.9 * sy + rng.normal(0, 1.2)
-        f = zoom_frame(fr, z, dx=sx, dy=sy)
+        f = zoom_frame(fr, z, cx, cy, dx=sx, dy=sy)
         p.stdin.write(f.tobytes())
         if i in (0, n // 2, n - 1):
             cv2.imwrite(os.path.join(QA, f"{sid}-{('0', 'mid', 'end')[(0, n // 2, n - 1).index(i)]}.jpg"), f, [cv2.IMWRITE_JPEG_QUALITY, 85])
@@ -402,7 +407,7 @@ def pledge_fix():
     paper_q = [(938, 322), (1838, 976), (1257, 1776), (357, 1122)]  # TL=먼 왼쪽, TR=먼 오른쪽, BR=가까운 오른쪽, BL=가까운 왼쪽
     a = warp_canvas(base, pledge_canvas(), paper_q, "paper")
     phone_q = order_quad([[1505, -40], [1966, 220], [1894, 367], [1434, 110]], "left")  # 화면 윗변 = 왼쪽 짧은 변(노치)
-    a = warp_canvas(a, chat_canvas(0, show=7, conds=True, scroll=820), phone_q, "lcd")
+    a = warp_canvas(a, chat_canvas(0, show=7, conds=True, scroll=60), phone_q, "lcd")
     cv2.imwrite(os.path.join(KF, "S02bd-1.png"), a)
     return a
 
