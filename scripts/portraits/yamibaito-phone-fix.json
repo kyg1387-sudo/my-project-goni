@@ -1,0 +1,94 @@
+{
+ "_설명": "고니감독님 지적 2026-10-25 폰 컷 4건 — S02e 폰이 어깨 위에 떠 있음, S02h 폰이 책상 밑 허공에 떠 있음(책상 위가 맞음), S02k 누가 들었는지 불명확(카메라에 보여 주는 손) → 켄타 본인이 든 어깨 너머 구도. 화면은 무지 → 로컬 실제 UI 애니메이션 합성. 추가로 SNS 피드용 여행 사진 3장(t2i). seedream v4 edit 2560x1440 2장씩 + t2i 3장 ≈ 0.35달러.",
+ "_style_preset": "REAL PHOTOGRAPH, photorealistic Japanese drama film still, cinematic, 16:9, one continuous frame.",
+ "characters": [
+  {
+   "id": "S02e-fix",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S02e-1.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING exactly as it is — the same young man, his face, hair, teal vest, white shirt, the lockers, the plastic chair, the steel table, the camera angle, framing, cold fluorescent lighting and film grain. Fix ONLY the phone: REMOVE the glowing smartphone that is stuck on his left shoulder, and REMOVE the smartphone lying on the steel table at the bottom left. Instead he holds ONE smartphone naturally in his right hand at chest height in front of his body, the screen facing his face, the blank screen glowing softly and lighting his chin and chest from below; his gaze is lowered toward the phone, both arms hang relaxed, five fingers, nothing floating. REAL PHOTOGRAPH, photorealistic Japanese drama film still, cinematic, 16:9, one continuous frame. [NEGATIVE] readable text, letters, numbers, logos, app icons, screen content, anime, 3d render, cartoon, extra hands, extra fingers, floating objects, watermark, split panels."
+  },
+  {
+   "id": "S02h-fix",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S02h-1.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING exactly as it is — the bed, pillow, blanket, the wooden desk, the laptop, the small lamp, the white envelope on the floor, the camera angle, framing, warm dim lighting and film grain. Fix ONLY the phone: REMOVE the glowing smartphone floating in the air under the desk and its blue glow on the floor. Instead place ONE smartphone lying flat on the top surface of the wooden desk next to the laptop, screen facing up, the screen dark black glass with a faint reflection of the lamp (screen OFF, no glow), physically resting on the desk with a soft contact shadow. Nothing floats. REAL PHOTOGRAPH, photorealistic Japanese drama film still, cinematic, 16:9, one continuous frame. [NEGATIVE] readable text, letters, numbers, logos, app icons, screen content, anime, 3d render, cartoon, extra hands, extra fingers, floating objects, watermark, split panels."
+  },
+  {
+   "id": "S02k-fix",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-cast/cells/kenta-conv-front.png",
+    "assets/portraits/yamibaito-cast/cells/loc-workroom.png"
+   ],
+   "prompt": "[CAMERA] Over-the-shoulder shot from behind the young man's LEFT shoulder, slightly high, 35mm: the back of his dark hair and his teal-vest shoulder fill the LEFT third of the frame softly out of focus; in sharp focus in the centre-right, HIS OWN right hand holds a smartphone upright at chest height, the full phone clearly visible, screen facing him (toward the camera), thumb resting on the screen edge, white shirt sleeve, teal vest edge. [CHARACTER] IDENTITY FIRST — the SAME young Japanese man as the reference (Kenta, 24, short dark hair), only the back of his head and a sliver of his cheek visible, no eyes. Exactly ONE person, exactly ONE hand holding the phone. [ACTION] He is looking down at the phone, still. [SETTING] The cramped staff back room from the reference: grey steel lockers, one cold fluorescent tube, dim. The phone screen is a completely BLANK bright white rectangle with NO content (to be composited later). REAL PHOTOGRAPH, photorealistic Japanese drama film still, cinematic, 16:9, one continuous frame. [NEGATIVE] readable text, letters, numbers, logos, app icons, screen content, anime, 3d render, cartoon, extra hands, extra fingers, floating objects, watermark, split panels."
+  },
+  {
+   "id": "sns-beach",
+   "count": 1,
+   "aspect_ratio": "1:1",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "extra": {
+    "image_size": {
+     "width": 1280,
+     "height": 1280
+    }
+   },
+   "prompt": "Casual smartphone selfie photo: three Japanese university students in their early twenties laughing on a bright tropical beach at noon, sunglasses, wet hair, turquoise sea and white sand behind, harsh sunlight, slightly overexposed, natural candid social-media snapshot, square format. [NEGATIVE] text, letters, logos, watermark, anime, 3d render, extra fingers."
+  },
+  {
+   "id": "sns-night",
+   "count": 1,
+   "aspect_ratio": "1:1",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "extra": {
+    "image_size": {
+     "width": 1280,
+     "height": 1280
+    }
+   },
+   "prompt": "Casual smartphone photo at night: two Japanese young men in their twenties grinning at a rooftop bar with a glittering foreign city skyline (Bangkok-like high-rises) blurred behind them, cocktails in hand, warm string lights, handheld snapshot with slight motion blur, square format. [NEGATIVE] text, letters, logos, watermark, anime, 3d render, extra fingers."
+  },
+  {
+   "id": "sns-street",
+   "count": 1,
+   "aspect_ratio": "1:1",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "extra": {
+    "image_size": {
+     "width": 1280,
+     "height": 1280
+    }
+   },
+   "prompt": "Casual smartphone photo: a group of four Japanese students in their early twenties posing with peace signs in a sunny old European cobblestone street with pastel buildings, backpacks, big smiles, graduation trip snapshot, natural daylight, square format. [NEGATIVE] text, letters, logos, watermark, anime, 3d render, extra fingers."
+  }
+ ]
+}
