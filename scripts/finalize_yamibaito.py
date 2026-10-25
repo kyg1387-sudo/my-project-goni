@@ -32,7 +32,7 @@ W, H, FPS = 1920, 1080, 24
 # (컷, 키프레임, 컷 시작 후 초, 길이 None=끝까지) — 1초 시트 검수 뒤 지정(5초 넘는 한 구도)
 MANUAL = []
 # (컷, 교체 클립 경로) — 재생성 i2v·립싱크 클립
-CLIPS = []
+CLIPS = [("S11m", "assets/video-overrides/yamibaito/scene154.mp4")]  # NA65 자막 「#9110へ」 수정분 재굽기(카드 클립 위)
 # 시점 소자막: 컷 시작 +0.3초부터 2.4초, 왼쪽 위(제19장 14 ①)
 CAPTIONS = {"S01a": "東京　深夜一時", "S06a": "一日目", "S07a": "三日目", "S07f": "六日目"}
 # 시간 점프 경계(이 컷의 시작에서 앞 컷 마지막 프레임을 0.6초 디졸브)
@@ -65,7 +65,8 @@ def caption_png(text, path):
     f = ImageFont.truetype(os.path.join(ROOT, "scripts", "fonts", "ZenOldMincho-Regular.ttf"), 46)
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
     x, y = 110, 92
-    d.text((x + 2, y + 2), text, font=f, fill=(0, 0, 0, 170)); d.text((x, y), text, font=f, fill=(238, 234, 224, 235))
+    d.text((x + 3, y + 3), text, font=f, fill=(0, 0, 0, 200), stroke_width=4, stroke_fill=(0, 0, 0, 200))
+    d.text((x, y), text, font=f, fill=(238, 234, 224, 245), stroke_width=3, stroke_fill=(20, 20, 20, 230))
     im.save(path)
 
 
