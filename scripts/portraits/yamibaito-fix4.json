@@ -1,0 +1,195 @@
+{
+ "_설명": "고니감독님 2차 검수 지적(2026-10-25 공장·전화 구간): 공장 컷이 켄타·유토 혼자(현장감 없음)→배경에 같은 작업복 청년 12명 추가(edit), S06m 명찰 제거, S07i 주먹 POV→소매 쥔 팔 인서트(t2i), S07k 거대 손→자연 비율 손(t2i), S09c 눈물→땀(edit), S09d 수화기를 귀에(edit). 2장씩 ≈ 0.7달러.",
+ "_style_preset": "REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, natural skin texture, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render.",
+ "characters": [
+  {
+   "id": "S06f-fix",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S06f-1.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING else exactly as it is — the same room, tables, greenish fluorescent light, camera angle, framing, colors and film grain. Keep the heavy-set man in the black jacket walking away exactly as he is. Add, further along the long steel tables in the background, a dozen young Japanese men in the SAME grey work jumpsuits seated with heads bowed over stacks of blank bankbooks and cardboard parcels, seen from behind or in profile, faces not visible, all working silently like a real sweatshop. The young men sit on both sides of the tables he walks between. REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, natural skin texture, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render. [NEGATIVE] anime, illustration, cartoon, 3d render, readable text, letters, name tags, badges, logos, watermark, split panels, extra fingers, changed faces."
+  },
+  {
+   "id": "S06k-fix",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S06k-1.png",
+    "assets/portraits/yamibaito-cast/cells/kenta-work-front.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING else exactly as it is — the same room, tables, greenish fluorescent light, camera angle, framing, colors and film grain. Keep the young man with short brown hair (Yuto) exactly as he is. Add, seated right beside him at the same table on the LEFT side of the frame, the young man from the second reference (Kenta, short black hair) in the same grey jumpsuit, bowed over his own stack of blank bankbooks, hands working, face in three-quarter profile. Add, further along the long steel tables in the background, a dozen young Japanese men in the SAME grey work jumpsuits seated with heads bowed over stacks of blank bankbooks and cardboard parcels, seen from behind or in profile, faces not visible, all working silently like a real sweatshop.  REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, natural skin texture, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render. [NEGATIVE] anime, illustration, cartoon, 3d render, readable text, letters, name tags, badges, logos, watermark, split panels, extra fingers, changed faces."
+  },
+  {
+   "id": "S06k2-fix",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S06k2-1.png",
+    "assets/portraits/yamibaito-cast/cells/yuto-front.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING else exactly as it is — the same room, tables, greenish fluorescent light, camera angle, framing, colors and film grain. Keep Kenta (the young man with black hair) exactly as he is. Add, seated right beside him at the same table on the RIGHT side of the frame, the young man from the second reference (Yuto, short brown hair) in the same grey jumpsuit, head bowed over blank bankbooks, hands sorting them. Add, further along the long steel tables in the background, a dozen young Japanese men in the SAME grey work jumpsuits seated with heads bowed over stacks of blank bankbooks and cardboard parcels, seen from behind or in profile, faces not visible, all working silently like a real sweatshop.  REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, natural skin texture, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render. [NEGATIVE] anime, illustration, cartoon, 3d render, readable text, letters, name tags, badges, logos, watermark, split panels, extra fingers, changed faces."
+  },
+  {
+   "id": "S06m-fix",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S06m-1.png",
+    "assets/portraits/yamibaito-cast/cells/yuto-front.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING else exactly as it is — the same room, tables, greenish fluorescent light, camera angle, framing, colors and film grain. Keep the young man bowed low over the table exactly as he is, but REMOVE the small name tag on his chest so the jumpsuit chest is completely plain. Add, seated beside him at the same table on the LEFT, the young man from the second reference (Yuto, short brown hair) in the same grey jumpsuit, head bowed over blank bankbooks. Add, further along the long steel tables in the background, a dozen young Japanese men in the SAME grey work jumpsuits seated with heads bowed over stacks of blank bankbooks and cardboard parcels, seen from behind or in profile, faces not visible, all working silently like a real sweatshop.  REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, natural skin texture, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render. [NEGATIVE] anime, illustration, cartoon, 3d render, readable text, letters, name tags, badges, logos, watermark, split panels, extra fingers, changed faces."
+  },
+  {
+   "id": "S06n-fix",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S06n-1.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING else exactly as it is — the same room, tables, greenish fluorescent light, camera angle, framing, colors and film grain. Keep the young man with brown hair (Yuto) and the bowed figure on the right exactly as they are. Add, further along the long steel tables in the background, a dozen young Japanese men in the SAME grey work jumpsuits seated with heads bowed over stacks of blank bankbooks and cardboard parcels, seen from behind or in profile, faces not visible, all working silently like a real sweatshop.  REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, natural skin texture, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render. [NEGATIVE] anime, illustration, cartoon, 3d render, readable text, letters, name tags, badges, logos, watermark, split panels, extra fingers, changed faces."
+  },
+  {
+   "id": "S07g-fix",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S07g-1.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING else exactly as it is — the same room, tables, greenish fluorescent light, camera angle, framing, colors and film grain. Keep the young man with brown hair exactly as he is. Add, further along the long steel tables in the background, a dozen young Japanese men in the SAME grey work jumpsuits seated with heads bowed over stacks of blank bankbooks and cardboard parcels, seen from behind or in profile, faces not visible, all working silently like a real sweatshop.  REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, natural skin texture, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render. [NEGATIVE] anime, illustration, cartoon, 3d render, readable text, letters, name tags, badges, logos, watermark, split panels, extra fingers, changed faces."
+  },
+  {
+   "id": "S07h-fix",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S07h-1.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING else exactly as it is — the same room, tables, greenish fluorescent light, camera angle, framing, colors and film grain. Keep the two young men exactly as they are. Add, further along the long steel tables in the background, a dozen young Japanese men in the SAME grey work jumpsuits seated with heads bowed over stacks of blank bankbooks and cardboard parcels, seen from behind or in profile, faces not visible, all working silently like a real sweatshop.  REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, natural skin texture, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render. [NEGATIVE] anime, illustration, cartoon, 3d render, readable text, letters, name tags, badges, logos, watermark, split panels, extra fingers, changed faces."
+  },
+  {
+   "id": "S07j-fix",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S07j-1.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING else exactly as it is — the same room, tables, greenish fluorescent light, camera angle, framing, colors and film grain. Keep the young man in the foreground exactly as he is, including his face and expression. Add, further along the long steel tables in the background, a dozen young Japanese men in the SAME grey work jumpsuits seated with heads bowed over stacks of blank bankbooks and cardboard parcels, seen from behind or in profile, faces not visible, all working silently like a real sweatshop.  REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, natural skin texture, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render. [NEGATIVE] anime, illustration, cartoon, 3d render, readable text, letters, name tags, badges, logos, watermark, split panels, extra fingers, changed faces."
+  },
+  {
+   "id": "S07i-fix",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "prompt": "[CAMERA] Insert, high angle looking down at a long steel work table, 50mm, shallow depth of field. [CHARACTER] Only the forearms of a young man in a grey work jumpsuit: his right hand grips the grey sleeve of his own left forearm hard, knuckles white, both forearms resting ON the steel table, stacks of blank bankbooks beside them. No face, no head, no shoulders in the frame. [ACTION] Still, the grip tight. [SETTING] Abandoned factory workroom, greenish flickering fluorescent light, scratched steel table surface. GRAVITY LOCKED: the forearms rest on the table surface with a contact shadow. REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, natural skin texture, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render. [NEGATIVE] anime, illustration, cartoon, 3d render, readable text, letters, name tags, badges, logos, watermark, split panels, extra fingers, changed faces."
+  },
+  {
+   "id": "S07k-fix",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "prompt": "[CAMERA] Insert, high angle looking down at a long steel work table, 50mm lens, natural proportions, NO wide-angle distortion. [CHARACTER] Only a young man's two hands resting flat on the steel table, palms down, grey work-jumpsuit sleeves, the skin rough and chapped with cracked knuckles and a few small healing cuts, realistic size, five fingers each. No face, no head, no shoulders in the frame. [ACTION] Completely still. [SETTING] Abandoned factory workroom, greenish fluorescent light, a few stacks of blank bankbooks out of focus beyond the hands. REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, natural skin texture, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render. [NEGATIVE] anime, illustration, cartoon, 3d render, readable text, letters, name tags, badges, logos, watermark, split panels, extra fingers, changed faces."
+  },
+  {
+   "id": "S09c-fix",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S09c-1.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING exactly as it is — the same young man, his face, wet hair, the green handset, the store behind, the lighting and film grain. Change ONLY this: REMOVE the tear streak running down his cheek completely, leave the eyes merely tense (not crying, no tears). Add realistic SWEAT instead: tiny sweat beads on his forehead and temple, a faint oily sheen on the skin, one thin bead of sweat running from the temple down the jawline. Natural skin tone, no red or pink around the eyes. REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, natural skin texture, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render. [NEGATIVE] anime, illustration, cartoon, 3d render, readable text, letters, name tags, badges, logos, watermark, split panels, extra fingers, changed faces."
+  },
+  {
+   "id": "S09d-fix",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S09d-1.png"
+   ],
+   "prompt": "Edit this photograph. Keep EVERYTHING exactly as it is — the same high angle from above and behind, the young man in the grey jumpsuit, the green public telephone, the store, the wet pavement, the lighting. Change ONLY his arms: his RIGHT hand holds the green handset pressed against his right ear, the coiled cord stretching from the handset to the phone box, his head bowed into the handset; his LEFT hand is braced flat on top of the green phone box. The handset is NOT resting in its cradle. REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, natural skin texture, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render. [NEGATIVE] anime, illustration, cartoon, 3d render, readable text, letters, name tags, badges, logos, watermark, split panels, extra fingers, changed faces."
+  }
+ ]
+}
