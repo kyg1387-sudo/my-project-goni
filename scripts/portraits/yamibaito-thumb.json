@@ -1,0 +1,57 @@
+{
+ "_설명": "『時給5万円の罠』 썸네일 그림 3안(제19장 16 형식: 위 1/3 또는 한쪽 절반을 비워 초대형 글자, 실사 감정 정점 + 상징 소품). A 안대(자극)·B 철문+赤色灯·C 공중전화. 본편 健太 얼굴 참조 재생성(제13장 5). seedream v4 edit 2560x1440, 3안×3장 약 0.81달러.",
+ "_style_preset": "Photorealistic Japanese crime drama YouTube thumbnail, 16:9",
+ "characters": [
+  {
+   "id": "TA_mask",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-faces/kenta-face.png",
+    "assets/portraits/yamibaito-keyframes/S04g-1.png"
+   ],
+   "prompt": "REAL PHOTOGRAPH, photorealistic Japanese crime re-enactment drama YouTube thumbnail, one single film still, 16:9, NOT anime, NOT 3D, NOT illustration. [CAMERA] Tight close-up, 85mm, f/1.8, eye-level, his face large on the RIGHT 55% of the frame, head top near the upper edge, the LEFT 45% is a dark blurred van interior with teal night light, reserved for a huge title. [CHARACTER] The Japanese young man from reference image 1 — Kenta, 24, thin face, messy black hair, bare ears, no glasses. Reproduce exactly this face, skin and age. grey hoodie. [ACTION] A black sleep mask is being pulled down over his eyes by a gloved hand entering from the right edge; his mouth is slightly open in fear, brow tense, a thin sheen of sweat on the temple, NOT smiling. [SETTING] Inside a moving van at night, teal-cyan streetlight streaks through the window, cold cinematic grade, Kodak 35mm grain. [NEGATIVE] gibberish, foreign text, letters, numbers, logos, signage lettering, watermarks, extra fingers, deformed eyes, duplicate people, anime, 3d render, cartoon, thick glossy gel tears, pink eyelids, red irises, split panels, inset portrait, collage."
+  },
+  {
+   "id": "TB_door",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-faces/kenta-face.png",
+    "assets/portraits/yamibaito-keyframes/S05c-1.png"
+   ],
+   "prompt": "REAL PHOTOGRAPH, photorealistic Japanese crime re-enactment drama YouTube thumbnail, one single film still, 16:9, NOT anime, NOT 3D, NOT illustration. [CAMERA] Medium shot from behind and slightly above, 35mm, f/2.8; the young man small-to-medium in the lower-left third seen from the back three-quarter so his face is partly visible in profile, looking up at a massive rusted iron door; the TOP 35% of the frame is dark corrugated wall, reserved for a huge title. [CHARACTER] The Japanese young man from reference image 1 — Kenta, 24, thin face, messy black hair, bare ears, no glasses. Reproduce exactly this face, skin and age. grey hoodie, black backpack. [ACTION] He stands frozen before the iron door that is closing, a single red revolving police light glowing far right, his profile shows fear, NOT smiling. [SETTING] Abandoned factory yard at night, blue moonlight, one bare bulb above the door, fog, cinematic grade, Kodak grain. [NEGATIVE] gibberish, foreign text, letters, numbers, logos, signage lettering, watermarks, extra fingers, deformed eyes, duplicate people, anime, 3d render, cartoon, thick glossy gel tears, pink eyelids, red irises, split panels, inset portrait, collage."
+  },
+  {
+   "id": "TC_phone",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-faces/kenta-face.png",
+    "assets/portraits/yamibaito-keyframes/S09c-1.png"
+   ],
+   "prompt": "REAL PHOTOGRAPH, photorealistic Japanese crime re-enactment drama YouTube thumbnail, one single film still, 16:9, NOT anime, NOT 3D, NOT illustration. [CAMERA] Close-up, 85mm, f/2, eye-level, his face large on the RIGHT half pressed to a green Japanese public payphone handset, the LEFT 45% is the blurred bright convenience-store window at night, reserved for a huge title. [CHARACTER] The Japanese young man from reference image 1 — Kenta, 24, thin face, messy black hair, bare ears, no glasses. Reproduce exactly this face, skin and age. grey work jumpsuit, hair wet and messy. [ACTION] He clutches the green handset with both hands, eyes wet and glistening, only the eyelid edges faintly pink, natural skin tone, mouth tense mid-breath, NOT smiling. [SETTING] Outside a convenience store on a national road at night, white fluorescent spill, wet asphalt, cinematic grade, Kodak grain. [NEGATIVE] gibberish, foreign text, letters, numbers, logos, signage lettering, watermarks, extra fingers, deformed eyes, duplicate people, anime, 3d render, cartoon, thick glossy gel tears, pink eyelids, red irises, split panels, inset portrait, collage."
+  }
+ ]
+}
