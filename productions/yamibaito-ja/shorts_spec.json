@@ -1,0 +1,40 @@
+{
+ "shorts": [
+  {
+   "id": "1-door",
+   "start": 258.0,
+   "end": 282.0,
+   "title": "ここに出口はない\\N時給5万円の罠"
+  },
+  {
+   "id": "2-dm",
+   "start": 98.5,
+   "end": 126.0,
+   "title": "時給5万円の求人\\N条件は3つだけ"
+  },
+  {
+   "id": "3-escape",
+   "start": 424.0,
+   "end": 457.0,
+   "title": "六日目の夜\\N鉄の扉から逃げた"
+  },
+  {
+   "id": "4-110",
+   "start": 457.5,
+   "end": 491.5,
+   "title": "公衆電話で110番\\N店長の一言"
+  },
+  {
+   "id": "5-mother",
+   "start": 555.0,
+   "end": 585.0,
+   "title": "母からの電話\\N「ごはん、食べた？」"
+  }
+ ],
+ "keep": 0.8,
+ "skip_styles": [
+  "Caption",
+  "Title"
+ ],
+ "sub_font": "Zen Kaku Gothic New"
+}
