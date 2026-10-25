@@ -32,7 +32,7 @@ W, H, FPS = 1920, 1080, 24
 # (컷, 키프레임, 컷 시작 후 초, 길이 None=끝까지) — 1초 시트 검수 뒤 지정(5초 넘는 한 구도)
 MANUAL = []
 # (컷, 교체 클립 경로) — 재생성 i2v·립싱크 클립
-CLIPS = [("S11m", "assets/video-overrides/yamibaito/scene154.mp4")]  # NA65 자막 「#9110へ」 수정분 재굽기(카드 클립 위)
+CLIPS = [("S11m", "assets/video-overrides/yamibaito/scene154.mp4"), ("S10m", "assets/video-overrides/yamibaito/scene141.mp4")]  # NA65 자막 「#9110へ」 수정분 재굽기(카드 클립 위)
 # 시점 소자막: 컷 시작 +0.3초부터 2.4초, 왼쪽 위(제19장 14 ①)
 CAPTIONS = {"S01a": "東京　深夜一時", "S06a": "一日目", "S07a": "三日目", "S07f": "六日目"}
 # 시간 점프 경계(이 컷의 시작에서 앞 컷 마지막 프레임을 0.6초 디졸브)
