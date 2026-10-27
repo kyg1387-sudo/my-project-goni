@@ -1,0 +1,927 @@
+{
+ "_설명": "『引きこもりの息子』 PHASE 1 본녹음 92줄 (확정 캐스트, Typecast ssfm-v30 jpn). 음성 입력만 가나 변형, 자막은 한자 유지. line### = 시간 순서. S05 「出ていけ！」는 L01 녹음 재사용. TTS 구독 크레딧만 사용. 생성: productions/hikikomori-ja/build_tts_spec.py",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "line001",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "出ていけ！ お前みたいなゴミ、育てた覚えはない！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.1,
+   "tempo": 1.1
+  },
+  {
+   "id": "line002",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "ゴミと怒鳴って、追い出した息子。その部屋で、父が見てしまったものとは――",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "line003",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "とうきょう・おおたく。創業よんじゅうねんのまちこうば、せおせいこう。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line004",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "二代目社長のけんたろうは、この工場に人生を捧げてきました。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "line005",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……また、にわり下げろと。……はい、分かりました",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 0.9,
+   "tempo": 0.9
+  },
+  {
+   "id": "line006",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "取引先のほうおうこうぎょうから、ねさげの要求が続いていました。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line007",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "ひとりむすこのだいきは、にじゅうろく歳。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line008",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "昼に眠り、夜に起きる。部屋から出てくるのは、食事の時だけでした。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "line009",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……また、ゲームか",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 0.8,
+   "tempo": 0.9
+  },
+  {
+   "id": "line010",
+   "model": "typecast-direct",
+   "voice": "tc_63049449e7dfae64b10c6cb9",
+   "language": "jpn",
+   "text": "お隣の太郎くん、就職が決まったんですって",
+   "emotion_preset": "normal",
+   "emotion_intensity": 0.9,
+   "tempo": 1.0
+  },
+  {
+   "id": "line011",
+   "model": "typecast-direct",
+   "voice": "tc_63049449e7dfae64b10c6cb9",
+   "language": "jpn",
+   "text": "今夜はお祝いに、すき焼きだそうよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.5,
+   "tempo": 1.0
+  },
+  {
+   "id": "line012",
+   "model": "typecast-direct",
+   "voice": "tc_63049449e7dfae64b10c6cb9",
+   "language": "jpn",
+   "text": "だいきにも、何か考えがあるのよ",
+   "emotion_preset": "normal",
+   "emotion_intensity": 0.9,
+   "tempo": 0.92
+  },
+  {
+   "id": "line013",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "考え？ にじゅうろくにもなって、部屋から出てこないんだぞ！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 0.9,
+   "tempo": 1.05
+  },
+  {
+   "id": "line014",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "だいき！ いつまでこんな生活を続けるつもりだ！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.0,
+   "tempo": 1.08
+  },
+  {
+   "id": "line015",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "隣の太郎くんは、ちゃんと働いてるんだぞ！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.0,
+   "tempo": 1.08
+  },
+  {
+   "id": "line016",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "……分かった。出ていくよ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.88
+  },
+  {
+   "id": "line017",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "でも、とうさん。……後悔しないでね",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line018",
+   "model": "typecast-direct",
+   "voice": "tc_63049449e7dfae64b10c6cb9",
+   "language": "jpn",
+   "text": "だいき！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.9,
+   "tempo": 1.05
+  },
+  {
+   "id": "line019",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "だいきは、母に小さく頭を下げ、家を出ていきました。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "line020",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……せいせいした",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 0.8,
+   "tempo": 0.88
+  },
+  {
+   "id": "line021",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "けれどけんたろうは、まだ知らなかったのです。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "line022",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "息子があの部屋に残したものが、自分の人生を変えることを。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line023",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "にいさん、聞いたよ。だいき、とうとう追い出したんだって？",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 0.9,
+   "tempo": 1.05
+  },
+  {
+   "id": "line024",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "だから言ったじゃない。いまどきの若いのは、根性がないって",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 0.9,
+   "tempo": 1.05
+  },
+  {
+   "id": "line025",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "うちのりょうすけはさ、こんど、ほうおうこうぎょうの本社で課長だよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.7,
+   "tempo": 1.05
+  },
+  {
+   "id": "line026",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "……にいさんとこの、いちばんのお得意さん",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line027",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "だいきがあんなふうになったのも……にいさんに似たのかねぇ",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "line028",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "その夜。けんたろうは、眠れませんでした。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "line029",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……電気もつけっぱなしで、出ていきやがって",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 0.8,
+   "tempo": 0.9
+  },
+  {
+   "id": "line030",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "けんたろうがこの部屋に入るのは、ごねんぶりのことでした。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line031",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "そこは、思っていた部屋とは、まるで違っていました。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "line032",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……工場の、そうぎょうび？",
+   "emotion_preset": "normal",
+   "emotion_intensity": 0.8,
+   "tempo": 0.9
+  },
+  {
+   "id": "line033",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "その時、けんたろうは……思いもよらないものを、目にするのです。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line034",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……なんだ、これ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 0.9,
+   "tempo": 0.85
+  },
+  {
+   "id": "line035",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "いっせん……にひゃくごじゅうまん……？ いっかげつで……？",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.7,
+   "tempo": 0.85
+  },
+  {
+   "id": "line036",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "画面に並んでいたのは、海外の企業の名前でした。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "line037",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "毎晩……起きてたのは……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 0.85
+  },
+  {
+   "id": "line038",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "夜に起きていたのは、遊ぶためではありませんでした。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line039",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "地球の裏側の朝に合わせて、彼は働いていたのです。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.88
+  },
+  {
+   "id": "line040",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "画面の隅に、フォルダがひとつだけありました。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "line041",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "名前は、とうさんの工場。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line042",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "ほうおうのねさげ、あと一年で限界。新しい取引先を、必ず見つける",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 0.9,
+   "tempo": 0.9
+  },
+  {
+   "id": "line043",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "とうさんには、決まってから話す",
+   "emotion_preset": "normal",
+   "emotion_intensity": 0.8,
+   "tempo": 0.88
+  },
+  {
+   "id": "line044",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……あいつは……ゴミなんかじゃ……なかった……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.8
+  },
+  {
+   "id": "line045",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "けれど運命は、謝る時間さえ、与えてはくれませんでした。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line046",
+   "model": "typecast-direct",
+   "voice": "tc_68f0422cc863e7c17af5183d",
+   "language": "jpn",
+   "text": "ほんじつをもちまして、せおせいこうさんへの発注は……",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line047",
+   "model": "typecast-direct",
+   "voice": "tc_68f0422cc863e7c17af5183d",
+   "language": "jpn",
+   "text": "すべて、打ち切らせていただきます",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "line048",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "打ち切り……？ おやじの代からよんじゅうねん、ほうおうさんとやってきたんだぞ！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "line049",
+   "model": "typecast-direct",
+   "voice": "tc_68f0422cc863e7c17af5183d",
+   "language": "jpn",
+   "text": "その代わり、ご提案があります",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 0.9,
+   "tempo": 1.0
+  },
+  {
+   "id": "line050",
+   "model": "typecast-direct",
+   "voice": "tc_68f0422cc863e7c17af5183d",
+   "language": "jpn",
+   "text": "おんしゃの特許ごと、工場を買い取らせていただきたい。……さんぜんまんえんで",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "line051",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "さんぜんまん……？ りょうすけ、お前……本気で言ってるのか",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 0.95
+  },
+  {
+   "id": "line052",
+   "model": "typecast-direct",
+   "voice": "tc_68f0422cc863e7c17af5183d",
+   "language": "jpn",
+   "text": "おじさん。……ビジネスですから",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line053",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "にいさん、悪いことは言わない。売っちゃいなよ",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 0.9,
+   "tempo": 1.05
+  },
+  {
+   "id": "line054",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "だいきもにいさんも、もう終わりなんだからさ",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.08
+  },
+  {
+   "id": "line055",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "銀行には融資を断られ、取引先も、次々と離れていきました。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line056",
+   "model": "typecast-direct",
+   "voice": "tc_63049449e7dfae64b10c6cb9",
+   "language": "jpn",
+   "text": "おとうさん……来週の支払い、このままじゃ……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.7,
+   "tempo": 0.9
+  },
+  {
+   "id": "line057",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……分かってる",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 0.9,
+   "tempo": 0.88
+  },
+  {
+   "id": "line058",
+   "model": "typecast-direct",
+   "voice": "tc_63049449e7dfae64b10c6cb9",
+   "language": "jpn",
+   "text": "……あの子には、黙ってろって言われてたんだけど",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.88
+  },
+  {
+   "id": "line059",
+   "model": "typecast-direct",
+   "voice": "tc_63049449e7dfae64b10c6cb9",
+   "language": "jpn",
+   "text": "工場の赤字……よねんかん、ずっとあの子が埋めてくれてたのよ",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line060",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "毎月、にじゅうまんえん。息子は、いちども欠かさず送っていました。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.88
+  },
+  {
+   "id": "line061",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……おやじ、すまない。俺は……何も、見えてなかった",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.82
+  },
+  {
+   "id": "line062",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "そして、運命の日がやってきます。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.88
+  },
+  {
+   "id": "line063",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "せお社長。……サインを",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.1,
+   "tempo": 0.9
+  },
+  {
+   "id": "line064",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "にいさん、早くしなよ",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 0.9,
+   "tempo": 1.08
+  },
+  {
+   "id": "line065",
+   "model": "typecast-direct",
+   "voice": "tc_68f0422cc863e7c17af5183d",
+   "language": "jpn",
+   "text": "だいき……？ お前、なんでここに",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.7,
+   "tempo": 1.05
+  },
+  {
+   "id": "line066",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "おいおい、引きこもりがなんの用だよ",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.08
+  },
+  {
+   "id": "line067",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "とうさん。……そのペン、置いて",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.88
+  },
+  {
+   "id": "line068",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "ほうおうさんが、うちの特許を欲しがる理由。……ヴァイスベルク研究所との取引ですよね",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "line069",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "……なぜ、それを",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 0.9,
+   "tempo": 0.85
+  },
+  {
+   "id": "line070",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "研究所のセキュリティ設計、僕が担当してるんです",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "line071",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "向こうの技術責任者に、聞かれたんですよ。この部品を作れる工場を、知らないかって",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line072",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "直接取引のいこうしょです。……せおせいこうと",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.88
+  },
+  {
+   "id": "line073",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "それと、過去ごねんぶんの、一方的なねさげの記録。全部まとめてあります",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "line074",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "どこに出すかは……とうさんが決めて",
+   "emotion_preset": "normal",
+   "emotion_intensity": 0.9,
+   "tempo": 0.85
+  },
+  {
+   "id": "line075",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "せお社長！ たんかは元に戻します！",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.1
+  },
+  {
+   "id": "line076",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "いえ、うわのせします！ ですから、どうか……！",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.1
+  },
+  {
+   "id": "line077",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……うちはもう、ほうおうさんとは取引しません",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line078",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "よんじゅうねんかん、ありがとうございました",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line079",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "だ、だいきくん……いや、だいきさん。いやぁ、さすがせおけの……",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 1.08
+  },
+  {
+   "id": "line080",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "おじさん。……とうさんに似て、よかったです",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line081",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……だいき。入っても、いいか",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.85
+  },
+  {
+   "id": "line082",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "……もう、いっかい入ったくせに",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.4,
+   "tempo": 0.92
+  },
+  {
+   "id": "line083",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "すまなかった。……お前を、ゴミだなんて……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.82
+  },
+  {
+   "id": "line084",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "なんで……言わなかったんだ",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.8,
+   "tempo": 0.85
+  },
+  {
+   "id": "line085",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "言ったらとうさん、僕のお金なんて、絶対受け取らないでしょ",
+   "emotion_preset": "normal",
+   "emotion_intensity": 0.8,
+   "tempo": 0.92
+  },
+  {
+   "id": "line086",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "小さい頃、工場でせんばんが回るのを、ずっと見てた",
+   "emotion_preset": "normal",
+   "emotion_intensity": 0.8,
+   "tempo": 0.88
+  },
+  {
+   "id": "line087",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "あれが、僕の最初のプログラムだったんだ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.5,
+   "tempo": 0.88
+  },
+  {
+   "id": "line088",
+   "model": "typecast-direct",
+   "voice": "tc_63049449e7dfae64b10c6cb9",
+   "language": "jpn",
+   "text": "お隣に負けないくらい、いいお肉にしたのよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.9,
+   "tempo": 1.0
+  },
+  {
+   "id": "line089",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "人は、見えているものだけで、誰かを判断してしまいます。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.88
+  },
+  {
+   "id": "line090",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "けれど、とざされたドアの向こうで……",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line091",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "誰かが、大切な人のために戦っているのかもしれません。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line092",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "皆様なら、部屋を出ていく息子さんに、なんと声をかけますか？　コメントで教えてください",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  }
+ ]
+}
