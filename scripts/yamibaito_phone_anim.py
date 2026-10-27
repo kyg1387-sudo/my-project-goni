@@ -18,7 +18,9 @@ QA = os.path.join(ROOT, "out", "fin", "phone_anim")
 SB = os.path.join(ROOT, "scripts", "storyboard", "yamibaito.json")
 QUADS = json.load(open(os.path.join(ROOT, "productions", "yamibaito-ja", "screen_quads.json")))
 QUADS.update({"S02a": [[900, 610], [1080, 505], [1425, 790], [1235, 905]], "S02k": None})  # S02k는 새 키프레임에서 검출
-W, H, FPS = 1280, 720, 24
+W, H, FPS = 1920, 1080, 24  # finalize CLIPS로 직접 덮는 1080p(조립 720p 통일을 우회, 고니감독님 2026-10-26 지시 ④)
+SS = 2  # UI 캔버스 슈퍼샘플(글자 선명도)
+HD = os.path.join(ROOT, "out", "fin", "hd")
 INK = (28, 30, 36); GREY = (120, 124, 134); LINE_BG = (170, 186, 212); GREEN = (111, 206, 88); RED = (226, 54, 54); BLUE = (0, 112, 214)
 
 
@@ -371,11 +373,32 @@ def zoom_frame(img, z, cx=0.5, cy=0.5, dx=0.0, dy=0.0):
     return cv2.warpAffine(img, M, (W, H), flags=cv2.INTER_AREA if z < 1.01 else cv2.INTER_LINEAR)
 
 
+def screen_fx(base, q):
+    """유리 반사(장면을 뒤집어 흐린 판, Screen 12%)·화면 글로우·비네팅 마스크를 한 번 만든다(고니감독님 지시 ②③)."""
+    H_, W_ = base.shape[:2]
+    mask = np.zeros((H_, W_), np.uint8); cv2.fillConvexPoly(mask, np.array(q, np.int32), 255)
+    m = mask.astype(np.float32) / 255
+    refl = cv2.GaussianBlur(cv2.flip(base, 0), (0, 0), 25).astype(np.float32)
+    # 밝은 광원만 남긴 반사(형광등·창)
+    g = cv2.cvtColor(refl.astype(np.uint8), cv2.COLOR_BGR2GRAY).astype(np.float32)
+    hi = np.clip((g - 110) / 145, 0, 1)[..., None]
+    refl = refl * hi * 0.12 * m[..., None]
+    # 비네팅: 화면 가장자리 0.88
+    dist = cv2.distanceTransform(mask, cv2.DIST_L2, 5); dist = np.clip(dist / max(dist.max(), 1) * 3, 0, 1)
+    vig = (0.88 + 0.12 * dist)[..., None]
+    # 글로우: 화면 바깥으로 번지는 발광
+    glow_m = cv2.GaussianBlur(cv2.dilate(mask, np.ones((25, 25), np.uint8)), (0, 0), 38).astype(np.float32) / 255
+    glow_m = np.clip(glow_m - m, 0, 1)[..., None]
+    return m[..., None], refl, vig, glow_m
+
+
 def render(sid, spec, sec, base_path, quad, extra=None):
-    out = os.path.join(OUT, f"scene{NUM[sid]:02d}.mp4")
+    os.makedirs(HD, exist_ok=True)
+    out = os.path.join(HD, f"scene{NUM[sid]:02d}.mp4")
     base = cv2.imread(base_path)
     if extra: base = extra(base)
     q = order_quad(quad, spec["top"])
+    m, refl, vig, glow_m = screen_fx(base, q)
     n = int(math.ceil(sec * FPS))
     rng = np.random.default_rng(7); sx = sy = 0.0
     p = subprocess.Popen(["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
@@ -384,7 +407,11 @@ def render(sid, spec, sec, base_path, quad, extra=None):
     for i in range(n):
         t = i / FPS
         canvas = spec["frame"](t, sec)
-        fr = warp_canvas(base, canvas, q, "lcd")
+        if SS > 1: canvas = canvas.resize((SW * SS, SH * SS), Image.LANCZOS)
+        fr = warp_canvas(base, canvas, q, "lcd").astype(np.float32)
+        fr = fr * (1 - m) + (fr * vig + refl) * m                      # 비네팅 + 유리 반사(Screen 근사)
+        col = (fr * m).sum(axis=(0, 1)) / max(m.sum(), 1)               # 화면 평균색으로 글로우
+        fr = np.clip(fr + glow_m * col * 0.22, 0, 255).astype(np.uint8)
         k = i / n
         if spec["cam"] == "push": z, cx, cy = 1.0 + 0.05 * k, 0.5, 0.5
         elif spec["cam"].startswith("pushto"):  # 폰 중심으로 다가가 화면을 크게(제8장 4-2·휴대폰 가독성)
@@ -431,4 +458,7 @@ if __name__ == "__main__":
         a = pledge_fix()
         from build_yamibaito_overrides import cam
         cam(os.path.join(KF, "S02bd-1.png"), os.path.join(OUT, f"scene{NUM['S02bd']:02d}.mp4"), DUR["S02bd"], "push")
+        import build_yamibaito_overrides as ov; ov.W, ov.H = W, H   # 1080p 판(finalize CLIPS용)
+        for hd_id, fx in (("S02bd", "push"), ("S07m", "push"), ("S08n", "push")):
+            ov.cam(os.path.join(KF, f"{hd_id}-1.png"), os.path.join(HD, f"scene{NUM[hd_id]:02d}.mp4"), DUR[hd_id], fx)
         cv2.imwrite(os.path.join(QA, "S02bd.jpg"), cv2.resize(a, (1280, 720)), [cv2.IMWRITE_JPEG_QUALITY, 85]); print("S02bd 재합성")

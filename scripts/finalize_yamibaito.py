@@ -104,6 +104,13 @@ def patch(src, out, tmp):
     segs = []
     for sid, clip in CLIPS:
         a, b = B[sid]; segs.append((a, b, os.path.join(ROOT, clip)))
+    hd_dir = os.path.join(ROOT, "out", "fin", "hd")   # 1080p 직접 덮기(폰 UI·종이·시계·간판 — 조립 720p 통일 우회, 제20장 12 ⑫)
+    if os.path.isdir(hd_dir):
+        used = {sid for sid, _ in CLIPS}
+        for k, sc in enumerate(SB, start=1):
+            f = os.path.join(hd_dir, f"scene{k:02d}.mp4")
+            if os.path.exists(f) and sc["id"] not in used:
+                a, b = B[sc["id"]]; segs.append((a, b, f)); print("HD 덮기:", sc["id"], os.path.basename(f))
     for sid, kf_id, off, sec in MANUAL:
         lo, hi = B[sid]
         a = lo + off; b = hi - 0.02 if sec is None else min(hi - 0.02, a + sec)
