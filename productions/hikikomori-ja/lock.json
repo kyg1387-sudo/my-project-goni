@@ -1,8 +1,8 @@
 {
  "hook": 20.0,
  "outro": 30.0,
- "total": 607.02,
- "body_end": 577.02,
+ "total": 630.057,
+ "body_end": 600.057,
  "ads": [
   {
    "name": "1차 광고",
@@ -12,7 +12,7 @@
   },
   {
    "name": "2차 광고",
-   "at": 393.593,
+   "at": 416.63,
    "target": 420.0,
    "after": "NA21"
   }
@@ -93,73 +93,73 @@
   {
    "id": "S13",
    "start": 320.979,
-   "end": 332.395,
-   "lines": 2
+   "end": 338.108,
+   "lines": 4
   },
   {
    "id": "S14",
-   "start": 332.395,
-   "end": 343.518,
-   "lines": 1
-  },
-  {
-   "id": "S15",
-   "start": 343.518,
-   "end": 372.175,
-   "lines": 5
-  },
-  {
-   "id": "S16",
-   "start": 372.175,
-   "end": 394.593,
+   "start": 338.108,
+   "end": 357.509,
    "lines": 2
   },
   {
+   "id": "S15",
+   "start": 357.509,
+   "end": 390.239,
+   "lines": 6
+  },
+  {
+   "id": "S16",
+   "start": 390.239,
+   "end": 417.63,
+   "lines": 3
+  },
+  {
    "id": "S17",
-   "start": 394.593,
-   "end": 409.356,
+   "start": 417.63,
+   "end": 432.393,
    "lines": 2
   },
   {
    "id": "S18",
-   "start": 409.356,
-   "end": 429.767,
+   "start": 432.393,
+   "end": 452.804,
    "lines": 3
   },
   {
    "id": "S19",
-   "start": 429.767,
-   "end": 457.874,
+   "start": 452.804,
+   "end": 480.911,
    "lines": 5
   },
   {
    "id": "S20",
-   "start": 457.874,
-   "end": 482.527,
+   "start": 480.911,
+   "end": 505.564,
    "lines": 4
   },
   {
    "id": "S21",
-   "start": 482.527,
-   "end": 495.055,
+   "start": 505.564,
+   "end": 518.092,
    "lines": 2
   },
   {
    "id": "S22",
-   "start": 495.055,
-   "end": 510.36,
+   "start": 518.092,
+   "end": 533.397,
    "lines": 2
   },
   {
    "id": "S23",
-   "start": 510.36,
-   "end": 547.592,
+   "start": 533.397,
+   "end": 570.629,
    "lines": 7
   },
   {
    "id": "S24",
-   "start": 547.592,
-   "end": 577.02,
+   "start": 570.629,
+   "end": 600.057,
    "lines": 4
   }
  ],
@@ -712,380 +712,430 @@
    "end": 328.095
   },
   {
+   "tag": "L35a",
+   "spk": "父",
+   "scene": "S13",
+   "id": "line055",
+   "lead": 0.098,
+   "dur": 1.054,
+   "start": 328.895,
+   "end": 329.949
+  },
+  {
+   "tag": "L35b",
+   "spk": "叔父",
+   "scene": "S13",
+   "id": "line056",
+   "lead": 0.145,
+   "dur": 3.059,
+   "start": 330.749,
+   "end": 333.808
+  },
+  {
    "tag": "NA19",
    "spk": "NA",
    "scene": "S14",
-   "id": "line055",
+   "id": "line057",
    "lead": 0.318,
    "dur": 5.123,
-   "start": 334.895,
-   "end": 340.018
+   "start": 340.608,
+   "end": 345.731
+  },
+  {
+   "tag": "NA19a",
+   "spk": "NA",
+   "scene": "S14",
+   "id": "line058",
+   "lead": 0.348,
+   "dur": 5.178,
+   "start": 348.831,
+   "end": 354.009
   },
   {
    "tag": "L36",
    "spk": "母",
    "scene": "S15",
-   "id": "line056",
+   "id": "line059",
    "lead": 0.52,
    "dur": 3.966,
-   "start": 346.018,
-   "end": 349.984
+   "start": 360.009,
+   "end": 363.975
   },
   {
    "tag": "L37",
    "spk": "父",
    "scene": "S15",
-   "id": "line057",
+   "id": "line060",
    "lead": 0.049,
    "dur": 0.933,
-   "start": 350.784,
-   "end": 351.717
+   "start": 364.775,
+   "end": 365.708
   },
   {
    "tag": "L38",
    "spk": "母",
    "scene": "S15",
-   "id": "line058",
+   "id": "line061",
    "lead": 0.491,
    "dur": 3.993,
-   "start": 352.517,
-   "end": 356.51
+   "start": 366.508,
+   "end": 370.501
   },
   {
    "tag": "L39",
    "spk": "母",
    "scene": "S15",
-   "id": "line059",
+   "id": "line062",
    "lead": 0.477,
    "dur": 4.926,
-   "start": 359.61,
-   "end": 364.536
+   "start": 373.601,
+   "end": 378.527
+  },
+  {
+   "tag": "L39a",
+   "spk": "父",
+   "scene": "S15",
+   "id": "line063",
+   "lead": 0.249,
+   "dur": 3.273,
+   "start": 379.327,
+   "end": 382.6
   },
   {
    "tag": "NA20",
    "spk": "NA",
    "scene": "S15",
-   "id": "line060",
+   "id": "line064",
    "lead": 0.283,
    "dur": 5.839,
-   "start": 365.336,
-   "end": 371.175
+   "start": 383.4,
+   "end": 389.239
+  },
+  {
+   "tag": "NA20a",
+   "spk": "NA",
+   "scene": "S16",
+   "id": "line065",
+   "lead": 0.208,
+   "dur": 4.173,
+   "start": 395.239,
+   "end": 399.412
   },
   {
    "tag": "L40",
    "spk": "父",
    "scene": "S16",
-   "id": "line061",
+   "id": "line066",
    "lead": 0.314,
    "dur": 6.942,
-   "start": 377.175,
-   "end": 384.117
+   "start": 400.212,
+   "end": 407.154
   },
   {
    "tag": "NA21",
    "spk": "NA",
    "scene": "S16",
-   "id": "line062",
+   "id": "line067",
    "lead": 0.287,
    "dur": 2.676,
-   "start": 387.417,
-   "end": 390.093
+   "start": 410.454,
+   "end": 413.13
   },
   {
    "tag": "L41",
    "spk": "真壁",
    "scene": "S17",
-   "id": "line063",
+   "id": "line068",
    "lead": 0.366,
    "dur": 3.097,
-   "start": 399.593,
-   "end": 402.69
+   "start": 422.63,
+   "end": 425.727
   },
   {
    "tag": "L42",
    "spk": "叔父",
    "scene": "S17",
-   "id": "line064",
+   "id": "line069",
    "lead": 0.163,
    "dur": 1.566,
-   "start": 405.99,
-   "end": 407.556
+   "start": 429.027,
+   "end": 430.593
   },
   {
    "tag": "L43",
    "spk": "亮介",
    "scene": "S18",
-   "id": "line065",
+   "id": "line070",
    "lead": 0.246,
    "dur": 3.264,
-   "start": 416.856,
-   "end": 420.12
+   "start": 439.893,
+   "end": 443.157
   },
   {
    "tag": "L44",
    "spk": "叔父",
    "scene": "S18",
-   "id": "line066",
+   "id": "line071",
    "lead": 0.178,
    "dur": 2.569,
-   "start": 420.92,
-   "end": 423.489
+   "start": 443.957,
+   "end": 446.526
   },
   {
    "tag": "L45",
    "spk": "大樹",
    "scene": "S18",
-   "id": "line067",
+   "id": "line072",
    "lead": 0.07,
    "dur": 2.178,
-   "start": 425.789,
-   "end": 427.967
+   "start": 448.826,
+   "end": 451.004
   },
   {
    "tag": "L46",
    "spk": "大樹",
    "scene": "S19",
-   "id": "line068",
+   "id": "line073",
    "lead": 0.091,
    "dur": 6.208,
-   "start": 429.767,
-   "end": 435.975
+   "start": 452.804,
+   "end": 459.012
   },
   {
    "tag": "L47",
    "spk": "真壁",
    "scene": "S19",
-   "id": "line069",
+   "id": "line074",
    "lead": 0.242,
    "dur": 2.102,
-   "start": 436.775,
-   "end": 438.877
+   "start": 459.812,
+   "end": 461.914
   },
   {
    "tag": "L48",
    "spk": "大樹",
    "scene": "S19",
-   "id": "line070",
+   "id": "line075",
    "lead": 0.051,
    "dur": 3.666,
-   "start": 439.677,
-   "end": 443.343
+   "start": 462.714,
+   "end": 466.38
   },
   {
    "tag": "L49",
    "spk": "大樹",
    "scene": "S19",
-   "id": "line071",
+   "id": "line076",
    "lead": 0.051,
    "dur": 5.519,
-   "start": 443.943,
-   "end": 449.462
+   "start": 466.98,
+   "end": 472.499
   },
   {
    "tag": "L50",
    "spk": "大樹",
    "scene": "S19",
-   "id": "line072",
+   "id": "line077",
    "lead": 0.078,
    "dur": 3.512,
-   "start": 452.562,
-   "end": 456.074
+   "start": 475.599,
+   "end": 479.111
   },
   {
    "tag": "L51",
    "spk": "大樹",
    "scene": "S20",
-   "id": "line073",
+   "id": "line078",
    "lead": 0.012,
    "dur": 5.829,
-   "start": 460.374,
-   "end": 466.203
+   "start": 483.411,
+   "end": 489.24
   },
   {
    "tag": "L52",
    "spk": "大樹",
    "scene": "S20",
-   "id": "line074",
+   "id": "line079",
    "lead": 0.042,
    "dur": 2.647,
-   "start": 466.803,
-   "end": 469.45
+   "start": 489.84,
+   "end": 492.487
   },
   {
    "tag": "L53",
    "spk": "真壁",
    "scene": "S20",
-   "id": "line075",
+   "id": "line080",
    "lead": 0.39,
    "dur": 3.328,
-   "start": 470.25,
-   "end": 473.578
+   "start": 493.287,
+   "end": 496.615
   },
   {
    "tag": "L54",
    "spk": "真壁",
    "scene": "S20",
-   "id": "line076",
+   "id": "line081",
    "lead": 0.322,
    "dur": 4.049,
-   "start": 474.178,
-   "end": 478.227
+   "start": 497.215,
+   "end": 501.264
   },
   {
    "tag": "L55",
    "spk": "父",
    "scene": "S21",
-   "id": "line077",
+   "id": "line082",
    "lead": 0.149,
    "dur": 4.008,
-   "start": 485.027,
-   "end": 489.035
+   "start": 508.064,
+   "end": 512.072
   },
   {
    "tag": "L56",
    "spk": "父",
    "scene": "S21",
-   "id": "line078",
+   "id": "line083",
    "lead": 0.277,
    "dur": 3.42,
-   "start": 489.835,
-   "end": 493.255
+   "start": 512.872,
+   "end": 516.292
   },
   {
    "tag": "L57",
    "spk": "叔父",
    "scene": "S22",
-   "id": "line079",
+   "id": "line084",
    "lead": 0.116,
    "dur": 4.338,
-   "start": 497.555,
-   "end": 501.893
+   "start": 520.592,
+   "end": 524.93
   },
   {
    "tag": "L58",
    "spk": "大樹",
    "scene": "S22",
-   "id": "line080",
+   "id": "line085",
    "lead": 0.021,
    "dur": 3.167,
-   "start": 502.893,
-   "end": 506.06
+   "start": 525.93,
+   "end": 529.097
   },
   {
    "tag": "L59",
    "spk": "父",
    "scene": "S23",
-   "id": "line081",
+   "id": "line086",
    "lead": 0.218,
    "dur": 3.219,
-   "start": 512.86,
-   "end": 516.079
+   "start": 535.897,
+   "end": 539.116
   },
   {
    "tag": "L60",
    "spk": "大樹",
    "scene": "S23",
-   "id": "line082",
+   "id": "line087",
    "lead": 0.013,
    "dur": 1.816,
-   "start": 516.879,
-   "end": 518.695
+   "start": 539.916,
+   "end": 541.732
   },
   {
    "tag": "L61",
    "spk": "父",
    "scene": "S23",
-   "id": "line083",
+   "id": "line088",
    "lead": 0.279,
    "dur": 3.95,
-   "start": 521.995,
-   "end": 525.945
+   "start": 545.032,
+   "end": 548.982
   },
   {
    "tag": "L62",
    "spk": "父",
    "scene": "S23",
-   "id": "line084",
+   "id": "line089",
    "lead": 0.177,
    "dur": 2.751,
-   "start": 526.545,
-   "end": 529.296
+   "start": 549.582,
+   "end": 552.333
   },
   {
    "tag": "L63",
    "spk": "大樹",
    "scene": "S23",
-   "id": "line085",
+   "id": "line090",
    "lead": 0.046,
    "dur": 4.355,
-   "start": 530.096,
-   "end": 534.451
+   "start": 553.133,
+   "end": 557.488
   },
   {
    "tag": "L64",
    "spk": "大樹",
    "scene": "S23",
-   "id": "line086",
+   "id": "line091",
    "lead": 0.021,
    "dur": 4.506,
-   "start": 537.551,
-   "end": 542.057
+   "start": 560.588,
+   "end": 565.094
   },
   {
    "tag": "L65",
    "spk": "大樹",
    "scene": "S23",
-   "id": "line087",
+   "id": "line092",
    "lead": 0.038,
    "dur": 3.135,
-   "start": 542.657,
-   "end": 545.792
+   "start": 565.694,
+   "end": 568.829
   },
   {
    "tag": "L66",
    "spk": "母",
    "scene": "S24",
-   "id": "line088",
+   "id": "line093",
    "lead": 0.223,
    "dur": 2.994,
-   "start": 550.092,
-   "end": 553.086
+   "start": 573.129,
+   "end": 576.123
   },
   {
    "tag": "NA22",
    "spk": "NA",
    "scene": "S24",
-   "id": "line089",
+   "id": "line094",
    "lead": 0.353,
    "dur": 5.334,
-   "start": 556.386,
-   "end": 561.72
+   "start": 579.423,
+   "end": 584.757
   },
   {
    "tag": "NA23",
    "spk": "NA",
    "scene": "S24",
-   "id": "line090",
+   "id": "line095",
    "lead": 0.338,
    "dur": 2.858,
-   "start": 562.32,
-   "end": 565.178
+   "start": 585.357,
+   "end": 588.215
   },
   {
    "tag": "NA24",
    "spk": "NA",
    "scene": "S24",
-   "id": "line091",
+   "id": "line096",
    "lead": 0.326,
    "dur": 5.242,
-   "start": 565.778,
-   "end": 571.02
+   "start": 588.815,
+   "end": 594.057
   },
   {
    "tag": "OUT3",
    "spk": "OUT",
    "scene": "OUT",
-   "id": "line092",
+   "id": "line097",
    "lead": 0.201,
    "dur": 6.71
   }
