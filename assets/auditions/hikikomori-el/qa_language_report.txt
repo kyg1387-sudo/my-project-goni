@@ -1,0 +1,18 @@
+=== TTS 대사 파일 검사 (line*.mp3) ===
+[daiki_EL1-Kaguya - Natural_A.mp3] lang=ja | 대본:  | 들림: わかった、出て行くよ。 でも、父さん、後悔しないでね。 | 
+[daiki_EL1-Kaguya - Natural_B.mp3] lang=ja | 대본:  | 들림: おじさん、父さんに似てよかったです | 
+[daiki_EL2-Aru - Warm Japanese _A.mp3] lang=ja | 대본:  | 들림: わかった。出て行くよ。 でもお父さん、後悔しないでね。 | 
+[daiki_EL2-Aru - Warm Japanese _B.mp3] lang=ja | 대본:  | 들림: おじさん 父さんに似てよかったです | 
+[father_EL1-Jiro - Polite, Clear_A.mp3] lang=ja | 대본:  | 들림: 出て行け!お前みたいなゴミ育てた覚えはない! | 
+[father_EL1-Jiro - Polite, Clear_B.mp3] lang=ja | 대본:  | 들림: あいつはゴミなんかじゃなかった。 | 
+[father_EL2-Taniguchi – A calm, _A.mp3] lang=ja | 대본:  | 들림: 出て行け。お前みたいなゴミ育てた覚えはない。 | 
+[father_EL2-Taniguchi – A calm, _B.mp3] lang=ja | 대본:  | 들림: あいつはゴミなんかじゃなかった | 
+[mother_EL1-Mio - Calm Elegant J_A.mp3] lang=ja | 대본:  | 들림: 工場の赤字。4年間、ずっとあの子が埋めてくれてたのよ。 | 
+[mother_EL1-Mio - Calm Elegant J_B.mp3] lang=ja | 대본:  | 들림: お隣に負けないくらいいいお肉にしたのよ。 | 
+[mother_EL2-Jun - Videos_A.mp3] lang=ja | 대본:  | 들림: 工場の赤字、4年間。ずっとあの子が埋めてくれてたのよ。 | 
+[mother_EL2-Jun - Videos_B.mp3] lang=ja | 대본:  | 들림: お隣に負けないくらいいいお肉にしたのよ | 
+
+=== 현장음 파일 검사 (amb*.wav) — 말소리가 들리면 안 됨 ===
+
+=== 요약 ===
+문제 파일 없음
