@@ -506,11 +506,20 @@ def main():
                  or cfg["default_voice"])
         emotion = (cfg.get("emotion_overrides", {}).get(str(i))
                    or cfg.get("style_emotions", {}).get(style))
-        print(f"[{i:03d}/{len(lines)}] {start:7.2f}s {voice}/{emotion or 'neutral'}: {text[:30]}")
-        path = tts_line(cfg, key, i, voice, text, emotion)
+        # 읽기 지정: 화면 자막은 한자 그대로, TTS에는 읽기 가나를 넣어 오독 방지
+        # (예: readings {"大樹": "だいき"}, 줄 전체는 tts_text_overrides {"12": "..."})
+        tts_text = cfg.get("tts_text_overrides", {}).get(str(i))
+        if tts_text is None:
+            tts_text = text
+            readings = cfg.get("readings", {})
+            for word in sorted(readings, key=len, reverse=True):  # 긴 단어 먼저(加藤大樹 > 大樹)
+                reading = readings[word]
+                tts_text = tts_text.replace(word, reading)
+        print(f"[{i:03d}/{len(lines)}] {start:7.2f}s {voice}/{emotion or 'neutral'}: {tts_text[:30]}")
+        path = tts_line(cfg, key, i, voice, tts_text, emotion)
         if not path:  # 한 번 재시도
             print(f"  [tts {i:03d}] 재시도")
-            path = tts_line(cfg, key, i, voice, text, emotion)
+            path = tts_line(cfg, key, i, voice, tts_text, emotion)
         if not path:
             raise RuntimeError(f"[tts {i:03d}] 생성 실패 — 위 로그를 확인하세요.")
         # 화자 이름: Name 필드가 비어 있으면 스타일→이름 매핑 사용 (예: Doyun → 도윤)
