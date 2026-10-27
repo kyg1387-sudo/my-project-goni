@@ -1,5 +1,5 @@
 {
- "_설명": "『引きこもりの息子』 PHASE 1 본녹음 92줄 (확정 캐스트, Typecast ssfm-v30 jpn). 음성 입력만 가나 변형, 자막은 한자 유지. line### = 시간 순서. S05 「出ていけ！」는 L01 녹음 재사용. TTS 구독 크레딧만 사용. 생성: productions/hikikomori-ja/build_tts_spec.py",
+ "_설명": "『引きこもりの息子』 PHASE 1 본녹음 97줄 (확정 캐스트, Typecast ssfm-v30 jpn). 음성 입력만 가나 변형, 자막은 한자 유지. line### = 시간 순서. S05 「出ていけ！」는 L01 녹음 재사용. TTS 구독 크레딧만 사용. 생성: productions/hikikomori-ja/build_tts_spec.py",
  "tc_model": "ssfm-v30",
  "language": "jpn",
  "tests": [
@@ -546,6 +546,26 @@
   {
    "id": "line055",
    "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……帰ってくれ",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "line056",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "はいはい。……みっかご、ハンコ持ってくるからさ",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 0.9,
+   "tempo": 1.05
+  },
+  {
+   "id": "line057",
+   "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
    "text": "銀行には融資を断られ、取引先も、次々と離れていきました。",
@@ -554,7 +574,17 @@
    "tempo": 0.95
   },
   {
-   "id": "line056",
+   "id": "line058",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "じゅうににんの職人たちの暮らしも、けんたろうの肩にかかっていました。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "line059",
    "model": "typecast-direct",
    "voice": "tc_63049449e7dfae64b10c6cb9",
    "language": "jpn",
@@ -564,7 +594,7 @@
    "tempo": 0.9
   },
   {
-   "id": "line057",
+   "id": "line060",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
@@ -574,7 +604,7 @@
    "tempo": 0.88
   },
   {
-   "id": "line058",
+   "id": "line061",
    "model": "typecast-direct",
    "voice": "tc_63049449e7dfae64b10c6cb9",
    "language": "jpn",
@@ -584,7 +614,7 @@
    "tempo": 0.88
   },
   {
-   "id": "line059",
+   "id": "line062",
    "model": "typecast-direct",
    "voice": "tc_63049449e7dfae64b10c6cb9",
    "language": "jpn",
@@ -594,7 +624,17 @@
    "tempo": 0.85
   },
   {
-   "id": "line060",
+   "id": "line063",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……あいつ、そんなこと、ひとことも……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.9,
+   "tempo": 0.82
+  },
+  {
+   "id": "line064",
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
@@ -604,7 +644,17 @@
    "tempo": 0.88
   },
   {
-   "id": "line061",
+   "id": "line065",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "なんどかけても、だいきは、電話に出ませんでした。",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "line066",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
@@ -614,7 +664,7 @@
    "tempo": 0.82
   },
   {
-   "id": "line062",
+   "id": "line067",
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
@@ -624,7 +674,7 @@
    "tempo": 0.88
   },
   {
-   "id": "line063",
+   "id": "line068",
    "model": "typecast-direct",
    "voice": "tc_6a8f9d53322676d2f0934a21",
    "language": "jpn",
@@ -634,7 +684,7 @@
    "tempo": 0.9
   },
   {
-   "id": "line064",
+   "id": "line069",
    "model": "typecast-direct",
    "voice": "tc_6322940059d649937b97f326",
    "language": "jpn",
@@ -644,7 +694,7 @@
    "tempo": 1.08
   },
   {
-   "id": "line065",
+   "id": "line070",
    "model": "typecast-direct",
    "voice": "tc_68f0422cc863e7c17af5183d",
    "language": "jpn",
@@ -654,7 +704,7 @@
    "tempo": 1.05
   },
   {
-   "id": "line066",
+   "id": "line071",
    "model": "typecast-direct",
    "voice": "tc_6322940059d649937b97f326",
    "language": "jpn",
@@ -664,7 +714,7 @@
    "tempo": 1.08
   },
   {
-   "id": "line067",
+   "id": "line072",
    "model": "typecast-direct",
    "voice": "tc_63f7167e54b37fb5326409d1",
    "language": "jpn",
@@ -674,7 +724,7 @@
    "tempo": 0.88
   },
   {
-   "id": "line068",
+   "id": "line073",
    "model": "typecast-direct",
    "voice": "tc_63f7167e54b37fb5326409d1",
    "language": "jpn",
@@ -684,7 +734,7 @@
    "tempo": 0.92
   },
   {
-   "id": "line069",
+   "id": "line074",
    "model": "typecast-direct",
    "voice": "tc_6a8f9d53322676d2f0934a21",
    "language": "jpn",
@@ -694,7 +744,7 @@
    "tempo": 0.85
   },
   {
-   "id": "line070",
+   "id": "line075",
    "model": "typecast-direct",
    "voice": "tc_63f7167e54b37fb5326409d1",
    "language": "jpn",
@@ -704,7 +754,7 @@
    "tempo": 0.92
   },
   {
-   "id": "line071",
+   "id": "line076",
    "model": "typecast-direct",
    "voice": "tc_63f7167e54b37fb5326409d1",
    "language": "jpn",
@@ -714,7 +764,7 @@
    "tempo": 0.95
   },
   {
-   "id": "line072",
+   "id": "line077",
    "model": "typecast-direct",
    "voice": "tc_63f7167e54b37fb5326409d1",
    "language": "jpn",
@@ -724,7 +774,7 @@
    "tempo": 0.88
   },
   {
-   "id": "line073",
+   "id": "line078",
    "model": "typecast-direct",
    "voice": "tc_63f7167e54b37fb5326409d1",
    "language": "jpn",
@@ -734,7 +784,7 @@
    "tempo": 0.92
   },
   {
-   "id": "line074",
+   "id": "line079",
    "model": "typecast-direct",
    "voice": "tc_63f7167e54b37fb5326409d1",
    "language": "jpn",
@@ -744,7 +794,7 @@
    "tempo": 0.85
   },
   {
-   "id": "line075",
+   "id": "line080",
    "model": "typecast-direct",
    "voice": "tc_6a8f9d53322676d2f0934a21",
    "language": "jpn",
@@ -754,7 +804,7 @@
    "tempo": 1.1
   },
   {
-   "id": "line076",
+   "id": "line081",
    "model": "typecast-direct",
    "voice": "tc_6a8f9d53322676d2f0934a21",
    "language": "jpn",
@@ -764,7 +814,7 @@
    "tempo": 1.1
   },
   {
-   "id": "line077",
+   "id": "line082",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
@@ -774,7 +824,7 @@
    "tempo": 0.85
   },
   {
-   "id": "line078",
+   "id": "line083",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
@@ -784,7 +834,7 @@
    "tempo": 0.85
   },
   {
-   "id": "line079",
+   "id": "line084",
    "model": "typecast-direct",
    "voice": "tc_6322940059d649937b97f326",
    "language": "jpn",
@@ -794,7 +844,7 @@
    "tempo": 1.08
   },
   {
-   "id": "line080",
+   "id": "line085",
    "model": "typecast-direct",
    "voice": "tc_63f7167e54b37fb5326409d1",
    "language": "jpn",
@@ -804,7 +854,7 @@
    "tempo": 0.85
   },
   {
-   "id": "line081",
+   "id": "line086",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
@@ -814,7 +864,7 @@
    "tempo": 0.85
   },
   {
-   "id": "line082",
+   "id": "line087",
    "model": "typecast-direct",
    "voice": "tc_63f7167e54b37fb5326409d1",
    "language": "jpn",
@@ -824,7 +874,7 @@
    "tempo": 0.92
   },
   {
-   "id": "line083",
+   "id": "line088",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
@@ -834,7 +884,7 @@
    "tempo": 0.82
   },
   {
-   "id": "line084",
+   "id": "line089",
    "model": "typecast-direct",
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
@@ -844,7 +894,7 @@
    "tempo": 0.85
   },
   {
-   "id": "line085",
+   "id": "line090",
    "model": "typecast-direct",
    "voice": "tc_63f7167e54b37fb5326409d1",
    "language": "jpn",
@@ -854,7 +904,7 @@
    "tempo": 0.92
   },
   {
-   "id": "line086",
+   "id": "line091",
    "model": "typecast-direct",
    "voice": "tc_63f7167e54b37fb5326409d1",
    "language": "jpn",
@@ -864,7 +914,7 @@
    "tempo": 0.88
   },
   {
-   "id": "line087",
+   "id": "line092",
    "model": "typecast-direct",
    "voice": "tc_63f7167e54b37fb5326409d1",
    "language": "jpn",
@@ -874,7 +924,7 @@
    "tempo": 0.88
   },
   {
-   "id": "line088",
+   "id": "line093",
    "model": "typecast-direct",
    "voice": "tc_63049449e7dfae64b10c6cb9",
    "language": "jpn",
@@ -884,7 +934,7 @@
    "tempo": 1.0
   },
   {
-   "id": "line089",
+   "id": "line094",
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
@@ -894,7 +944,7 @@
    "tempo": 0.88
   },
   {
-   "id": "line090",
+   "id": "line095",
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
@@ -904,7 +954,7 @@
    "tempo": 0.85
   },
   {
-   "id": "line091",
+   "id": "line096",
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
@@ -914,7 +964,7 @@
    "tempo": 0.85
   },
   {
-   "id": "line092",
+   "id": "line097",
    "model": "typecast-direct",
    "voice": "tc_629fe972013e90b4db213fd8",
    "language": "jpn",
