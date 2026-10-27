@@ -203,6 +203,81 @@ def el_child_search(cfg):
     print("어린이 목소리 후보 탐색 완료")
 
 
+def el_ja_search(cfg):
+    """ElevenLabs 목소리 도서관에서 일본어 원어 화자(language=ja)를 배역 조건별로 찾아
+    오디션 대사 샘플을 만든다. 도서관 목소리는 내 목소리에 추가해야 TTS가 되므로
+    배역당 n명(기본 2)만 추가한다 — 계정의 사용자 목소리 칸 한도를 넘지 않게."""
+    import urllib.parse
+    key = (os.environ.get("ELEVENLABS_API_KEY") or "").strip()
+    if not key:
+        sys.exit("ELEVENLABS_API_KEY 시크릿이 필요합니다.")
+    os.makedirs(OUT_DIR, exist_ok=True)
+    model = cfg.get("model", "eleven_v3")
+    seen, failed, log = set(), [], []
+    for role in cfg["roles"]:
+        params = {"page_size": 30, "language": "ja"}
+        for k in ("gender", "age", "use_cases", "search"):
+            if role.get(k):
+                params[k] = role[k]
+        status, data = el_request(
+            "GET", "https://api.elevenlabs.io/v1/shared-voices?" + urllib.parse.urlencode(params), key)
+        if status != 200 or not isinstance(data, dict):
+            print(f"[{role['role']}] 검색 실패 (HTTP {status}): {data}")
+            failed.append(role["role"])
+            continue
+        picks = []
+        for v in data.get("voices", []):
+            vid = v.get("voice_id")
+            # 일본어 원어 화자만: 도서관 표기 언어가 ja인 목소리(다국어·외국 화자 제외)
+            if not vid or vid in seen or (v.get("language") or "").lower() != "ja":
+                continue
+            seen.add(vid)
+            picks.append(v)
+            if len(picks) >= int(role.get("n", 2)):
+                break
+        if not picks:
+            print(f"[{role['role']}] 조건에 맞는 일본어 원어 목소리가 없습니다: {params}")
+            failed.append(role["role"])
+            continue
+        for i, v in enumerate(picks, 1):
+            name = (v.get("name") or f"voice{i}").replace("/", "-")
+            vid, owner = v["voice_id"], v.get("public_owner_id")
+            print(f"[{role['role']} 후보{i}] {name} | id={vid} | gender={v.get('gender')} "
+                  f"age={v.get('age')} accent={v.get('accent')} | {(v.get('description') or '')[:80]}")
+            a_status, added = el_request(
+                "POST", f"https://api.elevenlabs.io/v1/voices/add/{owner}/{vid}",
+                key, {"new_name": f"{role['role']}-{name}"[:40]})
+            use_id = added.get("voice_id", vid) if a_status == 200 and isinstance(added, dict) else vid
+            if a_status != 200:
+                print(f"  내 목소리 추가 실패 (HTTP {a_status}): {added} — 원본 ID로 시도")
+            log.append({"role": role["role"], "cand": i, "name": name, "voice_id": use_id,
+                        "library_id": vid, "gender": v.get("gender"), "age": v.get("age"),
+                        "accent": v.get("accent"), "description": v.get("description")})
+            for line in role["lines"]:
+                path = os.path.join(OUT_DIR, f"{role['role']}_EL{i}-{name[:20]}_{line['id']}.mp3")
+                if os.path.exists(path) and os.path.getsize(path) > 0:
+                    print(f"  기존 파일 재사용 → {path}")
+                    continue
+                req = urllib.request.Request(
+                    f"https://api.elevenlabs.io/v1/text-to-speech/{use_id}",
+                    data=json.dumps({"text": line["text"], "model_id": model}).encode(),
+                    headers={"Content-Type": "application/json", "xi-api-key": key},
+                    method="POST")
+                try:
+                    with urllib.request.urlopen(req, timeout=120) as resp:
+                        open(path, "wb").write(resp.read())
+                    print(f"  생성됨 → {path}")
+                except urllib.error.HTTPError as e:
+                    print(f"  [{line['id']}] 오류 (HTTP {e.code}): {e.read().decode(errors='replace')[:200]}")
+                    failed.append(f"{role['role']}-{i}-{line['id']}")
+    with open(os.path.join(OUT_DIR, "el_ja_voices.jsonl"), "w", encoding="utf-8") as f:
+        for row in log:
+            f.write(json.dumps(row, ensure_ascii=False) + "\n")
+    if failed:
+        print(f"실패: {', '.join(failed)}")
+    print("ElevenLabs 일본어 원어 목소리 오디션 완료")
+
+
 def typecast_list(cfg):
     """Typecast 보이스 목록을 로그에 출력한다(무과금). 후보 선정용 — 이름·성별·나이·지원 언어를 한 줄씩."""
     key = (os.environ.get("TYPECAST_API_KEY") or "").strip()
@@ -281,6 +356,9 @@ def main():
                           encoding="utf-8"))
     if spec.get("el_child_search"):
         el_child_search(spec["el_child_search"])
+        return
+    if spec.get("el_ja_search"):
+        el_ja_search(spec["el_ja_search"])
         return
     if spec.get("typecast_list"):
         typecast_list(spec["typecast_list"])

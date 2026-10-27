@@ -1,0 +1,327 @@
+{
+ "_설명": "『引きこもり息子』(hikikomori-ja) PHASE 1 배역 오디션(Typecast ssfm-v30, language=jpn). 6배역 후보 15명 + 내레이터 Lloyd(채널 고정) 확인 × 대비 감정 대사 2줄 = 32샘플(기획검토 대본 원문, 음성 입력만 가나 변형). TTS 구독 크레딧만 사용(fal 달러 0). 언어 검사(ja/large-v3) 후 고니감독님 청취로 채택. ElevenLabs 비교는 hikikomori-el.json. 실행: generate-video.yml audition_spec=hikikomori-voices.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "father_DaichiInoue_A",
+   "model": "typecast-direct",
+   "voice": "tc_63622a97ee3708cc70012f94",
+   "language": "jpn",
+   "text": "出ていけ！ お前みたいなゴミ、育てた覚えはない！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "father_DaichiInoue_B",
+   "model": "typecast-direct",
+   "voice": "tc_63622a97ee3708cc70012f94",
+   "language": "jpn",
+   "text": "……あいつは……ゴミなんかじゃ……なかった……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "father_RyoutaTakahashi_A",
+   "model": "typecast-direct",
+   "voice": "tc_62baac31e1c614d37b9160e3",
+   "language": "jpn",
+   "text": "出ていけ！ お前みたいなゴミ、育てた覚えはない！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "father_RyoutaTakahashi_B",
+   "model": "typecast-direct",
+   "voice": "tc_62baac31e1c614d37b9160e3",
+   "language": "jpn",
+   "text": "……あいつは……ゴミなんかじゃ……なかった……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "father_HideoWatanabe_A",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "出ていけ！ お前みたいなゴミ、育てた覚えはない！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.0,
+   "tempo": 1.05
+  },
+  {
+   "id": "father_HideoWatanabe_B",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……あいつは……ゴミなんかじゃ……なかった……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "daiki_ToumaMurata_A",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "……分かった。出ていくよ。……でも、とうさん。後悔しないでね",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "daiki_ToumaMurata_B",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "おじさん。……とうさんに似て、よかったです",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "daiki_Tonakaisan_A",
+   "model": "typecast-direct",
+   "voice": "tc_639ad2a0b3863ffe1948a241",
+   "language": "jpn",
+   "text": "……分かった。出ていくよ。……でも、とうさん。後悔しないでね",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "daiki_Tonakaisan_B",
+   "model": "typecast-direct",
+   "voice": "tc_639ad2a0b3863ffe1948a241",
+   "language": "jpn",
+   "text": "おじさん。……とうさんに似て、よかったです",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "daiki_KentaYoshida_A",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "……分かった。出ていくよ。……でも、とうさん。後悔しないでね",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "daiki_KentaYoshida_B",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "おじさん。……とうさんに似て、よかったです",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "mother_NanamiIchikawa_A",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "工場の赤字……よねんかん、ずっとあの子が埋めてくれてたのよ",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "mother_NanamiIchikawa_B",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "おとなりに負けないくらい、いいお肉にしたのよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "mother_Agatha_A",
+   "model": "typecast-direct",
+   "voice": "tc_63049449e7dfae64b10c6cb9",
+   "language": "jpn",
+   "text": "工場の赤字……よねんかん、ずっとあの子が埋めてくれてたのよ",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "mother_Agatha_B",
+   "model": "typecast-direct",
+   "voice": "tc_63049449e7dfae64b10c6cb9",
+   "language": "jpn",
+   "text": "おとなりに負けないくらい、いいお肉にしたのよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "mother_Hera_A",
+   "model": "typecast-direct",
+   "voice": "tc_6a7446f56a91f3d41108bfca",
+   "language": "jpn",
+   "text": "工場の赤字……よねんかん、ずっとあの子が埋めてくれてたのよ",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "mother_Hera_B",
+   "model": "typecast-direct",
+   "voice": "tc_6a7446f56a91f3d41108bfca",
+   "language": "jpn",
+   "text": "おとなりに負けないくらい、いいお肉にしたのよ",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 1.0
+  },
+  {
+   "id": "uncle_Rex_A",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "ま、だいきがあんなふうになったのも……にいさんに似ちゃったのかねぇ",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "uncle_Rex_B",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "だ、だいきくん……いや、だいきさん。いやぁ、さすが、かとうけの……",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.1
+  },
+  {
+   "id": "uncle_Antonio_A",
+   "model": "typecast-direct",
+   "voice": "tc_62ce5451b130717df10ea36e",
+   "language": "jpn",
+   "text": "ま、だいきがあんなふうになったのも……にいさんに似ちゃったのかねぇ",
+   "emotion_preset": "toneup",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "uncle_Antonio_B",
+   "model": "typecast-direct",
+   "voice": "tc_62ce5451b130717df10ea36e",
+   "language": "jpn",
+   "text": "だ、だいきくん……いや、だいきさん。いやぁ、さすが、かとうけの……",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.1
+  },
+  {
+   "id": "shota_Lorenzo_A",
+   "model": "typecast-direct",
+   "voice": "tc_68f0422cc863e7c17af5183d",
+   "language": "jpn",
+   "text": "本日をもちまして、かとうせいこうさんへの発注は、すべて打ち切らせていただきます",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "shota_Lorenzo_B",
+   "model": "typecast-direct",
+   "voice": "tc_68f0422cc863e7c17af5183d",
+   "language": "jpn",
+   "text": "おじさん。……ビジネスですから",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "shota_Robert_A",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "本日をもちまして、かとうせいこうさんへの発注は、すべて打ち切らせていただきます",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "shota_Robert_B",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "おじさん。……ビジネスですから",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "kuroda_Poseidon_A",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "かとう社長。……サインを",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "kuroda_Poseidon_B",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "た、単価は元に戻します。いえ、うわのせします！ ですから、どうか……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 1.1
+  },
+  {
+   "id": "kuroda_HideoWatanabe_A",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "かとう社長。……サインを",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "kuroda_HideoWatanabe_B",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "た、単価は元に戻します。いえ、うわのせします！ ですから、どうか……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 1.1
+  },
+  {
+   "id": "narrator_Lloyd_NA0",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "「ゴミ」と怒鳴って追い出した息子。その部屋で、父が見てしまったものとは――",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "narrator_Lloyd_NA10",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "昼に眠り、夜に起きていたのは、ゲームのためではなかった。地球の裏側の朝に合わせて、彼は働いていたのだ。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  }
+ ]
+}
