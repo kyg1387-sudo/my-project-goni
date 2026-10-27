@@ -58,7 +58,7 @@
    "model": "typecast-direct",
    "voice": "tc_65681f21097fc4326ceb5e21",
    "language": "jpn",
-   "text": "取引先のほうおうこうぎょうから、ねさげの要求が続いていました。",
+   "text": "取引先のほうおうこうぎょうから、値さげの要求が続いていました。",
    "emotion_preset": "normal",
    "emotion_intensity": 1.0,
    "tempo": 0.95
@@ -108,7 +108,7 @@
    "model": "typecast-direct",
    "voice": "tc_63049449e7dfae64b10c6cb9",
    "language": "jpn",
-   "text": "今夜はお祝いに、すき焼きだそうよ",
+   "text": "今夜はお祝いに、すきやき、だそうよ",
    "emotion_preset": "happy",
    "emotion_intensity": 0.5,
    "tempo": 1.0
@@ -678,7 +678,7 @@
    "model": "typecast-direct",
    "voice": "tc_6a8f9d53322676d2f0934a21",
    "language": "jpn",
-   "text": "せお社長。……サインを",
+   "text": "セオ社長。……サインを",
    "emotion_preset": "tonedown",
    "emotion_intensity": 1.1,
    "tempo": 0.9
@@ -768,7 +768,7 @@
    "model": "typecast-direct",
    "voice": "tc_63f7167e54b37fb5326409d1",
    "language": "jpn",
-   "text": "直接取引のいこうしょです。……せおせいこうと",
+   "text": "直接取引のいこうしょです。……セオ精工と",
    "emotion_preset": "tonedown",
    "emotion_intensity": 1.0,
    "tempo": 0.88
