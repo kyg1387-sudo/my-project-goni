@@ -1,0 +1,37 @@
+{
+ "_설명": "『引きこもり息子』 黒田(Poseidon) B대사 재녹음 3안 — 1차 오디션 B가 15.7초로 늘어지고 「いいいい」 말더듬 붕괴. 문장 앞 「た、」 더듬기 제거·세기 낮춤 비교. Typecast 구독 크레딧만(fal 0). 실행: generate-video.yml audition_spec=hikikomori-retake.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "kuroda_Poseidon_B1",
+   "text": "た、単価は、元に戻します。いえ……うわのせします！ ですから、どうか……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.7,
+   "tempo": 1.0,
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn"
+  },
+  {
+   "id": "kuroda_Poseidon_B2",
+   "text": "単価は元に戻します。いえ、うわのせします。ですから、どうか……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 1.05,
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn"
+  },
+  {
+   "id": "kuroda_Poseidon_B3",
+   "text": "単価は元に戻します！ いえ、うわのせします！ ですから、どうか……！",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.1,
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn"
+  }
+ ]
+}
