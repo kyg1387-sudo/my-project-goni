@@ -1,0 +1,19 @@
+{
+ "_설명": "S04a 3차 — edit는 켄타를 운전석에 앉혔다(2장 모두). 얼굴 없는 뒷모습 구도로 t2i(정체 참조 불필요): 뒷좌석 카메라 → 가운데 줄 오른쪽 끝에 라이트그레이 후디 청년(뒷모습), 옆에 고개 숙인 청년 2명, 앞자리 인솔자 좌·운전기사 우. 2장 ≈ 0.07달러.",
+ "_style_preset": "REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, natural skin and fabric texture, cold blue night, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render.",
+ "characters": [
+  {
+   "id": "S04a-t2i",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/text-to-image",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "prompt": "[CAMERA] Inside a RIGHT-hand-drive Japanese Toyota HiAce-type passenger van at night, photographed from the rear bench seat looking forward over the middle bench, 35mm, eye level, slightly from the left. [CHARACTER] On the middle bench directly in front of the camera, three young Japanese men seated facing forward, seen from behind: at the RIGHT end by the window, a 24-year-old with short dark hair in a LIGHT GREY hoodie (hood down), his head turned slightly toward the window so only the back and a sliver of his cheek show; beside him two young men in dark jackets with heads bowed. Seat belts across their shoulders, the grey cloth seat backs and headrests visible in front of them. In the front seats: a heavy-set man with a shaved head in a black jacket in the LEFT passenger seat, and the driver in the RIGHT seat with both hands on the steering wheel, backs of their heads only, NO masks. [ACTION] Everyone still; the grey-hoodie young man looks out at the passing lights. [SETTING] Grey cloth seats, dark cabin lit by the dashboard glow and cold blue-white street lights streaking past the tinted windows, the night road through the windscreen, a small navigation screen in the centre console. REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, natural skin and fabric texture, cold blue night, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render. [NEGATIVE] anime, illustration, 3d render, left-hand drive, steering wheel on the left, faces of the bowed men, eye masks, readable text, logos, watermark, split panels, extra people."
+  }
+ ]
+}
