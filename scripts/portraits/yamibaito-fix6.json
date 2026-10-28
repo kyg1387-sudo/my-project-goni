@@ -1,0 +1,23 @@
+{
+ "_설명": "고니감독님 재지적 2026-10-28 「차 안 장면 수정이 안 됐다」 — v2-1 크롭 판은 켄타가 창틀·필러 뒤에 보여 차 밖처럼 읽힘. 사진 키프레임(S04c 우핸들 내부)을 refs로 켄타를 '카메라 앞 가운데 줄 좌석'에 앉혀 명백히 차 안에 있게 edit(2장 ≈ 0.07달러) → i2v lite 재생성 0.18달러.",
+ "_style_preset": "REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, natural skin texture, cold blue night, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render.",
+ "characters": [
+  {
+   "id": "S04a-v3",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/yamibaito-keyframes/S04c-1.png",
+    "assets/portraits/yamibaito-cast/cells/kenta-hoodie-expr1.png"
+   ],
+   "prompt": "Edit this photograph. Keep the van interior exactly as it is — RIGHT-hand drive, the heavy-set escort in the LEFT front passenger seat, the driver's hands on the wheel on the RIGHT, the grey cloth seats, the night road, the cold lighting. ADD people in the middle bench seat directly in front of the camera (the camera sits on the rear bench): at the RIGHT end of that bench, the young man from the second reference (Kenta, 24, short dark hair, light grey hoodie, hood down) seen from behind at three-quarter angle so the side of his face is visible, seated INSIDE the cabin with the seat back and headrest in front of him and the tinted window with streaking lights beside him; next to him on the same bench, two young men in dark jackets with heads bowed, only the backs of their heads visible. Everyone is clearly inside the vehicle. REAL PHOTOGRAPH, photorealistic Japanese drama film still shot on a cinema camera, natural skin texture, cold blue night, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render. [NEGATIVE] anime, illustration, 3d render, left-hand drive, people outside the car, faces of the two bowed men, readable text, logos, watermark, split panels."
+  }
+ ]
+}
