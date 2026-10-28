@@ -1,0 +1,15 @@
+{
+ "_설명": "S04a 5차 — 내레이션 「三人の若者」에 맞춰 뒷좌석 청년을 4명→3명(켄타 제외)으로. 가장 왼쪽(창가) 청년을 지우고 빈 좌석으로. 2장 ≈ 0.07달러.",
+ "_style_preset": "REAL PHOTOGRAPH, photorealistic Japanese drama film still, cold blue night, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render.",
+ "characters": [
+  {
+   "id": "S04a-v5",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {"image_size": {"width": 2560, "height": 1440}},
+   "refs": ["assets/portraits/yamibaito-fix10/S04a-base.png"],
+   "prompt": "Edit this photograph. REMOVE ONLY the leftmost young man (the one seated by the LEFT window, in a dark jacket with head bowed) and show the empty grey seat and the seat belt hanging there instead, with the left window and the blurred night street behind. Keep EVERYTHING else exactly as it is — the remaining three young men in dark jackets with bowed heads on the bench, the young man in the light grey hoodie at the right end, the heavy-set man in the left front seat, the driver on the right with hands on the wheel, the van interior, windows, lighting and framing. Exactly FOUR people on the rear bench after the edit: three in dark jackets and one in a grey hoodie. REAL PHOTOGRAPH, photorealistic Japanese drama film still, cold blue night, 16:9, one continuous frame. NOT anime, NOT illustration, NOT 3d render. [NEGATIVE] anime, 3d render, faces, extra people, left-hand drive, changed seating, readable text, watermark, split panels."
+  }
+ ]
+}
