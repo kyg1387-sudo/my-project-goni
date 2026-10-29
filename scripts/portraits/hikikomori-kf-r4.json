@@ -1,0 +1,15 @@
+{
+ "_설명": "hikikomori PHASE 4 키프레임 r4 (build_hikikomori_keyframes.py 생성, 직접 수정 금지).",
+ "_style_preset": "Photorealistic live-action Japanese human drama, contemporary Tokyo (Reiwa era), Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting",
+ "characters": [
+  {
+   "id": "S06f",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-cast/cells/loc-home-living-day.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the location reference: match its architecture, colours, set dressing and light direction; ignore any borders, labels or wall papers. Nobody holds a phone; NO smartphone in any hand. [CAMERA] high-angle looking down, 100mm macro lens, f/2.8, very shallow depth of field, creamy bokeh, the object fills more than 70 percent of the frame. Insert: only the hands and the object, NO FACE visible, no other people. Photorealistic live-action Japanese human drama, contemporary Tokyo (Reiwa era), Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting. [CHARACTER] IDENTITY FIRST — only the hands and sleeves of Seo Kentaro: thick weathered hands with a small faded pale burn scar on the back of the RIGHT hand, sleeves of a plain charcoal-grey knit cardigan over a plain grey crew-neck T-shirt, dark trousers, no logo.  [ACTION] Insert: Kentaro's scarred hands on his knees, trembling slightly, gripping the trouser fabric. [SETTING] Lighting: night, a warm 3200K pendant lamp over the dining table, soft falloff into the dark room, faces readable. All papers, ledgers, screens, signs, cards, keyboards and labels are completely blank (monitors show only a soft plain glow); no letters, numbers or symbols anywhere in the frame. [NEGATIVE] gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, signage lettering, documents with writing, screens with text, printed labels, keyboard key letters, brand logos, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, anime, 3d render, illustration, thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks, earrings on men, apple logo, brand logo on monitors or laptops, LED light strips. The house has NO calendars, NO posters, NO notes with writing on the walls or fridge; all labels blank. CAMERA: steep high angle, looking down from about 4 metres above. Full-frame 16:9 image filling the whole canvas: NO black bars, NO white borders, NO letterbox or pillarbox. Absolutely no text, letters, numbers, logos or symbols anywhere in the image."
+  }
+ ]
+}
