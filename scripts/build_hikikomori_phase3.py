@@ -265,7 +265,7 @@ SHOTS = [
       motion="The hand gestures proudly in small circles, then taps the knee."),
     S("S07e", "S07", "face", "ms", "home_day", "EL", [Y_], "HOME_LIV", "Medium: Yumiko standing at the kitchen side with a tray of tea, frozen, eyes lowered, hearing who Ryosuke works for.", line="L17", vo=True,
       motion="She freezes with the tray, her eyes lower, her fingers tighten on the tray." + HOLD, expr="worry"),
-    S("S07f", "S07", "d", "cu", "home_day", "EL", [Se], "HOME_LIV", "Close-up of Seiji pushing up his gold-rimmed glasses with one finger, eyes narrowed, sneering.", line="L18",
+    S("S07f", "S07", "d", "ots", "home_day", "EL", [Se, Kh], "HOME_LIV", "Over Kentaro's blurred shoulder (left foreground): close shot of Seiji pushing up his gold-rimmed glasses with one finger, eyes narrowed, sneering.", line="L18",
       act="Seiji pushes up his glasses with one finger and sneers in a mocking, dismissive tone, eyes narrowed with contempt, the corner of his mouth raised. Looking down on his brother." + OB, expr="sneer"),
     S("S07g", "S07", "ins", "ecu", "home_day", "EL", [Kh], "HOME_LIV", "Insert: Kentaro's scarred fist slowly clenching on his knee.",
       motion="The fist clenches slowly and trembles."),
@@ -280,7 +280,7 @@ SHOTS = [
 
     S("S09a", "S09", "empty", "ws", "room_n", "EL", [], "ROOM_N", "POV from the doorway: the door swinging slowly open into the dark room, revealing the glow of three monitors.",
       motion="The door swings slowly open; the monitor glow widens across the floor."),
-    S("S09b", "S09", "face", "ms", "room_n", "LA", [Kh], "ROOM_N", "Low medium: Kentaro standing in the doorway, the cold monitor glow on his face, surprised.",
+    S("S09b", "S09", "face", "ms", "room_n", "SIDE", [Kh], "ROOM_N", "Low medium: Kentaro standing in the doorway, the cold monitor glow on his face, surprised.",
       motion="He stands still, his eyes move across the room, a slow breath." + HOLD, expr="calm"),
     S("S09c", "S09", "empty", "ws", "room_n", "EL", [], "ROOM_C", "Wide of the room, unexpectedly tidy: an organised desk with three monitors in sleep glow, a small humming server with blinking green LEDs, thick plain-covered books, "
       "a whiteboard with only line diagrams and arrows, a few empty plastic bottles in the corner.", motion="The server LEDs blink, the monitors glow softly; nothing else moves.", line="NA11"),
@@ -296,7 +296,7 @@ SHOTS = [
 
     # ③ 전개·위기 3:40~7:00
     S("S10a", "S10", "estill", "ms", "screen", "EL", [], "ROOM_M", "Full-screen monitor in the dark: a sales dashboard layout with plain panels (all Japanese UI text composited, lcd mode).", fx="pushin"),
-    S("S10b", "S10", "pstill", "ots", "room_n", "SIDE", [Kh], "ROOM_N", "From behind over Kentaro's shoulder, seated in the desk chair: the glowing dashboard monitor in front of him, his face not visible, a quiet stunned murmur.", line="L21", fx="pushin", expr="back"),
+    S("S10b", "S10", "pstill", "ots", "room_n", "SIDE", [Kh], "ROOM_N", "From directly behind Kentaro's desk chair, the camera low behind him: the glowing dashboard monitor in front of him, his face not visible, a quiet stunned murmur.", line="L21", fx="pushin", expr="back"),
     S("S10c", "S10", "estill", "ecu", "screen", "EL", [], "ROOM_M", "Extreme close-up on the monitor: a large monthly sales figure panel (figure composited).", line="L22", vo=True, fx="pushin"),
     S("S10d", "S10", "estill", "ms", "screen", "EL", [], "ROOM_M", "Monitor: a client list panel (company names composited).", line="NA13", fx="pan"),
     S("S10e", "S10", "estill", "ecu", "screen", "HA", [], "ROOM_M", "Monitor: a calendar panel with the same 2:00 AM meeting repeated every day (composited).", fx="tilt"),
@@ -382,7 +382,7 @@ SHOTS = [
     S("S15g", "S15", "d", "ots", "office_n", "HA", [Kw, Y_], "OFF_N", "Over Yumiko's blurred shoulder (right foreground), high angle: Kentaro gripping the passbook at three-quarter angle, wet eyes, his voice fading.", line="L39a",
       act=NOSMILE + "Kentaro grips the passbook with trembling hands, his voice fading away, wet eyes on the page." + WET_HOLD + OB, expr="grief"),
     S("S15h", "S15", "estill", "ecu", "office_n", "EL", [], "OFF_N", "Extreme close-up: the repeated deposit rows on the passbook page (composited), lamp light.", line="NA20", fx="tilt"),
-    S("S15i", "S15", "face", "ecu", "office_n", "EL", [Kw], "OFF_N", "Choker extreme close-up of Kentaro's eyes and brow, his breath stopping.",
+    S("S15i", "S15", "face", "ecu", "office_n", "SIDE", [Kw], "OFF_N", "Choker extreme close-up of Kentaro's eyes and brow, his breath stopping.",
       motion=NOSMILE + "His breath stops, his eyes fill, one slow blink." + WET_HOLD + HOLD, expr="grief"),
 
     S("S16a", "S16", "empty", "ews", "fac_n", "HA", [], "FAC_N", "Extreme wide of the deserted factory at night, machines silent, one fluorescent tube lit.",
@@ -417,7 +417,7 @@ SHOTS = [
       motion="His eyes move across the room and settle, a calm breath." + HOLD, expr="calm"),
     S("S18d", "S18", "d", "ms", "meet", "EL", [R_], "MEET", "Medium: Ryosuke half-rising from his chair at three-quarter angle, flustered, eyes wide.", line="L43",
       act=NOSMILE + "Ryosuke half-rises from his chair, flustered, eyes wide, asking his cousin why he is here." + OB, expr="shock"),
-    S("S18e", "S18", "face", "cu", "meet_door", "LA", [Ds], "MEET", "Low close-up of Daiki standing, unbothered by his uncle's sneer, calm eyes on his father only.", line="L44", vo=True,
+    S("S18e", "S18", "face", "cu", "meet_door", "SIDE", [Ds], "MEET", "Low close-up of Daiki standing, unbothered by his uncle's sneer, calm eyes on his father only.", line="L44", vo=True,
       motion="He ignores the sneer, his eyes stay calm and steady, one slow blink." + HOLD, expr="cool"),
     S("S18f", "S18", "face", "cu", "meet", "HA", [Kw], "MEET_T", "High close-up of Kentaro seated, the pen still in his hand, staring at his son in disbelief.",
       motion="He stares at his son, his lips part, the pen still in his hand." + SEATED + HOLD, expr="stunned"),
@@ -439,7 +439,7 @@ SHOTS = [
     S("S19g", "S19", "face", "ms", "meet_turn", "EL", [R_], "MEET", "Medium: Ryosuke seated, flipping through papers in his folder in a panic, pale.",
       motion=NOSMILE + "He flips the pages quickly back and forth, pale, breath short." + SEATED + HOLD, expr="shock"),
 
-    S("S20a", "S20", "face", "cu", "meet_turn", "HA", [M_], "MEET", "High chest-up close-up of Makabe, pale, a thin line of cold sweat running down from the temple.",
+    S("S20a", "S20", "face", "cu", "meet_turn", "SIDE", [M_], "MEET", "High chest-up close-up of Makabe, pale, a thin line of cold sweat running down from the temple.",
       motion=NOSMILE + "He swallows hard." + SWEAT_FLOW + SEATED + HOLD, expr="stern"),
     S("S20b", "S20", "ins", "ecu", "meet_turn", "HA", [Ds], "MEET_T", "Insert: Daiki's hand setting a thick plain file binder down flat on the grey table, tabs without writing, no face.", line="L51", vo=True,
       motion="The hand sets the thick binder down flat and pushes it forward a little."),
@@ -469,7 +469,7 @@ SHOTS = [
       act="Seiji approaches with a servile forced grin, rubbing his hands, stammering flattery, sweat at the temple. Fawning over his nephew." + OB, expr="forced"),
     S("S22c", "S22", "d", "ots", "meet_turn", "EL", [Ds, Se], "MEET", "Over Seiji's blurred shoulder (right foreground): Daiki at three-quarter angle looking straight at his uncle, calm faint smile.", line="L58",
       act="Daiki looks straight at his uncle and says it quietly and clearly, a calm faint smile. Speaking to his uncle." + OB, expr="smile"),
-    S("S22d", "S22", "face", "ms", "meet_turn", "HA", [Se], "MEET", "High medium of Seiji standing frozen, the forced grin stuck on his face.",
+    S("S22d", "S22", "face", "ms", "meet_turn", "SIDE", [Se], "MEET", "High medium of Seiji standing frozen, the forced grin stuck on his face.",
       motion="The forced grin freezes and fades, his eyes dart." + HOLD, expr="forced"),
     S("S22e", "S22", "face", "ws", "meet_turn", "EL", [Kw, Ds], "MEET", "Wide: Kentaro seated in the foreground at three-quarter angle looking across the room at his son standing by the window, eyes softening with pride.",
       motion="His eyes soften, a slow breath, a faint tremble at the lips." + WET_HOLD + HOLD, expr="calm"),
@@ -489,7 +489,7 @@ SHOTS = [
     S("S23g", "S23", "d", "ms", "room_warm", "EL", [Dw, Kh], "ROOM_N", "Medium: Daiki seated at three-quarter angle shrugging slightly, a faint smile, answering his father.", line="L63",
       act="Daiki shrugs slightly and answers plainly, a faint smile. Speaking to his father." + OB, expr="smile"),
     S("S23h", "S23", "estill", "ecu", "room_warm", "EL", ["KID"], "P_PHOTO", "Insert: an old faded framed photograph beside the monitor: a small boy and a young father standing in front of a lathe in a small factory, warm faded colours.", line="L64", vo=True, fx="pushin"),
-    S("S23j", "S23", "face", "cu", "room_warm", "HA", [Kh], "ROOM_N", "High close-up of Kentaro listening, eyes wet, a trembling small smile.",
+    S("S23j", "S23", "face", "cu", "room_warm", "SIDE", [Kh], "ROOM_N", "High close-up of Kentaro listening, eyes wet, a trembling small smile.",
       motion="His eyes wet, his lips tremble into a small smile." + TEARS_FLOW + HOLD, expr="grief"),
     S("S23k", "S23", "d", "ots", "room_warm", "EL", [Dw, Kh], "ROOM_N", "Over Kentaro's blurred shoulder (left foreground): Daiki at three-quarter angle looking at his father with a faint smile.", line="L65",
       act="Daiki looks at his father and smiles faintly, saying it gently. Speaking to his father." + OB, expr="smile"),
@@ -514,7 +514,7 @@ SHOTS = [
 
 SPK_WHO = {"父": "KEN:work", "母": Y_, "大樹": Ds, "叔父": Se, "亮介": R_, "真壁": M_}
 # 듣는 사람 VO 컷의 앞 화자 어깨(ots 자동)를 쓰지 않는 컷 — 화자가 뒤에 있거나 화면 밖이 자연스러운 구도
-VO_OTS_SKIP = {"S06b", "S13b", "S07e", "S19d", "S23f", "S11f", "S12d", "S23c", "S18e"}  # S23c 문 너머·S18e 앞 인물 뒤바뀜(Kill Gate 1차)
+VO_OTS_SKIP = {"S06b", "S13b", "S07e", "S19d", "S23f", "S11f", "S12d", "S23c", "S18e", "S04e"}  # S23c 문 너머·S18e 앞 인물 뒤바뀜(Kill Gate 1차)
 SCENE_SPK_WARD = {"S04": {"父": Kh}, "S05": {"父": Kh, "大樹": Dh}, "S06": {"大樹": Dh, "父": Kh}, "S07": {"父": Kh}, "S15": {"父": Kw},
                   "S23": {"父": Kh, "大樹": Dw}, "S24": {"大樹": Dh}}
 

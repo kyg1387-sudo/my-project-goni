@@ -420,7 +420,7 @@
    "image": "assets/portraits/hikikomori-keyframes/S07e-1.png"
   },
   {
-   "prompt": "(override) omni: Close-up of Seiji pushing up his gold-rimmed glasses with one finger, eyes narro",
+   "prompt": "(override) omni: Over Kentaro's blurred shoulder (left foreground): close shot of Seiji pushing u",
    "duration": 5,
    "override_required": true,
    "image": "assets/portraits/hikikomori-keyframes/S07f-1.png"
@@ -499,7 +499,7 @@
    "image": "assets/portraits/hikikomori-keyframes/S10a-1.png"
   },
   {
-   "prompt": "(override) still: From behind over Kentaro's shoulder, seated in the desk chair: the glowing dashb",
+   "prompt": "(override) still: From directly behind Kentaro's desk chair, the camera low behind him: the glowin",
    "duration": 5,
    "override_required": true,
    "image": "assets/portraits/hikikomori-keyframes/S10b-1.png"

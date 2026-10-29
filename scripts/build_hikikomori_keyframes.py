@@ -135,6 +135,32 @@ EMO_OVERRIDE = {
     "S24g": "The chest badge is a BLANK plain silver plate with NO text.",
     "S24h": "Both men are seen strictly from BEHIND, side by side, facing the factory shutter; NO faces visible.",
 }
+# Kill Gate 2차(r3) — 정면 응시가 문장으로 안 막힌 컷은 앵글 자체를 옆모습으로, 앞 인물 안경 유입은 머리를 화면 밖으로
+EMO_OVERRIDE.update({
+    "S04e": "SIDE PROFILE: Kentaro is seen in strict side profile facing screen LEFT, staring down at his bowl; his wife is only a soft blurred shape far beyond him.",
+    "S06d": "Daiki is a small figure seen strictly from BEHIND, about 15 metres away, walking away down the street toward the distant factory; only the back of his grey hood and the bag are visible; NO face.",
+    "S07f": "FOREGROUND: only the blurred charcoal-cardigan shoulder of Kentaro at the near LEFT edge, his head OUT of frame. Seiji looks screen LEFT at his brother, NOT at the camera.",
+    "S08b": "The hallway contains NO computers, NO monitors, NO desks: only walls, the wooden floor and the son's door at the end.",
+    "S09b": "SIDE PROFILE: Kentaro stands in the doorway seen in side profile facing screen RIGHT into the room, his face lit by the cold monitor glow; NO phone.",
+    "S10b": "Exactly ONE person: Kentaro seated in the desk chair seen from directly behind (back of his greying head and cardigan), the glowing monitors beyond him; NOTHING in the foreground.",
+    "S13e": "Kentaro stands in the near foreground seen from BEHIND (back of the greying crew-cut and navy work jacket), facing the lathe; beyond him, about four metres away, Kaneda at his own machine looks toward Kentaro with concern, three-quarter angle, NOT at the camera.",
+    "S15i": "SIDE PROFILE extreme close-up: Kentaro's eye, cheek and brow in strict side profile facing screen LEFT, eyes wet, breath held; he does NOT look at the camera.",
+    "S17b": "EXTREME CLOSE-UP: the stapled plain white contract and a black fountain pen fill 70 percent of the frame on the grey table; NO characters.",
+    "S18c": "Behind Daiki: the open meeting-room doorway with bright corridor light, softly out of focus; NO office desks, NO monitors.",
+    "S18e": "SIDE PROFILE: Daiki in strict side profile facing screen LEFT toward his father, calm; nobody else.",
+    "S18g": "FOREGROUND: only a blurred navy work-jacket shoulder at the near LEFT edge, the head OUT of frame. Daiki STANDS at the near end of the table, chest-up, three-quarter angle toward screen LEFT.",
+    "S19a": "FOREGROUND: only a blurred black-suit shoulder at the near RIGHT edge, the head OUT of frame. Daiki stands, chest-up, three-quarter angle toward screen RIGHT.",
+    "S20a": "SIDE PROFILE: Makabe seated in side profile facing screen LEFT toward Daiki, pale, a thin line of cold sweat at the temple; NOT looking at the camera.",
+    "S20d": "FOREGROUND: only a blurred navy work-jacket shoulder at the near LEFT edge, the head OUT of frame. Daiki stands, chest-up, three-quarter angle toward screen LEFT, soft trusting eyes.",
+    "S21c": "POSE LOCKED: Makabe is ON HIS KNEES on the carpet (knees and shins on the floor, NOT seated, NOT on a chair), torso upright, head tilted up toward Kentaro off-screen RIGHT, stunned; high angle looking down at him.",
+    "S21d": "FRAMING: chest-up close-up of Kentaro standing at three-quarter angle toward screen LEFT, his head beginning a slight dignified bow; face at least one third of the frame height.",
+    "S22d": "SIDE PROFILE: Seiji in side profile facing screen LEFT, the forced grin frozen; medium shot, NOT looking at the camera.",
+    "S23j": "SIDE PROFILE: Kentaro seated in side profile facing screen RIGHT toward his son, eyes wet, a trembling small smile; nobody in the foreground.",
+    "S24e": "The hallway contains NO computers, NO desks, NO notices: only walls, the wooden floor and the son's door standing wide open with warm light flowing out.",
+    "S24h": "A REAL outdoor back alley in the morning, NOT a studio, NO white background: the small factory with its rising metal shutter, utility poles, golden light; both men seen strictly from BEHIND.",
+    "S17a": "Camera BEHIND Kentaro and Yumiko: the backs of their heads and shoulders (greying crew-cut + navy work jacket, dark-brown bob + beige cardigan) fill the near foreground, seated at the near side of the long table; across the table Makabe and Ryosuke sit facing them (NOT the camera); Seiji leans on the RIGHT wall. Exactly FIVE people, nobody duplicated. " + SEAT,
+})
+BACK_ONLY = {"S17a": ("kentaro", "yumiko"), "S13e": ("kentaro",)}  # 뒷모습으로만 나오는 인물 — 얼굴 크롭·정면 셀 대신 뒷모습 셀
 ANGER_CLOSED = ("Fury shown only in the wide-open glaring eyes, furrowed brow, flared nostrils and clenched jaw: eyes OPEN and fixed on the listener, "
                 "lips pressed together, mouth CLOSED, NOT shouting (speech is added later).")
 
@@ -196,6 +222,8 @@ def build(sc, stage):
                 face.append(f)
         refs = face + refs
     # 전경 인물 뒷모습 셀은 PHASE 3 생성기가 이미 넣었다
+    for k in BACK_ONLY.get(sc["id"], ()):
+        refs = [r for r in refs if not (who_of(os.path.basename(r))[0] == k or os.path.basename(r) == f"{k}.png")] + [f"{CELLS}/{k}-fullback.png"]
     if len(refs) > MAX_REFS:  # fal edit 모델은 참조 10장까지(S17a 5인 컷 422 실증) — 얼굴 크롭이 있는 인물의 시트 셀부터 뺀다
         has_face = {os.path.basename(r)[:-4] for r in refs if r.startswith(FACE_DIR)}
         refs = [r for r in refs if not (r.startswith(CELLS + "/") and who_of(os.path.basename(r))[0]
