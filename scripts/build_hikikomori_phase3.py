@@ -514,6 +514,32 @@ SHOTS = [
 
 SPK_WHO = {"父": "KEN:work", "母": Y_, "大樹": Ds, "叔父": Se, "亮介": R_, "真壁": M_}
 # 듣는 사람 VO 컷의 앞 화자 어깨(ots 자동)를 쓰지 않는 컷 — 화자가 뒤에 있거나 화면 밖이 자연스러운 구도
+# i2v 1초 시트 검수 1차(2026-10-29, lite 108컷): 무인 컷 i2v가 사람을 만들어 냄(S09a 정장 남자·S09c·S16e·S24e 코트 남자),
+# 무인 공장 조명이 켜짐(S16a), 빈 복도 문이 열리고 사람 등장(S08b) → 무인 컷은 정지 + 편집 카메라(제7장 2 재확인)
+EMPTY_STILL = {"S08b", "S09a", "S09c", "S16a", "S16e", "S24e"}
+# 태블릿 화면 합성 면(S19e) — 손이 사라졌다 나타남 + 화면 내용을 합성해야 하므로 정지
+INS_STILL = {"S19e"}
+# 재생성 컷 동작 고정 문장(맨 앞) — 정면 응시·정체 변형·카메라 풀백·조명 급변·지시 없는 소품
+MOTION_FIX = {
+    "S02c": "GAZE LOCKED: Kentaro keeps his eyes lowered on the desk phone the whole time and slowly closes them; he never raises his head and never looks at the camera.",
+    "S06f": "Only his scarred hands tremble slightly on his knees and his chest breathes; his hands stay EMPTY — no cloth, no paper, no object appears.",
+    "S08d": "FRAMING LOCKED: only the hand on the doorknob and the charcoal cardigan sleeve stay in frame; the camera never moves or pulls back; no face and no glasses ever appear.",
+    "S09g": "LIGHTING LOCKED: the brightness and colour of the light on his face stay exactly constant from the first frame to the last (no flash, no exposure change); only his eyes widen slightly and he breathes.",
+    "S16c": "FRAMING LOCKED: the camera stays fixed on the hand; only the scarred hand slowly lowers the phone; no face, no head and no glasses ever enter the frame.",
+    "S19d": "FRAMING LOCKED: Makabe stays seated in the same high close-up the whole time; the camera never pulls back; he does not bow or lean; he only swallows and his eyes drop.",
+    "S20a": "FRAMING LOCKED: Makabe stays seated upright in the same chest-up close-up; no bowing, no leaning forward, no collapse; only a thin bead of sweat runs down from the temple and he blinks.",
+    "S18b": "Daiki stays standing in the doorway the whole time, one hand still near the door edge; he takes no step toward the camera; he only breathes and his eyes move toward the table.",
+    "S24c": "The father's hand slowly places the piece of beef into the rice bowl; only the hand and chopsticks move; steam rises; no face enters the frame.",
+    "S24d": "GAZE LOCKED: nobody looks at the camera; Kentaro serves from the pot, Yumiko smiles softly at Daiki, Daiki eats; steam rises; small natural movements only.",
+}
+for _s in SHOTS:
+    if _s["id"] in EMPTY_STILL:
+        _s["kind"] = "estill"
+    if _s["id"] in INS_STILL:
+        _s["motion"] = ""
+    if _s["id"] in MOTION_FIX:
+        _s["motion"] = MOTION_FIX[_s["id"]] + " " + _s["motion"]
+
 VO_OTS_SKIP = {"S06b", "S13b", "S07e", "S19d", "S23f", "S11f", "S12d", "S23c", "S18e", "S04e"}  # S23c 문 너머·S18e 앞 인물 뒤바뀜(Kill Gate 1차)
 SCENE_SPK_WARD = {"S04": {"父": Kh}, "S05": {"父": Kh, "大樹": Dh}, "S06": {"大樹": Dh, "父": Kh}, "S07": {"父": Kh}, "S15": {"父": Kw},
                   "S23": {"父": Kh, "大樹": Dw}, "S24": {"大樹": Dh}}

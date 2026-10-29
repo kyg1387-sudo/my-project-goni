@@ -185,6 +185,22 @@ def tv_screen():
     return im.filter(ImageFilter.GaussianBlur(6))
 
 
+def loi_screen():
+    """大樹が差し出すタブレット(S19e) — 직거래 의향서 PDF 화면(대본 L50 「直接取引の意向書」)."""
+    im = Image.new("RGB", (SW, SH), (236, 238, 242)); d = ImageDraw.Draw(im)
+    d.rectangle((0, 0, SW, 56), fill=(48, 52, 60)); d.text((24, 28), "意向書.pdf", font=F(26), fill=(230, 232, 236), anchor="lm")
+    d.rectangle((250, 80, SW - 250, SH), fill=(255, 255, 255))
+    d.text((SW / 2, 160), "直接取引に関する意向書", font=F(62), fill=(25, 25, 30), anchor="mm")
+    d.text((SW / 2, 240), "ヴァイスベルク研究所　×　瀬尾精工", font=F(36), fill=(60, 60, 70), anchor="mm")
+    body = ["当研究所は、瀬尾精工の旋盤加工技術を高く評価し、", "部品の直接取引を開始する意向を表明します。",
+            "第１条　対象：精密加工部品（試作・量産）", "第２条　期間：五年間（自動更新）"]
+    for i, t in enumerate(body):
+        d.text((330, 330 + i * 66), t, font=F(32), fill=(40, 40, 45))
+    d.text((SW - 330, 700), "ヴァイスベルク研究所　代表", font=F(30), fill=(40, 40, 45), anchor="rm")
+    d.line([(SW - 640, 760), (SW - 330, 760)], fill=(80, 80, 80), width=2)
+    return im
+
+
 def dashnum_screen():
     im = dash_screen().crop((0, 70, 800, 520)).resize((SW, SH), Image.LANCZOS)
     return im
@@ -217,7 +233,7 @@ def content(kind):
     return {"sleep": sleep_screen, "lock": lock_screen, "dash": dash_screen, "desk": desk_screen, "deskopen": lambda: desk_screen(True),
             "memo": memo_screen, "office": office_screen, "off": off_screen, "code": lambda: work_screen("code"), "term": lambda: work_screen("term"),
             "meet": lambda: work_screen("meet"), "graph": lambda: work_screen("graph"), "dashnum": dashnum_screen,
-            "clients": clients_screen, "cal": cal_screen, "tv": tv_screen}[kind]()
+            "clients": clients_screen, "cal": cal_screen, "tv": tv_screen, "loi": loi_screen}[kind]()
 
 
 # ---------- 컷별 화면 배정(왼쪽→오른쪽) ----------
