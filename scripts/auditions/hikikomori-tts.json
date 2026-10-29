@@ -440,8 +440,8 @@
    "language": "jpn",
    "text": "……あいつは……ゴミなんかじゃ……なかった……",
    "emotion_preset": "sad",
-   "emotion_intensity": 1.0,
-   "tempo": 0.8
+   "emotion_intensity": 0.6,
+   "tempo": 0.85
   },
   {
    "id": "line045",
@@ -659,9 +659,9 @@
    "voice": "tc_640997d2c535f40558c0722c",
    "language": "jpn",
    "text": "……おやじ、すまない。俺は……何も、見えてなかった",
-   "emotion_preset": "sad",
+   "emotion_preset": "whisper",
    "emotion_intensity": 1.0,
-   "tempo": 0.82
+   "tempo": 0.85
   },
   {
    "id": "line067",
@@ -880,8 +880,8 @@
    "language": "jpn",
    "text": "すまなかった。……お前を、ゴミだなんて……",
    "emotion_preset": "sad",
-   "emotion_intensity": 1.0,
-   "tempo": 0.82
+   "emotion_intensity": 0.6,
+   "tempo": 0.85
   },
   {
    "id": "line089",
