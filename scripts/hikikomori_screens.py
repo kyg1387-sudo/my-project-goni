@@ -175,6 +175,16 @@ def off_screen():
 
 
 
+def tv_screen():
+    """거실 TV(초점 밖) — 밤 뉴스 스튜디오: 푸른 배경·앵커 실루엣·하단 자막 띠. 흐림으로만 보이므로 글자는 넣지 않는다."""
+    im = Image.new("RGB", (SW, SH), (22, 48, 96)); d = ImageDraw.Draw(im)
+    for y in range(SH):
+        d.line([(0, y), (SW, y)], fill=(22 + y // 30, 48 + y // 25, 96 + y // 20))
+    d.ellipse((660, 230, 940, 520), fill=(205, 160, 135)); d.rectangle((560, 480, 1040, SH), fill=(40, 42, 58))
+    d.rectangle((0, 700, SW, 800), fill=(235, 235, 240)); d.rectangle((0, 700, 260, 800), fill=(200, 40, 50))
+    return im.filter(ImageFilter.GaussianBlur(6))
+
+
 def dashnum_screen():
     im = dash_screen().crop((0, 70, 800, 520)).resize((SW, SH), Image.LANCZOS)
     return im
@@ -207,7 +217,7 @@ def content(kind):
     return {"sleep": sleep_screen, "lock": lock_screen, "dash": dash_screen, "desk": desk_screen, "deskopen": lambda: desk_screen(True),
             "memo": memo_screen, "office": office_screen, "off": off_screen, "code": lambda: work_screen("code"), "term": lambda: work_screen("term"),
             "meet": lambda: work_screen("meet"), "graph": lambda: work_screen("graph"), "dashnum": dashnum_screen,
-            "clients": clients_screen, "cal": cal_screen}[kind]()
+            "clients": clients_screen, "cal": cal_screen, "tv": tv_screen}[kind]()
 
 
 # ---------- 컷별 화면 배정(왼쪽→오른쪽) ----------
@@ -297,6 +307,11 @@ def apply_plan(img, entries, blur=1.0):
     base = np.asarray(img.convert("RGB")).astype(float); H, W, _ = base.shape; out = base.copy()
     for e in entries:
         q = np.float32(e["q"]); kind = e["kind"]
+        if e["mode"] == "blurpatch":  # 벽 종이의 가짜 글자(라틴 낙서) — 초점 밖처럼 더 흐리게
+            poly = np.zeros((H, W), np.float32); cv2.fillConvexPoly(poly, q.astype(np.int32), 1.0)
+            poly = cv2.GaussianBlur(poly, (0, 0), 6)[..., None]
+            out = out * (1 - poly) + cv2.GaussianBlur(out, (0, 0), e.get("blur", 9)) * poly
+            continue
         src = np.asarray(lcd(content(kind), kind))
         M = cv2.getPerspectiveTransform(np.float32([[0, 0], [SW, 0], [SW, SH], [0, SH]]), q)
         warped = cv2.warpPerspective(src, M, (W, H), flags=cv2.INTER_AREA).astype(float)

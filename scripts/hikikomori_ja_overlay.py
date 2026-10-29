@@ -19,10 +19,14 @@ def F(p, s):
     return ImageFont.truetype(p, s)
 
 
+HAND = os.path.join(ROOT, "assets", "fonts", "KleeOne-SemiBold.ttf")  # 손글씨(포스트잇) — 인쇄체면 합성 티가 난다
+
+
 def postit():
     im = Image.new("RGB", (600, 600), (255, 255, 255)); d = ImageDraw.Draw(im)
-    d.text((300, 230), "パス：", font=F(G, 110), fill=(30, 30, 40), anchor="mm")
-    d.text((300, 390), "工場の創業日", font=F(G, 92), fill=(30, 30, 40), anchor="mm")
+    d.text((250, 215), "パス：", font=F(HAND, 112), fill=(25, 30, 55), anchor="mm")
+    d.text((305, 385), "工場の創業日", font=F(HAND, 96), fill=(25, 30, 55), anchor="mm")
+    im = im.rotate(-4, resample=Image.BICUBIC, fillcolor=(255, 255, 255))  # 손으로 쓴 줄은 약간 기운다
     a = np.asarray(im).astype(float); a = cv2.GaussianBlur(a, (0, 0), 1.6)  # 사인펜 번짐
     return Image.fromarray(a.astype("uint8"))
 
@@ -55,7 +59,7 @@ def contract():
     return im
 
 
-def put(base, art, quad, tol=55, strength=1.0):
+def put(base, art, quad, tol=55, strength=1.0, satkey=True):
     b = np.asarray(base.convert("RGB")).astype(float); H, W, _ = b.shape
     a = np.asarray(art.convert("RGB")).astype(float); h, w, _ = a.shape
     Mx = cv2.getPerspectiveTransform(np.float32([[0, 0], [w, 0], [w, h], [0, h]]), np.float32(quad))
@@ -64,7 +68,8 @@ def put(base, art, quad, tol=55, strength=1.0):
     med = np.median(b[poly > 0], axis=0); dist = np.linalg.norm(b - med, axis=2)
     key = np.clip(1 - (dist - tol) / 40, 0, 1) * poly
     hsv = cv2.cvtColor(b.astype("uint8"), cv2.COLOR_RGB2HSV).astype(float)
-    key *= np.clip((125 - hsv[..., 1]) / 30, 0, 1)  # 종이(채도 낮음, 램프 아래 약 75)만 — 손 피부(약 160)는 제외
+    if satkey:  # 노란 포스트잇처럼 채도 높은 종이는 끈다
+        key *= np.clip((125 - hsv[..., 1]) / 30, 0, 1)  # 종이(채도 낮음, 램프 아래 약 75)만 — 손 피부(약 160)는 제외
     key = cv2.erode(key, np.ones((5, 5), np.uint8))
     key = cv2.GaussianBlur(key, (0, 0), 1.0)
     mult = 1 - (1 - wa / 255.0) * strength * key[..., None]
@@ -74,7 +79,7 @@ def put(base, art, quad, tol=55, strength=1.0):
 def main():
     os.makedirs(OUT, exist_ok=True)
     src = os.path.join(OUT, "S09e.png")
-    im = put(Image.open(src if os.path.exists(src) else os.path.join(KF, "S09e-1.png")), postit(), [(298, 125), (420, 112), (440, 245), (322, 262)], tol=70, strength=0.9)
+    im = put(Image.open(src if os.path.exists(src) else os.path.join(KF, "S09e-1.png")), postit(), [(298, 125), (420, 112), (440, 245), (322, 262)], tol=70, strength=0.9, satkey=False)
     im.save(os.path.join(OUT, "S09e.png"))
     put(Image.open(os.path.join(KF, "S15e-1.png")), passbook(), [(600, 478), (820, 474), (814, 596), (604, 598)], tol=60, strength=0.85).save(os.path.join(OUT, "S15e.png"))
     put(Image.open(os.path.join(KF, "S15h-1.png")), passbook(8), [(560, 828 - 572 + 0, ), (700, 820 - 572), (712, 878 - 572), (575, 890 - 572)], tol=60, strength=0.6).save(os.path.join(OUT, "S15h.png")) if False else None
