@@ -23,7 +23,7 @@ FPS = 24; HARD = 1 / FPS; OMNI_MAX = 7.9; LEAD = 0.3; MIN_SHOT = 1.2; STILL_MAX 
 C = "assets/portraits/hikikomori-cast/cells/"
 WHO = {
     "KEN": ("Seo Kentaro, a stocky Japanese man aged 52, square weathered face, short greying crew-cut hair, thick straight black eyebrows, "
-            "a small old faded pale burn scar on the back of his RIGHT hand, no glasses, no earrings, no beard", C + "kentaro-front.png"),
+            "a small old healed burn scar on the back of his RIGHT hand only (pale, smooth, barely visible, NOT red, NOT a wound), no glasses, no earrings, no beard", C + "kentaro-front.png"),
     "DAI": ("Seo Daiki, a slim Japanese man aged 26, pale indoor complexion, slightly long straight black hair with bangs just above the eyebrows, "
             "black thick-rimmed rectangular glasses, clean-shaven, NO earrings, a young MAN with short hair above the ears", C + "daiki-front0.png"),
     "YUM": ("Seo Yumiko, a Japanese woman aged 50, soft round face, shoulder-length dark-brown bob, small single pearl stud earrings, no glasses, "
@@ -113,7 +113,7 @@ NOSMILE = "NOT smiling at any moment: brows knotted, the corners of the mouth pu
 GLASSES = {"KEN": "Kentaro wears no glasses.", "DAI": "Daiki wears his black thick-rimmed rectangular glasses.", "YUM": "Yumiko wears no glasses.",
            "SEI": "Seiji wears his thin GOLD wire-rimmed glasses.", "RYO": "Ryosuke wears no glasses.", "MAK": "Makabe wears no glasses.",
            "KAN": "Kaneda wears his thin silver half-rim browline glasses."}
-HANDS = {"KEN": "thick weathered hands with a small faded pale burn scar on the back of the RIGHT hand", "DAI": "slim pale young hands",
+HANDS = {"KEN": "thick weathered hands; only the back of the RIGHT hand has a small old healed burn scar (pale, smooth, barely visible, NOT red, NOT a wound); the left hand and forearms are unmarked", "DAI": "slim pale young hands",
          "YUM": "a middle-aged woman's hands", "SEI": "plump hands, a plain gold wristwatch", "RYO": "lean young hands", "MAK": "thin old hands",
          "KAN": "weathered craftsman's hands"}
 LENS = {
@@ -226,8 +226,8 @@ SHOTS = [
       act="NOT smiling. Kentaro leans forward in the doorway and shouts at his son, face flushed, brows knotted, pointing at him. Shouting at his son at the desk." + OB, expr="anger"),
     S("S05c", "S05", "face", "ms", "room_n", "HA", [Dh], "ROOM_N", "High medium from the doorway: Daiki seated at the desk with his back half turned, monitor glow on his cheek, not turning around.",
       motion="He keeps his eyes on the screen, fingers resting on the keyboard, a slow breath; he does not turn." + HOLD, expr="hoodback"),
-    S("S05d", "S05", "ins", "ecu", "room_n", "HA", [Dh], "ROOM_M", "Insert: Daiki's fingers in grey hoodie sleeves freezing on the blank keyboard, monitor glow.", line="L09", vo=True,
-      motion="The fingers stop typing and stay frozen above the keys; a faint tremble."),
+    S("S05d", "S05", "ins", "ecu", "room_n", "SIDE", [Dh], "ROOM_M", "Side close insert at desk height: Daiki's hands in grey hoodie sleeves resting on the black keyboard, fingers frozen mid-typing just above the keys, wrists on the desk edge, his arms continuing out of frame; the monitors behind are only a soft dim blue glow, out of focus.", line="L09", vo=True,
+      motion="The fingers stop typing and stay frozen just above the keys; a faint tremble."),
     S("S05e", "S05", "d", "cu", "room_n", "LA", [Kh], "ROOM_N", "Extreme low chest-up close-up, handheld: Kentaro in the doorway at three-quarter angle, finger pointing out to the hallway, furious, a vein on his temple.", replay="L01", pin=101.205, fx="handheld",
       act="NOT smiling at any moment. Kentaro explodes, pointing out to the hallway, shouting at his son to get out, face twisted with rage, brows knotted, a vein on his temple. Shouting at his son." + OB, expr="anger"),
     S("S05f", "S05", "ins", "ecu", "room_n", "HA", [Dh], "ROOM_M", "Insert: Daiki's hands in grey hoodie sleeves quietly closing the laptop lid, the blue light vanishing from his fingers.", pin=106.3,
@@ -441,7 +441,7 @@ SHOTS = [
 
     S("S20a", "S20", "face", "cu", "meet_turn", "SIDE", [M_], "MEET", "High chest-up close-up of Makabe, pale, a thin line of cold sweat running down from the temple.",
       motion=NOSMILE + "He swallows hard." + SWEAT_FLOW + SEATED + HOLD, expr="stern"),
-    S("S20b", "S20", "ins", "ecu", "meet_turn", "HA", [Ds], "MEET_T", "Insert: Daiki's hand setting a thick plain file binder down flat on the grey table, tabs without writing, no face.", line="L51", vo=True,
+    S("S20b", "S20", "ins", "ecu", "meet_turn", "SIDE", [Ds], "MEET_T", "Side insert at table height: Daiki's hand in a navy suit sleeve setting a thick plain file binder down flat on the grey table, tabs without writing, his arm continuing out of frame; no face.", line="L51", vo=True,
       motion="The hand sets the thick binder down flat and pushes it forward a little."),
     S("S20c", "S20", "face", "cu", "meet_turn", "EL", [Y_], "MEET", "Close-up of Yumiko seated, a hand at her mouth, eyes wet, watching her son.",
       motion="Her hand stays at her mouth, her eyes wet, a trembling breath." + WET_HOLD + SEATED + HOLD, expr="worry"),

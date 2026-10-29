@@ -9,7 +9,7 @@ import json, os, shutil, subprocess, sys
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 SB = os.path.join(ROOT, "scripts", "storyboard", "hikikomori.json")
 SEL = os.path.join(ROOT, "productions", "hikikomori-ja", "kf_select.json")
-STAGES = ["assets/portraits/hikikomori-kf-r3", "assets/portraits/hikikomori-kf-r2", "assets/portraits/hikikomori-kf-r1",
+STAGES = ["assets/portraits/hikikomori-kf-r5", "assets/portraits/hikikomori-kf-r4", "assets/portraits/hikikomori-kf-r3", "assets/portraits/hikikomori-kf-r2", "assets/portraits/hikikomori-kf-r1",
           "assets/portraits/hikikomori-kf-a", "assets/portraits/hikikomori-kf-b1", "assets/portraits/hikikomori-kf-b2"]
 
 

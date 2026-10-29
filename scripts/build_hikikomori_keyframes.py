@@ -137,6 +137,10 @@ EMO_OVERRIDE = {
 }
 # Kill Gate 2차(r3) — 정면 응시가 문장으로 안 막힌 컷은 앵글 자체를 옆모습으로, 앞 인물 안경 유입은 머리를 화면 밖으로
 EMO_OVERRIDE.update({
+    "S05d": "BODY CONTINUITY LOCKED: the hands are attached to forearms that continue naturally out of the frame edge; fingers relaxed and curved just above the keys, NOT raised in the air. Monitors are a soft dim blue glow, NOT blown-out white. NO whiteboard writing.",
+    "S20b": "BODY CONTINUITY LOCKED: only the hand and suit sleeve enter from the frame edge; the person stands BESIDE the table, nobody is on the table.",
+    "S08d": "SCAR LOCKED: no red marks, no wounds, no blood on either hand; only a faint pale healed patch on the back of the RIGHT hand.",
+    "S23a": "SCAR LOCKED: no red marks, no wounds, no blood on the hand or forearm; only a faint pale healed patch on the back of the RIGHT hand.",
     "S06f": "BODY CONTINUITY LOCKED: ONE complete seated man seen from the SIDE on the sofa — shoulders, chest, arms and hands all physically connected to his body; NO floating arms, NO missing torso, NO see-through body; the frame is cut just below his chin.",
     "S04e": "SIDE PROFILE: Kentaro is seen in strict side profile facing screen LEFT, staring down at his bowl; his wife is only a soft blurred shape far beyond him.",
     "S06d": "Daiki is a small figure seen strictly from BEHIND, about 15 metres away, walking away down the street toward the distant factory; only the back of his grey hood and the bag are visible; NO face.",

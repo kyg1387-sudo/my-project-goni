@@ -320,7 +320,7 @@
    "image": "assets/portraits/hikikomori-keyframes/S05c-1.png"
   },
   {
-   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The fingers stop typing and stay frozen above the keys; a faint tremble. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The fingers stop typing and stay frozen just above the keys; a faint tremble. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
    "duration": 5,
    "image": "assets/portraits/hikikomori-keyframes/S05d-1.png"
   },
