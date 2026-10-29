@@ -248,7 +248,7 @@ SHOTS = [
     S("S06d", "S06", "face", "ws", "street_n", "EL", [Dh], None, "Wide: Daiki seen from behind walking away down the night street under one streetlight, a single bag on his shoulder, wind moving his hood.",
       motion="He walks slowly away from the camera; at the streetlight he turns his head slightly left toward the far factory, face never visible, then walks on." + HOLD, line="NA6", expr="hoodback"),
     S("S06e", "S06", "pstill", "ws", "home_n", "SIDE", [Kh], "HOME_LIV", "From behind: Kentaro sitting alone on the living-room sofa in the dark, only the dining lamp on, his face not visible.", fx="pushin", expr="back"),
-    S("S06f", "S06", "ins", "ecu", "home_n", "HA", [Kh], "HOME_LIV", "Insert: Kentaro's scarred hands on his knees, trembling slightly, gripping the trouser fabric.", line="L13", vo=True,
+    S("S06f", "S06", "ins", "ms", "home_n", "SIDE", [Kh], "HOME_LIV", "Side insert framed below the chin: Kentaro seated on the dark sofa seen from the side, his chest, cardigan and arms continuous down to his scarred hands resting on his knees, trembling slightly, gripping the trouser fabric; no face.", line="L13", vo=True,
       motion="The hands tremble slightly and grip the fabric, then loosen."),
     S("S06g", "S06", "empty", "ws", "hall_n", "LA", [], "HALL", "Low wide from the floor of the dark hallway: the son's door left ajar, the blue monitor light still glowing inside the empty room.",
       motion="The blue light inside glows steadily; a faint flicker; nothing else moves.", line="NA7"),
