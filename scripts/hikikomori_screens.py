@@ -300,8 +300,9 @@ def apply_plan(img, entries, blur=1.0):
         src = np.asarray(lcd(content(kind), kind))
         M = cv2.getPerspectiveTransform(np.float32([[0, 0], [SW, 0], [SW, SH], [0, SH]]), q)
         warped = cv2.warpPerspective(src, M, (W, H), flags=cv2.INTER_AREA).astype(float)
-        if blur:
-            warped = cv2.GaussianBlur(warped, (0, 0), blur)
+        b = e.get("blur", blur)  # 초점 밖 화면은 항목별로 더 흐리게
+        if b:
+            warped = cv2.GaussianBlur(warped, (0, 0), b)
         poly = np.zeros((H, W), np.float32); cv2.fillConvexPoly(poly, q.astype(np.int32), 1.0)
         if e.get("grow"):  # 화면 가장자리 흰 테까지 덮기
             poly = cv2.dilate(poly, np.ones((2 * e["grow"] + 1,) * 2, np.uint8))
@@ -319,7 +320,7 @@ def apply_plan(img, entries, blur=1.0):
         if e.get("occpoly"):  # 앞 인물 윤곽(머리·어깨)을 다각형으로
             m = np.ones((H, W), np.float32); cv2.fillPoly(m, [np.int32(e["occpoly"])], 0.0)
             key *= cv2.GaussianBlur(m, (0, 0), 2)
-        key = cv2.GaussianBlur(key, (0, 0), 1.0)
+        key = cv2.GaussianBlur(key, (0, 0), e.get("feather", 1.0))  # 초점 밖 화면은 가장자리도 무르게
         out = out * (1 - key[..., None]) + warped * gain * lvl * key[..., None]
     return Image.fromarray(out.clip(0, 255).astype("uint8"))
 
