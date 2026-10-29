@@ -323,7 +323,7 @@ def apply_plan(img, entries, blur=1.0):
             poly = cv2.dilate(poly, np.ones((2 * e["grow"] + 1,) * 2, np.uint8))
         if e["mode"] == "key":
             inside = base[poly > 0]; med = np.median(inside, axis=0)
-            dist = np.linalg.norm(base - med, axis=2); key = np.clip(1 - (dist - 40) / 45, 0, 1) * poly
+            dist = np.linalg.norm(base - med, axis=2); key = np.clip(1 - (dist - e.get("tol", 40)) / 45, 0, 1) * poly  # tol↑ = 인물 가장자리에 남는 흰 테까지 교체
             key = cv2.dilate(key, np.ones((3, 3), np.uint8))  # 화면 가장자리 흰 테 제거
             gain = np.clip(base.mean(2) / max(med.mean(), 1), 0.6, 1.05)[..., None]
             lvl = 1.0
