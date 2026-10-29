@@ -18,6 +18,7 @@ def main():
     sel = json.load(open(SEL, encoding="utf-8")) if os.path.exists(SEL) else {}
     picks = {k: v for k, v in sel.get("pick", {}).items()}
     frame = sel.get("face_frame", {})  # id: [target, hint_x, fg]
+    crops = sel.get("crop", {})  # id: [x0, y0, w] 비율
     scenes = [s for s in json.load(open(SB, encoding="utf-8"))["scenes"] if s.get("keyframe")]
     missing, plan = [], []
     for s in scenes:
@@ -32,6 +33,11 @@ def main():
     for sid, src, dst in plan:
         d = os.path.join(ROOT, dst); os.makedirs(os.path.dirname(d), exist_ok=True)
         shutil.copy(os.path.join(ROOT, src), d)
+        if sid in crops:  # 앞 인물 잘라내기(안경 유입 등) — [x0, y0, 폭] 비율, 16:9 유지
+            from PIL import Image
+            im = Image.open(d).convert("RGB"); W, H = im.size; x0, y0, wf = crops[sid]
+            cw = int(W * wf); ch = int(cw * 9 / 16)
+            im.crop((int(W * x0), int(H * y0), int(W * x0) + cw, int(H * y0) + ch)).resize((W, H), Image.LANCZOS).save(d)
         subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "kf_letterbox_fix.py"), d], check=True, capture_output=True)
         if sid in frame:
             t, hx, fg = frame[sid]
