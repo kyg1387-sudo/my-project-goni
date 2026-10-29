@@ -275,7 +275,7 @@ SHOTS = [
     S("S08b", "S08", "empty", "ws", "hall_n", "LA", [], "HALL", "Wide from the end of the dark hallway: the son's door at the far end, blue light still leaking from the gap, a low fan hum.",
       motion="The blue light flickers faintly; nothing else moves.", line="NA9"),
     S("S08c", "S08", "pstill", "ms", "hall_n", "SIDE", [Kh], "HALL", "From behind: Kentaro walking slowly down the dark hallway toward the son's door, his face not visible.", line="L19", fx="handheld", expr="back"),
-    S("S08d", "S08", "ins", "ecu", "hall_n", "EL", [Kh], "HALL", "Insert: Kentaro's scarred hand resting on the son's doorknob, hesitating.",
+    S("S08d", "S08", "ins", "ecu", "hall_n", "EL", [Kh], "HALL", "Insert: Kentaro's hand resting on the son's doorknob, hesitating.",
       motion="The hand rests on the knob, hesitates, then slowly turns it.", line="NA10"),
 
     S("S09a", "S09", "empty", "ws", "room_n", "EL", [], "ROOM_N", "POV from the doorway: the door swinging slowly open into the dark room, revealing the glow of three monitors.",
@@ -474,7 +474,7 @@ SHOTS = [
     S("S22e", "S22", "face", "ws", "meet_turn", "EL", [Kw, Ds], "MEET", "Wide: Kentaro seated in the foreground at three-quarter angle looking across the room at his son standing by the window, eyes softening with pride.",
       motion="His eyes soften, a slow breath, a faint tremble at the lips." + WET_HOLD + HOLD, expr="calm"),
 
-    S("S23a", "S23", "ins", "ecu", "hall_n", "EL", [Kh], "HALL", "Insert: Kentaro's scarred knuckles knocking gently twice on the son's closed door, warm light from under it.",
+    S("S23a", "S23", "ins", "ecu", "hall_n", "EL", [Kh], "HALL", "Insert: Kentaro's knuckles knocking gently twice on the son's closed door, warm light from under it.",
       motion="The knuckles knock twice gently and rest on the door."),
     S("S23b", "S23", "d", "cu", "hall_n", "EL", [Kh], "HALL", "Close-up: Kentaro at the closed door at three-quarter angle, hand resting on the wood, hesitant, warm light leaking from under the door.", line="L59",
       act="Kentaro asks quietly through the door, voice trembling slightly, awkward and hesitant, his hand resting on the wood. Speaking to his son through the door." + OB, expr="grief"),
