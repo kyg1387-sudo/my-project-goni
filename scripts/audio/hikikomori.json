@@ -464,27 +464,71 @@
   "31": "a laptop lid closing softly",
   "35": "sneaker laces pulled tight",
   "43": "a gift box set down on a wooden table",
-  "59": "eight single keyboard key presses, then a soft unlock chime",
+  "59": "eight slow single keyboard key presses in a silent room, a held breath, then a soft unlock chime",
+  "60": "a low cinematic sub-bass swell rising for two seconds",
   "62": "a deep low cinematic impact boom",
-  "76": "a computer mouse sliding off a desk",
-  "77": "knees hitting a wooden floor softly, a sharp breath",
+  "76": "a computer mouse sliding off a desk edge and dropping, then silence",
+  "77": "a slow heavy heartbeat thump twice, knees hitting a wooden floor",
+  "84": "a single low heartbeat thump, a held breath",
   "90": "a hand patting a work jacket shoulder twice",
   "94": "a single clock tick",
   "99": "a single clock tick",
   "111": "a phone call ringing out and cutting off",
   "113": "a single clock tick",
   "119": "a fountain pen trembling against paper",
+  "120": "a wall clock second hand ticking loudly in a silent room, a shaky breath",
   "121": "a metal door handle turning, a door opening",
+  "122": "slow measured footsteps on a vinyl floor stepping into a silent room",
   "129": "fingers stopping on a table, a tight grip",
   "132": "a tablet set down on a table",
   "136": "a thick binder dropped flat on a table",
+  "139": "a chair scraping back sharply on the floor",
   "140": "knees dropping onto a carpeted floor",
+  "141": "a deep low cinematic impact",
   "142": "a thick stapled contract torn in half, a sharp paper rip, an orchestral hit",
   "146": "a smartphone vibrating on a table",
   "151": "two gentle knocks on a wooden door",
   "161": "sukiyaki sizzling loudly in an iron pot",
   "168": "a metal shutter rolling up"
  },
+ "bgm_silence": [
+  {
+   "start": 203.65,
+   "end": 206.28,
+   "sfx_boost_db": 3,
+   "why": "비밀번호 8자리 — 키 소리와 숨소리만, 해제음에서 터짐"
+  },
+  {
+   "start": 266.6,
+   "end": 272.13,
+   "sfx_boost_db": 2,
+   "why": "손이 마우스에서 미끄러짐 → 무너짐 — 심장 박동·숨만"
+  },
+  {
+   "start": 304.41,
+   "end": 307.42,
+   "sfx_boost_db": 3,
+   "why": "서류가 미끄러지는 마찰음·거친 숨만"
+  },
+  {
+   "start": 426.26,
+   "end": 435.54,
+   "sfx_boost_db": 4,
+   "why": "펜 끝이 떨림 — 시계 초침·숨만, 문손잡이 소리로 깸"
+  },
+  {
+   "start": 498.23,
+   "end": 502.56,
+   "sfx_boost_db": 2,
+   "why": "무릎 꿇는 소리·떨리는 숨만"
+  },
+  {
+   "start": 506.88,
+   "end": 509.08,
+   "sfx_boost_db": 4,
+   "why": "계약서를 찢는 소리만 → 다음 컷에서 오케스트라"
+  }
+ ],
  "ambience_model": "fal-ai/mmaudio-v2",
  "ambience_volume": 0.35,
  "duck_db": 8,

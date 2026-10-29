@@ -579,6 +579,27 @@ BGM = [  # (시작, 끝, 볼륨, 프롬프트) — 0~3.5초 BGM 없음(드론+�
 for _a, _b in zip(BGM, BGM[1:]):
     assert _b[0] - _a[1] >= 1.0, f"BGM 구간 간격 {_b[0] - _a[1]:.1f}s < 1.0s"
 
+# 긴박한 순간 = BGM을 빼고 정적 속 효과음만(고니감독님 지시 2026-10-29 「긴박함 상황에서는 정적이 흐르면서 효과음만」, 제19장 14).
+# 룸톤(약 −52 dBFS)은 유지해 디지털 무음은 만들지 않는다(제15장 13). (컷 시작, 컷 끝, 효과음 세기 dB, 이유)
+SILENCE = [("S09f", "S09g", +3, "비밀번호 8자리 — 키 소리와 숨소리만, 해제음에서 터짐"),
+           ("S11g", "S11i", +2, "손이 마우스에서 미끄러짐 → 무너짐 — 심장 박동·숨만"),
+           ("S12f", "S12h", +3, "서류가 미끄러지는 마찰음·거친 숨만"),
+           ("S17d", "S18b", +4, "펜 끝이 떨림 — 시계 초침·숨만, 문손잡이 소리로 깸"),
+           ("S20f", "S20g", +2, "무릎 꿇는 소리·떨리는 숨만"),
+           ("S21a", "S21b", +4, "계약서를 찢는 소리만 → 다음 컷에서 오케스트라")]
+FOLEY_TENSION = {  # 몰입용 긴장 효과음(대사 구간 −6 dB 덕킹, 제15장 22)
+    "S09f": "eight slow single keyboard key presses in a silent room, a held breath, then a soft unlock chime",
+    "S09g": "a low cinematic sub-bass swell rising for two seconds",
+    "S11g": "a computer mouse sliding off a desk edge and dropping, then silence",
+    "S11h": "a slow heavy heartbeat thump twice, knees hitting a wooden floor",
+    "S12d": "a single low heartbeat thump, a held breath",
+    "S17e": "a wall clock second hand ticking loudly in a silent room, a shaky breath",
+    "S18b": "slow measured footsteps on a vinyl floor stepping into a silent room",
+    "S20e": "a chair scraping back sharply on the floor",
+    "S20g": "a deep low cinematic impact",
+}
+FOLEY.update(FOLEY_TENSION)
+
 STYLE = {"NA": "Naration", "父": "Kentaro", "母": "Yumiko", "大樹": "Daiki", "叔父": "Seiji", "亮介": "Ryosuke", "真壁": "Makabe"}
 STYLE_JA = {"Naration": "ナレーター", "Kentaro": "健太郎", "Yumiko": "由美子", "Daiki": "大樹", "Seiji": "誠二", "Ryosuke": "亮介", "Makabe": "真壁"}
 STYLE_COLOR = {"Naration": "&H00DDDDDD", "Kentaro": "&H00FFFFFF", "Yumiko": "&H00F0E6C8", "Daiki": "&H00C8E6F0", "Seiji": "&H00B4D2FF",
@@ -930,6 +951,7 @@ def main():
         "omnihuman_prompts": {str(idx[k]): v for k, v in omni_prompts.items()},
         "omnihuman_models": ["fal-ai/bytedance/omnihuman/v1.5", "fal-ai/bytedance/omnihuman"], "omnihuman_max_s": 8.0, "legacy_lipsync": False,
         "foley_prompts": {str(idx[k]): v for k, v in foley.items()},
+        "bgm_silence": [{"start": round(starts[a], 2), "end": round(starts[b], 2), "sfx_boost_db": g, "why": w} for a, b, g, w in SILENCE],
         "ambience_model": "fal-ai/mmaudio-v2", "ambience_volume": 0.35, "duck_db": 8, "ambience_prompts": [x["ambience"] for x in sb],
         "bgm_model": "fal-ai/lyria2", "bgm_volume": 0.40, "bgm_prompt": BGM[1][3],
         "bgm_segments": [{"start": s, "end": round(main_end, 2) if e is None else e, "volume": v, "prompt": p} for s, e, v, p in BGM],
