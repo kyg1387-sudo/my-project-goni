@@ -25,6 +25,7 @@ PEOPLE = [
 ]
 FACE_OF = {"daikih": "daiki"}
 FACE_KINDS = ("face", "d")
+MAX_REFS = 10
 PILOT_DONE = set()
 LOC_NOTE = {
     "loc-home": "The house has NO calendars, NO posters, NO notes with writing on the walls or fridge; all labels blank.",
@@ -138,6 +139,12 @@ def build(sc, stage):
                 face.append(f)
         refs = face + refs
     # 전경 인물 뒷모습 셀은 PHASE 3 생성기가 이미 넣었다
+    if len(refs) > MAX_REFS:  # fal edit 모델은 참조 10장까지(S17a 5인 컷 422 실증) — 얼굴 크롭이 있는 인물의 시트 셀부터 뺀다
+        has_face = {os.path.basename(r)[:-4] for r in refs if r.startswith(FACE_DIR)}
+        refs = [r for r in refs if not (r.startswith(CELLS + "/") and who_of(os.path.basename(r))[0]
+                                        and FACE_OF.get(who_of(os.path.basename(r))[0], who_of(os.path.basename(r))[0]) in has_face
+                                        and not is_backcell(os.path.basename(r)))]
+    assert len(refs) <= MAX_REFS, f"{sc['id']}: 참조 {len(refs)}장 > {MAX_REFS}"
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
     if sc["id"] in EMO_OVERRIDE:
