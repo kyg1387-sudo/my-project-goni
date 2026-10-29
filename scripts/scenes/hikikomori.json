@@ -1,0 +1,1073 @@
+{
+ "_설명": "hikikomori 장면 설정(build_hikikomori_phase3.py 생성). override_required 장면은 정지 푸시인·OMNI 정지 프레임·재사용·카드를 video-overrides로 먼저 넣는다.",
+ "ratio": "16:9",
+ "budget_usd": 26.1,
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "durations": [
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5
+ ],
+ "scenes": [
+  {
+   "prompt": "(override) reuse: Reuse of S05e (Kentaro in the doorway shouting, handheld). L01 audio.",
+   "duration": 10,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S09g (Kentaro's face washed by monitor light, eyes widening). Corner ca",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S11g (his hand slipping off the mouse).",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S11h (high angle, Kentaro collapsing to his knees). NA0 audio + centre ",
+   "duration": 10,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) card: Title card over the blurred last frame of H2b (no black).",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Thin steam drifts from a wall vent, morning light slowly brightens; nothing else moves. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S01a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The chuck rotates steadily, the metal curl grows and falls away; coolant drips. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S01b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hands turn the handwheel slowly and precisely; swarf curls in the background. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S01c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He leans in slightly toward the work, a slow blink, hands adjusting the tool rest. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S01d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He turns the part slowly in his fingers, reads the micrometer, a small satisfied nod. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/hikikomori-keyframes/S01e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She watches, her fingers tighten on the folder, a small worried breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S02a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up medium: Kentaro seated at the steel office desk, an old cream desk phon",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S02b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He lowers the receiver slowly and closes his eyes, a long breath out through the nose. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S02c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The fingers tighten slowly on the ledger edge, then loosen. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/hikikomori-keyframes/S02d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The blue line under the door flickers faintly as if from a screen; nothing else moves. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S03a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The blue light flickers and shifts softly on the floor. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S03b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He sleeps, the blanket rising and falling slowly with his breath; a thin line of daylight at the curtain edge. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S03c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand slides the tray slowly in through the door gap. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S03d-1.png"
+  },
+  {
+   "prompt": "(override) still: From behind: Kentaro standing in the dark hallway in front of the closed door wi",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S03e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] They eat slowly in silence, chopsticks moving; steam from the bowls. SEATED/FURNITURE LOCKED: seated on the chair pulled in to the table, thighs under the table edge, forearms on the table; the chair never passes through the body. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S04a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kentaro's blurred shoulder (left foreground): Yumiko at three-quarter angle",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S04b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] His jaw tightens, his eyes stay on the bowl, the chopsticks stop in his hand. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S04c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand lays the chopsticks down across the bowl and stays still. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S04d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He keeps staring at the bowl, his jaw working, a short breath through the nose. SEATED/FURNITURE LOCKED: seated on the chair pulled in to the table, thighs under the table edge, forearms on the table; the chair never passes through the body. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S04e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low medium past Yumiko's blurred shoulder: Kentaro setting his bowl down hard an",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S04f-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand turns the knob and pushes the door open in one firm move; blue light spills over the hand. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S05a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Daiki's blurred grey hood (seated, right foreground), low angle: Kentaro st",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S05b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He keeps his eyes on the screen, fingers resting on the keyboard, a slow breath; he does not turn. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S05c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The fingers stop typing and stay frozen above the keys; a faint tremble. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S05d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Extreme low chest-up close-up, handheld: Kentaro in the doorway at three-quarter",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S05e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hands close the laptop lid slowly and rest on it; the glow shrinks to darkness. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S05f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kentaro's blurred shoulder (left foreground, in the doorway): Daiki seated ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S05g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He stands silent, his jaw working, a breath catches; eyes stay on his son. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S05h-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up: Daiki having just stood up beside the desk, at three-quarter ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S05i-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hands pull the laces tight and finish the knot. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S06a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He stops, his shoulders tense, he lowers his eyes; he does not step out yet. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S06b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He bows his head slightly once to his mother and straightens; she trembles. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S06c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He walks slowly away from the camera; at the streetlight he turns his head slightly left toward the far factory, face never visible, then walks on. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S06d-1.png"
+  },
+  {
+   "prompt": "(override) still: From behind: Kentaro sitting alone on the living-room sofa in the dark, only the",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S06e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hands tremble slightly and grip the fabric, then loosen. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S06f-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The blue light inside glows steadily; a faint flicker; nothing else moves. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S06g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The reflected light on the knob shifts very slightly. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/hikikomori-keyframes/S06h-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand sets the box down and taps its lid twice. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S07a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kentaro's blurred shoulder (left foreground): Seiji sitting down on the sof",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S07b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He keeps his eyes down, his jaw tightens, a slow breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S07c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand gestures proudly in small circles, then taps the knee. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S07d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She freezes with the tray, her eyes lower, her fingers tighten on the tray. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S07e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up of Seiji pushing up his gold-rimmed glasses with one finger, eyes narro",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S07f-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The fist clenches slowly and trembles. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S07g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He turns the glass slowly on the table, a long breath, eyes unfocused. SEATED/FURNITURE LOCKED: seated on the chair pulled in to the table, thighs under the table edge, forearms on the table; the chair never passes through the body. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S08a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The blue light flickers faintly; nothing else moves. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S08b-1.png"
+  },
+  {
+   "prompt": "(override) still: From behind: Kentaro walking slowly down the dark hallway toward the son's door,",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S08c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand rests on the knob, hesitates, then slowly turns it. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/hikikomori-keyframes/S08d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The door swings slowly open; the monitor glow widens across the floor. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S09a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He stands still, his eyes move across the room, a slow breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S09b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The server LEDs blink, the monitors glow softly; nothing else moves. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S09c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He leans in slightly and squints, a puzzled breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S09d-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a small yellow sticky note on the black bezel of a monitor (note blank; ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S09e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] One finger presses a key, then another, slowly and carefully, eight times. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S09f-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The light on his face brightens, his eyes widen slowly, his lips part. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S09g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The reflection in his eyes flickers, a single slow blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S09h-1.png"
+  },
+  {
+   "prompt": "(override) still: Full-screen monitor in the dark: a sales dashboard layout with plain panels (all",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S10a-1.png"
+  },
+  {
+   "prompt": "(override) still: From behind over Kentaro's shoulder, seated in the desk chair: the glowing dashb",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S10b-1.png"
+  },
+  {
+   "prompt": "(override) still: Extreme close-up on the monitor: a large monthly sales figure panel (figure comp",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S10c-1.png"
+  },
+  {
+   "prompt": "(override) still: Monitor: a client list panel (company names composited).",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S10d-1.png"
+  },
+  {
+   "prompt": "(override) still: Monitor: a calendar panel with the same 2:00 AM meeting repeated every day (comp",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S10e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low close-up of Kentaro at three-quarter angle, lips trembling, eyes beginning t",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S10f-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The blue window glows steadily, a faint flicker; clouds drift; nothing else moves. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S10g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The fingers type quickly and steadily; the light flickers. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/hikikomori-keyframes/S10h-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He moves the mouse slowly, his eyes scanning the screen, a slow breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S11a-1.png"
+  },
+  {
+   "prompt": "(override) still: Monitor: a plain dark desktop with a single folder icon in the corner (label com",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S11b-1.png"
+  },
+  {
+   "prompt": "(override) still: Extreme close-up of the single folder icon (folder name composited).",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S11c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] His eyes move slowly across the screen line by line, his lips part, his breath shortens. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S11d-1.png"
+  },
+  {
+   "prompt": "(override) still: Monitor: a plain memo window and a dependency graph panel (Japanese memo text an",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S11e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] NOT smiling. His eyes well up, a trembling breath, one slow blink. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S11f-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand slides off the mouse and drops slowly off the desk edge. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S11g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] NOT smiling. He slides slowly down from the chair onto his knees, his hands landing on the floor, shoulders dropping; the chair stays in place. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S11h-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up: Kentaro kneeling on the floor at three-quarter angle, face toward the ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S11i-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] NOT smiling at any moment: brows knotted, the corners of the mouth pulled down, chin trembling slightly. His lips press tight. One clear tear slowly spills over the lower lid and runs down the cheek along its natural curve, catching the light; a slow blink, a trembling breath; only one tear line, thin and translucent. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S11j-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He sits still on the floor, his shoulders shaking slightly with a breath; the monitors glow. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/hikikomori-keyframes/S11k-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The sedan stays parked and still, no headlights; morning light shifts slightly on the paint; the building does not move. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S12a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He steps in from the left at the same distance, stops beside the desk; the junior follows behind; nobody walks toward the camera. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S12b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kentaro's blurred shoulder (seated, left foreground), low angle, dutch 5 de",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S12c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He freezes, his eyes widen, his breath stops. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S12d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Ryosuke's blurred shoulder (right foreground): Kentaro half-risen from his ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S12e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The paper slides smoothly across the desk under two fingers and stops in front of the other hand; the hand twitches. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S12f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low close-up of Ryosuke tapping the blank document with the tip of a pen, a fain",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S12h-1.png"
+  },
+  {
+   "prompt": "(override) omni: High close-up of Kentaro, disbelieving, face twisting, trembling voice.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S12i-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up of Ryosuke with his eyes on the document, not meeting his uncle's gaze.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S12j-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kentaro's blurred shoulder (left foreground): Seiji at three-quarter angle ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S13a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He stands rigid, his jaw clenches, a breath through the nose; he does not turn back. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S13b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up: Kentaro with his back to his brother (who is blurred far behi",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S13c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low medium: Seiji in the office doorway, already turned back over his shoulder t",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S13d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Kentaro stares at the lathe without moving; Kaneda lowers his hands from the machine and looks at him with concern. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S13e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He bows low and holds the bow; the clerk shape shakes its head slightly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S14a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He walks slowly away from the camera in the rain, shoulders hunched; rain falls steadily. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S14b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] They wipe the machines slowly with cloths, in silence. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S14c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The craftsmen work slowly at their machines; Kentaro stands still at the window. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S14d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The second hand ticks forward steadily. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S14e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She closes the ledger slowly and rests her hands on it; he does not move. SEATED/FURNITURE LOCKED: seated on the chair pulled in to the table, thighs under the table edge, forearms on the table; the chair never passes through the body. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S15a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He keeps his head lowered, eyes closed for a moment, a long tired breath. SEATED/FURNITURE LOCKED: seated on the chair pulled in to the table, thighs under the table edge, forearms on the table; the chair never passes through the body. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/hikikomori-keyframes/S15b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She hesitates, bites her lip, her hand moves slowly toward the drawer. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S15c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The trembling hands slide the passbook slowly across the desk and stop, then pull back. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S15d-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead insert: an open bank passbook page with plain ruled rows (entries compo",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S15e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up of Yumiko at three-quarter angle, tears welling but not falling, voice ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S15f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Yumiko's blurred shoulder (right foreground), high angle: Kentaro gripping ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S15g-1.png"
+  },
+  {
+   "prompt": "(override) still: Extreme close-up: the repeated deposit rows on the passbook page (composited), l",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S15h-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] NOT smiling at any moment: brows knotted, the corners of the mouth pulled down, chin trembling slightly. His breath stops, his eyes fill, one slow blink. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S15i-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The single fluorescent tube flickers faintly once; nothing else moves. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S16a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He waits with the phone at his ear, eyes lowered, a slow breath; nobody answers. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S16b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand lowers the phone slowly to his side. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S16c-1.png"
+  },
+  {
+   "prompt": "(override) still: From behind: Kentaro with his hand resting on the silent lathe, shoulders trembl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S16d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The second hand ticks forward steadily. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S16e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The one window light glows; a faint wind; nothing else moves. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S16f-1.png"
+  },
+  {
+   "prompt": "(override) still: The closed meeting-room door in cold light, empty (preview card composited).",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S16g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] They sit still; Makabe taps a finger once; Seiji folds his arms. PEOPLE LOCKED (meeting room seating): Makabe and Ryosuke seated on the far side of the long table, Kentaro and Yumiko seated on the near side, Seiji standing against the wall on the right; nobody else in the room. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S17a-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: a stapled sale contract (title composited) and a black fountain pen on t",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S17b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kentaro's blurred shoulder (left foreground), low angle: Makabe at three-qu",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S17c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand trembles, the pen tip wavers over the paper. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S17d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The pen tip slowly descends and stops just above the paper. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S17e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The handle turns slowly down; the door begins to open. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S18a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He takes two slow steps into the room at the same distance and stops; the backlight edges his shoulders; head steady. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S18b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] His eyes move across the room and settle, a calm breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S18c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Medium: Ryosuke half-rising from his chair at three-quarter angle, flustered, ey",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S18d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He ignores the sneer, his eyes stay calm and steady, one slow blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S18e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He stares at his son, his lips part, the pen still in his hand. SEATED/FURNITURE LOCKED: seated on the chair pulled in to the table, thighs under the table edge, forearms on the table; the chair never passes through the body. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S18f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kentaro's blurred shoulder (seated, left foreground), low angle: Daiki stan",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S18g-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Makabe's blurred shoulder (right foreground): Daiki at three-quarter angle ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S19a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The tapping finger stops; the hand slowly closes into a tight fist. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S19b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hands draw the tablet out of the bag smoothly and hold it. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S19c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] NOT smiling at any moment: brows knotted, the corners of the mouth pulled down, chin trembling slightly. He listens rigidly, the colour draining from his face. A thin bead of cold sweat slowly runs from the temple down toward the jaw; a shaky breath, a hard swallow. SEATED/FURNITURE LOCKED: seated on the chair pulled in to the table, thighs under the table edge, forearms on the table; the chair never passes through the body. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S19d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand sets the tablet down flat on the table and slides it forward a little. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S19e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low medium: Daiki standing at the table at three-quarter angle, one hand on the ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S19f-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] NOT smiling at any moment: brows knotted, the corners of the mouth pulled down, chin trembling slightly. He flips the pages quickly back and forth, pale, breath short. SEATED/FURNITURE LOCKED: seated on the chair pulled in to the table, thighs under the table edge, forearms on the table; the chair never passes through the body. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S19g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] NOT smiling at any moment: brows knotted, the corners of the mouth pulled down, chin trembling slightly. He swallows hard. A thin bead of cold sweat slowly runs from the temple down toward the jaw; a shaky breath, a hard swallow. SEATED/FURNITURE LOCKED: seated on the chair pulled in to the table, thighs under the table edge, forearms on the table; the chair never passes through the body. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S20a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand sets the thick binder down flat and pushes it forward a little. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S20b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Her hand stays at her mouth, her eyes wet, a trembling breath. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. SEATED/FURNITURE LOCKED: seated on the chair pulled in to the table, thighs under the table edge, forearms on the table; the chair never passes through the body. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S20c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kentaro's blurred shoulder (left foreground): Daiki turning to his father a",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S20d-1.png"
+  },
+  {
+   "prompt": "(override) omni: High chest-up close-up: Makabe having sprung up from his chair, panicked, sweat ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S20e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] KNEELING, NOT lying down: he stays on his knees with his head bowed, his shoulders trembling; his face stays hidden. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S20f-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He looks down steadily, a slow breath, his jaw set. SEATED/FURNITURE LOCKED: seated on the chair pulled in to the table, thighs under the table edge, forearms on the table; the chair never passes through the body. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S20g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Both hands grip the contract firmly and tear it cleanly in half all the way down, never letting go. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S21a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low close-up of Kentaro at three-quarter angle, the torn halves set down, calm a",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S21b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] NOT smiling at any moment: brows knotted, the corners of the mouth pulled down, chin trembling slightly. He looks up, stunned, his mouth half open, frozen. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S21c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Medium: Kentaro standing at three-quarter angle beginning a dignified slight bow",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S21d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] NOT smiling at any moment: brows knotted, the corners of the mouth pulled down, chin trembling slightly. He stares down at the phone, his face going pale, his breath stopping. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S22a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Medium: Seiji approaching his nephew with a servile forced grin, hands rubbing t",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S22b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Seiji's blurred shoulder (right foreground): Daiki at three-quarter angle l",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S22c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The forced grin freezes and fades, his eyes dart. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S22d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] His eyes soften, a slow breath, a faint tremble at the lips. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S22e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The knuckles knock twice gently and rest on the door. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S23a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up: Kentaro at the closed door at three-quarter angle, hand resting on the",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S23b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] His tense face loosens, a breath of relief, his hand stays on the door. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S23c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Kentaro bows deeply and holds the bow; Daiki looks at him without moving. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S23d-1.png"
+  },
+  {
+   "prompt": "(override) omni: High close-up: Kentaro with his head still lowered about 15 degrees, face visibl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S23e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] His eyes wet, he swallows, a slow breath. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S23f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Medium: Daiki seated at three-quarter angle shrugging slightly, a faint smile, a",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S23g-1.png"
+  },
+  {
+   "prompt": "(override) still: Insert: an old faded framed photograph beside the monitor: a small boy and a you",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S23h-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] His eyes wet, his lips tremble into a small smile. One clear tear slowly spills over the lower lid and runs down the cheek along its natural curve, catching the light; a slow blink, a trembling breath; only one tear line, thin and translucent. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S23j-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kentaro's blurred shoulder (left foreground): Daiki at three-quarter angle ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S23k-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The broth bubbles and sizzles, steam rises. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S24a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Daiki's blurred grey hood (left foreground): Yumiko at the table at three-q",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/hikikomori-keyframes/S24b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The chopsticks lift a piece of beef from the pot and lay it gently in the other bowl. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S24c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] They eat slowly; steam rises; Yumiko laughs softly. SEATED/FURNITURE LOCKED: seated on the chair pulled in to the table, thighs under the table edge, forearms on the table; the chair never passes through the body. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/hikikomori-keyframes/S24d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Warm light glows steadily from the open door; nothing else moves. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S24e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hands press the start lever, the chuck begins to rotate, swarf curls. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S24f-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He smiles quietly, a slow nod, his hands on the machine. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S24g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] They stand side by side looking at the factory; the shutter rises slowly; their backs stay to the camera. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/hikikomori-keyframes/S24h-1.png"
+  }
+ ]
+}
