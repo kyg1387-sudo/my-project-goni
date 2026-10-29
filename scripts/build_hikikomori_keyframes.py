@@ -87,6 +87,53 @@ EMO_OVERRIDE = {
     "S10b": "Seen from behind over Kentaro's shoulder: the back of his greying crew-cut head and charcoal cardigan shoulder in the foreground, the glowing monitor beyond with a blank plain dashboard layout; his face is NOT visible.",
     "S06d": "Daiki is seen strictly from behind, walking away; NO face visible.",
     "S03c": "Daiki is asleep in the bed, face half hidden by the pillow and blanket; his glasses are folded on the shelf.",
+    # Kill Gate 1차(2026-10-29) 재생성 고정 문장
+    "S02c": "A PERSON MUST BE IN FRAME: high close-up of Kentaro seated at the office desk, his hand lowering the old cream phone receiver onto its cradle, eyes closing.",
+    "S03d": "INSERT ONLY: a single hand and grey hoodie sleeve reaching out from the narrow door gap at floor level; the person stays behind the door — NO body, NO head, NO face in the hallway.",
+    "S05b": "Kentaro stands in the doorway, chest-up and close; the blurred grey hood of seated Daiki fills the near RIGHT edge.",
+    "S05e": "LOCATION LOCKED: the SAME son's room — a desk with three monitors, a small server box; NO server racks, NO extra screens. Kentaro's right arm points out toward the hallway (screen LEFT), not at the camera.",
+    "S05f": "Daiki is SEATED at the desk; the monitors show only a plain soft glow — NO person, NO image on any screen.",
+    "S05i": "Daiki stands right beside the desk, chest-up close-up; his hands are empty.",
+    "S06c": "LOCATION LOCKED: the narrow entryway (genkan) by the front door with the shoe step, NOT the dining room. Daiki has the bag on his shoulder.",
+    "S06d": "Daiki is seen strictly from BEHIND walking away down the street; NO face visible.",
+    "S07a": "The box is a premium Japanese melon gift box: a flat wooden box with a lid, a round green netted melon visible inside, NO cardboard moving box.",
+    "S07b": "FOREGROUND IDENTITY LOCKED: the blurred foreground man is Kentaro — short greying crew-cut, charcoal cardigan, NO glasses.",
+    "S10b": "Exactly ONE person in the frame: Kentaro seen from behind over his shoulder; NO other person anywhere.",
+    "S10c": "The monitor screen is ONE uniform plain glowing pale-blue surface: NO numbers, NO characters, NO boxes.",
+    "S10d": "The monitor screen is ONE uniform plain glowing pale-blue surface: NO numbers, NO characters, NO boxes.",
+    "S10e": "The monitor screen is ONE uniform plain glowing pale surface: NO calendar grid, NO characters.",
+    "S10g": "ONLY the outside of the house at night seen from the street: NO desk, NO monitors, NO papers in the foreground.",
+    "S11e": "The monitor screen is ONE uniform plain glowing pale surface: NO characters, NO diagrams.",
+    "S12h": "EXPRESSION LOCKED: cold and businesslike, a thin cynical tightening of the lips, NOT friendly, NO warm smile; eyes on his uncle screen LEFT, NOT the camera.",
+    "S13c": "Behind Kentaro, far and blurred near the office door, stands Seiji in a BURGUNDY polo shirt (NOT a navy uniform).",
+    "S13e": "Kentaro stands in the foreground staring down at the lathe; Kaneda stands a few metres BEHIND him at his own machine, hands lowered, watching Kentaro with concern; neither looks at the camera.",
+    "S15d": "A plain dark-blue bank passbook is clearly visible under her fingers on the desk.",
+    "S15e": "The open passbook pages show only faint plain ruled rows: NO characters, NO header.",
+    "S15h": "NO monitor, NO computer anywhere: only the open passbook on the desk under the warm lamp; pages with faint plain ruled rows, NO characters.",
+    "S16e": "EXTREME CLOSE-UP of a plain round office wall clock at night with NO numerals and NO markings, filling most of the frame; dim light.",
+    "S17b": "The contract is plain white paper with NO characters, NO title.",
+    "S17c": "Makabe is close: chest-up, his face at least one third of the frame height, seated across the table.",
+    "S17e": "All papers are plain white with NO characters, NO tables; only the signature area is a blank line.",
+    "S18a": "EXTREME CLOSE-UP of a metal lever door handle on the inside of a plain wooden door, the handle turning down.",
+    "S18e": "Only Daiki in the frame, chest-up close-up, NO other person.",
+    "S18g": "Daiki is STANDING at the near end of the table; FOREGROUND IDENTITY LOCKED: the blurred seated man at the near LEFT edge is Kentaro — greying crew-cut, navy work jacket, NO glasses.",
+    "S19a": "FOREGROUND IDENTITY LOCKED: the blurred man at the near RIGHT edge is Makabe — slicked-back silver-white hair, black suit, NO glasses. Daiki stands.",
+    "S19f": "Daiki stands at the table edge, chest-up close-up, one hand resting on the tablet.",
+    "S20d": "FOREGROUND IDENTITY LOCKED: the blurred foreground man is Kentaro — greying crew-cut, navy work jacket, NO glasses. Daiki stands.",
+    "S20e": "POSE LOCKED: Makabe has just sprung up from his chair, half-standing, both hands raised slightly, panic in wide eyes, a few tiny beads of sweat on the forehead, NOT smiling, NOT calm.",
+    "S20f": "POSE LOCKED: Makabe kneels ON THE CARPETED FLOOR beside the long table (NOT on the table), seen from DIRECTLY ABOVE; knees on the floor, palms flat on the floor, head bowed; he is NOT lying down.",
+    "S21a": "INSERT ONLY: only two hands tearing the paper, framed below the chin; NO face, NO mouth visible.",
+    "S21d": "Kentaro stands at the table edge, chest-up close-up, beginning a slight dignified bow.",
+    "S22b": "Seiji is close: chest-up, approaching, his face at least one third of the frame height.",
+    "S23a": "EXTREME CLOSE-UP: a man's knuckles knocking on the plain wooden door.",
+    "S23b": "Kentaro stands close to the closed door, chest-up, three-quarter angle toward the door, NOT looking at the camera.",
+    "S23c": "Only Kentaro in the frame at the closed door, NO other person.",
+    "S23k": "FOREGROUND IDENTITY LOCKED: the blurred foreground man is Kentaro — greying crew-cut, charcoal cardigan, NO glasses. Daiki's hands are empty.",
+    "S24a": "Only the sukiyaki pot, bowls and chopsticks on the table: NO tablet, NO notebook, NO papers.",
+    "S24b": "Yumiko holds chopsticks and a bowl; NO paper in her hands.",
+    "S24f": "The work jacket has NO lettering at all; any chest badge is a BLANK plain silver plate.",
+    "S24g": "The chest badge is a BLANK plain silver plate with NO text.",
+    "S24h": "Both men are seen strictly from BEHIND, side by side, facing the factory shutter; NO faces visible.",
 }
 ANGER_CLOSED = ("Fury shown only in the wide-open glaring eyes, furrowed brow, flared nostrils and clenched jaw: eyes OPEN and fixed on the listener, "
                 "lips pressed together, mouth CLOSED, NOT shouting (speech is added later).")
@@ -119,7 +166,17 @@ def describe(path, i):
 
 
 NO_FACE = {}
-NO_LOC = set()  # 장소 참조가 원경·후광을 만들면 여기에(제18장 9④)
+NO_LOC = {"S18b", "S18c"}  # 장소 참조가 후광 테두리(오려 붙인 인물)를 만듦 — Kill Gate 1차(제18장 9④)
+LIGHT_INTEG = ("LIGHT INTEGRATION: the person is lit by the same light as the room, natural soft edges; NO glowing outline, NO halo or white rim "
+               "around the body, NOT a pasted cut-out.")
+# Kill Gate 1차(2026-10-29) 정면 응시 다발 → 립싱크가 아닌 얼굴 컷은 시선 방향을 화면 좌우로 고정하고 정면 셀 대신 45° 셀을 참조
+GAZE = {"S04c": "LEFT toward his wife", "S04e": "down at his bowl, head turned to screen LEFT", "S07f": "screen LEFT toward his brother",
+        "S09b": "screen RIGHT across the room", "S09g": "screen RIGHT at the monitors", "S09h": "screen RIGHT at the monitors",
+        "S11d": "screen RIGHT at the monitors", "S11f": "screen RIGHT at the monitors", "S12d": "screen RIGHT up at his nephew",
+        "S15i": "down at the passbook, screen LEFT", "S19d": "screen LEFT toward Daiki", "S20a": "screen LEFT toward Daiki",
+        "S20g": "down screen RIGHT at the kneeling man", "S22a": "DOWN at the phone in his hand", "S22d": "screen LEFT toward his nephew",
+        "S22e": "screen RIGHT toward his son by the window", "S23j": "screen RIGHT toward his son", "S24g": "screen LEFT down at his lathe",
+        "S13e": "Kentaro down at the lathe; Kaneda screen LEFT toward Kentaro", "S21c": "UP toward Kentaro off-screen right", "S10f": "screen RIGHT at the monitors"}
 
 
 def build(sc, stage):
@@ -145,8 +202,19 @@ def build(sc, stage):
                                         and FACE_OF.get(who_of(os.path.basename(r))[0], who_of(os.path.basename(r))[0]) in has_face
                                         and not is_backcell(os.path.basename(r)))]
     assert len(refs) <= MAX_REFS, f"{sc['id']}: 참조 {len(refs)}장 > {MAX_REFS}"
+    if sc["id"] in GAZE:  # 정면 셀 → 45° 셀
+        refs = [r.replace("-front0.png", "-45.png").replace("-front.png", "-45.png") if r.startswith(CELLS + "/") else r for r in refs]
+        refs = [r if os.path.exists(os.path.join(ROOT, r)) else r.replace("-45.png", "-front0.png") for r in refs]
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
+    if sc["kind"] == "d":  # 구도 문장은 맨 앞(제15장 3) — 1차에서 서 있는 미디엄·원경 립싱크 키프레임 다발
+        parts.append("FRAMING LOCKED FIRST: chest-up MEDIUM CLOSE-UP, the speaker's face at least ONE THIRD of the frame height; NOT a wide shot, NO full body, NO legs.")
+    if sc["id"] in GAZE:
+        parts.append(f"GAZE LOCKED: eyes look {GAZE[sc['id']]}, head turned 30 to 40 degrees away from the lens; the eyes NEVER look into the camera lens.")
+    if sc["id"] in NO_LOC:
+        parts.append(LIGHT_INTEG)
+    if "phone" not in (sc["subject"] + " " + (sc.get("motion") or "")).lower():
+        parts.append("Nobody holds a phone; NO smartphone in any hand.")
     if sc["id"] in EMO_OVERRIDE:
         parts.append(EMO_OVERRIDE[sc["id"]])
     parts.append(sc["keyframe_prompt"])

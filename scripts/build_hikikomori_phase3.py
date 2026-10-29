@@ -89,13 +89,16 @@ LOC_TXT = {  # 장소 참조를 뺀 컷(NO_LOC)은 글로만 지정 — 후광 �
     "RAIN": "a narrow Japanese residential street on a rainy evening, wet asphalt reflecting streetlights, no signage",
     "HOUSE_N": "the outside of a modest two-storey Japanese house at night, one upstairs window glowing cold blue, all other windows dark",
     "HALL_OPEN": "the narrow dark hallway of a modest Japanese house at night",
+    "HALL": ("the narrow dark hallway of a modest Japanese house at night: plain beige walls, a worn wooden floor, the son's plain wooden door at the end; "
+             "the ONLY blue light is a faint cold glow leaking from the thin gap under that door; NO LED strips, NO light lines along the walls or floor"),
 }
 PRESET = ("Photorealistic live-action Japanese human drama, contemporary Tokyo (Reiwa era), Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, "
           "restrained Japanese film mise-en-scene, no flat lighting")
 NEGATIVE = ("gibberish, foreign text, incomprehensible letters, fake alphabets, blurry typography, text on badge, text on name tag, logo on shirt, "
             "signage lettering, documents with writing, screens with text, printed labels, keyboard key letters, brand logos, watermarks, stamps, "
             "symbols on collar, bad anatomy, deformed eyes, extra fingers, extra arms, duplicate people, blood, gore, anime, 3d render, illustration, "
-            "thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks, earrings on men")
+            "thick glossy gel tears, cartoon sweat drops, multiple tear streams on both cheeks, earrings on men, apple logo, brand logo on monitors or laptops, "
+            "LED light strips")
 PLAIN = ("All papers, ledgers, screens, signs, cards, keyboards and labels are completely blank (monitors show only a soft plain glow); "
          "no letters, numbers or symbols anywhere in the frame.")
 TEARS = ("Realistic tears as in a live-action film: reddened eye rims, glossy wet eyes catching the light, a small clear tear bead on the lower lashes, "
@@ -189,20 +192,20 @@ SHOTS = [
       motion="She watches, her fingers tighten on the folder, a small worried breath." + HOLD, expr="worry"),
     S("S02b", "S02", "d", "ms", "office", "EL", [Kw], "OFF_DESK", "Chest-up medium: Kentaro seated at the steel office desk, an old cream desk phone receiver held to his ear, his other hand pressing on a closed blank ledger, three-quarter angle, swallowing humiliation.", line="L02",
       act="Kentaro listens on the phone and answers with a stiff restrained voice, jaw tight, his hand pressing harder on the ledger, swallowing the humiliation; breathes at each pause." + OB, expr="anger"),
-    S("S02c", "S02", "face", "cu", "office", "HA", [Kw], "OFF_DESK", "High close-up: Kentaro slowly lowering the receiver onto the cradle and closing his eyes.",
+    S("S02c", "S02", "face", "cu", "office", "HA", [Kw], "OFF_D", "High close-up: Kentaro slowly lowering the receiver onto the cradle and closing his eyes.",
       motion="He lowers the receiver slowly and closes his eyes, a long breath out through the nose." + HOLD, expr="grief"),
     S("S02d", "S02", "ins", "ecu", "office", "EL", [Kw], "OFF_DESK", "Insert: Kentaro's scarred hand gripping the edge of the closed blank ledger, knuckles whitening, a calculator beside it.",
       motion="The fingers tighten slowly on the ledger edge, then loosen." , line="NA3"),
 
-    S("S03a", "S03", "empty", "ws", "hall_n", "LA", [], "HOME_HALL", "Wide of the dark hallway at night, the closed door at the end with a thin line of cold blue light leaking from underneath.",
+    S("S03a", "S03", "empty", "ws", "hall_n", "LA", [], "HALL", "Wide of the dark hallway at night, the closed door at the end with a thin line of cold blue light leaking from underneath.",
       motion="The blue line under the door flickers faintly as if from a screen; nothing else moves."),
-    S("S03b", "S03", "ins", "ecu", "hall_n", "EL", [], "HOME_HALL", "Insert at floor level: the gap under the closed wooden door, cold blue light flickering on the floorboards.",
+    S("S03b", "S03", "ins", "ecu", "hall_n", "EL", [], "HALL", "Insert at floor level: the gap under the closed wooden door, cold blue light flickering on the floorboards.",
       motion="The blue light flickers and shifts softly on the floor.", line="NA4"),
     S("S03c", "S03", "face", "ews", "room_d", "HA", [Dh], "ROOM_D", "High wide in the daytime: the curtained room, Daiki asleep under a blanket on the bed, face half hidden by the pillow, glasses folded on the shelf.",
       motion="He sleeps, the blanket rising and falling slowly with his breath; a thin line of daylight at the curtain edge." + HOLD, line="NA5", expr="hood"),
-    S("S03d", "S03", "ins", "ecu", "hall_n", "HA", [Dh], "HOME_HALL", "Insert at night: a hand in a grey hoodie sleeve reaching out from the door gap and taking a plain tray with a covered rice bowl left on the hallway floor, no face.",
+    S("S03d", "S03", "ins", "ecu", "hall_n", "HA", [Dh], "HALL", "Insert at night: a hand in a grey hoodie sleeve reaching out from the door gap and taking a plain tray with a covered rice bowl left on the hallway floor, no face.",
       motion="The hand slides the tray slowly in through the door gap."),
-    S("S03e", "S03", "pstill", "ms", "hall_n", "SIDE", [Kh], "HOME_HALL", "From behind: Kentaro standing in the dark hallway in front of the closed door with a quiet low sigh, shoulders dropping, his face not visible, blue light at his feet.", line="L03", fx="pushin", expr="back"),
+    S("S03e", "S03", "pstill", "ms", "hall_n", "SIDE", [Kh], "HALL", "From behind: Kentaro standing in the dark hallway in front of the closed door with a quiet low sigh, shoulders dropping, his face not visible, blue light at his feet.", line="L03", fx="pushin", expr="back"),
 
     S("S04a", "S04", "face", "ws", "home_n", "HA", [Kh, Y_], "HOME_DIN", "Wide of the small dining table at night under the pendant lamp: Kentaro and Yumiko eating in silence, a third chair and an untouched place setting empty.",
       motion="They eat slowly in silence, chopsticks moving; steam from the bowls." + SEATED + HOLD, expr="calm"),
@@ -217,7 +220,7 @@ SHOTS = [
     S("S04f", "S04", "d", "ms", "home_n", "LA", [Kh, Y_], "HOME_DIN", "Low medium past Yumiko's blurred shoulder: Kentaro setting his bowl down hard and raising his voice, brows knotted.", line="L07",
       act="NOT smiling. Kentaro puts the bowl down hard and raises his voice in frustration, brows knotted, pointing toward the hallway. Answering his wife." + SEATED + OB, expr="anger"),
 
-    S("S05a", "S05", "ins", "ecu", "hall_n", "EL", [Kh], "HOME_HALL", "Insert: a scarred hand grabbing the doorknob of the closed door and yanking it open, blue light spilling out.",
+    S("S05a", "S05", "ins", "ecu", "hall_n", "EL", [Kh], "HALL", "Insert: a scarred hand grabbing the doorknob of the closed door and yanking it open, blue light spilling out.",
       motion="The hand turns the knob and pushes the door open in one firm move; blue light spills over the hand."),
     S("S05b", "S05", "d", "ots", "room_n", "LA", [Kh, Dh], "ROOM_N", "Over Daiki's blurred grey hood (seated, right foreground), low angle: Kentaro standing in the doorway at three-quarter angle, chest-up, leaning forward, hallway light behind him.", line="L08",
       act="NOT smiling. Kentaro leans forward in the doorway and shouts at his son, face flushed, brows knotted, pointing at him. Shouting at his son at the desk." + OB, expr="anger"),
@@ -247,9 +250,9 @@ SHOTS = [
     S("S06e", "S06", "pstill", "ws", "home_n", "SIDE", [Kh], "HOME_LIV", "From behind: Kentaro sitting alone on the living-room sofa in the dark, only the dining lamp on, his face not visible.", fx="pushin", expr="back"),
     S("S06f", "S06", "ins", "ecu", "home_n", "HA", [Kh], "HOME_LIV", "Insert: Kentaro's scarred hands on his knees, trembling slightly, gripping the trouser fabric.", line="L13", vo=True,
       motion="The hands tremble slightly and grip the fabric, then loosen."),
-    S("S06g", "S06", "empty", "ws", "hall_n", "LA", [], "HOME_HALL", "Low wide from the floor of the dark hallway: the son's door left ajar, the blue monitor light still glowing inside the empty room.",
+    S("S06g", "S06", "empty", "ws", "hall_n", "LA", [], "HALL", "Low wide from the floor of the dark hallway: the son's door left ajar, the blue monitor light still glowing inside the empty room.",
       motion="The blue light inside glows steadily; a faint flicker; nothing else moves.", line="NA7"),
-    S("S06h", "S06", "ins", "ecu", "hall_n", "LA", [], "HOME_HALL", "Insert: the old brass doorknob of the son's door, cold blue light reflected on it.",
+    S("S06h", "S06", "ins", "ecu", "hall_n", "LA", [], "HALL", "Insert: the old brass doorknob of the son's door, cold blue light reflected on it.",
       motion="The reflected light on the knob shifts very slightly.", line="NA8"),
 
     S("S07a", "S07", "ins", "ecu", "home_day", "HA", [Se], "HOME_LIV", "Insert: a plain gift box with a premium melon set down on the low wooden living-room table by a hand with a gold wristwatch, no face.",
@@ -269,10 +272,10 @@ SHOTS = [
 
     S("S08a", "S08", "face", "ws", "home_n", "EL", [Kh], "HOME_DIN", "Wide: late at night, Kentaro sitting alone at the dark dining table with a glass of water, unable to sleep, only the pendant lamp on.",
       motion="He turns the glass slowly on the table, a long breath, eyes unfocused." + SEATED + HOLD, expr="calm"),
-    S("S08b", "S08", "empty", "ws", "hall_n", "LA", [], "HOME_HALL", "Wide from the end of the dark hallway: the son's door at the far end, blue light still leaking from the gap, a low fan hum.",
+    S("S08b", "S08", "empty", "ws", "hall_n", "LA", [], "HALL", "Wide from the end of the dark hallway: the son's door at the far end, blue light still leaking from the gap, a low fan hum.",
       motion="The blue light flickers faintly; nothing else moves.", line="NA9"),
-    S("S08c", "S08", "pstill", "ms", "hall_n", "SIDE", [Kh], "HOME_HALL", "From behind: Kentaro walking slowly down the dark hallway toward the son's door, his face not visible.", line="L19", fx="handheld", expr="back"),
-    S("S08d", "S08", "ins", "ecu", "hall_n", "EL", [Kh], "HOME_HALL", "Insert: Kentaro's scarred hand resting on the son's doorknob, hesitating.",
+    S("S08c", "S08", "pstill", "ms", "hall_n", "SIDE", [Kh], "HALL", "From behind: Kentaro walking slowly down the dark hallway toward the son's door, his face not visible.", line="L19", fx="handheld", expr="back"),
+    S("S08d", "S08", "ins", "ecu", "hall_n", "EL", [Kh], "HALL", "Insert: Kentaro's scarred hand resting on the son's doorknob, hesitating.",
       motion="The hand rests on the knob, hesitates, then slowly turns it.", line="NA10"),
 
     S("S09a", "S09", "empty", "ws", "room_n", "EL", [], "ROOM_N", "POV from the doorway: the door swinging slowly open into the dark room, revealing the glow of three monitors.",
@@ -299,7 +302,7 @@ SHOTS = [
     S("S10e", "S10", "estill", "ecu", "screen", "HA", [], "ROOM_M", "Monitor: a calendar panel with the same 2:00 AM meeting repeated every day (composited).", fx="tilt"),
     S("S10f", "S10", "d", "cu", "room_n", "LA", [Kh], "ROOM_N", "Low close-up of Kentaro at three-quarter angle, lips trembling, eyes beginning to wet, the realisation landing.", line="L23",
       act="NOT smiling. Kentaro speaks haltingly as the realisation lands, lips trembling, eyes beginning to wet." + WET_HOLD + OB, expr="grief"),
-    S("S10g", "S10", "empty", "ews", "street_n", "LA", [], None, "Low wide from the street at night: the modest two-storey house, only one upstairs window glowing cold blue at 2 AM.",
+    S("S10g", "S10", "empty", "ews", "street_n", "LA", [], "HOUSE_N", "Low wide from the street at night: the modest two-storey house, only one upstairs window glowing cold blue at 2 AM.",
       motion="The blue window glows steadily, a faint flicker; clouds drift; nothing else moves.", line="NA14"),
     S("S10h", "S10", "ins", "ecu", "room_n", "EL", [Dh], "ROOM_M", "Insert (memory): Daiki's hands in grey hoodie sleeves typing fast on the blank keyboard at night, a headset cable, cold blue light.",
       motion="The fingers type quickly and steadily; the light flickers.", line="NA15"),
@@ -373,12 +376,12 @@ SHOTS = [
       motion="She hesitates, bites her lip, her hand moves slowly toward the drawer." + HOLD, expr="worry"),
     S("S15d", "S15", "ins", "ecu", "office_n", "EL", [Y_], "OFF_N", "Insert: Yumiko's trembling hands sliding a plain bank passbook across the desk under the lamp, no face.", line="L38", vo=True,
       motion="The trembling hands slide the passbook slowly across the desk and stop, then pull back."),
-    S("S15e", "S15", "ins", "ecu", "office_n", "OH", [Kw], "P_PASS", "Overhead insert: an open bank passbook page with plain ruled rows (entries composited), a scarred finger resting on the rows."),
+    S("S15e", "S15", "ins", "ecu", "office_n", "OH", [Kw], "OFF_N", "Overhead insert: an open bank passbook page with plain ruled rows (entries composited), a scarred finger resting on the rows."),
     S("S15f", "S15", "d", "cu", "office_n", "EL", [Y_], "OFF_N", "Close-up of Yumiko at three-quarter angle, tears welling but not falling, voice trembling.", line="L39",
       act=NOSMILE + "Yumiko tells him with tears welling and a trembling voice, stretching the word for 'all along'." + WET_HOLD + OB, expr="worry"),
     S("S15g", "S15", "d", "ots", "office_n", "HA", [Kw, Y_], "OFF_N", "Over Yumiko's blurred shoulder (right foreground), high angle: Kentaro gripping the passbook at three-quarter angle, wet eyes, his voice fading.", line="L39a",
       act=NOSMILE + "Kentaro grips the passbook with trembling hands, his voice fading away, wet eyes on the page." + WET_HOLD + OB, expr="grief"),
-    S("S15h", "S15", "estill", "ecu", "office_n", "EL", [], "P_PASS", "Extreme close-up: the repeated deposit rows on the passbook page (composited), lamp light.", line="NA20", fx="tilt"),
+    S("S15h", "S15", "estill", "ecu", "office_n", "EL", [], "OFF_N", "Extreme close-up: the repeated deposit rows on the passbook page (composited), lamp light.", line="NA20", fx="tilt"),
     S("S15i", "S15", "face", "ecu", "office_n", "EL", [Kw], "OFF_N", "Choker extreme close-up of Kentaro's eyes and brow, his breath stopping.",
       motion=NOSMILE + "His breath stops, his eyes fill, one slow blink." + WET_HOLD + HOLD, expr="grief"),
 
@@ -398,12 +401,12 @@ SHOTS = [
     # ④ 절정·결말 7:10~10:20
     S("S17a", "S17", "face", "ews", "meet_power", "EL", [M_, R_, Kw, Y_, Se], "MEET", "Wide of the meeting room: Makabe and Ryosuke seated on the far side of the long table, Kentaro and Yumiko on the near side from behind, Seiji leaning against the right wall.",
       motion="They sit still; Makabe taps a finger once; Seiji folds his arms." + MEET5 + HOLD, expr="cold"),
-    S("S17b", "S17", "ins", "ecu", "meet", "HA", [], "P_CONTRACT", "Insert: a stapled sale contract (title composited) and a black fountain pen on the grey table.", fx="pushin"),
+    S("S17b", "S17", "ins", "ecu", "meet", "HA", [], "MEET_T", "Insert: a stapled sale contract (title composited) and a black fountain pen on the grey table.", fx="pushin"),
     S("S17c", "S17", "d", "ots", "meet_power", "LA", [M_, Kw], "MEET_T", "Over Kentaro's blurred shoulder (left foreground), low angle: Makabe at three-quarter angle leaning back deep in his chair, one finger tapping the table, looking down.", line="L41",
       act="Makabe leans back and says it low and intimidating, tapping the table with one finger, looking down at Kentaro." + SEATED + OB, expr="cold"),
     S("S17d", "S17", "ins", "ms", "meet", "HA", [Kw], "MEET_T", "Medium insert on Kentaro's chest and arms at the table, his scarred hand holding the fountain pen over the contract, trembling, no face (framed below the chin).",
       motion="The hand trembles, the pen tip wavers over the paper."),
-    S("S17e", "S17", "ins", "ecu", "meet", "OH", [Kw], "P_CONTRACT", "Overhead insert: the pen tip descending to within a centimetre of the signature line.", line="L42", vo=True,
+    S("S17e", "S17", "ins", "ecu", "meet", "OH", [Kw], "MEET_T", "Overhead insert: the pen tip descending to within a centimetre of the signature line.", line="L42", vo=True,
       motion="The pen tip slowly descends and stops just above the paper."),
 
     S("S18a", "S18", "ins", "ecu", "meet", "LA", [], "MEET_DOOR", "Insert: the meeting-room door handle turning from outside.",
@@ -431,7 +434,7 @@ SHOTS = [
       motion=NOSMILE + "He listens rigidly, the colour draining from his face." + SWEAT_FLOW + SEATED + HOLD, expr="stern"),
     S("S19e", "S19", "ins", "ecu", "meet_turn", "OH", [Ds], "P_TABLET", "Overhead insert: a tablet set down on the grey table by Daiki's hand (letter of intent screen composited).",
       motion="The hand sets the tablet down flat on the table and slides it forward a little."),
-    S("S19f", "S19", "d", "ms", "meet_turn", "LA", [Ds], "MEET", "Low medium: Daiki standing at the table at three-quarter angle, one hand on the tablet, stressing the company name.", line="L50",
+    S("S19f", "S19", "d", "cu", "meet_turn", "LA", [Ds], "MEET", "Low medium: Daiki standing at the table at three-quarter angle, one hand on the tablet, stressing the company name.", line="L50",
       act="Daiki rests his hand on the tablet and says it with quiet emphasis on the company name. Speaking to Makabe." + OB, expr="cool"),
     S("S19g", "S19", "face", "ms", "meet_turn", "EL", [R_], "MEET", "Medium: Ryosuke seated, flipping through papers in his folder in a panic, pale.",
       motion=NOSMILE + "He flips the pages quickly back and forth, pale, breath short." + SEATED + HOLD, expr="shock"),
@@ -451,31 +454,31 @@ SHOTS = [
     S("S20g", "S20", "face", "cu", "meet_turn", "LA", [Kw], "MEET", "Low close-up of Kentaro seated, looking down at the kneeling man with firm, quiet eyes.",
       motion="He looks down steadily, a slow breath, his jaw set." + SEATED + HOLD, expr="calm"),
 
-    S("S21a", "S21", "ins", "ecu", "meet_turn", "EL", [Kw], "P_CONTRACT", "Insert: Kentaro's scarred hands tearing the stapled contract in half.",
+    S("S21a", "S21", "ins", "ecu", "meet_turn", "EL", [Kw], "MEET_T", "Insert: Kentaro's scarred hands tearing the stapled contract in half.",
       motion="Both hands grip the contract firmly and tear it cleanly in half all the way down, never letting go."),
     S("S21b", "S21", "d", "cu", "meet_turn", "LA", [Kw], "MEET", "Low close-up of Kentaro at three-quarter angle, the torn halves set down, calm and firm.", line="L55",
       act="Kentaro says it calmly and firmly without raising his voice, resolved steady eyes. Speaking to Makabe." + OB, expr="calm"),
     S("S21c", "S21", "face", "cu", "meet_turn", "HA", [M_], "MEET", "High close-up of Makabe on his knees looking up, stunned.",
       motion=NOSMILE + "He looks up, stunned, his mouth half open, frozen." + HOLD, expr="stern"),
-    S("S21d", "S21", "d", "ms", "meet_turn", "EL", [Kw], "MEET", "Medium: Kentaro standing at three-quarter angle beginning a dignified slight bow, hands at his sides.", line="L56",
+    S("S21d", "S21", "d", "cu", "meet_turn", "EL", [Kw], "MEET", "Medium: Kentaro standing at three-quarter angle beginning a dignified slight bow, hands at his sides.", line="L56",
       act="Kentaro thanks them politely and with dignity, then lowers his head slightly in a small bow within 15 degrees, voice steady and quiet." + OB, expr="calm"),
 
     S("S22a", "S22", "face", "cu", "meet_turn", "HA", [R_], "MEET", "High close-up of Ryosuke looking down at his vibrating phone, the colour draining from his face.",
       motion=NOSMILE + "He stares down at the phone, his face going pale, his breath stopping." + HOLD, expr="shock"),
-    S("S22b", "S22", "d", "ms", "meet_turn", "EL", [Se, Ds], "MEET", "Medium: Seiji approaching his nephew with a servile forced grin, hands rubbing together, sweat at the temple.", line="L57",
+    S("S22b", "S22", "d", "cu", "meet_turn", "EL", [Se, Ds], "MEET", "Medium: Seiji approaching his nephew with a servile forced grin, hands rubbing together, sweat at the temple.", line="L57",
       act="Seiji approaches with a servile forced grin, rubbing his hands, stammering flattery, sweat at the temple. Fawning over his nephew." + OB, expr="forced"),
     S("S22c", "S22", "d", "ots", "meet_turn", "EL", [Ds, Se], "MEET", "Over Seiji's blurred shoulder (right foreground): Daiki at three-quarter angle looking straight at his uncle, calm faint smile.", line="L58",
       act="Daiki looks straight at his uncle and says it quietly and clearly, a calm faint smile. Speaking to his uncle." + OB, expr="smile"),
-    S("S22d", "S22", "face", "cu", "meet_turn", "EL", [Se], "MEET", "Close-up of Seiji frozen, the forced grin stuck on his face.",
+    S("S22d", "S22", "face", "ms", "meet_turn", "HA", [Se], "MEET", "High medium of Seiji standing frozen, the forced grin stuck on his face.",
       motion="The forced grin freezes and fades, his eyes dart." + HOLD, expr="forced"),
     S("S22e", "S22", "face", "ws", "meet_turn", "EL", [Kw, Ds], "MEET", "Wide: Kentaro seated in the foreground at three-quarter angle looking across the room at his son standing by the window, eyes softening with pride.",
       motion="His eyes soften, a slow breath, a faint tremble at the lips." + WET_HOLD + HOLD, expr="calm"),
 
-    S("S23a", "S23", "ins", "ecu", "hall_n", "EL", [Kh], "HOME_HALL", "Insert: Kentaro's scarred knuckles knocking gently twice on the son's closed door, warm light from under it.",
+    S("S23a", "S23", "ins", "ecu", "hall_n", "EL", [Kh], "HALL", "Insert: Kentaro's scarred knuckles knocking gently twice on the son's closed door, warm light from under it.",
       motion="The knuckles knock twice gently and rest on the door."),
-    S("S23b", "S23", "d", "cu", "hall_n", "EL", [Kh], "HOME_HALL", "Close-up: Kentaro at the closed door at three-quarter angle, hand resting on the wood, hesitant, warm light leaking from under the door.", line="L59",
+    S("S23b", "S23", "d", "cu", "hall_n", "EL", [Kh], "HALL", "Close-up: Kentaro at the closed door at three-quarter angle, hand resting on the wood, hesitant, warm light leaking from under the door.", line="L59",
       act="Kentaro asks quietly through the door, voice trembling slightly, awkward and hesitant, his hand resting on the wood. Speaking to his son through the door." + OB, expr="grief"),
-    S("S23c", "S23", "face", "cu", "hall_n", "LA", [Kh], "HOME_HALL", "Low close-up of Kentaro at the closed door hearing his son's small laugh through it, his tense face loosening.", line="L60", vo=True,
+    S("S23c", "S23", "face", "cu", "hall_n", "LA", [Kh], "HALL", "Low close-up of Kentaro at the closed door hearing his son's small laugh through it, his tense face loosening.", line="L60", vo=True,
       motion="His tense face loosens, a breath of relief, his hand stays on the door." + HOLD, expr="grief"),
     S("S23d", "S23", "face", "ws", "room_warm", "EL", [Kh, Dw], "ROOM_N", "Wide inside the room: Kentaro bowing deeply to his seated son in silence, Daiki turned in his chair.",
       motion="Kentaro bows deeply and holds the bow; Daiki looks at him without moving." + HOLD, expr="grief"),
@@ -499,7 +502,7 @@ SHOTS = [
       motion="The chopsticks lift a piece of beef from the pot and lay it gently in the other bowl."),
     S("S24d", "S24", "face", "ws", "sukiyaki", "EL", [Kh, Y_, Dh], "HOME_DIN", "Wide: the three of them around the small dining table with the steaming pot, the third chair finally taken.",
       motion="They eat slowly; steam rises; Yumiko laughs softly." + SEATED + HOLD, line="NA22", expr="calm"),
-    S("S24e", "S24", "empty", "ws", "room_warm", "LA", [], "HOME_HALL", "Wide of the hallway: the son's door now left wide open, warm light flowing out into the hall.",
+    S("S24e", "S24", "empty", "ws", "room_warm", "LA", [], "HALL", "Wide of the hallway: the son's door now left wide open, warm light flowing out into the hall.",
       motion="Warm light glows steadily from the open door; nothing else moves.", line="NA23"),
     S("S24f", "S24", "ins", "ecu", "morning", "EL", [Ka], "LATHE", "Insert in the morning: Kaneda's hands starting the lathe again, the chuck beginning to spin, golden light.",
       motion="The hands press the start lever, the chuck begins to rotate, swarf curls.", line="NA24"),
@@ -511,7 +514,7 @@ SHOTS = [
 
 SPK_WHO = {"父": "KEN:work", "母": Y_, "大樹": Ds, "叔父": Se, "亮介": R_, "真壁": M_}
 # 듣는 사람 VO 컷의 앞 화자 어깨(ots 자동)를 쓰지 않는 컷 — 화자가 뒤에 있거나 화면 밖이 자연스러운 구도
-VO_OTS_SKIP = {"S06b", "S13b", "S07e", "S19d", "S23f", "S11f", "S12d"}
+VO_OTS_SKIP = {"S06b", "S13b", "S07e", "S19d", "S23f", "S11f", "S12d", "S23c", "S18e"}  # S23c 문 너머·S18e 앞 인물 뒤바뀜(Kill Gate 1차)
 SCENE_SPK_WARD = {"S04": {"父": Kh}, "S05": {"父": Kh, "大樹": Dh}, "S06": {"大樹": Dh, "父": Kh}, "S07": {"父": Kh}, "S15": {"父": Kw},
                   "S23": {"父": Kh, "大樹": Dw}, "S24": {"大樹": Dh}}
 
@@ -800,7 +803,7 @@ def main():
         n = len(s["who"])
         if s["kind"] == "d" and n > 1:
             comp = ("Over-the-shoulder two-shot: the listener's blurred shoulder and back of the head at the near foreground edge (FOREGROUND IDENTITY LOCKED: "
-                    f"that blurred person is {ids[1].split(',')[0]}), the speaker beyond facing the listener at 30 to 40 degrees from the camera axis, the speaker's face "
+                    f"that blurred person is {ids[1].split(',')[0]} — {GLASSES.get(s['who'][1].split(':')[0], '')}), the speaker beyond facing the listener at 30 to 40 degrees from the camera axis, the speaker's face "
                     "at least one third of the frame height, the speaker's mouth closed, hands visible doing the described work. SPEAKER LOCKED: the speaker is "
                     f"{ids[0].split(',')[0]}. Exactly two people, no extra people.")
         elif s["kind"] == "d":
@@ -808,7 +811,7 @@ def main():
                     "of the frame height, mouth closed. NO foreground person, no other people.")
         elif s.get("ots"):
             comp = ("Over-the-shoulder reverse shot: the SPEAKER's blurred back of the head and shoulder at the near foreground edge (face and mouth NOT visible; "
-                    f"FOREGROUND IDENTITY LOCKED: that is {ids[-1].split(',')[0]}); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, "
+                    f"FOREGROUND IDENTITY LOCKED: that is {ids[-1].split(',')[0]} — {GLASSES.get(s['who'][-1].split(':')[0], '')}); the LISTENER beyond faces the speaker at 30 to 40 degrees from the camera axis, "
                     "eyes on the speaker, NOT looking at the camera, the listener's face at least one third of the frame height, mouth closed. Exactly two people.")
         elif s["kind"] in ("empty", "estill") and not s["who"] or (s["kind"] == "ins" and not s["who"]):
             comp = "Completely unpopulated: no people, no hands, no faces. EMPTY."
