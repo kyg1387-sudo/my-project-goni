@@ -1,0 +1,35 @@
+{
+ "_설명": "『引きこもりの息子』 아웃트로 진행자 — 승인 새 스타일(host-cu-2: 어깨 길이 웨이브·크림 니트·카멜 카디건·진주)을 3컷에 같은 스타일로, 헤어·의상 완성도 강화(고니감독님 지시 2026-10-29 「아웃트로 장면마다 헤어스타일 의상 예쁘게」, 제19장 8). 컷당 2장 중 선택.",
+ "characters": [
+  {
+   "id": "host-cu",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png",
+    "assets/portraits/hikikomori-cast-2/host-cu-2.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). Reference image 2 is THIS episode's approved new look: copy its hairstyle, wardrobe and earrings exactly. STYLING (pretty and polished, CLAUDE.md 제19장 8): glossy dark-brown hair in soft, airy shoulder-length waves with a neat side part, smooth healthy shine, a gentle volume at the crown, the ends curled softly inward, flyaways tidied, one wave tucked lightly behind the left ear; she wears a cream-white fine-knit high-neck sweater that fits softly with natural knit texture, and a thin camel-brown wool cardigan draped neatly over her shoulders, sleeves hanging symmetrically; small matching pearl stud earrings (the only accessory); natural fresh makeup with soft coral lips, light peach blush and natural brows, real skin texture (NOT plastic, NOT glossy). The same bright living-room studio with the beige sofa, wooden shelf and green plant, plus a small vase of white flowers on the shelf matching her cream and camel colours, warm morning window light, softly out of focus. Chest-up close-up, she faces the camera directly with a warm gentle smile, mouth gently closed (speech is added later), 85mm lens f/2. Both eyes sharp and symmetrical, natural five-fingered hands. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  },
+  {
+   "id": "host-wu",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png",
+    "assets/portraits/hikikomori-cast-2/host-cu-2.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). Reference image 2 is THIS episode's approved new look: copy its hairstyle, wardrobe and earrings exactly. STYLING (pretty and polished, CLAUDE.md 제19장 8): glossy dark-brown hair in soft, airy shoulder-length waves with a neat side part, smooth healthy shine, a gentle volume at the crown, the ends curled softly inward, flyaways tidied, one wave tucked lightly behind the left ear; she wears a cream-white fine-knit high-neck sweater that fits softly with natural knit texture, and a thin camel-brown wool cardigan draped neatly over her shoulders, sleeves hanging symmetrically; small matching pearl stud earrings (the only accessory); natural fresh makeup with soft coral lips, light peach blush and natural brows, real skin texture (NOT plastic, NOT glossy). The same bright living-room studio with the beige sofa, wooden shelf and green plant, plus a small vase of white flowers on the shelf matching her cream and camel colours, warm morning window light, softly out of focus. Waist-up medium shot: she sits on the beige sofa facing the camera directly, hands resting lightly together on her lap, back straight, relaxed friendly posture, 35mm lens f/2.8, mouth gently closed in a soft smile (speech is added later). Both eyes sharp and symmetrical, natural five-fingered hands. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  },
+  {
+   "id": "host-wave",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png",
+    "assets/portraits/hikikomori-cast-2/host-cu-2.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). Reference image 2 is THIS episode's approved new look: copy its hairstyle, wardrobe and earrings exactly. STYLING (pretty and polished, CLAUDE.md 제19장 8): glossy dark-brown hair in soft, airy shoulder-length waves with a neat side part, smooth healthy shine, a gentle volume at the crown, the ends curled softly inward, flyaways tidied, one wave tucked lightly behind the left ear; she wears a cream-white fine-knit high-neck sweater that fits softly with natural knit texture, and a thin camel-brown wool cardigan draped neatly over her shoulders, sleeves hanging symmetrically; small matching pearl stud earrings (the only accessory); natural fresh makeup with soft coral lips, light peach blush and natural brows, real skin texture (NOT plastic, NOT glossy). The same bright living-room studio with the beige sofa, wooden shelf and green plant, plus a small vase of white flowers on the shelf matching her cream and camel colours, warm morning window light, softly out of focus. Chest-up medium close shot: she raises her right hand beside her face and waves goodbye to the camera with a bright warm smile, palm open, all five fingers clearly separate, the cardigan staying draped on her shoulders. Both eyes sharp and symmetrical, natural five-fingered hands. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  }
+ ]
+}
