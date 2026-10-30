@@ -13,101 +13,90 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, "..", ".."))
 CAST_JSON = json.load(open(os.path.join(REPO, "scripts", "audio", "soukaion-cast-voices.json"), encoding="utf-8"))
 
-CAST = {"NA": ("내레이터", "narr"), "健太": ("健太", "kenta"), "悠斗": ("悠斗", "yuto"), "男": ("男", "otoko"),
-        "店長": ("店長", "tencho"), "母": ("母", "haha"), "警察官": ("警察官", "keisatsu"), "진행자": ("진행자", "host")}
-SAME_AS = {"L00": "L08"}  # 후크의 「ここに、出口はない」 = S05 L08 녹음 재사용
-SKIP = {"OUT0", "OUT5"}   # 무언 몽타주·예고 카드
-EXTRA_ID = {"NA39c": "line201", "NA39d": "line202"}  # Lock 보강 추가 줄 — 기존 line### 번호를 밀지 않는다
+CAST = {"NA": ("美咲(내레이션)", "misaki"), "美咲": ("美咲", "misaki"), "結衣": ("結衣", "yui"), "黒木": ("黒木", "kuroki"),
+        "大野": ("大野", "ohno"), "弁護士": ("弁護士", "bengoshi"), "警察官": ("警察官", "keisatsu"), "管理会社": ("管理会社", "kanri"),
+        "진행자": ("진행자", "host")}
+SAME_AS = {"L11": "L02"}  # S03b 黒木 「お前らが出ていけよ」 = 후크 H2 L02 녹음 재사용
+SKIP = {"OUT0", "OUT5"}   # 무언 몽타주·엔드카드
+EXTRA_ID = {}
 
 # 태그: (EL 연기 태그 또는 Typecast (감정, 강도, 템포), 연기 메모 = 표정·동작의 단일 출처, 제10장 7)
+# 발성 디렉션 표준(제20장 7): 내레이션(美咲 1인칭 회고)은 감정 배제·낮고 담담, 다큐 호흡. 대사는 숨 삼킴·속삭임, 외침 0줄.
 N = lambda tag, note: (tag, note)
 T = {
-    # 내레이터 Hatake — 3인칭 です・ます, 차갑고 낮게·객관적. 세기는 속도·침묵으로
-    "NA0": N("[low, cold, slow]", "후크. 숫자만 또렷이, 뒤에 심장 박동"),
-    "NA1": N("[low, ominous, trailing off]", "후크. 「一週間後」에서 끊어 여운"),
-    "NA2": N("[calm, detached]", "장소 제시, 담담"), "NA3": N("[calm, detached]", "인물 소개, 이름·나이 또렷이"),
-    "NA4": N("[calm, matter-of-fact]", "일상 묘사"), "NA8": N("[quiet, foreboding]", "「普通の青年」 뒤에 반 박자"),
-    "NA9": N("[low, suspenseful]", "DM 도착, 톤 한 단계 낮춤"), "NA10": N("[measured, reading out]", "DM 조건을 읽듯 또박또박"),
-    "NA11": N("[measured, reading out]", "「現金」에 무게"), "NA12": N("[flat, skeptical]", "「おかしな話」 건조하게"),
-    "NA13": N("[calm, matter-of-fact]", "켄타의 첫 반응"), "NA6": N("[flat, cold]", "잔고 숫자, 감정 없이"),
-    "NA5": N("[quiet, heavy]", "「遅れていました」 무겁게"), "NA7a": N("[quiet, heavy]", "「借金」에 무게"),
-    "NA7b": N("[flat, cold]", "「十五年」 건조하게"), "NA7": N("[quiet, bitter]", "SNS, 약간 씁쓸하게"),
-    "NA14": N("[low, slow, knowing]", "주제문 ①, 느리게"), "NA16": N("[low, suspicious]", "조건 도입, 톤 낮춤"),
-    "NA17": N("[clipped, counting]", "ひとつ — 끊어 읽기"), "NA18": N("[clipped, counting]", "ふたつ — 끊어 읽기"),
-    "NA19": N("[clipped, colder]", "みっつ — 「家族にも」 가장 차갑게"), "NA20": N("[hushed, uneasy]", "「おかしい」 반복, 속삭이듯"),
-    "NA21": N("[low, slow, knowing]", "주제문 ②, 「鈍らせます」 느리게"), "NA22": N("[flat, final]", "버튼, 단정적으로"),
-    "NA15": N("[quiet, direct, slow]", "시청자에게 1회 질문 — 가장 느리게, 뒤 1.0초 여운"),
-    "NA23": N("[low, uneasy]", "출발 전날 밤"), "NA24": N("[quiet, curious]", "번호 검색"), "NA24a": N("[quiet]", "「相談窓口」 짧게"),
-    "NA24b": N("[low, regretful, slow]", "「かけませんでした」 — 복선, 여운 0.8초"),
-    "NA25a": N("[quiet, heavy]", "「最後の普通の会話」 무겁게"), "NA25d": N("[calm, matter-of-fact]", "짐"),
-    "NA25e": N("[quiet, foreboding]", "「戻るつもり」 — 복선"), "NA25b": N("[low, ominous]", "약속의 밤"),
-    "NA25c": N("[low, slow, ominous]", "왕박스카, 「音もなく」 느리게"),
-    "NA25": N("[low, slow, suspenseful]", "1차 광고 직전, 끝을 가장 느리게 → 0.8초 여운"),
-    "NA26": N("[hushed, tense]", "차 안, 숨죽여"), "NA27": N("[hushed, tense]", "「一言も」 짧게"),
-    "NA27a": N("[hushed, observing]", "떨리는 손"), "NA27b": N("[quiet]", "짧게"), "NA27c": N("[low, uneasy]", "「いけない気が」 여운"),
-    "NA28": N("[low, slow]", "빛이 사라짐, 느리게"), "NA29": N("[flat, clipped]", "한 시간, 짧게"),
-    "NA30": N("[low, cold, slow]", "「完全な闇」 가장 낮게"), "NA31": N("[low, observing]", "도착"),
-    "NA32": N("[flat, clipped]", "간판 없음·쇠창살, 끊어 읽기"), "NA33": N("[hushed, sensory]", "쇠 냄새, 속삭이듯"),
-    "NA34": N("[low, slow, final]", "철문, 「閉まっていました」 느리고 무겁게"),
-    "NA35": N("[low, cold]", "「アルバイト先では」 차갑게"), "NA36": N("[low, grave]", "「収容所」 무겁게"),
-    "NA37": N("[flat, reading out]", "통장 정리"), "NA38": N("[flat, reading out]", "짐 분류"),
-    "NA39": N("[low, heavy]", "16시간, 「ほとんど」 무겁게"), "NA39a": N("[flat, clipped]", "식사·바닥, 끊어 읽기"),
-    "NA39b": N("[low, slow]", "카메라, 「一瞬も」 느리게"),
-    "NA39c": N("[quiet, heavy]", "작업대 밑 — 무겁게"), "NA39d": N("[low, slow, sorrowful]", "이름을 몰랐다 — 실종 복선, 느리게"), "NA40": N("[low, slow, grave]", "주제문 ③ — 「命の値段」 가장 느리게"),
-    "NA41": N("[hushed, chilling]", "실종, 속삭이듯 차갑게"), "NA42": N("[hushed, chilling]", "「口にしません」 여운"),
-    "NA43a": N("[low, sorrowful]", "무너지는 마음"), "NA43b": N("[quiet, turning]", "「気づいていました」 — 전환, 톤 살짝 올림"),
-    "NA43c": N("[quiet, precise]", "3시·5분 또렷이"), "NA43d": N("[quiet, precise]", "비상계단, 복선"),
-    "NA43": N("[low, slow, suspenseful]", "2차 광고 직전, 「ありませんでした」 가장 느리게 → 0.8초"),
-    "NA44": N("[hushed, tense, precise]", "시각 또렷이, 숨죽여"), "NA45": N("[low, firm]", "「決めました」 단호하게"),
-    "NA45a": N("[hushed, tense]", "감시자 외출"), "NA45b": N("[hushed, tense]", "열쇠"),
-    "NA46": N("[tense, faster]", "추격 — 템포 올림"), "NA47": N("[firm, breathless]", "「振り返りませんでした」"),
-    "NA48": N("[driving, breathless]", "달리고 달리고 — 리듬"), "NA48a": N("[breathless, fading]", "기억나지 않음"),
-    "NA48b": N("[quiet, relief]", "편의점 불빛 — 안도"), "NA49": N("[low, slow, meaningful]", "복선 회수, 느리게"),
-    "NA50": N("[firm, quiet]", "「迷いませんでした」 단단히"), "NA50a": N("[hushed, trembling]", "떨리는 손"),
-    "NA50b": N("[quiet, relief]", "장소 특정"), "NA51": N("[low, building]", "「一時間後」 — 급습 예고"),
-    "NA52": N("[firm, driving]", "급습, 힘 있게"), "NA53": N("[firm, cold justice]", "체포, 단정적"),
-    "NA54": N("[measured]", "27명 또렷이"), "NA54b": N("[firm, warm]", "「被害者として」 단단히"),
-    "NA54a": N("[quiet, heavy]", "18세 소년, 무겁게"), "NA55": N("[quiet, warm]", "悠斗 — 안도"),
-    "NA56": N("[measured, resolving]", "뉴스, 해결"), "NA57": N("[quiet, warm]", "목숨을 되찾음"),
-    "NA58": N("[quiet, heavy]", "상처, 「消えていません」 여운"), "NA58a": N("[calm, gentle]", "현재"),
-    "NA58b": N("[quiet, tender]", "어머니에게 말하지 않음 — 여운"), "NA59": N("[low, slow]", "주제문 ④"),
-    "NA60": N("[low, grave]", "「大きな悪意」 무겁게"), "NA61": N("[firm, plain]", "「ありません」 단정"),
-    "NA62": N("[low, slow, warning]", "지금 이 순간에도 — 경고"), "NA63": N("[gentle, direct]", "행동 요청 ①"),
-    "NA64": N("[gentle, sincere]", "행동 요청 ② 「どうか」 진심"), "NA65": N("[clear, measured]", "#9110 — 번호 또렷이"),
-    "NA66": N("[warm, slow]", "평범한 일상"), "NA67": N("[warm, gentle ending]", "주제문, 가장 느리게"),
-    # 健太 Hadou — 불안·궁핍, 절제. 외침 없음
-    "L01": N("[whispering, stunned]", "폰을 보며 속삭임 [Omni]"),
-    "L02": N("[low, convincing himself]", "자신에게 말하듯, 눈은 불안 [Omni]"),
-    "L04": N("[forced cheerful, strained]", "억지로 밝게, 눈은 웃지 않음 [Omni]"),
-    "L10": N("[muttering, hollow]", "고개 숙인 채 [VO]"),
-    "L14": N("[trembling whisper, afraid]", "젖은 눈·흐르지 않음, NOT smiling [Omni]"),
-    "L16": N("[breathless, pleading]", "수화기, 숨 가쁨 [VO]"), "L16a": N("[breathless, urgent]", "공장 설명 [VO]"),
-    "L20": N("[quiet, choked, half laugh]", "悠斗 어깨 너머 뒷모습 [VO]"),
-    "L22": N("[quiet, tender, holding back]", "젖은 눈, 웃지 않고 조용히 [Omni]"),
-    # 悠斗 Mizu — 체념·자조 → 재회 오열
-    "L09": N("[whispering, dry]", "입만 움직이는 속삭임, 어깨 너머 [Omni]"),
-    "L11": N("[low, hollow, bitter]", "자조, 눈은 작업대 [Omni]"),
-    "L12": N("[whispering, quick, nervous]", "눈만 빠르게 [Omni]"), "L13": N("[whispering, lower]", "더 낮게 [Omni]"),
-    "L13a": N("[whispering, defeated]", "눈을 내리깔고 [Omni]"),
-    "L19": N("[choked up, tearful]", "젖은 눈·흐르지 않음(흐름은 다음 i2v 컷), NOT smiling [Omni]"),
-    # 男 Henry — 낮고 무표정, 고함 없음(외침은 L15만 VO)
-    "L06": N("[cold, flat, low]", "조수석에서 돌아보지 않음 [VO]"), "L06a": N("[cold, clipped]", "짧게 [VO]"),
-    "L07": N("[cold, flat, slow]", "무표정 가슴 위 CU [Omni]"), "L08": N("[quiet menace, slow]", "눈만 健太에게 [Omni] — 후크 L00에 재사용"),
-    "L00": N("[quiet menace, slow]", "후크 재사용(L08 녹음) [VO]"),
-    "L08a": N("[cold, bored]", "책상 사이 뒷모습 [VO]"), "L15": N("[shouting, distant]", "멀리서 고함 — 화면은 손 [VO]"),
-    # 店長 Takumi — 짧고 묵직하게 따뜻
-    "L17": N("[calm, warm, low]", "카운터 너머 3/4 [Omni]"), "L17a": N("[steady, protective]", "문 쪽을 한 번 보고 [Omni]"),
-    "L17b": N("[grave, realizing]", "창밖 어둠 쪽 [Omni]"),
-    # 母 Koharu — 전화 너머
-    "L03": N("[warm, motherly]", "전화 너머 EQ [VO]"), "L05": N("[gentle, a little worried]", "[VO]"),
-    "L21": N("[gentle, worried, soft]", "결말 전화 [VO]"),
-    # 警察官 Anton
-    "L18": N("[commanding shout]", "철문 너머 — 화면은 빛줄기 [VO]"),
-    # 진행자 Yui Sato (Typecast)
+    # ── 美咲 내레이션(1인칭 だ・である) — 낮고 침착, 세기는 속도·침묵으로
+    "NA0": N("[low, flat, slow]", "후크. 「地獄」를 세게 말하지 않고 낮게"),
+    "NA1": N("[low, quiet]", "후크 결말 선행 ①"), "NA2": N("[low, steady, slow]", "후크 결말 선행 ② 「一週間で」 또렷이"),
+    "NA3": N("[calm, tired]", "아침 7시, 피로가 밴 담담함"), "NA4": N("[calm, matter-of-fact]", "자기소개, 숫자 또렷이"),
+    "NA5": N("[calm, warm]", "딸 이야기, 아주 조금 온기"), "NA6": N("[quiet, heavy]", "「貯められていなかった」 무겁게"),
+    "NA7": N("[calm, low]", "22:50, 하루의 유일한 휴식"), "NA8": N("[low, flat, precise]", "「十一時ちょうど」 또렷이"),
+    "NA9": N("[quiet, heavy]", "딸의 해석, 느리게"), "NA10": N("[quiet, bitter]", "「否定できなかった」 씁쓸하게"),
+    "NA11": N("[flat, clipped]", "「三回」 짧게"), "NA12": N("[low, cold]", "「大きくなった」 차갑게"),
+    "NA13": N("[flat, dry]", "뜯긴 종이, 건조하게"), "NA14": N("[flat, clipped]", "숫자만"),
+    "NA15": N("[quiet, heavy]", "「二度」 무겁게 — 직업 리스크"), "NA16": N("[low, firm]", "「仕事ではない」 단단히"),
+    "NA16a": N("[flat, listing, tired]", "하루 루틴을 나열하듯, 끝에 피로"),
+    "NA17": N("[quiet, slow]", "「一行」 뒤 반 박자"), "NA18": N("[low, resolved]", "「四階へ」 결심"),
+    "NA19": N("[hushed, tense]", "402호 앞, 숨죽여"), "NA20": N("[low, heavy]", "새벽 2시까지, 무겁게"),
+    "NA21": N("[quiet, trembling edge]", "「声を出した」 — 떨림의 가장자리만"),
+    "NA22": N("[low, slow, turning]", "1차 광고 직전, 끝을 가장 느리게 → 0.8초 여운"),
+    "NA23": N("[calm, low]", "大野 소개"), "NA24": N("[measured]", "「三十八年間」 또렷이"), "NA24a": N("[quiet, warm]", "「私の壁でもある」 — 온기"),
+    "NA25a": N("[quiet, slow]", "「分かっていなかった」 복선, 느리게"), "NA25": N("[calm, matter-of-fact]", "측정기 설치"),
+    "NA26": N("[hushed, precise]", "「ちょうど」 또렷이"), "NA26a": N("[quiet]", "측정기 앞, 숨죽임"),
+    "NA27": N("[hushed, tense]", "막대 하나, 숨죽여"), "NA28": N("[low, slow, precise]", "「六十三ヘルツ」 — 가장 또렷이, 뒤 0.8초"),
+    "NA29": N("[hushed, counting]", "「きっかり二秒」"), "NA30": N("[low, cold, precise]", "「一度も、ずれなかった」 차갑게"),
+    "NA31": N("[low, slow, heavy]", "「足音ではなかった」 — 반전 ①, 느리게"), "NA31a": N("[quiet, realizing]", "이사 온 주 — 깨달음"),
+    "NA31b": N("[quiet, bitter]", "「思おうとしていた」 자조"),
+    "NA32": N("[calm, steady]", "기록 계속"), "NA33": N("[low, suspenseful]", "「ひとつの事実」 톤 낮춤"),
+    "NA34": N("[low, precise]", "「十一時ではなかった」"), "NA35": N("[low, slow, chilling]", "「十五分後」 — 반전 ②, 가장 느리게, 뒤 0.8초"),
+    "NA36": N("[hushed, cold]", "「待っていた」 속삭이듯 차갑게"),
+    "NA36a": N("[quiet, tense]", "엘리베이터"), "NA36b": N("[hushed, chilling]", "「小さく、笑った」"), "NA36c": N("[low, firm]", "「五日分あった」 단단히"),
+    "NA37a": N("[quiet, precise]", "빨간 동그라미"), "NA37": N("[calm, matter-of-fact]", "편지 두 통"),
+    "NA38": N("[measured, reading out]", "한 통째 — 읽듯이"), "NA39": N("[measured, reading out]", "다른 한 통"),
+    "NA40": N("[low, slow, suspenseful]", "2차 광고 직전, 「翌日の夜が来た」 가장 느리게 → 0.8초"),
+    "NA41": N("[hushed, tense]", "다음 날 밤, 숨죽여"), "NA41a": N("[quiet]", "짧게"), "NA41b": N("[quiet, guarded]", "「もう嫌だった」 억눌러"),
+    "NA42": N("[hushed, listening]", "끄는 소리 — 귀 기울이듯"), "NA42a": N("[hushed, slow]", "테이프 소리, 느리게"),
+    "NA43": N("[quiet, steady]", "밤을 세었다"),
+    "NA44": N("[low, precise]", "「七日目、午前四時」 또렷이"), "NA45": N("[low, slow]", "베란다 — 느리게"),
+    "NA46": N("[hushed, recognizing]", "「あの段ボール」 알아봄"), "NA47": N("[low, flat, slow]", "스피커 — 감정 없이, 느리게"),
+    "NA48": N("[low, steady]", "「消えた」 담담하게"), "NA49": N("[flat, precise]", "「六日目」 또렷이"),
+    "NA50": N("[low, slow, final]", "「彼のほうだった」 — 카타르시스, 가장 느리게, 뒤 1.0초"),
+    "NA50a": N("[calm, matter-of-fact]", "관리회사 전화"), "NA50b": N("[quiet, heavy, relieved]", "「誰も言ってくれなかった」 — 안도 섞인 무게"),
+    "NA51": N("[warm, gentle]", "S10부터 반음 따뜻하게. 「九時まで」"), "NA52": N("[warm, quiet, slow]", "측정기, 조용한 채 — 여운"),
+    "NA53": N("[calm, firm]", "교훈 ① 단단히"), "NA54": N("[calm, firm, slow]", "「記録だ」 — 느리게"),
+    "NA55": N("[measured, listing]", "실용 정보 나열, 또박또박"), "NA56": N("[calm, warm, slow]", "「法律の言葉に変わる」"),
+    "NA57": N("[gentle, direct, slow]", "시청자에게 1회 질문 — 가장 느리게"), "NA58": N("[gentle, quiet]", "댓글 유도, 짧게"),
+    # ── 美咲 대사 — 절제, 외침 없음
+    "L04": N("[soft, warm, smiling]", "딸에게, 웃으며 [VO]"), "L08": N("[polite, trembling slightly]", "402호 문 앞, 정중하지만 떨림 [VO]"),
+    "L10": N("[quiet, hesitant]", "말을 잇지 못함 [VO]"), "L12": N("[choked, pleading whisper]", "목 멘 채, 외침 아님. NOT shouting [VO]"),
+    "L16": N("[quiet, puzzled]", "「形？」 되묻기 [VO]"), "L20": N("[hushed, counting]", "스톱워치, 숨죽여 세기 [VO]"),
+    "L22": N("[quiet, dreading]", "「じゃあ、これは」 [VO]"), "L24": N("[whispering, chilled]", "「見てる」 속삭임 [VO]"),
+    "L28": N("[quiet, confused]", "변호사에게 되묻기 [VO]"), "L31": N("[whispering, disbelief]", "「来ない」 믿기지 않는 속삭임 [VO]"),
+    "L33": N("[warm, smiling, soft]", "딸에게, 웃으며 [VO]"), "L34": N("[warm, polite]", "おはぎ를 내밀며 [VO]"), "L36": N("[hesitant, moved]", "받지 못하고 [VO]"),
+    # ── 結衣 — 6세, 작게
+    "L03": N("[bright, childlike]", "카탈로그를 가리키며, 어깨 너머 [Omni]"), "L05": N("[small, sleepy, worried]", "이불 속, 작게 [VO]"),
+    "L32": N("[sleepy, soft, hopeful]", "잠에서 덜 깬 채, 이불을 쥔 손 [Omni]"),
+    # ── 黒木 — 낮은 비웃음, 고함 없음
+    "L02": N("[low, sneering, bored]", "문틈 얼굴 절반, 비웃음 [VO] — S03b L11에 재사용"),
+    "L09": N("[flat, dismissive]", "「普通に生活してるだけ」 가볍게 [VO]"), "L11": N("[low, sneering, bored]", "L02 녹음 재사용 [VO]"),
+    # ── 大野 — 느리고 짧게, 따뜻함은 밑에
+    "L13": N("[low, slow, gentle]", "문가에서, 느리게 [VO]"), "L14": N("[calm, slow, teaching]", "측정기를 쥔 손, 어깨 너머 3/4 [Omni]"),
+    "L15": N("[calm, slow, emphatic]", "「形です」 — 측정기를 내밀며 [Omni]"), "L17": N("[gentle, explaining]", "손가락으로 눈금 [VO]"),
+    "L18": N("[low, firm]", "「嘘をつけない」 [VO]"), "L19": N("[low, steady, serious]", "「一晩も、休まずに」 어깨 너머 [Omni]"),
+    "L21": N("[quiet, grave, slow]", "출력물을 보며, 조용히 [Omni]"), "L23": N("[low, certain]", "「床に直接」 확신 [Omni]"),
+    "L25": N("[low, slow, sorrowful]", "창가 뒷모습, 아내 이야기 [VO]"), "L26": N("[low, resolved, slow]", "「測る人間になった」 [VO]"),
+    "L35": N("[gruff, warm underneath]", "측정기를 내밀며 [Omni]"), "L37": N("[slow, tender, firm]", "「誰かの耳になりなさい」 — 가장 느리게 [Omni]"),
+    # ── 弁護士 — 사무적이되 단호
+    "L27": N("[calm, professional, intrigued]", "노트를 넘기며, 어깨 너머 [Omni]"), "L29": N("[firm, precise, professional]", "노트를 짚으며 [Omni]"),
+    "L30": N("[calm, grave, low]", "판례집을 덮으며 「懲役です」 [VO]"),
+    # ── 警察官 · 管理会社 — 사무적 VO
+    "L00": N("[flat, official, apologetic]", "무전기 EQ [VO]"), "L06": N("[flat, official]", "현관 앞 [VO]"),
+    "L01": N("[flat, clerical, hurried]", "전화 EQ [VO]"), "L07": N("[flat, clerical, hurried]", "전화 EQ [VO]"),
+    "L38": N("[flat, clerical]", "「解約となりました」 사무적 [VO]"),
+    # ── 진행자 Yui Sato (Typecast)
     "OUT1": (("normal", 1.0, 0.95), "가슴 위 CU, 정중하게 [Omni]"),
-    "OUT2": (("normal", 1.0, 0.92), "질문, 진지하게 [Omni]"),
-    "OUT3": (("normal", 0.9, 0.95), "댓글 부탁 [Omni]"),
-    "OUT4": (("happy", 0.9, 1.0), "구독 요청, 밝게 [Omni]"),
+    "OUT2": (("normal", 1.0, 0.92), "요약, 진지하게 [Omni]"),
+    "OUT3": (("normal", 0.9, 0.95), "다음 화 예고 [Omni]"),
+    "OUT4": (("happy", 0.9, 1.0), "구독·댓글 요청, 밝게 [Omni]"),
 }
 
 KANA = sorted(CAST_JSON["kana"].items(), key=lambda kv: -len(kv[0]))
@@ -174,15 +163,13 @@ def main():
             chars_tc += len(text); src = f"Typecast {r['name']}"
         else:
             kt = kana(text)
-            if role == "haha":
-                kt = kt.replace("けんた", "健太")  # Koharu는 가나 けんた를 「ケント」로 읽음(2회 실증) → 한자 표기
             tests.append({"id": lid, "model": "elevenlabs-direct", "voice": r["voice_id"], "voice_name": r["name"],
                           "el_model": "eleven_v3", "text": f"{tone} {kt}", "subtitle": text})
             chars_el += len(text) + len(tone) + 1; src = f"EL {r['name']}"
         tone_s = tone if isinstance(tone, str) else f"{tone[0]} {tone[1]} · tempo {tone[2]}"
         rows.append(f"| {lid[4:]} | {tag} | {name} | {'Omni' if omni else '-'} | {text} | {tone_s} | {note} | {src} |")
     for tag, src_tag in SAME_AS.items():
-        rows.append(f"| — | {tag} | 재사용 | | | | {src_tag}({idmap[src_tag]}) 음성을 후크 H2에 배치 | |")
+        rows.append(f"| — | {tag} | 재사용 | | | | {src_tag}({idmap[src_tag]}) 음성을 S03b에 배치 | |")
     spec = {"_설명": f"『63ヘルツ』 본녹음(PHASE 1). build_tts.py 생성물 — 직접 고치지 말 것. EL {chars_el}자 · Typecast {chars_tc}자, fal 0.",
             "tts_model": "ssfm-v30", "language": "jpn", "tests": tests}
     json.dump(spec, open(os.path.join(REPO, "scripts", "auditions", "soukaion-tts.json"), "w", encoding="utf-8"),

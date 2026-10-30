@@ -1,0 +1,1059 @@
+{
+ "_설명": "『63ヘルツ』 본녹음(PHASE 1). build_tts.py 생성물 — 직접 고치지 말 것. EL 4264자 · Typecast 119자, fal 0.",
+ "tts_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "line001",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, flat, slow] よるじゅういちじ。頭の上で、地獄が始まる。",
+   "subtitle": "夜十一時。頭の上で、地獄が始まる。"
+  },
+  {
+   "id": "line002",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[flat, official, apologetic] 個人間の問題ですので、警察は介入できません",
+   "subtitle": "個人間の問題ですので、警察は介入できません"
+  },
+  {
+   "id": "line003",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[flat, clerical, hurried] ちゅういぶんをけいじばんに貼っておきますので",
+   "subtitle": "注意文を掲示板に貼っておきますので"
+  },
+  {
+   "id": "line004",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, sneering, bored] うるせえな。気に入らないなら、お前らが出ていけよ",
+   "subtitle": "うるせえな。気に入らないなら、お前らが出ていけよ"
+  },
+  {
+   "id": "line005",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, quiet] 警察も止められなかった、この音。",
+   "subtitle": "警察も止められなかった、この音。"
+  },
+  {
+   "id": "line006",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, steady, slow] 私はこの音ひとつで、上の階の男を、いっしゅうかんで追い出した。",
+   "subtitle": "私はこの音ひとつで、上の階の男を、一週間で追い出した。"
+  },
+  {
+   "id": "line007",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[calm, tired] やきんあけの、あさしちじ。",
+   "subtitle": "夜勤明けの、朝七時。"
+  },
+  {
+   "id": "line008",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[calm, matter-of-fact] 私はかんごしで、さんじゅうにさい。ろくさいの娘と二人で暮らしている。",
+   "subtitle": "私は看護師で、三十二歳。六歳の娘と二人で暮らしている。"
+  },
+  {
+   "id": "line009",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[bright, childlike] ママ、これ。赤いの",
+   "subtitle": "ママ、これ。赤いの"
+  },
+  {
+   "id": "line010",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[soft, warm, smiling] うん。しがつまでに、ね",
+   "subtitle": "うん。四月までに、ね"
+  },
+  {
+   "id": "line011",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[calm, warm] 来年の春、娘は小学生になる。",
+   "subtitle": "来年の春、娘は小学生になる。"
+  },
+  {
+   "id": "line012",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, heavy] ランドセルの代金を、私はまだ、貯められていなかった。",
+   "subtitle": "ランドセルの代金を、私はまだ、貯められていなかった。"
+  },
+  {
+   "id": "line013",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[calm, low] よるじゅうじごじゅっぷん。私が、その日はじめて目を閉じる時間。",
+   "subtitle": "夜十時五十分。私が、その日はじめて目を閉じる時間。"
+  },
+  {
+   "id": "line014",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, flat, precise] それはさんかげつ前から、毎晩じゅういちじちょうどに始まった。",
+   "subtitle": "それは三か月前から、毎晩十一時ちょうどに始まった。"
+  },
+  {
+   "id": "line015",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[small, sleepy, worried] ……ママ。上の人、また怒ってる？",
+   "subtitle": "……ママ。上の人、また怒ってる？"
+  },
+  {
+   "id": "line016",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, heavy] 娘は上の音を、『誰かが怒っている音』だと思っていた。",
+   "subtitle": "娘は上の音を、『誰かが怒っている音』だと思っていた。"
+  },
+  {
+   "id": "line017",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, bitter] 私は、その言葉を、否定できなかった。",
+   "subtitle": "私は、その言葉を、否定できなかった。"
+  },
+  {
+   "id": "line018",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[flat, clipped] ひゃくとおばんは、さんかいかけた。",
+   "subtitle": "百十番は、三回かけた。"
+  },
+  {
+   "id": "line019",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[flat, official] 上の方にはお伝えしました。ただ、個人間の問題ですので",
+   "subtitle": "上の方にはお伝えしました。ただ、個人間の問題ですので"
+  },
+  {
+   "id": "line020",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, cold] 警察官が帰ったじゅっぷんご、音は、前より大きくなった。",
+   "subtitle": "警察官が帰った十分後、音は、前より大きくなった。"
+  },
+  {
+   "id": "line021",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[flat, clerical, hurried] ちゅういぶんを貼っておきますので。あとは、当事者同士で",
+   "subtitle": "注意文を貼っておきますので。あとは、当事者同士で"
+  },
+  {
+   "id": "line022",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[flat, dry] けいじばんの紙は、みっかで剥がされていた。",
+   "subtitle": "掲示板の紙は、三日で剥がされていた。"
+  },
+  {
+   "id": "line023",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[flat, clipped] 睡眠時間は、一日さんじかん。",
+   "subtitle": "睡眠時間は、一日三時間。"
+  },
+  {
+   "id": "line024",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, heavy] てんてきの量を、にど、確認し直した日があった。",
+   "subtitle": "点滴の量を、二度、確認し直した日があった。"
+  },
+  {
+   "id": "line025",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, firm] 私の仕事は、眠れないまま続けていい仕事ではない。",
+   "subtitle": "私の仕事は、眠れないまま続けていい仕事ではない。"
+  },
+  {
+   "id": "line026",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[flat, listing, tired] 夜勤のあと、娘を迎えに行き、夕食を作り、じゅういちじに、また目を開ける。",
+   "subtitle": "夜勤のあと、娘を迎えに行き、夕食を作り、十一時に、また目を開ける。"
+  },
+  {
+   "id": "line027",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, slow] そして、れんらくちょうに、いちぎょう。",
+   "subtitle": "そして、連絡帳に、一行。"
+  },
+  {
+   "id": "line028",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, resolved] そのいちぎょうが、私を、よんかいへ向かわせた。",
+   "subtitle": "その一行が、私を、四階へ向かわせた。"
+  },
+  {
+   "id": "line029",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[hushed, tense] よんまるにごうしつ。ひょうさつは、なかった。",
+   "subtitle": "四〇二号室。表札は、なかった。"
+  },
+  {
+   "id": "line030",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[polite, trembling slightly] 夜中の音のことで……娘が、眠れなくて",
+   "subtitle": "夜中の音のことで……娘が、眠れなくて"
+  },
+  {
+   "id": "line031",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[flat, dismissive] は？　俺、普通に生活してるだけだけど",
+   "subtitle": "は？　俺、普通に生活してるだけだけど"
+  },
+  {
+   "id": "line032",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, hesitant] じゅういちじから、毎晩……",
+   "subtitle": "十一時から、毎晩……"
+  },
+  {
+   "id": "line034",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, heavy] その夜、音は、ごぜんにじまで止まなかった。",
+   "subtitle": "その夜、音は、午前二時まで止まなかった。"
+  },
+  {
+   "id": "line035",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, trembling edge] 私は初めて、天井に向かって、声を出した。",
+   "subtitle": "私は初めて、天井に向かって、声を出した。"
+  },
+  {
+   "id": "line036",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[choked, pleading whisper] ……やめてください……お願いだから……",
+   "subtitle": "……やめてください……お願いだから……"
+  },
+  {
+   "id": "line037",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, turning] その声を、隣の部屋の誰かが、聞いていた。",
+   "subtitle": "その声を、隣の部屋の誰かが、聞いていた。"
+  },
+  {
+   "id": "line038",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, gentle] 奥さん。その音、録ってますか",
+   "subtitle": "奥さん。その音、録ってますか"
+  },
+  {
+   "id": "line039",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[calm, low] さんまるいちごうしつの大野さん。",
+   "subtitle": "三〇一号室の大野さん。"
+  },
+  {
+   "id": "line040",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[measured] さんじゅうはちねんかん、工場や道路の音を測り続けた、元・かんきょうけいりょうしだった。",
+   "subtitle": "三十八年間、工場や道路の音を測り続けた、元・環境計量士だった。"
+  },
+  {
+   "id": "line041",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, warm] 奥さんの壁は、私の壁でもある。そう言って、彼は私を部屋に入れた。",
+   "subtitle": "奥さんの壁は、私の壁でもある。そう言って、彼は私を部屋に入れた。"
+  },
+  {
+   "id": "line042",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[calm, slow, teaching] 警察が聞いているのは、音の大きさです",
+   "subtitle": "警察が聞いているのは、音の大きさです"
+  },
+  {
+   "id": "line043",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[calm, slow, emphatic] 私が見るのは、音の、形です",
+   "subtitle": "私が見るのは、音の、形です"
+  },
+  {
+   "id": "line044",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, puzzled] ……形？",
+   "subtitle": "……形？"
+  },
+  {
+   "id": "line045",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[gentle, explaining] 足音はばらばらです。重い、軽い、速い、遅い……人間ですから",
+   "subtitle": "足音はばらばらです。重い、軽い、速い、遅い……人間ですから"
+  },
+  {
+   "id": "line046",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, firm] でも、機械は、嘘をつけない",
+   "subtitle": "でも、機械は、嘘をつけない"
+  },
+  {
+   "id": "line047",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, slow] 私は、その言葉の意味を、まだ分かっていなかった。",
+   "subtitle": "私は、その言葉の意味を、まだ分かっていなかった。"
+  },
+  {
+   "id": "line048",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[calm, matter-of-fact] 彼は測定器を天井の真下に置き、こう言った。",
+   "subtitle": "彼は測定器を天井の真下に置き、こう言った。"
+  },
+  {
+   "id": "line049",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, steady, serious] いっしゅうかん、録り続けてください。……一晩も、休まずに",
+   "subtitle": "一週間、録り続けてください。……一晩も、休まずに"
+  },
+  {
+   "id": "line050",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[hushed, precise] いちにちめ。ごごじゅういちじ、ちょうど。",
+   "subtitle": "一日目。午後十一時、ちょうど。"
+  },
+  {
+   "id": "line051",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet] 結衣を寝かしつけて、私は、測定器の前に座った。",
+   "subtitle": "結衣を寝かしつけて、私は、測定器の前に座った。"
+  },
+  {
+   "id": "line052",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[hushed, tense] 画面の中で、ひとつの棒だけが、跳ね上がった。",
+   "subtitle": "画面の中で、ひとつの棒だけが、跳ね上がった。"
+  },
+  {
+   "id": "line053",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, precise] ろくじゅうさんヘルツ。",
+   "subtitle": "六十三ヘルツ。"
+  },
+  {
+   "id": "line054",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[hushed, counting] ……にびょう。……また、にびょう",
+   "subtitle": "……二秒。……また、二秒"
+  },
+  {
+   "id": "line055",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[hushed, counting] ドン、から次のドン、まで、きっかりにびょう。",
+   "subtitle": "ドン、から次のドン、まで、きっかり二秒。"
+  },
+  {
+   "id": "line056",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, cold, precise] じゅういちじからごぜんにじまで、一度も、ずれなかった。",
+   "subtitle": "十一時から午前二時まで、一度も、ずれなかった。"
+  },
+  {
+   "id": "line057",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, grave, slow] ……人の足は、こんなに正確に、歩けません",
+   "subtitle": "……人の足は、こんなに正確に、歩けません"
+  },
+  {
+   "id": "line058",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, dreading] じゃあ、これは……",
+   "subtitle": "じゃあ、これは……"
+  },
+  {
+   "id": "line059",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, certain] スピーカーです。それも、床に直接、置いている",
+   "subtitle": "スピーカーです。それも、床に直接、置いている"
+  },
+  {
+   "id": "line060",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, heavy] さんかげつ間、私と娘が聞いていたのは、足音ではなかった。",
+   "subtitle": "三か月間、私と娘が聞いていたのは、足音ではなかった。"
+  },
+  {
+   "id": "line061",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, realizing] さんかげつ前は、私たちが越してきた、その週だった。",
+   "subtitle": "三か月前は、私たちが越してきた、その週だった。"
+  },
+  {
+   "id": "line062",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, bitter] 偶然だと、私はまだ、思おうとしていた。",
+   "subtitle": "偶然だと、私はまだ、思おうとしていた。"
+  },
+  {
+   "id": "line063",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[calm, steady] ふつかめ、みっかめ。私は、記録を続けた。",
+   "subtitle": "二日目、三日目。私は、記録を続けた。"
+  },
+  {
+   "id": "line064",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, suspenseful] そしてよっかめ。記録が、ひとつの事実を教えた。",
+   "subtitle": "そして四日目。記録が、ひとつの事実を教えた。"
+  },
+  {
+   "id": "line065",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, precise] 音が始まるのは、じゅういちじではなかった。",
+   "subtitle": "音が始まるのは、十一時ではなかった。"
+  },
+  {
+   "id": "line066",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, chilling] 私が、玄関の鍵を閉めた、じゅうごふんごだった。",
+   "subtitle": "私が、玄関の鍵を閉めた、十五分後だった。"
+  },
+  {
+   "id": "line067",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[whispering, chilled] ……見てる",
+   "subtitle": "……見てる"
+  },
+  {
+   "id": "line068",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[hushed, cold] 上の階の男は、私の帰りを、待っていた。",
+   "subtitle": "上の階の男は、私の帰りを、待っていた。"
+  },
+  {
+   "id": "line069",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, tense] いつかめの朝、エレベーターで、黒木と乗り合わせた。",
+   "subtitle": "五日目の朝、エレベーターで、黒木と乗り合わせた。"
+  },
+  {
+   "id": "line070",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[hushed, chilling] 彼は私の顔を見て、小さく、笑った。",
+   "subtitle": "彼は私の顔を見て、小さく、笑った。"
+  },
+  {
+   "id": "line071",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, firm] 私は、笑い返さなかった。……記録は、もういつかぶんあった。",
+   "subtitle": "私は、笑い返さなかった。……記録は、もう五日分あった。"
+  },
+  {
+   "id": "line072",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, sorrowful] ……つまも、眠れなくなりました。昔、工場の低い音で",
+   "subtitle": "……妻も、眠れなくなりました。昔、工場の低い音で"
+  },
+  {
+   "id": "line073",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, resolved, slow] 誰も、証明してくれなかった。……だから私は、測る人間になった",
+   "subtitle": "誰も、証明してくれなかった。……だから私は、測る人間になった"
+  },
+  {
+   "id": "line074",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[calm, professional, intrigued] ……これは、そうおんの相談ではありませんね",
+   "subtitle": "……これは、騒音の相談ではありませんね"
+  },
+  {
+   "id": "line075",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, confused] ……どういう、ことですか",
+   "subtitle": "……どういう、ことですか"
+  },
+  {
+   "id": "line076",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[firm, precise, professional] 嫌がらせの、証拠です。時刻、しゅうはすう、間隔……全部、揃っている",
+   "subtitle": "嫌がらせの、証拠です。時刻、周波数、間隔……全部、揃っている"
+  },
+  {
+   "id": "line077",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[calm, grave, low] そうおんで有罪になったはんれいがあります。……ちょうえきです",
+   "subtitle": "騒音で有罪になった判例があります。……懲役です"
+  },
+  {
+   "id": "line078",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, precise] 弁護士は、ノートの『十五分』に、赤い丸をつけた。",
+   "subtitle": "弁護士は、ノートの『十五分』に、赤い丸をつけた。"
+  },
+  {
+   "id": "line079",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[calm, matter-of-fact] 弁護士はその日のうちに、につうの手紙を書いた。",
+   "subtitle": "弁護士はその日のうちに、二通の手紙を書いた。"
+  },
+  {
+   "id": "line080",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[measured, reading out] いっつうは、よんまるにごうしつへ。測定データと、はんれいを添えて。",
+   "subtitle": "一通は、四〇二号室へ。測定データと、判例を添えて。"
+  },
+  {
+   "id": "line081",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[measured, reading out] もういっつうは、管理会社とオーナーへ。ちんたいけいやくのかいじょよこくを求めて。",
+   "subtitle": "もう一通は、管理会社とオーナーへ。賃貸契約の解除予告を求めて。"
+  },
+  {
+   "id": "line082",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, suspenseful] 私は一度も、天井を叩かなかった。……そして、翌日の夜が来た。",
+   "subtitle": "私は一度も、天井を叩かなかった。……そして、翌日の夜が来た。"
+  },
+  {
+   "id": "line083",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[hushed, tense] ないようしょうめいが届いた、翌日の夜。",
+   "subtitle": "内容証明が届いた、翌日の夜。"
+  },
+  {
+   "id": "line084",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet] 結衣には、何も言っていなかった。",
+   "subtitle": "結衣には、何も言っていなかった。"
+  },
+  {
+   "id": "line085",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, guarded] 期待して、裏切られるのは、もう嫌だった。",
+   "subtitle": "期待して、裏切られるのは、もう嫌だった。"
+  },
+  {
+   "id": "line086",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[whispering, disbelief] ……来ない",
+   "subtitle": "……来ない"
+  },
+  {
+   "id": "line087",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[hushed, listening] 代わりに聞こえてきたのは、重いものを引きずる音。",
+   "subtitle": "代わりに聞こえてきたのは、重いものを引きずる音。"
+  },
+  {
+   "id": "line088",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[hushed, slow] そして、ガムテープを剥がす音だった。",
+   "subtitle": "そして、ガムテープを剥がす音だった。"
+  },
+  {
+   "id": "line089",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, steady] 私は、天井を見上げたまま、その夜を数えた。",
+   "subtitle": "私は、天井を見上げたまま、その夜を数えた。"
+  },
+  {
+   "id": "line090",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, precise] なのかめ、ごぜんよじ。",
+   "subtitle": "七日目、午前四時。"
+  },
+  {
+   "id": "line091",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, slow] エンジンの音で目を覚ました私が、ベランダから見たもの。",
+   "subtitle": "エンジンの音で目を覚ました私が、ベランダから見たもの。"
+  },
+  {
+   "id": "line092",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[hushed, recognizing] ゴミ置き場に、あのだんボール。",
+   "subtitle": "ゴミ置き場に、あの段ボール。"
+  },
+  {
+   "id": "line093",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, flat, slow] 中身は、床に置くタイプの、じゅうていおんスピーカーだった。",
+   "subtitle": "中身は、床に置くタイプの、重低音スピーカーだった。"
+  },
+  {
+   "id": "line094",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, steady] 男は誰にも挨拶をせず、夜が明ける前に、消えた。",
+   "subtitle": "男は誰にも挨拶をせず、夜が明ける前に、消えた。"
+  },
+  {
+   "id": "line095",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[flat, precise] ないようしょうめいを受け取ってから、むいかめのことだった。",
+   "subtitle": "内容証明を受け取ってから、六日目のことだった。"
+  },
+  {
+   "id": "line096",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, final] 出ていったのは、彼のほうだった。",
+   "subtitle": "出ていったのは、彼のほうだった。"
+  },
+  {
+   "id": "line097",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[calm, matter-of-fact] 翌週、管理会社から、一本の電話があった。",
+   "subtitle": "翌週、管理会社から、一本の電話があった。"
+  },
+  {
+   "id": "line098",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[flat, clerical] よんまるにごうしつは、解約となりました",
+   "subtitle": "四〇二号室は、解約となりました"
+  },
+  {
+   "id": "line099",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[quiet, heavy, relieved] さんかげつ間、誰も言ってくれなかった言葉だった。",
+   "subtitle": "三か月間、誰も言ってくれなかった言葉だった。"
+  },
+  {
+   "id": "line100",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[warm, gentle] その朝、娘は、くじまで起きなかった。",
+   "subtitle": "その朝、娘は、九時まで起きなかった。"
+  },
+  {
+   "id": "line101",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[sleepy, soft, hopeful] ……ママ。上の人、もう怒ってない？",
+   "subtitle": "……ママ。上の人、もう怒ってない？"
+  },
+  {
+   "id": "line102",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[warm, smiling, soft] うん。……もう、怒ってないよ",
+   "subtitle": "うん。……もう、怒ってないよ"
+  },
+  {
+   "id": "line103",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[warm, polite] 大野さん。これ……おれいに",
+   "subtitle": "大野さん。これ……お礼に"
+  },
+  {
+   "id": "line104",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[gruff, warm underneath] おれいなら、こっちを持っていきなさい",
+   "subtitle": "お礼なら、こっちを持っていきなさい"
+  },
+  {
+   "id": "line105",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[hesitant, moved] でも、これは大野さんの……",
+   "subtitle": "でも、これは大野さんの……"
+  },
+  {
+   "id": "line106",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[slow, tender, firm] つまには、間に合わなかった。……次は、あなたが、誰かの耳になりなさい",
+   "subtitle": "妻には、間に合わなかった。……次は、あなたが、誰かの耳になりなさい"
+  },
+  {
+   "id": "line107",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[warm, quiet, slow] 測定器の画面は、その夜も、静かなままだった。",
+   "subtitle": "測定器の画面は、その夜も、静かなままだった。"
+  },
+  {
+   "id": "line108",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[calm, firm] そうおんに、そうおんで返してはいけない。",
+   "subtitle": "騒音に、騒音で返してはいけない。"
+  },
+  {
+   "id": "line109",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[calm, firm, slow] 返すのは、記録だ。",
+   "subtitle": "返すのは、記録だ。"
+  },
+  {
+   "id": "line110",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[measured, listing] 日時、長さ、音の種類。毎晩、同じ場所で、同じ機械で。",
+   "subtitle": "日時、長さ、音の種類。毎晩、同じ場所で、同じ機械で。"
+  },
+  {
+   "id": "line111",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[calm, warm, slow] それだけで、警察が動けなかった問題は、法律の言葉に変わる。",
+   "subtitle": "それだけで、警察が動けなかった問題は、法律の言葉に変わる。"
+  },
+  {
+   "id": "line112",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[gentle, direct, slow] 皆様の上の階は、今夜、静かだろうか。",
+   "subtitle": "皆様の上の階は、今夜、静かだろうか。"
+  },
+  {
+   "id": "line113",
+   "model": "elevenlabs-direct",
+   "voice": "TBD",
+   "voice_name": "TBD",
+   "el_model": "eleven_v3",
+   "text": "[gentle, quiet] 答えは、コメントで。",
+   "subtitle": "答えは、コメントで。"
+  },
+  {
+   "id": "line114",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "ご視聴、ありがとうございました。",
+   "subtitle": "ご視聴、ありがとうございました。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line115",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "叩き返すより、測って、記録して、渡す。美咲さんのいっしゅうかんは、誰にでも真似できる方法でした。",
+   "subtitle": "叩き返すより、測って、記録して、渡す。美咲さんの一週間は、誰にでも真似できる方法でした。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "line116",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "次回は、『誰も来なかった送別会』。定年の日、正門に並んでいたものとは。",
+   "subtitle": "次回は、『誰も来なかった送別会』。定年の日、正門に並んでいたものとは。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 0.9,
+   "tempo": 0.95
+  },
+  {
+   "id": "line117",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "チャンネル登録と、コメントで、お待ちしています。",
+   "subtitle": "チャンネル登録と、コメントで、お待ちしています。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.9,
+   "tempo": 1.0
+  }
+ ]
+}
