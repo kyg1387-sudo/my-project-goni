@@ -296,6 +296,24 @@ def render_track(placed, total, out_wav):
 
 
 DUCK_DB = 0.0  # 오디오 설정 duck_db(대사 중 환경음·BGM 감쇠 dB) — generate_audio main에서 설정
+BGM_SILENCE = []  # 오디오 설정 bgm_silence [{start,end,sfx_boost_db}] — 긴박 구간 BGM 0·효과음 부스트(제19장 14)
+
+
+def silence_env(boost=False):
+    """bgm_silence 구간 볼륨식. BGM: 구간 0(앞 0.4초 페이드·뒤 0.6초 복귀). 현장음·폴리(boost): 구간 sfx_boost_db만큼 올림."""
+    terms = []
+    for w in BGM_SILENCE:
+        s, e = float(w["start"]), float(w["end"])
+        win = f"min(1,max(0,(t-{s - 0.4:.3f})/0.4))*min(1,max(0,({e + 0.6:.3f}-t)/0.6))"
+        if boost:
+            g = 10 ** (float(w.get("sfx_boost_db", 0)) / 20) - 1
+            terms.append(f"{g:.4f}*{win}")
+        else:
+            terms.append(f"(1-{win})")
+    if not terms:
+        return ""
+    expr = ("1+" + "+".join(terms)) if boost else "*".join(terms)
+    return f",volume=volume='{expr}':eval=frame"
 
 
 def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume=0.4):
@@ -324,7 +342,7 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
     base = len(placed) + 1
     for k, (start, _path) in enumerate(ambience):
         ms = int(round(start * 1000))
-        parts.append(f"[{base + k}:a]volume={ambience_volume},adelay={ms}:all=1[amb{k}]")
+        parts.append(f"[{base + k}:a]volume={ambience_volume},adelay={ms}:all=1{silence_env(True)}[amb{k}]")
         mix_inputs.append(f"[amb{k}]")
     # BGM 세그먼트: 구간 길이만큼 루프-트림하고, 경계는 2초 페이드로 겹쳐 잇는다
     for k, (_path, seg_s, seg_e, seg_vol) in enumerate(bgm_list):
@@ -337,7 +355,7 @@ def mix(video, placed, bgm, bgm_volume, out_path, ambience=None, ambience_volume
             f"atrim=0:{seg_len:.3f},asetpts=PTS-STARTPTS,"
             f"afade=t=in:st=0:d={'0.01' if k == 0 else '2'},"
             f"afade=t=out:st={fade_out_st:.3f}:d=2,"
-            f"volume={vol},adelay={int(round(seg_s * 1000))}:all=1[bg{k}]")
+            f"volume={vol},adelay={int(round(seg_s * 1000))}:all=1{silence_env()}[bg{k}]")
         mix_inputs.append(f"[bg{k}]")
     if DUCK_DB and placed and len(mix_inputs) > len(placed):
         # 대사 우선 덕킹(tsuki 7-3절): 대사 트랙을 사이드체인으로 환경음·BGM을 눌렀다가 말이 끝나면 복귀. BGM·현장음 1~3kHz −3dB EQ
@@ -689,6 +707,8 @@ def main():
         cfg = json.load(f)
     global DUCK_DB
     DUCK_DB = float(cfg.get("duck_db", 0) or 0)
+    global BGM_SILENCE
+    BGM_SILENCE = cfg.get("bgm_silence") or []
 
     WORK_DIR = os.path.join(os.path.dirname(args.out) or ".", "audio")
     os.makedirs(WORK_DIR, exist_ok=True)
