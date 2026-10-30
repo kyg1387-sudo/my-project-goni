@@ -40,7 +40,8 @@ PUNCH = {"S09g": 0.5, "S10c": 0.4, "S11c": 0.4, "S18b": 0.6, "S22a": 0.5}  # 컷
 ZIN = ["S09h", "S11f", "S11j", "S12d", "S15b", "S15i", "S18f", "S20c", "S23c", "S23j", "S24g"]  # i2v 감정 정점 CU(정지 컷은 이미 푸시인)
 ZOUT = ["S06d", "S11k", "S13e", "S14b", "S22e", "S24d"]
 POV = ["S08b", "S09a", "S09f"]
-CLIP_OVERRIDE = {"S22b": "assets/auditions/hikikomori-outro-omni/omni-s22b.mp4"}  # 립싱크 누락 컷 재생성(제19장 19)
+CLIP_OVERRIDE = {"S22b": "assets/auditions/hikikomori-outro-omni/omni-s22b.mp4",
+                 "S05a": "assets/preview/hikikomori-fix/S05a.mp4"}  # 문손잡이: 두 손이 레버 하나를 겹쳐 쥠 → 옆에서 한 손 ECU(r12-3) 정지 푸시인(고니감독님 지적 1:30)  # 립싱크 누락 컷 재생성(제19장 19)
 LCUT = {"S20e": (1.25, "S20c", 2.0)}  # (립싱크 사용 초, 반응 컷, 반응 원본 시작 초) — S20e 1.3초 뒤 일어서며 방이 바뀜
 PAPER = {"S17d": [(486, 478), (828, 478), (880, 628), (424, 632)], "S17e": [(480, 290), (890, 290), (945, 670), (418, 678)]}  # 키프레임 종이 네 꼭짓점
 PLATE = ("S12a", (797, 641, 855, 669))
