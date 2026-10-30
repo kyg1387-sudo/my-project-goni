@@ -41,7 +41,8 @@ ZIN = ["S09h", "S11f", "S11j", "S12d", "S15b", "S15i", "S18f", "S20c", "S23c", "
 ZOUT = ["S06d", "S11k", "S13e", "S14b", "S22e", "S24d"]
 POV = ["S08b", "S09a", "S09f"]
 CLIP_OVERRIDE = {"S22b": "assets/auditions/hikikomori-outro-omni/omni-s22b.mp4",
-                 "S05a": "assets/preview/hikikomori-fix/S05a.mp4"}  # 문손잡이: 두 손이 레버 하나를 겹쳐 쥠 → 옆에서 한 손 ECU(r12-3) 정지 푸시인(고니감독님 지적 1:30)  # 립싱크 누락 컷 재생성(제19장 19)
+                 "S05a": "assets/preview/hikikomori-fix/S05a.mp4",
+                 "S21a": "assets/preview/hikikomori-fix/S21a.mp4"}  # 계약서 찢기: 무지 종이 → 뒷면 비침 합성(hikikomori_fix_s21a.py)  # 문손잡이: 두 손이 레버 하나를 겹쳐 쥠 → 옆에서 한 손 ECU(r12-3) 정지 푸시인(고니감독님 지적 1:30)  # 립싱크 누락 컷 재생성(제19장 19)
 LCUT = {"S20e": (1.25, "S20c", 2.0)}  # (립싱크 사용 초, 반응 컷, 반응 원본 시작 초) — S20e 1.3초 뒤 일어서며 방이 바뀜
 PAPER = {"S17d": [(486, 478), (828, 478), (880, 628), (424, 632)], "S17e": [(480, 290), (890, 290), (945, 670), (418, 678)]}  # 키프레임 종이 네 꼭짓점
 PLATE = ("S12a", (797, 641, 855, 669))
@@ -406,14 +407,32 @@ def hook_bed(path):
     run(["-filter_complex", fc, "-map", "[a]", "-t", "3.5", path])
 
 
+# 효과음 덧믹스(제15장 22): (파일, 컷, 컷 시작 후 초, 목표 피크 dBFS) — 장면 폴리가 약한 정점만
+SFX = [("assets/auditions/hikikomori-sfx/tear-1.mp3", "S21a", 0.25, -9.0),  # 계약서 찢기(고니감독님 요청 「크게」, 기존 −40 dB) — 정적 구간이라 BGM 없음
+       ("assets/sfx/impact-low.wav", "S21b", 0.0, -12.0)]  # 찢기 직후 저음 임팩트 → 다음 컷 오케스트라(제19장 14)
+
+
+def peak_db(path):
+    e = subprocess.run([FF, "-v", "info", "-i", path, "-af", "volumedetect", "-f", "null", "-"], capture_output=True, text=True).stderr
+    return float(e.split("max_volume:")[1].split("dB")[0])
+
+
 def master(patched, out):
     bed = patched.replace(".mp4", "_hook.wav"); hook_bed(bed)
     vd = dur(patched)
     ad = float(subprocess.check_output(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=duration", "-of", "csv=p=0", patched]))
+    B = bounds(); sfx_in, sfx_fc, labs = [], [], ""
+    for k, (path, sid, off, pk) in enumerate([x for x in SFX if os.path.exists(os.path.join(ROOT, x[0]))]):
+        p = os.path.join(ROOT, path); ms = int((B[sid][0] + off) * 1000)
+        sfx_in += ["-i", p]
+        sfx_fc.append(f"[{k + 2}:a]aformat=sample_rates=44100:channel_layouts=stereo,volume={pk - peak_db(p):.2f}dB,adelay={ms}|{ms},apad=whole_dur={vd:.3f}[x{k}]")
+        labs += f"[x{k}]"; print(f"효과음 {os.path.basename(p)} @ {sid}+{off}s → 피크 {pk} dBFS")
+    n = 3 + len(sfx_fc)
     fc = (f"[0:a]afade=t=out:st={max(ad - 2.5, 0):.3f}:d=2.5,apad=whole_dur={vd:.3f}[m];[1:a]apad=whole_dur={vd:.3f}[h];"
           f"anoisesrc=d={vd:.3f}:c=brown:a=1,lowpass=f=250,volume=-40dB,aformat=sample_rates=44100:channel_layouts=stereo[rt];"
-          "[m][h][rt]amix=inputs=3:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=11,alimiter=limit=0.89:level=0[a]")
-    run(["-i", patched, "-i", bed, "-filter_complex", fc, "-map", "0:v", "-map", "[a]", "-ar", "44100", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", out])
+          + "".join(x + ";" for x in sfx_fc) +
+          f"[m][h][rt]{labs}amix=inputs={n}:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=11,alimiter=limit=0.84:level=0[a]")
+    run(["-i", patched, "-i", bed] + sfx_in + ["-filter_complex", fc, "-map", "0:v", "-map", "[a]", "-ar", "44100", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", out])
 
 
 def outro(main_out, tmp):
