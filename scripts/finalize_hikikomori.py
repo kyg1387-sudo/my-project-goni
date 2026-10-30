@@ -309,6 +309,44 @@ def build_cut(sid, sec, tmp):
     return out
 
 
+# 후크(0~20초): 본편 실제 클립 재사용 — 교체 클립이 키프레임 정지(입 안 움직임·흰 무지 화면)·검은 카드로 남아 있었음(최종 1차 검수)
+HOOK = {"H0": ("S05e", 0.213 - 0.32), "H1": ("S09g", 0.0), "H2a": ("S11g", 0.0), "H2b": ("S11h", 0.0)}  # (원본 컷, 원본 시작 초 — 음수면 첫 프레임 유지)
+CARD = ("H2b", "息子は、ずっと隠していた。", 0.5)  # 중앙 카드(굵은 명조), 컷 시작 후 초
+TITLE = ("H3", "引きこもりの息子")  # 직전 컷 블러 위 타이틀 — 암전 금지(제15장 20)
+MINCHO = os.path.join(ROOT, "scripts", "fonts", "ZenOldMincho-Bold.ttf")
+
+
+def text_frame(f, txt, size, alpha, dy=0):
+    im = Image.fromarray(f).convert("RGBA"); lay = Image.new("RGBA", im.size, (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
+    fnt = ImageFont.truetype(MINCHO, size); a = int(255 * alpha)
+    for o in range(6, 0, -2):  # 부드러운 그림자
+        d.text((W / 2 + 3, H / 2 + 3 + dy), txt, font=fnt, fill=(0, 0, 0, a // (o + 1)), anchor="mm", stroke_width=o, stroke_fill=(0, 0, 0, a // (o + 1)))
+    d.text((W / 2, H / 2 + dy), txt, font=fnt, fill=(255, 255, 255, a), anchor="mm")
+    im.alpha_composite(lay); return np.asarray(im.convert("RGB"))
+
+
+def build_hook(hid, sec, tmp):
+    out = os.path.join(tmp, f"cut_{hid}.mp4")
+    if os.path.exists(out) and "--rebuild" not in sys.argv:
+        return out
+    n = int(round(sec * FPS)) + 1
+    if hid == TITLE[0]:
+        last = cv2.GaussianBlur(cover(read_frames(raw_path(HOOK["H2b"][0]))[-1]), (0, 0), 22) * 0.5
+        last = last.astype(np.uint8)
+        frames = [text_frame(zoom_frame(last, 1 + 0.04 * i / n), TITLE[1], 150, min(1, i / 14) * min(1, (n - i) / 10)) for i in range(n)]
+    else:
+        sid, off = HOOK[hid]
+        src = raw_path(sid)
+        fr = [cover(f) for f in process_native(sid, read_frames(src, max(off, 0)))]
+        fr = [fr[0]] * int(round(max(-off, 0) * FPS)) + fr
+        frames = (fr + [fr[-1]] * n)[:n]
+        if hid == CARD[0]:
+            k0 = int(CARD[2] * FPS)
+            frames = [text_frame(f, CARD[1], 88, min(1, max(0, (i - k0) / 10)) * min(1, (n - i) / 8), dy=-420) if i >= k0 else f for i, f in enumerate(frames)]  # 화면 위 빈 벽(얼굴 가림 금지)
+    write_frames(frames, out)
+    return out
+
+
 def targets():
     t = set(JUMP) | set(PUNCH) | set(ZIN) | set(ZOUT) | set(POV) | set(LCUT) | set(CLIP_OVERRIDE) | set(PAPER) | {PLATE[0], BADGE[0]}
     t |= {s for s in SCREENS if kind(s) == "i2v"}
@@ -320,6 +358,11 @@ def patch(src, out, tmp, only=None):
     ass = os.path.join(ROOT, "subs", "hikikomori.ass")
     fdir = os.environ.get("FONTSDIR", "/usr/share/fonts")
     segs = []
+    for hid in list(HOOK) + [TITLE[0]]:
+        if only and hid not in only:
+            continue
+        a, b = B[hid]; print(f"[{hid}] 후크 {a:.2f}~{b:.2f}s")
+        segs.append((a, b - 1 / FPS, build_hook(hid, b - a, tmp)))
     for sid in targets():
         if only and sid not in only:
             continue
