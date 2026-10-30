@@ -42,7 +42,9 @@ ZOUT = ["S06d", "S11k", "S13e", "S14b", "S22e", "S24d"]
 POV = ["S08b", "S09a", "S09f"]
 CLIP_OVERRIDE = {"S22b": "assets/auditions/hikikomori-outro-omni/omni-s22b.mp4",
                  "S05a": "assets/preview/hikikomori-fix/S05a.mp4",
-                 "S21a": "assets/preview/hikikomori-fix/S21a.mp4"}  # 계약서 찢기: 무지 종이 → 뒷면 비침 합성(hikikomori_fix_s21a.py)  # 문손잡이: 두 손이 레버 하나를 겹쳐 쥠 → 옆에서 한 손 ECU(r12-3) 정지 푸시인(고니감독님 지적 1:30)  # 립싱크 누락 컷 재생성(제19장 19)
+                 "S21a": "assets/preview/hikikomori-fix/S21a.mp4",
+                 "S23a": "assets/preview/hikikomori-fix/S23a.mp4",
+                 "S24e": "assets/preview/hikikomori-fix/S24e.mp4"}  # 「閉ざされたドア」: 반쯤 열린 문 → 완전히 닫힌 문 + 문틈 빛(r14-1, 고니감독님 지적 9:47)  # 노크: 두 손이 문 가장자리·세로 손잡이 → 한 손 망설이는 노크(r13-1, 고니감독님 지적 8:55)  # 계약서 찢기: 무지 종이 → 뒷면 비침 합성(hikikomori_fix_s21a.py)  # 문손잡이: 두 손이 레버 하나를 겹쳐 쥠 → 옆에서 한 손 ECU(r12-3) 정지 푸시인(고니감독님 지적 1:30)  # 립싱크 누락 컷 재생성(제19장 19)
 LCUT = {"S20e": (1.25, "S20c", 2.0)}  # (립싱크 사용 초, 반응 컷, 반응 원본 시작 초) — S20e 1.3초 뒤 일어서며 방이 바뀜
 PAPER = {"S17d": [(486, 478), (828, 478), (880, 628), (424, 632)], "S17e": [(480, 290), (890, 290), (945, 670), (418, 678)]}  # 키프레임 종이 네 꼭짓점
 PLATE = ("S12a", (797, 641, 855, 669))
@@ -408,7 +410,7 @@ def hook_bed(path):
 
 
 # 효과음 덧믹스(제15장 22): (파일, 컷, 컷 시작 후 초, 목표 피크 dBFS) — 장면 폴리가 약한 정점만
-SFX = [("assets/auditions/hikikomori-sfx/tear-1.mp3", "S21a", 0.25, -9.0),  # 계약서 찢기(고니감독님 요청 「크게」, 기존 −40 dB) — 정적 구간이라 BGM 없음
+SFX = [("assets/auditions/hikikomori-sfx/tear-1.mp3", "S21a", 0.0, -9.0),  # 계약서 찢기(고니감독님 요청 「크게」, 기존 −40 dB) — 정적 구간이라 BGM 없음
        ("assets/sfx/impact-low.wav", "S21b", 0.0, -12.0)]  # 찢기 직후 저음 임팩트 → 다음 컷 오케스트라(제19장 14)
 
 
