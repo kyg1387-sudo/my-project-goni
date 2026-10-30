@@ -1,0 +1,26 @@
+{
+ "_설명": "S21a 계약서 찢기 효과음(고니감독님 요청 2026-10-30 「종이 찢어지는 효과음을 크게」) — 기존 장면 폴리가 −40 dB로 거의 안 들림. 3안 중 선택.",
+ "tests": [
+  {
+   "id": "tear-1",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: two strong hands slowly then sharply tear a thick stapled stack of contract papers in half — a crisp, loud, dry paper rip with fibrous crackle, starting slow and ending in one decisive tear; quiet small meeting room, no music, no voices.",
+   "duration_s": 2.2,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "tear-2",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: two strong hands slowly then sharply tear a thick stapled stack of contract papers in half — a crisp, loud, dry paper rip with fibrous crackle, starting slow and ending in one decisive tear; quiet small meeting room, no music, no voices.",
+   "duration_s": 2.2,
+   "prompt_influence": 0.8
+  },
+  {
+   "id": "tear-3",
+   "model": "elevenlabs-sfx",
+   "text": "A single long, violent rip of a thick paper document torn in two by hand, very close microphone, crisp high-frequency paper fibres tearing, dry room tone, no music.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.7
+  }
+ ]
+}
