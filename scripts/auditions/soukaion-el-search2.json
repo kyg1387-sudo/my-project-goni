@@ -1,0 +1,10 @@
+{"_설명": "『63ヘルツ』(soukaion) ElevenLabs 목소리 도서관 2차 검색(무과금). 1차(12질의)는 seen 중복 제거로 40명만 나와 結衣·弁護士·管理会社·警察官 후보가 비었다 → 일본어 전체 목록을 100명 단위로 2페이지 받고(필터는 로컬에서 gender/age/use_case로), 아역은 키워드 검색으로 보충한다.",
+ "el_shared_search": {"per_query": 100, "queries": [
+   {"tag": "all_ja", "language": "ja"},
+   {"tag": "all_ja_p2", "language": "ja", "page": "1"},
+   {"tag": "all_ja_p3", "language": "ja", "page": "2"},
+   {"tag": "yui_kw", "search": "子供"},
+   {"tag": "yui_kw2", "search": "少女"},
+   {"tag": "yui_kw3", "language": "ja", "search": "girl"},
+   {"tag": "yui_kw4", "language": "ja", "search": "child"}
+ ]}}
