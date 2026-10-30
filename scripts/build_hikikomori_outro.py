@@ -74,18 +74,23 @@ def main():
             x0, y0, k = CROP[vid]
             pre = f",crop=iw*{k}:ih*{k}:iw*{x0}:ih*{y0},scale={W}:{H}:flags=lanczos"
         norm(os.path.join(A, f"{vid}.mp4"), p, extra=f"{pre},tpad=stop_mode=clone:stop_duration={HOLD}"); hosts.append(p)
+    # 마지막 정지는 omni-out4의 마지막 프레임에서 — 손 흔드는 키프레임으로 디졸브하면 얼굴·손이 이중으로 겹침(1차 조립 실증)
+    last_png = os.path.join(tmp, "out4_last.png")
+    run(["-sseof", "-0.1", "-i", os.path.join(A, "omni-out4.mp4"), "-frames:v", "1", "-vf", f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H}", last_png])
     wave = os.path.join(tmp, "wave.mp4")
-    ov.cam(WAVE_KF, wave, 2.6 + XF, "push")
+    ov.cam(last_png, wave, 2.6, "push")
     clips = parts + hosts + [wave]
     lens = [dur(c) for c in clips]
+    # 진행자 컷끼리는 하드컷(1프레임) — 말하는 얼굴끼리 0.6초 디졸브하면 두 얼굴이 겹쳐 보임(1차 조립 실증). 몽타주 안·몽타주→진행자만 디졸브
+    xf = lambda k: XF if k <= len(parts) else 1 / FPS
     fc, last, off = [], "[0:v]", 0.0
     for k in range(1, len(clips)):
-        off += lens[k - 1] - XF
-        fc.append(f"{last}[{k}:v]xfade=transition=fade:duration={XF}:offset={off:.3f}[v{k}]"); last = f"[v{k}]"
+        off += lens[k - 1] - xf(k)
+        fc.append(f"{last}[{k}:v]xfade=transition=fade:duration={xf(k):.4f}:offset={off:.3f}[v{k}]"); last = f"[v{k}]"
     total = off + lens[-1]
     host_start = [sum(lens[:len(parts)]) - XF * len(parts)]
     for k in range(len(parts), len(parts) + len(hosts) - 1):
-        host_start.append(host_start[-1] + lens[k] - XF)
+        host_start.append(host_start[-1] + lens[k] - xf(k + 1))
     voice = [(os.path.join(A, f"{aid}.mp3"), host_start[j]) for j, (_, aid) in enumerate(HOSTS)]
     inputs = []
     for c in clips:
@@ -107,9 +112,10 @@ def main():
                 "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\n"
                 f"Style: Host,{FONT},66,&H00F0F0F0,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,4,2,2,200,200,70,1\n\n"
                 "[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n")
-        for (v, a), (_, aid) in zip(voice, HOSTS):
+        for j, ((v, a), (_, aid)) in enumerate(zip(voice, HOSTS)):
             ls = LINES[aid] if isinstance(LINES[aid], list) else [LINES[aid]]
-            d = dur(v) + 0.3; w = [len(x) for x in ls]; t0 = a
+            nxt = voice[j + 1][1] - 0.05 if j + 1 < len(voice) else total
+            d = min(dur(v) + 0.3, nxt - a); w = [len(x) for x in ls]; t0 = a  # 다음 멘트와 자막 겹침 금지
             for x, n in zip(ls, w):  # 2줄 넘는 멘트는 글자 수 비례로 나눠 표시(제15장 21)
                 t1 = t0 + d * n / sum(w); f.write(f"Dialogue: 0,{tc(t0)},{tc(t1)},Host,,0,0,0,,{x}\n"); t0 = t1
     fdir = os.path.join(ROOT, "scripts", "fonts")
