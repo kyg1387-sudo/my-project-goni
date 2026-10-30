@@ -51,6 +51,10 @@ on:
         description: 제작 대신 오디오 캐시 언어 검사만 실행 (resume_run_id의 Artifact 대상, 무료)
         required: false
         default: "false"
+      export_audio:
+        description: 전달 전용 모드에서 Artifact의 out/audio 파일(공백 구분 패턴, 예 "omni*.mp4")을 assets/preview/<skit>-audio/에 커밋 — 마무리용 원본(자막 없는 립싱크 클립)
+        required: false
+        default: ""
 
 env:
   SKIT: ${{ inputs.skit || 'bungeoppang' }}
@@ -251,6 +255,18 @@ jobs:
             out/audio/ambg-*.media
             out/audio/bgm*.audio
           retention-days: 7
+
+      - name: 중간 산출물 내보내기 (마무리용 원본, 전달 전용 모드)
+        if: ${{ inputs.export_audio != '' && inputs.deliver_from_run_id != '' }}
+        run: |
+          D="assets/preview/${SKIT}-audio"; mkdir -p "$D"
+          for pat in ${{ inputs.export_audio }}; do cp -v out/audio/$pat "$D"/ || true; done
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git diff --cached --quiet || git commit -m "마무리용 원본 내보내기 (${SKIT})"
+          git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          git push origin "HEAD:${GITHUB_REF_NAME}"
 
       # Artifact 저장소(Azure)에 접근할 수 없는 환경에서 git으로 영상을 받을 수 있게 한다
       - name: 완성 영상 브랜치에 커밋
