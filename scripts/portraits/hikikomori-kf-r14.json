@@ -1,0 +1,15 @@
+{
+ "_설명": "S24e 닫힌 문(고니감독님 지적 2026-10-30 「장면 정확하게」 9:47 「閉ざされたドアの向こうで」) — 문이 반쯤 열려 방 안 스탠드가 보이는데 빛은 닫힌 문처럼 샘 → 완전히 닫힌 문 + 문틈 빛.",
+ "characters": [
+  {
+   "id": "S24e",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-keyframes/S08b-1.png",
+    "assets/portraits/hikikomori-keyframes/S05a-1.png"
+   ],
+   "prompt": "[CAMERA] Low angle from the hallway floor, 35mm lens, f/2.8, camera about 3 metres from the door looking straight down the narrow corridor, symmetrical, 16:9, one single photorealistic film still. [CHARACTER] EMPTY: no people, no hands, nobody in the frame. [ACTION] DOOR LOCKED SHUT: at the far end of the corridor, the son's dark-brown wooden bedroom door is FULLY CLOSED, flush and flat inside its door frame — no gap at the hinge side, the door is NOT ajar, nothing of the room behind it is visible. Thin lines of cold blue monitor light leak ONLY through the narrow crack under the door (spilling a few centimetres onto the floorboards) and along the latch edge. A single plain brass LEVER handle on a small round rosette, the same as reference image 2, untouched. [SETTING] The same narrow Japanese house hallway as reference image 1 at night: worn dark wooden floorboards, beige plaster walls, a light switch plate on the right wall, very dim warm tungsten spill from behind the camera, the rest in deep shadow. No lamp, no desk, no furniture in the corridor. Quiet, lonely, low-key, cinematic film grain. [NEGATIVE] open door, ajar door, visible room interior, desk lamp, desk, people, hands, LED strips, text, letters, logo, watermark, anime, 3D."
+  }
+ ]
+}
