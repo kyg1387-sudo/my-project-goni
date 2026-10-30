@@ -1,0 +1,15 @@
+{
+ "_설명": "S05a 문손잡이 2차 — 편집(r11)은 두 손 자세가 유지돼 3장 모두 실패 → 옆에서 한 손 ECU 신규 구도(제19장 25).",
+ "characters": [
+  {
+   "id": "S05a",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-keyframes/S05b-1.png",
+    "assets/portraits/hikikomori-keyframes/S05a-1.png"
+   ],
+   "prompt": "[CAMERA] Extreme close-up insert from the SIDE at hand height, 100mm macro lens, f/2.8, shallow depth of field, 16:9, one single photorealistic film still. Cropped tight: only the door edge, the handle and ONE hand with the cuff of the sleeve are in frame — no face, no head, no torso. [CHARACTER] The hand of a Japanese man aged 58 — slightly weathered skin, a faint smooth old pale scar on the back of the RIGHT hand (not red). His sleeve is a dark charcoal-grey knit cardigan cuff, exactly like reference image 1. [ACTION] HANDS LOCKED: exactly ONE hand in the whole frame — his RIGHT hand grips a single plain brass LEVER door handle from above and presses it firmly down: four fingers wrapped over the top of the lever bar, the thumb underneath, knuckles tense. The lever is one straight solid brass bar on a small round brass rosette, clearly separate from the fingers. The door has just been pulled open a few centimetres. No second hand anywhere, no fused fingers, natural five-fingered hand. [SETTING] A dark Japanese house hallway at night: dark brown wooden door, the gap at the door edge glowing with cold blue monitor light spilling over the knuckles, everything else in deep shadow, low-key, cinematic film grain, same colour grade as reference image 2. [NEGATIVE] second hand, two hands, extra fingers, fused fingers, deformed handle, round knob, face, text, letters, logo, watermark, anime, 3D."
+  }
+ ]
+}
