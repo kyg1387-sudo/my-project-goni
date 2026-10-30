@@ -1,0 +1,14 @@
+{
+ "_설명": "S05a 문손잡이 수정(고니감독님 지적 2026-10-30 「문 손잡이 정확하게」) — 두 손이 레버 하나를 겹쳐 쥐고 손잡이가 손가락과 엉킴 → 오른손 하나·레버 손잡이 하나로 편집.",
+ "characters": [
+  {
+   "id": "S05a",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-keyframes/S05a-1.png"
+   ],
+   "prompt": "EDIT reference image 1 — keep EXACTLY its composition, camera position, framing, the dark hallway wall on the left, the dark wooden door, the blue light spilling from the gap, the man's grey cardigan, grey T-shirt and dark trousers, and the low-key lighting. Change ONLY the hands and the door handle: HANDLE LOCKED: a single plain brass LEVER door handle — one straight horizontal lever bar on a small round brass rosette fixed to the door, clearly a separate solid metal object, correct size for a Japanese interior door. HANDS LOCKED: ONLY his RIGHT hand is on the handle — it grips the lever from above, four fingers curled over the top of the bar and the thumb underneath, wrist slightly bent as he pushes it down; a faint smooth old pale scar on the back of that right hand only, not red. His LEFT hand is NOT on the handle: the left arm hangs relaxed at his side, the left hand mostly out of frame. Exactly one hand touches the door. Natural five-fingered hand, correct knuckles, fingers clearly separate from the metal, no fused fingers, no extra hand. BODY CONTINUITY LOCKED: the gripping arm connects naturally to his shoulder and body. No face in frame (cropped below the chin). Real photograph, cinematic, film grain. Absolutely no text, letters or logos."
+  }
+ ]
+}
