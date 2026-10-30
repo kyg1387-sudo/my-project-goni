@@ -1,0 +1,33 @@
+{
+ "_설명": "『引きこもりの息子』 아웃트로 진행자(이번 작품 새 스타일 host-cu-2·host-wu-2·host-wave-1) OmniHuman 4컷. 음성: pad1·pad2·pad4 = 채널 공통 인사(beggar-outro-omni 동일 녹음, Yui Sato), pad3 = 이 작품 댓글 질문 line097(무음 정리+0.15초 여백). 8초 이하. 약 21.5초 x 0.16 ≈ 3.4달러.",
+ "tests": [
+  {
+   "id": "omni-out1",
+   "model": "omnihuman",
+   "image": "assets/portraits/hikikomori-host/host-cu-2.png",
+   "audio_id": "pad1",
+   "prompt": "A friendly young Japanese TV host thanks the viewers warmly with a gentle natural smile and a small bow of the head, hands still, hair and outfit unchanged."
+  },
+  {
+   "id": "omni-out2",
+   "model": "omnihuman",
+   "image": "assets/portraits/hikikomori-host/host-cu-2.png",
+   "audio_id": "pad2",
+   "prompt": "The host cheerfully asks for subscribe and like with a bright natural smile and a small nod, hands still."
+  },
+  {
+   "id": "omni-out3",
+   "model": "omnihuman",
+   "image": "assets/portraits/hikikomori-host/host-wu-2.png",
+   "audio_id": "pad3",
+   "prompt": "The host asks the viewers a warm, thoughtful question about a father and his son, slight head tilt, soft caring expression, hands relaxed and still."
+  },
+  {
+   "id": "omni-out4",
+   "model": "omnihuman",
+   "image": "assets/portraits/hikikomori-host/host-wave-1.png",
+   "audio_id": "pad4",
+   "prompt": "The host gives the next-episode teaser and says goodbye with a warm smile, keeps the raised waving hand still and open."
+  }
+ ]
+}
