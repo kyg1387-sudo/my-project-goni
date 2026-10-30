@@ -1,0 +1,54 @@
+{
+ "_설명": "『引きこもりの息子』 썸네일 A(어두운 실사 얼굴)·B(웹툰 역전)·C(따뜻한 실사 투샷) — 제18장 12 표준, 5단 형식. 2560x1440, 각 3장 약 0.27달러.",
+ "characters": [
+  {
+   "id": "thumbA",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-faces/kentaro.png",
+    "assets/portraits/hikikomori-keyframes/S11j-1.png"
+   ],
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "prompt": "[CAMERA] Close-up portrait, 85mm, f/1.8, eye level, subject on the RIGHT third, the LEFT HALF of the frame kept dark and empty for text. 16:9 widescreen, one single photorealistic film still, NOT a grid. [CHARACTER] The Japanese man from reference image 1 — Seo Kentaro, aged 58, owner of a small Tokyo machine factory, short grey hair, tired lined face, NO glasses, NO earrings, wearing a dark grey cardigan over a grey T-shirt. Reproduce exactly this face. No name tag, no text. [ACTION] Lit only by the cold blue glow of computer monitors from the left, he stares toward the lens in shock and regret: eyebrows drawn together, lips slightly parted, natural dark-brown irises, only the eyelid edges slightly pink, the lower lids wet with a thin film of tears and ONE thin clear tear line on his right cheek, matte natural skin. [SETTING] His son's dark bedroom at night: three monitors glowing blue behind him, softly out of focus, a few blurred sticky notes on the wall, deep shadows, teal-blue color grade, low key, cinematic film grain. Reference image 2 is only for the room look. [NEGATIVE] text, letters, logo, watermark, extra fingers, anime, cartoon, 3D render, plastic skin, glossy gel tears, earrings, grid, split panels, inset portrait."
+  },
+  {
+   "id": "thumbB",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-faces/kentaro.png",
+    "assets/portraits/hikikomori-faces/daiki.png",
+    "assets/portraits/hikikomori-faces/makabe.png"
+   ],
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "prompt": "[CAMERA] Wide shot, slight high angle, 24mm, deep focus, 16:9, one single illustration, NOT a grid. The father large in the LEFT foreground (chest up), the executive kneeling in the CENTER-RIGHT in a spotlight, the son standing on the FAR RIGHT; the upper-left area left open for text. [CHARACTER] Japanese manga-style digital illustration, clean bold linework, cel shading with soft gradients, dramatic lighting (NOT photorealistic, NOT 3D). Father = Kentaro from reference image 1: aged 58, short grey hair, NO glasses, navy factory work jacket. Son = Daiki from reference image 2: aged 26, neat black hair, thin black-rimmed glasses, slim navy suit, white shirt, no tie, holding a thin tablet at his side. Executive = Makabe from reference image 3: aged 60, slicked grey hair, black suit, dark tie, on his knees on the floor, head bowed, sweating, hands on the floor. No name tags, no text. [ACTION] The father looks toward his son with wet, astonished eyes; the son looks down at the kneeling executive with a calm, cool expression; the executive trembles. [SETTING] A cold corporate meeting room: long grey table, black chairs, window blinds, a single hard spotlight from above on the kneeling man, blue-grey shadows elsewhere, scattered contract papers on the floor. [NEGATIVE] text, letters, speech bubbles, logo, watermark, extra fingers, photorealistic, 3D, earrings, grid, split panels, inset portrait."
+  },
+  {
+   "id": "thumbC",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-faces/kentaro.png",
+    "assets/portraits/hikikomori-faces/daiki.png"
+   ],
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "prompt": "[CAMERA] Medium shot, 50mm, f/2.8, eye level, two-shot: the father large on the LEFT third facing the camera, the son smaller behind him on the right, slightly out of focus. 16:9, one single photorealistic film still, NOT a grid. Upper-right area kept dim for text. [CHARACTER] Father = Seo Kentaro from reference image 1 (reproduce exactly this face): aged 58, short grey hair, NO glasses, NO earrings, dark grey cardigan. Son = Daiki from reference image 2: aged 26, neat black hair, thin black-rimmed glasses, plain light grey knit sweater. No text. [ACTION] The father smiles gently at the camera, eyes slightly glistening; the son beside him lowers his gaze with a shy, warm smile. [SETTING] The family dining table at night: a bubbling sukiyaki pot with soft steam rising between them, a warm tungsten pendant lamp overhead creating a halo of light, cozy dark wood interior, cinematic photorealistic, film grain. [NEGATIVE] text, letters, logo, watermark, extra fingers, anime, cartoon, 3D render, plastic skin, glossy gel tears, earrings, grid, split panels, inset portrait."
+  }
+ ]
+}
