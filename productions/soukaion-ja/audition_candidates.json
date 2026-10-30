@@ -1,0 +1,22 @@
+{
+ "_설명": "2차 검색(일본어 311명)에서 고른 배역별 후보. 기준: accent standard/kanto 우선(関西 Makoto 제외), 전작 확정 목소리 제외(Hatake·Hadou·Mizu·Henry·Takumi·Koharu·Anton·bento·ryokan). 結衣는 도서관에 진짜 어린이 목소리가 없어 anime 계열 young 3명으로 시험(불합격 시 Typecast 아역 보충, 제19장 2 ⑤).",
+ "misaki": [{"name": "Haruno - Calm & Low", "voice_id": "b02kNc4YmZR6NvjjXr2a"},
+            {"name": "Honoka - Clear & Composed", "voice_id": "5I5dvUIAoHkJi5p41hL1"},
+            {"name": "Kiyomi - Calm, Warm & Natural", "voice_id": "pdJqk51tDVoes2IzwOyU"}],
+ "yui": [{"name": "Suzu - Cute, Clear & Calm", "voice_id": "6awt6FKyZGV0HyQEwisX"},
+         {"name": "Sameno - inviting, Clear and Steady", "voice_id": "hMK7c1GPJmptCzI4bQIu"},
+         {"name": "itsuki - Anime energetic voice", "voice_id": "oAlEJuW30knHWhA6cF0e"}],
+ "kuroki": [{"name": "PiropiroRX - Anime attractive male", "voice_id": "YkUoVuNq2782tso28g8Q"},
+            {"name": "Taniguchi - calm husky low", "voice_id": "AzXhp77fg6sHrgy2EtLn"},
+            {"name": "Masafumi - Clearly & Assertively", "voice_id": "nkmkwBCNHgzLGGnbmMTD"}],
+ "ohno": [{"name": "PapaJi - Deep, Wise Japanese", "voice_id": "rDiGqdvxRVKhplqZE31x"},
+          {"name": "Garyu - Calm Japanese Male", "voice_id": "xeizJaHsHrlfQdJJQmlK"},
+          {"name": "Takashi - Calm Narrator", "voice_id": "ok4ERsdqy0XfV8XdOi3U"}],
+ "bengoshi": [{"name": "Akane - Tokyo Standard Japanese", "voice_id": "Q3V5SJSktn49inIBeIuC"},
+              {"name": "Tomo - Calm Japanese Narrator", "voice_id": "vuzURFNcGxdkmY9AleMn"},
+              {"name": "Naomi - Natural & Calm", "voice_id": "JGDwW9z83vZudMiOzzS9"}],
+ "keisatsu": [{"name": "Jiro - Polite Clear Business", "voice_id": "qrxCoXetZMROJh88P461"},
+              {"name": "Takamasa - Confident Business", "voice_id": "xeuGp5e7xzV9lMbAK8Vd"}],
+ "kanri": [{"name": "Amatera - Calm Clear Polished", "voice_id": "NZoZfn46w5tlIPQoJh96"},
+           {"name": "Ris - Calm & Professional", "voice_id": "QAhJARY0lcXostXl8jlz"}]
+}

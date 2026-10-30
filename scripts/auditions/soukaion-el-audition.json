@@ -1,0 +1,338 @@
+{
+ "_설명": "『63ヘルツ』(soukaion) ElevenLabs 오디션 — build_audition.py 생성물. 배역 8개, 샘플 37개, EL 약 1683자 크레딧(fal 0). 직전 작품 확정 목소리·외국 억양 제외.",
+ "tests": [
+  {
+   "id": "misaki_el_Haruno_NA24",
+   "model": "elevenlabs-direct",
+   "voice": "b02kNc4YmZR6NvjjXr2a",
+   "voice_name": "Haruno - Calm & Low",
+   "el_model": "eleven_v3",
+   "text": "[calm, measured] さんじゅうはちねんかん、工場や道路の音を測り続けた、元・かんきょうけいりょうしだった。",
+   "subtitle": "三十八年間、工場や道路の音を測り続けた、元・環境計量士だった。"
+  },
+  {
+   "id": "misaki_el_Haruno_NA28_35",
+   "model": "elevenlabs-direct",
+   "voice": "b02kNc4YmZR6NvjjXr2a",
+   "voice_name": "Haruno - Calm & Low",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, chilling] ろくじゅうさんヘルツ。……私が、玄関の鍵を閉めた、じゅうごふんごだった。",
+   "subtitle": "六十三ヘルツ。……私が、玄関の鍵を閉めた、十五分後だった。"
+  },
+  {
+   "id": "misaki_el_Haruno_L12",
+   "model": "elevenlabs-direct",
+   "voice": "b02kNc4YmZR6NvjjXr2a",
+   "voice_name": "Haruno - Calm & Low",
+   "el_model": "eleven_v3",
+   "text": "[choked, pleading whisper] ……やめてください……お願いだから……",
+   "subtitle": "……やめてください……お願いだから……"
+  },
+  {
+   "id": "misaki_el_Honoka_NA24",
+   "model": "elevenlabs-direct",
+   "voice": "5I5dvUIAoHkJi5p41hL1",
+   "voice_name": "Honoka - Clear & Composed",
+   "el_model": "eleven_v3",
+   "text": "[calm, measured] さんじゅうはちねんかん、工場や道路の音を測り続けた、元・かんきょうけいりょうしだった。",
+   "subtitle": "三十八年間、工場や道路の音を測り続けた、元・環境計量士だった。"
+  },
+  {
+   "id": "misaki_el_Honoka_NA28_35",
+   "model": "elevenlabs-direct",
+   "voice": "5I5dvUIAoHkJi5p41hL1",
+   "voice_name": "Honoka - Clear & Composed",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, chilling] ろくじゅうさんヘルツ。……私が、玄関の鍵を閉めた、じゅうごふんごだった。",
+   "subtitle": "六十三ヘルツ。……私が、玄関の鍵を閉めた、十五分後だった。"
+  },
+  {
+   "id": "misaki_el_Honoka_L12",
+   "model": "elevenlabs-direct",
+   "voice": "5I5dvUIAoHkJi5p41hL1",
+   "voice_name": "Honoka - Clear & Composed",
+   "el_model": "eleven_v3",
+   "text": "[choked, pleading whisper] ……やめてください……お願いだから……",
+   "subtitle": "……やめてください……お願いだから……"
+  },
+  {
+   "id": "misaki_el_Kiyomi_NA24",
+   "model": "elevenlabs-direct",
+   "voice": "pdJqk51tDVoes2IzwOyU",
+   "voice_name": "Kiyomi - Calm, Warm & Natural",
+   "el_model": "eleven_v3",
+   "text": "[calm, measured] さんじゅうはちねんかん、工場や道路の音を測り続けた、元・かんきょうけいりょうしだった。",
+   "subtitle": "三十八年間、工場や道路の音を測り続けた、元・環境計量士だった。"
+  },
+  {
+   "id": "misaki_el_Kiyomi_NA28_35",
+   "model": "elevenlabs-direct",
+   "voice": "pdJqk51tDVoes2IzwOyU",
+   "voice_name": "Kiyomi - Calm, Warm & Natural",
+   "el_model": "eleven_v3",
+   "text": "[low, slow, chilling] ろくじゅうさんヘルツ。……私が、玄関の鍵を閉めた、じゅうごふんごだった。",
+   "subtitle": "六十三ヘルツ。……私が、玄関の鍵を閉めた、十五分後だった。"
+  },
+  {
+   "id": "misaki_el_Kiyomi_L12",
+   "model": "elevenlabs-direct",
+   "voice": "pdJqk51tDVoes2IzwOyU",
+   "voice_name": "Kiyomi - Calm, Warm & Natural",
+   "el_model": "eleven_v3",
+   "text": "[choked, pleading whisper] ……やめてください……お願いだから……",
+   "subtitle": "……やめてください……お願いだから……"
+  },
+  {
+   "id": "yui_el_Suzu_L03",
+   "model": "elevenlabs-direct",
+   "voice": "6awt6FKyZGV0HyQEwisX",
+   "voice_name": "Suzu - Cute, Clear & Calm",
+   "el_model": "eleven_v3",
+   "text": "[bright, childlike] ママ、これ。赤いの",
+   "subtitle": "ママ、これ。赤いの"
+  },
+  {
+   "id": "yui_el_Suzu_L32",
+   "model": "elevenlabs-direct",
+   "voice": "6awt6FKyZGV0HyQEwisX",
+   "voice_name": "Suzu - Cute, Clear & Calm",
+   "el_model": "eleven_v3",
+   "text": "[sleepy, soft, hopeful] ……ママ。上の人、もう怒ってない？",
+   "subtitle": "……ママ。上の人、もう怒ってない？"
+  },
+  {
+   "id": "yui_el_Sameno_L03",
+   "model": "elevenlabs-direct",
+   "voice": "hMK7c1GPJmptCzI4bQIu",
+   "voice_name": "Sameno - inviting, Clear and Steady",
+   "el_model": "eleven_v3",
+   "text": "[bright, childlike] ママ、これ。赤いの",
+   "subtitle": "ママ、これ。赤いの"
+  },
+  {
+   "id": "yui_el_Sameno_L32",
+   "model": "elevenlabs-direct",
+   "voice": "hMK7c1GPJmptCzI4bQIu",
+   "voice_name": "Sameno - inviting, Clear and Steady",
+   "el_model": "eleven_v3",
+   "text": "[sleepy, soft, hopeful] ……ママ。上の人、もう怒ってない？",
+   "subtitle": "……ママ。上の人、もう怒ってない？"
+  },
+  {
+   "id": "yui_el_itsuki_L03",
+   "model": "elevenlabs-direct",
+   "voice": "oAlEJuW30knHWhA6cF0e",
+   "voice_name": "itsuki - Anime energetic voice",
+   "el_model": "eleven_v3",
+   "text": "[bright, childlike] ママ、これ。赤いの",
+   "subtitle": "ママ、これ。赤いの"
+  },
+  {
+   "id": "yui_el_itsuki_L32",
+   "model": "elevenlabs-direct",
+   "voice": "oAlEJuW30knHWhA6cF0e",
+   "voice_name": "itsuki - Anime energetic voice",
+   "el_model": "eleven_v3",
+   "text": "[sleepy, soft, hopeful] ……ママ。上の人、もう怒ってない？",
+   "subtitle": "……ママ。上の人、もう怒ってない？"
+  },
+  {
+   "id": "kuroki_el_PiropiroRX_L02",
+   "model": "elevenlabs-direct",
+   "voice": "YkUoVuNq2782tso28g8Q",
+   "voice_name": "PiropiroRX - Anime attractive male",
+   "el_model": "eleven_v3",
+   "text": "[low, sneering, bored] うるせえな。気に入らないなら、お前らが出ていけよ",
+   "subtitle": "うるせえな。気に入らないなら、お前らが出ていけよ"
+  },
+  {
+   "id": "kuroki_el_PiropiroRX_L09",
+   "model": "elevenlabs-direct",
+   "voice": "YkUoVuNq2782tso28g8Q",
+   "voice_name": "PiropiroRX - Anime attractive male",
+   "el_model": "eleven_v3",
+   "text": "[flat, dismissive] は？　俺、普通に生活してるだけだけど",
+   "subtitle": "は？　俺、普通に生活してるだけだけど"
+  },
+  {
+   "id": "kuroki_el_Taniguchi_L02",
+   "model": "elevenlabs-direct",
+   "voice": "AzXhp77fg6sHrgy2EtLn",
+   "voice_name": "Taniguchi - calm husky low",
+   "el_model": "eleven_v3",
+   "text": "[low, sneering, bored] うるせえな。気に入らないなら、お前らが出ていけよ",
+   "subtitle": "うるせえな。気に入らないなら、お前らが出ていけよ"
+  },
+  {
+   "id": "kuroki_el_Taniguchi_L09",
+   "model": "elevenlabs-direct",
+   "voice": "AzXhp77fg6sHrgy2EtLn",
+   "voice_name": "Taniguchi - calm husky low",
+   "el_model": "eleven_v3",
+   "text": "[flat, dismissive] は？　俺、普通に生活してるだけだけど",
+   "subtitle": "は？　俺、普通に生活してるだけだけど"
+  },
+  {
+   "id": "kuroki_el_Masafumi_L02",
+   "model": "elevenlabs-direct",
+   "voice": "nkmkwBCNHgzLGGnbmMTD",
+   "voice_name": "Masafumi - Clearly & Assertively",
+   "el_model": "eleven_v3",
+   "text": "[low, sneering, bored] うるせえな。気に入らないなら、お前らが出ていけよ",
+   "subtitle": "うるせえな。気に入らないなら、お前らが出ていけよ"
+  },
+  {
+   "id": "kuroki_el_Masafumi_L09",
+   "model": "elevenlabs-direct",
+   "voice": "nkmkwBCNHgzLGGnbmMTD",
+   "voice_name": "Masafumi - Clearly & Assertively",
+   "el_model": "eleven_v3",
+   "text": "[flat, dismissive] は？　俺、普通に生活してるだけだけど",
+   "subtitle": "は？　俺、普通に生活してるだけだけど"
+  },
+  {
+   "id": "ohno_el_PapaJi_L14_15",
+   "model": "elevenlabs-direct",
+   "voice": "rDiGqdvxRVKhplqZE31x",
+   "voice_name": "PapaJi - Deep, Wise Japanese",
+   "el_model": "eleven_v3",
+   "text": "[calm, slow, teaching] 警察が聞いているのは、音の大きさです。私が見るのは、音の、形です",
+   "subtitle": "警察が聞いているのは、音の大きさです。私が見るのは、音の、形です"
+  },
+  {
+   "id": "ohno_el_PapaJi_L37",
+   "model": "elevenlabs-direct",
+   "voice": "rDiGqdvxRVKhplqZE31x",
+   "voice_name": "PapaJi - Deep, Wise Japanese",
+   "el_model": "eleven_v3",
+   "text": "[slow, tender, firm] つまには、間に合わなかった。……次は、あなたが、誰かの耳になりなさい",
+   "subtitle": "妻には、間に合わなかった。……次は、あなたが、誰かの耳になりなさい"
+  },
+  {
+   "id": "ohno_el_Garyu_L14_15",
+   "model": "elevenlabs-direct",
+   "voice": "xeizJaHsHrlfQdJJQmlK",
+   "voice_name": "Garyu - Calm Japanese Male",
+   "el_model": "eleven_v3",
+   "text": "[calm, slow, teaching] 警察が聞いているのは、音の大きさです。私が見るのは、音の、形です",
+   "subtitle": "警察が聞いているのは、音の大きさです。私が見るのは、音の、形です"
+  },
+  {
+   "id": "ohno_el_Garyu_L37",
+   "model": "elevenlabs-direct",
+   "voice": "xeizJaHsHrlfQdJJQmlK",
+   "voice_name": "Garyu - Calm Japanese Male",
+   "el_model": "eleven_v3",
+   "text": "[slow, tender, firm] つまには、間に合わなかった。……次は、あなたが、誰かの耳になりなさい",
+   "subtitle": "妻には、間に合わなかった。……次は、あなたが、誰かの耳になりなさい"
+  },
+  {
+   "id": "ohno_el_Takashi_L14_15",
+   "model": "elevenlabs-direct",
+   "voice": "ok4ERsdqy0XfV8XdOi3U",
+   "voice_name": "Takashi - Calm Narrator",
+   "el_model": "eleven_v3",
+   "text": "[calm, slow, teaching] 警察が聞いているのは、音の大きさです。私が見るのは、音の、形です",
+   "subtitle": "警察が聞いているのは、音の大きさです。私が見るのは、音の、形です"
+  },
+  {
+   "id": "ohno_el_Takashi_L37",
+   "model": "elevenlabs-direct",
+   "voice": "ok4ERsdqy0XfV8XdOi3U",
+   "voice_name": "Takashi - Calm Narrator",
+   "el_model": "eleven_v3",
+   "text": "[slow, tender, firm] つまには、間に合わなかった。……次は、あなたが、誰かの耳になりなさい",
+   "subtitle": "妻には、間に合わなかった。……次は、あなたが、誰かの耳になりなさい"
+  },
+  {
+   "id": "bengoshi_el_Akane_L27",
+   "model": "elevenlabs-direct",
+   "voice": "Q3V5SJSktn49inIBeIuC",
+   "voice_name": "Akane - Tokyo Standard Japanese",
+   "el_model": "eleven_v3",
+   "text": "[calm, professional, intrigued] ……これは、そうおんの相談ではありませんね",
+   "subtitle": "……これは、騒音の相談ではありませんね"
+  },
+  {
+   "id": "bengoshi_el_Akane_L30",
+   "model": "elevenlabs-direct",
+   "voice": "Q3V5SJSktn49inIBeIuC",
+   "voice_name": "Akane - Tokyo Standard Japanese",
+   "el_model": "eleven_v3",
+   "text": "[calm, grave, low] そうおんで有罪になったはんれいがあります。……ちょうえきです",
+   "subtitle": "騒音で有罪になった判例があります。……懲役です"
+  },
+  {
+   "id": "bengoshi_el_Tomo_L27",
+   "model": "elevenlabs-direct",
+   "voice": "vuzURFNcGxdkmY9AleMn",
+   "voice_name": "Tomo - Calm Japanese Narrator",
+   "el_model": "eleven_v3",
+   "text": "[calm, professional, intrigued] ……これは、そうおんの相談ではありませんね",
+   "subtitle": "……これは、騒音の相談ではありませんね"
+  },
+  {
+   "id": "bengoshi_el_Tomo_L30",
+   "model": "elevenlabs-direct",
+   "voice": "vuzURFNcGxdkmY9AleMn",
+   "voice_name": "Tomo - Calm Japanese Narrator",
+   "el_model": "eleven_v3",
+   "text": "[calm, grave, low] そうおんで有罪になったはんれいがあります。……ちょうえきです",
+   "subtitle": "騒音で有罪になった判例があります。……懲役です"
+  },
+  {
+   "id": "bengoshi_el_Naomi_L27",
+   "model": "elevenlabs-direct",
+   "voice": "JGDwW9z83vZudMiOzzS9",
+   "voice_name": "Naomi - Natural & Calm",
+   "el_model": "eleven_v3",
+   "text": "[calm, professional, intrigued] ……これは、そうおんの相談ではありませんね",
+   "subtitle": "……これは、騒音の相談ではありませんね"
+  },
+  {
+   "id": "bengoshi_el_Naomi_L30",
+   "model": "elevenlabs-direct",
+   "voice": "JGDwW9z83vZudMiOzzS9",
+   "voice_name": "Naomi - Natural & Calm",
+   "el_model": "eleven_v3",
+   "text": "[calm, grave, low] そうおんで有罪になったはんれいがあります。……ちょうえきです",
+   "subtitle": "騒音で有罪になった判例があります。……懲役です"
+  },
+  {
+   "id": "keisatsu_el_Jiro_L06",
+   "model": "elevenlabs-direct",
+   "voice": "qrxCoXetZMROJh88P461",
+   "voice_name": "Jiro - Polite Clear Business",
+   "el_model": "eleven_v3",
+   "text": "[flat, official] 上の方にはお伝えしました。ただ、個人間の問題ですので",
+   "subtitle": "上の方にはお伝えしました。ただ、個人間の問題ですので"
+  },
+  {
+   "id": "keisatsu_el_Takamasa_L06",
+   "model": "elevenlabs-direct",
+   "voice": "xeuGp5e7xzV9lMbAK8Vd",
+   "voice_name": "Takamasa - Confident Business",
+   "el_model": "eleven_v3",
+   "text": "[flat, official] 上の方にはお伝えしました。ただ、個人間の問題ですので",
+   "subtitle": "上の方にはお伝えしました。ただ、個人間の問題ですので"
+  },
+  {
+   "id": "kanri_el_Amatera_L38",
+   "model": "elevenlabs-direct",
+   "voice": "NZoZfn46w5tlIPQoJh96",
+   "voice_name": "Amatera - Calm Clear Polished",
+   "el_model": "eleven_v3",
+   "text": "[flat, clerical] よんまるにごうしつは、解約となりました。ないようしょうめいは、確認しております",
+   "subtitle": "四〇二号室は、解約となりました。内容証明は、確認しております"
+  },
+  {
+   "id": "kanri_el_Ris_L38",
+   "model": "elevenlabs-direct",
+   "voice": "QAhJARY0lcXostXl8jlz",
+   "voice_name": "Ris - Calm & Professional",
+   "el_model": "eleven_v3",
+   "text": "[flat, clerical] よんまるにごうしつは、解約となりました。ないようしょうめいは、確認しております",
+   "subtitle": "四〇二号室は、解約となりました。内容証明は、確認しております"
+  }
+ ]
+}
