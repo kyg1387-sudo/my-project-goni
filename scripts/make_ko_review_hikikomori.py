@@ -18,6 +18,7 @@ src, out = sys.argv[1], sys.argv[2]
 body = open(os.path.join(ROOT, "productions/hikikomori-ja/00_script_ja.md"), encoding="utf-8").read()
 pairs = [(m.group(1), m.group(2).strip()) for m in re.finditer(r"「(.+?)」[^\n]*\n\s*→\s*(.+)", body)]
 assert pairs, "대본에서 번역 줄을 찾지 못함"
+pairs.append(("その代わり、ご提案があります", "그 대신, 제안이 있습니다."))  # 대본에서 번역 줄 사이에 폴리 메모가 끼어 정규식이 놓침
 
 
 def sec(t):
