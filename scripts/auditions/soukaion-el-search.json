@@ -1,0 +1,15 @@
+{"_설명": "『63ヘルツ』(soukaion) ElevenLabs 일본어 목소리 도서관 검색(무과금, 미리듣기만) — 제19장 2 ①. 태그 = 배역. 직전·인접 작품 확정 목소리(yamibaito: Hatake·Hadou·Mizu·Henry·Takumi·Koharu·Anton / bento: Shino·Chiemi·Tonatsu·Masa·Jun·Akio / ryokan: Chihiro·Chieko·Kaori·Riku·Akari·Kujira)는 후보에서 뺀다. 내레이터는 美咲 본인(1인칭 회고, 여 30대 낮고 침착) — 채널 첫 여성 1인칭이라 narrative·conversational 두 갈래로 찾는다. 大野만 전작 Henry를 비교군으로 남긴다.",
+ "el_shared_search": {"per_query": 8, "queries": [
+   {"tag": "misaki_narr", "language": "ja", "gender": "female", "age": "young", "use_case": "narrative_story"},
+   {"tag": "misaki_narr_b", "language": "ja", "gender": "female", "age": "middle_aged", "use_case": "narrative_story"},
+   {"tag": "misaki_conv", "language": "ja", "gender": "female", "age": "young", "use_case": "conversational"},
+   {"tag": "yui", "language": "ja", "gender": "female", "age": "young", "search": "girl child"},
+   {"tag": "yui_b", "language": "ja", "gender": "female", "search": "子供"},
+   {"tag": "kuroki", "language": "ja", "gender": "male", "age": "middle_aged", "use_case": "characters_animation"},
+   {"tag": "kuroki_b", "language": "ja", "gender": "male", "age": "middle_aged", "search": "rough"},
+   {"tag": "ohno", "language": "ja", "gender": "male", "age": "old", "use_case": "narrative_story"},
+   {"tag": "ohno_b", "language": "ja", "gender": "male", "age": "old", "use_case": "conversational"},
+   {"tag": "bengoshi", "language": "ja", "gender": "female", "age": "middle_aged", "use_case": "conversational"},
+   {"tag": "keisatsu", "language": "ja", "gender": "male", "age": "middle_aged", "search": "strong"},
+   {"tag": "kanri", "language": "ja", "gender": "male", "age": "middle_aged", "use_case": "conversational"}
+ ]}}
