@@ -1,0 +1,14 @@
+{
+ "_설명": "S23a 노크 직전 손(고니감독님 지적 2026-10-30 「문고리를 손으로 흔드는 장면이 어설퍼」) — 두 손이 문 가장자리·세로 막대 손잡이를 쥠 → 한 손 망설이는 노크(제19장 25).",
+ "characters": [
+  {
+   "id": "S23a",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-keyframes/S05a-1.png"
+   ],
+   "prompt": "[CAMERA] Close-up insert from the SIDE at chest height, 85mm lens, f/2.2, shallow depth of field, 16:9, one single photorealistic film still. Framed tight on the closed door and ONE hand with the cardigan cuff — no face, no head. [CHARACTER] The right hand of a Japanese man aged 58 — slightly weathered skin, a faint smooth old pale scar on the back of the RIGHT hand (not red); sleeve = the same dark charcoal-grey knit cardigan as reference image 1. [ACTION] HANDS LOCKED: exactly ONE hand in the whole frame. His RIGHT hand is raised to knock but hesitates: loosely curled fist, the middle knuckles stopped about two centimetres from the door panel at face height, not yet touching, fingers relaxed and clearly separate. His other hand is NOT in frame. Nobody touches the door handle. [SETTING] The SAME door as reference image 1: dark brown wooden door, a single plain brass LEVER handle on a small round brass rosette lower down, untouched and clearly visible below the hand. Night hallway in a Japanese house, a soft warm tungsten hallway light from the right, a thin line of cold blue monitor light glowing at the door edge. Low-key, cinematic film grain. [NEGATIVE] second hand, two hands, hand on the handle, gripping the handle, extra fingers, fused fingers, deformed handle, vertical bar handle, face, text, letters, logo, watermark, anime, 3D."
+  }
+ ]
+}
