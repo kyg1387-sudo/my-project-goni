@@ -317,7 +317,7 @@ def lcd(src, kind):
     return Image.fromarray(s.clip(0, 255).astype("uint8"))
 
 
-def apply_plan(img, entries, blur=1.0):
+def apply_plan(img, entries, blur=1.0, extra=None):
     """screens.json 항목 합성. key = 화면 원래 색(흰·파랑 무지)에 가까운 픽셀만 교체(앞 사람은 유지),
     replace = 어두운 백라이트 화면 전체 교체(occ 타원 = 앞 머리·몸은 유지). 원래 화면 밝기로 노출을 맞춘다."""
     base = np.asarray(img.convert("RGB")).astype(float); H, W, _ = base.shape; out = base.copy()
@@ -343,6 +343,10 @@ def apply_plan(img, entries, blur=1.0):
             key = cv2.dilate(key, np.ones((3, 3), np.uint8))  # 화면 가장자리 흰 테 제거
             gain = np.clip(base.mean(2) / max(med.mean(), 1), 0.6, 1.05)[..., None]
             lvl = 1.0
+        elif e["mode"] == "lum":  # 밝은 무지 화면 + 움직이는 사람(i2v): 밝은 픽셀만 교체 — 얼굴·머리는 어두워 그대로
+            lum = base.mean(2); key = np.clip((lum - e.get("lum_lo", 160)) / 30, 0, 1) * poly
+            key = cv2.dilate(key, np.ones((3, 3), np.uint8))
+            gain = np.clip(lum / 235.0, 0.6, 1.05)[..., None]; lvl = 1.0
         else:
             key = poly.copy(); gain = 1.0; lvl = 0.80  # 어두운 방 화면은 조금 낮게
         for cx, cy, rx, ry in e.get("occ", []):
@@ -351,6 +355,8 @@ def apply_plan(img, entries, blur=1.0):
         if e.get("occpoly"):  # 앞 인물 윤곽(머리·어깨)을 다각형으로
             m = np.ones((H, W), np.float32); cv2.fillPoly(m, [np.int32(e["occpoly"])], 0.0)
             key *= cv2.GaussianBlur(m, (0, 0), 2)
+        if extra is not None:  # i2v 매 프레임 합성: 시간 중앙값(빈 화면)과 다른 픽셀 = 움직이는 사람 → 보호(finalize)
+            key *= extra
         key = cv2.GaussianBlur(key, (0, 0), e.get("feather", 1.0))  # 초점 밖 화면은 가장자리도 무르게
         out = out * (1 - key[..., None]) + warped * gain * lvl * key[..., None]
     return Image.fromarray(out.clip(0, 255).astype("uint8"))
