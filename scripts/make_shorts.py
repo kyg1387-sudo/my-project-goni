@@ -33,23 +33,74 @@ PUNCT = "。、…』」？！?!"
 HANG = "…。、』」？！?!—"
 
 
-def wrap(text, limit=13):
-    """세로 화면용 줄바꿈(제13장 4, 휴대폰): 한 줄 최대 13자(줄 끝 구두점 1자는 매달기 허용), 최대 3줄.
-    문장 전체를 다시 나눈다 — 구두점 뒤 > 조사 뒤 > 13자 순. 줄머리 구두점·전각 공백 금지. 한 줄에 들어가면 한 줄."""
-    t = text.replace("\\N", "").replace("　", "").strip()
-    out = []
-    while len(t) > limit:
-        n_left = -(-len(t) // limit)                                    # 남은 최소 줄 수
-        lo = max(4, len(t) - limit * (n_left - 1))                      # 뒤 줄들이 13자 안에 들어가게
-        cut = max((k + 1 for k in range(lo - 1, limit) if t[k] in PUNCT), default=0)
-        if not cut:
-            cut = max((k + 1 for k in range(lo - 1, limit) if t[k] in "がでにをはのともへ"), default=limit)
-        while cut < len(t) and t[cut] in HANG:                          # 줄머리 구두점(……。 포함) → 앞 줄 끝에 매단다
-            cut += 1
-        out.append(t[:cut]); t = t[cut:]
-    if t:
-        out.append(t)
-    return "\\N".join(out)
+def _kind(c):
+    if "\u3040" <= c <= "\u309f":
+        return "h"
+    if "\u30a0" <= c <= "\u30ff" or c == "ー":
+        return "k"
+    if "\u4e00" <= c <= "\u9fff" or c in "々〆":
+        return "j"
+    return "o"
+
+
+def wrap(text, limit=13, with_cost=False):
+    """세로 화면용 줄바꿈(제13장 4, 휴대폰): 한 줄 최대 13자(줄 끝 구두점은 매달기 — 글자 수에서 뺌), 최대 3줄.
+    동적 계획법으로 문장 전체를 나눈다 — 끊는 자리 비용: 구두점 뒤 0 < 조사 뒤 1 < 글자 종류 경계(가나→한자·가타카나) 3 < 낱말 중간 30.
+    줄 수가 적을수록, 비용이 낮을수록, 줄 길이가 고를수록 좋다. 줄머리 구두점 금지(앞 줄 끝에 매단다).
+    (hikikomori 쇼츠 실증: 13자 강제 절단이 「ゴ/ミ」「聞か/れた」처럼 낱말 중간을 자름, 반각 공백이 글자 수에 들어감)"""
+    t = re.sub(r"[ 　]", "", text.replace("\\N", "")).strip()
+    n = len(t)
+
+    def vis(a, b):  # 줄 끝 매단 구두점은 폭에서 뺀다
+        while b > a and t[b - 1] in HANG:
+            b -= 1
+        return b - a
+
+    def cost(k):  # t[:k] 뒤에서 끊는 비용
+        if k >= n:
+            return 0
+        if t[k] in HANG:
+            return 99  # 줄머리 구두점
+        c, d = t[k - 1], t[k]
+        if c in PUNCT:
+            return 0
+        if c in "がでにをはのともへやか" and _kind(d) != "h":
+            return 1
+        if c in "がでにをはのともへ":
+            return 2
+        if _kind(c) != _kind(d) and not (_kind(c) == "j" and _kind(d) == "h"):  # 한자+오쿠리가나는 붙임
+            return 3
+        return 30
+    best = {0: (0, 0, 0, [])}
+    for k in range(1, n + 1):
+        cands = []
+        for a in range(max(0, k - limit - 3), k):
+            if a not in best or vis(a, k) > limit or vis(a, k) == 0:
+                continue
+            L, C, V, cuts = best[a]
+            cands.append((L + 1, C + cost(k), V + (limit - vis(a, k)) ** 2, cuts + [k]))
+        if cands:
+            best[k] = min(cands)
+    L, C, _, cuts = best[n]
+    out, a = [], 0
+    for k in cuts:
+        out.append(t[a:k]); a = k
+    res = "\\N".join(out)
+    return (res, C + (100 if L > 3 else 0)) if with_cost else res
+
+
+def split_events(s, e, text):
+    """3줄 안에서 낱말 중간을 끊어야 하는 긴 줄은 가운데에 가까운 구두점에서 두 이벤트로 나눠 글자 수 비례로 시간을 나눈다(제15장 21)."""
+    w, c = wrap(text, with_cost=True)
+    t = re.sub(r"[ 　]", "", text.replace("\\N", ""))
+    if c < 30:
+        return [(s, e, w)]
+    pos = [k + 1 for k, ch in enumerate(t[:-1]) if ch in "。、？！?!…" and t[k + 1] not in HANG]
+    if not pos:
+        return [(s, e, w)]
+    k = min(pos, key=lambda x: abs(x - len(t) / 2))
+    m = s + (e - s) * k / len(t)
+    return split_events(s, m, t[:k]) + split_events(m, e, t[k:])
 
 
 def events(ass_path):
@@ -98,7 +149,8 @@ def main():
             if e <= a or s >= b or style in skip:
                 continue
             st = "Cap" if style == "Caption" else "Sub"
-            lines.append(f"Dialogue: 0,{s2t(s - a)},{s2t(min(e, b) - a)},{st},,0,0,0,,{wrap(text)}")
+            for s1, e1, w in split_events(s, min(e, b), text):
+                lines.append(f"Dialogue: 0,{s2t(s1 - a)},{s2t(e1 - a)},{st},,0,0,0,,{w}")
         lines.append(f"Dialogue: 0,{s2t(dur)},{s2t(dur + tail)},End,,0,0,0,,{sh.get('end_text', '続きは本編で')}")
         sub = os.path.join(out_dir, f"_{sh['id']}.ass")
         open(sub, "w", encoding="utf-8").write(head + "\n".join(lines) + "\n")
