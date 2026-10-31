@@ -1,0 +1,170 @@
+{
+ "_설명": "3D 아바타 시험 쇼츠 16컷 키프레임 변환(고니감독님 제안 2026-10-31).",
+ "characters": [
+  {
+   "id": "S18c",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-keyframes/S18c-1.png",
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png"
+   ],
+   "prompt": "EDIT reference image 1 — keep EXACTLY its composition, camera angle, framing, every person's position, pose, hands, gaze and expression, the props and the room. Re-render this exact frame in a stylized 3D animated feature-film style: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, clean stylized hair, soft global illumination, the same cinematic lighting and colour mood (NOT photorealistic, NOT 2D anime). Reference image 2 is the 3D character design of Daiki — use exactly this design for him/her. Hands: natural five fingers, the same number of hands as in reference image 1. Screens and papers stay plain or keep their existing content; no new text, no letters, no logo, no watermark."
+  },
+  {
+   "id": "S18d",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-keyframes/S18d-1.png",
+    "assets/portraits/hikikomori-avatar/av-ryosuke-1.png"
+   ],
+   "prompt": "EDIT reference image 1 — keep EXACTLY its composition, camera angle, framing, every person's position, pose, hands, gaze and expression, the props and the room. Re-render this exact frame in a stylized 3D animated feature-film style: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, clean stylized hair, soft global illumination, the same cinematic lighting and colour mood (NOT photorealistic, NOT 2D anime). Reference image 2 is the 3D character design of Ryosuke — use exactly this design for him/her. Hands: natural five fingers, the same number of hands as in reference image 1. Screens and papers stay plain or keep their existing content; no new text, no letters, no logo, no watermark."
+  },
+  {
+   "id": "S18e",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-keyframes/S18e-1.png",
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png",
+    "assets/portraits/hikikomori-avatar/av-kentaro-2.png",
+    "assets/portraits/hikikomori-avatar/av-seiji-1.png"
+   ],
+   "prompt": "EDIT reference image 1 — keep EXACTLY its composition, camera angle, framing, every person's position, pose, hands, gaze and expression, the props and the room. Re-render this exact frame in a stylized 3D animated feature-film style: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, clean stylized hair, soft global illumination, the same cinematic lighting and colour mood (NOT photorealistic, NOT 2D anime). Reference image 2 is the 3D character design of Daiki — use exactly this design for him/her. Reference image 3 is the 3D character design of Kentaro — use exactly this design for him/her. Reference image 4 is the 3D character design of Seiji — use exactly this design for him/her. Hands: natural five fingers, the same number of hands as in reference image 1. Screens and papers stay plain or keep their existing content; no new text, no letters, no logo, no watermark."
+  },
+  {
+   "id": "S18f",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-keyframes/S18f-1.png",
+    "assets/portraits/hikikomori-avatar/av-kentaro-2.png"
+   ],
+   "prompt": "EDIT reference image 1 — keep EXACTLY its composition, camera angle, framing, every person's position, pose, hands, gaze and expression, the props and the room. Re-render this exact frame in a stylized 3D animated feature-film style: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, clean stylized hair, soft global illumination, the same cinematic lighting and colour mood (NOT photorealistic, NOT 2D anime). Reference image 2 is the 3D character design of Kentaro — use exactly this design for him/her. Hands: natural five fingers, the same number of hands as in reference image 1. Screens and papers stay plain or keep their existing content; no new text, no letters, no logo, no watermark."
+  },
+  {
+   "id": "S18g",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-keyframes/S18g-1.png",
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png",
+    "assets/portraits/hikikomori-avatar/av-kentaro-2.png"
+   ],
+   "prompt": "EDIT reference image 1 — keep EXACTLY its composition, camera angle, framing, every person's position, pose, hands, gaze and expression, the props and the room. Re-render this exact frame in a stylized 3D animated feature-film style: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, clean stylized hair, soft global illumination, the same cinematic lighting and colour mood (NOT photorealistic, NOT 2D anime). Reference image 2 is the 3D character design of Daiki — use exactly this design for him/her. Reference image 3 is the 3D character design of Kentaro — use exactly this design for him/her. Hands: natural five fingers, the same number of hands as in reference image 1. Screens and papers stay plain or keep their existing content; no new text, no letters, no logo, no watermark."
+  },
+  {
+   "id": "S19a",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-keyframes/S19a-1.png",
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png",
+    "assets/portraits/hikikomori-avatar/av-makabe-1.png"
+   ],
+   "prompt": "EDIT reference image 1 — keep EXACTLY its composition, camera angle, framing, every person's position, pose, hands, gaze and expression, the props and the room. Re-render this exact frame in a stylized 3D animated feature-film style: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, clean stylized hair, soft global illumination, the same cinematic lighting and colour mood (NOT photorealistic, NOT 2D anime). Reference image 2 is the 3D character design of Daiki — use exactly this design for him/her. Reference image 3 is the 3D character design of Makabe — use exactly this design for him/her. Hands: natural five fingers, the same number of hands as in reference image 1. Screens and papers stay plain or keep their existing content; no new text, no letters, no logo, no watermark."
+  },
+  {
+   "id": "S19b",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-keyframes/S19b-1.png",
+    "assets/portraits/hikikomori-avatar/av-makabe-1.png"
+   ],
+   "prompt": "EDIT reference image 1 — keep EXACTLY its composition, camera angle, framing, every person's position, pose, hands, gaze and expression, the props and the room. Re-render this exact frame in a stylized 3D animated feature-film style: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, clean stylized hair, soft global illumination, the same cinematic lighting and colour mood (NOT photorealistic, NOT 2D anime). Reference image 2 is the 3D character design of Makabe — use exactly this design for him/her. Hands: natural five fingers, the same number of hands as in reference image 1. Screens and papers stay plain or keep their existing content; no new text, no letters, no logo, no watermark."
+  },
+  {
+   "id": "S19c",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-keyframes/S19c-1.png",
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png"
+   ],
+   "prompt": "EDIT reference image 1 — keep EXACTLY its composition, camera angle, framing, every person's position, pose, hands, gaze and expression, the props and the room. Re-render this exact frame in a stylized 3D animated feature-film style: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, clean stylized hair, soft global illumination, the same cinematic lighting and colour mood (NOT photorealistic, NOT 2D anime). Reference image 2 is the 3D character design of Daiki — use exactly this design for him/her. Hands: natural five fingers, the same number of hands as in reference image 1. Screens and papers stay plain or keep their existing content; no new text, no letters, no logo, no watermark."
+  },
+  {
+   "id": "S19d",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-keyframes/S19d-1.png",
+    "assets/portraits/hikikomori-avatar/av-makabe-1.png"
+   ],
+   "prompt": "EDIT reference image 1 — keep EXACTLY its composition, camera angle, framing, every person's position, pose, hands, gaze and expression, the props and the room. Re-render this exact frame in a stylized 3D animated feature-film style: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, clean stylized hair, soft global illumination, the same cinematic lighting and colour mood (NOT photorealistic, NOT 2D anime). Reference image 2 is the 3D character design of Makabe — use exactly this design for him/her. Hands: natural five fingers, the same number of hands as in reference image 1. Screens and papers stay plain or keep their existing content; no new text, no letters, no logo, no watermark."
+  },
+  {
+   "id": "S19e",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/preview/hikikomori-screens/S19e.png",
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png"
+   ],
+   "prompt": "EDIT reference image 1 — keep EXACTLY its composition, camera angle, framing, every person's position, pose, hands, gaze and expression, the props and the room. Re-render this exact frame in a stylized 3D animated feature-film style: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, clean stylized hair, soft global illumination, the same cinematic lighting and colour mood (NOT photorealistic, NOT 2D anime). Reference image 2 is the 3D character design of Daiki — use exactly this design for him/her. Hands: natural five fingers, the same number of hands as in reference image 1. Screens and papers stay plain or keep their existing content; no new text, no letters, no logo, no watermark."
+  },
+  {
+   "id": "S19f",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-keyframes/S19f-1.png",
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png"
+   ],
+   "prompt": "EDIT reference image 1 — keep EXACTLY its composition, camera angle, framing, every person's position, pose, hands, gaze and expression, the props and the room. Re-render this exact frame in a stylized 3D animated feature-film style: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, clean stylized hair, soft global illumination, the same cinematic lighting and colour mood (NOT photorealistic, NOT 2D anime). Reference image 2 is the 3D character design of Daiki — use exactly this design for him/her. Hands: natural five fingers, the same number of hands as in reference image 1. Screens and papers stay plain or keep their existing content; no new text, no letters, no logo, no watermark."
+  },
+  {
+   "id": "S19g",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-keyframes/S19g-1.png",
+    "assets/portraits/hikikomori-avatar/av-ryosuke-1.png"
+   ],
+   "prompt": "EDIT reference image 1 — keep EXACTLY its composition, camera angle, framing, every person's position, pose, hands, gaze and expression, the props and the room. Re-render this exact frame in a stylized 3D animated feature-film style: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, clean stylized hair, soft global illumination, the same cinematic lighting and colour mood (NOT photorealistic, NOT 2D anime). Reference image 2 is the 3D character design of Ryosuke — use exactly this design for him/her. Hands: natural five fingers, the same number of hands as in reference image 1. Screens and papers stay plain or keep their existing content; no new text, no letters, no logo, no watermark."
+  },
+  {
+   "id": "S20a",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-keyframes/S20a-1.png",
+    "assets/portraits/hikikomori-avatar/av-makabe-1.png"
+   ],
+   "prompt": "EDIT reference image 1 — keep EXACTLY its composition, camera angle, framing, every person's position, pose, hands, gaze and expression, the props and the room. Re-render this exact frame in a stylized 3D animated feature-film style: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, clean stylized hair, soft global illumination, the same cinematic lighting and colour mood (NOT photorealistic, NOT 2D anime). Reference image 2 is the 3D character design of Makabe — use exactly this design for him/her. Hands: natural five fingers, the same number of hands as in reference image 1. Screens and papers stay plain or keep their existing content; no new text, no letters, no logo, no watermark."
+  },
+  {
+   "id": "S20b",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/preview/hikikomori-screens/S20b.png",
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png"
+   ],
+   "prompt": "EDIT reference image 1 — keep EXACTLY its composition, camera angle, framing, every person's position, pose, hands, gaze and expression, the props and the room. Re-render this exact frame in a stylized 3D animated feature-film style: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, clean stylized hair, soft global illumination, the same cinematic lighting and colour mood (NOT photorealistic, NOT 2D anime). Reference image 2 is the 3D character design of Daiki — use exactly this design for him/her. Hands: natural five fingers, the same number of hands as in reference image 1. Screens and papers stay plain or keep their existing content; no new text, no letters, no logo, no watermark."
+  },
+  {
+   "id": "S20c",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-keyframes/S20c-1.png",
+    "assets/portraits/hikikomori-avatar/av-yumiko-1.png"
+   ],
+   "prompt": "EDIT reference image 1 — keep EXACTLY its composition, camera angle, framing, every person's position, pose, hands, gaze and expression, the props and the room. Re-render this exact frame in a stylized 3D animated feature-film style: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, clean stylized hair, soft global illumination, the same cinematic lighting and colour mood (NOT photorealistic, NOT 2D anime). Reference image 2 is the 3D character design of Yumiko — use exactly this design for him/her. Hands: natural five fingers, the same number of hands as in reference image 1. Screens and papers stay plain or keep their existing content; no new text, no letters, no logo, no watermark."
+  },
+  {
+   "id": "S20d",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-keyframes/S20d-1.png",
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png",
+    "assets/portraits/hikikomori-avatar/av-kentaro-2.png"
+   ],
+   "prompt": "EDIT reference image 1 — keep EXACTLY its composition, camera angle, framing, every person's position, pose, hands, gaze and expression, the props and the room. Re-render this exact frame in a stylized 3D animated feature-film style: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, clean stylized hair, soft global illumination, the same cinematic lighting and colour mood (NOT photorealistic, NOT 2D anime). Reference image 2 is the 3D character design of Daiki — use exactly this design for him/her. Reference image 3 is the 3D character design of Kentaro — use exactly this design for him/her. Hands: natural five fingers, the same number of hands as in reference image 1. Screens and papers stay plain or keep their existing content; no new text, no letters, no logo, no watermark."
+  }
+ ]
+}
