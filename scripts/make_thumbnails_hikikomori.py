@@ -23,7 +23,7 @@ mb.ABC = {
               row_y=300, quote="月商1250万", quote_size=270),  # 2차(2026-10-31): 168px 가독성 — 4줄 → 2줄 + 숫자 확대
     "B": dict(src="thumbB-{n}z.png", side="L", label="スカッとする話",
               rows=[("父の工場を", 150, FIRE, None), ("救った息子", 150, YELLOW, None)],
-              row_y=120, shade=95, shade_w=1000, badge=("専務、土下座", "取引お断り"), badge_xy=(1200, 24), band=None),  # 2차: 글자 2줄 크게(확대는 얼굴 잘림으로 불채택)
+              row_y=120, shade=95, shade_w=1000, badge=("専務、土下座", "取引お断り"), badge_xy=(830, 24), band=None),  # 2차: 글자 2줄 크게(확대는 얼굴 잘림으로 불채택), 배지는 아들 머리를 가려 위쪽 가운데로(2026-10-31)
     "C": dict(src="thumbC-{n}.png", side="R", label="感動する話", label_style="black",
               rows=[("「ゴミ」と呼んだ", 104, RED, None), ("息子が守ったもの", 100, YELLOW, None)], x0=930,
               band=["四年間、黙って", "工場を支えた息子"], band_xy=(1060, 760)),
