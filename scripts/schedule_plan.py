@@ -99,9 +99,27 @@ def table(L):
     print("\n시각: — = 스튜디오 목록에 시각이 없어 미확인, ? = 계획값(스튜디오 미확인)")
 
 
+def sync_guard(L, max_days=2):
+    """스튜디오 「예약됨」 목록 대조일 검사(2026-10-31 실증: 대장 10/18 이후 미대조 → 11/10 본편 2편 겹침).
+    대장 'updated'는 내가 고친 날일 뿐이므로, 고니감독님이 보낸 스튜디오 목록을 반영한 날짜(studio_synced)로만 판정한다."""
+    s = L.get("studio_synced") or {}
+    today = dt.date.today()
+    bad = []
+    for k, name in (("videos", "동영상"), ("shorts", "Shorts")):
+        v = s.get(k)
+        age = (today - d(v)).days if v else None
+        if age is None or age > max_days:
+            bad.append(f"{name} 탭 예약 목록 대조 {'없음' if v is None else f'{v}({age}일 전)'}")
+    if bad:
+        print("⚠ 확정 금지 — " + " / ".join(bad) + ". 스튜디오 「예약됨」 목록(동영상·Shorts)을 받아 대장 반영 후 다시 실행. 아래 날짜는 잠정.")
+    return not bad
+
+
 if __name__ == "__main__":
     L = load()
     cmd = sys.argv[1] if len(sys.argv) > 1 else "check"
+    if cmd in ("check", "next"):
+        sync_guard(L)
     if cmd == "check":
         check(L)
     elif cmd == "next":
