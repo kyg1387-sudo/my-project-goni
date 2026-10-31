@@ -1,0 +1,24 @@
+{
+ "_설명": "beggar-chairman 썸네일 E — 고니감독님 제공 썸네일(실사 레스토랑·머리 숙인 지배인·서 있는 회장)을 편집: 글자·Gemini 워터마크 제거, 회장 → 源蔵(낡은 회색 점퍼), 지배인 → 岩城(콧수염·귀걸이). 4장 약 0.12달러. 글자는 로컬 합성.",
+ "_style_preset": "Photorealistic Japanese human drama, 16:9",
+ "characters": [
+  {
+   "id": "thumbE",
+   "count": 4,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/beggar-thumb-e/user-src.png",
+    "assets/portraits/beggar-faces/genzo.png",
+    "assets/portraits/beggar-faces/iwaki.png"
+   ],
+   "prompt": "Edit reference image 1 into ONE single photorealistic cinematic film still, 16:9, keeping its composition, the upscale restaurant interior, lighting, the shocked and clapping diners in the background, and the camera angle. [CHANGE 1 — remove all lettering] Remove every piece of text and the yellow and red title letters in the upper left and the small star mark in the lower right corner; fill those areas naturally with the restaurant background (warm ceiling lights, dark wood wall). The upper-left area must become plain, slightly dark restaurant background with NO text. [CHANGE 2 — the standing man] Replace the standing man on the right with the old man from reference image 2: Takamiya Genzo, Japanese, aged 78, lean weathered face with deep wrinkles, close-cropped WHITE hair, a short neat WHITE beard, exactly one small dark mole above his LEFT eyebrow, NO glasses, NO earrings, wearing a SHABBY faded grey zip-up jacket with frayed cuffs, plain worn beige cotton trousers and old scuffed white sneakers. Same pose: standing tall, arms at his sides, looking down coldly and calmly at the bowing man. Make him slightly larger in the frame so his face is clearly visible. [CHANGE 3 — the bowing man] Make the bowing man the restaurant manager from reference image 3: Japanese man aged 45, slim oval face, black hair slicked back with pomade, a thin neat black moustache, small black stud earrings, black three-piece suit, white shirt, silver tie. Same deep bow with hands on his knees, face lifted, eyes wide in panic, mouth open, a few beads of sweat. Natural skin texture, correct anatomy, five fingers per hand, no plastic skin. Absolutely no text, letters, logos, watermarks or symbols anywhere; wine labels blank."
+  }
+ ]
+}
