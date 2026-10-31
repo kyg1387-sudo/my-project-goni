@@ -1,0 +1,34 @@
+{
+ "_설명": "아바타 키프레임 3차 — S18g·S19f 얼굴이 작아 립싱크 불가, S20d 앞 아버지 안경 유입.",
+ "characters": [
+  {
+   "id": "S18g",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png",
+    "assets/portraits/hikikomori-avatar/av-kentaro-2.png"
+   ],
+   "prompt": "FRAMING LOCKED FIRST: Daiki is framed from the chest up — his face fills about ONE THIRD of the frame height, three-quarter angle, mouth closed (speech is added later). [STYLE] Stylized 3D animated feature-film render — EVERY person and the whole room in the SAME 3D animated style as the character references: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, stylized hair, soft global illumination, cinematic depth of field. NOT photorealistic, NOT live-action, NOT 2D anime. [CAMERA] Over-the-shoulder, low angle, 50mm: the blurred back of Kentaro's head and shoulder in the LEFT foreground (seated). [CHARACTER] Daiki (reference image 1): aged 26, neat black hair, thin black-rimmed glasses, slim, navy suit, white shirt, no tie; foreground = Kentaro (reference image 2): aged 58, short cropped grey hair, clean-shaven, NO glasses, dark navy work jacket. [ACTION] Daiki stands at the table edge at a three-quarter angle looking only at his father, quiet and firm, mouth closed (speech is added later), his face clearly visible and large in frame (one third of frame height). [SETTING] The same small Japanese corporate meeting room in every shot: pale grey walls, a long grey speckled-stone table, black office chairs, white window blinds on the back wall, a plain wooden door, a round wall clock; cool overcast daylight with soft overhead fluorescent light. Only the people named here are in the room — nobody else, no crowd, no students. The foreground man is Kentaro: short cropped grey hair, NO glasses, navy work jacket — absolutely no glasses on him. [NEGATIVE] glasses on the foreground man,  photorealistic humans, mixed styles, extra people, text, letters, logo, watermark, extra fingers, fused fingers, second hand on an object."
+  },
+  {
+   "id": "S19f",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png"
+   ],
+   "prompt": "FRAMING LOCKED FIRST: Daiki is framed from the chest up — his face fills about ONE THIRD of the frame height, three-quarter angle, mouth closed (speech is added later). [STYLE] Stylized 3D animated feature-film render — EVERY person and the whole room in the SAME 3D animated style as the character references: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, stylized hair, soft global illumination, cinematic depth of field. NOT photorealistic, NOT live-action, NOT 2D anime. [CAMERA] Low-angle medium close-up, 85mm, Daiki at the table at a three-quarter angle, one hand on the tablet at the bottom edge of frame. [CHARACTER] Daiki (reference image 1): aged 26, neat black hair, thin black-rimmed glasses, slim, navy suit, white shirt, no tie. [ACTION] One hand resting on the tablet on the table, explaining firmly, mouth closed (speech is added later), face large in frame. Behind him only the empty meeting room wall and blinds — NOBODY else. [SETTING] The same small Japanese corporate meeting room in every shot: pale grey walls, a long grey speckled-stone table, black office chairs, white window blinds on the back wall, a plain wooden door, a round wall clock; cool overcast daylight with soft overhead fluorescent light. Only the people named here are in the room — nobody else, no crowd, no students. [NEGATIVE] photorealistic humans, mixed styles, extra people, text, letters, logo, watermark, extra fingers, fused fingers, second hand on an object."
+  },
+  {
+   "id": "S20d",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png",
+    "assets/portraits/hikikomori-avatar/av-kentaro-2.png"
+   ],
+   "prompt": "FRAMING LOCKED FIRST: Daiki is framed from the chest up — his face fills about ONE THIRD of the frame height, three-quarter angle, mouth closed (speech is added later). [STYLE] Stylized 3D animated feature-film render — EVERY person and the whole room in the SAME 3D animated style as the character references: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, stylized hair, soft global illumination, cinematic depth of field. NOT photorealistic, NOT live-action, NOT 2D anime. [CAMERA] Over-the-shoulder, eye level, 50mm: the blurred back of Kentaro's grey head and navy shoulder in the LEFT foreground. [CHARACTER] Daiki (reference image 1): aged 26, neat black hair, thin black-rimmed glasses, slim, navy suit, white shirt, no tie; foreground = Kentaro (reference image 2): aged 58, short cropped grey hair, clean-shaven, NO glasses, dark navy work jacket. [ACTION] Daiki turns to his father at a three-quarter angle with softer, trusting eyes, mouth closed (speech is added later), face large in frame. [SETTING] The same small Japanese corporate meeting room in every shot: pale grey walls, a long grey speckled-stone table, black office chairs, white window blinds on the back wall, a plain wooden door, a round wall clock; cool overcast daylight with soft overhead fluorescent light. Only the people named here are in the room — nobody else, no crowd, no students. The foreground man is Kentaro: short cropped grey hair, NO glasses, navy work jacket — absolutely no glasses on him. [NEGATIVE] glasses on the foreground man,  photorealistic humans, mixed styles, extra people, text, letters, logo, watermark, extra fingers, fused fingers, second hand on an object."
+  }
+ ]
+}
