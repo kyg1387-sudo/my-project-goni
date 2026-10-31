@@ -50,7 +50,11 @@ for l in open(os.path.join(ROOT, "subs/hikikomori.ass"), encoding="utf-8"):
 def main():
     out = sys.argv[1]
     tmp = tempfile.mkdtemp(); parts = []
-    for k, sh in enumerate(spec["shorts"], 1):
+    shorts = spec["shorts"]
+    if os.environ.get("AVATAR"):  # 3D 아바타 시험판 쇼츠 ③만(같은 구간·같은 자막)
+        shorts = [dict(next(x for x in shorts if x["id"] == "3-touchaku"), id="3-touchaku-avatar")]
+        KO_TITLE["3-touchaku-avatar"] = "[3D 아바타판] 은둔형 외톨이가 계약 자리에 나타났다"
+    for k, sh in enumerate(shorts, 1):
         a, b = float(sh["start"]), float(sh["end"])
         src = os.path.join(SHORTS, f"{spec['prefix']}-short-{sh['id']}-JP.mp4")
         lines = [f"Dialogue: 0,{tc(0)},{tc(b - a + 1.2)},T,,0,0,0,,[쇼츠 {k}] {KO_TITLE[sh['id']]}"]

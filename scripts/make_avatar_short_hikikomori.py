@@ -27,6 +27,9 @@ def main():
         a, b = B[cid]
         if cid in OMNIS:
             src = os.path.join(OMNI, f"omni-{cid}.mp4"); clip = os.path.join(TMP, f"{cid}.mp4")
+            alt = os.path.join(ROOT, "assets/auditions/hikikomori-avatar-omni2", f"omni-{cid}.mp4")  # 재생성분 우선(S18d 고개 90° 돌림)
+            if os.path.exists(alt):
+                src = alt
             f.run(["-i", src, "-vf", f"scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,fps=24,tpad=stop_mode=clone:stop_duration=2",
                    "-t", f"{b - a + 0.1:.3f}", "-an", "-c:v", "libx264", "-crf", "16", clip])
         else:
