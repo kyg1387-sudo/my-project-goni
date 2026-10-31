@@ -56,7 +56,7 @@ jobs:
   audition:
     if: ${{ inputs.audition_spec != '' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 80  # 립싱크 5컷 ≈ 27분에서 30분 상한에 취소된 실증(2026-10-31) — 생성 단계 70분 + 업로드·커밋 여유
     permissions:
       contents: write
     env:
@@ -73,6 +73,7 @@ jobs:
           fi
 
       - name: 오디션 샘플 생성 (fal.ai TTS)
+        timeout-minutes: 70  # 단계 상한 — 넘으면 이 단계만 끝내고 아래 커밋 단계로 완성분을 저장
         env:
           FAL_API_KEY: ${{ secrets.FAL_API_KEY }}
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
@@ -92,6 +93,7 @@ jobs:
           retention-days: 7
 
       - name: 샘플을 저장소에 커밋
+        if: ${{ always() }}  # 생성 단계가 시간 초과·실패해도 이미 만든 클립은 저장(유료 결과 유실 방지)
         run: |
           mkdir -p "assets/auditions/${ASPEC}"
           cp -v out/audition/*.mp3 "assets/auditions/${ASPEC}/" || true
