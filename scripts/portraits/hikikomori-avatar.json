@@ -1,0 +1,77 @@
+{
+ "_설명": "『引きこもりの息子』 3D 아바타 화풍 시험(고니감독님 제안 2026-10-31) — 인물 6명 아바타 기준 + 썸네일 B 3D판.",
+ "characters": [
+  {
+   "id": "av-daiki",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-faces/daiki.png"
+   ],
+   "prompt": "Stylized 3D animated feature-film character render: soft rounded forms, slightly larger expressive eyes, smooth subsurface-scattered skin, clean stylized hair clumps, soft global illumination, gentle cinematic lighting — a high-quality 3D family animation look (NOT photorealistic, NOT 2D anime, NOT manga, NOT clay). Reference image 1 is the live-action actor: keep his/her identity (face shape, hair, glasses or no glasses, age, clothing) but render as a 3D animated character. CHARACTER: Seo Daiki, Japanese man aged 26, neat black hair with soft fringe, thin black-rimmed rectangular glasses, slim build, navy suit, white shirt, no tie, calm resolute expression. Chest-up, three-quarter view, plain soft grey studio background, one single image, no text, no logo."
+  },
+  {
+   "id": "av-kentaro",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-faces/kentaro.png"
+   ],
+   "prompt": "Stylized 3D animated feature-film character render: soft rounded forms, slightly larger expressive eyes, smooth subsurface-scattered skin, clean stylized hair clumps, soft global illumination, gentle cinematic lighting — a high-quality 3D family animation look (NOT photorealistic, NOT 2D anime, NOT manga, NOT clay). Reference image 1 is the live-action actor: keep his/her identity (face shape, hair, glasses or no glasses, age, clothing) but render as a 3D animated character. CHARACTER: Seo Kentaro, Japanese man aged 58, short neatly cropped grey hair, clean-shaven, NO glasses, tired kind face with smile lines, dark navy work jacket, worried expression. Chest-up, three-quarter view, plain soft grey studio background, one single image, no text, no logo."
+  },
+  {
+   "id": "av-makabe",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-faces/makabe.png"
+   ],
+   "prompt": "Stylized 3D animated feature-film character render: soft rounded forms, slightly larger expressive eyes, smooth subsurface-scattered skin, clean stylized hair clumps, soft global illumination, gentle cinematic lighting — a high-quality 3D family animation look (NOT photorealistic, NOT 2D anime, NOT manga, NOT clay). Reference image 1 is the live-action actor: keep his/her identity (face shape, hair, glasses or no glasses, age, clothing) but render as a 3D animated character. CHARACTER: Makabe, Japanese executive aged 60, slicked-back grey hair, NO glasses, stern narrow eyes, black suit, dark tie, arrogant expression. Chest-up, three-quarter view, plain soft grey studio background, one single image, no text, no logo."
+  },
+  {
+   "id": "av-ryosuke",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-faces/ryosuke.png"
+   ],
+   "prompt": "Stylized 3D animated feature-film character render: soft rounded forms, slightly larger expressive eyes, smooth subsurface-scattered skin, clean stylized hair clumps, soft global illumination, gentle cinematic lighting — a high-quality 3D family animation look (NOT photorealistic, NOT 2D anime, NOT manga, NOT clay). Reference image 1 is the live-action actor: keep his/her identity (face shape, hair, glasses or no glasses, age, clothing) but render as a 3D animated character. CHARACTER: Ryosuke, Japanese man aged 30, short black hair neatly styled, NO glasses, sharp confident face, grey suit, dark tie, smug expression. Chest-up, three-quarter view, plain soft grey studio background, one single image, no text, no logo."
+  },
+  {
+   "id": "av-seiji",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-faces/seiji.png"
+   ],
+   "prompt": "Stylized 3D animated feature-film character render: soft rounded forms, slightly larger expressive eyes, smooth subsurface-scattered skin, clean stylized hair clumps, soft global illumination, gentle cinematic lighting — a high-quality 3D family animation look (NOT photorealistic, NOT 2D anime, NOT manga, NOT clay). Reference image 1 is the live-action actor: keep his/her identity (face shape, hair, glasses or no glasses, age, clothing) but render as a 3D animated character. CHARACTER: Seiji, Japanese man aged 55, round face, thinning black hair combed back, gold-rimmed glasses, heavy build, maroon polo shirt, sly grin. Chest-up, three-quarter view, plain soft grey studio background, one single image, no text, no logo."
+  },
+  {
+   "id": "av-yumiko",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-faces/yumiko.png"
+   ],
+   "prompt": "Stylized 3D animated feature-film character render: soft rounded forms, slightly larger expressive eyes, smooth subsurface-scattered skin, clean stylized hair clumps, soft global illumination, gentle cinematic lighting — a high-quality 3D family animation look (NOT photorealistic, NOT 2D anime, NOT manga, NOT clay). Reference image 1 is the live-action actor: keep his/her identity (face shape, hair, glasses or no glasses, age, clothing) but render as a 3D animated character. CHARACTER: Yumiko, Japanese woman aged 54, shoulder-length dark brown bob, NO glasses, gentle kind face, beige cardigan over a white blouse, worried soft expression. Chest-up, three-quarter view, plain soft grey studio background, one single image, no text, no logo."
+  },
+  {
+   "id": "thumbB3d",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-thumb-abc/thumbB-1.png",
+    "assets/portraits/hikikomori-faces/kentaro.png",
+    "assets/portraits/hikikomori-faces/daiki.png",
+    "assets/portraits/hikikomori-faces/makabe.png"
+   ],
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "prompt": "Stylized 3D animated feature-film character render: soft rounded forms, slightly larger expressive eyes, smooth subsurface-scattered skin, clean stylized hair clumps, soft global illumination, gentle cinematic lighting — a high-quality 3D family animation look (NOT photorealistic, NOT 2D anime, NOT manga, NOT clay). EDIT reference image 1 — keep EXACTLY its composition, camera angle, positions and poses: the father (navy work jacket, short grey hair, clean-shaven, no glasses) large in the LEFT foreground looking toward his son with wet astonished eyes; the executive in a black suit KNEELING on the floor in the CENTRE spotlight, head bowed, hands on the floor, papers scattered; the son (navy suit, thin black-rimmed glasses) standing on the FAR RIGHT holding a thin tablet, looking down calmly. The grey corporate meeting room with long table, black chairs and window blinds, cold blue-grey light with a hard spotlight on the kneeling man. Re-render everything as the 3D animated feature-film style. Faces must match references 2 (father), 3 (son), 4 (executive). Keep the upper-left area and the top centre empty for text. No text, no letters, no logo."
+  }
+ ]
+}
