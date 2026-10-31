@@ -160,8 +160,9 @@ def abc_final(picks, only=None):
 #  왼쪽 = 어두운 배경 + 아래 불꽃(생성 그림) + 작은 검은 라벨 + 흰 글자 1줄 + 초대형 노랑→주황 그라데이션 2줄째(굵은 검은 테)
 #  가운데 = 노란 번개(대각선, 검은 테·글로) / 오른쪽 = 악역(외치는 얼굴)·회장(냉정) 얼굴 클로즈업(생성 그림)
 #  악역 입 옆 세로 말풍선(흰 바탕·검은 굵은 글자) / 오른쪽 아래(재생 시간 칸 왼쪽) 「〜の末路」 태그
-D = dict(src="beggar-thumb-d/thumbD-{n}.png", label="スカッとする話", line1="追い出した老人は…", line2="会長だった",
-         bubble="知らなかった‼", bubble_xy=(1010, 70), tail_to=(1180, 560), bolt_x=(980, 840), tag="支配人の末路", tag_xy=(1180, 950))
+D = dict(src="beggar-thumb-d/thumbD2-{n}fix.png", label="スカッとする話", line1="追い出した老人は…", line1_size=92, line1_y=180,
+         line2="会長だった", line2_size=182, line2_y=740, bubble="知らなかった‼", bubble_xy=(1225, 50), tail_to=(1095, 560),
+         bolt_x=(770, 640), tag="支配人の末路", tag_xy=(1290, 960))
 GOLD = ((255, 250, 120), (255, 214, 0), (255, 140, 0))
 
 
@@ -193,20 +194,26 @@ def vbubble(img, text, xy, tail_to, size=86):
     d.rounded_rectangle([x, y, x + bw, y + bh], 46, fill=(255, 255, 255, 255), outline=(0, 0, 0, 255), width=7)
     d.polygon([(x + bw // 2 - 22, y + bh - 8), (x + bw // 2 + 22, y + bh - 8), (tx - 6, ty - 14)], fill=(255, 255, 255, 255))
     for i, ch in enumerate(text):
-        d.text((x + bw // 2, y + 40 + i * (size + 4) + size // 2), ch, font=f, fill=(10, 10, 10, 255), anchor="mm")
+        cy = y + 40 + i * (size + 4) + size // 2
+        if ch == "‼":  # 글꼴에 「‼」가 없어 「！」 두 개를 한 칸에 나란히(세로쓰기 가로 묶음)
+            fs = ImageFont.truetype(GOTH, int(size * 0.8))
+            for dx in (-size // 5, size // 5):
+                d.text((x + bw // 2 + dx, cy), "!", font=fs, fill=(10, 10, 10, 255), anchor="mm", stroke_width=3, stroke_fill=(10, 10, 10, 255))
+            continue
+        d.text((x + bw // 2, cy), ch, font=f, fill=(10, 10, 10, 255), anchor="mm")
 
 
 def thumb_d(n, v=D):
     img = Image.open(os.path.join(ABC_SRC, v["src"].format(n=n))).convert("RGB").resize((W, H), Image.LANCZOS).convert("RGBA")
-    shade = Image.new("L", (W, H), 0); ImageDraw.Draw(shade).rectangle([0, 0, 900, H], fill=120)
+    shade = Image.new("L", (W, H), 0); ImageDraw.Draw(shade).rectangle([0, 0, 640, H], fill=110)
     shade = shade.filter(ImageFilter.GaussianBlur(110)); dark = Image.new("RGBA", (W, H), (0, 0, 0, 255)); dark.putalpha(shade)
     img.alpha_composite(dark)
     bolt(img, *v["bolt_x"])
     img.alpha_composite(label(v["label"], 58, (12, 12, 12, 255), (255, 255, 255), border=(255, 255, 255, 255)), (24, 26))
-    l1 = text_layer(v["line1"], GOTH, 104, (255, 255, 255), (0, 0, 0), 14)
-    put(img, l1, 0, 230)
-    l2 = glow(big(v["line2"], 205, gradient=GOLD, stroke_w=16, outer_w=12), color=(255, 90, 0), r=20, strength=1.3)
-    put(img, l2, -30, 360)
+    l1 = text_layer(v["line1"], GOTH, v["line1_size"], (255, 255, 255), (0, 0, 0), 14)
+    put(img, l1, 0, v["line1_y"])
+    l2 = glow(big(v["line2"], v["line2_size"], gradient=GOLD, stroke_w=16, outer_w=12), color=(255, 90, 0), r=20, strength=1.3)
+    put(img, l2, -30, v["line2_y"])
     vbubble(img, v["bubble"], v["bubble_xy"], v["tail_to"])
     tag = label(v["tag"], 54, (150, 10, 10, 245), (255, 255, 255), border=(255, 210, 60, 255), pad=(26, 8))
     img.alpha_composite(tag, v["tag_xy"])
