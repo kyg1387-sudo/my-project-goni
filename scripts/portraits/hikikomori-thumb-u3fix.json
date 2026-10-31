@@ -1,0 +1,21 @@
+{
+ "_설명": "고니감독님 썸네일 U3(split) — 아버지 얼굴을 본편 健太郎로 일치(R60: 썸네일 인물 = 본편 인물, 원본은 염소수염·긴 머리). 글자 영역은 원본으로 복원.",
+ "characters": [
+  {
+   "id": "U3fix",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/thumbnails/hikikomori/user/U3-split-base.jpg",
+    "assets/portraits/hikikomori-faces/kentaro.png"
+   ],
+   "prompt": "EDIT reference image 1 — keep EXACTLY its composition, split layout, the dark workshop on the left, the young man at the glowing monitor on the right, the lighting, colours, the crying pose with both hands near the face, and the large Japanese title text at the top right unchanged. Change ONLY the crying older man on the left so that he is the SAME PERSON as reference image 2 (Seo Kentaro, aged 58): short neatly cropped grey hair, CLEAN-SHAVEN — no beard, no goatee, no moustache — his face shape, eyes and nose from reference image 2. Keep his expression: he is weeping, eyebrows drawn together, mouth trembling, natural dark-brown irises, eyelid edges slightly pink, ONE or two thin clear natural tear lines on the cheeks (no gel droplets), matte real skin. Same dark work jacket. Photorealistic, cinematic. No new text, no logos, no watermark.",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  }
+ ]
+}
