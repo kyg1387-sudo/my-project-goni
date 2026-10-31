@@ -24,6 +24,9 @@ mb.ABC = {
     "B": dict(src="thumbB-{n}z.png", side="L", label="スカッとする話",
               rows=[("父の工場を", 150, FIRE, None), ("救った息子", 150, YELLOW, None)],
               row_y=120, shade=95, shade_w=1000, badge=("専務、土下座", "取引お断り"), badge_xy=(830, 24), band=None),  # 2차: 글자 2줄 크게(확대는 얼굴 잘림으로 불채택), 배지는 아들 머리를 가려 위쪽 가운데로(2026-10-31)
+    "D": dict(src="thumbB3d-{n}s.png", side="L", label="スカッとする話",  # 3D 아바타판 B(고니감독님 제안 2026-10-31)
+              rows=[("父の工場を", 150, FIRE, None), ("救った息子", 150, YELLOW, None)],
+              row_y=120, shade=95, shade_w=1000, badge=("専務、土下座", "取引お断り"), badge_xy=(830, 24), band=None),
     "C": dict(src="thumbC-{n}.png", side="R", label="感動する話", label_style="black",
               rows=[("「ゴミ」と呼んだ", 104, RED, None), ("息子が守ったもの", 100, YELLOW, None)], x0=930,
               band=["四年間、黙って", "工場を支えた息子"], band_xy=(1060, 760)),
@@ -37,6 +40,15 @@ def shift_right(n, dx=420):
     out.save(os.path.join(SRC, f"thumbA-{n}s.png"))
 
 
+def shift_down_d(n, dy=170):
+    """D(3D판): 2줄 제목이 아버지 머리를 가림 → 그림을 아래로 내리고 위는 흐린 같은 배경으로(얼굴 가림 금지)."""
+    from PIL import ImageFilter, ImageEnhance
+    src = Image.open(os.path.join(ROOT, "assets", "portraits", "hikikomori-avatar", f"thumbB3d-{n}.png")).convert("RGB").resize((mb.W, mb.H), Image.LANCZOS)
+    out = Image.new("RGB", (mb.W, mb.H)); out.paste(src.crop((0, 0, mb.W, mb.H - dy)), (0, dy))
+    top = src.crop((0, 0, mb.W, dy)).filter(ImageFilter.GaussianBlur(25)); out.paste(ImageEnhance.Brightness(top).enhance(0.7), (0, 0))
+    out.save(os.path.join(SRC, f"thumbB3d-{n}s.png"))
+
+
 def zoom_b(n, z=1.0):
     """B: 1.15배 확대는 아들 머리·아버지 얼굴이 잘려 불채택(2026-10-31) — 원본 구도 유지(z=1.0), 글자만 2줄 확대."""
     src = Image.open(os.path.join(SRC, f"thumbB-{n}.png")).convert("RGB")
@@ -48,8 +60,11 @@ if __name__ == "__main__":
     a = (sys.argv[1:] + ["2", "1", "3"])[:3]
     shift_right(a[0]); zoom_b(a[1])
     mb.ABC_SRC = SRC
-    mb.abc_final(dict(zip("ABC", a)))
-    for t in "ABC":  # 파일 이름 접두어
+    picks = dict(zip("ABC", a))
+    if len(sys.argv) > 4:
+        picks["D"] = sys.argv[4]; shift_down_d(sys.argv[4])
+    mb.abc_final(picks)
+    for t in "ABCD":  # 파일 이름 접두어
         for suf in ("-JP.jpg", "-phone360.jpg", "-phone168.png"):
             p = os.path.join(mb.OUT, f"beggar-thumb-{t}{suf}")
             if os.path.exists(p):
