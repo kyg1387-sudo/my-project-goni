@@ -1,0 +1,12 @@
+{
+ "_설명": "아바타 S18d 립싱크 재생성 — 1차에서 말 도중 옆얼굴로 90° 돌아감 + 배경 문간에 사람 등장.",
+ "tests": [
+  {
+   "id": "omni-S18d",
+   "model": "omnihuman",
+   "image": "assets/portraits/hikikomori-avatar-final/S18d.png",
+   "audio_id": "pad-S18d",
+   "prompt": "HEAD LOCKED FIRST: his face keeps pointing toward the left of frame at the same three-quarter angle the whole time — he never turns to profile, never looks away, head turns under 10 degrees. Ryosuke, half-risen with both hands on the table, speaks in flustered surprise to someone off-screen left; eyes wide, small natural head movement only. The background stays exactly the same — NO new people appear, the doorway stays empty. Keep the 3D animated character style, same face and grey suit."
+  }
+ ]
+}
