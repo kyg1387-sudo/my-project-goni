@@ -1,0 +1,23 @@
+{
+ "_설명": "beggar-chairman 썸네일 B 교체 — 고니감독님 첨부 『運転手のくせに』 형식(왼쪽 어두운 배경+불꽃+큰 글자, 가운데 번개, 오른쪽 악역·회장 얼굴 클로즈업, 말풍선). 그림만 생성(2560x1440), 번개·말풍선·글자는 로컬. 3장 약 0.09달러.",
+ "_style_preset": "Realistic cinematic digital painting, Japanese drama thumbnail, 16:9",
+ "characters": [
+  {
+   "id": "thumbD",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/beggar-faces/iwaki.png",
+    "assets/portraits/beggar-faces/genzo.png"
+   ],
+   "prompt": "[CAMERA] YouTube thumbnail composition, 16:9, one single continuous image, NOT a grid. LEFT 45 percent of the frame: a dim, dark upscale Japanese restaurant hall at night, out of focus, with glowing orange embers and low flames rising along the bottom-left edge (dramatic, warm), kept dark and simple for title text. RIGHT 55 percent: two large face close-ups side by side, chest up, filling the height of the frame. [CHARACTER] Center-right, slightly lower and larger: the restaurant manager from reference image 1 (Japanese man aged 45, slim oval face, black hair slicked back, thin neat black moustache, small black stud earrings, black three-piece suit, white shirt, silver tie) — face flushed red, eyes wide in panic, mouth wide open as if shouting an excuse, sweat on forehead, eyebrows raised, turned three-quarters toward the right. Far right, slightly higher: the old man from reference image 2 (Takamiya Genzo, aged 78, lean weathered face, close-cropped white hair, short neat white beard, one small dark mole above his LEFT eyebrow, NO glasses, NO earrings, plain grey zip-up jacket) — calm, stern and dignified, looking down coldly at the manager, mouth closed, lit by a cool rim light. [ACTION] The manager desperately pleads; the old man silently judges him. [SETTING] Realistic cinematic digital painting style like a Japanese drama poster, high contrast, warm red-orange light on the manager, cool blue-white light on the old man, dark vignette, crisp faces with natural skin texture (not plastic), sharp details. [NEGATIVE] text, letters, logo, watermark, speech bubble, lightning, glasses on the old man, extra people, extra fingers, anime, 3d render, split panels, grid, blurry faces."
+  }
+ ]
+}
