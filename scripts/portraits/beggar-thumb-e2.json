@@ -1,0 +1,23 @@
+{
+ "_설명": "썸네일 E 2차 — E-3 기준 최소 편집: 岩城 콧수염 추가, 흰 반점 제거. 2장 약 0.06달러.",
+ "_style_preset": "Photorealistic Japanese human drama, 16:9",
+ "characters": [
+  {
+   "id": "thumbE2",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/beggar-thumb-e/base-E3.png",
+    "assets/portraits/beggar-faces/iwaki.png"
+   ],
+   "prompt": "Edit reference image 1 minimally and keep EVERYTHING else exactly the same (composition, both men's poses, the old man, the room, the diners, the lighting). Only two changes on the bowing man in the black suit: (1) give him a thin, neat black moustache exactly like the man in reference image 2, keeping his face, expression, slicked-back hair and stud earring the same; (2) remove the white speckles on his cheek, forehead and suit, leaving only two or three tiny natural sweat beads on his forehead. Photorealistic, natural skin texture. No text, no letters, no watermarks."
+  }
+ ]
+}
