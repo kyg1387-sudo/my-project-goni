@@ -62,3 +62,38 @@
 - 8:55 노크: 두 손 + 세로 막대 손잡이 → r13-1 한 손 망설이는 노크.
 - 9:47 「閉ざされたドア」: 반쯤 열린 문 → r14-1 완전히 닫힌 문 + 문틈 빛(제19장 27).
 - 최종: 10:44.6, −14.5 LUFS, 피크 −1.0 dBFS, −60 dB 무음 0건.
+
+## 25. 정리 — 다음 작품 착수 체크리스트 (2026-10-31, 고니감독님 지시 「이번 영상 제작 지침을 정리해서 다음 영상에서 참고」)
+
+이번 작품은 고니감독님 평가 「오류가 최소한으로 제작」. 아래는 그 결과를 만든 방식과, 마지막까지 남았던 결함을 **단계별로 미리 막는** 순서다. 제19장 1~27의 실행판.
+
+### 단계별 체크리스트
+| 단계 | 반드시 할 것 | 근거 |
+|---|---|---|
+| 착수 | 직전 작품 보강 장 전수 대조표 `01_제작지침-적용.md` + 채널 반복 피로 점검(무대·감정 주인공·마지막 행동을 직전 4편과 다르게) + `schedule_plan.py next` | 지속 개선 3·제0장 9 |
+| PHASE 1 대본 | 가상 회사명 「이름+업종」·영문 검색 / 2.5초 이하 대사 VO / 감정 정점 대사는 절제(sad 0.6·whisper) / **내레이션이 말하는 상태(닫힌 문 등)를 샷 리스트 상태 고정 문장으로 옮겨 적기** / 정점 효과음 목록을 대본에 적기(장면 폴리에 맡기지 않음) | 제19장 4·6·26·27 |
+| PHASE 1 녹음 | Whisper 전사 전수 육안 대조 / 흔들리는 고유명사 가나·한자·가타카나 3안 / 「……」 정적 `pace_pauses.py` | 제19장 1·2·5 |
+| PHASE 2 시트 | 처음부터 2단계(1차 정면 셀 refs + REAL PHOTOGRAPH) / 장소 시트 라벨 없이 / 사용 셀 기록 | 제19장 7 |
+| PHASE 3 설계 | 손 인서트 = 옆 구도·**한 손 + 물건 하나**·BODY CONTINUITY / 무인 컷 = 정지(EMPTY_STILL) / 비립싱크 얼굴 컷 = 45° 셀·GAZE / 카메라 줌 설계표(점프 15·펀치 ≤6·슬로 줌·POV) / 긴박 구간 `bgm_silence` + 정점 효과음 | 제19장 10·11·16·17·25·26 |
+| PHASE 4 키프레임 | Kill Gate: 정면 응시·지시 없는 소품·앞 인물 안경·몸 연결·**손 인서트 640px(손 개수·손가락·물건 형태)**·**내레이션 ↔ 화면 상태 대조** / 화면 합성(`*_screens.py`)·소품 글자(손글씨체) / 배경 전수 점검 시트 | 제19장 10~15·25·27 |
+| PHASE 5 i2v·립싱크 | i2v 1초 시트(실제 사용 길이 안) / OmniHuman **한 번에 하나** / burn 직후 립싱크 번호 전수 대조 / 아웃트로 진행자 = 스타일 시안 → CU·35° 각도·손 흔들기 3룩 → 립싱크 후 고개 돌림 0.125초 검수 | 제19장 16·18·19·21 |
+| PHASE 6 마무리 | `finalize_<작품>.py`(복사): i2v 화면 매 프레임 합성(시간 중앙값·휘도 키) / 후크 H0~H3를 실제 클립으로 재구성(암전 0) / 수정 컷은 `CLIP_OVERRIDE` / 정점 효과음 `SFX` / **마무리 전 `fc-match` 글꼴 확인** | 제19장 20·22·23·26 |
+| 최종 게이트 | `python3 scripts/qa_final.py <작품> out/<작품>-final.mp4 --omni-dir assets/preview/<작품>-audio` 전부 PASS → 2초 간격 전수 시트 → 28MB 조각·480p·한국어 검수판·쇼츠(낱말 단위 줄바꿈)·SRT·썸네일 A·B·C·업로드 가이드 | 제19장 24·이 절 |
+
+### 최종 검수에서 고니감독님이 직접 찾은 결함(다음 작품 Kill Gate 필수 항목)
+| 시각 | 결함 | 놓친 이유 | 이제 막는 곳 |
+|---|---|---|---|
+| 1:30 | 두 손이 레버 하나를 겹쳐 쥠 | 손 인서트를 콘택트시트 크기로만 봄 | PHASE 3 한 손 설계 + PHASE 4 640px 손 검사 |
+| 8:26 | 계약서 찢는 소리 −40 dB | 정적 구간(BGM 0)의 장면 폴리를 믿음 | 정점 효과음 전용 생성 + `qa_final.py` 정점 소리 검사 |
+| 8:55 | 문고리를 흔드는 듯한 두 손 | 손 인서트 640px 검사 부재 | 한 손 + 물건 하나 |
+| 9:47 | 「閉ざされたドア」에 반쯤 열린 문 | 내레이션과 화면 상태를 대조하지 않음 | 상태 고정 문장 + Kill Gate 대조 |
+| 0:00~0:20(내부 발견) | 후크 정지 립싱크·흰 화면·4초 암전 | 재사용 컷 교체 목록 미처리 | finalize HOOK 재구성 + `qa_final.py` 암전 검사 |
+
+### 이번 작품 도구(다음 작품은 작품명만 바꿔 복사)
+`build_hikikomori_phase3.py`·`build_hikikomori_keyframes.py`·`assemble_hikikomori_keyframes.py`·`build_hikikomori_overrides.py`·`hikikomori_screens.py`(PC 화면 일본어 UI)·`hikikomori_ja_overlay.py`(소품 글자·손글씨)·`finalize_hikikomori.py`(화면 매 프레임·후크·CLIP_OVERRIDE·SFX·줌 4기법·밝기·마스터)·`build_hikikomori_outro.py`·`make_ko_review_hikikomori.py`·`make_ko_review_shorts_hikikomori.py`·`make_thumbnails_hikikomori.py`·`hikikomori_fix_s21a.py`(뒷면 비침)·공용 `make_shorts.py`(DP 줄바꿈)·`voice_audition.py`(`elevenlabs-sfx` 효과음 모드)·`generate_audio.py`(`bgm_silence`)·`qa_final.py`(최종 게이트).
+
+### 배역 목소리(Typecast ssfm-v30 jpn)
+내레이터 Lloyd `tc_65681f21097fc4326ceb5e21` · 健太郎(父) Hideo Watanabe `tc_640997d2c535f40558c0722c` · 大樹 Touma Murata `tc_63f7167e54b37fb5326409d1` · 由美子(母) Agatha `tc_63049449e7dfae64b10c6cb9` · 誠二(叔父) Rex `tc_6322940059d649937b97f326` · 亮介 Lorenzo `tc_68f0422cc863e7c17af5183d` · 真壁 Poseidon `tc_6a8f9d53322676d2f0934a21` · 아웃트로 Yui Sato `tc_629fe972013e90b4db213fd8`.
+
+### 최종 수치
+본편 10:02.8 + 아웃트로 36.0초 + 엔드카드 5.5초 = 10:44.6 · −14.5 LUFS · 피크 −1.0 dBFS · 168컷(i2v lite 101·립싱크 37·정지 25 + 후크 5) · 패치 60컷 · `qa_final.py` 7항목 PASS.

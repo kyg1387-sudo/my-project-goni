@@ -586,6 +586,10 @@ deformed eyes, extra fingers.
 26. **정점 효과음은 전용 생성 + 피크 기준(2026-10-30 고니감독님 요청 「종이 찢어지는 효과음 크게」)**: 계약서 찢기 정점(BGM 0 정적 구간)의 장면 폴리가 평균 −40 dB로 거의 안 들려 카타르시스가 꺼졌다. 정적 구간 정점 효과음은 장면 생성 소리에 맡기지 않고 ElevenLabs 효과음(`voice_audition.py` `elevenlabs-sfx`, 3안)으로 만들어 `finalize_*.py` SFX 목록으로 **피크 −9 dBFS**에 덧믹스하고, 직후 컷에 저음 임팩트(−12)를 둔다. 조립 후 정점 구간 평균 −30 dB 이상을 확인한다. 무지 소품(계약서)은 인쇄면 방향을 따져 뒷면이면 반전 글자를 옅게 비치게 합성한다.
 27. **내레이션이 말하는 상태는 키프레임에 고정(2026-10-30 고니감독님 지적 9:47)**: 「閉ざされたドア」 내레이션 위에 반쯤 열린 문(방 안 스탠드 노출)이 나왔다. 내레이션·대사가 상태(닫힌·열린·빈·꺼진·찢긴)를 말하는 컷은 키프레임 프롬프트 맨 앞에 「DOOR LOCKED SHUT… NOT ajar」 같은 상태 고정 문장과 금지어(open door, ajar)를 넣고, Kill Gate에서 「내레이션 문장 ↔ 화면 상태」를 대조한다. 노크·문고리처럼 손이 물건에 닿는 동작은 제19장 25(한 손 + 물건 하나)로 — 8:55 「두 손 + 세로 막대 손잡이」는 한 손 망설이는 노크로 재연출.
 
+**제19장 정리 — 다음 작품 착수 전 필독(2026-10-31 고니감독님 지시 「이번 영상 제작 지침을 정리해서 다음 영상에서 참고」, 평가 「오류가 최소한으로 제작」)**: 단계별 실행 체크리스트·최종 검수 결함표·도구·배역 목소리는 `docs/제작규격-보강-hikikomori실증.md` 25절. 핵심 7가지:
+① 손 인서트는 설계부터 옆 구도·한 손 + 물건 하나, Kill Gate 640px(25). ② 내레이션이 말하는 상태는 키프레임 상태 고정 + 화면 대조(27). ③ 정점(BGM 0) 효과음은 ElevenLabs 전용 생성·피크 −9 dBFS(26). ④ 무인 컷은 정지, 비립싱크 얼굴은 45° 셀·GAZE(10·16). ⑤ PC 화면·소품 글자는 무지 생성 → 실제 일본어 UI 합성, i2v는 매 프레임(13·20). ⑥ 후크는 본편 실제 클립으로 재구성·암전 0, 로컬 글꼴 확인(22·23). ⑦ OmniHuman 순차 실행·누락 번호 대조·아웃트로 3룩(18·19·21).
+**최종 게이트(자동 검사, 지속 개선 원칙 4)**: `python3 scripts/qa_final.py <작품> out/<작품>-final.mp4 --omni-dir assets/preview/<작품>-audio [--covered 번호]` — 길이·라우드니스/피크·무음·후크 암전·정점 구간 소리·립싱크 누락·로컬 자막 글꼴 7항목이 전부 PASS여야 전달한다.
+
 ---
 
 ## 부록. 프로젝트 운영 정보 (규칙이 아닌 참조 사실)
@@ -615,3 +619,6 @@ deformed eyes, extra fingers.
   `finalize_tsuki.py`(MANUAL 인서트)·`splice_tsuki_cut.py`·`build_tsuki_outro.py`·`make_ko_review_tsuki.py`·`make_ko_review_shorts_tsuki.py`·`make_thumbnails_tsuki.py`·`ass_to_srt.py`.
   배역 목소리(Typecast): 내레이터 Lloyd, 光 Kenta Yoshida `tc_62a8974c6fe31dc29ac53b0d`, 鷲尾 Robert `tc_66bc600762cab997910b107b`, 日野 Simon `tc_65b34b05b3fb844f3d6b7aab`,
   さくら Haruna Suzuki `tc_62b17ef6695ad26f7fb8e7f3`, 篠田 Poseidon, ハル Juha `tc_5d01a52563338e00072b8c9c`. 실증 기록 `docs/제작규격-보강-tsuki실증.md`.
+- 『引きこもりの息子』(2026-10-31 완료) 도구: `build_hikikomori_phase3.py`·`build_hikikomori_keyframes.py`·`build_hikikomori_overrides.py`·`hikikomori_screens.py`·`hikikomori_ja_overlay.py`·`finalize_hikikomori.py`·`build_hikikomori_outro.py`·`make_ko_review_hikikomori.py`·`make_ko_review_shorts_hikikomori.py`·`make_thumbnails_hikikomori.py`, 공용 `qa_final.py`·`voice_audition.py elevenlabs-sfx`.
+  배역 목소리(Typecast): 내레이터 Lloyd, 健太郎 Hideo Watanabe `tc_640997d2c535f40558c0722c`, 大樹 Touma Murata `tc_63f7167e54b37fb5326409d1`, 由美子 Agatha `tc_63049449e7dfae64b10c6cb9`,
+  誠二 Rex, 亮介 Lorenzo `tc_68f0422cc863e7c17af5183d`, 真壁 Poseidon, 아웃트로 Yui Sato. 아웃트로 진행자 스타일 A(로 시뇽·더스티 로즈 보 블라우스) `hikikomori-host-a`·`hikikomori-host-a5`. 실증 기록 `docs/제작규격-보강-hikikomori실증.md`.
