@@ -236,16 +236,18 @@ E = dict(src="beggar-thumb-e/thumbE-{n}fix.png", tag="【スカッと】", line1
 
 
 def thumb_e(n, v=E, x0=30):
-    img = Image.open(os.path.join(ABC_SRC, v["src"].format(n=n))).convert("RGB").resize((W, H), Image.LANCZOS).convert("RGBA")
+    src = Image.open(os.path.join(ABC_SRC, v["src"].format(n=n))).convert("RGB")
+    sw, sh = src.size  # 인물을 휴대폰에서 크게: 왼쪽 10%·아래 10%를 잘라 1.11배 확대(얼굴 화면 높이 약 14%)
+    img = src.crop((int(sw * 0.10), 0, sw, int(sh * 0.90))).resize((W, H), Image.LANCZOS).convert("RGBA")
     shade = Image.new("L", (W, H), 0); ImageDraw.Draw(shade).rectangle([0, 0, 1150, 560], fill=125)
     shade = shade.filter(ImageFilter.GaussianBlur(110)); dark = Image.new("RGBA", (W, H), (0, 0, 0, 255)); dark.putalpha(shade)
     img.alpha_composite(dark)
-    t = text_layer(v["tag"], GOTH, 112, (255, 240, 0), (0, 0, 0), 12)
+    t = text_layer(v["tag"], GOTH, 128, (255, 240, 0), (0, 0, 0), 13)
     put(img, t, x0 - 30, 6)
     l1 = text_layer(v["line1"], GOTH, 96, (255, 255, 255), (0, 0, 0), 13)
-    put(img, l1, x0 - 20, 150)
+    put(img, l1, x0 - 20, 165)
     l2 = text_layer(v["line2"], MIN, 236, None, (255, 244, 214), 14, gradient=CRIMSON, outer=(0, 0, 0), outer_w=10)
-    put(img, l2, x0 - 40, 255)
+    put(img, l2, x0 - 40, 270)
     return img.convert("RGB")
 
 
