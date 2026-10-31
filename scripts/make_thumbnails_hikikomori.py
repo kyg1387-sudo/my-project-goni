@@ -19,11 +19,11 @@ SRC = os.path.join(ROOT, "assets", "portraits", "hikikomori-thumb-abc")
 mb.OUT = os.path.join(ROOT, "assets", "thumbnails", "hikikomori")
 mb.ABC = {
     "A": dict(src="thumbA-{n}s.png", side="L", label=None,
-              rows=[("「ゴミ」と", 112, None, (255, 255, 255)), ("追い出した息子の", 112, None, (255, 255, 255)), ("部屋を開けると…", 112, None, (255, 255, 255))],
-              row_y=230, quote="月商1250万", quote_size=230),
-    "B": dict(src="thumbB-{n}.png", side="L", label="スカッとする話",
-              rows=[("引きこもり息子が", 120, FIRE, None), ("父の工場を救った", 120, YELLOW, None)],
-              row_y=130, shade=95, shade_w=1100, badge=("専務、土下座", "取引お断り"), badge_xy=(1180, 24), band=None),
+              rows=[("引きこもり息子の", 120, None, (255, 255, 255)), ("部屋の画面に…", 120, None, (255, 255, 255))],
+              row_y=300, quote="月商1250万", quote_size=270),  # 2차(2026-10-31): 168px 가독성 — 4줄 → 2줄 + 숫자 확대
+    "B": dict(src="thumbB-{n}z.png", side="L", label="スカッとする話",
+              rows=[("父の工場を", 150, FIRE, None), ("救った息子", 150, YELLOW, None)],
+              row_y=120, shade=95, shade_w=1000, badge=("専務、土下座", "取引お断り"), badge_xy=(1200, 24), band=None),  # 2차: 글자 2줄 크게(확대는 얼굴 잘림으로 불채택)
     "C": dict(src="thumbC-{n}.png", side="R", label="感動する話", label_style="black",
               rows=[("「ゴミ」と呼んだ", 104, RED, None), ("息子が守ったもの", 100, YELLOW, None)], x0=930,
               band=["四年間、黙って", "工場を支えた息子"], band_xy=(1060, 760)),
@@ -37,9 +37,16 @@ def shift_right(n, dx=420):
     out.save(os.path.join(SRC, f"thumbA-{n}s.png"))
 
 
+def zoom_b(n, z=1.0):
+    """B: 1.15배 확대는 아들 머리·아버지 얼굴이 잘려 불채택(2026-10-31) — 원본 구도 유지(z=1.0), 글자만 2줄 확대."""
+    src = Image.open(os.path.join(SRC, f"thumbB-{n}.png")).convert("RGB")
+    w, h = src.size; cw, ch = int(w / z), int(h / z)
+    src.crop((w - cw, h - ch, w, h)).resize((w, h), Image.LANCZOS).save(os.path.join(SRC, f"thumbB-{n}z.png"))
+
+
 if __name__ == "__main__":
     a = (sys.argv[1:] + ["2", "1", "3"])[:3]
-    shift_right(a[0])
+    shift_right(a[0]); zoom_b(a[1])
     mb.ABC_SRC = SRC
     mb.abc_final(dict(zip("ABC", a)))
     for t in "ABC":  # 파일 이름 접두어
