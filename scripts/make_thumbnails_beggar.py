@@ -15,7 +15,7 @@ from PIL import Image, ImageDraw, ImageFilter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
-from make_thumbnails_ashita import GOTH, W, H, band, big, glow, label, put  # noqa: E402
+from make_thumbnails_ashita import GOTH, MIN, W, H, band, big, glow, label, put  # noqa: E402
 from make_thumbnails_yanagi_v2 import text_layer  # noqa: E402
 
 SRC = os.path.join(ROOT, "assets", "portraits", "beggar-thumb-anime-hd")
@@ -229,8 +229,39 @@ def d_final(n):
     print("저장:", p, os.path.getsize(p) // 1024, "KB")
 
 
+# ---------------------------------------------------------------- E: 고니감독님 제공 썸네일 편집판(2026-10-31) — 실사 레스토랑, 머리 숙인 岩城·서 있는 源蔵(낡은 점퍼)
+#  왼쪽 위 노란 【スカッと】(검은 테) + 흰 「追い出した老人は」 + 초대형 빨강 그라데이션 「財閥会長」(크림 테·검은 바깥 테)
+CRIMSON = ((255, 90, 70), (215, 20, 20), (120, 0, 0))
+E = dict(src="beggar-thumb-e/thumbE-{n}fix.png", tag="【スカッと】", line1="追い出した老人は", line2="財閥会長")
+
+
+def thumb_e(n, v=E, x0=30):
+    img = Image.open(os.path.join(ABC_SRC, v["src"].format(n=n))).convert("RGB").resize((W, H), Image.LANCZOS).convert("RGBA")
+    shade = Image.new("L", (W, H), 0); ImageDraw.Draw(shade).rectangle([0, 0, 1150, 560], fill=125)
+    shade = shade.filter(ImageFilter.GaussianBlur(110)); dark = Image.new("RGBA", (W, H), (0, 0, 0, 255)); dark.putalpha(shade)
+    img.alpha_composite(dark)
+    t = text_layer(v["tag"], GOTH, 112, (255, 240, 0), (0, 0, 0), 12)
+    put(img, t, x0 - 30, 6)
+    l1 = text_layer(v["line1"], GOTH, 96, (255, 255, 255), (0, 0, 0), 13)
+    put(img, l1, x0 - 20, 150)
+    l2 = text_layer(v["line2"], MIN, 236, None, (255, 244, 214), 14, gradient=CRIMSON, outer=(0, 0, 0), outer_w=10)
+    put(img, l2, x0 - 40, 255)
+    return img.convert("RGB")
+
+
+def e_final(n, tag="E"):
+    im = thumb_e(n)
+    p = os.path.join(OUT, f"beggar-thumb-{tag}-JP.jpg")
+    im.resize((1280, 720), Image.LANCZOS).save(p, quality=92)
+    im.resize((360, 203), Image.LANCZOS).save(p.replace("-JP.jpg", "-phone360.jpg"), quality=90)
+    im.resize((168, 95), Image.LANCZOS).save(p.replace("-JP.jpg", "-phone168.png"))
+    print("저장:", p, os.path.getsize(p) // 1024, "KB")
+
+
 if __name__ == "__main__":
     a = sys.argv[1:]
+    if a and a[0] == "e":  # e 그림번호 — 고니감독님 제공 썸네일 편집판
+        e_final(a[1] if len(a) > 1 else "1"); sys.exit()
     if a and a[0] == "d":  # d 그림번호 — B를 『運転手のくせに』 형식으로 교체
         d_final(a[1] if len(a) > 1 else "1"); sys.exit()
     if a and a[0] == "abc":  # abc A번호 B번호 C번호
