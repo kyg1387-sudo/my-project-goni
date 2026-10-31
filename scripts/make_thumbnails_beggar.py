@@ -156,8 +156,76 @@ def abc_final(picks, only=None):
         print("저장:", p, os.path.getsize(p) // 1024, "KB")
 
 
+# ---------------------------------------------------------------- B 교체: 『運転手のくせに』 썸네일 형식(고니감독님 첨부 2026-10-31)
+#  왼쪽 = 어두운 배경 + 아래 불꽃(생성 그림) + 작은 검은 라벨 + 흰 글자 1줄 + 초대형 노랑→주황 그라데이션 2줄째(굵은 검은 테)
+#  가운데 = 노란 번개(대각선, 검은 테·글로) / 오른쪽 = 악역(외치는 얼굴)·회장(냉정) 얼굴 클로즈업(생성 그림)
+#  악역 입 옆 세로 말풍선(흰 바탕·검은 굵은 글자) / 오른쪽 아래(재생 시간 칸 왼쪽) 「〜の末路」 태그
+D = dict(src="beggar-thumb-d/thumbD-{n}.png", label="スカッとする話", line1="追い出した老人は…", line2="会長だった",
+         bubble="知らなかった‼", bubble_xy=(1010, 70), tail_to=(1180, 560), bolt_x=(980, 840), tag="支配人の末路", tag_xy=(1180, 950))
+GOLD = ((255, 250, 120), (255, 214, 0), (255, 140, 0))
+
+
+def bolt(img, x_top, x_bot, w=70):
+    """대각선 번개: 위(x_top,0) → 아래(x_bot,H)로 꺾이는 지그재그 다각형, 노랑 채움 + 주황 안쪽 + 검은 테 + 글로."""
+    pts_c = [(x_top, -20), (x_top - 40, 300), (x_top + 60, 330), (x_bot - 30, 700), (x_bot + 70, 720), (x_bot - 60, H + 20)]
+    left = [(x - w // 2, y) for x, y in pts_c]
+    right = [(x + w // 2, y) for x, y in pts_c][::-1]
+    poly = left + right
+    lay = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
+    d.polygon(poly, fill=(255, 220, 40, 255), outline=(0, 0, 0, 255))
+    inner = [(x - w // 5, y) for x, y in pts_c] + [(x + w // 5, y) for x, y in pts_c][::-1]
+    d.polygon(inner, fill=(255, 250, 200, 255))
+    edge = Image.new("RGBA", (W, H), (0, 0, 0, 0)); ImageDraw.Draw(edge).line(poly + [poly[0]], fill=(0, 0, 0, 255), width=10)
+    g = lay.split()[3].filter(ImageFilter.GaussianBlur(28)).point(lambda v: min(255, int(v * 1.4)))
+    glowl = Image.new("RGBA", (W, H), (255, 190, 0, 0)); glowl.putalpha(g)
+    img.alpha_composite(glowl); img.alpha_composite(edge); img.alpha_composite(lay)
+
+
+def vbubble(img, text, xy, tail_to, size=86):
+    """세로 말풍선: 흰 둥근 사각 + 검은 테 + 꼬리(악역 입 쪽), 글자는 세로쓰기."""
+    from PIL import ImageFont
+    f = ImageFont.truetype(GOTH, size)
+    n = len(text); bw, bh = size + 70, n * (size + 4) + 70
+    x, y = xy
+    d = ImageDraw.Draw(img)
+    tx, ty = tail_to
+    d.polygon([(x + bw // 2 - 26, y + bh - 30), (x + bw // 2 + 26, y + bh - 30), (tx, ty)], fill=(255, 255, 255, 255), outline=(0, 0, 0, 255))
+    d.rounded_rectangle([x, y, x + bw, y + bh], 46, fill=(255, 255, 255, 255), outline=(0, 0, 0, 255), width=7)
+    d.polygon([(x + bw // 2 - 22, y + bh - 8), (x + bw // 2 + 22, y + bh - 8), (tx - 6, ty - 14)], fill=(255, 255, 255, 255))
+    for i, ch in enumerate(text):
+        d.text((x + bw // 2, y + 40 + i * (size + 4) + size // 2), ch, font=f, fill=(10, 10, 10, 255), anchor="mm")
+
+
+def thumb_d(n, v=D):
+    img = Image.open(os.path.join(ABC_SRC, v["src"].format(n=n))).convert("RGB").resize((W, H), Image.LANCZOS).convert("RGBA")
+    shade = Image.new("L", (W, H), 0); ImageDraw.Draw(shade).rectangle([0, 0, 900, H], fill=120)
+    shade = shade.filter(ImageFilter.GaussianBlur(110)); dark = Image.new("RGBA", (W, H), (0, 0, 0, 255)); dark.putalpha(shade)
+    img.alpha_composite(dark)
+    bolt(img, *v["bolt_x"])
+    img.alpha_composite(label(v["label"], 58, (12, 12, 12, 255), (255, 255, 255), border=(255, 255, 255, 255)), (24, 26))
+    l1 = text_layer(v["line1"], GOTH, 104, (255, 255, 255), (0, 0, 0), 14)
+    put(img, l1, 0, 230)
+    l2 = glow(big(v["line2"], 205, gradient=GOLD, stroke_w=16, outer_w=12), color=(255, 90, 0), r=20, strength=1.3)
+    put(img, l2, -30, 360)
+    vbubble(img, v["bubble"], v["bubble_xy"], v["tail_to"])
+    tag = label(v["tag"], 54, (150, 10, 10, 245), (255, 255, 255), border=(255, 210, 60, 255), pad=(26, 8))
+    img.alpha_composite(tag, v["tag_xy"])
+    return img.convert("RGB")
+
+
+def d_final(n):
+    im = thumb_d(n)
+    p = os.path.join(OUT, "beggar-thumb-B-JP.jpg")
+    im.resize((1280, 720), Image.LANCZOS).save(p, quality=92)
+    im.resize((360, 203), Image.LANCZOS).save(p.replace("-JP.jpg", "-phone360.jpg"), quality=90)
+    im.resize((168, 95), Image.LANCZOS).save(p.replace("-JP.jpg", "-phone168.png"))
+    print("저장:", p, os.path.getsize(p) // 1024, "KB")
+
+
 if __name__ == "__main__":
     a = sys.argv[1:]
+    if a and a[0] == "d":  # d 그림번호 — B를 『運転手のくせに』 형식으로 교체
+        d_final(a[1] if len(a) > 1 else "1"); sys.exit()
     if a and a[0] == "abc":  # abc A번호 B번호 C번호
         abc_final(dict(zip("ABC", (a[1:] + ["1", "1", "1"])[:3]))); sys.exit()
     main(int(a[0]) if a else 1, int(a[1]) if len(a) > 1 else 2)
