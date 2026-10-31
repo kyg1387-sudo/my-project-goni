@@ -10,6 +10,7 @@
   5 정점 소리    bgm_silence 구간 평균 −36 dB 이상(제19장 26 — 계약서 찢기 −40 dB 실증으로 보정, 키 소리·숨만 남는 긴장 구간 −33 dB는 정상)
   6 립싱크 누락  omnihuman_scenes 번호마다 omniNN.mp4 존재(제19장 19, --omni-dir 지정 시)
   7 자막 글꼴    로컬 fc-match가 Noto Sans CJK Bold(제19장 22 — 로컬 패치 자막이 대체 글꼴로 구워지는 것 방지)
+  8 3대 기록     (--work <대장 작품명>) 시리즈-제작비용.md에 작품 표, 등록 대장에 본편 날짜, 스튜디오 대조일 2일 이내(최우선 원칙 5)
 """
 import json, os, re, shutil, subprocess, sys
 
@@ -58,6 +59,16 @@ def main():
         check("립싱크 누락", not miss, f"없는 번호 {miss} — 교체 클립(CLIP_OVERRIDE)으로 메웠는지 확인" if miss else "전부 있음")
     fm = subprocess.run(["fc-match", "Noto Sans CJK JP:bold"], capture_output=True, text=True).stdout.strip()
     check("로컬 자막 글꼴", "NotoSansCJK" in fm and "Bold" in fm, fm or "fc-match 없음")
+    if "--work" in a:
+        import datetime as _dt
+        w = a[a.index("--work") + 1]
+        cost = open(os.path.join(ROOT, "docs", "시리즈-제작비용.md"), encoding="utf-8").read()
+        L = json.load(open(os.path.join(ROOT, "docs", "등록현황-美談ものがたり.json"), encoding="utf-8"))
+        mains = [m for m in L["main"] if m.get("work") == w]
+        sync = L.get("studio_synced") or {}
+        age = [(_dt.date.today() - _dt.date.fromisoformat(sync[k])).days if sync.get(k) else 99 for k in ("videos", "shorts")]
+        ok = (w in cost) and len(mains) == 1 and max(age) <= 2
+        check("3대 기록(비용·캘린더·대조)", ok, f"비용표 {'있음' if w in cost else '없음'} · 대장 본편 {[m['date'] for m in mains]} · 스튜디오 대조 동영상 {age[0]}일/Shorts {age[1]}일 전")
     print(f"\n결과: {'전부 PASS' if all(res) else f'FAIL {res.count(False)}건'}")
     sys.exit(0 if all(res) else 1)
 
