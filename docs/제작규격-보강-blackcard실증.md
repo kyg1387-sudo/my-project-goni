@@ -83,3 +83,17 @@ CLAUDE.md 제20장의 상세 근거. 수정·검수 지적·실패에서 나온 
 
 r1 재생성 실행이 결과를 푸시하는 순간(rebase → push 사이 4초)에 내가 아웃트로 스펙을 푸시해 r1의 커밋이 거절됐다(`cannot lock ref`). 생성분은 Artifact에 남아 `portraits_spec=blackcard-kf-r1 + resume_run_id=<실패 run>`으로 무과금 회수했다.
 규칙: **키프레임·오디션·burn 등 결과를 커밋하는 실행이 하나라도 돌고 있으면 브랜치에 푸시하지 않는다**(로컬 커밋만). 새 실행을 띄워야 할 때는 `git pull --rebase` 직후 바로 푸시 → 즉시 `gh workflow run` 순서로 창을 최소화하고, 실패하면 Artifact 회수(resume_run_id)로 복구한다.
+
+## 11. 키프레임 Kill Gate — b1(71컷, 2026-11-02): 합격 66 · 재생성 5 · 흐림 1 · 레터박스 1
+
+| 패턴 | 컷 | 고정 문장(r4) |
+|---|---|---|
+| 「걸어 멀어짐」이 카메라 쪽 보행으로 | S02l | 「strictly from BEHIND, walking AWAY, face NEVER visible」(제18장 6⑤와 같은 패턴 — 키프레임에서도 「away」만으로는 부족) |
+| 글자 합성 면에 인쇄 글자·트레이·인주가 생성 | S03i | 「ONE completely BLANK sheet, NO printed title, NO boxes, NO trays」 |
+| 「뒷좌석에서 본 운전사」에 운전사 옆얼굴 + 화자(켄지) 입 노출 | S04g | 「ONLY the back of the cap and gloved hands, NO faces, NO passenger」 |
+| 휴대폰 인서트에 다른 젊은 남자(귀걸이·애니 화풍) | S06a | 정지 컷에 사람 설명이 들어가면 얼굴을 만든다 → 「INSERT ONLY, NO face/head/hair」 |
+| 손목 인서트에 서류·카드 단말기(책상 장면으로 변질) | S06d | 「NO desk, NO papers, NO terminal」 + 배경 「wet asphalt bokeh」 |
+| 엘리베이터 표지판 작은 가짜 글자 | S07f | `kf_glyph_blur.py`(배경 작은 글자는 흐림 허용, 제11장 10) |
+| 레터박스 | S05l | `kf_letterbox_fix.py` |
+
+합격률 93%(a 64% → 어깨 너머·시선 문장 보강 뒤). 손 인서트 23컷은 640px 시트에서 손 개수·물건 전부 합격(설계 단계 HANDS LOCKED 효과).
