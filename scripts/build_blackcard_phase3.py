@@ -84,7 +84,7 @@ EXPR = {  # PHASE 2 Kill Gate 합격 셀(03_마스터에셋.md). 会長 하단 �
     ("KENW", "stare"): C + "kenji-wet-exp1.png", ("KENW", "anger"): C + "kenji-wet-exp2.png", ("KENW", "tense"): C + "kenji-wet-exp3.png",
     ("KENW", "back"): C + "kenji-wet-full-back.png",
     ("KENG", "cold"): C + "kenji-suit-exp1.png", ("KENG", "calm"): C + "kenji-suit-exp2.png", ("KENG", "hard"): C + "kenji-suit-exp3.png",
-    ("KENG", "back"): C + "kenji-suit-full-back.png",
+    ("KENG", "back"): C + "kenji-wet-full-back.png",
     ("KENS", "cold"): C + "kenji-suit-exp1.png", ("KENS", "calm"): C + "kenji-suit-exp2.png", ("KENS", "hard"): C + "kenji-suit-exp3.png",
     ("KENS", "back"): C + "kenji-suit-full-back.png",
     ("SHI", "smug"): C + "shibata-exp1.png", ("SHI", "shock"): C + "shibata-exp2.png", ("SHI", "bow"): C + "shibata-exp3.png",
@@ -205,7 +205,7 @@ SHOTS = [
       motion="The two guards each give one firm push on his shoulders; he stumbles one step forward and stops, hunched over the box; the guards stay turned away." + RAIN),
     S("S01c", "S01", "face", "cu", "rain_n", "HA", [Kw], None, "High close-up of Kenji's rain-soaked face lit by the red neon, eyes down at the wet asphalt (screen LEFT), jaw clenched, water running off his hair.", line="L002a", expr="stare",
       motion="Rain runs down his face; he blinks slowly; his jaw tightens; he never looks up or at the camera." + HOLD),
-    S("S01d", "S01", "ins", "ecu", "rain_n", "EL", [Gd], "BACK3", "Side insert at the guard booth counter: ONE white-gloved hand holding a pair of steel scissors cuts a plain blank white plastic ID card in two with one snip; the second hand only holds the card edge below." + ONEHAND, line="L002b",
+    S("S01d", "S01", "ins", "ecu", "rain_n", "EL", [Gd], "BACK3", "Side insert at the guard booth counter: ONE white-gloved hand holding a pair of steel scissors cuts a plain blank white plastic ID card in two with one snip while the other gloved hand holds the card edge. HANDS LOCKED: exactly two white-gloved hands of one guard, one pair of scissors, one card, five clean fingers each, forearms continuing out of frame.", line="L002b",
       motion="One snip: the scissors close and the card drops in two pieces onto the counter; nothing else moves."),
     S("S01e", "S01", "ins", "ecu", "rain_n", "HA", [], "BACK2", "High insert: a plain white envelope falling into a rain-filled gutter beside the kerb, red neon rippling on the water; no text on the envelope.", pin=E("L002b", -1.0),
       motion="The envelope hits the water, floats for a second and the current pulls it toward the drain grate; rain ripples the surface."),
@@ -248,6 +248,7 @@ SHOTS = [
     S("S02m", "S02", "face", "ms", "meet", "SIDE", ["SUB"], "MEET1", "Through the glass: three employees at desks seen from behind, heads bent over blank glowing screens; one head glances a few degrees toward the meeting room, then back down.", line="L014",
       motion="One head turns a few degrees toward the glass and then back to the screen; fingers keep typing; nothing else moves." + HOLD),
     S("S02n", "S02", "estill", "ws", "meet", "EL", [], "MEET3", "Wide of the now-empty glass meeting room: the white table, the metal hanko tray, two chairs pushed back, a plain round wall clock with a blank white dial (hands composited); EMPTY.", line="L015", fx="push"),
+    S("S02n2", "S02", "estill", "ecu", "meet", "HA", [], "MEET4", "High insert: the metal tray on the white table with the wooden hanko lying beside a small red ink pad, nothing else; no hands, no people, no text.", pin=B("L015", 3.2), fx="push"),
 
     # ── S03 낡은 맨션 거실(1:30~2:28): 젖은 켄지 뒷모습 → 美咲 통장 → 離婚届 「判子は――ここ」 → 혼자 → 회상 재사용
     S("S03a", "S03", "face", "ms", "home_n", "SIDE", [Kw], "HOME3", "Medium from behind in the narrow entryway: Kenji standing in his soaked grey suit, water dripping onto the floor, a packed black suitcase waiting by the door; his face is not visible.", expr="back",
@@ -293,7 +294,7 @@ SHOTS = [
       motion="He raises his arm; the headlights sweep across him; rain falls; he does not turn toward the camera." + HOLD),
     S("S04g", "S04", "face", "ms", "taxi", "SIDE", ["TAXI"], "TAXI1", "From the rear seat: the back of the taxi driver's cap and white-gloved hands on the wheel, rain streaming down the windshield, the green meter glow, wipers mid-sweep; no faces.", line="L030", vo=True,
       motion="The wipers sweep once; the green light flickers; the gloved hand turns the wheel slightly; rain streams on the glass."),
-    S("S04h", "S04", "ins", "ecu", "taxi", "EL", [Kw], "TAXI1", "Side insert: ONE wet hand pressing the black card flat against a blank black payment terminal mounted on the seat back, a small green light beside the screen." + ONEHAND, pin=168.3,
+    S("S04h", "S04", "ins", "ecu", "taxi", "EL", [Kw], "TAXI1", "Side insert: ONE wet hand pressing the black card flat against a blank black payment terminal mounted on the seat back, a small green light beside the screen." + ONEHAND, pin=E("L030", 0.4),
       motion="The hand holds the card against the terminal and stays still; the small green light blinks once."),
     S("S04i", "S04", "face", "cu", "taxi", "HA", [Kw], "TAXI2", "High close-up from the front seat: Kenji in the rear seat staring at the terminal (screen LEFT, down), lips parted, cold rain light moving across his face.", line="L031a", vo=True, expr="tense",
       motion="His eyes widen slightly as the light changes; he exhales; passing neon slides across his face; he does not look at the camera." + HOLD),
@@ -476,7 +477,6 @@ SHOTS = [
       motion="He stands still; the red light pulses; her shape on the floor does not move." + HOLD),
     S("S10q", "S10", "ins", "ecu", "office_n", "EL", [Ks], None, "Insert: Kenji's hand pressed against the cold glass, the city lights blurred through his fingers, the steel watch on the wrist; no face." + ONEHAND, line="L088",
       motion="The fingers press slowly against the glass; the lights shimmer beyond."),
-    S("S10r", "S10", "estill", "ews", "street_n", "LA", [], None, "Extreme low wide: the dark glass tower at night under rain, one red aviation light pulsing at the top, the city haze blue; EMPTY, nobody.", fx="push"),
 
     # ── S11 렉서스 LS 뒷좌석(8:24~8:42): 카드 돌리는 손 → 네온 위 켄지 → 운전사 뒷모습 → 「そう、思っていた」 첫 흔들림
     S("S11a", "S11", "ins", "ecu", "car", "HA", [Ks], "CAR1", "High insert: the black card turning slowly between Kenji's fingers over the black leather seat, amber neon sliding across it; one hand, one card; no text." + ONEHAND,
@@ -571,7 +571,7 @@ AMB_BY_SCENE = {"S01": "rain_ext", "S02": "meeting", "S03": "home", "S04": "rain
                 "S08": "restaurant", "S09": "office_n", "S10": "office_n", "S11": "car", "S12": "car"}
 AMB_BY_SHOT = {"S02l": "corridor", "S03n": "rain_ext", "S03o": "rain_ext", "S04g": "taxi", "S04h": "taxi", "S04i": "taxi", "S04j": "taxi", "S04k": "taxi",
                "S05k": "street_rain", "S05l": "street_rain", "S06a": "phone", "S07a": "hotel", "S07b": "hotel", "S07c": "hotel", "S07d": "hotel", "S07e": "hotel",
-               "S07f": "elevator", "S07g": "hotel", "S07g2": "hotel", "S07h": "elevator", "S07i": "lobby", "S10r": "rain_ext", "S12j": "lobby", "S12r": "clock",
+               "S07f": "elevator", "S07g": "hotel", "S07g2": "hotel", "S07h": "elevator", "S07i": "lobby", "S12j": "lobby", "S12r": "clock",
                "S12u": "clock", "S12z": "rain_ext", "S12zz": "rain_ext"}
 FOLEY = {  # 컷별 폴리(제12장 10·제15장 22) — 타임코드 자동 믹스(−18~−12 dBFS, 대사 구간 −6 dB)
     "S01a": "a single thunder crack rolling over a city", "S01b": "a cardboard box thudding on wet concrete, shoes slipping on wet asphalt",
@@ -884,8 +884,8 @@ def main():
         kf_prompt = None
         if keyframe:
             low = (s["subject"] + " " + (s["act"] or "") + " " + (s["motion"] or "")).lower()
-            real = " ".join(x for x, keys in ((TEARS, ("tear", "welling")), (SWEAT, ("sweat",)), (RAINSKIN, ("rain on", "rain-streaked", "rain-soaked face", "wet face")))
-                            if any(k in low for k in keys) or (s["expr"] == "plead" and x == TEARS))
+            real = " ".join(x for x, keys in ((TEARS, (r"tears? (spill|bead|track|run|well)", "eyes wet", "wet eyes", "welling")), (SWEAT, ("sweat",)), (RAINSKIN, ("rain on", "rain-streaked", "rain-soaked face", "wet face")))
+                            if any(re.search(k, low) for k in keys) or (s["expr"] == "plead" and x == TEARS))
             glasses = " ".join(GLASSES[w.split(":")[0]] for w in s["who"] if w.split(":")[0] in GLASSES and s["kind"] not in ("ins", "estill"))
             face_expr = f" Expression of {ids[0].split(',')[0]}: {EXPR_TXT[s['expr']]} (about half intensity)." if s["expr"] in EXPR_TXT and s["expr"] != "back" and s["kind"] not in ("ins", "estill", "pstill") else ""
             setting = f"Lighting: {LIGHT[s['light']]}."

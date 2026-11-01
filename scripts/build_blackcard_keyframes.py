@@ -105,12 +105,12 @@ def is_backcell(name):
 def describe(path, i):
     name = os.path.basename(path)
     if path.startswith(FACE_DIR):
-        who = dict(PEOPLE).get(name[:-4], "the character")
+        who = dict(PEOPLE).get(name[:-4]) or next((v for k, v in PEOPLE if FACE_OF.get(k, k) == name[:-4]), "the character")
         return (f"Reference image {i} is a tight face crop of {who}: reproduce exactly this face, age, hairstyle and eyewear; identity ONLY — "
                 "do NOT copy its camera angle, background or lighting.")
     k, v = who_of(name)
     if k and is_backcell(name):
-        return f"Reference image {i} is the BACK VIEW of {v}: this person appears seen from behind exactly like this (hair, wardrobe); do not show this person's face."
+        return f"Reference image {i} is the BACK VIEW of {v}: this person appears seen from behind exactly like this (hair, build, posture); the WARDROBE follows the [CHARACTER] text below; do not show this person's face."
     if k:
         return (f"Reference image {i} is the character sheet cell of {v}: copy this exact face, hairstyle, eyewear and age; the WARDROBE follows "
                 "the [CHARACTER] text below (it changes by scene); ignore its background, framing and any sheet layout.")

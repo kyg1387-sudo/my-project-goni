@@ -1,5 +1,5 @@
 {
- "_설명": "『ブラックカード』 PHASE 1 본녹음 131줄(본편 127 + OUT 4). 켄지 Taniguchi·柴田/보조 Jiro·美咲 Jun·声 Mio = ElevenLabs eleven_v3, 진행자 Yui Sato = Typecast. 음성 입력만 가나 치환, 자막은 한자(_subtitle). fal 지출 0. 생성: productions/blackcard-ja/build_tts_spec.py",
+ "_설명": "『ブラックカード』 PHASE 1 본녹음 131줄(본편 127 + OUT 4). 켄지 Taniguchi·柴田/보조 Jiro·美咲 Jun·声 Mio = ElevenLabs eleven_v3, 진행자 Yui Sato = Typecast. 음성 입력만 가나 치환, 자막은 한자(_subtitle). fal 지출 0. 생성: productions/blackcard-ja/build_tts_spec.py 전사 검사(run 41301177842) 뒤 11줄을 r1 3안 중 선택본으로 교체(원본 _v0/).",
  "tc_model": "ssfm-v30",
  "language": "jpn",
  "tests": [
@@ -155,9 +155,10 @@
    "voice": "AzXhp77fg6sHrgy2EtLn",
    "voice_name": "Taniguchi",
    "el_model": "eleven_v3",
-   "text": "解雇、ではない。きぼうたいしょく。",
+   "text": "かいこ、ではない。きぼうたいしょく。",
    "_tone": "tonedown/1.0/1.0",
-   "_subtitle": "解雇、ではない。\"希望退職\"。"
+   "_subtitle": "解雇、ではない。\"希望退職\"。",
+   "_replaced": "r1 a (2026-11-01 전사 검사 선택)"
   },
   {
    "id": "line014",
@@ -215,9 +216,10 @@
    "voice": "AzXhp77fg6sHrgy2EtLn",
    "voice_name": "Taniguchi",
    "el_model": "eleven_v3",
-   "text": "ごぜんじゅうじよんじゅうごふん。じゅうごねんが、紙切れいちまいで終わった。",
+   "text": "ごぜん、じゅうじ、よんじゅうごふん。じゅうごねんが、かみきれ、いちまいで終わった。",
    "_tone": "tonedown/1.0/1.0",
-   "_subtitle": "午前十時四十五分。十五年が、紙切れ一枚で終わった。"
+   "_subtitle": "午前十時四十五分。十五年が、紙切れ一枚で終わった。",
+   "_replaced": "r1 a (2026-11-01 전사 검사 선택)"
   },
   {
    "id": "line019",
@@ -227,9 +229,10 @@
    "voice": "cijnU1nZEPfVNWVa4qoW",
    "voice_name": "Jun",
    "el_model": "eleven_v3",
-   "text": "残高、見た？さんぜんにひゃくじゅうはちえん。",
+   "text": "ざんだか、見た？さんぜん、にひゃく、じゅうはちえん。",
    "_tone": "tonedown/1.0/1.0",
-   "_subtitle": "残高、見た？三千二百十八円。"
+   "_subtitle": "残高、見た？三千二百十八円。",
+   "_replaced": "r1 a (2026-11-01 전사 검사 선택)"
   },
   {
    "id": "line020",
@@ -239,9 +242,10 @@
    "voice": "cijnU1nZEPfVNWVa4qoW",
    "voice_name": "Jun",
    "el_model": "eleven_v3",
-   "text": "ローンの引き落とし、来週よ。",
+   "text": "ローンの、引き落とし、来週よ。",
    "_tone": "tonedown/1.0/1.0",
-   "_subtitle": "ローンの引き落とし、来週よ。"
+   "_subtitle": "ローンの引き落とし、来週よ。",
+   "_replaced": "r1 c (2026-11-01 전사 검사 선택)"
   },
   {
    "id": "line021",
@@ -263,9 +267,10 @@
    "voice": "cijnU1nZEPfVNWVa4qoW",
    "voice_name": "Jun",
    "el_model": "eleven_v3",
-   "text": "聞いたわ。よんじゅうさんで、無職。",
+   "text": "聞いたわ。43で、無職。",
    "_tone": "tonedown/1.0/1.0",
-   "_subtitle": "聞いたわ。四十三で、無職。"
+   "_subtitle": "聞いたわ。四十三で、無職。",
+   "_replaced": "r1 c (2026-11-01 전사 검사 선택)"
   },
   {
    "id": "line023",
@@ -635,9 +640,10 @@
    "voice": "jDIcRgSETu4QTbxPgjmn",
    "voice_name": "Mio",
    "el_model": "eleven_v3",
-   "text": "何でも。",
+   "text": "なんでも。",
    "_tone": "normal/0.9/0.88",
-   "_subtitle": "何でも。"
+   "_subtitle": "何でも。",
+   "_replaced": "r1 a (2026-11-01 전사 검사 선택)"
   },
   {
    "id": "line054",
@@ -791,9 +797,10 @@
    "voice": "qrxCoXetZMROJh88P461",
    "voice_name": "Jiro",
    "el_model": "eleven_v3",
-   "text": "……ひっとうかぶぬしが、変わった？",
+   "text": "……筆頭株主が、変わった？",
    "_tone": "normal/0.8/1.0",
-   "_subtitle": "……筆頭株主が、変わった？"
+   "_subtitle": "……筆頭株主が、変わった？",
+   "_replaced": "r1 b (2026-11-01 전사 검사 선택)"
   },
   {
    "id": "line067",
@@ -815,9 +822,10 @@
    "voice": "AzXhp77fg6sHrgy2EtLn",
    "voice_name": "Taniguchi",
    "el_model": "eleven_v3",
-   "text": "[angry] 座れ。",
+   "text": "[angry] ……座れ。",
    "_tone": "angry/0.6/1.0",
-   "_subtitle": "座れ。"
+   "_subtitle": "座れ。",
+   "_replaced": "r1 c (2026-11-01 전사 검사 선택)"
   },
   {
    "id": "line069",
@@ -1079,9 +1087,10 @@
    "voice": "cijnU1nZEPfVNWVa4qoW",
    "voice_name": "Jun",
    "el_model": "eleven_v3",
-   "text": "[sad] 待って、けんじ、お願い。一度だけ、",
+   "text": "[sad] まって、ケンジ、おねがい。いちどだけ……",
    "_tone": "sad/0.6/0.9",
-   "_subtitle": "待って、健二、お願い。一度だけ――"
+   "_subtitle": "待って、健二、お願い。一度だけ――",
+   "_replaced": "r1 b (2026-11-01 전사 검사 선택)"
   },
   {
    "id": "line091",
@@ -1283,9 +1292,10 @@
    "voice": "AzXhp77fg6sHrgy2EtLn",
    "voice_name": "Taniguchi",
    "el_model": "eleven_v3",
-   "text": "……なのか？その後は。",
+   "text": "……七日？その後は。",
    "_tone": "tonedown/1.0/0.95",
-   "_subtitle": "……七日？その後は。"
+   "_subtitle": "……七日？その後は。",
+   "_replaced": "r1 b (2026-11-01 전사 검사 선택)"
   },
   {
    "id": "line108",
@@ -1309,7 +1319,8 @@
    "el_model": "eleven_v3",
    "text": "せいさん……俺に、払えと？",
    "_tone": "tonedown/1.0/0.95",
-   "_subtitle": "精算……俺に、払えと？"
+   "_subtitle": "精算……俺に、払えと？",
+   "_replaced": "r1 a (2026-11-01 전사 검사 선택)"
   },
   {
    "id": "line110",
