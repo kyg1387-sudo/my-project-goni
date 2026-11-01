@@ -69,6 +69,9 @@ LIGHT_NOTE = {
 SEAT = ("SEATED/FURNITURE LOCKED: seated persons sit ON chairs pulled in to the table, thighs under the table edge, forearms on the table; "
         "no chair passes through any body, no floating chair legs; correct solid furniture geometry.")
 EMO_OVERRIDE = {  # 상태 고정(00_script_ja.md 7절·제19장 27) — Kill Gate 뒤에 재생성 고정 문장을 여기에 더한다
+    # Kill Gate r5(2026-11-02): 「watch」 단독 문장이 손에 쥔 기기를 부름(2회) → 「worn on the wrist like a bracelet, hand EMPTY」; S09d 얼굴 1/6 → CAMERA CLOSE
+    "S08k": "INSERT ONLY: a man's LEFT forearm in a black suit sleeve and white cuff resting on the white tablecloth, the hand EMPTY and relaxed, palm down; a brushed-steel WRISTWATCH is WORN on the wrist like a bracelet (strap around the wrist, blank dial facing up); NOTHING is held in the hand, NO gadget, NO camera, NO second object on the table; warm window light.",
+    "S09d": "CAMERA CLOSE: the camera is 1.2 m behind Kenji's black-suited shoulder (near RIGHT edge, blurred, at most 25 percent of the frame width); Misaki fills the centre, her face at least ONE THIRD of the frame height, lit by the cold white desk lamp, pleading, eyes wet, speaking to Kenji; NEVER into the lens.",
     # Kill Gate b2(2026-11-02): 남의 손 유입(S08i), 손목 인서트가 기기로(S08k·S12f), 지시 없는 붉은 표시(S08r), 사진 내용·주변 서류(S12n·S12o), 카드 문양 불일치(S12x)
     "S08i": "INSERT ONLY: exactly ONE hand (Shibata's right hand, navy double-breasted sleeve) entering from the frame edge, hovering over and then grasping the wooden hanko on the white tablecloth; NO other person's hand, NO torso, NO face, NO second person; the forearm continues out of frame.",
     "S08k": "INSERT ONLY: Kenji's LEFT wrist resting on the white tablecloth with the brushed-steel watch (completely blank dial) catching the window light, the black suit sleeve; NOTHING is held — NO device, NO camera, NO phone, NO second hand.",
@@ -147,7 +150,7 @@ def describe(path, i):
 
 NO_FACE = {}
 EXTRA_REFS = {"S12x": ["assets/portraits/blackcard-cast/cells/props-card-1.png"]}  # 컷별 추가 참조(소품 문양 통일)
-NO_LOC = set()  # 장소 참조가 후광 테두리를 만드는 컷 — Kill Gate 뒤에 채운다
+NO_LOC = {"S08k"}  # 소품 시트(쿠션 위 시계)·장소 참조가 손에 쥔 기기를 부름(S08k 2회) — 글로만
 LIGHT_INTEG = ("LIGHT INTEGRATION: the person is lit by the same light as the room, natural soft edges; NO glowing outline, NO halo or white rim "
                "around the body, NOT a pasted cut-out.")
 # Kill Gate 1차(2026-10-29) 정면 응시 다발 → 립싱크가 아닌 얼굴 컷은 시선 방향을 화면 좌우로 고정하고 정면 셀 대신 45° 셀을 참조

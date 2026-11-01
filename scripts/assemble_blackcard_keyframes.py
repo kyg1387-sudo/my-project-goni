@@ -26,8 +26,10 @@ def main():
         if not src or not os.path.exists(os.path.join(ROOT, src)):
             missing.append(s["id"]); continue
         plan.append((s["id"], src, s["keyframe"]))
-    if missing:
+    if missing and os.environ.get("ALLOW_MISSING") != "1":
         sys.exit(f"키프레임 없음 {len(missing)}컷: {', '.join(missing)}")
+    if missing:
+        print(f"(부분 조립) 없는 컷 {len(missing)}: {', '.join(missing)}")
     if check:
         print(f"키프레임 {len(plan)}컷 확인"); return
     for sid, src, dst in plan:
