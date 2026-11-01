@@ -97,3 +97,16 @@ r1 재생성 실행이 결과를 푸시하는 순간(rebase → push 사이 4초
 | 레터박스 | S05l | `kf_letterbox_fix.py` |
 
 합격률 93%(a 64% → 어깨 너머·시선 문장 보강 뒤). 손 인서트 23컷은 640px 시트에서 손 개수·물건 전부 합격(설계 단계 HANDS LOCKED 효과).
+
+## 12. 키프레임 Kill Gate — b2(72컷, 2026-11-02): 합격 65 · 재생성 7 · 덮어쓰기 합성 2
+
+| 패턴 | 컷 | 고정 문장(r5) |
+|---|---|---|
+| 손 인서트에 남의 손이 들어와 물건을 다룸(柴田 자리에 다른 사람 손이 판자를 찍음) | S08i | 「exactly ONE hand… NO other person's hand, NO second person」 |
+| 「손목의 시계」 인서트가 손에 기기(카메라·단말기)를 쥔 그림으로 | S08k·S12f(2회) | 「NOTHING is held — NO device, NO camera, NO phone」 — 「watch」 단독 문장은 기기를 부른다 |
+| 지시 없는 붉은 표시·문양 | S08r | 「NO red marks, NO symbols」 |
+| 무지 사진에 얼굴·대시보드 서류 뭉치 | S12n·S12o | 「plain pale BLANK rectangle, NO image」 + 「NO dashboard, NO papers」 |
+| 카드 문양이 다른 모양(사각 문양) | S12x | 컷별 추가 참조 `EXTRA_REFS`(props-card-1) + 「TOWER inside a RING exactly like the reference」 |
+| 합성 면에 생성 글자(스탬프·시계 숫자) | S12p·S12u | 재생성 대신 `REPLACE`/lcd 덮어쓰기 합성(제15장 17·제19장 13) |
+
+세 단계 합계: 168컷 생성 → 재생성 23컷(14%) + 로컬 처리 5컷. 손 인서트 전체(약 50컷)에서 손가락·손 개수 결함 0 — 「HANDS LOCKED + 옆 구도」 설계가 효과(제19장 25).
