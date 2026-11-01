@@ -69,6 +69,14 @@ LIGHT_NOTE = {
 SEAT = ("SEATED/FURNITURE LOCKED: seated persons sit ON chairs pulled in to the table, thighs under the table edge, forearms on the table; "
         "no chair passes through any body, no floating chair legs; correct solid furniture geometry.")
 EMO_OVERRIDE = {  # 상태 고정(00_script_ja.md 7절·제19장 27) — Kill Gate 뒤에 재생성 고정 문장을 여기에 더한다
+    # Kill Gate b2(2026-11-02): 남의 손 유입(S08i), 손목 인서트가 기기로(S08k·S12f), 지시 없는 붉은 표시(S08r), 사진 내용·주변 서류(S12n·S12o), 카드 문양 불일치(S12x)
+    "S08i": "INSERT ONLY: exactly ONE hand (Shibata's right hand, navy double-breasted sleeve) entering from the frame edge, hovering over and then grasping the wooden hanko on the white tablecloth; NO other person's hand, NO torso, NO face, NO second person; the forearm continues out of frame.",
+    "S08k": "INSERT ONLY: Kenji's LEFT wrist resting on the white tablecloth with the brushed-steel watch (completely blank dial) catching the window light, the black suit sleeve; NOTHING is held — NO device, NO camera, NO phone, NO second hand.",
+    "S08r": "INSERT: Kenji's right hand sliding a plain matte black card (blank, NO emblem, NO text) into the inside breast pocket of the open black jacket; one hand, one card; NO red marks, NO symbols, NO logos anywhere.",
+    "S12f": "INSERT ONLY: Kenji's LEFT wrist and the brushed-steel watch (completely blank dial) resting on the black leather seat, cold neon reflections sliding over the steel, the black sleeve; NOTHING is held — NO device, NO phone, NO camera.",
+    "S12n": "The photograph is a plain pale BLANK rectangle with NO image, NO faces, NO text, emerging only halfway from the brown envelope; only the hands, the envelope and the leather seat.",
+    "S12o": "ONLY Kenji's two hands holding ONE plain pale BLANK photograph (NO image, NO text) under the small reading light, the dark black leather seat behind; NO dashboard, NO papers, NO phone, NO documents, NO windshield.",
+    "S12x": "The card is matte black with exactly ONE small engraved emblem — a TOWER inside a RING exactly like the card reference — NO other symbols, NO squares, NO text; the brown envelope beside it is blank.",
     # Kill Gate b1(2026-11-02): 카메라 쪽 보행(S02l), 서류 가짜 글자(S03i), 택시 운전사 얼굴·화자 입 노출(S04g), 정체 변형(S06a), 인서트에 엉뚱한 소품(S06d)
     "S02l": "Kenji is seen strictly from BEHIND, walking AWAY from the camera down the corridor toward its far end; only the back of his head and the grey suit are visible; his face is NEVER visible; nobody else in the corridor.",
     "S03i": "The form is ONE completely BLANK white sheet of paper lying flat on the cheap wooden table: NO printed title, NO lines, NO characters anywhere; the ONLY marks are a single round red seal impression in the lower-left area; a small wooden hanko beside the sheet; NO boxes, NO trays, NO ink pad; no hands.",
@@ -138,6 +146,7 @@ def describe(path, i):
 
 
 NO_FACE = {}
+EXTRA_REFS = {"S12x": ["assets/portraits/blackcard-cast/cells/props-card-1.png"]}  # 컷별 추가 참조(소품 문양 통일)
 NO_LOC = set()  # 장소 참조가 후광 테두리를 만드는 컷 — Kill Gate 뒤에 채운다
 LIGHT_INTEG = ("LIGHT INTEGRATION: the person is lit by the same light as the room, natural soft edges; NO glowing outline, NO halo or white rim "
                "around the body, NOT a pasted cut-out.")
@@ -158,7 +167,7 @@ def gaze_of(sc):
 
 
 def build(sc, stage):
-    refs = list(sc["refs"])
+    refs = list(sc["refs"]) + EXTRA_REFS.get(sc["id"], [])
     if sc["id"] in NO_LOC:
         refs = [r for r in refs if not os.path.basename(r).startswith("loc-")]
     people = [r for r in refs if who_of(os.path.basename(r))[0]]

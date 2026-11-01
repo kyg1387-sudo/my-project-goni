@@ -145,7 +145,7 @@ ART = {"S03c": passbook, "S03h": divorce_form, "S03i": divorce_form, "S10f": div
        "S07g": news, "S06a": phone_hitsuuchi, "S12a": phone_hitsuuchi, "S04j": taxi_meter, "S12p": photo_back, "S12r": clock,
        "S12u": clock, "S10k": titles_folder}
 LCD = {"S07g", "S06a", "S12a", "S04j", "S12r", "S12u"}
-REPLACE = {"S03i"}  # 생성 면에 인쇄 글자가 남는 컷 — 곱하기 대신 종이 면을 통째로 덮고 원본 조명만 남긴다(r4 2회 실증)
+REPLACE = {"S03i", "S12p"}  # 생성 면에 인쇄 글자가 남는 컷 — 곱하기 대신 종이 면을 통째로 덮고 원본 조명만 남긴다(r4 2회 실증)
 
 
 def put_replace(base, art, quad, paper=(246, 244, 238)):
