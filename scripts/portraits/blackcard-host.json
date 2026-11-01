@@ -1,0 +1,14 @@
+{
+ "_설명": "『ブラックカード』 아웃트로 진행자 스타일 B(로 포니테일·검은 실크 블라우스·가는 금 목걸이) CU 2장 → 선택본을 스타일 참조로 35° MCU·손 흔들기 생성(제19장 8·21). 약 0.08달러.",
+ "characters": [
+  {
+   "id": "host-cu",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity); do NOT copy its hairstyle or clothes. STYLING B (elegant, noir episode, CLAUDE.md 제19장 8): glossy dark-brown hair in a sleek low ponytail with a clean centre part, smooth crown, flyaways tidied, the ponytail falling over one shoulder; a black silk blouse with a softly draped neckline, fabric with natural soft folds; a thin gold chain necklace with one tiny pendant, symmetrical, the ONLY accessory (no earrings); natural fresh makeup with muted berry lips, real skin texture (NOT plastic, NOT glossy). The same bright living-room studio with the beige sofa, wooden shelf and green plant, a small vase of white flowers on the shelf, warm late-autumn morning window light, softly out of focus. Chest-up close-up, she faces the camera directly with a warm gentle smile, mouth gently closed (speech is added later), 85mm lens f/2. Both eyes sharp and symmetrical, natural five-fingered hands. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  }
+ ]
+}
