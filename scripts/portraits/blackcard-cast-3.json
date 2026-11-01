@@ -1,10 +1,10 @@
 {
- "_설명": "『ブラックカード』 PHASE 2 3차(재시도) — 柴田 v2 정면 셀 refs, 美咲 2차와 같은 문장 구조(귀걸이·점·라펠 핀을 본문 서술로 금지). 2안 약 0.08달러.",
+ "_설명": "『ブラックカード』 PHASE 2 3차(재시도) — 柴田 v2 정면 셀 refs, 美咲 2차와 같은 문장 구조(귀걸이·점·라펠 핀을 본문 서술로 금지). 2안 약 0.08달러. 재시도: count 1(2차 합격 스펙과 동일 조건).",
  "_style_preset": "Photorealistic live-action, contemporary Tokyo (Reiwa era), Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, low-key cinematic lighting with deep blue shadows and subtle warm rim light, no flat lighting.",
  "characters": [
   {
    "id": "shibata-sheet-v3",
-   "count": 2,
+   "count": 1,
    "refs": [
     "assets/portraits/blackcard-cast/cells/shibata-front.png"
    ],
