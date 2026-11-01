@@ -78,3 +78,8 @@ CLAUDE.md 제20장의 상세 근거. 수정·검수 지적·실패에서 나온 
 | 柴田 옷깃 핀 | S02b·S02d | 시트 1차 핀이 얼굴 참조와 무관하게 재등장 | 「NO lapel pin, NO badge」를 柴田 모든 컷 문장에 |
 
 교훈(제20장 9로 저장): **어깨 너머 립싱크 컷은 「카메라 거리(1.2 m)·앞 인물 폭 25% 이하·화자 얼굴 1/3」 세 수치를 함께 써야 원경이 안 나온다.** 「FRAMING LOCKED FIRST」만으로는 세 작품 연속 원경이 나왔다(hikikomori 10⑥·beggar 4·이번 4컷).
+
+## 10. 실행 중 푸시 충돌(2026-11-02 r1 실증) — 제18장 9⑨ 확장
+
+r1 재생성 실행이 결과를 푸시하는 순간(rebase → push 사이 4초)에 내가 아웃트로 스펙을 푸시해 r1의 커밋이 거절됐다(`cannot lock ref`). 생성분은 Artifact에 남아 `portraits_spec=blackcard-kf-r1 + resume_run_id=<실패 run>`으로 무과금 회수했다.
+규칙: **키프레임·오디션·burn 등 결과를 커밋하는 실행이 하나라도 돌고 있으면 브랜치에 푸시하지 않는다**(로컬 커밋만). 새 실행을 띄워야 할 때는 `git pull --rebase` 직후 바로 푸시 → 즉시 `gh workflow run` 순서로 창을 최소화하고, 실패하면 Artifact 회수(resume_run_id)로 복구한다.
