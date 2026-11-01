@@ -179,6 +179,8 @@ def build(sc, stage):
     gaze = gaze_of(sc)
     if gaze and not is_back:  # 정면 셀 → 45° 셀
         refs = [r.replace("-front-noglasses.png", "-45.png").replace("-front.png", "-45.png") if r.startswith(CELLS + "/") else r for r in refs]
+        if sc["id"] in FORCE45:  # 표정 셀도 45° 셀로(립싱크 컷의 렌즈 응시 재발 방지)
+            refs = [f"{CELLS}/{who_of(os.path.basename(r))[0]}-45.png" if r.startswith(CELLS + "/") and who_of(os.path.basename(r))[0] else r for r in refs]
         refs = [r if os.path.exists(os.path.join(ROOT, r)) else r.replace("-45.png", "-front.png") for r in refs]
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
     parts += [describe(p, i + 1) for i, p in enumerate(refs)]
