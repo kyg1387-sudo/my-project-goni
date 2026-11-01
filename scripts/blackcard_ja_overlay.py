@@ -145,6 +145,21 @@ ART = {"S03c": passbook, "S03h": divorce_form, "S03i": divorce_form, "S10f": div
        "S07g": news, "S06a": phone_hitsuuchi, "S12a": phone_hitsuuchi, "S04j": taxi_meter, "S12p": photo_back, "S12r": clock,
        "S12u": clock, "S10k": titles_folder}
 LCD = {"S07g", "S06a", "S12a", "S04j", "S12r", "S12u"}
+REPLACE = {"S03i"}  # 생성 면에 인쇄 글자가 남는 컷 — 곱하기 대신 종이 면을 통째로 덮고 원본 조명만 남긴다(r4 2회 실증)
+
+
+def put_replace(base, art, quad, paper=(246, 244, 238)):
+    b = np.asarray(base.convert("RGB")).astype(float); H, W, _ = b.shape
+    a = np.asarray(art.convert("RGB")).astype(float); h, w, _ = a.shape
+    Mx = cv2.getPerspectiveTransform(np.float32([[0, 0], [w, 0], [w, h], [0, h]]), np.float32(quad))
+    wa = cv2.warpPerspective(a, Mx, (W, H), flags=cv2.INTER_AREA, borderValue=(255, 255, 255))
+    poly = np.zeros((H, W), np.float32); cv2.fillConvexPoly(poly, np.int32(quad), 1.0)
+    poly = cv2.erode(poly, np.ones((3, 3), np.uint8)); poly = cv2.GaussianBlur(poly, (0, 0), 1.0)
+    lum = cv2.GaussianBlur(b.mean(2), (0, 0), 9)  # 원본 종이의 조명 분포(글자는 흐려 사라짐)
+    ref = np.median(lum[poly > 0.5]) if (poly > 0.5).any() else 200.0
+    shade = np.clip(lum / max(ref, 1), 0.55, 1.15)[..., None]
+    out = b * (1 - poly[..., None]) + (wa * shade) * poly[..., None]
+    return Image.fromarray(out.clip(0, 255).astype("uint8"))
 QUADS = {}  # id: [(x,y)×4] — Kill Gate 합격 키프레임에서 채움(원본 해상도 좌표)
 
 
@@ -187,7 +202,7 @@ def main():
             print(f"[{sid}] QUADS 없음 — 건너뜀"); continue
         base = Image.open(os.path.join(KF, f"{sid}-1.png"))
         art = ART[sid]()
-        im = put_lcd(base, art, QUADS[sid]) if sid in LCD else put(base, art, QUADS[sid], tol=50, strength=0.9)
+        im = put_lcd(base, art, QUADS[sid]) if sid in LCD else put_replace(base, art, QUADS[sid]) if sid in REPLACE else put(base, art, QUADS[sid], tol=50, strength=0.9)
         im.save(os.path.join(OUT, f"{sid}.png")); done.append(sid)
     print("합성 완료:", done)
     for k, fn in ART.items():  # 아트 미리보기(검수용)
