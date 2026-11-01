@@ -1,0 +1,257 @@
+{
+ "_설명": "『ブラックカード』 정점 효과음(대본 6절 ①~⑤ + 후크·콜백) 12종 × 3안(prompt_influence 0.6/0.75/0.45) — 청취·피크 검사로 선택 → finalize_blackcard.py SFX 목록(제19장 26). ElevenLabs 사운드 생성, fal 0.",
+ "tests": [
+  {
+   "id": "thunder-1",
+   "model": "elevenlabs-sfx",
+   "text": "A single distant thunder crack rolling over a rain-soaked Tokyo night, heavy rain hiss underneath, no music, no voices.",
+   "duration_s": 1.6,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "thunder-2",
+   "model": "elevenlabs-sfx",
+   "text": "A single distant thunder crack rolling over a rain-soaked Tokyo night, heavy rain hiss underneath, no music, no voices.",
+   "duration_s": 1.6,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "thunder-3",
+   "model": "elevenlabs-sfx",
+   "text": "A single distant thunder crack rolling over a rain-soaked Tokyo night, heavy rain hiss underneath, no music, no voices.",
+   "duration_s": 1.6,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "heartbeat-accel-1",
+   "model": "elevenlabs-sfx",
+   "text": "A deep sub-bass heartbeat starting slow at 60 bpm and accelerating to 90 bpm over four seconds, cinematic low-frequency thumps, dry, no music.",
+   "duration_s": 4.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "heartbeat-accel-2",
+   "model": "elevenlabs-sfx",
+   "text": "A deep sub-bass heartbeat starting slow at 60 bpm and accelerating to 90 bpm over four seconds, cinematic low-frequency thumps, dry, no music.",
+   "duration_s": 4.0,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "heartbeat-accel-3",
+   "model": "elevenlabs-sfx",
+   "text": "A deep sub-bass heartbeat starting slow at 60 bpm and accelerating to 90 bpm over four seconds, cinematic low-frequency thumps, dry, no music.",
+   "duration_s": 4.0,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "scissors-card-1",
+   "model": "elevenlabs-sfx",
+   "text": "Close foley: steel scissors snip once through a thin plastic ID card, a sharp crisp metallic snip, two pieces dropping on a counter, quiet room.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "scissors-card-2",
+   "model": "elevenlabs-sfx",
+   "text": "Close foley: steel scissors snip once through a thin plastic ID card, a sharp crisp metallic snip, two pieces dropping on a counter, quiet room.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "scissors-card-3",
+   "model": "elevenlabs-sfx",
+   "text": "Close foley: steel scissors snip once through a thin plastic ID card, a sharp crisp metallic snip, two pieces dropping on a counter, quiet room.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "envelope-gutter-1",
+   "model": "elevenlabs-sfx",
+   "text": "A paper envelope lands in a rain-filled street gutter, a soft wet slap then water gurgling into a drain grate, heavy rain around.",
+   "duration_s": 1.8,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "envelope-gutter-2",
+   "model": "elevenlabs-sfx",
+   "text": "A paper envelope lands in a rain-filled street gutter, a soft wet slap then water gurgling into a drain grate, heavy rain around.",
+   "duration_s": 1.8,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "envelope-gutter-3",
+   "model": "elevenlabs-sfx",
+   "text": "A paper envelope lands in a rain-filled street gutter, a soft wet slap then water gurgling into a drain grate, heavy rain around.",
+   "duration_s": 1.8,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "paper-slide-1",
+   "model": "elevenlabs-sfx",
+   "text": "Close foley: a single sheet of paper slid slowly across a smooth white tablecloth by one hand, dry fibrous friction, then stops; silent room, no music.",
+   "duration_s": 1.6,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "paper-slide-2",
+   "model": "elevenlabs-sfx",
+   "text": "Close foley: a single sheet of paper slid slowly across a smooth white tablecloth by one hand, dry fibrous friction, then stops; silent room, no music.",
+   "duration_s": 1.6,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "paper-slide-3",
+   "model": "elevenlabs-sfx",
+   "text": "Close foley: a single sheet of paper slid slowly across a smooth white tablecloth by one hand, dry fibrous friction, then stops; silent room, no music.",
+   "duration_s": 1.6,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "chair-tilt-1",
+   "model": "elevenlabs-sfx",
+   "text": "A heavy leather office chair tilting back on its rear legs and rocking, leather creak and a dull wooden thud, a man slumping, silent room.",
+   "duration_s": 1.8,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "chair-tilt-2",
+   "model": "elevenlabs-sfx",
+   "text": "A heavy leather office chair tilting back on its rear legs and rocking, leather creak and a dull wooden thud, a man slumping, silent room.",
+   "duration_s": 1.8,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "chair-tilt-3",
+   "model": "elevenlabs-sfx",
+   "text": "A heavy leather office chair tilting back on its rear legs and rocking, leather creak and a dull wooden thud, a man slumping, silent room.",
+   "duration_s": 1.8,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "payment-chime-1",
+   "model": "elevenlabs-sfx",
+   "text": "A single short electronic payment-terminal confirmation beep, clean and sharp, one 'pip', then silence.",
+   "duration_s": 0.8,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "payment-chime-2",
+   "model": "elevenlabs-sfx",
+   "text": "A single short electronic payment-terminal confirmation beep, clean and sharp, one 'pip', then silence.",
+   "duration_s": 0.8,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "payment-chime-3",
+   "model": "elevenlabs-sfx",
+   "text": "A single short electronic payment-terminal confirmation beep, clean and sharp, one 'pip', then silence.",
+   "duration_s": 0.8,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "receipt-printer-1",
+   "model": "elevenlabs-sfx",
+   "text": "A thermal receipt printer printing a short slip: fine buzzing zips and a paper feed, then a tear-off, quiet boutique.",
+   "duration_s": 2.2,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "receipt-printer-2",
+   "model": "elevenlabs-sfx",
+   "text": "A thermal receipt printer printing a short slip: fine buzzing zips and a paper feed, then a tear-off, quiet boutique.",
+   "duration_s": 2.2,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "receipt-printer-3",
+   "model": "elevenlabs-sfx",
+   "text": "A thermal receipt printer printing a short slip: fine buzzing zips and a paper feed, then a tear-off, quiet boutique.",
+   "duration_s": 2.2,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "door-bang-1",
+   "model": "elevenlabs-sfx",
+   "text": "A heavy office door flung open and slamming hard into a wall, a dull violent bang with a short room echo, night office, no music.",
+   "duration_s": 1.5,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "door-bang-2",
+   "model": "elevenlabs-sfx",
+   "text": "A heavy office door flung open and slamming hard into a wall, a dull violent bang with a short room echo, night office, no music.",
+   "duration_s": 1.5,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "door-bang-3",
+   "model": "elevenlabs-sfx",
+   "text": "A heavy office door flung open and slamming hard into a wall, a dull violent bang with a short room echo, night office, no music.",
+   "duration_s": 1.5,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "paper-tear-1",
+   "model": "elevenlabs-sfx",
+   "text": "Close foley: one sheet of paper torn slowly and loudly straight down the middle by two hands, dry fibrous rip starting slow and ending sharp, silent room.",
+   "duration_s": 1.6,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "paper-tear-2",
+   "model": "elevenlabs-sfx",
+   "text": "Close foley: one sheet of paper torn slowly and loudly straight down the middle by two hands, dry fibrous rip starting slow and ending sharp, silent room.",
+   "duration_s": 1.6,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "paper-tear-3",
+   "model": "elevenlabs-sfx",
+   "text": "Close foley: one sheet of paper torn slowly and loudly straight down the middle by two hands, dry fibrous rip starting slow and ending sharp, silent room.",
+   "duration_s": 1.6,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "impact-low-1",
+   "model": "elevenlabs-sfx",
+   "text": "A deep low cinematic sub-bass impact boom with a slow decay, dark and heavy, no music.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "impact-low-2",
+   "model": "elevenlabs-sfx",
+   "text": "A deep low cinematic sub-bass impact boom with a slow decay, dark and heavy, no music.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "impact-low-3",
+   "model": "elevenlabs-sfx",
+   "text": "A deep low cinematic sub-bass impact boom with a slow decay, dark and heavy, no music.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "clock-tick-heart-1",
+   "model": "elevenlabs-sfx",
+   "text": "A single soft digital dashboard clock tick, then one slow heavy heartbeat thump with sub-bass, inside a silent luxury car cabin.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "clock-tick-heart-2",
+   "model": "elevenlabs-sfx",
+   "text": "A single soft digital dashboard clock tick, then one slow heavy heartbeat thump with sub-bass, inside a silent luxury car cabin.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "clock-tick-heart-3",
+   "model": "elevenlabs-sfx",
+   "text": "A single soft digital dashboard clock tick, then one slow heavy heartbeat thump with sub-bass, inside a silent luxury car cabin.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.45
+  }
+ ]
+}
