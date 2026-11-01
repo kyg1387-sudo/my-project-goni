@@ -1,0 +1,33 @@
+{
+ "_설명": "『ブラックカード』 아웃트로 진행자(스타일 B) OmniHuman 4컷 — OUT1 CU(감사) / OUT2 35° MCU(질문) / OUT3 CU-2(댓글·구독) / OUT4 손 흔들기(예고·인사). 음성 pad1~4(Typecast Yui Sato, 무음 정리 + 0.15초). 약 19.5초 x 0.16 = 약 3.1달러. 립싱크 실행은 한 번에 하나(제19장 18).",
+ "tests": [
+  {
+   "id": "omni-out1",
+   "model": "omnihuman",
+   "image": "assets/portraits/blackcard-host/host-cu-1.png",
+   "audio_id": "pad1",
+   "prompt": "Natural, calm presenter delivery: warm gentle smile between phrases, small natural head movements under 10 degrees, natural blinks, hands still; the same woman, hairstyle, blouse and necklace throughout; no new people."
+  },
+  {
+   "id": "omni-out2",
+   "model": "omnihuman",
+   "image": "assets/portraits/blackcard-host-2/host-mcu-1.png",
+   "audio_id": "pad2",
+   "prompt": "Natural, calm presenter delivery: warm gentle smile between phrases, small natural head movements under 10 degrees, natural blinks, hands still; the same woman, hairstyle, blouse and necklace throughout; no new people. HEAD LOCKED: she keeps the same 35-degree body angle and looks into the camera."
+  },
+  {
+   "id": "omni-out3",
+   "model": "omnihuman",
+   "image": "assets/portraits/blackcard-host/host-cu-2.png",
+   "audio_id": "pad3",
+   "prompt": "Natural, calm presenter delivery: warm gentle smile between phrases, small natural head movements under 10 degrees, natural blinks, hands still; the same woman, hairstyle, blouse and necklace throughout; no new people."
+  },
+  {
+   "id": "omni-out4",
+   "model": "omnihuman",
+   "image": "assets/portraits/blackcard-host-2/host-wave-1.png",
+   "audio_id": "pad4",
+   "prompt": "Natural, calm presenter delivery: warm gentle smile between phrases, small natural head movements under 10 degrees, natural blinks, hands still; the same woman, hairstyle, blouse and necklace throughout; no new people. Her raised right hand waves gently twice and stays raised beside her face until the end; the hand stays connected to the arm."
+  }
+ ]
+}
