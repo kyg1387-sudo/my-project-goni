@@ -20,7 +20,9 @@
   "S12f": "assets/portraits/blackcard-kf-r5/S12f-1.png",
   "S12n": "assets/portraits/blackcard-kf-r5/S12n-1.png",
   "S12o": "assets/portraits/blackcard-kf-r5/S12o-1.png",
-  "S12x": "assets/portraits/blackcard-kf-r5/S12x-1.png"
+  "S12x": "assets/portraits/blackcard-kf-r5/S12x-1.png",
+  "S08k": "assets/portraits/blackcard-kf-b2/S08a-1.png",
+  "S09d": "assets/portraits/blackcard-kf-r6/S09d-2.png"
  },
  "face_frame": {
   "S03b": [
@@ -47,6 +49,11 @@
    0.33,
    0.55,
    "L"
+  ],
+  "S09d": [
+   0.33,
+   0.45,
+   "R"
   ]
  },
  "crop": {
@@ -64,6 +71,11 @@
    0.12,
    0.08,
    0.62
+  ],
+  "S08k": [
+   0.45,
+   0.3,
+   0.55
   ]
  }
 }
