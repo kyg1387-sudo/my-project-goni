@@ -1,0 +1,11 @@
+{
+ "_설명": "Kill Gate 배경 작은 가짜 글자 흐림 영역(제11장 10 — 배경 글자만). assemble 뒤 1회 적용: python3 scripts/kf_glyph_blur.py productions/blackcard-ja/kf_blur.json",
+ "assets/portraits/blackcard-keyframes/S07f-1.png": [
+  [
+   1130,
+   185,
+   1325,
+   322
+  ]
+ ]
+}
