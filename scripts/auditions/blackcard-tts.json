@@ -701,30 +701,18 @@
   },
   {
    "id": "line059",
-   "src": "L050a",
+   "src": "L050",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
    "voice": "AzXhp77fg6sHrgy2EtLn",
    "voice_name": "Taniguchi",
    "el_model": "eleven_v3",
-   "text": "『ほんじつじゅうにじ、最上階のレストラン。こしつはご用意しております。",
+   "text": "『ほんじつじゅうにじ、最上階のレストラン。こしつはご用意しております。』",
    "_tone": "tonedown/1.0/1.0",
-   "_subtitle": "『本日十二時、最上階のレストラン。個室はご用意しております。"
+   "_subtitle": "『本日十二時、最上階のレストラン。個室はご用意しております。』"
   },
   {
    "id": "line060",
-   "src": "L050b",
-   "speaker": "高橋 健二",
-   "model": "elevenlabs-direct",
-   "voice": "AzXhp77fg6sHrgy2EtLn",
-   "voice_name": "Taniguchi",
-   "el_model": "eleven_v3",
-   "text": "』",
-   "_tone": "tonedown/1.0/1.0",
-   "_subtitle": "』"
-  },
-  {
-   "id": "line061",
    "src": "L051",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -736,7 +724,7 @@
    "_subtitle": "差出人の名は、ない。"
   },
   {
-   "id": "line062",
+   "id": "line061",
    "src": "L052",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -748,7 +736,7 @@
    "_subtitle": "ニュースの片隅に、小さな見出し。『六本木ルクスタワー、所有権移転』。"
   },
   {
-   "id": "line063",
+   "id": "line062",
    "src": "L053",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -760,7 +748,7 @@
    "_subtitle": "二十四時間。あの声は、嘘をつかなかった。"
   },
   {
-   "id": "line064",
+   "id": "line063",
    "src": "L054",
    "speaker": "店長",
    "model": "elevenlabs-direct",
@@ -772,7 +760,7 @@
    "_subtitle": "オーナー、お待ちしておりました。"
   },
   {
-   "id": "line065",
+   "id": "line064",
    "src": "L055",
    "speaker": "柴田",
    "model": "elevenlabs-direct",
@@ -784,7 +772,7 @@
    "_subtitle": "た、高橋……？ここは、うちの予約席――"
   },
   {
-   "id": "line066",
+   "id": "line065",
    "src": "L056",
    "speaker": "店長",
    "model": "elevenlabs-direct",
@@ -796,7 +784,7 @@
    "_subtitle": "本日より、こちらはオーナー様のお席となっております。"
   },
   {
-   "id": "line067",
+   "id": "line066",
    "src": "L057",
    "speaker": "社長",
    "model": "elevenlabs-direct",
@@ -808,7 +796,7 @@
    "_subtitle": "……筆頭株主が、変わった？"
   },
   {
-   "id": "line068",
+   "id": "line067",
    "src": "L058a",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -820,7 +808,7 @@
    "_subtitle": "株は、今朝、買わせていただきました。――柴田。"
   },
   {
-   "id": "line069",
+   "id": "line068",
    "src": "L058b",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -832,7 +820,7 @@
    "_subtitle": "座れ。"
   },
   {
-   "id": "line070",
+   "id": "line069",
    "src": "L059",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -844,7 +832,7 @@
    "_subtitle": "希望退職って形にしてやる。退職金は、規定どおりだ。"
   },
   {
-   "id": "line071",
+   "id": "line070",
    "src": "L060",
    "speaker": "柴田",
    "model": "elevenlabs-direct",
@@ -856,7 +844,7 @@
    "_subtitle": "……待て、高橋。俺たち、同期だろ。"
   },
   {
-   "id": "line072",
+   "id": "line071",
    "src": "L061",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -868,7 +856,7 @@
    "_subtitle": "だから、だよ。お前が隣にいると――俺の評価が下がる。"
   },
   {
-   "id": "line073",
+   "id": "line072",
    "src": "L062",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -880,7 +868,7 @@
    "_subtitle": "判子は――ここ。"
   },
   {
-   "id": "line074",
+   "id": "line073",
    "src": "L063",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -892,7 +880,7 @@
    "_subtitle": "昨日まで俺を、犬のように使っていた男。俺の前で膝を折るまでにかかった時間は――二十四時間。"
   },
   {
-   "id": "line075",
+   "id": "line074",
    "src": "L064",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -904,7 +892,7 @@
    "_subtitle": "三千八百万の時計が、俺の腕で光っていた。"
   },
   {
-   "id": "line076",
+   "id": "line075",
    "src": "L065",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -916,7 +904,7 @@
    "_subtitle": "だが、本当に重かったのは、時計じゃない。この、紙一枚だ。"
   },
   {
-   "id": "line077",
+   "id": "line076",
    "src": "L066",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -928,7 +916,7 @@
    "_subtitle": "柴田が、椅子ごと後ろに崩れ落ちた。"
   },
   {
-   "id": "line078",
+   "id": "line077",
    "src": "L067",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -940,7 +928,7 @@
    "_subtitle": "気持ちいい、とは思わなかった。ただ、静かだった。"
   },
   {
-   "id": "line079",
+   "id": "line078",
    "src": "L068",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -952,7 +940,7 @@
    "_subtitle": "十五年、耳の奥で鳴り続けていた雑音が、やっと止まった。"
   },
   {
-   "id": "line080",
+   "id": "line079",
    "src": "L069",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -964,7 +952,7 @@
    "_subtitle": "胸がすく――という言葉の意味を、四十三年目に初めて知った。"
   },
   {
-   "id": "line081",
+   "id": "line080",
    "src": "L070",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -976,7 +964,7 @@
    "_subtitle": "だが、本当のクライマックスは、その夜に待っていた。"
   },
   {
-   "id": "line082",
+   "id": "line081",
    "src": "L071",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -988,7 +976,7 @@
    "_subtitle": "俺を捨てた妻が――オフィスのドアを叩き壊すように開けたのだ。"
   },
   {
-   "id": "line083",
+   "id": "line082",
    "src": "L072",
    "speaker": "美咲",
    "model": "elevenlabs-direct",
@@ -1000,7 +988,7 @@
    "_subtitle": "健二……あなた、これ……本当、なの？"
   },
   {
-   "id": "line084",
+   "id": "line083",
    "src": "L073",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1012,7 +1000,7 @@
    "_subtitle": "ニュースは、早いな。"
   },
   {
-   "id": "line085",
+   "id": "line084",
    "src": "L074",
    "speaker": "美咲",
    "model": "elevenlabs-direct",
@@ -1024,7 +1012,7 @@
    "_subtitle": "ねぇ、あの……離婚届、まだ出してないの。私、あのときは動揺してて――ずっと、あなたを信じて――"
   },
   {
-   "id": "line086",
+   "id": "line085",
    "src": "L075a",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1036,7 +1024,7 @@
    "_subtitle": "\"四十三で、無職。それが全部\"。"
   },
   {
-   "id": "line087",
+   "id": "line086",
    "src": "L075b",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1048,7 +1036,7 @@
    "_subtitle": "昨日の、君の言葉だ。"
   },
   {
-   "id": "line088",
+   "id": "line087",
    "src": "L076",
    "speaker": "美咲",
    "model": "elevenlabs-direct",
@@ -1060,7 +1048,7 @@
    "_subtitle": "……これ、どこで……"
   },
   {
-   "id": "line089",
+   "id": "line088",
    "src": "L077a",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1072,7 +1060,7 @@
    "_subtitle": "君の家族カードは、今朝止めた。慰謝料の請求書と、財産分与ゼロの協議書。"
   },
   {
-   "id": "line090",
+   "id": "line089",
    "src": "L077b",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1084,7 +1072,7 @@
    "_subtitle": "弁護士が、全部用意してくれた。"
   },
   {
-   "id": "line091",
+   "id": "line090",
    "src": "L078",
    "speaker": "美咲",
    "model": "elevenlabs-direct",
@@ -1096,7 +1084,7 @@
    "_subtitle": "待って、健二、お願い。一度だけ――"
   },
   {
-   "id": "line092",
+   "id": "line091",
    "src": "L079",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1108,7 +1096,7 @@
    "_subtitle": "\"あなたの欄だけ、空けておいたから\"。"
   },
   {
-   "id": "line093",
+   "id": "line092",
    "src": "L080a",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1120,7 +1108,7 @@
    "_subtitle": "これは、いらない。離婚は――俺の条件でする。"
   },
   {
-   "id": "line094",
+   "id": "line093",
    "src": "L080b",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1132,7 +1120,7 @@
    "_subtitle": "判子は、ここ。"
   },
   {
-   "id": "line095",
+   "id": "line094",
    "src": "L081",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1144,7 +1132,7 @@
    "_subtitle": "真っ白な顔で、オフィスに飛び込んできた、俺を捨てた妻。"
   },
   {
-   "id": "line096",
+   "id": "line095",
    "src": "L082",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1156,7 +1144,7 @@
    "_subtitle": "泣きながら縋る彼女に、俺が渡したのは――離婚届じゃなかった。"
   },
   {
-   "id": "line097",
+   "id": "line096",
    "src": "L083",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1168,7 +1156,7 @@
    "_subtitle": "彼女が隠してきた不倫の証拠と、慰謝料の請求書。"
   },
   {
-   "id": "line098",
+   "id": "line097",
    "src": "L084",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1180,7 +1168,7 @@
    "_subtitle": "相手の名前は――柴田。"
   },
   {
-   "id": "line099",
+   "id": "line098",
    "src": "L085",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1192,7 +1180,7 @@
    "_subtitle": "俺を切った男と、俺を捨てた女は、同じベッドで笑っていた。"
   },
   {
-   "id": "line100",
+   "id": "line099",
    "src": "L086",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1204,7 +1192,7 @@
    "_subtitle": "他人を踏みつけて笑っていた人間に、慈悲はいらない。"
   },
   {
-   "id": "line101",
+   "id": "line100",
    "src": "L087",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1216,7 +1204,7 @@
    "_subtitle": "俺が味わった恐怖と不安を、何倍にもして、返す。"
   },
   {
-   "id": "line102",
+   "id": "line101",
    "src": "L088",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1228,7 +1216,7 @@
    "_subtitle": "それが――本物の復讐だ。"
   },
   {
-   "id": "line103",
+   "id": "line102",
    "src": "L089",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1240,7 +1228,7 @@
    "_subtitle": "金がなければ人間以下。金があれば神になれる街――東京。"
   },
   {
-   "id": "line104",
+   "id": "line103",
    "src": "L090",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1252,7 +1240,7 @@
    "_subtitle": "俺はもう、底じゃない。この巨大な食物連鎖の、一番上に座っている。"
   },
   {
-   "id": "line105",
+   "id": "line104",
    "src": "L091",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1264,7 +1252,7 @@
    "_subtitle": "……そう、思っていた。"
   },
   {
-   "id": "line106",
+   "id": "line105",
    "src": "L092a",
    "speaker": "声",
    "model": "elevenlabs-direct",
@@ -1276,7 +1264,7 @@
    "_subtitle": "高橋様。一点、お伝えし忘れておりました。"
   },
   {
-   "id": "line107",
+   "id": "line106",
    "src": "L092b",
    "speaker": "声",
    "model": "elevenlabs-direct",
@@ -1288,7 +1276,7 @@
    "_subtitle": "カードの有効期限は――あと、七日です。"
   },
   {
-   "id": "line108",
+   "id": "line107",
    "src": "L093",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1300,7 +1288,7 @@
    "_subtitle": "……七日？その後は。"
   },
   {
-   "id": "line109",
+   "id": "line108",
    "src": "L094",
    "speaker": "声",
    "model": "elevenlabs-direct",
@@ -1312,7 +1300,7 @@
    "_subtitle": "期限の日に、精算がございます。ビルも、株も、時計も――すべて。"
   },
   {
-   "id": "line110",
+   "id": "line109",
    "src": "L095",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1324,7 +1312,7 @@
    "_subtitle": "精算……俺に、払えと？"
   },
   {
-   "id": "line111",
+   "id": "line110",
    "src": "L096",
    "speaker": "声",
    "model": "elevenlabs-direct",
@@ -1336,7 +1324,7 @@
    "_subtitle": "それをお決めになるのは、カードのオーナーです。期限の日に、オーナーが、お会いになります。"
   },
   {
-   "id": "line112",
+   "id": "line111",
    "src": "L097",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1348,7 +1336,7 @@
    "_subtitle": "カードの裏の紋章。"
   },
   {
-   "id": "line113",
+   "id": "line112",
    "src": "L098a",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1360,7 +1348,7 @@
    "_subtitle": "それは、十五年間、毎朝くぐってきたあのビルの――"
   },
   {
-   "id": "line114",
+   "id": "line113",
    "src": "L098b",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1372,7 +1360,7 @@
    "_subtitle": "正面玄関に刻まれた紋章と、同じだった。"
   },
   {
-   "id": "line115",
+   "id": "line114",
    "src": "L099",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1384,7 +1372,7 @@
    "_subtitle": "俺を切ったのは、本当に、あの会社だったのか。"
   },
   {
-   "id": "line116",
+   "id": "line115",
    "src": "L100",
    "speaker": "運転手",
    "model": "elevenlabs-direct",
@@ -1396,7 +1384,7 @@
    "_subtitle": "高橋様。オーナーより、お預かりしております。"
   },
   {
-   "id": "line117",
+   "id": "line116",
    "src": "L101",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1408,7 +1396,7 @@
    "_subtitle": "一枚の写真。十五年前、入社面接の日の俺。"
   },
   {
-   "id": "line118",
+   "id": "line117",
    "src": "L102a",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1420,7 +1408,7 @@
    "_subtitle": "裏には、赤いスタンプ。『候補者、No.7』。"
   },
   {
-   "id": "line119",
+   "id": "line118",
    "src": "L102b",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1432,7 +1420,7 @@
    "_subtitle": "そして――今日の日付。"
   },
   {
-   "id": "line120",
+   "id": "line119",
    "src": "L103a",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1444,7 +1432,7 @@
    "_subtitle": "七日。七人目。"
   },
   {
-   "id": "line121",
+   "id": "line120",
    "src": "L103b",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1456,7 +1444,7 @@
    "_subtitle": "偶然じゃない。"
   },
   {
-   "id": "line122",
+   "id": "line121",
    "src": "L104",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1468,7 +1456,7 @@
    "_subtitle": "俺は、カードを拾ったんじゃない。十五年前から――\"選ばれていた\"。"
   },
   {
-   "id": "line123",
+   "id": "line122",
    "src": "L105",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1480,7 +1468,7 @@
    "_subtitle": "時計が、午前零時を回った。残り――六日。"
   },
   {
-   "id": "line124",
+   "id": "line123",
    "src": "L106",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1492,7 +1480,7 @@
    "_subtitle": "次回――十五年前、俺を\"候補者\"に選んだのは誰か。No.1からNo.6は、どこへ消えたのか。"
   },
   {
-   "id": "line125",
+   "id": "line124",
    "src": "L107",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1504,7 +1492,7 @@
    "_subtitle": "そして期限の日。ビルと株と時計の請求書は、誰の手に渡るのか。"
   },
   {
-   "id": "line126",
+   "id": "line125",
    "src": "L108",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1516,7 +1504,7 @@
    "_subtitle": "見逃したくない方は、チャンネル登録と通知ベルをお願いします。"
   },
   {
-   "id": "line127",
+   "id": "line126",
    "src": "L109",
    "speaker": "高橋 健二",
    "model": "elevenlabs-direct",
@@ -1528,7 +1516,7 @@
    "_subtitle": "あなたなら――残り六日で、何を買い、誰に復讐しますか？コメントで、教えてください。"
   },
   {
-   "id": "line128",
+   "id": "line127",
    "src": "OUT1",
    "speaker": "진행자",
    "model": "typecast-direct",
@@ -1541,7 +1529,7 @@
    "_subtitle": "最後までご覧いただき、ありがとうございます。"
   },
   {
-   "id": "line129",
+   "id": "line128",
    "src": "OUT2",
    "speaker": "진행자",
    "model": "typecast-direct",
@@ -1554,7 +1542,7 @@
    "_subtitle": "皆様なら、残り六日で、誰に、最初に復讐しますか。"
   },
   {
-   "id": "line130",
+   "id": "line129",
    "src": "OUT3",
    "speaker": "진행자",
    "model": "typecast-direct",
@@ -1567,7 +1555,7 @@
    "_subtitle": "コメントで、教えてください。チャンネル登録も、よろしくお願いします。"
   },
   {
-   "id": "line131",
+   "id": "line130",
    "src": "OUT4",
    "speaker": "진행자",
    "model": "typecast-direct",

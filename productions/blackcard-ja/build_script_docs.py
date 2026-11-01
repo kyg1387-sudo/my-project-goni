@@ -34,7 +34,7 @@ OVERRIDE = {
 def sub(s):
     for a, b in SUBS: s = s.replace(a, b)
     return s
-def sents(ja): return [x for x in re.split(r"(?<=[。！？])", ja) if x.strip()]
+def sents(ja): return [x for x in re.split(r"(?<=[。！？])(?![』」])", ja) if x.strip()]
 def nchars(s): return len(re.sub(r"[\s「」『』\"（）()―…]", "", s))
 
 SPK_JA = {k: v["ja"] for k, v in M["characters"].items()}
