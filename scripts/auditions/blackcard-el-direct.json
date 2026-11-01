@@ -1,0 +1,133 @@
+{
+ "_설명": "『ブラックカード』 ElevenLabs 오디션 ② — 『引きこもり』 오디션 때 계정에 추가된 일본어 원어 목소리 6명을 같은 대사로 재사용(추가 칸 0, 생성 크레딧만). 실행: generate-video.yml audition_spec=blackcard-el-direct.",
+ "tests": [
+  {
+   "id": "kenji_Taniguchi_A",
+   "model": "elevenlabs-direct",
+   "voice": "AzXhp77fg6sHrgy2EtLn",
+   "voice_name": "Taniguchi",
+   "el_model": "eleven_v3",
+   "text": "十五年、魂を削って尽くした会社。今朝、俺はゴミのように切り捨てられた。"
+  },
+  {
+   "id": "kenji_Taniguchi_B",
+   "model": "elevenlabs-direct",
+   "voice": "AzXhp77fg6sHrgy2EtLn",
+   "voice_name": "Taniguchi",
+   "el_model": "eleven_v3",
+   "text": "[whispers] ……はんこは、ここ。"
+  },
+  {
+   "id": "kenji_Taniguchi_C",
+   "model": "elevenlabs-direct",
+   "voice": "AzXhp77fg6sHrgy2EtLn",
+   "voice_name": "Taniguchi",
+   "el_model": "eleven_v3",
+   "text": "俺は、カードを拾ったんじゃない。十五年前から――選ばれていた。"
+  },
+  {
+   "id": "kenji_Jiro_A",
+   "model": "elevenlabs-direct",
+   "voice": "qrxCoXetZMROJh88P461",
+   "voice_name": "Jiro",
+   "el_model": "eleven_v3",
+   "text": "十五年、魂を削って尽くした会社。今朝、俺はゴミのように切り捨てられた。"
+  },
+  {
+   "id": "kenji_Jiro_B",
+   "model": "elevenlabs-direct",
+   "voice": "qrxCoXetZMROJh88P461",
+   "voice_name": "Jiro",
+   "el_model": "eleven_v3",
+   "text": "[whispers] ……はんこは、ここ。"
+  },
+  {
+   "id": "kenji_Jiro_C",
+   "model": "elevenlabs-direct",
+   "voice": "qrxCoXetZMROJh88P461",
+   "voice_name": "Jiro",
+   "el_model": "eleven_v3",
+   "text": "俺は、カードを拾ったんじゃない。十五年前から――選ばれていた。"
+  },
+  {
+   "id": "shibata_Jiro_A",
+   "model": "elevenlabs-direct",
+   "voice": "qrxCoXetZMROJh88P461",
+   "voice_name": "Jiro",
+   "el_model": "eleven_v3",
+   "text": "たかはし。きぼうたいしょくって形にしてやる。退職金は規定どおりだ。はんこは――ここ。"
+  },
+  {
+   "id": "shibata_Jiro_B",
+   "model": "elevenlabs-direct",
+   "voice": "qrxCoXetZMROJh88P461",
+   "voice_name": "Jiro",
+   "el_model": "eleven_v3",
+   "text": "た、たかはし……？ ここは、うちの予約席――"
+  },
+  {
+   "id": "shibata_Kaguya_A",
+   "model": "elevenlabs-direct",
+   "voice": "8A3fL4hzOXrcEzl4apU4",
+   "voice_name": "Kaguya",
+   "el_model": "eleven_v3",
+   "text": "たかはし。きぼうたいしょくって形にしてやる。退職金は規定どおりだ。はんこは――ここ。"
+  },
+  {
+   "id": "shibata_Kaguya_B",
+   "model": "elevenlabs-direct",
+   "voice": "8A3fL4hzOXrcEzl4apU4",
+   "voice_name": "Kaguya",
+   "el_model": "eleven_v3",
+   "text": "た、たかはし……？ ここは、うちの予約席――"
+  },
+  {
+   "id": "misaki_Jun_A",
+   "model": "elevenlabs-direct",
+   "voice": "cijnU1nZEPfVNWVa4qoW",
+   "voice_name": "Jun",
+   "el_model": "eleven_v3",
+   "text": "聞いたわ。よんじゅうさんで、無職。それが全部。もう、あなたみたいな人とは暮らせない。"
+  },
+  {
+   "id": "misaki_Jun_B",
+   "model": "elevenlabs-direct",
+   "voice": "cijnU1nZEPfVNWVa4qoW",
+   "voice_name": "Jun",
+   "el_model": "eleven_v3",
+   "text": "待って、けんじ、お願い。一度だけ――"
+  },
+  {
+   "id": "misaki_Mio_A",
+   "model": "elevenlabs-direct",
+   "voice": "jDIcRgSETu4QTbxPgjmn",
+   "voice_name": "Mio",
+   "el_model": "eleven_v3",
+   "text": "聞いたわ。よんじゅうさんで、無職。それが全部。もう、あなたみたいな人とは暮らせない。"
+  },
+  {
+   "id": "misaki_Mio_B",
+   "model": "elevenlabs-direct",
+   "voice": "jDIcRgSETu4QTbxPgjmn",
+   "voice_name": "Mio",
+   "el_model": "eleven_v3",
+   "text": "待って、けんじ、お願い。一度だけ――"
+  },
+  {
+   "id": "koe_Mio_A",
+   "model": "elevenlabs-direct",
+   "voice": "jDIcRgSETu4QTbxPgjmn",
+   "voice_name": "Mio",
+   "el_model": "eleven_v3",
+   "text": "たかはしけんじ様。カードのご利用を、確認いたしました。ご要望だけを、お聞かせください。すべて、にじゅうよじかん以内に。"
+  },
+  {
+   "id": "koe_Mio_B",
+   "model": "elevenlabs-direct",
+   "voice": "jDIcRgSETu4QTbxPgjmn",
+   "voice_name": "Mio",
+   "el_model": "eleven_v3",
+   "text": "期限の日に、精算がございます。ビルも、株も、時計も――すべて。"
+  }
+ ]
+}

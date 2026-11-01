@@ -1,0 +1,80 @@
+{
+ "_설명": "『ブラックカード』 ElevenLabs 오디션 ① — 도서관에서 language=ja 원어 화자만 배역별 검색(켄지 2·柴田 1·美咲 1·声 1 = 5명 추가, 계정 목소리 칸 절약). 같은 대사로 eleven_v3 생성. 실행: generate-video.yml audition_spec=blackcard-el (ref claude/next-bidan-1101).",
+ "el_ja_search": {
+  "model": "eleven_v3",
+  "roles": [
+   {
+    "role": "kenji",
+    "gender": "male",
+    "age": "middle_aged",
+    "search": "deep calm",
+    "n": 2,
+    "lines": [
+     {
+      "id": "A",
+      "text": "十五年、魂を削って尽くした会社。今朝、俺はゴミのように切り捨てられた。"
+     },
+     {
+      "id": "B",
+      "text": "[whispers] ……はんこは、ここ。"
+     },
+     {
+      "id": "C",
+      "text": "俺は、カードを拾ったんじゃない。十五年前から――選ばれていた。"
+     }
+    ]
+   },
+   {
+    "role": "shibata",
+    "gender": "male",
+    "age": "middle_aged",
+    "search": "confident",
+    "n": 1,
+    "lines": [
+     {
+      "id": "A",
+      "text": "たかはし。きぼうたいしょくって形にしてやる。退職金は規定どおりだ。はんこは――ここ。"
+     },
+     {
+      "id": "B",
+      "text": "た、たかはし……？ ここは、うちの予約席――"
+     }
+    ]
+   },
+   {
+    "role": "misaki",
+    "gender": "female",
+    "age": "middle_aged",
+    "n": 1,
+    "lines": [
+     {
+      "id": "A",
+      "text": "聞いたわ。よんじゅうさんで、無職。それが全部。もう、あなたみたいな人とは暮らせない。"
+     },
+     {
+      "id": "B",
+      "text": "待って、けんじ、お願い。一度だけ――"
+     }
+    ]
+   },
+   {
+    "role": "koe",
+    "gender": "female",
+    "age": "young",
+    "use_cases": "narration",
+    "search": "calm",
+    "n": 1,
+    "lines": [
+     {
+      "id": "A",
+      "text": "たかはしけんじ様。カードのご利用を、確認いたしました。ご要望だけを、お聞かせください。すべて、にじゅうよじかん以内に。"
+     },
+     {
+      "id": "B",
+      "text": "期限の日に、精算がございます。ビルも、株も、時計も――すべて。"
+     }
+    ]
+   }
+  ]
+ }
+}
