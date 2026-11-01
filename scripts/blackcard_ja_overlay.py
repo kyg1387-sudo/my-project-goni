@@ -54,9 +54,9 @@ def divorce_form(seal_left=True, seal_right=False, torn=False):
     for k, (x, lab) in enumerate([(230, "妻"), (880, "夫")]):
         d.rectangle((x, 760, x + 300, 940), outline=(90, 90, 100), width=3)
         d.text((x + 150, 790), lab, font=F(M, 36), fill=(40, 40, 45), anchor="mm")
-    d.text((380, 880), "高橋　美咲", font=F(HAND, 48), fill=(30, 30, 60), anchor="mm")
+    d.text((350, 880), "高橋　美咲", font=F(HAND, 48), fill=(30, 30, 60), anchor="mm")
     if seal_left:
-        d.ellipse((470, 820, 540, 890), outline=(200, 40, 40), width=5); d.text((505, 855), "高橋", font=F(M, 26), fill=(200, 40, 40), anchor="mm")
+        d.ellipse((456, 800, 522, 866), outline=(200, 40, 40), width=5); d.text((489, 833), "高橋", font=F(M, 26), fill=(200, 40, 40), anchor="mm")
     return im
 
 
@@ -120,7 +120,7 @@ def photo_back():
     st = st.rotate(-6, resample=Image.BICUBIC, expand=True)
     a = np.asarray(st).astype(float); a[..., 3] *= (0.75 + 0.25 * np.random.default_rng(7).random(a.shape[:2]))  # 스탬프 번짐
     st = Image.fromarray(a.astype("uint8")); im.paste(st, (240, 200), st)
-    d.text((W / 2, 600), "二〇二六年十一月一日", font=F(HAND, 60), fill=(40, 40, 60), anchor="mm")
+    d.text((W / 2, 600), "令和七年十一月一日", font=F(HAND, 60), fill=(40, 40, 60), anchor="mm")
     return im
 
 
