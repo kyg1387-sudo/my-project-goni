@@ -63,7 +63,7 @@ ass = os.path.join(ROOT, "out/blackcard-ko.ass"); os.makedirs(os.path.dirname(as
 with open(ass, "w", encoding="utf-8") as fp:
     fp.write("[Script Info]\nScriptType: v4.00+\nPlayResX: 1920\nPlayResY: 1080\nWrapStyle: 0\n\n[V4+ Styles]\n"
              "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\n"
-             "Style: KO,WenQuanYi Zen Hei,文泉驛正黑,文泉驿正黑,50,&H0000F0FF,&H000000FF,&H00000000,&HA0000000,-1,0,0,0,100,100,0,0,3,12,0,8,120,120,40,1\n\n"
+             "Style: KO,WenQuanYi Zen Hei,50,&H0000F0FF,&H000000FF,&H00000000,&HA0000000,-1,0,0,0,100,100,0,0,3,12,0,8,120,120,40,1\n\n"
              "[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n")
     for a, b, t in rows:
         fp.write(f"Dialogue: 0,{tc(a)},{tc(b)},KO,,0,0,0,,{t}\n")
