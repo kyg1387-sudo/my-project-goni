@@ -69,6 +69,12 @@ LIGHT_NOTE = {
 SEAT = ("SEATED/FURNITURE LOCKED: seated persons sit ON chairs pulled in to the table, thighs under the table edge, forearms on the table; "
         "no chair passes through any body, no floating chair legs; correct solid furniture geometry.")
 EMO_OVERRIDE = {  # 상태 고정(00_script_ja.md 7절·제19장 27) — Kill Gate 뒤에 재생성 고정 문장을 여기에 더한다
+    # Kill Gate b1(2026-11-02): 카메라 쪽 보행(S02l), 서류 가짜 글자(S03i), 택시 운전사 얼굴·화자 입 노출(S04g), 정체 변형(S06a), 인서트에 엉뚱한 소품(S06d)
+    "S02l": "Kenji is seen strictly from BEHIND, walking AWAY from the camera down the corridor toward its far end; only the back of his head and the grey suit are visible; his face is NEVER visible; nobody else in the corridor.",
+    "S03i": "The form is ONE completely BLANK white sheet of paper lying flat on the cheap wooden table: NO printed title, NO lines, NO characters anywhere; the ONLY marks are a single round red seal impression in the lower-left area; a small wooden hanko beside the sheet; NO boxes, NO trays, NO ink pad; no hands.",
+    "S04g": "Seen from the rear seat looking forward between the lace-covered headrests: ONLY the back of the taxi driver's dark cap and his white-gloved hands on the steering wheel (RIGHT-hand drive), the wipers and the rain-streaked windshield; NO faces at all, NO passenger visible, nobody looks back.",
+    "S06a": "INSERT ONLY: a man's wet bare hand and grey suit sleeve holding a smartphone, framed below the chin — NO face, NO head, NO hair anywhere in the frame; the screen is a uniform dark glow with NO text; rain on the hand; the steel watch on the wrist.",
+    "S06d": "INSERT ONLY, outdoors in the rain: a man's LEFT wrist with the plain brushed-steel watch (blank dial) and the grey wet suit cuff, raindrops hitting the watch, the knuckles of the other hand holding a phone just at the frame edge; wet asphalt bokeh behind; NO desk, NO papers, NO card terminal, NO documents, NO face.",
     # Kill Gate 1차(a, 2026-11-02): 어깨 너머 컷의 화자가 원경(S02b·S02f·S03b·S03h), 렌즈 응시(S02d·S02e·S03g), 전화 자세(S06h), 소품 누락(S10f)
     "S02b": "CAMERA CLOSE: the camera is 1.2 m behind Kenji's grey shoulder; Shibata's head and shoulders fill the centre, his face at least ONE THIRD of the frame height; his eyes on Kenji screen LEFT, NEVER into the lens; NO lapel pin, NO badge.",
     "S02f": "CAMERA CLOSE, low angle: the camera is 1.2 m behind Kenji's grey shoulder looking slightly up; Shibata leaning forward on his elbows fills the centre, face at least ONE THIRD of the frame height; eyes on Kenji screen LEFT, NEVER into the lens; NO lapel pin.",
