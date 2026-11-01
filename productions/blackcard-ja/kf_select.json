@@ -1,0 +1,14 @@
+{
+ "_설명": "Kill Gate 선택(assemble_blackcard_keyframes.py) — pick: 단계 폴더 후보, face_frame: [얼굴 목표 비율, 힌트 x, 전경 유지]",
+ "pick": {
+  "S02b": "assets/portraits/blackcard-kf-r1/S02b-1.png",
+  "S02f": "assets/portraits/blackcard-kf-r1/S02f-1.png",
+  "S03b": "assets/portraits/blackcard-kf-r1/S03b-2.png",
+  "S03g": "assets/portraits/blackcard-kf-r1/S03g-2.png",
+  "S03h": "assets/portraits/blackcard-kf-r1/S03h-1.png",
+  "S06h": "assets/portraits/blackcard-kf-r1/S06h-1.png",
+  "S10f": "assets/portraits/blackcard-kf-r1/S10f-1.png"
+ },
+ "face_frame": {},
+ "crop": {}
+}

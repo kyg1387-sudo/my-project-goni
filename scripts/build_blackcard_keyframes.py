@@ -136,14 +136,15 @@ NO_LOC = set()  # 장소 참조가 후광 테두리를 만드는 컷 — Kill Ga
 LIGHT_INTEG = ("LIGHT INTEGRATION: the person is lit by the same light as the room, natural soft edges; NO glowing outline, NO halo or white rim "
                "around the body, NOT a pasted cut-out.")
 # Kill Gate 1차(2026-10-29) 정면 응시 다발 → 립싱크가 아닌 얼굴 컷은 시선 방향을 화면 좌우로 고정하고 정면 셀 대신 45° 셀을 참조
-GAZE_FIX = {}  # 자동 추출(샷 설명의 screen LEFT/RIGHT)이 틀린 컷만 손으로
+GAZE_FIX = {"S02d": "at Kenji off-screen LEFT", "S02e": "up at Shibata off-screen RIGHT"}  # 자동 추출이 틀린 컷·립싱크인데 렌즈를 보는 컷(FORCE45)
+FORCE45 = {"S02d", "S02e"}  # 립싱크 컷인데 정면 셀로 두 번 렌즈 응시(r1) → 45° 셀 참조 + GAZE 문장
 
 
 def gaze_of(sc):
     """비립싱크 얼굴 컷의 시선: 샷 설명의 「screen LEFT/RIGHT」(제19장 10① — 정면 응시 방지, 45° 셀 참조)."""
     if sc["id"] in GAZE_FIX:
         return GAZE_FIX[sc["id"]]
-    if sc["kind"] != "face":
+    if sc["kind"] != "face" and sc["id"] not in FORCE45:
         return None
     m = re.search(r"\(screen (LEFT|RIGHT)[^)]*\)", sc["subject"]) or re.search(r"screen (LEFT|RIGHT)", sc["subject"])
     return (m.group(0).strip("()") if m else "away from the lens toward the other person")
