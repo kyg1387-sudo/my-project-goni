@@ -1,0 +1,25 @@
+{
+ "_설명": "『ブラックカード』 아웃트로 진행자 스타일 B 2룩(35° MCU·손 흔들기, 제19장 21) — cu-1을 스타일 참조. 컷당 2장, 약 0.16달러.",
+ "characters": [
+  {
+   "id": "host-mcu",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png",
+    "assets/portraits/blackcard-host/host-cu-1.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). Reference image 2 is THIS episode's approved look B: copy its hairstyle, black silk blouse and gold pendant necklace exactly; ignore its framing. ANGLE LOCKED FIRST: medium close-up from about 35 degrees to her left side, cut at mid-chest, her body angled while her face turns to look into the camera with a warm gentle smile, mouth gently closed (speech is added later), 50mm lens f/2.2. STYLING B (elegant, noir episode, CLAUDE.md 제19장 8): glossy dark-brown hair in a sleek low ponytail with a clean centre part, smooth crown, flyaways tidied, the ponytail falling over one shoulder; a black silk blouse with a softly draped neckline, fabric with natural soft folds; a thin gold chain necklace with one tiny pendant, symmetrical, the ONLY accessory (no earrings); natural fresh makeup with muted berry lips, real skin texture (NOT plastic, NOT glossy). The same bright living-room studio with the beige sofa, wooden shelf and green plant, a small vase of white flowers on the shelf, warm late-autumn morning window light, softly out of focus. Both eyes sharp and symmetrical. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  },
+  {
+   "id": "host-wave",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png",
+    "assets/portraits/blackcard-host/host-cu-1.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). Reference image 2 is THIS episode's approved look B: copy its hairstyle, black silk blouse and gold pendant necklace exactly; ignore its framing. Waist-up medium shot: she sits on the beige sofa facing the camera, her right hand raised beside her face in a small friendly wave with five natural fingers, left hand on her lap, warm smile with the mouth gently closed, 35mm lens f/2.8. STYLING B (elegant, noir episode, CLAUDE.md 제19장 8): glossy dark-brown hair in a sleek low ponytail with a clean centre part, smooth crown, flyaways tidied, the ponytail falling over one shoulder; a black silk blouse with a softly draped neckline, fabric with natural soft folds; a thin gold chain necklace with one tiny pendant, symmetrical, the ONLY accessory (no earrings); natural fresh makeup with muted berry lips, real skin texture (NOT plastic, NOT glossy). The same bright living-room studio with the beige sofa, wooden shelf and green plant, a small vase of white flowers on the shelf, warm late-autumn morning window light, softly out of focus. Both eyes sharp and symmetrical, natural five-fingered hands, the hand clearly connected to the arm. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  }
+ ]
+}
