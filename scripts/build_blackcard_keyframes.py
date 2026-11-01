@@ -43,7 +43,8 @@ FACE13 = ("MEDIUM CLOSE-UP, the camera about 1.5 metres from the speaker: the sp
           "turned about 35 degrees toward the other person (never straight at the camera, never full profile); the speaker's hands and what "
           "they hold are visible at the bottom of the frame; 50mm lens, f/2.0, shallow depth of field.")
 OTS = ("Over-the-shoulder two-shot composition: the listener is at the near foreground edge seen strictly from behind — only the back of the "
-       "head, hair and one shoulder, soft and out of focus; the listener's face is NOT visible.")
+       "head, hair and one shoulder, soft and out of focus, occupying at most 25 percent of the frame width; the listener's face is NOT visible. "
+       "The camera stands close (about 1.2 m) behind the listener so the SPEAKER is large: head and shoulders fill the centre, NOT a wide shot.")
 INSERT = ("EXTREME CLOSE-UP INSERT: only the hands / object described fill the frame; NO face, NO head and NO shoulders anywhere in the frame — "
           "the person is out of frame except the hands, wrists and sleeves. Shallow depth of field.")
 BACK = ("The person is seen strictly from behind — only the back of the head, hair, ears and shoulders are visible, the face turned away from "
@@ -68,6 +69,16 @@ LIGHT_NOTE = {
 SEAT = ("SEATED/FURNITURE LOCKED: seated persons sit ON chairs pulled in to the table, thighs under the table edge, forearms on the table; "
         "no chair passes through any body, no floating chair legs; correct solid furniture geometry.")
 EMO_OVERRIDE = {  # 상태 고정(00_script_ja.md 7절·제19장 27) — Kill Gate 뒤에 재생성 고정 문장을 여기에 더한다
+    # Kill Gate 1차(a, 2026-11-02): 어깨 너머 컷의 화자가 원경(S02b·S02f·S03b·S03h), 렌즈 응시(S02d·S02e·S03g), 전화 자세(S06h), 소품 누락(S10f)
+    "S02b": "CAMERA CLOSE: the camera is 1.2 m behind Kenji's grey shoulder; Shibata's head and shoulders fill the centre, his face at least ONE THIRD of the frame height; his eyes on Kenji screen LEFT, NEVER into the lens; NO lapel pin, NO badge.",
+    "S02f": "CAMERA CLOSE, low angle: the camera is 1.2 m behind Kenji's grey shoulder looking slightly up; Shibata leaning forward on his elbows fills the centre, face at least ONE THIRD of the frame height; eyes on Kenji screen LEFT, NEVER into the lens; NO lapel pin.",
+    "S02d": "GAZE LOCKED: Shibata's head is turned about 35 degrees toward screen LEFT and his eyes look at Kenji off-screen LEFT, NEVER into the lens; a wooden hanko under his index finger on the table; NO lapel pin, NO badge.",
+    "S02e": "GAZE LOCKED: Kenji's head is turned about 35 degrees toward screen RIGHT, eyes up at Shibata off-screen RIGHT, NEVER into the lens; eyes wet with pooled tears, brows drawn, NOT smiling; both hands flat on the white table.",
+    "S03b": "CAMERA CLOSE: the camera is 1.2 m behind Kenji's wet grey shoulder (near RIGHT edge, blurred); Misaki STANDING at the table fills the centre, her face at least ONE THIRD of the frame height, holding the open passbook toward him; eyes on Kenji screen RIGHT, NEVER into the lens.",
+    "S03h": "CAMERA CLOSE: the camera is 1.2 m behind Kenji's wet shoulder (near RIGHT edge, blurred); Misaki fills the centre, face at least ONE THIRD of the frame height, bending slightly to press one finger on the white form lying flat on the table; eyes on Kenji screen RIGHT, NEVER into the lens.",
+    "S03g": "GAZE LOCKED: Misaki is STANDING at the table (not seated), head turned about 35 degrees toward screen LEFT where Kenji's blurred shoulder is, eyes on him, NEVER into the lens; she lifts a white form from the table.",
+    "S06h": "POSE LOCKED: the smartphone is PRESSED AGAINST HIS RIGHT EAR by his right hand (NOT held out in front, NOT looked at); his head is turned about 35 degrees toward screen RIGHT, eyes lifted toward the dark tower; the steel watch on the left wrist.",
+    "S10f": "PROP LOCKED: Kenji holds ONE single white sheet of paper lifted between two fingers at chest height, the sheet blank except ONE red seal in its LEFT lower box; his eyes on Misaki off-screen RIGHT, NEVER into the lens.",
     "S03h": "STATE LOCKED: the divorce form has exactly ONE red seal impression in the LEFT box and the RIGHT box is EMPTY; the paper is otherwise blank.",
     "S03i": "STATE LOCKED: exactly ONE red seal impression in the LEFT box only, the RIGHT box EMPTY; no hands; the paper otherwise blank.",
     "S04b": "STATE LOCKED: the FRONT of the card is completely blank — no name, no numbers, no chip, no text.",
