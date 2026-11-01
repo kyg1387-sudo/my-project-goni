@@ -1,0 +1,32 @@
+{
+ "_설명": "아웃트로 진행자 새 스타일 3안(고니감독님 2026-10-30 「헤어스타일과 의상을 예쁘게 변경」) — CU 시안 각 2장, 승인 안으로 3컷 재생성.",
+ "characters": [
+  {
+   "id": "style-a",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). STYLING A — elegant and graceful: glossy dark-brown hair styled in a soft low chignon at the nape with a few delicate face-framing tendrils, smooth crown with natural volume, neat side part; a dusty-rose silky blouse with a softly tied bow at the neckline, fabric falling in gentle natural folds; small gold drop earrings (the only accessory); natural fresh makeup with soft rose lips, light pink blush, real skin texture (NOT plastic, NOT glossy). A small vase of pale pink flowers on the shelf matching the blouse. The same bright living-room studio with the beige sofa, wooden shelf and green plant, warm late-autumn morning window light, softly out of focus. Chest-up close-up, she faces the camera directly with a warm gentle smile, mouth gently closed (speech is added later), 85mm lens f/2. Both eyes sharp and symmetrical. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  },
+  {
+   "id": "style-b",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). STYLING B — chic and intelligent: glossy dark-brown hair in a sleek chin-to-shoulder-length bob with the ends turned softly inward, smooth shine, tidy side part, one side tucked behind the ear; a tailored navy tweed jacket with fine texture over a crisp white round-neck blouse; a single delicate short pearl necklace (the only accessory); natural makeup with soft beige-rose lips, real skin texture (NOT plastic, NOT glossy). A small white ceramic vase with white flowers on the shelf. The same bright living-room studio with the beige sofa, wooden shelf and green plant, warm late-autumn morning window light, softly out of focus. Chest-up close-up, she faces the camera directly with a warm gentle smile, mouth gently closed (speech is added later), 85mm lens f/2. Both eyes sharp and symmetrical. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  },
+  {
+   "id": "style-c",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). STYLING C — warm and gentle autumn: glossy dark-brown long hair in soft loose waves, half-up with the top section gathered at the back by a small dark velvet ribbon barrette, face-framing see-through bangs, airy volume, flyaways tidied; a soft burgundy (bordeaux) fine-knit crew-neck sweater with natural knit texture; small gold stud earrings (the only accessory); natural makeup with soft brick-rose lips, light peach blush, real skin texture (NOT plastic, NOT glossy). A small vase of autumn leaves and white flowers on the shelf matching her colours. The same bright living-room studio with the beige sofa, wooden shelf and green plant, warm late-autumn morning window light, softly out of focus. Chest-up close-up, she faces the camera directly with a warm gentle smile, mouth gently closed (speech is added later), 85mm lens f/2. Both eyes sharp and symmetrical. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "_설명": "S24d r9-1(시선·구도 합격) — 健太郎 머리가 어두운 조명에서 검게 나옴 → 머리만 회색 크루컷으로 부분 편집.",
+ "characters": [
+  {
+   "id": "S24d",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-kf-r9/S24d-1.png",
+    "assets/portraits/hikikomori-faces/kentaro.png",
+    "assets/portraits/hikikomori-cast/cells/kentaro-calm.png"
+   ],
+   "prompt": "Edit reference image 1 and return it as ONE photorealistic 16:9 film still. Change ONLY the hair of the stocky man on the LEFT (Seo Kentaro, charcoal cardigan, serving from the pot): give him exactly the short GREYING crew-cut of reference images 2 and 3 — clearly salt-and-pepper grey-white hair on top and sides, catching the warm pendant light — and keep his face identical to reference images 2 and 3 (52, square weathered face, thick black eyebrows, NO glasses). Keep EVERYTHING else pixel-identical to reference image 1: the same framing, the same three people in the same poses and gazes (nobody looks at the camera), the same woman and young man, the table, the steaming sukiyaki pot, the pendant lamp, the room and the warm dim lighting. No text, no letters, no borders, NO letterbox."
+  }
+ ]
+}

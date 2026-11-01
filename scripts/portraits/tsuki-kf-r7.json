@@ -1,0 +1,17 @@
+{
+ "_설명": "tsuki 키프레임 r7: S15c 「さくら가 달려가며 부르는데 반대편에 아무도 없다」(고니감독님 지적) — 문 너머 멀리 상자를 든 光의 뒷모습을 추가(seedream edit).",
+ "_style_preset": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting",
+ "characters": [
+  {
+   "id": "S15c",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "refs": [
+    "assets/portraits/tsuki-keyframes/S15c-1.png",
+    "assets/portraits/tsuki-keyframes/S15b-1.png"
+   ],
+   "prompt": "Edit reference image 1 and output ONE single photorealistic film still with exactly the same framing, same woman running seen from behind, same moon, gate, lamps and wet pavement, same lighting and colours. ONLY add: beyond the open gate, about 25 metres away on the night street, the small back-view figure of the young man from reference image 2 — slim, short black hair, light-grey work jacket, white towel around his neck, walking away from the camera carrying a single cardboard box under his arm, lit by the moonlight, clearly visible but small (about one fifth of the frame height), roughly centered between the two gate lamps. Nothing else changes. Photorealistic, no text, no watermark, not a grid, no borders."
+  }
+ ]
+}

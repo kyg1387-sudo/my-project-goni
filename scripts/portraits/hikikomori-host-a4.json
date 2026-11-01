@@ -1,0 +1,15 @@
+{
+ "_설명": "스타일 A 허리 위 컷 4차 — 3차 wu-2(구도 합격·머리/소매/귀걸이 불일치)를 베이스로 머리·소매·귀걸이만 편집.",
+ "characters": [
+  {
+   "id": "host-wu",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-host-a3/host-wu-2.png",
+    "assets/portraits/hikikomori-host-style/style-a-1.png"
+   ],
+   "prompt": "EDIT reference image 1 — keep EXACTLY its composition, camera distance, waist-up seated pose on the beige sofa, her hands on her lap, her face, the room, the plant and the light. Change ONLY three things to match reference image 2: (1) HAIR: glossy dark-brown hair gathered into a soft low chignon at the nape with a few delicate face-framing tendrils, neat side part, smooth crown — NO long loose waves, no hair over the shoulders; (2) BLOUSE: the whole blouse including BOTH long sleeves is the same dusty-rose silky fabric with the softly tied bow at the neckline, natural soft folds — NO white sleeves, no white undershirt, no vest look; (3) EARRINGS: small gold drop earrings, one on each ear — NO pearls. Real photograph, natural skin texture (NOT plastic), both eyes sharp, natural five-fingered hands, mouth gently closed in a soft smile. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  }
+ ]
+}

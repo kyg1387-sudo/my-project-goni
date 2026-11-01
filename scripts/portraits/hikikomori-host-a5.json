@@ -1,0 +1,15 @@
+{
+ "_설명": "스타일 A 두 번째 컷 — 허리 위 4회 실패(머리·의상 이탈) → 크기 대신 각도 35° 변화(제8장 2 「각도 30° 이상」)로 CU와 구분.",
+ "characters": [
+  {
+   "id": "host-ang",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png",
+    "assets/portraits/hikikomori-host-style/style-a-1.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). Reference image 2 is THIS episode's approved look A: copy its hairstyle, blouse, bow and earrings exactly. STYLING A (elegant and graceful, CLAUDE.md 제19장 8): glossy dark-brown hair in a soft low chignon at the nape with a few delicate face-framing tendrils, smooth crown with natural volume, neat side part, flyaways tidied; a dusty-rose silky blouse with a softly tied bow at the neckline, fabric falling in gentle natural folds, the bow identical in every shot; small gold drop earrings, one on each ear, symmetrical (the only accessory); natural fresh makeup with soft rose lips, light pink blush, real skin texture (NOT plastic, NOT glossy). The same bright living-room studio with the beige sofa, wooden shelf and green plant, a small vase of pale pink flowers on the shelf matching the blouse, warm late-autumn morning window light, softly out of focus. ANGLE LOCKED FIRST: the camera is placed 35 degrees to HER LEFT side (screen right) — her shoulders and body are turned 35 degrees away, she turns her head back to look warmly toward the camera, a thoughtful gentle expression with a slight head tilt; medium close-up from mid-chest up, both of her hands lightly clasped together in front of her chest are visible at the bottom of the frame, natural five fingers each; mouth gently closed (speech is added later), 50mm lens f/2.2. Both eyes sharp and symmetrical, natural five-fingered hands. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  }
+ ]
+}

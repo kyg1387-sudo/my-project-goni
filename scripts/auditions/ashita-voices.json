@@ -1,0 +1,267 @@
+{
+ "_설명": "『明日から来なくていい』 PHASE 1 배역 오디션(Typecast ssfm-v30, language=jpn). 6배역 후보 13명 × 대비되는 감정 대사(대본 v1 원문, 음성 입력만 가나 변형). TTS 구독 크레딧만 사용(달러 지출 0). 언어 검사(ja/large-v3) 후 고니감독님 청취로 채택. 실행: generate-video.yml audition_spec=ashita-voices — 대본 동결 승인 후에만.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "nar_Lloyd_NA3",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "その現場を、三十年支えてきた男がいる。さとうまこと、四十八歳。だいいっしゅ電気主任技術者。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "nar_Lloyd_NA16",
+   "model": "typecast-direct",
+   "voice": "tc_65681f21097fc4326ceb5e21",
+   "language": "jpn",
+   "text": "佐藤が持ち去ったもの。その正体を知った時、彼らは、本当の意味で震え上がることになるのです……",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "nar_Juha_NA3",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "その現場を、三十年支えてきた男がいる。さとうまこと、四十八歳。だいいっしゅ電気主任技術者。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "nar_Juha_NA16",
+   "model": "typecast-direct",
+   "voice": "tc_5d01a52563338e00072b8c9c",
+   "language": "jpn",
+   "text": "佐藤が持ち去ったもの。その正体を知った時、彼らは、本当の意味で震え上がることになるのです……",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "sato_Simon_L24",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "……分かりました。では、その言葉。忘れないでください",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "sato_Simon_L48",
+   "model": "typecast-direct",
+   "voice": "tc_65b34b05b3fb844f3d6b7aab",
+   "language": "jpn",
+   "text": "明日から会社に来るなって言ったのは、君たちの方だろう？",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "sato_Rex_L24",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "……分かりました。では、その言葉。忘れないでください",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.9
+  },
+  {
+   "id": "sato_Rex_L48",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "明日から会社に来るなって言ったのは、君たちの方だろう？",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "tanaka_TakuyaMurakami_L22",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "今日付けでクビだ。明日から、会社に来るな！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.0
+  },
+  {
+   "id": "tanaka_TakuyaMurakami_L47",
+   "model": "typecast-direct",
+   "voice": "tc_63478295af3bab65523c3237",
+   "language": "jpn",
+   "text": "佐藤さん……お願いだ、助けてくれ……！ 俺が、悪かった……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.2,
+   "tempo": 0.95
+  },
+  {
+   "id": "tanaka_KentaYoshida_L22",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "今日付けでクビだ。明日から、会社に来るな！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.0
+  },
+  {
+   "id": "tanaka_KentaYoshida_L47",
+   "model": "typecast-direct",
+   "voice": "tc_62a8974c6fe31dc29ac53b0d",
+   "language": "jpn",
+   "text": "佐藤さん……お願いだ、助けてくれ……！ 俺が、悪かった……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.2,
+   "tempo": 0.95
+  },
+  {
+   "id": "tanaka_ToumaMurata_L22",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "今日付けでクビだ。明日から、会社に来るな！",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.2,
+   "tempo": 1.0
+  },
+  {
+   "id": "tanaka_ToumaMurata_L47",
+   "model": "typecast-direct",
+   "voice": "tc_63f7167e54b37fb5326409d1",
+   "language": "jpn",
+   "text": "佐藤さん……お願いだ、助けてくれ……！ 俺が、悪かった……！",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.2,
+   "tempo": 0.95
+  },
+  {
+   "id": "yamamoto_Robert_L19",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "君はいつから、この会社の経営方針を決める立場になったのかね？",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "yamamoto_Robert_L45",
+   "model": "typecast-direct",
+   "voice": "tc_66bc600762cab997910b107b",
+   "language": "jpn",
+   "text": "た、高橋本部長……これは、何かの間違いで……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "yamamoto_Dean_L19",
+   "model": "typecast-direct",
+   "voice": "tc_673eb45cdc1073aef51e6b90",
+   "language": "jpn",
+   "text": "君はいつから、この会社の経営方針を決める立場になったのかね？",
+   "emotion_preset": "tonedown",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "yamamoto_Dean_L45",
+   "model": "typecast-direct",
+   "voice": "tc_673eb45cdc1073aef51e6b90",
+   "language": "jpn",
+   "text": "た、高橋本部長……これは、何かの間違いで……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "takahashi_Poseidon_L46",
+   "model": "typecast-direct",
+   "voice": "tc_6a8f9d53322676d2f0934a21",
+   "language": "jpn",
+   "text": "間違い？ 間違えたのは、あなた方が誰を追い出したか、ですよ",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "takahashi_Rex_L46",
+   "model": "typecast-direct",
+   "voice": "tc_6322940059d649937b97f326",
+   "language": "jpn",
+   "text": "間違い？ 間違えたのは、あなた方が誰を追い出したか、ですよ",
+   "emotion_preset": "angry",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "mori_NanamiIchikawa_L25",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "佐藤さん……私のせいです。私が、判子を……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.2,
+   "tempo": 0.95
+  },
+  {
+   "id": "mori_NanamiIchikawa_L34",
+   "model": "typecast-direct",
+   "voice": "tc_64a66e30679f68b9bf301edb",
+   "language": "jpn",
+   "text": "……これは、佐藤さんが残した安全装置です。外せません",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "mori_HarunaSuzuki_L25",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "佐藤さん……私のせいです。私が、判子を……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.2,
+   "tempo": 0.95
+  },
+  {
+   "id": "mori_HarunaSuzuki_L34",
+   "model": "typecast-direct",
+   "voice": "tc_62b17ef6695ad26f7fb8e7f3",
+   "language": "jpn",
+   "text": "……これは、佐藤さんが残した安全装置です。外せません",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  },
+  {
+   "id": "mori_SakuraTanaka_L25",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "佐藤さん……私のせいです。私が、判子を……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 1.2,
+   "tempo": 0.95
+  },
+  {
+   "id": "mori_SakuraTanaka_L34",
+   "model": "typecast-direct",
+   "voice": "tc_6412c4162bafc5127fa16ffa",
+   "language": "jpn",
+   "text": "……これは、佐藤さんが残した安全装置です。外せません",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 1.0
+  }
+ ]
+}

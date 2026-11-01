@@ -1,0 +1,40 @@
+{
+ "_설명": "3D 아바타 시험 쇼츠 립싱크 5컷(구동 오디오 = 화자 대사만, 컷 창 정렬). 22.3초 x 0.16 ≈ 3.6달러. 단독 실행.",
+ "tests": [
+  {
+   "id": "omni-S18d",
+   "model": "omnihuman",
+   "image": "assets/portraits/hikikomori-avatar-final/S18d.png",
+   "audio_id": "pad-S18d",
+   "prompt": "HEAD LOCKED: face stays toward the same direction, head turns under 10 degrees. Ryosuke half-rises in shock, eyes wide, speaking to the young man who just entered the room on his left; flustered, small head movement under 10 degrees, hands on the table. Keep the 3D animated character style, the same face, glasses and clothes; no new people."
+  },
+  {
+   "id": "omni-S18g",
+   "model": "omnihuman",
+   "image": "assets/portraits/hikikomori-avatar-final/S18g.png",
+   "audio_id": "pad-S18g",
+   "prompt": "HEAD LOCKED: face stays toward the same direction, head turns under 10 degrees. Daiki speaks quietly and firmly to his seated father in the foreground, eyes only on his father, calm, minimal head movement, natural blinks. Keep the 3D animated character style, the same face, glasses and clothes; no new people."
+  },
+  {
+   "id": "omni-S19a",
+   "model": "omnihuman",
+   "image": "assets/portraits/hikikomori-avatar-final/S19a.png",
+   "audio_id": "pad-S19a",
+   "prompt": "HEAD LOCKED: face stays toward the same direction, head turns under 10 degrees. Daiki explains with calm certainty to the executive in the foreground, looking at him steadily, small nod on key words, minimal head movement. Keep the 3D animated character style, the same face, glasses and clothes; no new people."
+  },
+  {
+   "id": "omni-S19f",
+   "model": "omnihuman",
+   "image": "assets/portraits/hikikomori-avatar-final/S19f.png",
+   "audio_id": "pad-S19f",
+   "prompt": "HEAD LOCKED: face stays toward the same direction, head turns under 10 degrees. Daiki states the company name firmly, one hand resting on the tablet, calm and confident, minimal head movement. Keep the 3D animated character style, the same face, glasses and clothes; no new people."
+  },
+  {
+   "id": "omni-S20d",
+   "model": "omnihuman",
+   "image": "assets/portraits/hikikomori-avatar-final/S20d.png",
+   "audio_id": "pad-S20d",
+   "prompt": "HEAD LOCKED: face stays toward the same direction, head turns under 10 degrees. Daiki turns to his father with softer, trusting eyes and speaks gently, small warm nod, minimal head movement. Keep the 3D animated character style, the same face, glasses and clothes; no new people."
+  }
+ ]
+}

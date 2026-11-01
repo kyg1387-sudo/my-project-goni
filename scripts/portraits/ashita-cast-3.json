@@ -1,0 +1,14 @@
+{
+ "_설명": "『明日から来なくていい』 PHASE 2 Kill Gate 3차(1장 약 0.04달러, PHASE 2 누계 약 1.08달러). 고니감독님 지적(2026-10-11): 야마모토 2차 시트 공포 표정 칸이 다른 사람(머리숱·수염·안경 없음) → 정면 셀 참조로 공포 표정 단독 초상 재생성.",
+ "characters": [
+  {
+   "id": "yamamoto-fear",
+   "count": 1,
+   "aspect_ratio": "3:4",
+   "refs": [
+    "assets/portraits/ashita-cast-2/cells/yamamoto-front.png"
+   ],
+   "prompt": "Use the exact same man as the reference image: same round fleshy face, same bald crown with white hair only at the sides, same thin gold-rimmed glasses worn on the face, clean-shaven with no beard or stubble, same black double-breasted suit, white shirt and burgundy necktie. One single head-and-shoulders portrait, straight frontal view, plain light grey studio background. Expression: stammering fear and panic, eyes wide behind the glasses, eyebrows raised and pinched, mouth half open. Realistic sweat as in a live-action film: fine tiny beads of perspiration on the forehead, bald crown and temples, a natural oily sheen on the skin; no large cartoon drops. Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, soft studio key light from upper-left. Absolutely no text. Negative: different person, long hair, hair on the crown, beard, stubble, no glasses, cartoon sweat drops, text, watermark."
+  }
+ ]
+}
