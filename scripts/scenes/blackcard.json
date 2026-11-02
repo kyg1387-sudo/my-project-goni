@@ -492,7 +492,7 @@
    "image": "assets/portraits/blackcard-keyframes/S05f-1.png"
   },
   {
-   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Nothing moves for a second; then his eyes change, a slow blink, a breath out through the nose; the ceiling light on his face brightens slightly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] IDENTITY LOCKED: the SAME man as the first frame for the whole clip — same face, same stubble, NO glasses ever appear, nobody else enters; the camera never moves. Nothing moves for a second; then his eyes change, a slow blink, a breath out through the nose; the ceiling light on his face brightens slightly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
    "duration": 5,
    "image": "assets/portraits/blackcard-keyframes/S05g-1.png"
   },
@@ -621,7 +621,7 @@
    "image": "assets/portraits/blackcard-keyframes/S07g-1.png"
   },
   {
-   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] His eyes move along one line of text and stop; one slow blink; nothing else. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] NO TEXT anywhere at any moment: the tablet and every surface stay plain with no characters, no signs, no vertical writing; only his eyes and breath move. His eyes move along one line of text and stop; one slow blink; nothing else. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
    "duration": 5,
    "image": "assets/portraits/blackcard-keyframes/S07g2-1.png"
   },
@@ -680,7 +680,7 @@
    "image": "assets/portraits/blackcard-keyframes/S07q-1.png"
   },
   {
-   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] His head turns about 15 degrees toward screen left; he swallows; a bead of sweat runs; NOT smiling. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] GAZE LOCKED: his head turns only about 15 degrees toward screen LEFT and his eyes stay on the president off-screen LEFT; he NEVER looks into the camera lens. His head turns about 15 degrees toward screen left; he swallows; a bead of sweat runs; NOT smiling. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
    "duration": 5,
    "image": "assets/portraits/blackcard-keyframes/S07r-1.png"
   },
@@ -1091,7 +1091,7 @@
    "image": "assets/portraits/blackcard-keyframes/S12x-1.png"
   },
   {
-   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] A slow blink; the red reflection pulses in his eye; he does not turn to the camera. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] LIGHTING LOCKED: no red light on his face or eyes at any moment — his eyes stay natural dark brown; only a faint neutral reflection passes; a slow blink. A slow blink; the red reflection pulses in his eye; he does not turn to the camera. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
    "duration": 5,
    "image": "assets/portraits/blackcard-keyframes/S12y-1.png"
   },

@@ -538,7 +538,12 @@ SPK_WHO = {"柴田": Sh, "美咲": Mi, "社長": Pr}
 KEN_WARD = {"S01": Kw, "S02": Kg, "S03": Kw, "S04": Kw, "S05": Kww, "S06": Kww}  # S07 이후 Ks
 VO_OTS_SKIP = {"S07r"}  # 社長 VO 위 柴田 — 社長이 뒤에 서 있어 어깨 너머가 부자연스러움
 # 재생성 컷 동작 고정 문장(맨 앞) — Kill Gate·1초 시트 검수 후 채운다
-MOTION_FIX = {}
+MOTION_FIX = {  # i2v 1초 시트 검수 1차(2026-11-02, lite 112컷 중 4컷): 정체 변형·가짜 글자·렌즈 응시·붉은 눈
+    "S05g": "IDENTITY LOCKED: the SAME man as the first frame for the whole clip — same face, same stubble, NO glasses ever appear, nobody else enters; the camera never moves.",
+    "S07g2": "NO TEXT anywhere at any moment: the tablet and every surface stay plain with no characters, no signs, no vertical writing; only his eyes and breath move.",
+    "S07r": "GAZE LOCKED: his head turns only about 15 degrees toward screen LEFT and his eyes stay on the president off-screen LEFT; he NEVER looks into the camera lens.",
+    "S12y": "LIGHTING LOCKED: no red light on his face or eyes at any moment — his eyes stay natural dark brown; only a faint neutral reflection passes; a slow blink.",
+}
 for _s in SHOTS:
     if _s["id"] in MOTION_FIX:
         _s["motion"] = MOTION_FIX[_s["id"]] + " " + _s["motion"]
