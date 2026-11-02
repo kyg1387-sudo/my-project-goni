@@ -1,0 +1,15 @@
+{
+ "_설명": "tsuki 키프레임 r10: S07e 찻잔 인서트 재생성 — 손이 손잡이를 실제로 쥐지 않고 떠 있음(고니감독님 지적). 손가락이 손잡이를 제대로 쥔 컷.",
+ "_style_preset": "Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting",
+ "characters": [
+  {
+   "id": "S07e",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/tsuki-keyframes/S07e-1.png"
+   ],
+   "prompt": "ONE single photorealistic cinematic film still, 16:9, NOT a grid, no text, no face. Match reference image 1 exactly in framing, lighting and setting (glossy black boardroom table, black leather chairs, window blinds, navy suit sleeve with white cuff, red tie, gold wristwatch on the left wrist). ONLY change the hand: the right hand holds a white porcelain teacup PROPERLY — index finger through the cup handle, thumb on top of the handle, the cup lifted about 5 cm above its saucer, a realistic natural grip with exactly five fingers, no floating fingers, no gap between fingers and handle. The left hand rests flat on the table with the gold watch visible. Macro 100mm look, shallow depth of field. Photorealistic live-action Japanese human drama, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, 16:9, restrained Japanese film mise-en-scene, no flat lighting No letters, no logos."
+  }
+ ]
+}

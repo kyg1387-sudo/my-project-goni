@@ -1,0 +1,19 @@
+{
+ "_설명": "아웃트로 omni-out2·out3 재생성 — 1차에서 out2 시작 40°·out3 옆얼굴 90° 고개 돌림(제2장 3 위반). 머리 고정 문장 맨 앞. 약 11.1초 x 0.16 ≈ 1.8달러. 단독 실행.",
+ "tests": [
+  {
+   "id": "omni-out2",
+   "model": "omnihuman",
+   "image": "assets/portraits/hikikomori-host-a/host-cu-1.png",
+   "audio_id": "pad2",
+   "prompt": "HEAD LOCKED FIRST: her head stays facing the camera the whole time, head turns under 10 degrees, she never looks away to the side and never turns into profile; eyes on the lens, natural blinks. The host cheerfully asks for subscribe and like with a bright natural smile and a small nod, hands still."
+  },
+  {
+   "id": "omni-out3",
+   "model": "omnihuman",
+   "image": "assets/portraits/hikikomori-host-a5/host-ang-2.png",
+   "audio_id": "pad3",
+   "prompt": "HEAD LOCKED FIRST: her head stays facing the camera the whole time, head turns under 10 degrees, she never looks away to the side and never turns into profile; eyes on the lens, natural blinks. The host, her body stays turned at an angle while her face looks warmly into the camera and asks the viewers a thoughtful question about a father and his son, slight head tilt, soft caring expression; her clasped hands stay still and relaxed, hair and outfit unchanged."
+  }
+ ]
+}

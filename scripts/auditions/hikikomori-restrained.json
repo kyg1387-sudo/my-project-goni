@@ -1,0 +1,67 @@
+{
+ "_설명": "『引きこもりの息子』 아버지 오열 3줄(L26·L40·L61) 절제 연기 A/B — 발성 디렉션 1-2(소리 내 오열 대신 목이 메는 떨림·속삭임). w=whisper 1.0, s=sad 0.6, 현재 본녹음은 sad 1.0. Typecast 크레딧만.",
+ "tc_model": "ssfm-v30",
+ "language": "jpn",
+ "tests": [
+  {
+   "id": "L26_w",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……あいつは……ゴミなんかじゃ……なかった……",
+   "emotion_preset": "whisper",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "L26_s",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……あいつは……ゴミなんかじゃ……なかった……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.85
+  },
+  {
+   "id": "L40_w",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……おやじ、すまない。俺は……何も、見えてなかった",
+   "emotion_preset": "whisper",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "L40_s",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "……おやじ、すまない。俺は……何も、見えてなかった",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.85
+  },
+  {
+   "id": "L61_w",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "すまなかった。……お前を、ゴミだなんて……",
+   "emotion_preset": "whisper",
+   "emotion_intensity": 1.0,
+   "tempo": 0.85
+  },
+  {
+   "id": "L61_s",
+   "model": "typecast-direct",
+   "voice": "tc_640997d2c535f40558c0722c",
+   "language": "jpn",
+   "text": "すまなかった。……お前を、ゴミだなんて……",
+   "emotion_preset": "sad",
+   "emotion_intensity": 0.6,
+   "tempo": 0.85
+  }
+ ]
+}

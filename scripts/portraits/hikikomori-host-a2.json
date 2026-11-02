@@ -1,0 +1,16 @@
+{
+ "_설명": "스타일 A 허리 위 소파 컷 재생성 — 1차(host-a)가 2장 모두 CU로 나옴(제19장 10⑥ 구도 문장 맨 앞 + 구도 참조).",
+ "characters": [
+  {
+   "id": "host-wu",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png",
+    "assets/portraits/hikikomori-host-style/style-a-1.png",
+    "assets/portraits/ashita-host-2/host-wu-1.png"
+   ],
+   "prompt": "FRAMING LOCKED FIRST: WAIST-UP MEDIUM SHOT, the camera is 2.5 metres away — her head occupies only the upper quarter of the frame, her whole upper body, both arms, her hands on her lap and the seat cushion of the beige sofa are all visible; this is NOT a close-up. Reference image 3 shows the required framing and sofa pose only (copy its distance and seated posture, NOT its clothes or hair). Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). Reference image 2 is THIS episode's approved look A: copy its hairstyle, blouse, bow and earrings exactly. STYLING A (elegant and graceful, CLAUDE.md 제19장 8): glossy dark-brown hair in a soft low chignon at the nape with a few delicate face-framing tendrils, smooth crown with natural volume, neat side part, flyaways tidied; a dusty-rose silky blouse with a softly tied bow at the neckline, fabric falling in gentle natural folds, the bow identical in every shot; small gold drop earrings, one on each ear, symmetrical (the only accessory); natural fresh makeup with soft rose lips, light pink blush, real skin texture (NOT plastic, NOT glossy). The same bright living-room studio with the beige sofa, wooden shelf and green plant, a small vase of pale pink flowers on the shelf matching the blouse, warm late-autumn morning window light, softly out of focus. Waist-up medium shot: she sits on the beige sofa facing the camera directly, hands resting lightly together on her lap, back straight, relaxed friendly posture, the blouse bow and its folds clearly visible, 35mm lens f/2.8, mouth gently closed in a soft smile (speech is added later). Both eyes sharp and symmetrical, natural five-fingered hands. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  }
+ ]
+}

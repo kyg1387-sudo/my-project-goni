@@ -1,0 +1,14 @@
+{
+ "_설명": "『引きこもりの息子』 PHASE 2 Kill Gate 3차 — 亮介만: 2차 실사화는 성공했으나 얼굴 점·주근깨 번식(제18장 3 패턴)과 놀람 셀 흰 분장 얼굴. 2차 정면 셀 refs + 깨끗한 피부 문장.",
+ "_style_preset": "Photorealistic live-action, contemporary Japan (Reiwa era), Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting.",
+ "characters": [
+  {
+   "id": "ryosuke-sheet-v3",
+   "count": 1,
+   "refs": [
+    "assets/portraits/hikikomori-cast/cells/ryosuke-front.png"
+   ],
+   "prompt": "Use the exact face of the person in the reference image (same person, same face shape, same hair, same age) in ALL nine panels — never a different person; in the shocked panel he stays the same man with natural skin tone (not white, not pale makeup). REAL PHOTOGRAPH of a real person shot on a full-frame camera: natural skin texture with pores, real hair strands, NOT 3D render, NOT CGI, NOT anime, NOT illustration, NOT cartoon, every panel the same photographic style. Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (three head-and-shoulders portraits of the SAME person): left = straight frontal view, middle = 45-degree three-quarter view, right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (three head-and-shoulders portraits): left = cold businesslike neutral; middle = averted eyes, coolly dismissive; right = pale shocked face. Subject: a Japanese man aged 28, lean face with CLEAR SMOOTH even skin (no freckles, no moles, no spots, no blemishes), short neat black hair, natural side-parted two-block cut (no bowl cut, no fringe), no glasses, no earrings, clean-shaven. Wardrobe locked in every panel: a plain slim charcoal-grey business suit, white shirt, plain dark-grey necktie with a small plain silver tie clip, black leather shoes, no badge. Identical face, hair and clothing in all nine panels, photorealistic, soft even studio lighting. Photorealistic live-action, contemporary Japan (Reiwa era), Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, incomprehensible letters, fake alphabets, text on badge, text on name tag, logo on shirt, signage lettering, watermarks, stamps, symbols on collar, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, illustration."
+  }
+ ]
+}

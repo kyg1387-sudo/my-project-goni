@@ -1,0 +1,152 @@
+{
+ "_설명": "3D 아바타 시험 쇼츠 16컷 2차 — 1차(실사 키프레임 편집)는 실사로 남거나 화풍 혼합 → 아바타 기준 참조 + 글 구도로 새로 생성.",
+ "characters": [
+  {
+   "id": "S18c",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png"
+   ],
+   "prompt": "[STYLE] Stylized 3D animated feature-film render — EVERY person and the whole room in the SAME 3D animated style as the character references: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, stylized hair, soft global illumination, cinematic depth of field. NOT photorealistic, NOT live-action, NOT 2D anime. [CAMERA] Low-angle close-up, 85mm, Daiki framed chest-up in the open doorway, strong backlight from the corridor behind him, rim light on his hair. [CHARACTER] Daiki (reference image 1): aged 26, neat black hair, thin black-rimmed glasses, slim, navy suit, white shirt, no tie. [ACTION] He stands still, calm resolute eyes behind the glasses scanning the room, mouth closed. [SETTING] The same small Japanese corporate meeting room in every shot: pale grey walls, a long grey speckled-stone table, black office chairs, white window blinds on the back wall, a plain wooden door, a round wall clock; cool overcast daylight with soft overhead fluorescent light. Only the people named here are in the room — nobody else, no crowd, no students. [NEGATIVE] photorealistic humans, mixed styles, extra people, text, letters, logo, watermark, extra fingers, fused fingers, second hand on an object."
+  },
+  {
+   "id": "S18d",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-avatar/av-ryosuke-1.png"
+   ],
+   "prompt": "[STYLE] Stylized 3D animated feature-film render — EVERY person and the whole room in the SAME 3D animated style as the character references: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, stylized hair, soft global illumination, cinematic depth of field. NOT photorealistic, NOT live-action, NOT 2D anime. [CAMERA] Eye-level medium shot, 50mm. [CHARACTER] Ryosuke (reference image 1): aged 30, short neat black hair, NO glasses, grey suit, dark tie. [ACTION] He half-rises from his chair at a three-quarter angle, both hands on the table edge, flustered, eyes wide, mouth closed (speech is added later), face toward the left of frame. [SETTING] The same small Japanese corporate meeting room in every shot: pale grey walls, a long grey speckled-stone table, black office chairs, white window blinds on the back wall, a plain wooden door, a round wall clock; cool overcast daylight with soft overhead fluorescent light. Only the people named here are in the room — nobody else, no crowd, no students. [NEGATIVE] photorealistic humans, mixed styles, extra people, text, letters, logo, watermark, extra fingers, fused fingers, second hand on an object."
+  },
+  {
+   "id": "S18e",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png"
+   ],
+   "prompt": "[STYLE] Stylized 3D animated feature-film render — EVERY person and the whole room in the SAME 3D animated style as the character references: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, stylized hair, soft global illumination, cinematic depth of field. NOT photorealistic, NOT live-action, NOT 2D anime. [CAMERA] Low-angle side close-up, 85mm, chest-up. [CHARACTER] Daiki (reference image 1): aged 26, neat black hair, thin black-rimmed glasses, slim, navy suit, white shirt, no tie. [ACTION] Standing, unbothered, calm eyes looking off to the left toward his father, mouth closed. [SETTING] The same small Japanese corporate meeting room in every shot: pale grey walls, a long grey speckled-stone table, black office chairs, white window blinds on the back wall, a plain wooden door, a round wall clock; cool overcast daylight with soft overhead fluorescent light. Only the people named here are in the room — nobody else, no crowd, no students. [NEGATIVE] photorealistic humans, mixed styles, extra people, text, letters, logo, watermark, extra fingers, fused fingers, second hand on an object."
+  },
+  {
+   "id": "S18f",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-avatar/av-kentaro-2.png"
+   ],
+   "prompt": "[STYLE] Stylized 3D animated feature-film render — EVERY person and the whole room in the SAME 3D animated style as the character references: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, stylized hair, soft global illumination, cinematic depth of field. NOT photorealistic, NOT live-action, NOT 2D anime. [CAMERA] High-angle close-up, 85mm. [CHARACTER] Kentaro (reference image 1): aged 58, short cropped grey hair, clean-shaven, NO glasses, dark navy work jacket. [ACTION] Seated at the table, ONE hand still holding a pen above the papers, staring up toward the right in disbelief, mouth slightly open. HANDS LOCKED: exactly one hand holds the pen. [SETTING] The same small Japanese corporate meeting room in every shot: pale grey walls, a long grey speckled-stone table, black office chairs, white window blinds on the back wall, a plain wooden door, a round wall clock; cool overcast daylight with soft overhead fluorescent light. Only the people named here are in the room — nobody else, no crowd, no students. [NEGATIVE] photorealistic humans, mixed styles, extra people, text, letters, logo, watermark, extra fingers, fused fingers, second hand on an object."
+  },
+  {
+   "id": "S18g",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png",
+    "assets/portraits/hikikomori-avatar/av-kentaro-2.png"
+   ],
+   "prompt": "[STYLE] Stylized 3D animated feature-film render — EVERY person and the whole room in the SAME 3D animated style as the character references: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, stylized hair, soft global illumination, cinematic depth of field. NOT photorealistic, NOT live-action, NOT 2D anime. [CAMERA] Over-the-shoulder, low angle, 50mm: the blurred back of Kentaro's head and shoulder in the LEFT foreground (seated). [CHARACTER] Daiki (reference image 1): aged 26, neat black hair, thin black-rimmed glasses, slim, navy suit, white shirt, no tie; foreground = Kentaro (reference image 2): aged 58, short cropped grey hair, clean-shaven, NO glasses, dark navy work jacket. [ACTION] Daiki stands at the table edge at a three-quarter angle looking only at his father, quiet and firm, mouth closed (speech is added later), his face clearly visible and large in frame (one third of frame height). [SETTING] The same small Japanese corporate meeting room in every shot: pale grey walls, a long grey speckled-stone table, black office chairs, white window blinds on the back wall, a plain wooden door, a round wall clock; cool overcast daylight with soft overhead fluorescent light. Only the people named here are in the room — nobody else, no crowd, no students. [NEGATIVE] photorealistic humans, mixed styles, extra people, text, letters, logo, watermark, extra fingers, fused fingers, second hand on an object."
+  },
+  {
+   "id": "S19a",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png",
+    "assets/portraits/hikikomori-avatar/av-makabe-1.png"
+   ],
+   "prompt": "[STYLE] Stylized 3D animated feature-film render — EVERY person and the whole room in the SAME 3D animated style as the character references: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, stylized hair, soft global illumination, cinematic depth of field. NOT photorealistic, NOT live-action, NOT 2D anime. [CAMERA] Over-the-shoulder, eye level, 50mm: the blurred black-suited shoulder and grey slicked hair of Makabe in the RIGHT foreground. [CHARACTER] Daiki (reference image 1): aged 26, neat black hair, thin black-rimmed glasses, slim, navy suit, white shirt, no tie; foreground = Makabe (reference image 2): aged 60, slicked-back grey hair, NO glasses, black suit, dark tie. [ACTION] Daiki at a three-quarter angle turns his gaze to Makabe, calm certainty, mouth closed (speech is added later), face large in frame. [SETTING] The same small Japanese corporate meeting room in every shot: pale grey walls, a long grey speckled-stone table, black office chairs, white window blinds on the back wall, a plain wooden door, a round wall clock; cool overcast daylight with soft overhead fluorescent light. Only the people named here are in the room — nobody else, no crowd, no students. [NEGATIVE] photorealistic humans, mixed styles, extra people, text, letters, logo, watermark, extra fingers, fused fingers, second hand on an object."
+  },
+  {
+   "id": "S19b",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-avatar/av-makabe-1.png"
+   ],
+   "prompt": "[STYLE] Stylized 3D animated feature-film render — EVERY person and the whole room in the SAME 3D animated style as the character references: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, stylized hair, soft global illumination, cinematic depth of field. NOT photorealistic, NOT live-action, NOT 2D anime. [CAMERA] Extreme close-up insert from the side at table height, 100mm. [CHARACTER] Only Makabe's RIGHT hand and black suit sleeve (reference image 1 for the style), no face. [ACTION] His fingers stop tapping on the grey table and curl tight into a fist. HANDS LOCKED: exactly ONE hand, five fingers, the arm continues out of frame. [SETTING] The same small Japanese corporate meeting room in every shot: pale grey walls, a long grey speckled-stone table, black office chairs, white window blinds on the back wall, a plain wooden door, a round wall clock; cool overcast daylight with soft overhead fluorescent light. Only the people named here are in the room — nobody else, no crowd, no students. [NEGATIVE] photorealistic humans, mixed styles, extra people, text, letters, logo, watermark, extra fingers, fused fingers, second hand on an object."
+  },
+  {
+   "id": "S19c",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png"
+   ],
+   "prompt": "[STYLE] Stylized 3D animated feature-film render — EVERY person and the whole room in the SAME 3D animated style as the character references: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, stylized hair, soft global illumination, cinematic depth of field. NOT photorealistic, NOT live-action, NOT 2D anime. [CAMERA] Medium insert, eye level, framed from below the chin: Daiki's chest, navy suit and both hands only, no face. [CHARACTER] Daiki (reference image 1): aged 26, neat black hair, thin black-rimmed glasses, slim, navy suit, white shirt, no tie. [ACTION] He takes a slim black tablet out of a plain black bag on the table with both hands; natural fingers. [SETTING] The same small Japanese corporate meeting room in every shot: pale grey walls, a long grey speckled-stone table, black office chairs, white window blinds on the back wall, a plain wooden door, a round wall clock; cool overcast daylight with soft overhead fluorescent light. Only the people named here are in the room — nobody else, no crowd, no students. [NEGATIVE] photorealistic humans, mixed styles, extra people, text, letters, logo, watermark, extra fingers, fused fingers, second hand on an object."
+  },
+  {
+   "id": "S19d",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-avatar/av-makabe-1.png"
+   ],
+   "prompt": "[STYLE] Stylized 3D animated feature-film render — EVERY person and the whole room in the SAME 3D animated style as the character references: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, stylized hair, soft global illumination, cinematic depth of field. NOT photorealistic, NOT live-action, NOT 2D anime. [CAMERA] High-angle close-up, 85mm. [CHARACTER] Makabe (reference image 1): aged 60, slicked-back grey hair, NO glasses, black suit, dark tie. [ACTION] Seated, listening, the colour draining from his face, one small bead of sweat at the temple, eyes fixed toward the left of frame, mouth closed. [SETTING] The same small Japanese corporate meeting room in every shot: pale grey walls, a long grey speckled-stone table, black office chairs, white window blinds on the back wall, a plain wooden door, a round wall clock; cool overcast daylight with soft overhead fluorescent light. Only the people named here are in the room — nobody else, no crowd, no students. [NEGATIVE] photorealistic humans, mixed styles, extra people, text, letters, logo, watermark, extra fingers, fused fingers, second hand on an object."
+  },
+  {
+   "id": "S19e",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png"
+   ],
+   "prompt": "[STYLE] Stylized 3D animated feature-film render — EVERY person and the whole room in the SAME 3D animated style as the character references: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, stylized hair, soft global illumination, cinematic depth of field. NOT photorealistic, NOT live-action, NOT 2D anime. [CAMERA] Overhead insert, 50mm, looking straight down at the grey table. [CHARACTER] Only Daiki's RIGHT hand and navy suit cuff (reference image 1 for the style). [ACTION] He sets a slim tablet flat on the table; the tablet screen glows plain white with no writing. HANDS LOCKED: exactly ONE hand. [SETTING] The same small Japanese corporate meeting room in every shot: pale grey walls, a long grey speckled-stone table, black office chairs, white window blinds on the back wall, a plain wooden door, a round wall clock; cool overcast daylight with soft overhead fluorescent light. Only the people named here are in the room — nobody else, no crowd, no students. [NEGATIVE] photorealistic humans, mixed styles, extra people, text, letters, logo, watermark, extra fingers, fused fingers, second hand on an object."
+  },
+  {
+   "id": "S19f",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png"
+   ],
+   "prompt": "[STYLE] Stylized 3D animated feature-film render — EVERY person and the whole room in the SAME 3D animated style as the character references: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, stylized hair, soft global illumination, cinematic depth of field. NOT photorealistic, NOT live-action, NOT 2D anime. [CAMERA] Low-angle chest-up shot, 50mm, Daiki standing at the table at a three-quarter angle. [CHARACTER] Daiki (reference image 1): aged 26, neat black hair, thin black-rimmed glasses, slim, navy suit, white shirt, no tie. [ACTION] One hand resting on the tablet on the table, explaining firmly, mouth closed (speech is added later), face large in frame. Behind him only the empty meeting room wall and blinds — NOBODY else. [SETTING] The same small Japanese corporate meeting room in every shot: pale grey walls, a long grey speckled-stone table, black office chairs, white window blinds on the back wall, a plain wooden door, a round wall clock; cool overcast daylight with soft overhead fluorescent light. Only the people named here are in the room — nobody else, no crowd, no students. [NEGATIVE] photorealistic humans, mixed styles, extra people, text, letters, logo, watermark, extra fingers, fused fingers, second hand on an object."
+  },
+  {
+   "id": "S19g",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-avatar/av-ryosuke-1.png"
+   ],
+   "prompt": "[STYLE] Stylized 3D animated feature-film render — EVERY person and the whole room in the SAME 3D animated style as the character references: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, stylized hair, soft global illumination, cinematic depth of field. NOT photorealistic, NOT live-action, NOT 2D anime. [CAMERA] Eye-level medium shot, 50mm. [CHARACTER] Ryosuke (reference image 1): aged 30, short neat black hair, NO glasses, grey suit, dark tie. [ACTION] Seated, flipping through papers in a folder in a panic, pale, eyes darting down. [SETTING] The same small Japanese corporate meeting room in every shot: pale grey walls, a long grey speckled-stone table, black office chairs, white window blinds on the back wall, a plain wooden door, a round wall clock; cool overcast daylight with soft overhead fluorescent light. Only the people named here are in the room — nobody else, no crowd, no students. [NEGATIVE] photorealistic humans, mixed styles, extra people, text, letters, logo, watermark, extra fingers, fused fingers, second hand on an object."
+  },
+  {
+   "id": "S20a",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-avatar/av-makabe-1.png"
+   ],
+   "prompt": "[STYLE] Stylized 3D animated feature-film render — EVERY person and the whole room in the SAME 3D animated style as the character references: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, stylized hair, soft global illumination, cinematic depth of field. NOT photorealistic, NOT live-action, NOT 2D anime. [CAMERA] High-angle side chest-up close-up, 85mm. [CHARACTER] Makabe (reference image 1): aged 60, slicked-back grey hair, NO glasses, black suit, dark tie. [ACTION] Pale, a thin line of cold sweat running down from the temple, staring blankly ahead, mouth closed. [SETTING] The same small Japanese corporate meeting room in every shot: pale grey walls, a long grey speckled-stone table, black office chairs, white window blinds on the back wall, a plain wooden door, a round wall clock; cool overcast daylight with soft overhead fluorescent light. Only the people named here are in the room — nobody else, no crowd, no students. [NEGATIVE] photorealistic humans, mixed styles, extra people, text, letters, logo, watermark, extra fingers, fused fingers, second hand on an object."
+  },
+  {
+   "id": "S20b",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png"
+   ],
+   "prompt": "[STYLE] Stylized 3D animated feature-film render — EVERY person and the whole room in the SAME 3D animated style as the character references: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, stylized hair, soft global illumination, cinematic depth of field. NOT photorealistic, NOT live-action, NOT 2D anime. [CAMERA] Side insert at table height, 100mm, no face. [CHARACTER] Daiki's RIGHT hand in a navy suit sleeve (reference image 1 for the style). [ACTION] He sets a thick plain grey file binder down flat on the table; the tabs are blank; his arm continues out of frame. HANDS LOCKED: exactly ONE hand. [SETTING] The same small Japanese corporate meeting room in every shot: pale grey walls, a long grey speckled-stone table, black office chairs, white window blinds on the back wall, a plain wooden door, a round wall clock; cool overcast daylight with soft overhead fluorescent light. Only the people named here are in the room — nobody else, no crowd, no students. [NEGATIVE] photorealistic humans, mixed styles, extra people, text, letters, logo, watermark, extra fingers, fused fingers, second hand on an object."
+  },
+  {
+   "id": "S20c",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-avatar/av-yumiko-1.png"
+   ],
+   "prompt": "[STYLE] Stylized 3D animated feature-film render — EVERY person and the whole room in the SAME 3D animated style as the character references: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, stylized hair, soft global illumination, cinematic depth of field. NOT photorealistic, NOT live-action, NOT 2D anime. [CAMERA] Eye-level close-up, 85mm. [CHARACTER] Yumiko (reference image 1): aged 54, dark brown bob, NO glasses, NO earrings, beige cardigan over a white blouse. [ACTION] Seated, one hand at her mouth, eyes wet with a thin tear line, watching her son off to the right with pride and relief. NOT smiling. [SETTING] The same small Japanese corporate meeting room in every shot: pale grey walls, a long grey speckled-stone table, black office chairs, white window blinds on the back wall, a plain wooden door, a round wall clock; cool overcast daylight with soft overhead fluorescent light. Only the people named here are in the room — nobody else, no crowd, no students. [NEGATIVE] photorealistic humans, mixed styles, extra people, text, letters, logo, watermark, extra fingers, fused fingers, second hand on an object."
+  },
+  {
+   "id": "S20d",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-avatar/av-daiki-2.png",
+    "assets/portraits/hikikomori-avatar/av-kentaro-2.png"
+   ],
+   "prompt": "[STYLE] Stylized 3D animated feature-film render — EVERY person and the whole room in the SAME 3D animated style as the character references: soft rounded forms, slightly larger expressive eyes, smooth subsurface skin, stylized hair, soft global illumination, cinematic depth of field. NOT photorealistic, NOT live-action, NOT 2D anime. [CAMERA] Over-the-shoulder, eye level, 50mm: the blurred back of Kentaro's grey head and navy shoulder in the LEFT foreground. [CHARACTER] Daiki (reference image 1): aged 26, neat black hair, thin black-rimmed glasses, slim, navy suit, white shirt, no tie; foreground = Kentaro (reference image 2): aged 58, short cropped grey hair, clean-shaven, NO glasses, dark navy work jacket. [ACTION] Daiki turns to his father at a three-quarter angle with softer, trusting eyes, mouth closed (speech is added later), face large in frame. [SETTING] The same small Japanese corporate meeting room in every shot: pale grey walls, a long grey speckled-stone table, black office chairs, white window blinds on the back wall, a plain wooden door, a round wall clock; cool overcast daylight with soft overhead fluorescent light. Only the people named here are in the room — nobody else, no crowd, no students. [NEGATIVE] photorealistic humans, mixed styles, extra people, text, letters, logo, watermark, extra fingers, fused fingers, second hand on an object."
+  }
+ ]
+}
