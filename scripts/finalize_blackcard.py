@@ -254,8 +254,13 @@ def build_cut(sid, sec, tmp):
         frames = [cover(f) for f in process_native(sid, read_frames(src))]
     frames = (frames + [frames[-1]] * n)[:n]
     frames = camera(sid, frames, sec, src)
-    if sid in COUNT:  # 구석 카운트다운 자막 전환
+    if sid in COUNT:  # 구석 카운트다운 자막 전환 + 대시보드 시계 23:59 → 0:00(합성 정지 2장 위 연속 슬로 줌)
         a_txt, b_txt, tsw = COUNT[sid]; ksw = int(tsw * FPS)
+        if sid in jov.QUADS:
+            base = Image.open(os.path.join(KF, f"{sid}-1.png"))
+            A = cover(np.asarray(jov.put_lcd(base, jov.clock("23:59"), jov.QUADS[sid])))
+            Bf = cover(np.asarray(jov.put_lcd(base, jov.clock("0:00"), jov.QUADS[sid])))
+            frames = [zoom_frame(A if i < ksw else Bf, 1 + 0.05 * i / max(n - 1, 1), 0.5, 0.45) for i in range(n)]
         frames = [text_frame(f, a_txt if i < ksw else b_txt, 64, 0.92, corner=True) for i, f in enumerate(frames)]
     write_frames(frames, out)
     return out
