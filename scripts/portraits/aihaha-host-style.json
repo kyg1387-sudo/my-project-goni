@@ -1,0 +1,33 @@
+{
+ "_설명": "아웃트로 진행자 스타일 3안×2(3차 #1038에서 참조 이미지 ashita-host-1 누락으로 미생성 → 정본 브랜치에서 파일 단위로 가져옴, 제9장 6). 고니감독님 선택용, 약 0.25달러.",
+ "_style_preset": "Photorealistic live-action, contemporary Japan (Reiwa era), Chiba prefecture, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting, natural skin texture with pores, no plastic skin.",
+ "characters": [
+  {
+   "id": "host-style-A",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "aspect_ratio": "16:9",
+   "count": 2,
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no captions. The reference image is the channel's APPROVED host: reproduce exactly this young Japanese woman's FACE, age and skin (identity). Medium close-up, chest up, she looks warmly into the lens with a gentle closed-mouth smile, 85mm f/2. STYLING A (pretty and neatly styled, every strand tidy, fabric with natural folds): a soft low half-up knot with loose face-framing strands, glossy dark-brown hair; a cream cable-knit sweater with a fine camel cardigan draped over the shoulders; one thin delicate gold chain necklace; natural soft makeup; background: a cozy Japanese living room set with a warm table lamp and a vase of dried autumn flowers (soft bokeh). Soft warm key light from the left, gentle rim light. Absolutely no text, letters, numbers, logos or watermarks. Negative: gibberish, fake alphabets, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, CGI, cartoon."
+  },
+  {
+   "id": "host-style-B",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "aspect_ratio": "16:9",
+   "count": 2,
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no captions. The reference image is the channel's APPROVED host: reproduce exactly this young Japanese woman's FACE, age and skin (identity). Medium close-up, chest up, she looks warmly into the lens with a gentle closed-mouth smile, 85mm f/2. STYLING B (pretty and neatly styled, every strand tidy, fabric with natural folds): a sleek low ponytail tied with a small muted lavender silk ribbon, glossy dark-brown hair; a soft lavender high-neck knit top (echoing the mother's lavender cardigan in the story); small pearl stud earrings; natural soft makeup; background: a bright tatami-room corner with shoji light and a small potted plant (soft bokeh). Soft warm key light from the left, gentle rim light. Absolutely no text, letters, numbers, logos or watermarks. Negative: gibberish, fake alphabets, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, CGI, cartoon."
+  },
+  {
+   "id": "host-style-C",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "aspect_ratio": "16:9",
+   "count": 2,
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no captions. The reference image is the channel's APPROVED host: reproduce exactly this young Japanese woman's FACE, age and skin (identity). Medium close-up, chest up, she looks warmly into the lens with a gentle closed-mouth smile, 85mm f/2. STYLING C (pretty and neatly styled, every strand tidy, fabric with natural folds): shoulder-length glossy dark-brown hair in soft inward waves with a neat side part, tucked behind one ear; an ivory silk blouse with a soft round collar under a dusty-blue cardigan; one thin gold bangle; natural soft makeup; background: a warm study corner with a bookshelf and a window with late-autumn light (soft bokeh). Soft warm key light from the left, gentle rim light. Absolutely no text, letters, numbers, logos or watermarks. Negative: gibberish, fake alphabets, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, CGI, cartoon."
+  }
+ ]
+}
