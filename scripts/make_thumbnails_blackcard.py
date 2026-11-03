@@ -16,6 +16,7 @@ import make_thumbnails_beggar as mb  # noqa: E402
 
 FIRE, YELLOW, RED = mb.FIRE, mb.YELLOW, mb.RED
 SRC = os.path.join(ROOT, "assets", "portraits", "blackcard-thumb-abc")
+SRC_D = os.path.join(ROOT, "assets", "portraits", "blackcard-thumb-d")
 mb.OUT = os.path.join(ROOT, "assets", "thumbnails", "blackcard")
 mb.ABC = {
     "A": dict(src="thumbA-{n}s.png", side="L", label=None,
@@ -25,8 +26,8 @@ mb.ABC = {
               rows=[("切った部下が", 138, FIRE, None), ("ビルの主に", 150, YELLOW, None)],
               row_y=120, shade=95, shade_w=1000, badge=("妻の不倫相手は", "上司だった"), badge_xy=(890, 24), band=None),
     "D": dict(src="thumbD-{n}.png", side="L", label="スカッとする話",  # 시네마틱 실사풍(고니감독님 지시 2026-11-03): 왼쪽 흰 고딕 테두리 3줄 + 하단 불꽃 그라데이션 인용구
-              rows=[("クビにした", 118, None, (255, 255, 255)), ("部下が翌日", 118, None, (255, 255, 255)), ("ビルの主に", 118, None, (255, 255, 255))],
-              row_y=130, shade=120, shade_w=900, quote="「判子は、ここ」", quote_size=200),
+              rows=[("クビにした部下が", 108, None, (255, 255, 255)), ("翌日、ビルの主に", 108, None, (255, 255, 255))],  # 3줄은 美咲 얼굴을 가림 → 2줄
+              row_y=126, shade=120, shade_w=980, quote="「判子は、ここ」", quote_size=200),
     "C": dict(src="thumbC-{n}.png", side="R", label=None,
               rows=[("十五年、捨てられた男の", 88, RED, None), ("本当の復讐", 118, YELLOW, None)], x0=640, row_y=36,
               band=["「判子は――ここ」", "三度目の、その言葉"], band_xy=(1060, 780)),
@@ -40,9 +41,17 @@ def shift_right(n, dx=140):
     out.save(os.path.join(SRC, f"thumbA-{n}s.png"))
 
 
+def zoom_d(n, top=0.12, left=0.04):
+    """D: 와이드 생성 그림의 인물이 작아 위·왼쪽 여백을 잘라 1.1~1.2배 확대(얼굴 크기, 제13장 5)."""
+    src = Image.open(os.path.join(SRC_D, f"thumbD-{n}.png")).convert("RGB"); w, h = src.size
+    src.crop((int(w * left), int(h * top), w, h)).resize((mb.W, mb.H), Image.LANCZOS).save(os.path.join(SRC_D, f"thumbD-{n}z.png"))
+
+
 if __name__ == "__main__":
-    if sys.argv[1:2] == ["D"]:  # python3 make_thumbnails_blackcard.py D 번호
-        mb.ABC_SRC = SRC; mb.abc_final({"D": sys.argv[2]})
+    if sys.argv[1:2] == ["D"]:  # python3 make_thumbnails_blackcard.py D 번호 [top left]
+        zoom_d(sys.argv[2], float(sys.argv[3]) if len(sys.argv) > 3 else 0.12, float(sys.argv[4]) if len(sys.argv) > 4 else 0.04)
+        mb.ABC["D"]["src"] = "thumbD-{n}z.png"
+        mb.ABC_SRC = SRC_D; mb.abc_final({"D": sys.argv[2]})
         for suf in ("-JP.jpg", "-phone360.jpg", "-phone168.png"):
             p = os.path.join(mb.OUT, f"beggar-thumb-D{suf}")
             if os.path.exists(p):
