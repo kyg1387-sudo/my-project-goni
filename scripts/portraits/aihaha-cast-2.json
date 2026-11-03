@@ -1,5 +1,5 @@
 {
- "_설명": "『母が遺したビデオレター』 PHASE 2 Kill Gate 2차(1차 #1036 검수 결과 반영). 1차 불합격: 由紀子 표정 셀 다른 사람(단발·안경 없음)·젤 눈물·45° 칸이 측면·귀걸이·시계 과대, 佐和子 점 번식·측면 칸 안경·귀걸이, 剛 표정 셀 다른 사람·귀걸이, 翔太 전체 3D 화풍 + 「blood draining」이 피로 그려짐, 宮下 전 칸 귀걸이·측면 안경·옷깃 배지, 완공 방 시트 크레인·창밖 다른 풍경·벽 달력 가짜 글자·6칸 배치, 요정 시트 달력·병 라벨 가짜 글자·의자. 합격: 頼子·비계 방·거실·경찰·외경 강변/거리·소품. 1차 셀은 로컬 인페인트(귀걸이·점·배지)로 정리해 refs로 사용. 「no earrings/no glasses」 부정문이 오히려 유입 → 「bare earlobes·eyes uncovered」 긍정문으로 바꿈. 완공 창은 비계 창 셀을 편집(같은 방·같은 타워 = 매치컷 증거 일치). 의상 변형(由紀子 상복·剛 골프·頼子 블라우스)·가짜 어머니 기준 포함. 翔太 의상 변형·由紀子 코트·아웃트로 진행자는 3차. 14장, 예상 약 0.6달러.",
+ "_설명": "『母が遺したビデオレター』 PHASE 2 Kill Gate 2차(1차 #1036 검수 결과 반영). 1차 불합격: 由紀子 표정 셀 다른 사람(단발·안경 없음)·젤 눈물·45° 칸이 측면·귀걸이·시계 과대, 佐和子 점 번식·측면 칸 안경·귀걸이, 剛 표정 셀 다른 사람·귀걸이, 翔太 전체 3D 화풍 + 「blood draining」이 피로 그려짐, 宮下 전 칸 귀걸이·측면 안경·옷깃 배지, 완공 방 시트 크레인·창밖 다른 풍경·벽 달력 가짜 글자·6칸 배치, 요정 시트 달력·병 라벨 가짜 글자·의자. 합격: 頼子·비계 방·거실·경찰·외경 강변/거리·소품. 1차 셀은 로컬 인페인트(귀걸이·점·배지)로 정리해 refs로 사용. 「no earrings/no glasses」 부정문이 오히려 유입 → 「bare earlobes·eyes uncovered」 긍정문으로 바꿈. 완공 창은 비계 창 셀을 편집(같은 방·같은 타워 = 매치컷 증거 일치). 의상 변형(由紀子 상복·剛 골프·頼子 블라우스)·가짜 어머니 기준 포함. 翔太 의상 변형·由紀子 코트·아웃트로 진행자는 3차. 14장, 예상 약 0.6달러. + 눈물·땀 기준 컷 2종×2(고니감독님 지시 「진짜 사람이 흘리는 것처럼」, `10_눈물땀설계.md`) → 18장, 약 0.8달러.",
  "_style_preset": "Photorealistic live-action, contemporary Japan (Reiwa era), Chiba prefecture, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting, natural skin texture with pores, no plastic skin.",
  "characters": [
   {
@@ -115,6 +115,25 @@
    ],
    "aspect_ratio": "16:9",
    "prompt": "Edit: the SAME elderly woman (same face, same short white permed hair, same lavender cardigan, one mole on her right cheek) but rendered as an uncanny AI-generated deepfake video still: unnaturally smooth airbrushed skin with no pores, perfect left-right facial symmetry, glassy fixed eyes staring straight into the lens, a stiff polite smile, sitting on a chair in a tatami room; behind her a window showing a FINISHED tall tower (no scaffolding, no mesh, no cranes). Flat even lighting, slightly over-sharpened video look. Single image, 16:9. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, stamps, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, illustration, CGI, cartoon."
+  },
+  {
+   "id": "yukiko-tear-ref",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/aihaha-cast/cells/yukiko-45.png",
+    "assets/portraits/aihaha-cast/cells/yukiko-full-front.png"
+   ],
+   "prompt": "Use the exact face of the woman in the reference images (same person, same age, low ponytail, thin silver wire-rim round glasses, bare earlobes). REAL PHOTOGRAPH, 85mm lens f/1.8, tight close-up of her face at a 30-degree three-quarter angle looking off-camera to the left (not at the lens), soft morning window light from the left. She is quietly crying in a real, restrained way: the rims of her eyes and the tip of her nose slightly pink, eyes glistening with a thin film of tears gathered on the lower eyelids, ONE single thin transparent tear track on her right cheek only, running along the natural curve of the cheek and catching a faint highlight of the window light, natural matte skin texture with pores, lips pressed together, chin slightly tense, NOT smiling. Negative: gel tears, thick glossy tear streaks, tears on both cheeks, multiple tear lines, glitter, cartoon droplets, whole-face shine, plastic skin, large sweat drops, anime style, 3D render, CGI, text, watermark."
+  },
+  {
+   "id": "tsuyoshi-sweat-ref",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/aihaha-cast/cells/tsuyoshi-front.png"
+   ],
+   "prompt": "Use the exact face of the man in the reference image (same person, grey hair slicked back, receding hairline, jowls, bare face, bare earlobes). REAL PHOTOGRAPH, 50mm lens, close-up from a slightly high angle, cold overhead fluorescent light. He is panicking quietly: skin turning pale, a few tiny natural beads of sweat on his forehead and temples, a faint natural oily sheen at the hairline, ONE thin trickle of sweat running from his left temple toward the jawline, eyes darting to the side, mouth slightly open, natural skin texture with pores, NOT glossy. Negative: gel tears, thick glossy tear streaks, tears on both cheeks, multiple tear lines, glitter, cartoon droplets, whole-face shine, plastic skin, large sweat drops, anime style, 3D render, CGI, text, watermark."
   }
  ]
 }
