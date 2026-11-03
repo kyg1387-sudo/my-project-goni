@@ -1,0 +1,89 @@
+{
+ "_설명": "진짜 어머니 L56(line109)·L03c(line007) 재녹음 2차 — 억양 범위가 가짜 비디오레터(5.1~5.2반음)와 겹침(L56 5.4~5.6, L03c 5.4). eleven_v3 비언어 태그(한숨·웃음·떨림)로 사람 숨결을 넣어 진짜/가짜 대비(제20장 9). 각 3~4안, 약 200크레딧.",
+ "tests": [
+  {
+   "id": "line109-r1",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko - Warm, Witty Grandma",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.0
+   },
+   "text": "[soft sigh] ゆっこ。[gently, voice trembling] 仕事、辞めさせてごめんね。",
+   "lock_tempo": 0.88
+  },
+  {
+   "id": "line109-r2",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko - Warm, Witty Grandma",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.0
+   },
+   "text": "[tired, tender] ゆっこ。……[apologetic, warm] 仕事、辞めさせてごめんね。",
+   "lock_tempo": 0.88
+  },
+  {
+   "id": "line109-r3",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko - Warm, Witty Grandma",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.0
+   },
+   "text": "[softly laughs] ゆっこ。[warmly, a little sad] 仕事、辞めさせてごめんね。",
+   "lock_tempo": 0.88
+  },
+  {
+   "id": "line109-r4",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko - Warm, Witty Grandma",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.0
+   },
+   "text": "[whispering, loving] ゆっこ。[sincere, emotional] 仕事、辞めさせてごめんね。",
+   "lock_tempo": 0.88
+  },
+  {
+   "id": "line007-r1",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko - Warm, Witty Grandma",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.0
+   },
+   "text": "[chuckles softly] ゆっこの煮物、お母さんのより、おいしいねえ。",
+   "lock_tempo": 0.95
+  },
+  {
+   "id": "line007-r2",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko - Warm, Witty Grandma",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.0
+   },
+   "text": "[delighted, warm] ゆっこの煮物、お母さんのより、おいしいねえ。",
+   "lock_tempo": 0.95
+  },
+  {
+   "id": "line007-r3",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko - Warm, Witty Grandma",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.0
+   },
+   "text": "[playful, teasing] ゆっこの煮物、お母さんのより、おいしいねえ。",
+   "lock_tempo": 0.95
+  }
+ ]
+}
