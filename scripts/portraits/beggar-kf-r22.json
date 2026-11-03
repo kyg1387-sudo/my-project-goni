@@ -1,0 +1,17 @@
+{
+ "_설명": "beggar-chairman S14d 재생성 r22(8:03 L41 — 앞 岩城의 입이 같이 움직임 → 源蔵 가슴 위 CU + 岩城 완전 뒷모습 어깨 너머). 4장 약 0.12달러.",
+ "_style_preset": "Photorealistic live-action Japanese human drama, 16:9",
+ "characters": [
+  {
+   "id": "S14d",
+   "count": 4,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "refs": [
+    "assets/portraits/beggar-chairman-keyframes/S14d-1.png",
+    "assets/portraits/beggar-faces/genzo.png"
+   ],
+   "prompt": "[CAMERA] Medium close-up reverse over-the-shoulder shot, low angle, 50mm, f/2.0, 16:9, one single photorealistic film still, NOT a grid. The old man's face is LARGE: chest up, his face about one third of the frame height, placed right of centre. In the LEFT FOREGROUND, the restaurant manager is seen STRICTLY FROM BEHIND: only the back of his slicked-back black hair and one shoulder of his black suit, soft and out of focus at the frame edge; his face, ears and mouth are NOT visible at all. [CHARACTER] The old man = Takamiya Genzo from reference image 2 (reproduce exactly this face): Japanese man aged 78, lean weathered face, close-cropped white hair, short neat white beard, one small dark mole above his LEFT eyebrow, NO glasses, NO earrings, plain faded grey zip-up jacket. [ACTION] He stands and looks DOWN toward the foreground man with bitter calm, mouth gently closed (speech is added later), eyes slightly narrowed. [SETTING] Same room and light as reference image 1: the dim restaurant corner, beige wall and dark wood wainscot, a bright soft window behind him, warm soft light, film grain, natural soft edges, NO glowing outline, NO halo. [NEGATIVE] the manager's face, profile of the manager, earrings visible, text, letters, logo, watermark, extra fingers, anime, grid, split panels, wide shot, full body."
+  }
+ ]
+}

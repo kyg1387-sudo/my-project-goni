@@ -1,0 +1,12 @@
+{
+ "_설명": "beggar-chairman S14d 립싱크 재생성(8:03 L41 앞 3.3초, 본편 정렬 오프셋 0.065초) — 源蔵 CU + 岩城 뒷모습 키프레임 r22-3. 약 3.4초 x 0.16 ≈ 0.55달러.",
+ "tests": [
+  {
+   "id": "omni-s14d",
+   "model": "omnihuman",
+   "image": "assets/portraits/beggar-kf-r22/S14d-3-169.png",
+   "audio_id": "l41a",
+   "prompt": "NOT smiling at any moment. The old man answers the kneeling manager in front of him with bitter, quiet calm, looking down at him, speaking slowly; minimal head movement, shoulders still. The foreground man seen from behind stays completely still and silent."
+  }
+ ]
+}

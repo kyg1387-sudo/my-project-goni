@@ -1,0 +1,26 @@
+{
+ "_설명": "『みすぼらしい老人は、財閥会長だった』 대사 3컷 시범(제10장 4) — 회장 L38·지배인 L32·ちひろ L30c. 음성은 본녹음 확정본(앞뒤 무음 정리+0.15초). 약 8초 x 0.16 ≈ 1.3달러. 립싱크 컷은 눈물이 흐르지 않는 「젖었지만 흐르지 않음」(제18장 1).",
+ "tests": [
+  {
+   "id": "omni-S13i",
+   "model": "omnihuman",
+   "image": "assets/portraits/beggar-kf-pilot/S13i-fixed.png",
+   "audio_id": "L38",
+   "prompt": "After a long silence Genzo says softly that the boy was him, eyes wet and glistening, voice low. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout."
+  },
+  {
+   "id": "omni-S12f",
+   "model": "omnihuman",
+   "image": "assets/portraits/beggar-kf-pilot/S12f-fixed.png",
+   "audio_id": "L32",
+   "prompt": "Iwaki stammers in shock, gone pale, lips trembling, cold sweat on his brow, repeating 'Chairman' in disbelief. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout."
+  },
+  {
+   "id": "omni-S11i",
+   "model": "omnihuman",
+   "image": "assets/portraits/beggar-kf-pilot/S11i-fixed.png",
+   "audio_id": "L30c",
+   "prompt": "Chihiro spreads her arms in front of the old man and shouts fiercely for them not to touch him, jaw set hard, voice shaking but loud. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout."
+  }
+ ]
+}

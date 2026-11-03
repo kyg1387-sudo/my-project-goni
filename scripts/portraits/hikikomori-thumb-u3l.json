@@ -1,0 +1,20 @@
+{
+ "_설명": "썸네일 U3 재구성 — 왼쪽 健太郎 오열 CU(본편 얼굴, 수염 없음). 오른쪽은 본편 키프레임(S05f 화면 합성본), 글자는 로컬 합성.",
+ "characters": [
+  {
+   "id": "U3L",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/hikikomori-faces/kentaro.png"
+   ],
+   "prompt": "[CAMERA] Close-up portrait, 85mm, f/1.8, slightly low eye level, the man fills the LEFT half of a 16:9 frame (his face in the left-centre), the RIGHT half is out-of-focus dark workshop, one single photorealistic film still. [CHARACTER] The Japanese man from reference image 1 — Seo Kentaro, aged 58, owner of a small Tokyo machine shop: short neatly cropped grey hair, CLEAN-SHAVEN (no beard, no goatee, no moustache), NO glasses, NO earrings, a dark navy work jacket. Reproduce exactly this face. No name tag, no text, no patch. [ACTION] He weeps with remorse, both hands clasped and pressed against his mouth, eyebrows knotted, eyes squeezed and wet, natural dark-brown irises, eyelid edges pink, ONE or two thin clear natural tear lines down the cheeks (no gel droplets), matte real skin, shoulders hunched over a worn steel workbench. NOT smiling. [SETTING] His small machine factory at night: dark lathe silhouettes, a single warm work lamp behind him giving a rim light on his grey hair, deep shadows, teal-amber cinematic grade, film grain. [NEGATIVE] text, letters, logo, watermark, name patch, beard, goatee, long hair, glasses, extra fingers, anime, 3D, plastic skin.",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+{
+ "_설명": "beggar-chairman 썸네일 B 3차 — 첨부 형식(히로인 얼굴 왼쪽 38%, 왼쪽 30% 글자 자리) 위치 고정. 3장 약 0.09달러.",
+ "_style_preset": "Photorealistic Japanese human drama thumbnail, 16:9",
+ "characters": [
+  {
+   "id": "thumbB3",
+   "refs": [
+    "assets/portraits/beggar-faces/chihiro.png",
+    "assets/portraits/beggar-faces/iwaki.png",
+    "assets/portraits/beggar-faces/genzo.png"
+   ],
+   "prompt": "[CAMERA] Wide shot, slight high angle, 24mm, deep focus, 16:9, one single illustration, NOT a grid. Heroine in the left-center foreground seen from the waist up, her FACE placed at about 38 percent from the left edge of the frame and in the upper half; the LEFT 30 percent of the frame beside her is plain dark red background with soft bokeh (no faces there) for title text. Antagonist kneeling center-right in a white spotlight, the old man standing far right at full height. [CHARACTER] Japanese manga-style digital illustration, clean bold linework, cel shading with soft gradients (NOT photorealistic, NOT 3D). Heroine = Chihiro from reference image 1: Japanese woman aged 20, black hair with straight bangs tied in a low ponytail, NO glasses, NO earrings, white blouse and navy apron, hugging a tray with a steaming bowl of plain udon to her chest. Antagonist = Iwaki from reference image 2: restaurant manager aged 45, black hair slicked back, thin black moustache, small black stud earrings, black three-piece suit, silver tie, a small blank metal name plate, sweating, on his knees, mouth open in panic, holding an empty silver bill tray. The old man = Takamiya Genzo from reference image 3: aged 78, lean, close-cropped white hair, short white beard, small mole above his LEFT eyebrow, NO glasses, NO earrings, plain grey zip-up jacket, standing tall over him with arms at his sides. Blurred crowd of diners and staff in dark clothes behind. [ACTION] The heroine glances sideways at the kneeling man with a calm, steady expression; the kneeling man trembles; the old man looks down in stern silence. [SETTING] Luxury restaurant banquet hall at night, crystal chandeliers, warm red and gold lighting, red carpet, white tablecloths, spotlight beams from above, dramatic warm-cool contrast. [NEGATIVE] earrings on the heroine, text, letters, logo, watermark, photorealistic, extra limbs, blurry faces on main characters, glasses on the heroine, grid, split panels.",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   }
+  }
+ ]
+}

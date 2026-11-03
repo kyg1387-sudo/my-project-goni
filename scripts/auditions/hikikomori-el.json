@@ -1,0 +1,56 @@
+{
+ "_설명": "『引きこもり息子』 ElevenLabs 비교 오디션 — 도서관에서 language=ja(일본어 원어 화자)만 배역당 2명 검색해 같은 대사로 생성(eleven_v3). 다국어·영어권 목소리는 쓰지 않는다. 실행: generate-video.yml audition_spec=hikikomori-el.",
+ "el_ja_search": {
+  "model": "eleven_v3",
+  "roles": [
+   {
+    "role": "father",
+    "gender": "male",
+    "age": "middle_aged",
+    "n": 2,
+    "lines": [
+     {
+      "id": "A",
+      "text": "出ていけ！ お前みたいなゴミ、育てた覚えはない！"
+     },
+     {
+      "id": "B",
+      "text": "……あいつは……ゴミなんかじゃ……なかった……"
+     }
+    ]
+   },
+   {
+    "role": "daiki",
+    "gender": "male",
+    "age": "young",
+    "n": 2,
+    "lines": [
+     {
+      "id": "A",
+      "text": "……分かった。出ていくよ。……でも、とうさん。後悔しないでね"
+     },
+     {
+      "id": "B",
+      "text": "おじさん。……とうさんに似て、よかったです"
+     }
+    ]
+   },
+   {
+    "role": "mother",
+    "gender": "female",
+    "age": "middle_aged",
+    "n": 2,
+    "lines": [
+     {
+      "id": "A",
+      "text": "工場の赤字……よねんかん、ずっとあの子が埋めてくれてたのよ"
+     },
+     {
+      "id": "B",
+      "text": "おとなりに負けないくらい、いいお肉にしたのよ"
+     }
+    ]
+   }
+  ]
+ }
+}
