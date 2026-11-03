@@ -1,0 +1,55 @@
+{
+ "_설명": "『ブラックカード』(第1話) 썸네일 A(어두운 실사 얼굴+카드)·B(웹툰 역전: 의자째 무너진 柴田·무릎 꿇은 美咲·내려다보는 健二)·C(따뜻한 실사 투샷: 健二+会長 레스토랑) — 제18장 12 표준, 5단 형식. 2560x1440, 각 3장 약 0.27달러. 찢기 장면 미사용(01_제작지침-적용 2).",
+ "characters": [
+  {
+   "id": "thumbA",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-faces/kenji.png",
+    "assets/portraits/blackcard-keyframes/S08m-1.png"
+   ],
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "prompt": "[CAMERA] Close-up portrait, 85mm, f/1.8, eye level, subject on the RIGHT third, the LEFT HALF of the frame kept dark and empty for text. 16:9 widescreen, one single photorealistic film still, NOT a grid. [CHARACTER] Takahashi Kenji from reference image 1 (reproduce exactly this face): Japanese man aged 43, lean face, short black hair with a little grey, short neat stubble, a small old scar above his LEFT eyebrow, NO glasses, NO earrings, wearing a plain black tailored suit, white shirt, no tie, a steel chronograph watch with a plain dial. No name tag, no text. [ACTION] He holds up a plain matte-black credit card with NO text and NO numbers, only a faint embossed geometric emblem, between two fingers beside his face at cheek height, and stares straight into the lens with a cold, quiet, dangerous calm: jaw set, eyes narrowed slightly, natural dark-brown irises with sharp catchlights, matte natural skin, a faint sheen of rain on his hair. [SETTING] Roppongi at night: a dark executive office window behind him with blurred city lights and one red aviation warning light, teal-and-amber noir color grade, low key, hard rim light from the right, cinematic film grain. Reference image 2 is only for the room look. [NEGATIVE] text, letters, logo, watermark, extra fingers, anime, cartoon, 3D render, plastic skin, glossy gel tears, earrings, grid, split panels, inset portrait."
+  },
+  {
+   "id": "thumbB",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-faces/kenji.png",
+    "assets/portraits/blackcard-faces/shibata.png",
+    "assets/portraits/blackcard-faces/misaki.png"
+   ],
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "prompt": "[CAMERA] Wide shot, slight high angle, 24mm, deep focus, 16:9, one single illustration, NOT a grid, ONE continuous scene. Kenji standing large on the RIGHT third looking down, the executive Shibata slumped backward in a tilted black leather chair in the CENTER under a hard spotlight, the wife Misaki on her knees on the floor at the LOWER LEFT; the upper-left area left open for text. [CHARACTER] Japanese manga-style digital illustration, clean bold linework, cel shading with soft gradients, dramatic lighting (NOT photorealistic, NOT 3D). Kenji = reference image 1: aged 43, lean face, short black hair, short stubble, NO glasses, black tailored suit, white shirt, no tie, holding a plain matte-black card in one hand at his side. Shibata = reference image 2: aged 44, broad face, slicked-back black hair, RIMLESS glasses, navy double-breasted suit, grey tie, collapsed backward in the chair, mouth open, sweating, one hand gripping the armrest. Misaki = reference image 3: aged 41, chin-length black bob, exactly ONE small mole on her left cheek, NO glasses, beige trench coat, kneeling on the floor, one hand over her mouth, eyes wet. No name tags, no text. [ACTION] Kenji looks down at both of them with a calm, cold expression; Shibata trembles; Misaki looks up at Kenji in shock. [SETTING] A glass-walled executive boardroom at night: long dark table, floor-to-ceiling windows with Roppongi city lights, one hard spotlight from above on the chair, blue-grey shadows elsewhere, a single envelope on the table. [NEGATIVE] text, letters, speech bubbles, logo, watermark, extra fingers, photorealistic, 3D, earrings, grid, split panels, inset portrait."
+  },
+  {
+   "id": "thumbC",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-faces/kenji.png",
+    "assets/portraits/blackcard-faces/president.png",
+    "assets/portraits/blackcard-keyframes/S07s-1.png"
+   ],
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "prompt": "[CAMERA] Medium shot, 50mm, f/2.8, eye level, two-shot: Kenji large on the LEFT third facing the camera, the elderly chairman smaller behind him on the right, slightly out of focus. 16:9, one single photorealistic film still, NOT a grid. Upper-right area kept dim for text. [CHARACTER] Kenji = Takahashi Kenji from reference image 1 (reproduce exactly this face): Japanese man aged 43, lean face, short black hair with a little grey, short neat stubble, a small old scar above his LEFT eyebrow, NO glasses, NO earrings, wearing a plain black tailored suit, white shirt, no tie, a steel chronograph watch with a plain dial. Chairman = reference image 2 (reproduce exactly this face): Japanese man in his 70s, white slicked-back hair, round silver-rimmed glasses, charcoal three-piece suit, navy tie, NO earrings. No text. [ACTION] Kenji gives the camera a faint, tired but warm smile, eyes slightly glistening, one hand resting on the table beside a plain matte-black card with no text; the chairman behind him looks at Kenji with a quiet, knowing, kindly smile. [SETTING] A private room of a high-floor Roppongi restaurant at night: warm tungsten table lamp, dark wood and leather, blurred city lights through the window, warm amber color grade, cinematic photorealistic, film grain. Reference image 3 is only for the room look. [NEGATIVE] text, letters, logo, watermark, extra fingers, anime, cartoon, 3D render, plastic skin, glossy gel tears, earrings, grid, split panels, inset portrait."
+  }
+ ]
+}
