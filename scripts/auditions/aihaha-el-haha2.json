@@ -1,0 +1,49 @@
+{
+ "_설명": "『母が遺したビデオレター』 어머니 추가 후보 — aihaha-el-haha에서 고령 여성(age=old) 일본어 원어 화자가 Chieko 1명만 검색돼 검색어를 넓힘. 고니감독님이 Chieko를 들어 보고 부족할 때만 실행. 실행: generate-video.yml audition_spec=aihaha-el-haha2 (브랜치 claude/aihaha-ja).",
+ "el_ja_search": {
+  "model": "eleven_v3",
+  "roles": [
+   {
+    "role": "haha",
+    "gender": "female",
+    "search": "grandma",
+    "n": 2,
+    "lines": [
+     {
+      "id": "A",
+      "text": "[warm, gentle] ゆっこ、いつもありがとね。あのマンション、まだ工事してるねえ。"
+     },
+     {
+      "id": "B",
+      "text": "[tender, slightly tired] ゆっこ。仕事、辞めさせてごめんね。……ちゃんと、ご飯食べなさいよ。"
+     },
+     {
+      "id": "C",
+      "text": "[flat, emotionless] ゆきこ……お母さんよ。相続は、放棄して。おじさんに、全部任せて。"
+     }
+    ]
+   },
+   {
+    "role": "haha",
+    "gender": "female",
+    "age": "middle_aged",
+    "search": "mother",
+    "n": 2,
+    "lines": [
+     {
+      "id": "A",
+      "text": "[warm, gentle] ゆっこ、いつもありがとね。あのマンション、まだ工事してるねえ。"
+     },
+     {
+      "id": "B",
+      "text": "[tender, slightly tired] ゆっこ。仕事、辞めさせてごめんね。……ちゃんと、ご飯食べなさいよ。"
+     },
+     {
+      "id": "C",
+      "text": "[flat, emotionless] ゆきこ……お母さんよ。相続は、放棄して。おじさんに、全部任せて。"
+     }
+    ]
+   }
+  ]
+ }
+}
