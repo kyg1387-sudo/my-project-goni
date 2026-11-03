@@ -444,7 +444,7 @@ def outro(main_out, tmp):
     cta = os.path.join(tmp, "outro-cta.mp4")
     subprocess.run([sys.executable, os.path.join(ROOT, "scripts/outro_cta_overlay.py"), outro, cta, f"{hs[1] + 1.0:.2f}", f"{hs[1] + 1.8:.2f}", f"{hs[2] - 0.2:.2f}"], check=True)
     final = os.path.join(OUTD, "hikikomori-final.mp4")
-    env = {**os.environ, "OUTRO": cta, "ENDCARD": os.path.join(ROOT, "assets/brand/endcard-midam-ja.mp4"), "OUT_SIZE": "1920x1080"}
+    env = {**os.environ, "OUTRO": cta, "ENDCARD": os.path.join(ROOT, "assets/brand/endcard-midam-ja-v2.mp4"), "OUT_SIZE": "1920x1080"}
     subprocess.run([sys.executable, os.path.join(ROOT, "scripts/append_outro.py"), main_out, final], check=True, env=env)
     print(f"완성: {final} ({dur(final):.1f}초) / 본편 {dur(main_out):.1f}초")
 

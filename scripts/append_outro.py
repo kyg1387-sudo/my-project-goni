@@ -6,7 +6,7 @@
 import os, subprocess, sys
 src, out = sys.argv[1], sys.argv[2]
 outro = os.environ.get("OUTRO", "assets/auditions/outro-host/OUTRO-SCENE.mp4")      # 일본어판: OUTRO=assets/auditions/outro-host/OUTRO-SCENE-ja.mp4
-endcard = os.environ.get("ENDCARD", "assets/brand/endcard-midam.mp4")             # 일본어판: ENDCARD=assets/brand/endcard-midam-ja.mp4  # 채널 엔드카드(5.5s, 자체 음악 베드) — 아웃트로 뒤 0.6s 크로스페이드로 이어짐
+endcard = os.environ.get("ENDCARD", "assets/brand/endcard-midam.mp4")             # 일본어판: ENDCARD=assets/brand/endcard-midam-ja-v2.mp4(제목 왼쪽 아래 — 제19장 30③, make_endcard_v2.py)  # 채널 엔드카드(5.5s, 자체 음악 베드) — 아웃트로 뒤 0.6s 크로스페이드로 이어짐
 def dur(p): return float(subprocess.check_output(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",p]).decode())
 d0, d1 = dur(src), dur(outro)
 FO, GAP, FI = 1.0, 0.8, 0.5
