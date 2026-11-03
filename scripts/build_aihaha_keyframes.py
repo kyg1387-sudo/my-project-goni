@@ -40,7 +40,8 @@ def describe(path, i):
     if b.startswith("sweat-standard"):
         return f"Reference image {i} is the APPROVED SWEAT LOOK of {PEOPLE[k]}: reproduce exactly this face and this subtle natural sweat; ignore its background."
     if k and b.endswith("-back.png"):
-        return f"Reference image {i} is the BACK VIEW of {PEOPLE[k]}: this person appears seen from behind exactly like this (hair, build); never show this person's face."
+        bare = "" if k in GLASSES else " This person's ears and temples are bare — no eyewear arms."
+        return f"Reference image {i} is the BACK VIEW of {PEOPLE[k]}: this person appears seen from behind exactly like this (hair, build); never show this person's face.{bare}"
     if k and any(w in b for w in ("mourning", "coat", "golf", "blouse", "hoodie")):
         return f"Reference image {i} is the WARDROBE reference of {PEOPLE[k]}: copy this exact outfit and the same face; ignore its white background and panel layout."
     if k:
@@ -85,7 +86,40 @@ EMO_OVERRIDE = {
     "S08k": "The framed portrait on the small altar shows a plain soft pale surface inside the frame (the photograph is composited later).",
     "S11j": "Exactly three people slumped on the sofa seen from directly above; nobody else.",
     "S13d": "Yukiko alone, close-up, the morning window light from the left exactly like the approved tear reference.",
+    # r1 (시범 #1046 Kill Gate) — 손 개수·시선·두 사람 손 구분·구도
+    "H0b": ("ONE HAND ONLY: her LEFT hand alone holds the tablet by its lower edge, tilted toward her; her right hand is out of frame, resting in her lap. "
+            "Five separate fingers, the watch on that left wrist."),
+    "H2b": ("ONE HAND ONLY: her LEFT hand alone lowers the tablet, tilted about 30 degrees above the low table with its glowing screen facing DOWN toward the wood, "
+            "so the screen itself is hidden — only its plain black back and the cold light spilling onto the table are seen; her right hand is out of frame."),
+    "H1": ("EYELINE LOCKED: her eyes look DOWN and toward the left edge of the frame at the tablet held below the frame at chest height; the lens sees her face from "
+           "about 40 degrees to her right; her eyelids lowered toward the screen, the pupils never aimed at the lens."),
+    "S01h": ("TWO DIFFERENT PEOPLE'S HANDS: from the LEFT, the mother's thin wrinkled 74-year-old hand in a lavender cardigan sleeve with the small brown-leather watch "
+             "on her wrist; from the RIGHT, Yukiko's smooth 46-year-old hand in a beige knit sleeve, lying palm-down on the blanket underneath; the old hand rests on "
+             "top of the younger hand. Exactly two hands, one from each side."),
+    "S01b": ("ONE HAND ONLY: her RIGHT hand alone, pinching one small white pill between thumb and index finger just above an open compartment of the plain "
+             "white weekly pill case on the low table; her left hand is out of frame. Five separate fingers."),
+    "S01f": "PEOPLE LOCKED: exactly two people — the mother's blurred white-haired head and lavender shoulder at the near left edge, her thin hand pointing at the window; Yukiko beyond by the window.",
 }
+FRAMING_FIRST = {
+    "S01f": "FRAMING LOCKED FIRST: MEDIUM SHOT from the waist up — Yukiko stands close to the window, her face at least one quarter of the frame height; NOT a full-body shot.",
+}
+GLASSES = {"yukiko": "thin silver wire-rim ROUND glasses", "shota": "thick black rectangular glasses"}
+NAME = {"yukiko": "Yukiko", "sawako": "the mother (Sawako)", "tsuyoshi": "the uncle", "yoriko": "the aunt", "shota": "the cousin", "miyashita": "the detective",
+        "ai-haha": "the AI mother"}
+
+
+def eyewear_lock(keys):
+    """안경 이동 방지(시범 #1046: 유키코 정면 셀의 안경이 어깨 너머 어머니로 옮겨 감 2/3컷, 유키코는 안경 소실)."""
+    keys = [k for k in dict.fromkeys(keys) if k in NAME]
+    if len(keys) < 2:
+        return None
+    wear = [f"{NAME[k]} wears {GLASSES[k]}" for k in keys if k in GLASSES]
+    bare = [NAME[k] for k in keys if k not in GLASSES]
+    if not wear or not bare:
+        return None
+    return ("EYEWEAR LOCKED: " + "; ".join(wear) + " — always, including in this frame; " + " and ".join(bare)
+            + " ha" + ("s" if len(bare) == 1 else "ve") + " bare uncovered eyes and bare temples. The glasses belong only to "
+            + " and ".join(NAME[k] for k in keys if k in GLASSES) + ".")
 SEAT = "SEATED/FURNITURE LOCKED: seated people sit on zabuton or chairs pulled in to the table; no furniture passes through any body."
 
 
@@ -96,17 +130,34 @@ def build(sc):
     if len(refs) > MAX_REFS:
         refs = refs[:MAX_REFS]
     assert len(refs) <= MAX_REFS
+    kp = sc["keyframe_prompt"]
+    if sc["id"] == "H0a":
+        # 극 중 AI 영상만 렌즈 정면(제21장 4) — PHASE 3 공통 립싱크 문장(30~40° 시선)과 충돌하므로 제거, 장소 판을 첫 참조로
+        kp = kp.replace("Single speaker at 30 to 40 degrees from the camera axis, eyes toward the other person off-screen, NOT looking at the camera, "
+                        "the face at least one third of the frame height, mouth closed. ", "")
+        refs = [r for r in refs if not who_of(os.path.basename(r))] + [r for r in refs if who_of(os.path.basename(r))]
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
-    parts += [describe(p, i + 1) for i, p in enumerate(refs)]
     if sc["kind"] == "d" and sc["id"] != "H0a":
         parts.append("FRAMING LOCKED FIRST: chest-up MEDIUM CLOSE-UP, the speaker's face at least ONE THIRD of the frame height; NOT a wide shot, NO full body.")
+    if sc["id"] in FRAMING_FIRST:
+        parts.append(FRAMING_FIRST[sc["id"]])
+    if sc["id"] == "H0a":
+        parts.append("Reference image 1 is the BASE PLATE of the room: keep the same textured beige wall, the same dark-wood window frame and EXACTLY the same "
+                     "finished pale tower with the same tiled-roof houses and green trees below it outside; the woman sits in the brown armchair in front of that window. "
+                     "Nothing else in the room: no tablet, no devices, no frames.")
+        parts += [describe(p, i + 1) for i, p in enumerate(refs) if i > 0]
+    else:
+        parts += [describe(p, i + 1) for i, p in enumerate(refs)]
+    ew = eyewear_lock([who_of(os.path.basename(r)) for r in refs])
+    if ew:
+        parts.append(ew)
     if sc["kind"] in ("face", "d", "pstill") and sc["id"] != "H0a":
         parts.append(GAZE_DEFAULT)
     if "phone" not in (sc["subject"] + " " + (sc.get("motion") or "")).lower():
         parts.append("Nobody holds a phone.")
     if sc["id"] in EMO_OVERRIDE:
         parts.append(EMO_OVERRIDE[sc["id"]])
-    parts.append(sc["keyframe_prompt"])
+    parts.append(kp)
     parts.append(LOC_NOTE)
     if sc.get("lighting") in LIGHT_NOTE:
         parts.append(LIGHT_NOTE[sc["lighting"]])
