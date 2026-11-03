@@ -327,8 +327,9 @@ def red_pulse_inputs():
     """항공장애등: 오른쪽 위에서 퍼지는 붉은 글로 PNG를 2초 주기로 screen 블렌드(S09·S10)."""
     p = os.path.join(OUTD, "fin-bc", "red_glow.png")
     if not os.path.exists(p):
-        y, x = np.mgrid[0:H, 0:W]; d = np.sqrt(((x - W * 0.95) / (W * 0.6)) ** 2 + ((y - H * 0.1) / (H * 0.9)) ** 2)
-        g = np.clip(1 - d, 0, 1) ** 1.6
+        # 1차(2026-11-03): 타원 W0.6×H0.9·세기 0.55는 S09·S10 전체가 자홍색으로 물듦(색감 급변) → 오른쪽 위 1/3에만 닿는 작은 글로·세기 0.28
+        y, x = np.mgrid[0:H, 0:W]; d = np.sqrt(((x - W * 0.97) / (W * 0.34)) ** 2 + ((y - H * 0.06) / (H * 0.42)) ** 2)
+        g = np.clip(1 - d, 0, 1) ** 2.2
         im = np.zeros((H, W, 3), np.uint8); im[..., 0] = (g * 150).astype(np.uint8); im[..., 1] = (g * 15).astype(np.uint8); im[..., 2] = (g * 10).astype(np.uint8)
         Image.fromarray(im).save(p)
     return p
@@ -358,7 +359,7 @@ def patch(src, out, tmp, only=None):
         sc = SCENE_OF[sid]; lo, hi = sc_rng.get(sc, (a, b)); sc_rng[sc] = (min(lo, a), max(hi, b))
     en = "+".join(f"between(t,{sc_rng[s][0]:.3f},{sc_rng[s][1]:.3f})" for s in sorted(RED_PULSE))
     # all_opacity는 식을 받지 않는다(2026-11-03 실증) → screen 블렌드를 all_expr로 쓰고 구간은 enable로(그 밖은 통과)
-    fc.append(f"{last}[1:v]blend=all_expr='A+(B-A*B/255)*(0.55*(0.5+0.5*sin(2*PI*T/2.0)))':enable='{en}':shortest=1[rp]")
+    fc.append(f"{last}[1:v]blend=all_expr='A+(B-A*B/255)*(0.28*(0.5+0.5*sin(2*PI*T/2.0)))':enable='{en}':shortest=1[rp]")
     fc.append(f"[rp]{grade_filters(src)}eq=contrast=1.03:saturation=0.97,{lift_filter(src)}noise=alls=3:allf=t+u,format=yuv420p[v]")
     script = os.path.join(tmp, "patch_fc.txt"); open(script, "w").write(";\n".join(fc))
     run(inputs + ["-filter_complex_script", script, "-map", "[v]", "-map", "0:a", "-c:v", "libx264", "-preset", "medium", "-crf", "17",
@@ -427,6 +428,10 @@ def outro(main_out, tmp):
     final = os.path.join(OUTD, f"{SKIT}-final.mp4")
     env = {**os.environ, "OUTRO": cta, "ENDCARD": os.path.join(ROOT, "assets/brand/endcard-midam-ja.mp4"), "OUT_SIZE": "1920x1080"}
     subprocess.run([sys.executable, os.path.join(ROOT, "scripts/append_outro.py"), main_out, final], check=True, env=env)
+    # 아웃트로 결합 뒤 트루피크가 −0.9 dBTP로 올라감(2026-11-03 qa_final FAIL) → 완성본에 트루피크 리미터(영상 복사)
+    lim = final.replace(".mp4", "_lim.mp4")
+    run(["-i", final, "-c:v", "copy", "-af", "alimiter=limit=0.82:attack=3:release=40:level=false", "-c:a", "aac", "-b:a", "192k", lim])
+    os.replace(lim, final)
     print(f"완성: {final} ({dur(final):.1f}초) / 본편 {dur(main_out):.1f}초")
 
 
