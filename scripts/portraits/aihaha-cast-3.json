@@ -1,0 +1,90 @@
+{
+ "_설명": "『母が遺したビデオレター』 PHASE 2 3차. 2차(#1037) 결과: 합격 — 佐和子·剛·宮下(옷깃 핀은 키프레임 「plain lapels」+검수)·翔太(상단·전신만 기준, 표정 오른쪽은 다른 사람)·由紀子 상복·剛 골프·頼子 블라우스·요정·방 와이드 밤·눈물 기준 2번·땀 기준 2번. 불합격 — **완공 창 낮·밤(편집이 비계·녹색 그물을 남김 = 증거 장면 치명)**, 由紀子 시트 정면·표정 칸 안경 누락·측면 귀걸이 잔존, 가짜 어머니 기준의 창밖 타워가 실제 타워와 다른 건물(→ PHASE 4에서 완공 창 합성). 3차: 由紀子 안경 정면·45°, 완공 창 v3(낮 결과에서 아래 그물·펜스만 제거하는 작은 편집 ×2안), 由紀子 코트, 翔太 후드, 아웃트로 진행자 스타일 3안(고니감독님 선택용).",
+ "_style_preset": "Photorealistic live-action, contemporary Japan (Reiwa era), Chiba prefecture, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting, natural skin texture with pores, no plastic skin.",
+ "characters": [
+  {
+   "id": "yukiko-front-glasses",
+   "refs": [
+    "assets/portraits/aihaha-cast/cells/yukiko-v2-front.png",
+    "assets/portraits/aihaha-cast/cells/yukiko-tear.png"
+   ],
+   "aspect_ratio": "3:4",
+   "count": 2,
+   "prompt": "Edit reference image 1: the SAME woman, same face, same low ponytail, same beige knit, same plain white background, same framing — ADD thin silver wire-rim ROUND glasses exactly like the ones in reference image 2, sitting naturally on her nose. Bare earlobes. Calm neutral expression. REAL PHOTOGRAPH, natural skin texture. Absolutely no text, letters, numbers, logos or watermarks. Negative: gibberish, fake alphabets, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, CGI, cartoon."
+  },
+  {
+   "id": "yukiko-45-glasses",
+   "refs": [
+    "assets/portraits/aihaha-cast/cells/yukiko-v2-front.png",
+    "assets/portraits/aihaha-cast/cells/yukiko-tear.png"
+   ],
+   "aspect_ratio": "3:4",
+   "count": 2,
+   "prompt": "The SAME woman as reference image 1 (same face, low ponytail, beige knit) wearing thin silver wire-rim ROUND glasses exactly like the ones in reference image 2, head-and-shoulders, turned 35 degrees to her left (three-quarter view, both eyes visible, NOT a profile), looking past the camera, bare earlobes, plain white studio background, soft even light. REAL PHOTOGRAPH. Absolutely no text, letters, numbers, logos or watermarks. Negative: gibberish, fake alphabets, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, CGI, cartoon."
+  },
+  {
+   "id": "yukiko-coat",
+   "refs": [
+    "assets/portraits/aihaha-cast/cells/yukiko-mourning-front.png",
+    "assets/portraits/aihaha-cast/cells/yukiko-tear.png"
+   ],
+   "aspect_ratio": "16:9",
+   "count": 1,
+   "prompt": "Use the exact face of the woman in the reference images (same person, low ponytail, thin silver wire-rim round glasses, bare earlobes). REAL PHOTOGRAPH. One single image, a 1x3 row of three photo panels separated by thin white gutters on pure white, no captions: left = head-and-shoulders frontal, middle = full-body frontal standing, right = full-body back view. Wardrobe (late November): a plain camel-beige wool coat over the beige knit and grey slacks, dark flat shoes, the small old brown-leather wristwatch on her LEFT wrist. Calm, quietly relieved expression. Photorealistic live-action, contemporary Japan (Reiwa era), Chiba prefecture, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting, natural skin texture with pores, no plastic skin. Absolutely no text, letters, numbers, logos or watermarks. Negative: gibberish, fake alphabets, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, CGI, cartoon."
+  },
+  {
+   "id": "shota-hoodie",
+   "refs": [
+    "assets/portraits/aihaha-cast/cells/shota-v2-front.png"
+   ],
+   "aspect_ratio": "16:9",
+   "count": 1,
+   "prompt": "Use the exact face of the man in the reference image (same person, same two-block haircut with longer side-swept black top, same thick black rectangular glasses, clean-shaven, bare earlobes). REAL PHOTOGRAPH. One single image, a 1x3 row of three photo panels separated by thin white gutters on pure white, no captions: left = head-and-shoulders frontal, middle = full-body frontal standing holding a smartphone at his side, right = full-body back view. Wardrobe: a plain grey hoodie with no print under a plain black casual jacket, black slim trousers, white sneakers with no logo. Arrogant smirk. Photorealistic live-action, contemporary Japan (Reiwa era), Chiba prefecture, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting, natural skin texture with pores, no plastic skin. Absolutely no text, letters, numbers, logos or watermarks. Negative: gibberish, fake alphabets, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, CGI, cartoon."
+  },
+  {
+   "id": "room-window-finished-day-v3",
+   "refs": [
+    "assets/portraits/aihaha-cast/cells/room-window-finished-day-try1.png"
+   ],
+   "aspect_ratio": "16:9",
+   "count": 2,
+   "prompt": "Edit this exact photo. Keep the room, the window frame, the brown armchair, the wall, the camera angle and the finished tower EXACTLY as they are. Change ONLY the lower part of the view outside the window: REMOVE the green safety net, the temporary metal fence and every scaffolding pole completely — replace them with the tiled rooftops of ordinary low Japanese houses and a few trees at the foot of the tower. The construction is completely finished: no green net, no fence, no poles, no cranes anywhere. Soft late-summer daylight. Photorealistic. Absolutely no text, letters, numbers, logos or watermarks. Negative: gibberish, fake alphabets, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, CGI, cartoon."
+  },
+  {
+   "id": "room-window-finished-night-v3",
+   "refs": [
+    "assets/portraits/aihaha-cast/cells/room-window-finished-day-try1.png"
+   ],
+   "aspect_ratio": "16:9",
+   "count": 2,
+   "prompt": "Edit this exact photo. Keep the room, the window frame, the brown armchair, the wall, the camera angle and the finished tower EXACTLY in place. Make it NIGHT: inside, the room is lit only by a warm 3200K floor lamp off-frame to the left; outside, a dark navy night sky, the finished tower with scattered warm lit apartment windows, and below it the dark tiled rooftops of low houses. REMOVE the green safety net, the temporary fence and every scaffolding pole completely — no green net, no fence, no poles, no cranes anywhere. Photorealistic. Absolutely no text, letters, numbers, logos or watermarks. Negative: gibberish, fake alphabets, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, CGI, cartoon."
+  },
+  {
+   "id": "host-style-A",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "aspect_ratio": "16:9",
+   "count": 1,
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no captions. The reference image is the channel's APPROVED host: reproduce exactly this young Japanese woman's FACE, age and skin (identity). Medium close-up, chest up, she looks warmly into the lens with a gentle closed-mouth smile, 85mm f/2. STYLING A (pretty and neatly styled, every strand tidy, fabric with natural folds): a soft low half-up knot with loose face-framing strands, glossy dark-brown hair; a cream cable-knit sweater with a fine camel cardigan draped over the shoulders; one thin delicate gold chain necklace; natural soft makeup; background: a cozy Japanese living room set with a warm table lamp and a vase of dried autumn flowers (soft bokeh). Soft warm key light from the left, gentle rim light. Absolutely no text, letters, numbers, logos or watermarks. Negative: gibberish, fake alphabets, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, CGI, cartoon."
+  },
+  {
+   "id": "host-style-B",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "aspect_ratio": "16:9",
+   "count": 1,
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no captions. The reference image is the channel's APPROVED host: reproduce exactly this young Japanese woman's FACE, age and skin (identity). Medium close-up, chest up, she looks warmly into the lens with a gentle closed-mouth smile, 85mm f/2. STYLING B (pretty and neatly styled, every strand tidy, fabric with natural folds): a sleek low ponytail tied with a small muted lavender silk ribbon, glossy dark-brown hair; a soft lavender high-neck knit top (echoing the mother's lavender cardigan in the story); small pearl stud earrings; natural soft makeup; background: a bright tatami-room corner with shoji light and a small potted plant (soft bokeh). Soft warm key light from the left, gentle rim light. Absolutely no text, letters, numbers, logos or watermarks. Negative: gibberish, fake alphabets, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, CGI, cartoon."
+  },
+  {
+   "id": "host-style-C",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "aspect_ratio": "16:9",
+   "count": 1,
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no captions. The reference image is the channel's APPROVED host: reproduce exactly this young Japanese woman's FACE, age and skin (identity). Medium close-up, chest up, she looks warmly into the lens with a gentle closed-mouth smile, 85mm f/2. STYLING C (pretty and neatly styled, every strand tidy, fabric with natural folds): shoulder-length glossy dark-brown hair in soft inward waves with a neat side part, tucked behind one ear; an ivory silk blouse with a soft round collar under a dusty-blue cardigan; one thin gold bangle; natural soft makeup; background: a warm study corner with a bookshelf and a window with late-autumn light (soft bokeh). Soft warm key light from the left, gentle rim light. Absolutely no text, letters, numbers, logos or watermarks. Negative: gibberish, fake alphabets, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, CGI, cartoon."
+  }
+ ]
+}
