@@ -150,6 +150,10 @@ jobs:
       actions: read
     steps:
       - uses: actions/checkout@v4
+        with:  # 희소 체크아웃(2026-11-03): 초상 생성은 scripts·assets/portraits만
+          sparse-checkout: |
+            scripts
+            assets/portraits
 
       - name: 이전 실행 초상 복원 (이어하기)
         if: ${{ inputs.resume_run_id != '' }}

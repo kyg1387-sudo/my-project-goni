@@ -24,6 +24,9 @@ mb.ABC = {
     "B": dict(src="thumbB-{n}.png", side="L", label="スカッとする話",
               rows=[("切った部下が", 138, FIRE, None), ("ビルの主に", 150, YELLOW, None)],
               row_y=120, shade=95, shade_w=1000, badge=("妻の不倫相手は", "上司だった"), badge_xy=(890, 24), band=None),
+    "D": dict(src="thumbD-{n}.png", side="L", label="スカッとする話",  # 시네마틱 실사풍(고니감독님 지시 2026-11-03): 왼쪽 흰 고딕 테두리 3줄 + 하단 불꽃 그라데이션 인용구
+              rows=[("クビにした", 118, None, (255, 255, 255)), ("部下が翌日", 118, None, (255, 255, 255)), ("ビルの主に", 118, None, (255, 255, 255))],
+              row_y=130, shade=120, shade_w=900, quote="「判子は、ここ」", quote_size=200),
     "C": dict(src="thumbC-{n}.png", side="R", label=None,
               rows=[("十五年、捨てられた男の", 88, RED, None), ("本当の復讐", 118, YELLOW, None)], x0=640, row_y=36,
               band=["「判子は――ここ」", "三度目の、その言葉"], band_xy=(1060, 780)),
@@ -38,6 +41,13 @@ def shift_right(n, dx=140):
 
 
 if __name__ == "__main__":
+    if sys.argv[1:2] == ["D"]:  # python3 make_thumbnails_blackcard.py D 번호
+        mb.ABC_SRC = SRC; mb.abc_final({"D": sys.argv[2]})
+        for suf in ("-JP.jpg", "-phone360.jpg", "-phone168.png"):
+            p = os.path.join(mb.OUT, f"beggar-thumb-D{suf}")
+            if os.path.exists(p):
+                os.replace(p, p.replace("beggar-thumb", "blackcard-thumb"))
+        sys.exit()
     a = (sys.argv[1:] + ["1", "1", "1"])[:3]
     shift_right(a[0])
     mb.ABC_SRC = SRC
