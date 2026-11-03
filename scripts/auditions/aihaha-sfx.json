@@ -1,0 +1,425 @@
+{
+ "_설명": "『母が遺したビデオレター』 효과음 20종×3안(07_연출설계 3절). 사람 목소리·음악 생성 금지. 선택 후 finalize SFX 목록으로 피크 −9 dBFS(정점)·−18~−12(일반) 믹스.",
+ "tests": [
+  {
+   "id": "tablet_tap-1",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: a single soft fingertip tap on a glass tablet screen in a dark quiet room. No music, no voices, no speech, no people talking.",
+   "duration_s": 0.6,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "tablet_tap-2",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: a single soft fingertip tap on a glass tablet screen in a dark quiet room. No music, no voices, no speech, no people talking.",
+   "duration_s": 0.6,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "tablet_tap-3",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: a single soft fingertip tap on a glass tablet screen in a dark quiet room. No music, no voices, no speech, no people talking.",
+   "duration_s": 0.6,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "glitch-1",
+   "model": "elevenlabs-sfx",
+   "text": "Short digital video glitch: a brief high-frequency data stutter and electronic crackle, like a corrupted video frame. No music, no voices, no speech, no people talking.",
+   "duration_s": 0.8,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "glitch-2",
+   "model": "elevenlabs-sfx",
+   "text": "Short digital video glitch: a brief high-frequency data stutter and electronic crackle, like a corrupted video frame. No music, no voices, no speech, no people talking.",
+   "duration_s": 0.8,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "glitch-3",
+   "model": "elevenlabs-sfx",
+   "text": "Short digital video glitch: a brief high-frequency data stutter and electronic crackle, like a corrupted video frame. No music, no voices, no speech, no people talking.",
+   "duration_s": 0.8,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "drone-1",
+   "model": "elevenlabs-sfx",
+   "text": "Cinematic deep sub-bass drone, slow and ominous, very low rumbling pressure that slowly swells, dark suspense. No music, no voices, no speech, no people talking.",
+   "duration_s": 8.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "drone-2",
+   "model": "elevenlabs-sfx",
+   "text": "Cinematic deep sub-bass drone, slow and ominous, very low rumbling pressure that slowly swells, dark suspense. No music, no voices, no speech, no people talking.",
+   "duration_s": 8.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "drone-3",
+   "model": "elevenlabs-sfx",
+   "text": "Cinematic deep sub-bass drone, slow and ominous, very low rumbling pressure that slowly swells, dark suspense. No music, no voices, no speech, no people talking.",
+   "duration_s": 8.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "heartbeat-1",
+   "model": "elevenlabs-sfx",
+   "text": "Slow heavy human heartbeat, deep and muffled, close and intimate, steady rhythm about 60 beats per minute. No music, no voices, no speech, no people talking.",
+   "duration_s": 6.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "heartbeat-2",
+   "model": "elevenlabs-sfx",
+   "text": "Slow heavy human heartbeat, deep and muffled, close and intimate, steady rhythm about 60 beats per minute. No music, no voices, no speech, no people talking.",
+   "duration_s": 6.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "heartbeat-3",
+   "model": "elevenlabs-sfx",
+   "text": "Slow heavy human heartbeat, deep and muffled, close and intimate, steady rhythm about 60 beats per minute. No music, no voices, no speech, no people talking.",
+   "duration_s": 6.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "sub_hit-1",
+   "model": "elevenlabs-sfx",
+   "text": "Single cinematic low boom impact hit with a long deep sub-bass tail, dramatic reveal. No music, no voices, no speech, no people talking.",
+   "duration_s": 3.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "sub_hit-2",
+   "model": "elevenlabs-sfx",
+   "text": "Single cinematic low boom impact hit with a long deep sub-bass tail, dramatic reveal. No music, no voices, no speech, no people talking.",
+   "duration_s": 3.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "sub_hit-3",
+   "model": "elevenlabs-sfx",
+   "text": "Single cinematic low boom impact hit with a long deep sub-bass tail, dramatic reveal. No music, no voices, no speech, no people talking.",
+   "duration_s": 3.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "glass_clink-1",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: two glass beer tumblers clink together gently at a Japanese dining table, crisp ASMR detail. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "glass_clink-2",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: two glass beer tumblers clink together gently at a Japanese dining table, crisp ASMR detail. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "glass_clink-3",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: two glass beer tumblers clink together gently at a Japanese dining table, crisp ASMR detail. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "chopsticks-1",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: wooden chopsticks tapping a ceramic plate and a small bowl being set down on a low wooden table, ASMR detail. No music, no voices, no speech, no people talking.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "chopsticks-2",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: wooden chopsticks tapping a ceramic plate and a small bowl being set down on a low wooden table, ASMR detail. No music, no voices, no speech, no people talking.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "chopsticks-3",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: wooden chopsticks tapping a ceramic plate and a small bowl being set down on a low wooden table, ASMR detail. No music, no voices, no speech, no people talking.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "paper_drop-1",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: a single sheet of thick paper is placed flat onto a wooden table with a soft slap. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "paper_drop-2",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: a single sheet of thick paper is placed flat onto a wooden table with a soft slap. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "paper_drop-3",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: a single sheet of thick paper is placed flat onto a wooden table with a soft slap. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "drawer_slide-1",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: an old wooden chest drawer slides open slowly with a dry wooden scrape, then stops. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.8,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "drawer_slide-2",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: an old wooden chest drawer slides open slowly with a dry wooden scrape, then stops. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.8,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "drawer_slide-3",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: an old wooden chest drawer slides open slowly with a dry wooden scrape, then stops. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.8,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "cctv_switch-1",
+   "model": "elevenlabs-sfx",
+   "text": "Security camera monitor switching: a short burst of analog static white noise and an electronic click. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "cctv_switch-2",
+   "model": "elevenlabs-sfx",
+   "text": "Security camera monitor switching: a short burst of analog static white noise and an electronic click. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "cctv_switch-3",
+   "model": "elevenlabs-sfx",
+   "text": "Security camera monitor switching: a short burst of analog static white noise and an electronic click. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "watch_tick-1",
+   "model": "elevenlabs-sfx",
+   "text": "Extreme close-up of a mechanical wristwatch ticking, crisp metallic second-hand ticks, quiet room. No music, no voices, no speech, no people talking.",
+   "duration_s": 6.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "watch_tick-2",
+   "model": "elevenlabs-sfx",
+   "text": "Extreme close-up of a mechanical wristwatch ticking, crisp metallic second-hand ticks, quiet room. No music, no voices, no speech, no people talking.",
+   "duration_s": 6.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "watch_tick-3",
+   "model": "elevenlabs-sfx",
+   "text": "Extreme close-up of a mechanical wristwatch ticking, crisp metallic second-hand ticks, quiet room. No music, no voices, no speech, no people talking.",
+   "duration_s": 6.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "pull_cord-1",
+   "model": "elevenlabs-sfx",
+   "text": "A ceiling light pull cord is tugged with a small click, then a fluorescent tube light flickers and buzzes on. No music, no voices, no speech, no people talking.",
+   "duration_s": 2.5,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "pull_cord-2",
+   "model": "elevenlabs-sfx",
+   "text": "A ceiling light pull cord is tugged with a small click, then a fluorescent tube light flickers and buzzes on. No music, no voices, no speech, no people talking.",
+   "duration_s": 2.5,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "pull_cord-3",
+   "model": "elevenlabs-sfx",
+   "text": "A ceiling light pull cord is tugged with a small click, then a fluorescent tube light flickers and buzzes on. No music, no voices, no speech, no people talking.",
+   "duration_s": 2.5,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "table_slam-1",
+   "model": "elevenlabs-sfx",
+   "text": "A palm slams down hard once on a low wooden table, sharp heavy thud with a small rattle of a cup. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "table_slam-2",
+   "model": "elevenlabs-sfx",
+   "text": "A palm slams down hard once on a low wooden table, sharp heavy thud with a small rattle of a cup. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "table_slam-3",
+   "model": "elevenlabs-sfx",
+   "text": "A palm slams down hard once on a low wooden table, sharp heavy thud with a small rattle of a cup. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "intercom_chime-1",
+   "model": "elevenlabs-sfx",
+   "text": "Japanese home intercom doorbell: a two-tone electronic ding-dong chime, heard from inside a quiet living room. No music, no voices, no speech, no people talking.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "intercom_chime-2",
+   "model": "elevenlabs-sfx",
+   "text": "Japanese home intercom doorbell: a two-tone electronic ding-dong chime, heard from inside a quiet living room. No music, no voices, no speech, no people talking.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "intercom_chime-3",
+   "model": "elevenlabs-sfx",
+   "text": "Japanese home intercom doorbell: a two-tone electronic ding-dong chime, heard from inside a quiet living room. No music, no voices, no speech, no people talking.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "siren_far-1",
+   "model": "elevenlabs-sfx",
+   "text": "A distant police car siren approaching from far away outside a house at dusk, muffled through closed windows. No music, no voices, no speech, no people talking.",
+   "duration_s": 8.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "siren_far-2",
+   "model": "elevenlabs-sfx",
+   "text": "A distant police car siren approaching from far away outside a house at dusk, muffled through closed windows. No music, no voices, no speech, no people talking.",
+   "duration_s": 8.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "siren_far-3",
+   "model": "elevenlabs-sfx",
+   "text": "A distant police car siren approaching from far away outside a house at dusk, muffled through closed windows. No music, no voices, no speech, no people talking.",
+   "duration_s": 8.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "radio_squelch-1",
+   "model": "elevenlabs-sfx",
+   "text": "Short police radio static squelch and crackle burst, no voice, no words. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.5,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "radio_squelch-2",
+   "model": "elevenlabs-sfx",
+   "text": "Short police radio static squelch and crackle burst, no voice, no words. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.5,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "radio_squelch-3",
+   "model": "elevenlabs-sfx",
+   "text": "Short police radio static squelch and crackle burst, no voice, no words. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.5,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "line_play_tap-1",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: a fingertip taps a smartphone screen once, a soft tiny click. No music, no voices, no speech, no people talking.",
+   "duration_s": 0.8,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "line_play_tap-2",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: a fingertip taps a smartphone screen once, a soft tiny click. No music, no voices, no speech, no people talking.",
+   "duration_s": 0.8,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "line_play_tap-3",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: a fingertip taps a smartphone screen once, a soft tiny click. No music, no voices, no speech, no people talking.",
+   "duration_s": 0.8,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "screen_off-1",
+   "model": "elevenlabs-sfx",
+   "text": "A smartphone screen lock button is pressed: one small crisp mechanical click, then silence. No music, no voices, no speech, no people talking.",
+   "duration_s": 0.8,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "screen_off-2",
+   "model": "elevenlabs-sfx",
+   "text": "A smartphone screen lock button is pressed: one small crisp mechanical click, then silence. No music, no voices, no speech, no people talking.",
+   "duration_s": 0.8,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "screen_off-3",
+   "model": "elevenlabs-sfx",
+   "text": "A smartphone screen lock button is pressed: one small crisp mechanical click, then silence. No music, no voices, no speech, no people talking.",
+   "duration_s": 0.8,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "mokugyo-1",
+   "model": "elevenlabs-sfx",
+   "text": "A wooden temple block (mokugyo) struck slowly in a steady rhythm, heard from a distance in a quiet room. No music, no voices, no speech, no people talking.",
+   "duration_s": 5.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "mokugyo-2",
+   "model": "elevenlabs-sfx",
+   "text": "A wooden temple block (mokugyo) struck slowly in a steady rhythm, heard from a distance in a quiet room. No music, no voices, no speech, no people talking.",
+   "duration_s": 5.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "mokugyo-3",
+   "model": "elevenlabs-sfx",
+   "text": "A wooden temple block (mokugyo) struck slowly in a steady rhythm, heard from a distance in a quiet room. No music, no voices, no speech, no people talking.",
+   "duration_s": 5.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "page_flip-1",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: a paper desk calendar page is flipped over once with a soft papery rustle. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "page_flip-2",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: a paper desk calendar page is flipped over once with a soft papery rustle. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "page_flip-3",
+   "model": "elevenlabs-sfx",
+   "text": "Close-up foley: a paper desk calendar page is flipped over once with a soft papery rustle. No music, no voices, no speech, no people talking.",
+   "duration_s": 1.0,
+   "prompt_influence": 0.6
+  }
+ ]
+}
