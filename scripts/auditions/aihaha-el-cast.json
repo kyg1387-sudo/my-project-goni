@@ -1,0 +1,245 @@
+{
+ "_설명": "『母が遺したビデオレター』(aihaha-ja) ElevenLabs 배역 오디션 — 제20장 1·2. 배역 5명 × 일본어 원어 화자 후보 3명 × 감정이 다른 2줄(A 평상·B 정점), eleven_v3. 후보는 accent standard/kanto·ja 도서관 목소리만, 전작 확정 목소리(Hatake·Hadou·Mizu·Henry·Takumi·Koharu·Anton) 제외. 입력 = 짧은 영어 톤 태그 + 가나 치환본. 실행: generate-video.yml audition_spec=aihaha-el-cast (브랜치 claude/aihaha-ja). 어머니는 aihaha-el-haha(도서관 검색).",
+ "tests": [
+  {
+   "id": "yukiko_EL1-Shino_A",
+   "model": "elevenlabs-direct",
+   "voice": "Kohz4YYGbPgnEUrf8CZl",
+   "voice_name": "Shino",
+   "el_model": "eleven_v3",
+   "text": "[calm, reflective] 三年前、私は、しんようきんこを辞めた。母の介護のためだ。"
+  },
+  {
+   "id": "yukiko_EL1-Shino_B",
+   "model": "elevenlabs-direct",
+   "voice": "Kohz4YYGbPgnEUrf8CZl",
+   "voice_name": "Shino",
+   "el_model": "eleven_v3",
+   "text": "[quiet, firm] 押しても、意味がありません。期限は、昨日で終わっています。"
+  },
+  {
+   "id": "yukiko_EL2-Chiemi_A",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "text": "[calm, reflective] 三年前、私は、しんようきんこを辞めた。母の介護のためだ。"
+  },
+  {
+   "id": "yukiko_EL2-Chiemi_B",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "text": "[quiet, firm] 押しても、意味がありません。期限は、昨日で終わっています。"
+  },
+  {
+   "id": "yukiko_EL3-Hanano_A",
+   "model": "elevenlabs-direct",
+   "voice": "ITF8fTyktGfOvtmgRv8y",
+   "voice_name": "Hanano",
+   "el_model": "eleven_v3",
+   "text": "[calm, reflective] 三年前、私は、しんようきんこを辞めた。母の介護のためだ。"
+  },
+  {
+   "id": "yukiko_EL3-Hanano_B",
+   "model": "elevenlabs-direct",
+   "voice": "ITF8fTyktGfOvtmgRv8y",
+   "voice_name": "Hanano",
+   "el_model": "eleven_v3",
+   "text": "[quiet, firm] 押しても、意味がありません。期限は、昨日で終わっています。"
+  },
+  {
+   "id": "oji_EL1-Jun_A",
+   "model": "elevenlabs-direct",
+   "voice": "JOcmGzB8OFjY8MhjHHEf",
+   "voice_name": "Jun - Calm, Clear and Husky",
+   "el_model": "eleven_v3",
+   "text": "[condescending] ゆきこ、驚かずに聞け。姉さんには借金があった。"
+  },
+  {
+   "id": "oji_EL1-Jun_B",
+   "model": "elevenlabs-direct",
+   "voice": "JOcmGzB8OFjY8MhjHHEf",
+   "voice_name": "Jun - Calm, Clear and Husky",
+   "el_model": "eleven_v3",
+   "text": "[furious, shouting] 家族を疑うのか！ 姉さんの弟の、この俺を！"
+  },
+  {
+   "id": "oji_EL2-Akio_A",
+   "model": "elevenlabs-direct",
+   "voice": "eRD4wLHoHH7P30TZIexm",
+   "voice_name": "Akio",
+   "el_model": "eleven_v3",
+   "text": "[condescending] ゆきこ、驚かずに聞け。姉さんには借金があった。"
+  },
+  {
+   "id": "oji_EL2-Akio_B",
+   "model": "elevenlabs-direct",
+   "voice": "eRD4wLHoHH7P30TZIexm",
+   "voice_name": "Akio",
+   "el_model": "eleven_v3",
+   "text": "[furious, shouting] 家族を疑うのか！ 姉さんの弟の、この俺を！"
+  },
+  {
+   "id": "oji_EL3-Taniguchi_A",
+   "model": "elevenlabs-direct",
+   "voice": "AzXhp77fg6sHrgy2EtLn",
+   "voice_name": "Taniguchi",
+   "el_model": "eleven_v3",
+   "text": "[condescending] ゆきこ、驚かずに聞け。姉さんには借金があった。"
+  },
+  {
+   "id": "oji_EL3-Taniguchi_B",
+   "model": "elevenlabs-direct",
+   "voice": "AzXhp77fg6sHrgy2EtLn",
+   "voice_name": "Taniguchi",
+   "el_model": "eleven_v3",
+   "text": "[furious, shouting] 家族を疑うのか！ 姉さんの弟の、この俺を！"
+  },
+  {
+   "id": "oba_EL1-Mio_A",
+   "model": "elevenlabs-direct",
+   "voice": "jDIcRgSETu4QTbxPgjmn",
+   "voice_name": "Mio",
+   "el_model": "eleven_v3",
+   "text": "[sneering] 考える？ 無職が、いちおくの土地持って、どうするの。"
+  },
+  {
+   "id": "oba_EL1-Mio_B",
+   "model": "elevenlabs-direct",
+   "voice": "jDIcRgSETu4QTbxPgjmn",
+   "voice_name": "Mio",
+   "el_model": "eleven_v3",
+   "text": "[panicked, shrill] あなた！ それ、どういうこと！"
+  },
+  {
+   "id": "oba_EL2-Akane_A",
+   "model": "elevenlabs-direct",
+   "voice": "Q3V5SJSktn49inIBeIuC",
+   "voice_name": "Akane",
+   "el_model": "eleven_v3",
+   "text": "[sneering] 考える？ 無職が、いちおくの土地持って、どうするの。"
+  },
+  {
+   "id": "oba_EL2-Akane_B",
+   "model": "elevenlabs-direct",
+   "voice": "Q3V5SJSktn49inIBeIuC",
+   "voice_name": "Akane",
+   "el_model": "eleven_v3",
+   "text": "[panicked, shrill] あなた！ それ、どういうこと！"
+  },
+  {
+   "id": "oba_EL3-Chidori_A",
+   "model": "elevenlabs-direct",
+   "voice": "RG23A8s6ehr3kui0iBz6",
+   "voice_name": "Chidori",
+   "el_model": "eleven_v3",
+   "text": "[sneering] 考える？ 無職が、いちおくの土地持って、どうするの。"
+  },
+  {
+   "id": "oba_EL3-Chidori_B",
+   "model": "elevenlabs-direct",
+   "voice": "RG23A8s6ehr3kui0iBz6",
+   "voice_name": "Chidori",
+   "el_model": "eleven_v3",
+   "text": "[panicked, shrill] あなた！ それ、どういうこと！"
+  },
+  {
+   "id": "shota_EL1-Asu_A",
+   "model": "elevenlabs-direct",
+   "voice": "ronK01G13l5Jag13vEpH",
+   "voice_name": "Asu",
+   "el_model": "eleven_v3",
+   "text": "[mocking, casual] 介護って言えば、働かなくて済むもんな。"
+  },
+  {
+   "id": "shota_EL1-Asu_B",
+   "model": "elevenlabs-direct",
+   "voice": "ronK01G13l5Jag13vEpH",
+   "voice_name": "Asu",
+   "el_model": "eleven_v3",
+   "text": "[flustered, stammering] そ、そんなの、エーアイの誤差だろ……！"
+  },
+  {
+   "id": "shota_EL2-Samurai_A",
+   "model": "elevenlabs-direct",
+   "voice": "TlxVR97quVHvTxE8Qkcm",
+   "voice_name": "Samurai",
+   "el_model": "eleven_v3",
+   "text": "[mocking, casual] 介護って言えば、働かなくて済むもんな。"
+  },
+  {
+   "id": "shota_EL2-Samurai_B",
+   "model": "elevenlabs-direct",
+   "voice": "TlxVR97quVHvTxE8Qkcm",
+   "voice_name": "Samurai",
+   "el_model": "eleven_v3",
+   "text": "[flustered, stammering] そ、そんなの、エーアイの誤差だろ……！"
+  },
+  {
+   "id": "shota_EL3-Tomoki_A",
+   "model": "elevenlabs-direct",
+   "voice": "xbp9DJTY7EwveeixvGFW",
+   "voice_name": "Tomoki",
+   "el_model": "eleven_v3",
+   "text": "[mocking, casual] 介護って言えば、働かなくて済むもんな。"
+  },
+  {
+   "id": "shota_EL3-Tomoki_B",
+   "model": "elevenlabs-direct",
+   "voice": "xbp9DJTY7EwveeixvGFW",
+   "voice_name": "Tomoki",
+   "el_model": "eleven_v3",
+   "text": "[flustered, stammering] そ、そんなの、エーアイの誤差だろ……！"
+  },
+  {
+   "id": "miyashita_EL1-Jiro_A",
+   "model": "elevenlabs-direct",
+   "voice": "qrxCoXetZMROJh88P461",
+   "voice_name": "Jiro",
+   "el_model": "eleven_v3",
+   "text": "[calm, professional] 映像のかんていには、さんしゅうかんほどかかります。"
+  },
+  {
+   "id": "miyashita_EL1-Jiro_B",
+   "model": "elevenlabs-direct",
+   "voice": "qrxCoXetZMROJh88P461",
+   "voice_name": "Jiro",
+   "el_model": "eleven_v3",
+   "text": "[formal, firm] しょまで、ごどうこう願えますか。"
+  },
+  {
+   "id": "miyashita_EL2-MacLight_A",
+   "model": "elevenlabs-direct",
+   "voice": "C4mQ5g9WaCYNQ3mMeJZR",
+   "voice_name": "MacLight",
+   "el_model": "eleven_v3",
+   "text": "[calm, professional] 映像のかんていには、さんしゅうかんほどかかります。"
+  },
+  {
+   "id": "miyashita_EL2-MacLight_B",
+   "model": "elevenlabs-direct",
+   "voice": "C4mQ5g9WaCYNQ3mMeJZR",
+   "voice_name": "MacLight",
+   "el_model": "eleven_v3",
+   "text": "[formal, firm] しょまで、ごどうこう願えますか。"
+  },
+  {
+   "id": "miyashita_EL3-Kohei_A",
+   "model": "elevenlabs-direct",
+   "voice": "E1kRTkWc95aZdiBB7ZFj",
+   "voice_name": "Kohei",
+   "el_model": "eleven_v3",
+   "text": "[calm, professional] 映像のかんていには、さんしゅうかんほどかかります。"
+  },
+  {
+   "id": "miyashita_EL3-Kohei_B",
+   "model": "elevenlabs-direct",
+   "voice": "E1kRTkWc95aZdiBB7ZFj",
+   "voice_name": "Kohei",
+   "el_model": "eleven_v3",
+   "text": "[formal, firm] しょまで、ごどうこう願えますか。"
+  }
+ ]
+}
