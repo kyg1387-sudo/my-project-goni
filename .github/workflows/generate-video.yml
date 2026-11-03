@@ -63,6 +63,11 @@ jobs:
       ASPEC: ${{ inputs.audition_spec }}
     steps:
       - uses: actions/checkout@v4
+        with:  # 저장소 2.4GB — 전체 체크아웃이 20분 넘게 걸려(2026-11-03) 필요한 폴더만 희소 체크아웃
+          sparse-checkout: |
+            scripts
+            assets/auditions/${{ inputs.audition_spec }}
+            assets/portraits
 
       - name: 기존 샘플 복원 (재사용)
         run: |
@@ -203,6 +208,11 @@ jobs:
       actions: read
     steps:
       - uses: actions/checkout@v4
+        with:  # 희소 체크아웃(2026-11-03): 커밋 대상 폴더만
+          sparse-checkout: |
+            scripts
+            assets/preview/${{ env.SKIT }}
+            assets/qa/${{ env.SKIT }}
       - name: Artifact에서 장면 복원
         uses: actions/download-artifact@v4
         with:
