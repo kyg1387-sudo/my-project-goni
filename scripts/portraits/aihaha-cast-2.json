@@ -1,0 +1,120 @@
+{
+ "_설명": "『母が遺したビデオレター』 PHASE 2 Kill Gate 2차(1차 #1036 검수 결과 반영). 1차 불합격: 由紀子 표정 셀 다른 사람(단발·안경 없음)·젤 눈물·45° 칸이 측면·귀걸이·시계 과대, 佐和子 점 번식·측면 칸 안경·귀걸이, 剛 표정 셀 다른 사람·귀걸이, 翔太 전체 3D 화풍 + 「blood draining」이 피로 그려짐, 宮下 전 칸 귀걸이·측면 안경·옷깃 배지, 완공 방 시트 크레인·창밖 다른 풍경·벽 달력 가짜 글자·6칸 배치, 요정 시트 달력·병 라벨 가짜 글자·의자. 합격: 頼子·비계 방·거실·경찰·외경 강변/거리·소품. 1차 셀은 로컬 인페인트(귀걸이·점·배지)로 정리해 refs로 사용. 「no earrings/no glasses」 부정문이 오히려 유입 → 「bare earlobes·eyes uncovered」 긍정문으로 바꿈. 완공 창은 비계 창 셀을 편집(같은 방·같은 타워 = 매치컷 증거 일치). 의상 변형(由紀子 상복·剛 골프·頼子 블라우스)·가짜 어머니 기준 포함. 翔太 의상 변형·由紀子 코트·아웃트로 진행자는 3차. 14장, 예상 약 0.6달러.",
+ "_style_preset": "Photorealistic live-action, contemporary Japan (Reiwa era), Chiba prefecture, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting, natural skin texture with pores, no plastic skin.",
+ "characters": [
+  {
+   "id": "yukiko-sheet-v2",
+   "count": 1,
+   "refs": [
+    "assets/portraits/aihaha-cast/cells/yukiko-45.png",
+    "assets/portraits/aihaha-cast/cells/yukiko-full-front.png"
+   ],
+   "prompt": "Use the exact face of the person in the reference image(s) (same person, same face shape, same hair, same age) in ALL panels, including every expression panel and full-body panel — never a different, younger or other person. REAL PHOTOGRAPH of a real person shot on a full-frame camera: natural skin texture with pores, real hair strands, NOT 3D render, NOT CGI, NOT anime, NOT illustration, NOT cartoon, NOT Pixar style, every panel the same photographic style. Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (head-and-shoulders, SAME person): left = straight frontal view, middle = 45-degree three-quarter view facing left (both eyes visible, NOT a profile), right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (head-and-shoulders): left = calm neutral, quietly tired eyes; middle = quiet steely resolve, lips set, steady gaze, not smiling; right = held-back grief: eyes glistening wet, a thin film of tears on the lower eyelids, NOT flowing, no droplets, lips pressed, rims of the eyes slightly pink. Subject identity locked in EVERY panel: Japanese woman aged 46, shoulder-length straight black hair pulled back and tied LOW in a single ponytail at the nape in EVERY panel (never loose, never a bob), thin silver wire-rim round glasses worn in EVERY panel including the expression panels, bare earlobes with no jewelry, an old small women's wristwatch (small 26 mm round case, thin worn brown leather strap, plain cream dial with simple stick markers, no numbers, no text) worn on her LEFT wrist. Wardrobe locked in every panel: a plain beige crew-neck knit sweater, plain grey slacks, plain dark flat shoes.  Photorealistic live-action, contemporary Japan (Reiwa era), Chiba prefecture, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting, natural skin texture with pores, no plastic skin. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, stamps, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, illustration, CGI, cartoon."
+  },
+  {
+   "id": "yukiko-mourning",
+   "count": 1,
+   "refs": [
+    "assets/portraits/aihaha-cast/cells/yukiko-45.png",
+    "assets/portraits/aihaha-cast/cells/yukiko-full-front.png"
+   ],
+   "prompt": "Use the exact face of the person in the reference image(s) (same person, same face shape, same hair, same age) in ALL panels, including every expression panel and full-body panel — never a different, younger or other person. REAL PHOTOGRAPH of a real person shot on a full-frame camera: natural skin texture with pores, real hair strands, NOT 3D render, NOT CGI, NOT anime, NOT illustration, NOT cartoon, NOT Pixar style, every panel the same photographic style. One single image, a 1x3 row of three photo panels separated by thin white gutters on pure white, no captions: left = head-and-shoulders frontal, middle = full-body frontal standing, right = full-body back view. Same woman: low ponytail, thin silver wire-rim round glasses, bare earlobes, an old small women's wristwatch (small 26 mm round case, thin worn brown leather strap, plain cream dial with simple stick markers, no numbers, no text) worn on her LEFT wrist. Wardrobe: a plain black Japanese mourning dress with long sleeves (no ornaments), black stockings, black low pumps. Calm restrained grief. Photorealistic live-action, contemporary Japan (Reiwa era), Chiba prefecture, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting, natural skin texture with pores, no plastic skin. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, stamps, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, illustration, CGI, cartoon.",
+   "aspect_ratio": "16:9"
+  },
+  {
+   "id": "sawako-sheet-v2",
+   "count": 1,
+   "refs": [
+    "assets/portraits/aihaha-cast/cells/sawako-front.png"
+   ],
+   "prompt": "Use the exact face of the person in the reference image(s) (same person, same face shape, same hair, same age) in ALL panels, including every expression panel and full-body panel — never a different, younger or other person. REAL PHOTOGRAPH of a real person shot on a full-frame camera: natural skin texture with pores, real hair strands, NOT 3D render, NOT CGI, NOT anime, NOT illustration, NOT cartoon, NOT Pixar style, every panel the same photographic style. Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (head-and-shoulders, SAME person): left = straight frontal view, middle = 45-degree three-quarter view facing left (both eyes visible, NOT a profile), right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (head-and-shoulders): left = warm gentle smile with deep eye wrinkles; middle = cheerful chatty expression, mouth slightly open mid-sentence; right = tender slightly tired smile, soft eyes. Subject identity locked in EVERY panel: Japanese woman aged 74, short soft WHITE permed hair, gentle crow's feet, EXACTLY ONE small dark mole on her RIGHT cheek (the cheek on the image-left side in a frontal view) — one mole only, no other moles or spots, bare face with her eyes uncovered (she wears nothing on her face), bare earlobes with no jewelry. Wardrobe locked in every panel: a plain lavender (light purple) cardigan over a plain cream blouse, plain dark-grey long skirt, house slippers.  Photorealistic live-action, contemporary Japan (Reiwa era), Chiba prefecture, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting, natural skin texture with pores, no plastic skin. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, stamps, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, illustration, CGI, cartoon."
+  },
+  {
+   "id": "tsuyoshi-sheet-v2",
+   "count": 1,
+   "refs": [
+    "assets/portraits/aihaha-cast/cells/tsuyoshi-front.png"
+   ],
+   "prompt": "Use the exact face of the person in the reference image(s) (same person, same face shape, same hair, same age) in ALL panels, including every expression panel and full-body panel — never a different, younger or other person. REAL PHOTOGRAPH of a real person shot on a full-frame camera: natural skin texture with pores, real hair strands, NOT 3D render, NOT CGI, NOT anime, NOT illustration, NOT cartoon, NOT Pixar style, every panel the same photographic style. Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (head-and-shoulders, SAME person): left = straight frontal view, middle = 45-degree three-quarter view facing left (both eyes visible, NOT a profile), right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (head-and-shoulders): left = false gentle smile, eyes not smiling; middle = contemptuous pressure, chin raised, looking down, not shouting; right = the SAME man in pale shock, mouth slightly open, eyes wide, a faint natural sheen of sweat on the forehead (no droplets). Subject identity locked in EVERY panel: Japanese man aged 66, heavy-set, receding hairline with grey hair slicked straight back, thick jowls, a plain GOLD wristwatch on his LEFT wrist, bare face with his eyes uncovered, bare earlobes with no jewelry, clean-shaven. Wardrobe locked in every panel: a plain black Japanese mourning suit, white shirt, plain black tie, black shoes, plain lapels.  Photorealistic live-action, contemporary Japan (Reiwa era), Chiba prefecture, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting, natural skin texture with pores, no plastic skin. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, stamps, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, illustration, CGI, cartoon."
+  },
+  {
+   "id": "tsuyoshi-golf",
+   "count": 1,
+   "refs": [
+    "assets/portraits/aihaha-cast/cells/tsuyoshi-front.png"
+   ],
+   "prompt": "Use the exact face of the person in the reference image(s) (same person, same face shape, same hair, same age) in ALL panels, including every expression panel and full-body panel — never a different, younger or other person. REAL PHOTOGRAPH of a real person shot on a full-frame camera: natural skin texture with pores, real hair strands, NOT 3D render, NOT CGI, NOT anime, NOT illustration, NOT cartoon, NOT Pixar style, every panel the same photographic style. One single image, a 1x3 row of three photo panels separated by thin white gutters on pure white, no captions: left = head-and-shoulders frontal, middle = full-body frontal standing, right = full-body back view. Same man: grey hair slicked back, receding hairline, gold plain wristwatch on the left wrist, bare face, bare earlobes. Wardrobe: a plain navy golf windbreaker jacket with no logo, a plain white polo shirt, beige chino trousers, brown loafers. Smug confident expression. Photorealistic live-action, contemporary Japan (Reiwa era), Chiba prefecture, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting, natural skin texture with pores, no plastic skin. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, stamps, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, illustration, CGI, cartoon.",
+   "aspect_ratio": "16:9"
+  },
+  {
+   "id": "yoriko-blouse",
+   "count": 1,
+   "refs": [
+    "assets/portraits/aihaha-cast/cells/yoriko-front.png"
+   ],
+   "prompt": "Use the exact face of the person in the reference image(s) (same person, same face shape, same hair, same age) in ALL panels, including every expression panel and full-body panel — never a different, younger or other person. REAL PHOTOGRAPH of a real person shot on a full-frame camera: natural skin texture with pores, real hair strands, NOT 3D render, NOT CGI, NOT anime, NOT illustration, NOT cartoon, NOT Pixar style, every panel the same photographic style. One single image, a 1x3 row of three photo panels separated by thin white gutters on pure white, no captions: left = head-and-shoulders frontal, middle = full-body frontal standing holding a plain black leather handbag, right = full-body back view. Same woman: brown-dyed short wavy bob, one single strand pearl necklace, bare earlobes. Wardrobe: a plain wine-red blouse, a plain black knee-length skirt, black low heels, the same plain black leather handbag with no logo. Thin mocking half-smile. Photorealistic live-action, contemporary Japan (Reiwa era), Chiba prefecture, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting, natural skin texture with pores, no plastic skin. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, stamps, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, illustration, CGI, cartoon.",
+   "aspect_ratio": "16:9"
+  },
+  {
+   "id": "shota-sheet-v2",
+   "count": 1,
+   "prompt": "REAL PHOTOGRAPH of a real person shot on a full-frame camera: natural skin texture with pores, real hair strands, NOT 3D render, NOT CGI, NOT anime, NOT illustration, NOT cartoon, NOT Pixar style, every panel the same photographic style. Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (head-and-shoulders, SAME person): left = straight frontal view, middle = 45-degree three-quarter view facing left (both eyes visible, NOT a profile), right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (head-and-shoulders): left = arrogant smirk, eyes looking slightly off-camera to the side; middle = bored indifference, half-lidded eyes; right = his face turning pale with shock, eyes wide behind the glasses, lips parted, frozen (clean skin, nothing on the face). Subject identity locked in EVERY panel: Japanese man aged 36, slim, short two-block haircut (clipped sides, longer black top), thick BLACK rectangular plastic-frame glasses worn in EVERY panel, clean-shaven, bare earlobes, ordinary realistic Japanese office worker face. Wardrobe locked in every panel: a plain black suit, white shirt, plain black tie, black shoes.  Photorealistic live-action, contemporary Japan (Reiwa era), Chiba prefecture, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting, natural skin texture with pores, no plastic skin. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, stamps, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, illustration, CGI, cartoon."
+  },
+  {
+   "id": "miyashita-sheet-v2",
+   "count": 1,
+   "refs": [
+    "assets/portraits/aihaha-cast/cells/miyashita-front.png"
+   ],
+   "prompt": "Use the exact face of the person in the reference image(s) (same person, same face shape, same hair, same age) in ALL panels, including every expression panel and full-body panel — never a different, younger or other person. REAL PHOTOGRAPH of a real person shot on a full-frame camera: natural skin texture with pores, real hair strands, NOT 3D render, NOT CGI, NOT anime, NOT illustration, NOT cartoon, NOT Pixar style, every panel the same photographic style. Character master sheet: one single image, a clean 3x3 grid of nine photo panels separated by thin white gutters on a pure white background, no header, no captions. TOP ROW (head-and-shoulders, SAME person): left = straight frontal view, middle = 45-degree three-quarter view facing left (both eyes visible, NOT a profile), right = strict left profile. MIDDLE ROW: left = full-body frontal standing view with feet visible, middle = full-body back view, right = full-body left side view. BOTTOM ROW (head-and-shoulders): left = calm attentive listening; middle = serious low-voiced warning, slight lean forward, steady eyes; right = small approving nod, the faintest smile at the corners of the eyes. Subject identity locked in EVERY panel: Japanese man aged 52, very short-cropped salt-and-pepper hair, square jaw, calm observant eyes, bare face with his eyes uncovered in every panel including profiles, bare earlobes with no jewelry, clean-shaven. Wardrobe locked in every panel: a plain navy business suit with plain lapels and nothing pinned on them, white shirt, plain navy tie, black shoes.  Photorealistic live-action, contemporary Japan (Reiwa era), Chiba prefecture, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting, natural skin texture with pores, no plastic skin. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, stamps, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, illustration, CGI, cartoon."
+  },
+  {
+   "id": "room-window-finished-day",
+   "count": 1,
+   "refs": [
+    "assets/portraits/aihaha-cast/cells/room-window-scaffold.png"
+   ],
+   "aspect_ratio": "16:9",
+   "prompt": "Edit this exact photo. Keep the SAME room, the SAME window frame, the SAME brown armchair, the SAME wall, the SAME camera angle and the SAME tall tower building in the same position. Change only the tower: REMOVE all scaffolding, metal pipes, nets and the green safety mesh — the tower is now FINISHED with a clean pale-grey facade, regular windows and glass balcony railings. NO cranes, NO construction equipment anywhere. Soft diffuse late-summer daylight. Photorealistic. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, stamps, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, illustration, CGI, cartoon."
+  },
+  {
+   "id": "room-window-finished-night",
+   "count": 1,
+   "refs": [
+    "assets/portraits/aihaha-cast/cells/room-window-scaffold.png"
+   ],
+   "aspect_ratio": "16:9",
+   "prompt": "Edit this exact photo. Keep the SAME room, the SAME window frame, the SAME brown armchair, the SAME wall, the SAME camera angle and the SAME tall tower in the same position. Make it NIGHT: the room lit only by a warm 3200K floor lamp off-frame to the left; outside, the tower is FINISHED (all scaffolding and green mesh removed, clean facade) with scattered warm lit apartment windows against a dark navy sky. NO cranes. Photorealistic. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, stamps, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, illustration, CGI, cartoon."
+  },
+  {
+   "id": "room-wide-night",
+   "count": 1,
+   "refs": [
+    "assets/portraits/aihaha-cast/cells/room-wide.png"
+   ],
+   "aspect_ratio": "16:9",
+   "prompt": "Edit this exact photo. Keep the SAME tatami room, sliding doors, shoji panel and window, the SAME camera angle. Make it NIGHT: lit only by one warm 3200K floor standing lamp in the corner, soft pools of light, deep shadows; through the window a dark navy night sky with distant lit apartment windows. Empty room, no people. Photorealistic. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, stamps, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, illustration, CGI, cartoon."
+  },
+  {
+   "id": "loc-ryotei-v2",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "prompt": "Location reference sheet, one single 16:9 image, a 2x2 grid of four photo cells separated by thin white gutters, NO captions. Photorealistic, 35mm, EMPTY - no people. Setting: a private tatami room in a traditional Japanese restaurant for a forty-ninth-day memorial meal: bare plain beige plaster walls with nothing hanging on them (completely bare walls), a long low dark lacquered table, flat zabuton floor cushions only (floor seating only), closed shoji screens, plain brown glass beer bottles that are completely plain (bare glass), small beer glasses, sashimi on blue-and-white plates. Lighting: cold top light 5600K from a plain ceiling panel mixed with soft shoji daylight. Cell 1: the long table seen from the head of the room. Cell 2: the reverse angle toward the closed shoji screens. Cell 3: overhead tabletop view of plates, glasses and the plain bottles. Cell 4: low angle along the table edge toward the head seat. Photorealistic live-action, contemporary Japan (Reiwa era), Chiba prefecture, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting, natural skin texture with pores, no plastic skin. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, stamps, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, illustration, CGI, cartoon."
+  },
+  {
+   "id": "loc-house-v2",
+   "count": 1,
+   "aspect_ratio": "16:9",
+   "prompt": "Location reference sheet, one single 16:9 image, a 1x2 row of two photo cells separated by a thin white gutter, NO captions. Photorealistic, 35mm, EMPTY - no people. A well-kept, lived-in old modest two-storey Japanese wooden house in a quiet residential street of a regional city in Chiba: tidy small front yard with a few potted plants, a low plain fence, a sliding-door genkan entrance, clean windows with lace curtains, a plain mailbox with nothing written on it, no name plate. Cell 1: daytime autumn, soft daylight. Cell 2: the same house at dusk, warm light glowing in a ground-floor window. Photorealistic live-action, contemporary Japan (Reiwa era), Chiba prefecture, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, soft natural key light from upper-left, subtle warm rim light, no flat lighting, natural skin texture with pores, no plastic skin. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, stamps, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, illustration, CGI, cartoon."
+  },
+  {
+   "id": "ai-haha-ref",
+   "count": 1,
+   "refs": [
+    "assets/portraits/aihaha-cast/cells/sawako-front.png"
+   ],
+   "aspect_ratio": "16:9",
+   "prompt": "Edit: the SAME elderly woman (same face, same short white permed hair, same lavender cardigan, one mole on her right cheek) but rendered as an uncanny AI-generated deepfake video still: unnaturally smooth airbrushed skin with no pores, perfect left-right facial symmetry, glassy fixed eyes staring straight into the lens, a stiff polite smile, sitting on a chair in a tatami room; behind her a window showing a FINISHED tall tower (no scaffolding, no mesh, no cranes). Flat even lighting, slightly over-sharpened video look. Single image, 16:9. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: gibberish, foreign text, fake alphabets, signage lettering, watermarks, stamps, bad anatomy, deformed eyes, extra fingers, anime style, 3D render, illustration, CGI, cartoon."
+  }
+ ]
+}
