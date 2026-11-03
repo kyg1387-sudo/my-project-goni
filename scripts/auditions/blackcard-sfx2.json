@@ -1,0 +1,152 @@
+{
+ "_설명": "『ブラックカード』 몰입 보강 효과음 2차(고니감독님 지시 2026-11-03 「긴장감·몰입감 최대」, 최우선 원칙 6) — 긴장 드론 1종 + 손이 물건에 닿는 폴리 6종 × 3안. ElevenLabs, fal 0.",
+ "tests": [
+  {
+   "id": "tension-drone-1",
+   "model": "elevenlabs-sfx",
+   "text": "A low cinematic tension drone, sub-bass and dark string pad slowly swelling and receding, 30 seconds, seamless, no melody, no percussion, no voices.",
+   "duration_s": 30.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "tension-drone-2",
+   "model": "elevenlabs-sfx",
+   "text": "A low cinematic tension drone, sub-bass and dark string pad slowly swelling and receding, 30 seconds, seamless, no melody, no percussion, no voices.",
+   "duration_s": 30.0,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "tension-drone-3",
+   "model": "elevenlabs-sfx",
+   "text": "A low cinematic tension drone, sub-bass and dark string pad slowly swelling and receding, 30 seconds, seamless, no melody, no percussion, no voices.",
+   "duration_s": 30.0,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "stamp-press-1",
+   "model": "elevenlabs-sfx",
+   "text": "A wooden hanko seal pressed firmly onto paper on a cloth-covered table: a soft thud and a faint paper squeak, dry room, no music.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "stamp-press-2",
+   "model": "elevenlabs-sfx",
+   "text": "A wooden hanko seal pressed firmly onto paper on a cloth-covered table: a soft thud and a faint paper squeak, dry room, no music.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "stamp-press-3",
+   "model": "elevenlabs-sfx",
+   "text": "A wooden hanko seal pressed firmly onto paper on a cloth-covered table: a soft thud and a faint paper squeak, dry room, no music.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "phone-vibrate-1",
+   "model": "elevenlabs-sfx",
+   "text": "A smartphone vibrating twice on a hard surface in a man's hand, close, realistic buzz, no music.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "phone-vibrate-2",
+   "model": "elevenlabs-sfx",
+   "text": "A smartphone vibrating twice on a hard surface in a man's hand, close, realistic buzz, no music.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "phone-vibrate-3",
+   "model": "elevenlabs-sfx",
+   "text": "A smartphone vibrating twice on a hard surface in a man's hand, close, realistic buzz, no music.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "elevator-chime-1",
+   "model": "elevenlabs-sfx",
+   "text": "A single soft hotel elevator arrival chime followed by doors sliding open, quiet lobby, no music.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "elevator-chime-2",
+   "model": "elevenlabs-sfx",
+   "text": "A single soft hotel elevator arrival chime followed by doors sliding open, quiet lobby, no music.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "elevator-chime-3",
+   "model": "elevenlabs-sfx",
+   "text": "A single soft hotel elevator arrival chime followed by doors sliding open, quiet lobby, no music.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "glass-set-1",
+   "model": "elevenlabs-sfx",
+   "text": "A thin wine glass set down gently on a linen tablecloth, a faint crystal ring, quiet private dining room, no music.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "glass-set-2",
+   "model": "elevenlabs-sfx",
+   "text": "A thin wine glass set down gently on a linen tablecloth, a faint crystal ring, quiet private dining room, no music.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "glass-set-3",
+   "model": "elevenlabs-sfx",
+   "text": "A thin wine glass set down gently on a linen tablecloth, a faint crystal ring, quiet private dining room, no music.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "paper-drop-1",
+   "model": "elevenlabs-sfx",
+   "text": "A few sheets of paper dropped onto a glass desk and sliding slightly, quiet night office, no music.",
+   "duration_s": 1.4,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "paper-drop-2",
+   "model": "elevenlabs-sfx",
+   "text": "A few sheets of paper dropped onto a glass desk and sliding slightly, quiet night office, no music.",
+   "duration_s": 1.4,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "paper-drop-3",
+   "model": "elevenlabs-sfx",
+   "text": "A few sheets of paper dropped onto a glass desk and sliding slightly, quiet night office, no music.",
+   "duration_s": 1.4,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "watch-clasp-1",
+   "model": "elevenlabs-sfx",
+   "text": "A steel watch bracelet clasp clicking shut on a wrist, close, metallic, no music.",
+   "duration_s": 0.9,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "watch-clasp-2",
+   "model": "elevenlabs-sfx",
+   "text": "A steel watch bracelet clasp clicking shut on a wrist, close, metallic, no music.",
+   "duration_s": 0.9,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "watch-clasp-3",
+   "model": "elevenlabs-sfx",
+   "text": "A steel watch bracelet clasp clicking shut on a wrist, close, metallic, no music.",
+   "duration_s": 0.9,
+   "prompt_influence": 0.45
+  }
+ ]
+}
