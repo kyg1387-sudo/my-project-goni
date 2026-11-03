@@ -3,8 +3,8 @@
 
 scripts/storyboard/aihaha.json(PHASE 3)을 읽어 generate-video.yml portraits_spec 스펙(scripts/portraits/aihaha-kf-<단계>.json)을 만든다.
 단계: p:<id,…> 시범 / a 립싱크 컷 / b1·b2 나머지(실행 상한 때문에 반으로) / r<n>:<id,…> 재생성(컷당 2장)
-이 작품 규칙: 참조 = aihaha-ref(고니감독님 승인 PHASE 2), 비립싱크 얼굴은 45° 셀 + GAZE(제19장 10①), 눈물·땀은 승인 기준 컷(제20장 11),
-창이 보이는 컷은 비계 상태 고정(제20장 6), 손 인서트는 한 손 + 물건 하나(제19장 25), 부정문 대신 긍정문(제20장 10).
+이 작품 규칙: 참조 = aihaha-ref(고니감독님 승인 PHASE 2), 비립싱크 얼굴은 45° 셀 + GAZE(제19장 10①), 눈물·땀은 승인 기준 컷(제21장 11),
+창이 보이는 컷은 비계 상태 고정(제21장 6), 손 인서트는 한 손 + 물건 하나(제19장 25), 부정문 대신 긍정문(제21장 10).
 사용법: python3 scripts/build_aihaha_keyframes.py p:H0a,H0b,…   → scripts/portraits/aihaha-kf-p.json
 """
 import json, os, sys

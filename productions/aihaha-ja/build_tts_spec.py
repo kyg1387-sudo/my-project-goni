@@ -3,11 +3,11 @@
 
 입력: 00_script_ja.md (🔒 v1.0 동결 대본), 고니감독님 청취 확정 캐스트(2026-11-03, 아래 VOICE).
 출력: scripts/auditions/aihaha-tts.json  (ElevenLabs eleven_v3 elevenlabs-direct + 아웃트로 Typecast Yui Sato, line### = 시간 순서)
-      scripts/audio/aihaha-cast-voices.json (배역별 목소리·설정값 기록 — 제20장 1)
+      scripts/audio/aihaha-cast-voices.json (배역별 목소리·설정값 기록 — 제21장 1)
       05_톤연출표.md (줄 번호 ↔ 대본 태그 ↔ 목소리 ↔ 연기 태그·안정도·속도·연기 메모 = 음성·표정·동작의 단일 출처, 제10장 7)
-규칙: 음성 입력 = 「[짧은 영어 톤 태그] + 가나 치환본」, 자막은 원문 한자 유지(제20장 1·제14장 8).
-      ElevenLabs v3 stability: 0.0 Creative(감정 폭 큼) / 0.5 Natural(기본) / 1.0 Robust(평탄·일정 — 가짜 어머니 전용, 제20장 4).
-검사: 한 문장 30자·한 줄 2문장(제17장 4②) · 톤 지정 없는 줄 0 · 목소리 없는 화자 0 · 태그 4단어 이하(제20장 1·EP2 ⑩).
+규칙: 음성 입력 = 「[짧은 영어 톤 태그] + 가나 치환본」, 자막은 원문 한자 유지(제21장 1·제14장 8).
+      ElevenLabs v3 stability: 0.0 Creative(감정 폭 큼) / 0.5 Natural(기본) / 1.0 Robust(평탄·일정 — 가짜 어머니 전용, 제21장 4).
+검사: 한 문장 30자·한 줄 2문장(제17장 4②) · 톤 지정 없는 줄 0 · 목소리 없는 화자 0 · 태그 4단어 이하(제21장 1·EP2 ⑩).
 """
 import json, os, re
 
@@ -31,7 +31,7 @@ VOICE = {
 # 숙부 Jun은 오디션에서 음량·분노 폭이 작았음 → 분노 정점(L38·L39)은 stability 0.0(Creative)로 폭을 키우고 믹스에서 음량 맞춤.
 TONE = {
     # v1.1 보강 8줄(B안 템포 분량 보강, 2026-11-03)
-    "L03c": ("warm, playful, loving", 0.0, 0.95, "식탁에서 조림을 한 입 먹고 눈을 가늘게 뜨며 웃음 — 진짜 어머니(억양 폭 크게, 제20장 9)"),
+    "L03c": ("warm, playful, loving", 0.0, 0.95, "식탁에서 조림을 한 입 먹고 눈을 가늘게 뜨며 웃음 — 진짜 어머니(억양 폭 크게, 제21장 9)"),
     "NA8a": ("quiet, foreboding", None, 1.0, "흑백 CCTV 위, 담담하게 — 열린 고리"),
     "NA10a": ("quiet, sharp", None, 1.0, "차용증을 내려다보는 신용금고 출신의 눈, 끝을 낮게"),
     "NA18b": ("crisp, certain", None, 1.0, "검지로 인지 빈 자리를 짚음 — 「ありえない」 단정"),
@@ -247,11 +247,11 @@ def main():
             "language": "jpn", "tc_model": "ssfm-v30", "tests": tests}
     json.dump(spec, open(os.path.join(REPO, "scripts", "auditions", "aihaha-tts.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     cast = {k: {kk: vv for kk, vv in v.items()} for k, v in VOICE.items()}
-    json.dump({"_설명": "『母が遺したビデオレター』 확정 캐스트·ElevenLabs 설정값(제20장 1 — 재현성). 2026-11-03 고니감독님 청취 확정. 줄별 덮어쓰기(stability·speed)는 05_톤연출표.md.",
+    json.dump({"_설명": "『母が遺したビデオレター』 확정 캐스트·ElevenLabs 설정값(제21장 1 — 재현성). 2026-11-03 고니감독님 청취 확정. 줄별 덮어쓰기(stability·speed)는 05_톤연출표.md.",
                "model": "eleven_v3", "cast": cast}, open(os.path.join(REPO, "scripts", "audio", "aihaha-cast-voices.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     md = ["# 『母が遺したビデオレター』 줄별 톤 연출표 (규칙 8-2 · 제10장 7 — 음성·표정·동작의 단일 출처)", "",
           f"> 🔒 대본 v1.1 기준 본녹음 {len(tests)}줄(본편 {len(tests)-5} + 아웃트로 5). 지정 없는 줄 0개. 생성기: `build_tts_spec.py`. ElevenLabs 입력 약 {chars}자(태그 포함).",
-          "> 안정도(stability): 0.0 감정 폭 큼(분노·당황 정점) / 0.5 기본 / 1.0 평탄(가짜 어머니 전용 — 진짜 어머니와 같은 목소리에서 숨·떨림을 지워 대비, 제20장 4).",
+          "> 안정도(stability): 0.0 감정 폭 큼(분노·당황 정점) / 0.5 기본 / 1.0 평탄(가짜 어머니 전용 — 진짜 어머니와 같은 목소리에서 숨·떨림을 지워 대비, 제21장 4).",
           "> 연기 메모의 표정·동작은 키프레임(50% 반영)·i2v 동작 문장·OmniHuman 연기 지시에 그대로 쓴다. 가나 치환은 음성 입력에만.", "",
           "| 녹음 | 대본 | 배역 | 목소리 | 일본어 | 연기 태그 | 안정도 | Lock 템포 | 연기 메모(표정·동작) |", "|---|---|---|---|---|---|---|---|---|"] + rows
     open(os.path.join(HERE, "05_톤연출표.md"), "w", encoding="utf-8").write("\n".join(md) + "\n")
