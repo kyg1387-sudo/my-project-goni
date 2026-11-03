@@ -479,6 +479,8 @@ def main():
     print("패치 컷", len(done), done)
     main_out = os.path.join(tmp, "main.mp4"); master(patched, main_out)
     print("본편 마무리:", main_out, round(dur(main_out), 2))
+    if os.environ.get("KEEP_PATCHED") != "1":
+        os.remove(patched)  # 디스크 여유(세션 할당량) — 마스터 뒤 패치본 삭제
     if "--no-outro" not in sys.argv:
         outro(main_out, tmp)
 
