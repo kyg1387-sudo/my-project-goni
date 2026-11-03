@@ -30,6 +30,15 @@ VOICE = {
 # 줄별 연기: (영어 톤 태그 2~4단어, stability 덮어쓰기 또는 None, speed, 연기 메모 = 표정·동작)
 # 숙부 Jun은 오디션에서 음량·분노 폭이 작았음 → 분노 정점(L38·L39)은 stability 0.0(Creative)로 폭을 키우고 믹스에서 음량 맞춤.
 TONE = {
+    # v1.1 보강 8줄(B안 템포 분량 보강, 2026-11-03)
+    "L03c": ("warm, playful, loving", 0.0, 0.95, "식탁에서 조림을 한 입 먹고 눈을 가늘게 뜨며 웃음 — 진짜 어머니(억양 폭 크게, 제20장 9)"),
+    "NA8a": ("quiet, foreboding", None, 1.0, "흑백 CCTV 위, 담담하게 — 열린 고리"),
+    "NA10a": ("quiet, sharp", None, 1.0, "차용증을 내려다보는 신용금고 출신의 눈, 끝을 낮게"),
+    "NA18b": ("crisp, certain", None, 1.0, "검지로 인지 빈 자리를 짚음 — 「ありえない」 단정"),
+    "L17d": ("low, knowing", None, 1.0, "차용증을 내려놓고 由紀子를 똑바로 봄 — 경험에서 나온 낮은 목소리"),
+    "L21b": ("low, threatening", 0.0, 1.0, "얼굴을 가까이 대고 낮게 위협, 입꼬리만 웃음"),
+    "NA24b": ("hushed, weary", None, 1.0, "밤 식탁, 펜 끝이 떨림 — 속삭이듯"),
+    "NA24c": ("hushed, weary", None, 1.0, "지친 숨, 끝을 흐림"),
     "L01": ("flat, emotionless", None, 0.95, "태블릿 속 가짜 어머니 — 눈 깜빡임 없음·대칭 얼굴, 입모양 12프레임 지연(편집)"),
     "L02": ("flat, emotionless", None, 0.95, "같은 화면, 억양 없이 일정하게"),
     "NA0": ("quiet, uneasy", None, 0.92, "태블릿 빛 속 옆얼굴, 숨을 멈춘 채"),
@@ -175,7 +184,7 @@ LINE_RE = re.compile(r'^\s*((?:NA|L|OUT)\d+\w*)\s*([^:「]*?)\s*[:：]\s*「(.+)
 
 def load():
     t = open(os.path.join(HERE, "00_script_ja.md"), encoding="utf-8").read()
-    assert "🔒 v1.0" in t.splitlines()[0], "동결 대본(🔒 v1.0)이 아닙니다"
+    assert "🔒 v1.1" in t.splitlines()[0], "동결 대본(🔒 v1.1)이 아닙니다"
     body = t.split("## 4. 대본")[1].split("## 5.")[0]
     out = []
     for ln in body.splitlines():
@@ -241,7 +250,7 @@ def main():
     json.dump({"_설명": "『母が遺したビデオレター』 확정 캐스트·ElevenLabs 설정값(제20장 1 — 재현성). 2026-11-03 고니감독님 청취 확정. 줄별 덮어쓰기(stability·speed)는 05_톤연출표.md.",
                "model": "eleven_v3", "cast": cast}, open(os.path.join(REPO, "scripts", "audio", "aihaha-cast-voices.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     md = ["# 『母が遺したビデオレター』 줄별 톤 연출표 (규칙 8-2 · 제10장 7 — 음성·표정·동작의 단일 출처)", "",
-          f"> 🔒 동결 대본 v1.0 기준 본녹음 {len(tests)}줄(본편 {len(tests)-5} + 아웃트로 5). 지정 없는 줄 0개. 생성기: `build_tts_spec.py`. ElevenLabs 입력 약 {chars}자(태그 포함).",
+          f"> 🔒 대본 v1.1 기준 본녹음 {len(tests)}줄(본편 {len(tests)-5} + 아웃트로 5). 지정 없는 줄 0개. 생성기: `build_tts_spec.py`. ElevenLabs 입력 약 {chars}자(태그 포함).",
           "> 안정도(stability): 0.0 감정 폭 큼(분노·당황 정점) / 0.5 기본 / 1.0 평탄(가짜 어머니 전용 — 진짜 어머니와 같은 목소리에서 숨·떨림을 지워 대비, 제20장 4).",
           "> 연기 메모의 표정·동작은 키프레임(50% 반영)·i2v 동작 문장·OmniHuman 연기 지시에 그대로 쓴다. 가나 치환은 음성 입력에만.", "",
           "| 녹음 | 대본 | 배역 | 목소리 | 일본어 | 연기 태그 | 안정도 | Lock 템포 | 연기 메모(표정·동작) |", "|---|---|---|---|---|---|---|---|---|"] + rows

@@ -1,5 +1,5 @@
 {
- "_설명": "『母が遺したビデオレター』 효과음 20종×3안(07_연출설계 3절). 사람 목소리·음악 생성 금지. 선택 후 finalize SFX 목록으로 피크 −9 dBFS(정점)·−18~−12(일반) 믹스. + 진짜 어머니 LINE 음성 L56·L57 재녹음 3안씩(억양 폭이 가짜 영상과 비슷하게 평탄 — stability 0.0, 따뜻한 태그).",
+ "_설명": "『母が遺したビデオレター』 효과음 20종×3안(07_연출설계 3절). 사람 목소리·음악 생성 금지. 선택 후 finalize SFX 목록으로 피크 −9 dBFS(정점)·−18~−12(일반) 믹스. + 진짜 어머니 LINE 음성 L56·L57 재녹음 3안씩(억양 폭이 가짜 영상과 비슷하게 평탄 — stability 0.0, 따뜻한 태그). + 대본 v1.1 보강 8줄 본녹음(line007, line021, line025, line045, line056, line063, line068, line069 — 결과는 assets/auditions/aihaha-tts로 옮김).",
  "tests": [
   {
    "id": "tablet_tap-1",
@@ -422,7 +422,7 @@
    "prompt_influence": 0.6
   },
   {
-   "id": "redo_line101-1",
+   "id": "redo_line109-1",
    "model": "elevenlabs-direct",
    "voice": "xE6NbKmUvY3BhBzNAYsV",
    "voice_name": "Chieko - Warm, Witty Grandma",
@@ -434,7 +434,7 @@
    "text": "[tender, warm, gently apologetic] ゆっこ。仕事、辞めさせてごめんね。"
   },
   {
-   "id": "redo_line101-2",
+   "id": "redo_line109-2",
    "model": "elevenlabs-direct",
    "voice": "xE6NbKmUvY3BhBzNAYsV",
    "voice_name": "Chieko - Warm, Witty Grandma",
@@ -446,7 +446,7 @@
    "text": "[softly, with a little laugh, loving] ゆっこ。仕事、辞めさせてごめんね。"
   },
   {
-   "id": "redo_line101-3",
+   "id": "redo_line109-3",
    "model": "elevenlabs-direct",
    "voice": "xE6NbKmUvY3BhBzNAYsV",
    "voice_name": "Chieko - Warm, Witty Grandma",
@@ -458,7 +458,7 @@
    "text": "[warm, intimate, slightly tired] ゆっこ。仕事、辞めさせてごめんね。"
   },
   {
-   "id": "redo_line102-1",
+   "id": "redo_line110-1",
    "model": "elevenlabs-direct",
    "voice": "xE6NbKmUvY3BhBzNAYsV",
    "voice_name": "Chieko - Warm, Witty Grandma",
@@ -470,7 +470,7 @@
    "text": "[warm, smiling, loving] いつもありがとね。……ちゃんと、ご飯食べなさいよ。"
   },
   {
-   "id": "redo_line102-2",
+   "id": "redo_line110-2",
    "model": "elevenlabs-direct",
    "voice": "xE6NbKmUvY3BhBzNAYsV",
    "voice_name": "Chieko - Warm, Witty Grandma",
@@ -482,7 +482,7 @@
    "text": "[tender, a soft smile in the voice] いつもありがとね。……ちゃんと、ご飯食べなさいよ。"
   },
   {
-   "id": "redo_line102-3",
+   "id": "redo_line110-3",
    "model": "elevenlabs-direct",
    "voice": "xE6NbKmUvY3BhBzNAYsV",
    "voice_name": "Chieko - Warm, Witty Grandma",
@@ -492,6 +492,102 @@
    },
    "lock_tempo": 0.88,
    "text": "[gentle, cheerful, motherly] いつもありがとね。……ちゃんと、ご飯食べなさいよ。"
+  },
+  {
+   "id": "line007",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko - Warm, Witty Grandma",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.0
+   },
+   "lock_tempo": 0.95,
+   "text": "[warm, playful, loving] ゆっこの煮物、お母さんのより、おいしいねえ。"
+  },
+  {
+   "id": "line021",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 1.0,
+   "text": "[quiet, foreboding] それに私が気づくのは、もっと後のことだ。"
+  },
+  {
+   "id": "line025",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 1.0,
+   "text": "[quiet, sharp] ただ、どのしゃくようしょにも、あるはずのものがなかった。"
+  },
+  {
+   "id": "line045",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 1.0,
+   "text": "[crisp, certain] よんせんななひゃくまんえんのしゃくようしょに、収入印紙が一枚もない。本物の業者なら、ありえない。"
+  },
+  {
+   "id": "line056",
+   "model": "elevenlabs-direct",
+   "voice": "C4mQ5g9WaCYNQ3mMeJZR",
+   "voice_name": "MacLight",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 1.0,
+   "text": "[low, knowing] 偽の借金で放棄させる人には、たいてい本物の借金があります。"
+  },
+  {
+   "id": "line063",
+   "model": "elevenlabs-direct",
+   "voice": "JOcmGzB8OFjY8MhjHHEf",
+   "voice_name": "Jun - Calm, Clear and Husky",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.0
+   },
+   "lock_tempo": 1.0,
+   "text": "[low, threatening] ひだまりの人が、取り立てに来るって言ってたぞ。"
+  },
+  {
+   "id": "line068",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 1.0,
+   "text": "[hushed, weary] いちどだけ、申述書の名前の欄に、ペン先を当てた。"
+  },
+  {
+   "id": "line069",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 1.0,
+   "text": "[hushed, weary] 三年分の疲れが、私の背中を押していた。"
   }
  ]
 }
