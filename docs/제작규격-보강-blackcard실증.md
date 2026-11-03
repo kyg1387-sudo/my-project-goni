@@ -133,3 +133,12 @@ r1 재생성 실행이 결과를 푸시하는 순간(rebase → push 사이 4초
 | 「눈에 비친 붉은 빛」 지시가 붉은 눈(광원)으로 | S12y | 「no red light on his face or eyes」 — 반사·글로는 finalize 그레이딩으로 |
 
 무인 컷을 전부 정지로 설계(제19장 16①)한 덕에 「없는 사람 등장」 0건, 손 인서트 23컷 변형 0건. 다음 작품 규칙: 「눈에 비친 빛」 같은 반사 지시는 i2v에 쓰지 않는다(광원으로 해석).
+
+## 15. 립싱크 0.5초 시트 검수·burn 누락 보충·휴대폰 화면 추적 합성(2026-11-03)
+
+1. **립싱크 25컷(burn 162 + 단독 1컷) 0.5초 시트 전수 합격**: 헤드턴·웃음 변환·배경 변형 0건. 서 있는 미디엄 립싱크(S07n 柴田 문 앞)도 「FRAMING LOCKED FIRST」 가슴 위로 설계해 제18장 7①의 「돌아서 걸어 나감」 없음.
+2. **burn 누락 1컷(scene124 S09f)**: 제19장 19대로 `omnihuman_scenes` 번호 전부와 `omniNN.mp4`를 대조해 누락을 잡고, audition 단독 립싱크(`assets/auditions/blackcard-s09f-omni/omni-S09f.mp4`, L075a 4.0초 ≈ 0.64달러)로 보충 → `finalize_blackcard.py` `CLIP_OVERRIDE["S09f"]`로 영상만 교체(소리는 remix 그대로).
+3. **손에 든 휴대폰 화면은 립싱크 컷에서도 움직인다**: S09b(美咲가 뉴스 화면을 들어 보임)는 키프레임에 lcd 합성을 하고 OmniHuman을 돌렸는데, 생성된 립싱크는 무지 흰 화면 그대로였고(OmniHuman이 화면 내용을 뭉갬) 4.7초 동안 손이 약 90px 이동·화면이 1.3배 커졌다. 고정 사각형(제19장 20 방식)으로는 화면이 손에서 벗어난다 → `finalize_blackcard.py` `PHONE`: 키프레임 정합으로 ROI를 잡고 **매 프레임 밝은 무지 화면을 minAreaRect로 추적(EMA 0.6)** 해 `put_lcd`로 합성. 휴대폰·태블릿처럼 손에 든 화면은 처음부터 이 방식(추적 합성)으로 설계하고, 세로 화면용 그림(`phone_news` 720x1500)을 따로 그린다.
+4. **로컬 글꼴**: 이 컨테이너도 `fc-match "Noto Sans CJK JP:bold"`가 Inter-Bold였다(제19장 22 재현). `sudo apt-get update && apt-get install fonts-noto-cjk` 뒤 NotoSansCJK-Bold 확인하고 finalize를 돌렸다. 마무리 시작 체크리스트 1번.
+5. **썸네일 스펙 실행 인자**: `generate-video.yml`의 `portraits_spec`은 **이름만**(`blackcard-thumb-abc`) — 경로를 넣으면 `scripts/portraits/scripts/portraits/….json.json`으로 실패(무과금 1회).
+6. **백그라운드 실행 자기 종료 주의**: 추적 백그라운드 명령 안에 `pkill -f "<같은 스크립트명>"`을 넣으면 그 셸 자신이 걸려 죽는다(exit 144). 정리는 별도 명령으로.
