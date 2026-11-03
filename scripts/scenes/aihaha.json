@@ -1,0 +1,954 @@
+{
+ "_설명": "aihaha 장면 설정(build_aihaha_phase3.py 생성). override_required 장면은 정지 푸시인·OMNI 정지 프레임·재사용·카드를 video-overrides로 먼저 넣는다.",
+ "ratio": "16:9",
+ "budget_usd": 23.17,
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "durations": [
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  10,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  10,
+  5,
+  10,
+  10,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  10,
+  10,
+  5,
+  5,
+  10,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5,
+  10,
+  10,
+  5,
+  5
+ ],
+ "scenes": [
+  {
+   "prompt": "(override) omni: WINDOW STATE LOCKED FIRST: through the window the same tall tower is FINISHED — ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/H0a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand holds the tablet still; only the screen glow flickers softly on the fingers; nothing else moves. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/H0b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She holds her breath; her eyes move slightly across the screen; one slow blink; the cold screen light flickers faintly on her glasses. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/H1-1.png"
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S01e (the real mother smiling in the window chair, scaffolded tower beh",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand slowly lowers the tablet screen-side down onto the table and stays resting on it; the glow is cut off underneath. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/H2b-1.png"
+  },
+  {
+   "prompt": "(override) card: Title card over the blurred last frame of H2b (no black).",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] They move slowly away along the path; leaves drift; their backs stay to the camera. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S01a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The fingers drop pills one by one into the compartments and close a lid. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S01b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She ladles slowly into the bowl, steam rises; small natural movements. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S01c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She watches with a soft smile and a small laugh of breath; one blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S01d-1.png"
+  },
+  {
+   "prompt": "(override) omni: WINDOW STATE LOCKED FIRST: through the window the tall tower is COMPLETELY wrapp",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S01e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She looks out at the scaffolded tower and back, a small amused smile; the pointing hand stays still. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S01f-1.png"
+  },
+  {
+   "prompt": "(override) omni: WINDOW STATE LOCKED FIRST: through the window the tall tower is COMPLETELY wrapp",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S01g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The old hand pats the younger hand twice, slowly, and rests on it. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S01h-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Her fingers slowly fasten the worn leather strap buckle and then rest still. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S01i-1.png"
+  },
+  {
+   "prompt": "(override) still: WINDOW STATE LOCKED FIRST: through the window the tall tower is COMPLETELY wrapp",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S01j-1.png"
+  },
+  {
+   "prompt": "(override) still: The white-draped wake altar with chrysanthemums and incense smoke, the framed po",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S02a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The uncle looks up at the pillars appraisingly; the others drink; small natural movements. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S02b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle over Yukiko's blurred mourning shoulder: the uncle pouring beer from a",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S02c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Medium: the aunt pushing a small plate of sushi across the low table with her fi",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S02d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Her hands tighten on her knees; she swallows; her eyes stay lowered. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S02e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up: Yukiko lifting her eyes toward her relatives, restraining herself, eye",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S02f-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The relatives drink and gesture; Yukiko stays still by the altar; incense smoke drifts. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S02g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She steps out, puts the small box into the handbag, glances down the hallway and walks away to the left. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S03a-1.png"
+  },
+  {
+   "prompt": "(override) still: The open drawer of the old paulownia chest, the empty velvet spot where the seal",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S03b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand lays the sheets down one at a time and taps the last one flat. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S04a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle over Yukiko's blurred mourning shoulder: the uncle at the head of the ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S04b-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead: three blank cream sheets of paper side by side on the dark lacquered t",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S04c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She stares down, breath held, a small swallow. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S04d-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro of the corner of one cream sheet where a red seal impression will be compo",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S04e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Her eyes move along the papers and narrow slightly; a slow blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S04f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the uncle's blurred shoulder: Yukiko looking down at the papers, stiff with",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S04g-1.png"
+  },
+  {
+   "prompt": "(override) omni: Medium: the uncle lowering his voice with a false gentle face, one hand open tow",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S04h-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She sips tea and watches over the cup rim; small satisfied blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S04i-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle over Yukiko's blurred shoulder: the uncle tapping the papers with his ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S04j-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Yukiko's blurred shoulder: the cousin in a black suit holding out a plain b",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S04k-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand holds the tablet still; only a tiny natural hand drift. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S04l-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She stares, a tiny frown; one blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S04m-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She dabs the handkerchief under her dry eyes twice and peeks over it; no tears appear. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S04n-1.png"
+  },
+  {
+   "prompt": "(override) omni: High-angle close-up: Yukiko with her eyes lowered, hands on her lap.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S04o-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Yukiko's blurred shoulder: the aunt leaning back with a sneer.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S04p-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low-angle medium: the uncle setting down his beer glass with leisurely confidenc",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S04q-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She nods once slowly and keeps her eyes down. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S04r-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She taps the tablet awake and leans in; the glow brightens on her face; she freezes. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S04s-1.png"
+  },
+  {
+   "prompt": "(override) reuse: Reuse of H0a (the video letter) — slow push-in past the mother's shoulder to the",
+   "duration": 10,
+   "override_required": true
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Her breath stops; her eyes widen very slightly; nothing else moves. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S05b-1.png"
+  },
+  {
+   "prompt": "(override) still: WINDOW STATE LOCKED FIRST: through the window the same tall tower is FINISHED — ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S05c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She stands still looking out; her shoulders rise with one deep breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S05d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Her eyes steady; a slow blink; the reflection trembles faintly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S05e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand closes slowly over the watch and trembles once. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S05f-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She sits very still; the tablet glow pulses softly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S05g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand turns the sheet over and smooths it flat. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S06a-1.png"
+  },
+  {
+   "prompt": "(override) still: HANDS LOCKED: exactly ONE hand and ONE object in frame, seen from the side, the ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S06b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Her eyes move once across the paper and settle; she breathes out slowly through her nose. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S06c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She turns a page and runs a finger down a column; small natural movements. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. SEATED/FURNITURE LOCKED: seated on the zabuton or chair pulled in to the low table, legs under the table edge, forearms on the table; no furniture passes through the body. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S06d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The fingers type steadily and stop. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S06e-1.png"
+  },
+  {
+   "prompt": "(override) still: The plain silver laptop screen filling the frame (a credit report will be compos",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S06f-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She scrolls slowly; her head stays still facing the screen. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S06g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She leans back a little and exhales; eyes steady. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S06h-1.png"
+  },
+  {
+   "prompt": "(override) still: The plain laptop screen filling the frame (the black-and-white care-camera playb",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S06i-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The finger taps once and stays still. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S06j-1.png"
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S03a paused — punch-in on the aunt's hand holding the small black seal ",
+   "duration": 10,
+   "override_required": true
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] They sit facing each other; Miyashita opens the envelope; small natural movements. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. SEATED/FURNITURE LOCKED: seated on the zabuton or chair pulled in to the low table, legs under the table edge, forearms on the table; no furniture passes through the body. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S07a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Miyashita's blurred shoulder: Yukiko sliding the tablet and the envelope ac",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S07b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Yukiko's blurred shoulder (reverse angle): Miyashita stopping the video on ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S07c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up: Yukiko with her right hand resting over the old watch on her left wris",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S07d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Medium: Miyashita holding up one blank cream loan paper between two fingers.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S07e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She listens, a small nod. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S07f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up: Miyashita setting the paper down and speaking lower, from experience.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S07g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand turns two pages and stops. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S07h-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up: Miyashita lifting his eyes and looking straight at Yukiko off-screen.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S07i-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Miyashita's blurred shoulder: Yukiko with the smallest smile.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S07j-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She walks slowly toward the house; her back stays to the camera. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S07k-1.png"
+  },
+  {
+   "prompt": "(override) still: The old two-storey wooden house at dusk, warm light glowing in one ground-floor ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S07l-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] They step up into the house, shoes left scattered; their backs stay to the camera. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S08a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low-angle medium: the uncle in a golf jacket patting a wooden pillar of the livi",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S08b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She keeps her eyes lowered; her folded hands tighten. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S08c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle over Yukiko's blurred shoulder: the uncle leaning his face close to he",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S08d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Medium: the cousin in a grey hoodie filming the living room with his smartphone ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S08e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low-angle medium: the aunt in a wine-red blouse adjusting the plain black handba",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S08f-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She bows her head slowly and holds it. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S08g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand holds the phone still; only a faint natural tremor; the screen glow stays constant. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S08h-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The pen tip trembles on the paper, then stops completely and lifts a few millimetres. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S08i-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The pen tip trembles on the paper, then stops and lifts away a few millimetres. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S08i2-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] NOT smiling at any moment: brows knotted, the corners of the mouth pulled down. A tired breath; her eyes glisten; one slow blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S08j-1.png"
+  },
+  {
+   "prompt": "(override) still: From behind Yukiko's shoulder: her back and slightly trembling shoulder in the n",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S08k-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She sits motionless; only her breathing. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S08l-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Only the second hand moves, tick by tick. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S08m-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Her eyes lift slowly; she breathes in. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S08n-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro of an open thick law book with blank pages on the low table, lamp light (t",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S08o-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro of a small desk calendar with blank pages on the low table (the date Octob",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S08p-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She rises slowly to her feet and stands still, looking at the calendar. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S08p2-1.png"
+  },
+  {
+   "prompt": "(override) card: Preview card over the blurred calendar frame (no black).",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand sets the form down and places the pen on it. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S09a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle over Yukiko's blurred shoulder: the uncle holding out the pen with a s",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S09b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the uncle's blurred shoulder: Yukiko holding the TV remote control, calm an",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S09c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand pulls the cord once; the light flickers and comes on cold. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S09d-1.png"
+  },
+  {
+   "prompt": "(override) still: The TV on its low cabinet in the cold-lit living room, the screen glowing (the v",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S09e-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low angle over the uncle's blurred shoulder: Yukiko pointing at the TV with the ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S09f-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] His smile fades; he swallows; his eyes dart to the TV. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S09g-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low-angle medium: Yukiko standing straight in the cold light.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S09h-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand lays the sheets down and squares them neatly. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S09i-1.png"
+  },
+  {
+   "prompt": "(override) omni: Medium: the aunt raising her voice, leaning forward from the sofa.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S09j-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up: Yukiko pushing her glasses up with one finger, calm.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S09k-1.png"
+  },
+  {
+   "prompt": "(override) omni: Medium: the cousin half-risen from his chair, both hands on the table, flustered",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S09l-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up: Yukiko slowly turning her face toward the cousin.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S09m-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] They turn their heads slowly toward their son, frozen. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S09n-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the cousin's blurred shoulder: Yukiko facing him.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S09o-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] His face drains; his hand slips off the chair back; he swallows. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. A single small bead of sweat slowly runs from his temple down toward the jawline; he swallows hard, eyes darting sideways. Head still. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S09p-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up at 40 degrees: Yukiko looking toward her mother's portrait off-screen.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S09q-1.png"
+  },
+  {
+   "prompt": "(override) omni: Medium: the uncle leaning both hands on the low table, furious.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S09r-1.png"
+  },
+  {
+   "prompt": "(override) omni: High-angle medium: the uncle's palm flat on the low table after striking it, bre",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S10a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low-angle close-up: Yukiko unmoved.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S10b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The wrist turns up slowly; the second hand ticks. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S10c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She waits, eyes steady. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S10d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the uncle's blurred shoulder: Yukiko.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S10e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] They glance at each other uneasily; the aunt's hand tightens on her bag. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S10f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low-angle close-up: Yukiko explaining calmly.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S10g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] His eyes widen; his mouth opens slightly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S10h-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low-angle medium: Yukiko.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S10i-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION]  A single small bead of sweat slowly runs from his temple down toward the jawline; he swallows hard, eyes darting sideways. Head still. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S10j-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low-angle close-up: Yukiko after a beat, the decisive line.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S10k-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Only the second hand moves. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S10l-1.png"
+  },
+  {
+   "prompt": "(override) omni: High-angle medium: the uncle sinking onto the sofa, trembling.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S10m-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over the uncle's blurred shoulder: the aunt gripping her husband's arm, shocked.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S10n-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand keeps gripping the sleeve and pulls twice, never letting go. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S10o-1.png"
+  },
+  {
+   "prompt": "(override) still: The small intercom monitor on the wall glowing (the detective and two uniformed ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S11a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low-angle medium: Detective Miyashita stepping in from the hallway into the livi",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S11b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She freezes, lips trembling; the police light sweeps slowly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S11c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Close-up: Miyashita turning his eyes to the aunt.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S11d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The fingers clench the handbag tighter and tremble. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S11e-1.png"
+  },
+  {
+   "prompt": "(override) omni: High-angle close-up: the uncle pleading for the first time.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S11f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low-angle close-up: Yukiko answering quietly.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S11g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He stares at the floor, motionless. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S11h-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low-angle medium: Yukiko, the callback.",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S11i-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] They sit slumped, motionless; the red light sweeps slowly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S11j-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She walks slowly away; ginkgo leaves drift. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S12a-1.png"
+  },
+  {
+   "prompt": "(override) still: An old empty two-storey wooden house in the late-autumn morning, its curtains cl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S12b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The thumb taps once and the hand stays still. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S13a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] NOT smiling at any moment: brows knotted, the corners of the mouth pulled down. She listens without moving; her eyes fill; a trembling breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 10,
+   "image": "assets/portraits/aihaha-keyframes/S13b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand closes over the watch slowly and holds it. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S13c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION]  NOT smiling at any moment. A single thin transparent tear slowly spills over her right lower eyelid and runs down along the natural curve of her cheek to about one third, catching a faint highlight of the window light; she blinks once slowly, her breath trembles, lips pressed together. Head still, no other tears. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S13d-1.png"
+  },
+  {
+   "prompt": "(override) still: WINDOW STATE LOCKED FIRST: through the window the same tall tower is FINISHED — ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S13e-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro: the plain black tablet lying dark and switched off on the low table, morn",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S13f-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She turns a little and smiles softly through wet eyes; one slow blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Eyes wet and glistening with tears welling on the lower lids but NOT running down — the tears stay pooled. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "duration": 5,
+   "image": "assets/portraits/aihaha-keyframes/S13g-1.png"
+  },
+  {
+   "prompt": "(override) still: WINDOW STATE LOCKED FIRST: through the window the same tall tower is FINISHED — ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/aihaha-keyframes/S13h-1.png"
+  }
+ ]
+}
