@@ -1,0 +1,1317 @@
+{
+ "_설명": "『母が遺したビデオレター』 PHASE 1 본녹음 110줄(본편 ElevenLabs eleven_v3 + 아웃트로 Typecast Yui Sato). 음성 입력 = [영어 톤 태그] + 가나 치환본, 자막은 원문. line### = 시간 순서. 생성: productions/aihaha-ja/build_tts_spec.py. 실행: generate-video.yml audition_spec=aihaha-tts (브랜치 claude/aihaha-ja).",
+ "language": "jpn",
+ "tc_model": "ssfm-v30",
+ "tests": [
+  {
+   "id": "line001",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko - Warm, Witty Grandma",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 1.0
+   },
+   "lock_tempo": 0.95,
+   "text": "[flat, emotionless] ゆきこ……お母さんよ。"
+  },
+  {
+   "id": "line002",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko - Warm, Witty Grandma",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 1.0
+   },
+   "lock_tempo": 0.95,
+   "text": "[flat, emotionless] 相続は、放棄して。おじさんに、全部任せて。"
+  },
+  {
+   "id": "line003",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.92,
+   "text": "[quiet, uneasy] 画面の中の母は、いちども瞬きをしなかった。"
+  },
+  {
+   "id": "line004",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.88,
+   "text": "[quiet, certain] そして母は、私をいちどもゆきこと呼んだことがない。"
+  },
+  {
+   "id": "line005",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[calm, reflective] さんねんまえ、私はしんようきんこを辞めた。母の介護のためだ。"
+  },
+  {
+   "id": "line006",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[warm, gentle] 朝は薬、昼は散歩、夜は母の好きな煮物。"
+  },
+  {
+   "id": "line007",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko - Warm, Witty Grandma",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.9,
+   "text": "[warm, gentle] ゆっこ、いつもありがとね。"
+  },
+  {
+   "id": "line008",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko - Warm, Witty Grandma",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.92,
+   "text": "[warm, chatty] あのマンション、まだ工事してるねえ。"
+  },
+  {
+   "id": "line009",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[soft, warm] できあがったら、いっしょに見に行こうね。"
+  },
+  {
+   "id": "line010",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.92,
+   "text": "[warm, nostalgic] 母は私を、いつもゆっこと呼んだ。"
+  },
+  {
+   "id": "line011",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.88,
+   "text": "[quiet, sad] しちがつふつかの朝。母は眠ったまま、旅立った。"
+  },
+  {
+   "id": "line012",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.85,
+   "text": "[quiet, sad] その約束は、果たせなかった。"
+  },
+  {
+   "id": "line013",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[calm, bitter] つやの席で、おじの目は家の柱ばかり見ていた。"
+  },
+  {
+   "id": "line014",
+   "model": "elevenlabs-direct",
+   "voice": "JOcmGzB8OFjY8MhjHHEf",
+   "voice_name": "Jun - Calm, Clear and Husky",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 1.0,
+   "text": "[condescending] ゆきこ。この土地のことは、俺に任せろ。"
+  },
+  {
+   "id": "line015",
+   "model": "elevenlabs-direct",
+   "voice": "RG23A8s6ehr3kui0iBz6",
+   "voice_name": "Chidori",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 1.05,
+   "text": "[sneering] よんじゅうろくで無職でしょ。お母さんの年金で暮らしてたくせに。"
+  },
+  {
+   "id": "line016",
+   "model": "elevenlabs-direct",
+   "voice": "TlxVR97quVHvTxE8Qkcm",
+   "voice_name": "Samurai",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 1.05,
+   "text": "[mocking, casual] 介護って言えば、働かなくて済むもんな。"
+  },
+  {
+   "id": "line017",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.9,
+   "text": "[restrained, trembling] ……母の前で、やめてください。"
+  },
+  {
+   "id": "line018",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.92,
+   "text": "[quiet, bitter] 親戚は誰も、介護のさんねんかんを見ていない。"
+  },
+  {
+   "id": "line019",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.88,
+   "text": "[ominous, quiet] その夜、母の部屋の引き出しから、じついんが消えた。"
+  },
+  {
+   "id": "line020",
+   "model": "elevenlabs-direct",
+   "voice": "JOcmGzB8OFjY8MhjHHEf",
+   "voice_name": "Jun - Calm, Clear and Husky",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[serious, persuasive] ゆきこ、驚かずに聞け。ねえさんには借金があった。"
+  },
+  {
+   "id": "line021",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.92,
+   "text": "[tense, quiet] 並べられたしゃくようしょはさんまい。合計、よんせんななひゃくまんえん。"
+  },
+  {
+   "id": "line022",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.92,
+   "text": "[tense, quiet] どれにも、母のじついんが押されていた。"
+  },
+  {
+   "id": "line023",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.92,
+   "text": "[shocked, quiet] ……母が、借金を？ いちども聞いていません。"
+  },
+  {
+   "id": "line024",
+   "model": "elevenlabs-direct",
+   "voice": "JOcmGzB8OFjY8MhjHHEf",
+   "voice_name": "Jun - Calm, Clear and Husky",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[fake gentle] ねえさんは、お前に心配かけたくなかったんだよ。"
+  },
+  {
+   "id": "line025",
+   "model": "elevenlabs-direct",
+   "voice": "JOcmGzB8OFjY8MhjHHEf",
+   "voice_name": "Jun - Calm, Clear and Husky",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 1.0,
+   "text": "[pressuring, firm] 相続したら、借金は全部お前のものだ。放棄しろ。"
+  },
+  {
+   "id": "line026",
+   "model": "elevenlabs-direct",
+   "voice": "TlxVR97quVHvTxE8Qkcm",
+   "voice_name": "Samurai",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 1.0,
+   "text": "[casual, smug] おばさんから、預かってた動画があるんだ。"
+  },
+  {
+   "id": "line027",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko - Warm, Witty Grandma",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 1.0
+   },
+   "lock_tempo": 0.95,
+   "text": "[flat, emotionless] ゆきこ……お母さんよ。相続は、放棄して。"
+  },
+  {
+   "id": "line028",
+   "model": "elevenlabs-direct",
+   "voice": "RG23A8s6ehr3kui0iBz6",
+   "voice_name": "Chidori",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 1.0,
+   "text": "[fake sad] ほら。おねえさんも、そう言ってるじゃない。"
+  },
+  {
+   "id": "line029",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.92,
+   "text": "[cold, quiet] おばはハンカチで目を押さえた。涙は、いってきも出ていなかった。"
+  },
+  {
+   "id": "line030",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.9,
+   "text": "[quiet, hesitant] ……少し、考えさせてください。"
+  },
+  {
+   "id": "line031",
+   "model": "elevenlabs-direct",
+   "voice": "RG23A8s6ehr3kui0iBz6",
+   "voice_name": "Chidori",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 1.05,
+   "text": "[sneering, mocking] 考える？ 無職がいちおくの土地持って、どうするの。"
+  },
+  {
+   "id": "line032",
+   "model": "elevenlabs-direct",
+   "voice": "JOcmGzB8OFjY8MhjHHEf",
+   "voice_name": "Jun - Calm, Clear and Husky",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.98,
+   "text": "[smug, relaxed] 期限はしじゅうくにちからさんかげつだ。じゅういちがつまで待ってやる。"
+  },
+  {
+   "id": "line033",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.9,
+   "text": "[quiet, defeated] 私は、うなずくことしかできなかった。"
+  },
+  {
+   "id": "line034",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.88,
+   "text": "[tense, whispery] その夜。動画を見返した私は、息をのんだ。"
+  },
+  {
+   "id": "line035",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.85,
+   "text": "[tense, slow] 母の背中の向こう。窓の外のマンション。"
+  },
+  {
+   "id": "line036",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.8,
+   "text": "[whispering, stunned] ……足場が、ない。"
+  },
+  {
+   "id": "line037",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.92,
+   "text": "[firm, quiet] 足場が外れたのは、しちがつにじゅうごにち。母が亡くなったさんしゅうかん後だ。"
+  },
+  {
+   "id": "line038",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.92,
+   "text": "[quiet, certain] さんねんかん、毎日この窓を見てきた私には、分かる。"
+  },
+  {
+   "id": "line039",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.85,
+   "text": "[whispering, trembling] ……お母さんじゃ、ない。"
+  },
+  {
+   "id": "line040",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.88,
+   "text": "[tense, low] では、誰が。なんのために。"
+  },
+  {
+   "id": "line041",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[confident, calm] しゃくようしょなら、私はにじゅうねん、毎日見てきた。"
+  },
+  {
+   "id": "line042",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[calm, firm] 母の年金も預金も、さんねんかん、いちえんたんいで私が見てきた。"
+  },
+  {
+   "id": "line043",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[calm, explaining] そうぞくにんは、亡くなった人のしんようじょうほうをかいじできる。"
+  },
+  {
+   "id": "line044",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[crisp, certain] シーアイシー、ジェイアイシーシー、ケーエスシー。さんしゃとも、がいとうなし。"
+  },
+  {
+   "id": "line045",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[cold, certain] ひだまりファイナンスは、かしきんぎょうの登録すらなかった。"
+  },
+  {
+   "id": "line046",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.9,
+   "text": "[tense, quiet] そして、廊下のみまもりカメラ。つやの夜、じゅういちじよんじゅういっぷん。"
+  },
+  {
+   "id": "line047",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.9,
+   "text": "[cold, quiet] 母の部屋から出てきたおばの手に、じついんのケースがあった。"
+  },
+  {
+   "id": "line048",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[polite, determined] この動画としゃくようしょを、調べていただけますか。"
+  },
+  {
+   "id": "line049",
+   "model": "elevenlabs-direct",
+   "voice": "C4mQ5g9WaCYNQ3mMeJZR",
+   "voice_name": "MacLight",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[impressed, calm] よく、ここまで調べましたね。"
+  },
+  {
+   "id": "line050",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.9,
+   "text": "[soft, sad] 母の呼び方が、違ったんです。"
+  },
+  {
+   "id": "line051",
+   "model": "elevenlabs-direct",
+   "voice": "C4mQ5g9WaCYNQ3mMeJZR",
+   "voice_name": "MacLight",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[calm, serious] 本物なら、ただの借金です。偽物なら、犯罪の証拠です。"
+  },
+  {
+   "id": "line052",
+   "model": "elevenlabs-direct",
+   "voice": "C4mQ5g9WaCYNQ3mMeJZR",
+   "voice_name": "MacLight",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.98,
+   "text": "[calm, professional] 映像のかんていには、さんしゅうかんほどかかります。"
+  },
+  {
+   "id": "line053",
+   "model": "elevenlabs-direct",
+   "voice": "C4mQ5g9WaCYNQ3mMeJZR",
+   "voice_name": "MacLight",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[serious, low] それまで、何も気づかないふりを。できますか。"
+  },
+  {
+   "id": "line054",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[small smile, firm] はい。にじゅうねん、窓口で鍛えましたから。"
+  },
+  {
+   "id": "line055",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.9,
+   "text": "[quiet, mysterious] かんていまで、さんしゅうかん。でも私には、もうひとつ待つものがあった。"
+  },
+  {
+   "id": "line056",
+   "model": "elevenlabs-direct",
+   "voice": "JOcmGzB8OFjY8MhjHHEf",
+   "voice_name": "Jun - Calm, Clear and Husky",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 1.02,
+   "text": "[irritated, pushy] まだはんこを押してないのか。"
+  },
+  {
+   "id": "line057",
+   "model": "elevenlabs-direct",
+   "voice": "JOcmGzB8OFjY8MhjHHEf",
+   "voice_name": "Jun - Calm, Clear and Husky",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.98,
+   "text": "[threatening, low] じゅういちがつを過ぎたら、この家ごと差し押さえだぞ。"
+  },
+  {
+   "id": "line058",
+   "model": "elevenlabs-direct",
+   "voice": "TlxVR97quVHvTxE8Qkcm",
+   "voice_name": "Samurai",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 1.05,
+   "text": "[greedy, casual] ここ、さらちにしたらいくらになるかな。"
+  },
+  {
+   "id": "line059",
+   "model": "elevenlabs-direct",
+   "voice": "RG23A8s6ehr3kui0iBz6",
+   "voice_name": "Chidori",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 1.02,
+   "text": "[spiteful, smug] ご近所にも言っといたわよ。無職の娘が居座ってるって。"
+  },
+  {
+   "id": "line060",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.9,
+   "text": "[quiet, restrained] それでも私は、黙って頭を下げた。"
+  },
+  {
+   "id": "line061",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.92,
+   "text": "[cold, quiet] 翔太からは毎晩、あの動画が送られてきた。"
+  },
+  {
+   "id": "line062",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.85,
+   "text": "[whispering, tearful] ……お母さん。あと、少しだけ待ってて。"
+  },
+  {
+   "id": "line063",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.85,
+   "text": "[quiet, slow] 母のうでどけいの針だけが、静かに進んでいた。"
+  },
+  {
+   "id": "line064",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.9,
+   "text": "[quiet, knowing] おじは、ひとつだけ大きな勘違いをしていた。"
+  },
+  {
+   "id": "line065",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.88,
+   "text": "[quiet, knowing] 法律に書かれた、ある数字を。"
+  },
+  {
+   "id": "line066",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.9,
+   "text": "[firm, resolute] じゅうがつみっか。私はおじいっかを、母の家に呼んだ。"
+  },
+  {
+   "id": "line067",
+   "model": "elevenlabs-direct",
+   "voice": "JOcmGzB8OFjY8MhjHHEf",
+   "voice_name": "Jun - Calm, Clear and Husky",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.98,
+   "text": "[smug, satisfied] よく決心したな。はんこは、ここだ。"
+  },
+  {
+   "id": "line068",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[calm, polite] その前に。母の動画、もういちど見せてください。"
+  },
+  {
+   "id": "line069",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko - Warm, Witty Grandma",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 1.0
+   },
+   "lock_tempo": 0.95,
+   "text": "[flat, emotionless] ゆきこ……お母さんよ。"
+  },
+  {
+   "id": "line070",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[calm, firm] 止めます。窓の外、足場がありませんよね。"
+  },
+  {
+   "id": "line071",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[calm, firm] 足場が外れたのは、母が亡くなったさんしゅうかん後です。"
+  },
+  {
+   "id": "line072",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[calm, firm] しゃくようしょも調べました。母の借金は、ゼロ円です。"
+  },
+  {
+   "id": "line073",
+   "model": "elevenlabs-direct",
+   "voice": "RG23A8s6ehr3kui0iBz6",
+   "voice_name": "Chidori",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 1.05,
+   "text": "[shrill, angry] 無職のあんたに、何が分かるのよ！"
+  },
+  {
+   "id": "line074",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.92,
+   "text": "[calm, dignified] さんねんまえまで、しんようきんこでにじゅうねん。ゆうしの担当でした。"
+  },
+  {
+   "id": "line075",
+   "model": "elevenlabs-direct",
+   "voice": "TlxVR97quVHvTxE8Qkcm",
+   "voice_name": "Samurai",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.0
+   },
+   "lock_tempo": 1.05,
+   "text": "[flustered, stammering] そ、そんなの、エーアイの誤差だろ……！"
+  },
+  {
+   "id": "line076",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.9,
+   "text": "[quiet, sharp] ……今、エーアイって言いましたね。"
+  },
+  {
+   "id": "line077",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.92,
+   "text": "[quiet, firm] 私はひとことも、エーアイなんて言っていません。"
+  },
+  {
+   "id": "line078",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.9,
+   "text": "[quiet, emotional] それに。母は私を、ゆきことは呼びません。"
+  },
+  {
+   "id": "line079",
+   "model": "elevenlabs-direct",
+   "voice": "JOcmGzB8OFjY8MhjHHEf",
+   "voice_name": "Jun - Calm, Clear and Husky",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.0
+   },
+   "lock_tempo": 1.05,
+   "text": "[furious, shouting] 家族を疑うのか！ ねえさんの弟の、この俺を！"
+  },
+  {
+   "id": "line080",
+   "model": "elevenlabs-direct",
+   "voice": "JOcmGzB8OFjY8MhjHHEf",
+   "voice_name": "Jun - Calm, Clear and Husky",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.0
+   },
+   "lock_tempo": 1.08,
+   "text": "[furious, shouting] もういい！ はんこさえ押せば、済む話だ！"
+  },
+  {
+   "id": "line081",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.92,
+   "text": "[calm, quiet] 押しても、意味がありません。"
+  },
+  {
+   "id": "line082",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.9,
+   "text": "[calm, quiet] おじさん。今日は、なんにちですか。"
+  },
+  {
+   "id": "line083",
+   "model": "elevenlabs-direct",
+   "voice": "JOcmGzB8OFjY8MhjHHEf",
+   "voice_name": "Jun - Calm, Clear and Husky",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.98,
+   "text": "[confused, irritated] ……じゅうがつみっかだろう。"
+  },
+  {
+   "id": "line084",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.88,
+   "text": "[calm, firm] 母が亡くなって、きゅうじゅうさんにちです。"
+  },
+  {
+   "id": "line085",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.92,
+   "text": "[calm, explaining] 放棄の期限は、亡くなったと知った日からさんかげつ。"
+  },
+  {
+   "id": "line086",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.9,
+   "text": "[calm, firm] しじゅうくにちからでは、ありません。"
+  },
+  {
+   "id": "line087",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.85,
+   "text": "[quiet, decisive] 期限は、昨日で終わっています。"
+  },
+  {
+   "id": "line088",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.9,
+   "text": "[cold, satisfied] おじが積み上げた嘘は、最初から時計に負けていた。"
+  },
+  {
+   "id": "line089",
+   "model": "elevenlabs-direct",
+   "voice": "JOcmGzB8OFjY8MhjHHEf",
+   "voice_name": "Jun - Calm, Clear and Husky",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.0
+   },
+   "lock_tempo": 0.92,
+   "text": "[shocked, trembling] そんな……家をたんぽに、にせんろっぴゃくまんも……"
+  },
+  {
+   "id": "line090",
+   "model": "elevenlabs-direct",
+   "voice": "RG23A8s6ehr3kui0iBz6",
+   "voice_name": "Chidori",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.0
+   },
+   "lock_tempo": 1.08,
+   "text": "[panicked, shrill] あなた！ それ、どういうこと！"
+  },
+  {
+   "id": "line091",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.92,
+   "text": "[cold, quiet] 遺産を当てに、おじは家をたんぽにしていたのだ。"
+  },
+  {
+   "id": "line092",
+   "model": "elevenlabs-direct",
+   "voice": "C4mQ5g9WaCYNQ3mMeJZR",
+   "voice_name": "MacLight",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[formal, firm] ちばけんけいです。あの動画は、エーアイによるごうせいでした。"
+  },
+  {
+   "id": "line093",
+   "model": "elevenlabs-direct",
+   "voice": "C4mQ5g9WaCYNQ3mMeJZR",
+   "voice_name": "MacLight",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[formal, cold] おおのよりこさん。つやの夜の映像も、確認しました。"
+  },
+  {
+   "id": "line094",
+   "model": "elevenlabs-direct",
+   "voice": "C4mQ5g9WaCYNQ3mMeJZR",
+   "voice_name": "MacLight",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.92,
+   "text": "[formal, firm] しょまで、ごどうこう願えますか。"
+  },
+  {
+   "id": "line095",
+   "model": "elevenlabs-direct",
+   "voice": "JOcmGzB8OFjY8MhjHHEf",
+   "voice_name": "Jun - Calm, Clear and Husky",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.0
+   },
+   "lock_tempo": 0.88,
+   "text": "[pleading, weak] ゆきこ……俺たちは、家族だろう……"
+  },
+  {
+   "id": "line096",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.9,
+   "text": "[quiet, calm] 動画の母は、おじさんに全部任せてと言いました。"
+  },
+  {
+   "id": "line097",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.88,
+   "text": "[quiet, final] だから私も、全部、警察に任せたんです。"
+  },
+  {
+   "id": "line098",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.95,
+   "text": "[calm, matter-of-fact] おじの家はけいばいにかけられ、翔太は会社をかいこされた。"
+  },
+  {
+   "id": "line099",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.92,
+   "text": "[calm, quiet] さんにんは今、裁判を待っている。"
+  },
+  {
+   "id": "line100",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.88,
+   "text": "[soft, emotional] 母のスマホに、いっつうだけ、聞けずにいた音声が残っていた。"
+  },
+  {
+   "id": "line101",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko - Warm, Witty Grandma",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.88,
+   "text": "[tender, slightly tired] ゆっこ。仕事、辞めさせてごめんね。"
+  },
+  {
+   "id": "line102",
+   "model": "elevenlabs-direct",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "voice_name": "Chieko - Warm, Witty Grandma",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.88,
+   "text": "[tender, smiling] いつもありがとね。……ちゃんと、ご飯食べなさいよ。"
+  },
+  {
+   "id": "line103",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.82,
+   "text": "[whispering, tearful] ……うん。ちゃんと食べるよ、お母さん。"
+  },
+  {
+   "id": "line104",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.88,
+   "text": "[quiet, emotional] エーアイは、母の顔も声も、真似できた。"
+  },
+  {
+   "id": "line105",
+   "model": "elevenlabs-direct",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "voice_name": "Chiemi",
+   "el_model": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.5
+   },
+   "lock_tempo": 0.82,
+   "text": "[quiet, emotional] でも、母が私をなんと呼んでいたかだけは、真似できなかった。"
+  },
+  {
+   "id": "line106",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "最後までご覧いただき、ありがとうございました。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.6,
+   "tempo": 0.95
+  },
+  {
+   "id": "line107",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "皆様のご家族には、家族だけの呼び名はありますか。",
+   "emotion_preset": "normal",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  },
+  {
+   "id": "line108",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "ぜひ、コメントで教えてください。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 0.92
+  },
+  {
+   "id": "line109",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "チャンネル登録と高評価も、よろしくお願いします。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 0.8,
+   "tempo": 0.95
+  },
+  {
+   "id": "line110",
+   "model": "typecast-direct",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "language": "jpn",
+   "text": "次回も、どうぞお楽しみに。",
+   "emotion_preset": "happy",
+   "emotion_intensity": 1.0,
+   "tempo": 0.95
+  }
+ ]
+}

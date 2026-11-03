@@ -473,6 +473,8 @@ def main():
                     data=json.dumps({
                         "text": t["text"],
                         "model_id": t.get("el_model", "eleven_v3"),
+                        # 배역별 설정값(제20장 1 — stability·similarity_boost·style·speed·use_speaker_boost). 없으면 계정 기본값
+                        **({"voice_settings": t["voice_settings"]} if t.get("voice_settings") else {}),
                     }).encode(),
                     headers={"Content-Type": "application/json", "xi-api-key": el_key},
                     method="POST")

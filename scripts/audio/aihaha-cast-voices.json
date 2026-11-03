@@ -1,0 +1,76 @@
+{
+ "_설명": "『母が遺したビデオレター』 확정 캐스트·ElevenLabs 설정값(제20장 1 — 재현성). 2026-11-03 고니감독님 청취 확정. 줄별 덮어쓰기(stability·speed)는 05_톤연출표.md.",
+ "model": "eleven_v3",
+ "cast": {
+  "NA": {
+   "name": "Chiemi",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "role": "由紀子(내레이션)",
+   "settings": {
+    "stability": 0.5
+   }
+  },
+  "由紀子": {
+   "name": "Chiemi",
+   "voice": "CAz2VQzFEVyGujit7Iof",
+   "role": "由紀子(대사)",
+   "settings": {
+    "stability": 0.5
+   }
+  },
+  "母": {
+   "name": "Chieko - Warm, Witty Grandma",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "role": "어머니 佐和子(진짜)",
+   "settings": {
+    "stability": 0.5
+   }
+  },
+  "AI母": {
+   "name": "Chieko - Warm, Witty Grandma",
+   "voice": "xE6NbKmUvY3BhBzNAYsV",
+   "role": "가짜 비디오레터 어머니",
+   "settings": {
+    "stability": 1.0
+   }
+  },
+  "叔父": {
+   "name": "Jun - Calm, Clear and Husky",
+   "voice": "JOcmGzB8OFjY8MhjHHEf",
+   "role": "숙부 剛",
+   "settings": {
+    "stability": 0.5
+   }
+  },
+  "叔母": {
+   "name": "Chidori",
+   "voice": "RG23A8s6ehr3kui0iBz6",
+   "role": "숙모 頼子",
+   "settings": {
+    "stability": 0.5
+   }
+  },
+  "翔太": {
+   "name": "Samurai",
+   "voice": "TlxVR97quVHvTxE8Qkcm",
+   "role": "사촌 翔太",
+   "settings": {
+    "stability": 0.5
+   }
+  },
+  "宮下": {
+   "name": "MacLight",
+   "voice": "C4mQ5g9WaCYNQ3mMeJZR",
+   "role": "형사 宮下",
+   "settings": {
+    "stability": 0.5
+   }
+  },
+  "OUT": {
+   "name": "Yui Sato",
+   "voice": "tc_629fe972013e90b4db213fd8",
+   "role": "아웃트로 진행자(Typecast, 채널 공식)",
+   "typecast": true
+  }
+ }
+}

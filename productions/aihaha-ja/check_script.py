@@ -14,6 +14,11 @@ for ln in body.splitlines():
     if m: sec = m.group(1).split('·')[0].strip(); continue
     m = re.match(r'^\s*((?:NA|L|OUT)\d+\w*)\s*([^:「]*?)\s*[:：]\s*「(.+)」\s*$', ln)
     if m: rows.append((sec, m.group(1), m.group(2).strip(), m.group(3)))
+# 줄 번호로 시작하는데 대사 형식으로 읽히지 않은 줄(메모 안의 「」 등) = 녹음에서 조용히 빠짐 → 오류
+for ln in body.splitlines():
+    if re.match(r'^\s*(?:NA|L|OUT)\d+\w*\b', ln) and re.search(r'[:：]\s*「', ln) and not re.match(r'^\s*((?:NA|L|OUT)\d+\w*)\s*([^:「]*?)\s*[:：]\s*「(.+)」\s*$', ln):
+        rows_skip = True
+        print('[오류] 대사로 읽히지 않는 줄(메모 안 「」 금지):', ln.strip()[:60]); sys.exit(1)
 P = re.compile(r"[\s、。，．・…―！？!?『』「」（）()　]")
 errs = []; ids = collections.Counter(r[1] for r in rows)
 for k, v in ids.items():
