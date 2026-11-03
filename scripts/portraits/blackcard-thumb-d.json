@@ -1,0 +1,22 @@
+{
+ "_설명": "『ブラックカード』 썸네일 D — 고니감독님 지시(2026-11-03): 웹툰 B 구도를 「시네마틱 실사풍 AI 그래픽(극사실 일러스트, 감정 극대화)」으로. 2560x1440 4장 약 0.36달러. 글자(왼쪽 흰 고딕 테두리 3줄 + 하단 그라데이션 인용구)는 로컬 합성.",
+ "characters": [
+  {
+   "id": "thumbD",
+   "count": 4,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-faces/kenji.png",
+    "assets/portraits/blackcard-faces/shibata.png",
+    "assets/portraits/blackcard-faces/misaki.png"
+   ],
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "prompt": "[CAMERA] Wide cinematic shot, 35mm, slight high angle, deep focus, 16:9, ONE continuous scene, one single frame, NOT a grid. Kenji standing large on the RIGHT third looking down; the executive Shibata collapsed backward in a tilted black leather chair in the CENTER under a hard spotlight; the wife Misaki on her knees on the floor at the LOWER LEFT; the UPPER-LEFT third kept dark and empty for text. [CHARACTER] Hyper-realistic cinematic film still, photorealistic skin and fabric, dramatic Japanese suspense-drama lighting (NOT anime, NOT cartoon, NOT 3D render). Kenji = Takahashi Kenji from reference image 1 (reproduce exactly this face): Japanese man aged 43, lean face, short black hair with a little grey, short neat stubble, a small old scar above his LEFT eyebrow, NO glasses, NO earrings, plain black tailored suit, white shirt, no tie, steel chronograph watch. Shibata = reference image 2 (reproduce exactly this face): aged 44, broad face, slicked-back black hair, RIMLESS glasses, navy double-breasted suit, grey tie. Misaki = reference image 3 (reproduce exactly this face): aged 41, chin-length black bob, exactly ONE small mole on her left cheek, NO glasses, NO earrings, beige trench coat over a white shirt. No name tags, no text anywhere. [ACTION] Emotions at maximum but realistic: Kenji's face cold and controlled, jaw set, eyes narrowed, holding a plain matte-black card with no text loosely at his side; Shibata panicking, mouth open, eyebrows raised, a few tiny beads of sweat on his temple, one hand gripping the armrest, body sliding back in the chair; Misaki looking up at Kenji in shock, eyes red-rimmed and wet with a thin film of tears, ONE thin clear tear line on one cheek, one hand pressed over her mouth. [SETTING] A glass-walled executive boardroom at night: long dark table, floor-to-ceiling windows with blurred Roppongi city lights and one red aviation light, a single hard spotlight from above on the chair, blue-grey shadows elsewhere, a single envelope on the table, teal-and-amber noir color grade, film grain. [NEGATIVE] text, letters, logo, watermark, extra fingers, anime, cartoon, 3D render, plastic skin, glossy gel tears, earrings, grid, split panels, inset portrait."
+  }
+ ]
+}
