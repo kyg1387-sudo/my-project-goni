@@ -18,3 +18,9 @@
 
 - 고니감독님 지시로 정본 `claude/happy-noether-kq0lkf`(835522e)에서 CLAUDE.md·docs·scripts·assets/brand를 다시 가져옴. 정본 CLAUDE.md에는 제20장이 없어 이 작품 제20장 1~5를 부록 앞에 다시 붙임.
 - 브랜치 전체 fetch는 대용량 영상(약 3.8GB 수신 후 연결 끊김)으로 2회 실패 → `--depth 1 --filter=blob:none` 부분 fetch 후 필요한 경로만 checkout으로 해결. 다음 작품도 지침 가져오기는 이 방식이 안전하다.
+
+
+## PHASE 1 본녹음 실측(2026-11-03, #1033)
+- 由紀子 내레이션 가나 3.7자/초(느림) → A/B 템포안, `08_PHASE1_Lock1차.md`.
+- 어머니 A/B/C 억양 폭: C 가짜 1.87·2.31·2.83·1.98 / A 진짜 3.28·4.46 / B LINE 2.15·2.64 → B 재녹음 3안씩(stability 0.0), 제20장 9.
+- 재생 영상 대사 L11·L26 = H0 음성 재사용(line027·line069, 원본 _v1).
