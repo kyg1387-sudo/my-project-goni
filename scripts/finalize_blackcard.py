@@ -58,9 +58,16 @@ MINCHO = os.path.join(ROOT, "scripts", "fonts", "ZenOldMincho-Bold.ttf")
 PICKS = json.load(open(os.path.join(SFXD, "_picks_prelim.json"))) if os.path.exists(os.path.join(SFXD, "_picks_prelim.json")) else {}
 
 
+SFXD2 = os.path.join(ROOT, "assets", "auditions", f"{SKIT}-sfx2")  # 2차(몰입 보강) 폴더
+PICKS2 = json.load(open(os.path.join(SFXD2, "_picks_prelim.json"))) if os.path.exists(os.path.join(SFXD2, "_picks_prelim.json")) else {}
+
+
 def sfx(name):
-    p = os.path.join(SFXD, PICKS.get(name, f"{name}-1.mp3"))
-    return p if os.path.exists(p) else None
+    for d, pk in ((SFXD, PICKS), (SFXD2, PICKS2)):
+        p = os.path.join(d, pk.get(name, f"{name}-1.mp3"))
+        if os.path.exists(p):
+            return p
+    return None
 
 
 # 효과음 덧믹스(09_정점효과음설계.md): (소리, 컷, 컷 시작 후 초, 목표 피크 dBFS)
