@@ -36,6 +36,8 @@ SCENE_OF = {s["id"]: s["scene"] for s in SB}
 
 # ---------- 설계(18_카메라줌설계.md) ----------
 JUMP = ["S02h", "S03b", "S06h", "S08d", "S09b", "S09d", "S10c", "S10e"]  # 4.5초 넘는 립싱크 — 말 안 정적에서 1.00→1.10
+JUMP_I2V = ["S02l", "S04k", "S08j", "S11c", "S12e", "S12x"]  # 6초 넘는 i2v 한 구도(최우선 원칙 6 ②) — 내레이션 정적(remix 오디오)에서 1.00→1.10, 뒤는 1.13까지 슬로 줌
+DRONE = [(36.2, 91.4, -31.0), (91.4, 151.5, -33.0), (331.0, 376.5, -30.0)]  # 긴장 드론 베드(시작, 끝, 피크 dBFS): S02 해고·S03 이혼 통보·S08 반전~柴田 붕괴 직전(이후 「静かだった」 정적 설계 유지)
 PUNCH = {"S01h": 1.6, "S05g": 3.0, "S07n": 0.3, "S10h": 0.0, "S12p": 0.4, "S12u": 1.0}  # 컷 시작 후 몇 초에 터뜨리는지(6회)
 ZIN = ["S01j", "S03k", "S05i", "S06k", "S08q", "S09e", "S10o", "S12g", "S12q", "S12v"]
 ZOUT = ["S05l", "S06j", "S10p", "S12w"]
@@ -66,7 +68,10 @@ SFX = [("thunder", "S01a", 1.0, -14.0), ("scissors-card", "S01d", 0.6, -12.0), (
        ("paper-slide", "S03h", 0.2, -12.0),  # 콜백 원점(1막) — ③과 같은 파일
        ("payment-chime", "S04h", 0.3, -12.0), ("payment-chime", "S05f", 0.3, -12.0), ("receipt-printer", "S05g", 3.4, -9.0),
        ("paper-slide", "S08a", 0.0, -12.0), ("chair-tilt", "S08m", 0.1, -9.0), ("door-bang", "S09a", 0.1, -9.0),
-       ("paper-tear", "S10g", 0.0, -9.0), ("impact-low", "S10h", 0.0, -12.0), ("clock-tick-heart", "S12u", 1.0, -12.0)]
+       ("paper-tear", "S10g", 0.0, -9.0), ("impact-low", "S10h", 0.0, -12.0), ("clock-tick-heart", "S12u", 1.0, -12.0),
+       # 2차 폴리(2026-11-03 최우선 원칙 6 ③ 「손이 물건에 닿는 순간마다 폴리 1개」)
+       ("watch-clasp", "S05h", 0.5, -18.0), ("phone-vibrate", "S06a", 0.1, -16.0), ("elevator-chime", "S07e", 0.2, -18.0),
+       ("stamp-press", "S08i", 1.0, -14.0), ("glass-set", "S08o", 0.3, -20.0), ("paper-drop", "S10b", 0.2, -16.0)]
 
 
 def run(args):
@@ -234,6 +239,12 @@ def camera(sid, frames, sec, src):
         tj = quiet_point(src, 0.35 * sec, 0.75 * sec) or 0.5 * sec
         kj = int(round(tj * FPS)); print(f"  [{sid}] 점프 컷 {tj:.2f}s")
         return [zoom_frame(f, 1.10 if i >= kj else 1.0, 0.5, 0.40) for i, f in enumerate(frames)]
+    if sid in JUMP_I2V:  # i2v 클립에는 소리가 없으므로 remix 오디오의 그 구간에서 정적을 찾는다
+        a0, _ = bounds()[sid]; seg = os.path.join(OUTD, "fin-bc", f"seg_{sid}.wav")
+        run(["-ss", f"{a0:.3f}", "-t", f"{sec:.3f}", "-i", sys.argv[1], "-vn", "-ac", "1", "-ar", "8000", seg])
+        tj = quiet_point(seg, 0.35 * sec, 0.75 * sec) or 0.5 * sec
+        kj = int(round(tj * FPS)); print(f"  [{sid}] 점프 컷(i2v) {tj:.2f}s")
+        return [zoom_frame(f, (1.10 + 0.03 * (i - kj) / max(n - kj, 1)) if i >= kj else 1.0, 0.5, 0.42) for i, f in enumerate(frames)]
     if sid in PUNCH:
         k0 = int(PUNCH[sid] * FPS)
         return [zoom_frame(f, 1 + 0.12 * min(max((i - k0) / 7, 0), 1), 0.5, 0.45) for i, f in enumerate(frames)]
@@ -296,7 +307,7 @@ def build_cut(sid, sec, tmp):
 
 
 def targets():
-    t = set(JUMP) | set(PUNCH) | set(ZIN) | set(ZOUT) | set(LCUT) | set(CLIP_OVERRIDE) | set(CARDS) | set(COUNT)
+    t = set(JUMP) | set(JUMP_I2V) | set(PUNCH) | set(ZIN) | set(ZOUT) | set(LCUT) | set(CLIP_OVERRIDE) | set(CARDS) | set(COUNT)
     t |= {s for s in PAPER if kind(s) == "i2v" and s in jov.QUADS} | set(PHONE)
     return sorted(t, key=lambda s: IDX[s])
 
@@ -411,6 +422,17 @@ def master(patched, out):
         sfx_in += ["-i", p]
         sfx_fc.append(f"[{k + 2}:a]aformat=sample_rates=44100:channel_layouts=stereo,volume={pk - peak_db(p):.2f}dB,adelay={ms}|{ms},apad=whole_dur={vd:.3f}[x{k}]")
         labs += f"[x{k}]"; print(f"효과음 {os.path.basename(p)} @ {sid}+{off}s → 피크 {pk} dBFS"); k += 1
+    dr = sfx("tension-drone")
+    if dr:
+        for a0, b0, pk in DRONE:
+            ms = int(a0 * 1000); d0 = b0 - a0
+            sfx_in += ["-stream_loop", "-1", "-i", dr]
+            sfx_fc.append(f"[{k + 2}:a]aformat=sample_rates=44100:channel_layouts=stereo,atrim=0:{d0:.3f},asetpts=PTS-STARTPTS,"
+                          f"afade=t=in:st=0:d=2.0,afade=t=out:st={max(d0 - 2.5, 0):.3f}:d=2.5,volume={pk - peak_db(dr):.2f}dB,"
+                          f"adelay={ms}|{ms},apad=whole_dur={vd:.3f}[x{k}]")
+            labs += f"[x{k}]"; print(f"긴장 드론 {a0:.1f}~{b0:.1f}s 피크 {pk} dBFS"); k += 1
+    else:
+        print("긴장 드론 없음(tension-drone) — 베드 생략")
     n = 3 + len(sfx_fc)
     fc = (f"[0:a]afade=t=out:st={max(ad - 2.5, 0):.3f}:d=2.5,apad=whole_dur={vd:.3f}[m];[1:a]apad=whole_dur={vd:.3f}[h];"
           f"anoisesrc=d={vd:.3f}:c=brown:a=1,lowpass=f=250,volume=-40dB,aformat=sample_rates=44100:channel_layouts=stereo[rt];"
