@@ -356,8 +356,9 @@ def patch(src, out, tmp, only=None):
     sc_rng = {}
     for sid, (a, b) in B.items():
         sc = SCENE_OF[sid]; lo, hi = sc_rng.get(sc, (a, b)); sc_rng[sc] = (min(lo, a), max(hi, b))
-    en = "+".join(f"between(T,{sc_rng[s][0]:.3f},{sc_rng[s][1]:.3f})" for s in sorted(RED_PULSE))
-    fc.append(f"{last}[1:v]blend=all_mode=screen:all_opacity='({en})*0.55*(0.5+0.5*sin(2*PI*T/2.0))':shortest=1[rp]")
+    en = "+".join(f"between(t,{sc_rng[s][0]:.3f},{sc_rng[s][1]:.3f})" for s in sorted(RED_PULSE))
+    # all_opacity는 식을 받지 않는다(2026-11-03 실증) → screen 블렌드를 all_expr로 쓰고 구간은 enable로(그 밖은 통과)
+    fc.append(f"{last}[1:v]blend=all_expr='A+(B-A*B/255)*(0.55*(0.5+0.5*sin(2*PI*T/2.0)))':enable='{en}':shortest=1[rp]")
     fc.append(f"[rp]{grade_filters(src)}eq=contrast=1.03:saturation=0.97,{lift_filter(src)}noise=alls=3:allf=t+u,format=yuv420p[v]")
     script = os.path.join(tmp, "patch_fc.txt"); open(script, "w").write(";\n".join(fc))
     run(inputs + ["-filter_complex_script", script, "-map", "[v]", "-map", "0:a", "-c:v", "libx264", "-preset", "medium", "-crf", "17",
