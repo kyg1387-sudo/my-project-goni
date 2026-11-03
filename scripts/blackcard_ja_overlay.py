@@ -104,6 +104,22 @@ def phone_hitsuuchi():
     return im
 
 
+def phone_news():
+    """S09b 美咲 휴대폰 뉴스 화면(lcd, 세로 720x1500) — S07g 태블릿 기사와 같은 내용."""
+    W, H = 720, 1500; im = Image.new("RGB", (W, H), (248, 248, 250)); d = ImageDraw.Draw(im)
+    d.rectangle((0, 0, W, 70), fill=(248, 248, 250)); d.text((40, 35), "6:14", font=F(G, 34), fill=(30, 30, 35), anchor="lm")
+    d.rectangle((0, 70, W, 190), fill=(30, 40, 70)); d.text((40, 130), "経済ニュース", font=F(G, 52), fill=(255, 255, 255), anchor="lm")
+    for i, t in enumerate(["六本木ルクスタワー、", "所有権移転"]):
+        d.text((40, 250 + i * 92), t, font=F(G, 80), fill=(25, 25, 30))
+    d.text((40, 450), "11月1日　午前6時12分", font=F(G, 32), fill=(110, 110, 120))
+    body = ["六本木の大型複合ビル「六本木ルク", "スタワー」の所有権が、個人へ移転", "したことが登記情報で明らかになっ", "た。取得額は非公表。同ビルには蓮",
+            "見商事の本社が入居している。", "", "関係者によると、取引は二十四時間", "以内に完了したという。"]
+    for i, t in enumerate(body):
+        d.text((40, 530 + i * 64), t, font=F(G, 40), fill=(45, 45, 50))
+    d.rectangle((40, 1120, W - 40, 1420), fill=(205, 210, 220))
+    return im
+
+
 def taxi_meter():
     """S04j 미터 2,340円(L031a)."""
     W, H = 900, 400; im = Image.new("RGB", (W, H), (10, 20, 12)); d = ImageDraw.Draw(im)

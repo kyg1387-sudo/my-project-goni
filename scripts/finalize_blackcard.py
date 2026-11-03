@@ -39,9 +39,10 @@ JUMP = ["S02h", "S03b", "S06h", "S08d", "S09b", "S09d", "S10c", "S10e"]  # 4.5�
 PUNCH = {"S01h": 1.6, "S05g": 3.0, "S07n": 0.3, "S10h": 0.0, "S12p": 0.4, "S12u": 1.0}  # 컷 시작 후 몇 초에 터뜨리는지(6회)
 ZIN = ["S01j", "S03k", "S05i", "S06k", "S08q", "S09e", "S10o", "S12g", "S12q", "S12v"]
 ZOUT = ["S05l", "S06j", "S10p", "S12w"]
-CLIP_OVERRIDE = {}  # 검수 뒤 교체 클립(재생성·고정 컷)
+CLIP_OVERRIDE = {"S09f": "assets/auditions/blackcard-s09f-omni/omni-S09f.mp4"}  # burn 누락 립싱크(scene124) 단독 생성분 교체(제19장 19)
 LCUT = {}  # sid: (립싱크 사용 초, 반응 컷, 반응 원본 시작 초)
 PAPER = {"S08g": jov.jirei}  # i2v 컷의 글자 면(quad는 jov.QUADS, 키프레임 좌표)
+PHONE = {"S09b": jov.phone_news}  # 립싱크 컷의 손에 든 휴대폰(밝은 무지 화면을 매 프레임 추적해 lcd 합성 — 손이 움직인다)
 # 화면 카드(클립에 직접, 제15장 12·20): sid → (직전 컷, 글자, 크기, dy, 카드 시작 초)
 CARDS = {"S01k": ("S01j", "拾ったのは、カードだけじゃなかった。", 88, 0, 0.0), "S02a": ("S01j", "ブラックカード", 170, 0, 0.0),
          "S08u": ("S08t", "この後――妻が、ドアを叩き壊す", 84, 0, 0.2), "S12zz": ("S12z", "残り　６日", 150, 0, 0.0)}
@@ -156,8 +157,36 @@ def mapq(q, s, ox, oy):
     return [[x * s - ox, y * s - oy] for x, y in q]
 
 
+def track_bright_quad(frame, roi, prev=None, thr=205):
+    """ROI 안의 밝은 무지 화면(휴대폰)을 minAreaRect로 잡아 TL·TR·BR·BL 사각형으로 돌려준다."""
+    g = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY); x0, y0, x1, y1 = roi
+    m = np.zeros_like(g); m[y0:y1, x0:x1] = (g[y0:y1, x0:x1] > thr)
+    cnts, _ = cv2.findContours(m.astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    if not cnts:
+        return prev
+    c = max(cnts, key=cv2.contourArea)
+    if cv2.contourArea(c) < 2000:
+        return prev
+    pts = cv2.boxPoints(cv2.minAreaRect(c))
+    s_ = pts.sum(1); d_ = pts[:, 0] - pts[:, 1]
+    q = np.array([pts[np.argmin(s_)], pts[np.argmax(d_)], pts[np.argmax(s_)], pts[np.argmin(d_)]], np.float32)
+    if prev is not None:
+        q = 0.6 * q + 0.4 * np.asarray(prev, np.float32)
+    return q
+
+
 def process_native(sid, frames):
-    """원본 해상도에서 매 프레임 합성(글자 면)."""
+    """원본 해상도에서 매 프레임 합성(글자 면·휴대폰 화면)."""
+    if sid in PHONE and sid in jov.QUADS:
+        s, ox, oy = kf_map(sid, frames[0]); q0 = np.array(mapq(jov.QUADS[sid], s, ox, oy))
+        h, w = frames[0].shape[:2]; pw, ph = np.ptp(q0[:, 0]), np.ptp(q0[:, 1])
+        roi = (int(max(q0[:, 0].min() - pw * 1.2, 0)), int(max(q0[:, 1].min() - ph * 0.3, 0)), int(min(q0[:, 0].max() + pw * 0.6, w)), int(min(q0[:, 1].max() + ph * 0.3, h)))
+        art = PHONE[sid](); out = []; q = None
+        for f in frames:
+            q = track_bright_quad(f, roi, q)
+            out.append(np.asarray(jov.put_lcd(Image.fromarray(f), art, q.tolist(), glow=0.95)) if q is not None else f)
+        print(f"  [{sid}] 휴대폰 화면 추적 합성 {len(out)}프레임, 마지막 quad {np.int32(q).tolist() if q is not None else None}")
+        return out
     if sid not in PAPER or kind(sid) != "i2v" or sid not in jov.QUADS:
         return frames
     s, ox, oy = kf_map(sid, frames[0])
@@ -268,7 +297,7 @@ def build_cut(sid, sec, tmp):
 
 def targets():
     t = set(JUMP) | set(PUNCH) | set(ZIN) | set(ZOUT) | set(LCUT) | set(CLIP_OVERRIDE) | set(CARDS) | set(COUNT)
-    t |= {s for s in PAPER if kind(s) == "i2v" and s in jov.QUADS}
+    t |= {s for s in PAPER if kind(s) == "i2v" and s in jov.QUADS} | set(PHONE)
     return sorted(t, key=lambda s: IDX[s])
 
 
