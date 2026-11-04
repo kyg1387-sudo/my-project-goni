@@ -1,0 +1,14 @@
+{
+ "_설명": "『ブラックカード』 S12a(8:40 차 안 휴대폰 착신 인서트) 재생성(2026-11-04 고니감독님 지적 「운전대 위치가 맞는지」 — 기존 컷은 좌핸들 + 좌석에 휴대폰 1대 더 + 봉투 가짜 글자). 우핸들·휴대폰 1대·무지 화면(非通知 합성용)·좌석에 다른 물건 없음. 정지 교체. 3장 약 0.12달러.",
+ "characters": [
+  {
+   "id": "S12a-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/loc-car-1.png"
+   ],
+   "prompt": "[CAMERA] Medium close insert inside a luxury black sedan at night, camera in the REAR seat beside the passenger looking FORWARD, 50mm, shallow depth of field on the phone; the passenger's hands and the phone fill the lower-left half of the frame. [CHARACTER] CAR GEOMETRY LOCKED: Japanese RIGHT-HAND-DRIVE car — through the gap between the front seats the dashboard is visible out of focus and the single steering wheel is on the RIGHT front seat with the chauffeur's black cap and white-gloved hands on it; NO steering wheel on the left. The passenger is a Japanese man in his forties in a black tailored suit and white shirt, face above the frame, seated normally facing forward on the rear LEFT seat; HANDS LOCKED: his RIGHT hand holds exactly ONE black smartphone horizontally at chest height, thumb on the edge, the LEFT hand resting on his knee showing a steel bracelet watch with the dial on the BACK of the wrist. The phone screen is a uniform flat LIGHT GREY blank rectangle (no icons, no text, to be composited). The leather seat beside him is EMPTY — no second phone, no papers, no envelope. [ACTION] He looks down at the ringing phone; the hand is still. [SETTING] Night city lights streaking past the windows, cool blue interior light with warm dashboard glow, reference image 1 for the interior, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, logo, watermark, extra fingers, extra hands, deformed hands, two phones, papers, envelope, documents, left-hand drive, steering wheel on the left, two steering wheels, anime, cartoon, 3D render, grid, split panels."
+  }
+ ]
+}
