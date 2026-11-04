@@ -1,14 +1,15 @@
 {
- "_설명": "『ブラックカード』 S06d(3:52 시계 인서트) 재생성(2026-11-04 전수 점검·고니감독님 지적 「손목 시계가 이상하게」 — 1차 수정은 S06i를 대상으로 해 S06d가 남았다). 다이얼이 손목 안쪽에 있어 WATCH LOCKED로 다시. 정지 푸시인 교체. 3장 약 0.12달러.",
+ "_설명": "『ブラックカード』 S06d(3:52 시계 인서트) 재생성(2026-11-04 전수 점검·고니감독님 지적 「손목 시계가 이상하게」 — 1차 수정은 S06i를 대상으로 해 S06d가 남았다). 다이얼이 손목 안쪽에 있어 WATCH LOCKED로 다시. 정지 푸시인 교체. 3장 약 0.12달러. 2차(fix2): 1차 3장이 모두 남색 소매(장면은 회색 정장)로 나와 WARDROBE LOCKED + 45° 셀 참조 추가.",
  "characters": [
   {
-   "id": "S06d-fix",
+   "id": "S06d-fix2",
    "count": 3,
    "aspect_ratio": "16:9",
    "refs": [
+    "assets/portraits/blackcard-cast/cells/kenji-wet-45.png",
     "assets/portraits/blackcard-cast/cells/kenji-wet-full-side.png"
    ],
-   "prompt": "[CAMERA] High-angle insert looking down over Kenji's shoulder at his LEFT wrist, 100mm macro, shallow depth of field on the watch, the wrist filling 60 percent of the frame. [CHARACTER] Kenji's LEFT forearm in the rain-soaked plain grey suit sleeve with a white shirt cuff (reference image 1 for the wardrobe), the hand relaxed and half open, palm facing DOWN toward the wet pavement; WATCH LOCKED: a steel bracelet watch worn correctly on the LEFT wrist — the dial sits on the BACK (outer side) of the wrist, exactly where a watch is normally worn, the dial facing UP toward the camera, bracelet snug and closed, plain white dial with NO text; only one watch, one wrist, one hand. The knuckles of his RIGHT hand holding a black phone to his ear are just visible at the top right edge, blurred. No face. [ACTION] Raindrops strike the watch glass and bead on the steel bracelet; water runs off the cuff. [SETTING] Tokyo street at night in heavy rain, wet asphalt with red tail-light and blue neon reflections below, cool blue key light, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, numbers on the dial, logo, watermark, extra fingers, extra hands, deformed hands, two watches, watch on the inner wrist, palm facing up, clenched fist, anime, cartoon, 3D render, grid, split panels."
+   "prompt": "[CAMERA] High-angle insert looking down over Kenji's shoulder at his LEFT wrist, 100mm macro, shallow depth of field on the watch, the wrist filling 60 percent of the frame. [CHARACTER] WARDROBE LOCKED: Kenji's LEFT forearm in a LIGHT GREY suit sleeve — pale medium grey wool exactly like reference images 1 and 2, NOT navy, NOT black, NOT dark blue — rain-soaked, with a white shirt cuff, the hand relaxed and half open, palm facing DOWN toward the wet pavement; WATCH LOCKED: a steel bracelet watch worn correctly on the LEFT wrist — the dial sits on the BACK (outer side) of the wrist, exactly where a watch is normally worn, the dial facing UP toward the camera, bracelet snug and closed, plain white dial with NO text; only one watch, one wrist, one hand. The knuckles of his RIGHT hand holding a black phone to his ear are just visible at the top right edge, blurred. No face. [ACTION] Raindrops strike the watch glass and bead on the steel bracelet; water runs off the cuff. [SETTING] Tokyo street at night in heavy rain, wet asphalt with red tail-light and blue neon reflections below, cool blue key light, photorealistic, Kodak 35mm grain. [NEGATIVE] navy suit, black suit, dark blue sleeve, text, letters, numbers on the dial, logo, watermark, extra fingers, extra hands, deformed hands, two watches, watch on the inner wrist, palm facing up, clenched fist, anime, cartoon, 3D render, grid, split panels."
   }
  ]
 }
