@@ -41,9 +41,9 @@ def describe(path, i):
         return f"Reference image {i} is the APPROVED SWEAT LOOK of {PEOPLE[k]}: reproduce exactly this face and this subtle natural sweat; ignore its background."
     if k and b.endswith("-back.png"):
         bare = "" if k in GLASSES else " This person's ears and temples are bare — no eyewear arms."
-        return f"Reference image {i} is the BACK VIEW of {PEOPLE[k]}: this person appears seen from behind exactly like this (hair, build); never show this person's face.{bare}"
+        return f"Reference image {i} is the BACK VIEW of {PEOPLE[k]}: this person appears seen from behind exactly like this (hair, build); never show this person's face.{bare} Use it only as a look reference — it is never shown as a separate panel, inset or second picture; the output is ONE single continuous camera frame."
     if k and any(w in b for w in ("mourning", "coat", "golf", "blouse", "hoodie")):
-        return f"Reference image {i} is the WARDROBE reference of {PEOPLE[k]}: copy this exact outfit and the same face; ignore its white background and panel layout."
+        return f"Reference image {i} is the WARDROBE reference of {PEOPLE[k]}: copy this exact outfit and the same face; ignore its white background and panel layout. Use it only as a look reference — it is never shown as a separate panel, inset or second picture; the output is ONE single continuous camera frame."
     if k:
         return (f"Reference image {i} is the approved identity photo of {PEOPLE[k]}: copy this exact face, hairstyle, eyewear and age; the WARDROBE follows "
                 "the [CHARACTER] text below; ignore its white background and framing.")
@@ -115,6 +115,18 @@ EMO_OVERRIDE = {
     "S07d": "Her right hand rests over the old brown-leather watch on her LEFT wrist on the table, both hands visible at the bottom of the frame.",
     "S04b": "GAZE: the uncle's eyes on Yukiko's blurred shoulder at the near LEFT edge, never on the lens.",
     "S04j": "GAZE: the uncle's eyes on Yukiko's blurred shoulder at the near LEFT edge, never on the lens; his fingertip on the papers.",
+    # b1 Kill Gate(2026-11-04)
+    "S02a": "The wall behind the altar is plain and bare: no papers, no calendars, no notices, no frames except the portrait; no chair in front of the altar.",
+    "S02g": ("PEOPLE LOCKED: exactly four people — at the low table the uncle (black mourning suit), the aunt (black mourning dress, pearls) and the cousin "
+             "(black suit, black glasses), two men and one woman, drinking; Yukiko alone kneeling by the white-draped altar at the far side of the room."),
+    "S02b": "The bottles on the table are plain brown beer bottles with blank labels — no writing, no characters on any bottle or glass.",
+    "S02e": "Exactly ONE person: Yukiko alone, seen from above, kneeling on the tatami; nobody else and no back of another head in the frame.",
+    "S04d": "Her eyes look DOWN at the papers on the table just below the frame, head bowed about 20 degrees, the colour drained from her face; frozen.",
+    "S04l": "Exactly ONE tablet in the whole frame, held by the cousin's hand; no second tablet or screen anywhere.",
+    "S04m": "Exactly ONE person in the frame: Yukiko; no foreground person, no back of another head.",
+    "S04n": "GAZE: her eyes look down toward the table beyond the LEFT frame edge, never at the lens; the handkerchief at the corner of her dry eye.",
+    "S06g": ("Exactly ONE person: Yukiko, seen from directly behind her right shoulder — her own black low ponytail and beige knit shoulder soft in the near "
+             "foreground, the laptop screen glowing beyond her on the low table; nobody else in the room."),
     "S01f": "PEOPLE LOCKED: exactly two people — the mother's blurred white-haired head and lavender shoulder at the near left edge, her thin hand pointing at the window; Yukiko beyond by the window.",
 }
 FRAMING_FIRST = {
@@ -156,6 +168,7 @@ LOC_TEXT = {
     "loc-police-3.png": "BACKGROUND (soft, out of focus): a plain police consultation room with pale grey walls, a grey table and a window with horizontal blinds casting soft stripes.",
     "loc-police-2.png": "BACKGROUND (soft, out of focus): a plain police consultation room with pale grey walls and a window with horizontal blinds.",
 }
+SOLO_FIX = {"S02e", "S04m"}
 SOLO = ("SINGLE PERSON LOCKED: this one person is the only human in the frame; the space between the camera and the person is empty air — no foreground "
         "shoulder, no back of a head, no other people anywhere.")
 
@@ -181,6 +194,9 @@ def build(sc):
         base, extra, prompt = EDIT[sc["id"]]
         return {"id": sc["id"], "count": 1, "aspect_ratio": "16:9", "refs": [base] + extra, "prompt": prompt}
     refs = list(sc["refs"])
+    if sc["id"] in SOLO_FIX:  # b1: 단독 반응 컷에 붙은 뒷모습 셀이 분할 화면(흰 배경 인물 칸)을 만듦 → 참조·어깨 너머 문장 제거
+        refs = [r for r in refs if not r.endswith("-back.png")]
+        sc = dict(sc, ots=False)
     for src, cond, dst in BACK_BY_WARD:
         refs = [r.replace(src, dst) if r.endswith("/" + src) and cond(scene_no(sc["id"])) else r for r in refs]
     loc_text = None
