@@ -1,0 +1,24 @@
+{
+ "_설명": "『ブラックカード』 S11a(카드 돌리는 손)·S11c(운전사 RHD) 재생성(2026-11-04 고니감독님 지적 8:22·8:32). 정지 푸시인 교체. 3장씩 약 0.25달러.",
+ "characters": [
+  {
+   "id": "S11a-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/loc-car-1.png",
+    "assets/portraits/blackcard-cast/cells/props-card-1.png"
+   ],
+   "prompt": "[CAMERA] High insert from above the rear seat, 100mm macro, shallow depth of field, the hand and card filling the center. [CHARACTER] Exactly ONE hand (Kenji's right hand) in a black tailored suit sleeve with a white cuff; a steel bracelet watch correctly on the back of the wrist; the hand holds a plain matte-black credit card (reference image 2 for the card: NO text, NO numbers, only a faint embossed emblem) turning it slowly between thumb and fingers over the black leather rear seat. [ACTION] The card is held edge-on between the fingers, half turned; amber and red neon reflections slide across the card and the leather. [SETTING] Rear seat of a black chauffeured sedan at night, black leather, city neon through the window, reference image 1 for the interior, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, logo, watermark, extra fingers, extra hands, deformed hands, left-hand drive, steering wheel on the left, floating gloves, two cards, anime, cartoon, 3D render, grid, split panels."
+  },
+  {
+   "id": "S11c-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/loc-car-2.png"
+   ],
+   "prompt": "[CAMERA] From the rear seat of a Japanese luxury sedan at night, 35mm, eye level, looking forward between the two front headrests. [CHARACTER] Exactly ONE person: the chauffeur seated in the RIGHT front seat (RIGHT-hand drive — the steering wheel is directly in front of him on the right side of the dashboard), seen from behind: the back of a dark chauffeur's cap, dark uniform collar, both WHITE-GLOVED hands on the steering wheel at ten and two, forearms attached naturally to his shoulders. NO face visible. [ACTION] He drives calmly; the neon street slides past through the windshield; the dashboard instruments glow softly. [SETTING] Black leather interior, wood trim, reference image 1 for the interior, Roppongi neon reflections, cool blue night light with amber accents, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, logo, watermark, extra fingers, extra hands, deformed hands, left-hand drive, steering wheel on the left, floating gloves, two cards, anime, cartoon, 3D render, grid, split panels."
+  }
+ ]
+}
