@@ -1,0 +1,14 @@
+{
+ "_설명": "『ブラックカード』 S12p 재생성(2026-11-04 고니감독님 지적 9:40 사진 뒷면 컷 손·사진 위치 이상): 한 손이 사진 가장자리를 잡고 뒷면(무지)을 카메라로 — 스탬프·날짜는 합성. 3장 약 0.12달러.",
+ "characters": [
+  {
+   "id": "S12p-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/loc-car-1.png"
+   ],
+   "prompt": "[CAMERA] Close insert from the rear seat, 85mm, eye level, shallow depth of field; a single photograph fills the center-right of the frame. [CHARACTER] Exactly ONE hand (Kenji's left hand) in a black tailored suit sleeve with a white cuff, a steel bracelet watch correctly on the back of the wrist; the thumb and fingers hold the photograph by its LEFT edge naturally, the hand clearly connected to the photo. [ACTION] The photograph is held up with its BACK toward the camera: a plain pale blank rectangle (no text, no stamp — composited later), slightly tilted, the small amber reading light on it; beyond it the dark window with rain and the red aviation light of a tower. [SETTING] Rear seat of a black Japanese luxury sedan at night, black leather, reference image 1 for the interior, cold blue night light, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, stamp, logo, watermark, extra fingers, extra hands, deformed hands, floating photo, photo not touching the hand, anime, cartoon, 3D render, grid, split panels."
+  }
+ ]
+}
