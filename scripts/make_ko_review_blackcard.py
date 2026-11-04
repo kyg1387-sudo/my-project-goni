@@ -39,7 +39,7 @@ def norm(t):
 
 
 rows, miss = [], []
-for l in open(os.path.join(ROOT, "subs/blackcard.ass"), encoding="utf-8"):
+for l in open(os.path.join(ROOT, os.environ.get("SUBS", "subs/blackcard.ass")), encoding="utf-8"):  # v4: SUBS=subs/blackcard-v4.ass(결말 CTA 줄 제거)
     if not l.startswith("Dialogue:"):
         continue
     f = l.split(",", 9); a, b, style, text = sec(f[1]), sec(f[2]), f[3], f[9].strip()
