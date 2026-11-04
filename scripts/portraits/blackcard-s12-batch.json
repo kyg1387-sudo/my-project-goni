@@ -1,0 +1,43 @@
+{
+ "_설명": "『ブラックカード』 S12 일괄 재생성(S12d 우핸들 운전사·S12n 정면 착석·S12p 사진 뒷면 손·S12q 사진 보는 켄지) — 2026-11-04 고니감독님 지적. 3장씩 약 0.5달러.",
+ "characters": [
+  {
+   "id": "S12d-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/loc-car-2.png"
+   ],
+   "prompt": "[CAMERA] From the rear seat of a Japanese luxury sedan at night, 35mm, eye level, looking forward between the two front headrests, the rear-view mirror visible at the top center. [CHARACTER] Exactly ONE person: the chauffeur seated in the RIGHT front seat (RIGHT-hand drive — the steering wheel is directly in front of him on the right side of the dashboard), seen from behind: the back of a dark chauffeur's cap, dark uniform collar, both WHITE-GLOVED hands on the steering wheel at ten and two, forearms attached naturally to his shoulders; in the rear-view mirror only the brim of the cap, no readable face. [ACTION] He drives steadily; rain streaks the windshield, road lights streak past. [SETTING] Black leather interior, wood trim, reference image 1 for the interior, cold blue-white night light, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, logo, watermark, extra fingers, extra hands, deformed hands, left-hand drive, steering wheel on the left, floating gloves, visible face, anime, cartoon, 3D render, grid, split panels."
+  },
+  {
+   "id": "S12n-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/loc-car-1.png",
+    "assets/portraits/blackcard-faces/kenji.png"
+   ],
+   "prompt": "[CAMERA] Side insert from the adjacent rear seat, 50mm, slightly high, framing from the chest down to the knees; no face above the chin. [CHARACTER] Kenji (reference image 2 only for identity) SEATED NORMALLY in the rear seat facing FORWARD like any passenger — back against the seat back, knees toward the front seats; black tailored suit, white shirt, no tie; a steel bracelet watch correctly on the back of the left wrist. [ACTION] Both hands open a plain brown A5 envelope resting on his knee under the small amber reading light; the white edge of a photograph just emerging. Exactly two hands of one man, one envelope, one photograph. [SETTING] Rear seat of a black Japanese luxury sedan at night, black leather, the front headrest and the dark side window with passing city lights beside him, reference image 1 for the interior, cold blue light with amber reading-lamp glow, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, logo, watermark, extra fingers, extra hands, deformed hands, sitting sideways, facing the camera, facing backward, anime, cartoon, 3D render, grid, split panels."
+  },
+  {
+   "id": "S12p-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/loc-car-1.png"
+   ],
+   "prompt": "[CAMERA] Close insert from the rear seat, 85mm, eye level, shallow depth of field; a single photograph fills the center-right of the frame. [CHARACTER] Exactly ONE hand (Kenji's left hand) in a black tailored suit sleeve with a white cuff, a steel bracelet watch correctly on the back of the wrist; the thumb and fingers hold the photograph by its LEFT edge naturally, the hand clearly connected to the photo. [ACTION] The photograph is held up with its BACK toward the camera: a plain pale blank rectangle (no text, no stamp — composited later), slightly tilted, the small amber reading light on it; beyond it the dark window with rain and the red aviation light of a tower. [SETTING] Rear seat of a black Japanese luxury sedan at night, black leather, reference image 1 for the interior, cold blue night light, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, stamp, logo, watermark, extra fingers, extra hands, deformed hands, floating photo, photo not touching the hand, anime, cartoon, 3D render, grid, split panels."
+  },
+  {
+   "id": "S12q-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-faces/kenji.png",
+    "assets/portraits/blackcard-cast/cells/loc-car-1.png"
+   ],
+   "prompt": "[CAMERA] Three-quarter medium close-up from the front passenger seat looking back, 50mm, slightly high, his face at one third of the frame height. [CHARACTER] Takahashi Kenji from reference image 1 (reproduce exactly this face): Japanese man aged 43, lean face, short black hair with a little grey, short neat stubble, a small old scar above his LEFT eyebrow, NO glasses, black tailored suit, white shirt, no tie; SEATED NORMALLY in the rear seat facing FORWARD, back against the seat. [ACTION] He holds a SMALL photograph (10 by 15 centimetres, a pale blank rectangle, no text) in both hands at chest height and looks down at it, jaw tight, eyes narrowed in realization; natural matte skin. [SETTING] Rear seat of a black Japanese luxury sedan at night, black leather, the side window with rain and passing city lights behind him, reference image 2 for the interior, cold blue night light with a faint amber reading lamp, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, logo, watermark, extra fingers, extra hands, large sheet of paper, A4 paper, sitting sideways, looking into the lens, anime, cartoon, 3D render, plastic skin, grid, split panels."
+  }
+ ]
+}
