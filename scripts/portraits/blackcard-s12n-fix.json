@@ -1,0 +1,15 @@
+{
+ "_설명": "『ブラックカード』 S12n 재생성(2026-11-04 고니감독님 지적 9:32 「차 안 앉은 방향」): 뒷좌석에 정면으로 앉아 무릎 위 봉투를 여는 손, 옆에서. 3장 약 0.12달러.",
+ "characters": [
+  {
+   "id": "S12n-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/loc-car-1.png",
+    "assets/portraits/blackcard-faces/kenji.png"
+   ],
+   "prompt": "[CAMERA] Side insert from the adjacent rear seat, 50mm, slightly high, framing from the chest down to the knees; no face above the chin. [CHARACTER] Kenji (reference image 2 only for identity) SEATED NORMALLY in the rear seat facing FORWARD like any passenger — back against the seat back, knees toward the front seats; black tailored suit, white shirt, no tie; a steel bracelet watch correctly on the back of the left wrist. [ACTION] Both hands open a plain brown A5 envelope resting on his knee under the small amber reading light; the white edge of a photograph just emerging. Exactly two hands of one man, one envelope, one photograph. [SETTING] Rear seat of a black Japanese luxury sedan at night, black leather, the front headrest and the dark side window with passing city lights beside him, reference image 1 for the interior, cold blue light with amber reading-lamp glow, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, logo, watermark, extra fingers, extra hands, deformed hands, sitting sideways, facing the camera, facing backward, anime, cartoon, 3D render, grid, split panels."
+  }
+ ]
+}
