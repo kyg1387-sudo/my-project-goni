@@ -141,7 +141,8 @@ def eyewear_lock(keys):
 def scene_no(cid):
     return int(cid[1:3]) if cid[0] == "S" and cid[1:3].isdigit() else 0
 BACK_BY_WARD = [  # (인물 뒷모습 셀, 장면 조건, 바꿀 셀)
-    ("yukiko-back.png", lambda n: 2 <= n <= 4, "yukiko-mourning-back.png"),
+    ("yukiko-back.png", lambda n: 2 <= n <= 5, "yukiko-mourning-back.png"),   # S05 = 8/19 밤(49재 당일, 상복)
+    ("yukiko-back.png", lambda n: n == 12, "yukiko-coat-back.png"),          # S12 = 11월 아침 바깥(카멜 코트)
     ("tsuyoshi-back.png", lambda n: n >= 8, "tsuyoshi-golf-back.png"),
     ("yoriko-back.png", lambda n: n >= 8, "yoriko-blouse-back.png"),
     ("shota-back.png", lambda n: n >= 8, "shota-hoodie-back.png"),
