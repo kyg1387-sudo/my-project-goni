@@ -1,0 +1,14 @@
+{
+ "_설명": "『ブラックカード』 S12m(9:31 운전사가 봉투를 뒤로 건네는 인서트) 재생성(2026-11-04 고니감독님 「차 안 장면 일관성」 — 기존 컷은 장갑 손이 왼쪽 앞좌석에서 나옴, 운전사는 오른쪽). 오른쪽 앞좌석(우핸들)에서 뒤로 내민 장갑 손 + 뒷좌석 왼쪽 켄지의 맨손. 정지 교체. 3장 약 0.12달러.",
+ "characters": [
+  {
+   "id": "S12m-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/loc-car-1.png"
+   ],
+   "prompt": "[CAMERA] Insert inside a luxury black sedan at night, camera in the rear seat on the LEFT side looking forward-right across the gap between the front seats, 50mm, shallow depth of field on the envelope. [CHARACTER] CAR GEOMETRY LOCKED — Japanese RIGHT-HAND-DRIVE: the chauffeur sits in the RIGHT front seat (steering wheel in front of him, only his dark uniform shoulder and black cap seen from behind, no face); his white-gloved RIGHT hand reaches BACK over the right front seat toward the rear-left passenger, holding a plain brown envelope with NO writing. From the lower left a bare hand of a Japanese man in a black suit sleeve with a white cuff reaches forward to take it. HANDS LOCKED: exactly ONE gloved hand and ONE bare hand, ONE envelope. The LEFT front seat is empty. [ACTION] The envelope is held steady in the gap between the seats, the bare hand just touching its edge. [SETTING] Night city lights blurred through the wet windows, cool blue interior with warm dashboard glow, reference image 1 for the interior, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, logo, watermark, extra fingers, extra hands, deformed hands, two envelopes, steering wheel on the left, driver on the left, driver's face, anime, cartoon, 3D render, grid, split panels."
+  }
+ ]
+}
