@@ -120,10 +120,22 @@ def eyewear_lock(keys):
     return ("EYEWEAR LOCKED: " + "; ".join(wear) + " — always, including in this frame; " + " and ".join(bare)
             + " ha" + ("s" if len(bare) == 1 else "ve") + " bare uncovered eyes and bare temples. The glasses belong only to "
             + " and ".join(NAME[k] for k in keys if k in GLASSES) + ".")
+# 합격 컷 부분 편집(제7장 5 EDIT_FROM) — 시범 r1: H0a-1은 방·인물 합격, 창밖 타워만 실제 방 창과 다름 + 귀 장신구
+EDIT = {
+    "H0a": ("assets/portraits/aihaha-kf-r1/H0a-1.png", ["assets/portraits/aihaha-ref/cells/loc-window-view-finished-day.png"],
+            "Edit image 1. Keep the elderly woman exactly unchanged — her face, smile, white hair, lavender cardigan and cream blouse — and keep the room, the beige "
+            "wall, the armchair and the dark window frame exactly unchanged. Replace ONLY the view seen through the window glass with the view in image 2: the same "
+            "pale tall apartment tower with horizontal balconies, its facade clean and finished, with the tiled-roof houses and green trees below it, overcast daylight. "
+            "The tower stands just to the right of her head, its left edge partly hidden behind her hair. Her earlobes are bare skin: the small white stud on her "
+            "left earlobe is gone. Same framing, same 16:9 size, photorealistic, no text."),
+}
 SEAT = "SEATED/FURNITURE LOCKED: seated people sit on zabuton or chairs pulled in to the table; no furniture passes through any body."
 
 
 def build(sc):
+    if sc["id"] in EDIT:
+        base, extra, prompt = EDIT[sc["id"]]
+        return {"id": sc["id"], "count": 1, "aspect_ratio": "16:9", "refs": [base] + extra, "prompt": prompt}
     refs = list(sc["refs"])
     people = [r for r in refs if who_of(os.path.basename(r))]
     is_back = bool(people) and os.path.basename(people[0]).endswith("-back.png") and sc["kind"] != "d"
@@ -138,7 +150,8 @@ def build(sc):
         refs = [r for r in refs if not who_of(os.path.basename(r))] + [r for r in refs if who_of(os.path.basename(r))]
     parts = ["Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions."]
     if sc["kind"] == "d" and sc["id"] != "H0a":
-        parts.append("FRAMING LOCKED FIRST: chest-up MEDIUM CLOSE-UP, the speaker's face at least ONE THIRD of the frame height; NOT a wide shot, NO full body.")
+        parts.append("FRAMING LOCKED FIRST: chest-up MEDIUM CLOSE-UP, the camera about one metre from the speaker, the speaker's face at least ONE THIRD of the "
+                     "frame height, the top of the head near the top edge; NOT a wide shot, NO full body, NO room-wide view.")
     if sc["id"] in FRAMING_FIRST:
         parts.append(FRAMING_FIRST[sc["id"]])
     if sc["id"] == "H0a":
