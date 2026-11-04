@@ -38,7 +38,8 @@ def describe(path, i):
         return (f"Reference image {i} is the APPROVED TEAR LOOK of {PEOPLE[k]}: reproduce exactly this face and exactly this kind of real tear — "
                 "pink eye rims, glistening lower lids, at most one thin transparent track on one cheek, matte skin; ignore its background.")
     if b.startswith("sweat-standard"):
-        return f"Reference image {i} is the APPROVED SWEAT LOOK of {PEOPLE[k]}: reproduce exactly this face and this subtle natural sweat; ignore its background."
+        return (f"Reference image {i} is the APPROVED SWEAT LOOK of {PEOPLE[k]}: reproduce exactly this face and this subtle natural sweat; ignore its background "
+                "and its clothing — the outfit follows the WARDROBE reference and the [CHARACTER] text.")
     if k and b.endswith("-back.png"):
         bare = "" if k in GLASSES else " This person's ears and temples are bare — no eyewear arms."
         return f"Reference image {i} is the BACK VIEW of {PEOPLE[k]}: this person appears seen from behind exactly like this (hair, build); never show this person's face.{bare} Use it only as a look reference — it is never shown as a separate panel, inset or second picture; the output is ONE single continuous camera frame."
@@ -127,6 +128,16 @@ EMO_OVERRIDE = {
     "S04n": "GAZE: her eyes look down toward the table beyond the LEFT frame edge, never at the lens; the handkerchief at the corner of her dry eye.",
     "S06g": ("Exactly ONE person: Yukiko, seen from directly behind her right shoulder — her own black low ponytail and beige knit shoulder soft in the near "
              "foreground, the laptop screen glowing beyond her on the low table; nobody else in the room."),
+    # b2 Kill Gate(2026-11-04)
+    "S08c": "FRAMING: close-up from slightly above, Yukiko's face at least one third of the frame height, her folded hands at the bottom edge; eyes lowered.",
+    "S08i": "The old brown-leather watch is on her LEFT wrist: her LEFT hand holds the phone, her RIGHT hand (bare wrist) writes with the pen.",
+    "S08k": ("Exactly ONE person: Yukiko seen from behind — her own black low ponytail and beige knit shoulder soft in the near foreground — and beyond her the "
+             "small home altar with her mother's framed portrait in focus; nobody else."),
+    "S08l": ("The small home altar stands against the wall in front of her: a framed portrait, a small vase of white chrysanthemums and an incense holder; "
+             "she kneels before it with her hands on her knees; no laptop."),
+    "S08p2": "GAZE: her eyes on the calendar on the table beside her, never at the lens.",
+    "S11j": ("Exactly THREE people slumped on the sofa seen from directly above: the uncle (navy golf windbreaker), the aunt (wine-red blouse, pearls) and the "
+             "cousin (grey hoodie, black jacket)."),
     "S01f": "PEOPLE LOCKED: exactly two people — the mother's blurred white-haired head and lavender shoulder at the near left edge, her thin hand pointing at the window; Yukiko beyond by the window.",
 }
 FRAMING_FIRST = {
@@ -159,6 +170,10 @@ BACK_BY_WARD = [  # (인물 뒷모습 셀, 장면 조건, 바꿀 셀)
     ("yoriko-back.png", lambda n: n >= 8, "yoriko-blouse-back.png"),
     ("shota-back.png", lambda n: n >= 8, "shota-hoodie-back.png"),
 ]
+# 장면 의상 참조 자동 추가(b2 실측: 땀 기준 컷·정면 셀만 참조한 叔父 얼굴 컷 3개가 골프 점퍼 장면에 검은 정장 — S09g·S10h·S10j)
+WARD_ADD = [("tsuyoshi", lambda n: n >= 8, "tsuyoshi-golf.png"), ("yoriko", lambda n: n >= 8, "yoriko-blouse.png"),
+            ("shota", lambda n: n >= 8, "shota-hoodie.png"), ("yukiko", lambda n: 2 <= n <= 5, "yukiko-mourning.png"),
+            ("yukiko", lambda n: n == 12, "yukiko-coat.png")]
 # 원경으로 나온 립싱크 컷은 장소 참조를 빼고 글로 배경 지정(제18장 4 — S13i 실증, 배치 a: S04g·S04j·S09f·S09o·S11b·S11i)
 NO_LOC = {"S04b", "S04g", "S04j", "S09f", "S09o", "S11b", "S11i", "S07d", "S09h", "S10i", "S10k"}
 LOC_TEXT = {
@@ -168,7 +183,7 @@ LOC_TEXT = {
     "loc-police-3.png": "BACKGROUND (soft, out of focus): a plain police consultation room with pale grey walls, a grey table and a window with horizontal blinds casting soft stripes.",
     "loc-police-2.png": "BACKGROUND (soft, out of focus): a plain police consultation room with pale grey walls and a window with horizontal blinds.",
 }
-SOLO_FIX = {"S02e", "S04m"}
+SOLO_FIX = {"S02e", "S04m", "S08c"}
 SOLO = ("SINGLE PERSON LOCKED: this one person is the only human in the frame; the space between the camera and the person is empty air — no foreground "
         "shoulder, no back of a head, no other people anywhere.")
 
@@ -199,6 +214,10 @@ def build(sc):
         sc = dict(sc, ots=False)
     for src, cond, dst in BACK_BY_WARD:
         refs = [r.replace(src, dst) if r.endswith("/" + src) and cond(scene_no(sc["id"])) else r for r in refs]
+    for who, cond, ward in WARD_ADD:
+        faces = [r for r in refs if who_of(os.path.basename(r)) == who and not r.endswith("-back.png")]
+        if faces and cond(scene_no(sc["id"])) and not any(os.path.basename(r) == ward for r in refs):
+            refs.insert(refs.index(faces[-1]) + 1, f"assets/portraits/aihaha-ref/{ward}")
     loc_text = None
     if sc["id"] in NO_LOC:
         locs = [r for r in refs if not who_of(os.path.basename(r))]
