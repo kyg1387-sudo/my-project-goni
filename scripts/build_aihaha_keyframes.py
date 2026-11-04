@@ -53,7 +53,7 @@ def describe(path, i):
 
 FULL = "Full-frame 16:9 image filling the whole canvas: NO black bars, NO white borders, NO letterbox."
 FACE13 = ("MEDIUM CLOSE-UP from mid-chest up: the speaker's head and shoulders fill the centre of the frame, the face about one third of the frame height and sharp, "
-          "turned about 35 degrees toward the other person (never straight at the camera, never full profile); hands and what they hold visible at the bottom; "
+          "turned about 35 degrees toward the listener (never straight at the camera, never full profile); hands and what they hold visible at the bottom; "
           "50mm lens, f/2.0, shallow depth of field.")
 OTS = ("Over-the-shoulder two-shot: the listener at the near foreground edge seen strictly from behind — only the back of the head and one shoulder, soft and "
        "out of focus; the listener's face NOT visible.")
@@ -70,6 +70,8 @@ LIGHT_NOTE = {"sep_day": "LIGHTING OVERRIDES THE LOCATION REFERENCE: early-autum
               "warm_liv": "LIGHTING OVERRIDES THE LOCATION REFERENCE: the round ceiling light is OFF; only a warm table lamp.",
               "cold_liv": "LIGHTING: the round ceiling fluorescent light is ON, cold flat white light from above.",
               "night_lamp": "LIGHTING OVERRIDES THE LOCATION REFERENCE: night, one warm floor lamp only, deep shadows."}
+LIGHT_NOTE["police_red"] = ("LIGHTING: the cold round ceiling fluorescent light lights the faces; outside the window a soft, diffuse red and blue glow tints ONLY the lace "
+                            "curtain and the window glass. The air of the room is clear: no light beams, no coloured lines or streaks across the walls, the room or any face.")
 LOC_NOTE = "The rooms have NO calendars with writing, NO posters, NO notices, NO name plates; everything plain."
 GAZE_DEFAULT = "GAZE LOCKED: nobody in the frame looks into the camera lens; eyes stay on the person or object described, head turned 30 to 40 degrees from the lens."
 EMO_OVERRIDE = {
@@ -98,6 +100,17 @@ EMO_OVERRIDE = {
              "top of the younger hand. Exactly two hands, one from each side."),
     "S01b": ("ONE HAND ONLY: her RIGHT hand alone, pinching one small white pill between thumb and index finger just above an open compartment of the plain "
              "white weekly pill case on the low table; her left hand is out of frame. Five separate fingers."),
+    "S08d": ("He leans forward across the low table toward Yukiko, his face about 60 centimetres from hers, eyes locked on her, one hand flat on the table; "
+             "his hands hold nothing — no pen, no paper."),
+    "S08f": "GAZE: her eyes on Yukiko beyond the LEFT frame edge, her head turned about 35 degrees away from the lens.",
+    "S10m": ("SWEAT exactly like the approved sweat reference: a few tiny natural beads on the forehead and temples, a faint sheen, the face turning pale; "
+             "he sinks back into the sofa, both hands gripping his knees, lips pressed tight, eyes down and to the left."),
+    "S11f": ("PLEADING for the first time: brows raised and knotted, eyes wet and wide, mouth slightly open as if begging, shoulders hunched forward, "
+             "both palms pressed together at his chest; NOT smiling at any moment."),
+    "S08e": "GAZE: his eyes on the smartphone screen he is holding up to film the room, his head turned about 35 degrees away from the lens.",
+    "S07d": "Her right hand rests over the old brown-leather watch on her LEFT wrist on the table, both hands visible at the bottom of the frame.",
+    "S04b": "GAZE: the uncle's eyes on Yukiko's blurred shoulder at the near LEFT edge, never on the lens.",
+    "S04j": "GAZE: the uncle's eyes on Yukiko's blurred shoulder at the near LEFT edge, never on the lens; his fingertip on the papers.",
     "S01f": "PEOPLE LOCKED: exactly two people — the mother's blurred white-haired head and lavender shoulder at the near left edge, her thin hand pointing at the window; Yukiko beyond by the window.",
 }
 FRAMING_FIRST = {
@@ -120,6 +133,27 @@ def eyewear_lock(keys):
     return ("EYEWEAR LOCKED: " + "; ".join(wear) + " — always, including in this frame; " + " and ".join(bare)
             + " ha" + ("s" if len(bare) == 1 else "ve") + " bare uncovered eyes and bare temples. The glasses belong only to "
             + " and ".join(NAME[k] for k in keys if k in GLASSES) + ".")
+# 뒷모습 셀 의상 = 장면 의상(배치 a 실측: 상복 장면에 베이지 니트 뒷모습, 골프 점퍼 장면에 검은 상복 뒷모습 — 06_장면정합표 5절)
+def scene_no(cid):
+    return int(cid[1:3]) if cid[0] == "S" and cid[1:3].isdigit() else 0
+BACK_BY_WARD = [  # (인물 뒷모습 셀, 장면 조건, 바꿀 셀)
+    ("yukiko-back.png", lambda n: 2 <= n <= 4, "yukiko-mourning-back.png"),
+    ("tsuyoshi-back.png", lambda n: n >= 8, "tsuyoshi-golf-back.png"),
+    ("yoriko-back.png", lambda n: n >= 8, "yoriko-blouse-back.png"),
+    ("shota-back.png", lambda n: n >= 8, "shota-hoodie-back.png"),
+]
+# 원경으로 나온 립싱크 컷은 장소 참조를 빼고 글로 배경 지정(제18장 4 — S13i 실증, 배치 a: S04g·S04j·S09f·S09o·S11b·S11i)
+NO_LOC = {"S04b", "S04g", "S04j", "S09f", "S09o", "S11b", "S11i", "S07d", "S09h", "S10i", "S10k"}
+LOC_TEXT = {
+    "loc-ryotei-1.png": "BACKGROUND (soft, out of focus): a traditional Japanese ryotei private room with beige plaster walls, tall shoji windows with daylight, tatami floor and a long low dark lacquered table with brown beer bottles.",
+    "loc-living-cold.png": "BACKGROUND (soft, out of focus): the same small old Japanese living room — cream walls, a window with white lace curtains, a TV on a low wooden cabinet, a small intercom monitor on the wall, a floral-pattern sofa, the round ceiling fluorescent light.",
+    "loc-living-warm.png": "BACKGROUND (soft, out of focus): the same small old Japanese living room at night — a warm table lamp, a floral-pattern sofa, a glass display cabinet, a small intercom monitor on the wall.",
+    "loc-police-3.png": "BACKGROUND (soft, out of focus): a plain police consultation room with pale grey walls, a grey table and a window with horizontal blinds casting soft stripes.",
+    "loc-police-2.png": "BACKGROUND (soft, out of focus): a plain police consultation room with pale grey walls and a window with horizontal blinds.",
+}
+SOLO = ("SINGLE PERSON LOCKED: this one person is the only human in the frame; the space between the camera and the person is empty air — no foreground "
+        "shoulder, no back of a head, no other people anywhere.")
+
 # 합격 컷 부분 편집(제7장 5 EDIT_FROM) — 시범 r1: H0a-1은 방·인물 합격, 창밖 타워만 실제 방 창과 다름 + 귀 장신구
 EDIT = {
     "H0a": ("assets/portraits/aihaha-kf-r1/H0a-1.png", ["assets/portraits/aihaha-ref/cells/loc-window-view-finished-day.png"],
@@ -137,12 +171,25 @@ def build(sc):
         base, extra, prompt = EDIT[sc["id"]]
         return {"id": sc["id"], "count": 1, "aspect_ratio": "16:9", "refs": [base] + extra, "prompt": prompt}
     refs = list(sc["refs"])
+    for src, cond, dst in BACK_BY_WARD:
+        refs = [r.replace(src, dst) if r.endswith("/" + src) and cond(scene_no(sc["id"])) else r for r in refs]
+    loc_text = None
+    if sc["id"] in NO_LOC:
+        locs = [r for r in refs if not who_of(os.path.basename(r))]
+        loc_text = " ".join(LOC_TEXT[os.path.basename(r)] for r in locs if os.path.basename(r) in LOC_TEXT)
+        refs = [r for r in refs if who_of(os.path.basename(r))]
     people = [r for r in refs if who_of(os.path.basename(r))]
     is_back = bool(people) and os.path.basename(people[0]).endswith("-back.png") and sc["kind"] != "d"
     if len(refs) > MAX_REFS:
         refs = refs[:MAX_REFS]
     assert len(refs) <= MAX_REFS
     kp = sc["keyframe_prompt"]
+    solo = sc["kind"] == "d" and len({who_of(os.path.basename(r)) for r in refs if who_of(os.path.basename(r))}) < 2 and sc["id"] != "H0a"
+    if solo:  # 「상대를 본다」 문장이 전경에 엉뚱한 사람을 불러온다(배치 a 12컷)
+        kp = kp.replace("eyes toward the other person off-screen", "eyes toward a point just beyond the frame edge")
+    if sc["kind"] == "d":
+        kp = kp.replace("the person's face at least one quarter of the frame height. ", "")
+    kp = kp.replace("slow red and blue police light reflections sweeping across the window glass", "a soft red and blue glow on the window glass")
     if sc["id"] == "H0a":
         # 극 중 AI 영상만 렌즈 정면(제21장 4) — PHASE 3 공통 립싱크 문장(30~40° 시선)과 충돌하므로 제거, 장소 판을 첫 참조로
         kp = kp.replace("Single speaker at 30 to 40 degrees from the camera axis, eyes toward the other person off-screen, NOT looking at the camera, "
@@ -154,6 +201,8 @@ def build(sc):
                      "frame height, the top of the head near the top edge; NOT a wide shot, NO full body, NO room-wide view.")
     if sc["id"] in FRAMING_FIRST:
         parts.append(FRAMING_FIRST[sc["id"]])
+    if solo:
+        parts.append(SOLO)
     if sc["id"] == "H0a":
         parts.append("Reference image 1 is the BASE PLATE of the room: keep the same textured beige wall, the same dark-wood window frame and EXACTLY the same "
                      "finished pale tower with the same tiled-roof houses and green trees below it outside; the woman sits in the brown armchair in front of that window. "
@@ -171,6 +220,8 @@ def build(sc):
     if sc["id"] in EMO_OVERRIDE:
         parts.append(EMO_OVERRIDE[sc["id"]])
     parts.append(kp)
+    if loc_text:
+        parts.append(loc_text)
     parts.append(LOC_NOTE)
     if sc.get("lighting") in LIGHT_NOTE:
         parts.append(LIGHT_NOTE[sc["lighting"]])
@@ -188,7 +239,7 @@ def build(sc):
         parts.append("REVERSE OVER-THE-SHOULDER COMPOSITION: the near-edge foreground person is the SPEAKER seen strictly from behind (blurred back of the head and one "
                      "shoulder, face NOT visible); the LISTENER beyond at three-quarter angle, eyes on the speaker, never into the lens, face at least one third of the frame height.")
     if sc["kind"] == "d" and sc["id"] != "H0a":
-        parts.append((OTS + " " + FACE13) if len(people) >= 2 else (FACE13 + " Only this one person is in the frame: NO foreground shoulder or head."))
+        parts.append((OTS + " " + FACE13) if len({who_of(os.path.basename(r)) for r in people}) >= 2 else (FACE13 + " Only this one person is in the frame: NO foreground shoulder or head."))
         if "NOT smiling" in (sc.get("act") or ""):
             parts.append("EXPRESSION AT 70 PERCENT: brows knotted, the corners of the mouth pulled down, jaw tight; absolutely NO smile.")
         parts.append("Mouth gently closed (speech is added later); natural skin texture with pores, both eyes sharp and symmetrical.")
@@ -197,8 +248,27 @@ def build(sc):
     return {"id": sc["id"], "count": 1, "aspect_ratio": "16:9", "refs": refs, "prompt": " ".join(parts)}
 
 
+CELL_JOBS = {  # 장면 의상별 뒷모습 셀(뒷모습 셀 + 의상 참조 편집) → 고른 것을 aihaha-ref/cells/<이름>.png로 복사
+    "yukiko-mourning-back": ("yukiko-back.png", "yukiko-mourning.png", "a plain black Japanese mourning dress with long sleeves, no ornaments"),
+    "tsuyoshi-golf-back": ("tsuyoshi-back.png", "tsuyoshi-golf.png", "a plain navy golf windbreaker jacket with no logo over a white polo shirt, the same trousers and shoes as image 2"),
+    "yoriko-blouse-back": ("yoriko-back.png", "yoriko-blouse.png", "the plain wine-red blouse and the same skirt and shoes as image 2, no handbag"),
+    "shota-hoodie-back": ("shota-back.png", "shota-hoodie.png", "the plain grey hoodie under a plain black jacket, the grey hood lying on the back of the jacket, the same trousers and shoes as image 2"),
+}
+
+
+def cell_job(name):
+    back, ward, text = CELL_JOBS[name]
+    return {"id": name, "count": 2, "aspect_ratio": "9:16",
+            "refs": [f"assets/portraits/aihaha-ref/cells/{back}", f"assets/portraits/aihaha-ref/{ward}"],
+            "prompt": ("Edit image 1. Keep exactly the same person seen strictly from behind — the same hair, head, build, standing pose, the same plain white "
+                       f"background and the same full-body framing. Change ONLY the clothes to the outfit worn in image 2: {text}. The face is never visible. "
+                       "Photorealistic studio photograph, no text, no labels.")}
+
+
 def main():
     arg = sys.argv[1] if len(sys.argv) > 1 else "a"
+    with_cells = arg.endswith("+cells")
+    arg = arg[:-6] if with_cells else arg
     stage, _, only = arg.partition(":")
     only = set(only.split(",")) if only else None
     sb = json.load(open(SB_PATH, encoding="utf-8"))
@@ -222,6 +292,10 @@ def main():
             c["count"] = 2
         missing += [f for f in c["refs"] if not os.path.exists(os.path.join(ROOT, f))]
         chars.append(c)
+    if with_cells:
+        chars += [cell_job(n) for n in CELL_JOBS]
+    missing += [f for c in chars for f in c["refs"] if not os.path.exists(os.path.join(ROOT, f)) and "aihaha-ref/cells/" in f and f.endswith("-back.png")
+                and os.path.basename(f)[:-4] in CELL_JOBS and not with_cells and False]
     assert not missing, f"참조 파일 없음: {sorted(set(missing))}"
     out = OUT.format(stage)
     json.dump({"_설명": f"『母が遺したビデオレター』 PHASE 4 키프레임 {stage} — {len(chars)}장(build_aihaha_keyframes.py 생성). 약 {len(chars) * 0.04 * (2 if stage.startswith('r') else 1):.2f}달러.",
