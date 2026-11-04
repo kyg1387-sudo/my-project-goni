@@ -1,0 +1,14 @@
+{
+ "_설명": "『ブラックカード』 S04b(2:33 카드를 든 손 인서트) 재생성(2026-11-04 고니감독님 지적 「카드를 잡고 있는 것이 부자연스럽고 이상해」 — 주먹으로 카드 모서리를 움켜쥔 자세). 엄지·검지로 아래 모서리를 집은 자연스러운 그립. 정지 푸시인 교체. 3장 약 0.12달러.",
+ "characters": [
+  {
+   "id": "S04b-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/kenji-wet-full-side.png"
+   ],
+   "prompt": "[CAMERA] Side insert at chest height, 100mm macro, shallow depth of field on the card, the card filling about 35 percent of the frame width, slightly right of centre. [CHARACTER] HANDS LOCKED: exactly ONE wet bare right hand of a Japanese man in his forties entering from the RIGHT, in a rain-soaked LIGHT GREY suit sleeve with a white shirt cuff (reference image 1 for the wardrobe); the hand holds a plain matte BLACK credit-card-sized card NATURALLY — the card pinched by its lower edge between the pad of the THUMB (in front) and the first joint of the INDEX finger (behind), the other three fingers curled loosely under it, the card held upright and flat toward the camera like showing an ID; wrist relaxed, forearm horizontal. The card front is completely blank — no name, no numbers, no logo, no text, no chip. [ACTION] The hand holds the card still up into the light; raindrops bead on the card's surface and on the knuckles; one drop runs off the lower edge. [SETTING] Rainy Tokyo back alley at night, red neon reflected on wet asphalt and a cool blue ambient fill, deep bokeh background, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, numbers, logo, chip, watermark, extra fingers, extra hands, two hands, deformed hands, fist gripping the card, card floating above the hand, card held by a corner only, fingers wrapped around the card, anime, cartoon, 3D render, grid, split panels."
+  }
+ ]
+}
