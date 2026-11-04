@@ -50,7 +50,7 @@ CARDS = {"S01k": ("S01j", "拾ったのは、カードだけじゃなかった�
          "S08u": ("S08t", "この後――妻が、ドアを叩き壊す", 84, 0, 0.2), "S12zz": ("S12z", "残り　６日", 150, 0, 0.0)}
 COUNT = {"S12u": ("残り７日", "残り６日", 1.0)}  # 구석 소자막 전환(시계 0:00과 같은 프레임)
 # 색 큐(장면 단위) — 재미나이 △ 항목을 로컬로
-FLICKER = {"S02", "S03"}  # 초록 형광 불규칙 플리커
+FLICKER = set()  # 초록 형광 불규칙 플리커 — 2026-11-04 고니감독님 지적 「전등이 꺼졌다 켜진 것처럼 깜박임」: 프레임 15%에 −2~4%는 4초에 급변 27회 → 전면 제거(제20장 11)
 STOP_UP = ("S05g", "S05i")  # 승인 → +1 stop 램프(0.8초)
 RED_PULSE = {"S09", "S10"}  # 항공장애등 2초 주기
 WARM = {"S07", "S11"}; COLD = {"S12"}
@@ -377,7 +377,7 @@ def patch(src, out, tmp, only=None):
         sc = SCENE_OF[sid]; lo, hi = sc_rng.get(sc, (a, b)); sc_rng[sc] = (min(lo, a), max(hi, b))
     en = "+".join(f"between(t,{sc_rng[s][0]:.3f},{sc_rng[s][1]:.3f})" for s in sorted(RED_PULSE))
     # all_opacity는 식을 받지 않는다(2026-11-03 실증) → screen 블렌드를 all_expr로 쓰고 구간은 enable로(그 밖은 통과)
-    fc.append(f"{last}[1:v]blend=all_expr='A+(B-A*B/255)*(0.28*(0.5+0.5*sin(2*PI*T/2.0)))':enable='{en}':shortest=1[rp]")
+    fc.append(f"{last}[1:v]blend=all_expr='A+(B-A*B/255)*(0.15*(0.5+0.5*sin(2*PI*T/2.0)))':enable='{en}':shortest=1[rp]")
     fc.append(f"[rp]{grade_filters(src)}eq=contrast=1.03:saturation=0.97,{lift_filter(src)}noise=alls=3:allf=t+u,format=yuv420p[v]")
     script = os.path.join(tmp, "patch_fc.txt"); open(script, "w").write(";\n".join(fc))
     run(inputs + ["-filter_complex_script", script, "-map", "[v]", "-map", "0:a", "-c:v", "libx264", "-preset", "medium", "-crf", "17",
