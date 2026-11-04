@@ -1,0 +1,24 @@
+{
+ "_설명": "『ブラックカード』 S04g·S04h 재생성(2026-11-04 고니감독님 지적 2:48 「운전기사가 없다」): 운전사가 보이는 택시 결제 장면. 정지 푸시인으로 교체. 3장씩 약 0.25달러.",
+ "characters": [
+  {
+   "id": "S04g-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/loc-taxi-1.png"
+   ],
+   "prompt": "[CAMERA] From the rear passenger seat of a Japanese taxi at night, 35mm, eye level, looking forward between the two lace-covered headrests; the driver's seat is on the RIGHT (right-hand drive). [CHARACTER] Exactly ONE person visible: the taxi driver seated in the RIGHT front seat, seen from behind — the back of his dark uniform cap, dark uniform jacket collar, both WHITE-GLOVED hands on the steering wheel at ten and two. NO face visible. No passenger hands in frame. [ACTION] The driver sits still, hands resting on the wheel; wipers mid-sweep across a rain-streaked windshield, blurred Ginza neon through the glass. [SETTING] Japanese taxi interior at night, reference image 1 for the interior: white lace seat covers, a green-glowing meter and a small blank dark payment terminal on the dashboard, cool blue night light with red neon reflections, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, digits on screens, stickers with text, logo, watermark, extra fingers, extra hands, deformed hands, anime, cartoon, 3D render, left-hand drive, empty driver seat, grid, split panels."
+  },
+  {
+   "id": "S04h-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/loc-taxi-1.png",
+    "assets/portraits/blackcard-cast/cells/kenji-wet-full-side.png"
+   ],
+   "prompt": "[CAMERA] Close-up from the rear seat, 50mm, slightly high, framing the gap between the front seats: in the background the RIGHT-hand driver's seat with the driver, in the foreground the payment moment. [CHARACTER] Two people: (1) the taxi driver in the RIGHT front seat, turned slightly toward the rear, dark uniform cap, dark uniform, ONE white-gloved hand holding out a small black card payment terminal (blank dark screen, one tiny green light) toward the rear seat over the center console, face turned away and NOT visible; (2) the passenger's single hand entering from the LOWER LEFT in a wet grey suit sleeve with a white cuff — reference image 2 for the sleeve — holding a plain matte-black card flat against the terminal. Exactly one passenger hand, exactly one gloved driver hand visible. [ACTION] The card touches the terminal; a small green light glows; rain streaks the windshield behind; wipers paused. [SETTING] Japanese taxi interior at night, reference image 1: white lace headrest covers, green meter glow on the dashboard, cool blue night light with red neon reflections, photorealistic, Kodak 35mm grain, shallow depth of field on the terminal and card. [NEGATIVE] text, letters, digits on screens, stickers with text, logo, watermark, extra fingers, extra hands, deformed hands, anime, cartoon, 3D render, left-hand drive, empty driver seat, grid, split panels."
+  }
+ ]
+}
