@@ -1,0 +1,15 @@
+{
+ "_설명": "『ブラックカード』 S09a 재생성(2026-11-04 고니감독님 지적 6:52 「문 여는 것이 이상하다」): 수평 레버 손잡이·경첩 방향 고정, 정지 푸시인 교체. 3장 약 0.12달러.",
+ "characters": [
+  {
+   "id": "S09a-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/loc-office-1.png",
+    "assets/portraits/blackcard-cast/cells/misaki-full-side.png"
+   ],
+   "prompt": "[CAMERA] Low insert at door-handle height from inside the office, 50mm, slight low angle, shallow depth of field. [CHARACTER] Exactly ONE slim woman's hand entering from the LEFT in a beige trench coat sleeve with a white shirt cuff (reference image 2 for the coat), fingers wrapped over a HORIZONTAL brushed-steel lever handle; a thin wedding ring; no face. [ACTION] DOOR GEOMETRY LOCKED: a heavy dark office door hinged on the RIGHT edge of the frame, just flung fully open toward the camera, the lever handle at waist height on the door's free edge, the hand still gripping the lever after pushing; beyond the open doorway the dim night office with desks, dark monitors and one red aviation light through the window. [SETTING] Night office, cold blue lamp light, reference image 1 for the room, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, logo, watermark, extra fingers, extra hands, deformed hands, round knob, vertical bar handle, floating handle, anime, cartoon, 3D render, grid, split panels."
+  }
+ ]
+}

@@ -63,12 +63,16 @@ def divorce_form(seal_left=True, seal_right=False, torn=False):
 def jirei():
     """S08g·S08l 辞令(희망퇴직) — 柴田 서명·인감 칸."""
     W, H = 1400, 1000; im = Image.new("RGB", (W, H), (255, 255, 255)); d = ImageDraw.Draw(im)
-    d.text((W / 2, 110), "辞　　令", font=F(M, 110), fill=(25, 25, 30), anchor="mm")
-    body = ["柴田　隆　殿", "", "貴殿の希望退職の申出を受理し、", "令和七年十一月末日をもって退職とする。", "退職金は規定どおり支給する。", "",
-            "　　　　　　　　　　　　蓮見商事株式会社", "　　　　　　　　　　　　筆頭株主　高橋　健二"]
+    # 2026-11-04 고니감독님 지적 「서류를 내용에 맞게 정확하게」: 휴대폰에서 읽히게 글자를 키우고 줄을 줄임(제13장 2)
+    d.text((W / 2, 120), "辞　　令", font=F(M, 150), fill=(25, 25, 30), anchor="mm")
+    d.text((110, 260), "柴田　隆　殿", font=F(M, 60), fill=(40, 40, 45))
+    body = ["貴殿の希望退職の申出を受理し、", "令和七年十一月末日をもって退職とする。", "退職金は規定どおり支給する。"]
     for i, t in enumerate(body):
-        d.text((120, 250 + i * 66), t, font=F(M, 40), fill=(40, 40, 45))
-    d.text((900, 850), "署名　　　　　　　　　印", font=F(M, 36), fill=(40, 40, 45)); d.line([(990, 900), (1240, 900)], fill=(60, 60, 60), width=2)
+        d.text((110, 380 + i * 92), t, font=F(M, 54), fill=(40, 40, 45))
+    d.text((W - 110, 720), "蓮見商事株式会社", font=F(M, 52), fill=(40, 40, 45), anchor="ra")
+    d.text((W - 110, 790), "筆頭株主　高橋　健二", font=F(M, 52), fill=(40, 40, 45), anchor="ra")
+    d.text((110, 890), "署名", font=F(M, 48), fill=(40, 40, 45)); d.line([(250, 945), (760, 945)], fill=(60, 60, 60), width=3)
+    d.text((820, 890), "印", font=F(M, 48), fill=(40, 40, 45)); d.ellipse((900, 860, 1000, 960), outline=(150, 40, 40), width=3)
     return im
 
 

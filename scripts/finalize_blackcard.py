@@ -45,6 +45,7 @@ CLIP_OVERRIDE = {"S09f": "assets/auditions/blackcard-s09f-omni/omni-S09f.mp4",
                  "S04a": "assets/video-overrides/blackcard/scene43_still.mp4"}  # 2026-11-04 고니감독님 지적: i2v에서 카드가 혼자 튀고 손이 나타남 → 정지 푸시인(제7장 2·제19장 16)  # burn 누락 립싱크(scene124) 단독 생성분 교체(제19장 19)
 LCUT = {}  # sid: (립싱크 사용 초, 반응 컷, 반응 원본 시작 초)
 PAPER = {"S08g": jov.jirei}  # i2v 컷의 글자 면(quad는 jov.QUADS, 키프레임 좌표)
+PAPER_REPLACE = {"S08g"}
 PHONE = {"S09b": jov.phone_news}  # 립싱크 컷의 손에 든 휴대폰(밝은 무지 화면을 매 프레임 추적해 lcd 합성 — 손이 움직인다)
 # 화면 카드(클립에 직접, 제15장 12·20): sid → (직전 컷, 글자, 크기, dy, 카드 시작 초)
 CARDS = {"S01k": ("S01j", "拾ったのは、カードだけじゃなかった。", 88, 0, 0.0), "S02a": ("S01j", "ブラックカード", 170, 0, 0.0),
@@ -204,6 +205,8 @@ def process_native(sid, frames):
         return frames
     s, ox, oy = kf_map(sid, frames[0])
     art = PAPER[sid](); q = mapq(jov.QUADS[sid], s, ox, oy)
+    if sid in PAPER_REPLACE:  # 2026-11-04: 키프레임에 인쇄된 사각형·글자가 비쳐 글이 겹침 → 종이를 흰색으로 덮고 글자(put_replace)
+        return [np.asarray(jov.put_replace(Image.fromarray(f), art, q)) for f in frames]
     return [np.asarray(jov.put(Image.fromarray(f), art, q, tol=45, strength=0.88)) for f in frames]
 
 
