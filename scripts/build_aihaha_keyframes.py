@@ -47,6 +47,10 @@ def describe(path, i):
     if k:
         return (f"Reference image {i} is the approved identity photo of {PEOPLE[k]}: copy this exact face, hairstyle, eyewear and age; the WARDROBE follows "
                 "the [CHARACTER] text below; ignore its white background and framing.")
+    if b.endswith("-bg.png"):
+        return (f"Reference image {i} is a BACKGROUND PLATE detail of the same room: the wall seen behind the person must show exactly these things "
+                "(the door, the small intercom monitor, the flat TV on the low wooden cabinet, the window with white lace curtains, the glass cabinet), "
+                "soft and out of focus behind the person. It is NOT a framing guide — the camera stays close on the person.")
     return (f"Reference image {i} is the location reference: match its architecture, colours, set dressing, window view and light direction; "
             "ignore any borders or panel layout.")
 
@@ -155,7 +159,12 @@ SOLO = ("SINGLE PERSON LOCKED: this one person is the only human in the frame; t
         "shoulder, no back of a head, no other people anywhere.")
 
 # 합격 컷 부분 편집(제7장 5 EDIT_FROM) — 시범 r1: H0a-1은 방·인물 합격, 창밖 타워만 실제 방 창과 다름 + 귀 장신구
+SWEAT_EDIT = ("Edit image 1. Keep the man, his pose, expression, clothes, the room and the light exactly unchanged. Add ONLY the real sweat look from image 2: "
+              "a few tiny natural beads on his forehead and temples, a faint sheen along the hairline, one thin line running from the temple toward the jaw; "
+              "matte skin elsewhere, no gel drops, no shiny face. Same framing, same 16:9 size, photorealistic, no text.")
 EDIT = {
+    "S10m": ("assets/portraits/aihaha-kf-r2/S10m-1.png", ["assets/portraits/aihaha-ref/sweat-standard-tsuyoshi.png"], SWEAT_EDIT),
+    "S10a": ("assets/portraits/aihaha-kf-a/S10a-1.png", ["assets/portraits/aihaha-ref/sweat-standard-tsuyoshi.png"], SWEAT_EDIT),
     "H0a": ("assets/portraits/aihaha-kf-r1/H0a-1.png", ["assets/portraits/aihaha-ref/cells/loc-window-view-finished-day.png"],
             "Edit image 1. Keep the elderly woman exactly unchanged — her face, smile, white hair, lavender cardigan and cream blouse — and keep the room, the beige "
             "wall, the armchair and the dark window frame exactly unchanged. Replace ONLY the view seen through the window glass with the view in image 2: the same "
@@ -178,6 +187,8 @@ def build(sc):
         locs = [r for r in refs if not who_of(os.path.basename(r))]
         loc_text = " ".join(LOC_TEXT[os.path.basename(r)] for r in locs if os.path.basename(r) in LOC_TEXT)
         refs = [r for r in refs if who_of(os.path.basename(r))]
+        if any(os.path.basename(r) == "loc-living-cold.png" for r in locs):  # r2 실측: 글만으로는 커튼·TV가 바뀜(브라운관·일반 커튼) → 배경 판 참조
+            refs.append("assets/portraits/aihaha-ref/cells/loc-living-cold-bg.png")
     people = [r for r in refs if who_of(os.path.basename(r))]
     is_back = bool(people) and os.path.basename(people[0]).endswith("-back.png") and sc["kind"] != "d"
     if len(refs) > MAX_REFS:
