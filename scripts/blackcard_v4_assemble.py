@@ -13,7 +13,7 @@ sys.argv = [sys.argv[0], "out/blackcard-remix.mp4"] + sys.argv[1:]  # finalize_b
 import finalize_blackcard as fb  # noqa: E402
 
 ROOT = fb.ROOT; OV = os.path.join(ROOT, "assets", "video-overrides", "blackcard")
-FIX = {"S03i": "scene36_still.mp4", "S04g": "scene49_still.mp4", "S06f": "scene71_fix.mp4", "S04h": "scene50_still.mp4", "S05f": "scene59_still.mp4", "S06i": "scene74_still.mp4",
+FIX = {"S03i": "scene36_still.mp4", "S04a": "scene43_still.mp4", "S04g": "scene49_still.mp4", "S06d": "scene69_still.mp4", "S06f": "scene71_fix.mp4", "S04h": "scene50_still.mp4", "S05f": "scene59_still.mp4", "S06i": "scene74_still.mp4",
        "S07b": "scene78_still.mp4", "S08g": None, "S08l": "scene109_fix.mp4", "S09a": "scene119_still.mp4", "S09e": "scene123_fix.mp4",
        "S10i": "scene135_fix.mp4", "S11a": "scene144_still.mp4", "S11c": "scene146_still.mp4", "S12a": "scene148_fix.mp4",
        "S12d": "scene151_still.mp4", "S12f": "scene153_still.mp4", "S12l": "scene159_still.mp4", "S12m": "scene160_still.mp4",
