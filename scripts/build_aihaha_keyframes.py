@@ -137,7 +137,7 @@ EMO_OVERRIDE = {
              "she kneels before it with her hands on her knees; no laptop."),
     "S08p2": "GAZE: her eyes on the calendar on the table beside her, never at the lens.",
     "S11j": ("Exactly THREE people slumped on the sofa seen from directly above: the uncle (navy golf windbreaker), the aunt (wine-red blouse, pearls) and the "
-             "cousin (grey hoodie, black jacket)."),
+             "cousin (grey hoodie, black jacket). Indoors in a Japanese home: all three in socks, NO shoes on their feet (r4: shoes on tatami)."),
     "S01f": "PEOPLE LOCKED: exactly two people — the mother's blurred white-haired head and lavender shoulder at the near left edge, her thin hand pointing at the window; Yukiko beyond by the window.",
 }
 FRAMING_FIRST = {
@@ -193,6 +193,7 @@ SWEAT_EDIT = ("Edit image 1. Keep the man, his pose, expression, clothes, the ro
               "matte skin elsewhere, no gel drops, no shiny face. Same framing, same 16:9 size, photorealistic, no text.")
 EDIT = {
     "S10m": ("assets/portraits/aihaha-kf-r2/S10m-1.png", ["assets/portraits/aihaha-ref/sweat-standard-tsuyoshi.png"], SWEAT_EDIT),
+    "S09g": ("assets/portraits/aihaha-kf-r4/S09g-2.png", ["assets/portraits/aihaha-ref/sweat-standard-tsuyoshi.png"], SWEAT_EDIT),
     "S10a": ("assets/portraits/aihaha-kf-a/S10a-1.png", ["assets/portraits/aihaha-ref/sweat-standard-tsuyoshi.png"], SWEAT_EDIT),
     "H0a": ("assets/portraits/aihaha-kf-r1/H0a-1.png", ["assets/portraits/aihaha-ref/cells/loc-window-view-finished-day.png"],
             "Edit image 1. Keep the elderly woman exactly unchanged — her face, smile, white hair, lavender cardigan and cream blouse — and keep the room, the beige "
