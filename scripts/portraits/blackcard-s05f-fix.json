@@ -1,0 +1,14 @@
+{
+ "_설명": "『ブラックカード』 S05f 재생성(2026-11-04 고니감독님 지적 3:14 「카드 결제가 어설프다」): 점원이 단말기에 카드를 꽂는 정확한 동작. 정지 푸시인 교체. 3장 약 0.12달러.",
+ "characters": [
+  {
+   "id": "S05f-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/loc-boutique-1.png"
+   ],
+   "prompt": "[CAMERA] Side insert at counter height, 100mm macro, eye level, shallow depth of field, the payment terminal filling the center-right of the frame. [CHARACTER] Exactly ONE white-gloved hand of a luxury boutique clerk entering from the RIGHT (dark suit cuff), fingers holding the top edge of a plain matte-black credit card with NO text or numbers. [ACTION] The clerk is INSERTING the card vertically into the chip slot at the front of a black countertop payment terminal: the lower half of the card is already inside the slot, the upper half still held between thumb and forefinger; the terminal stands upright on the glass counter with its small screen dark and one tiny green light lit; the motion is precise and calm. No other hands, no second card. [SETTING] High-end Ginza watch boutique at night, reference image 1 for the look: polished marble-and-glass counter, warm gold spot lighting from above, blurred glass display cases with watches in the background, a thin red accent light along the ceiling edge, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, digits on the screen, logo, watermark, extra fingers, extra hands, deformed hands, two cards, anime, cartoon, 3D render, grid, split panels."
+  }
+ ]
+}
