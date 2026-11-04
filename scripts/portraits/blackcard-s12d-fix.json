@@ -1,0 +1,14 @@
+{
+ "_설명": "『ブラックカード』 S12d 재생성(2026-11-04 고니감독님 지적 8:50 좌핸들 운전사): 우핸들 운전사 뒷모습, 한랭 그레이드. 3장 약 0.12달러.",
+ "characters": [
+  {
+   "id": "S12d-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/loc-car-2.png"
+   ],
+   "prompt": "[CAMERA] From the rear seat of a Japanese luxury sedan at night, 35mm, eye level, looking forward between the two front headrests, the rear-view mirror visible at the top center. [CHARACTER] Exactly ONE person: the chauffeur seated in the RIGHT front seat (RIGHT-hand drive — the steering wheel is directly in front of him on the right side of the dashboard), seen from behind: the back of a dark chauffeur's cap, dark uniform collar, both WHITE-GLOVED hands on the steering wheel at ten and two, forearms attached naturally to his shoulders; in the rear-view mirror only the brim of the cap, no readable face. [ACTION] He drives steadily; rain streaks the windshield, road lights streak past. [SETTING] Black leather interior, wood trim, reference image 1 for the interior, cold blue-white night light, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, logo, watermark, extra fingers, extra hands, deformed hands, left-hand drive, steering wheel on the left, floating gloves, visible face, anime, cartoon, 3D render, grid, split panels."
+  }
+ ]
+}
