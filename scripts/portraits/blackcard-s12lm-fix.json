@@ -1,0 +1,23 @@
+{
+ "_설명": "『ブラックカード』 S12l·S12m 재생성(2026-11-04 고니감독님 지적 9:26 운전사 얼굴 노출·좌핸들): 설계대로 손 인서트(얼굴 비노출, 우핸들). 3장씩 약 0.25달러.",
+ "characters": [
+  {
+   "id": "S12l-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/loc-car-2.png"
+   ],
+   "prompt": "[CAMERA] Close insert from the rear seat looking between the front seats at the center console, 85mm, eye level, shallow depth of field. [CHARACTER] Exactly ONE white-gloved hand of the chauffeur (dark uniform sleeve) entering from the RIGHT — he sits in the RIGHT front seat, right-hand drive, so the gear lever is to his LEFT on the center console; the hand rests on the leather gear lever moving it to park. No face, no head in frame. [ACTION] The car glides to a stop; the dashboard glows dim blue-white with no readable text. [SETTING] Black leather and wood interior of a Japanese luxury sedan at night, rain on the windshield beyond, reference image 1, cold blue-white light, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, logo, watermark, extra fingers, extra hands, deformed hands, visible face, left-hand drive, steering wheel on the left, anime, cartoon, 3D render, grid, split panels."
+  },
+  {
+   "id": "S12m-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/loc-car-1.png"
+   ],
+   "prompt": "[CAMERA] Side insert between the front seats from the rear seat, 85mm, eye level, shallow depth of field. [CHARACTER] Two hands only: (1) the chauffeur's WHITE-GLOVED right hand in a dark uniform sleeve reaching back over the right front seat-back toward the rear, holding a plain brown A5 envelope with NO text; the chauffeur's capped head stays turned to the front and is NOT visible beyond the headrest; (2) Kenji's bare hand in a black suit sleeve with a white cuff entering from the lower right to take the envelope. Exactly one gloved hand and one bare hand, one envelope. [ACTION] The envelope is passed over the seat; no faces. [SETTING] Black leather interior of a Japanese luxury sedan stopped at night, reference image 1, cold blue-white light with faint amber from a reading lamp, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, logo, watermark, extra fingers, extra hands, deformed hands, visible face, left-hand drive, steering wheel on the left, anime, cartoon, 3D render, grid, split panels."
+  }
+ ]
+}
