@@ -41,7 +41,8 @@ DRONE = [(36.2, 91.4, -31.0), (91.4, 151.5, -33.0), (331.0, 376.5, -30.0)]  # �
 PUNCH = {"S01h": 1.6, "S05g": 3.0, "S07n": 0.3, "S10h": 0.0, "S12p": 0.4, "S12u": 1.0}  # 컷 시작 후 몇 초에 터뜨리는지(6회)
 ZIN = ["S01j", "S03k", "S05i", "S06k", "S08q", "S09e", "S10o", "S12g", "S12q", "S12v"]
 ZOUT = ["S05l", "S06j", "S10p", "S12w"]
-CLIP_OVERRIDE = {"S09f": "assets/auditions/blackcard-s09f-omni/omni-S09f.mp4"}  # burn 누락 립싱크(scene124) 단독 생성분 교체(제19장 19)
+CLIP_OVERRIDE = {"S09f": "assets/auditions/blackcard-s09f-omni/omni-S09f.mp4",
+                 "S04a": "assets/video-overrides/blackcard/scene43_still.mp4"}  # 2026-11-04 고니감독님 지적: i2v에서 카드가 혼자 튀고 손이 나타남 → 정지 푸시인(제7장 2·제19장 16)  # burn 누락 립싱크(scene124) 단독 생성분 교체(제19장 19)
 LCUT = {}  # sid: (립싱크 사용 초, 반응 컷, 반응 원본 시작 초)
 PAPER = {"S08g": jov.jirei}  # i2v 컷의 글자 면(quad는 jov.QUADS, 키프레임 좌표)
 PHONE = {"S09b": jov.phone_news}  # 립싱크 컷의 손에 든 휴대폰(밝은 무지 화면을 매 프레임 추적해 lcd 합성 — 손이 움직인다)
