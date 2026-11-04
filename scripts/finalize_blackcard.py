@@ -459,7 +459,7 @@ def outro(main_out, tmp):
     subprocess.run([sys.executable, os.path.join(ROOT, "scripts/append_outro.py"), main_out, final], check=True, env=env)
     # 아웃트로 결합 뒤 트루피크가 −0.9 dBTP로 올라감(2026-11-03 qa_final FAIL) → 완성본에 트루피크 리미터(영상 복사)
     lim = final.replace(".mp4", "_lim.mp4")
-    run(["-i", final, "-c:v", "copy", "-af", "alimiter=limit=0.82:attack=3:release=40:level=false", "-c:a", "aac", "-b:a", "192k", lim])
+    run(["-i", final, "-c:v", "copy", "-af", "alimiter=limit=0.7:attack=3:release=40:level=false", "-c:a", "aac", "-b:a", "192k", lim])
     os.replace(lim, final)
     print(f"완성: {final} ({dur(final):.1f}초) / 본편 {dur(main_out):.1f}초")
 
