@@ -13,7 +13,7 @@ sys.argv = [sys.argv[0], "out/blackcard-remix.mp4"] + sys.argv[1:]  # finalize_b
 import finalize_blackcard as fb  # noqa: E402
 
 ROOT = fb.ROOT; OV = os.path.join(ROOT, "assets", "video-overrides", "blackcard")
-FIX = {"S04g": "scene49_still.mp4", "S04h": "scene50_still.mp4", "S05f": "scene59_still.mp4", "S06i": "scene74_still.mp4",
+FIX = {"S03i": "scene36_still.mp4", "S04g": "scene49_still.mp4", "S06f": "scene71_fix.mp4", "S04h": "scene50_still.mp4", "S05f": "scene59_still.mp4", "S06i": "scene74_still.mp4",
        "S07b": "scene78_still.mp4", "S08g": None, "S08l": "scene109_fix.mp4", "S09a": "scene119_still.mp4", "S09e": "scene123_fix.mp4",
        "S10i": "scene135_fix.mp4", "S11a": "scene144_still.mp4", "S11c": "scene146_still.mp4", "S12a": "scene148_fix.mp4",
        "S12d": "scene151_still.mp4", "S12f": "scene153_still.mp4", "S12l": "scene159_still.mp4", "S12m": "scene160_still.mp4",
@@ -23,6 +23,7 @@ FIX = {"S04g": "scene49_still.mp4", "S04h": "scene50_still.mp4", "S05f": "scene5
 def main():
     src, body_end, out = sys.argv[2], float(sys.argv[3]), sys.argv[4]
     B = fb.bounds(); tmp = os.path.join(fb.OUTD, "fin-bc"); os.makedirs(tmp, exist_ok=True)
+    ass = os.path.join(ROOT, "subs", "blackcard-v4.ass"); fdir = os.environ.get("FONTSDIR", "/usr/share/fonts")  # 교체 클립은 자막이 없으므로 절대 시각에 맞춰 다시 굽는다(제19장 22 글꼴 확인)
     inputs, fc, last, k = ["-i", src], [], "[0:v]", 1
     for sid, clip in FIX.items():
         p = os.path.join(tmp, "cut_S08g.mp4") if clip is None else os.path.join(OV, clip)
@@ -30,7 +31,7 @@ def main():
             print("없음(건너뜀):", sid, p); continue
         a, b = B[sid]
         inputs += ["-i", p]
-        fc.append(f"[{k}:v]trim=0:{b - a + 1 / fb.FPS:.3f},setpts=PTS-STARTPTS+{a:.3f}/TB[p{k}]")
+        fc.append(f"[{k}:v]trim=0:{b - a + 1 / fb.FPS:.3f},setpts=PTS-STARTPTS+{a:.3f}/TB,ass={ass}:fontsdir={fdir}[p{k}]")
         fc.append(f"{last}[p{k}]overlay=enable='between(t,{a:.3f},{b:.3f})':eof_action=pass[o{k}]"); last = f"[o{k}]"
         print(f"교체 {sid} {a:.2f}-{b:.2f} ← {os.path.basename(p)}"); k += 1
     fc.append(f"{last}trim=0:{body_end:.3f},setpts=PTS-STARTPTS,fade=t=out:st={body_end - 0.8:.3f}:d=0.8,format=yuv420p[v]")
@@ -47,9 +48,10 @@ def main():
                         f"{hs[1] + 1.0:.2f}", f"{hs[1] + 1.8:.2f}", f"{hs[2] - 0.2:.2f}"], check=True)
     env = {**os.environ, "OUTRO": cta, "ENDCARD": os.path.join(ROOT, "assets/brand/endcard-midam-ja.mp4"), "OUT_SIZE": "1920x1080"}
     subprocess.run([sys.executable, os.path.join(ROOT, "scripts/append_outro.py"), body, out], check=True, env=env)
+    os.remove(body)  # 디스크 여유(세션 할당량)를 위해 리미터 전에 본편 중간 파일 삭제
     lim = out.replace(".mp4", "_lim.mp4")
     fb.run(["-i", out, "-c:v", "copy", "-af", "alimiter=limit=0.7:attack=3:release=40:level=false", "-c:a", "aac", "-b:a", "192k", lim])
-    os.replace(lim, out); os.remove(body)
+    os.replace(lim, out)
     print("완성:", out, round(fb.dur(out), 2))
 
 
