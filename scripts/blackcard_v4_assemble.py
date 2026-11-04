@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ブラックカード v4 조립(2026-11-04 고니감독님 지적 반영): v3 완성본 위에 수정 컷(정지 푸시인·합성 클립)을 한 번에 덮고,
-결말의 중복 CTA 구간(S12y~S12zz, L108·L109 — 아웃트로 진행자와 중복)을 잘라낸 뒤 아웃트로·엔드카드를 다시 붙이고 리미터.
+결말의 다음 화 예고·CTA 구간(S12w~S12zz, L106~L109 — 아웃트로 진행자가 맡음, 고니감독님 지시 2026-11-04)을 잘라낸 뒤 아웃트로·엔드카드를 다시 붙이고 리미터.
 사용법: blackcard_v4_assemble.py <v3 final.mp4> <body_end 초> <out final.mp4>  (교체 목록은 FIX)
 """
 import json
@@ -33,8 +33,8 @@ def main():
         fc.append(f"[{k}:v]trim=0:{b - a + 1 / fb.FPS:.3f},setpts=PTS-STARTPTS+{a:.3f}/TB[p{k}]")
         fc.append(f"{last}[p{k}]overlay=enable='between(t,{a:.3f},{b:.3f})':eof_action=pass[o{k}]"); last = f"[o{k}]"
         print(f"교체 {sid} {a:.2f}-{b:.2f} ← {os.path.basename(p)}"); k += 1
-    fc.append(f"{last}trim=0:{body_end:.3f},setpts=PTS-STARTPTS,fade=t=out:st={body_end - 1.0:.3f}:d=1.0,format=yuv420p[v]")
-    fc.append(f"[0:a]atrim=0:{body_end:.3f},asetpts=PTS-STARTPTS,afade=t=out:st={body_end - 1.5:.3f}:d=1.5[a]")
+    fc.append(f"{last}trim=0:{body_end:.3f},setpts=PTS-STARTPTS,fade=t=out:st={body_end - 0.8:.3f}:d=0.8,format=yuv420p[v]")
+    fc.append(f"[0:a]atrim=0:{body_end:.3f},asetpts=PTS-STARTPTS,afade=t=out:st={body_end - 0.6:.3f}:d=0.6[a]")
     script = os.path.join(tmp, "v4_fc.txt"); open(script, "w").write(";\n".join(fc))
     body = os.path.join(tmp, "main_v4.mp4")
     fb.run(inputs + ["-filter_complex_script", script, "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "medium", "-crf", "17",
