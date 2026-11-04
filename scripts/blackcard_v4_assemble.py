@@ -35,7 +35,7 @@ def main():
         fc.append(f"{last}[p{k}]overlay=enable='between(t,{a:.3f},{b:.3f})':eof_action=pass[o{k}]"); last = f"[o{k}]"
         print(f"교체 {sid} {a:.2f}-{b:.2f} ← {os.path.basename(p)}"); k += 1
     fc.append(f"{last}trim=0:{body_end:.3f},setpts=PTS-STARTPTS,fade=t=out:st={body_end - 0.8:.3f}:d=0.8,format=yuv420p[v]")
-    fc.append(f"[0:a]atrim=0:{body_end:.3f},asetpts=PTS-STARTPTS,afade=t=out:st={body_end - 0.6:.3f}:d=0.6[a]")
+    fc.append(f"[0:a]atrim=0:{body_end:.3f},asetpts=PTS-STARTPTS,afade=t=out:st={body_end - 0.4:.3f}:d=0.4[a]")
     script = os.path.join(tmp, "v4_fc.txt"); open(script, "w").write(";\n".join(fc))
     body = os.path.join(tmp, "main_v4.mp4")
     fb.run(inputs + ["-filter_complex_script", script, "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "medium", "-crf", "17",
