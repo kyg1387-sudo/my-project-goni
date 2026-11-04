@@ -1,0 +1,32 @@
+{
+ "_설명": "『ブラックカード』 시계 착용 수정 재생성(2026-11-04 고니감독님 지적 「손목 시계가 이상하게 차고 있다」): S07b 호텔 문 손잡이·S06i 휴대폰 든 손·S12f 시계 보는 손. 정지 푸시인 교체. 3장씩 약 0.36달러.",
+ "characters": [
+  {
+   "id": "S07b-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/loc-hotel-1.png"
+   ],
+   "prompt": "[CAMERA] Side insert at door-handle height from INSIDE the hotel room, 85mm, eye level, shallow depth of field. [CHARACTER] Exactly ONE bare right hand entering from the RIGHT in a black tailored suit sleeve with a crisp white shirt cuff; WATCH LOCKED: a steel bracelet chronograph worn correctly on this wrist — the dial on the BACK (outer side) of the wrist, bracelet snug and closed, plain dark dial with NO text; only one watch. [ACTION] DOOR GEOMETRY LOCKED: a heavy dark-wood hotel room door hinged on the LEFT, opening INWARD toward the camera by about 30 centimetres; a HORIZONTAL brass lever handle (not a vertical bar, not a knob) mounted near the door's RIGHT edge at waist height; the hand presses the lever down with fingers wrapped over it; through the opening gap on the left the warm hotel corridor is visible; the door's edge and latch face the camera naturally. No face. [SETTING] Luxury hotel at dawn, warm corridor lamps through the gap, reference image 1 for the room look, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, logo, watermark, extra fingers, extra hands, deformed hands, vertical bar handle, door knob, two doors, watch on the inner wrist, anime, cartoon, 3D render, grid, split panels."
+  },
+  {
+   "id": "S06i-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/kenji-wet-full-side.png"
+   ],
+   "prompt": "[CAMERA] Medium close-up from the side, 50mm, slightly high, framing the chest and hands; no face above the chin. [CHARACTER] Kenji's torso in the rain-soaked plain grey suit with a loosened navy tie and a white shirt (reference image 1 for the wardrobe), both hands holding a black smartphone at chest height with the screen turned toward HIS chest (the camera sees the dark back of the phone); WATCH LOCKED: a steel bracelet chronograph worn correctly on the LEFT wrist — the dial sits on the BACK (outer side) of the wrist, exactly where a watch is normally worn, bracelet snug and closed, plain dark dial with NO text; only one watch. [ACTION] Rain beads on the sleeves; he holds the phone still after the call, thumb resting on its edge. [SETTING] Tokyo street at night in rain, red tower light and neon reflections in puddles, cool blue light, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, logo, watermark, extra fingers, extra hands, deformed hands, two watches, watch on the inner wrist, anime, cartoon, 3D render, grid, split panels."
+  },
+  {
+   "id": "S12f-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/loc-car-1.png"
+   ],
+   "prompt": "[CAMERA] Close insert from the side inside a car, 85mm, eye level, shallow depth of field on the wrist. [CHARACTER] Kenji's LEFT forearm in a black tailored suit sleeve with a white cuff, raised to chest height to check the time; WATCH LOCKED: a steel bracelet chronograph worn correctly on the LEFT wrist — the dial sits on the BACK (outer side) of the wrist, exactly where a watch is normally worn, bracelet snug and closed, plain dark dial with NO text; only one watch. the dial turned toward his eyes (toward the upper left, away from the camera at a three-quarter angle), the thumb of his right hand lightly touching the cuff; no face. [ACTION] He reads the time; the hand is steady. [SETTING] Rear seat of a black car at night, leather seats, city lights streaking past the window, cool blue with red neon, reference image 1 for the interior, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, logo, watermark, extra fingers, extra hands, deformed hands, two watches, watch on the inner wrist, anime, cartoon, 3D render, grid, split panels."
+  }
+ ]
+}
