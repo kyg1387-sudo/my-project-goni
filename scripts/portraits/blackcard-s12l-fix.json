@@ -1,0 +1,14 @@
+{
+ "_설명": "『ブラックカード』 S12l(9:27 운전사가 기어를 넣는 인서트) 재생성(2026-11-04 고니감독님 지적 「운전대는 왼쪽에 있고 운전기사는 오른쪽에 있어」 — 1차 수정본도 좌핸들 + 오른쪽 운전사). 우핸들 앞에 운전사, 왼손으로 센터 콘솔 기어. 정지 교체. 3장 약 0.12달러.",
+ "characters": [
+  {
+   "id": "S12l-fix",
+   "count": 3,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/blackcard-cast/cells/loc-car-1.png"
+   ],
+   "prompt": "[CAMERA] Insert from the rear seat of a luxury black sedan looking FORWARD between the two front seats, 50mm, eye level with the headrests, shallow depth of field on the gear lever. [CHARACTER] CAR GEOMETRY LOCKED — Japanese RIGHT-HAND-DRIVE: the single steering wheel is on the RIGHT front seat DIRECTLY IN FRONT of the chauffeur, who sits in the right front seat seen from behind (black chauffeur cap, dark uniform jacket, face not visible); his LEFT hand in a white glove rests on the automatic gear lever on the centre console between the seats, pushing it into park; his right hand on the steering wheel. The LEFT front seat is EMPTY with no steering wheel in front of it. Only ONE steering wheel in the whole image. [ACTION] The car is gliding to a stop; the dashboard glows; rain streaks the windshield. [SETTING] Night city street lights blurred through the wet windshield, cool blue interior with warm instrument glow, reference image 1 for the interior, photorealistic, Kodak 35mm grain. [NEGATIVE] text, letters, logo, watermark, extra fingers, extra hands, deformed hands, steering wheel on the left, two steering wheels, driver on the left, driver's face, passenger in front seat, anime, cartoon, 3D render, grid, split panels."
+  }
+ ]
+}
