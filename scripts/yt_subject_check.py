@@ -5,10 +5,10 @@
 표는 자동으로 채우고, 「판정」 칸(같은 반전 여부·바꿀 것)은 제작 세션이 시청자 관점으로 채운 뒤 착수 보고에 붙인다.
 
 사용법:
-  python3 scripts/yt_subject_check.py <작품명> "<소재어1>" ["<소재어2>" ...] [--days 30] [--top 20]
+  python3 scripts/yt_subject_check.py <작품명> "<소재어1>" ["<소재어2>" ...] [--days 30] [--top 30]
   예: python3 scripts/yt_subject_check.py ブラックカード2話 "捨てた妻 スカッと" "六日 期限 妻"
 
-산출: docs/分析/<날짜>-소재대조-<작품명>.md  (qa_final.py --work 가 이 파일을 찾는다)
+산출: docs/분석/<날짜>-소재대조-<작품명>.md  (qa_final.py --work 가 이 파일을 찾는다)
 할당량: 소재어 1개당 100유닛 + 목록 조회.
 """
 import argparse
@@ -27,7 +27,7 @@ def main():
     ap.add_argument("work")
     ap.add_argument("keywords", nargs="+")
     ap.add_argument("--days", type=int, default=30)
-    ap.add_argument("--top", type=int, default=20)
+    ap.add_argument("--top", type=int, default=30)
     ap.add_argument("--out", default="docs/분석")
     a = ap.parse_args()
 
@@ -37,32 +37,38 @@ def main():
          "최우선 원칙 7 · 제21장 3. 표는 자동, **판정 칸은 제작 세션이 채운다**(비우면 착수 보고 불가).", ""]
     all_titles = []
     for kw in a.keywords:
-        d = api("search", part="snippet", q=kw, type="video", order="viewCount", publishedAfter=after,
-                regionCode="JP", relevanceLanguage="ja", maxResults=min(a.top, 50))
-        ids = [i["id"]["videoId"] for i in d.get("items", [])]
-        vids = video_details(ids)
+        got = {}
+        for extra in ({}, {"videoDuration": "short"}):
+            d = api("search", part="snippet", q=kw, type="video", order="viewCount", publishedAfter=after,
+                    regionCode="JP", relevanceLanguage="ja", maxResults=50 if not extra else min(a.top, 50), **extra)
+            for i in d.get("items", []):
+                got.setdefault(i["id"]["videoId"], None)
+        vids = video_details(list(got))
         chans = channel_details({v["snippet"]["channelId"] for v in vids.values()})
-        items = [vids[i] for i in ids if i in vids]
-        titles = [v["snippet"]["title"] for v in items]
-        all_titles += titles
-        longs = [iso_dur(v["contentDetails"]["duration"]) for v in items if iso_dur(v["contentDetails"]["duration"]) > 180]
-        shorts = [iso_dur(v["contentDetails"]["duration"]) for v in items if iso_dur(v["contentDetails"]["duration"]) <= 180]
-        pat = title_patterns(titles) if titles else {"len_median": 0, "tag_ratio": 0, "top_tags": []}
-        L += [f"## 「{kw}」 상위 {len(items)}편", "",
-              f"- 제목 길이 중앙값 {pat['len_median']:.0f}자 · 【】태그 {pat['tag_ratio']*100:.0f}% · "
-              f"태그: {', '.join(f'【{t}】{c}' for t, c in pat['top_tags']) or '없음'}",
-              f"- 본편(3분 초과) {len(longs)}편 길이 중앙값 {fmt_dur(int(median(longs))) if longs else '—'} · "
-              f"쇼츠 {len(shorts)}편 길이 중앙값 {fmt_dur(int(median(shorts))) if shorts else '—'}",
-              "",
-              "| # | 조회 | 채널(구독) | 길이 | 공개일 | 제목 | 반전·구조(세션 기입) |",
-              "|---|---|---|---|---|---|---|"]
-        for k, v in enumerate(items, 1):
-            ch = chans.get(v["snippet"]["channelId"], {})
-            subs = n(ch.get("statistics", {}).get("subscriberCount"))
-            L.append(f"| {k} | {fmt_n(n(v['statistics'].get('viewCount')))} | {short_title(v['snippet']['channelTitle'], 14)}({subs:,}) | "
-                     f"{fmt_dur(iso_dur(v['contentDetails']['duration']))} | {jst_date(v['snippet']['publishedAt'])} | "
-                     f"{short_title(v['snippet']['title'], 44)} | {'' if k > 5 else '(상위 5는 필수 기입)'} |")
-        L.append("")
+        items = sorted(vids.values(), key=lambda v: -n(v["statistics"].get("viewCount")))
+        mains = [v for v in items if iso_dur(v["contentDetails"]["duration"]) > 180][:a.top]
+        shorts = [v for v in items if iso_dur(v["contentDetails"]["duration"]) <= 180][:a.top]
+        all_titles += [v["snippet"]["title"] for v in mains + shorts]
+        for label, grp in (("본편(3분 초과)", mains), ("쇼츠(3분 이하)", shorts)):
+            if not grp:
+                L += [f"## 「{kw}」 {label} — 결과 없음", ""]
+                continue
+            titles = [v["snippet"]["title"] for v in grp]
+            durs = [iso_dur(v["contentDetails"]["duration"]) for v in grp]
+            pat = title_patterns(titles)
+            L += [f"## 「{kw}」 {label} 상위 {len(grp)}편", "",
+                  f"- 제목 길이 중앙값 {pat['len_median']:.0f}자 · 【】태그 {pat['tag_ratio']*100:.0f}% · "
+                  f"태그: {', '.join(f'【{t}】{c}' for t, c in pat['top_tags']) or '없음'} · 길이 중앙값 {fmt_dur(int(median(durs)))}",
+                  "",
+                  "| # | 조회 | 채널(구독) | 길이 | 공개일 | 제목 | 반전·구조(세션 기입) |",
+                  "|---|---|---|---|---|---|---|"]
+            for k, v in enumerate(grp, 1):
+                ch = chans.get(v["snippet"]["channelId"], {})
+                subs = n(ch.get("statistics", {}).get("subscriberCount"))
+                L.append(f"| {k} | {fmt_n(n(v['statistics'].get('viewCount')))} | {short_title(v['snippet']['channelTitle'], 14)}({subs:,}) | "
+                         f"{fmt_dur(iso_dur(v['contentDetails']['duration']))} | {jst_date(v['snippet']['publishedAt'])} | "
+                         f"{short_title(v['snippet']['title'], 44)} | {'' if k > 5 else '(상위 5는 필수 기입)'} |")
+            L.append("")
     pats = re.findall(r"(…した結果|正体|末路|【完結】|後悔|言葉を失う|真実|衝撃|涙|スカッと)", " ".join(all_titles))
     cnt = {}
     for p in pats:
@@ -79,8 +85,16 @@ def main():
           "| 이번 작품에서 바꾼 것(착수 보고 「데이터 근거 3줄」 ③) |  |", ""]
     os.makedirs(a.out, exist_ok=True)
     path = os.path.join(a.out, f"{today}-소재대조-{a.work}.md")
+    text = "\n".join(L)
+    if os.path.exists(path):  # 이미 채운 판정 표는 보존
+        old = open(path, encoding="utf-8").read()
+        if "## 판정" in old:
+            sec = old.split("## 판정", 1)[1]
+            rows = [ln for ln in sec.splitlines() if ln.startswith("| ") and not ln.startswith("| 항목")]
+            if any(ln.rstrip("| ").split("|")[-1].strip() for ln in rows):
+                text = text.split("## 판정", 1)[0] + "## 판정" + sec
     with open(path, "w", encoding="utf-8") as f:
-        f.write("\n".join(L))
+        f.write(text)
     print(f"[소재대조] 키워드 {len(a.keywords)}개 → {path}  (판정 칸을 채운 뒤 착수 보고에 붙인다)")
 
 

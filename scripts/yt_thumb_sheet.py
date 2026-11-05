@@ -41,6 +41,15 @@ def font(size):
     return ImageFont.load_default()
 
 
+def fit(text, f, width):
+    """글자 폭이 width를 넘지 않게 자른다(옆 칸 침범 방지)."""
+    if f.getlength(text) <= width:
+        return text
+    while text and f.getlength(text + "…") > width:
+        text = text[:-1]
+    return text + "…"
+
+
 def fetch(url):
     with urllib.request.urlopen(url, timeout=30) as r:
         return Image.open(io.BytesIO(r.read())).convert("RGB")
@@ -50,7 +59,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("keyword")
     ap.add_argument("--days", type=int, default=30)
-    ap.add_argument("--top", type=int, default=12)
+    ap.add_argument("--top", type=int, default=12, help="시트 장수(본편 대조는 --long-only --top 30)")
     ap.add_argument("--ours", action="append", default=[], help="우리 썸네일 파일(여러 개)")
     ap.add_argument("--tile", type=int, default=168, choices=(168, 360))
     ap.add_argument("--long-only", action="store_true", help="3분 초과 본편만")
@@ -74,7 +83,7 @@ def main():
         th = v["snippet"]["thumbnails"]
         url = (th.get("maxres") or th.get("standard") or th.get("high") or th.get("medium"))["url"]
         rows.append((url, f"{n(v['statistics'].get('viewCount')):,}回 · {fmt_dur(dur)}",
-                     short_title(v["snippet"]["title"], 22)))
+                     v["snippet"]["title"]))
         if len(rows) >= a.top:
             break
 
@@ -103,8 +112,8 @@ def main():
         sheet.paste(im, (x, y))
         if cap == "★우리":
             dr.rectangle((x - 2, y - 2, x + W + 1, y + H + 1), outline=(255, 80, 80), width=2)
-        dr.text((x, y + H + 3), cap, fill=(255, 215, 120) if cap == "★우리" else (200, 200, 200), font=f_small)
-        dr.text((x, y + H + 3 + (14 if a.tile == 168 else 22)), title, fill=(170, 170, 170), font=f_small)
+        dr.text((x, y + H + 3), fit(cap, f_small, W), fill=(255, 215, 120) if cap == "★우리" else (200, 200, 200), font=f_small)
+        dr.text((x, y + H + 3 + (14 if a.tile == 168 else 22)), fit(title, f_small, W), fill=(170, 170, 170), font=f_small)
 
     out = a.out or os.path.join("docs/분석/thumbs", f"{dt.datetime.now(JST):%Y-%m-%d}-{a.keyword.replace(' ', '_')}-{W}.jpg")
     os.makedirs(os.path.dirname(out), exist_ok=True)
