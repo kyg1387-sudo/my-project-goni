@@ -1,0 +1,26 @@
+{
+ "_설명": "S11b L49 음성 거절 낱말 진단: a=「千葉県警です」만, b=「あの動画は」만, c=피치 +3반음(타이밍 동일).",
+ "tests": [
+  {
+   "id": "diag2-a",
+   "model": "omnihuman",
+   "image": "assets/portraits/aihaha-keyframes/S11b-1.png",
+   "audio_id": "pad-a",
+   "prompt": "HEAD LOCKED: he stays at the doorway in the same pose and framing, only a small step forward at most; NO new people appear; plain lapels with nothing pinned. Standing in the doorway, he announces Chiba Prefectural Police and that the video was an AI fabrication; calm authority. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout."
+  },
+  {
+   "id": "diag2-b",
+   "model": "omnihuman",
+   "image": "assets/portraits/aihaha-keyframes/S11b-1.png",
+   "audio_id": "pad-b",
+   "prompt": "HEAD LOCKED: he stays at the doorway in the same pose and framing, only a small step forward at most; NO new people appear; plain lapels with nothing pinned. Standing in the doorway, he announces Chiba Prefectural Police and that the video was an AI fabrication; calm authority. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout."
+  },
+  {
+   "id": "diag2-c",
+   "model": "omnihuman",
+   "image": "assets/portraits/aihaha-keyframes/S11b-1.png",
+   "audio_id": "pad-c",
+   "prompt": "HEAD LOCKED: he stays at the doorway in the same pose and framing, only a small step forward at most; NO new people appear; plain lapels with nothing pinned. Standing in the doorway, he announces Chiba Prefectural Police and that the video was an AI fabrication; calm authority. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout."
+  }
+ ]
+}
