@@ -520,11 +520,11 @@ JA_OVERLAY = {
 }
 G = {
     "morning": "morning sparrows outside, a kettle faintly simmering, a quiet old house", "kitchen": "a pot simmering softly, a ladle touching a ceramic bowl",
-    "river": "a gentle riverside wind, dry leaves rustling, a distant train crossing a steel bridge", "wake": "incense crackling softly, a wall clock ticking, glasses set on a table",
-    "cctv": "analog security camera white noise hiss", "room_n": "a quiet room at night, an air conditioner hum, a wall clock ticking",
-    "ryotei": "a quiet private dining room, an air conditioner hum, chopsticks on ceramic, distant cicadas outside", "living": "a wall clock ticking, an old refrigerator hum",
-    "living_cold": "a fluorescent tube humming, a wall clock ticking", "police": "a fluorescent tube humming, papers rustling, an air conditioner",
-    "dusk": "evening crickets, a distant train", "sep": "a distant car passing, a wall clock ticking", "night_sep": "autumn bell crickets outside, a wall clock ticking",
+    "river": "a gentle riverside wind, dry leaves rustling, a distant train crossing a steel bridge", "wake": "incense crackling softly, a faint distant traffic hum, glasses set on a table",
+    "cctv": "analog security camera white noise hiss", "room_n": "a quiet room at night, an air conditioner hum, a faint distant traffic hum",
+    "ryotei": "a quiet private dining room, an air conditioner hum, chopsticks on ceramic, distant cicadas outside", "living": "a faint distant traffic hum, an old refrigerator hum",
+    "living_cold": "a fluorescent tube humming, a faint distant traffic hum", "police": "a fluorescent tube humming, papers rustling, an air conditioner",
+    "dusk": "evening crickets, a distant train", "sep": "a distant car passing, a faint distant traffic hum", "night_sep": "autumn bell crickets outside, a faint distant traffic hum",
     "siren": "a distant police siren approaching, a quiet room", "street": "a late-autumn street, sparrows, ginkgo leaves skittering", "nov_room": "morning sparrows, a quiet room",
 }
 AMB_BY_SCENE = {"S01": "morning", "S02": "wake", "S03": "cctv", "S04": "ryotei", "S05": "room_n", "S06": "living", "S07": "police", "S08": "sep",
