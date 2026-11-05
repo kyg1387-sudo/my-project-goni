@@ -24,10 +24,11 @@
    "voice": "AzXhp77fg6sHrgy2EtLn",
    "voice_name": "Taniguchi",
    "el_model": "eleven_v3",
-   "text": "壁に並んだ、七つの額。ななつめには、俺の名前があった。",
+   "text": "壁に並んだ、ななつの、がく。ななつめには、俺の名前があった。",
    "_tone": "tonedown/1.0/1.0",
    "_memo": "—",
-   "_subtitle": "壁に並んだ、七つの額。七つ目には――俺の名前があった。"
+   "_subtitle": "壁に並んだ、七つの額。七つ目には――俺の名前があった。",
+   "_r1": "202a"
   },
   {
    "id": "line203",
@@ -284,10 +285,11 @@
    "voice": "AzXhp77fg6sHrgy2EtLn",
    "voice_name": "Taniguchi",
    "el_model": "eleven_v3",
-   "text": "俺の面接評価票。そうごう、エー。",
+   "text": "俺の面接評価票。総合、A。",
    "_tone": "tonedown/1.0/1.0",
    "_memo": "—",
-   "_subtitle": "俺の面接評価票。総合、A。"
+   "_subtitle": "俺の面接評価票。総合、A。",
+   "_r1": "222b"
   },
   {
    "id": "line223",
@@ -310,10 +312,11 @@
    "voice": "AzXhp77fg6sHrgy2EtLn",
    "voice_name": "Taniguchi",
    "el_model": "eleven_v3",
-   "text": "赤い判には、指示あり。その下に、あのもんしょう。",
+   "text": "赤いハンには、シジアリ。その下に、あのモンショウ。",
    "_tone": "tonedown/1.0/0.95",
    "_memo": "—",
-   "_subtitle": "赤い判には、\"指示あり\"。その下に、あの紋章。"
+   "_subtitle": "赤い判には、\"指示あり\"。その下に、あの紋章。",
+   "_r1": "224c"
   },
   {
    "id": "line225",
@@ -570,10 +573,11 @@
    "voice": "jDIcRgSETu4QTbxPgjmn",
    "voice_name": "Mio",
    "el_model": "eleven_v3",
-   "text": "それからいってん、お伝えし忘れておりました。",
+   "text": "それから一点、お伝えし忘れておりました。",
    "_tone": "normal/0.8/0.95",
    "_memo": "—",
-   "_subtitle": "それから一点、お伝えし忘れておりました。"
+   "_subtitle": "それから一点、お伝えし忘れておりました。",
+   "_r1": "244b"
   },
   {
    "id": "line245",
@@ -599,7 +603,8 @@
    "text": "次の名前？……誰の名前だ。",
    "_tone": "tonedown/1.0/0.95",
    "_memo": "—",
-   "_subtitle": "次の名前？……誰の名前だ。"
+   "_subtitle": "次の名前？……誰の名前だ。",
+   "_r1": "246b"
   },
   {
    "id": "line247",
@@ -674,10 +679,11 @@
    "voice": "AzXhp77fg6sHrgy2EtLn",
    "voice_name": "Taniguchi",
    "el_model": "eleven_v3",
-   "text": "すべて。その意味を、ろくじかんご、みよしの部屋で知ることになる。",
+   "text": "すべて。……その意味を、ろくじかんご、みよしの部屋で知ることになる。",
    "_tone": "tonedown/1.0/0.95",
    "_memo": "—",
-   "_subtitle": "\"すべて\"。その意味を、六時間後――三好の部屋で知ることになる。"
+   "_subtitle": "\"すべて\"。その意味を、六時間後――三好の部屋で知ることになる。",
+   "_r1": "252a"
   },
   {
    "id": "line253",
@@ -765,10 +771,11 @@
    "voice": "AzXhp77fg6sHrgy2EtLn",
    "voice_name": "Taniguchi",
    "el_model": "eleven_v3",
-   "text": "机の上には、半分に切られたカード。そして、古いアイシーレコーダー。",
+   "text": "ツクエの上には、半分に切られたカード。そして、古いアイシーレコーダー。",
    "_tone": "tonedown/1.0/0.95",
    "_memo": "—",
-   "_subtitle": "机の上には、半分に切られたカード。そして、古いICレコーダー。"
+   "_subtitle": "机の上には、半分に切られたカード。そして、古いICレコーダー。",
+   "_r1": "259c"
   },
   {
    "id": "line260",
@@ -778,10 +785,11 @@
    "voice": "Ncfr0DOB9MiCWyPewqcL",
    "voice_name": "Atsuji",
    "el_model": "eleven_v3",
-   "text": "[sad] [sighs] ……たかはし。これ聞いてるってことは、お前がななばんめか。",
+   "text": "[sad] ……たかはし。これ聞いてるってことは、お前がななばんめか。",
    "_tone": "sad/0.5/0.85",
    "_memo": "[sighs]",
-   "_subtitle": "……高橋。これ聞いてるってことは、お前が七番目か。"
+   "_subtitle": "……高橋。これ聞いてるってことは、お前が七番目か。",
+   "_r1": "260a"
   },
   {
    "id": "line261",
@@ -856,10 +864,11 @@
    "voice": "AzXhp77fg6sHrgy2EtLn",
    "voice_name": "Taniguchi",
    "el_model": "eleven_v3",
-   "text": "[sad] 最後に会った日。みよしは何か言いかけて、笑ってごまかした。",
+   "text": "最後に会った日。三好は何か言いかけて、笑ってごまかした。",
    "_tone": "sad/0.4/0.9",
    "_memo": "—",
-   "_subtitle": "最後に会った日。三好は何か言いかけて、笑ってごまかした。"
+   "_subtitle": "最後に会った日。三好は何か言いかけて、笑ってごまかした。",
+   "_r1": "266b"
   },
   {
    "id": "line267",
@@ -960,10 +969,11 @@
    "voice": "AzXhp77fg6sHrgy2EtLn",
    "voice_name": "Taniguchi",
    "el_model": "eleven_v3",
-   "text": "じゅうにねんで、ろくにん。全部、あなたの判だ。",
+   "text": "ジュウニネンで、ロクニン。全部、あなたのハンだ。",
    "_tone": "tonedown/1.0/0.95",
    "_memo": "—",
-   "_subtitle": "十二年で、六人。全部、あなたの判だ。"
+   "_subtitle": "十二年で、六人。全部、あなたの判だ。",
+   "_r1": "274c"
   },
   {
    "id": "line275",
@@ -1025,10 +1035,11 @@
    "voice": "AzXhp77fg6sHrgy2EtLn",
    "voice_name": "Taniguchi",
    "el_model": "eleven_v3",
-   "text": "止まればいい。じゅうごねん、人を沈めてきた歯車だ。",
+   "text": "とまれば、いい。じゅうごねん、人を沈めてきた歯車だ。",
    "_tone": "tonedown/1.0/0.9",
    "_memo": "—",
-   "_subtitle": "止まればいい。十五年、人を沈めてきた歯車だ。"
+   "_subtitle": "止まればいい。十五年、人を沈めてきた歯車だ。",
+   "_r1": "279a"
   },
   {
    "id": "line280",
@@ -1158,7 +1169,8 @@
    "text": "さぎぬま。その男を探す前に、携帯にみさきからの着信がじゅうにけん、溜まっていた。",
    "_tone": "tonedown/1.0/1.0",
    "_memo": "—",
-   "_subtitle": "鷺沼。その男を探す前に、携帯に美咲からの着信が十二件、溜まっていた。"
+   "_subtitle": "鷺沼。その男を探す前に、携帯に美咲からの着信が十二件、溜まっていた。",
+   "_r1": "289a"
   },
   {
    "id": "line290",
@@ -1285,10 +1297,11 @@
    "voice": "AzXhp77fg6sHrgy2EtLn",
    "voice_name": "Taniguchi",
    "el_model": "eleven_v3",
-   "text": "なら、じゅうごねんまえに見張りを付けた男にも、もう、時間がない。",
+   "text": "なら、じゅうごねんまえに見張りを付けた男にも、……もう、時間がない。",
    "_tone": "tonedown/1.0/0.95",
    "_memo": "—",
-   "_subtitle": "なら、十五年前に見張りを付けた男にも――もう、時間がない。"
+   "_subtitle": "なら、十五年前に見張りを付けた男にも――もう、時間がない。",
+   "_r1": "299a"
   },
   {
    "id": "line300",
@@ -1298,10 +1311,11 @@
    "voice": "eRD4wLHoHH7P30TZIexm",
    "voice_name": "Akio",
    "el_model": "eleven_v3",
-   "text": "……来たか。ななばんめ。",
+   "text": "……きたか。ななばんめ。",
    "_tone": "tonedown/0.9/0.85",
    "_memo": "—",
-   "_subtitle": "……来たか。七番目。"
+   "_subtitle": "……来たか。七番目。",
+   "_r1": "300a"
   },
   {
    "id": "line301",
@@ -1389,10 +1403,11 @@
    "voice": "eRD4wLHoHH7P30TZIexm",
    "voice_name": "Akio",
    "el_model": "eleven_v3",
-   "text": "あの年、面接の上位しちにんに印をつけろと言われた。",
+   "text": "あの年、面接の上位七人に印をつけろと言われた。",
    "_tone": "tonedown/0.9/0.85",
    "_memo": "—",
-   "_subtitle": "あの年、面接の上位七人に印をつけろと言われた。"
+   "_subtitle": "あの年、面接の上位七人に印をつけろと言われた。",
+   "_r1": "307b"
   },
   {
    "id": "line308",
@@ -1402,10 +1417,11 @@
    "voice": "eRD4wLHoHH7P30TZIexm",
    "voice_name": "Akio",
    "el_model": "eleven_v3",
-   "text": "真面目で、辛抱強くて、恨みを口に出さない男だけをな。",
+   "text": "真面目で、辛抱強くて、恨みを口に出さない男だけを、な。",
    "_tone": "tonedown/0.9/0.85",
    "_memo": "—",
-   "_subtitle": "真面目で、辛抱強くて、恨みを口に出さない男だけをな。"
+   "_subtitle": "真面目で、辛抱強くて、恨みを口に出さない男だけをな。",
+   "_r1": "308b"
   },
   {
    "id": "line309",
@@ -1714,10 +1730,11 @@
    "voice": "AzXhp77fg6sHrgy2EtLn",
    "voice_name": "Taniguchi",
    "el_model": "eleven_v3",
-   "text": "[whispers] はすみそういちろう。はすみしょうじの、創業者。",
+   "text": "[whispers] はすみ、そういちろう。はすみしょうじの、創業者。",
    "_tone": "whisper/0.8/0.85",
    "_memo": "—",
-   "_subtitle": "蓮見宗一郎。蓮見商事の、創業者。"
+   "_subtitle": "蓮見宗一郎。蓮見商事の、創業者。",
+   "_r1": "332a"
   },
   {
    "id": "line333",
@@ -1727,10 +1744,11 @@
    "voice": "AzXhp77fg6sHrgy2EtLn",
    "voice_name": "Taniguchi",
    "el_model": "eleven_v3",
-   "text": "[whispers] じゅうねんまえ、しゃそうで俺もしょうこうした男の名前だった。",
+   "text": "[whispers] 十年前、社葬で俺も焼香した男の名前だった。",
    "_tone": "whisper/0.8/0.85",
    "_memo": "—",
-   "_subtitle": "十年前、社葬で俺も焼香した男の名前だった。"
+   "_subtitle": "十年前、社葬で俺も焼香した男の名前だった。",
+   "_r1": "333b"
   },
   {
    "id": "line334",

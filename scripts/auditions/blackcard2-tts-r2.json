@@ -1,0 +1,71 @@
+{
+ "_설명": "2화 r1 3안이 모두 흔들린 2줄(書庫·紋章) 추가 3안. line213c는 「地下の書庫」로 자막 1낱말 추가안. 크레딧만, fal 0.",
+ "tests": [
+  {
+   "src": "L213",
+   "speaker": "警備員",
+   "model": "elevenlabs-direct",
+   "voice": "qrxCoXetZMROJh88P461",
+   "voice_name": "Jiro",
+   "el_model": "eleven_v3",
+   "_subtitle": "あの書庫……先月、夜中に一人だけ入った方がいます。",
+   "id": "line213a",
+   "text": "あの、しょこ……。せんげつ、夜中にひとりだけ入った方がいます。"
+  },
+  {
+   "src": "L213",
+   "speaker": "警備員",
+   "model": "elevenlabs-direct",
+   "voice": "qrxCoXetZMROJh88P461",
+   "voice_name": "Jiro",
+   "el_model": "eleven_v3",
+   "_subtitle": "あの書庫……先月、夜中に一人だけ入った方がいます。",
+   "id": "line213b",
+   "text": "[whispers] あの……しょこ。せんげつ、夜中にひとりだけ入った方がいます。"
+  },
+  {
+   "src": "L213",
+   "speaker": "警備員",
+   "model": "elevenlabs-direct",
+   "voice": "qrxCoXetZMROJh88P461",
+   "voice_name": "Jiro",
+   "el_model": "eleven_v3",
+   "_subtitle": "あの書庫……先月、夜中に一人だけ入った方がいます。",
+   "id": "line213c",
+   "text": "あの、ちかの、しょこ……せんげつ、夜中にひとりだけ入った方がいます。"
+  },
+  {
+   "src": "L224",
+   "speaker": "高橋 健二(N)",
+   "model": "elevenlabs-direct",
+   "voice": "AzXhp77fg6sHrgy2EtLn",
+   "voice_name": "Taniguchi",
+   "el_model": "eleven_v3",
+   "_subtitle": "赤い判には、\"指示あり\"。その下に、あの紋章。",
+   "id": "line224a",
+   "text": "赤いハンには、シジアリ。その下に……あの、もん、しょう。"
+  },
+  {
+   "src": "L224",
+   "speaker": "高橋 健二(N)",
+   "model": "elevenlabs-direct",
+   "voice": "AzXhp77fg6sHrgy2EtLn",
+   "voice_name": "Taniguchi",
+   "el_model": "eleven_v3",
+   "_subtitle": "赤い判には、\"指示あり\"。その下に、あの紋章。",
+   "id": "line224b",
+   "text": "赤いハンには、シジアリ。その下に、あの、モンショウ。"
+  },
+  {
+   "src": "L224",
+   "speaker": "高橋 健二(N)",
+   "model": "elevenlabs-direct",
+   "voice": "AzXhp77fg6sHrgy2EtLn",
+   "voice_name": "Taniguchi",
+   "el_model": "eleven_v3",
+   "_subtitle": "赤い判には、\"指示あり\"。その下に、あの紋章。",
+   "id": "line224c",
+   "text": "赤いハンには、シジアリ。その下に、あの……もんしょう。"
+  }
+ ]
+}
