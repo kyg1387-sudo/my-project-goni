@@ -51,7 +51,7 @@ VIDSCREEN = {  # 키프레임(1344x768) 화면 네 꼭짓점(TL·TR·BR·BL) —
 VID_OFFSET = {"H0b": 0.0, "S04l": 1.2, "S09e": 2.0}  # 같은 영상의 다른 구간(L02·L11·L26 — 같은 음성 파일 재사용, 제21장 9)
 LAPTOP = ("S06g", [(503.75, 461.7), (720.8, 450.0), (739.2, 588.3), (523.75, 610.8)],
           [(725.8, 478.3), (713.3, 515.8), (692.5, 557.5), (669.6, 595.0), (760, 640), (760, 440)])  # 화면 사각형, 앞 인물(머리·어깨) 보호 다각형
-TVOFF = {"S10c": [(236, 329), (459, 329), (459, 468), (236, 468)]}  # 배경 TV가 흰 무지로 빛남 → 꺼진 화면(어두운 유리 + 옅은 반사), 매 프레임
+TVOFF = {"S10c": [(214, 307), (481, 307), (481, 490), (214, 490)]}  # 배경 TV가 흰 무지로 빛남 → 꺼진 화면(어두운 유리 + 옅은 반사), 매 프레임
 PAGEBLUR = {"S07h": (100, 330, 760, 600), "S10h": (880, 450, 1344, 768)}  # 키프레임 좌표, 종이색 픽셀만 흐림
 CCTV = {"S03a", "S06k"}
 POST_CCTV = {"S06k", "S03a"}  # 펀치 인 뒤에 CCTV 화면 글자를 얹는다(먼저 얹으면 확대로 글자가 잘림)
@@ -208,6 +208,18 @@ def lcd_put(b, art, quad, keep=150, refl=0.15, blur=0.8, protect=None):
         key *= (1 - protect)
     out = wa * (1 - refl) + bf * refl
     return np.clip(bf * (1 - key[..., None]) + out * key[..., None], 0, 255).astype(np.uint8)
+
+
+def tv_off(f, quad):
+    """켜진 무지 TV → 꺼진 화면: 밝은 화면 영역(밝기 140↑)을 찾아 넓혀(번짐 포함) 어두운 유리색으로 통째로 덮고 원래 밝기 10%를 반사로 남김.
+    밝기 키를 반만 걸면 초점 밖 화면 가장자리에 하늘색 테두리가 남고, 기준을 낮추면 벽까지 어두워진다(S10c 실측)."""
+    h, w = f.shape[:2]
+    poly = np.zeros((h, w), np.uint8); cv2.fillConvexPoly(poly, np.int32(np.round(quad)), 1)
+    bright = ((f.mean(2) > 140) & (poly > 0)).astype(np.uint8)
+    m = cv2.dilate(bright, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (13, 13))).astype(np.float32)
+    m = cv2.GaussianBlur(m, (0, 0), 3.0)[..., None]
+    g = f.astype(np.float32); dark = np.array([22, 25, 30], np.float32) + 0.10 * g
+    return np.clip(g * (1 - m) + dark * m, 0, 255).astype(np.uint8)
 
 
 def barrel(f, k):
@@ -424,8 +436,7 @@ def source_frames(sid):
         fr = page_blur(sid, fr)
     if sid in TVOFF:
         sc, ox, oy = kf_map(sid, fr[0]); q = mapq(TVOFF[sid], sc, ox, oy)
-        dark = np.full((90, 160, 3), 14, np.float32)
-        fr = [lcd_put(f, dark, q, keep=140, refl=0.12, blur=1.2) for f in fr]
+        fr = [tv_off(f, q) for f in fr]
     fr = [cover(f) for f in fr]
     if sid in FAKE:
         fr = fake_video(fr)
