@@ -21,6 +21,10 @@ on:
         description: 장르 검색 생략(할당량 절약)
         required: false
         default: "false"
+      thumb_keywords:
+        description: 썸네일 대조 시트를 만들 키워드(쉼표 구분, 예 "捨てた妻 スカッと,財閥 会長")
+        required: false
+        default: ""
 
 jobs:
   report:
@@ -53,6 +57,18 @@ jobs:
           for k in ${{ inputs.keywords }}; do ARGS="$ARGS --keyword $k"; done
           if [ "${{ inputs.no_search }}" = "true" ]; then ARGS="$ARGS --no-search"; fi
           python3 scripts/yt_public_report.py $ARGS
+
+      - name: 썸네일 대조 시트
+        if: ${{ inputs.thumb_keywords != '' }}
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          pip install --quiet pillow
+          IFS=',' read -ra KWS <<< "${{ inputs.thumb_keywords }}"
+          for kw in "${KWS[@]}"; do
+            python3 scripts/yt_thumb_sheet.py "$kw" --tile 168
+            python3 scripts/yt_thumb_sheet.py "$kw" --tile 360 --top 9
+          done
 
       - name: 보고서 커밋
         run: |
