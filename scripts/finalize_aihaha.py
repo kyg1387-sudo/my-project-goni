@@ -682,7 +682,7 @@ def master(patched, out, tmp):
           f"anoisesrc=d={vd:.3f}:c=brown:a=1,lowpass=f=250,volume=-40dB,aformat=sample_rates=44100:channel_layouts=stereo[rt];"
           + "".join(x + ";" for x in vfc)
           + "".join(x + ";" for x in sfx_fc) +
-          f"[m][h][rt]{vlabs}{labs}amix=inputs={n}:normalize=0:duration=first,loudnorm=I=-14:TP=-2.0:LRA=11,alimiter=limit=0.79:level=0[a]")
+          f"[m][h][rt]{vlabs}{labs}amix=inputs={n}:normalize=0:duration=first,loudnorm=I=-14:TP=-2.0:LRA=11,aresample=176400,alimiter=limit=0.84:level=0,aresample=44100[a]")
     script = os.path.join(tmp, "master_fc.txt"); open(script, "w").write(fc)
     run(["-i", patched, "-i", bed] + vins + sfx_in + ["-filter_complex_script", script, "-map", "0:v", "-map", "[a]", "-ar", "44100",
                                                        "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", out])
