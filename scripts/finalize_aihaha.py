@@ -671,6 +671,12 @@ def master(patched, out, tmp):
         labs += f"[x{k}]"; print(f"효과음 {os.path.basename(p)} @ {sid} → 피크 {pk} dBFS")
     # 어머니 LINE 음성 구간: 원본 믹스의 마른 목소리를 내리고(BGM 0 구간, 방 공기음은 룸톤이 채움) 휴대폰 처리본으로
     duck = "".join(f",volume=enable='between(t,{a - 0.05:.3f},{b + 0.15:.3f})':volume=0.12" for a, b in phone)
+    # 정적 구간 베드(최우선 원칙 6①): BGM 0인 구간의 효과음 사이가 −36~−42 dBFS로 비어 인공적 적막 → 방 공기음 + 아주 낮은 서브 드론으로 −30~−32에 맞춤
+    win = [(w["start"], w["end"]) for w in AUDIO["bgm_silence"]]
+    en = "+".join(f"between(t,{a:.2f},{b:.2f})" for a, b in win)
+    sfx_fc.append(f"anoisesrc=d={vd:.3f}:c=brown:a=1,lowpass=f=380,volume=-27dB,aformat=sample_rates=44100:channel_layouts=stereo,"
+                  f"volume=volume='{en}':eval=frame[tb1]"); labs += "[tb1]"
+    sfx_fc.append(f"sine=f=46:d={vd:.3f},volume=-33dB,aformat=sample_rates=44100:channel_layouts=stereo,volume=volume='{en}':eval=frame[tb2]"); labs += "[tb2]"
     n = 3 + nv + len(sfx_fc)
     fc = (f"[0:a]afade=t=out:st={max(ad - 2.5, 0):.3f}:d=2.5{duck},apad=whole_dur={vd:.3f}[m];[1:a]apad=whole_dur={vd:.3f}[h];"
           f"anoisesrc=d={vd:.3f}:c=brown:a=1,lowpass=f=250,volume=-40dB,aformat=sample_rates=44100:channel_layouts=stereo[rt];"
