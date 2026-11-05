@@ -67,15 +67,22 @@ def bottom_band(im, top=0.52, alpha=0.88):
     im.alpha_composite(band); return im
 
 
-def compose(bg, lines, out, band=0.50, keep_br=True):
+def fit169(im):
+    w, h = im.size; tw = int(round(h * 16 / 9))
+    if tw < w:
+        x0 = (w - tw) // 2; return im.crop((x0, 0, x0 + tw, h))
+    th = int(round(w * 9 / 16)); y0 = (h - th) // 2; return im.crop((0, y0, w, y0 + th))
+
+
+def compose(bg, lines, out, band=0.50, keep_br=True, maxw_frac=0.64):
     """lines: [(글자, 크기, 색, x, y)] — x·y는 사선 처리 후 왼쪽 위 기준(1280x720). 오른쪽 아래(재생 시간)는 비운다."""
-    im = bg.convert("RGB").resize((W, H), Image.LANCZOS).convert("RGBA")
+    im = fit169(bg.convert("RGB")).resize((W, H), Image.LANCZOS).convert("RGBA")
     im = bottom_band(im, band)
     lays = []
     for txt, size, color, x, _ in lines:
         lay = slant(text_layer(txt, size, color, stroke=max(10, size // 9)))
         lay = lay.crop(lay.getbbox())  # 사선·회전 여백 제거
-        maxw = int(W * 0.64) if keep_br else W - 60
+        maxw = int(W * maxw_frac)
         if lay.width > maxw:
             lay = lay.resize((maxw, int(lay.height * maxw / lay.width)), Image.LANCZOS)
         lays.append((lay, x))
@@ -97,11 +104,20 @@ TEST = {"test-a": ("assets/portraits/aihaha-keyframes/H0b-1.png", [("この母�
         "test-b": ("assets/portraits/aihaha-keyframes/S10m-1.png", [("期限は、", 120, "white", 30, 360), ("昨日", 230, "red", 60, 470)])}
 
 
+# A/B 테스트 3종(고니감독님 생성 그림 2026-11-05, 순서는 제작 수석 결정: A 가짜 엄마 = 0:00 후크 약속·의문 최강, B 애니 통쾌, C 눈물)
+# (그림, [(글자, 크기, 색, x, _)], 글자 최대 폭 비율) — 얼굴·태블릿을 가리지 않는 쪽에, 아래 줄부터 위로 쌓음
+THUMBS = {
+    "A": ("assets/thumbs/aihaha/src-A.jpg", [("この母、", 130, "red", 24, 0), ("AIです", 230, "yellow", 30, 0)], 0.56),
+    "B": ("assets/thumbs/aihaha/src-B.jpg", [("期限は、", 120, "yellow", 20, 0), ("昨日", 250, "red", 40, 0)], 0.36),
+    "C": ("assets/thumbs/aihaha/src-C.jpg", [("母が最後に", 120, "yellow", 20, 0), ("呼んだ名前", 150, "red", 24, 0)], 0.50),
+}
+
+
 def main(only=None):
-    for k, (bg, lines) in TEST.items():
+    for k, (bg, lines, mw) in THUMBS.items():
         if only and k not in only:
             continue
-        print(compose(Image.open(os.path.join(ROOT, bg)), lines, os.path.join(OUT, f"thumb-{k}.jpg")))
+        print(compose(Image.open(os.path.join(ROOT, bg)), lines, os.path.join(OUT, f"thumb-{k}.jpg"), maxw_frac=mw))
 
 
 if __name__ == "__main__":
