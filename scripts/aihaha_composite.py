@@ -115,16 +115,17 @@ def intercom():
     fg = ~((ma.mean(2) > 205) & (hsv[..., 1] < 30))  # 흰 배경만 뺀다
     alpha = Image.fromarray((cv2.GaussianBlur(fg.astype(np.float32), (0, 0), 1.5) * 255).astype("uint8"))
     sc = 100 / m.height; m2 = m.resize((int(m.width * sc), 100), Image.LANCZOS); a2 = alpha.resize(m2.size, Image.LANCZOS)
-    im.paste(m2, (96 - m2.width // 2, H - 100 + 8), a2)
     d = ImageDraw.Draw(im)
-    for cx in (14, 178):  # 제복 경찰 = 가장자리에서 반쯤 잘린 모자·어깨(초점 밖)
-        d.polygon([(cx - 26, H), (cx - 22, 70), (cx + 22, 70), (cx + 26, H)], fill=(22, 28, 52))
-        d.ellipse([cx - 13, 40, cx + 13, 74], fill=(122, 98, 84))
-        d.polygon([(cx - 16, 46), (cx - 13, 30), (cx + 13, 30), (cx + 16, 46)], fill=(18, 22, 40))
-        d.rectangle([cx - 16, 44, cx + 16, 48], fill=(10, 12, 22)); d.ellipse([cx - 2, 33, cx + 2, 38], fill=(150, 130, 70))
+    for cx in (14, 178):  # 제복 경찰 두 명 = 화면 양 가장자리에 반쯤 걸림(현관등 밖이라 얼굴은 그늘)
+        d.polygon([(cx - 30, H), (cx - 24, 72), (cx + 24, 72), (cx + 30, H)], fill=(24, 30, 54))
+        d.ellipse([cx - 12, 44, cx + 12, 76], fill=(74, 62, 56))
+        d.polygon([(cx - 15, 50), (cx - 12, 33), (cx + 12, 33), (cx + 15, 50)], fill=(18, 22, 40))
+        d.rectangle([cx - 15, 47, cx + 15, 51], fill=(10, 12, 22)); d.ellipse([cx - 2, 36, cx + 2, 41], fill=(150, 130, 70))
+    im = Image.fromarray(cv2.GaussianBlur(np.asarray(im).astype(np.float32), (0, 0), 1.2).astype("uint8"))  # 뒤 인물은 초점 밖
+    im.paste(m2, (96 - m2.width // 2, H - 100 + 8), a2)
     a = np.asarray(im).astype(float)
     edge = np.zeros((H, W)); edge[:, :40] = 1; edge[:, -40:] = 1
-    a = a * (1 - edge[..., None]) + cv2.GaussianBlur(a, (0, 0), 1.8) * edge[..., None]
+    a = a * (1 - edge[..., None]) + cv2.GaussianBlur(a, (0, 0), 1.0) * edge[..., None]
     k = 0.32; nx = (xx - W / 2) / (W / 2); ny = (yy - H / 2) / (W / 2); r2 = nx ** 2 + ny ** 2  # 어안(배럴)
     mx = (W / 2 + nx * (1 - k * r2) * (W / 2)).astype(np.float32); my = (H / 2 + ny * (1 - k * r2) * (W / 2)).astype(np.float32)
     a = cv2.remap(a.astype(np.float32), mx, my, cv2.INTER_LINEAR, borderValue=(10, 10, 12))
@@ -157,6 +158,90 @@ def tablet_law():
     for y in range(340, 560, 40):
         d.line([(30, y), (W - 30 - (y % 120), y)], fill=(205, 205, 210), width=10)
     return im
+
+
+def _status(d, W, t, dark=False):
+    c = (245, 245, 245) if dark else (20, 20, 24)
+    d.text((70, 62), t, font=F(GB, 40), fill=c, anchor="lm")
+    d.rounded_rectangle((W - 150, 48, W - 82, 78), 8, outline=c, width=3); d.rectangle((W - 146, 52, W - 104, 74), fill=c)  # 배터리
+    for i in range(4):
+        d.rectangle((W - 260 + i * 16, 74 - 8 - i * 6, W - 250 + i * 16, 74), fill=c)  # 안테나
+
+
+def chat_shota():
+    """S08h — 由紀子 휴대폰: 翔太가 매일 밤 보낸 같은 동영상(썸네일 = 극 중 가짜 비디오레터 H0a 화면), 날짜별."""
+    W, H = 1080, 2340; im = Image.new("RGB", (W, H), (140, 170, 206)); d = ImageDraw.Draw(im)
+    d.rectangle((0, 0, W, 250), fill=(36, 44, 58)); _status(d, W, "23:14", dark=True)
+    d.text((60, 180), "＜", font=F(G, 52), fill=(240, 240, 240), anchor="lm"); d.text((W // 2, 180), "翔太", font=F(GB, 52), fill=(245, 245, 245), anchor="mm")
+    th = Image.open(os.path.join(OUT, "H0a-1.png")).convert("RGB"); th = th.crop((180, 0, 1164, 768)).resize((560, 437), Image.LANCZOS)
+    face = Image.open(os.path.join(REF, "shota-front.png")).convert("RGB"); fs = min(face.size); face = face.crop((0, 0, fs, fs)).resize((96, 96))
+    mask = Image.new("L", (96, 96), 0); ImageDraw.Draw(mask).ellipse((0, 0, 95, 95), fill=255)
+    y = 300
+    for date, tm in (("8月25日(火)", "22:58"), ("9月2日(水)", "23:06"), ("9月10日(木)", "22:41")):
+        d.rounded_rectangle((W // 2 - 150, y, W // 2 + 150, y + 56), 28, fill=(118, 146, 182)); d.text((W // 2, y + 28), date, font=F(G, 32), fill=(255, 255, 255), anchor="mm")
+        y += 100; im.paste(face, (36, y), mask)
+        im.paste(th, (156, y)); d.rounded_rectangle((156, y, 716, y + 437), 26, outline=(140, 170, 206), width=10)
+        cx, cy = 436, y + 218; d.ellipse((cx - 60, cy - 60, cx + 60, cy + 60), fill=(0, 0, 0)); d.polygon([(cx - 20, cy - 34), (cx - 20, cy + 34), (cx + 38, cy)], fill=(255, 255, 255))
+        d.rounded_rectangle((590, y + 380, 700, y + 424), 12, fill=(0, 0, 0)); d.text((645, y + 402), "2:14", font=F(G, 30), fill=(255, 255, 255), anchor="mm")
+        d.text((736, y + 420), tm, font=F(G, 28), fill=(70, 86, 110), anchor="ld"); y += 520
+    d.rectangle((0, H - 150, W, H), fill=(248, 248, 250)); d.rounded_rectangle((150, H - 120, W - 150, H - 40), 40, fill=(236, 237, 240))
+    return im
+
+
+def voice_mom():
+    """S13a — 어머니 휴대폰: 由紀子와의 대화, 6/29 통원 확인 → 6/30 어머니가 보낸 음성 메시지 1개(0:12). 대화 상대 이름은 「由紀子」
+    (「ゆっこ」 호칭은 직후 음성 L56에서 처음 드러나야 한다 — NA36 반전 보호)."""
+    W, H = 1080, 2340; im = Image.new("RGB", (W, H), (140, 170, 206)); d = ImageDraw.Draw(im)
+    d.rectangle((0, 0, W, 250), fill=(36, 44, 58)); _status(d, W, "8:12", dark=True)
+    d.text((60, 180), "＜", font=F(G, 52), fill=(240, 240, 240), anchor="lm"); d.text((W // 2, 180), "由紀子", font=F(GB, 52), fill=(245, 245, 245), anchor="mm")
+    face = Image.open(os.path.join(REF, "yukiko-front.png")).convert("RGB"); fs = min(face.size); face = face.crop((0, 0, fs, fs)).resize((96, 96))
+    mask = Image.new("L", (96, 96), 0); ImageDraw.Draw(mask).ellipse((0, 0, 95, 95), fill=255)
+    def chip(y, t):
+        d.rounded_rectangle((W // 2 - 150, y, W // 2 + 150, y + 56), 28, fill=(118, 146, 182)); d.text((W // 2, y + 28), t, font=F(G, 32), fill=(255, 255, 255), anchor="mm")
+    chip(520, "6月29日(月)")
+    im.paste(face, (36, 620), mask); d.rounded_rectangle((156, 620, 760, 730), 40, fill=(255, 255, 255)); d.text((196, 675), "明日の病院、10時だからね", font=F(G, 40), fill=(20, 20, 24), anchor="lm")
+    d.text((776, 728), "19:02", font=F(G, 28), fill=(70, 86, 110), anchor="ld")
+    d.rounded_rectangle((790, 780, 1040, 890), 40, fill=(156, 226, 126)); d.text((915, 835), "はーい", font=F(G, 40), fill=(20, 20, 24), anchor="mm")
+    d.text((774, 888), "19:05", font=F(G, 28), fill=(70, 86, 110), anchor="rd")
+    chip(980, "6月30日(火)")
+    y = 1080; d.rounded_rectangle((420, y, 1040, y + 140), 70, fill=(156, 226, 126))
+    d.ellipse((450, y + 25, 540, y + 115), fill=(255, 255, 255)); d.polygon([(482, y + 45), (482, y + 95), (522, y + 70)], fill=(70, 150, 70))
+    for i in range(22):
+        h = 14 + (i * 29 % 46); d.line((570 + i * 16, y + 70 - h // 2, 570 + i * 16, y + 70 + h // 2), fill=(80, 120, 70), width=7)
+        d.ellipse((570 + i * 16 - 3, y + 70 - h // 2 - 3, 570 + i * 16 + 3, y + 70 - h // 2 + 3), fill=(80, 120, 70))
+    d.text((1010, y + 70), "0:12", font=F(G, 34), fill=(30, 60, 30), anchor="rm")
+    d.text((404, y + 138), "21:47", font=F(G, 28), fill=(70, 86, 110), anchor="rd")
+    d.rectangle((0, H - 150, W, H), fill=(248, 248, 250)); d.rounded_rectangle((150, H - 120, W - 150, H - 40), 40, fill=(236, 237, 240))
+    return im
+
+
+def report3(title, org):
+    """S09i — 개시 결과서(대본: 3장 모두 「該当なし」). 기관명은 실존 기관 대신 일반 명칭."""
+    W, H = 1240, 1754; im = Image.new("RGB", (W, H), (255, 255, 255)); d = ImageDraw.Draw(im)
+    d.text((W // 2, 150), title, font=F(GB, 64), fill=(25, 25, 30), anchor="mm")
+    d.text((W - 110, 260), "令和8年9月18日", font=F(G, 34), fill=(40, 40, 44), anchor="ra")
+    d.text((110, 340), org, font=F(G, 34), fill=(40, 40, 44))
+    d.text((110, 440), "照会対象者　佐伯　佐和子　様", font=F(G, 40), fill=(25, 25, 30))
+    d.rectangle((110, 560, W - 110, 1100), outline=(60, 60, 66), width=4)
+    d.text((W // 2, 660), "登録されている情報", font=F(G, 40), fill=(60, 60, 66), anchor="mm")
+    d.text((W // 2, 880), "該当なし", font=F(GB, 170), fill=(20, 20, 24), anchor="mm")
+    for i, t in enumerate(["※ お借入れ・クレジット・保証に関する", "　 登録情報はございません。"]):
+        d.text((110, 1200 + i * 60), t, font=F(G, 34), fill=(60, 60, 66))
+    return im
+
+
+def intercom_clean(b):
+    """S11a(r6 ECU) — 가짜 라벨 글자·아래로 늘어진 코일선 제거(무지 벽·무지 패널) 후 화면에 현관 카메라 영상."""
+    b = inpaint(b, [(548, 345, 576, 357), (660, 422, 696, 434), (560, 450, 576, 463), (600, 483, 700, 497)])
+    m = np.zeros(b.shape[:2], np.uint8); cv2.rectangle(m, (530, 566), (608, 760), 255, -1)
+    r = cv2.inpaint(b.astype("uint8"), m, 15, cv2.INPAINT_TELEA).astype(float)
+    wall = cv2.GaussianBlur(r, (0, 0), 6)  # 벽은 고르게
+    mm = cv2.GaussianBlur((m > 0).astype(np.float32), (0, 0), 3)[..., None]
+    out = b * (1 - mm) + (wall + np.random.default_rng(5).normal(0, 2.2, b.shape)) * mm
+    out[538:572, 532:606] = b[538:572, 612:686]  # 코일선이 가린 본체 아래 그림자 = 옆 그림자 복사
+    edge = np.zeros(b.shape[:2], np.float32); cv2.rectangle(edge, (528, 536), (610, 576), 1.0, 2)
+    edge = cv2.GaussianBlur(edge, (0, 0), 2)[..., None]
+    return out * (1 - edge) + cv2.GaussianBlur(out, (0, 0), 2) * edge
 
 
 # ---------- 합성 방식 ----------
@@ -206,6 +291,8 @@ def lcd(b, art, quad, keep_thr=150, refl=0.18, blur=0.8, mode="bright"):
     lum = b.mean(2)
     if mode == "bright":  # 밝은 무지 화면만 교체 — 화면 앞 손가락(어두움)은 보호
         key = np.clip((lum - keep_thr) / 30, 0, 1)
+    elif mode == "neutral":  # 회색 무지 화면 위 손가락(밝기가 비슷함) — 채도 낮은(R≈B) 밝은 픽셀만
+        key = np.clip((lum - keep_thr) / 20, 0, 1) * np.clip((24 - (b[..., 0] - b[..., 2])) / 10, 0, 1)
     else:  # 꺼진 어두운 화면 — 어두운 픽셀만 교체(밝은 피부 손가락 보호)
         key = np.clip((keep_thr - lum) / 30, 0, 1)
     key = cv2.GaussianBlur(key.astype(np.float32), (0, 0), 1.0) * poly
@@ -285,9 +372,15 @@ JOBS = {
                                            gfx("S08o_law").crop((90, 90, 1280, 800)), [(684, 605), (788, 601), (838, 638), (714, 644)], tol=80, strength=0.9, blur=0.8),
                                      law_left(), [(556, 606), (642, 597), (660, 634), (558, 647)], tol=80, strength=0.75, blur=0.8),
                           tablet_law(), [(940.5, 578), (1022, 607.5), (966, 679.5), (888, 642.5)], keep_thr=120, refl=0.12, blur=0.9),
-    "S08p": lambda b: paper(blank(b, [(574, 518), (764, 512), (767, 691), (575, 692)]), gfx("S08p_calendar"), [(578, 517), (763, 508), (766, 692), (575, 692)], tol=70, strength=1.0, blur=0.9),
+    "S08p": lambda b: paper(blank(b, [(543, 383), (806, 379), (805, 620), (544, 627)], inset=3), gfx("S08p_calendar"), [(546, 384), (804, 381), (803, 621), (547, 627)], tol=75, strength=1.0, blur=0.9),
+    "S08h": lambda b: lcd(b, chat_shota(), [(527, 264), (663, 243), (768, 501), (634.5, 538)], keep_thr=165, refl=0.10, blur=0.7),
+    "S13a": lambda b: lcd(b, voice_mom(), [(796.7, 228.9), (942.2, 260.6), (786.7, 497.8), (660, 457.8)], keep_thr=168, refl=0.08, blur=0.8, mode="neutral"),
+    "S09i": lambda b: paper(paper(paper(blank(b, [(578, 205), (780, 205), (780, 226), (578, 226)], inset=0, k=9, sigma=3),
+                                              report3("信用情報開示報告書", "指定信用情報機関　開示窓口"), [(150, 181), (467, 181), (398, 553), (0, 551)], tol=60, strength=0.92, blur=0.9),
+                                        report3("本人開示結果のお知らせ", "個人信用情報センター"), [(497, 181), (814, 181), (841, 553), (441, 553)], tol=60, strength=0.92, blur=0.9),
+                                  report3("登録情報開示報告書", "信用情報機構　開示担当"), [(864, 177), (1187, 177), (1289, 551), (908, 553)], tol=60, strength=0.92, blur=0.9),
     "S09a": lambda b: paper(b, gfx("S09a_form"), [(504, 591), (732, 581), (793, 672), (531, 699)], strength=0.9, blur=1.0, clean=9),
-    "S11a": lambda b: punch(screen_full(b, intercom(), [(558.5, 357.5), (591.5, 357.5), (591.5, 377.5), (558.5, 377.5)], blur=0.5), 575, 390, 1.5),
+    "S11a": lambda b: screen_full(intercom_clean(b), intercom(), [(561, 249), (688, 249), (688, 326), (561, 326)], blur=0.9, bloom=0.18),
 }
 
 
