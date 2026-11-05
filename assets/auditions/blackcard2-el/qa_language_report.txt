@@ -1,0 +1,26 @@
+=== TTS 대사 파일 검사 (line*.mp3) ===
+[annai_EL1-Aiko - Bright Japane_L238.mp3] lang=ja | 대본:  | 들림: おかけになった電話番号は現在使われておりません | 
+[miyoshi_EL1-Makoto-san - Warm, F_L260.mp3] lang=ja | 대본:  | 들림: ふぅ、高橋。これ聞いてるってことはお前が7番目か。 | 
+[miyoshi_EL1-Makoto-san - Warm, F_L264.mp3] lang=ja | 대본:  | 들림: この社食の唐揚げいつも一個くれたよな。あれ、うまかったな。 | 
+[miyoshi_EL1-Makoto-san - Warm, F_L265.mp3] lang=ja | 대본:  | 들림: ごめんな、お前の名前だけは書けなかった。 | 
+[miyoshi_EL2-Atsuji - Calm_L260.mp3] lang=ja | 대본:  | 들림: 高橋、これ聞いてるってことはお前が7番目か? | 
+[miyoshi_EL2-Atsuji - Calm_L264.mp3] lang=ja | 대본:  | 들림: 社食の唐揚げいつも一個くれたよな。 あれ、うまかったな。 | 
+[miyoshi_EL2-Atsuji - Calm_L265.mp3] lang=ja | 대본:  | 들림: ごめんな、お前の名前だけは書けなかった | 
+[nagase_EL1-Nozomu - Fresh High-_L275.mp3] lang=ja | 대본:  | 들림: 指定通りの手続きですよ。 何か問題でも? | 
+[nagase_EL1-Nozomu - Fresh High-_L281.mp3] lang=ja | 대본:  | 들림: 脅しているおつもりですか | 
+[nagase_EL1-Nozomu - Fresh High-_L285.mp3] lang=ja | 대본:  | 들림: 詐欺沼さんです。当時の人事部長の。 | 
+[no1_EL1-Fumi - Calm, Soothin_L341.mp3] lang=ja | 대본:  | 들림: 高橋健二だな 俺はナンバーワンだ | 
+[no1_EL1-Fumi - Calm, Soothin_L342.mp3] lang=ja | 대본:  | 들림: 横浜で待ってる 期限の前に来い | 
+[no1_EL2-Fu-chan - Calm tone_L341.mp3] lang=ja | 대본:  | 들림: 高橋健二だな。俺はナンバーワンだ。 | 
+[no1_EL2-Fu-chan - Calm tone_L342.mp3] lang=ja | 대본:  | 들림: 横浜で待ってる。期限の前に来い。 | 
+[sagisuma_EL1-Makoto - Calm 60s Ja_L306.mp3] lang=ja | 대본:  | 들림: 書き換えたのは私だ。決めたのは私じゃない。 | 
+[sagisuma_EL1-Makoto - Calm 60s Ja_L309.mp3] lang=ja | 대본:  | 들림: 出世させず、やめさせず、壊れた順に番号を振っていく。 | 
+[sagisuma_EL1-Makoto - Calm 60s Ja_L311.mp3] lang=ja | 대본:  | 들림: 首だけは15年経っても壊れなかった。 だから先月、壊すことに決まった。 | 
+[sagisuma_EL2-Akio - 47-Year Japan_L306.mp3] lang=ja | 대본:  | 들림: 書き換えたのは私だ。決めたのは私じゃない。 | 
+[sagisuma_EL2-Akio - 47-Year Japan_L309.mp3] lang=ja | 대본:  | 들림: 出世させず、やめさせず、壊れた順に番号を振っていく。 | 
+[sagisuma_EL2-Akio - 47-Year Japan_L311.mp3] lang=ja | 대본:  | 들림: 君だけは15年経っても壊れなかった だから先月壊すことに決まった | 
+
+=== 현장음 파일 검사 (amb*.wav) — 말소리가 들리면 안 됨 ===
+
+=== 요약 ===
+문제 파일 없음
