@@ -1,0 +1,33 @@
+{
+ "_설명": "『ブラックカード』第2話 확정 캐스트 가용성 점검 + 2화 톤 시험(배역당 1줄). 1화 Kaguya가 소유자 비활성(voice_disabled)으로 확인돼, 확정 4명의 voice_id가 살아 있는지 원래 ID로만 확인한다(이름 재검색 없음). 실행: audition_spec=blackcard2-cast-check.",
+ "tests": [
+  {
+   "id": "kenji_Taniguchi_L284",
+   "model": "elevenlabs-direct",
+   "voice": "AzXhp77fg6sHrgy2EtLn",
+   "el_model": "eleven_v3",
+   "text": "[whispers] ……はんこは――ここ。"
+  },
+  {
+   "id": "keibi_Jiro_L209",
+   "model": "elevenlabs-direct",
+   "voice": "qrxCoXetZMROJh88P461",
+   "el_model": "eleven_v3",
+   "text": "オ、オーナー……こんな時間に、どちらへ。"
+  },
+  {
+   "id": "misaki_Jun_L292",
+   "model": "elevenlabs-direct",
+   "voice": "cijnU1nZEPfVNWVa4qoW",
+   "el_model": "eleven_v3",
+   "text": "違うの、お金じゃないの。……しばたが、いなくなったの。"
+  },
+  {
+   "id": "koe_Mio_L335",
+   "model": "elevenlabs-direct",
+   "voice": "jDIcRgSETu4QTbxPgjmn",
+   "el_model": "eleven_v3",
+   "text": "……申し訳ございません。そのご要望だけは、お受けいたしかねます。"
+  }
+ ]
+}
