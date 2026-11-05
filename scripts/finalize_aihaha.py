@@ -58,6 +58,19 @@ S01B_HOLD = 5.0  # S01b 5초 이후 약통이 납작해짐 → 5초 프레임 �
 CORNERS = {"S01a": "corner_S01a", "S02a": "corner_S02a", "S04a": "corner_S04a", "S07a": "corner_S07a", "S08a": "corner_S08a", "S12a": "corner_S12a"}
 CARD = ("H2b", "card_H2b", 4.15)  # 중앙 카드 — NA1 자막(~20.09초)이 끝난 뒤 2.3초만(자막과 글자 이중 금지, 2026-11-05 후크 점검)
 EYES = ("H1", 2.6, (0.50, 0.34), 2.2)  # 0:09 「一度も瞬きをしなかった」 — 첫 2.6초 = 태블릿 속 가짜 엄마의 눈 ECU(깜빡임 없는 정지 응시 + 화면 픽셀 질감)
+MULTICAM = {"S01i", "S06f", "S06j", "S07c", "S07g", "S09q", "S11d"}  # 같은 크기·각도 연속 쌍의 두 번째 컷 → 1.10배 화각 교체(제19장 17③, 제8장 2)
+POLICE = {s["id"] for s in SB if s["lighting"] == "police_red"}  # S11 — 창으로 들어오는 경광등 빛 맥동(붉은 0.55Hz·푸른 엇박)
+GRADE = {  # 조명 큐별 색(제8장 1·제3장 2) — 장면 안에서는 일정, 경계에서만 바뀜(색감 급변 금지)
+    "wake": "colorbalance=rm=0.03:bm=-0.03:rh=0.02",                 # 통야 3200K 텅스텐
+    "morning": "colorbalance=rm=0.02:bm=-0.02,eq=saturation=1.03",   # 간병 회상 디퓨즈 아침빛
+    "sep_day": "colorbalance=rm=0.02:bm=-0.02,eq=saturation=1.03", "warm_liv": "colorbalance=rm=0.025:bm=-0.025",
+    "night_lamp": "colorbalance=bs=0.025:rh=0.03:bh=-0.02",          # 밤 스탠드: 따뜻한 하이라이트·차가운 그림자
+    "ryotei": "colorbalance=rm=0.015:bm=-0.01",
+    "cold_liv": "colorbalance=rm=-0.02:bm=0.03,eq=saturation=0.95:contrast=1.02",  # 대면 형광등 5600K
+    "analysis": "colorbalance=rm=-0.015:bm=0.025,eq=saturation=0.96", "police": "colorbalance=rm=-0.02:bm=0.03,eq=saturation=0.94",
+    "nov_room": "colorbalance=rm=0.015:bm=-0.005,eq=saturation=1.02", "nov": "colorbalance=rm=0.015:bm=-0.005",
+    "dusk": "colorbalance=rm=0.03:bm=-0.02:rh=0.03", "grey": "eq=saturation=0.94",
+}
 JLEAD = {"S03a": -0.5, "S04a": -0.5, "S09a": -0.5, "S13a": -0.5, "S11a": -0.3, "S02a": -0.5}  # 장면 연결 J컷(대본 10절) — 다음 장면 소리를 먼저
 EXTRA_SFX = [("mokugyo", "S02a", -0.5, -18.0),  # S01 → S02 매치컷: 독경(목탁) 선행
              # 궁금증 극대화(고니감독님 2026-11-05 「궁금증을 최고로」): 광고 지점·반전 직전 1~2초 심장 박동으로 당기고 정점은 정적 + 저음 임팩트(최우선 원칙 6④)
@@ -333,6 +346,8 @@ def camera(sid, frames, sec, src):
         return [zoom_frame(f, 1 + 0.10 * i / max(n - 1, 1), 0.72, 0.35) for i, f in enumerate(frames)]
     if fx == "punchhand":
         return [zoom_frame(f, 1 + 0.12 * min(i / 8, 1), 0.64, 0.60) for i, f in enumerate(frames)]
+    if sid in MULTICAM:
+        return [zoom_frame(f, 1.10, 0.5, 0.42) for f in frames]
     if sid in long_cuts():
         k = n // 2
         return [zoom_frame(f, (1.0 + 0.02 * i / k) if i < k else (1.10 + 0.02 * (i - k) / max(n - k, 1)), 0.5, 0.45) for i, f in enumerate(frames)]
@@ -383,6 +398,20 @@ def source_frames(sid):
     return fr
 
 
+def police(frames):
+    """경광등: 붉은 기가 있는 픽셀(커튼·벽 반사)만 붉은·푸른 빛이 엇박으로 맥동 — 얼굴 전체를 칠하지 않는다(제21장 17④)."""
+    out = []
+    for i, f in enumerate(frames):
+        g = f.astype(np.float32); t = i / FPS
+        red = np.clip((g[..., 0] - g[..., 1] - 18) / 40, 0, 1)
+        pr = 0.5 + 0.5 * math.sin(2 * math.pi * 0.55 * t); pb = 0.5 + 0.5 * math.sin(2 * math.pi * 0.55 * t + math.pi)
+        amb = 0.05 * (0.5 + 0.5 * math.sin(2 * math.pi * 0.55 * t))  # 방 전체에 아주 옅은 붉은 기(창빛)
+        g[..., 0] *= 1 + 0.22 * pr * red + amb
+        g[..., 2] *= 1 + 0.14 * pb * red
+        out.append(np.clip(g, 0, 255).astype(np.uint8))
+    return out
+
+
 def build_cut(sid, sec, tmp):
     out = os.path.join(tmp, f"cut_{sid}.mp4")
     if os.path.exists(out) and "--rebuild" not in sys.argv:
@@ -392,6 +421,8 @@ def build_cut(sid, sec, tmp):
         print(f"  [{sid}] 원본 없음 — 건너뜀: {src}")
         return None
     frames = source_frames(sid)
+    if sid in POLICE:
+        frames = police(frames)
     n = int(round(sec * FPS)) + 1
     frames = (frames + [frames[-1]] * n)[:n]
     frames = camera(sid, frames, sec, src)
@@ -400,7 +431,7 @@ def build_cut(sid, sec, tmp):
 
 
 def targets():
-    t = set(FX) | set(REUSE) | set(VIDSCREEN) | {LAPTOP[0], EYES[0]} | set(PAGEBLUR) | CCTV | FAKE | {"S01b"} | set(jump_cuts()) | set(long_cuts())
+    t = set(FX) | set(REUSE) | set(VIDSCREEN) | {LAPTOP[0], EYES[0]} | MULTICAM | POLICE | set(PAGEBLUR) | CCTV | FAKE | {"S01b"} | set(jump_cuts()) | set(long_cuts())
     t -= {"S11a", "S13h", "S02a"}
     return sorted(t, key=lambda s: IDX[s])
 
@@ -411,6 +442,26 @@ def overlays(B):
     sid, g, off = CARD
     ov.append((os.path.join(GFX, f"{g}.png"), B[sid][0] + off, B[sid][1] - 0.1))
     return ov
+
+
+def grade_filter(B):
+    """같은 조명 큐가 이어지는 컷을 한 구간으로 묶어 색 필터를 건다."""
+    runs, cur = [], None
+    for x in SB:
+        a, b = B[x["id"]]; g = x["lighting"]
+        if cur and cur[0] == g:
+            cur[2] = b
+        else:
+            if cur:
+                runs.append(cur)
+            cur = [g, a, b]
+    runs.append(cur)
+    parts = []
+    for g, a, b in runs:
+        for flt in GRADE.get(g, "").split(","):
+            if flt:
+                parts.append(f"{flt}:enable='between(t,{a:.3f},{b:.3f})'")
+    return "".join(p + "," for p in parts)
 
 
 def lift_filter(src):
@@ -449,7 +500,7 @@ def patch(src, out, tmp, only=None):
         inputs += ["-loop", "1", "-t", f"{b - a:.3f}", "-i", g]
         fc.append(f"[{j}:v]format=rgba,fade=t=in:st=0:d=0.4:alpha=1,fade=t=out:st={max(b - a - 0.4, 0):.3f}:d=0.4:alpha=1,setpts=PTS-STARTPTS+{a:.3f}/TB[g{j}]")
         fc.append(f"{last}[g{j}]overlay=0:0:enable='between(t,{a:.3f},{b:.3f})':eof_action=pass[q{j}]"); last = f"[q{j}]"
-    fc.append(f"{last}eq=contrast=1.03:saturation=0.98,{lift_filter(src)}noise=alls=3:allf=t+u,format=yuv420p[v]")
+    fc.append(f"{last}eq=contrast=1.03:saturation=0.98,{grade_filter(B)}{lift_filter(src)}noise=alls=3:allf=t+u,format=yuv420p[v]")
     script = os.path.join(tmp, "patch_fc.txt"); open(script, "w").write(";\n".join(fc))
     run(inputs + ["-filter_complex_script", script, "-map", "[v]", "-map", "0:a", "-c:v", "libx264", "-preset", "medium", "-crf", "17",
                   "-c:a", "copy", out])
