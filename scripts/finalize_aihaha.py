@@ -674,9 +674,9 @@ def master(patched, out, tmp):
     # 정적 구간 베드(최우선 원칙 6①): BGM 0인 구간의 효과음 사이가 −36~−42 dBFS로 비어 인공적 적막 → 방 공기음 + 아주 낮은 서브 드론으로 −30~−32에 맞춤
     win = [(w["start"], w["end"]) for w in AUDIO["bgm_silence"]]
     en = "+".join(f"between(t,{a:.2f},{b:.2f})" for a, b in win)
-    sfx_fc.append(f"anoisesrc=d={vd:.3f}:c=brown:a=1,lowpass=f=380,volume=-27dB,aformat=sample_rates=44100:channel_layouts=stereo,"
+    sfx_fc.append(f"anoisesrc=d={vd:.3f}:c=brown:a=1,lowpass=f=380,volume=-20dB,aformat=sample_rates=44100:channel_layouts=stereo,"
                   f"volume=volume='{en}':eval=frame[tb1]"); labs += "[tb1]"
-    sfx_fc.append(f"sine=f=46:d={vd:.3f},volume=-33dB,aformat=sample_rates=44100:channel_layouts=stereo,volume=volume='{en}':eval=frame[tb2]"); labs += "[tb2]"
+    sfx_fc.append(f"sine=f=46:d={vd:.3f},volume=-27dB,aformat=sample_rates=44100:channel_layouts=stereo,volume=volume='{en}':eval=frame[tb2]"); labs += "[tb2]"
     n = 3 + nv + len(sfx_fc)
     fc = (f"[0:a]afade=t=out:st={max(ad - 2.5, 0):.3f}:d=2.5{duck},apad=whole_dur={vd:.3f}[m];[1:a]apad=whole_dur={vd:.3f}[h];"
           f"anoisesrc=d={vd:.3f}:c=brown:a=1,lowpass=f=250,volume=-40dB,aformat=sample_rates=44100:channel_layouts=stereo[rt];"
@@ -712,7 +712,7 @@ def main():
     patched = os.path.join(tmp, "patched.mp4")
     if "--remaster" in sys.argv:  # 영상 패치는 그대로, 오디오만 새 remix(src)로 바꿔 끼워 다시 마스터링(정적 구간 등 오디오 수정 — 무료)
         p2 = os.path.join(tmp, "patched_remix.mp4")
-        run(["-i", patched, "-i", src, "-map", "0:v", "-map", "1:a", "-c", "copy", "-shortest", p2]); patched = p2
+        run(["-i", patched, "-i", src, "-map", "0:v", "-map", "1:a", "-c", "copy", p2]); patched = p2  # -shortest 금지(remix 오디오가 짧으면 본편이 잘림 — 실측 3.5초)
     else:
         done = patch(src, patched, tmp, only)
         print("패치 컷", len(done), done)
