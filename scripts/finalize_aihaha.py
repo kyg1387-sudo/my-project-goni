@@ -568,7 +568,14 @@ def sfx_list():
             out.append((p, sid, JLEAD.get(sid, 0.05), pk))
     for sx, sid, off, pk in EXTRA_SFX:
         out.append((os.path.join(ROOT, "assets", "sfx", SKIT, f"{sx}.mp3"), sid, off, pk))
-    return out
+    # 긴장 정적 구간(BGM 0) 안의 효과음은 최대로(고니감독님 「최대한 높여」): 임팩트 −4, 나머지 −7 dBFS — 어머니 음성 구간(여운)은 그대로
+    B = bounds(); win = [(w["start"], w["end"]) for w in AUDIO["bgm_silence"] if w["sfx_boost_db"] >= 5]
+    def boost(p, sid, off, pk):
+        t = B[sid][0] + off
+        if any(a - 0.6 <= t <= b for a, b in win):
+            pk = max(pk, -4.0 if os.path.basename(p)[:-4] in ("sub_hit", "table_slam", "intercom_chime") else -7.0)
+        return (p, sid, off, pk)
+    return [boost(*x) for x in out]
 
 
 def peak_db(path):

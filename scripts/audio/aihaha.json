@@ -480,55 +480,55 @@
   {
    "start": 104.08,
    "end": 115.28,
-   "sfx_boost_db": 3,
+   "sfx_boost_db": 6,
    "why": "CCTV 속 실인을 가져가는 叔母 → 빈 서랍 — CCTV 노이즈·서랍·심장 박동만(2026-11-05 긴장 보강)"
   },
   {
    "start": 203.28,
    "end": 213.02,
-   "sfx_boost_db": 3,
+   "sfx_boost_db": 6,
    "why": "가짜 영상 다시 보기 → 「足場が、ない」 — 저음 드론 → 발견 임팩트(2026-11-05 긴장 보강)"
   },
   {
    "start": 283.38,
    "end": 293.04,
-   "sfx_boost_db": 3,
+   "sfx_boost_db": 6,
    "why": "돌봄 카메라 일시정지 → 叔母의 손 — 키보드·CCTV 노이즈·심장 박동(2026-11-05 긴장 보강)"
   },
   {
    "start": 501.0,
    "end": 508.12,
-   "sfx_boost_db": 4,
+   "sfx_boost_db": 6,
    "why": "「家族を疑うのか！」 탁자 내리침 → 꿈쩍 않는 由紀子 — 정적(2026-11-05 긴장 보강)"
   },
   {
    "start": 373.8,
    "end": 376.58,
-   "sfx_boost_db": 4,
+   "sfx_boost_db": 6,
    "why": "펜 끝이 떨림 — 손목시계 초침·숨만"
   },
   {
    "start": 392.11,
    "end": 402.41,
-   "sfx_boost_db": 3,
+   "sfx_boost_db": 5,
    "why": "혼자 남은 밤 — 손목시계 초침만(원안: 시계 초침 + 심장 박동)"
   },
   {
    "start": 479.49,
    "end": 485.8,
-   "sfx_boost_db": 3,
+   "sfx_boost_db": 6,
    "why": "「AI」 실언 뒤 정적 — 룸톤·심장 박동만"
   },
   {
    "start": 527.5,
    "end": 534.39,
-   "sfx_boost_db": 4,
+   "sfx_boost_db": 6,
    "why": "결정타 앞 한 박자 — 벽시계 초침만, 「期限は」에서 저음 임팩트"
   },
   {
    "start": 555.67,
    "end": 557.88,
-   "sfx_boost_db": 3,
+   "sfx_boost_db": 5,
    "why": "인터폰 단음 → 역전 테마"
   },
   {
