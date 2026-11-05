@@ -1,0 +1,96 @@
+{
+ "_설명": "『ブラックカード』第2話 신규 배역 ElevenLabs 오디션 — 도서관에서 language=ja(일본어 원어 화자)만 배역 조건별로 찾아 2화 실제 대사(가나 치환)로 생성(eleven_v3). 三好·鷺沼·No.1 각 2명, 永瀬 1명(Kaguya와 비교는 blackcard2-el-direct), 안내음 1명. 실행: generate-video.yml audition_spec=blackcard2-el.",
+ "el_ja_search": {
+  "model": "eleven_v3",
+  "roles": [
+   {
+    "role": "miyoshi",
+    "gender": "male",
+    "age": "middle_aged",
+    "n": 2,
+    "lines": [
+     {
+      "id": "L260",
+      "text": "[sighs] ……たかはし。これ聞いてるってことは、お前がななばんめか。"
+     },
+     {
+      "id": "L264",
+      "text": "しゃしょくの唐揚げ、いつもいっこくれたよな。……あれ、うまかったなあ。"
+     },
+     {
+      "id": "L265",
+      "text": "……ごめんな。お前の名前だけは、書けなかった。"
+     }
+    ]
+   },
+   {
+    "role": "sagisuma",
+    "gender": "male",
+    "age": "old",
+    "n": 2,
+    "lines": [
+     {
+      "id": "L306",
+      "text": "書き換えたのは私だ。決めたのは、私じゃない。"
+     },
+     {
+      "id": "L309",
+      "text": "出世させず、辞めさせず。壊れた順に、番号を振っていく。"
+     },
+     {
+      "id": "L311",
+      "text": "君だけは、じゅうごねん経っても壊れなかった。だから先月――壊すことに決まった。"
+     }
+    ]
+   },
+   {
+    "role": "no1",
+    "gender": "male",
+    "age": "middle_aged",
+    "n": 2,
+    "lines": [
+     {
+      "id": "L341",
+      "text": "たかはしけんじだな。……俺は、ナンバーワンだ。"
+     },
+     {
+      "id": "L342",
+      "text": "よこはまで待ってる。期限の前に、来い。"
+     }
+    ]
+   },
+   {
+    "role": "nagase",
+    "gender": "male",
+    "age": "middle_aged",
+    "n": 1,
+    "lines": [
+     {
+      "id": "L275",
+      "text": "規定どおりの手続きですよ。何か問題でも。"
+     },
+     {
+      "id": "L281",
+      "text": "……脅しているおつもりですか。"
+     },
+     {
+      "id": "L285",
+      "text": "……さぎぬまさんです。当時の、人事部長の。"
+     }
+    ]
+   },
+   {
+    "role": "annai",
+    "gender": "female",
+    "age": "middle_aged",
+    "n": 1,
+    "lines": [
+     {
+      "id": "L238",
+      "text": "おかけになった電話番号は、現在使われておりません。"
+     }
+    ]
+   }
+  ]
+ }
+}

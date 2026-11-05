@@ -1,0 +1,29 @@
+{
+ "_설명": "『ブラックカード』第2話 永瀬 비교 — 계정 보유 Kaguya(8A3fL4hzOXrcEzl4apU4)로 같은 대사 3줄(blackcard2-el의 도서관 후보와 비교). 실행: generate-video.yml audition_spec=blackcard2-el-direct.",
+ "tests": [
+  {
+   "id": "nagase_Kaguya_L275",
+   "model": "elevenlabs-direct",
+   "voice": "8A3fL4hzOXrcEzl4apU4",
+   "voice_name": "Kaguya",
+   "el_model": "eleven_v3",
+   "text": "規定どおりの手続きですよ。何か問題でも。"
+  },
+  {
+   "id": "nagase_Kaguya_L281",
+   "model": "elevenlabs-direct",
+   "voice": "8A3fL4hzOXrcEzl4apU4",
+   "voice_name": "Kaguya",
+   "el_model": "eleven_v3",
+   "text": "……脅しているおつもりですか。"
+  },
+  {
+   "id": "nagase_Kaguya_L285",
+   "model": "elevenlabs-direct",
+   "voice": "8A3fL4hzOXrcEzl4apU4",
+   "voice_name": "Kaguya",
+   "el_model": "eleven_v3",
+   "text": "……さぎぬまさんです。当時の、人事部長の。"
+  }
+ ]
+}
