@@ -588,12 +588,27 @@ def h0a_frames():
     return fake_video(fr)
 
 
+# 화면 속 가짜 영상(R43): V1 = L01 립싱크(omni01 = H0a), V2 = L02 립싱크(같은 키프레임, aihaha-omni-fix3 omni-02v).
+# 컷마다 (컷 안 시각, 영상, 그 시각의 영상 시각) — 완성본 소리와 패드 음성의 상호상관으로 잼(H0b L02 −0.01초, S04l L01 −0.07·L02 +3.46초, S09e L01 −0.10초)
+VIDSEQ = {"H0b": [(0.0, "V2", 0.01)], "S04l": [(0.0, "V1", 0.07), (3.46, "V2", 0.0)], "S09e": [(0.0, "V1", 0.10)]}
+V2_PATH = os.path.join(ROOT, "assets", "auditions", "aihaha-omni-fix3", "omni-02v.mp4")
+_VCACHE = {}
+
+
+def video_letter(name):
+    if name not in _VCACHE:
+        path = raw_path("H0a") if name == "V1" else V2_PATH
+        _VCACHE[name] = fake_video([cover(f) for f in read_frames(path)])
+    return _VCACHE[name]
+
+
 def vid_screen(sid, n):
-    """정지 키프레임 화면 속에 H0a 가짜 영상(재생바 포함)을 매 프레임 합성 → 1344x768 프레임 n장."""
-    base = kf_img(sid); src = h0a_frames(); k0 = int(VID_OFFSET[sid] * FPS)
+    """정지 키프레임 화면 속에 가짜 영상(재생바 포함)을 매 프레임 합성 → 1344x768 프레임 n장. 입 모양은 그 컷에서 들리는 대사와 일치(VIDSEQ)."""
+    base = kf_img(sid); seq = VIDSEQ[sid]; k0 = int(VID_OFFSET[sid] * FPS)
     out = []
     for i in range(n):
-        f = src[(k0 + i) % len(src)]
+        t = i / FPS; t0, name, st = [x for x in seq if x[0] <= t + 1e-6][-1]
+        src = video_letter(name); f = src[min(int(round((t - t0 + st) * FPS)), len(src) - 1)]
         art = cv2.resize(f, (640, 360), interpolation=cv2.INTER_AREA).astype(np.float32)
         bar = int(640 * min(1.0, (k0 + i) / (134 * FPS) + 0.02))
         art[340:346, 20:620] = art[340:346, 20:620] * 0.4 + 90
@@ -881,8 +896,24 @@ def lift_filter(src):
     return "".join(f"curves=all='0/0 0.12/0.17 0.35/0.42 1/1':enable='between(t,{a:.3f},{b:.3f})'," for a, b, _ in parts)
 
 
+def missing_sources():
+    """패치 대상 컷 원본이 로컬에 있는지(제21장 30 — 없으면 조용히 건너뛰어 효과가 빠진 실증)."""
+    miss = []
+    for sid in targets():
+        paths = [raw_path(REUSE[sid][0]) if sid in REUSE else raw_path(sid)] if sid not in VIDSCREEN else []
+        if sid in SPLIT:
+            paths = [os.path.join(OMNI_DIR, f"{p}.mp4") if p.startswith("omni") else raw_path(p) for p, _, _ in SPLIT[sid]]
+        miss += [(sid, p) for p in paths if not os.path.exists(p)]
+    if any(s_ in VIDSEQ and n == "V2" for s_ in VIDSEQ for _, n, _ in VIDSEQ[s_]) and not os.path.exists(V2_PATH):
+        miss.append(("VIDSEQ", V2_PATH))
+    return miss
+
+
 def patch(src, out, tmp, only=None):
     B = bounds()
+    miss = missing_sources()
+    if miss and "--allow-missing" not in sys.argv:
+        sys.exit("원본 없음 — 무료 반출(export_files)부터: " + ", ".join(f"{a}:{os.path.basename(b)}" for a, b in miss))
     ass = os.path.join(ROOT, "subs", f"{SKIT}.ass")
     fdir = os.environ.get("FONTSDIR", "/usr/share/fonts")
     segs = []
