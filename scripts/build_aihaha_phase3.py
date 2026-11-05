@@ -935,7 +935,9 @@ def main():
         "omnihuman_scenes": [idx[s["id"]] for s in SHOTS if s["kind"] == "d" and (s["line"] or s["replay"])],
         "omnihuman_prompts": {str(idx[k]): v for k, v in omni_prompts.items()},
         "omnihuman_models": ["fal-ai/bytedance/omnihuman/v1.5", "fal-ai/bytedance/omnihuman"], "omnihuman_max_s": 8.0, "legacy_lipsync": False,
-        "foley_prompts": {str(idx[k]): v for k, v in foley.items()},
+        # 「sfx:파일」 항목은 finalize가 실제 효과음 파일로 믹스한다 — 행동음 생성(mmaudio)에 넘기면 파일 이름이 글자 그대로 프롬프트가 되어
+        # 엉뚱한 소리(1초에 4~8번 딸깍이는 「시계」 등)가 섞인다(R48 실증). 시계 초침은 finalize CLOCK 구간으로만.
+        "foley_prompts": {str(idx[k]): v for k, v in foley.items() if not v.startswith("sfx:") and "ticking" not in v},
         "bgm_silence": [{"start": round(starts[a], 2), "end": round(starts[b], 2), "sfx_boost_db": g, "why": w} for a, b, g, w in SILENCE],
         "ambience_model": "fal-ai/mmaudio-v2", "ambience_volume": 0.35, "duck_db": 8, "ambience_prompts": [x["ambience"] for x in sb],
         "bgm_model": "fal-ai/lyria2", "bgm_volume": 0.40, "bgm_prompt": BGM[1][3],

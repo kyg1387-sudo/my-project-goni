@@ -947,6 +947,8 @@ def sfx_list():
         m = re.match(r"- (\S+): sfx:(\w+)", ln.strip())
         if m and m.group(1) in IDX:
             sid, sx = m.groups(); p = os.path.join(ROOT, "assets", "sfx", SKIT, f"{sx}.mp3")
+            if sx == "watch_tick":
+                continue  # 시계 초침은 CLOCK 구간 단위로(파일 하나를 컷 시작에 얹으면 12초 동안 컷 경계를 넘어 계속 울림)
             pk = -9.0 if sx in ("sub_hit", "table_slam", "intercom_chime") else (-14.0 if sx in ("drone", "heartbeat", "siren_far") else -16.0)
             out.append((p, sid, JLEAD.get(sid, 0.05), pk))
     for sx, sid, off, pk in EXTRA_SFX:
@@ -959,6 +961,23 @@ def sfx_list():
             pk = max(pk, -4.0 if os.path.basename(p)[:-4] in ("sub_hit", "table_slam", "intercom_chime") else -7.0)
         return (p, sid, off, pk)
     return [boost(*x) for x in out]
+
+
+# 시계 초침(R48, 고니감독님 「시계바늘 가는 소리로 실감 나게 째깍째깍」): 실제 기계식 시계처럼 1초 한 번 째·깍 교대(make_clock_tick.py),
+# 시계가 보이거나 정적 속에서 시간을 재는 구간에만 그 구간 길이만큼 — (파일, 시작 컷, 끝 컷, 피크 dBFS)
+CLOCK = [("watch_tick", "S01i", "S01i", -24.0),   # 어머니가 떠난 아침 — 손목시계를 푸는 손
+         ("watch_tick", "S08i", "S08i", -10.0),   # 펜 끝이 떨림(정적 구간)
+         ("watch_tick", "S08l", "S08n", -9.0),    # 혼자 남은 밤 「腕時計の針だけが、静かに進んでいた」(정적 구간)
+         ("watch_tick", "S10c", "S10c", -16.0),   # 「今日は、何日ですか」 시계를 봄
+         ("wall_clock", "S10j", "S10j", -8.0),    # 결정타 앞 한 박자 — 벽시계(정적 구간)
+         ("watch_tick", "S10l", "S10l", -11.0)]   # 시계 접사 「時計に負けていた」
+
+
+def clock_list():
+    B = bounds(); out = []
+    for sx, a, b, pk in CLOCK:
+        out.append((os.path.join(ROOT, "assets", "sfx", SKIT, f"{sx}.mp3"), B[a][0], B[b][1], pk))
+    return out
 
 
 def peak_db(path):
@@ -1010,6 +1029,12 @@ def master(patched, out, tmp):
         sfx_in += ["-i", p]
         sfx_fc.append(f"[{j}:a]aformat=sample_rates=44100:channel_layouts=stereo,volume={pk - peak_db(p):.2f}dB,adelay={ms}|{ms},apad=whole_dur={vd:.3f}[x{k}]")
         labs += f"[x{k}]"; print(f"효과음 {os.path.basename(p)} @ {sid} → 피크 {pk} dBFS")
+    for k2, (p, t0, t1, pk) in enumerate(clock_list()):
+        j = 2 + nv + len(sfx_in) // 2; ms = int(t0 * 1000); d_ = t1 - t0
+        sfx_in += ["-i", p]
+        sfx_fc.append(f"[{j}:a]aformat=sample_rates=44100:channel_layouts=stereo,atrim=0:{d_:.3f},afade=t=in:d=0.15,afade=t=out:st={max(d_ - 0.3, 0):.3f}:d=0.3,"
+                      f"volume={pk - peak_db(p):.2f}dB,adelay={ms}|{ms},apad=whole_dur={vd:.3f}[c{k2}]")
+        labs += f"[c{k2}]"; print(f"시계 {os.path.basename(p)} {t0:.2f}~{t1:.2f}s → 피크 {pk} dBFS")
     # 어머니 LINE 음성 구간: 원본 믹스의 마른 목소리를 내리고(BGM 0 구간, 방 공기음은 룸톤이 채움) 휴대폰 처리본으로
     duck = "".join(f",volume=enable='between(t,{a - 0.05:.3f},{b + 0.15:.3f})':volume=0.12" for a, b in phone)
     # 정적 구간 베드(최우선 원칙 6①): BGM 0인 구간의 효과음 사이가 −36~−42 dBFS로 비어 인공적 적막 → 방 공기음 + 아주 낮은 서브 드론으로 −30~−32에 맞춤
