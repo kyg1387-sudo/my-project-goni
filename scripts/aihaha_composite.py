@@ -244,6 +244,15 @@ def intercom_clean(b):
     return out * (1 - edge) + cv2.GaussianBlur(out, (0, 0), 2) * edge
 
 
+def scroll_nembutsu():
+    """S08k 불단 족자 — 가짜 붓글씨 대신 실제 「南無阿弥陀仏」(세로, 먹색). 초점 밖이라 크게 흐림."""
+    W, H = 300, 900; im = Image.new("RGB", (W, H), (255, 255, 255)); d = ImageDraw.Draw(im)
+    f = ImageFont.truetype(os.path.join(ROOT, "scripts", "fonts", "ZenOldMincho-Bold.ttf"), 128)
+    for i, ch in enumerate("南無阿弥陀仏"):
+        d.text((W // 2, 80 + i * 140), ch, font=f, fill=(20, 20, 24), anchor="mm")
+    return im
+
+
 # ---------- 합성 방식 ----------
 def warp(art, quad, W, H, border=(255, 255, 255)):
     a = np.asarray(art.convert("RGB")).astype(float); h, w, _ = a.shape
@@ -380,6 +389,10 @@ JOBS = {
                                         report3("本人開示結果のお知らせ", "個人信用情報センター"), [(497, 181), (814, 181), (841, 553), (441, 553)], tol=60, strength=0.92, blur=0.9),
                                   report3("登録情報開示報告書", "信用情報機構　開示担当"), [(864, 177), (1187, 177), (1289, 551), (908, 553)], tol=60, strength=0.92, blur=0.9),
     "S09a": lambda b: paper(b, gfx("S09a_form"), [(504, 591), (732, 581), (793, 672), (531, 699)], strength=0.9, blur=1.0, clean=9),
+    "S13f": lambda b: put_photo(b, portrait(), [(452, 516), (528, 516), (528, 596), (452, 596)], blur=1.0),  # 탁자 위 작은 액자 = 진짜 어머니 사진(무지 흰 사각형 → 「AIは顔も声も真似できた」 위 진짜 얼굴)
+    "S08k": lambda b: put_photo(paper(blank(b, [(600, 165), (700, 165), (700, 330), (600, 330)], inset=2, k=21, sigma=6), scroll_nembutsu(),
+                            [(612, 168), (688, 168), (688, 322), (612, 322)], tol=90, strength=0.75, blur=3.2),
+                                portrait(), [(570, 404), (750, 404), (750, 620), (570, 620)], blur=2.6),  # 영정 속 엉뚱한 남자 → 어머니(제21장 21① 재발)
     "S11a": lambda b: screen_full(intercom_clean(b), intercom(), [(561, 249), (688, 249), (688, 326), (561, 326)], blur=0.9, bloom=0.18),
 }
 

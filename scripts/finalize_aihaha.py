@@ -51,9 +51,10 @@ VIDSCREEN = {  # 키프레임(1344x768) 화면 네 꼭짓점(TL·TR·BR·BL) —
 VID_OFFSET = {"H0b": 0.0, "S04l": 1.2, "S09e": 2.0}  # 같은 영상의 다른 구간(L02·L11·L26 — 같은 음성 파일 재사용, 제21장 9)
 LAPTOP = ("S06g", [(503.75, 461.7), (720.8, 450.0), (739.2, 588.3), (523.75, 610.8)],
           [(725.8, 478.3), (713.3, 515.8), (692.5, 557.5), (669.6, 595.0), (760, 640), (760, 440)])  # 화면 사각형, 앞 인물(머리·어깨) 보호 다각형
+TVOFF = {"S10c": [(236, 329), (459, 329), (459, 468), (236, 468)]}  # 배경 TV가 흰 무지로 빛남 → 꺼진 화면(어두운 유리 + 옅은 반사), 매 프레임
 PAGEBLUR = {"S07h": (100, 330, 760, 600), "S10h": (880, 450, 1344, 768)}  # 키프레임 좌표, 종이색 픽셀만 흐림
 CCTV = {"S03a", "S06k"}
-POST_CCTV = {"S06k"}  # 펀치 인 뒤에 CCTV 화면 글자를 얹는다(먼저 얹으면 확대로 글자가 잘림)
+POST_CCTV = {"S06k", "S03a"}  # 펀치 인 뒤에 CCTV 화면 글자를 얹는다(먼저 얹으면 확대로 글자가 잘림)
 FAKE = {"H0a", "S05a"}
 S01B_HOLD = 5.0  # S01b 5초 이후 약통이 납작해짐 → 5초 프레임 정지 + 슬로 푸시
 CORNERS = {"S01a": "corner_S01a", "S02a": "corner_S02a", "S04a": "corner_S04a", "S07a": "corner_S07a", "S08a": "corner_S08a", "S12a": "corner_S12a"}
@@ -69,6 +70,7 @@ CREEP = {  # 긴장 정적 구간 카메라(고니감독님 2026-11-05 「카메
     "S03a": (1.10, 0.62, 0.52, False), "S08l": (1.08, 0.5, 0.5, False), "S08n": (1.05, 0.5, 0.42, False),
     "S09p": (1.06, 0.5, 0.42, True), "S10j": (1.08, 0.5, 0.45, True),
 }
+KF_REDO = {"S08k", "S13f"}  # 마무리 단계에서 키프레임을 고친 정지 컷(족자 「南無阿弥陀仏」) — 교체 클립과 같은 푸시인으로 다시 만듦
 STATIC = {"S05c", "S08i", "S08o"}  # 움직이는 컷 3연속 끊기 — 정지 교체 클립(푸시인) 대신 완전 고정(돌리줌 직후 정지 = 충격의 여운)
 FX.update({"S10a": "punch"}); PUNCH_AT["S10a"] = 0.1  # 탁자 내리침 순간 — 펀치 인 3회째(작품당 6회 이하)
 MULTICAM = {"S01i", "S06f", "S06j", "S07c", "S07g", "S09q", "S11d"}  # 같은 크기·각도 연속 쌍의 두 번째 컷 → 1.10배 화각 교체(제19장 17③, 제8장 2)
@@ -388,6 +390,9 @@ def source_frames(sid):
     if sid in STATIC:
         n = int(round(BY[sid]["assembled_s"] * FPS)) + 2
         return [cover(kf_img(sid))] * n
+    if sid in KF_REDO:
+        n = int(round(BY[sid]["assembled_s"] * FPS)) + 2; base = cover(kf_img(sid))
+        return [zoom_frame(base, 1 + 0.05 * i / n) for i in range(n)]
     if sid in VIDSCREEN:
         n = int(round(BY[sid]["assembled_s"] * FPS)) + 2
         base = [cover(f) for f in vid_screen(sid, n)]
@@ -417,6 +422,10 @@ def source_frames(sid):
         fr = laptop(fr)
     if sid in PAGEBLUR:
         fr = page_blur(sid, fr)
+    if sid in TVOFF:
+        sc, ox, oy = kf_map(sid, fr[0]); q = mapq(TVOFF[sid], sc, ox, oy)
+        dark = np.full((90, 160, 3), 14, np.float32)
+        fr = [lcd_put(f, dark, q, keep=140, refl=0.12, blur=1.2) for f in fr]
     fr = [cover(f) for f in fr]
     if sid in FAKE:
         fr = fake_video(fr)
@@ -474,7 +483,7 @@ def moving_check():
 
 
 def targets():
-    t = set(FX) | set(REUSE) | set(VIDSCREEN) | {LAPTOP[0], EYES[0]} | MULTICAM | POLICE | set(CREEP) | STATIC | set(SPLIT) | set(OFFSET) | CLIP_FIXED | set(PAGEBLUR) | CCTV | FAKE | {"S01b"} | set(jump_cuts()) | set(long_cuts())
+    t = set(FX) | set(REUSE) | set(VIDSCREEN) | {LAPTOP[0], EYES[0]} | MULTICAM | POLICE | set(CREEP) | STATIC | KF_REDO | set(TVOFF) | set(SPLIT) | set(OFFSET) | CLIP_FIXED | set(PAGEBLUR) | CCTV | FAKE | {"S01b"} | set(jump_cuts()) | set(long_cuts())
     t -= {"S11a", "S13h", "S02a"}
     return sorted(t, key=lambda s: IDX[s])
 
