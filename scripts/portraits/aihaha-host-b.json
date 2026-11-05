@@ -1,0 +1,25 @@
+{
+ "_설명": "『母が遺したビデオレター』 아웃트로 진행자 스타일 B 3룩 — CU는 승인 시안 host-style-B-1 그대로, 35° MCU·손 흔들기 2종×2장 = 4장 약 0.16달러(제19장 21).",
+ "characters": [
+  {
+   "id": "host-ang",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png",
+    "assets/portraits/aihaha-host-style/host-style-B-1.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). Reference image 2 is THIS episode's approved look B: copy its hairstyle, ribbon, sweater, earrings and room exactly. ANGLE LOCKED FIRST: the camera is placed 35 degrees to HER LEFT side (screen right) — her shoulders and body are turned 35 degrees away, she turns her head back to look warmly toward the camera, a thoughtful gentle expression with a slight head tilt; medium close-up from mid-chest up, both of her hands lightly clasped together in front of her chest are visible at the bottom of the frame, natural five fingers each; mouth gently closed (speech is added later), 50mm lens f/2.2. STYLING B (soft and refined, CLAUDE.md 제19장 8): glossy dark-brown hair pulled back in a smooth low ponytail with a neat center part, a slim lavender satin ribbon tied in a small bow at the ponytail with two short tails, flyaways tidied; a fine-knit lavender high-neck sweater, smooth fitted shoulders and gentle natural folds; tiny pearl stud earrings, one on each ear, symmetrical (the only accessory); natural fresh makeup with soft rose lips, light pink blush, real skin texture (NOT plastic, NOT glossy). The same bright Japanese tatami room with shoji windows and a sliding paper door, a green potted plant by the window, soft late-autumn morning light, softly out of focus.  Both eyes sharp and symmetrical, natural five-fingered hands. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  },
+  {
+   "id": "host-wave",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png",
+    "assets/portraits/aihaha-host-style/host-style-B-1.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). Reference image 2 is THIS episode's approved look B: copy its hairstyle, ribbon, sweater, earrings and room exactly. Chest-up medium close shot: she raises her right hand beside her face and waves goodbye to the camera with a bright warm smile, palm open, all five fingers clearly separate, the sleeve of the same lavender knit sweater on the raised arm, mouth gently closed (speech is added later). STYLING B (soft and refined, CLAUDE.md 제19장 8): glossy dark-brown hair pulled back in a smooth low ponytail with a neat center part, a slim lavender satin ribbon tied in a small bow at the ponytail with two short tails, flyaways tidied; a fine-knit lavender high-neck sweater, smooth fitted shoulders and gentle natural folds; tiny pearl stud earrings, one on each ear, symmetrical (the only accessory); natural fresh makeup with soft rose lips, light pink blush, real skin texture (NOT plastic, NOT glossy). The same bright Japanese tatami room with shoji windows and a sliding paper door, a green potted plant by the window, soft late-autumn morning light, softly out of focus.  Both eyes sharp and symmetrical, natural five-fingered hands. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  }
+ ]
+}
