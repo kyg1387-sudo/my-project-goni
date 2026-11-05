@@ -1,0 +1,56 @@
+{
+ "_설명": "『母が遺したビデオレター』 썸네일 A/B 테스트 3종(고니감독님 지시 2026-11-05 「3개 보고 바로 클릭」) — A 실사 가짜 엄마 태블릿 · B 애니(실사처럼 강하게) 叔父 무릎 · C 실사 진짜 눈물, 각 2장 = 6장 약 0.24달러. 글자는 make_thumbnails_aihaha.py.",
+ "characters": [
+  {
+   "id": "thumb-a",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/aihaha-ref/yukiko-front.png",
+    "assets/portraits/aihaha-keyframes/H0a-1.png"
+   ],
+   "prompt": "Create ONE single ultra-sharp, highly detailed YouTube thumbnail photograph in 16:9 widescreen (2560x1440) — one frame only, no panels, no borders. [CAMERA] Eye-level medium close-up, the woman centered and facing the viewer directly, staring straight into the lens with intense, tearful, furious eyes — the strongest possible eye contact. 50mm lens, f/2.0, razor-sharp focus on her eyes and the tablet screen, softly blurred background. Her eyes about 30 percent from the top; her shoulders fill the lower half. [CHARACTER] Saeki Yukiko (the woman in reference image 1), Japanese woman aged 46: black hair in a neat low ponytail, thin silver wire-rim ROUND glasses, bare earlobes, plain long-sleeved black Japanese mourning dress. Lower eyelids red and wet, exactly ONE thin transparent tear line on her right cheek, jaw clenched, lips pressed together, NOT smiling. Photorealistic, real skin texture and pores, natural matte skin (NOT plastic, NOT 3D). [ACTION] With her RIGHT hand only she holds a tablet up beside her face on the right side, screen facing the viewer. On the screen: the elderly woman from reference image 2 (short soft white permed hair, one small mole on her right cheek, lavender cardigan), smiling far too perfectly — airbrushed, perfectly symmetrical, glassy unblinking eyes — with thin horizontal glitch lines and a slight RGB split: an AI deepfake video. Natural five fingers. [SETTING] Dim Japanese tatami room at night, a small Buddhist altar with white chrysanthemums and a framed portrait softly out of focus behind her, thin incense smoke; deep in the background three dark silhouettes in a doorway (a heavy-set older man in the middle) under a menacing red rim light. Cold blue key light from the tablet on her face, warm orange rim light on her hair, cinematic high contrast. Keep the lower 35 percent darker and simple for title text. The reference images are look references only — ONE continuous scene, never separate panels or insets. [NEGATIVE] No text, no letters, no numbers, no logos, no watermark; no extra people in the foreground; no second tablet; no extra fingers; no earrings; no smile; no gel-like tears; no cartoon style."
+  },
+  {
+   "id": "thumb-b",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/aihaha-ref/yukiko-front.png",
+    "assets/portraits/aihaha-ref/tsuyoshi-front.png"
+   ],
+   "prompt": "Create ONE single ultra-sharp, highly detailed YouTube thumbnail illustration in 16:9 widescreen (2560x1440) — one image only, no panels, no borders. [CAMERA] Slight high angle looking down on the villain, dramatic stage composition: the uncle in the CENTER under a hard white spotlight from above, the heroine standing on the RIGHT third looking down at him; 35mm, everything crisp and in focus. [CHARACTER] ART STYLE: hyper-detailed semi-realistic Japanese anime illustration (2.5D, like a high-end Japanese drama poster drawn in anime style) — realistic proportions and skin shading, crisp clean ink outlines, dramatic cel shading, glossy catchlights; NOT photographic, NOT chibi, NOT 3D render. CENTER: Ono Tsuyoshi (the man in reference image 2), heavy-set Japanese man aged 66, receding grey hair slicked back, jowls, navy golf windbreaker over a white polo shirt, sunk to his knees on the tatami, both hands on the floor, face pale with shock, mouth half open, a few tiny sweat beads on his temple — looking up toward the viewer in panic. RIGHT: Saeki Yukiko (the woman in reference image 1), aged 46, low ponytail, thin silver round glasses, plain beige knit sweater, standing tall, holding one sheet of paper at her side, looking down at him coldly, calm and dignified, NOT smiling. [ACTION] Between them on the tatami lies a tablet with a cracked, glitching screen showing a smiling elderly white-haired woman (the fake video), RGB split and broken pixels. [SETTING] A Japanese living room at dusk: lace curtains glowing red and blue from police lights outside the window, deep shadows around the spotlight, red rim light on the uncle, cool blue light on Yukiko, rich saturated colors, high contrast. Keep the lower-left 35 percent darker and simple for big title text; nothing important in the bottom-right corner. The reference images are look references only — ONE continuous scene, never separate panels or insets. [NEGATIVE] No text, no letters, no numbers, no logos, no watermark; no shoes indoors (socks only); no extra people; no extra fingers; no earrings on Yukiko; no glasses on the uncle."
+  },
+  {
+   "id": "thumb-c",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/aihaha-ref/yukiko-front.png",
+    "assets/portraits/aihaha-ref/tear-standard-yukiko.png"
+   ],
+   "prompt": "Create ONE single ultra-sharp, highly detailed YouTube thumbnail photograph in 16:9 widescreen (2560x1440) — one frame only, no panels, no borders. [CAMERA] Close-up at a slight 20-degree angle, her face on the RIGHT half of the frame looking straight into the lens with deep, wet, trembling eyes — strong emotional eye contact. 85mm lens, f/1.8, razor-sharp focus on the irises and the tear, creamy bokeh. [CHARACTER] Saeki Yukiko (the woman in reference image 1), Japanese woman aged 46: black hair in a low ponytail, thin silver wire-rim ROUND glasses, bare earlobes, plain beige knit sweater. Restrained real crying like reference image 2: red wet lower eyelids, exactly ONE thin transparent tear running down her right cheek to one third, catching the morning light, the corners of her mouth trembling slightly down, NOT smiling. Photorealistic, real skin texture, matte skin. [ACTION] With her LEFT hand only she holds a smartphone close to her cheek on the LEFT side of her face, the screen facing the viewer, showing a simple chat screen with one green voice-message bubble and a play button (no readable text); the old brown leather wristwatch on her left wrist is visible. Natural five fingers. [SETTING] Her late mother's small room on a soft November morning: warm golden window light from the left, an empty wooden window chair softly out of focus behind her, through the window a completed apartment tower and rooftops in pale morning haze, dust motes in the light; warm, gentle, cinematic color grade, high detail. Keep the left 40 percent of the lower half simple for title text. The reference images are look references only — ONE continuous scene, never separate panels or insets; the clothes follow the text, not the references. [NEGATIVE] No readable text, no letters, no numbers, no logos, no watermark; no extra people; no extra fingers; no earrings; no smile; no gel-like or multiple tears; no cartoon style."
+  }
+ ]
+}
