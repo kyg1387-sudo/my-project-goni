@@ -1,0 +1,25 @@
+{
+ "_설명": "『母が遺したビデオレター』 아웃트로 진행자 스타일 D 2단계 — 1단계 CU 1번 채택(다다미·장지문·진주 핀), 35° MCU·손 흔들기 2종×2장 = 4장 약 0.16달러(제19장 21).",
+ "characters": [
+  {
+   "id": "host-ang",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png",
+    "assets/portraits/aihaha-host-d/host-cu-1.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). Reference image 2 is THIS episode's approved look D: copy its wavy half-up hairstyle with the pearl clip, the ivory cable-knit cardigan, the sage-green blouse, the thin gold necklace and the tatami room exactly. ANGLE LOCKED FIRST: the camera is placed 35 degrees to HER LEFT side (screen right) — her shoulders and body are turned 35 degrees away, she turns her head back to look warmly toward the camera, a thoughtful gentle expression with a slight head tilt; medium close-up from mid-chest up, both of her hands lightly clasped together in front of her chest are visible at the bottom of the frame, natural five fingers each; mouth gently closed (speech is added later), 50mm lens f/2.2. STYLING D (fresh and elegant, CLAUDE.md 제19장 8 — different from the earlier chignon and ponytail looks): beautifully styled glossy dark-brown shoulder-length hair in soft, even, loose waves with a healthy sheen, the ends gently curled inward, the top section gently pulled back in a half-up style held by one small pearl hair clip at the back, soft volume at the crown, a few delicate face-framing strands, flyaways tidied; a well-fitted soft ivory cable-knit cardigan with neat shoulders, worn open over a soft sage-green silky blouse with a small rounded collar, buttons neatly done, fabric falling in gentle natural folds; one thin delicate gold chain necklace (the only accessory), bare earlobes; a graceful, radiant look with natural fresh makeup with soft coral-rose lips, light peach blush, real skin texture (NOT plastic, NOT glossy). The same bright Japanese tatami room with shoji windows and a sliding paper door, a green potted plant by the window and a small vase of white and pale-green flowers harmonising with her blouse, soft late-autumn morning light, softly out of focus.   Both eyes sharp and symmetrical, natural five-fingered hands. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  },
+  {
+   "id": "host-wave",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png",
+    "assets/portraits/aihaha-host-d/host-cu-1.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity). Reference image 2 is THIS episode's approved look D: copy its wavy half-up hairstyle with the pearl clip, the ivory cable-knit cardigan, the sage-green blouse, the thin gold necklace and the tatami room exactly. Chest-up medium close shot: she raises her right hand beside her face and waves goodbye to the camera with a bright warm smile, palm open, all five fingers clearly separate, the sleeve of the same ivory cardigan on the raised arm, mouth gently closed (speech is added later). STYLING D (fresh and elegant, CLAUDE.md 제19장 8 — different from the earlier chignon and ponytail looks): beautifully styled glossy dark-brown shoulder-length hair in soft, even, loose waves with a healthy sheen, the ends gently curled inward, the top section gently pulled back in a half-up style held by one small pearl hair clip at the back, soft volume at the crown, a few delicate face-framing strands, flyaways tidied; a well-fitted soft ivory cable-knit cardigan with neat shoulders, worn open over a soft sage-green silky blouse with a small rounded collar, buttons neatly done, fabric falling in gentle natural folds; one thin delicate gold chain necklace (the only accessory), bare earlobes; a graceful, radiant look with natural fresh makeup with soft coral-rose lips, light peach blush, real skin texture (NOT plastic, NOT glossy). The same bright Japanese tatami room with shoji windows and a sliding paper door, a green potted plant by the window and a small vase of white and pale-green flowers harmonising with her blouse, soft late-autumn morning light, softly out of focus.   Both eyes sharp and symmetrical, natural five-fingered hands. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  }
+ ]
+}
