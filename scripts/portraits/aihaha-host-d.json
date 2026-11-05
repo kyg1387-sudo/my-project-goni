@@ -1,0 +1,14 @@
+{
+ "_설명": "『母が遺したビデオレター』 아웃트로 진행자 새 스타일 D(고니감독님 지시 2026-11-05 「헤어스타일과 옷 변경」) — 1단계 CU 시안 4장 약 0.16달러. 고른 CU를 스타일 참조로 2단계 35° MCU·손 흔들기. 고니감독님 「좋아 예쁘게 해줘」 반영(헤어 결·윤기·카디건 핏·꽃 색 조화).",
+ "characters": [
+  {
+   "id": "host-cu",
+   "count": 4,
+   "aspect_ratio": "16:9",
+   "refs": [
+    "assets/portraits/ashita-host-1/host-cu-4.png"
+   ],
+   "prompt": "Create ONE single photorealistic cinematic film still in 16:9 widescreen — one frame only, NOT a grid, no panels, no borders, no captions. Reference image 1 is the channel's APPROVED host: reproduce exactly this woman's FACE, age and skin only (identity) — but give her the NEW hairstyle and NEW outfit described below. Chest-up close-up, she faces the camera directly with a warm gentle smile, mouth gently closed (speech is added later), 85mm lens f/2. STYLING D (fresh and elegant, CLAUDE.md 제19장 8 — different from the earlier chignon and ponytail looks): beautifully styled glossy dark-brown shoulder-length hair in soft, even, loose waves with a healthy sheen, the ends gently curled inward, the top section gently pulled back in a half-up style held by one small pearl hair clip at the back, soft volume at the crown, a few delicate face-framing strands, flyaways tidied; a well-fitted soft ivory cable-knit cardigan with neat shoulders, worn open over a soft sage-green silky blouse with a small rounded collar, buttons neatly done, fabric falling in gentle natural folds; one thin delicate gold chain necklace (the only accessory), bare earlobes; a graceful, radiant look with natural fresh makeup with soft coral-rose lips, light peach blush, real skin texture (NOT plastic, NOT glossy). The same bright Japanese tatami room with shoji windows and a sliding paper door, a green potted plant by the window and a small vase of white and pale-green flowers harmonising with her blouse, soft late-autumn morning light, softly out of focus.  Both eyes sharp and symmetrical, natural five-fingered hands. Full-frame 16:9, no black bars. Absolutely no text, letters, numbers, logos or symbols anywhere."
+  }
+ ]
+}
