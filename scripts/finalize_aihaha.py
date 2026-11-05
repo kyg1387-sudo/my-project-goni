@@ -58,6 +58,12 @@ S01B_HOLD = 5.0  # S01b 5초 이후 약통이 납작해짐 → 5초 프레임 �
 CORNERS = {"S01a": "corner_S01a", "S02a": "corner_S02a", "S04a": "corner_S04a", "S07a": "corner_S07a", "S08a": "corner_S08a", "S12a": "corner_S12a"}
 CARD = ("H2b", "card_H2b", 4.15)  # 중앙 카드 — NA1 자막(~20.09초)이 끝난 뒤 2.3초만(자막과 글자 이중 금지, 2026-11-05 후크 점검)
 EYES = ("H1", 2.6, (0.50, 0.34), 2.2)  # 0:09 「一度も瞬きをしなかった」 — 첫 2.6초 = 태블릿 속 가짜 엄마의 눈 ECU(깜빡임 없는 정지 응시 + 화면 픽셀 질감)
+SPLIT = {  # 립싱크 재생성 검수(2026-11-05): (원본 컷 또는 omniNN, 원본 시작 초, 사용 길이 — None이면 컷 끝까지)
+    "S11b": [("S11c", 0.0, 1.6), ("omni128", 1.6, None)],  # 「千葉県警です」 음성이 립싱크 필터에 거절 → 叔母 얼굴 위 목소리 선행, 「あの動画は」부터 宮下 립싱크
+    "S11d": [("omni130", 0.0, 1.5), ("S11e", 0.0, None)],  # 1.7초부터 없던 叔母 등장·옷깃 꽃(재생성은 고개 90° 회전) → 「大野頼子さん」에서 叔母의 떨리는 손으로 L컷
+}
+OFFSET = {"S11c": 1.6, "S11e": 2.96}  # 위 L컷에서 앞부분을 쓴 컷은 뒤 구간부터(같은 움직임 반복 금지)
+CLIP_FIXED = {"S02f"}  # 립싱크 재생성으로 교체한 컷(omni22.mp4, 원본 _v1) — 패치로 덮는다
 MULTICAM = {"S01i", "S06f", "S06j", "S07c", "S07g", "S09q", "S11d"}  # 같은 크기·각도 연속 쌍의 두 번째 컷 → 1.10배 화각 교체(제19장 17③, 제8장 2)
 POLICE = {s["id"] for s in SB if s["lighting"] == "police_red"}  # S11 — 창으로 들어오는 경광등 빛 맥동(붉은 0.55Hz·푸른 엇박)
 GRADE = {  # 조명 큐별 색(제8장 1·제3장 2) — 장면 안에서는 일정, 경계에서만 바뀜(색감 급변 금지)
@@ -370,7 +376,15 @@ def source_frames(sid):
         n = int(round(BY[sid]["assembled_s"] * FPS)) + 2
         base = [cover(f) for f in vid_screen(sid, n)]
         return [zoom_frame(f, 1 + 0.04 * i / n, 0.5, 0.5) for i, f in enumerate(base)]  # 정지 컷 기본 푸시인(교체 클립과 같음)
-    fr = read_frames(raw_path(sid))
+    if sid in SPLIT:
+        out, n = [], int(round(BY[sid]["assembled_s"] * FPS)) + 2
+        for src, st, ln in SPLIT[sid]:
+            path = os.path.join(OMNI_DIR, f"{src}.mp4") if src.startswith("omni") else raw_path(src)
+            fr = [cover(f) for f in read_frames(path, st)]
+            k = int(round(ln * FPS)) if ln else n - len(out)
+            out += (fr + [fr[-1]] * k)[:k]
+        return out
+    fr = read_frames(raw_path(sid), OFFSET.get(sid, 0.0))
     if sid == EYES[0]:
         k = int(EYES[1] * FPS); src = h0a_frames(); f0 = src[min(len(src) - 1, int(1.5 * FPS))]
         cx, cy = EYES[2]; z = EYES[3]
@@ -417,6 +431,8 @@ def build_cut(sid, sec, tmp):
     if os.path.exists(out) and "--rebuild" not in sys.argv:
         return out
     src = raw_path(REUSE[sid][0]) if sid in REUSE else raw_path(sid)
+    if sid in SPLIT:
+        src = os.path.join(OMNI_DIR, f"{SPLIT[sid][-1][0]}.mp4") if SPLIT[sid][-1][0].startswith("omni") else raw_path(SPLIT[sid][-1][0])
     if sid not in VIDSCREEN and not os.path.exists(src):
         print(f"  [{sid}] 원본 없음 — 건너뜀: {src}")
         return None
@@ -431,7 +447,7 @@ def build_cut(sid, sec, tmp):
 
 
 def targets():
-    t = set(FX) | set(REUSE) | set(VIDSCREEN) | {LAPTOP[0], EYES[0]} | MULTICAM | POLICE | set(PAGEBLUR) | CCTV | FAKE | {"S01b"} | set(jump_cuts()) | set(long_cuts())
+    t = set(FX) | set(REUSE) | set(VIDSCREEN) | {LAPTOP[0], EYES[0]} | MULTICAM | POLICE | set(SPLIT) | set(OFFSET) | CLIP_FIXED | set(PAGEBLUR) | CCTV | FAKE | {"S01b"} | set(jump_cuts()) | set(long_cuts())
     t -= {"S11a", "S13h", "S02a"}
     return sorted(t, key=lambda s: IDX[s])
 
