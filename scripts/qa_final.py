@@ -11,6 +11,8 @@
   6 립싱크 누락  omnihuman_scenes 번호마다 omniNN.mp4 존재(제19장 19, --omni-dir 지정 시)
   7 자막 글꼴    로컬 fc-match가 Noto Sans CJK Bold(제19장 22 — 로컬 패치 자막이 대체 글꼴로 구워지는 것 방지)
   8 3대 기록     (--work <대장 작품명>) 시리즈-제작비용.md에 작품 표, 등록 대장에 본편 날짜, 스튜디오 대조일 2일 이내(최우선 원칙 5)
+  9 데이터 대조   (--work) docs/분석/*-소재대조-*<작품>*.md 존재 + 「판정」 표가 채워짐, 썸네일 대조 시트(docs/분석/thumbs/) 존재
+                 (최우선 원칙 7·제21장 7). 썸네일 시트를 네트워크 정책 때문에 못 만들었으면 --thumb-waived "<이유>"로 기록 후 통과
 """
 import json, os, re, shutil, subprocess, sys
 
@@ -69,6 +71,19 @@ def main():
         age = [(_dt.date.today() - _dt.date.fromisoformat(sync[k])).days if sync.get(k) else 99 for k in ("videos", "shorts")]
         ok = (w in cost) and len(mains) == 1 and max(age) <= 2
         check("3대 기록(비용·캘린더·대조)", ok, f"비용표 {'있음' if w in cost else '없음'} · 대장 본편 {[m['date'] for m in mains]} · 스튜디오 대조 동영상 {age[0]}일/Shorts {age[1]}일 전")
+        import glob as _g
+        key = re.sub(r"[『』\s]", "", w)
+        subj = [f for f in _g.glob(os.path.join(ROOT, "docs", "분석", "*-소재대조-*.md")) if key[:4] in os.path.basename(f)]
+        filled = False
+        for f in subj:
+            body = open(f, encoding="utf-8").read()
+            sec = body.split("## 판정", 1)[-1]
+            rows = [ln for ln in sec.splitlines() if ln.startswith("| ") and not ln.startswith("| 항목") and not ln.startswith("|---")]
+            filled = filled or (rows and all(ln.rstrip("| ").split("|")[-1].strip() for ln in rows))
+        thumbs = _g.glob(os.path.join(ROOT, "docs", "분석", "thumbs", "*.jpg"))
+        waived = a[a.index("--thumb-waived") + 1] if "--thumb-waived" in a else ""
+        ok2 = bool(subj) and filled and (bool(thumbs) or bool(waived))
+        check("데이터 대조(소재·썸네일)", ok2, f"소재대조 {[os.path.basename(f) for f in subj] or '없음'} · 판정 {'채움' if filled else '비어 있음'} · 썸네일 시트 {len(thumbs)}장{(' · 면제: ' + waived) if waived else ''}")
     print(f"\n결과: {'전부 PASS' if all(res) else f'FAIL {res.count(False)}건'}")
     sys.exit(0 if all(res) else 1)
 

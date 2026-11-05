@@ -1,0 +1,26 @@
+{
+  "_설명": "YouTube 공개 데이터 수집 설정(제21장 1단계). 키는 여기에 쓰지 않는다 — 클라우드 환경 Network secrets(프록시 주입) 또는 GitHub Secrets YOUTUBE_API_KEY.",
+  "channel_id": "UCUyQLjV4AzMd06WUl3yMzyw",
+  "channel_handle": "@kokoro-theater",
+  "channel_title": "美談ものがたり",
+  "region": "JP",
+  "language": "ja",
+  "search_days": 30,
+  "search_max": 30,
+  "keywords": [
+    "スカッと",
+    "スカッとする話",
+    "修羅場",
+    "感動",
+    "泣ける",
+    "復讐",
+    "不倫",
+    "介護",
+    "相続",
+    "嫁姑"
+  ],
+  "extra_keywords": [],
+  "competitor_channels": [],
+  "ai_mention_pattern": "AI|ＡＩ|不自然|合成|CG|ＣＧ|機械|棒読み|作り物|生成|ボイス|音声が変|口が合|ロボット",
+  "short_max_seconds": 180
+}
