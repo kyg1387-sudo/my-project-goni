@@ -1,0 +1,63 @@
+name: YouTube 공개 데이터 보고 (제21장 1단계, 무료)
+
+# 매일 08:00 JST(23:00 UTC) 우리 채널 수치·장르 동향을 수집해 docs/분석/에 커밋한다.
+# 예약 실행(schedule)은 기본 브랜치(main)에 이 파일이 있을 때만 돈다. 그 전에는 수동 실행(workflow_dispatch).
+# 키는 GitHub Secrets YOUTUBE_API_KEY(읽기 전용 Data API 키)에서만 읽는다.
+
+on:
+  schedule:
+    - cron: "0 23 * * *"
+  workflow_dispatch:
+    inputs:
+      target_branch:
+        description: 보고서를 커밋할 브랜치
+        required: false
+        default: "claude/next-bidan-1101"
+      keywords:
+        description: 이번 작품 소재 키워드(공백 구분, 임시 추가)
+        required: false
+        default: ""
+      no_search:
+        description: 장르 검색 생략(할당량 절약)
+        required: false
+        default: "false"
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    env:
+      TARGET_BRANCH: ${{ inputs.target_branch || 'claude/next-bidan-1101' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TARGET_BRANCH }}
+          fetch-depth: 1
+
+      - name: 키 확인
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          if [ -z "$YOUTUBE_API_KEY" ]; then
+            echo "::error::GitHub Secrets에 YOUTUBE_API_KEY가 없습니다(저장소 Settings → Secrets and variables → Actions)."
+            exit 1
+          fi
+
+      - name: 수집·보고
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          ARGS=""
+          for k in ${{ inputs.keywords }}; do ARGS="$ARGS --keyword $k"; done
+          if [ "${{ inputs.no_search }}" = "true" ]; then ARGS="$ARGS --no-search"; fi
+          python3 scripts/yt_public_report.py $ARGS
+
+      - name: 보고서 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/분석
+          git diff --cached --quiet || git commit -m "YouTube 공개 데이터 보고 $(TZ=Asia/Tokyo date +%Y-%m-%d)"
+          git push origin "HEAD:${TARGET_BRANCH}"
