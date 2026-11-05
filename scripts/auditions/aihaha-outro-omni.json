@@ -1,0 +1,33 @@
+{
+ "_설명": "『母が遺したビデオレター』 아웃트로 진행자 스타일 D(CU host-d/cu-1 · 각도 컷 host-d2/ang-1 · 손 흔들기 host-d2/wave-1) OmniHuman 4컷. pad1 OUT1 감사, pad2 OUT2+OUT3 호칭 질문·댓글, pad3 OUT4 구독·좋아요, pad4 OUT5 다음 화. 약 19.2초 × 0.16 ≈ 3.1달러. 단독 실행(제19장 18).",
+ "tests": [
+  {
+   "id": "omni-out1",
+   "model": "omnihuman",
+   "image": "assets/portraits/aihaha-host-d/host-cu-1.png",
+   "audio_id": "pad1",
+   "prompt": "A friendly young Japanese TV host thanks the viewers warmly with a gentle natural smile and a small bow of the head, hands still, hair and outfit unchanged, NO new people."
+  },
+  {
+   "id": "omni-out2",
+   "model": "omnihuman",
+   "image": "assets/portraits/aihaha-host-d2/host-ang-1.png",
+   "audio_id": "pad2",
+   "prompt": "The host asks the viewers a heartfelt question about the special nicknames families call each other, a soft caring expression and a slight head tilt, then gently invites them to comment; her clasped hands stay still and relaxed, hair and outfit unchanged, NO new people."
+  },
+  {
+   "id": "omni-out3",
+   "model": "omnihuman",
+   "image": "assets/portraits/aihaha-host-d/host-cu-1.png",
+   "audio_id": "pad3",
+   "prompt": "The host cheerfully asks for channel subscription and likes with a bright natural smile and a small nod, hands still, hair and outfit unchanged, NO new people."
+  },
+  {
+   "id": "omni-out4",
+   "model": "omnihuman",
+   "image": "assets/portraits/aihaha-host-d2/host-wave-1.png",
+   "audio_id": "pad4",
+   "prompt": "The host says see you next time with a warm smile, keeps the raised waving hand open and still beside her face, hair and outfit unchanged, NO new people."
+  }
+ ]
+}
