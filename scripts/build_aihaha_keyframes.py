@@ -228,6 +228,12 @@ ECU_NEW = {  # PHASE 4 합성 단계 실측(2026-11-05): 화면·서류가 카�
              "[SETTING] the same cold living-room wall at night, a faint red glow from a window off-screen falling on the wall only, the air clear. The intercom screen is ONE "
              "plain flat lit blue-grey surface with NOTHING on it; the buttons are plain blank buttons. [NEGATIVE] no characters, no icons, no logo, no numbers, no stripes of "
              "light across the wall."),
+    "S08p": ("assets/portraits/aihaha-keyframes-raw/S08p-1.png",
+             "[CAMERA] EXTREME CLOSE-UP INSERT, 85mm, slightly high angle: a small standing desk calendar with a black wire spiral on top, standing on the low wooden "
+             "table, its page facing the camera squarely, the calendar fills about 55 percent of the frame height, sharp focus on the page. [CHARACTER] NO people, NO hands. "
+             "[ACTION] still. [SETTING] the same dark tatami room at night, the warm paper floor lamp as soft bokeh behind, the lamp light falling softly across the page from "
+             "the right. The calendar page is ONE completely blank clean off-white sheet with NOTHING printed on it. [NEGATIVE] no numbers, no characters, no grid lines, no "
+             "red marks, no logo, no pen."),
     "S09i": ("assets/portraits/aihaha-keyframes-raw/S09i-1.png",
              "[CAMERA] EXTREME CLOSE-UP INSERT, 50mm, high angle 60 degrees looking down at the low wooden table: three separate plain white A4 sheets lying flat side by side, "
              "upright and facing the camera, slightly overlapping at the edges, together filling about 75 percent of the frame; sharp focus on the sheets. [CHARACTER] HANDS "
