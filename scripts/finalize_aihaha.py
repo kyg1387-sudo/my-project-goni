@@ -65,6 +65,12 @@ SPLIT = {  # 립싱크 재생성 검수(2026-11-05): (원본 컷 또는 omniNN, 
 }
 OFFSET = {"S11c": 1.6, "S11e": 2.96}  # 위 L컷에서 앞부분을 쓴 컷은 뒤 구간부터(같은 움직임 반복 금지)
 CLIP_FIXED = {"S02f"}  # 립싱크 재생성으로 교체한 컷(omni22.mp4, 원본 _v1) — 패치로 덮는다
+CREEP = {  # 긴장 정적 구간 카메라(고니감독님 2026-11-05 「카메라 각도와 줌으로도 긴장감」): (최대 배율, cx, cy, 미세 흔들림)
+    "S03a": (1.10, 0.62, 0.52, False), "S08l": (1.08, 0.5, 0.5, False), "S08n": (1.05, 0.5, 0.42, False),
+    "S09p": (1.06, 0.5, 0.42, True), "S10j": (1.08, 0.5, 0.45, True),
+}
+STATIC = {"S05c", "S08i", "S08o"}  # 움직이는 컷 3연속 끊기 — 정지 교체 클립(푸시인) 대신 완전 고정(돌리줌 직후 정지 = 충격의 여운)
+FX.update({"S10a": "punch"}); PUNCH_AT["S10a"] = 0.1  # 탁자 내리침 순간 — 펀치 인 3회째(작품당 6회 이하)
 MULTICAM = {"S01i", "S06f", "S06j", "S07c", "S07g", "S09q", "S11d"}  # 같은 크기·각도 연속 쌍의 두 번째 컷 → 1.10배 화각 교체(제19장 17③, 제8장 2)
 POLICE = {s["id"] for s in SB if s["lighting"] == "police_red"}  # S11 — 창으로 들어오는 경광등 빛 맥동(붉은 0.55Hz·푸른 엇박)
 GRADE = {  # 조명 큐별 색(제8장 1·제3장 2) — 장면 안에서는 일정, 경계에서만 바뀜(색감 급변 금지)
@@ -331,7 +337,7 @@ def jump_cuts():
 
 def long_cuts():
     """5초 넘는 한 구도(립싱크·설계 효과 제외) — 가운데에서 1.10배 리프레임(최우선 원칙 6②)."""
-    return [s["id"] for s in SB if s["assembled_s"] > 5.0 and IDX[s["id"]] not in OMNI and s["id"] not in FX and s["tier"] != "card"]
+    return [s["id"] for s in SB if s["assembled_s"] > 5.0 and IDX[s["id"]] not in OMNI and s["id"] not in FX and s["id"] not in CREEP and s["id"] not in STATIC and s["tier"] != "card"]
 
 
 def camera(sid, frames, sec, src):
@@ -355,6 +361,10 @@ def camera(sid, frames, sec, src):
         return [zoom_frame(f, 1 + 0.10 * i / max(n - 1, 1), 0.72, 0.35) for i, f in enumerate(frames)]
     if fx == "punchhand":
         return [zoom_frame(f, 1 + 0.12 * min(i / 8, 1), 0.64, 0.60) for i, f in enumerate(frames)]
+    if sid in CREEP:  # 정적 속에서 천천히 조여 오는 카메라(드레드 줌), 악역은 미세 핸드헬드
+        zm, cx, cy, shake = CREEP[sid]
+        return [zoom_frame(f, 1 + (zm - 1) * (i / max(n - 1, 1)) ** 1.3 + (0.01 if shake else 0), cx, cy,
+                           dx=0.003 * math.sin(i / 6.0) if shake else 0, dy=0.003 * math.cos(i / 8.0) if shake else 0) for i, f in enumerate(frames)]
     if sid in MULTICAM:
         return [zoom_frame(f, 1.10, 0.5, 0.42) for f in frames]
     if sid in long_cuts():
@@ -375,6 +385,9 @@ def source_frames(sid):
         if sid in CCTV and sid not in POST_CCTV:
             fr = cctv(fr)
         return fr
+    if sid in STATIC:
+        n = int(round(BY[sid]["assembled_s"] * FPS)) + 2
+        return [cover(kf_img(sid))] * n
     if sid in VIDSCREEN:
         n = int(round(BY[sid]["assembled_s"] * FPS)) + 2
         base = [cover(f) for f in vid_screen(sid, n)]
@@ -451,8 +464,17 @@ def build_cut(sid, sec, tmp):
     return out
 
 
+def moving_check():
+    """움직이는 카메라 컷 비율 35% 이하·연속 3컷 금지(제19장 17) — 정지 교체 클립(푸시인)도 움직이는 컷으로 센다."""
+    mv = [x["id"] in CREEP or FX.get(x["id"], "") in ("dutch5", "dutch7", "handheld", "slowpush", "dollyzoom", "pushwin", "punchhand", "punch")
+          or (x["tier"] == "still" and x["id"] not in STATIC) for x in SB]
+    run3 = [SB[i]["id"] for i in range(len(SB) - 2) if mv[i] and mv[i + 1] and mv[i + 2]]
+    print(f"움직이는 카메라 컷 {sum(mv)}/{len(SB)} = {sum(mv) / len(SB):.0%} · 연속 3컷 {run3}")
+    return sum(mv) / len(SB), run3
+
+
 def targets():
-    t = set(FX) | set(REUSE) | set(VIDSCREEN) | {LAPTOP[0], EYES[0]} | MULTICAM | POLICE | set(SPLIT) | set(OFFSET) | CLIP_FIXED | set(PAGEBLUR) | CCTV | FAKE | {"S01b"} | set(jump_cuts()) | set(long_cuts())
+    t = set(FX) | set(REUSE) | set(VIDSCREEN) | {LAPTOP[0], EYES[0]} | MULTICAM | POLICE | set(CREEP) | STATIC | set(SPLIT) | set(OFFSET) | CLIP_FIXED | set(PAGEBLUR) | CCTV | FAKE | {"S01b"} | set(jump_cuts()) | set(long_cuts())
     t -= {"S11a", "S13h", "S02a"}
     return sorted(t, key=lambda s: IDX[s])
 
@@ -661,8 +683,13 @@ def main():
         for sid in (only or targets()):
             a, b = B[sid]; print(sid, build_cut(sid, b - a, tmp))
         return
-    patched = os.path.join(tmp, "patched.mp4"); done = patch(src, patched, tmp, only)
-    print("패치 컷", len(done), done)
+    patched = os.path.join(tmp, "patched.mp4")
+    if "--remaster" in sys.argv:  # 영상 패치는 그대로, 오디오만 새 remix(src)로 바꿔 끼워 다시 마스터링(정적 구간 등 오디오 수정 — 무료)
+        p2 = os.path.join(tmp, "patched_remix.mp4")
+        run(["-i", patched, "-i", src, "-map", "0:v", "-map", "1:a", "-c", "copy", "-shortest", p2]); patched = p2
+    else:
+        done = patch(src, patched, tmp, only)
+        print("패치 컷", len(done), done)
     main_out = os.path.join(tmp, "main.mp4"); master(patched, main_out, tmp)
     print("본편 마무리:", main_out, round(dur(main_out), 2))
     if "--no-outro" not in sys.argv:
