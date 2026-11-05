@@ -1,0 +1,23 @@
+{
+ "_설명": "『母が遺したビデオレター』 썸네일 애니메이션판(고니감독님 지시 2026-11-05 「하나는 애니메이션, 실사화 같이 강하게 바로 보고 클릭」, 레퍼런스: 정면 강한 응시 + 사선 극대형 글자) — 4장 2560x1440 약 0.16달러. 글자는 make_thumbnails_aihaha.py 로컬 합성.",
+ "characters": [
+  {
+   "id": "anime-hd",
+   "count": 4,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/aihaha-ref/yukiko-front.png",
+    "assets/portraits/aihaha-keyframes/H0a-1.png",
+    "assets/portraits/aihaha-ref/tsuyoshi-front.png"
+   ],
+   "prompt": "Create ONE single ultra-sharp, highly detailed illustration in 16:9 widescreen for a YouTube thumbnail — one image only, NOT a grid, no panels, no borders. [CAMERA] Eye-level medium close-up, the woman centered and facing the viewer DIRECTLY, staring straight into the lens with an intense, tearful, furious glare — the strongest possible eye contact; her face in the upper middle of the frame (eyes at about 30 percent from the top), her shoulders filling the lower half; 50mm, crisp focus on the face and the tablet. [CHARACTER] ART STYLE: hyper-detailed semi-realistic Japanese anime illustration (2.5D, like a high-end Japanese drama poster drawn in anime style) — realistic proportions, realistic skin shading and hair strands, crisp clean ink outlines, dramatic cel shading with soft gradients, glossy catchlights in the eyes; NOT photographic, NOT chibi, NOT 3D render. The woman is the person in reference image 1 drawn in this style — a Japanese woman in her mid-forties, black hair in a low ponytail, thin silver round wire-rim glasses, plain black mourning dress, bare earlobes; one thin tear line on her right cheek, lower eyelids red and wet, jaw clenched, lips pressed together, NOT smiling. [ACTION] With her right hand she holds a tablet up beside her face on the right side of the frame, its screen facing the viewer, the screen showing the elderly smiling woman from reference image 2 (white wavy hair, lavender cardigan, smiling too perfectly) with faint digital glitch lines and a slight RGB split across the screen image — the fake video. Exactly ONE hand holds the tablet, natural five fingers. [SETTING] Behind her a dim Japanese tatami room at night: a small Buddhist altar with white chrysanthemums and a framed portrait, soft incense smoke; deep in the background three dark silhouettes of the uncle's family (the man from reference image 3 in the middle) lit by a menacing red rim light; strong cool blue key light on her face from the tablet and a warm orange rim light on her hair; cinematic high contrast, rich saturated colors. Keep the lower 35 percent of the frame simple and dark (black dress and shadow) for big title text. The reference images are look references only — never copy them as separate panels or insets; ONE continuous scene. [NEGATIVE] No text, no letters, no numbers, no logos, no captions anywhere; no watermark; no extra people in the foreground; no second tablet; no extra fingers."
+  }
+ ]
+}
