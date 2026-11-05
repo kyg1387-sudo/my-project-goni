@@ -39,6 +39,7 @@ def loan(no, amount, date):
         d.text((150, 1330 + i * 64), t, font=F(30, M), fill=INK)
     d.text((150, 1560), "借主　住所　千葉県　　　　　　　　　　　　　氏名　佐伯　佐和子", font=F(30, M), fill=INK)
     seal(d, W - 230, 1575, 62)
+    seal(d, 150, 150, 56)  # 捨印(위 여백 왼쪽, 같은 실인) — S04e 접사의 인영과 같은 자리(R45, 2026-11-05)
     return im
 
 def report(org, full):

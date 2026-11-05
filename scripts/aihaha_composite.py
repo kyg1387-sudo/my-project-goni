@@ -362,13 +362,31 @@ def flip180(im):
     return im.rotate(180)
 
 
+def doc_dof(b, art, quad, focus, tol=55, strength=0.9, near=0.7, far=3.2, reach=420, ystretch=1.7):
+    """접사 서류 합성(R45): 서류 전체를 원근(quad = 그림 네 모서리, 화면 밖 허용)으로 얹고, 초점(focus) 거리에 따라 흐림을 키운다
+    (얕은 심도 — 초점 면의 인영만 선명, 멀어질수록 무름. 세로 거리는 깊이 변화가 커서 ystretch배로 센다)."""
+    H, W, _ = b.shape
+    wa = warp(art, quad, W, H)
+    yy, xx = np.mgrid[0:H, 0:W]; d = np.sqrt((xx - focus[0]) ** 2 + ((yy - focus[1]) * ystretch) ** 2)
+    t = np.clip((d - 90) / reach, 0, 1)
+    levels = [near, (near + far) / 2, far]; blurred = [cv2.GaussianBlur(wa, (0, 0), s_) for s_ in levels]
+    wa = np.where((t < 0.5)[..., None], blurred[0] * (1 - 2 * t[..., None]) + blurred[1] * (2 * t[..., None]),
+                  blurred[1] * (2 - 2 * t[..., None]) + blurred[2] * (2 * t[..., None] - 1))
+    poly = polymask(quad, W, H, 0)
+    med = np.median(b[poly > 0], axis=0); dist = np.linalg.norm(b - med, axis=2)
+    key = np.clip(1 - (dist - tol) / 40, 0, 1) * poly
+    key = cv2.GaussianBlur(cv2.erode(key, np.ones((3, 3), np.uint8)), (0, 0), 1.0)
+    return b * (1 - (1 - wa / 255.0) * strength * key[..., None])
+
+
 # ---------- 컷별 합성(좌표 = 1344x768 원본) ----------
 JOBS = {
     "S02a": lambda b: put_photo(b, portrait(), [(645, 366), (708, 366), (708, 457), (645, 457)]),
     "S04c": lambda b: paper(paper(paper(b, gfx("S04c_loan1"), [(175, 363), (497, 363), (464, 659), (54, 659)]),
                                   gfx("S04c_loan2"), [(520, 363), (836, 363), (867, 659), (480, 659)]),
                             gfx("S04c_loan3"), [(860, 363), (1176, 363), (1294, 659), (898, 659)]),
-    "S04e": lambda b: paper(inpaint(b, [(455, 405, 720, 495)]), seal_macro(), [(455, 398), (725, 380), (735, 488), (462, 505)], strength=0.95, blur=1.4),
+    # 인영만 있던 종이(R45) → 차용증 전체(위 여백 왼쪽 捨印 = 같은 실인, 제목·貸主·借主 줄)를 종이 모서리·윗변에 맞춰 원근 합성, 초점은 인영
+    "S04e": lambda b: doc_dof(inpaint(b, [(452, 402, 724, 500)]), gfx("S04c_loan1"), [(305, 440), (1666, 105), (3179, 666), (1818, 1001)], focus=(590, 428), strength=0.93),
     "S06a": lambda b: paper(b, ImageOps.mirror(gfx("S04c_loan1")), [(160, 606), (520, 590), (560, 636), (162, 652)], strength=0.22, blur=1.6),
     "S06b": lambda b: paper(b, stamp_box(), [(820, 585), (900, 582), (912, 640), (828, 645)], strength=0.85, blur=0.9),
     "S06e": lambda b: lcd(b, app_screen(), [(1051, 309), (1257, 289), (1125, 726), (1001, 659)]),

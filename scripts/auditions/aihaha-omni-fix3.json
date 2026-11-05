@@ -1,0 +1,11 @@
+{
+ "_설명": "『母が遺したビデオレター』 립싱크 재생성 3컷(R43, 2026-11-05 전수 검수): ① H0a 가짜 엄마 L01 — 옛 연기 지시의 「입이 말보다 살짝 늦게」 삭제, 무깜빡임·굳은 미소는 유지하되 입은 정확히 ② 같은 가짜 영상의 L02 구간(태블릿 H0b·S04l·TV S09e 화면 속 영상용, 같은 키프레임) ③ S10i 끝 「ん」에서 입이 크게 벌어짐 → 입 다묾. 약 11.4초 × 0.16 ≈ 1.8달러. 단독 실행(제19장 18).",
+ "tests": [
+  {"id": "omni-01", "model": "omnihuman", "image": "assets/portraits/aihaha-keyframes/H0a-1.png", "audio_id": "pad-01",
+   "prompt": "Her lips move precisely in sync with every syllable of the words, closing on m and n sounds and between phrases. She speaks slowly in an even, gentle monotone while looking straight into the lens without blinking; her face and shoulders stay perfectly still and the polite smile stays the same; only the lips and jaw move with the words. NO new people appear; the window and room stay exactly the same."},
+  {"id": "omni-02v", "model": "omnihuman", "image": "assets/portraits/aihaha-keyframes/H0a-1.png", "audio_id": "pad-02",
+   "prompt": "Her lips move precisely in sync with every syllable of the words, closing on m and n sounds and between phrases. She speaks slowly in an even, gentle monotone while looking straight into the lens without blinking; her face and shoulders stay perfectly still and the polite smile stays the same; only the lips and jaw move with the words. NO new people appear; the window and room stay exactly the same."},
+  {"id": "omni-120", "model": "omnihuman", "image": "assets/portraits/aihaha-keyframes/S10i-1.png", "audio_id": "pad-120",
+   "prompt": "Her lips move precisely in sync with every syllable; the mouth closes softly at the end of the sentence on the final n sound and stays closed after she finishes. She adds that it does not count from the forty-ninth day; quiet, exact, looking at the uncle. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle; no exaggerated motion, the same person throughout."}
+ ]
+}

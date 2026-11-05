@@ -1,0 +1,426 @@
+{
+ "H0a": {
+  "file": "assets/preview/aihaha-audio/omni01.mp4",
+  "dur": 4.04,
+  "lag": -8,
+  "corr": 0.55,
+  "face": 1.0,
+  "closed_voiced": 0.05
+ },
+ "S01e": {
+  "file": "assets/preview/aihaha-audio/omni11.mp4",
+  "dur": 3.56,
+  "lag": 12,
+  "corr": 0.38,
+  "face": 0.75,
+  "closed_voiced": 0.04
+ },
+ "S01g": {
+  "file": "assets/preview/aihaha-audio/omni13.mp4",
+  "dur": 3.88,
+  "lag": 0,
+  "corr": 0.64,
+  "face": 0.86,
+  "closed_voiced": 0.0
+ },
+ "S02c": {
+  "file": "assets/preview/aihaha-audio/omni19.mp4",
+  "dur": 4.84,
+  "lag": 1,
+  "corr": 0.73,
+  "face": 1.0,
+  "closed_voiced": 0.04
+ },
+ "S02d": {
+  "file": "assets/preview/aihaha-audio/omni20.mp4",
+  "dur": 5.16,
+  "lag": -1,
+  "corr": 0.46,
+  "face": 0.98,
+  "closed_voiced": 0.11
+ },
+ "S02f": {
+  "file": "assets/preview/aihaha-audio/omni22.mp4",
+  "dur": 3.72,
+  "lag": -1,
+  "corr": 0.62,
+  "face": 1.0,
+  "closed_voiced": 0.26
+ },
+ "S04b": {
+  "file": "assets/preview/aihaha-audio/omni27.mp4",
+  "dur": 6.28,
+  "lag": -1,
+  "corr": 0.68,
+  "face": 0.93,
+  "closed_voiced": 0.05
+ },
+ "S04g": {
+  "file": "assets/preview/aihaha-audio/omni32.mp4",
+  "dur": 5.16,
+  "lag": -2,
+  "corr": 0.48,
+  "face": 0.98,
+  "closed_voiced": 0.3
+ },
+ "S04h": {
+  "file": "assets/preview/aihaha-audio/omni33.mp4",
+  "dur": 2.46,
+  "lag": -1,
+  "corr": 0.79,
+  "face": 1.0,
+  "closed_voiced": 0.1
+ },
+ "S04j": {
+  "file": "assets/preview/aihaha-audio/omni35.mp4",
+  "dur": 4.68,
+  "lag": -1,
+  "corr": 0.5,
+  "face": 1.0,
+  "closed_voiced": 0.4
+ },
+ "S04k": {
+  "file": "assets/preview/aihaha-audio/omni36.mp4",
+  "dur": 3.8,
+  "lag": -1,
+  "corr": 0.44,
+  "face": 0.84,
+  "closed_voiced": 0.21
+ },
+ "S04o": {
+  "file": "assets/preview/aihaha-audio/omni40.mp4",
+  "dur": 3.88,
+  "lag": -1,
+  "corr": 0.7,
+  "face": 1.0,
+  "closed_voiced": 0.18
+ },
+ "S04p": {
+  "file": "assets/preview/aihaha-audio/omni41.mp4",
+  "dur": 5.16,
+  "lag": -1,
+  "corr": 0.48,
+  "face": 1.0,
+  "closed_voiced": 0.34
+ },
+ "S04q": {
+  "file": "assets/preview/aihaha-audio/omni42.mp4",
+  "dur": 8.04,
+  "lag": -1,
+  "corr": 0.62,
+  "face": 1.0,
+  "closed_voiced": 0.16
+ },
+ "S07b": {
+  "file": "assets/preview/aihaha-audio/omni64.mp4",
+  "dur": 5.32,
+  "lag": -4,
+  "corr": 0.16,
+  "face": 0.95,
+  "closed_voiced": 0.49
+ },
+ "S07c": {
+  "file": "assets/preview/aihaha-audio/omni65.mp4",
+  "dur": 3.25,
+  "lag": 0,
+  "corr": 0.65,
+  "face": 1.0,
+  "closed_voiced": 0.08
+ },
+ "S07d": {
+  "file": "assets/preview/aihaha-audio/omni66.mp4",
+  "dur": 4.52,
+  "lag": -1,
+  "corr": 0.7,
+  "face": 1.0,
+  "closed_voiced": 0.17
+ },
+ "S07e": {
+  "file": "assets/preview/aihaha-audio/omni67.mp4",
+  "dur": 2.93,
+  "lag": 0,
+  "corr": 0.78,
+  "face": 1.0,
+  "closed_voiced": 0.06
+ },
+ "S07g": {
+  "file": "assets/preview/aihaha-audio/omni69.mp4",
+  "dur": 5.32,
+  "lag": -1,
+  "corr": 0.52,
+  "face": 1.0,
+  "closed_voiced": 0.1
+ },
+ "S07i": {
+  "file": "assets/preview/aihaha-audio/omni71.mp4",
+  "dur": 4.36,
+  "lag": 0,
+  "corr": 0.64,
+  "face": 1.0,
+  "closed_voiced": 0.13
+ },
+ "S07j": {
+  "file": "assets/preview/aihaha-audio/omni72.mp4",
+  "dur": 4.69,
+  "lag": -2,
+  "corr": 0.56,
+  "face": 1.0,
+  "closed_voiced": 0.1
+ },
+ "S08b": {
+  "file": "assets/preview/aihaha-audio/omni76.mp4",
+  "dur": 2.44,
+  "lag": null,
+  "corr": 0.0,
+  "face": 0.31,
+  "closed_voiced": 0.0
+ },
+ "S08d": {
+  "file": "assets/preview/aihaha-audio/omni78.mp4",
+  "dur": 4.69,
+  "lag": -1,
+  "corr": 0.46,
+  "face": 1.0,
+  "closed_voiced": 0.41
+ },
+ "S08e": {
+  "file": "assets/preview/aihaha-audio/omni79.mp4",
+  "dur": 3.08,
+  "lag": -2,
+  "corr": 0.52,
+  "face": 0.77,
+  "closed_voiced": 0.08
+ },
+ "S08f": {
+  "file": "assets/preview/aihaha-audio/omni80.mp4",
+  "dur": 5.0,
+  "lag": 0,
+  "corr": 0.54,
+  "face": 1.0,
+  "closed_voiced": 0.17
+ },
+ "S09b": {
+  "file": "assets/preview/aihaha-audio/omni95.mp4",
+  "dur": 4.84,
+  "lag": 0,
+  "corr": 0.53,
+  "face": 1.0,
+  "closed_voiced": 0.16
+ },
+ "S09c": {
+  "file": "assets/preview/aihaha-audio/omni96.mp4",
+  "dur": 5.64,
+  "lag": 0,
+  "corr": 0.58,
+  "face": 1.0,
+  "closed_voiced": 0.09
+ },
+ "S09f": {
+  "file": "assets/preview/aihaha-audio/omni99.mp4",
+  "dur": 4.2,
+  "lag": 0,
+  "corr": 0.63,
+  "face": 1.0,
+  "closed_voiced": 0.24
+ },
+ "S09h": {
+  "file": "assets/preview/aihaha-audio/omni101.mp4",
+  "dur": 5.48,
+  "lag": -1,
+  "corr": 0.6,
+  "face": 1.0,
+  "closed_voiced": 0.1
+ },
+ "S09j": {
+  "file": "assets/preview/aihaha-audio/omni103.mp4",
+  "dur": 3.08,
+  "lag": 0,
+  "corr": 0.54,
+  "face": 1.0,
+  "closed_voiced": 0.11
+ },
+ "S09k": {
+  "file": "assets/preview/aihaha-audio/omni104.mp4",
+  "dur": 7.08,
+  "lag": -2,
+  "corr": 0.3,
+  "face": 0.99,
+  "closed_voiced": 0.18
+ },
+ "S09l": {
+  "file": "assets/preview/aihaha-audio/omni105.mp4",
+  "dur": 3.9,
+  "lag": -2,
+  "corr": 0.77,
+  "face": 1.0,
+  "closed_voiced": 0.0
+ },
+ "S09m": {
+  "file": "assets/preview/aihaha-audio/omni106.mp4",
+  "dur": 1.64,
+  "lag": 0,
+  "corr": 0.69,
+  "face": 1.0,
+  "closed_voiced": 0.04
+ },
+ "S09o": {
+  "file": "assets/preview/aihaha-audio/omni108.mp4",
+  "dur": 4.84,
+  "lag": -1,
+  "corr": 0.56,
+  "face": 1.0,
+  "closed_voiced": 0.23
+ },
+ "S09q": {
+  "file": "assets/preview/aihaha-audio/omni110.mp4",
+  "dur": 5.96,
+  "lag": -1,
+  "corr": 0.64,
+  "face": 1.0,
+  "closed_voiced": 0.22
+ },
+ "S09r": {
+  "file": "assets/preview/aihaha-audio/omni111.mp4",
+  "dur": 6.76,
+  "lag": 0,
+  "corr": 0.68,
+  "face": 1.0,
+  "closed_voiced": 0.0
+ },
+ "S10a": {
+  "file": "assets/preview/aihaha-audio/omni112.mp4",
+  "dur": 4.04,
+  "lag": -1,
+  "corr": 0.29,
+  "face": 1.0,
+  "closed_voiced": 0.24
+ },
+ "S10b": {
+  "file": "assets/preview/aihaha-audio/omni113.mp4",
+  "dur": 3.24,
+  "lag": -2,
+  "corr": 0.57,
+  "face": 1.0,
+  "closed_voiced": 0.21
+ },
+ "S10e": {
+  "file": "assets/preview/aihaha-audio/omni116.mp4",
+  "dur": 1.97,
+  "lag": 1,
+  "corr": 0.81,
+  "face": 1.0,
+  "closed_voiced": 0.0
+ },
+ "S10g": {
+  "file": "assets/preview/aihaha-audio/omni118.mp4",
+  "dur": 2.92,
+  "lag": -1,
+  "corr": 0.49,
+  "face": 1.0,
+  "closed_voiced": 0.21
+ },
+ "S10i": {
+  "file": "assets/preview/aihaha-audio/omni120.mp4",
+  "dur": 2.28,
+  "lag": 13,
+  "corr": 0.68,
+  "face": 1.0,
+  "closed_voiced": 0.05
+ },
+ "S10k": {
+  "file": "assets/preview/aihaha-audio/omni122.mp4",
+  "dur": 4.84,
+  "lag": -1,
+  "corr": 0.68,
+  "face": 1.0,
+  "closed_voiced": 0.11
+ },
+ "S10m": {
+  "file": "assets/preview/aihaha-audio/omni124.mp4",
+  "dur": 7.88,
+  "lag": -1,
+  "corr": 0.56,
+  "face": 1.0,
+  "closed_voiced": 0.43
+ },
+ "S10n": {
+  "file": "assets/preview/aihaha-audio/omni125.mp4",
+  "dur": 2.76,
+  "lag": -1,
+  "corr": 0.47,
+  "face": 1.0,
+  "closed_voiced": 0.0
+ },
+ "S11b": {
+  "file": "assets/preview/aihaha-audio/omni128.mp4",
+  "dur": 2.76,
+  "lag": -15,
+  "corr": 0.6,
+  "face": 1.0,
+  "closed_voiced": 0.41
+ },
+ "S11d": {
+  "file": "assets/preview/aihaha-audio/omni130.mp4",
+  "dur": 4.52,
+  "lag": -1,
+  "corr": 0.4,
+  "face": 1.0,
+  "closed_voiced": 0.46
+ },
+ "S11f": {
+  "file": "assets/preview/aihaha-audio/omni132.mp4",
+  "dur": 5.0,
+  "lag": -1,
+  "corr": 0.62,
+  "face": 1.0,
+  "closed_voiced": 0.12
+ },
+ "S11g": {
+  "file": "assets/preview/aihaha-audio/omni133.mp4",
+  "dur": 2.6,
+  "lag": 4,
+  "corr": 0.61,
+  "face": 1.0,
+  "closed_voiced": 0.2
+ },
+ "S11i": {
+  "file": "assets/preview/aihaha-audio/omni135.mp4",
+  "dur": 5.5,
+  "lag": -1,
+  "corr": 0.62,
+  "face": 1.0,
+  "closed_voiced": 0.12
+ },
+ "OUT1": {
+  "file": "assets/auditions/aihaha-outro-omni/omni-out1.mp4",
+  "dur": 3.9,
+  "lag": -1,
+  "corr": 0.52,
+  "face": 1.0,
+  "closed_voiced": 0.1
+ },
+ "OUT2": {
+  "file": "assets/auditions/aihaha-outro-omni/omni-out2.mp4",
+  "dur": 7.88,
+  "lag": -1,
+  "corr": 0.37,
+  "face": 1.0,
+  "closed_voiced": 0.25
+ },
+ "OUT3": {
+  "file": "assets/auditions/aihaha-outro-omni/omni-out3.mp4",
+  "dur": 4.2,
+  "lag": 0,
+  "corr": 0.65,
+  "face": 1.0,
+  "closed_voiced": 0.04
+ },
+ "OUT4": {
+  "file": "assets/auditions/aihaha-outro-omni/omni-out4.mp4",
+  "dur": 3.08,
+  "lag": -1,
+  "corr": 0.49,
+  "face": 1.0,
+  "closed_voiced": 0.12
+ }
+}

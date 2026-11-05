@@ -61,10 +61,11 @@ CORNERS = {"S01a": "corner_S01a", "S02a": "corner_S02a", "S04a": "corner_S04a", 
 CARD = ("H2b", "card_H2b", 4.15)  # 중앙 카드 — NA1 자막(~20.09초)이 끝난 뒤 2.3초만(자막과 글자 이중 금지, 2026-11-05 후크 점검)
 EYES = ("H1", 2.6, (0.50, 0.30), 2.8)  # 0:09 「一度も瞬きをしなかった」 — 첫 2.6초 = 태블릿 속 가짜 엄마의 눈 ECU(깜빡임 없는 정지 응시 + 화면 픽셀 질감)
 SPLIT = {  # 립싱크 재생성 검수(2026-11-05): (원본 컷 또는 omniNN, 원본 시작 초, 사용 길이 — None이면 컷 끝까지)
-    "S11b": [("S11c", 0.0, 1.6), ("omni128", 1.6, None)],  # 「千葉県警です」 음성이 립싱크 필터에 거절 → 叔母 얼굴 위 목소리 선행, 「あの動画は」부터 宮下 립싱크
+    "S11b": [("S11c", 0.0, None)],  # 「千葉県警です」 립싱크 거절 + 재생성본(omni128)은 「あの動画は」 첫 0.4초 입이 닫힘(R43) → 宮下 목소리 전체를 叔母의 굳는 얼굴 위로(L컷, 다음 컷 S11c와 한 호흡)
     "S11d": [("omni130", 0.0, 1.5), ("S11e", 0.0, None)],  # 1.7초부터 없던 叔母 등장·옷깃 꽃(재생성은 고개 90° 회전) → 「大野頼子さん」에서 叔母의 떨리는 손으로 L컷
+    "S07b": [("S07a", 2.2, 2.42), ("omni64", 2.42, None)],  # 「この動画と借用書を、」 동안 립싱크 입이 닫힘(R43) → 앞 와이드(S07a) 이어서 목소리 선행(J컷), 「調べていただけますか」부터 립싱크
 }
-OFFSET = {"S11c": 1.6, "S11e": 2.96}  # 위 L컷에서 앞부분을 쓴 컷은 뒤 구간부터(같은 움직임 반복 금지)
+OFFSET = {"S11c": 2.5, "S11e": 2.96, "S11g": 0.17}  # S11g: 원본 입이 소리보다 4프레임 늦음(R43 실측) → 영상을 4프레임 앞당김  # 위 L컷에서 앞부분을 쓴 컷은 뒤 구간부터(같은 움직임 반복 금지)
 CLIP_FIXED = {"S02f"}  # 립싱크 재생성으로 교체한 컷(omni22.mp4, 원본 _v1) — 패치로 덮는다
 CREEP = {  # 긴장 정적 구간 카메라(고니감독님 2026-11-05 「카메라 각도와 줌으로도 긴장감」): (최대 배율, cx, cy, 미세 흔들림)
     "S03a": (1.10, 0.62, 0.52, False), "S08l": (1.08, 0.5, 0.5, False), "S08n": (1.05, 0.5, 0.42, False),
@@ -241,6 +242,330 @@ def fake_video(frames):
     return out  # 입 지연 없음(R43 — 의도한 0.5초 지연이 시청자에게는 립싱크 오류로 보였다)
 
 
+# ---------- 서류 매 프레임 합성(R44·R46, 2026-11-05 「날인 종이가 많이 나오는데 정확하게 내용」) ----------
+# 컷 → [(x0, y0, x1, y1, 그림, 회전, 세기, 흐림, 방식)] — 좌표 = cover 뒤 1920x1080(카메라 효과 전).
+#   그림: "loan1~3" 차용증(S04c와 같은 그래픽) · "back" 뒷면(인물이 읽는 쪽이 앞면 → 우리에게는 뒷면, 앞면 인쇄가 옅게 비침) · "report" 「該当なし」 보고서
+#   회전 0~3: 종이 네 모서리(왼쪽 위부터 시계 방향) 기준 글자 위쪽 방향 — 2 = 맞은편 사람을 향해 놓인 종이(우리에게는 거꾸로)
+#   방식: "static" 탁자 위(전 프레임 중앙값 사각형) · "track" 손에 든 종이(프레임마다 추적 + 부드럽게)
+PAPERS = {
+    "S04b": [(560, 930, 880, 1080, "loan1", 0, 0.85, 1.6, "static"), (900, 960, 1360, 1080, "loan2", 0, 0.85, 1.4, "static"),
+             (1500, 1010, 1920, 1080, "loan3", 0, 0.85, 1.8, "static")],
+    "S04g": [(640, 840, 1100, 1080, "back", 0, 0.16, 3.0, "track"), (950, 815, 1340, 960, "back", 0, 0.16, 2.0, "track"),
+             (1000, 950, 1360, 1080, "loan2", 2, 0.8, 1.6, "static")],
+    "S04d": [(1300, 990, 1920, 1080, "loan2", 2, 0.8, 1.6, "static")],
+    "S04r": [(1080, 640, 1400, 800, "loan1", 2, 0.7, 2.2, "static")],
+    "S04j": [(1480, 990, 1920, 1080, "loan1", 0, 0.8, 1.8, "static")],
+    "S04f": [(1100, 930, 1540, 1080, "loan1", 1, 0.8, 1.6, "static"), (1450, 920, 1920, 1080, "loan2", 1, 0.8, 2.0, "static")],
+    "S04l": [(330, 860, 1010, 1010, "loan3", 0, 0.75, 2.4, "static")],
+    "S07e": [(540, 860, 1380, 1080, "back", 0, 0.14, 2.5, "track")],
+    "S07g": [(780, 870, 1340, 1080, "back", 0, 0.14, 2.5, "track")],
+    "S09o": [(700, 900, 1060, 1080, "back", 0, 0.14, 2.5, "track"), (980, 860, 1300, 1080, "back", 0, 0.14, 2.5, "track")],
+}
+
+
+AUTO_SHEETS = {"S04a": (["loan1", "loan2", "loan3"], 0.85, 1.1,
+                         [[(515, 640), (740, 540), (1310, 865), (827, 1411)], [(769, 533), (1067, 387), (1620, 627), (1333, 847)],
+                          [(1067, 387), (1413, 320), (1833, 467), (1620, 627)]])}
+# 叔父가 펼쳐 놓은 차용증 3장(R44): 세 장이 모두 놓인 앞 구간(PINGPONG)만 쓰고, 첫 프레임에서 잰 네 모서리를 배경 특징점 호모그래피로
+# 카메라 움직임에 맞춰 옮긴다(프레임마다 종이를 새로 찾으면 장이 붙어 보이거나 글자가 깜빡임 — 실측)
+
+
+def auto_sheets(sid, frames):
+    names, strength, blur, quads = AUTO_SHEETS[sid]
+    arts = [cv2.GaussianBlur(paper_art(n), (0, 0), blur * 2) for n in names]
+    orb = cv2.ORB_create(3000); g0 = cv2.cvtColor(frames[0], cv2.COLOR_RGB2GRAY)
+    hsv0 = cv2.cvtColor(frames[0], cv2.COLOR_RGB2HSV)
+    mask0 = (~(((hsv0[..., 0] < 25) & (hsv0[..., 1] > 50)))).astype(np.uint8) * 255  # 손(피부)은 특징점에서 제외
+    k0, d0 = orb.detectAndCompute(g0, mask0); bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
+    out = []; Hp = np.eye(3)
+    for f in frames:
+        g = cv2.cvtColor(f, cv2.COLOR_RGB2GRAY); k1, d1 = orb.detectAndCompute(g, None)
+        Hm = Hp
+        if d1 is not None and len(k1) > 50:
+            mt = sorted(bf.match(d0, d1), key=lambda m: m.distance)[:600]
+            if len(mt) > 30:
+                A = np.float32([k0[m.queryIdx].pt for m in mt]); Bp = np.float32([k1[m.trainIdx].pt for m in mt])
+                H_, inl = cv2.findHomography(A, Bp, cv2.RANSAC, 3.0)
+                if H_ is not None and inl.sum() > 25:
+                    Hm = H_
+        Hp = Hp * 0.5 + Hm * 0.5  # 떨림 완화
+        hsv = cv2.cvtColor(f, cv2.COLOR_RGB2HSV)
+        paper = ((hsv[..., 2] > 140) & (hsv[..., 1] < 60)).astype(np.float32)
+        paper = cv2.GaussianBlur(cv2.erode(paper, np.ones((5, 5), np.uint8)), (0, 0), 1.5)
+        gg = f.astype(np.float32)
+        for art, q in zip(arts, quads):
+            qq = cv2.perspectiveTransform(np.float32(q)[None], Hp)[0]
+            ah, aw = art.shape[:2]
+            M = cv2.getPerspectiveTransform(np.float32([[0, 0], [aw, 0], [aw, ah], [0, ah]]), qq)
+            wa = cv2.warpPerspective(art, M, (f.shape[1], f.shape[0]), flags=cv2.INTER_AREA, borderValue=(255, 255, 255))
+            poly = np.zeros(f.shape[:2], np.float32); cv2.fillConvexPoly(poly, np.int32(qq), 1.0)
+            key = paper * cv2.GaussianBlur(cv2.erode(poly, np.ones((7, 7), np.uint8)), (0, 0), 1.0)
+            gg = gg * (1 - (1 - wa / 255.0) * strength * key[..., None])
+        out.append(np.clip(gg, 0, 255).astype(np.uint8))
+    return out
+
+
+def paper_art(name):
+    if name.startswith("loan"):
+        return np.asarray(Image.open(os.path.join(GFX, f"S04c_{name}.png")).convert("RGB")).astype(np.float32)
+    if name == "back":  # 뒷면: 앞면 인쇄가 거울상으로 옅게(종이를 통해 비침)
+        a = np.asarray(Image.open(os.path.join(GFX, "S04c_loan1.png")).convert("RGB")).astype(np.float32)[:, ::-1]
+        return cv2.GaussianBlur(a, (0, 0), 3.0)
+    return np.asarray(Image.open(os.path.join(GFX, "S09a_form.png")).convert("RGB")).astype(np.float32)
+
+
+def _order(pts):
+    c = pts.mean(0); ang = np.arctan2(pts[:, 1] - c[1], pts[:, 0] - c[0]); p = pts[np.argsort(ang)]
+    k = int(np.argmin(p.sum(1))); return np.roll(p, -k, axis=0)  # 왼쪽 위부터 시계 방향(화면 좌표, y 아래)
+
+
+def _paper_quad(f, box):
+    x0, y0, x1, y1 = box
+    sub = f[y0:y1, x0:x1]
+    hsv = cv2.cvtColor(sub, cv2.COLOR_RGB2HSV)
+    m = ((hsv[..., 2] > 150) & (hsv[..., 1] < 50)).astype(np.uint8)
+    m = cv2.morphologyEx(m, cv2.MORPH_OPEN, np.ones((5, 5), np.uint8))
+    n, lab, st, _ = cv2.connectedComponentsWithStats(m)
+    if n < 2:
+        return None, None
+    k = 1 + int(np.argmax(st[1:, cv2.CC_STAT_AREA]))
+    if st[k, cv2.CC_STAT_AREA] < 1500:
+        return None, None
+    comp = (lab == k).astype(np.uint8)
+    cs, _ = cv2.findContours(comp, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    hull = cv2.convexHull(max(cs, key=cv2.contourArea))
+    q = None
+    for eps in (0.02, 0.03, 0.045, 0.06, 0.08):
+        ap = cv2.approxPolyDP(hull, eps * cv2.arcLength(hull, True), True)
+        if len(ap) == 4:
+            q = ap.reshape(4, 2).astype(np.float32); break
+    if q is None:
+        q = cv2.boxPoints(cv2.minAreaRect(hull)).astype(np.float32)
+    full = np.zeros(f.shape[:2], np.uint8); full[y0:y1, x0:x1] = comp
+    return _order(q + [x0, y0]), full
+
+
+def papers(sid, frames):
+    out = [f.astype(np.float32) for f in frames]
+    for (x0, y0, x1, y1, name, rot, strength, blur, mode) in PAPERS[sid]:
+        art = paper_art(name); ah, aw = art.shape[:2]
+        if blur:
+            art = cv2.GaussianBlur(art, (0, 0), blur * aw / 600)
+        qs = [_paper_quad(f, (x0, y0, x1, y1))[0] for f in frames]
+        good = [q for q in qs if q is not None]
+        if not good:
+            print(f"  [{sid}] 종이 못 찾음 {name} {x0},{y0}"); continue
+        med = np.median(np.stack(good), 0)
+        area0 = cv2.contourArea(med.astype(np.float32))
+        if mode == "track":  # 손으로 들어 올린 종이(아랫면이 보임)·잘못 잡힌 면적은 건너뜀 → 그 프레임은 무지 그대로
+            qs = [q if q is not None and abs(cv2.contourArea(q.astype(np.float32)) / max(area0, 1) - 1) < 0.35 else None for q in qs]
+        sm, prev = [], None
+        for q in qs:
+            if mode == "track" and q is None:
+                sm.append(None); continue
+            if mode == "static" or q is None:
+                q = med if mode == "static" or prev is None else prev
+            elif prev is not None:
+                q = prev * 0.6 + q * 0.4
+            prev = q; sm.append(q)
+        src = np.roll(np.float32([[0, 0], [aw, 0], [aw, ah], [0, ah]]), rot, axis=0)
+        for i, f in enumerate(frames):
+            if sm[i] is None:
+                continue
+            M = cv2.getPerspectiveTransform(src, np.float32(sm[i]))
+            wa = cv2.warpPerspective(art, M, (f.shape[1], f.shape[0]), flags=cv2.INTER_AREA, borderValue=(255, 255, 255))
+            _, comp = _paper_quad(f, (x0, y0, x1, y1))
+            if comp is None:
+                continue
+            key = cv2.GaussianBlur(cv2.erode(comp.astype(np.float32), np.ones((5, 5), np.uint8)), (0, 0), 1.5)
+            poly = np.zeros(f.shape[:2], np.float32); cv2.fillConvexPoly(poly, np.int32(sm[i]), 1.0)
+            key = key * cv2.GaussianBlur(poly, (0, 0), 1.0)
+            out[i] = out[i] * (1 - (1 - wa / 255.0) * strength * key[..., None])
+    return [np.clip(o, 0, 255).astype(np.uint8) for o in out]
+
+
+# 립싱크 결과에서 말하는 동안 입이 닫힌 구간(R43 전수 검수): 같은 클립을 확대한 손·소품 인서트로 가린다 (시작초, 끝초, 배율, cx, cy)
+INSERTS = {}
+
+
+# 생성 영상 중간에 결함이 생기는 컷: 깨끗한 앞 구간만 동작 보간(광학 흐름)으로 천천히 앞뒤로 오가며 채움(R50 — S13c 1초 뒤 오른손목에 시계가 하나 더 생김)
+PINGPONG = {"S13c": (0, 15, 3), "S04a": (0, 15, 3)}  # (시작 프레임, 끝 프레임, 느리게 배수)
+
+
+def slow_pingpong(fr, a, b, k):
+    seg = fr[a:b + 1]; dis = cv2.DISOpticalFlow_create(cv2.DISOPTICAL_FLOW_PRESET_MEDIUM)
+    out = []
+    for i in range(len(seg) - 1):
+        f0, f1 = seg[i], seg[i + 1]; out.append(f0)
+        g0, g1 = cv2.cvtColor(f0, cv2.COLOR_RGB2GRAY), cv2.cvtColor(f1, cv2.COLOR_RGB2GRAY)
+        fl = dis.calc(g0, g1, None); fb = dis.calc(g1, g0, None)
+        h, w = g0.shape; yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
+        for j in range(1, k):
+            t = j / k
+            m0 = cv2.remap(f0, xx + fb[..., 0] * t, yy + fb[..., 1] * t, cv2.INTER_LINEAR)
+            m1 = cv2.remap(f1, xx + fl[..., 0] * (1 - t), yy + fl[..., 1] * (1 - t), cv2.INTER_LINEAR)
+            out.append(cv2.addWeighted(m0, 1 - t, m1, t, 0))
+    out.append(seg[-1])
+    loop = out + out[-2:0:-1]
+    return (loop * 10)[: max(len(fr), 4 * len(loop))]
+
+
+# 손목시계 시계판(R49, 2026-11-05 「이 장면은 어떤 장면인지 정확하게」): 생성 영상의 시계판이 바늘 없는 흰 원판 → 실제 바늘(저녁 7시 48분)
+# + 날짜 창 「3」(10월 3일 = 기한 다음 날) + 1초마다 움직이는 초침(시계 소리와 같은 박자), 케이스는 다른 컷과 같은 은색(금색으로 바뀌는 결함)
+WATCHES = {"S10c": dict(ref=30, seed=(1062, 510), axes=(62, 68), win=24, keys=[(0, (1078, 495, 58, 42, -15)), (12, (1076, 497, 56, 48, -8))], keys_until=20, hm=(7, 48), date="3", sec0=12)}
+
+
+def _dial_art(h, m, sec, date, n=240):
+    im = Image.new("RGB", (n, n), (255, 255, 255)); d = ImageDraw.Draw(im); c = n / 2; r = n / 2 - 6
+    for k in range(60):
+        a = math.radians(k * 6); L = 0.13 if k % 5 == 0 else 0.05; wdt = 5 if k % 5 == 0 else 2
+        p0 = (c + math.sin(a) * r * (0.93 - L), c - math.cos(a) * r * (0.93 - L)); p1 = (c + math.sin(a) * r * 0.93, c - math.cos(a) * r * 0.93)
+        if k != 15:
+            d.line([p0, p1], fill=(70, 70, 74), width=wdt)
+    bx = (c + r * 0.50, c - r * 0.12, c + r * 0.80, c + r * 0.12)  # 3시 날짜 창
+    d.rectangle(bx, fill=(252, 252, 250), outline=(90, 90, 90), width=2)
+    d.text(((bx[0] + bx[2]) / 2, c + 1), date, font=ImageFont.truetype("/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc", int(r * 0.2)), fill=(25, 25, 28), anchor="mm")
+    def hand(ang, L, wdt, col, back=0.12):
+        a = math.radians(ang); d.line([(c - math.sin(a) * r * back, c + math.cos(a) * r * back), (c + math.sin(a) * r * L, c - math.cos(a) * r * L)], fill=col, width=wdt)
+    hand((h % 12) * 30 + m * 0.5, 0.52, 9, (30, 30, 34)); hand(m * 6 + sec * 0.1, 0.80, 6, (30, 30, 34)); hand(sec * 6, 0.86, 2, (160, 30, 30), 0.2)
+    d.ellipse((c - 6, c - 6, c + 6, c + 6), fill=(30, 30, 34))
+    return np.asarray(im).astype(np.float32)
+
+
+def watches(sid, frames):
+    cfg = WATCHES[sid]; out = []; found = [None] * len(frames)
+    # 기준 프레임의 시계(원판+케이스) 모양을 템플릿으로 앞뒤 프레임을 따라감(흰 원판과 흰 벽이 색으로는 안 갈림)
+    k0 = cfg["ref"]; cx, cy = cfg["seed"]; ax, ay = cfg["axes"]; T = 46
+    gray = [cv2.cvtColor(f, cv2.COLOR_RGB2GRAY) for f in frames]
+    tpl = gray[k0][int(cy - T):int(cy + T), int(cx - T):int(cx + T)]
+    for order in (range(k0, len(frames)), range(k0 - 1, -1, -1)):
+        prev = np.array([cx, cy], float)
+        for i in order:
+            x0, y0 = int(prev[0] - T - cfg["win"]), int(prev[1] - T - cfg["win"])
+            win = gray[i][max(y0, 0):y0 + 2 * (T + cfg["win"]), max(x0, 0):x0 + 2 * (T + cfg["win"])]
+            r = cv2.matchTemplate(win, tpl, cv2.TM_CCOEFF_NORMED); _, mv, _, ml = cv2.minMaxLoc(r)
+            if mv < cfg.get("min_score", 0.45):
+                break  # 시계가 비스듬해져 모양이 달라지면 거기서 멈춤(그 앞 프레임은 원래 그대로)
+            prev = np.array([max(x0, 0) + ml[0] + T, max(y0, 0) + ml[1] + T], float)
+            found[i] = np.array([prev[0], prev[1], ax, ay, 0.0])
+            nt = gray[i][int(prev[1] - T):int(prev[1] + T), int(prev[0] - T):int(prev[0] + T)]
+            if nt.shape == tpl.shape:
+                tpl = cv2.addWeighted(tpl, 0.6, nt, 0.4, 0)  # 템플릿을 조금씩 갱신(시계가 천천히 돌아가도 따라감)
+        tpl = gray[k0][int(cy - T):int(cy + T), int(cx - T):int(cx + T)]
+    for (k, e0) in cfg.get("keys", []):  # 비스듬한 앞 구간: 손으로 잰 타원(중심·축·기울기)으로 고정하고 추적 구간까지 보간
+        found[k] = np.array(e0, float)
+    ks = [k for k, _ in cfg.get("keys", [])]
+    if ks:
+        k1 = cfg["keys_until"]; a0 = found[ks[-1]]; a1 = found[k1] if found[k1] is not None else a0
+        for i in range(ks[-1] + 1, k1):
+            t = (i - ks[-1]) / (k1 - ks[-1]); found[i] = a0 * (1 - t) + a1 * t
+        for j in range(len(ks) - 1):
+            for i in range(ks[j] + 1, ks[j + 1]):
+                t = (i - ks[j]) / (ks[j + 1] - ks[j]); found[i] = found[ks[j]] * (1 - t) + found[ks[j + 1]] * t
+    good = [e for e in found if e is not None]
+    sm = []; last = None
+    for e in found:
+        if e is None:
+            sm.append(None); continue
+        last = e if last is None else np.r_[last[:4] * 0.5 + e[:4] * 0.5, e[4]]; sm.append(last)
+    for i, f in enumerate(frames):
+        e = sm[i]; g = f.astype(np.float32)
+        if e is None or min(e[2], e[3]) < 10:
+            out.append(f); continue
+        sec = cfg["sec0"] + int(i / FPS)
+        art = _dial_art(cfg["hm"][0], cfg["hm"][1], sec, cfg["date"])
+        n = art.shape[0]; (ex, ey, ea, eb, ang) = e
+        a = math.radians(ang); ca, sa = math.cos(a), math.sin(a)
+        # 단위 원 → 타원(축 ea·eb, 회전 ang): 원판 안쪽 92%
+        M = np.float32([[ca * ea / n * 0.92, -sa * eb / n * 0.92, 0], [sa * ea / n * 0.92, ca * eb / n * 0.92, 0]])
+        M[:, 2] = [ex, ey] - M[:, :2] @ [n / 2, n / 2]
+        wa = cv2.warpAffine(art, M, (f.shape[1], f.shape[0]), flags=cv2.INTER_AREA, borderValue=(255, 255, 255))
+        wa = cv2.GaussianBlur(wa, (0, 0), 0.8)
+        mk = np.zeros(f.shape[:2], np.float32); cv2.ellipse(mk, ((ex, ey), (ea * 0.95, eb * 0.95), ang), 1.0, -1); mk = cv2.GaussianBlur(mk, (0, 0), 1.2)
+        g = g * (1 - (1 - wa / 255.0) * 0.92 * mk[..., None])
+        # 케이스 은색: 시계 둘레(축 1.7배) 안의 금빛(색상 16~25·채도 40~120·밝음, 실측) 픽셀만 무채색 금속으로 — 피부(색상 ≤ 14·채도 높음)는 그대로
+        zone = np.zeros(f.shape[:2], np.uint8); cv2.ellipse(zone, ((ex, ey), (ea * 1.7, eb * 1.7), ang), 1, -1)
+        hsv = cv2.cvtColor(np.clip(g, 0, 255).astype(np.uint8), cv2.COLOR_RGB2HSV)
+        gold = ((hsv[..., 0] >= 14) & (hsv[..., 0] <= 28) & (hsv[..., 1] > 35) & (hsv[..., 1] < 140) & (hsv[..., 2] > 85) & (zone > 0)).astype(np.float32)
+        gold = np.clip(cv2.GaussianBlur(gold, (0, 0), 0.8) * 1.3, 0, 1)
+        lum = g.mean(2, keepdims=True) * 1.05 + 3
+        g = g * (1 - gold[..., None]) + np.concatenate([lum * 0.98, lum, lum * 1.03], 2) * gold[..., None]
+        out.append(np.clip(g, 0, 255).astype(np.uint8))
+    print(f"  [{sid}] 시계판 추적 {len(good)}/{len(frames)}")
+    return out
+
+
+# 화면·소품 정합(R47): 좌표 = cover 뒤 1920x1080. paused = 방금 본 가짜 영상의 멈춘 화면(재생 표시줄 + 재생 버튼),
+# off = 꺼진 화면(어두운 유리 + 옅은 반사), photo = 어머니 사진(영정·액자)
+SCREENS_C = {
+    "H2b": [("pausedtrack", (950, 520, 1600, 800))],  # 태블릿을 내려놓으며 화면이 켜짐 → 켜진 화면 사각형을 프레임마다 찾아 멈춘 영상으로
+    "S05c": [("paused", [(320, 852), (468, 845), (475, 945), (320, 950)])],
+    "S08l": [("paused", [(855, 918), (985, 912), (993, 948), (862, 955)]), ("photo", [(866, 549), (929, 549), (929, 644), (866, 644)])],
+    "S09k": [("offfull", [(232, 874), (600, 878), (600, 1080), (234, 1080)])],
+    "S13c": [("off", [(1312, 962), (1620, 962), (1625, 1080), (1312, 1080)])],
+}
+
+
+def _paused_art():
+    f = cv2.resize(cover(kf_img("H0a")), (640, 360), interpolation=cv2.INTER_AREA).astype(np.float32)
+    f = fake_video([f.astype(np.uint8)])[0].astype(np.float32) * 0.9
+    f[330:336, 20:620] = f[330:336, 20:620] * 0.4 + 90; f[330:336, 20:260] = (235, 60, 60)  # 재생 표시줄(멈춘 지점)
+    im = Image.fromarray(np.clip(f, 0, 255).astype(np.uint8)); d = ImageDraw.Draw(im)
+    d.ellipse((290, 150, 350, 210), fill=(0, 0, 0, 0), outline=(240, 240, 240), width=4)
+    d.polygon([(311, 163), (311, 197), (339, 180)], fill=(240, 240, 240))  # 재생 버튼(일시정지 상태)
+    return np.asarray(im).astype(np.float32)
+
+
+def screens_c(sid, frames):
+    sys.path.insert(0, os.path.join(ROOT, "scripts")); import aihaha_composite as C
+    out = frames
+    for kind_, q in SCREENS_C[sid]:
+        if kind_ == "off":
+            out = [tv_off(f, q) for f in out]
+        elif kind_ == "offfull":  # 화면 전체가 하늘색으로 빛남(밝기 키로는 테두리가 남음) → 사각형 전체를 꺼진 유리로(위쪽이 살짝 밝은 반사)
+            h_, w_ = out[0].shape[:2]; poly = np.zeros((h_, w_), np.float32); cv2.fillConvexPoly(poly, np.int32(q), 1.0)
+            poly = cv2.GaussianBlur(poly, (0, 0), 2.5)[..., None]
+            ys = np.linspace(1, 0, h_)[:, None, None]
+            res = []
+            for f in out:
+                g = f.astype(np.float32); dark = np.array([20, 23, 28], np.float32) + 0.06 * g + 10 * ys
+                res.append(np.clip(g * (1 - poly) + dark * poly, 0, 255).astype(np.uint8))
+            out = res
+        elif kind_ == "paused":
+            art = _paused_art(); med = np.median(np.stack(out[::4]).astype(np.float32), 0)
+            res = []
+            for f in out:
+                d = np.linalg.norm(f.astype(np.float32) - med, axis=2)
+                prot = cv2.GaussianBlur(np.clip((d - 26) / 30, 0, 1).astype(np.float32), (0, 0), 2)  # 화면 앞을 지나는 손 보호
+                res.append(lcd_put(f, art, q, keep={'H2b': 70}.get(sid, 150), refl=0.12, blur=0.9, protect=prot))
+            out = res
+        elif kind_ == "pausedtrack":
+            art = _paused_art(); x0, y0, x1, y1 = q; res = []; prev = None
+            for f in out:
+                sub = f[y0:y1, x0:x1]; m = (sub.max(2) > 95).astype(np.uint8)
+                m = cv2.morphologyEx(m, cv2.MORPH_OPEN, np.ones((5, 5), np.uint8))
+                n, lab, st, _ = cv2.connectedComponentsWithStats(m)
+                if n < 2 or st[1:, cv2.CC_STAT_AREA].max() < 3000:
+                    res.append(f); continue
+                k = 1 + int(np.argmax(st[1:, cv2.CC_STAT_AREA]))
+                cs, _ = cv2.findContours((lab == k).astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+                hull = cv2.convexHull(max(cs, key=cv2.contourArea)); qq = None
+                for eps in (0.02, 0.035, 0.05, 0.07):
+                    ap = cv2.approxPolyDP(hull, eps * cv2.arcLength(hull, True), True)
+                    if len(ap) == 4:
+                        qq = ap.reshape(4, 2).astype(np.float32); break
+                if qq is None:
+                    qq = cv2.boxPoints(cv2.minAreaRect(hull)).astype(np.float32)
+                qq = _order(qq + [x0, y0]); c_ = qq.mean(0); qq = c_ + (qq - c_) * 1.09  # 화면 가장자리까지(가장자리 어두운 띠가 검출에서 빠짐)
+                prev = qq if prev is None else prev * 0.5 + qq * 0.5
+                res.append(lcd_put(f, art, prev, keep=-200, refl=0.10, blur=0.9))  # 화면 전체 교체(원래 앱 아이콘이 비치지 않게)
+            out = res
+        elif kind_ == "photo":
+            ph = np.asarray(C.portrait().convert("RGB")).astype(np.float32)
+            out = [np.clip(C.put_photo(f.astype(float), C.portrait(), q, blur=1.6), 0, 255).astype(np.uint8) for f in out]
+    return out
+
+
 def cctv(frames):
     """돌봄 카메라: 흑백·어안 6%·15fps 끊김·압축 블록·노이즈 + 타임스탬프(그래픽)."""
     ts = np.asarray(Image.open(os.path.join(GFX, "cctv_S03a.png")).convert("RGBA").resize((W, H))).astype(np.float32)
@@ -392,6 +717,8 @@ def source_frames(sid):
     if sid in REUSE:
         rid, off = REUSE[sid]
         fr = [cover(f) for f in read_frames(raw_path(rid), off)]
+        if sid == "S05a":  # 내레이션 위에서 가짜 엄마 입이 움직이면 「다른 사람 말에 입이 움직임」(R43) → 다시 보며 멈춘 화면(입 다문 키프레임)
+            fr = [cover(kf_img("H0a"))] * (int(round(BY[sid]["assembled_s"] * FPS)) + 2)
         if sid == "S06k":  # 일시정지 화면(정지 프레임) + CCTV
             fr = [fr[0]] * 200
         if rid in FAKE or sid in FAKE:
@@ -418,6 +745,8 @@ def source_frames(sid):
             out += (fr + [fr[-1]] * k)[:k]
         return out
     fr = read_frames(raw_path(sid), OFFSET.get(sid, 0.0))
+    if sid in PINGPONG:
+        fr = slow_pingpong(fr, *PINGPONG[sid])
     if sid == EYES[0]:
         k = int(EYES[1] * FPS); src = h0a_frames(); f0 = src[2]  # 말하기 전 입을 다문 프레임(입 벌린 채 정지 금지)
         cx, cy = EYES[2]; z = EYES[3]
@@ -438,6 +767,12 @@ def source_frames(sid):
         sc, ox, oy = kf_map(sid, fr[0]); q = mapq(TVOFF[sid], sc, ox, oy)
         fr = [tv_off(f, q) for f in fr]
     fr = [cover(f) for f in fr]
+    if sid in PAPERS:
+        fr = papers(sid, fr)
+    if sid in AUTO_SHEETS:
+        fr = auto_sheets(sid, fr)
+    if sid in WATCHES:
+        fr = watches(sid, fr)
     if sid in FAKE:
         fr = fake_video(fr)
     if sid in CCTV and sid not in POST_CCTV:  # POST_CCTV는 build_cut에서 1회만(R47 Q1 — 글자 이중 표시)
@@ -473,11 +808,17 @@ def build_cut(sid, sec, tmp):
         print(f"  [{sid}] 원본 없음 — 건너뜀: {src}")
         return None
     frames = source_frames(sid)
+    if sid in SCREENS_C:
+        frames = screens_c(sid, frames)
     if sid in POLICE:
         frames = police(frames)
     n = int(round(sec * FPS)) + 1
     frames = (frames + [frames[-1]] * n)[:n]
+    raw_fr = frames
     frames = camera(sid, frames, sec, src)
+    for (t0, t1, z, cx, cy) in INSERTS.get(sid, []):  # 립싱크 입이 닫힌 구간 → 같은 클립의 손·소품 인서트(R43)
+        for i in range(int(t0 * FPS), min(int(t1 * FPS), len(frames))):
+            frames[i] = zoom_frame(raw_fr[i], z, cx, cy)
     if sid in POST_CCTV:
         frames = cctv(frames)
     write_frames(frames, out)
@@ -494,7 +835,7 @@ def moving_check():
 
 
 def targets():
-    t = set(FX) | set(REUSE) | set(VIDSCREEN) | {LAPTOP[0], EYES[0]} | MULTICAM | POLICE | set(CREEP) | STATIC | KF_REDO | set(TVOFF) | set(SPLIT) | set(OFFSET) | CLIP_FIXED | set(PAGEBLUR) | CCTV | FAKE | {"S01b"} | set(jump_cuts()) | set(long_cuts())
+    t = set(FX) | set(REUSE) | set(VIDSCREEN) | {LAPTOP[0], EYES[0]} | MULTICAM | POLICE | set(CREEP) | STATIC | KF_REDO | set(TVOFF) | set(SPLIT) | set(OFFSET) | CLIP_FIXED | set(PAGEBLUR) | set(PAPERS) | set(PINGPONG) | set(WATCHES) | set(SCREENS_C) | set(INSERTS) | set(AUTO_SHEETS) | CCTV | FAKE | {"S01b"} | set(jump_cuts()) | set(long_cuts())
     t -= {"S11a", "S13h", "S02a"}
     return sorted(t, key=lambda s: IDX[s])
 
