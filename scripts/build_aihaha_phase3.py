@@ -479,7 +479,14 @@ VO_OTS_SKIP = {"S13b"}  # 어머니 목소리는 휴대폰 속 — 앞 어깨에
 EMPTY_STILL = set()   # 무인 컷은 처음부터 estill로 설계(제19장 16)
 # 일본어 글자 합성 면(서류·노트북·휴대폰·태블릿 화면)을 쥔 손 인서트는 정지 + 편집 카메라(제10장 3·제7장 2 — i2v는 화면·종이 글자를 뭉갠다)
 INS_STILL = {"S06b", "S06a", "S06e", "S08h", "S08i", "S08i2", "S09a", "S09i", "S13a", "H0b", "S04l"}
-MOTION_FIX = {}
+MOTION_FIX = {  # i2v 1초 시트 1차 검수(2026-11-05, run 41952958756) — 동작 문장 맨 앞(제19장 16)
+    "S01b": "OBJECT LOCKED: the white pill box stays in exactly the same place and shape the whole time, its lids stay open; the fingers only drop pills into the compartments; the hand never lifts away or floats.",
+    "S04d": "HANDS LOCKED: both hands stay still on the table edge below the frame and never rise into view; her eyes stay down on the papers on the table, never lifting toward the lens.",
+    "S08g": "She bows slowly from the waist, a polite deep bow, both hands together in front of her thighs; her hands never touch her head or face.",
+    "S11j": "LIGHTING LOCKED: the room light stays exactly as in the first frame — the lamp stays off, no warm or orange light appears; only a faint red tint drifts slowly across the floor.",
+    "S13d": "HANDS LOCKED: both hands rest still in her lap below the frame and never rise into view.",
+}
+PRO = {"S13d"}  # 정점 눈물(제21장 11) — 얼굴이 보이는 정점 i2v는 pro 1080p
 for _s in SHOTS:
     if _s["id"] in EMPTY_STILL:
         _s["kind"] = "estill"
@@ -836,6 +843,8 @@ def main():
                               " Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. "
                               "[NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.")
             item["image"] = keyframe; cost["lite"] += gen; live[sid] = s["motion"]
+            if sid in PRO:
+                item["i2v_model"] = "fal-ai/bytedance/seedance/v1/pro/image-to-video"; item["i2v_resolution"] = "1080p"
         else:
             item["prompt"] = f"(override) {tier}: {s['subject'][:80]}"; item["override_required"] = True
             if keyframe:

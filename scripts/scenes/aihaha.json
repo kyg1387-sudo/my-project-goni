@@ -190,7 +190,7 @@
    "image": "assets/portraits/aihaha-keyframes/S01a-1.png"
   },
   {
-   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The fingers drop pills one by one into the compartments and close a lid. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] OBJECT LOCKED: the white pill box stays in exactly the same place and shape the whole time, its lids stay open; the fingers only drop pills into the compartments; the hand never lifts away or floats. The fingers drop pills one by one into the compartments and close a lid. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
    "duration": 10,
    "image": "assets/portraits/aihaha-keyframes/S01b-1.png"
   },
@@ -305,7 +305,7 @@
    "image": "assets/portraits/aihaha-keyframes/S04c-1.png"
   },
   {
-   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She stares down, breath held, a small swallow. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] HANDS LOCKED: both hands stay still on the table edge below the frame and never rise into view; her eyes stay down on the papers on the table, never lifting toward the lens. She stares down, breath held, a small swallow. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
    "duration": 5,
    "image": "assets/portraits/aihaha-keyframes/S04d-1.png"
   },
@@ -592,7 +592,7 @@
    "image": "assets/portraits/aihaha-keyframes/S08f-1.png"
   },
   {
-   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She bows her head slowly and holds it. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She bows slowly from the waist, a polite deep bow, both hands together in front of her thighs; her hands never touch her head or face. She bows her head slowly and holds it. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
    "duration": 5,
    "image": "assets/portraits/aihaha-keyframes/S08g-1.png"
   },
@@ -901,7 +901,7 @@
    "image": "assets/portraits/aihaha-keyframes/S11i-1.png"
   },
   {
-   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] They sit slumped, motionless; the red light sweeps slowly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] LIGHTING LOCKED: the room light stays exactly as in the first frame — the lamp stays off, no warm or orange light appears; only a faint red tint drifts slowly across the floor. They sit slumped, motionless; the red light sweeps slowly. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
    "duration": 10,
    "image": "assets/portraits/aihaha-keyframes/S11j-1.png"
   },
@@ -933,9 +933,11 @@
    "image": "assets/portraits/aihaha-keyframes/S13c-1.png"
   },
   {
-   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION]  NOT smiling at any moment. A single thin transparent tear slowly spills over her right lower eyelid and runs down along the natural curve of her cheek to about one third, catching a faint highlight of the window light; she blinks once slowly, her breath trembles, lips pressed together. Head still, no other tears. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] HANDS LOCKED: both hands rest still in her lap below the frame and never rise into view.  NOT smiling at any moment. A single thin transparent tear slowly spills over her right lower eyelid and runs down along the natural curve of her cheek to about one third, catching a faint highlight of the window light; she blinks once slowly, her breath trembles, lips pressed together. Head still, no other tears. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
    "duration": 5,
-   "image": "assets/portraits/aihaha-keyframes/S13d-1.png"
+   "image": "assets/portraits/aihaha-keyframes/S13d-1.png",
+   "i2v_model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+   "i2v_resolution": "1080p"
   },
   {
    "prompt": "(override) still: WINDOW STATE LOCKED FIRST: through the window the same tall tower is FINISHED — ",
