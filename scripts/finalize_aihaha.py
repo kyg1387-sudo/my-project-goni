@@ -686,7 +686,7 @@ def quiet_point(path, lo, hi):
 
 def jump_cuts():
     """4.5초 넘는 립싱크 컷(설계 효과 없는 것) — 점프 컷 1.00→1.10(제19장 17①)."""
-    return [s["id"] for s in SB if IDX[s["id"]] in OMNI and s["assembled_s"] > 4.5 and s["id"] not in FX]
+    return [s["id"] for s in SB if IDX[s["id"]] in OMNI and s["assembled_s"] > 4.5 and s["id"] not in FX and s["id"] not in SPLIT]  # SPLIT 컷은 이미 컷이 바뀜(연속 두 번 끊김 금지)
 
 
 def long_cuts():
