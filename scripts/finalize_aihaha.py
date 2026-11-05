@@ -56,7 +56,10 @@ CCTV = {"S03a", "S06k"}
 FAKE = {"H0a", "S05a"}
 S01B_HOLD = 5.0  # S01b 5초 이후 약통이 납작해짐 → 5초 프레임 정지 + 슬로 푸시
 CORNERS = {"S01a": "corner_S01a", "S02a": "corner_S02a", "S04a": "corner_S04a", "S07a": "corner_S07a", "S08a": "corner_S08a", "S12a": "corner_S12a"}
-CARD = ("H2b", "card_H2b", 0.6)  # 중앙 카드 — 태블릿을 내려놓는 손 위 빈 공간, 컷 시작 후 초
+CARD = ("H2b", "card_H2b", 4.15)  # 중앙 카드 — NA1 자막(~20.09초)이 끝난 뒤 2.3초만(자막과 글자 이중 금지, 2026-11-05 후크 점검)
+EYES = ("H1", 2.6, (0.50, 0.34), 2.2)  # 0:09 「一度も瞬きをしなかった」 — 첫 2.6초 = 태블릿 속 가짜 엄마의 눈 ECU(깜빡임 없는 정지 응시 + 화면 픽셀 질감)
+JLEAD = {"S03a": -0.5, "S04a": -0.5, "S09a": -0.5, "S13a": -0.5, "S11a": -0.3, "S02a": -0.5}  # 장면 연결 J컷(대본 10절) — 다음 장면 소리를 먼저
+EXTRA_SFX = [("mokugyo", "S02a", -0.5, -18.0)]  # S01 → S02 매치컷: 독경(목탁) 선행
 
 
 def run(args):
@@ -348,6 +351,18 @@ def source_frames(sid):
         base = [cover(f) for f in vid_screen(sid, n)]
         return [zoom_frame(f, 1 + 0.04 * i / n, 0.5, 0.5) for i, f in enumerate(base)]  # 정지 컷 기본 푸시인(교체 클립과 같음)
     fr = read_frames(raw_path(sid))
+    if sid == EYES[0]:
+        k = int(EYES[1] * FPS); src = h0a_frames(); f0 = src[min(len(src) - 1, int(1.5 * FPS))]
+        cx, cy = EYES[2]; z = EYES[3]
+        yy, xx = np.mgrid[0:H, 0:W]
+        sub = np.stack([(xx % 3 == 0), (xx % 3 == 1), (xx % 3 == 2)], -1).astype(np.float32) * 0.10 + 0.93  # LCD 서브픽셀
+        eyes = []
+        for j in range(k):
+            g = zoom_frame(f0, z + 0.06 * j / k, cx, cy).astype(np.float32) * sub
+            g = g * (1 + 0.015 * math.sin(j * 1.7)) + np.random.default_rng(j).normal(0, 2.5, g.shape)  # 화면 깜빡임·센서 노이즈(눈은 그대로)
+            eyes.append(np.clip(g, 0, 255).astype(np.uint8))
+        rest = [cover(f) for f in fr]
+        return eyes + rest
     if sid == LAPTOP[0]:
         fr = laptop(fr)
     if sid in PAGEBLUR:
@@ -380,7 +395,7 @@ def build_cut(sid, sec, tmp):
 
 
 def targets():
-    t = set(FX) | set(REUSE) | set(VIDSCREEN) | {LAPTOP[0]} | set(PAGEBLUR) | CCTV | FAKE | {"S01b"} | set(jump_cuts()) | set(long_cuts())
+    t = set(FX) | set(REUSE) | set(VIDSCREEN) | {LAPTOP[0], EYES[0]} | set(PAGEBLUR) | CCTV | FAKE | {"S01b"} | set(jump_cuts()) | set(long_cuts())
     t -= {"S11a", "S13h", "S02a"}
     return sorted(t, key=lambda s: IDX[s])
 
@@ -473,7 +488,9 @@ def sfx_list():
         if m and m.group(1) in IDX:
             sid, sx = m.groups(); p = os.path.join(ROOT, "assets", "sfx", SKIT, f"{sx}.mp3")
             pk = -9.0 if sx in ("sub_hit", "table_slam", "intercom_chime") else (-14.0 if sx in ("drone", "heartbeat", "siren_far") else -16.0)
-            out.append((p, sid, 0.05, pk))
+            out.append((p, sid, JLEAD.get(sid, 0.05), pk))
+    for sx, sid, off, pk in EXTRA_SFX:
+        out.append((os.path.join(ROOT, "assets", "sfx", SKIT, f"{sx}.mp3"), sid, off, pk))
     return out
 
 
@@ -522,7 +539,7 @@ def master(patched, out, tmp):
     nv = len(vins) // 2
     sfx_in, sfx_fc, labs = [], [], ""
     for k, (p, sid, off, pk) in enumerate([x for x in sfx_list() if os.path.exists(x[0])]):
-        ms = int((B[sid][0] + off) * 1000); j = 2 + nv + k
+        ms = max(int((B[sid][0] + off) * 1000), 0); j = 2 + nv + k
         sfx_in += ["-i", p]
         sfx_fc.append(f"[{j}:a]aformat=sample_rates=44100:channel_layouts=stereo,volume={pk - peak_db(p):.2f}dB,adelay={ms}|{ms},apad=whole_dur={vd:.3f}[x{k}]")
         labs += f"[x{k}]"; print(f"효과음 {os.path.basename(p)} @ {sid} → 피크 {pk} dBFS")
