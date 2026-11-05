@@ -813,9 +813,20 @@ def police(frames):
     return out
 
 
+def cut_signature(sid):
+    """컷을 만드는 설정 지문 — 합성·분할·카메라 설정이나 원본·키프레임이 바뀌면 캐시를 다시 만든다(1차 캐시가 남아 새 합성이 빠진 실증, 제21장 30)."""
+    import hashlib
+    parts = [repr(d.get(sid)) for d in (FX, REUSE, VIDSCREEN, PAPERS, AUTO_SHEETS, WATCHES, SCREENS_C, PINGPONG, INSERTS, OFFSET, SPLIT, VIDSEQ, CREEP, TVOFF, PAGEBLUR)]
+    parts += [str(sid in x) for x in (MULTICAM, POLICE, STATIC, KF_REDO, CLIP_FIXED, CCTV, POST_CCTV, FAKE, set(jump_cuts()), set(long_cuts()))]
+    for p in [raw_path(sid), os.path.join(KF, f"{sid}-1.png")] + ([raw_path(REUSE[sid][0])] if sid in REUSE else []):
+        if os.path.exists(p):
+            parts.append(f"{os.path.basename(p)}:{os.path.getsize(p)}:{int(os.path.getmtime(p))}")
+    return hashlib.md5("|".join(parts).encode()).hexdigest()
+
+
 def build_cut(sid, sec, tmp):
-    out = os.path.join(tmp, f"cut_{sid}.mp4")
-    if os.path.exists(out) and "--rebuild" not in sys.argv:
+    out = os.path.join(tmp, f"cut_{sid}.mp4"); sig_p = out + ".sig"; sig = cut_signature(sid)
+    if os.path.exists(out) and "--rebuild" not in sys.argv and os.path.exists(sig_p) and open(sig_p).read() == sig:
         return out
     src = raw_path(REUSE[sid][0]) if sid in REUSE else raw_path(sid)
     if sid in SPLIT:
@@ -838,6 +849,7 @@ def build_cut(sid, sec, tmp):
     if sid in POST_CCTV:
         frames = cctv(frames)
     write_frames(frames, out)
+    open(sig_p, "w").write(sig)
     return out
 
 
