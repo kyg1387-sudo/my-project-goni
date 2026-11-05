@@ -53,11 +53,12 @@ LAPTOP = ("S06g", [(503.75, 461.7), (720.8, 450.0), (739.2, 588.3), (523.75, 610
           [(725.8, 478.3), (713.3, 515.8), (692.5, 557.5), (669.6, 595.0), (760, 640), (760, 440)])  # 화면 사각형, 앞 인물(머리·어깨) 보호 다각형
 PAGEBLUR = {"S07h": (100, 330, 760, 600), "S10h": (880, 450, 1344, 768)}  # 키프레임 좌표, 종이색 픽셀만 흐림
 CCTV = {"S03a", "S06k"}
+POST_CCTV = {"S06k"}  # 펀치 인 뒤에 CCTV 화면 글자를 얹는다(먼저 얹으면 확대로 글자가 잘림)
 FAKE = {"H0a", "S05a"}
 S01B_HOLD = 5.0  # S01b 5초 이후 약통이 납작해짐 → 5초 프레임 정지 + 슬로 푸시
 CORNERS = {"S01a": "corner_S01a", "S02a": "corner_S02a", "S04a": "corner_S04a", "S07a": "corner_S07a", "S08a": "corner_S08a", "S12a": "corner_S12a"}
 CARD = ("H2b", "card_H2b", 4.15)  # 중앙 카드 — NA1 자막(~20.09초)이 끝난 뒤 2.3초만(자막과 글자 이중 금지, 2026-11-05 후크 점검)
-EYES = ("H1", 2.6, (0.50, 0.34), 2.2)  # 0:09 「一度も瞬きをしなかった」 — 첫 2.6초 = 태블릿 속 가짜 엄마의 눈 ECU(깜빡임 없는 정지 응시 + 화면 픽셀 질감)
+EYES = ("H1", 2.6, (0.50, 0.30), 2.8)  # 0:09 「一度も瞬きをしなかった」 — 첫 2.6초 = 태블릿 속 가짜 엄마의 눈 ECU(깜빡임 없는 정지 응시 + 화면 픽셀 질감)
 SPLIT = {  # 립싱크 재생성 검수(2026-11-05): (원본 컷 또는 omniNN, 원본 시작 초, 사용 길이 — None이면 컷 끝까지)
     "S11b": [("S11c", 0.0, 1.6), ("omni128", 1.6, None)],  # 「千葉県警です」 음성이 립싱크 필터에 거절 → 叔母 얼굴 위 목소리 선행, 「あの動画は」부터 宮下 립싱크
     "S11d": [("omni130", 0.0, 1.5), ("S11e", 0.0, None)],  # 1.7초부터 없던 叔母 등장·옷깃 꽃(재생성은 고개 90° 회전) → 「大野頼子さん」에서 叔母의 떨리는 손으로 L컷
@@ -369,7 +370,7 @@ def source_frames(sid):
             fr = [fr[0]] * 200
         if rid in FAKE or sid in FAKE:
             fr = fake_video(fr)
-        if sid in CCTV:
+        if sid in CCTV and sid not in POST_CCTV:
             fr = cctv(fr)
         return fr
     if sid in VIDSCREEN:
@@ -386,7 +387,7 @@ def source_frames(sid):
         return out
     fr = read_frames(raw_path(sid), OFFSET.get(sid, 0.0))
     if sid == EYES[0]:
-        k = int(EYES[1] * FPS); src = h0a_frames(); f0 = src[min(len(src) - 1, int(1.5 * FPS))]
+        k = int(EYES[1] * FPS); src = h0a_frames(); f0 = src[2]  # 말하기 전 입을 다문 프레임(입 벌린 채 정지 금지)
         cx, cy = EYES[2]; z = EYES[3]
         yy, xx = np.mgrid[0:H, 0:W]
         sub = np.stack([(xx % 3 == 0), (xx % 3 == 1), (xx % 3 == 2)], -1).astype(np.float32) * 0.10 + 0.93  # LCD 서브픽셀
@@ -442,6 +443,8 @@ def build_cut(sid, sec, tmp):
     n = int(round(sec * FPS)) + 1
     frames = (frames + [frames[-1]] * n)[:n]
     frames = camera(sid, frames, sec, src)
+    if sid in POST_CCTV:
+        frames = cctv(frames)
     write_frames(frames, out)
     return out
 
