@@ -544,7 +544,7 @@ def outro(main_out, tmp):
     meta = json.load(open(os.path.join(OUTD, f"{SKIT}-outro.json")))
     hs = meta["host_start"]
     cta = os.path.join(tmp, "outro-cta.mp4")
-    subprocess.run([sys.executable, os.path.join(ROOT, "scripts/outro_cta_overlay.py"), outro, cta, f"{hs[2] + 1.1:.2f}", f"{hs[2] + 0.35:.2f}", f"{hs[3] - 0.2:.2f}"  # 「チャンネル登録(0.35초)と高評価(1.1초)も」], check=True)
+    subprocess.run([sys.executable, os.path.join(ROOT, "scripts/outro_cta_overlay.py"), outro, cta, f"{hs[2] + 1.1:.2f}", f"{hs[2] + 0.35:.2f}", f"{hs[3] - 0.2:.2f}"], check=True)  # 「チャンネル登録(0.35초)と高評価(1.1초)も」
     final = os.path.join(OUTD, f"{SKIT}-final.mp4")
     env = {**os.environ, "OUTRO": cta, "ENDCARD": os.path.join(ROOT, "assets/brand/endcard-midam-ja-v2.mp4"), "OUT_SIZE": "1920x1080"}
     subprocess.run([sys.executable, os.path.join(ROOT, "scripts/append_outro.py"), main_out, final], check=True, env=env)
