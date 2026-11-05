@@ -486,6 +486,12 @@ MOTION_FIX = {  # i2v 1초 시트 1차 검수(2026-11-05, run 41952958756) — �
     "S11j": "LIGHTING LOCKED: the room light stays exactly as in the first frame — the lamp stays off, no warm or orange light appears; only a faint red tint drifts slowly across the floor.",
     "S13d": "HANDS LOCKED: both hands rest still in her lap below the frame and never rise into view.",
 }
+MOTION_REPLACE = {  # 2차(run 41959614264): 「only body, hands and breath move」 공통 문장이 남아 팔이 무릎으로 뻗고 고개가 옆으로 돌아감 → 동작 문장 전체 교체
+    "S13d": ("STILLNESS LOCKED: her head, shoulders, arms and hands stay completely still in the same pose for the whole shot; her hands stay below the frame. "
+             "NOT smiling at any moment: lips pressed together, the corners of the mouth slightly down, the chin trembling faintly. "
+             "The ONLY movements: a single thin transparent tear slowly spills over her right lower eyelid and runs down along the natural curve of her cheek to about one third, "
+             "catching a faint highlight of the window light; one slow blink; a faint trembling breath. Her eyes stay on the window, never toward the camera."),
+}
 PRO = {"S13d"}  # 정점 눈물(제21장 11) — 얼굴이 보이는 정점 i2v는 pro 1080p
 for _s in SHOTS:
     if _s["id"] in EMPTY_STILL:
@@ -494,6 +500,8 @@ for _s in SHOTS:
         _s["motion"] = ""
     if _s["id"] in MOTION_FIX:
         _s["motion"] = MOTION_FIX[_s["id"]] + " " + _s["motion"]
+    if _s["id"] in MOTION_REPLACE:
+        _s["motion"] = MOTION_REPLACE[_s["id"]]
 
 CARDS = {"H2b": "この動画は、誰が作ったのか。", "H3": "母が遺したビデオレター", "S08q": "この後――母の動画が、もう一度流れる"}
 JA_OVERLAY = {

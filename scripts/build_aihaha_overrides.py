@@ -24,7 +24,7 @@ KF = os.path.join(ROOT, "assets", "portraits", "aihaha-keyframes")
 OUT = os.path.join(ROOT, "assets", "video-overrides", "aihaha")
 FF = shutil.which("ffmpeg") or __import__("imageio_ffmpeg").get_ffmpeg_exe()
 W, H, FPS = 1280, 720, 24
-I2V_FALLBACK = {"S10o"}  # i2v 검수 불합격 → 정지 푸시인 폴백(S10o: 소매 속 팔이 몸 없이 주먹만 — 붙잡은 상태 정지로 충분)
+I2V_FALLBACK = {"S10o", "S11j"}  # i2v 불합격 → 정지 푸시인(S10o 몸 없는 소매 주먹, S11j 2회 연속 스탠드 켜짐·주황 조명 — 경광등 붉은 빛은 finalize)
 FX_MAP = {"matchcut": "push", "slowpush": "push", "intercom": "push", "punchin": "push", "pushin": "push"}  # 펀치·매치컷은 finalize(제19장 17)
 CARDS = {  # 카드 id → (블러 배경 키프레임, 글자 줄들, 글꼴 크기)
     "H3": ("H2b", ["母が遺したビデオレター"], 92),
