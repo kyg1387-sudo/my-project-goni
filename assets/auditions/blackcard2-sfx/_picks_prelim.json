@@ -1,0 +1,25 @@
+{
+ "_설명": "잠정 선택(측정 기준: 피크가 너무 낮은 안·포화된 안 제외, 그 밖은 prompt_influence 0.6 안). 고니감독님 청취 `_review_all.mp3`로 확정. 믹스는 finalize에서 피크 기준(09_정점효과음설계.md).",
+ "picks": {
+  "archive-clock-tick": 1,
+  "call-end-click": 1,
+  "cardkey-slide": 1,
+  "cctv-servo": 1,
+  "door-latch-heavy": 1,
+  "elevator-accept-rise": 1,
+  "elevator-deny": 1,
+  "envelope-open": 3,
+  "file-flip": 1,
+  "flashlight-buzz": 3,
+  "foghorn-waves": 3,
+  "highrise-wind": 3,
+  "ice-glass": 1,
+  "jp-ringback": 1,
+  "pen-cap": 1,
+  "pen-scratch-shaky": 1,
+  "phone-lower-thud": 1,
+  "recorder-play": 2,
+  "sedan-cabin": 1,
+  "train-pass-far": 2
+ }
+}
