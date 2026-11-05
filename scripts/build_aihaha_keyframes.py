@@ -205,7 +205,43 @@ EDIT = {
 SEAT = "SEATED/FURNITURE LOCKED: seated people sit on zabuton or chairs pulled in to the table; no furniture passes through any body."
 
 
+LOOK = ("Image 1 is ONLY a look reference for the room, the light, the colours and the sleeve; do NOT copy its framing — this is a NEW extreme close-up insert. "
+        "One continuous photograph, no separate panels. ")
+ECU_NEW = {  # PHASE 4 합성 단계 실측(2026-11-05): 화면·서류가 카메라를 보지 않는 미디엄으로 나와 글자 합성 불가 → 화면이 카메라를 향한 ECU로 새로 생성
+    "S08h": ("assets/portraits/aihaha-keyframes-raw/S08h-1.png",
+             "[CAMERA] EXTREME CLOSE-UP INSERT, 100mm macro, from just behind and above her right shoulder: a smartphone in portrait orientation, the screen facing the camera, "
+             "tilted 15 degrees, the phone fills about 40 percent of the frame width, sharp focus on the screen. [CHARACTER] HANDS LOCKED: exactly ONE hand — her left hand "
+             "holds the phone from below, the thumb resting at the lower screen edge; the other hand is out of frame; only the hand and the cuff of a plain cream knit sweater; "
+             "NO face. BODY CONTINUITY LOCKED: the wrist continues into the sleeve at the frame edge. [ACTION] still, the thumb not touching the screen. [SETTING] the same dark "
+             "tatami room at night, a warm paper floor lamp as soft bokeh behind, the cool screen glow lighting her fingers. The phone screen is ONE plain flat light grey-white "
+             "glowing surface with NOTHING on it. [NEGATIVE] no characters, no icons, no app interface, no logo on the phone, no second phone, no extra fingers."),
+    "S13a": ("assets/portraits/aihaha-keyframes-raw/S13a-1.png",
+             "[CAMERA] EXTREME CLOSE-UP INSERT, 100mm macro, from beside her right shoulder looking down: a smartphone in portrait orientation, the screen facing the camera, "
+             "tilted 15 degrees, the phone fills about 40 percent of the frame width, sharp focus on the screen. [CHARACTER] HANDS LOCKED: her left hand holds the phone from "
+             "below; her right index finger hovers 1 cm above the lower half of the screen, about to tap, not touching; only the hands and the cuffs of a plain beige knit "
+             "sweater; NO face. BODY CONTINUITY LOCKED: both wrists continue into the sleeves at the frame edge. [ACTION] still, a held breath. [SETTING] the same room by the "
+             "window on a soft November morning, diffuse daylight, the window as soft bokeh behind. The phone screen is ONE plain flat light grey-white glowing surface with "
+             "NOTHING on it. [NEGATIVE] no characters, no icons, no app interface, no logo on the phone, no extra fingers, no third hand."),
+    "S11a": ("assets/portraits/aihaha-keyframes-raw/S11a-1.png",
+             "[CAMERA] EXTREME CLOSE-UP INSERT, 85mm, straight on at eye level: a plain white Japanese apartment intercom monitor mounted on the living-room wall, the unit fills "
+             "about 45 percent of the frame height, centred slightly left, sharp focus on its small screen. [CHARACTER] NO people, NO hands. [ACTION] the small screen is lit. "
+             "[SETTING] the same cold living-room wall at night, a faint red glow from a window off-screen falling on the wall only, the air clear. The intercom screen is ONE "
+             "plain flat lit blue-grey surface with NOTHING on it; the buttons are plain blank buttons. [NEGATIVE] no characters, no icons, no logo, no numbers, no stripes of "
+             "light across the wall."),
+    "S09i": ("assets/portraits/aihaha-keyframes-raw/S09i-1.png",
+             "[CAMERA] EXTREME CLOSE-UP INSERT, 50mm, high angle 60 degrees looking down at the low wooden table: three separate plain white A4 sheets lying flat side by side, "
+             "upright and facing the camera, slightly overlapping at the edges, together filling about 75 percent of the frame; sharp focus on the sheets. [CHARACTER] HANDS "
+             "LOCKED: exactly ONE hand — her right hand at the right frame edge, fingertips lightly pressing the corner of the third sheet as she has just laid it down; only "
+             "the hand and the cuff of a plain light-grey knit sweater; NO face. BODY CONTINUITY LOCKED: the wrist continues into the sleeve at the frame edge. [ACTION] still. "
+             "[SETTING] the same cold living room, cool fluorescent ceiling light, the wooden table grain visible around the sheets. Every sheet is completely blank clean white "
+             "paper. [NEGATIVE] no printed lines, no characters, no stamps, no logos, no stack of paper, no extra fingers."),
+}
+
+
 def build(sc):
+    if sc["id"] in ECU_NEW:
+        look, prompt = ECU_NEW[sc["id"]]
+        return {"id": sc["id"], "count": 2, "aspect_ratio": "16:9", "refs": [look], "prompt": LOOK + prompt + " " + FULL}
     if sc["id"] in EDIT:
         base, extra, prompt = EDIT[sc["id"]]
         return {"id": sc["id"], "count": 1, "aspect_ratio": "16:9", "refs": [base] + extra, "prompt": prompt}

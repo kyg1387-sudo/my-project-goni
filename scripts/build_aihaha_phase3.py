@@ -20,6 +20,8 @@ PROD = os.path.join(ROOT, "productions", "aihaha-ja")
 sys.path.insert(0, PROD)
 SKIT = "aihaha"
 TTS_DIR = "aihaha-tts-b"
+# 글자 합성 면이라 정지로 바꾼 긴 인서트 — 편집 카메라가 서류 3장을 차례로 훑거나(pan) 재생 버튼으로 다가가(pushto) 정지감을 깬다(제4장·제8장 6)
+STILL_LONG_OK = {"S09i": 9.5, "S13a": 7.2}
 FPS = 24; HARD = 1 / FPS; OMNI_MAX = 7.9; LEAD = 0.3; MIN_SHOT = 1.2; STILL_MAX = 6.5; I2V_MAX = 10.0
 
 R = "assets/portraits/aihaha-ref/"
@@ -475,7 +477,8 @@ SCENE_SPK_WARD = {sc: {"叔父": Tg, "叔母": Ob, "翔太": Hh, "由紀子": Yk
 SCENE_SPK_WARD.update({sc: {"由紀子": Ym} for sc in ("S02", "S04")})
 VO_OTS_SKIP = {"S13b"}  # 어머니 목소리는 휴대폰 속 — 앞 어깨에 어머니를 두지 않는다
 EMPTY_STILL = set()   # 무인 컷은 처음부터 estill로 설계(제19장 16)
-INS_STILL = {"S06b", "S08h"} - {"S08h"}
+# 일본어 글자 합성 면(서류·노트북·휴대폰·태블릿 화면)을 쥔 손 인서트는 정지 + 편집 카메라(제10장 3·제7장 2 — i2v는 화면·종이 글자를 뭉갠다)
+INS_STILL = {"S06b", "S06a", "S06e", "S08h", "S08i", "S08i2", "S09a", "S09i", "S13a", "H0b", "S04l"}
 MOTION_FIX = {}
 for _s in SHOTS:
     if _s["id"] in EMPTY_STILL:
@@ -747,7 +750,7 @@ def main():
         if d < MIN_SHOT:
             problems.append(f"{s['id']} {d:.2f}s < {MIN_SHOT}")
         still = s["kind"] in ("estill", "pstill") or (s["kind"] == "ins" and not s["motion"])
-        if still and d > STILL_MAX:
+        if still and d > STILL_LONG_OK.get(s["id"], STILL_MAX):
             problems.append(f"{s['id']} 정지 {d:.2f}s > {STILL_MAX}")
         if s["kind"] in ("face", "empty") and d > I2V_MAX:
             problems.append(f"{s['id']} i2v {d:.2f}s > {I2V_MAX}")
