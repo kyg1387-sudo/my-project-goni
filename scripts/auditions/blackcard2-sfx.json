@@ -1,0 +1,425 @@
+{
+ "_설명": "『ブラックカード』第2話 긴장 정적(BGM 0) 전용 효과음 20종 × 3안(prompt_influence 0.6/0.75/0.45) — productions/blackcard-ja-ep2/09_정점효과음설계.md T0~T10. 1화 콜백(heartbeat-accel·paper-slide·stamp-press·impact-low·clock-tick-heart·phone-vibrate·tension-drone)은 재사용. ElevenLabs 사운드 생성, fal 0. 고니감독님 승인 후 실행.",
+ "tests": [
+  {
+   "id": "flashlight-buzz-1",
+   "model": "elevenlabs-sfx",
+   "text": "A small LED flashlight humming faintly in a silent underground archive room, very soft electrical buzz, no music, no voices.",
+   "duration_s": 3.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "flashlight-buzz-2",
+   "model": "elevenlabs-sfx",
+   "text": "A small LED flashlight humming faintly in a silent underground archive room, very soft electrical buzz, no music, no voices.",
+   "duration_s": 3.0,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "flashlight-buzz-3",
+   "model": "elevenlabs-sfx",
+   "text": "A small LED flashlight humming faintly in a silent underground archive room, very soft electrical buzz, no music, no voices.",
+   "duration_s": 3.0,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "archive-clock-tick-1",
+   "model": "elevenlabs-sfx",
+   "text": "A single old wall clock ticking slowly in a silent concrete basement archive, dry close ticks, faint room tone, no music, no voices.",
+   "duration_s": 4.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "archive-clock-tick-2",
+   "model": "elevenlabs-sfx",
+   "text": "A single old wall clock ticking slowly in a silent concrete basement archive, dry close ticks, faint room tone, no music, no voices.",
+   "duration_s": 4.0,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "archive-clock-tick-3",
+   "model": "elevenlabs-sfx",
+   "text": "A single old wall clock ticking slowly in a silent concrete basement archive, dry close ticks, faint room tone, no music, no voices.",
+   "duration_s": 4.0,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "file-flip-1",
+   "model": "elevenlabs-sfx",
+   "text": "One thick paper personnel file folder being flipped open on a metal shelf, dry cardboard and paper rustle, close, no music, no voices.",
+   "duration_s": 1.5,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "file-flip-2",
+   "model": "elevenlabs-sfx",
+   "text": "One thick paper personnel file folder being flipped open on a metal shelf, dry cardboard and paper rustle, close, no music, no voices.",
+   "duration_s": 1.5,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "file-flip-3",
+   "model": "elevenlabs-sfx",
+   "text": "One thick paper personnel file folder being flipped open on a metal shelf, dry cardboard and paper rustle, close, no music, no voices.",
+   "duration_s": 1.5,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "jp-ringback-1",
+   "model": "elevenlabs-sfx",
+   "text": "Japanese mobile phone ringback tone heard through a phone earpiece, two short purururu rings, narrow telephone band, no music, no voices.",
+   "duration_s": 3.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "jp-ringback-2",
+   "model": "elevenlabs-sfx",
+   "text": "Japanese mobile phone ringback tone heard through a phone earpiece, two short purururu rings, narrow telephone band, no music, no voices.",
+   "duration_s": 3.0,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "jp-ringback-3",
+   "model": "elevenlabs-sfx",
+   "text": "Japanese mobile phone ringback tone heard through a phone earpiece, two short purururu rings, narrow telephone band, no music, no voices.",
+   "duration_s": 3.0,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "cctv-servo-1",
+   "model": "elevenlabs-sfx",
+   "text": "A ceiling security camera motor turning slowly with a small electric whirr and a click, quiet basement, no music, no voices.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "cctv-servo-2",
+   "model": "elevenlabs-sfx",
+   "text": "A ceiling security camera motor turning slowly with a small electric whirr and a click, quiet basement, no music, no voices.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "cctv-servo-3",
+   "model": "elevenlabs-sfx",
+   "text": "A ceiling security camera motor turning slowly with a small electric whirr and a click, quiet basement, no music, no voices.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "call-end-click-1",
+   "model": "elevenlabs-sfx",
+   "text": "A phone call ending abruptly: a soft digital click then dead line, heard close to the ear, no music, no voices.",
+   "duration_s": 1.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "call-end-click-2",
+   "model": "elevenlabs-sfx",
+   "text": "A phone call ending abruptly: a soft digital click then dead line, heard close to the ear, no music, no voices.",
+   "duration_s": 1.0,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "call-end-click-3",
+   "model": "elevenlabs-sfx",
+   "text": "A phone call ending abruptly: a soft digital click then dead line, heard close to the ear, no music, no voices.",
+   "duration_s": 1.0,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "recorder-play-1",
+   "model": "elevenlabs-sfx",
+   "text": "A finger pressing the play button of a small IC voice recorder: plastic click, then faint tape-like hiss and tiny motor, no music, no voices.",
+   "duration_s": 2.5,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "recorder-play-2",
+   "model": "elevenlabs-sfx",
+   "text": "A finger pressing the play button of a small IC voice recorder: plastic click, then faint tape-like hiss and tiny motor, no music, no voices.",
+   "duration_s": 2.5,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "recorder-play-3",
+   "model": "elevenlabs-sfx",
+   "text": "A finger pressing the play button of a small IC voice recorder: plastic click, then faint tape-like hiss and tiny motor, no music, no voices.",
+   "duration_s": 2.5,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "train-pass-far-1",
+   "model": "elevenlabs-sfx",
+   "text": "A commuter train passing on an elevated track outside a small empty apartment window, rumble rising and fading, no horn, no music, no voices.",
+   "duration_s": 5.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "train-pass-far-2",
+   "model": "elevenlabs-sfx",
+   "text": "A commuter train passing on an elevated track outside a small empty apartment window, rumble rising and fading, no horn, no music, no voices.",
+   "duration_s": 5.0,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "train-pass-far-3",
+   "model": "elevenlabs-sfx",
+   "text": "A commuter train passing on an elevated track outside a small empty apartment window, rumble rising and fading, no horn, no music, no voices.",
+   "duration_s": 5.0,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "pen-cap-1",
+   "model": "elevenlabs-sfx",
+   "text": "Uncapping a fountain pen in a silent office: one crisp small plastic and metal click, no music, no voices.",
+   "duration_s": 0.8,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "pen-cap-2",
+   "model": "elevenlabs-sfx",
+   "text": "Uncapping a fountain pen in a silent office: one crisp small plastic and metal click, no music, no voices.",
+   "duration_s": 0.8,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "pen-cap-3",
+   "model": "elevenlabs-sfx",
+   "text": "Uncapping a fountain pen in a silent office: one crisp small plastic and metal click, no music, no voices.",
+   "duration_s": 0.8,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "pen-scratch-shaky-1",
+   "model": "elevenlabs-sfx",
+   "text": "A fountain pen nib scratching slowly and hesitantly on thick paper, short uneven strokes, very close, silent room, no music, no voices.",
+   "duration_s": 3.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "pen-scratch-shaky-2",
+   "model": "elevenlabs-sfx",
+   "text": "A fountain pen nib scratching slowly and hesitantly on thick paper, short uneven strokes, very close, silent room, no music, no voices.",
+   "duration_s": 3.0,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "pen-scratch-shaky-3",
+   "model": "elevenlabs-sfx",
+   "text": "A fountain pen nib scratching slowly and hesitantly on thick paper, short uneven strokes, very close, silent room, no music, no voices.",
+   "duration_s": 3.0,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "envelope-open-1",
+   "model": "elevenlabs-sfx",
+   "text": "Tearing open a thick sealed paper envelope slowly, wax seal cracking, close, silent room, no music, no voices.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "envelope-open-2",
+   "model": "elevenlabs-sfx",
+   "text": "Tearing open a thick sealed paper envelope slowly, wax seal cracking, close, silent room, no music, no voices.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "envelope-open-3",
+   "model": "elevenlabs-sfx",
+   "text": "Tearing open a thick sealed paper envelope slowly, wax seal cracking, close, silent room, no music, no voices.",
+   "duration_s": 2.0,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "ice-glass-1",
+   "model": "elevenlabs-sfx",
+   "text": "Ice cubes shifting once in a whisky glass on a wooden counter, single clink, quiet old bar, no music, no voices.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "ice-glass-2",
+   "model": "elevenlabs-sfx",
+   "text": "Ice cubes shifting once in a whisky glass on a wooden counter, single clink, quiet old bar, no music, no voices.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "ice-glass-3",
+   "model": "elevenlabs-sfx",
+   "text": "Ice cubes shifting once in a whisky glass on a wooden counter, single clink, quiet old bar, no music, no voices.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "cardkey-slide-1",
+   "model": "elevenlabs-sfx",
+   "text": "A plastic key card sliding across a wooden bar counter and stopping, short smooth friction, close, no music, no voices.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "cardkey-slide-2",
+   "model": "elevenlabs-sfx",
+   "text": "A plastic key card sliding across a wooden bar counter and stopping, short smooth friction, close, no music, no voices.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "cardkey-slide-3",
+   "model": "elevenlabs-sfx",
+   "text": "A plastic key card sliding across a wooden bar counter and stopping, short smooth friction, close, no music, no voices.",
+   "duration_s": 1.2,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "elevator-deny-1",
+   "model": "elevenlabs-sfx",
+   "text": "A luxury elevator card reader rejecting a card: one low short error buzz, quiet elevator hum underneath, no music, no voices.",
+   "duration_s": 1.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "elevator-deny-2",
+   "model": "elevenlabs-sfx",
+   "text": "A luxury elevator card reader rejecting a card: one low short error buzz, quiet elevator hum underneath, no music, no voices.",
+   "duration_s": 1.0,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "elevator-deny-3",
+   "model": "elevenlabs-sfx",
+   "text": "A luxury elevator card reader rejecting a card: one low short error buzz, quiet elevator hum underneath, no music, no voices.",
+   "duration_s": 1.0,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "elevator-accept-rise-1",
+   "model": "elevenlabs-sfx",
+   "text": "An elevator card reader accepting: short high beep, then a smooth elevator starting to rise with low hum, no music, no voices.",
+   "duration_s": 3.5,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "elevator-accept-rise-2",
+   "model": "elevenlabs-sfx",
+   "text": "An elevator card reader accepting: short high beep, then a smooth elevator starting to rise with low hum, no music, no voices.",
+   "duration_s": 3.5,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "elevator-accept-rise-3",
+   "model": "elevenlabs-sfx",
+   "text": "An elevator card reader accepting: short high beep, then a smooth elevator starting to rise with low hum, no music, no voices.",
+   "duration_s": 3.5,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "door-latch-heavy-1",
+   "model": "elevenlabs-sfx",
+   "text": "A heavy wooden executive door unlatching and swinging open slowly, deep metal latch clack, large silent room, no music, no voices.",
+   "duration_s": 2.5,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "door-latch-heavy-2",
+   "model": "elevenlabs-sfx",
+   "text": "A heavy wooden executive door unlatching and swinging open slowly, deep metal latch clack, large silent room, no music, no voices.",
+   "duration_s": 2.5,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "door-latch-heavy-3",
+   "model": "elevenlabs-sfx",
+   "text": "A heavy wooden executive door unlatching and swinging open slowly, deep metal latch clack, large silent room, no music, no voices.",
+   "duration_s": 2.5,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "highrise-wind-1",
+   "model": "elevenlabs-sfx",
+   "text": "Faint wind pressure against floor-to-ceiling windows of a silent top-floor office at night, very low steady whoosh, no music, no voices.",
+   "duration_s": 6.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "highrise-wind-2",
+   "model": "elevenlabs-sfx",
+   "text": "Faint wind pressure against floor-to-ceiling windows of a silent top-floor office at night, very low steady whoosh, no music, no voices.",
+   "duration_s": 6.0,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "highrise-wind-3",
+   "model": "elevenlabs-sfx",
+   "text": "Faint wind pressure against floor-to-ceiling windows of a silent top-floor office at night, very low steady whoosh, no music, no voices.",
+   "duration_s": 6.0,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "phone-lower-thud-1",
+   "model": "elevenlabs-sfx",
+   "text": "A smartphone lowered and set down firmly on a glass window ledge, single dull thud, quiet room, no music, no voices.",
+   "duration_s": 1.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "phone-lower-thud-2",
+   "model": "elevenlabs-sfx",
+   "text": "A smartphone lowered and set down firmly on a glass window ledge, single dull thud, quiet room, no music, no voices.",
+   "duration_s": 1.0,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "phone-lower-thud-3",
+   "model": "elevenlabs-sfx",
+   "text": "A smartphone lowered and set down firmly on a glass window ledge, single dull thud, quiet room, no music, no voices.",
+   "duration_s": 1.0,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "foghorn-waves-1",
+   "model": "elevenlabs-sfx",
+   "text": "Through a phone line: a distant ship foghorn over harbor waves at night, narrow telephone band, no music, no voices.",
+   "duration_s": 5.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "foghorn-waves-2",
+   "model": "elevenlabs-sfx",
+   "text": "Through a phone line: a distant ship foghorn over harbor waves at night, narrow telephone band, no music, no voices.",
+   "duration_s": 5.0,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "foghorn-waves-3",
+   "model": "elevenlabs-sfx",
+   "text": "Through a phone line: a distant ship foghorn over harbor waves at night, narrow telephone band, no music, no voices.",
+   "duration_s": 5.0,
+   "prompt_influence": 0.45
+  },
+  {
+   "id": "sedan-cabin-1",
+   "model": "elevenlabs-sfx",
+   "text": "Inside a quiet luxury sedan driving at night: low engine hum and soft tire road noise, closed windows, no music, no voices.",
+   "duration_s": 8.0,
+   "prompt_influence": 0.6
+  },
+  {
+   "id": "sedan-cabin-2",
+   "model": "elevenlabs-sfx",
+   "text": "Inside a quiet luxury sedan driving at night: low engine hum and soft tire road noise, closed windows, no music, no voices.",
+   "duration_s": 8.0,
+   "prompt_influence": 0.75
+  },
+  {
+   "id": "sedan-cabin-3",
+   "model": "elevenlabs-sfx",
+   "text": "Inside a quiet luxury sedan driving at night: low engine hum and soft tire road noise, closed windows, no music, no voices.",
+   "duration_s": 8.0,
+   "prompt_influence": 0.45
+  }
+ ]
+}
