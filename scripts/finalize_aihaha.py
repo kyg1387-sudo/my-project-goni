@@ -230,7 +230,7 @@ def barrel(f, k):
 
 
 def fake_video(frames):
-    """극 중 AI 영상(제21장 4): 배럴 2%·색수차 1px·지나치게 매끈한 피부(약한 bilateral)·입 12프레임 지연(영상을 소리보다 늦게)."""
+    """극 중 AI 영상(제21장 4): 배럴 2%·색수차 1px·지나치게 매끈한 피부(약한 bilateral)·입은 소리와 정확히 일치(R43)."""
     out = []
     for f in frames:
         g = barrel(f, 0.02)
@@ -238,7 +238,7 @@ def fake_video(frames):
         r, gg, bb = cv2.split(g)
         r = np.roll(r, 1, axis=1); bb = np.roll(bb, -1, axis=1)
         out.append(cv2.merge([r, gg, bb]))
-    return [out[0]] * 12 + out[:-12] if len(out) > 12 else out
+    return out  # 입 지연 없음(R43 — 의도한 0.5초 지연이 시청자에게는 립싱크 오류로 보였다)
 
 
 def cctv(frames):
@@ -440,7 +440,7 @@ def source_frames(sid):
     fr = [cover(f) for f in fr]
     if sid in FAKE:
         fr = fake_video(fr)
-    if sid in CCTV:
+    if sid in CCTV and sid not in POST_CCTV:  # POST_CCTV는 build_cut에서 1회만(R47 Q1 — 글자 이중 표시)
         fr = cctv(fr)
     if sid == "S01b":
         k = int(S01B_HOLD * FPS); n = int(round(BY[sid]["assembled_s"] * FPS)) + 2
