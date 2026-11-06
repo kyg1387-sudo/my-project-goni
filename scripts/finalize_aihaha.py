@@ -39,7 +39,7 @@ OMNI = set(AUDIO["omnihuman_scenes"])
 MINCHO = os.path.join(ROOT, "scripts", "fonts", "ZenOldMincho-Bold.ttf")
 
 # ---------- 설계 ----------
-FX = {"S04p": "dutch5", "S09r": "dutch7", "S08b": "handheld", "S08d": "handheld", "S08f": "handheld", "S09m": "punch", "S10k": "slowpush",
+FX = {"S13h": "chairpull", "S04p": "dutch5", "S09r": "dutch7", "S08b": "handheld", "S08d": "handheld", "S08f": "handheld", "S09m": "punch", "S10k": "slowpush",
       "S05b": "dollyzoom", "S05a": "pushwin", "S06k": "punchhand"}  # 18_카메라줌설계.md (S02a matchcut·S11a·S13h는 교체 클립에 이미 반영)
 PUNCH_AT = {"S09m": 0.35}
 REUSE = {"H2a": ("S01e", 0.0), "S05a": ("H0a", 0.0), "S06k": ("S03a", 3.0)}  # (원본 컷, 원본 시작 초)
@@ -714,6 +714,9 @@ def camera(sid, frames, sec, src):
         k = int(1.6 * FPS); return [zoom_frame(f, 1 + 0.12 * min(i / k, 1), 0.5, 0.42) for i, f in enumerate(frames)]
     if fx == "pushwin":  # 가짜 영상 재시청 — 창밖 완공 타워 쪽으로
         return [zoom_frame(f, 1 + 0.10 * i / max(n - 1, 1), 0.72, 0.35) for i, f in enumerate(frames)]
+    if fx == "chairpull":  # R53: 같은 구도의 빈 방으로 바로 넘어가면 사람이 사라진 것처럼 보임 → 어머니의 빈 의자 클로즈업에서 시작해 방 전체로 천천히 물러남
+        cx, cy, z0 = 0.13, 0.80, 1.75
+        return [zoom_frame(f, 1 + (z0 - 1) * (1 - (0.5 - 0.5 * math.cos(math.pi * min(i / max(n - 1, 1) * 1.15, 1)))), cx, cy) for i, f in enumerate(frames)]
     if fx == "punchhand":
         return [zoom_frame(f, 1 + 0.12 * min(i / 8, 1), 0.64, 0.60) for i, f in enumerate(frames)]
     if sid in CREEP:  # 정적 속에서 천천히 조여 오는 카메라(드레드 줌), 악역은 미세 핸드헬드
@@ -742,6 +745,8 @@ def source_frames(sid):
         if sid in CCTV and sid not in POST_CCTV:
             fr = cctv(fr)
         return fr
+    if FX.get(sid) == "chairpull":
+        return [cover(kf_img(sid))] * (int(round(BY[sid]["assembled_s"] * FPS)) + 2)
     if sid in STATIC:
         n = int(round(BY[sid]["assembled_s"] * FPS)) + 2
         return [cover(kf_img(sid))] * n
@@ -864,7 +869,7 @@ def moving_check():
 
 def targets():
     t = set(FX) | set(REUSE) | set(VIDSCREEN) | {LAPTOP[0], EYES[0]} | MULTICAM | POLICE | set(CREEP) | STATIC | KF_REDO | set(TVOFF) | set(SPLIT) | set(OFFSET) | CLIP_FIXED | set(PAGEBLUR) | set(PAPERS) | set(PINGPONG) | set(WATCHES) | set(SCREENS_C) | set(INSERTS) | set(AUTO_SHEETS) | CCTV | FAKE | {"S01b"} | set(jump_cuts()) | set(long_cuts())
-    t -= {"S11a", "S13h", "S02a"}
+    t -= {"S11a", "S02a"}
     return sorted(t, key=lambda s: IDX[s])
 
 
