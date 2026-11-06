@@ -1,0 +1,38 @@
+{
+ "_설명": "2화 논리 검수표 ③-2(社長는 왜 몰랐나) 막는 대사 1줄 × 3안 — 2026-11-06 데이터 지시(최우선 원칙 8⑦c). 크레딧만, fal 0.",
+ "tests": [
+  {
+   "src": "L286b",
+   "speaker": "永瀬",
+   "model": "elevenlabs-direct",
+   "voice": "5sgRUBXTwmRGmFqEzLBa",
+   "voice_name": "Kaguya - Natural",
+   "el_model": "eleven_v3",
+   "_subtitle": "社長は、何も知りません。封筒が来たら、判を押すだけです。",
+   "id": "line286ba",
+   "text": "[sad] しゃちょうは、何も知りません。封筒が来たら、はんを押すだけです。"
+  },
+  {
+   "src": "L286b",
+   "speaker": "永瀬",
+   "model": "elevenlabs-direct",
+   "voice": "5sgRUBXTwmRGmFqEzLBa",
+   "voice_name": "Kaguya - Natural",
+   "el_model": "eleven_v3",
+   "_subtitle": "社長は、何も知りません。封筒が来たら、判を押すだけです。",
+   "id": "line286bb",
+   "text": "[sad] 社長は、何も知りません。封筒が来たら、判を押すだけです。"
+  },
+  {
+   "src": "L286b",
+   "speaker": "永瀬",
+   "model": "elevenlabs-direct",
+   "voice": "5sgRUBXTwmRGmFqEzLBa",
+   "voice_name": "Kaguya - Natural",
+   "el_model": "eleven_v3",
+   "_subtitle": "社長は、何も知りません。封筒が来たら、判を押すだけです。",
+   "id": "line286bc",
+   "text": "[sad] シャチョウは……何も知りません。フウトウが来たら、ハンを押すだけです。"
+  }
+ ]
+}
