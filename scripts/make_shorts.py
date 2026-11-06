@@ -4,7 +4,8 @@
 
 사용법: make_shorts.py <본편.mp4(자막 입힘, 아웃트로 전)> <subs.ass> <spec.json> <out_dir>
 spec: {"shorts":[{"id":"1-letter","start":88.9,"end":112.3,"title":"…\\N…"}]}
-선택 키: "keep"(원 화면 위쪽 사용 비율, 기본 0.80 — 2줄 자막이 80% 선에 걸리면 0.78), "skip_styles"(쇼츠 자막에서 뺄
+선택 키(쇼츠별): "segments"([[시작,끝],…] — 무대사 카드·늘어지는 구간을 건너뛰고 이어 붙임, 이음매 0.04초 소리 페이드),
+"end_text"(끝 문구). 선택 키(전체): "keep"(원 화면 위쪽 사용 비율, 기본 0.80 — 2줄 자막이 80% 선에 걸리면 0.78), "skip_styles"(쇼츠 자막에서 뺄
 원 스타일 — 화면에 이미 구워진 강조 자막과 겹칠 때), "sub_font"(자막 글꼴, 기본 IPAGothic)
 """
 import json
@@ -141,27 +142,40 @@ def main():
     head = HEAD.replace("Style: Sub,IPAGothic", f"Style: Sub,{spec.get('sub_font', 'IPAGothic')}")
     for sh in spec["shorts"]:
         assert all(len(x) <= 13 for x in sh["title"].split("\\N")), f"쇼츠 제목 한 줄 13자 초과(제13장 4): {sh['title']}"
-        a, b = float(sh["start"]), float(sh["end"])
-        dur = b - a
+        segs = [(float(x), float(y)) for x, y in (sh.get("segments") or [[sh["start"], sh["end"]]])]
+        offs, acc = [], 0.0
+        for x, y in segs:
+            offs.append(acc); acc += y - x
+        dur = acc
         tail = 1.2
+
+        def remap(t0, t1):  # 원본 구간 → 쇼츠 시간(구간마다 잘라서)
+            for (x, y), o in zip(segs, offs):
+                s0, s1 = max(t0, x), min(t1, y)
+                if s1 - s0 > 0.15:
+                    yield s0 - x + o, s1 - x + o
         lines = [f"Dialogue: 0,{s2t(0)},{s2t(dur + tail)},Title,,0,0,0,,{sh['title']}"]
         for s, e, style, text in ev:
-            if e <= a or s >= b or style in skip:
+            if style in skip:
                 continue
             st = "Cap" if style == "Caption" else "Sub"
-            for s1, e1, w in split_events(s, min(e, b), text):
-                lines.append(f"Dialogue: 0,{s2t(s1 - a)},{s2t(e1 - a)},{st},,0,0,0,,{w}")
+            for r0, r1 in remap(s, e):
+                for s1, e1, w in split_events(r0, r1, text):
+                    lines.append(f"Dialogue: 0,{s2t(s1)},{s2t(e1)},{st},,0,0,0,,{w}")
         lines.append(f"Dialogue: 0,{s2t(dur)},{s2t(dur + tail)},End,,0,0,0,,{sh.get('end_text', '続きは本編で')}")
         sub = os.path.join(out_dir, f"_{sh['id']}.ass")
         open(sub, "w", encoding="utf-8").write(head + "\n".join(lines) + "\n")
         out = os.path.join(out_dir, f"{spec['prefix']}-short-{sh['id']}-JP.mp4")
+        n = len(segs)
+        parts = "".join(f"[0:v]trim=start={x}:end={y},setpts=PTS-STARTPTS[v{i}];[0:a]atrim=start={x}:end={y},asetpts=PTS-STARTPTS,"
+                        f"afade=t=in:st=0:d=0.04,afade=t=out:st={y - x - 0.04:.3f}:d=0.04[a{i}];" for i, (x, y) in enumerate(segs))
+        parts += "".join(f"[v{i}][a{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=1[cv][ca];"
         # 원 자막(하단)을 피해 위 80%만 쓰고(흐린 배경도 같은 영역 — 배경에 흐린 자막 줄이 비치지 않게), 흐린 배경 위 가운데(위쪽 약간)에 놓는다
-        fc = (f"[0:v]trim=start={a}:end={b},setpts=PTS-STARTPTS,tpad=stop_mode=clone:stop_duration={tail},split[s1][s2];"
+        fc = (parts + f"[cv]tpad=stop_mode=clone:stop_duration={tail},split[s1][s2];"
               f"[s1]crop=iw:ih*{keep}:0:0,scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=30:2,eq=brightness=-0.12[bg];"
               f"[s2]crop=iw:ih*{keep}:0:0,scale=1080:-2[fg];"
               f"[bg][fg]overlay=0:560,ass={sub}:fontsdir={FONTS},fade=t=in:st=0:d=0.3[v];"
-              f"[0:a]atrim=start={a}:end={b},asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.3,"
-              f"afade=t=out:st={dur - 0.6:.3f}:d=0.6,apad=pad_dur={tail}[a]")
+              f"[ca]afade=t=in:st=0:d=0.3,afade=t=out:st={dur - 0.6:.3f}:d=0.6,apad=pad_dur={tail}[a]")
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", src, "-filter_complex", fc, "-map", "[v]", "-map", "[a]",
                         "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p",
                         "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", out], check=True)

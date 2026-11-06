@@ -74,10 +74,30 @@ def fit169(im):
     th = int(round(w * 9 / 16)); y0 = (h - th) // 2; return im.crop((0, y0, w, y0 + th))
 
 
-def compose(bg, lines, out, band=0.50, keep_br=True, maxw_frac=0.64):
+def ctx_box(im, segs, size, x, y, anchor="tl", maxw=None):
+    """상황 한 줄(상위 30선 v2, 2026-11-06): 반투명 검은 상자 + 흰 글자, 「」 대사는 노랑. segs = [(글자, 색)].
+    흥행 30선 본편 썸네일은 「상황 → 대사 → 결과」 3단 정보(スカッと 1위 #2 「期限切れたので…」, 실사 #9 同窓会 「」→「は…？」)."""
+    f = ImageFont.truetype(GB, size); d0 = ImageDraw.Draw(Image.new("L", (1, 1)))
+    ws = [d0.textlength(t, font=f) for t, _ in segs]; tw = int(sum(ws)); pad = int(size * 0.32)
+    bw, bh = tw + pad * 2, int(size * 1.36)
+    box = Image.new("RGBA", (bw, bh), (0, 0, 0, 0)); bd = ImageDraw.Draw(box)
+    bd.rounded_rectangle((0, 0, bw - 1, bh - 1), radius=int(size * 0.22), fill=(8, 8, 10, 222), outline=(255, 210, 40, 255), width=max(3, size // 14))
+    cx = pad
+    for (t, c), w in zip(segs, ws):
+        bd.text((cx, int(bh / 2)), t, font=f, fill={"w": WHITE, "y": (255, 222, 40), "r": (255, 80, 70)}[c], anchor="lm"); cx += w
+    if maxw and bw > maxw:
+        box = box.resize((maxw, int(bh * maxw / bw)), Image.LANCZOS)
+    px = x if anchor == "tl" else W - x - box.width
+    im.alpha_composite(box, (int(px), int(y)))
+    return (int(px), int(y), int(px) + box.width, int(y) + box.height)
+
+
+def compose(bg, lines, out, band=0.50, keep_br=True, maxw_frac=0.64, ctx=None):
     """lines: [(글자, 크기, 색, x, y)] — x·y는 사선 처리 후 왼쪽 위 기준(1280x720). 오른쪽 아래(재생 시간)는 비운다."""
     im = fit169(bg.convert("RGB")).resize((W, H), Image.LANCZOS).convert("RGBA")
     im = bottom_band(im, band)
+    if ctx:
+        ctx_box(im, *ctx)
     lays = []
     for txt, size, color, x, _ in lines:
         lay = slant(text_layer(txt, size, color, stroke=max(10, size // 9)))
@@ -106,6 +126,13 @@ TEST = {"test-a": ("assets/portraits/aihaha-keyframes/H0b-1.png", [("この母�
 
 # A/B 테스트 3종(고니감독님 생성 그림 2026-11-05, 순서는 제작 수석 결정: A 가짜 엄마 = 0:00 후크 약속·의문 최강, B 애니 통쾌, C 눈물)
 # (그림, [(글자, 크기, 색, x, _)], 글자 최대 폭 비율) — 얼굴·태블릿을 가리지 않는 쪽에, 아래 줄부터 위로 쌓음
+# v2(2026-11-06 고니감독님 「썸네일 쇼츠 일본유튜브 30선 기준 정밀 검토」): 생성기 표식(✦) 제거 원본 + 상황 한 줄 상자.
+# ctx = (segs, 크기, x, y, 기준) — 얼굴·태블릿을 가리지 않는 빈 곳(A 오른쪽 위 장지, B 왼쪽 위 어둠, C 왼쪽 위 창).
+CTX = {
+    "A": ([("叔父が見せた", "w"), ("亡き母の動画", "y")], 62, 22, 20, "tr", 560),
+    "B": ([("叔父", "w"), ("「判子さえ押せば」", "y")], 64, 20, 20, "tl", 620),
+    "C": ([("偽の母は", "w"), ("「由紀子」", "y"), ("と呼んだ", "w")], 60, 20, 20, "tl", 640),
+}
 THUMBS = {
     "A": ("assets/thumbs/aihaha/src-A.jpg", [("この母、", 130, "red", 24, 0), ("AIです", 230, "yellow", 30, 0)], 0.56),
     "B": ("assets/thumbs/aihaha/src-B.jpg", [("期限は、", 120, "yellow", 20, 0), ("昨日", 250, "red", 40, 0)], 0.36),
@@ -117,7 +144,7 @@ def main(only=None):
     for k, (bg, lines, mw) in THUMBS.items():
         if only and k not in only:
             continue
-        print(compose(Image.open(os.path.join(ROOT, bg)), lines, os.path.join(OUT, f"thumb-{k}.jpg"), maxw_frac=mw))
+        print(compose(Image.open(os.path.join(ROOT, bg)), lines, os.path.join(OUT, f"thumb-{k}.jpg"), maxw_frac=mw, ctx=CTX.get(k)))
 
 
 if __name__ == "__main__":

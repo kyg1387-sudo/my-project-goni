@@ -54,13 +54,18 @@ def main():
         shorts = [dict(next(x for x in shorts if x["id"] == "3-touchaku"), id="3-touchaku-avatar")]
         KO_TITLE["3-touchaku-avatar"] = "[3D 아바타판] 은둔형 외톨이가 계약 자리에 나타났다"
     for k, sh in enumerate(shorts, 1):
-        a, b = float(sh["start"]), float(sh["end"])
+        segs = [(float(x), float(y)) for x, y in (sh.get("segments") or [[sh["start"], sh["end"]]])]
+        offs, acc = [], 0.0
+        for x, y in segs:
+            offs.append(acc); acc += y - x
+        a, b = 0.0, acc  # 쇼츠 시간(구간 이어 붙임, make_shorts.py segments와 같은 계산)
         src = os.path.join(SHORTS, f"{spec['prefix']}-short-{sh['id']}-JP.mp4")
         lines = [f"Dialogue: 0,{tc(0)},{tc(b - a + 1.2)},T,,0,0,0,,[쇼츠 {k}] {KO_TITLE[sh['id']]}"]
         for s, e, t in rows:
-            if e <= a or s >= b:
-                continue
-            lines.append(f"Dialogue: 0,{tc(s - a)},{tc(min(e, b) - a)},K,,0,0,0,,{t}")
+            for (x, y), o in zip(segs, offs):
+                s0, s1 = max(s, x), min(e, y)
+                if s1 - s0 > 0.15:
+                    lines.append(f"Dialogue: 0,{tc(s0 - x + o)},{tc(s1 - x + o)},K,,0,0,0,,{t}")
         ass = os.path.join(tmp, f"{k}.ass")
         open(ass, "w", encoding="utf-8").write(
             "[Script Info]\nScriptType: v4.00+\nPlayResX: 1080\nPlayResY: 1920\nWrapStyle: 0\n\n[V4+ Styles]\n"
