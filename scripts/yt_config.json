@@ -22,5 +22,12 @@
   "extra_keywords": [],
   "competitor_channels": [],
   "ai_mention_pattern": "AI|ＡＩ|不自然|合成|CG|ＣＧ|機械|棒読み|作り物|生成|ボイス|音声が変|口が合|ロボット",
-  "short_max_seconds": 180
+  "short_max_seconds": 180,
+  "top30_genres": [
+    "スカッと",
+    "感動する話",
+    "修羅場 復讐",
+    "嫁姑 介護"
+  ],
+  "_흥행30선": "top30_genres: yt_top30_refresh.py가 최근 30일 창으로 본편·쇼츠 30선을 docs/분석/흥행30선/에 자동 갱신(매주 월·매월 1일)."
 }
