@@ -1,0 +1,18 @@
+{
+ "_설명": "『ブラックカード』第2話 PHASE 2 2차 — 1차 Kill Gate 불합격 2명(三好: 3D·인형 화풍·귀걸이·젤 눈물·칸 배치 오류 / 鷺沼: 양쪽 귀걸이·80대로 보임·목소리 Akio와 나이 불일치)의 실사 얼굴 단독 사진을 먼저 고정(각 2안). 3차에서 이 얼굴을 refs로 시트 생성(제19장 7). 4장 약 0.16달러.",
+ "_style_preset": "Photorealistic live-action, contemporary Tokyo (Reiwa era), Arri Alexa cinematic color grade, Kodak 35mm film grain, natural soft window key light from screen-left, subtle warm rim light.",
+ "characters": [
+  {
+   "id": "miyoshi-face",
+   "count": 2,
+   "aspect_ratio": "3:4",
+   "prompt": "REAL PHOTOGRAPH of a real Japanese man shot on a full-frame camera with an 85mm lens at f/2: natural skin pores and fine wrinkles, real individual hair strands, natural eye moisture, NOT 3D, NOT CGI, NOT anime. Head-and-shoulders portrait against a plain light grey wall, looking straight at the camera with a warm, slightly shy natural smile, mouth closed. Subject: a Japanese office worker aged 41, short neatly cut black hair with a slight natural wave, round gentle face, kind eyes with soft laugh lines, clean-shaven, clean skin, BOTH EARLOBES COMPLETELY BARE AND SMOOTH. Wearing a plain light grey business suit, white shirt, plain navy tie, bare lapel. Photorealistic live-action, contemporary Tokyo (Reiwa era), Arri Alexa cinematic color grade, Kodak 35mm film grain, natural soft window key light from screen-left, subtle warm rim light. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: 3D render, CGI, doll, plastic skin, anime, illustration, cartoon, earrings, ear studs, piercings, lapel pin, badge, glasses, freckles, moles, gibberish, fake letters, watermark, bad anatomy, deformed eyes, extra fingers."
+  },
+  {
+   "id": "sagisuma-face",
+   "count": 2,
+   "aspect_ratio": "3:4",
+   "prompt": "REAL PHOTOGRAPH of a real Japanese man shot on a full-frame camera with an 85mm lens at f/2: natural skin pores and fine wrinkles, real individual hair strands, natural eye moisture, NOT 3D, NOT CGI, NOT anime. Head-and-shoulders portrait in a dim warm bar, looking slightly off-camera to screen-left with a flat, tired, matter-of-fact expression, mouth closed. Subject: a sturdy Japanese man aged 62, a former company HR director, thinning grey hair combed straight back, deep forehead lines, heavy-lidded tired eyes, short grey stubble on the jaw, solid build (NOT frail, NOT emaciated), NO glasses, BOTH EARLOBES COMPLETELY BARE AND SMOOTH. Wearing a worn dark brown tweed jacket over a plain charcoal knit sweater and an open-collar white shirt. Warm tungsten 3200K light, background softly out of focus. Photorealistic live-action, contemporary Tokyo (Reiwa era), Arri Alexa cinematic color grade, Kodak 35mm film grain, natural soft window key light from screen-left, subtle warm rim light. Absolutely no text, letters, numbers, labels, logos or watermarks anywhere. Negative: 3D render, CGI, doll, plastic skin, anime, illustration, cartoon, earrings, ear studs, piercings, lapel pin, badge, glasses, freckles, moles, gibberish, fake letters, watermark, bad anatomy, deformed eyes, extra fingers."
+  }
+ ]
+}
