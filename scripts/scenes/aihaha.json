@@ -906,7 +906,7 @@
    "image": "assets/portraits/aihaha-keyframes/S11j-1.png"
   },
   {
-   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] She walks slowly away; ginkgo leaves drift. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker.",
+   "prompt": "[CAMERA] Static locked-off camera at eye level, no camera movement, no zoom. [CHARACTER] Keep the exact face, glasses, camel coat, grey trousers and dark flat shoes of the first frame; the same one woman only. [ACTION] WALKING LOCKED: she keeps walking slowly AWAY from the camera along the street at a calm natural pace, real steps — each shoe lifts and lands flat on the pavement, heel then toe, the coat hem swaying slightly, arms swinging gently; she gets a little smaller as she walks away. Head stays turned slightly to the right, never toward the camera. A few small ginkgo leaves drift down slowly. [SETTING] The same street, trees and overcast morning light as the first frame; the leaves on the ground stay small and still. [NEGATIVE] No sliding or gliding, no floating feet, no walking toward the camera, no turning around, no new people, no cars, no giant leaves, no text, no morphing, no flicker.",
    "duration": 5,
    "image": "assets/portraits/aihaha-keyframes/S12a-1.png"
   },
