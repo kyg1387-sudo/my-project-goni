@@ -1134,6 +1134,18 @@
    "_subtitle": "私は、紋章の入った封筒を受け取っていただけで……"
   },
   {
+   "src": "L286b",
+   "speaker": "永瀬",
+   "model": "elevenlabs-direct",
+   "voice": "5sgRUBXTwmRGmFqEzLBa",
+   "voice_name": "Kaguya - Natural",
+   "el_model": "eleven_v3",
+   "_subtitle": "社長は、何も知りません。封筒が来たら、判を押すだけです。",
+   "id": "line286b",
+   "text": "[sad] しゃちょうは、何も知りません。封筒が来たら、はんを押すだけです。",
+   "_r1": "r4-286ba"
+  },
+  {
    "id": "line287",
    "src": "L287",
    "speaker": "高橋 健二(N)",
