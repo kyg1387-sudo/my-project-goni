@@ -435,7 +435,7 @@ SHOTS = [
       motion="They sit slumped, motionless; the red light sweeps slowly." + HOLD),
 
     # ⑤ 결말 — S12 그 후 · S13 진짜 목소리
-    S("S12a", "S12", "face", "ews", "nov", "SIDE", [Yc], "STREET", "Extreme wide on a late-autumn morning: Yukiko in a camel coat walking along the street of yellow ginkgo leaves, seen from behind.",
+    S("S12a", "S12", "face", "ews", "nov", "SIDE", [Yc], "STREET", "Wide at eye level (camera 150 cm high, 6 m behind her) on a late-autumn morning: Yukiko in a camel coat walking away along a street of REAL-SIZED yellow ginkgo leaves (each 5-8 cm), her shoes visible on the pavement, seen from behind.",
       line="NA32", motion="She walks slowly away; ginkgo leaves drift." + HOLD, expr="back"),
     S("S12b", "S12", "estill", "ws", "nov", "EL", [], "HOUSE_D", "An old empty two-storey wooden house in the late-autumn morning, its curtains closed, nobody there.", line="NA33"),
     S("S13a", "S13", "ins", "ecu", "nov_room", "EL", [Yk], "ROOM_FIN_D", ONEHAND + "Insert: Yukiko's hand holding her mother's smartphone at chest height, about 35 cm away, the screen glowing (a chat screen with one voice message will be composited), her thumb tapping play.",
