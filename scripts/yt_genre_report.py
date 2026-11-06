@@ -148,7 +148,7 @@ def main():
         ht, hl = hook_type(r["desc"])
         L.append(f"| {k} | {r['views']:,} | {r['vpd']:,.0f} | {short_title(r['ch'], 12)}({r['subs']:,}) | {fmt_dur(r['dur'])} | "
                  f"{r['date']}({r['dow']}){r['hour']}時 | {short_title(r['title'], 40)} | {', '.join(r['tags'][:3]) or '—'} | "
-                 f"{ht}: {short_title(hl, 28)} | {r['like_r']:.1f}% | {r['com']} |")
+                 f"{ht}: {short_title(hl, 28)} | {r['like_r']:.1f}% | {r['com']} |<!-- id:{r['id']} -->")
     # 3 상위 5 정밀
     L += ["", "## 3. 상위 5 정밀(제목 분해·도입부 추정·댓글 반응)", ""]
     for k, r in enumerate(rows[:5], 1):
