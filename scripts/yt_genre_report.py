@@ -68,12 +68,45 @@ def fetch_group(kw, days, top, kind, sort="views"):
         items = [v for v in items if iso_dur(v["contentDetails"]["duration"]) > 180]
     elif kind == "shorts":
         items = [v for v in items if iso_dur(v["contentDetails"]["duration"]) <= 180]
+    if sort == "score":  # 흥행 점수(시청율 대리 지표 합성) 정렬 — 제21장 9
+        items = [v for v in items if n(v["statistics"].get("viewCount")) >= 1000]
+        items = score_rank(items, chans_for(items))
     if sort == "vpd":  # 조회/일(신작 보정) 정렬
         now = dt.datetime.now(dt.timezone.utc)
         items.sort(key=lambda v: -n(v["statistics"].get("viewCount")) / max((now - parse_ts(v["snippet"]["publishedAt"])).total_seconds() / 86400, 1 / 24))
     items = items[:top]
     chans = channel_details({v["snippet"]["channelId"] for v in items})
     return items, chans
+
+
+SCORE_W = {"views": 0.30, "vpd": 0.25, "like_r": 0.25, "spread": 0.20}
+
+
+def chans_for(items):
+    return channel_details({v["snippet"]["channelId"] for v in items})
+
+
+def score_rank(items, chans):
+    """흥행 점수 = 백분위(조회수)×0.30 + 백분위(조회/일)×0.25 + 백분위(좋아요율)×0.25 + 백분위(구독자 대비 조회 배수)×0.20.
+    좋아요율은 「끝까지 보고 만족했는가」, 구독자 대비 배수는 「구독자 밖으로 추천이 퍼졌는가」의 대리 지표."""
+    now = dt.datetime.now(dt.timezone.utc)
+    feats = []
+    for v in items:
+        st = v["statistics"]; views = n(st.get("viewCount")); likes = n(st.get("likeCount"))
+        days = max((now - parse_ts(v["snippet"]["publishedAt"])).total_seconds() / 86400, 1 / 24)
+        subs = n(chans.get(v["snippet"]["channelId"], {}).get("statistics", {}).get("subscriberCount"))
+        feats.append({"views": views, "vpd": views / days, "like_r": likes / views if views else 0,
+                      "spread": views / max(subs, 100)})
+    k = len(items)
+    pct = {}
+    for key in SCORE_W:
+        order = sorted(range(k), key=lambda i: feats[i][key])
+        for r, i in enumerate(order):
+            pct.setdefault(i, {})[key] = r / (k - 1) if k > 1 else 1.0
+    for i, v in enumerate(items):
+        v["_score"] = round(100 * sum(SCORE_W[key] * pct[i][key] for key in SCORE_W), 1)
+        v["_feat"] = feats[i]
+    return sorted(items, key=lambda v: -v["_score"])
 
 
 def row_stats(v, chans):
@@ -108,7 +141,7 @@ def main():
     ap.add_argument("--days", type=int, default=30)
     ap.add_argument("--top", type=int, default=30)
     ap.add_argument("--kind", choices=("main", "shorts", "both"), default="main")
-    ap.add_argument("--sort", choices=("views", "vpd"), default="views", help="views=조회수(기본) · vpd=조회/일(신작 보정)")
+    ap.add_argument("--sort", choices=("score", "views", "vpd"), default="score", help="score=흥행 점수(기본, 시청율 대리 지표 합성) · views=조회수 · vpd=조회/일")
     ap.add_argument("--ours", default="", help="우리 기획 한 줄(비교 칸에 표시)")
     ap.add_argument("--out", default="docs/분석")
     ap.add_argument("--config", default="scripts/yt_config.json")
@@ -133,7 +166,7 @@ def main():
     pat = title_patterns([r["title"] for r in rows])
     kind_label = {"main": "본편(3분 초과)", "shorts": "쇼츠(3분 이하)", "both": "본편+쇼츠"}[a.kind]
     L = [f"# 장르 정밀 분석 — 「{a.keyword}」 {kind_label} 상위 {len(rows)}선 · 최근 {a.days}일 · {today}", "",
-         f"정렬: {'조회수 내림차순' if a.sort == 'views' else '조회/일 내림차순(신작 보정)'} · 검색 regionCode=JP·relevanceLanguage=ja·publishedAfter={a.days}일 전 · 구독자 수는 기준이 아니라 참고치.",
+         f"정렬: {'흥행 점수(조회수 30%·조회/일 25%·좋아요율 25%·구독자 대비 조회 배수 20%, 각 백분위; 조회 1,000 미만 제외)' if a.sort == 'score' else '조회수 내림차순' if a.sort == 'views' else '조회/일 내림차순(신작 보정)'} · 검색 regionCode=JP·relevanceLanguage=ja·publishedAfter={a.days}일 전 · 구독자 수는 순위 기준이 아니라 배수 계산에만 쓴다.",
          "최우선 원칙 8. 출처: YouTube Data API(제목·설명문·태그·통계·댓글). **경쟁 영상 대본 전문은 공개 API로 받을 수 없으므로 구조는 제목·설명문·댓글로 추정**한 것이다.",
          f"우리 기획: {a.ours or '(미기입)'}", "",
          "## 1. 요약", "",
@@ -150,11 +183,12 @@ def main():
          ""]
     # 2 상위 30 표
     L += [f"## 2. 상위 {len(rows)} 표", "",
-          "| # | 조회 | 조회/일 | 채널(구독) | 길이 | 공개 | 제목 | 태그 | 후크(설명 1행) | 좋아요율 | 댓글 |",
-          "|---|---|---|---|---|---|---|---|---|---|---|"]
+          "| # | 점수 | 조회 | 조회/일 | 채널(구독) | 구독 대비 | 길이 | 공개 | 제목 | 태그 | 후크(설명 1행) | 좋아요율 | 댓글 |",
+          "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
     for k, r in enumerate(rows, 1):
         ht, hl = hook_type(r["desc"])
-        L.append(f"| {k} | {r['views']:,} | {r['vpd']:,.0f} | {short_title(r['ch'], 12)}({r['subs']:,}) | {fmt_dur(r['dur'])} | "
+        sc = items[k - 1].get("_score", "—"); sp = f"{r['views'] / max(r['subs'], 100):.1f}x"
+        L.append(f"| {k} | {sc} | {r['views']:,} | {r['vpd']:,.0f} | {short_title(r['ch'], 12)}({r['subs']:,}) | {sp} | {fmt_dur(r['dur'])} | "
                  f"{r['date']}({r['dow']}){r['hour']}時 | {short_title(r['title'], 40)} | {', '.join(r['tags'][:3]) or '—'} | "
                  f"{ht}: {short_title(hl, 28)} | {r['like_r']:.1f}% | {r['com']} |<!-- id:{r['id']} -->")
     # 3 상위 5 정밀
