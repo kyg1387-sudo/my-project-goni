@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """본편 완성본 → 세로 쇼츠(1080x1920, EP3 형식): 흐린 배경 + 위 훅 제목 + 가운데 16:9 영상(원 자막 영역은 잘라냄)
-+ 아래 큰 일본어 자막(원 .ass 타이밍 재사용) + 끝 「続きは本編で」 1.2초. 무과금, 로컬.
++ 아래 큰 일본어 자막(원 .ass 타이밍 재사용) + 끝 「続きは本編へ（概要欄）」 2.0초(최우선 원칙 8⑦b, 2026-11-06). 무과금, 로컬.
 
 사용법: make_shorts.py <본편.mp4(자막 입힘, 아웃트로 전)> <subs.ass> <spec.json> <out_dir>
 spec: {"shorts":[{"id":"1-letter","start":88.9,"end":112.3,"title":"…\\N…"}]}
@@ -143,7 +143,7 @@ def main():
         assert all(len(x) <= 13 for x in sh["title"].split("\\N")), f"쇼츠 제목 한 줄 13자 초과(제13장 4): {sh['title']}"
         a, b = float(sh["start"]), float(sh["end"])
         dur = b - a
-        tail = 1.2
+        tail = float(sh.get("end_tail", spec.get("end_tail", 2.0)))  # 끝 자막 길이(기본 2.0초)
         lines = [f"Dialogue: 0,{s2t(0)},{s2t(dur + tail)},Title,,0,0,0,,{sh['title']}"]
         for s, e, style, text in ev:
             if e <= a or s >= b or style in skip:
@@ -151,7 +151,7 @@ def main():
             st = "Cap" if style == "Caption" else "Sub"
             for s1, e1, w in split_events(s, min(e, b), text):
                 lines.append(f"Dialogue: 0,{s2t(s1 - a)},{s2t(e1 - a)},{st},,0,0,0,,{w}")
-        lines.append(f"Dialogue: 0,{s2t(dur)},{s2t(dur + tail)},End,,0,0,0,,{sh.get('end_text', '続きは本編で')}")
+        lines.append(f"Dialogue: 0,{s2t(dur)},{s2t(dur + tail)},End,,0,0,0,,{sh.get('end_text', spec.get('end_text', '続きは本編へ（概要欄）'))}")
         sub = os.path.join(out_dir, f"_{sh['id']}.ass")
         open(sub, "w", encoding="utf-8").write(head + "\n".join(lines) + "\n")
         out = os.path.join(out_dir, f"{spec['prefix']}-short-{sh['id']}-JP.mp4")
