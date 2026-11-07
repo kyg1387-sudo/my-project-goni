@@ -41,12 +41,14 @@ def text_layer(s, size, fill=None, gradient=None, stroke=(0, 0, 0), stroke_w=12,
             c = [top[i] + (mid[i] - top[i]) * min(1, t * 2) if t < 0.5 else mid[i] + (bot[i] - mid[i]) * (t - 0.5) * 2 for i in range(3)]
             gd.line([(0, y), (w, y)], fill=tuple(int(max(0, min(255, v))) for v in c))
         lay.paste(g, (0, 0), m)
-    # 획이 두꺼워 막힌 아주 작은 속공간(警·備·露 등)이 투명 구멍으로 남아 배경이 점처럼 비친다 → 닫힘 연산으로 메워 흰색 채움
-    a = lay.split()[3]
-    closed = a.filter(ImageFilter.MaxFilter(9)).filter(ImageFilter.MinFilter(9))
-    holes = ImageChops.subtract(closed, a)
-    white = Image.new("RGBA", lay.size, (255, 255, 255, 255))
-    lay.paste(white, (0, 0), holes)
+    # 획이 두꺼워 막힌 아주 작은 속공간(警·備·露 등)이 투명 구멍으로 남아 배경이 점처럼 비친다
+    # → 바깥과 이어지지 않은(완전히 둘러싸인) 투명 영역만 찾아 채운다(바깥 윤곽은 건드리지 않음)
+    a = lay.split()[3].point(lambda v: 255 if v > 128 else 0)
+    bg = a.copy()
+    ImageDraw.floodfill(bg, (0, 0), 128)
+    holes = bg.point(lambda v: 255 if v == 0 else 0)
+    hole_c = (gradient[1] + (255,)) if gradient else ((fill or (255, 255, 255)) + (255,))
+    lay.paste(Image.new("RGBA", lay.size, hole_c), (0, 0), holes)
     return lay
 
 
@@ -307,7 +309,27 @@ def teiden_gen(src):
     return out
 
 
-WORKS = {"ryokan": ryokan, "ryokan_gen": ryokan_gen, "souko": souko_gen, "yanagi": yanagi_gen, "teiden": teiden_gen}
+def tower_gen(src):
+    """タワマン(oZgJJvMWh2s): A 무너진 西園寺 ↔ 통장 든 주인공 / B 마이크 든 西園寺 ↔ 일어선 42층 주인 小田切."""
+    f = lambda n: os.path.join(src, n)
+    mark = (1720, 870, 1900, 1010)
+    out = {}
+    img = soften(full(f("gen_A.jpg"), bright=1.16, contrast=1.03, sat=1.06, lift=46), (1740, 880, 1880, 1000), r=18, desat=1.0, feather=40).convert("RGBA")
+    shade_bottom(img, 620, 130)
+    put(img, band("消えた積立金2,400万円", 70, fg=(255, 236, 60), bg=(0, 0, 0, 215)), 0, 0)
+    put(img, glow(text_layer("最上階の女王が", 128, stroke_w=12)), 40, 612)
+    put(img, glow(text_layer("1冊の通帳で転落", 196, gradient=GOLD, stroke=(255, 255, 255), stroke_w=15, outer=(0, 0, 0), outer_w=12), r=24), 10, 740)
+    out["A"] = img
+    img = soften(full(f("gen_B.jpg"), bright=1.12, contrast=1.03, sat=1.06, lift=40), (1740, 880, 1880, 1000), r=18, desat=1.0, feather=40).convert("RGBA")
+    shade_bottom(img, 620, 130)
+    put(img, glow(text_layer("「低層階の貧乏人が」", 100, stroke_w=11)), 0, 0)
+    put(img, glow(text_layer("その時、立ち上がったのは", 112, stroke_w=12)), 40, 622)
+    put(img, glow(text_layer("42階の持ち主", 240, gradient=GOLD, stroke=(255, 255, 255), stroke_w=15, outer=(0, 0, 0), outer_w=12), r=24), 10, 722)
+    out["B"] = img
+    return out
+
+
+WORKS = {"tower": tower_gen, "ryokan": ryokan, "ryokan_gen": ryokan_gen, "souko": souko_gen, "yanagi": yanagi_gen, "teiden": teiden_gen}
 
 
 def main():
