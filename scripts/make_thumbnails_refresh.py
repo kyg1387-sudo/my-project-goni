@@ -205,7 +205,15 @@ def ryokan_gen(src):
     gen = erase_mark(full(f("gen_A.jpg"), bright=1.46, contrast=1.04, sat=1.06, lift=54))
     R = panel(f("S18f.png"), 980, 560, 1.05, W, H, bright=1.28, contrast=1.02, sat=1.12, warm=6, lift=36)
     gen_l = Image.new("RGB", (W, H)); gen_l.paste(gen, (0, 0))
-    out["A3"] = ryokan_text_A(halves(gen_l, R, 480, 980) if False else split2(gen_l, shift_to(R, 980, 1440)))
+    out["A3"] = ryokan_text_A(split2(gen_l, shift_to(R, 980, 1440)))
+    # B2: 고니감독님 생성 그림(팔짱 낀 小姑 + 프런트에서 웃는 若菜) + B 글자
+    if os.path.exists(f("gen_B.jpg")):
+        img = erase_mark(full(f("gen_B.jpg"), bright=1.22, contrast=1.04, sat=1.08, lift=40)).convert("RGBA")
+        shade_bottom(img, 600, 160)
+        put(img, glow(text_layer("「代わりはいくらでもいる」", 100, stroke_w=11)), 20, 18)
+        put(img, glow(text_layer("3か月後", 150, stroke_w=12)), 50, 600)
+        put(img, glow(text_layer("立場逆転", 250, gradient=GOLD, stroke=(255, 255, 255), stroke_w=15, outer=(0, 0, 0), outer_w=12), r=24), 330, 712)
+        out["B2"] = img
     return out
 
 
