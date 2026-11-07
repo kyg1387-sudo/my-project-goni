@@ -170,7 +170,55 @@ def ryokan(src):
     return out
 
 
-WORKS = {"ryokan": ryokan}
+def full(path, **g):
+    """외부 생성 그림 1장(16:9 근처)을 1920x1080으로 맞춘다(가운데 크롭)."""
+    im = Image.open(path).convert("RGB")
+    w, h = im.size
+    tw = min(w, int(h * 16 / 9)); th = int(tw * 9 / 16)
+    im = im.crop(((w - tw) // 2, (h - th) // 2, (w - tw) // 2 + tw, (h - th) // 2 + th)).resize((W, H), Image.LANCZOS)
+    return grade(im, **g)
+
+
+def erase_mark(im, box=(1780, 960, 1920, 1080)):
+    """생성기 워터마크(오른쪽 아래 ✦)를 바로 위 영역을 흐려 덮어 지운다(재생 시간 자리라 글자는 두지 않는다)."""
+    x0, y0, x1, y1 = box
+    patch = im.crop((x0, y0 - (y1 - y0), x1, y0)).filter(ImageFilter.GaussianBlur(6))
+    im.paste(patch, (x0, y0))
+    return im
+
+
+def ryokan_text_A(img):
+    shade_bottom(img, 600, 160)
+    put(img, band("老舗旅館の3か月後", 78, fg=(255, 236, 60), bg=(0, 0, 0, 215)), 0, 0)
+    put(img, glow(text_layer("追い出した嫁に", 126, stroke_w=12)), 50, 612)
+    put(img, glow(text_layer("戻ってきて", 256, gradient=GOLD, stroke=(255, 255, 255), stroke_w=15, outer=(0, 0, 0), outer_w=12), r=24), 10, 712)
+    return img
+
+
+def ryokan_gen(src):
+    f = lambda n: os.path.join(src, n)
+    out = {}
+    # A2: 고니감독님 생성 그림(우는 姑 + 미소 若菜) + A 글자 그대로
+    img = erase_mark(full(f("gen_A.jpg"), bright=1.46, contrast=1.04, sat=1.06, lift=54)).convert("RGBA")
+    out["A2"] = ryokan_text_A(img)
+    # A3: 혼합 — 왼쪽 생성 姑(감정) + 오른쪽 본편 키프레임 若菜(본편과 같은 얼굴, 제13장 5 R60)
+    gen = erase_mark(full(f("gen_A.jpg"), bright=1.46, contrast=1.04, sat=1.06, lift=54))
+    R = panel(f("S18f.png"), 980, 560, 1.05, W, H, bright=1.28, contrast=1.02, sat=1.12, warm=6, lift=36)
+    gen_l = Image.new("RGB", (W, H)); gen_l.paste(gen, (0, 0))
+    out["A3"] = ryokan_text_A(halves(gen_l, R, 480, 980) if False else split2(gen_l, shift_to(R, 980, 1440)))
+    return out
+
+
+def shift_to(im, fx, tx):
+    out = Image.new("RGB", (W, H))
+    dx = int(tx - fx)
+    out.paste(im, (dx, 0))
+    if dx > 0:
+        out.paste(im.crop((0, 0, dx, H)).transpose(Image.FLIP_LEFT_RIGHT), (0, 0))
+    return out
+
+
+WORKS = {"ryokan": ryokan, "ryokan_gen": ryokan_gen}
 
 
 def main():
