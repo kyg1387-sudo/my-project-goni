@@ -41,14 +41,31 @@ def text_layer(s, size, fill=None, gradient=None, stroke=(0, 0, 0), stroke_w=12,
             c = [top[i] + (mid[i] - top[i]) * min(1, t * 2) if t < 0.5 else mid[i] + (bot[i] - mid[i]) * (t - 0.5) * 2 for i in range(3)]
             gd.line([(0, y), (w, y)], fill=tuple(int(max(0, min(255, v))) for v in c))
         lay.paste(g, (0, 0), m)
-    # 획이 두꺼워 막힌 아주 작은 속공간(警·備·露 등)이 투명 구멍으로 남아 배경이 점처럼 비친다
-    # → 바깥과 이어지지 않은(완전히 둘러싸인) 투명 영역만 찾아 채운다(바깥 윤곽은 건드리지 않음)
-    a = lay.split()[3].point(lambda v: 255 if v > 128 else 0)
-    bg = a.copy()
-    ImageDraw.floodfill(bg, (0, 0), 128)
-    holes = bg.point(lambda v: 255 if v == 0 else 0)
-    hole_c = (gradient[1] + (255,)) if gradient else ((fill or (255, 255, 255)) + (255,))
-    lay.paste(Image.new("RGBA", lay.size, hole_c), (0, 0), holes)
+    # 획이 두꺼워 막힌 아주 작은 속공간(警·備·転 등)에서 흰 테 사이로 바깥 검은 테가 점처럼 비친다
+    # → 흰 테(+채움) 층만 따로 그려, 그 층에서 바깥과 이어지지 않은 「작은」 빈 곳만 흰색으로 메운다
+    #   (ロ·口 같은 큰 속공간은 그대로 둔다)
+    inner = Image.new("L", (w, h), 0)
+    ImageDraw.Draw(inner).text(o, s, font=f, fill=255, stroke_width=stroke_w, stroke_fill=255)
+    bin_ = inner.point(lambda v: 255 if v > 60 else 0)
+    ImageDraw.floodfill(bin_, (0, 0), 128)
+    hp = bin_.load(); W_, H_ = bin_.size
+    limit = (size * 0.06) ** 2
+    small = Image.new("L", bin_.size, 0); sp = small.load(); seen = set()
+    for y in range(H_):
+        for x in range(W_):
+            if hp[x, y] == 0 and (x, y) not in seen:
+                stack, comp = [(x, y)], []
+                seen.add((x, y))
+                while stack:
+                    cx, cy = stack.pop(); comp.append((cx, cy))
+                    for nx, ny in ((cx + 1, cy), (cx - 1, cy), (cx, cy + 1), (cx, cy - 1)):
+                        if 0 <= nx < W_ and 0 <= ny < H_ and hp[nx, ny] == 0 and (nx, ny) not in seen:
+                            seen.add((nx, ny)); stack.append((nx, ny))
+                if len(comp) <= limit:
+                    for px in comp:
+                        sp[px] = 255
+    small = small.filter(ImageFilter.MaxFilter(3))
+    lay.paste(Image.new("RGBA", lay.size, stroke + (255,)), (0, 0), small)
     return lay
 
 
@@ -346,6 +363,14 @@ def cart_gen(src):
     put(img, glow(text_layer("誰にも言わずに", 124, stroke_w=12)), 40, 612)
     put(img, glow(text_layer("三晩の恩返し", 240, gradient=GOLD, stroke=(255, 255, 255), stroke_w=15, outer=(0, 0, 0), outer_w=12), r=24), 10, 722)
     out["B"] = img
+    if os.path.exists(f("gen_B2.jpg")):
+        # B2: 돈을 거절하는 社長 ↔ 10년 전 옥수수를 건네는 おばあさん(동양인 고정 재생성)
+        img = soften(full(f("gen_B2.jpg"), bright=1.10, contrast=1.04, sat=1.06, lift=30), mark, r=18, desat=1.0, feather=40).convert("RGBA")
+        shade_bottom(img, 620, 140)
+        put(img, glow(text_layer("「金はいりません」", 104, stroke_w=11)), 0, 0)
+        put(img, glow(text_layer("理由は十年前の", 128, stroke_w=12)), 40, 612)
+        put(img, glow(text_layer("トウモロコシ一本", 196, gradient=GOLD, stroke=(255, 255, 255), stroke_w=15, outer=(0, 0, 0), outer_w=12), r=24), 10, 740)
+        out["B2"] = img
     return out
 
 
