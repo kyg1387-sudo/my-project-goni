@@ -310,6 +310,9 @@ def main():
         chars.append(c)
     if (stage == "p" or stage.startswith("r")) and len(chars) != len(only):
         raise SystemExit(f"컷 일부 없음: {sorted(only - {c['id'] for c in chars})}")
+    leak = [c["id"] for c in chars if "「" in c["prompt"] or "composited" in c["prompt"]]
+    if leak:  # Kill Gate 1차 근본 원인 — 합성 문구가 프롬프트에 남으면 가짜 글자가 그려진다(실증 10절)
+        raise SystemExit("합성 예정 문구가 프롬프트에 남음: " + ", ".join(leak))
     if missing:
         raise SystemExit("참조 파일 없음: " + ", ".join(sorted(set(missing))))
     name = "pilot" if stage == "p" else stage if stage.startswith("r") else stage + ("-r" if only else "")
