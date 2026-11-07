@@ -226,7 +226,26 @@ def shift_to(im, fx, tx):
     return out
 
 
-WORKS = {"ryokan": ryokan, "ryokan_gen": ryokan_gen}
+def souko_gen(src):
+    """倉庫番(2V1jkoPxfE8): 고니감독님 Gemini 생성 그림 A(축하연에서 무너진 権藤 ↔ 전표 다발 든 沙織)·B(손가락질 権藤 ↔ 지하 창고에서 전표 든 沙織)."""
+    f = lambda n: os.path.join(src, n)
+    out = {}
+    img = erase_mark(full(f("gen_A.jpg"), bright=1.12, contrast=1.04, sat=1.06, lift=26)).convert("RGBA")
+    shade_bottom(img, 600, 160)
+    put(img, band("10年分の伝票", 78, fg=(255, 236, 60), bg=(0, 0, 0, 215)), 0, 0)
+    put(img, glow(text_layer("倉庫番に飛ばした女が", 118, stroke_w=12)), 40, 612)
+    put(img, glow(text_layer("祝賀会で暴露", 236, gradient=GOLD, stroke=(255, 255, 255), stroke_w=15, outer=(0, 0, 0), outer_w=12), r=24), 10, 722)
+    out["A"] = img
+    img = erase_mark(full(f("gen_B.jpg"), bright=1.26, contrast=1.05, sat=1.08, lift=44)).convert("RGBA")
+    shade_bottom(img, 600, 160)
+    put(img, glow(text_layer("「カビてろ」", 104, stroke_w=12)), 0, 0)
+    put(img, glow(text_layer("倉庫で見つけた1枚", 124, stroke_w=12)), 40, 612)
+    put(img, glow(text_layer("紙クズが証拠に", 214, gradient=GOLD, stroke=(255, 255, 255), stroke_w=15, outer=(0, 0, 0), outer_w=12), r=24), 10, 740)
+    out["B"] = img
+    return out
+
+
+WORKS = {"ryokan": ryokan, "ryokan_gen": ryokan_gen, "souko": souko_gen}
 
 
 def main():
