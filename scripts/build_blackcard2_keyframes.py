@@ -119,6 +119,16 @@ EMO_OVERRIDE = {  # 상태 고정(00_script_ja.md·제19장 27) — Kill Gate �
     "S24e2": "Kenji's ONE free hand rests flat and still on the contract; the capped pen lies beside it; the hand holds NOTHING — NO phone, NO card; the front seats out of frame.",
     "S24g": "FRAMING LOCKED: only Kenji's eyes and brows fill the frame; Kenji is ALONE in the rear seat; NO other person anywhere.",
     "S24d": "Exactly ONE hand holds the phone; the other hand and the face are out of frame.",
+    # Kill Gate r1(2026-11-07, 64장 중 10컷 재생성)
+    "S18d": "POSE LOCKED: both of Nagase's hands are DOWN out of frame, NO hand near the face. HEAD LOCKED: his head is turned 40 degrees toward screen LEFT so the camera sees mostly his RIGHT cheek; his eyes look screen LEFT at Kenji, NEVER into the lens; composed, lips closed.",
+    "S18i": "HEAD LOCKED: Nagase's head is turned 40 degrees toward screen LEFT so the camera sees mostly his RIGHT cheek; eyes on Kenji off-screen LEFT, NEVER into the lens; the thin smile gone, a hard swallow; bare lapel, NO pin.",
+    "S19a": "CAMERA CLOSE: the camera is 1 m behind Kenji's black-suited shoulder (near LEFT edge, blurred, at most 25 percent of the frame width); Misaki is CHEST-UP and LARGE in the centre, her face at least ONE THIRD of the frame height (NOT a wide shot, NOT full body), ONE hand gripping her handbag strap at the shoulder; eyes on Kenji screen LEFT, pleading, NEVER into the lens. Background: a pale grey rear service yard in flat overcast DAYTIME light, dry concrete, softly blurred, NO rain, NO night, NO signs.",
+    "S19j": "CAMERA CLOSE, slightly high: the camera is 1 m behind Kenji's black-suited shoulder (near LEFT edge, blurred); Misaki is CHEST-UP and LARGE in the centre, face at least ONE THIRD of the frame height (NOT a wide shot, NOT full body), lips trembling, eyes wet but NOT running, one hand at her coat collar, holding NO paper; eyes on Kenji screen LEFT. Background: a pale grey rear service yard in flat overcast DAYTIME light, softly blurred, NO rain, NO night.",
+    "S20g": "Camera directly BEHIND Kenji at the counter: the back of his head and black-suited shoulders fill the near foreground, his head turned only slightly toward Sagisuma beyond; NO face, NO cheek, NO mouth, NO profile visible — only hair, the back of the neck and an ear.",
+    "S20p": "Camera directly BEHIND Kenji: the back of his head and one shoulder close in the foreground, Sagisuma softly blurred beyond; NO face, NO cheek, NO mouth, NO profile visible — only hair, the back of the neck and an ear.",
+    "S23a": "CAR GEOMETRY LOCKED: the camera sits in the rear LEFT seat looking across the rear cabin; Kenji sits ALONE in the rear RIGHT seat, facing forward; in front of Kenji is the BACK of the right front seat, with the chauffeur's black cap just visible above its headrest (face never visible); the steering wheel is hidden behind that seat; NO person beside Kenji, NOBODY in the front left seat. Interior: black leather, warm amber and magenta neon reflections through the wet side window.",
+    "S24d": "REAR SEAT LOCKED: Kenji is in the REAR seat of a black luxury car: in front of his hand is only the BACK of the black leather front seat; NO steering wheel, NO dashboard, NO windscreen anywhere in the frame; exactly ONE hand holds the phone; neon reflections through the side window.",
+    "S24e2": "REAR SEAT LOCKED: the contract lies on Kenji's knee in the REAR seat; in front only the back of the black leather front seat; NO steering wheel, NO dashboard, NO driver visible.",
     "S24j": "STATE LOCKED: the framed portrait hangs on the wall, but its glass is covered by a bright white reflection glare: NO face, NO eyes, NO features of the person are visible — only the dark frame, the glare and a vague dark suit shape below it; the corridor is EMPTY.",
 }
 SUBJ_FIX = {"S19a": ("near RIGHT foreground", "near LEFT foreground")}  # 장면 축 통일(S19c 합격본이 켄지 왼쪽) — PHASE 3 문장 치환
@@ -181,12 +191,16 @@ def describe(path, i):
 
 NO_FACE = {}
 EXTRA_REFS = {}  # 컷별 추가 참조(소품 문양 통일)
-NO_LOC = set()  # 소품 시트(쿠션 위 시계)·장소 참조가 손에 쥔 기기를 부름(S08k 2회) — 글로만
+NO_LOC = {"S19a", "S19j", "S23a", "S24d", "S24e2"}  # Kill Gate r1: 1화 밤비 뒷문 셀이 낮 장면을 원경·밤으로(S19), 차 셀이 켄지를 운전석·조수석으로(S23a·S24d·S24e2) — 글로만
+C1 = "assets/portraits/blackcard-cast/cells/"
+REF_SWAP = {"S24g": [(C1 + "misaki-full-back.png", None)],  # 전화 상대 美咲 뒷모습 셀이 차 안에 美咲를 앉힘(2회)
+            "S20g": [(C1 + "kenji-suit-front.png", C1 + "kenji-suit-full-back.png")],  # 뒷모습 컷에 정면 셀 → 옆얼굴·입 노출(2회)
+            "S20p": [(C1 + "kenji-suit-front.png", C1 + "kenji-suit-full-back.png")]}  # 소품 시트(쿠션 위 시계)·장소 참조가 손에 쥔 기기를 부름(S08k 2회) — 글로만
 LIGHT_INTEG = ("LIGHT INTEGRATION: the person is lit by the same light as the room, natural soft edges; NO glowing outline, NO halo or white rim "
                "around the body, NOT a pasted cut-out.")
 # Kill Gate 1차(2026-10-29) 정면 응시 다발 → 립싱크가 아닌 얼굴 컷은 시선 방향을 화면 좌우로 고정하고 정면 셀 대신 45° 셀을 참조
-GAZE_FIX = {}  # 자동 추출이 틀린 컷·립싱크인데 렌즈를 보는 컷(FORCE45)
-FORCE45 = set()  # 립싱크 컷인데 정면 셀로 두 번 렌즈 응시(r1) → 45° 셀 참조 + GAZE 문장
+GAZE_FIX = {"S18d": "at Kenji off-screen LEFT", "S18i": "at Kenji off-screen LEFT"}  # 자동 추출이 틀린 컷·립싱크인데 렌즈를 보는 컷(FORCE45)
+FORCE45 = {"S18d", "S18i"}  # r1까지 2회 렌즈 응시  # 립싱크 컷인데 정면 셀로 두 번 렌즈 응시(r1) → 45° 셀 참조 + GAZE 문장
 
 
 def gaze_of(sc):
@@ -202,6 +216,8 @@ def gaze_of(sc):
 
 def build(sc, stage):
     refs = list(sc["refs"]) + EXTRA_REFS.get(sc["id"], [])
+    for old, new in REF_SWAP.get(sc["id"], ()):
+        refs = [new if r == old else r for r in refs if not (r == old and new is None)]
     if sc["id"] in NO_LOC:
         refs = [r for r in refs if not os.path.basename(r).startswith("loc-")]
     people = [r for r in refs if who_of(os.path.basename(r))[0]]
