@@ -1,0 +1,60 @@
+{
+ "_설명": "『母が遺したビデオレター』 썸네일 v3(흥행 30선 정밀 분석 2026-11-07, productions/aihaha-ja/24_썸네일30선분석-최종프롬프트.md) — A 대립·B 미스터리·C 감동 실사 3가설, 각 2장 = 6장 약 0.24달러. 글자는 make_thumbnails_aihaha.py.",
+ "characters": [
+  {
+   "id": "v3-A",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/aihaha-ref/yukiko-mourning.png",
+    "assets/portraits/aihaha-ref/tsuyoshi-front.png",
+    "assets/portraits/aihaha-ref/yoriko-front.png",
+    "assets/portraits/aihaha-ref/shota-front.png",
+    "assets/portraits/aihaha-ref/ai-haha.png"
+   ],
+   "prompt": "Create ONE single ultra-sharp, photorealistic YouTube thumbnail photograph in 16:9 (2560x1440) — one continuous scene, no panels, no borders, no insets. It must look like a frame from a high-end Japanese TV drama, not an AI image. [CAMERA] Eye-level medium wide shot across a low black lacquer table, 35mm lens, f/2.8, everything readable. Camera sits just behind and to the LEFT of the heroine: she fills the LEFT third in three-quarter profile (her face clearly visible, turned toward the right, NOT looking at the camera). Across the table, facing her, the uncle's family fills the center and right. Nobody looks into the lens. Keep the top 22 percent of the frame (shoji and wall) and the lower-left 35 percent (her black dress, table edge) simple and dark enough for title text; keep the bottom-right corner empty of faces. [CHARACTER] Exactly four people. LEFT: Saeki Yukiko (reference image 1), Japanese woman aged 46, black hair in a neat low ponytail, thin silver round wire-rim glasses, bare earlobes, plain thin black summer mourning dress, a small brown leather wristwatch on her LEFT wrist; lower eyelids slightly red and wet, jaw set, lips pressed together, quietly enduring — NOT smiling, NOT crying openly. CENTER: Ono Tsuyoshi (reference image 2), heavy-set man aged 66, receding grey hair slicked back, heavy jowls, plain black mourning suit, white shirt, black tie, plain gold wristwatch, no glasses; leaning forward over the table with a hard, impatient frown. CENTER-RIGHT: Ono Shota (reference image 4), thin man aged 36, short two-block black hair, black square-frame glasses, black suit; holding a tablet out toward Yukiko with a thin smug half-smile. FAR RIGHT: Ono Yoriko (reference image 3), woman aged 63, short wavy brown-dyed bob, single strand of pearls, plain black mourning dress; pressing a folded white handkerchief to the corner of her eye — her eyes are completely DRY, no tears (a fake cry). [ACTION] The uncle's right index finger presses down on three printed loan documents lying side by side on the table in front of Yukiko, each with a small red seal impression. Shota's tablet screen faces Yukiko and is angled so we can see it: on the screen, the elderly woman from reference image 5 (short soft white permed hair, one small mole on her right cheek, lavender cardigan over a cream blouse) smiles far too perfectly, eyes wide open and glassy — the fake video. Yukiko's eyes are fixed on the tablet screen. Natural hands, five fingers each, one tablet only. [SETTING] A bright Japanese tatami room for a 49th-day memorial in mid-August afternoon: shoji windows on the right glowing with soft daylight, beige plaster wall, flat floor cushions, a teacup on the table. Soft top light and window light, gentle contrast, a faint cool shadow over Yukiko and warmer light on the family side. Real skin texture with pores, natural matte skin, real fabric folds, subtle film grain, Japanese drama color grade. [NEGATIVE] No text, letters, numbers, logos, subtitles or watermark anywhere (the loan papers show only blurred grey print lines and red seals); nobody looking at the camera; no extra people; no second tablet; no shoes indoors; no earrings on Yukiko; no glasses on the uncle or the aunt; no tears on the aunt; no gel-like tears; no plastic or airbrushed skin; no cartoon, anime or 3D style."
+  },
+  {
+   "id": "v3-B",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/aihaha-ref/yukiko-mourning.png",
+    "assets/portraits/aihaha-ref/ai-haha.png",
+    "assets/portraits/aihaha-ref/tear-standard-yukiko.png"
+   ],
+   "prompt": "Create ONE single ultra-sharp, photorealistic YouTube thumbnail photograph in 16:9 (2560x1440) — one continuous scene, no panels, no borders, no insets. It must look like a frame from a high-end Japanese film, not an AI image. [CAMERA] Close medium shot from the heroine's front-left, 50mm lens, f/2.0. Her face is in the LEFT-CENTER, large (about 40 percent of the frame height), in three-quarter view turned toward the right, eyes fixed down-right on the tablet — NOT looking at the camera. The tablet she holds fills the RIGHT third, its screen angled about 30 degrees toward the camera so the face on the screen is clearly visible and sharp. Keep the top 22 percent and the lower-left 35 percent dark and simple for title text; nothing important in the bottom-right corner. [CHARACTER] Saeki Yukiko (reference image 1), Japanese woman aged 46, black hair in a neat low ponytail with a few loose strands, thin silver round wire-rim glasses, bare earlobes, plain black summer mourning dress, small brown leather wristwatch on her LEFT wrist. Expression: frozen, breath held, a chill of realisation — eyebrows slightly drawn together, lips parted a little, lower eyelids red and wet, exactly ONE thin transparent tear line on the cheek nearer the camera reaching only the upper third of the cheek, the tear catching light only at its edge (follow the tear look of reference image 3). Real skin texture and pores, natural matte skin. NOT smiling. [ACTION] She holds the tablet in both hands at chest height, fingers natural, five each. On the screen: the elderly woman from reference image 2 (short soft white permed hair, one small mole on her right cheek, lavender cardigan over a cream blouse) in a bright room, smiling too perfectly and too symmetrically, both eyes wide open and unblinking, skin airbrushed smooth, with very faint horizontal scan lines — clearly an uncanny AI video. Behind the woman on the screen, a window shows a finished tall apartment tower with NO scaffolding. [SETTING] A dark Japanese tatami room at night in August. The only lights: the cold blue-white glow of the tablet lighting her face from below-right, and a small warm paper floor lamp far behind her on the left giving a thin warm rim light on her hair and shoulder. In the soft-focus background, a window with a finished apartment tower and scattered lit windows at night. Deep shadows, high contrast, quiet and eerie, subtle film grain, cinematic color grade. [NEGATIVE] No text, letters, numbers, logos, subtitles, play buttons or watermark anywhere; she does not look at the camera; only one person in the room; no second screen; no scaffolding or green netting anywhere; no extra fingers; no earrings; no gel-like or multiple tears; no plastic skin on the heroine; no cartoon, anime or 3D style."
+  },
+  {
+   "id": "v3-C",
+   "count": 2,
+   "aspect_ratio": "16:9",
+   "model": "fal-ai/bytedance/seedream/v4/edit",
+   "extra": {
+    "image_size": {
+     "width": 2560,
+     "height": 1440
+    }
+   },
+   "refs": [
+    "assets/portraits/aihaha-ref/yukiko-front.png",
+    "assets/portraits/aihaha-ref/sawako-front.png"
+   ],
+   "prompt": "Create ONE single ultra-sharp, photorealistic YouTube thumbnail photograph in 16:9 (2560x1440) — one continuous scene, no panels, no borders, no insets. It must look like a warm frame from a high-end Japanese family drama, not an AI image. [CAMERA] Eye-level medium close two-shot at a small dining table by a window, 50mm lens, f/2.2. The mother sits on the RIGHT half, her face large and sharp (about 35 percent of the frame height), turned three-quarters toward her daughter on the left. The daughter is on the LEFT, seen in three-quarter profile from slightly behind her shoulder, her face partly visible and softly in focus. Neither looks at the camera. Keep the top 22 percent (window glow) and the lower-left 35 percent (the daughter's shoulder and table) simple and soft for title text; nothing important in the bottom-right corner. [CHARACTER] RIGHT: Saeki Sawako (reference image 2), Japanese woman aged 74, short soft white permed hair, deep warm smile lines around the eyes, exactly ONE small mole on her right cheek, plain lavender cardigan over a cream blouse; she smiles with her whole face, eyes crinkled almost shut with love — a real, imperfect, living smile (slightly uneven, natural wrinkles, real skin). LEFT: Saeki Yukiko (reference image 1), aged 43 here, black hair in a low ponytail, thin silver round wire-rim glasses, bare earlobes, plain beige knit sweater; a gentle, tired smile, eyes glistening but no tear falling. [ACTION] The mother has reached across the table and holds her daughter's hand with both of her own wrinkled hands, thumbs resting on the back of her daughter's hand. Between them on the table: a small ceramic bowl of Japanese simmered vegetables (nimono) and two pairs of chopsticks. Hands natural, five fingers each. [SETTING] A modest Japanese apartment dining corner on an early-summer late afternoon. Through the window behind them, softly out of focus: an apartment tower UNDER CONSTRUCTION covered in metal scaffolding and green safety netting. Warm golden-hour sunlight from the window creates a soft rim light on the mother's white hair and a warm glow over the table; gentle, low-contrast, tender mood, 3200K warmth, subtle film grain, Japanese drama color grade. [NEGATIVE] No text, letters, numbers, logos, subtitles or watermark anywhere; nobody looks at the camera; only two people; no tablet, no phone; no extra hands or fingers; no earrings on Yukiko; no glasses on the mother; no airbrushed, plastic or symmetrical \"perfect\" face on the mother (she must look clearly human and alive); no cartoon, anime or 3D style."
+  }
+ ]
+}
