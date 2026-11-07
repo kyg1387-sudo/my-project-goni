@@ -397,6 +397,8 @@ SHOTS = [
     S("S22a", "S22", "ins", "ecu", "top", "EL", [Ks], "P_ENV", "Side insert: Kenji's ONE hand holding a folded thick contract half drawn out of the opened cream envelope, the broken wax seal visible." + ONEHAND, fx="push"),
     S("S22b", "S22", "estill", "ws", "top", "OH", [], "TOP1", "Overhead: a thick plain contract laid flat on the walnut desk under the lamp (title 「所有権継承契約書」 composited); no hands.", line="L323", fx="push"),
     S("S22c", "S22", "estill", "ecu", "macro", "HA", [], "TOP1", "High macro of one contract clause, the lamp light raking across the paper (clause text composited and highlighted); no hands.", line="L324", fx="push"),
+    S("S22c2", "S22", "face", "cu", "top", "HA", [Ks], "TOP1", "High close-up of Kenji standing at the desk reading the contract under the lamp, eyes moving down the page (screen LEFT), jaw tight.", pin=B("L324", 2.4), expr="hard",
+      motion="His eyes move slowly down the page and stop; a slow breath; he never looks at the camera." + HOLD + DRY),
     S("S22d", "S22", "estill", "ecu", "macro", "EL", [], "TOP1", "Low raking macro of the next clause (text composited and highlighted), the rest of the page out of focus; no hands.", line="L325", fx="push"),
     S("S22e", "S22", "estill", "ms", "top", "EL", [], "TOP2", "Straight on: the empty high-backed black leather chair behind the desk, the night city beyond; EMPTY.", line="L326", fx="push"),
     S("S22g", "S22", "face", "cu", "top", "SIDE", [Ks], "TOP1", "Close-up profile of Kenji at three-quarter from the side, standing at the desk, eyes on the empty chair (screen RIGHT).", line="L327", expr="hard",

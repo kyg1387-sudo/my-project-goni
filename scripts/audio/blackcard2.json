@@ -178,7 +178,8 @@
   4.1677,
   2.2417,
   4.1447,
-  5.0017,
+  2.7417,
+  2.3017,
   4.6797,
   4.6567,
   3.0707,
@@ -366,6 +367,7 @@
   0.0,
   0.0,
   0.0,
+  0.0,
   0.0
  ],
  "omnihuman_scenes": [
@@ -390,7 +392,7 @@
   123,
   124,
   127,
-  160
+  161
  ],
  "omnihuman_prompts": {
   "12": "He speaks quietly and formally, ashamed, head slightly bowed, holding the key ring out with one hand toward Kenji screen RIGHT; answering Kenji's request. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout.",
@@ -414,7 +416,7 @@
   "123": "Confessing: for the first time he turns and looks Kenji in the eye; slow, heavy and hoarse, sorry; the last words almost a whisper; to Kenji screen LEFT, never into the lens. SEATED/FURNITURE LOCKED: seated on the chair or stool pulled in, thighs under the edge, forearms on the surface; the chair never passes through the body. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout.",
   "124": "He asks low and slow, the ice clicking once as his hand tightens on the glass; eyes on Sagisuma. SEATED/FURNITURE LOCKED: seated on the chair or stool pulled in, thighs under the edge, forearms on the surface; the chair never passes through the body. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout.",
   "127": "Weary and final, sliding the key card with one hand at 最上階へ行け; eyes on Kenji screen LEFT; the last clause slower. SEATED/FURNITURE LOCKED: seated on the chair or stool pulled in, thighs under the edge, forearms on the surface; the chair never passes through the body. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout.",
-  "160": "Very quiet, almost tender, a small pause before 自分の; eyes lowered toward the front; no smile; answering Misaki on the phone. CAR GEOMETRY LOCKED: Japanese right-hand-drive sedan — exactly ONE steering wheel, in front of the RIGHT front seat; the chauffeur sits in the RIGHT front seat, only his cap and gloves ever seen; Kenji sits in the rear seat SEATED NORMALLY facing FORWARD. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout."
+  "161": "Very quiet, almost tender, a small pause before 自分の; eyes lowered toward the front; no smile; answering Misaki on the phone. CAR GEOMETRY LOCKED: Japanese right-hand-drive sedan — exactly ONE steering wheel, in front of the RIGHT front seat; the chauffeur sits in the RIGHT front seat, only his cap and gloves ever seen; Kenji sits in the rear seat SEATED NORMALLY facing FORWARD. Natural, realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees, keeps looking toward the other person at the same three-quarter angle, hands keep doing what they do in the first frame; no exaggerated motion, the same person throughout."
  },
  "omnihuman_models": [
   "fal-ai/bytedance/omnihuman/v1.5",
@@ -477,11 +479,11 @@
   "137": "wind pressure on tall windows, a clock ticking",
   "139": "an envelope touched on wood",
   "140": "a thick envelope opened, paper drawn out",
-  "152": "a gloved hand on a steering wheel",
-  "153": "a fountain pen lifted from paper",
-  "156": "an engine hum, tyres on wet road",
-  "157": "a smartphone vibrating in a hand",
-  "164": "one slow heavy heartbeat"
+  "153": "a gloved hand on a steering wheel",
+  "154": "a fountain pen lifted from paper",
+  "157": "an engine hum, tyres on wet road",
+  "158": "a smartphone vibrating in a hand",
+  "165": "one slow heavy heartbeat"
  },
  "bgm_silence": [
   {
@@ -663,6 +665,7 @@
   "a quiet elevator humming",
   "a quiet elevator humming",
   "a quiet elevator humming",
+  "a silent top-floor office at night, faint wind pressure on the windows, a far city hum",
   "a silent top-floor office at night, faint wind pressure on the windows, a far city hum",
   "a silent top-floor office at night, faint wind pressure on the windows, a far city hum",
   "a silent top-floor office at night, faint wind pressure on the windows, a far city hum",

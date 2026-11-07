@@ -1,7 +1,7 @@
 {
  "_설명": "blackcard2 장면 설정(build_blackcard2_phase3.py 생성). override_required 장면은 정지 푸시인·OMNI 정지 프레임·재사용·카드를 video-overrides로 먼저 넣는다.",
  "ratio": "16:9",
- "budget_usd": 16.65,
+ "budget_usd": 16.87,
  "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
  "durations": [
   10,
@@ -139,6 +139,7 @@
   5,
   5,
   10,
+  5,
   5,
   5,
   5,
@@ -962,6 +963,11 @@
    "duration": 5,
    "override_required": true,
    "image": "assets/portraits/blackcard2-keyframes/S22c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] His eyes move slowly down the page and stop; a slow breath; he never looks at the camera. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. NO water indoors, ceiling and lamps dry. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S22c2-1.png"
   },
   {
    "prompt": "(override) still: Low raking macro of the next clause (text composited and highlighted), the rest ",
