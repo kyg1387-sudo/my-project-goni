@@ -10,7 +10,7 @@
 import argparse
 import os
 
-from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 GOTH = os.path.join(ROOT, "scripts", "fonts", "ZenMaruGothic-Black.ttf")
@@ -41,6 +41,12 @@ def text_layer(s, size, fill=None, gradient=None, stroke=(0, 0, 0), stroke_w=12,
             c = [top[i] + (mid[i] - top[i]) * min(1, t * 2) if t < 0.5 else mid[i] + (bot[i] - mid[i]) * (t - 0.5) * 2 for i in range(3)]
             gd.line([(0, y), (w, y)], fill=tuple(int(max(0, min(255, v))) for v in c))
         lay.paste(g, (0, 0), m)
+    # 획이 두꺼워 막힌 아주 작은 속공간(警·備·露 등)이 투명 구멍으로 남아 배경이 점처럼 비친다 → 닫힘 연산으로 메워 흰색 채움
+    a = lay.split()[3]
+    closed = a.filter(ImageFilter.MaxFilter(9)).filter(ImageFilter.MinFilter(9))
+    holes = ImageChops.subtract(closed, a)
+    white = Image.new("RGBA", lay.size, (255, 255, 255, 255))
+    lay.paste(white, (0, 0), holes)
     return lay
 
 
@@ -280,7 +286,28 @@ def yanagi_gen(src):
     return out
 
 
-WORKS = {"ryokan": ryokan, "ryokan_gen": ryokan_gen, "souko": souko_gen, "yanagi": yanagi_gen}
+def teiden_gen(src):
+    """停電予告(Cd1pzJE4QJM): A 감사에 우는 母 ↔ 밤 경비실 キムさん / B 새벽 4시 문 앞 트리 놓는 キムさん ↔ 웃는 れん."""
+    f = lambda n: os.path.join(src, n)
+    out = {}
+    base = full(f("gen_A.jpg"), bright=1.30, contrast=1.04, sat=1.06, lift=60)
+    base = soften(base, (770, 0, 1090, 380), r=26, desat=0.7)     # 벽 달력 숫자(가짜 글자 위험)
+    img = erase_mark(base, (1720, 870, 1900, 1010)).convert("RGBA")
+    shade_bottom(img, 600, 160)
+    put(img, band("クリスマスイブ、1801号室", 70, fg=(255, 236, 60), bg=(0, 0, 0, 215)), 0, 0)
+    put(img, glow(text_layer("電気代を払ったのは", 124, stroke_w=12)), 40, 612)
+    put(img, glow(text_layer("無口な警備員", 250, gradient=GOLD, stroke=(255, 255, 255), stroke_w=15, outer=(0, 0, 0), outer_w=12), r=24), 10, 712)
+    out["A"] = img
+    img = erase_mark(full(f("gen_B.jpg"), bright=1.22, contrast=1.10, sat=1.12, lift=42), (1720, 870, 1900, 1010)).convert("RGBA")
+    shade_bottom(img, 600, 160)
+    put(img, glow(text_layer("午前4時、ドアの前に", 100, stroke_w=11)), 0, 0)
+    put(img, glow(text_layer("サンタは煙突ではなく", 120, stroke_w=12)), 40, 612)
+    put(img, glow(text_layer("警備室から来た", 206, gradient=GOLD, stroke=(255, 255, 255), stroke_w=15, outer=(0, 0, 0), outer_w=12), r=24), 10, 722)
+    out["B"] = img
+    return out
+
+
+WORKS = {"ryokan": ryokan, "ryokan_gen": ryokan_gen, "souko": souko_gen, "yanagi": yanagi_gen, "teiden": teiden_gen}
 
 
 def main():
