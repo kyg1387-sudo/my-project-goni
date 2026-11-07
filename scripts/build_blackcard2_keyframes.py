@@ -75,8 +75,19 @@ LIGHT_NOTE = {  # 1화 장소 셀을 다른 시간대로 쓰는 장면·셀 조�
 SEAT = ("SEATED/FURNITURE LOCKED: seated persons sit ON chairs pulled in to the table, thighs under the table edge, forearms on the table; "
         "no chair passes through any body, no floating chair legs; correct solid furniture geometry.")
 EMO_OVERRIDE = {  # 상태 고정(00_script_ja.md·제19장 27) — Kill Gate 뒤에 재생성 고정 문장을 여기에 더한다
+    # Kill Gate a(2026-11-07, 22장 중 8장): 경비원 가슴 가짜 명찰 글자(S14g)·벽 공지(S14i), 화자 얼굴 1/6 이하 원경(S14i·S18a·S18g·S19a·S19j),
+    # 어깨 너머 앞 인물이 검은 머리 남자(S18b, 永瀬=은발), 안경 만지는 손(S18d, 립싱크 얼굴 변형 위험), 낮 장면에 비·밤(S19j)
+    "S14g": "CAMERA CLOSE: the camera is 1.2 m behind Kenji's black-suited shoulder (near RIGHT edge, blurred, at most 25 percent of the frame width); the guard's head and shoulders fill the centre, his face at least ONE THIRD of the frame height; he holds a ring of keys out in ONE hand at chest height; ashamed, eyes lowered then toward Kenji screen RIGHT, NOT smiling, NEVER into the lens. UNIFORM LOCKED: the navy uniform chest is completely plain — NO name tag, NO badge, NO patch, NO label, NO pocket card.",
+    "S14i": "CAMERA CLOSE: chest-up, the guard standing in the booth doorway fills the centre-left, his face at least ONE THIRD of the frame height, three-quarter toward screen RIGHT, one hand half raised; NOT smiling. UNIFORM LOCKED: the uniform chest plain, NO name tag, NO badge. The booth walls and window have NO notices, NO papers, NO signs.",
+    "S18a": "CAMERA CLOSE: the camera is 1.2 m behind Kenji's seated black-suited shoulder (near LEFT edge, blurred, at most 25 percent of the frame width); Nagase stands just inside the glass door framed from the WAIST UP, his head and shoulders large in the centre, face at least ONE THIRD of the frame height, a slight polite half-bow, ONE hand on the back of a chair; eyes on Kenji screen LEFT, NEVER into the lens; NOT a wide shot, NO full body, NO legs.",
+    "S18b": "FOREGROUND IDENTITY LOCKED: the blurred foreground back at the near RIGHT edge is Nagase — SILVER-GREY side-parted hair, the thin GOLD glasses temple arm visible at the ear, charcoal grey suit shoulder; NOT dark hair, NOT a young man. Kenji seated beyond at three-quarter, his face at least ONE THIRD of the frame height, eyes on Nagase screen RIGHT, NEVER into the lens.",
+    "S18d": "POSE LOCKED: both of Nagase's hands are DOWN, resting out of frame — NO hand near the face, NOT touching the glasses. GAZE LOCKED: head turned 35 degrees toward screen LEFT, eyes on Kenji off-screen LEFT, NEVER into the lens; composed, a thin polite non-smile, lips closed.",
+    "S18g": "CAMERA CLOSE, low angle: chest-up, Nagase leaning forward over the white table, his head and shoulders fill the centre, face at least ONE THIRD of the frame height, ONE hand pressed flat on the table at the bottom edge; eyes on Kenji screen LEFT, NEVER into the lens; NOT a wide shot; NO other person, NO foreground shoulder.",
+    "S19a": "CAMERA CLOSE: the camera is 1.2 m behind Kenji's black-suited shoulder (near LEFT edge, blurred, at most 25 percent of the frame width); Misaki chest-up fills the centre, her face at least ONE THIRD of the frame height, ONE hand gripping her handbag strap at the shoulder; eyes on Kenji screen LEFT, pleading, NEVER into the lens. Overcast DAYTIME, dry grey concrete, NO rain, NO signs with text.",
+    "S19j": "CAMERA CLOSE, slightly high: the camera is 1.2 m behind Kenji's black-suited shoulder (near LEFT edge, blurred, at most 25 percent of the frame width); Misaki chest-up fills the centre, face at least ONE THIRD of the frame height, lips trembling, eyes wet but NOT running, NOT smiling, one hand at her coat collar, holding NO paper; eyes on Kenji screen LEFT. Overcast DAYTIME, NOT night, NO rain falling.",
     "S24j": "STATE LOCKED: the framed portrait hangs on the wall, but its glass is covered by a bright white reflection glare: NO face, NO eyes, NO features of the person are visible — only the dark frame, the glare and a vague dark suit shape below it; the corridor is EMPTY.",
 }
+SUBJ_FIX = {"S19a": ("near RIGHT foreground", "near LEFT foreground")}  # 장면 축 통일(S19c 합격본이 켄지 왼쪽) — PHASE 3 문장 치환
 BACK_ONLY = {}  # 뒷모습으로만 나오는 인물 — PHASE 3 생성기가 expr=back 셀을 이미 넣는다
 ANGER_CLOSED = ("Fury shown only in the wide-open glaring eyes, furrowed brow, flared nostrils and clenched jaw: eyes OPEN and fixed on the listener, "
                 "lips pressed together, mouth CLOSED, NOT shouting (speech is added later).")
@@ -172,7 +183,11 @@ def build(sc, stage):
         parts.append("Nobody holds a phone; NO smartphone in any hand.")
     if sc["id"] in EMO_OVERRIDE:
         parts.append(EMO_OVERRIDE[sc["id"]])
-    parts.append(sc["keyframe_prompt"])
+    kp = sc["keyframe_prompt"]
+    if sc["id"] in SUBJ_FIX:
+        assert SUBJ_FIX[sc["id"]][0] in kp, sc["id"]
+        kp = kp.replace(*SUBJ_FIX[sc["id"]])
+    parts.append(kp)
     for r in sc["refs"]:
         b = os.path.basename(r)
         for k, v in LOC_NOTE.items():
