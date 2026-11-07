@@ -1,0 +1,26 @@
+{
+ "_설명": "『ブラックカード』第2話 립싱크 시범 3컷(S14g 警備員 L211 · S18n 켄지 L284 · S20m 鷺沼 L311). 음성은 Lock 확정본(1.05배속, 앞뒤 무음 정리 + 0.15/0.3초). 합계 11.6초 x 0.16 = 약 1.85달러. 키프레임은 Kill Gate 합격본을 복사.",
+ "tests": [
+  {
+   "id": "omni-S14g",
+   "model": "omnihuman",
+   "image": "assets/auditions/blackcard2-pilot-omni/S14g.png",
+   "audio_id": "L211",
+   "prompt": "The night guard speaks quietly and formally, ashamed, head slightly bowed, still holding the key ring out with one hand toward Kenji beyond the foreground shoulder; apologising for what he did to him last time. NOT smiling. Natural realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees; keeps looking toward the other person at the same angle, never turns to the camera; hands keep doing what they do in the first frame; the same person, wardrobe and room throughout; no new people."
+  },
+  {
+   "id": "omni-S18n",
+   "model": "omnihuman",
+   "image": "assets/auditions/blackcard2-pilot-omni/S18n.png",
+   "audio_id": "L284",
+   "prompt": "HEAD LOCKED FIRST. Kenji says it almost in a whisper, low and slow, throwing Nagase's old words back at him; one finger taps the blank sheet twice on the last word; eyes fixed on Nagase beyond the foreground shoulder; a cold, controlled face, NOT smiling. Natural realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees; keeps looking toward the other person at the same angle, never turns to the camera; hands keep doing what they do in the first frame; the same person, wardrobe and room throughout; no new people."
+  },
+  {
+   "id": "omni-S20m",
+   "model": "omnihuman",
+   "image": "assets/auditions/blackcard2-pilot-omni/S20m.png",
+   "audio_id": "L311",
+   "prompt": "HEAD LOCKED FIRST. Sagisuma confesses to Kenji beyond the foreground shoulder: his eyes lift to meet Kenji's and stay there; slow, heavy and hoarse, sorry; the last words almost a whisper, the jaw tight; NOT smiling at any moment; forearms stay on the bar counter. Natural realistic acting like a real film actor: subtle breathing, natural blinks, small head movements under 15 degrees; keeps looking toward the other person at the same angle, never turns to the camera; hands keep doing what they do in the first frame; the same person, wardrobe and room throughout; no new people."
+  }
+ ]
+}
