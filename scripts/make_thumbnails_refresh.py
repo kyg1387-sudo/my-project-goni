@@ -245,7 +245,42 @@ def souko_gen(src):
     return out
 
 
-WORKS = {"ryokan": ryokan, "ryokan_gen": ryokan_gen, "souko": souko_gen}
+def soften(im, box, r=34, desat=0.55, feather=70):
+    """실존 브랜드처럼 보이는 간판·로고(편의점 「7」 같은 색 띠)를 흐리고 색을 빼 지운다(실존 기업 연상 금지, 제10장 6).
+    경계가 네모로 보이지 않게 넓은 여백까지 함께 흐리고 타원형 페더 마스크로 섞는다."""
+    x0, y0, x1, y1 = box
+    pad = feather
+    big = (max(0, x0 - pad), max(0, y0 - pad), min(im.width, x1 + pad), min(im.height, y1 + pad))
+    reg = ImageEnhance.Color(im.crop(big).filter(ImageFilter.GaussianBlur(r))).enhance(desat)
+    m = Image.new("L", reg.size, 0)
+    ImageDraw.Draw(m).ellipse([pad * 0.5, pad * 0.5, reg.width - pad * 0.5, reg.height - pad * 0.5], fill=255)
+    m = m.filter(ImageFilter.GaussianBlur(feather * 0.6))
+    im.paste(reg, big[:2], m)
+    return im
+
+
+def yanagi_gen(src):
+    """柳の葉(hTY1C6LnW08): A 무릎 꿇은 坂本 ↔ 緒方会長 / B 손가락질 坂本 ↔ 버들잎 물을 건네는 結菜(감동 틀)."""
+    f = lambda n: os.path.join(src, n)
+    out = {}
+    img = erase_mark(full(f("gen_A.jpg"), bright=1.12, contrast=1.04, sat=1.06, lift=26)).convert("RGBA")
+    shade_bottom(img, 600, 160)
+    put(img, band("三日後、本部から来たのは", 66, fg=(255, 236, 60), bg=(0, 0, 0, 215)), 0, 0)
+    put(img, glow(text_layer("追い出した老人は", 126, stroke_w=12)), 40, 612)
+    put(img, glow(text_layer("本部の会長", 256, gradient=GOLD, stroke=(255, 255, 255), stroke_w=15, outer=(0, 0, 0), outer_w=12), r=24), 10, 712)
+    out["A"] = img
+    base = full(f("gen_B.jpg"), bright=1.12, contrast=1.04, sat=1.04, lift=26)
+    base = soften(base, (960, 100, 1260, 620))      # 結菜 뒤 유리문의 「7」 비슷한 색 띠·스티커
+    img = erase_mark(base).convert("RGBA")
+    shade_bottom(img, 600, 160)
+    put(img, glow(text_layer("「買わないなら出てって」", 92, stroke_w=11)), 0, 0)
+    put(img, glow(text_layer("柳の葉を浮かべた", 126, stroke_w=12)), 40, 612)
+    put(img, glow(text_layer("一杯の水", 266, gradient=GOLD, stroke=(255, 255, 255), stroke_w=15, outer=(0, 0, 0), outer_w=12), r=24), 10, 712)
+    out["B"] = img
+    return out
+
+
+WORKS = {"ryokan": ryokan, "ryokan_gen": ryokan_gen, "souko": souko_gen, "yanagi": yanagi_gen}
 
 
 def main():
