@@ -329,7 +329,27 @@ def tower_gen(src):
     return out
 
 
-WORKS = {"tower": tower_gen, "ryokan": ryokan, "ryokan_gen": ryokan_gen, "souko": souko_gen, "yanagi": yanagi_gen, "teiden": teiden_gen}
+def cart_gen(src):
+    """リヤカー(vtnfcOP-S4c): A 새 바퀴 손수레 손잡이에 우는 おばあさん ↔ 걸어가는 キムさん / B 같은 구도 다른 컷 + 대사형 글자."""
+    f = lambda n: os.path.join(src, n)
+    mark = (1740, 880, 1880, 1000)
+    out = {}
+    img = soften(full(f("gen_A.jpg"), bright=1.24, contrast=1.04, sat=1.06, lift=46), mark, r=18, desat=1.0, feather=40).convert("RGBA")
+    shade_bottom(img, 620, 140)
+    put(img, band("無口な警備員、三晩の追跡", 68, fg=(255, 236, 60), bg=(0, 0, 0, 215)), 0, 0)
+    put(img, glow(text_layer("売られたリヤカーが", 124, stroke_w=12)), 40, 612)
+    put(img, glow(text_layer("戻っていた", 262, gradient=GOLD, stroke=(255, 255, 255), stroke_w=15, outer=(0, 0, 0), outer_w=12), r=24), 10, 712)
+    out["A"] = img
+    img = soften(full(f("gen_B.jpg"), bright=1.24, contrast=1.04, sat=1.06, lift=46), mark, r=18, desat=1.0, feather=40).convert("RGBA")
+    shade_bottom(img, 620, 140)
+    put(img, glow(text_layer("「金はいりません」", 104, stroke_w=11)), 0, 0)
+    put(img, glow(text_layer("誰にも言わずに", 124, stroke_w=12)), 40, 612)
+    put(img, glow(text_layer("三晩の恩返し", 240, gradient=GOLD, stroke=(255, 255, 255), stroke_w=15, outer=(0, 0, 0), outer_w=12), r=24), 10, 722)
+    out["B"] = img
+    return out
+
+
+WORKS = {"cart": cart_gen, "tower": tower_gen, "ryokan": ryokan, "ryokan_gen": ryokan_gen, "souko": souko_gen, "yanagi": yanagi_gen, "teiden": teiden_gen}
 
 
 def main():
