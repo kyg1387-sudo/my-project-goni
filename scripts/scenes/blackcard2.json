@@ -1,0 +1,1084 @@
+{
+ "_설명": "blackcard2 장면 설정(build_blackcard2_phase3.py 생성). override_required 장면은 정지 푸시인·OMNI 정지 프레임·재사용·카드를 video-overrides로 먼저 넣는다.",
+ "ratio": "16:9",
+ "budget_usd": 16.65,
+ "style": "Photorealistic live-action, Arri Alexa cinematic color grade, Kodak 35mm film grain, 24fps, keep the exact look, faces, wardrobe, props and lighting of the first frame; natural slow motion only; no text, no captions, no logos, no sudden movement, no new people entering",
+ "durations": [
+  10,
+  10,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  10,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  10,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5
+ ],
+ "scenes": [
+  {
+   "prompt": "(override) reuse: Reuse of S17h: the IC recorder macro with only the small play LED glowing in the",
+   "duration": 10,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S21f: slow pan along the seven gold frames, rack focus to the empty sev",
+   "duration": 10,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) reuse: Episode 1 final-cut montage, 1.2 s each: the black card in the rain / the paymen",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Neon reflections slide slowly across the surfaces as the car glides; the hand and the object stay perfectly still in the same grip; nothing changes shape; nobody appears. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 10,
+   "image": "assets/portraits/blackcard2-keyframes/S13d-1.png"
+  },
+  {
+   "prompt": "(override) still: High insert: a smartphone lying screen-up on the black leather seat, the screen ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S13e-1.png"
+  },
+  {
+   "prompt": "(override) card: Question card over the blurred last frame of S13e (no black): 『消えた六人は、どこへ行ったのか。』",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "(override) card: Title card 「ブラックカード　第二話」 over the blurred frame (no black).",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Neon reflections slide slowly across the surfaces as the car glides; the hand and the object stay perfectly still in the same grip; nothing changes shape; nobody appears. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S14c-1.png"
+  },
+  {
+   "prompt": "(override) still: Low wide through the wet car window: the dark glass tower approaching at night, ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S14d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He breathes slowly, eyes on the guard screen LEFT; a slow blink. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S14e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He lowers his eyes and gives a small bow of the head; his hands stay on the counter. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S14f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kenji's blurred shoulder (near RIGHT foreground): the guard at the booth do",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S14g-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert at hand height: Kenji's ONE hand closed around the key ring, the key",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S14h-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of the guard at three-quarter angle in the booth doorway, hesi",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S14i-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He stands still mid-step; his shoulders rise with one breath; he does not turn. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S14j-1.png"
+  },
+  {
+   "prompt": "(override) still: Wide of the second-basement archive aisle: grey steel shelves of plain grey file",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S14k-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Dust drifts slowly through the flashlight beam; the beam edge trembles very slightly; the paper and the table do not move at all; nobody appears; the light level stays constant. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S14l-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Dust drifts slowly through the flashlight beam; the beam edge trembles very slightly; the paper and the table do not move at all; nobody appears; the light level stays constant. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 10,
+   "image": "assets/portraits/blackcard2-keyframes/S14m-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert at table height: Kenji's ONE index finger resting on a brush-ink str",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S14n-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Dust drifts slowly through the flashlight beam; the beam edge trembles very slightly; the paper and the table do not move at all; nobody appears; the light level stays constant. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S14o-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Dust drifts slowly through the flashlight beam; the beam edge trembles very slightly; the paper and the table do not move at all; nobody appears; the light level stays constant. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S14p-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He breathes slowly; his eyes stay on the ledger screen LEFT; a muscle in his jaw tightens; he never looks at the camera. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S14q-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert: Kenji's ONE hand holding a single plain evaluation sheet up at ches",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S14r-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Dust drifts slowly through the flashlight beam; the beam edge trembles very slightly; the paper and the table do not move at all; nobody appears; the light level stays constant. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S14s-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Dust drifts slowly through the flashlight beam; the beam edge trembles very slightly; the paper and the table do not move at all; nobody appears; the light level stays constant. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S14t-1.png"
+  },
+  {
+   "prompt": "(override) still: Memory, from behind: two young men in new navy recruit suits among rows of foldi",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S14u-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert: Kenji's ONE hand gripping the single evaluation sheet hard, the pap",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S14v-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Dust drifts slowly through the flashlight beam; the beam edge trembles very slightly; the paper and the table do not move at all; nobody appears; the light level stays constant. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S15a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Dust drifts slowly through the flashlight beam; the beam edge trembles very slightly; the paper and the table do not move at all; nobody appears; the light level stays constant. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 10,
+   "image": "assets/portraits/blackcard2-keyframes/S15b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Dust drifts slowly through the flashlight beam; the beam edge trembles very slightly; the paper and the table do not move at all; nobody appears; the light level stays constant. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S15c-1.png"
+  },
+  {
+   "prompt": "(override) still: High side insert: Kenji's ONE index finger resting on one of six dates written d",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S15d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Dust drifts slowly through the flashlight beam; the beam edge trembles very slightly; the paper and the table do not move at all; nobody appears; the light level stays constant. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S15e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand slowly lowers the flashlight; the beam slides down off the table onto the concrete floor; the brightness of the beam stays constant. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 10,
+   "image": "assets/portraits/blackcard2-keyframes/S15f-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Dust drifts slowly through the flashlight beam; the beam edge trembles very slightly; the paper and the table do not move at all; nobody appears; the light level stays constant. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S15g-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert: Kenji's ONE thumb resting at the edge of the small clipped ID photo",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S15h-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert: Kenji's ONE hand holding a smartphone at chest height, screen towar",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S15i-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He listens, still; a slow blink; his jaw tightens once. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 10,
+   "image": "assets/portraits/blackcard2-keyframes/S15j-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert: the smartphone in Kenji's ONE hand at chest height, the screen a pl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S16a-1.png"
+  },
+  {
+   "prompt": "(override) still: Low angle from behind Kenji's shoulder: the back of his head tilted up toward a ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S16b-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro: the dome security camera lens with its tiny red LED, the concrete ceiling",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S16c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Kenji at three-quarter angle between the shelves, the smart",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S16d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He stands listening; his shoulders rise with a breath; he does not turn. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S16e-1.png"
+  },
+  {
+   "prompt": "(override) still: Low wide of the dark archive ceiling corner, the dome camera small in the frame,",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S16f-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert: Kenji's ONE hand holding the matte black card with its plain back t",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S16g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Dust drifts slowly through the flashlight beam; the beam edge trembles very slightly; the paper and the table do not move at all; nobody appears; the light level stays constant. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S16h-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] His eyes narrow slightly; a slow blink; he never looks at the camera. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S16i-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Dust drifts slowly through the flashlight beam; the beam edge trembles very slightly; the paper and the table do not move at all; nobody appears; the light level stays constant. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S16j-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Dust drifts slowly through the flashlight beam; the beam edge trembles very slightly; the paper and the table do not move at all; nobody appears; the light level stays constant. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S16k-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He holds his breath; nothing moves but one slow blink; then a small exhale. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S16l-1.png"
+  },
+  {
+   "prompt": "(override) still: Medium from behind his shoulder: Kenji with the phone at his ear, his face turne",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S16m-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro: the ceiling dome camera, its red LED now dark (unlit); EMPTY.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S16n-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He stands still; the flashlight pool trembles very slightly in his hand; the light level stays constant. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S16o-1.png"
+  },
+  {
+   "prompt": "(override) still: High macro: the white flashlight pool on the bare concrete floor, dust drifting ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S16p-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert by the rusty apartment mailboxes: ONE white-gloved hand holding out ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S17a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He stands perfectly still; only a slow breath moves his shoulders; he does not turn. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S17b-1.png"
+  },
+  {
+   "prompt": "(override) still: Wide from the open doorway: the empty six-tatami room, bare tatami with pale rec",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S17c-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert at the window: Kenji's ONE index finger resting on the clean window ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S17d-1.png"
+  },
+  {
+   "prompt": "(override) still: Medium of the wall above the small desk: a plain wall calendar with a blank grid",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S17e-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro of the calendar grid: seven hand-drawn red circles on dates, the last one ",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S17f-1.png"
+  },
+  {
+   "prompt": "(override) still: High macro of the low desk: a matte black card cut cleanly in half with scissors",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S17g-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro: the small plain black IC voice recorder on the low desk, its play button ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S17g2-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert: Kenji's ONE index finger resting on the play button of the small bl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S17h-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro of the cut edge of the half card, clean straight scissor cut, the emblem h",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S17i-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro along the calendar's seven red circles (composited), soft morning light; n",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S17j-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He kneels still; his shoulders rise with one slow breath; he does not turn. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S17j2-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He listens without moving; a slow blink; his throat moves once as he swallows; eyes stay on the recorder screen LEFT. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S17k-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro: the recorder's small dark counter window (digits composited), the LED lit",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S17l-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] A plain silver commuter train passes from left to right along the elevated track at an even speed and leaves the frame; the room stays still; no people inside the room. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S17m-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] NOT smiling at any moment. His eyes stay wet; a slow trembling breath; he does not look at the camera. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S17n-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro: the recorder's LED now unlit, the counter window dark; no hands.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S17o-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand sets one piece of karaage onto the other tray and withdraws slowly out of frame. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S17p-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] NOT smiling. A slow blink; one tear stays on the lower lid; a long breath. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S17q-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He stands still at the window; his shoulders rise with one breath; he does not turn. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S17r-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He looks out; a slow blink; his jaw tightens. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 10,
+   "image": "assets/portraits/blackcard2-keyframes/S17s-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert at chest height: Kenji's ONE hand having just slipped the small blac",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S17t-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He takes one slow step down and stops, hand sliding on the rail; he does not turn. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S17u-1.png"
+  },
+  {
+   "prompt": "(override) still: Medium wide of the black luxury sedan by the kerb in grey morning light, the rea",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S17v-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kenji's blurred shoulder (near LEFT foreground): Nagase entering the glass ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S18a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Reverse over Nagase's blurred shoulder (near RIGHT foreground): Kenji seated at ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S18b-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead: seven plain approval forms fanned on the white table, each with a red ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S18c-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low chest-up close-up of Nagase at three-quarter angle, adjusting his gold-frame",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S18d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] His eyes flick once and steady; he swallows; his fingers tighten on the chair back. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S18e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He does not move; one slow blink. SEATED/FURNITURE LOCKED: seated on the chair or stool pulled in, thighs under the edge, forearms on the surface; the chair never passes through the body. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S18f-1.png"
+  },
+  {
+   "prompt": "(override) omni: Low chest-up close-up: Nagase leaning forward with ONE hand pressed flat on the ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S18g-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Nagase's blurred shoulder: Kenji at three-quarter angle, seated, unmoved, v",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S18h-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The smile fades; he swallows; his eyes stay on Kenji. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S18i-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Kenji at three-quarter angle, his index finger resting on t",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S18j-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] One thin bead of sweat slowly runs down from the temple; a tiny tremor of the jaw muscle. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S18k-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Nagase's blurred shoulder, slightly high: Kenji seated, both hands still on",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S18l-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert at table height: Kenji's ONE hand resting flat on a single blank whi",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S18m-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Nagase's blurred shoulder, closer: Kenji leaning in a little, almost whispe",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S18n-1.png"
+  },
+  {
+   "prompt": "(override) still: High insert: Nagase's ONE hand holding a pen, the nib just lifted from the white",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S18o-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He sinks back into the chair; his chest rises with a shaky breath; his hands lie limp on the armrests. SEATED/FURNITURE LOCKED: seated on the chair or stool pulled in, thighs under the edge, forearms on the surface; the chair never passes through the body. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S18p-1.png"
+  },
+  {
+   "prompt": "(override) still: From behind Nagase's chair: the back of his silver-grey head and shoulders slump",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S18q-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead macro: a red seal impression on an approval form (composited), the edge",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S18r-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He walks slowly away along the corridor at an even pace; nobody else appears; the camera does not move. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S18s-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert: Kenji's ONE hand holding a smartphone at chest height, the screen a",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S18t-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kenji's blurred shoulder (near RIGHT foreground): Misaki standing by the re",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S19a-1.png"
+  },
+  {
+   "prompt": "(override) still: Side medium from slightly behind: Kenji walking past without stopping, his face ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S19b-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kenji's blurred shoulder, slightly high: Misaki's ONE hand holding his blac",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S19c-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert at chest height: Misaki's ONE hand holding up a crumpled cream envel",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S19d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He stays still; a slow blink; eyes on the envelope. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S19e-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert: Misaki's ONE hand holding the opened cream envelope, the broken red",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S19f-1.png"
+  },
+  {
+   "prompt": "(override) still: Macro: a single unfolded sheet with one short printed line (「任務終了」 composited); ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S19g-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert: Misaki's ONE hand holding out a smartphone at chest height, the scr",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S19h-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] His eyes narrow slightly; one slow blink. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S19i-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kenji's blurred shoulder, slightly high: Misaki at three-quarter, lips trem",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S19j-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert: Kenji's ONE hand holding the crumpled cream envelope at chest heigh",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S19k-1.png"
+  },
+  {
+   "prompt": "(override) still: Extreme low wide: the office tower rising into the grey afternoon sky from the r",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S19l-1.png"
+  },
+  {
+   "prompt": "(override) card: Preview card over the blurred frame of S19l (no black): 『この後――十五年前、俺を\"落とした\"男の告白』",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The ice in the glass trembles faintly as a train passes overhead; the envelope does not move; nobody appears; the light stays constant. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S20a-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Sagisuma seated at the counter at three-quarter angle, eyes",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S20b-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert: Sagisuma's ONE thick fingertip resting on the opened envelope on th",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S20c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He settles on the stool and stays still; a slow blink; eyes on Sagisuma. SEATED/FURNITURE LOCKED: seated on the chair or stool pulled in, thighs under the edge, forearms on the surface; the chair never passes through the body. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S20d-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Sagisuma's blurred shoulder: Kenji at three-quarter angle at the counter, e",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S20e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The hand lifts the glass slowly a few centimetres and the ice tilts; it does not leave the frame. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S20f-1.png"
+  },
+  {
+   "prompt": "(override) still: From behind Kenji's shoulder at the counter: the back of his head turned toward ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S20g-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kenji's blurred shoulder: Sagisuma at three-quarter angle, the glass in his",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S20h-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The interviewers sit still; one turns a page; the applicant sits upright; nobody turns to the camera. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S20i-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Sagisuma at three-quarter, matter-of-fact, eyes half on his",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S20j-1.png"
+  },
+  {
+   "prompt": "(override) reuse: Reuse of S14m: the ledger with the black ink strike-throughs.",
+   "duration": 10,
+   "override_required": true
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] His eyes harden; one slow blink. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S20l-1.png"
+  },
+  {
+   "prompt": "(override) omni: Over Kenji's blurred shoulder: Sagisuma turning to look straight at Kenji for th",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S20m-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Kenji at three-quarter at the counter, his ONE hand around ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S20n-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert: Sagisuma's ONE hand resting beside the whisky glass just set down o",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S20o-1.png"
+  },
+  {
+   "prompt": "(override) still: Close from behind Kenji's shoulder: the side of his head toward Sagisuma, jaw se",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S20p-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Sagisuma at three-quarter angle, sliding a plain matte blac",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S20q-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert: Kenji's ONE hand holding the plain matte black key card lifted betw",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S20r-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] A train passes along the arch above as a soft blur of lit windows from left to right; the doorway light stays constant; nobody walks in or out. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S20s-1.png"
+  },
+  {
+   "prompt": "(override) still: Inside the private elevator: dark walnut and brass, the doors closed; EMPTY.",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S21a-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert: Kenji's ONE hand holding the black card against the blank card read",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S21b-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert: Kenji's ONE hand holding the plain black key card against the reade",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S21c-1.png"
+  },
+  {
+   "prompt": "(override) still: Low angle: the heavy dark walnut double door with plain brass lever handles, sli",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S21d-1.png"
+  },
+  {
+   "prompt": "(override) still: Low wide from the doorway: the long dark walnut desk, the empty high-backed blac",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S21e-1.png"
+  },
+  {
+   "prompt": "(override) still: The wall of seven identical gold frames in one row, six holding half-cut black c",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S21f-1.png"
+  },
+  {
+   "prompt": "(override) still: Straight on: the seventh gold frame, empty black matte board, its small brass pl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S21g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] A thin wisp of steam rises steadily from the coffee; nothing else moves; the light stays constant; nobody appears. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S21h-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He turns his head about 15 degrees to the right and back; his eyes search the dark; nobody else appears. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. NO water indoors, ceiling and lamps dry. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S21i-1.png"
+  },
+  {
+   "prompt": "(override) still: High macro: a cream envelope beside the coffee saucer on the walnut desk, sealed",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S21j-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert: Kenji's ONE hand holding a folded thick contract half drawn out of ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S22a-1.png"
+  },
+  {
+   "prompt": "(override) still: Overhead: a thick plain contract laid flat on the walnut desk under the lamp (ti",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S22b-1.png"
+  },
+  {
+   "prompt": "(override) still: High macro of one contract clause, the lamp light raking across the paper (claus",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S22c-1.png"
+  },
+  {
+   "prompt": "(override) still: Low raking macro of the next clause (text composited and highlighted), the rest ",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S22d-1.png"
+  },
+  {
+   "prompt": "(override) still: Straight on: the empty high-backed black leather chair behind the desk, the nigh",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S22e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He looks at the chair; a slow breath; his jaw tightens. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S22g-1.png"
+  },
+  {
+   "prompt": "(override) still: The sixth gold frame with its half card, the small brass plate below (「No.6 三好達也",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S22f-1.png"
+  },
+  {
+   "prompt": "(override) still: High macro of the contract's signature fields: one field with a printed name, on",
+   "duration": 10,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S22h-1.png"
+  },
+  {
+   "prompt": "(override) reuse: Episode 1 flashback 0.5 s: the divorce form on the kitchen table with the husban",
+   "duration": 5,
+   "override_required": true
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Kenji sits still facing forward; neon slides over him; the chauffeur's cap does not move. CAR GEOMETRY LOCKED: Japanese right-hand-drive sedan — exactly ONE steering wheel, in front of the RIGHT front seat; the chauffeur sits in the RIGHT front seat, only his cap and gloves ever seen; Kenji sits in the rear seat SEATED NORMALLY facing FORWARD. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 10,
+   "image": "assets/portraits/blackcard2-keyframes/S23a-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The night city lights slide past outside the glass at an even speed; the cabin stays dark and still; nobody appears. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S23a2-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] His eyes in the mirror narrow; one slow blink. CAR GEOMETRY LOCKED: Japanese right-hand-drive sedan — exactly ONE steering wheel, in front of the RIGHT front seat; the chauffeur sits in the RIGHT front seat, only his cap and gloves ever seen; Kenji sits in the rear seat SEATED NORMALLY facing FORWARD. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S23b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The gloved hand turns the wheel a few degrees and back, smooth and calm. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S23c-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Neon reflections slide slowly across the surfaces as the car glides; the hand and the object stay perfectly still in the same grip; nothing changes shape; nobody appears. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S23d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He breathes out slowly; a slow blink; neon slides over his face. CAR GEOMETRY LOCKED: Japanese right-hand-drive sedan — exactly ONE steering wheel, in front of the RIGHT front seat; the chauffeur sits in the RIGHT front seat, only his cap and gloves ever seen; Kenji sits in the rear seat SEATED NORMALLY facing FORWARD. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S23e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] He listens; a slow blink; his free hand rests on his knee. CAR GEOMETRY LOCKED: Japanese right-hand-drive sedan — exactly ONE steering wheel, in front of the RIGHT front seat; the chauffeur sits in the RIGHT front seat, only his cap and gloves ever seen; Kenji sits in the rear seat SEATED NORMALLY facing FORWARD. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 10,
+   "image": "assets/portraits/blackcard2-keyframes/S24b-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Neon reflections slide slowly across the card and the paper as the car glides; nothing moves or changes shape; no hands appear; nobody appears. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S24c-1.png"
+  },
+  {
+   "prompt": "(override) still: Side insert: Kenji's ONE hand holding the smartphone, the screen a plain soft gl",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S24d-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The night lights slide across the glass; Kenji does not move. CAR GEOMETRY LOCKED: Japanese right-hand-drive sedan — exactly ONE steering wheel, in front of the RIGHT front seat; the chauffeur sits in the RIGHT front seat, only his cap and gloves ever seen; Kenji sits in the rear seat SEATED NORMALLY facing FORWARD. Head stays at the same angle, never turns toward the camera; only body, hands and breath move. Mouth stays closed, lips still — this person is NOT speaking. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S24e-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Neon reflections slide slowly across the surfaces as the car glides; the hand and the object stay perfectly still in the same grip; nothing changes shape; nobody appears. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S24e2-1.png"
+  },
+  {
+   "prompt": "(override) omni: Chest-up close-up of Kenji at three-quarter angle in the rear seat, the smartpho",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S24f-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] NOT smiling broadly. The corners of his eyes soften; one slow blink; the eyes stay wet but no tear falls. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S24g-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] Neon reflections slide slowly across the card and the paper as the car glides; nothing moves or changes shape; no hands appear; nobody appears. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S24h-1.png"
+  },
+  {
+   "prompt": "[CAMERA] Static locked-off camera, no camera movement. [CHARACTER] Keep the exact faces, glasses, wardrobe and props of the first frame; the same people only. [ACTION] The night city lights slide past outside the glass at an even speed; the cabin stays dark and still; nobody appears. Head turns under 20 degrees. [SETTING] The same location and lighting as the first frame; the brightness and colour of the light stay constant. [NEGATIVE] No walking toward the camera, no new people, no text, no morphing, no flicker, no exposure change.",
+   "duration": 5,
+   "image": "assets/portraits/blackcard2-keyframes/S24i-1.png"
+  },
+  {
+   "prompt": "(override) still: Final cut, no dialogue: the large formal portrait in the dark basement corridor,",
+   "duration": 5,
+   "override_required": true,
+   "image": "assets/portraits/blackcard2-keyframes/S24j-1.png"
+  }
+ ]
+}
