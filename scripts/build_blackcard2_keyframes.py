@@ -131,7 +131,15 @@ EMO_OVERRIDE = {  # 상태 고정(00_script_ja.md·제19장 27) — Kill Gate �
     "S24e2": "REAR SEAT LOCKED: the contract lies on Kenji's knee in the REAR seat; in front only the back of the black leather front seat; NO steering wheel, NO dashboard, NO driver visible.",
     "S24j": "STATE LOCKED: the framed portrait hangs on the wall, but its glass is covered by a bright white reflection glare: NO face, NO eyes, NO features of the person are visible — only the dark frame, the glare and a vague dark suit shape below it; the corridor is EMPTY.",
 }
-SUBJ_FIX = {"S19a": ("near RIGHT foreground", "near LEFT foreground")}  # 장면 축 통일(S19c 합격본이 켄지 왼쪽) — PHASE 3 문장 치환
+SUBJ_FIX = {"S19a": ("near RIGHT foreground", "near LEFT foreground"),
+            "S18d": ("adjusting his gold-frame glasses with ONE hand", "both hands resting low out of frame")}  # r2까지 3회 안경 만지는 손
+# PHASE 3 생성기 결함: 전화 장면의 통화 상대(美咲)를 어깨 너머 앞 인물로 넣음(S24g, 차 안에 美咲 2회) → 프롬프트 전체 교체
+KP_OVERRIDE = {"S24g": ("[CAMERA] eye-level, 100mm macro lens, f/2.8, very shallow depth of field. FRAMING LOCKED: an extreme close-up of ONE man's eyes and brows "
+                        "filling the frame; the mouth is OUT of frame; NO other person, NO foreground shoulder. [CHARACTER] IDENTITY FIRST — Takahashi Kenji, a lean "
+                        "Japanese man aged 43, gaunt face, short black hair with a little grey, a small healing graze above the LEFT eyebrow, no glasses. [ACTION] his "
+                        "eyes at three-quarter toward screen LEFT, the corners softening for the first time, wet but NOT running, NOT smiling. [SETTING] night in the "
+                        "rear seat of a luxury car, warm amber and magenta neon reflections sliding over his skin, dark cabin behind, Kenji alone. Photorealistic "
+                        "live-action Japanese noir drama, Arri Alexa color grade, Kodak 35mm film grain, 16:9.")}  # 장면 축 통일(S19c 합격본이 켄지 왼쪽) — PHASE 3 문장 치환
 # Kill Gate b1·b2(2026-11-07) 근본 원인: PHASE 3 프롬프트의 합성 예정 문구(「非通知」「総合 A」 등)를 이미지 모델이 그대로 가짜 글자로 그림(63장 중 약 30장)
 # → 「…composited…」 괄호를 통째로 지우고, 글자·기호를 그리게 하는 서술은 무지 서술로 바꾼다(합성은 PHASE 4 ja_overlay).
 TEXT_FIX = {
@@ -157,7 +165,7 @@ def sanitize(sid, kp):
     return kp
 
 
-TWO_TAKES = {"S14g"}  # 립싱크 시범 컷
+TWO_TAKES = {"S14g", "S19a"}  # 립싱크 시범 컷
 BACK_ONLY = {}  # 뒷모습으로만 나오는 인물 — PHASE 3 생성기가 expr=back 셀을 이미 넣는다
 ANGER_CLOSED = ("Fury shown only in the wide-open glaring eyes, furrowed brow, flared nostrils and clenched jaw: eyes OPEN and fixed on the listener, "
                 "lips pressed together, mouth CLOSED, NOT shouting (speech is added later).")
@@ -259,7 +267,7 @@ def build(sc, stage):
         parts.append("Nobody holds a phone; NO smartphone in any hand.")
     if sc["id"] in EMO_OVERRIDE:
         parts.append(EMO_OVERRIDE[sc["id"]])
-    kp = sanitize(sc["id"], sc["keyframe_prompt"])
+    kp = sanitize(sc["id"], KP_OVERRIDE.get(sc["id"], sc["keyframe_prompt"]))
     if sc["id"] in SUBJ_FIX:
         assert SUBJ_FIX[sc["id"]][0] in kp, sc["id"]
         kp = kp.replace(*SUBJ_FIX[sc["id"]])
