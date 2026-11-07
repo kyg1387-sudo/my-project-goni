@@ -87,3 +87,18 @@
   - 차 안·바의 손+소품 컷은 「빛만 움직이고 손·물건은 그대로」라는 동작 문장으로 i2v를 쓴다.
   - 생성기에 **정지 비율 45% 상한 자동 검사**를 넣었다(지속 개선 원칙 4).
 - 결과: 정지 41%(68/164), i2v 66, 립싱크 22.
+
+## 10. PHASE 4 키프레임 Kill Gate 1차 (2026-11-07, 157장 중 63장 재생성 40%)
+
+- **근본 원인(약 30장): PHASE 3 프롬프트에 합성할 일본어 문구가 그대로 들어 있었다.** 예: 「(「非通知」 composited)」「(「A」 struck through … 「C」 written beside it composited)」. 이미지 모델은 「composited」를 읽지 않고 괄호 속 글자를 그대로 그렸다(가짜 일본어 「総合A」「多使の指計」, 라틴 A·C, 큰 X 표, 뱀 같은 붓줄). 1화는 STATE LOCKED 문장으로 컷마다 막았지만, 2화는 서고 문서 컷이 많아 한꺼번에 터졌다.
+  → 키프레임 생성기에 `sanitize()`를 넣었다. 「…composited…」 괄호와 「」 문구를 지우고, 글자를 그리게 하는 서술(「printed grade box」「dates written」「two shaky characters」)은 `TEXT_FIX`로 무지 서술로 바꾼다. **자동 검사**: 스펙 생성 뒤 프롬프트에 「 또는 composited가 남으면 안 된다(지속 개선 원칙 4).
+  → **PHASE 3 생성기 규칙 후보**: 합성 문구는 `ja_overlay` 필드에만 두고, 샷 설명(subject)에는 「blank」만 쓴다.
+- **두 손 인서트(7장)**: 「ONE hand」로 설계한 인서트가 두 손으로 나왔다. 공통 INSERT 문장이 「only the hands / object」(복수)라서 컷 문장과 충돌했다 → 「ONE hand/finger/thumb」 컷은 `INSERT_ONE`(다른 손은 화면 밖, 턱·얼굴 없음).
+- **립싱크 키프레임(22장 중 8장)**:
+  - 화자 얼굴이 화면 1/6 이하인 원경(5장): 서 있는 화자·낮 야외는 「CAMERA CLOSE 1.2 m·WAIST UP」 문장이 컷별로 필요하다(제20장 9 재확인).
+  - 경비원 가슴의 가짜 명찰 글자 → 「UNIFORM LOCKED」.
+  - 어깨 너머 앞 인물이 은발 永瀬가 아니라 검은 머리 남자 → 앞 인물의 머리색·안경을 「FOREGROUND IDENTITY LOCKED」에 쓴다.
+  - 안경을 만지는 손 → 립싱크 얼굴 변형 위험이라 손은 내린다.
+- **차 안 기하**: 운전대가 왼쪽(S13e·S23a2), 운전사가 뒷좌석에 켄지와 마주 앉음(S23a), 美咲가 차 안에 등장(S24g). 차 안 컷은 장소 셀이 있어도 「운전대 1개·오른쪽」「뒷좌석에 켄지 혼자」를 컷 문장에 넣는다(제20장 16 재확인).
+- **화자 뒷모습 정지 컷(pstill) 3장이 옆얼굴·입 노출**: 「strictly from BEHIND… NO profile」.
+- **얼굴 크롭**: 컨테이너의 cv2에 얼굴 검출기(CascadeClassifier)가 없어, 정면 셀을 눈으로 보고 손 크롭했다(`assets/portraits/blackcard2-faces/`, 7명).
