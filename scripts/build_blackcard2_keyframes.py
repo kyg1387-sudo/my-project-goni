@@ -59,13 +59,15 @@ OTS = ("Over-the-shoulder two-shot composition: the listener is at the near fore
        "The camera stands close (about 1.2 m) behind the listener so the SPEAKER is large: head and shoulders fill the centre, NOT a wide shot.")
 INSERT = ("EXTREME CLOSE-UP INSERT: only the hands / object described fill the frame; NO face, NO head and NO shoulders anywhere in the frame — "
           "the person is out of frame except the hands, wrists and sleeves. Shallow depth of field.")
+INSERT_ONE = ("EXTREME CLOSE-UP INSERT: exactly ONE hand (the other hand is completely OUT of frame) and the object fill the frame; NO face, "
+              "NO chin, NO head and NO shoulders anywhere in the frame — the person is out of frame except this one hand, wrist and sleeve. Shallow depth of field.")
 BACK = ("The person is seen strictly from behind — only the back of the head, hair, ears and shoulders are visible, the face turned away from "
         "the camera; the mouth is never visible.")
 ANGLE = {"HA": "CAMERA: steep high angle, looking down from about 4 metres above.", "OH": "CAMERA: directly overhead, looking straight down.",
          "BE": "CAMERA: bird's-eye view straight down from the ceiling.", "LA": "CAMERA: low angle, looking up from about waist height.",
          "SIDE": "CAMERA: from the side or behind — the face in side profile or hidden, NOT facing the camera."}
 BLANK = ("Every paper, document, form, envelope, phone screen and monitor surface is completely blank and clean: NO printed lines, NO characters, "
-         "NO headings, NO tables, NO numerals, NO stamps with characters (Japanese text is composited later).")
+         "NO headings, NO tables, NO numerals, NO stamps with characters; every surface stays empty.")
 LIGHT_NOTE = {  # 1화 장소 셀을 다른 시간대로 쓰는 장면·셀 조명이 장면과 다른 곳만(나머지는 프롬프트 [SETTING])
     "backday": "LIGHTING OVERRIDES THE LOCATION REFERENCE: 1 p.m. overcast DAYTIME, flat grey sky light, damp concrete; NOT night, NO rain falling, NO neon, the booth window unlit.",
     "archive": "LIGHTING OVERRIDES THE LOCATION REFERENCE: the room lights are OFF; a narrow cold white flashlight beam is the only key light, a very dim green glow near the floor, deep shadows, dust in the beam; faces readable in the spill.",
@@ -85,9 +87,67 @@ EMO_OVERRIDE = {  # 상태 고정(00_script_ja.md·제19장 27) — Kill Gate �
     "S18g": "CAMERA CLOSE, low angle: chest-up, Nagase leaning forward over the white table, his head and shoulders fill the centre, face at least ONE THIRD of the frame height, ONE hand pressed flat on the table at the bottom edge; eyes on Kenji screen LEFT, NEVER into the lens; NOT a wide shot; NO other person, NO foreground shoulder.",
     "S19a": "CAMERA CLOSE: the camera is 1.2 m behind Kenji's black-suited shoulder (near LEFT edge, blurred, at most 25 percent of the frame width); Misaki chest-up fills the centre, her face at least ONE THIRD of the frame height, ONE hand gripping her handbag strap at the shoulder; eyes on Kenji screen LEFT, pleading, NEVER into the lens. Overcast DAYTIME, dry grey concrete, NO rain, NO signs with text.",
     "S19j": "CAMERA CLOSE, slightly high: the camera is 1.2 m behind Kenji's black-suited shoulder (near LEFT edge, blurred, at most 25 percent of the frame width); Misaki chest-up fills the centre, face at least ONE THIRD of the frame height, lips trembling, eyes wet but NOT running, NOT smiling, one hand at her coat collar, holding NO paper; eyes on Kenji screen LEFT. Overcast DAYTIME, NOT night, NO rain falling.",
+    # Kill Gate b1·b2(2026-11-07) 컷별
+    "S13d": "INSERT ONLY: Kenji's head and face are OUT of frame (cut at the shoulder); the card is matte black with ONE small engraved ring-and-tower emblem and NO letters.",
+    "S13e": "Seen from above the REAR seat only: the phone on the black leather, the corner of a knee; NO steering wheel, NO dashboard, NO front seats, NO hands, NO face.",
+    "S14c": "The other hand and Kenji's face are OUT of frame.",
+    "S14d": "The plaza and the building have NO posters, NO billboards, NO signs, NO illuminated panels; only the bronze emblem above the doors.",
+    "S14e": "The person inside the booth is the night security guard in a plain navy uniform and navy cap (NOT a man in a white shirt), seen dimly through the glass; Kenji's eyes are on the booth screen LEFT, NEVER into the lens.",
+    "S14l": "The label plate on the box is a completely blank metal plate.",
+    "S15h": "Kenji's ONE thumb rests at the edge of a small rectangular ID photo clipped inside an open file lying on the table (the photo shows a plain pale blank surface); the file stays on the table; NO second hand, NO glowing object.",
+    "S15i": "Kenji's ONE hand holds ONLY the smartphone (screen a plain soft glow); NO paper, NO second hand.",
+    "S16a": "Kenji's ONE hand holds ONLY the smartphone (screen a plain soft glow); NO folder, NO file, NO second hand.",
+    "S17m": "The SAME empty six-tatami room: bare tatami floor, NO table, NO chairs, NO furniture, NO tablet.",
+    "S17t": "NOTHING in the air; no falling or floating object.",
+    "S17v": "Grey overcast MORNING daylight on a quiet residential street beside the old apartment; NOT night, NO neon, NO rain falling, NO city towers.",
+    "S18i": "GAZE LOCKED: head turned 35 degrees toward screen LEFT, eyes on Kenji off-screen LEFT, NEVER into the lens; bare lapel, NO pin.",
+    "S18m": "Kenji's ONE hand rests FLAT on the single blank sheet; the hand holds NOTHING, NO phone.",
+    "S19b": "Kenji is seen from BEHIND and slightly to the side, walking away; his face is turned AWAY from the camera — NO face, NO mouth visible.",
+    "S19i": "FRAMING LOCKED: only Kenji's eyes and brows fill the frame; NO hands, NO phone, NO mouth in the frame.",
+    "S19k": "The other hand is OUT of frame.",
+    "S20f": "INSERT ONLY: Sagisuma's face is OUT of frame (cut below the chin); exactly ONE hand lifts the glass; the other hand is out of frame.",
+    "S20g": "Seen strictly from BEHIND Kenji's shoulder: the back of his head turned toward Sagisuma; NO face, NO mouth, NO profile visible.",
+    "S20o": "INSERT ONLY: Sagisuma's face is OUT of frame (cut below the chin); exactly ONE hand rests beside the glass; the other hand is out of frame.",
+    "S20p": "Seen strictly from BEHIND Kenji's shoulder: the back and side of his head toward Sagisuma; NO face, NO mouth visible.",
+    "S21c": "Exactly ONE hand holds the card against the reader; the other hand is out of frame.",
+    "S21f": "EXACTLY SEVEN gold frames in one row: frames one to six each hold ONE half-cut matte black card (half a card, cut vertically) on black matte; the seventh frame is EMPTY black matte; a small BLANK brass plate under each frame.",
+    "S21g": "Straight-on frontal: ONE single gold frame fills the centre of the frame — EMPTY black matte board — with a small BLANK brass plate below it; no other frames visible.",
+    "S22f": "Straight-on frontal: ONE single gold frame holding ONE half-cut matte black card on black matte, a small BLANK brass plate below; no other frames visible.",
+    "S23a": "The chauffeur sits in the RIGHT FRONT seat behind the steering wheel, seen only as the back of his cap; Kenji is ALONE in the rear seat; nobody sits beside Kenji.",
+    "S23a2": "Only the rear side window glass and the city beyond fill the frame; NO dashboard, NO steering wheel, NO front seats visible.",
+    "S23c": "ONLY the white-gloved hand on the steering wheel; NO faces, NO passengers, NO other people in frame.",
+    "S24e2": "Kenji's ONE free hand rests flat and still on the contract; the capped pen lies beside it; the hand holds NOTHING — NO phone, NO card; the front seats out of frame.",
+    "S24g": "FRAMING LOCKED: only Kenji's eyes and brows fill the frame; Kenji is ALONE in the rear seat; NO other person anywhere.",
+    "S24d": "Exactly ONE hand holds the phone; the other hand and the face are out of frame.",
     "S24j": "STATE LOCKED: the framed portrait hangs on the wall, but its glass is covered by a bright white reflection glare: NO face, NO eyes, NO features of the person are visible — only the dark frame, the glare and a vague dark suit shape below it; the corridor is EMPTY.",
 }
 SUBJ_FIX = {"S19a": ("near RIGHT foreground", "near LEFT foreground")}  # 장면 축 통일(S19c 합격본이 켄지 왼쪽) — PHASE 3 문장 치환
+# Kill Gate b1·b2(2026-11-07) 근본 원인: PHASE 3 프롬프트의 합성 예정 문구(「非通知」「総合 A」 등)를 이미지 모델이 그대로 가짜 글자로 그림(63장 중 약 30장)
+# → 「…composited…」 괄호를 통째로 지우고, 글자·기호를 그리게 하는 서술은 무지 서술로 바꾼다(합성은 PHASE 4 ja_overlay).
+TEXT_FIX = {
+    "S14m": [("blank ruled pages", "blank pages with only faint thin ruled lines, NO marks, NO strokes, NO crosses")],
+    "S14n": [("resting on a brush-ink stroke on the ledger page", "resting on one blank ruled row of the ledger page")],
+    "S14p": [("a fresh glossy black ink stroke", "ONE short straight horizontal fresh glossy black ink line (a single straight line, NOT a curve, NOT a letter, NOT a cross)")],
+    "S14s": [("a printed grade box", "one small empty blank square box")],
+    "S15d": [("one of six dates written down the edge of a sheet", "the blank margin of a plain sheet")],
+    "S16h": [("six brush-ink strike-throughs in a column", "a column of blank faintly ruled rows")],
+    "S16j": [("the same six ink strike-throughs", "the same column of blank faintly ruled rows")],
+    "S18o": [("after writing two shaky characters", "above a completely blank area of the sheet")],
+    "S19g": [("with one short printed line", "completely blank, NO print")],
+    "S22h": [("one field with a printed name, one field empty", "two empty blank signature lines")],
+}
+
+
+def sanitize(sid, kp):
+    for old, new in TEXT_FIX.get(sid, ()):
+        assert old in kp, (sid, old)
+        kp = kp.replace(old, new)
+    kp = re.sub(r"\s*\([^()]*composited[^()]*\)", "", kp)
+    kp = re.sub(r"「[^」]*」", "", kp)
+    return kp
+
+
+TWO_TAKES = {"S14g"}  # 립싱크 시범 컷
 BACK_ONLY = {}  # 뒷모습으로만 나오는 인물 — PHASE 3 생성기가 expr=back 셀을 이미 넣는다
 ANGER_CLOSED = ("Fury shown only in the wide-open glaring eyes, furrowed brow, flared nostrils and clenched jaw: eyes OPEN and fixed on the listener, "
                 "lips pressed together, mouth CLOSED, NOT shouting (speech is added later).")
@@ -183,7 +243,7 @@ def build(sc, stage):
         parts.append("Nobody holds a phone; NO smartphone in any hand.")
     if sc["id"] in EMO_OVERRIDE:
         parts.append(EMO_OVERRIDE[sc["id"]])
-    kp = sc["keyframe_prompt"]
+    kp = sanitize(sc["id"], sc["keyframe_prompt"])
     if sc["id"] in SUBJ_FIX:
         assert SUBJ_FIX[sc["id"]][0] in kp, sc["id"]
         kp = kp.replace(*SUBJ_FIX[sc["id"]])
@@ -195,8 +255,8 @@ def build(sc, stage):
                 parts.append(v)
     if sc.get("lighting") in LIGHT_NOTE:
         parts.append(LIGHT_NOTE[sc["lighting"]])
-    if sc["kind"] == "ins" and people:
-        parts.append(INSERT)
+    if sc["kind"] == "ins" and people:  # 「ONE hand」 컷은 손 하나(두 손 생성 다발 — Kill Gate b 7컷)
+        parts.append(INSERT_ONE if "ONE hand" in sc["subject"] or "ONE index finger" in sc["subject"] or "ONE thumb" in sc["subject"] else INSERT)
     if is_back:
         parts.append(BACK)
     if sc.get("angle") in ANGLE and not (sc["angle"] == "SIDE" and is_back):
@@ -245,8 +305,8 @@ def main():
                 continue
         c = build(sc, stage)
         missing += [f for f in c["refs"] if not os.path.exists(os.path.join(ROOT, f))]
-        if only and stage != "p":
-            c["count"] = 2
+        if only and stage != "p":  # 재생성: 사람이 나오는 컷 2장, 사물·무지 면 1장(글자 원인 제거만으로 충분)
+            c["count"] = 2 if sc["id"] in TWO_TAKES else 1  # 승인 예산(약 8.4달러) 안: 원인 문장을 고쳤으므로 1장, 시범 컷만 2장
         chars.append(c)
     if (stage == "p" or stage.startswith("r")) and len(chars) != len(only):
         raise SystemExit(f"컷 일부 없음: {sorted(only - {c['id'] for c in chars})}")
