@@ -1,0 +1,27 @@
+{
+ "_설명": "2화 Kill Gate 선택(assemble_blackcard2_keyframes.py). pick = 검수에서 고른 후보, crop = [x0,y0,폭] 비율(16:9 유지), face_frame = [목표 얼굴 비율, 힌트 x, 앞 인물].",
+ "pick": {
+  "S14g": "assets/portraits/blackcard2-kf-r1/S14g-2.png",
+  "S14c": "assets/portraits/blackcard2-kf-b1/S14c-1.png",
+  "S20m": "assets/auditions/blackcard2-pilot-omni/S20m.png",
+  "S18n": "assets/auditions/blackcard2-pilot-omni/S18n.png"
+ },
+ "crop": {
+  "S13d": [
+   0.22,
+   0.0,
+   0.62
+  ],
+  "S16i": [
+   0.2,
+   0.12,
+   0.6
+  ],
+  "S19i": [
+   0.22,
+   0.12,
+   0.6
+  ]
+ },
+ "face_frame": {}
+}
